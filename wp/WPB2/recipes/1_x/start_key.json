@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "wb:start_key"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " XX",
+      "X# ",
+      "XX "
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:stone"
+      },
+      "X": {
+        "item": "minecraft:iron_ingot"
+      }
+      
+    },
+    "result": {
+      "item": "wb:start_key"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:ice_sword"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "BXB",
+      "BXB",
+      "A#A"
+    ],
+    "key": {
+      "#": {
+        "item": "dec:ice_rod"
+      },
+      "X": {
+        "item": "dec:ice_ingot"
+      },
+      "A": {
+        "item": "minecraft:ice"
+      },
+      "B": {
+        "item": "minecraft:snow"
+      }
+    },
+    "result": {
+      "item": "dec:ice_sword"
+    }
+  }
+}

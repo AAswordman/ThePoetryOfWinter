@@ -1,0 +1,63 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:purpur_block",
+          "weight": 25
+        },
+        {
+          "type": "item",
+          "name": "minecraft:end_bricks",
+          "weight": 25
+        },
+        {
+          "type": "item",
+          "name": "minecraft:endstone",
+          "weight": 25
+        },
+        {
+          "type": "item",
+          "name": "minecraft:chorus_fruit",
+          "weight": 40
+        },
+        {
+          "type": "item",
+          "name": "minecraft:chorus_fruit_popped",
+          "weight": 30
+        },
+        {
+          "type": "item",
+          "name": "dec:ender_mind",
+          "weight": 10
+        },
+        {
+          "type": "item",
+          "name": "dec:ender_substance",
+          "weight": 5
+        },
+        {
+          "type": "item",
+          "name": "dec:unknow_book",
+          "weight": 7
+        },
+        {
+          "type": "item",
+          "name": "minecraft:elytra",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "set_damage",
+              "damage": {
+                "min": 0.50,
+                "max": 0.99
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

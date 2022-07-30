@@ -1,0 +1,126 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.ancient_stone.chopping": {
+			"animation_length": 2.0,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.1": [-130, 0, 80],
+						"1.4": [-130, 0, 80],
+						"1.9": [0, 0, 80]
+					}
+				},
+				"rightArm2": {
+					"rotation": {
+						"0.1": [-10, 15, 0],
+						"1.4": [-10, 15, 0],
+						"1.9": [30, 15, 0]
+					}
+				}
+			}
+		},
+		"animation.ancient_stone.swordx": {
+			"animation_length": 4.0,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.3": [-90, 0, 0],
+						"0.9": [-90, 0, 0]
+					}
+				},
+				"sword": {
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.3": [0, 0, 0],
+						"0.9": [0, 0, -5000],
+						"1.0": [0, 0, -10000]
+					}
+				}
+			}
+		},
+		"animation.ancient_stone.sword": {
+			"animation_length": 3.0,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": [-50, 0, 0],
+						"1.0": [-50, 0, 0],
+						"1.1": [-130, 0, 80],
+						"2.4": [-130, 0, 80],
+						"2.9": [0, 0, 80]
+					}
+				},
+				"rightArm2": {
+					"rotation": {
+						"0.0": [-20, 0, 0],
+						"1.0": [-20, 0, 0],
+						"1.1": [-10, 15, 0],
+						"2.4": [-10, 15, 0],
+						"2.9": [30, 15, 0]
+					}
+				},
+				"sword": {
+					"scale": {
+						"0.0": [0, 0, 0],
+						"1.0": [1, 1, 1]
+					}
+				}
+			}
+		},
+		"animation.ancient_stone.attack": {
+			"animation_length": 0.4,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.01": [-85, 15, 0],
+						"0.4": [-15, 15, 0]
+					}
+				},
+				"rightArm2": {
+					"rotation": {
+						"0.01": [-60, 0, 0],
+						"0.4": [-20, 0, 0]
+					}
+				}
+			}
+		},
+		"animation.ancient_stone.base": {
+			"loop": true,
+			"bones": {
+				"rightArm": {
+					"rotation": ["query.is_baby ? 0 : -25", 0, "query.is_baby ? 0 : 15"]
+				},
+				"rightArm2": {
+					"rotation": ["query.is_baby ? 0 : -15", 0, "query.is_baby ? 0 : -40"]
+				}
+			}
+		},
+		"animation.ancient_stone.spell": {
+			"loop": true,
+			"bones": {
+				"leftArm": {
+					"rotation": [-55, 35, 20]
+				},
+				"leftArm1": {
+					"rotation": [10,0,-80]
+				}
+				/*
+				"leftArma": {
+					"rotation": [-55, 35, 20]
+				},
+				"leftArm1a": {
+					"rotation": ["10+query.target_x_rotation", 0, "query.target_y_rotation-80"]
+				},
+				"leftArmb": {
+					"rotation": [-55, 35, 20]
+				},
+				"leftArm1b": {
+					"rotation": [10,0,-80]
+				}
+				*/
+			}
+		}
+	}
+}

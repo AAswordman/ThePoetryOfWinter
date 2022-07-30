@@ -1,0 +1,26 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.chester.move": {
+			"loop": true,
+			"animation_length": 0.56,
+			"bones": {
+				"up": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.32": [0, 0, 0],
+						"0.4": [-35, 0, 0],
+						"0.56": [0, 0, 0]
+					}
+				},
+				"global": {
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.32": [0, 9, 0],
+						"0.56": [0, 0, 0]
+					}
+				}
+			}
+		}
+	}
+}

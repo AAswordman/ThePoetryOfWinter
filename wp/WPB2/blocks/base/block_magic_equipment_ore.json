@@ -1,0 +1,16 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "wb:block_magic_equipment_ore",
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:destroy_time": 5,
+			"minecraft:explosion_resistance": 1,
+			"minecraft:creative_category": {
+				"category": "construction"
+			}
+		}
+	}
+}

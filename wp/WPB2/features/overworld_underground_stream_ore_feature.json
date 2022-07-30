@@ -1,0 +1,19 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:ore_feature": {
+    "description": {
+      "identifier": "dec:overworld_underground_stream_ore_feature"
+    },
+    "count": 3,
+    "replace_rules": [
+			{
+				"places_block": "dec:stream_ore",
+				"may_replace": [
+				
+         
+          "minecraft:stone"
+				]
+			}
+		]
+  }
+}

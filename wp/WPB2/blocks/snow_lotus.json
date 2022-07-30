@@ -1,0 +1,39 @@
+{
+    "format_version": "1.16.0",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dec:snow_lotus"
+        },
+		
+        "components": {
+		  "minecraft:creative_category": {
+				"group": "itemGroup.name.flower",
+				"category": "nature"
+			},
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "snow_lotus",
+                    "render_method": "alpha_test"
+                }
+            },
+            "minecraft:geometry": "geometry.crop.sparse.flower",
+            "minecraft:entity_collision": false,
+            "minecraft:pick_collision": {
+                "origin": [-8,0,-8],
+                "size": [16,9,16]
+            },
+            "minecraft:destroy_time": 0.001,
+            "minecraft:map_color": "#00847D",
+            "minecraft:block_light_absorption": 0.0,
+            "minecraft:loot": "loot_tables/blocks/snow_lotus.json",
+            "minecraft:placement_filter": {
+                "conditions": [
+                    {
+                        "allowed_faces": ["up"],
+                        "block_filter": ["stone", "snow", "grass", "dirt", "gravel"]
+                    }
+                ]
+            }
+        }
+    }
+}

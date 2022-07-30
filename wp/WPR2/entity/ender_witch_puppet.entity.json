@@ -1,0 +1,31 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:ender_witch_puppet",
+      "materials": {
+        "default": "slime_outer"
+      },
+      "textures": {
+        "default": "textures/entity/ender_witch_puppet"
+      },
+      "geometry": {
+        "default": "geometry.villager.witch"
+      },
+      "scripts": {
+        "scale": "0.9375"
+      },
+      "animations": {
+        "villager_general": "animation.villager.general.v1.0",
+        "look_at_target": "animation.common.look_at_target",
+        "move": "animation.villager.move",
+        "general": "animation.witch.general"
+      },
+      "animation_controllers": [
+        { "general": "controller.animation.witch.general" },
+        { "move": "controller.animation.villager.move" }
+      ],
+      "render_controllers": [ "controller.render.witch.v1.0" ]
+    }
+  }
+}

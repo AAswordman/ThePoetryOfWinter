@@ -1,0 +1,46 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:spawn_rules": {
+    "description": {
+      "identifier": "dec:goblin",
+      "population_control": "monster"
+    },
+    "conditions": [
+      {
+        "minecraft:spawns_underground": {},
+        "minecraft:height_filter": {
+          "min": -64,
+          "max": 62
+        },
+        "minecraft:brightness_filter": {
+          "min": 0,
+          "max": 7,
+          "adjust_for_weather": true
+        },
+        "minecraft:weight": {
+          "default": 2
+        },
+        "minecraft:permute_type": [
+          {
+            "weight": 25
+          },
+          {
+            "weight": 10,
+            "entity_type": "dec:goblin_wizard"
+          },
+          {
+            "weight": 5,
+            "entity_type": "dec:goblin_sniper"
+          }
+        ],
+        "minecraft:herd": {
+          "min_size": 5,
+          "max_size": 10
+        },
+        "minecraft:biome_filter": {
+          "test": "has_biome_tag", "operator":"==", "value": "monster"
+        }
+      }
+    ]
+  }
+}

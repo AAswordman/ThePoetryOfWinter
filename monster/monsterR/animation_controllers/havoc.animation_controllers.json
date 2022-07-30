@@ -1,0 +1,97 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.havoc.attack": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "attack_normal": "query.variant == 0 && query.is_delayed_attacking"
+            }
+          ]
+        },
+        "attack_normal":{
+          "animations":[
+            "att_normal"
+          ],
+          "transitions": [
+            {
+              "default": "query.all_animations_finished"
+            }
+          ]
+        }
+      
+      }
+    },
+    "controller.animation.havoc.par": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "strike": "query.variant == 5"
+            },
+            {
+              "reinforce": "query.variant == 3"
+            },
+            {
+              "meltdown": "query.variant == 1"
+            },
+            {
+              "coordination": "query.variant == 4"
+            }
+          ]
+        },
+        "reinforce": {
+          "particle_effects": [
+            {
+              "effect": "reinforce_par"
+            }
+          ],
+          "transitions": [
+            {
+              "default": "query.variant != 3"
+            }
+          ]
+        },
+        "strike": {
+          "particle_effects": [
+            {
+              "effect": "strike_par"
+            }
+          ],
+          "transitions": [
+            {
+              "default": "query.variant != 5"
+            }
+          ]
+        },
+        "coordination": {
+          "particle_effects": [
+            {
+              "effect": "coordination_par"
+            }
+          ],
+          "transitions": [
+            {
+              "default": "query.variant != 4"
+            }
+          ]
+        },
+        "meltdown": {
+          "particle_effects": [
+            {
+              "effect": "meltdown_par"
+            }
+          ],
+          "transitions": [
+            {
+              "default": "query.variant != 1"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

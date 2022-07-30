@@ -1,0 +1,35 @@
+{
+  "format_version": "1.8.0",
+  "animation_controllers": {
+    "controller.animation.dark_werewolf": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "werewolf1": "query.has_target"
+            }
+          ]
+        },
+        "werewolf1": {
+          "transitions": [
+            {
+              "werewolf": "query.has_target"
+            }
+          ]
+        },
+        "werewolf": {
+          "transitions": [
+            {
+              "werewolf1": "query.has_target"
+            }
+          ],
+          "on_entry": [
+            "/execute @a[r=3] ~~~ effect @e[family=werewolf,family=monster,r=20] regeneration 5 0",
+            "/execute @a[r=3] ~~~ effect @e[family=radiate,family=monster,r=20] resistance 5 2",
+            "/execute @a[r=3] ~~~ effect @e[family=radiate,family=monster,r=5] resistance 5 3"
+          ]
+        }
+      }
+    }
+  }
+}

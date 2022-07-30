@@ -1,0 +1,21 @@
+{
+  "format_version": "1.8.0", 
+  "animations": {
+      "animation.gingerbread_totem": {
+        "timeline": {
+            "5": [
+                "/tag @s[scores={wbfl=1..}] add shot_offhand",
+                "/execute @s[scores={wbfl=1..}] ~~~ playsound random.eat @a ~~~",
+                "/scoreboard players remove @s[scores={wbfl=1..}] wbfl 1"
+            ],
+            "15": [
+                "/tag @s[scores={wbfl=1..}] add shot_offhand",
+                "/execute @s[scores={wbfl=1..}] ~~~ playsound random.eat @a ~~~",
+                "/scoreboard players remove @s[scores={wbfl=1..}] wbfl 1"
+            ]
+        }, 
+        "animation_length": 20, 
+        "loop": true
+      }
+   }
+}

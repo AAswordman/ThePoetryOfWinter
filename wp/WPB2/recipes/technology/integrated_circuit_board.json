@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "wb:integrated_circuit_board"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "X#X",
+      "#Y#",
+      "X#X"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:redstone"
+      },
+      "Y": {
+        "item":"minecraft:comparator"
+      },
+      "X": {
+        "item":"minecraft:repeater"
+      }
+    },
+    "result": {
+      "item": "wb:integrated_circuit_board"
+    }
+  }
+}

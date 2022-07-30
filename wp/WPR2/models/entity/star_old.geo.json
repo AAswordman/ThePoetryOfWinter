@@ -1,0 +1,32 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.star_old",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 1,
+				"visible_bounds_offset": [0, 0.5, 0]
+			},
+			"bones": [
+				{
+					"name": "bone",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-3, -1, -2], "size": [5, 1, 5], "uv": [0, 0]},
+						{"origin": [-3, -3, 0], "size": [5, 5, 1], "uv": [0, 0]},
+						{"origin": [-1, -3, -2], "size": [1, 5, 5], "uv": [0, 0]},
+						{"origin": [-1, 2, 0], "size": [1, 3, 1], "uv": [0, 0]},
+						{"origin": [2, -1, 0], "size": [3, 1, 1], "uv": [0, 0]},
+						{"origin": [-6, -1, 0], "size": [3, 1, 1], "uv": [0, 0]},
+						{"origin": [-1, -1, 3], "size": [1, 1, 3], "uv": [0, 0]},
+						{"origin": [-1, -1, -5], "size": [1, 1, 3], "uv": [0, 0]},
+						{"origin": [-1, -6, 0], "size": [1, 3, 1], "uv": [0, 0]}
+					]
+				}
+			]
+		}
+	]
+}

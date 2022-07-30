@@ -1,0 +1,40 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:block": {
+    "description": {
+      "identifier": "dec:eye_of_nature_log"
+    },
+    "components": {
+		  "minecraft:creative_category": {
+				"group": "itemGroup.name.log",
+				"category": "nature"
+			},
+      "minecraft:loot": "loot_tables/blocks/eye_of_nature_log.json",
+      "minecraft:block_light_absorption": 0,
+      "minecraft:block_light_emission": 0,
+      "minecraft:destroy_time": 3,
+      "minecraft:explosion_resistance": 0,
+      "minecraft:map_color": "#4C3D26",
+      "minecraft:ticking": {
+        "looping": true,
+        "range": [
+          10,
+          10
+        ],
+        "on_tick": {
+          "event": "minecraft:effect"
+        }
+      }
+    },
+    "events": {
+      "minecraft:effect": {
+        "run_command": {
+          "command": [
+            "effect @a[r=6,m=!1,tag=!wood_armor] mining_fatigue 11 1",
+            "particle dec:eye_of_nature_watching_particle ~~~"
+          ]
+        }
+      }
+    }
+  }
+}

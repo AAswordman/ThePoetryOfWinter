@@ -1,0 +1,26 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:steel_dart"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " X ",
+      "XAX",
+      " X "
+    ],
+    "key": {
+      "X": {
+        "item": "dec:steel_nugget"
+      },
+      "A": {
+        "item": "dec:steel_ingot"
+      }
+    },
+    "result": {
+      "item": "dec:steel_dart",
+      "count": 8
+    }
+  }
+}

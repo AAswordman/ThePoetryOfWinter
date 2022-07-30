@@ -1,0 +1,27 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:radiate_crystal",
+      "materials": { "default": "husk" },
+      "textures": {
+        "default": "textures/entity/radiate_crystal"
+      },
+      "geometry": {
+        "default": "geometry.radiate_crystal"
+      },
+      "scripts": {
+        "scale": "1",
+        "animate": [
+          "span",
+          "float"
+        ]
+      },
+      "animations": {
+        "span": "animation.radiate_crystal.span",
+        "float": "animation.radiate_crystal.float"
+      },
+      "render_controllers": [ "controller.render.star" ]
+    }
+  }
+}

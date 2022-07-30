@@ -1,0 +1,13 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_furnace": {
+    "description": {
+    "identifier": "dec:furnace_crab_leg"
+    },
+
+    
+    "tags": ["furnace", "blast_furnace","smoker", "campfire"],
+    "input": "dec:crab_leg",
+    "output": "dec:crab_leg_cooked"
+  }
+}

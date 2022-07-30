@@ -1,0 +1,14 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_furnace": {
+    "description": {
+    "identifier": "dec:furnace_compressed_ice"
+    },
+
+    
+    "tags": ["blast_furnace"],
+    "input": "dec:compressed_ice",
+    "output": "dec:ice_brick"
+  }
+  
+}

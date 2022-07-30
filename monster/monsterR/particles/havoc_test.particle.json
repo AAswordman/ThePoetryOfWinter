@@ -1,0 +1,47 @@
+{
+	"format_version": "1.10.0",
+	"particle_effect": {
+		"description": {
+			"identifier": "takile:havoc_test",
+			"basic_render_parameters": {
+				"material": "particles_blend",
+				"texture": "textures/par/test"
+			}
+		},
+		"components": {
+			"minecraft:emitter_initialization": {
+				"creation_expression": "variable.offset=2;variable.startY=1;"
+			},
+			"minecraft:emitter_rate_steady": {
+				"spawn_rate": 50,
+				"max_particles": 100
+			},
+			"minecraft:emitter_lifetime_looping": {
+				"active_time": 1
+			},
+			"minecraft:emitter_shape_point": {
+				"offset": ["variable.x=(variable.particle_random_2*2-1);variable.y=(variable.particle_random_3*2-1);variable.z=(variable.particle_random_4*2-1);variable.length=Math.sqrt(Math.pow(variable.x,2)+Math.pow(variable.y,2)+Math.pow(variable.z,2));return variable.x*variable.offset/variable.length;", "variable.y*variable.offset/variable.length+variable.startY", "variable.z*variable.offset/variable.length"],
+				"direction": ["variable.particle_random_2*2-1", "variable.particle_random_3*2-1", "variable.particle_random_4*2-1"]
+			},
+			"minecraft:particle_lifetime_expression": {
+				"max_lifetime": "Math.random(0.5,1)"
+			},
+			"minecraft:particle_initial_speed": "Math.random(0,1)",
+			"minecraft:particle_motion_dynamic": {},
+			"minecraft:particle_appearance_billboard": {
+				"size": [0.1, 0.4],
+				"facing_camera_mode": "direction_y",
+				"direction": {
+					"mode": "custom",
+					"custom_direction": ["(variable.particle_random_2*2-1)", "(variable.particle_random_3*2-1)", "(variable.particle_random_4*2-1)"]
+				},
+				"uv": {
+					"texture_width": 16,
+					"texture_height": 4,
+					"uv": ["Math.floor(variable.particle_random_1*16)", 0],
+					"uv_size": [1, 4]
+				}
+			}
+		}
+	}
+}

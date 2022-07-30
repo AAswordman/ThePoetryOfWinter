@@ -1,0 +1,16 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "wb:magic_forest_grass",
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:destroy_time": 2,
+			"minecraft:explosion_resistance": 3,
+			"minecraft:creative_category": {
+				"category": "construction"
+			}
+		}
+	}
+}

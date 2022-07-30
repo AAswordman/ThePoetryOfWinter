@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "wb:energy_core_a"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "###",
+      "#Y#",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:redstone_block"
+      },
+      "Y": {
+        "item":"minecraft:daylight_detector"
+      }
+    },
+    "result": {
+      "item": "wb:energy_core_a"
+    }
+  }
+}

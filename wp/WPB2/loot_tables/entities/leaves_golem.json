@@ -1,0 +1,142 @@
+{
+    "pools": [
+        {
+            "rolls": 2,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "dec:eye_of_nature",
+                    "weight": 5,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 4
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:log",
+                    "weight": 5,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 5,
+                                "max": 20
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:emerald",
+                    "weight": 4,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 2
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "dec:emerald_nugget",
+                    "weight": 5,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 4,
+                                "max": 12
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:leaves",
+                    "weight": 5,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 4,
+                                "max": 12
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "dec:wood_helmet",
+                    "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "dec:wood_chestplate",
+                    "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "dec:wood_leggings",
+                    "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "dec:wood_boots",
+                    "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "dec:natura_spear",
+                    "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "dec:leaves_knife",
+                    "weight": 3,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 11,
+                                "max": 23
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "dec:leaves_dagger",
+                    "weight": 2
+                },
+                {
+                    "type": "item",
+                    "name": "dec:poison_dart",
+                    "weight": 4,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 11,
+                                "max": 23
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

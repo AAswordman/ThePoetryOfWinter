@@ -1,0 +1,20 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "wb:station_upgrade_a",
+      "materials": { "default": "skeleton" },
+      "textures": {
+        "default": "textures/wb/4_x/station_upgrade_a"
+      },
+      "geometry": {
+        "default": "geometry.station_upgrade_a"
+      },
+      "render_controllers": [ "controller.render.base" ],
+      "spawn_egg": {
+        "texture": "station_upgrade_a",
+        "texture_index": 0
+      }
+    }
+  }
+}

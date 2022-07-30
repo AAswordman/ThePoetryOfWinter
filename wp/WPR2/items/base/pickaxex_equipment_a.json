@@ -1,0 +1,14 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "wb:pickaxex_equipment_a",
+      "category": "Nature"
+    },
+    "components": {
+      "minecraft:icon": "pickaxex_equipment_a",
+      "minecraft:use_animation": "bow",
+      "minecraft:hover_text_color": "light_purple"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:block": {
+    "description": {
+      "identifier": "dec:flower_ghost_block"
+    },
+    "components": {
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "flower_ghost_block",
+          "render_method": "blend"
+        }
+      },
+      "minecraft:loot": "loot_tables/empty.json",
+      "minecraft:block_light_absorption": 0,
+      "minecraft:block_light_emission": 0,
+      "minecraft:destroy_time": 0.01,
+      "minecraft:explosion_resistance": 0,
+      "minecraft:map_color": "#1C92D6",
+      "minecraft:ticking": {
+        "looping": true,
+        "range": [
+          1,
+          2
+        ],
+        "on_tick": {
+          "event": "minecraft:disappear"
+        }
+      }
+    },
+    "events": {
+      "minecraft:disappear": {
+        "set_block": {
+          "block_type": "minecraft:air"
+        },
+        "run_command": {
+          "command": [
+            "particle dec:flower_ghost_block_particle ~~~"
+          ]
+        }
+      }
+    }
+  }
+}

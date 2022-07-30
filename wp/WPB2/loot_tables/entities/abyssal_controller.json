@@ -1,0 +1,133 @@
+{
+    "pools": [
+        {
+            "rolls": {
+                "min": 2,
+                "max": 3
+              },
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "minecraft:prismarine_shard",
+                    "weight": 4,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 2,
+                                "max": 5
+                            }
+                        },
+                        {
+                            "function": "looting_enchant",
+                            "count": {
+                                "min": 0,
+                                "max": 1
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:sponge",
+                    "weight": 3,
+                    "functions": [
+                      {
+                        "function": "set_data",
+                        "data":  1
+                      }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "dec:scale_block",
+                    "weight": 1,
+                    "functions": [
+                      {
+                        "function": "set_data",
+                        "data":  1
+                      }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:prismarine_crystals",
+                    "weight": 6,
+                    "functions": [
+                        {
+                            "function": "looting_enchant",
+                            "count": {
+                                "min": 1,
+                                "max": 3
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "dec:wave_magic_book",
+                    "weight": 1,
+                    "functions": [
+                      {
+                        "function": "set_data",
+                        "data":  1
+                      }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "dec:sword_of_guard",
+                    "weight": 3,
+                    "functions": [
+                      {
+                        "function": "set_data",
+                        "data":  1
+                      }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "dec:storm_giant_sword",
+                    "weight": 1,
+                    "functions": [
+                      {
+                        "function": "set_data",
+                        "data":  1
+                      }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "dec:decrepit_atlantis",
+                    "weight": 2,
+                    "functions": [
+                      {
+                        "function": "set_data",
+                        "data":  1
+                      }
+                    ]
+                }
+            ]
+        },
+        {
+            "rolls": 2,
+            "entries": [
+                {
+                    "type": "loot_table",
+                    "name": "loot_tables/gameplay/fishing/ocean_fish",
+                    "weight": 1
+                },
+                {
+                    "type": "loot_table",
+                    "name": "loot_tables/gameplay/fishing/ocean_treasure",
+                    "weight": 1
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "wb:mineral_energy_water"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "#"
+    ],
+    "key": {
+      "#": {
+        "item": "wb:block_energy_water"
+      }
+    },
+    "result": {
+      "item": "wb:mineral_energy_water",
+      "count": 9
+    }
+  }
+}

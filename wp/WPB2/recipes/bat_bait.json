@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:bat_bait"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XXX",
+      "X#X",
+      "XXX"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:porkchop"
+      },
+      "X": {
+        "item": "dec:complete_bat_wing"
+      }
+    },
+    "result": {
+      "item": "dec:bat_bait"
+    }
+  }
+}

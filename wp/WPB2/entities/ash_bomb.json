@@ -1,0 +1,118 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:ash_bomb",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "minecraft:touched": {
+        "minecraft:transformation": {
+          "into": "dec:elf_of_ash<minecraft:from_summoner>",
+          "transformation_sound": "explode",
+          "delay": {
+            "value": 1
+          }
+        }
+      }
+    },
+    "components": {
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1,
+        "entity_types": {
+          "filters": {
+            "test": "is_family",
+            "subject": "other",
+            "operator": "!=",
+            "value": "ash"
+          },
+          "max_dist": 64
+        }
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+          "cause": "fall",
+          "deals_damage": false
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "ash"
+              }
+            },
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:behavior.melee_attack": {
+        "priority": 3
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "must_see": true,
+        "reselect_targets": true,
+        "within_radius": 3.0,
+        "must_see_forget_duration": 64.0,
+        "entity_types": [
+          {
+            "filters": {
+              "any_of": [
+                { "test": "is_family", "subject": "other", "value": "player" },
+                { "test": "is_family", "subject": "other", "value": "snowgolem" },
+                { "test": "is_family", "subject": "other", "value": "villager" },
+                { "test": "is_family", "subject": "other", "value": "irongolem" }
+              ]
+            },
+            "max_dist": 35
+          }
+        ]
+      },
+      "minecraft:attack": {
+        "damage": 6
+      },
+      "minecraft:target_nearby_sensor": {
+        "inside_range": 1.0,
+        "outside_range": 6.0,
+        "must_see": true,
+        "on_inside_range": {
+          "event": "minecraft:touched",
+          "target": "self"
+        }
+      },
+      "minecraft:explode": {
+        "fuseLength": 20,
+        "fuseLit": true,
+        "power": 0,
+        "causesFire": false
+        },
+      "minecraft:collision_box": {
+        "width": 0.5,
+        "height": 0.25
+      },
+	    "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    },
+    "events": {
+      "minecraft:touched": {
+        "sequence": [
+          {
+            "add": {
+              "component_groups": [
+                "minecraft:touched"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

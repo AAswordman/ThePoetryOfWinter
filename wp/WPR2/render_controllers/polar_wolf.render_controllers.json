@@ -1,0 +1,12 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.polar_wolf": {
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [
+        "query.is_angry ? Texture.polar_wolf_angry : (query.has_owner ? Texture.polar_wolf_tame : Texture.polar_wolf_default)"
+      ]
+    }
+  }
+}

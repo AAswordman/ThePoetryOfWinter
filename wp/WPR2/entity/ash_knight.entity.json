@@ -1,0 +1,31 @@
+ {
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:ash_knight",
+      "materials": { "default": "zombie" },
+      "textures": { "default": "textures/entity/ash_knight" },
+      "geometry": { "default": "geometry.ash_knight" },
+      "animations": {
+        "spawn": "animation.ash_knight.spawn",
+        "look_at_target": "animation.common.look_at_target",
+        "walk": "animation.ash_knight.move",
+        "attacking": "animation.ash_knight.attack"
+      },
+      "scripts": {
+        "animate": [
+          "spawn",
+          {"walk" : "query.modified_move_speed"},
+          {"attacking":"variable.attack_time"},
+          "look_at_target"
+        ]
+      },
+      "render_controllers": [ "controller.render.zombie" ],
+      "enable_attachables": true,
+      "spawn_egg": {
+        "base_color": "#560100",
+        "overlay_color": "#914811"
+      }
+    }
+  }
+}

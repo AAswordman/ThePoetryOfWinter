@@ -1,0 +1,23 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:yellow_flower_block_d0"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XXX",
+      "XXX",
+      "XXX"
+    ],
+      "key": {
+      "X": {
+        "item": "minecraft:double_plant",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "dec:yellow_flower_block"
+    }
+  }
+}

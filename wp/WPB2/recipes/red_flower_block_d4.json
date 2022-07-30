@@ -1,0 +1,23 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:red_flower_block_d4"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XXX",
+      "XXX",
+      "XXX"
+    ],
+      "key": {
+      "X": {
+        "item": "minecraft:double_plant",
+        "data": 4
+      }
+    },
+    "result": {
+      "item": "dec:red_flower_block"
+    }
+  }
+}

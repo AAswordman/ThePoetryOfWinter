@@ -1,0 +1,17 @@
+{
+    "format_version": "1.8.0", 
+    "animations": {
+        "animation.host_of_deep_track_attack": {
+          "timeline": {
+              "5": [
+                "/execute @a[m=!1,c=3,r=128] ~~~ summon evocation_fang ~~~"
+              ],
+              "10": [
+                "/execute @a[m=!1,c=3,r=128] ~~~ summon evocation_fang ~~~"
+              ]
+          }, 
+          "animation_length": 10, 
+          "loop": true
+        }
+     }
+  }

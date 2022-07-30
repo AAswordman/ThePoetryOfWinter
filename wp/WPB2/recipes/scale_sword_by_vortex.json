@@ -1,0 +1,24 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:scale_sword_by_vortex"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "X",
+      "A"
+    ],
+    "key": {
+      "X": {
+        "item": "dec:scale_block"
+      },
+      "A": {
+        "item": "dec:vortex"
+      }
+    },
+    "result": {
+      "item": "dec:scale_sword"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:block": {
+    "description": {
+      "identifier": "dec:scale_block"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "group": "itemGroup.name.outside",
+				"category": "items"
+			},
+      "minecraft:block_light_absorption": 1,
+      "minecraft:block_light_emission": 0.5,
+      "minecraft:destroy_time": 4,
+      "minecraft:explosion_resistance": 0,
+      "minecraft:map_color": "#7BE2D4",
+      "minecraft:loot": "loot_tables/blocks/scale_block.json",
+      "tag:stone": {}
+    }
+  }
+}

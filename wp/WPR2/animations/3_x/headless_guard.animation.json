@@ -1,0 +1,68 @@
+{
+	"format_version" : "1.8.0",
+	"animations" : {
+		"animation.headless_guard.move" : {
+			"bones" : {
+				"rightleg1":{"rotation":["(Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 35",0,0],"position":["query.modified_distance_moved ? 1.0 : 0.0",0,0]},
+				"rightleg2":{"position":["query.modified_distance_moved ? 1.0 : 0.0",0,0]},
+				"rightleg3":{"position":["query.modified_distance_moved ? 1.0 : 0.0",0,0]},
+				"rightfoot":{"position":["query.modified_distance_moved ? 1.0 : 0.0",0,0]},
+				"leftleg1":{"rotation":["-(Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 35",0,0],"position":["query.modified_distance_moved ? -1.0 : 0.0",0,0]},
+				"leftleg2":{"position":["query.modified_distance_moved ? -1.0 : 0.0",0,0]},
+				"leftleg3":{"position":["query.modified_distance_moved ? -1.0 : 0.0",0,0]},
+				"leftfoot":{"position":["query.modified_distance_moved ? -1.0 : 0.0",0,0]},
+				"rightarm1":{"rotation":["(Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 10",0,0]},
+				"leftarm1":{"rotation":["-(Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 10",0,0]}
+			},
+			"loop" : true
+		},
+	    "animation.headless_guard.charged" : {
+	    	"loop":true,
+			"bones" : {
+				"leftarm1":{"rotation":["query.anim_time <= 2.0 ? (query.anim_time > 1.5 ? -220+(query.anim_time-1.5)*260 : -220) : 0.0",0.0,0.0]},
+				"rightarm1":{"rotation":["query.anim_time <= 2.0 ? (query.anim_time > 1.5 ? -220+(query.anim_time-1.5)*260 : -220) : 0.0",0.0,0.0]},
+				"lefthand":{"rotation":[0,-90,0]},
+				"righthand":{"rotation":[0,90,0]},
+				"block":{"scale":["query.anim_time > 1.5 ? 1.0 : query.anim_time*0.66","query.anim_time > 1.5 ? 1.0 : query.anim_time*0.66","query.anim_time > 1.5 ? 1.0 : query.anim_time*0.66"],"rotation":["query.anim_time*120","query.anim_time*120","query.anim_time*120"]}
+			}
+	    },
+	    "animation.headless_guard.basex" : {
+	    	"loop":true,
+			"bones" : {
+				"block":{"scale":0}
+			}
+	    },
+		"animation.headless_guard.roaring" : {
+	    	"loop":true,
+			"bones" : {
+				"rightarm1":{"rotation":[-50,-50,"Math.sin(query.anim_time*90) > 0 ? 0-Math.abs(Math.sin(query.anim_time*45)*180) : 0-(1-Math.abs(Math.sin(query.anim_time*45)))*180"]},
+				"leftarm1":{"rotation":[-50,50,"Math.sin(query.anim_time*90) > 0 ? Math.abs(Math.sin(query.anim_time*45)*180) : (1-Math.abs(Math.sin(query.anim_time*45)))*180"]}
+			}
+		},
+        "animation.headless_guard.summon" : {
+	    	"loop":true,
+			"bones" : {
+				"rightleg1":{"rotation":["Math.sin(query.anim_time*90) > 0 ? -85+Math.abs(Math.sin(query.anim_time*45)*60) : -85+(1-Math.abs(Math.sin(query.anim_time*45)))*60",0,0]},
+				"rightleg2":{"rotation":[5,0,0]},
+				"rightleg3":{"rotation":[50,0,0]},
+				"rightfoot":{"rotation":[5,0,0]},
+				"leftleg1":{"rotation":["Math.sin(query.anim_time*90) > 0 ? -85+Math.abs(Math.sin(query.anim_time*45)*60) : -85+(1-Math.abs(Math.sin(query.anim_time*45)))*60",0,0]},
+				"leftleg2":{"rotation":[5,0,0]},
+				"leftleg3":{"rotation":[50,0,0]},
+				"leftfoot":{"rotation":[5,0,0]},
+				"body":{"rotation":["Math.sin(query.anim_time*90) > 0 ? -35+Math.abs(Math.sin(query.anim_time*45)*35) : -35+(1-Math.abs(Math.sin(query.anim_time*45)))*35",0,0]}
+			}
+        },
+	    "animation.headless_guard.attack" : {
+	    	"loop":true,
+			"bones" : {
+				"rightarm1":{"rotation":["Math.sin(variable.attack_time*360) > 0.0 ? -180+Math.abs(Math.sin(variable.attack_time*180))*160 : 0.0",0.0,"Math.sin(variable.attack_time*360) > 0.0 ? -50.0 : 0.0"]},
+				"rightarm2":{"rotation":["Math.sin(variable.attack_time*360) > 0.0 ? -20+Math.abs(Math.sin(variable.attack_time*180))*20 : 0.0",0.0,0.0]},
+				"rightarm3":{"rotation":["Math.sin(variable.attack_time*360) > 0.0 ? -20+Math.abs(Math.sin(variable.attack_time*180))*20 : 0.0",0.0,0.0]},
+				"leftarm1":{"rotation":["Math.sin(variable.attack_time*360) > 0.0 ? -180+Math.abs(Math.sin(variable.attack_time*180))*160 : 0.0",0.0,"Math.sin(variable.attack_time*360) > 0.0 ? -50.0 : 0.0"]},
+				"leftarm2":{"rotation":["Math.sin(variable.attack_time*360) > 0.0 ? -20+Math.abs(Math.sin(variable.attack_time*180))*20 : 0.0",0.0,0.0]},
+				"leftarm3":{"rotation":["Math.sin(variable.attack_time*360) > 0.0 ? -20+Math.abs(Math.sin(variable.attack_time*180))*20 : 0.0",0.0,0.0]}
+			}
+	    }
+	}
+}

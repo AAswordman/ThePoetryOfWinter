@@ -1,0 +1,26 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:everlasting_winter_dart"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " X ",
+      "XAX",
+      " X "
+    ],
+    "key": {
+      "X": {
+        "item": "minecraft:iron_nugget"
+      },
+      "A": {
+        "item": "dec:everlasting_winter_ingot"
+      }
+    },
+    "result": {
+      "item": "dec:everlasting_winter_dart",
+      "count": 8
+    }
+  }
+}

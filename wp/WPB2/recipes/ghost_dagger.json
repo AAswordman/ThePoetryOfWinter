@@ -1,0 +1,24 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:ghost_dagger"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "A",
+      "X"
+    ],
+    "key": {
+      "X": {
+        "item": "dec:ice_rod"
+      },
+      "A": {
+        "item": "dec:ghost_ingot"
+      }
+    },
+    "result": {
+      "item": "dec:ghost_dagger"
+    }
+  }
+}

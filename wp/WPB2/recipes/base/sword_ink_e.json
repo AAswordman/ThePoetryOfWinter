@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "wb:sword_ink_e"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "###",
+      "#X#",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "wb:mineral_senior_ink"
+      },
+      "X": {
+        "item": "wb:sword_ink_d"
+      }
+    },
+    "result": {
+      "item": "wb:sword_ink_e"
+    }
+  }
+}

@@ -1,0 +1,1957 @@
+{
+  "namespace": "how_to_play",
+  "how_to_play_screen@how_to_play_common.screen_base": {
+    "$selector_stack_panel": "how_to_play.selector_stack_panel",
+    "$section_content_panels": "how_to_play.section_content_panels"
+  },
+  "selector_stack_panel": {
+    "type": "stack_panel",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "orientation": "vertical",
+    "$default_selector_toggle_index": 1,
+    "controls": [
+      {
+        "how_to_play_selector_pane": {
+          "type": "stack_panel",
+          "controls": [
+            {
+              "padding_0": {
+                "type": "panel",
+                "size": [0,6]
+              }
+            },
+            {
+              "wb0_button@how_to_play.wb0_button": {
+                "$toggle_group_forced_index": 0
+              }
+            },
+            {
+              "wb0x_button@how_to_play.wb0x_button": {
+                "$toggle_group_forced_index": 1
+              }
+            },
+            {
+              "all@how_to_play_common.topic_category": {
+                "$category": "all"
+              }
+            },
+            {
+              "wb1_button@how_to_play.wb1_button": {
+                "$toggle_group_forced_index": 2
+              }
+            },
+            {
+              "core@how_to_play_common.topic_category": {
+                "$category": "core"
+              }
+            },
+            {
+              "wb2_button@how_to_play.wb2_button": {
+                "$toggle_group_forced_index": 3
+              }
+            },
+            
+            {
+              "item@how_to_play_common.topic_category": {
+                "$category": "item"
+              }
+            },
+            {
+              "wb3_button@how_to_play.wb3_button": {
+                "$toggle_group_forced_index": 5
+              }
+            },
+            {
+              "wb4_button@how_to_play.wb4_button": {
+                "$toggle_group_forced_index": 6
+              }
+            },
+            {
+              "wb5_button@how_to_play.wb5_button": {
+                "$toggle_group_forced_index": 7
+              }
+            },
+            {
+              "wb6_button@how_to_play.wb6_button": {
+                "$toggle_group_forced_index": 8
+              }
+            },
+            {
+              "tech@how_to_play_common.topic_category": {
+                "$category": "tech"
+              }
+            },
+            {
+              "wb7_button@how_to_play.wb7_button": {
+                "$toggle_group_forced_index": 9
+              }
+            },
+            {
+              "plot@how_to_play_common.topic_category": {
+                "$category": "plot"
+              }
+            },
+            {
+              "wb8_button@how_to_play.wb8_button": {
+                "$toggle_group_forced_index": 10
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "section_content_panels": {
+    "type": "stack_panel",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "size": [
+      "100% - 5px",
+      "100%c + 5px"
+    ],
+    "offset": [2,0],
+    "controls": [
+      {
+        "general_tips_sections": {
+          "type": "stack_panel",
+          "controls": [
+            {
+              "wb0_section@how_to_play.wb0_section": {}
+            },
+            {
+              "wb0x_section@how_to_play.wb0x_section": {}
+            },
+            {
+              "wb1_section@how_to_play.wb1_section": {}
+            },
+            {
+              "wb2_section@how_to_play.wb2_section": {}
+            },
+            
+            {
+              "wb3_section@how_to_play.wb3_section": {}
+            },
+            {
+              "wb4_section@how_to_play.wb4_section": {}
+            },
+            {
+              "wb5_section@how_to_play.wb5_section": {}
+            },
+            {
+              "wb6_section@how_to_play.wb6_section": {}
+            },
+            {
+              "wb7_section@how_to_play.wb7_section": {}
+            },
+            {
+              "wb8_section@how_to_play.wb8_section": {}
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "wb0_button@how_to_play_common.section_toggle_button": {
+    "$section_topic": "wb0"
+  },
+  "wb0x_button@how_to_play_common.section_toggle_button": {
+    "$section_topic": "wb0x"
+  },
+  "wb1_button@how_to_play_common.section_toggle_button": {
+    "$section_topic": "wb1"
+  },
+  "wb2_button@how_to_play_common.section_toggle_button": {
+    "$section_topic": "wb2"
+  },
+  
+  "wb3_button@how_to_play_common.section_toggle_button": {
+    "$section_topic": "wb3"
+  },
+  "wb4_button@how_to_play_common.section_toggle_button": {
+    "$section_topic": "wb4"
+  },
+  "wb5_button@how_to_play_common.section_toggle_button": {
+    "$section_topic": "wb5"
+  },
+  "wb6_button@how_to_play_common.section_toggle_button": {
+    "$section_topic": "wb6"
+  },
+  "wb7_button@how_to_play_common.section_toggle_button": {
+    "$section_topic": "wb7"
+  },
+  "wb8_button@how_to_play_common.section_toggle_button": {
+    "$section_topic": "wb8"
+  },
+  "wb0_section@how_to_play_common.main_sections": {
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "wb0_button_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+      {
+        "header_1@how_to_play_common.header": {
+          "$text": "BOSS推荐流程和召唤方法"
+        }
+      },
+      {
+        "paragraph_1@how_to_play_common.paragraph": {
+          "$text": "需要用到的:召唤者方块(使用泥土围住原木合成)"
+        }
+      },
+      {
+        "paragraph_2@how_to_play_common.paragraph": {
+          "$text": "接着，只要在上面丢BOSS召唤物就行了。(至于BOSS召唤物是什么，请自己对照着boss名字找)"
+        }
+      },
+      {
+        "paragraph_3@how_to_play_common.paragraph": {
+          "$text": "(ps.以下BOSS如果不在主题群系召唤就会狂怒，名字变成红色) (第二个括号是相应的召唤物，扔召唤者方块上面)"
+        }
+      },
+      {
+        "header_3@how_to_play_common.paragraph": {
+          "$text": "绿叶精华（主题地形：森林）（自然精华）"
+        }
+      },
+      {
+        "paragraph_8@how_to_play_common.paragraph": {
+          "$text": "掠夺者之王（主题地形：平原）（神秘的邀请函）"
+        }
+      },
+      {
+        "paragraph_9@how_to_play_common.paragraph": {
+          "$text": "深海牢笼（主题地形：海洋）（黑暗石）"
+        }
+      },
+      {
+        "paragraph_10@how_to_play_common.paragraph": {
+          "$text": "扑食者（主题群系：恶地）（蝙蝠诱饵）"
+        }
+      },
+      {
+        "paragraph_11@how_to_play_common.paragraph": {
+          "$text": "附魔师（主题地形: 神秘森林）（黑暗珍珠）"
+        }
+      },
+      
+      {
+        "paragraph_13@how_to_play_common.paragraph": {
+          "$text": "永冬恶魂（主题地形：雪地）（无）"
+        }
+      },
+      {
+        "paragraph_14@how_to_play_common.paragraph": {
+          "$text": "凋灵"
+        }
+      },
+      {
+        "paragraph_15@how_to_play_common.paragraph": {
+          "$text": "实体灵魂（主题地形：灵魂峡谷）（实体灵魂）"
+        }
+      },
+      {
+        "paragraph_16@how_to_play_common.paragraph": {
+          "$text": "深渊之主（主题地形：绯红森林）（深渊之书）"
+        }
+      },
+      {
+        "paragraph_17@how_to_play_common.paragraph": {
+          "$text": "灰烬骑士（主题地形：玄武岩三角洲）（灰烬挑战书）"
+        }
+      },
+      {
+        "paragraph_12@how_to_play_common.paragraph": {
+          "$text": "末影龙"
+        }
+      },
+      {
+        "paragraph_18@how_to_play_common.paragraph": {
+          "$text": "需要用到的:启程钥匙，屏障法杖"
+        }
+      },
+      {
+        "paragraph_19@how_to_play_common.paragraph": {
+          "$text": "使用屏障法杖可以快速创建平坦地形，然后在上面使用启程钥匙;请注意，玩家团灭后boss会消失"
+        }
+      },
+      {
+        "paragraph_20@how_to_play_common.paragraph": {
+          "$text": "魔化石块"
+        }
+      },
+      {
+        "paragraph_21@how_to_play_common.paragraph": {
+          "$text": "无头守卫"
+        }
+      },
+      {
+        "paragraph_22@how_to_play_common.paragraph": {
+          "$text": "远古石像"
+        }
+      },
+      {
+        "paragraph_23@how_to_play_common.paragraph": {
+          "$text": "念"
+        }
+      },
+      {
+        "header_24@how_to_play_common.header": {
+          "$text": "其他小Tips"
+        }
+      },
+      {
+        "paragraph_25@how_to_play_common.paragraph": {
+          "$text": "储存者：\n1、 获得：击败附魔师有几率获得魔法箱子碎片\n2、 召唤：把魔法箱子碎片丢在召唤者方块上召唤\n3、 驯服：使用铁钥匙驯服\n4、 使用：驯服后可打开，想让它跟着你的话需要栓绳拴着"
+        }
+      },
+      {
+        "paragraph_26@how_to_play_common.paragraph": {
+          "$text": "永冬塔：\n生成在雪地。在楼顶的正中央有一个激活的永冬召唤者，使用铁钥匙即可召唤Boss冰霜恶魂，激活的永冬召唤者也将变为未激活的永冬召唤者。当你击败Boss之后，会掉落永冬能量条，对未激活的永冬召唤者使用即可激活"
+        }
+      }
+    ]
+  },
+  "wb0x_section@how_to_play_common.main_sections": {
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "wb0x_button_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+      {
+        "header_1@how_to_play_common.header": {
+          "$text": "生存指南"
+        }
+      },
+      {
+        "paragraph_0@how_to_play_common.paragraph": {
+          "$text": "\n没死亡的情况下可输入指令/function diemode来开启死亡模式，死亡模式下死亡无法复活。§r"
+        }
+      },
+      {
+        "paragraph_1@how_to_play_common.paragraph": {
+          "$text": "§r"
+        }
+      },
+      {
+        "paragraph_2@how_to_play_common.paragraph": {
+          "$text": "进入游戏，首先选择钥匙长按进行新手教程。§r"
+        }
+      },
+      {
+        "paragraph_3@how_to_play_common.paragraph": {
+          "$text": "§r"
+        }
+      },
+      {
+        "paragraph_4@how_to_play_common.paragraph": {
+          "$text": "前期可以合成铁钥匙（三个铁粒）去开野外的上锁板条箱，然后打掉，有几率掉落高级物资。§r"
+        }
+      },
+      {
+        "paragraph_5@how_to_play_common.paragraph": {
+          "$text": "§r"
+        }
+      },
+      {
+        "paragraph_6@how_to_play_common.paragraph": {
+          "$text": "如果有村庄，就找个村庄过去存档。按照正常流程，砍树，发展石器，挖矿。§r"
+        }
+      },
+      {
+        "paragraph_7@how_to_play_common.paragraph": {
+          "$text": "前期时小心周围的怪物，建议晚上别乱跑。§r"
+        }
+      },
+      {
+        "paragraph_8@how_to_play_common.paragraph": {
+          "$text": "下矿后，注意这么几个矿物:§r"
+        }
+      },
+      {
+        "paragraph_9@how_to_play_common.paragraph": {
+          "$text": "墨痕矿(出墨痕盔甲，受伤瞬移)§r"
+        }
+      },
+      {
+        "paragraph_10@how_to_play_common.paragraph": {
+          "$text": "朱红矿(出嗜血盔甲和嗜血剑)§r"
+        }
+      },
+      {
+        "paragraph_11@how_to_play_common.paragraph": {
+          "$text": "水源矿(出水源剑，攻击带范围凋零)§r"
+        }
+      },
+      {
+        "paragraph_12@how_to_play_common.paragraph": {
+          "$text": "魔能锭(出魔能斧，潜行砍树一键砍树，出魔能镐，范围挖掘)§r"
+        }
+      },
+      {
+        "paragraph_13@how_to_play_common.paragraph": {
+          "$text": "屏障矿(出屏障法杖，长按搭建16*16平坦平台，潜行长按删除16*16平台)§r"
+        }
+      },
+      {
+        "paragraph_14@how_to_play_common.paragraph": {
+          "$text": "溪流矿(后期来激活机器)§r"
+        }
+      },
+      {
+        "paragraph_15@how_to_play_common.paragraph": {
+          "$text": "高级矿在y轴-20到8，可以用来进阶装备。这里注意！你在打败觉醒末影龙是拿不到高级锭的，所以，老老实实打boss掉材料吧§r"
+        }
+      },
+      {
+        "paragraph_16@how_to_play_common.paragraph": {
+          "$text": "其他的各位根据自己情况出装备。§r"
+        }
+      },
+      {
+        "paragraph_17@how_to_play_common.paragraph": {
+          "$text": "§r"
+        }
+      },
+      {
+        "paragraph_18@how_to_play_common.paragraph": {
+          "$text": "部分矿物需要高炉烧制§r"
+        }
+      },
+      {
+        "paragraph_19@how_to_play_common.paragraph": {
+          "$text": "§r"
+        }
+      },
+      {
+        "paragraph_20@how_to_play_common.paragraph": {
+          "$text": "倘若包中废物过多，可以选择用铁锭围住工作台来做一个废物回收站，东西扔上去，有一定的可能会出矿。§r"
+        }
+      },
+      {
+        "paragraph_21@how_to_play_common.paragraph": {
+          "$text": "§r"
+        }
+      },
+      {
+        "paragraph_22@how_to_play_common.paragraph": {
+          "$text": "如果周围有魔化森林(一片紫色)，那么注意一下刷出来的魔化书，打死可以掉高级附魔书(虽然都带绑定诅咒和消失诅咒)§r"
+        }
+      },
+      {
+        "paragraph_23@how_to_play_common.paragraph": {
+          "$text": "§r"
+        }
+      },
+      {
+        "paragraph_24@how_to_play_common.paragraph": {
+          "$text": "如果挖到铜了，可以选择先合成一个木法杖，然后继续合成能量射线杖。§r"
+        }
+      },
+      {
+        "paragraph_25@how_to_play_common.paragraph": {
+          "$text": "玩家死亡后，小心墓碑旁边的鬼魂。§r"
+        }
+      },
+      {
+        "paragraph_26@how_to_play_common.paragraph": {
+          "$text": "§r"
+        }
+      },
+      {
+        "paragraph_27@how_to_play_common.paragraph": {
+          "$text": "如果你生活在大型地下洞穴，小心周围的蝙蝠一类的怪物。可以使用物品 世界探索者 来标记周围生物并获取血量信息。§r"
+        }
+      },
+      {
+        "paragraph_28@how_to_play_common.paragraph": {
+          "$text": "§r"
+        }
+      },
+      {
+        "paragraph_29@how_to_play_common.paragraph": {
+          "$text": "前期如果遇到了什么塔什么的，不要去打。§r"
+        }
+      },
+      {
+        "paragraph_30@how_to_play_common.paragraph": {
+          "$text": "§r"
+        }
+      },
+      {
+        "paragraph_31@how_to_play_common.paragraph": {
+          "$text": "在前往地狱的时候，注意地狱幻翼，地狱铁傀儡，地狱苦力怕。用屏障法杖搭路是个好方法。§r"
+        }
+      },
+      {
+        "paragraph_32@how_to_play_common.paragraph": {
+          "$text": "§r"
+        }
+      },
+      {
+        "paragraph_33@how_to_play_common.paragraph": {
+          "$text": "部分有主题地形的Boss离开主题地形召唤会暴怒，变得极为棘手。§r"
+        }
+      },
+      {
+        "paragraph_34@how_to_play_common.paragraph": {
+          "$text": "§r"
+        }
+      },
+      {
+        "paragraph_35@how_to_play_common.paragraph": {
+          "$text": "§r"
+        }
+      },
+      {
+        "paragraph_36@how_to_play_common.paragraph": {
+          "$text": "绿叶精华：主题地形森林。在森林里面找特定的建筑，找到特定的召唤者方块。建议使用远程武器，保持一定距离，及时清理召唤出的绿叶精灵。§r"
+        }
+      },
+      {
+        "paragraph_37@how_to_play_common.paragraph": {
+          "$text": "§r"
+        }
+      },
+      {
+        "paragraph_38@how_to_play_common.paragraph": {
+          "$text": "掠夺者之王：主题地形平原。建议近战远程结合，在其召唤时近距离输出，其冲过来攻击时保持距离。§r"
+        }
+      },
+      {
+        "paragraph_39@how_to_play_common.paragraph": {
+          "$text": "§r"
+        }
+      },
+      {
+        "paragraph_40@how_to_play_common.paragraph": {
+          "$text": "深海牢笼：主题地形海洋。建议先在海上搭建平台，使用投掷武器，保持较高速度位移，并时刻处于八个气泡柱中间围成的圆中，出去会受到持续伤害。§r"
+        }
+      },
+      {
+        "paragraph_41@how_to_play_common.paragraph": {
+          "$text": "§r"
+        }
+      },
+      {
+        "paragraph_42@how_to_play_common.paragraph": {
+          "$text": "扑食者：主题地形恶地。如果对自己的预判没有信心的话建议使用高速射击的武器。§r"
+        }
+      },
+      {
+        "paragraph_43@how_to_play_common.paragraph": {
+          "$text": "§r"
+        }
+      },
+      {
+        "paragraph_44@how_to_play_common.paragraph": {
+          "$text": "附魔师：主题地形神秘森林。建议1-2阶段近战，并及时清理召唤出的小怪，三阶段附魔师变为近战，此时建议远程。§r"
+        }
+      },
+      {
+        "paragraph_45@how_to_play_common.paragraph": {
+          "$text": "§r"
+        }
+      },
+      {
+        "paragraph_46@how_to_play_common.paragraph": {
+          "$text": "永冬恶魂：主题地形雪地。在永冬塔上有一个激活的永冬召唤者，对其使用铁钥匙即可召唤Boss永冬恶魂，并变为未激活状态。在击败永冬恶魂后会掉落冰霜能量，对未激活的永冬召唤者使用后将其变为激活状态。一阶段建议保持一定距离近战并及时拉开距离清理小怪，二阶段利用掩体远程输出。§r"
+        }
+      },
+      {
+        "paragraph_47@how_to_play_common.paragraph": {
+          "$text": "§r"
+        }
+      },
+      {
+        "paragraph_48@how_to_play_common.paragraph": {
+          "$text": "实体灵魂：主题地形地狱。一阶段建议贴脸输出，不要拉开距离，适当清理距离较近的小怪。二阶段会召唤两个暗影之魂，两个暗影之魂分别给予实体灵魂力量与速度，需要先被打掉，再去打实体灵魂就比较简单了。§r"
+        }
+      },
+      {
+        "paragraph_49@how_to_play_common.paragraph": {
+          "$text": "§r"
+        }
+      },
+      {
+        "paragraph_50@how_to_play_common.paragraph": {
+          "$text": "深渊之主：主题地形绯红森林。建议1-2阶段保持距离输出，及时清理小怪。三阶段需刻意保持距离输出。§r"
+        }
+      },
+      {
+        "paragraph_51@how_to_play_common.paragraph": {
+          "$text": "§r"
+        }
+      },
+      {
+        "paragraph_52@how_to_play_common.paragraph": {
+          "$text": "灰烬骑士：主题地形玄武岩三角洲。注意别踩到地上的灰烬炸弹，不然会召唤更多小怪。小怪不需刻意清理，注意躲避子弹和小怪就好。§r"
+        }
+      },
+      {
+        "paragraph_53@how_to_play_common.paragraph": {
+          "$text": "§r"
+        }
+      },
+      {
+        "paragraph_54@how_to_play_common.paragraph": {
+          "$text": "§r"
+        }
+      },
+      {
+        "paragraph_55@how_to_play_common.paragraph": {
+          "$text": "当打完了灰烬骑士后，开始生存收尾式BOSS:§r"
+        }
+      },
+      {
+        "paragraph_56@how_to_play_common.paragraph": {
+          "$text": "这个时候可以长按启程钥匙，进行剧情线。§r"
+        }
+      },
+      {
+        "paragraph_57@how_to_play_common.paragraph": {
+          "$text": "注意其中的boss:§r"
+        }
+      },
+      {
+        "paragraph_58@how_to_play_common.paragraph": {
+          "$text": "§r"
+        }
+      },
+      {
+        "paragraph_59@how_to_play_common.paragraph": {
+          "$text": "魔化石块:建议用屏障法杖出一个大一点的平台。准备法杖或者弓，当石头升起时，可以打;砸过来的时候，赶紧跑。两次攻击有间隔。切勿直接上去刚。§r"
+        }
+      },
+      {
+        "paragraph_60@how_to_play_common.paragraph": {
+          "$text": "§r"
+        }
+      },
+      {
+        "paragraph_61@how_to_play_common.paragraph": {
+          "$text": "无头守卫:平台搭大，然后打远程消耗就行。配上法杖和弓，加墨痕剑或者末影珍珠或者一桶水。远程攻击时，如果boss突然跳起来了，赶紧跑，注意斜着躲避地刺。可以使用墨痕剑或者末影珍珠瞬移开，如果被击飞，也可以使用落地水。消耗就行了。§r"
+        }
+      },
+      {
+        "paragraph_62@how_to_play_common.paragraph": {
+          "$text": "§r"
+        }
+      },
+      {
+        "paragraph_63@how_to_play_common.paragraph": {
+          "$text": "远古石像:自己探索§r"
+        }
+      },
+      {
+        "paragraph_64@how_to_play_common.paragraph": {
+          "$text": "念:自己探索"
+        }
+      }
+    ]
+  },
+  "wb1_section@how_to_play_common.main_sections": {
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "wb1_button_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+      {
+        "header_1@how_to_play_common.header": {
+          "$text": "howtoplay.wb.ui.0.name"
+        }
+      },
+      {
+        "paragraph_1@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.1.name"
+        }
+      },
+      {
+        "paragraph_2@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.2.name"
+        }
+      },
+      {
+        "paragraph_3@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.3.name"
+        }
+      },
+      {
+        "header_3@how_to_play_common.header": {
+          "$text": "howtoplay.wb.ui.4.name"
+        }
+      },
+      {
+        "paragraph_8@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.5.name"
+        }
+      },
+      {
+        "paragraph_9@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.6.name"
+        }
+      }
+    ]
+  },
+  "wb2_section@how_to_play_common.main_sections": {
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "wb2_button_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+      {
+        "header_1@how_to_play_common.header": {
+          "$text": "howtoplay.wb.ui.7.name"
+        }
+      },
+      {
+        "paragraph_1@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.8.name"
+        }
+      },
+      {
+        "header_2@how_to_play_common.header": {
+          "$text": "howtoplay.wb.ui.9.name"
+        }
+      },
+      {
+        "paragraph_3@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.10.name"
+        }
+      },
+      {
+        "paragraph_8@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.11.name"
+        }
+      },
+      {
+        "paragraph_9@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.12.name"
+        }
+      },
+      {
+        "header_3@how_to_play_common.header": {
+          "$text": "howtoplay.wb.ui.13.name"
+        }
+      },
+      {
+        "paragraph_10@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.14.name"
+        }
+      },
+      {
+        "paragraph_11@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.15.name"
+        }
+      },
+      {
+        "header_4@how_to_play_common.header": {
+          "$text": "howtoplay.wb.ui.16.name"
+        }
+      },
+      {
+        "paragraph_12@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.17.name"
+        }
+      },
+      {
+        "paragraph_13@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.18.name"
+        }
+      },
+      {
+        "header_56@how_to_play_common.header": {
+          "$text": "howtoplay.wb.ui.19.name"
+        }
+      },
+      {
+        "paragraph_135@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.20.name"
+        }
+      }
+    ]
+  },
+  "wb3_section@how_to_play_common.main_sections": {
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "wb3_button_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+      {
+        "header_1@how_to_play_common.header": {
+          "$text": "howtoplay.wb.ui.36.name"
+        }
+      },
+      {
+        "paragraph_1@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.37.name"
+        }
+      },
+      {
+        "paragraph_140@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.38.name"
+        }
+      },
+      {
+        "header_2@how_to_play_common.header": {
+          "$text": "howtoplay.wb.ui.39.name"
+        }
+      },
+      {
+        "paragraph_4@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.40.name"
+        }
+      }
+    ]
+  },
+  "wb4_section@how_to_play_common.main_sections": {
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "wb4_button_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+      {
+        "header_1@how_to_play_common.header": {
+          "$text": "howtoplay.wb.ui.41.name"
+        }
+      },
+      {
+        "image_2@how_to_play_common.image": {
+          "texture": "textures/wb_item/2_x/staff_light",
+          "size": [
+            "50px",
+            "50px"
+          ]
+        }
+      },
+      {
+        "paragraph_1@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.42.name"
+        }
+      },
+      {
+        "paragraph_6@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.43.name"
+        }
+      },
+      {
+        "image_8@how_to_play_common.image": {
+          "texture": "textures/wb_item/2_x/staff_frost",
+          "size": [
+            "50px",
+            "50px"
+          ]
+        }
+      },
+      {
+        "paragraph_7@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.44.name"
+        }
+      },
+      {
+        "paragraph_9@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.45.name"
+        }
+      },
+      {
+        "header_11@how_to_play_common.header": {
+          "$text": "howtoplay.wb.ui.46.name"
+        }
+      },
+      {
+        "image_12@how_to_play_common.image": {
+          "texture": "textures/wb_item/3_x/staff_fire",
+          "size": [
+            "50px",
+            "50px"
+          ]
+        }
+      },
+      {
+        "paragraph_13@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.47.name"
+        }
+      },
+      {
+        "paragraph_14@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.48.name"
+        }
+      },
+      {
+        "image_15@how_to_play_common.image": {
+          "texture": "textures/wb_item/3_x/staff_wind",
+          "size": [
+            "50px",
+            "50px"
+          ]
+        }
+      },
+      {
+        "paragraph_16@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.49.name"
+        }
+      },
+      {
+        "paragraph_17@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.50.name"
+        }
+      },
+      {
+        "image_18@how_to_play_common.image": {
+          "texture": "textures/wb_item/3_x/staff_summon",
+          "size": [
+            "50px",
+            "50px"
+          ]
+        }
+      },
+      {
+        "paragraph_19@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.51.name"
+        }
+      },
+      {
+        "paragraph_20@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.52.name"
+        }
+      },
+      {
+        "image_21@how_to_play_common.image": {
+          "texture": "textures/wb_item/5_x/staff_burn",
+          "size": [
+            "50px",
+            "50px"
+          ]
+        }
+      },
+      {
+        "paragraph_22@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.53.name"
+        }
+      },
+      {
+        "paragraph_23@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.54.name"
+        }
+      }
+    ]
+  },
+  "wb5_section@how_to_play_common.main_sections": {
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "wb5_button_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+      {
+        "header_2@how_to_play_common.header": {
+          "$text": "howtoplay.wb.ui.55.name"
+        }
+      },
+      {
+        "paragraph_3@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.56.name"
+        }
+      },
+      {
+        "image_4@how_to_play_common.image": {
+          "texture": "textures/wb_item/3_x/sword_guard",
+          "size": [
+            "50px",
+            "50px"
+          ]
+        }
+      },
+      {
+        "paragraph_5@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.57.name"
+        }
+      },
+      {
+        "58paragraph_5@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.58.name"
+        }
+      },
+      {
+        "59paragraph_5@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.59.name"
+        }
+      },
+      {
+        "60paragraph_5@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.60.name"
+        }
+      },
+      {
+        "paragraph_6@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.61.name"
+        }
+      },
+      {
+        "62paragraph_6@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.62.name"
+        }
+      },
+      {
+        "63paragraph_6@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.63.name"
+        }
+      },
+      {
+        "64paragraph_6@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.64.name"
+        }
+      },
+      {
+        "paragraph_7@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.65.name"
+        }
+      },
+      {
+        "66paragraph_7@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.66.name"
+        }
+      },
+      {
+        "67paragraph_7@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.67.name"
+        }
+      },
+      {
+        "68paragraph_7@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.68.name"
+        }
+      },
+      {
+        "paragraph_8@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.69.name"
+        }
+      },
+      {
+        "paragraph_9@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.70.name"
+        }
+      },
+      {
+        "image_10@how_to_play_common.image": {
+          "texture": "textures/wb_item/3_x/sword_bluemark",
+          "size": [
+            "50px",
+            "50px"
+          ]
+        }
+      },
+      {
+        "paragraph_11@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.71.name"
+        }
+      },
+      {
+        "72paragraph_11@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.72.name"
+        }
+      },
+      {
+        "73paragraph_11@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.73.name"
+        }
+      },
+      {
+        "74paragraph_11@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.74.name"
+        }
+      },
+      {
+        "paragraph_12@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.75.name"
+        }
+      },
+      {
+        "76paragraph_12@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.76.name"
+        }
+      },
+      {
+        "77paragraph_12@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.77.name"
+        }
+      },
+      {
+        "78paragraph_12@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.78.name"
+        }
+      },
+      {
+        "paragraph_13@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.79.name"
+        }
+      },
+      {
+        "80paragraph_13@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.80.name"
+        }
+      },
+      {
+        "81paragraph_13@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.81.name"
+        }
+      },
+      {
+        "82paragraph_13@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.82.name"
+        }
+      },
+      {
+        "paragraph_14@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.83.name"
+        }
+      },
+      {
+        "paragraph_15@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.84.name"
+        }
+      },
+      {
+        "paragraph_16@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.85.name"
+        }
+      },
+      {
+        "paragraph_17@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.86.name"
+        }
+      },
+      {
+        "image_18@how_to_play_common.image": {
+          "texture": "textures/wb_item/base/sword_bloodsucking_f",
+          "size": [
+            "50px",
+            "50px"
+          ]
+        }
+      },
+      {
+        "paragraph_19@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.87.name"
+        }
+      },
+      {
+        "88paragraph_19@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.88.name"
+        }
+      },
+      {
+        "89paragraph_19@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.89.name"
+        }
+      },
+      {
+        "90paragraph_19@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.90.name"
+        }
+      },
+      {
+        "paragraph_20@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.91.name"
+        }
+      },
+      {
+        "92paragraph_20@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.92.name"
+        }
+      },
+      {
+        "93paragraph_20@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.93.name"
+        }
+      },
+      {
+        "94paragraph_20@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.94.name"
+        }
+      },
+      {
+        "paragraph_21@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.95.name"
+        }
+      },
+      {
+        "96paragraph_21@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.96.name"
+        }
+      },
+      {
+        "97paragraph_21@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.97.name"
+        }
+      },
+      {
+        "98paragraph_21@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.98.name"
+        }
+      },
+      {
+        "paragraph_22@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.99.name"
+        }
+      },
+      {
+        "paragraph_23@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.100.name"
+        }
+      },
+      {
+        "image_24@how_to_play_common.image": {
+          "texture": "textures/wb_item/base/sword_water_f",
+          "size": [
+            "50px",
+            "50px"
+          ]
+        }
+      },
+      {
+        "paragraph_25@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.101.name"
+        }
+      },
+      {
+        "102paragraph_25@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.102.name"
+        }
+      },
+      {
+        "103paragraph_25@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.103.name"
+        }
+      },
+      {
+        "104paragraph_25@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.104.name"
+        }
+      },
+      {
+        "paragraph_26@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.105.name"
+        }
+      },
+      {
+        "106paragraph_26@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.106.name"
+        }
+      },
+      {
+        "107paragraph_26@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.107.name"
+        }
+      },
+      {
+        "108paragraph_26@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.108.name"
+        }
+      },
+      {
+        "paragraph_27@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.109.name"
+        }
+      },
+      {
+        "110paragraph_27@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.110.name"
+        }
+      },
+      {
+        "111paragraph_27@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.111.name"
+        }
+      },
+      {
+        "112paragraph_27@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.112.name"
+        }
+      },
+      {
+        "paragraph_28@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.113.name"
+        }
+      },
+      {
+        "paragraph_29@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.114.name"
+        }
+      },
+      {
+        "image_30@how_to_play_common.image": {
+          "texture": "textures/wb_item/base/sword_ink_f",
+          "size": [
+            "50px",
+            "50px"
+          ]
+        }
+      },
+      {
+        "paragraph_31@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.115.name"
+        }
+      },
+      {
+        "116paragraph_31@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.116.name"
+        }
+      },
+      {
+        "117paragraph_31@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.117.name"
+        }
+      },
+      {
+        "118paragraph_31@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.118.name"
+        }
+      },
+      {
+        "paragraph_32@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.119.name"
+        }
+      },
+      {
+        "120paragraph_32@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.120.name"
+        }
+      },
+      {
+        "121paragraph_32@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.121.name"
+        }
+      },
+      {
+        "122paragraph_32@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.122.name"
+        }
+      },
+      {
+        "paragraph_33@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.123.name"
+        }
+      },
+      {
+        "124paragraph_33@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.124.name"
+        }
+      },
+      {
+        "125paragraph_33@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.125.name"
+        }
+      },
+      {
+        "126paragraph_33@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.126.name"
+        }
+      },
+      {
+        "paragraph_34@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.127.name"
+        }
+      },
+      {
+        "paragraph_35@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.128.name"
+        }
+      },
+      {
+        "image_36@how_to_play_common.image": {
+          "texture": "textures/wb_item/base/sword_seal_f",
+          "size": [
+            "50px",
+            "50px"
+          ]
+        }
+      },
+      {
+        "paragraph_37@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.129.name"
+        }
+      },
+      {
+        "130paragraph_37@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.130.name"
+        }
+      },
+      {
+        "131paragraph_37@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.131.name"
+        }
+      },
+      {
+        "132paragraph_37@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.132.name"
+        }
+      },
+      {
+        "paragraph_38@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.133.name"
+        }
+      },
+      {
+        "134paragraph_38@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.134.name"
+        }
+      },
+      {
+        "135paragraph_38@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.135.name"
+        }
+      },
+      {
+        "136paragraph_38@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.136.name"
+        }
+      },
+      {
+        "paragraph_39@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.137.name"
+        }
+      },
+      {
+        "138paragraph_39@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.138.name"
+        }
+      },
+      {
+        "139paragraph_39@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.139.name"
+        }
+      },
+      {
+        "140paragraph_39@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.140.name"
+        }
+      },
+      {
+        "paragraph_40@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.141.name"
+        }
+      },
+      {
+        "paragraph_41@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.142.name"
+        }
+      },
+      {
+        "image_42@how_to_play_common.image": {
+          "texture": "textures/wb_item/base/sword_forget_f",
+          "size": [
+            "50px",
+            "50px"
+          ]
+        }
+      },
+      {
+        "paragraph_43@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.143.name"
+        }
+      },
+      {
+        "144paragraph_43@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.144.name"
+        }
+      },
+      {
+        "145paragraph_43@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.145.name"
+        }
+      },
+      {
+        "146paragraph_43@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.146.name"
+        }
+      },
+      {
+        "paragraph_44@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.147.name"
+        }
+      },
+      {
+        "148paragraph_44@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.148.name"
+        }
+      },
+      {
+        "149paragraph_44@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.149.name"
+        }
+      },
+      {
+        "150paragraph_44@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.150.name"
+        }
+      },
+      {
+        "paragraph_45@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.151.name"
+        }
+      },
+      {
+        "152paragraph_45@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.152.name"
+        }
+      },
+      {
+        "153paragraph_45@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.153.name"
+        }
+      },
+      {
+        "154paragraph_45@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.154.name"
+        }
+      },
+      {
+        "header_46@how_to_play_common.header": {
+          "$text": "howtoplay.wb.ui.155.name"
+        }
+      },
+      {
+        "paragraph_47@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.156.name"
+        }
+      },
+      {
+        "image_48@how_to_play_common.image": {
+          "texture": "textures/wb_item/5_x/sword_fly",
+          "size": [
+            "50px",
+            "50px"
+          ]
+        }
+      },
+      {
+        "paragraph_49@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.157.name"
+        }
+      },
+      {
+        "158paragraph_49@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.158.name"
+        }
+      },
+      {
+        "159paragraph_49@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.159.name"
+        }
+      },
+      {
+        "160paragraph_49@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.160.name"
+        }
+      },
+      {
+        "paragraph_50@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.161.name"
+        }
+      },
+      {
+        "162paragraph_50@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.162.name"
+        }
+      },
+      {
+        "163paragraph_50@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.163.name"
+        }
+      },
+      {
+        "164paragraph_50@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.164.name"
+        }
+      },
+      {
+        "paragraph_51@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.165.name"
+        }
+      },
+      {
+        "166paragraph_51@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.166.name"
+        }
+      },
+      {
+        "167paragraph_51@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.167.name"
+        }
+      },
+      {
+        "168paragraph_51@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.168.name"
+        }
+      },
+      {
+        "paragraph_52@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.169.name"
+        }
+      },
+      {
+        "170paragraph_52@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.170.name"
+        }
+      },
+      {
+        "171paragraph_52@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.171.name"
+        }
+      },
+      {
+        "172paragraph_52@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.172.name"
+        }
+      },
+      {
+        "paragraph_53@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.173.name"
+        }
+      },
+      {
+        "paragraph_54@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.174.name"
+        }
+      },
+      {
+        "image_55@how_to_play_common.image": {
+          "texture": "textures/wb_item/5_x/sword_intentions",
+          "size": [
+            "50px",
+            "50px"
+          ]
+        }
+      },
+      {
+        "paragraph_56@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.175.name"
+        }
+      },
+      {
+        "176paragraph_56@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.176.name"
+        }
+      },
+      {
+        "177paragraph_56@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.177.name"
+        }
+      },
+      {
+        "178paragraph_56@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.178.name"
+        }
+      },
+      {
+        "paragraph_57@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.179.name"
+        }
+      },
+      {
+        "180paragraph_57@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.180.name"
+        }
+      },
+      {
+        "181paragraph_57@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.181.name"
+        }
+      },
+      {
+        "182paragraph_57@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.182.name"
+        }
+      },
+      {
+        "paragraph_58@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.183.name"
+        }
+      },
+      {
+        "184paragraph_58@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.184.name"
+        }
+      },
+      {
+        "185paragraph_58@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.185.name"
+        }
+      },
+      {
+        "186paragraph_58@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.186.name"
+        }
+      },
+      {
+        "paragraph_59@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.187.name"
+        }
+      },
+      {
+        "188paragraph_59@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.188.name"
+        }
+      },
+      {
+        "189paragraph_59@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.189.name"
+        }
+      },
+      {
+        "190paragraph_59@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.190.name"
+        }
+      }
+    ]
+  },
+  "wb6_section@how_to_play_common.main_sections": {
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "wb6_button_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+      {
+        "header_1@how_to_play_common.header": {
+          "$text": "howtoplay.wb.ui.191.name"
+        }
+      },
+      {
+        "image_2@how_to_play_common.image": {
+          "texture": "textures/wb_item/1_x/conveyor_issue",
+          "size": [
+            "50px",
+            "50px"
+          ]
+        }
+      },
+      {
+        "image_3@how_to_play_common.image": {
+          "texture": "textures/wb_item/1_x/conveyor_accept",
+          "size": [
+            "50px",
+            "50px"
+          ]
+        }
+      },
+      {
+        "paragraph_1@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.192.name"
+        }
+      },
+      {
+        "paragraph_6@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.193.name"
+        }
+      },
+      {
+        "header_11@how_to_play_common.header": {
+          "$text": "howtoplay.wb.ui.194.name"
+        }
+      },
+      {
+        "image_12@how_to_play_common.image": {
+          "texture": "textures/wb_item/2_x/particle_store",
+          "size": [
+            "50px",
+            "50px"
+          ]
+        }
+      },
+      {
+        "paragraph_13@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.195.name"
+        }
+      },
+      {
+        "paragraph_14@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.196.name"
+        }
+      },
+      {
+        "image_15@how_to_play_common.image": {
+          "texture": "textures/wb_item/2_x/particle_base",
+          "size": [
+            "50px",
+            "50px"
+          ]
+        }
+      },
+      {
+        "paragraph_16@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.197.name"
+        }
+      },
+      {
+        "paragraph_17@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.198.name"
+        }
+      },
+      {
+        "header_18@how_to_play_common.header": {
+          "$text": "howtoplay.wb.ui.199.name"
+        }
+      },
+      {
+        "image_19@how_to_play_common.image": {
+          "texture": "textures/wb_item/3_x/power",
+          "size": [
+            "50px",
+            "50px"
+          ]
+        }
+      },
+      {
+        "paragraph_20@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.200.name"
+        }
+      },
+      {
+        "paragraph_21@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.201.name"
+        }
+      }
+    ]
+  },
+  "wb7_section@how_to_play_common.main_sections": {
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "wb7_button_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+      {
+        "header_1@how_to_play_common.header": {
+          "$text": "机器简介"
+        }
+      },
+      {
+        "paragraph_1@how_to_play_common.paragraph": {
+          "$text": "有了机器，你就可以干更多的事情了。"
+        }
+      },
+      {
+        "header_2@how_to_play_common.header": {
+          "$text": "机器合成和使用"
+        }
+      },
+      {
+        "paragraph_4@how_to_play_common.paragraph": {
+          "$text": "废物回收站:将你不需要的东西丢在上面。过几秒钟后会产出铁/钻石/石头/附魔书/金锭 0或者1个。用铁锭围住一个工作台来合成。"
+        }
+      },
+      {
+        "paragraph_5@how_to_play_common.paragraph": {
+          "$text": "脉冲石，用来激活溪流机械，丢在溪流机械上激活机械。溪流机械(下面的)需要脉冲石丢在上面激活。"
+        }
+      },
+      {
+        "paragraph_6@how_to_play_common.paragraph": {
+          "$text": "雷电召唤者，求雨者，晴天召唤者，为切换天气；"
+        }
+      },
+      {
+        "paragraph_7@how_to_play_common.paragraph": {
+          "$text": "物品捡拾机可以捡拾周围的掉落物；"
+        }
+      },
+      {
+        "paragraph_8@how_to_play_common.paragraph": {
+          "$text": "挖掘机可以将脚下3*3范围的泥土，石头等非矿物方块摧毁（不掉东西）；"
+        }
+      },
+      {
+        "paragraph_9@how_to_play_common.paragraph": {
+          "$text": "引雷者需丢一个脉冲石上去激活，吸引一定范围内的雷电；"
+        }
+      },
+      {
+        "paragraph_10@how_to_play_common.paragraph": {
+          "$text": "末影祭坛玩家踩上去随机传送，消耗魔法值，前提是要有一定魔法值。"
+        }
+      }
+    ]
+  },
+  "wb8_section@how_to_play_common.main_sections": {
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "wb8_button_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+      {
+        "header_1@how_to_play_common.header": {
+          "$text": "howtoplay.wb.ui.276.name"
+        }
+      },
+      {
+        "paragraph_1@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.277.name"
+        }
+      },
+      {
+        "278paragraph_1@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.278.name"
+        }
+      },
+      {
+        "279paragraph_1@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.279.name"
+        }
+      },
+      {
+        "280paragraph_1@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.280.name"
+        }
+      },
+      {
+        "281paragraph_1@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.281.name"
+        }
+      },
+      {
+        "282paragraph_1@how_to_play_common.paragraph": {
+          "$text": "howtoplay.wb.ui.282.name"
+        }
+      }
+    ]
+  }
+}

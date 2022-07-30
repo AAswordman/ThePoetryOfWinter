@@ -1,0 +1,16 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "wb:ball_staff_wind",
+      "materials": { "default": "skeleton" },
+      "textures": {
+        "default": "textures/wb/3_x/ball_staff_wind"
+      },
+      "geometry": {
+        "default": "geometry.ball_staff_light"
+      },
+      "render_controllers": [ "controller.render.base" ]
+    }
+  }
+}

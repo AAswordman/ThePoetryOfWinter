@@ -1,0 +1,13 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "wb:integrated_circuit_board",
+      "category": "Nature"
+    },
+    "components": {
+      "minecraft:icon": "integrated_circuit_board",
+      "minecraft:hover_text_color": "light_purple"
+    }
+  }
+}

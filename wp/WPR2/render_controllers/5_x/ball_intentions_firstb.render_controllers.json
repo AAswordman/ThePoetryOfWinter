@@ -1,0 +1,13 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.ball_intentions_firstb": {
+      "rebuild_animation_matrices": true,
+      "geometry": "Geometry.default",
+      "ignore_lighting":true,
+      "light_color_multiplier":0.5,
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.default" ]
+    }
+  }
+}

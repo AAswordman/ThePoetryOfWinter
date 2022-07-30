@@ -1,0 +1,13 @@
+ {
+    "geometry.spell_fire":  {
+      "texturewidth":  64,
+      "textureheight":  32,
+      "bones":  [
+        {
+          "name":  "body",
+          "pivot":  [  0.0, 0.0,  0.0  ],
+          "rotation" :[0,0,0]
+        }
+      ]
+    }
+ }

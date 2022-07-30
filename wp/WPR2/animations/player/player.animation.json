@@ -1,0 +1,56 @@
+{
+	"format_version" : "1.8.0",
+	"animations" : {
+		"animation.player.attack.positions" : {
+			"loop" : true,
+			"bones" : {
+				"head" : {
+					"rotation" : [ 0.0, 0.0, 0.0 ]
+				}
+			}
+		},
+		"animation.player.attack.positions" : {
+			"loop" : true,
+			"bones" : {
+				"head" : {
+					"rotation" : [ 0.0, 0.0, 0.0 ]
+				}
+			}
+		},
+		"animation.player.staff_governor.first" : {
+			"loop" : true,
+			"override_previous_animation":true,
+			"bones" : {
+				"rightitem" : {
+					"scale" :[0,0,0]
+				},
+				"rightItem" : {
+					"scale" :[0,0,0]
+				},
+				"rightarm" : {
+					"position" : [16,-30,20],
+					"rotation":[-120,0,0]
+				},
+				"staff":{
+				    "rotation":["query.is_using_item ? -45:0",0,0],
+				    "position":[0,0,0]
+				}
+			}
+		},
+		"animation.player.staff_governor.third" : {
+			"loop" : true,
+			"bones" : {
+				"rightitem" : {
+					"scale" : 0
+				},
+				"rightarm" : {
+					"rotation":[-30,0,0]
+				},
+				"staff":{
+				    "rotation":["query.is_using_item ? 20:0",0,0],
+				    "position":[0,0,0]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "wb:staff_barrier"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "#",
+      "#",
+      "X"
+    ],
+    "key": {
+      "#": {
+        "item": "wb:mineral_magic_barrier"
+      },
+      "X": {
+        "item": "wb:staff_base"
+      }
+    },
+    "result": {
+      "item": "wb:staff_barrier"
+    }
+  }
+}

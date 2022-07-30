@@ -1,0 +1,30 @@
+{
+  "format_version": "1.15.0",
+  "minecraft:biome": {
+    "description": {
+      "identifier": "desert_mutated_hard"
+    },
+    "components": {
+      "minecraft:climate": {
+        "downfall": 0,
+        "snow_accumulation": [0,0.125],
+        "temperature": 1.8
+      },
+      "minecraft:overworld_height": {
+        "noise_params": [0.35,0.85]
+      },
+      "minecraft:surface_parameters": {
+      
+        "sea_floor_depth": 7,
+        "sea_floor_material": "minecraft:gravel",
+        "foundation_material": "minecraft:stone",
+        "mid_material": "wb:sand_hard",
+        "top_material": "wb:sand_hard",
+        "sea_material": "minecraft:water"
+      },
+      "desert_hard": {},
+      "monster": {},
+      "mutated": {}
+    }
+  }
+}

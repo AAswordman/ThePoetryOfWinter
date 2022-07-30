@@ -1,0 +1,22 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:ancient_ice_by_ingot"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XXX",
+      "XXX",
+      "XXX"
+    ],
+      "key": {
+      "X": {
+        "item": "dec:ice_ingot"
+      }
+    },
+    "result": {
+      "item": "dec:ancient_ice"
+    }
+  }
+}

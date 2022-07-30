@@ -1,0 +1,24 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:empty_totem_by_totem"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "#",
+      "X"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:iron_ingot"
+      },
+      "X": {
+        "item": "minecraft:totem"
+      }
+    },
+    "result": {
+      "item": "dec:empty_totem"
+    }
+  }
+}

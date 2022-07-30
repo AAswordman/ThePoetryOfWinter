@@ -1,0 +1,12 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_brewing_container": {
+    "description": {
+      "identifier": "dec:brew_steel_ingot"
+    },
+    "tags": [ "brewing_stand" ],
+    "input": "minecraft:potion:4",
+    "reagent": "dec:steel_ingot",
+    "output": "dec:haste_potion"
+  }
+}

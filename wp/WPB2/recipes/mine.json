@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:mine"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "#",
+      "X "
+    ],
+    "key": {
+      "X": {
+        "item": "minecraft:dirt",
+        "data": 1
+      },
+      "#": {
+        "item": "minecraft:tnt"
+      }
+    },
+    "result": {
+      "item": "dec:mine"
+    }
+  }
+}

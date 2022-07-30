@@ -1,0 +1,78 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "wb:ball_magic_stoneman_b",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball"
+    },
+    "component_groups": {
+      "minecraft:exploding": {
+          
+      
+        "minecraft:explode": {
+          "fuseLength": 0,
+          "fuseLit": true,
+          "breaks_blocks": false,
+          "power": 4,
+          "causesFire": true,
+          "fireAffectedByGriefing": true,
+          "destroyAffectedByGriefing": true
+        }
+      }
+    },
+    "components": {
+      "minecraft:explode": {
+        "fuseLength": 4,
+        "fuseLit": true,
+        "power": 0,
+        "breaks_blocks": false,
+        "causesFire": true,
+        "fireAffectedByGriefing": true,
+        "destroyAffectedByGriefing": true
+      },
+      "minecraft:physics": {},
+      "minecraft:collision_box": {
+        "width": 0.5,
+        "height": 1
+      },
+      "minecraft:projectile": {
+        "onHit": {
+          "definition_event": {
+            "affectProjectile": true,
+            "eventTrigger": {
+              "event": "minecraft:explode",
+              "target": "self"
+            }
+          }
+        },
+        "power": 0.8,
+        "gravity": 0,
+        "inertia": 1,
+        "uncertaintyBase": 0,
+        "uncertaintyMultiplier": 0,
+        "anchor": 1,
+        "reflectOnHurt": true,
+        "catchFire": true
+      }
+    },
+    "events": {
+      "minecraft:explode": {
+        "run_command": {
+          "command": [
+            "setblock ~ ~ ~ cobblestone",
+            "setblock ~ ~+1 ~ cobblestone"
+          ],
+          "target": "self"
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:exploding"
+          ]
+        }
+      }
+    }
+  }
+}

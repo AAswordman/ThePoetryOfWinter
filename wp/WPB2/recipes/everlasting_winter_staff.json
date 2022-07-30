@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:everlasting_winter_staff"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XXX",
+      "XAX",
+      "XXX"
+    ],
+    "key": {
+      "X": {
+        "item": "dec:everlasting_winter_ingot"
+      },
+      "A": {
+        "item": "dec:frozen_ray_staff"
+      }
+    },
+    "result": {
+      "item": "dec:everlasting_winter_staff"
+    }
+  }
+}

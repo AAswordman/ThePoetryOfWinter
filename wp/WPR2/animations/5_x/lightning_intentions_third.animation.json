@@ -1,0 +1,12 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.lightning_intentions_third.new": {
+			"bones": {
+				"body": {
+					"position": [-7, 42, -27]
+				}
+			}
+		}
+	}
+}

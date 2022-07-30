@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:elytra"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XXX",
+      "A#A",
+      "XXX"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:lead"
+      },
+      "A": {
+        "item": "dec:complete_bat_wing"
+      },
+      "X": {
+        "item": "minecraft:phantom_membrane"
+      }
+    },
+    "result": {
+      "item": "minecraft:elytra"
+    }
+  }
+}

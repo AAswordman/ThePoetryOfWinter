@@ -1,0 +1,27 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:candy_block"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "###",
+      "###",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "dec:candy",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "dec:candy_block",
+      "data": 0,
+      "count": 1
+    }
+  }
+}

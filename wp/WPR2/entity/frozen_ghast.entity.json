@@ -1,0 +1,32 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:frozen_ghast",
+      "materials": { "default": "ghast" },
+      "textures": {
+        "default": "textures/entity/ghast/frozen_ghast",
+        "shooting": "textures/entity/ghast/frozen_ghast_shooting"
+      },
+      "geometry": {
+        "default": "geometry.ghast"
+      },
+      "scripts": {
+        "scale": "0.5"
+      },
+      "spawn_egg": {
+        "base_color": "#D3FCFF",
+        "overlay_color": "#A0BFC1"
+      },
+      "animations": {
+        "move": "animation.ghast.move",
+        "scale": "animation.ghast.scale"
+      },
+      "animation_controllers": [
+        { "move": "controller.animation.ghast.move" },
+        { "scale": "controller.animation.ghast.scale" }
+      ],
+      "render_controllers": [ "controller.render.ghast" ]
+    }
+  }
+}

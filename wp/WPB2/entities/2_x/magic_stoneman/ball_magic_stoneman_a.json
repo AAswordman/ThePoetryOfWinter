@@ -1,0 +1,163 @@
+{
+  "format_version": "1.11.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "wb:ball_magic_stoneman_a",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "wb:ball_magic_stoneman_a",
+      "animations": {
+        "base": "controller.animation.cannon_ancient_stone"
+      },
+      "scripts": {
+        "animate": [
+          "base"
+        ]
+      }
+    },
+    "component_groups": {
+      "gj": {
+        "minecraft:shooter": {
+          "def": "wb:ball_magic_stoneman_b"
+        },
+        "minecraft:behavior.ranged_attack": {
+          "priority": 0,
+          "attack_interval_min": 1,
+          "attack_interval_max": 1.5,
+          "attack_radius": 64
+        },
+        "minecraft:explode": {
+          "fuseLength": 2,
+          "fuseLit": true,
+          "breaks_blocks": false,
+          "power": 0,
+          "destroyAffectedByGriefing": true
+        }
+      },
+      "rotate": {
+        "minecraft:is_baby": {},
+        "minecraft:timer": {
+          "time": 1,
+          "looping": false,
+          "time_down_event": {
+            "event": "sss",
+            "target": "self"
+          }
+        }
+      }
+    },
+    "components": {
+      "minecraft:follow_range": {
+        "value": 64,
+        "max": 64
+      },
+      "minecraft:timer": {
+        "time": [3.5,10],
+        "looping": false,
+        "time_down_event": {
+          "event": "rotate",
+          "target": "self"
+        }
+      },
+      "minecraft:damage_sensor": [
+        {
+          "cause": "all",
+          "deals_damage": false
+        }
+      ],
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:fire_immune": true,
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "within_radius": 64,
+        "entity_types": [
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "operator": "==",
+                  "subject": "other",
+                  "value": "player"
+                }
+              ]
+            },
+            "max_dist": 64,
+            "must_see_forget_duration": 64
+          }
+        ],
+        "must_see": true
+      },
+      "minecraft:health": {
+        "value": 200,
+        "max": 200
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 2
+      },
+      "minecraft:type_family": {
+        "family": [
+          "magic",
+          "magic"
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.5,
+        "height": 0.5
+      },
+      "minecraft:breathable": {
+        "totalSupply": 15,
+        "suffocateTime": 0
+      },
+      "minecraft:nameable": {},
+      "minecraft:movement": {
+        "value": 0,
+        "max": 0
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 1,
+        "look_distance": 6,
+        "probability": 0.02
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 8
+      },
+      "minecraft:navigation.walk": {},
+      "minecraft:movement.basic": {}
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "run_command": {
+          "command": [
+            "effect @s levitation 3 1 true"
+          ],
+          "target": "self"
+        }
+      },
+      "rotate": {
+        "run_command": {
+          "command": [
+            "tp @s ~ ~ ~ facing @p",
+            "tp @s ~ ~ ~ ~ ~-45"
+          ],
+          "target": "self"
+        },
+        "add": {
+          "component_groups": [
+            "rotate"
+          ]
+        }
+      },
+      "sss": {
+        "add": {
+          "component_groups": [
+            "gj"
+          ]
+        }
+      }
+    }
+  }
+}

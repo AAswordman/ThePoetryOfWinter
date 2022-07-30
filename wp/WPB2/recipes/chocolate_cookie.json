@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:chocolate_cookie"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "#",
+      "X"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:dye",
+        "data": 3
+      },
+      "X": {
+        "item": "minecraft:cookie"
+      }
+    },
+    "result": {
+      "item": "dec:chocolate_cookie"
+    }
+  }
+}

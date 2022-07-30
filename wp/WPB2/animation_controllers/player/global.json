@@ -1,0 +1,335 @@
+{
+  "format_version": "1.8.0",
+  "animation_controllers": {
+    "controller.animation.player.wb.global.die": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "die": "query.health<=0"
+            }
+          ]
+        },
+        "die": {
+          "on_entry":[
+              "/execute @s[tag=!wbdie] ~~~ summon dec:gravestone 墓碑 ~~~",
+              "/execute @s[tag=!wbdie,tag=!diemode] ~~~ summon dec:player_ghost 鬼魂 ~~~",
+              "/execute @s[tag=!wbdie,tag=diemode] ~~~ summon dec:vengeful_ghost 怨魂 ~~~",
+              "/tag @s add alreadydie",
+              "/tag @s add wbdie",
+              "/scoreboard players set @s wbwjswjs 18"
+          ],
+          "transitions": [
+            {
+              "default": "query.health>0"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.player.wb.global.cooling": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "coolingx": "variable.global_is_in_game==0"
+            }
+          ],
+          "on_entry": [
+            "variable.global_cooling=0;",
+            "variable.global_cooling_total=1;",
+            "variable.global_cooling_result=0;",
+            "variable.global_is_in_game=0;"
+          ]
+        },
+        "coolingx": {
+          "transitions": [
+            {
+              "cooling": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "variable.wb_player_speed=0;"
+          ]
+        },
+        "cooling": {
+          "transitions": [
+            {
+              "coolingu": "variable.global_cooling_result<=0"
+            },
+            {
+              "coolinga": "variable.global_cooling_result>0&&variable.global_cooling_result<=1"
+            },
+            {
+              "coolingb": "variable.global_cooling_result>1&&variable.global_cooling_result<=2"
+            },
+            {
+              "coolingc": "variable.global_cooling_result>2&&variable.global_cooling_result<=3"
+            },
+            {
+              "coolingd": "variable.global_cooling_result>3&&variable.global_cooling_result<=4"
+            },
+            {
+              "coolinge": "variable.global_cooling_result>4&&variable.global_cooling_result<=5"
+            },
+            {
+              "coolingf": "variable.global_cooling_result>5&&variable.global_cooling_result<=6"
+            },
+            {
+              "coolingg": "variable.global_cooling_result>6&&variable.global_cooling_result<=7"
+            },
+            {
+              "coolingh": "variable.global_cooling_result>7&&variable.global_cooling_result<=8"
+            },
+            {
+              "coolingi": "variable.global_cooling_result>8&&variable.global_cooling_result<=9"
+            },
+            {
+              "coolingj": "variable.global_cooling_result>9&&variable.global_cooling_result<=10"
+            },
+            {
+              "coolingk": "variable.global_cooling_result>10&&variable.global_cooling_result<=11"
+            },
+            {
+              "coolingl": "variable.global_cooling_result>11&&variable.global_cooling_result<=12"
+            },
+            {
+              "coolingm": "variable.global_cooling_result>12&&variable.global_cooling_result<=13"
+            },
+            {
+              "coolingn": "variable.global_cooling_result>13&&variable.global_cooling_result<=14"
+            },
+            {
+              "coolingo": "variable.global_cooling_result>14&&variable.global_cooling_result<=15"
+            },
+            {
+              "coolingp": "variable.global_cooling_result>15&&variable.global_cooling_result<=16"
+            },
+            {
+              "coolingq": "variable.global_cooling_result>16&&variable.global_cooling_result<=17"
+            },
+            {
+              "coolingr": "variable.global_cooling_result>17&&variable.global_cooling_result<=18"
+            },
+            {
+              "coolings": "variable.global_cooling_result>18&&variable.global_cooling_result<=19"
+            },
+            {
+              "coolingt": "variable.global_cooling_result>19&&variable.global_cooling_result<=20"
+            }
+          ]
+        },
+        "coolingu": {
+          "transitions": [
+            {
+              "cooling": "variable.global_cooling_result>0"
+            }
+          ],
+          "on_entry": [
+            "/scoreboard players set @s wbwqlq 0"
+          ]
+        },
+        "coolinga": {
+          "transitions": [
+            {
+              "cooling": "variable.global_cooling_result<=0||variable.global_cooling_result>1"
+            }
+          ],
+          "on_entry": [
+            "/scoreboard players set @s wbwqlq 1"
+          ]
+        },
+        "coolingb": {
+          "transitions": [
+            {
+              "cooling": "variable.global_cooling_result<=1||variable.global_cooling_result>2"
+            }
+          ],
+          "on_entry": [
+            "/scoreboard players set @s wbwqlq 2"
+          ]
+        },
+        "coolingc": {
+          "transitions": [
+            {
+              "cooling": "variable.global_cooling_result<=2||variable.global_cooling_result>3"
+            }
+          ],
+          "on_entry": [
+            "/scoreboard players set @s wbwqlq 3"
+          ]
+        },
+        "coolingd": {
+          "transitions": [
+            {
+              "cooling": "variable.global_cooling_result<=3||variable.global_cooling_result>4"
+            }
+          ],
+          "on_entry": [
+            "/scoreboard players set @s wbwqlq 4"
+          ]
+        },
+        "coolinge": {
+          "transitions": [
+            {
+              "cooling": "variable.global_cooling_result<=4||variable.global_cooling_result>5"
+            }
+          ],
+          "on_entry": [
+            "/scoreboard players set @s wbwqlq 5"
+          ]
+        },
+        "coolingf": {
+          "transitions": [
+            {
+              "cooling": "variable.global_cooling_result<=5||variable.global_cooling_result>6"
+            }
+          ],
+          "on_entry": [
+            "/scoreboard players set @s wbwqlq 6"
+          ]
+        },
+        "coolingg": {
+          "transitions": [
+            {
+              "cooling": "variable.global_cooling_result<=6||variable.global_cooling_result>7"
+            }
+          ],
+          "on_entry": [
+            "/scoreboard players set @s wbwqlq 7"
+          ]
+        },
+        "coolingh": {
+          "transitions": [
+            {
+              "cooling": "variable.global_cooling_result<=7||variable.global_cooling_result>8"
+            }
+          ],
+          "on_entry": [
+            "/scoreboard players set @s wbwqlq 8"
+          ]
+        },
+        "coolingi": {
+          "transitions": [
+            {
+              "cooling": "variable.global_cooling_result<=8||variable.global_cooling_result>9"
+            }
+          ],
+          "on_entry": [
+            "/scoreboard players set @s wbwqlq 9"
+          ]
+        },
+        "coolingj": {
+          "transitions": [
+            {
+              "cooling": "variable.global_cooling_result<=9||variable.global_cooling_result>10"
+            }
+          ],
+          "on_entry": [
+            "/scoreboard players set @s wbwqlq 10"
+          ]
+        },
+        "coolingk": {
+          "transitions": [
+            {
+              "cooling": "variable.global_cooling_result<=10||variable.global_cooling_result>11"
+            }
+          ],
+          "on_entry": [
+            "/scoreboard players set @s wbwqlq 11"
+          ]
+        },
+        "coolingl": {
+          "transitions": [
+            {
+              "cooling": "variable.global_cooling_result<=11||variable.global_cooling_result>12"
+            }
+          ],
+          "on_entry": [
+            "/scoreboard players set @s wbwqlq 12"
+          ]
+        },
+        "coolingm": {
+          "transitions": [
+            {
+              "cooling": "variable.global_cooling_result<=12||variable.global_cooling_result>13"
+            }
+          ],
+          "on_entry": [
+            "/scoreboard players set @s wbwqlq 13"
+          ]
+        },
+        "coolingn": {
+          "transitions": [
+            {
+              "cooling": "variable.global_cooling_result<=13||variable.global_cooling_result>14"
+            }
+          ],
+          "on_entry": [
+            "/scoreboard players set @s wbwqlq 14"
+          ]
+        },
+        "coolingo": {
+          "transitions": [
+            {
+              "cooling": "variable.global_cooling_result<=14||variable.global_cooling_result>15"
+            }
+          ],
+          "on_entry": [
+            "/scoreboard players set @s wbwqlq 15"
+          ]
+        },
+        "coolingp": {
+          "transitions": [
+            {
+              "cooling": "variable.global_cooling_result<=15||variable.global_cooling_result>16"
+            }
+          ],
+          "on_entry": [
+            "/scoreboard players set @s wbwqlq 16"
+          ]
+        },
+        "coolingq": {
+          "transitions": [
+            {
+              "cooling": "variable.global_cooling_result<=16||variable.global_cooling_result>17"
+            }
+          ],
+          "on_entry": [
+            "/scoreboard players set @s wbwqlq 17"
+          ]
+        },
+        "coolingr": {
+          "transitions": [
+            {
+              "cooling": "variable.global_cooling_result<=17||variable.global_cooling_result>18"
+            }
+          ],
+          "on_entry": [
+            "/scoreboard players set @s wbwqlq 18"
+          ]
+        },
+        "coolings": {
+          "transitions": [
+            {
+              "cooling": "variable.global_cooling_result<=18||variable.global_cooling_result>19"
+            }
+          ],
+          "on_entry": [
+            "/scoreboard players set @s wbwqlq 19"
+          ]
+        },
+        "coolingt": {
+          "transitions": [
+            {
+              "cooling": "variable.global_cooling_result<=19||variable.global_cooling_result>20"
+            }
+          ],
+          "on_entry": [
+            "/scoreboard players set @s wbwqlq 20"
+          ]
+        }
+      }
+    }
+  }
+}

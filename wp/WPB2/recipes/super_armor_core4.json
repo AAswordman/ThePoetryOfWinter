@@ -1,0 +1,22 @@
+{
+"format_version":"1.10",
+"minecraft:recipe_shapeless":{
+"description":{
+"identifier":"dec:super_armor_core4"
+},
+"tags":["crafting_table"],
+"ingredients": [
+    {
+      "item": "dec:super_armor_core1",
+      "count": 1
+    },
+    {
+      "item": "dec:energy_gem",
+      "count": 1
+    }
+  ],
+"result":{
+"item":"dec:super_armor_core4"
+}
+}
+}

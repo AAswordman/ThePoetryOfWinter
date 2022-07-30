@@ -1,0 +1,26 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:diamond_dart"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " X ",
+      "XAX",
+      " X "
+    ],
+    "key": {
+      "X": {
+        "item": "dec:diamond_nugget"
+      },
+      "A": {
+        "item": "minecraft:diamond"
+      }
+    },
+    "result": {
+      "item": "dec:diamond_dart",
+      "count": 8
+    }
+  }
+}

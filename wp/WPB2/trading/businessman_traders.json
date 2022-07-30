@@ -1,0 +1,727 @@
+{
+  "tiers": [
+    {
+      "total_exp_required": 0,
+      "groups": [
+        {
+          "num_to_select": 1,
+          "trades": [
+          	{
+              "wants": [
+                {
+                  "item": "minecraft:wood",
+                  "quantity": 20,
+                  "price_multiplier": 0.25
+                }
+              ],
+              "gives": [
+                {
+                  "item": "wb:currency_1",
+                  "quantity": 3
+                }
+              ],
+              "trader_exp": 3,
+              "max_uses": 6,
+              "reward_exp": true
+            },
+            {
+              "wants": [
+                {
+                  "item": "minecraft:wood",
+                  "quantity": 20,
+                  "price_multiplier": 0.2
+                }
+              ],
+              "gives": [
+                {
+                  "item": "wb:currency_1",
+                  "quantity": 5
+                }
+              ],
+              "trader_exp": 1,
+              "max_uses": 6,
+              "reward_exp": true
+            },
+            {
+              "wants": [
+                {
+                  "item": "minecraft:iron_ingot",
+                  "quantity": 4,
+                  "price_multiplier": 0.25
+                }
+              ],
+              "gives": [
+                {
+                  "item": "wb:currency_1",
+                  "quantity": 3
+                }
+              ],
+              "trader_exp": 1,
+              "max_uses": 2,
+              "reward_exp": true
+            },
+            {
+              "wants": [
+                {
+                  "item": "minecraft:gold_ingot",
+                  "quantity": 8,
+                  "price_multiplier": 0.25
+                }
+              ],
+              "gives": [
+                {
+                  "item": "wb:currency_2",
+                  "quantity": 2
+                }
+              ],
+              "trader_exp": 5,
+              "max_uses": 6,
+              "reward_exp": true
+            }
+          ]
+        },
+        {
+          "num_to_select": 1,
+          "trades": [
+            {
+              "wants": [
+                {
+                  "item": "wb:currency_1",
+                  "quantity": 4,
+                  "price_multiplier": 0.25
+                }
+              ],
+              "gives": [
+                {
+                  "item": "minecraft:iron_boots",
+                  "quantity": 1
+                }
+              ],
+              "trader_exp": 2,
+              "max_uses": 2,
+              "reward_exp": true
+            },
+            {
+              "wants": [
+                {
+                  "item": "wb:currency_1",
+                  "quantity": 4,
+                  "price_multiplier": 0.25
+                }
+              ],
+              "gives": [
+                {
+                  "item": "minecraft:iron_helmet",
+                  "quantity": 1
+                }
+              ],
+              "trader_exp": 2,
+              "max_uses": 2,
+              "reward_exp": true
+            },
+            {
+              "wants": [
+                {
+                  "item": "wb:currency_1",
+                  "quantity": 5,
+                  "price_multiplier": 0.3
+                }
+              ],
+              "gives": [
+                {
+                  "item": "minecraft:iron_chestplate",
+                  "quantity": 1
+                }
+              ],
+              "trader_exp": 2,
+              "max_uses": 2,
+              "reward_exp": true
+            },
+            {
+              "wants": [
+                {
+                  "item": "wb:currency_1",
+                  "quantity": 5,
+                  "price_multiplier": 0.2
+                }
+              ],
+              "gives": [
+                {
+                  "item": "minecraft:iron_leggings",
+                  "quantity": 1
+                }
+              ],
+              "trader_exp": 2,
+              "max_uses": 2,
+              "reward_exp": true
+            },
+            {
+              "wants": [
+                {
+                  "item": "wb:currency_2",
+                  "quantity": 4,
+                  "price_multiplier": 0.25
+                }
+              ],
+              "gives": [
+                {
+                  "item": "minecraft:diamond",
+                  "quantity": 2
+                }
+              ],
+              "trader_exp": 15,
+              "max_uses": 1,
+              "reward_exp": true
+            },
+            {
+              "wants": [
+                {
+                  "item": "wb:currency_1",
+                  "quantity": 8,
+                  "price_multiplier": 0.125
+                }
+              ],
+              "gives": [
+                {
+                  "item": "wb:territory_summon",
+                  "quantity": 1
+                }
+              ],
+              "trader_exp": 2,
+              "max_uses": 2,
+              "reward_exp": true
+            },
+            {
+              "wants": [
+                {
+                  "item": "minecraft:iron_ingot",
+                  "quantity": 10,
+                  "price_multiplier": 0.1
+                }
+              ],
+              "gives": [
+                {
+                  "item": "wb:currency_2",
+                  "quantity": 2
+                }
+              ],
+              "trader_exp": 2,
+              "max_uses": 4,
+              "reward_exp": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "total_exp_required": 10,
+      "groups": [
+        {
+          "num_to_select": 1,
+          "trades": [
+          	{
+              "wants": [
+                {
+                  "item": "wb:currency_2",
+                  "quantity": 10,
+                  "price_multiplier": 0.2
+                }
+              ],
+              "gives": [
+                {
+                  "item": "wb:sword_water_c",
+                  "quantity": 1
+                }
+              ],
+              "trader_exp": 10,
+              "max_uses": 3,
+              "reward_exp": true
+            },
+            {
+              "wants": [
+                {
+                  "item": "wb:currency_1",
+                  "quantity": 5,
+                  "price_multiplier": 0.2
+                }
+              ],
+              "gives": [
+                {
+                  "item": "wb:currency_2",
+                  "quantity": 1
+                }
+              ],
+              "trader_exp": 5,
+              "max_uses": 5,
+              "reward_exp": true
+            }
+          ]
+        },
+        {
+          "num_to_select": 1,
+          "trades": [
+            {
+              "wants": [
+                {
+                  "item": "wb:currency_2",
+                  "quantity": 50,
+                  "price_multiplier": 0.2
+                }
+              ],
+              "gives": [
+                {
+                  "item": "wb:currency_3",
+                  "quantity": 10
+                }
+              ],
+              "trader_exp": 10,
+              "max_uses": 3,
+              "reward_exp": true
+            },
+            {
+              "wants": [
+                {
+                  "item": "wb:currency_2",
+                  "quantity": 1,
+                  "price_multiplier": 0
+                }
+              ],
+              "gives": [
+                {
+                  "item": "minecraft:golden_chestplate",
+                  "quantity": 1
+                }
+              ],
+              "trader_exp": 10,
+              "max_uses": 3,
+              "reward_exp": true
+            },
+            {
+              "wants": [
+                {
+                  "item": "wb:staff_base",
+                  "quantity": 1,
+                  "price_multiplier": 0
+                }
+              ],
+              "gives": [
+                {
+                  "item": "minecraft:diamond",
+                  "quantity": 38
+                }
+              ],
+              "trader_exp": 15,
+              "max_uses": 1,
+              "reward_exp": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "total_exp_required": 60,
+      "groups": [
+        {
+          "num_to_select": 1,
+          "trades": [
+            {
+              "wants": [
+                {
+                  "item": "wb:currency_1",
+                  "quantity": 20
+                }
+              ],
+              "gives": [
+                {
+                  "item": "wb:sword_forget_b",
+                  "quantity": 1
+                }
+              ],
+              "trader_exp": 10,
+              "max_uses": 2,
+              "reward_exp": true
+            }
+          ]
+        },
+        {
+          "num_to_select": 1,
+          "trades": [
+            {
+              "wants": [
+                {
+                  "item": "wb:currency_3",
+                  "quantity": 20,
+                  "price_multiplier": 0.2
+                }
+              ],
+              "gives": [
+                {
+                  "item": "wb:currency_4",
+                  "quantity": 3
+                }
+              ],
+              "trader_exp": 20,
+              "max_uses": 3,
+              "reward_exp": true
+            },
+            {
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 1,
+                  "price_multiplier": 0
+                }
+              ],
+              "gives": [
+                {
+                  "item": "wb:conveyor_issue",
+                  "quantity": 3
+                }
+              ],
+              "trader_exp": 20,
+              "max_uses": 3,
+              "reward_exp": true
+            },
+            {
+              "wants": [
+                {
+                  "item": "minecraft:diamond",
+                  "quantity": 8,
+                  "price_multiplier": 0.5
+                }
+              ],
+              "gives": [
+                {
+                  "item": "wb:currency_4",
+                  "quantity": 10
+                }
+              ],
+              "trader_exp": 10,
+              "max_uses": 3,
+              "reward_exp": true
+            },
+            {
+              "wants": [
+                {
+                  "item": "wb:currency_4",
+                  "quantity": 2,
+                  "price_multiplier": 0.5
+                }
+              ],
+              "gives": [
+                {
+                  "item": "minecraft:diamond_boots",
+                  "quantity": 1
+                },
+                {
+                  "item": "minecraft:diamond_helmet",
+                  "quantity": 1
+                }
+              ],
+              "trader_exp": 20,
+              "max_uses": 3,
+              "reward_exp": true
+            },
+            {
+              "wants": [
+                {
+                  "item": "wb:currency_4",
+                  "quantity": 1,
+                  "price_multiplier": 0.0
+                }
+              ],
+              "gives": [
+                {
+                  "item": "minecraft:diamond_leggings",
+                  "quantity": 1
+                }
+              ],
+              "trader_exp": 20,
+              "max_uses": 3,
+              "reward_exp": true
+            },
+            {
+              "wants": [
+                {
+                  "item": "wb:currency_4",
+                  "quantity": 1,
+                  "price_multiplier": 0.0
+                }
+              ],
+              "gives": [
+                {
+                  "item": "minecraft:diamond_chestplate",
+                  "quantity": 1
+                }
+              ],
+              "trader_exp": 20,
+              "max_uses": 3,
+              "reward_exp": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "total_exp_required": 160,
+      "groups": [
+        {
+          "num_to_select": 1,
+          "trades": [
+            {
+              "wants": [
+                {
+                  "item": "wb:staff_base",
+                  "quantity": 1,
+                  "price_multiplier": 0.0
+                },
+                {
+                  "item": "minecraft:diamond",
+                  "quantity": 2
+                }
+              ],
+              "gives": [
+                {
+                  "item": "wb:element_frost",
+                  "quantity": 1
+                }
+              ],
+              "trader_exp": 10,
+              "max_uses": 1,
+              "reward_exp": true
+            }
+          ]
+        },
+        {
+          "num_to_select": 1,
+          "trades": [
+            {
+              "wants": [
+                {
+                  "item": "wb:currency_4",
+                  "quantity": 1,
+                  "price_multiplier": 0.0
+                }
+              ],
+              "gives": [
+                {
+                  "item": "minecraft:diamond_chestplate",
+                  "quantity": 1,
+                  "functions": [
+                    {
+                      "function": "enchant_with_levels",
+                      "treasure": false,
+                      "levels": {
+                        "min": 5,
+                        "max": 19
+                      }
+                    }
+                  ]
+                }
+              ],
+              "trader_exp": 30,
+              "max_uses": 2,
+              "reward_exp": true
+            },
+            {
+              "wants": [
+                {
+                  "item": "wb:currency_4",
+                  "quantity": 1,
+                  "price_multiplier": 0.0
+                }
+              ],
+              "gives": [
+                {
+                  "item": "minecraft:diamond_leggings",
+                  "quantity": 1,
+                  "functions": [
+                    {
+                      "function": "enchant_with_levels",
+                      "treasure": false,
+                      "levels": {
+                        "min": 5,
+                        "max": 19
+                      }
+                    }
+                  ]
+                }
+              ],
+              "trader_exp": 30,
+              "max_uses": 2,
+              "reward_exp": true
+            },
+            {
+              "wants": [
+                {
+                  "item": "wb:currency_4",
+                  "quantity": 1,
+                  "price_multiplier": 0.00
+                }
+              ],
+              "gives": [
+                {
+                  "item": "minecraft:diamond_helmet",
+                  "quantity": 1,
+                  "functions": [
+                    {
+                      "function": "enchant_with_levels",
+                      "treasure": false,
+                      "levels": {
+                        "min": 5,
+                        "max": 19
+                      }
+                    }
+                  ]
+                }
+              ],
+              "trader_exp": 30,
+              "max_uses": 2,
+              "reward_exp": true
+            },
+            {
+              "wants": [
+                {
+                  "item": "wb:currency_4",
+                  "quantity": 1,
+                  "price_multiplier": 0.00
+                }
+              ],
+              "gives": [
+                {
+                  "item": "minecraft:diamond_boots",
+                  "quantity": 1,
+                  "functions": [
+                    {
+                      "function": "enchant_with_levels",
+                      "treasure": false,
+                      "levels": {
+                        "min": 5,
+                        "max": 19
+                      }
+                    }
+                  ]
+                }
+              ],
+              "trader_exp": 30,
+              "max_uses": 2,
+              "reward_exp": true
+            },
+            {
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 8,
+                  "price_multiplier": 0.25
+                }
+              ],
+              "gives": [
+                {
+                  "item": "minecraft:diamond_boots",
+                  "quantity": 1,
+                  "functions": [
+                    {
+                      "function": "enchant_with_levels",
+                      "treasure": false,
+                      "levels": {
+                        "min": 5,
+                        "max": 19
+                      }
+                    }
+                  ]
+                }
+              ],
+              "trader_exp": 30,
+              "max_uses": 2,
+              "reward_exp": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "total_exp_required": 500,
+      "groups": [
+        {
+          "num_to_select": 1,
+          "trades": [
+            {
+              "wants": [
+                {
+                  "item": "minecraft:emerald",
+                  "quantity": 1,
+                  "price_multiplier": 0.00
+                }
+              ],
+              "gives": [
+                {
+                  "item": "wb:currency_1",
+                  "quantity": 20
+                }
+              ],
+              "trader_exp": 30,
+              "max_uses": 1,
+              "reward_exp": true
+            },
+            {
+              "wants": [
+                {
+                  "item": "wb:currency_4",
+                  "quantity": 2,
+                  "price_multiplier": 0
+                }
+              ],
+              "gives": [
+                {
+                  "item": "minecraft:diamond_chestplate",
+                  "quantity": 1,
+                  "functions": [
+                    {
+                      "function": "enchant_with_levels",
+                      "treasure": false,
+                      "levels": {
+                        "min": 18,
+                        "max": 19
+                      }
+                    }
+                  ]
+                }
+              ],
+              "trader_exp": 30,
+              "max_uses": 2,
+              "reward_exp": true
+            },
+            {
+              "wants": [
+                {
+                  "item": "wb:currency_4",
+                  "quantity": 2,
+                  "price_multiplier": 0.0
+                }
+              ],
+              "gives": [
+                {
+                  "item": "minecraft:diamond_leggings",
+                  "quantity": 1,
+                  "functions": [
+                    {
+                      "function": "enchant_with_levels",
+                      "treasure": false,
+                      "levels": {
+                        "min": 18,
+                        "max": 19
+                      }
+                    }
+                  ]
+                }
+              ],
+              "trader_exp": 30,
+              "max_uses": 2,
+              "reward_exp": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

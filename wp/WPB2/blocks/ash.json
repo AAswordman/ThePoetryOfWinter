@@ -1,0 +1,20 @@
+{
+   "format_version": "1.16.0",
+   "minecraft:block": {
+     "description": {
+       "identifier": "dec:ash"
+     },
+      "components": {
+          "minecraft:creative_category": {
+            "group": "itemGroup.name.outside",
+            "category": "nature"
+          },
+         "minecraft:block_light_absorption": 1,
+         "minecraft:block_light_emission": 0,
+         "minecraft:destroy_time": 0.5,
+         "minecraft:explosion_resistance": 0,
+         "minecraft:map_color": "#383429",
+         "minecraft:loot": "loot_tables/blocks/ash.json"
+     }
+   }
+ }

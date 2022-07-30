@@ -1,0 +1,29 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:star",
+      "materials": { "default": "husk" },
+      "textures": {
+        "default": "textures/entity/star"
+      },
+      "geometry": {
+        "default": "geometry.star"
+      },
+      "scripts": {
+        "scale": "1.5",
+        "animate": [
+          "span"
+        ]
+      },
+      "animations": {
+        "span": "animation.star.span"
+      },
+      "render_controllers": [ "controller.render.star" ],
+      "spawn_egg": {
+        "base_color": "#FFFF00",
+        "overlay_color": "#FFF68F"
+      }
+    }
+  }
+}

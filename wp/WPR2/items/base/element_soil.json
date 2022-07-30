@@ -1,0 +1,13 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "wb:element_soil",
+      "category": "Nature"
+    },
+    "components": {
+      "minecraft:icon": "element_soil",
+      "minecraft:hover_text_color": "light_purple"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:fuse"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XXX",
+      "XAX",
+      "XXX"
+    ],
+    "key": {
+      "X": {
+        "item": "dec:hemp_rope"
+      },
+      "A": {
+        "item": "minecraft:gunpowder"
+      }
+    },
+    "result": {
+      "item": "dec:fuse",
+      "count": 4
+    }
+  }
+}

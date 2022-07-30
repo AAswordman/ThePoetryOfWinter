@@ -1,0 +1,17 @@
+{
+  "format_version": "1.8.0", 
+  "animations": {
+      "animation.enter_game": {
+        "timeline": {
+            "10": [
+              "/function test/creator_list"
+            ],
+            "10.5": [
+              "/function test/load_ok"
+            ]
+        }, 
+        "animation_length": 10.6, 
+        "loop": false
+      }
+   }
+}

@@ -1,0 +1,21 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "wb:staff_governor",
+      "register_to_creative_menu": true
+    },
+    "components": {
+      "minecraft:food": {
+        "nutrition": 5,
+        "can_always_eat": true
+      },
+      "minecraft:hand_equipped": false,
+      "minecraft:use_duration": 99999999,
+      "minecraft:foil": true,
+      "minecraft:max_stack_size": 1,
+      "minecraft:max_damage": 50000,
+      "minecraft:stacked_by_data": false
+    }
+  }
+}

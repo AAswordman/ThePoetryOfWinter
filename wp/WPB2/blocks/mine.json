@@ -1,0 +1,34 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:block": {
+    "description": {
+      "identifier": "dec:mine"
+    },
+    "components": {
+		  "minecraft:creative_category": {
+        "group": "itemGroup.name.outside",
+				"category": "items"
+			},
+      "minecraft:block_light_absorption": 1,
+      "minecraft:block_light_emission": 0,
+      "minecraft:destroy_time": 1.2,
+      "minecraft:explosion_resistance": 7,
+      "minecraft:map_color": "#8E6045",
+      "minecraft:loot": "loot_tables/blocks/radiate_dirt.json",
+      "minecraft:on_step_on": {
+        "event": "explode",
+        "target": "other"
+      }
+    },
+    "events": {
+      "explode": {
+        "run_command": {
+          "command": [
+            "summon dec:mine ~~0.1~",
+            "setblock ~~~ air 0 destroy"
+          ]
+        }
+      }
+    }
+  }
+}

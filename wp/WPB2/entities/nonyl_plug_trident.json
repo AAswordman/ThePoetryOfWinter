@@ -1,0 +1,53 @@
+{
+  "format_version": "1.12.0",
+	"minecraft:entity": {
+    "description": {
+      "identifier": "dec:nonyl_plug_trident",
+      "runtime_identifier": "minecraft:throw_trident",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+		  
+		"components": {
+				"minecraft:explode": {
+				  "fuse_length": 2,
+				  "fuse_lit": true,
+				  "power": 0,
+				  "causes_fire": false,
+				  "destroy_affected_by_griefing": false
+				},
+			"minecraft:collision_box": {
+				"width": 0.25,
+				"height": 0.35
+			},
+			"minecraft:projectile": {
+				"onHit": {
+					"impact_damage": {
+						"damage": 11,
+						"knockback": true,
+						"semirandomdiffdamage": false,
+						"destroyonhit": true
+					},
+					"stick_in_ground": {
+						"shake_time" : 0.5
+					}
+				},
+				"liquidw_inertia": 0.99,
+				"hitSound": "item.trident.hit",
+				"hitGroundSound": "item.trident.hit_ground",
+				"power": 6,
+				"gravity": 0,
+				"uncertaintyBase": 1,
+				"uncertaintyMultiplier": 0,
+				"stopOnHurt": true,
+				"anchor": 1,
+				"shouldbounce": true,
+				"multipletargets": false,
+				"offset": [ 0, -0.1, 0 ]
+			},
+			"minecraft:physics": {
+			}
+		}
+	}
+}

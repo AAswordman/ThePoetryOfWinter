@@ -1,0 +1,21 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:block": {
+    "description": {
+      "identifier": "dec:lava_ore"
+    },
+    "components": {
+		  "minecraft:creative_category": {
+				"group": "itemGroup.name.ore",
+				"category": "nature"
+			},
+      "minecraft:block_light_absorption": 1,
+      "minecraft:block_light_emission": 0,
+      "minecraft:destroy_time": 2.5,
+      "minecraft:explosion_resistance": 8,
+      "minecraft:map_color": "#511515",
+      "minecraft:loot": "loot_tables/blocks/lava_ore.json",
+      "tag:stone": {}
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_furnace": {
+    "description": {
+    "identifier": "dec:furnace_diamond_helmet"
+    },
+
+    
+    "tags": ["furnace", "blast_furnace"],
+    "input": "minecraft:diamond_helmet",
+    "output": "minecraft:diamond"
+  }
+  
+}

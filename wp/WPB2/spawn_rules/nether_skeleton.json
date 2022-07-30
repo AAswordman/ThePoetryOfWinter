@@ -1,0 +1,41 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:spawn_rules": {
+    "description": {
+      "identifier": "dec:nether_skeleton",
+      "population_control": "monster"
+    },
+    "conditions": [
+      {
+        "minecraft:spawns_underground": {
+        },
+
+        "minecraft:difficulty_filter": {
+          "min": "easy",
+          "max": "hard"
+        },
+
+        "minecraft:weight": {
+          "default": 10
+        },
+        
+        "minecraft:herd": {
+          "min_size": 1,
+          "max_size": 2
+        },
+        "minecraft:permute_type": [
+          {
+            "weight": 25
+          },
+          {
+            "weight": 5,
+            "entity_type": "dec:nether_skeleton_wizard"
+          }
+        ],
+        "minecraft:biome_filter": { 
+          "test": "has_biome_tag", "operator":"==", "value": "nether_wastes"
+        }
+      }
+    ]
+  }
+}

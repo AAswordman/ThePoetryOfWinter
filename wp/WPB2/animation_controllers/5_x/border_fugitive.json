@@ -1,0 +1,24 @@
+{
+  "format_version": "1.8.0",
+  "animation_controllers": {
+    "controller.animation.border_fugitive": {
+      "states": {
+        "default": {
+           "transitions":[
+               { "oo":"query.is_baby" }
+              ]
+        },
+        "oo": {
+          "on_entry":[
+          	"/execute @e[r=6,rm=3] ~ ~ ~ particle wb:border_fugitive_parc ~ ~ ~",
+          	"/execute @e[r=6,rm=3] ~ ~ ~ summon wb:ball_border_fugitiveb ~ ~+5 ~",
+          	"/title @a[r=7] title §4炎之咆哮"
+           ],
+           "transitions":[
+               { "default":"!query.is_baby" }
+            ]
+        }
+      }
+    }
+  }
+}

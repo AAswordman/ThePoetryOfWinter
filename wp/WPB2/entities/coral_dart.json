@@ -1,0 +1,46 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:coral_dart",
+      "runtime_identifier": "minecraft:snowball",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "components": {
+     "minecraft:explode": {
+     "fuseLength": 2,
+     "fuseLit": true,
+     "power": 0,
+     "causesFire": true,
+     "fireAffectedByGriefing": true,
+     "destroyAffectedByGriefing": true
+    },
+      "minecraft:collision_box": {
+        "width": 0.25,
+        "height": 0.25
+      },
+      "minecraft:projectile": {
+        "onHit": {
+          "impact_damage": {
+            "damage": 5,
+            "knockback": true
+          },
+          "remove_on_hit": { }
+        },
+        "power": 2.1,
+        "gravity": 0.03,
+        "inertia": 1.1,
+        "liquid_inertia": 1.1,
+        "offset": [ 0, 0.5, 0 ],
+        "uncertaintyBase": 6.0,
+        "angleoffset": 0.0
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "flipbook_texture": "textures/wb_blocks/base/block_magic_barrier_ore",
+    "atlas_tile": "block_magic_barrier_ore",
+    "ticks_per_frame": 20
+  },
+  {
+    "flipbook_texture": "textures/wb_blocks/base/block_magic_barrier",
+    "atlas_tile": "block_magic_barrier",
+    "ticks_per_frame": 6
+  }
+]

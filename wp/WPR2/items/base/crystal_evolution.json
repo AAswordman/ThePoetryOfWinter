@@ -1,0 +1,13 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "wb:crystal_evolution",
+      "category": "Nature"
+    },
+    "components": {
+      "minecraft:icon": "crystal_evolution",
+      "minecraft:hover_text_color": "light_purple"
+    }
+  }
+}

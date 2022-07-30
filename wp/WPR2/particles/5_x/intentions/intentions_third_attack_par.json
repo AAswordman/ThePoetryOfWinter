@@ -1,0 +1,47 @@
+{
+	"format_version": "1.10.0",
+	"particle_effect": {
+		"description": {
+			"identifier": "wb:intentions_third_attack_par",
+			"basic_render_parameters": {
+				"material": "particles_alpha",
+				"texture": "textures/wb_par/intentions_first"
+			}
+		},
+		"components": {
+		
+			"minecraft:emitter_rate_steady": {
+				"spawn_rate": 200,
+				"max_particles": 800
+			},
+			"minecraft:emitter_lifetime_once": {
+				"active_time": 4
+			},
+			"minecraft:emitter_shape_point": {},
+			"minecraft:emitter_lifetime_looping": {
+				"active_time": 4
+			},
+			"minecraft:particle_initial_spin": {
+				"rotation": "Math.random( 0,360)",
+				"rotation_rate": 180
+			},
+			"minecraft:particle_initial_speed": 0.5,
+			"minecraft:particle_motion_parametric": {
+				"relative_position": ["variable.spawntime=variable.emitter_age-variable.particle_age;variable.active=variable.emitter_age-3;return Math.sin(variable.spawntime*360)*(Math.sin(variable.spawntime*90)+2)*2+Math.sin(variable.particle_random_1*360)*0.5+Math.max(variable.active,0)*(variable.particle_random_2-0.5)*12;", "Math.max(variable.active,0)*(variable.particle_random_4-0.5)*6", "Math.cos(variable.spawntime*360)*(Math.sin(variable.spawntime*90)+2)*2+Math.cos(variable.particle_random_1*360)*0.5+Math.max(variable.active,0)*(variable.particle_random_3-0.5)*12"]
+			},
+			"minecraft:particle_appearance_billboard": {
+				"size": [0.2, 0.2],
+				"facing_camera_mode": "rotate_xyz",
+				"uv": {
+					"texture_width": 32,
+					"texture_height": 16,
+					"uv": [0, 0],
+					"uv_size": [16, 16]
+				}
+			},
+			"minecraft:particle_appearance_tinting": {
+				"color": [0.97255, 0.9451, 0.9451, 1]
+			}
+		}
+	}
+}

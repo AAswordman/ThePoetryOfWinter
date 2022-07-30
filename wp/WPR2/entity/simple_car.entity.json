@@ -1,0 +1,16 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:simple_car",
+      "materials": { "default": "husk" },
+      "textures": {
+        "default": "textures/entity/simple_car"
+      },
+      "geometry": {
+        "default": "geometry.simple_car"
+      },
+      "render_controllers": [ "controller.render.star" ]
+    }
+  }
+}

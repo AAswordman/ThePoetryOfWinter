@@ -1,0 +1,28 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "wb:magic_crystal",
+      "materials": {
+        "territory_crystal": "skeleton"
+      },
+      "textures": {
+        "territory_crystal": "textures/wb/1_x/magic_crystal"
+      },
+      "geometry": {
+        "territory_crystal": "geometry.territory_crystal"
+      },
+      "animations": {
+        "base": "animation.territory.base"
+      },
+      "animation_controllers": [
+        { "base": "controller.animation.base.base" }
+      ],
+      "render_controllers": [ "controller.render.territory_crystal" ],
+      "spawn_egg": {
+        "texture": "magic_crystal",
+        "texture_index": 0
+      }
+    }
+  }
+}

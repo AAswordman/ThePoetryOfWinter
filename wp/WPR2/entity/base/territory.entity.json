@@ -1,0 +1,28 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "wb:territory",
+      "materials": {
+        "default": "spider",
+        "invisible": "spider_invisible",
+        "territory_crystal":"skeleton"
+      },
+      "textures": {
+        "default": "textures/wb/base/territory",
+        "territory_crystal":"textures/wb/base/territory_crystal"
+      },
+      "geometry": {
+        "default": "geometry.territory",
+        "territory_crystal":"geometry.territory_crystal"
+      },
+      "animations": {
+        "base": "animation.territory.base"
+      },
+      "animation_controllers": [
+        { "base": "controller.animation.base.base" }
+      ],
+      "render_controllers": [ "controller.render.spider","controller.render.territory_crystal" ]
+    }
+  }
+}

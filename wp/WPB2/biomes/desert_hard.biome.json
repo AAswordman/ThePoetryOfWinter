@@ -1,0 +1,38 @@
+{
+    "format_version": "1.15.0",
+  "minecraft:biome": {
+    "description": {
+      "identifier": "desert_hard"
+    },
+    "components": {
+    "minecraft:climate": {
+      "downfall": 0.0,
+      "snow_accumulation": [ 0.0, 0.125 ],
+      "temperature": 1.8
+    },
+    "minecraft:overworld_height": {
+      "noise_type": "lowlands"
+    },
+    "minecraft:surface_parameters": {
+      "sea_floor_depth": 7,
+      "sea_floor_material": "minecraft:gravel",
+      "foundation_material": "minecraft:stone",
+      "mid_material": "wb:red_sand_hard",
+      "sea_material": "minecraft:water",
+      "top_material": "wb:red_sand_hard"
+    },
+    "minecraft:overworld_generation_rules": {
+      "hills_transformation": "desert_hills_hard",
+      "mutate_transformation": "desert_mutated_hard",
+      "generate_for_climates": [
+        [ "warm", 1 ],
+        [ "lukewarm", 1 ]
+      ]
+    },
+
+    "desert_hard": {},
+    "monster": {},
+    "overworld": {}
+    }
+  }
+}

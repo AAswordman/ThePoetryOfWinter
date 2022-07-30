@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:iron_apple_enchanted"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "###",
+      "#X#",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:iron_block"
+      },
+      "X": {
+        "item": "minecraft:apple"
+      }
+    },
+    "result": {
+      "item": "dec:iron_apple_enchanted"
+    }
+  }
+}

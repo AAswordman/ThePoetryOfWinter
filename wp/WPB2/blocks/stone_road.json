@@ -1,0 +1,42 @@
+{
+    "format_version": "1.16.0",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dec:stone_road"
+        },
+        "components": {
+		  "minecraft:creative_category": {
+                "group": "itemGroup.name.outside",
+				"category": "construction"
+			},
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "small_stone",
+                    "render_method": "alpha_test"
+                }
+            },
+            "minecraft:pick_collision": {
+                "origin": [ -8, 0, -8 ],
+                "size": [ 16, 2, 16 ]
+            },
+            "minecraft:entity_collision": {
+                "origin": [ -8, 0, -8 ],
+                "size": [ 16, 2, 16 ]
+            },
+            "minecraft:placement_filter": {
+                "conditions": [
+                    {
+                        "allowed_faces": ["up"]
+                    }
+                ]
+            },
+            "minecraft:geometry": "geometry.stone_road",
+            "minecraft:map_color": "#A36FD5",
+            "minecraft:loot": "loot_tables/blocks/stone_heap.json",
+            "minecraft:block_light_emission": 0.0,
+            "minecraft:block_light_absorption": 0.0,
+            "minecraft:destroy_time": 0.2,
+            "tag:stone": { }
+        }
+    }
+}

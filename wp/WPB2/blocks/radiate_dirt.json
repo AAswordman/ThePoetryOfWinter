@@ -1,0 +1,39 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:block": {
+    "description": {
+      "identifier": "dec:radiate_dirt"
+    },
+    "components": {
+		  "minecraft:creative_category": {
+        "group": "itemGroup.name.outside",
+				"category": "nature"
+			},
+      "minecraft:block_light_absorption": 1,
+      "minecraft:block_light_emission": 0,
+      "minecraft:destroy_time": 1,
+      "minecraft:explosion_resistance": 5,
+      "minecraft:map_color": "#8E6045",
+      "minecraft:loot": "loot_tables/blocks/radiate_dirt.json",
+      "minecraft:on_step_on": {
+        "event": "step_on",
+        "target": "other"
+      }
+    },
+    "events":  {
+      "step_on": {
+        "add_mob_effect": {
+          "effect": "poison",
+          "duration": 5,
+          "amplifier": 1,
+          "target": "other"
+        },
+        "run_command": {
+          "command": [
+            "scoreboard players remove @a[x=~,y=~1,z=~,r=1] wbfl 1"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "wb:technology_world_explorer",
+      "category": "Nature"
+    },
+    "components": {
+      "minecraft:icon": "technology_world_explorer",
+      "minecraft:hover_text_color": "light_purple"
+    }
+  }
+}

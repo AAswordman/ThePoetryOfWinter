@@ -1,0 +1,13 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.towart": {
+			"loop": true,
+			"bones": {
+				"global": {
+					"rotation" : [ "-query.target_x_rotation", "-query.body_y_rotation", 0.0 ]
+				}
+			}
+		}
+	}
+}

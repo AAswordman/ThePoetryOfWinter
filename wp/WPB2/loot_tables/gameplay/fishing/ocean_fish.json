@@ -1,0 +1,104 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:fish",
+          "weight": 400
+        },
+        {
+          "type": "item",
+          "name": "minecraft:salmon",
+          "weight": 250
+        },
+        {
+          "type": "item",
+          "name": "minecraft:clownfish",
+          "weight": 20
+        },
+        {
+          "type": "item",
+          "name": "minecraft:pufferfish",
+          "weight": 130
+        },
+        {
+          "type": "item",
+          "name": "dec:ender_fish",
+          "weight": 10
+        },
+        {
+          "type": "item",
+          "name": "dec:coal_fish",
+          "weight": 10
+        },
+        {
+          "type": "item",
+          "name": "dec:iron_fish",
+          "weight": 5
+        },
+        {
+          "type": "item",
+          "name": "dec:gold_fish",
+          "weight": 3
+        },
+        {
+          "type": "item",
+          "name": "dec:emerald_fish",
+          "weight": 2
+        },
+        {
+          "type": "item",
+          "name": "dec:diamond_fish",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "dec:sword_fish",
+          "weight": 4
+        },
+        {
+          "type": "item",
+          "name": "dec:spiral_shell",
+          "weight": 40
+        },
+        {
+          "type": "item",
+          "name": "dec:snailfish",
+          "weight": 30
+        },
+        {
+          "type": "item",
+          "name": "dec:tropical_fish",
+          "weight": 400
+        },
+        {
+          "type": "item",
+          "name": "dec:yellow_jellyfish",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "dec:pink_jellyfish",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "dec:blue_jellyfish",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "dec:lamprey",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "dec:nautilus_alive",
+          "weight": 1
+        }
+      ]
+    }
+  ]
+}

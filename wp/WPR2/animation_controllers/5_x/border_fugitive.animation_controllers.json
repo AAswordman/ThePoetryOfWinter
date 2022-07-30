@@ -1,0 +1,13 @@
+{
+	"format_version" : "1.8.0",
+	"animation_controllers" : {
+		"controller.animation.border_fugitive.move" : {
+			"states" : {
+				"default" : {
+				    "particle_effects": [{"effect": "spell"}],
+					"animations":[{"move":[]}]
+				}
+			}
+		}
+	}
+}

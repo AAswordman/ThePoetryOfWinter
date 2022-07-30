@@ -1,0 +1,14 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_furnace": {
+    "description": {
+    "identifier": "dec:furnace_copper_sword"
+    },
+
+    
+    "tags": ["furnace", "blast_furnace"],
+    "input": "dec:copper_sword",
+    "output": "dec:copper_nugget"
+  }
+  
+}

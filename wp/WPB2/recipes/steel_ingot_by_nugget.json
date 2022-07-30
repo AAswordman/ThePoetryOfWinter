@@ -1,0 +1,27 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:steel_ingot_by_nugget"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "###",
+      "###",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "dec:steel_nugget",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "dec:steel_ingot",
+      "data": 0,
+      "count": 1
+    }
+  }
+}

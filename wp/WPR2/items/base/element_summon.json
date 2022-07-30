@@ -1,0 +1,13 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "wb:element_summon",
+      "category": "Nature"
+    },
+    "components": {
+      "minecraft:icon": "element_summon",
+      "minecraft:hover_text_color": "light_purple"
+    }
+  }
+}

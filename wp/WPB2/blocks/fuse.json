@@ -1,0 +1,24 @@
+{
+   "format_version": "1.16.0",
+   "minecraft:block": {
+     "description": {
+       "identifier": "dec:fuse"
+     },
+      "components": {
+          "minecraft:creative_category": {
+            "group": "itemGroup.name.outside",
+            "category": "items"
+          },
+         "minecraft:block_light_absorption": 1,
+         "minecraft:block_light_emission": 0,
+         "minecraft:destroy_time": 0.3,
+         "minecraft:explosion_resistance": 0,
+         "minecraft:map_color": "#8B573D",
+         "minecraft:flammable": {
+            "flame_odds": 500,
+            "burn_odds": 10
+        },
+         "minecraft:loot": "loot_tables/blocks/fuse.json"
+     }
+   }
+ }

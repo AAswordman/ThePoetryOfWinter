@@ -1,0 +1,141 @@
+{
+  "format_version": "1.8.0",
+  "animation_controllers": {
+    "controller.animation.player.wb.starttext": {
+      "states": {
+        "default": {
+          "on_entry": [
+            "/gamerule commandblockoutput false",
+            "/gamerule sendcommandfeedback false",
+            "/scoreboard objectives add wbdj dummy 等级",
+            "/scoreboard objectives add wbdjcg dummy 等级草稿",
+            "/scoreboard objectives add wbdjjf dummy 等级积分",
+            "/scoreboard objectives add wbxlgj dummy 蓄力时间",
+            "/scoreboard objectives add wblzxz dummy 粒子禁用选择",
+            "/scoreboard objectives add wbef dummy 勇者之力冷却",
+            "/scoreboard objectives add wbfl dummy 法力值",
+            "/scoreboard objectives add wbnldx dummy 能量值",
+            "/scoreboard objectives add wbldid dummy 领地id",
+            "/scoreboard objectives add wbldpd dummy 领地判断",
+            "/scoreboard objectives add wbldzr dummy 领地主人",
+            "/scoreboard objectives add wbldcg dummy 领地草稿",
+            "/scoreboard objectives add wbnjqzj dummy 剧情周目",
+            "/scoreboard objectives add wbnjqbf dummy 剧情部分",
+            "/scoreboard objectives add wbjqtx dummy 剧情屠杀数量",
+            "/scoreboard objectives add wbzbgs dummy 坐标归属",
+            "/scoreboard objectives add wbzbcg dummy 坐标草稿",
+            "/scoreboard objectives add wbzbcgx dummy 坐标草稿",
+            "/scoreboard objectives add wbzbcgy dummy 坐标草稿",
+            "/scoreboard objectives add wbqjsz dummy 全局设置",
+            "/scoreboard objectives add wbqjszcg dummy 全局设置草稿",
+            "/scoreboard objectives add wbwqlq dummy 武器冷却",
+            "/scoreboard objectives add wbkjlq dummy 盔甲冷却",
+            "/scoreboard objectives add wbkjlqzh dummy 盔甲冷却总和",
+            "/scoreboard objectives add wbfinal dummy 常量",
+            "/scoreboard objectives add wbkjlqcg dummy 盔甲冷却草稿",
+            "/scoreboard objectives add wbxxht dummy 信息互通",
+            "/scoreboard objectives add wbgc dummy 游戏GC",
+            "/scoreboard objectives add wbwjswjs dummy 玩家死亡计时"
+          ]
+        }
+      }
+    },
+    "controller.animation.player.wb.anytext": {
+      "states": {
+        "default": {
+          "on_entry": [
+            "/execute @s[tag=wbflx] ~ ~ ~ function magic/text3",
+            "/tag @s remove wbgjx",
+            "/scoreboard players set @s wbxlgj 0"
+          ],
+          "transitions": [
+            {
+              "base": "(3.0)"
+            }
+          ]
+        },
+        "base": {
+          "on_entry": [
+            "/execute @s[tag=wbflx] ~ ~ ~ function magic/text3"
+          ],
+          "transitions": [
+            {
+              "default": "((query.is_sneaking || query.get_equipped_item_name != 'particle_store')) && (query.variant < 17 || query.variant > 22) && (query.variant < 25 || query.variant > 54) && (query.variant < 63 && query.variant > 66)"
+            },
+            {
+              "basex": "(query.variant >= 17 && query.variant <= 22) || (query.variant >= 25 && query.variant <= 54)"
+            },
+            
+            {
+              "particle_store": "(!query.is_sneaking && query.get_equipped_item_name == 'particle_store')"
+            }
+          ]
+        },
+        "basex": {
+          "on_entry": [
+            "/execute @s[tag=wbgjx] ~ ~ ~ function magic/text2"
+          ],
+          "transitions": [
+            {
+              "basexx": "(1.0)"
+            }
+          ]
+        },
+        "basexx": {
+          "on_entry": [
+            "/execute @s[tag=wbgjx] ~ ~ ~ function magic/text2"
+          ],
+          "transitions": [
+            {
+              "default": "(query.variant < 17 || query.variant > 22) && (query.variant < 25 || query.variant > 54)"
+            },
+            {
+              "basex": "(query.variant >= 17 && query.variant <= 22) || (query.variant >= 25 && query.variant <= 54)"
+            }
+          ]
+        },
+        "particle_store": {
+          "on_entry": [
+            "/tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.4.name\"}]}",
+            "/tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.5.name\"}]}",
+            "/scoreboard players set @s wblzxz 1"
+          ],
+          "transitions": [
+            {
+              "particle_storea": "(!query.is_sneaking && query.get_equipped_item_name == 'particle_store')"
+            },
+            {
+              "default": "(query.is_sneaking || query.get_equipped_item_name != 'particle_store')"
+            }
+          ]
+        },
+        "particle_storea": {
+          "on_entry": [
+            "/execute @s[scores={wblzxz=1}] ~ ~ ~ function particle/stop1",
+            "/execute @s[scores={wblzxz=2}] ~ ~ ~ function particle/stop2",
+            "/execute @s[scores={wblzxz=3}] ~ ~ ~ function particle/stop3",
+            "/execute @s[scores={wblzxz=4}] ~ ~ ~ function particle/stop4"
+          ],
+          "transitions": [
+            {
+              "particle_storeb": "(!query.is_sneaking && query.get_equipped_item_name == 'particle_store')"
+            },
+            {
+              "default": "(query.is_sneaking || query.get_equipped_item_name != 'particle_store')"
+            }
+          ]
+        },
+        "particle_storeb": {
+          "transitions": [
+            {
+              "particle_storea": "(!query.is_sneaking && query.get_equipped_item_name == 'particle_store')"
+            },
+            {
+              "default": "(query.is_sneaking || query.get_equipped_item_name != 'particle_store')"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

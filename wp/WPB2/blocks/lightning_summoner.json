@@ -1,0 +1,35 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:block": {
+    "description": {
+      "identifier": "dec:lightning_summoner"
+    },
+    "components": {
+		  "minecraft:creative_category": {
+        "group": "itemGroup.name.outside",
+				"category": "items"
+			},
+      "minecraft:block_light_absorption": 1,
+      "minecraft:block_light_emission": 0,
+      "minecraft:destroy_time": 3,
+      "minecraft:explosion_resistance": 10,
+      "minecraft:map_color": "#ECECEC",
+      "minecraft:loot": "loot_tables/blocks/lightning_summoner.json",
+      "tag:stone": {},
+      "minecraft:on_interact": {
+        "event": "activate",
+        "condition": "query.get_equipped_item_name('main_hand') == 'pluse_stone'"
+      }
+    },
+    "events": {
+      "activate": {
+        "run_command": {
+          "command": [
+            "weather thunder"
+          ]
+        },
+        "decrement_stack": {}
+      }
+    }
+  }
+}

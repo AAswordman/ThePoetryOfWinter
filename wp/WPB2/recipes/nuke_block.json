@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:nuke_block"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "#A#",
+      "AXA",
+      "#A#"
+    ],
+    "key": {
+      "#": {
+        "item": "dec:uranium_block"
+      },
+      "A": {
+        "item": "minecraft:tnt"
+      },
+      "X": {
+        "item": "dec:enriched_uranium"
+      }
+    },
+    "result": {
+      "item": "dec:nuke_block"
+    }
+  }
+}

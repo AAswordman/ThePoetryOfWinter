@@ -1,0 +1,30 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:wood_leggings"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XXX",
+      "A A",
+      "B B"
+    ],
+    "key": {
+      "X": {
+        "item": "minecraft:log"
+      },
+      "A": {
+        "item": "dec:eye_of_nature"
+      },
+      "B": {
+        "item": "minecraft:vine"
+      }
+    },
+    "result": {
+      "item": "dec:wood_leggings"
+    }
+  }
+}

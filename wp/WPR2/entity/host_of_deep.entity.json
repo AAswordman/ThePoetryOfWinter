@@ -1,0 +1,39 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:host_of_deep",
+      "materials": {
+        "default": "vindicator"
+      },
+      "textures": {
+        "default": "textures/entity/illager/host_of_deep"      
+      },
+      "geometry": {
+        "default": "geometry.host_of_deep"
+      },
+      "scripts": {
+        "scale": "0.9375"
+      },
+      "animations": {
+        "general": "animation.evoker.general.v1.0",
+        "casting": "animation.evoker.casting.v1.0",
+        "look_at_target": "animation.humanoid.look_at_target.default.v1.0",
+        "move": "animation.villager.move"
+      },
+      "animation_controllers": [
+        { "general": "controller.animation.evoker.general.v1.0" },
+        { "move": "controller.animation.villager.move" }
+      ],
+      "particle_effects": {
+        "spell": "minecraft:evoker_spell"
+      },
+      "render_controllers": [ "controller.render.evoker" ],
+      "enable_attachables": true,
+      "spawn_egg": {
+        "base_color": "#2D2B28",
+        "overlay_color": "#850051"
+      }
+    }
+  }
+}

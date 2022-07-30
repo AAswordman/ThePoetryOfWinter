@@ -1,0 +1,64 @@
+{
+	"format_version": "1.10.0",
+	"geometry.ancient_stone": {
+		"texturewidth": 256,
+		"textureheight": 256,
+		"visible_bounds_width": 7,
+		"visible_bounds_height": 6,
+		"visible_bounds_offset": [0, 3, 0],
+		"bones": [
+			{
+				"name": "head",
+				"pivot": [0, 70, 0],
+				"cubes": [
+					{"origin": [-6, 63, -4], "size": [12, 14, 12], "uv": [64, 117], "inflate": 0.5}
+				]
+			},
+			{
+				"name": "body",
+				"pivot": [0, 0, 0],
+				"cubes": [
+					{"origin": [-4, 30, -3], "size": [8, 8, 8], "uv": [136, 100], "inflate": 0.001},
+					{"origin": [-13, 50, -6], "size": [26, 9, 12], "uv": [0, 100]},
+					{"origin": [-10, 41, -5], "size": [20, 7, 10], "uv": [76, 100]},
+					{"origin": [-50, 17, 12], "size": [100, 100, 0], "uv": [0, 0]}
+				]
+			},
+			{
+				"name": "rightArm",
+				"pivot": [-23, 56, -2.25],
+				"cubes": [
+					{"origin": [-28, 41, -5], "size": [9, 18, 9], "uv": [112, 117]}
+				]
+			},
+			{
+				"name": "rightArm2",
+				"parent": "rightArm",
+				"pivot": [-23, 36, -0.5],
+				"cubes": [
+					{"origin": [-28.5, 22, -6.5], "size": [9, 17, 9], "uv": [139, 139]}
+				]
+			},
+			{
+				"name": "leftArm",
+				"pivot": [24, 56, -2.25],
+				"rotation": [-25, 0, -15],
+				"cubes": [
+					{"origin": [19, 41, -5], "size": [9, 18, 9], "uv": [0, 121]}
+				]
+			},
+			{
+				"name": "leftArm2",
+				"parent": "leftArm",
+				"pivot": [24, 36, -0.5],
+				"rotation": [-15, 0, 40],
+				"cubes": [
+					{"origin": [19, 22, -6.5], "size": [9, 17, 9], "uv": [36, 134]}
+				],
+				"locators": {
+					"hand": [24, 20, -0.5]
+				}
+			}
+		]
+	}
+}

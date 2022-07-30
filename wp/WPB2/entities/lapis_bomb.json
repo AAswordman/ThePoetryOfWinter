@@ -1,0 +1,52 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:lapis_bomb",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {},
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "lapis_bomb"
+        ]
+      },
+      "minecraft:area_attack": {
+        "damage_range": 2,
+        "damage_per_tick": 4,
+        "cause": "contact",
+        "entity_filter": {
+          "any_of": [
+            {
+              "test": "is_family",
+              "subject": "other",
+              "value": "lapis_bomb"
+            },
+            {
+              "test": "is_family",
+              "subject": "other",
+              "value": "item"
+            }
+          ]
+        }
+      },
+      "minecraft:physics": {
+        "has_gravity": true
+      },
+      "minecraft:explode": {
+        "fuse_length": 0.3,
+        "fuse_lit": true,
+        "power": 0,
+        "causes_fire": false,
+        "destroy_affected_by_griefing": true
+      },
+      "minecraft:health": {
+        "value": 1,
+        "max": 1
+      }
+    }
+  }
+}

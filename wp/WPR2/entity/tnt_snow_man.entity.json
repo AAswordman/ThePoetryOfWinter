@@ -1,0 +1,30 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:tnt_snow_man",
+      "materials": {
+        "default": "snow_golem"
+      },
+      "textures": {
+        "default": "textures/entity/tnt_snow_man"
+      },
+      "geometry": {
+        "default": "geometry.snowgolem_have_block"
+      },
+      "animations": {
+        "move": "animation.snowgolem.move",
+        "arms": "animation.snowgolem.arms",
+        "look_at_target": "animation.common.look_at_target"
+      },
+      "spawn_egg": {
+        "base_color": "#EFEFEF",
+        "overlay_color": "#E00810"
+      },
+      "animation_controllers": [
+        { "move": "controller.animation.snowgolem.move" }
+      ],
+      "render_controllers": [ "controller.render.snowgolem" ]
+    }
+  }
+}

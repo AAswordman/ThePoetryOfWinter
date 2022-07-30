@@ -1,0 +1,33 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.station_upgrade_a.wb": {
+      "timeline": {
+          "0.5":["/scoreboard players add @a[x=~,y=~-2,z=~,dy=5] wbdjjf 1"]
+      },
+      "animation_length": 1.0,
+      "loop":true
+    },
+    "animation.station_upgrade_b.wb": {
+      "timeline": {
+          "0.5":["/scoreboard players add @a[x=~,y=~-2,z=~,dy=5] wbdjjf 4"]
+      },
+      "animation_length": 1.0,
+      "loop":true
+    },
+    "animation.station_upgrade_c.wb": {
+      "timeline": {
+          "0.5":["/scoreboard players add @a[x=~,y=~-2,z=~,dy=5] wbdjjf 16"]
+      },
+      "animation_length": 1.0,
+      "loop":true
+    },
+    "animation.station_upgrade_x.wb": {
+      "timeline": {
+          "0.5":["/scoreboard players add @a[x=~,y=~-2,z=~,dy=5] wbdjjf 32"]
+      },
+      "animation_length": 1.0,
+      "loop":true
+    }
+  }
+}

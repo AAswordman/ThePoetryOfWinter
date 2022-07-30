@@ -1,0 +1,23 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "wb:mineral_magic_ink"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "#"
+    ],
+    "key": {
+      "#": {
+        "item": "wb:block_magic_ink"
+      }
+    },
+    "result": {
+      "item": "wb:mineral_magic_ink",
+      "count": 9
+    }
+  }
+}

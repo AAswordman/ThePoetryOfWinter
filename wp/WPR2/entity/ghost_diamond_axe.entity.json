@@ -1,0 +1,29 @@
+ {
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:ghost_diamond_axe",
+      "materials": { "default": "zombie" },
+      "textures": { "default": "textures/entity/ghost_diamond_axe" },
+      "geometry": { "default": "geometry.ghost_axe" },
+      "animations": {
+        "spawn": "animation.ghost_axe.spawn",
+        "walk": "animation.ghost_axe.move",
+        "attacking": "animation.ghost_axe.attack"
+      },
+      "scripts": {
+        "animate": [
+          "spawn",
+          {"walk" : "query.modified_move_speed"},
+          {"attacking":"variable.attack_time"}
+        ]
+      },
+      "render_controllers": [ "controller.render.zombie" ],
+      "enable_attachables": true,
+      "spawn_egg": {
+        "base_color": "#3F827E",
+        "overlay_color": "#58B5B0"
+      }
+    }
+  }
+}

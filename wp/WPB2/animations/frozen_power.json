@@ -1,0 +1,25 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.frozen_power": {
+            "timeline": {
+                "0.1": [
+                    "/tag @s[scores={wbfl=1..}] add frozen_power",
+                    "/execute @s[scores={wbfl=1..},tag=frozen_power] ~~~ effect @e[r=4,rm=2] slowness 3 1",
+                    "/execute @s[scores={wbfl=1..},tag=frozen_power] ~~~ particle dec:frozen_shield_slow_particle ~~~",
+                    "/scoreboard players remove @s[scores={wbfl=1..},tag=frozen_power] wbfl 1",
+                    "/tag @s remove frozen_power"
+                ],
+                "0.19995": [
+                    "/tag @s[scores={wbfl=1..}] add frozen_power",
+                    "/execute @s[scores={wbfl=1..},tag=frozen_power] ~~~ effect @e[r=4,rm=2] slowness 3 1",
+                    "/execute @s[scores={wbfl=1..},tag=frozen_power] ~~~ particle dec:frozen_shield_slow_particle ~~~",
+                    "/scoreboard players remove @s[scores={wbfl=1..},tag=frozen_power] wbfl 1",
+                    "/tag @s remove frozen_power"
+                ]
+            },
+            "animation_length": 0.2,
+            "loop": true
+        }
+    }
+}

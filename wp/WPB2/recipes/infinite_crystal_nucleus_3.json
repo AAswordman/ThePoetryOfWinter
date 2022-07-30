@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:infinite_crystal_nucleus_3"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "#A#",
+      "AXA",
+      "#A#"
+    ],
+    "key": {
+      "X": {
+        "item": "dec:infinite_crystal_nucleus_2"
+      },
+      "#": {
+        "item": "dec:ghost_essence"
+      },
+      "A": {
+        "item": "dec:ghost_ingot"
+      }
+    },
+    "result": {
+      "item": "dec:infinite_crystal_nucleus_3"
+    }
+  }
+}

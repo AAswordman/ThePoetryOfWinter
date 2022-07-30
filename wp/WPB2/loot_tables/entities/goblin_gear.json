@@ -1,0 +1,317 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "dec:cudgel",
+          "weight": 90,
+          "functions": [
+            {
+              "function": "enchant_random_gear",
+              "chance": 0.5
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "dec:mace",
+          "weight": 40,
+          "functions": [
+            {
+              "function": "enchant_random_gear",
+              "chance": 0.5
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:wooden_sword",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "enchant_random_gear",
+              "chance": 0.5
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:stone_sword",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "enchant_random_gear",
+              "chance": 0.5
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:iron_sword",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "enchant_random_gear",
+              "chance": 0.5
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:golden_sword",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "enchant_random_gear",
+              "chance": 0.5
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:diamond_sword",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "enchant_random_gear",
+              "chance": 0.5
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "dec:amethyst_sword",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "enchant_random_gear",
+              "chance": 0.5
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "dec:steel_sword",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "enchant_random_gear",
+              "chance": 0.5
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "dec:emerald_sword",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "enchant_random_gear",
+              "chance": 0.5
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "dec:lapis_sword",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "enchant_random_gear",
+              "chance": 0.5
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "dec:copper_sword",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "enchant_random_gear",
+              "chance": 0.5
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "dec:long_bread",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "enchant_random_gear",
+              "chance": 0.5
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "dec:amethyst_dagger",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "enchant_random_gear",
+              "chance": 0.5
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "dec:copper_dagger",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "enchant_random_gear",
+              "chance": 0.5
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "dec:diamond_dagger",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "enchant_random_gear",
+              "chance": 0.5
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "dec:emerald_dagger",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "enchant_random_gear",
+              "chance": 0.5
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "dec:golden_dagger",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "enchant_random_gear",
+              "chance": 0.5
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "dec:iron_dagger",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "enchant_random_gear",
+              "chance": 0.5
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "dec:long_bread",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "enchant_random_gear",
+              "chance": 0.5
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "dec:stone_dagger",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "enchant_random_gear",
+              "chance": 0.5
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "dec:lapis_dagger",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "enchant_random_gear",
+              "chance": 0.5
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "dec:steel_dagger",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "enchant_random_gear",
+              "chance": 0.5
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "dec:wooden_dagger",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "enchant_random_gear",
+              "chance": 0.5
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "dec:copper_sickle",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "enchant_random_gear",
+              "chance": 0.5
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "dec:diamond_sickle",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "enchant_random_gear",
+              "chance": 0.5
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "dec:golden_sickle",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "enchant_random_gear",
+              "chance": 0.5
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "dec:steel_sickle",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "enchant_random_gear",
+              "chance": 0.5
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:friendly_spider",
+      "materials": {
+        "default": "spider",
+        "invisible": "spider_invisible"
+      },
+      "textures": {
+        "default": "textures/entity/friendly_spider"
+      },
+      "geometry": {
+        "default": "geometry.spider"
+      },
+      "scripts": {
+        "scale": "0.5"
+      },
+      "animations": {
+        "default_leg_pose": "animation.spider.default_leg_pose",
+        "look_at_target": "animation.spider.look_at_target",
+        "walk": "animation.spider.walk"
+      },
+      "animation_controllers": [
+        { "move": "controller.animation.spider.move" }
+      ],
+      "render_controllers": [ "controller.render.spider" ]
+    }
+  }
+}

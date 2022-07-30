@@ -1,0 +1,37 @@
+{
+  "format_version": 1,
+  "header": {
+    "description": "这是一个新的世界，为你的生存添加趣味。由 aa剑侠、LiLeyi 和其他许多的小伙伴们制作",
+    "name": "冬之纪行诗",
+    "uuid": "c2021c25-08e8-9ade-0916-6cd21931fac5",
+    "version": [0,0,1],
+    "min_engine_version": [1,9,0]
+  },
+  "modules": [
+    {
+      "description": "这是一个新的世界，为你的生存添加趣味。由 aa剑侠、LiLeyi 和其他许多的小伙伴们制作",
+      "type": "script",
+      "uuid": "c2021c83-08e8-9ade-0916-6cd21931fac5",
+      "version": [0,0,1],
+      "entry": "scripts/out/index.js"
+      
+    }
+  ],
+  "dependencies": [
+    {
+      // Minecraft native module
+      "uuid": "b26a4d4c-afdf-4690-88f8-931846312678",
+      "version": [ 0, 1, 0 ]
+    },
+    {
+      // GameTest native module
+      "uuid": "6f4b6893-1bb6-42fd-b458-7fa3d0c89616",
+      "version": [ 0, 1, 0 ]
+    },
+    {
+      // Minecraft UI module
+      "uuid": "2BD50A27-AB5F-4F40-A596-3641627C635E",
+      "version": [ 0, 1, 0 ]
+    }
+  ]
+}

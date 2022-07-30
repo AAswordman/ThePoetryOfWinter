@@ -1,0 +1,35 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "wb:headless_guard",
+      "materials": { "default": "skeleton" },
+      "textures": {
+        "default": "textures/wb/3_x/headless_guard"
+      },
+      "geometry": {
+        "default": "geometry.headless_guard"
+      },
+      "animations": {
+      	"base":"animation.headless_guard.move",
+      	"attack":"animation.headless_guard.attack",
+      	"summon":"animation.headless_guard.summon",
+      	"roaring":"animation.headless_guard.roaring",
+      	"charged":"animation.headless_guard.charged",
+      	"basex":"animation.headless_guard.basex"
+      },
+      "animation_controllers": [
+      	{ "base": "controller.animation.base.base" },
+      	{ "attack":"controller.animation.base.attack" },
+      	{ "summon":"controller.animation.base.summon" },
+      	{ "roaring":"controller.animation.base.roaring" },
+      	{ "charged":"controller.animation.base.charged" }
+      ],
+      "render_controllers": [ "controller.render.base" ],
+      "spawn_egg": {
+        "texture": "headless_guard",
+        "texture_index": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:the_blade"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.sword"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:the_blade.name"
+      },
+     "minecraft:icon": {
+        "texture": "the_blade"
+      },
+      "minecraft:stacked_by_data": false,
+      "minecraft:max_stack_size": 1,
+      "minecraft:durability": {
+        "max_durability": 432
+      },
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "minecraft:iron_ingot"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.3"
+          },
+          {
+            "items": [
+              "minecraft:iron_nugget"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.03"
+          }
+        ]
+      },
+      "minecraft:foil": false,
+      "minecraft:hand_equipped": true
+	 }
+  }
+}

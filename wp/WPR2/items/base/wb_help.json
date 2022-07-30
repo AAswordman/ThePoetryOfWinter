@@ -1,0 +1,13 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "wb:wb_help",
+      "category": "Nature"
+    },
+    "components": {
+      "minecraft:icon": "wb_help",
+      "minecraft:hover_text_color": "light_purple"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "wb:technology_world_explorer"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XXX",
+      "X#X",
+      "XXX"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:ender_eye"
+      },
+      "X": {
+        "item":"minecraft:iron_ingot"
+      }
+    },
+    "result": {
+      "item": "wb:technology_world_explorer"
+    }
+  }
+}

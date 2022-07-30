@@ -1,0 +1,29 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:ghost_wooden_sword",
+      "min_engine_version": "1.8.0",
+      "materials": {
+        "default": "zombie"
+      },
+      "textures": {
+        "default": "textures/entity/ghost_wooden_sword"
+      },
+      "geometry": {
+        "default": "geometry.sword"
+      },
+      "scripts": {
+        "scale": "1"
+      },
+      "animations": {
+        "attack": "animation.sword.attack"
+      },
+      "animation_controllers": [
+        { "attack": "controller.animation.sword.attack"}
+      ],
+      "render_controllers": [ "controller.render.sword" ],
+      "enable_attachables": true
+    }
+  }
+}

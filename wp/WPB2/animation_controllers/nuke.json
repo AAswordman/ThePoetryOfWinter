@@ -1,0 +1,41 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.nuke": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "/effect @e[r=30] nausea 7 0",
+            "/effect @e[r=10] poison 5 1",
+            "/effect @e[r=5] wither 3 1",
+            "/tag @e[type=creeper,r=100] add radiate",
+            "/tag @e[type=enderman,r=100] add radiate",
+            "/tag @e[type=spider,r=100] add radiate",
+            "/tag @e[type=cave_spider,r=100] add radiate",
+            "/tag @e[type=skeleton,r=100] add radiate",
+            "/effect @e[r=40,type=dec:radiate_creeper] resistance 5 5",
+            "/particle minecraft:knockback_roar_particle ~~~",
+            "/execute @e[type=creeper,tag=radiate] ~~~ summon dec:radiate_creeper",
+            "/execute @e[type=enderman,tag=radiate] ~~~ summon dec:radiate_enderman",
+            "/execute @e[type=spider,tag=radiate] ~~~ summon dec:radiate_spider",
+            "/execute @e[type=cave_spider,tag=radiate] ~~~ summon dec:radiate_spider",
+            "/execute @e[type=skeleton,tag=radiate] ~~~ summon dec:radiate_skeleton",
+            "/execute @e[type=!player,tag=radiate] ~~~ tp ~ -41 ~"
+          ]
+        }
+      }
+    }
+  }
+}

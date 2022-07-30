@@ -1,0 +1,17 @@
+{
+  "format_version": "1.8.0", 
+  "animations": {
+      "animation.playsound_random_explode": {
+        "timeline": {
+            "0.01": [
+              "/playsound random.explode @a ~~~"
+            ],
+            "0.015": [
+              "/function empty"
+            ]
+        }, 
+        "animation_length": 0.02, 
+        "loop": false
+      }
+   }
+}

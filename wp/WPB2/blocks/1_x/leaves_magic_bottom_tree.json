@@ -1,0 +1,16 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "wb:leaves_magic_bottom_tree",
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:destroy_time": 0.3,
+			"minecraft:explosion_resistance": 1,
+			"minecraft:creative_category": {
+				"category": "construction"
+			}
+		}
+	}
+}

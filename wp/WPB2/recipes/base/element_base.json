@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "wb:element_base"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " # ",
+      "#Y#",
+      " # "
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:diamond"
+      },
+      "Y": {
+        "item":"minecraft:obsidian"
+      }
+    },
+    "result": {
+      "item": "wb:element_base"
+    }
+  }
+}

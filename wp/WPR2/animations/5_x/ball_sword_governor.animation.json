@@ -1,0 +1,16 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.ball_sword_governor.base": {
+		    "loop":true,
+			"bones": {
+				"body": {
+					"rotation": {
+						"0.0": [0, -45, 0]
+					},
+					"scale": 0.4
+				}
+			}
+		}
+	}
+}

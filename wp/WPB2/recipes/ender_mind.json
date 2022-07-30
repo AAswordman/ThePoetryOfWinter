@@ -1,0 +1,26 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:ender_mind"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XXX",
+      "XAX",
+      "XXX"
+    ],
+    "key": {
+      "X": {
+        "item": "minecraft:chorus_fruit"
+      },
+      "A": {
+        "item": "minecraft:ender_eye"
+      }
+    },
+    "result": {
+      "item": "dec:ender_mind",
+      "count": 8
+    }
+  }
+}

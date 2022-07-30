@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:blaze_staff"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "AA#",
+      "AXA",
+      "XAA"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:magma_cream"
+      },
+      "A": {
+        "item": "minecraft:blaze_powder"
+      },
+      "X": {
+        "item": "minecraft:blaze_rod"
+      }
+    },
+    "result": {
+      "item": "dec:blaze_staff"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:emerald_sword"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "A",
+      "A",
+      "X"
+    ],
+    "key": {
+      "X": {
+        "item": "minecraft:stick"
+      },
+      "A": {
+        "item": "minecraft:emerald"
+      }
+    },
+    "result": {
+      "item": "dec:emerald_sword"
+    }
+  }
+}

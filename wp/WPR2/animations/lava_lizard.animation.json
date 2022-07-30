@@ -1,0 +1,32 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.lava_lizard.move": {
+			"loop": true,
+			"animation_length": 0.76,
+			"bones": {
+				"leftFin": {
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.24": [0, 0, -2],
+						"0.76": [0, 0, 0]
+					}
+				},
+				"rightFin": {
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.48": [0, 0, -2],
+						"0.76": [0, 0, 0]
+					}
+				},
+				"waist": {
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.24": [0, 0, -2],
+						"0.76": [0, 0, 0]
+					}
+				}
+			}
+		}
+	}
+}

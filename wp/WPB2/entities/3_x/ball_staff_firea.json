@@ -1,0 +1,72 @@
+{
+  "format_version": "1.8.0",
+ "minecraft:entity": {
+  "description": {
+    "identifier": "wb:ball_staff_firea",
+    "is_spawnable": false,
+    "is_summonable": true,
+    "is_experimental": false,
+    "runtime_identifier": "minecraft:snowball"
+  },
+
+  "component_groups": {
+   "minecraft:exploding": {
+    "minecraft:explode": {
+             "breaks_blocks":false,
+     "fuseLength": 0,
+     "fuseLit": true,
+     "power": 4,
+     "causesFire": true,
+     "fireAffectedByGriefing": true,
+     "destroyAffectedByGriefing": true
+    }
+   }
+  },
+
+  "components": {
+          "minecraft:explode": {
+     "fuseLength": 3,
+     "fuseLit": true,
+     "power": 0,
+     "causesFire": true,
+     "fireAffectedByGriefing": true,
+     "destroyAffectedByGriefing": true
+    },
+  	"minecraft:physics":{
+},
+   "minecraft:collision_box": {
+    "width": 0.18,
+    "height": 0.18
+   },
+   "minecraft:projectile": {
+    
+    "onHit": {
+     "definition_event": {
+      "affectProjectile": true,
+      "eventTrigger": {
+            "event": "minecraft:explode",
+            "target": "self"
+      }
+     }
+    },
+    "power": 0.8,
+    "gravity": 0.00,
+    "inertia": 1,
+    "uncertaintyBase": 5,
+    "uncertaintyMultiplier": 0,
+    "anchor": 1,
+    "reflectOnHurt": true,
+    "catchFire": true
+   }
+  },
+  "events": {
+   "minecraft:explode": {
+    "add": {
+     "component_groups": [
+      "minecraft:exploding"
+     ]
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,63 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:ash_energy",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball"
+    },
+    "components": {
+      "minecraft:explode": {
+        "fuseLength": 10,
+        "fuseLit": true,
+        "power": 0,
+        "causesFire": false
+        },
+      "minecraft:collision_box": {
+        "width": 0.31,
+        "height": 0.31
+      },
+      "minecraft:projectile": {
+        "on_hit": {
+          "impact_damage": {
+            "damage": [ 5, 8 ],
+            "knockback": true,
+            "semi_random_diff_damage": false,
+            "destroy_on_hit": true
+          },
+          "mob_effect": {
+            "effect": "wither",
+            "durationeasy": 0,
+            "durationnormal": 100,
+            "durationhard": 100,
+            "amplifier": 1
+          },
+          "remove_on_hit": { },
+          "particle_on_hit": {
+            "particle_type": "lava",
+            "num_particles": 10,
+            "on_entity_hit": true,
+            "on_other_hit": true
+          }
+        },
+        "anchor": 1,
+        "power": 0.02,
+        "gravity": 0.0,
+        "angle_offset": 0.0,
+        "offset": [ 0, -0.1, 0 ],
+        "inertia": 1.2,
+        "liquid_inertia": 1.2,
+        "uncertainty_base": 24,
+        "uncertainty_multiplier": 1
+      },
+	    "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    }
+  }
+}

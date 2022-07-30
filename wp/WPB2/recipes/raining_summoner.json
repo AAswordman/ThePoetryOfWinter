@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:raining_summoner"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XAX",
+      "X#X",
+      "XXX"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:iron_block"
+      },
+      "X": {
+        "item": "minecraft:redstone"
+      },
+      "A": {
+        "item": "dec:stream_stone"
+      }
+    },
+    "result": {
+      "item": "dec:raining_summoner"
+    }
+  }
+}

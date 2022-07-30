@@ -1,0 +1,27 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:emerald_axe"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XX",
+      "X#",
+      " #"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:stick"
+      },
+      "X": {
+        "item": "minecraft:emerald"
+      }
+    },
+    "result": {
+      "item": "dec:emerald_axe"
+    }
+  }
+}

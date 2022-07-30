@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:natura_essence"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "  #",
+      " # ",
+      "X  "
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:leaves"
+      },
+      "X": {
+        "item": "minecraft:iron_ingot"
+      }
+    },
+    "result": {
+      "item": "dec:natura_essence"
+    }
+  }
+}

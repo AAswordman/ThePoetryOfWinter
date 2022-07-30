@@ -1,0 +1,29 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:summoner"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "###",
+      "#A#",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:dirt"
+      },
+      "A": {
+        "item": "minecraft:log"
+      }
+    },
+    "result": {
+      "item": "dec:summoner",
+      "data": 0,
+      "count": 1
+    }
+  }
+}

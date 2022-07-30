@@ -1,0 +1,37 @@
+{
+	"geometry.block_ball": {
+	"texturewidth": 64,
+	"textureheight": 32,
+	"bones": [
+	{
+	  "name": "body",
+	  "pivot": [ 0.0, 8.0, 0.0 ],
+	  "cubes": [
+	   {
+	    "origin": [ -8, 0, -8 ],
+	    "size": [ 16, 16, 16],
+	    "uv": [ 0,0 ]
+	   }
+	   ]
+	 	 }
+	 	 ]
+	},
+	"geometry.small_block_ball": {
+	"texturewidth": 64,
+	"textureheight": 32,
+	"bones": [
+	{
+	  "name": "body",
+	  "pivot": [ 0.0, 8.0, 0.0 ],
+	  "cubes": [
+	   {
+	    "origin": [ -3, 0, -3 ],
+	    "size": [ 6, 6, 6],
+	    "uv": [ 0,0 ]
+	   }
+	   ]
+	 	 }
+	 	 ]
+	}
+
+}

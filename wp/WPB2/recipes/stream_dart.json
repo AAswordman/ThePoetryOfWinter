@@ -1,0 +1,26 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:stream_dart"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XXX",
+      "XAX",
+      "XXX"
+    ],
+    "key": {
+      "X": {
+        "item": "dec:iron_dart"
+      },
+      "A": {
+        "item": "dec:stream_stone"
+      }
+    },
+    "result": {
+      "item": "dec:stream_dart",
+      "count": 8
+    }
+  }
+}

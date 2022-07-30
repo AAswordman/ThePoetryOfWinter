@@ -1,0 +1,21 @@
+{
+   "format_version": "1.16.0",
+   "minecraft:block": {
+     "description": {
+       "identifier": "dec:compressed_ice"
+     },
+      "components": {
+          "minecraft:creative_category": {
+            "group": "itemGroup.name.outside",
+            "category": "construction"
+          },
+         "minecraft:block_light_absorption": 0.5,
+         "minecraft:block_light_emission": 0,
+         "minecraft:destroy_time": 1.5,
+         "minecraft:explosion_resistance": 10,
+         "minecraft:friction": 0.5,
+         "minecraft:map_color": "#6A8ABD",
+         "tag:stone": {}
+     }
+   }
+ }

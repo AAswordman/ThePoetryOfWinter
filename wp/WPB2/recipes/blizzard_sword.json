@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:blizzard_sword"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XAX",
+      "A#A",
+      "XAX"
+    ],
+    "key": {
+      "#": {
+        "item": "dec:ice_sword"
+      },
+      "A": {
+        "item": "dec:ice_ingot"
+      },
+      "X": {
+        "item": "minecraft:diamond"
+      }
+    },
+    "result": {
+      "item": "dec:blizzard_sword"
+    }
+  }
+}

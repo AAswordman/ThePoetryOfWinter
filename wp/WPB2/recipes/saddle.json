@@ -1,0 +1,27 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:saddle"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "###",
+      "XAX"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:leather"
+      },
+      "A": {
+        "item": "dec:hemp_rope"
+      },
+      "X": {
+        "item": "minecraft:iron_ingot"
+      }
+    },
+    "result": {
+      "item": "minecraft:saddle"
+    }
+  }
+}

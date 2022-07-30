@@ -1,0 +1,30 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:spawn_rules": {
+    "description": {
+      "identifier": "dec:saucer",
+      "population_control": "monster"
+    },
+    "conditions": [
+      {
+        "minecraft:spawns_on_surface": {},
+        "minecraft:brightness_filter": {
+          "min": 1,
+          "max": 10,
+          "adjust_for_weather": false
+        },
+        "minecraft:weight": {
+          "default": 5
+        },
+        "minecraft:herd": {
+          "min_size":1,
+          "max_size":1
+        },
+    
+        "minecraft:biome_filter": {
+          "test": "has_biome_tag", "operator":"==", "value": "mountain"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:block": {
+    "description": {
+      "identifier": "dec:nightmare_block"
+    },
+    "components": {
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "nightmare_block",
+          "render_method": "blend"
+        }
+      },
+      "minecraft:loot": "loot_tables/empty.json",
+      "minecraft:block_light_absorption": 0,
+      "minecraft:block_light_emission": 0.2,
+      "minecraft:destroy_time": 1,
+      "minecraft:explosion_resistance": 50,
+      "minecraft:map_color": "#000000",
+      "minecraft:ticking": {
+        "looping": true,
+        "range": [
+          5,
+          5
+        ],
+        "on_tick": {
+          "event": "minecraft:disappear"
+        }
+      }
+    },
+    "events": {
+      "minecraft:disappear": {
+        "set_block": {
+          "block_type": "minecraft:air"
+        },
+        "run_command": {
+          "command": [
+            "particle dec:nightmare_block_particle ~~~"
+          ]
+        }
+      }
+    }
+  }
+}

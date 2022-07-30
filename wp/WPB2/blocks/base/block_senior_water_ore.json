@@ -1,0 +1,16 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "wb:block_senior_water_ore",
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:destroy_time": 6,
+			"minecraft:explosion_resistance": 6,
+			"minecraft:creative_category": {
+				"category": "construction"
+			}
+		}
+	}
+}

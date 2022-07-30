@@ -1,0 +1,25 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:sun_energy",
+      "textures": {
+        "default": "textures/entity/sun_energy"
+      },
+      "geometry": {
+        "default": "geometry.energy_ball_v1"
+      },
+      "scripts": {
+        "scale": "0.25",
+        "animate": [
+          "fly"
+        ]
+      },
+      "animations": {
+        "fly": "animation.energy_ball.fly"
+      },
+      "render_controllers": [ "controller.render.spots" ],
+      "materials": { "default": "husk" }
+      }
+   }
+}

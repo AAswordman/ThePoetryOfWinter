@@ -1,0 +1,22 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:block": {
+    "description": {
+      "identifier": "dec:snow_brick_block"
+    },
+    "components": {
+		  "minecraft:creative_category": {
+				"group": "itemGroup.name.stoneBrick",
+				"category": "construction"
+			},
+      "minecraft:block_light_absorption": 1,
+      "minecraft:block_light_emission": 0,
+      "minecraft:destroy_time": 1.5,
+      "minecraft:explosion_resistance": 10,
+      "minecraft:friction": 0.5,
+      "minecraft:map_color": "#E0ECEC",
+      "minecraft:loot": "loot_tables/blocks/snow_brick_block.json",
+      "tag:stone": {}
+    }
+  }
+}

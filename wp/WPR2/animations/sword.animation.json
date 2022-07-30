@@ -1,0 +1,18 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.sword.attack": {
+			"animation_length": 1.12,
+			"bones": {
+				"all": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.3167": [270, 315, 0],
+						"0.6333": [445, 320, 0],
+						"0.9667": [0, 360, 0]
+					}
+				}
+			}
+		}
+	}
+}

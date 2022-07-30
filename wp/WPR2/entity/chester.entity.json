@@ -1,0 +1,25 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:chester",
+      "materials": { "default": "zombie" },
+      "textures": { "default": "textures/entity/chester" },
+      "geometry": { "default": "geometry.chester" },
+      "animations": {
+        "walk": "animation.chester.move"
+      },
+      "scripts": {
+        "animate": [
+          {"walk" : "query.modified_move_speed"}
+        ]
+      },
+      "render_controllers": [ "controller.render.zombie" ],
+      "enable_attachables": false,
+      "spawn_egg": {
+        "base_color": "#A26B23",
+        "overlay_color": "#373127"
+      }
+    }
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.ancient_stone.wb.music": {
+      "animation_length": 138,
+      "timeline": {
+        "10": [
+          "/function base/stopmusic",
+          "/playsound music.wb.anger_of_ancient @a[r=200] ~ ~ ~ 15 1 1"
+        ],
+        "137": [
+          "/summon wb:damage_execute"
+          
+        ]
+      },
+        "loop": true
+    },
+    "animation.ancient_stone.wb": {
+      "timeline": {
+        "1.0": [
+          "/execute @s[tag=gja] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~ ~ ~+5",
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~ ~ ~+5"
+        ],
+        "1.5": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~+5 ~ ~"
+        ],
+        "2.0": [
+          "/execute @s[tag=gja] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~+5 ~ ~",
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~-5 ~ ~"
+        ],
+        "2.5": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~ ~ ~-5"
+        ],
+        "3.0": [
+          "/execute @s[tag=gja] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~-5 ~ ~",
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~+5 ~ ~+5"
+        ],
+        "3.5": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~+5 ~ ~-5"
+        ],
+        "4.0": [
+          "/execute @s[tag=gja] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~ ~ ~-5",
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~-5 ~ ~-5"
+        ],
+        "4.5": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~-5 ~ ~+5"
+        ],
+        "5.0": [
+          "/execute @s[tag=gja] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~ ~ ~+5"
+        ],
+        "5.25": [
+          "/execute @s[tag=gja] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~+5 ~ ~"
+        ],
+        "5.5": [
+          "/execute @s[tag=gja] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~-5 ~ ~"
+        ],
+        "5.75": [
+          "/execute @s[tag=gja] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~ ~ ~-5"
+        ],
+        "6": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~0 ~ ~8"
+        ],
+        "6.15": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~-7.244626896052991 ~ ~3.393432058695976"
+        ],
+        "6.300000000000001": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~-6.146037290589335 ~ ~-5.1211547157535975"
+        ],
+        "6.450000000000001": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~2.03058690209629 ~ ~-7.7380047061910595"
+        ],
+        "6.600000000000001": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~7.868701963474759 ~ ~-1.4434435943286716"
+        ],
+        "6.750000000000002": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~4.644889473698514 ~ ~6.513447764212494"
+        ],
+        "6.900000000000002": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~-3.9281727511877547 ~ ~6.969179208258748"
+        ],
+        "7.0500000000000025": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~-7.977386310192639 ~ ~-0.6010887271868258"
+        ],
+        "7.200000000000003": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~-2.8395068612147703 ~ ~-7.4791176474978815"
+        ],
+        "7.350000000000003": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~5.568467906759292 ~ ~-5.743880671757709"
+        ],
+        "7.5000000000000036": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~7.563561239368934 ~ ~2.6062504442811845"
+        ],
+        "7.650000000000004": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~0.8481398901369102 ~ ~7.954914124411309"
+        ],
+        "7.800000000000004": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~-6.844034966006566 ~ ~4.142364709206507"
+        ],
+        "7.950000000000005": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~-6.654331806257636 ~ ~-4.4407058236532615"
+        ],
+        "8.100000000000005": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~1.1987792458678255 ~ ~-7.909673085512231"
+        ],
+        "8.250000000000005": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~7.671325787314452 ~ ~-2.2695287318922186"
+        ],
+        "8.400000000000006": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~5.309251468975677 ~ ~5.984300196278561"
+        ],
+        "8.550000000000006": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~-3.167179751689261 ~ ~7.346357765620291"
+        ],
+        "8.700000000000006": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~-7.996153795234451 ~ ~0.24804129284794735"
+        ],
+        "8.850000000000007": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~-3.61642140706376 ~ ~-7.135929946862635"
+        ],
+        "9.000000000000007": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~4.9281337101133085 ~ ~-6.301864655421031"
+        ],
+        "9.150000000000007": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~7.79724313742347 ~ ~1.7896925590454358"
+        ],
+        "9.300000000000008": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~1.6867199978816907 ~ ~7.820164681689637"
+        ],
+        "9.450000000000008": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~-6.366300708709636 ~ ~4.844606824736471"
+        ],
+        "9.600000000000009": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~-7.087622227940238 ~ ~-3.7102036539801233"
+        ],
+        "9.750000000000009": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~0.35345958665498556 ~ ~-7.992187830663246"
+        ],
+        "9.90000000000001": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~7.387482501142352 ~ ~-3.070032946943003"
+        ],
+        "10.05000000000001": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~5.913770401453012 ~ ~5.387700774810929"
+        ],
+        "10.20000000000001": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~-2.370487984127847 ~ ~7.640732079919142"
+        ],
+        "10.35000000000001": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~-7.92479288147627 ~ ~1.0943755231651704"
+        ],
+        "10.50000000000001": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~-4.352573571503961 ~ ~-6.712309833778924"
+        ],
+        "10.650000000000011": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~4.2322522076326745 ~ ~-6.788817367626585"
+        ],
+        "10.800000000000011": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~7.943038651970845 ~ ~0.952962209794905"
+        ],
+        "10.950000000000012": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~2.506288293632109 ~ ~7.597270495987533"
+        ],
+        "11.100000000000012": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~-5.816808890984436 ~ ~5.4922431051223874"
+        ],
+        "11.250000000000012": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~-7.441024736125702 ~ ~-2.937882039218972"
+        ],
+        "11.400000000000013": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~-0.49584408129524354 ~ ~-7.98461887926058"
+        ],
+        "11.550000000000013": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~7.020371435730219 ~ ~-3.835933381119024"
+        ],
+        "11.700000000000014": [
+          "/execute @s[tag=gjb] ~ ~ ~ execute @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=64,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec] ~ ~ ~ summon wb:cannon_ancient_stone ~6.451632454785348 ~ ~4.730374051632744"
+        ]
+      },
+      "animation_length": 12,
+      "loop": true
+    }
+  }
+}

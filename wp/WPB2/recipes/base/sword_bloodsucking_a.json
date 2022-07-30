@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "wb:sword_bloodsucking_a"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "#",
+      "#",
+      "X"
+    ],
+    "key": {
+      "#": {
+        "item": "wb:mineral_energy_boundary"
+      },
+      "X": {
+        "item": "minecraft:stick"
+      }
+    },
+    "result": {
+      "item": "wb:sword_bloodsucking_a"
+    }
+  }
+}

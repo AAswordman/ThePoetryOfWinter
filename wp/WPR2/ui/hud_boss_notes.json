@@ -1,0 +1,1164 @@
+{
+  "namespace": "hud_boss_notes",
+  "topic_category": {
+    "type": "panel",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "size": [
+      "16px",
+      "100%"
+    ],
+    "controls": [
+      {
+        "category_text": {
+          "type": "label",
+          "anchor_from": "bottom_left",
+          "anchor_to": "bottom_left",
+          "size": [
+            "default",
+            "default"
+          ],
+          "max_size": [
+            "100%",
+            "100% - 4px"
+          ],
+          "offset": [
+            "0px",
+            "-3px"
+          ],
+          "text": "('hud_boss_notes.category.' + $category)",
+          "color": "$main_header_text_color"
+        }
+      }
+    ]
+  },
+  "toggle_button_control": {
+    "type": "panel",
+    "controls": [
+      {
+        "tab_button_text": {
+          "type": "label",
+          "anchor_from": "left_middle",
+          "anchor_to": "left_middle",
+          "size": [
+            "default",
+            "100%-10px"
+          ],
+          "max_size": [
+            "100% - 14px",
+            "100% - 4px"
+          ],
+          "offset": [10,0],
+          "text": " ",
+          "color": "$text_color",
+          "alpha": "$content_alpha"
+        }
+      }
+    ]
+  },
+  "section_toggle_button": {
+    "type": "panel",
+    "anchor_from": "left_middle",
+    "anchor_to": "left_middle",
+    "$boss_icon|default": "",
+    "size": [
+      "24px",
+      "100%"
+    ],
+    "controls": [
+      {
+        "section_toggle_button@common_toggles.light_ui_toggle": {
+          "anchor_from": "left_middle",
+          "anchor_to": "left_middle",
+          "size": [
+            "22px",
+            "22px"
+          ],
+          "$button_type_panel": "hud_boss_notes.toggle_button_control",
+          "$checked_control": "common_toggles.toggle_unchecked",
+          "$radio_toggle_group": true,
+          "$toggle_name": "navigation_tab",
+          "$toggle_group_default_selected": "$default_selector_toggle_index",
+          "$toggle_tab_focus_binding_type": "global",
+          "$toggle_tab_focus_binding_name": "#navigation_tab_focus_precedence",
+          "$toggle_on_hover_binding_type": "global",
+          "$toggle_on_hover_binding_name": "#toggle_on_hover",
+          "$toggle_view_binding_name": "($section_topic + '_button_toggle')",
+          "$toggle_property_bag": {
+            "#panel_title": "('hud_boss_notes.' + $section_topic)"
+          }
+        }
+      },
+      {
+        "icon": {
+          "type": "image",
+          "anchor_from": "left_middle",
+          "anchor_to": "left_middle",
+          "size": [
+            "22px",
+            "22px"
+          ],
+          "layer": 199,
+          "texture": "$boss_icon"
+        }
+      }
+    ]
+  },
+  "left_next_arrow": {
+    "type": "panel",
+    "anchor_from": "left_middle",
+    "anchor_to": "left_middle",
+    "size": [
+      "30px",
+      "100%"
+    ],
+    "controls": [
+      {
+        "arrow": {
+          "type": "image",
+          "anchor_from": "left_middle",
+          "layer": 103,
+          "anchor_to": "left_middle",
+          "texture": "textures/ui/arrow_right",
+          "size": [15,22],
+          "offset": [0,0]
+        }
+      }
+    ]
+  },
+  "item_show": {
+    "type": "panel",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "layer": 104,
+    "size": [
+      "24px",
+      "24px"
+    ],
+    "controls": [
+      {
+        "backimg": {
+          "type": "image",
+          "texture": "textures/wb_ui/dialog_bubble",
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "layer": 105,
+          "size": [24,24]
+        }
+      },
+      {
+        "item": {
+          "type": "image",
+          "anchor_from": "center",
+          "layer": 106,
+          "anchor_to": "center",
+          "texture": "$item_icon_path",
+          "size": [20,20],
+          "offset": [0,0]
+        }
+      }
+    ]
+  },
+  "left_next_boss": {
+    "type": "image",
+    "anchor_from": "top_middle",
+    "layer": 103,
+    "anchor_to": "top_middle",
+    "texture": "textures/ui/dialog_background_opaque",
+    "size": [22,22],
+    "offset": [39,8]
+  },
+  "bottom_process": {
+    "type": "panel",
+    "size": [
+      280,
+      "100%c"
+    ],
+    "offset": [0,-6],
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "controls": [
+      {
+        "boss_layer": {
+          "type": "stack_panel",
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "$default_selector_toggle_index": 0,
+          "layer": 102,
+          "size": [
+            264,
+            "100%c"
+          ],
+          "controls": [
+            {
+              "boss_list": {
+                "type": "stack_panel",
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "orientation": "horizontal",
+                "layer": 103,
+                "size": [264,28],
+                "controls": [
+                  {
+                    "padding0": {
+                      "type": "panel",
+                      "size": [15,1]
+                    }
+                  },
+                  {
+                    "boss1@section_toggle_button": {
+                      "$section_topic": "help0",
+                      "$boss_icon": "textures/items/natura_essence",
+                      "$toggle_group_forced_index": 0
+                    }
+                  },
+                  {
+                    "a1@left_next_arrow": {}
+                  },
+                  {
+                    "boss2@section_toggle_button": {
+                      "$section_topic": "help1",
+                      "$boss_icon": "textures/items/mysterious_invitation",
+                      "$toggle_group_forced_index": 1
+                    }
+                  },
+                  {
+                    "a2@left_next_arrow": {}
+                  },
+                  {
+                    "boss3@section_toggle_button": {
+                      "$section_topic": "help2",
+                      "$boss_icon": "textures/items/dark_stone",
+                      "$toggle_group_forced_index": 2
+                    }
+                  },
+                  {
+                    "a3@left_next_arrow": {}
+                  },
+                  {
+                    "boss4@section_toggle_button": {
+                      "$boss_icon": "textures/items/bat_bait",
+                      "$section_topic": "help3",
+                      "$toggle_group_forced_index": 3
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "boss_list2": {
+                "type": "stack_panel",
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "orientation": "horizontal",
+                "layer": 103,
+                "size": [264,28],
+                "controls": [
+                  {
+                    "padding0": {
+                      "type": "panel",
+                      "size": [15,1]
+                    }
+                  },
+                  {
+                    "boss5@section_toggle_button": {
+                      "$section_topic": "help4",
+                      "$boss_icon": "textures/items/dark_pearl",
+                      "$toggle_group_forced_index": 4
+                    }
+                  },
+                  {
+                    "a1@left_next_arrow": {}
+                  },
+                  {
+                    "boss6@section_toggle_button": {
+                      "$boss_icon": "textures/items/frozen_power",
+                      "$section_topic": "help5",
+                      "$toggle_group_forced_index": 5
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "boss_list1": {
+                "type": "stack_panel",
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "orientation": "horizontal",
+                "layer": 103,
+                "size": [264,28],
+                "controls": [
+                  {
+                    "padding0": {
+                      "type": "panel",
+                      "size": [15,1]
+                    }
+                  },
+                  {
+                    "boss1@section_toggle_button": {
+                      "$section_topic": "help6",
+                      "$boss_icon": "textures/items/entity_soul",
+                      "$toggle_group_forced_index": 6
+                    }
+                  },
+                  {
+                    "a1@left_next_arrow": {}
+                  },
+                  {
+                    "boss2@section_toggle_button": {
+                      "$section_topic": "help7",
+                      "$boss_icon": "textures/items/book_of_deep",
+                      "$toggle_group_forced_index": 7
+                    }
+                  },
+                  {
+                    "a2@left_next_arrow": {}
+                  },
+                  {
+                    "boss3@section_toggle_button": {
+                      "$section_topic": "help8",
+                      "$boss_icon": "textures/items/challenge_of_ash",
+                      "$toggle_group_forced_index": 8
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "boss_list3": {
+                "type": "stack_panel",
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "orientation": "horizontal",
+                "layer": 103,
+                "size": [264,28],
+                "controls": [
+                  {
+                    "padding0": {
+                      "type": "panel",
+                      "size": [15,1]
+                    }
+                  },
+                  {
+                    "boss1@section_toggle_button": {
+                      "$section_topic": "help9",
+                      "$boss_icon": "textures/items/dragons_breath",
+                      "$toggle_group_forced_index": 9
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "boss_list4": {
+                "type": "stack_panel",
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "orientation": "horizontal",
+                "layer": 103,
+                "size": [264,28],
+                "controls": [
+                  {
+                    "padding0": {
+                      "type": "panel",
+                      "size": [15,1]
+                    }
+                  },
+                  {
+                    "boss1@section_toggle_button": {
+                      "$section_topic": "help10",
+                      "$boss_icon": "textures/wb_ui/boss10_icon",
+                      "$toggle_group_forced_index": 10
+                    }
+                  },
+                  {
+                    "a1@left_next_arrow": {}
+                  },
+                  {
+                    "boss2@section_toggle_button": {
+                      "$section_topic": "help11",
+                      "$boss_icon": "textures/wb_ui/boss11_icon",
+                      "$toggle_group_forced_index": 11
+                    }
+                  },
+                  {
+                    "a2@left_next_arrow": {}
+                  },
+                  {
+                    "boss3@section_toggle_button": {
+                      "$section_topic": "help12",
+                      "$boss_icon": "textures/wb_ui/boss12_icon",
+                      "$toggle_group_forced_index": 12
+                    }
+                  },
+                  {
+                    "a3@left_next_arrow": {}
+                  },
+                  {
+                    "boss4@section_toggle_button": {
+                      "$boss_icon": "textures/wb_item/5_x/sword_intentions",
+                      "$section_topic": "help14",
+                      "$toggle_group_forced_index": 14
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "message_common": {
+    "type": "stack_panel",
+    "anchor_from": "top_left",
+    "size": [
+      264,
+      "100%c"
+    ],
+    "anchor_to": "top_left",
+    "$loot_tabel_item_a|default": "textures/ui/none",
+    "$loot_tabel_item_b|default": "textures/ui/none",
+    "$loot_tabel_item_c|default": "textures/ui/none",
+    "$loot_tabel_item_d|default": "textures/ui/none",
+    "$loot_tabel_item_e|default": "textures/ui/none",
+    "$loot_tabel_item_f|default": "textures/ui/none",
+    "$loot_tabel_item_g|default": "textures/ui/none",
+    "$loot_tabel_item_h|default": "textures/ui/none",
+    "$loot_tabel_item_i|default": "textures/ui/none",
+    "$loot_tabel_item_j|default": "textures/ui/none",
+    "$loot_tabel_item_k|default": "textures/ui/none",
+    "$loot_tabel_item_l|default": "textures/ui/none",
+    "$loot_tabel_item_m|default": "textures/ui/none",
+    "$loot_tabel_item_n|default": "textures/ui/none",
+    "$loot_tabel_item_o|default": "textures/ui/none",
+    "$loot_tabel_item_p|default": "textures/ui/none",
+    "$loot_tabel_item_q|default": "textures/ui/none",
+    "$loot_tabel_item_r|default": "textures/ui/none",
+    "$loot_tabel_item_s|default": "textures/ui/none",
+    "$loot_tabel_item_t|default": "textures/ui/none",
+    "$loot_tabel_item_u|default": "textures/ui/none",
+    "$boss_info|default": "血量:0",
+    "controls": [
+      {
+        "padding0": {
+          "type": "panel",
+          "size": [1,10]
+        }
+      },
+      {
+        "header_1@how_to_play_common.header": {
+          "$text": "$boss_name",
+          "size": [
+            "100%",
+            "100%c"
+          ]
+        }
+      },
+      {
+        "main_message": {
+          "type": "stack_panel",
+          "anchor_from": "top_middle",
+          "orientation": "horizontal",
+          "anchor_to": "top_middle",
+          "layer": 102,
+          "size": [
+            264,
+            "100%c"
+          ],
+          "controls": [
+            {
+              "paddingx": {
+                "type": "panel",
+                "size": [
+                  90,
+                  "80px"
+                ],
+                "anchor_from": "center",
+                "anchor_to": "center",
+                "controls": [
+                  {
+                    "backimg": {
+                      "type": "image",
+                      "texture": "$boss_threed_img",
+                      "anchor_from": "center",
+                      "anchor_to": "center",
+                      "layer": 105,
+                      "size": [70,70]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "right_list": {
+                "type": "stack_panel",
+                "anchor_from": "top_left",
+                "size": [
+                  "100%-40px",
+                  "100%c"
+                ],
+                "anchor_to": "top_left",
+                "controls": [
+                  {
+                    "summon_item": {
+                      "type": "label",
+                      "anchor_from": "top_left",
+                      "anchor_to": "top_left",
+                      "size": [
+                        "default",
+                        "default"
+                      ],
+                      "offset": [
+                        "10px",
+                        "10px"
+                      ],
+                      "text": "召唤物:",
+                      "color": [0,0,0]
+                    }
+                  },
+                  {
+                    "des": {
+                      "type": "stack_panel",
+                      "anchor_from": "top_left",
+                      "orientation": "horizontal",
+                      "anchor_to": "top_left",
+                      "layer": 102,
+                      "size": [
+                        "100%",
+                        "24px"
+                      ],
+                      "controls": [
+                        {
+                          "summon_item_show@item_show": {
+                            "$item_icon_path": "$item_icon"
+                          }
+                        },
+                        {
+                          "padding0": {
+                            "type": "panel",
+                            "size": [15,1]
+                          }
+                        },
+                        {
+                          "des_boss": {
+                            "type": "image",
+                            "size": [
+                              "100px",
+                              "24px"
+                            ],
+                            "texture": "textures/wb_ui/dialog_bubble",
+                            "controls": [
+                              {
+                                "player_position_text": {
+                                  "type": "label",
+                                  "anchor_from": "top_left",
+                                  "anchor_to": "top_left",
+                                  "offset": [6,2],
+                                  "layer": 104,
+                                  "enable_profanity_filter": false,
+                                  "color": [1,1,1],
+                                  "text": "$boss_info"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "padding0": {
+                      "type": "panel",
+                      "size": [1,5]
+                    }
+                  },
+                  {
+                    "loot_tabel_item": {
+                      "type": "label",
+                      "anchor_from": "top_left",
+                      "anchor_to": "top_left",
+                      "size": [
+                        "default",
+                        "default"
+                      ],
+                      "offset": [
+                        "10px",
+                        "10px"
+                      ],
+                      "text": "掉落物:",
+                      "color": [0,0,0]
+                    }
+                  },
+                  {
+                    "loot_tabel_item_array": {
+                      "type": "stack_panel",
+                      "anchor_from": "top_left",
+                      "orientation": "horizontal",
+                      "anchor_to": "top_left",
+                      "layer": 102,
+                      "size": [168,24],
+                      "controls": [
+                        {
+                          "loot_tabel_item_show0@item_show": {
+                            "$item_icon_path": "$loot_tabel_item_a"
+                          }
+                        },
+                        {
+                          "loot_tabel_item_show1@item_show": {
+                            "$item_icon_path": "$loot_tabel_item_b"
+                          }
+                        },
+                        {
+                          "loot_tabel_item_show2@item_show": {
+                            "$item_icon_path": "$loot_tabel_item_c"
+                          }
+                        },
+                        {
+                          "loot_tabel_item_show3@item_show": {
+                            "$item_icon_path": "$loot_tabel_item_d"
+                          }
+                        },
+                        {
+                          "loot_tabel_item_show4@item_show": {
+                            "$item_icon_path": "$loot_tabel_item_e"
+                          }
+                        },
+                        {
+                          "loot_tabel_item_show5@item_show": {
+                            "$item_icon_path": "$loot_tabel_item_f"
+                          }
+                        },
+                        {
+                          "loot_tabel_item_show6@item_show": {
+                            "$item_icon_path": "$loot_tabel_item_g"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "loot_tabel_item_array2": {
+                      "type": "stack_panel",
+                      "anchor_from": "top_left",
+                      "orientation": "horizontal",
+                      "anchor_to": "top_left",
+                      "layer": 102,
+                      "size": [168,24],
+                      "controls": [
+                        {
+                          "loot_tabel_item_show7@item_show": {
+                            "$item_icon_path": "$loot_tabel_item_h"
+                          }
+                        },
+                        {
+                          "loot_tabel_item_show8@item_show": {
+                            "$item_icon_path": "$loot_tabel_item_i"
+                          }
+                        },
+                        {
+                          "loot_tabel_item_show9@item_show": {
+                            "$item_icon_path": "$loot_tabel_item_j"
+                          }
+                        },
+                        {
+                          "loot_tabel_item_show10@item_show": {
+                            "$item_icon_path": "$loot_tabel_item_k"
+                          }
+                        },
+                        {
+                          "loot_tabel_item_show11@item_show": {
+                            "$item_icon_path": "$loot_tabel_item_l"
+                          }
+                        },
+                        {
+                          "loot_tabel_item_show12@item_show": {
+                            "$item_icon_path": "$loot_tabel_item_m"
+                          }
+                        },
+                        {
+                          "loot_tabel_item_show13@item_show": {
+                            "$item_icon_path": "$loot_tabel_item_n"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "loot_tabel_item_array3": {
+                      "type": "stack_panel",
+                      "anchor_from": "top_left",
+                      "orientation": "horizontal",
+                      "anchor_to": "top_left",
+                      "layer": 102,
+                      "size": [168,24],
+                      "controls": [
+                        {
+                          "loot_tabel_item_show7@item_show": {
+                            "$item_icon_path": "$loot_tabel_item_o"
+                          }
+                        },
+                        {
+                          "loot_tabel_item_show8@item_show": {
+                            "$item_icon_path": "$loot_tabel_item_p"
+                          }
+                        },
+                        {
+                          "loot_tabel_item_show9@item_show": {
+                            "$item_icon_path": "$loot_tabel_item_q"
+                          }
+                        },
+                        {
+                          "loot_tabel_item_show10@item_show": {
+                            "$item_icon_path": "$loot_tabel_item_r"
+                          }
+                        },
+                        {
+                          "loot_tabel_item_show11@item_show": {
+                            "$item_icon_path": "$loot_tabel_item_s"
+                          }
+                        },
+                        {
+                          "loot_tabel_item_show12@item_show": {
+                            "$item_icon_path": "$loot_tabel_item_t"
+                          }
+                        },
+                        {
+                          "loot_tabel_item_show13@item_show": {
+                            "$item_icon_path": "$loot_tabel_item_u"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "message": {
+    "type": "stack_panel",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "layer": 103,
+    "offset": [0,0],
+    "size": [
+      264,
+      "100%c"
+    ],
+    "controls": [
+      {
+        "message0@message_common": {
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "help0_button_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ],
+          "$boss_name": "绿叶精华",
+          "$item_icon": "textures/items/natura_essence",
+          "$boss_threed_img": "textures/wb_ui/boss0",
+          "$loot_tabel_item_a": "textures/items/poison_dart",
+          "$loot_tabel_item_b": "textures/items/leaves_dagger",
+          "$loot_tabel_item_d": "textures/items/leaves_knife",
+          "$loot_tabel_item_c": "textures/items/emerald_nugget",
+          "$loot_tabel_item_e": "textures/items/natura_spear",
+          "$boss_info": "难度:傻瓜难度\n主题地形:森林",
+          "anchor_from": "top_left",
+          "anchor_to": "top_left"
+        }
+      },
+      {
+        "message1@message_common": {
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "help1_button_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ],
+          "$boss_info": "难度:简单\n主题地形:平原",
+          "$boss_name": "boss.dec:king_of_pillager.name",
+          "$item_icon": "textures/items/mysterious_invitation",
+          "$boss_threed_img": "textures/wb_ui/boss1",
+          "$loot_tabel_item_a": "textures/items/iron_ingot",
+          "$loot_tabel_item_b": "textures/items/amethyst_shard",
+          "$loot_tabel_item_c": "textures/items/stream_stone",
+          "$loot_tabel_item_d": "textures/items/copper_ingot",
+          "$loot_tabel_item_e": "textures/items/gold_ingot",
+          "$loot_tabel_item_f": "textures/items/diamond",
+          "$loot_tabel_item_g": "textures/items/emerald",
+          "$loot_tabel_item_h": "textures/items/illager_sword",
+          "$loot_tabel_item_i": "textures/items/scimitar",
+          "$loot_tabel_item_j": "textures/items/the_blade",
+          "anchor_from": "top_left",
+          "anchor_to": "top_left"
+        }
+      },
+      {
+        "message2@message_common": {
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "help2_button_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ],
+          "$boss_info": "难度:简单\n主题地形:海洋",
+          "$boss_name": "boss.dec:abyssal_controller.name",
+          "$item_icon": "textures/items/dark_stone",
+          "$boss_threed_img": "textures/wb_ui/boss2",
+          "$loot_tabel_item_a": "textures/items/prismarine_shard",
+          "$loot_tabel_item_b": "textures/blocks/sponge",
+          "$loot_tabel_item_c": "textures/blocks/scale_block",
+          "$loot_tabel_item_d": "textures/items/prismarine_crystals",
+          "$loot_tabel_item_e": "textures/items/wave_magic_book",
+          "$loot_tabel_item_f": "textures/items/sword_of_guard",
+          "$loot_tabel_item_g": "textures/items/storm_giant_sword",
+          "$loot_tabel_item_h": "textures/items/decrepit_atlantis",
+          "$loot_tabel_item_i": "textures/wb_item/base/mineral_senior_water",
+          "anchor_from": "top_left",
+          "anchor_to": "top_left"
+        }
+      },
+      {
+        "message3@message_common": {
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "help3_button_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ],
+          "$boss_info": "难度:简单\n主题地形:恶地",
+          "$boss_name": "boss.dec:predators.name",
+          "$item_icon": "textures/items/bat_bait",
+          "$boss_threed_img": "textures/wb_ui/boss3",
+          "$loot_tabel_item_a": "textures/wb_item/base/mineral_senior_boundary",
+          "$loot_tabel_item_b": "textures/items/bone",
+          "$loot_tabel_item_c": "textures/items/mutton_raw",
+          "$loot_tabel_item_d": "textures/items/beef_raw",
+          "$loot_tabel_item_e": "textures/items/bat_staff",
+          "$loot_tabel_item_f": "textures/items/gold_ingot",
+          "$loot_tabel_item_g": "textures/items/apple_golden",
+          "$loot_tabel_item_h": "textures/items/iron_apple",
+          "$loot_tabel_item_i": "textures/items/apple_golden",
+          "anchor_from": "top_left",
+          "anchor_to": "top_left"
+        }
+      },
+      {
+        "message4@message_common": {
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "help4_button_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ],
+          "$boss_info": "难度:普通\n主题地形:神秘森林",
+          "$boss_name": "boss.dec:enchant_illager.name",
+          "$item_icon": "textures/items/dark_pearl",
+          "$boss_threed_img": "textures/wb_ui/boss4",
+          "$loot_tabel_item_a": "textures/wb_item/base/mineral_senior_ink",
+          "$loot_tabel_item_b": "textures/items/wooden_enchant_book",
+          "$loot_tabel_item_c": "textures/items/iron_sword",
+          "$loot_tabel_item_d": "textures/items/iron_axe",
+          "$loot_tabel_item_e": "textures/items/iron_pickaxe",
+          "$loot_tabel_item_f": "textures/items/iron_hoe",
+          "$loot_tabel_item_g": "textures/items/iron_shovel",
+          "$loot_tabel_item_h": "textures/items/bow_standby",
+          "$loot_tabel_item_i": "textures/items/crossbow_standby",
+          "$loot_tabel_item_j": "textures/items/iron_helmet",
+          "$loot_tabel_item_k": "textures/items/iron_chestplate",
+          "$loot_tabel_item_l": "textures/items/iron_leggings",
+          "$loot_tabel_item_m": "textures/items/iron_boots",
+          "$loot_tabel_item_n": "textures/items/book_enchanted",
+          "$loot_tabel_item_o": "textures/items/magic_chest_debris",
+          "anchor_from": "top_left",
+          "anchor_to": "top_left"
+        }
+      },
+      {
+        "message5@message_common": {
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "help5_button_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ],
+          "$boss_info": "难度:普通\n召唤方式:在永冬塔用铁钥匙",
+          "$boss_name": "boss.dec:everlasting_winter_ghast.name",
+          "$item_icon": "textures/ui/none",
+          "$boss_threed_img": "textures/wb_ui/boss5",
+          "$loot_tabel_item_a": "textures/wb_item/base/mineral_senior_forget",
+          "$loot_tabel_item_b": "textures/items/snowball_magic_book",
+          "$loot_tabel_item_c": "textures/items/frozen_ball",
+          "$loot_tabel_item_d": "textures/items/grapeshot_frozen_ball",
+          "$loot_tabel_item_e": "textures/blocks/snow",
+          "$loot_tabel_item_f": "textures/items/ice_rod",
+          "$loot_tabel_item_g": "textures/items/ice_heart",
+          "$loot_tabel_item_h": "textures/items/everlasting_winter_ingot",
+          "$loot_tabel_item_i": "textures/items/frozen_power",
+          "anchor_from": "top_left",
+          "anchor_to": "top_left"
+        }
+      },
+      {
+        "message6@message_common": {
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "help6_button_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ],
+          "$boss_info": "难度:困难\n主题地形:地狱-灵魂峡谷",
+          "$boss_name": "boss.dec:entity_soul.name",
+          "$item_icon": "textures/items/entity_soul",
+          "$boss_threed_img": "textures/wb_ui/boss6",
+          "$loot_tabel_item_a": "textures/items/ghost_essence",
+          "$loot_tabel_item_b": "textures/wb_item/base/mineral_senior_seal",
+          "$loot_tabel_item_c": "textures/items/nether_star",
+          "$loot_tabel_item_d": "textures/items/ghost_ingot",
+          "$loot_tabel_item_e": "textures/items/ice_heart",
+          "anchor_from": "top_left",
+          "anchor_to": "top_left"
+        }
+      },
+      {
+        "message7@message_common": {
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "help7_button_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ],
+          "$boss_info": "难度:困难\n主题地形:地狱-绯红森林",
+          "$boss_name": "boss.dec:host_of_deep.name",
+          "$item_icon": "textures/items/book_of_deep",
+          "$boss_threed_img": "textures/wb_ui/boss7",
+          "$loot_tabel_item_a": "textures/items/sword_of_deep",
+          "$loot_tabel_item_b": "textures/items/deep_staff",
+          "$loot_tabel_item_c": "textures/items/void_whispering_dagger",
+          "$loot_tabel_item_d": "textures/items/netherite_scrap",
+          "$loot_tabel_item_e": "textures/blocks/crimson_fungus",
+          "$loot_tabel_item_f": "textures/blocks/huge_fungus/crimson_log_top",
+          "$loot_tabel_item_g": "textures/blocks/nether_wart_block",
+          "$loot_tabel_item_h": "textures/wb_item/base/mineral_senior_equipment",
+          "anchor_from": "top_left",
+          "anchor_to": "top_left"
+        }
+      },
+      {
+        "message8@message_common": {
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "help8_button_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ],
+          "$boss_info": "难度:困难\n主题地形:玄武岩三角洲",
+          "$boss_name": "boss.dec:ash_knight.name",
+          "$item_icon": "textures/items/challenge_of_ash",
+          "$boss_threed_img": "textures/wb_ui/boss8",
+          "$loot_tabel_item_a": "textures/items/dust_destroyer",
+          "$loot_tabel_item_b": "textures/items/dust_staff",
+          "$loot_tabel_item_c": "textures/items/chaos_staff",
+          "$loot_tabel_item_d": "textures/wb_item/base/mineral_senior_boundary",
+          "$loot_tabel_item_e": "textures/blocks/ash",
+          "$loot_tabel_item_f": "textures/items/nether_star",
+          "$loot_tabel_item_g": "textures/items/blaze_rod",
+          "$loot_tabel_item_h": "textures/blocks/lava_ore",
+          "anchor_from": "top_left",
+          "anchor_to": "top_left"
+        }
+      },
+      {
+        "message9@message_common": {
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "help9_button_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ],
+          "$boss_info": "难度:困难\n召唤方式:击败末影龙",
+          "$boss_name": "觉醒末影龙",
+          "$item_icon": "textures/ui/none",
+          "$boss_threed_img": "textures/wb_ui/boss9",
+          "anchor_from": "top_left",
+          "anchor_to": "top_left"
+        }
+      },
+      {
+        "message10@message_common": {
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "help10_button_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ],
+          "$boss_info": "难度:超困难\n召唤方式:剧情线",
+          "$boss_name": "魔化石块",
+          "$item_icon": "textures/ui/none",
+          "$boss_threed_img": "textures/wb_ui/boss10",
+          "anchor_from": "top_left",
+          "anchor_to": "top_left"
+        }
+      },
+      {
+        "message11@message_common": {
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "help11_button_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ],
+          "$boss_info": "难度:超困难\n召唤方式:剧情线",
+          "$boss_name": "无头守卫",
+          "$item_icon": "textures/ui/none",
+          "$boss_threed_img": "textures/wb_ui/boss11",
+          "anchor_from": "top_left",
+          "anchor_to": "top_left"
+        }
+      },
+      {
+        "message12@message_common": {
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "help12_button_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ],
+          "$boss_info": "难度:超困难\n召唤方式:剧情线",
+          "$boss_name": "远古石像",
+          "$item_icon": "textures/ui/none",
+          "$boss_threed_img": "textures/wb_ui/boss12",
+          "anchor_from": "top_left",
+          "anchor_to": "top_left"
+        }
+      },
+      {
+        "message14@message_common": {
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "help14_button_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ],
+          "$boss_info": "难度:炼狱\n召唤方式:剧情线",
+          "$boss_name": "念",
+          "$item_icon": "textures/ui/none",
+          "$boss_threed_img": "textures/wb_ui/boss14",
+          "anchor_from": "top_left",
+          "anchor_to": "top_left"
+        }
+      }
+    ]
+  },
+  "base_content": {
+    "type": "panel",
+    "layer": 90,
+    "size": [280,170],
+    "controls": [
+      {
+        "background_message": {
+          "type": "image",
+          "anchor_from": "top_middle",
+          "layer": 101,
+          "anchor_to": "top_middle",
+          "size": [280,120],
+          "texture": "textures/ui/dialog_background_opaque"
+        }
+      },
+      {
+        "background": {
+          "type": "image",
+          "anchor_from": "center",
+          "layer": 100,
+          "anchor_to": "center",
+          "size": [280,170],
+          "texture": "textures/ui/dialog_background_opaque"
+        }
+      },
+      {
+        "backimg": {
+          "type": "image",
+          "texture": "textures/wb_ui/dialog_bubble",
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "layer": 102,
+          "offset": [0,-8],
+          "size": [268,40]
+        }
+      },
+      {
+        "control_scroll2": {
+          "type": "panel",
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "size": [264,110],
+          "offset": [0,4],
+          "controls": [
+            {
+              "scrolling_panel@common.scrolling_panel": {
+                "$scrolling_content": "hud_boss_notes.message",
+                "$show_background": false,
+                "$scroll_size": [264,110],
+                "layer": 103,
+                "$scroll_bar_left_padding_size": [0,0]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "control_scroll": {
+          "type": "panel",
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "size": [280,33],
+          "offset": [0,-11],
+          "controls": [
+            {
+              "scrolling_panel@common.scrolling_panel": {
+                "$scrolling_content": "hud_boss_notes.bottom_process",
+                "$show_background": false,
+                "$scroll_size": [280,33],
+                "layer": 103,
+                "$scroll_bar_left_padding_size": [0,0]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

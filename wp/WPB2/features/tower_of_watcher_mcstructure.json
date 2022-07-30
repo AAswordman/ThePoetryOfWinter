@@ -1,0 +1,14 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "dec:tower_of_watcher_mcstructure"
+		},
+		"structure_name": "mystructure:tower_of_watcher_su",
+		"adjustment_radius": 6,
+		"facing_direction": "random",
+		"constraints": {
+			"grounded": {}
+		}
+	}
+}

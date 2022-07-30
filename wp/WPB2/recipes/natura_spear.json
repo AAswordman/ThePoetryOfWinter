@@ -1,0 +1,31 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:natura_spear"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "BAX",
+      "AXA",
+      "#AB"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:emerald"
+      },
+      "A": {
+        "item": "minecraft:vine"
+      },
+      "X": {
+        "item": "minecraft:log"
+      },
+      "B": {
+        "item": "dec:eye_of_nature"
+      }
+    },
+    "result": {
+      "item": "dec:natura_spear"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:everlasting_winter_ghast_1",
+      "materials": { "default": "ghast" },
+      "textures": {
+        "default": "textures/entity/ghast/everlasting_winter_ghast_1",
+        "shooting": "textures/entity/ghast/everlasting_winter_ghast_1_shooting"
+      },
+      "geometry": {
+        "default": "geometry.ghast"
+      },
+      "scripts": {
+        "scale": "1.25"
+      },
+      "animations": {
+        "move": "animation.ghast.move",
+        "scale": "animation.ghast.scale"
+      },
+      "animation_controllers": [
+        { "move": "controller.animation.ghast.move" },
+        { "scale": "controller.animation.ghast.scale" }
+      ],
+      "render_controllers": [ "controller.render.ghast" ]
+    }
+  }
+}

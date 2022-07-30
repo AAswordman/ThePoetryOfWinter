@@ -1,0 +1,25 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:energy_ball",
+      "textures": {
+        "default": "textures/entity/energy_ball"
+      },
+      "geometry": {
+        "default": "geometry.energy_ball_v1"
+      },
+      "scripts": {
+        "scale": "0.1",
+        "animate": [
+          "fly"
+        ]
+      },
+      "animations": {
+        "fly": "animation.energy_ball.fly"
+      },
+      "render_controllers": [ "controller.render.spots" ],
+      "materials": { "default": "husk" }
+      }
+   }
+}

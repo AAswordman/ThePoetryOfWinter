@@ -1,0 +1,13 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "wb:energy_core_a",
+      "category": "Nature"
+    },
+    "components": {
+      "minecraft:icon": "energy_core_a",
+      "minecraft:hover_text_color": "light_purple"
+    }
+  }
+}

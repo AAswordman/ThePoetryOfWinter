@@ -1,0 +1,45 @@
+{
+  "format_version": "1.15.0",
+  "minecraft:biome": {
+    "description": {
+      "identifier": "desolation_forest"
+    },
+    "components": {
+      "minecraft:climate": {
+        "downfall": 0.6,
+        "snow_accumulation": [0,0.125],
+        "temperature": 0.75
+      },
+      "minecraft:overworld_height": {
+        "noise_type": "default"
+      },
+      "minecraft:surface_parameters": {
+        "sea_floor_depth": 7,
+        "sea_floor_material": "minecraft:gravel",
+        "foundation_material": "minecraft:stone",
+        "mid_material": "minecraft:dirt",
+        "top_material": "minecraft:mossy_cobblestone",
+        "sea_material": "minecraft:water"
+      },
+      "minecraft:overworld_generation_rules": {
+        "hills_transformation": "desolation_forest_hills",
+        "mutate_transformation": "desolation_forest_mutated",
+        "generate_for_climates": [
+          [
+            "medium",
+            1
+          ],
+          [
+            "cold",
+            1
+          ]
+        ]
+      },
+      "animal": {},
+      "desolation_forest": {},
+      "forest": {},
+      "monster": {},
+      "overworld": {}
+    }
+  }
+}

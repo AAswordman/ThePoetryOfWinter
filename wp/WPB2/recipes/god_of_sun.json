@@ -1,0 +1,31 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:god_of_sun"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " BX",
+      " AB",
+      "#  "
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:gold_block"
+      },
+      "#": {
+        "item": "minecraft:blaze_rod"
+      },
+      "X": {
+        "item": "minecraft:magma_cream"
+      },
+      "B": {
+        "item": "dec:lava_ingot"
+      }
+    },
+    "result": {
+      "item": "dec:god_of_sun"
+    }
+  }
+}

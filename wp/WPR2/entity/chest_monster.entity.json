@@ -1,0 +1,26 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:chest_monster",
+      "materials": { "default": "zombie" },
+      "textures": { "default": "textures/entity/chest_monster" },
+      "geometry": { "default": "geometry.chester" },
+      "animations": {
+        "walk": "animation.chester.move"
+      },
+      "scripts": {
+        "scale": "1.8",
+        "animate": [
+          {"walk" : "query.modified_move_speed"}
+        ]
+      },
+      "render_controllers": [ "controller.render.zombie" ],
+      "enable_attachables": false,
+      "spawn_egg": {
+        "base_color": "#7F541C",
+        "overlay_color": "#1E1B15"
+      }
+    }
+  }
+}

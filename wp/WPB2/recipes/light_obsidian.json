@@ -1,0 +1,26 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:light_obsidian"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " # ",
+      "#X#",
+      " # "
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:obsidian"
+      },
+      "X": {
+        "item": "minecraft:slime_ball"
+      }
+    },
+    "result": {
+      "item": "dec:light_obsidian",
+      "count": 6
+    }
+  }
+}

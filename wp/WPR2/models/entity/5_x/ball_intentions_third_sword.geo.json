@@ -1,0 +1,19 @@
+{
+	"geometry.ball_intentions_third_sword": {
+	"texturewidth": 64,
+	"textureheight": 64,
+	"bones": [
+	{
+	  "name": "xa",
+	  "pivot": [ 0.0, 0.0, 0.0 ],
+	  "cubes": [
+	   {
+	    "origin": [ -4, -5000, -4],
+	    "size": [ 8, 5002, 8],
+	    "uv": [ 0,0 ]
+	   }
+	   ]
+	 	 }
+	 	 ]
+	}
+}

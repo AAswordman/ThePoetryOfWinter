@@ -1,0 +1,46 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.gravestone",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 3,
+				"visible_bounds_offset": [0, 1.5, 0]
+			},
+			"bones": [
+				{
+					"name": "base",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-12, -1, -12], "size": [24, 4, 24], "inflate": -1, "uv": [0, 0]},
+						{"origin": [-11, 1, -11], "size": [22, 4, 22], "inflate": -1, "uv": [0, 28]}
+					]
+				},
+				{
+					"name": "rod",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "stand",
+					"parent": "rod",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-5, 3, -3], "size": [10, 34, 6], "inflate": -1, "uv": [58, 60]}
+					]
+				},
+				{
+					"name": "cross",
+					"parent": "rod",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-13, 22, -3.04], "size": [26, 6, 6], "inflate": -1, "uv": [0, 54]},
+						{"origin": [-13, 16.5, -3.5], "size": [26, 12, 7], "inflate": -1, "uv": [45, 29]}
+					]
+				}
+			]
+		}
+	]
+}

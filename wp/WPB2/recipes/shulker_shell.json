@@ -1,0 +1,22 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:shulker_shell"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XX",
+      "XX"
+    ],
+    "key": {
+      "X": {
+        "item": "dec:ender_substance"
+      }
+    },
+    "result": {
+      "item": "minecraft:shulker_shell",
+      "count": 1
+    }
+  }
+}

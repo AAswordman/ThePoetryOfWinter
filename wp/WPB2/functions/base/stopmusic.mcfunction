@@ -1,0 +1,1 @@
+stopsound @a[r=128] music.wb.anger_of_ancient

@@ -1,0 +1,80 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "wb:originking",
+      "materials": { "default": "skeleton",
+      "summona":"wbarmor",
+      "summonbase":"spider",
+      "summonb":"spider_invisible",
+      "sword":"wbarmor",
+      "ex":"wbarmor",
+      "field":"wbarmor"
+      },
+      "textures": {
+        "default": "textures/wb/end/originking",
+        "summonb": "textures/wb/end/originking_summon",
+        "summona":"textures/wb/3_x/ball_staff",
+        "sword":"textures/wb/3_x/ball_staff",
+        "ex":"textures/wb/end/originking_exbroke",
+        "fieldlight":"textures/wb/end/fieldlight",
+        "fieldsoil":"textures/wb/end/fieldsoil",
+        "fieldfire":"textures/wb/end/fieldfire",
+        "fieldice":"textures/wb/end/fieldice",
+        "fielddrak":"textures/wb/end/fielddrak",
+        "fieldcolor":"textures/wb/end/fieldcolor"
+      },
+      "geometry": {
+        "default": "geometry.originking",
+        "summona": "geometry.originking.summona",
+        "summonb": "geometry.originking.summonb",
+        "sword": "geometry.originking.sword",
+        "ex": "geometry.originking_ex",
+        "field":"geometry.block_ballxb",
+        "exsword":"geometry.originking.ex.sword"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
+          "variable.tcos1 = -variable.tcos0;",
+          "variable.origin_random_element = 0;",
+          "variable.origin_random_log = 0;",
+          "variable.origin_field_scale = 0;"
+        ]
+      },
+      "animations": {
+        "look_at_target_default": "animation.humanoid.look_at_target.default.v1.0",
+        "look_at_target_gliding": "animation.humanoid.look_at_target.gliding.v1.0",
+        "look_at_target_swimming": "animation.humanoid.look_at_target.swimming.v1.0",
+        "move": "animation.humanoid.move.v1.0",
+        "base": "animation.originking.base",
+        "baby": "animation.originking.ex",
+        "exattack": "animation.originking.ex.attack",
+        "exbroke": "animation.originking.ex.broke",
+        "ly":"animation.originking.ex.ly",
+        "end":"animation.originking.end.reset"
+      },
+      "animation_controllers": [
+        { "look_at_target": "controller.animation.humanoid.look_at_target" },
+        { "move": "controller.animation.humanoid.move" },
+        { "base": "controller.animation.base.base" },
+        { "baby": "controller.animation.base.baby" },
+        { "attack": "controller.animation.originking.attack" },
+        { "ly": "controller.animation.originking.lyx" }
+      ],
+      "render_controllers": [ 
+      	"controller.render.base",
+      	"controller.render.originking.summonb",
+      	"controller.render.originking.summona",
+      	"controller.render.originking.sword",
+      	"controller.render.originking.ex",
+      	"controller.render.originking.field",
+      	"controller.render.originking.exsword"
+      ],
+      "spawn_egg": {
+        "texture": "originking",
+        "texture_index": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "biomes": {
+    "mystical_forest": {
+      "water_surface_color": "#86B6CC7F",
+      "water_fog_color": "#86B6CC",
+      "water_surface_transparency": 1,
+      "water_fog_distance": 50
+    },
+    "the_deep": {
+      "water_surface_color": "#4E68CE",
+      "water_fog_color": "#v",
+      "water_surface_transparency": 1,
+      "water_fog_distance": 50
+    },
+    "default": {
+      "water_surface_color": "#44AFF5",
+      "water_surface_transparency": 0.65,
+      "water_fog_color": "#44AFF5",
+      "water_fog_distance": 15,
+      "fog_color": "#ABD2FF"
+    },
+    "magic_forest": {
+      "water_surface_color": "#DA70D6",
+      "water_fog_color": "#DA70D6",
+      "fog_color": "#DA70D6"
+    },
+    "desolation_forest": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5",
+      "fog_color": "#ABD2FF"
+    },
+    "desert_hard": {
+      "water_surface_color": "#FFD700",
+      "water_fog_color": "#FFD700",
+      "fog_color": "#FFD700"
+    },
+    "shallow_cava_natural": {
+      "water_surface_color": "#44AFF5",
+      "water_fog_color": "#44AFF5",
+      "fog_color": "#191950"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.summon_lightning_bolt": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "/summon lightning_bolt ~~~",
+            "/tp ~ -400 ~",
+            "/kill @s"
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "/summon lightning_bolt ~~~",
+            "/tp ~ -400 ~",
+            "/kill @s"
+          ]
+        }
+      }
+    }
+  }
+}

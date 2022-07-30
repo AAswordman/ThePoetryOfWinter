@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:lapis_magic_book"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "###",
+      "#X#",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "dec:magic_powder"
+      },
+      "X": {
+        "item": "dec:unknow_book"
+      }
+    },
+    "result": {
+      "item": "dec:lapis_magic_book"
+    }
+  }
+}

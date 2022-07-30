@@ -1,0 +1,300 @@
+{
+	"format_version": "1.8.0",
+	"animation_controllers": {
+		"controller.animation.wb_kailuo": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"plot20": "query.variant == 20"
+						},
+						{
+							"plot18": "query.variant == 18"
+						},
+						{
+							"plot16": "query.variant == 16"
+						},
+						{
+							"plot14": "query.variant == 14"
+						},
+						{
+							"plot12": "query.variant == 12"
+						},
+						{
+							"plot10": "query.variant == 10"
+						},
+						{
+							"plot8": "query.variant == 8"
+						},
+						{
+							"plot6": "query.variant == 6"
+						},
+						{
+							"plot4": "query.variant == 4"
+						},
+						{
+							"plot2": "query.variant == 2"
+						},
+						{
+							"oo": "query.variant == 1000"
+						},
+						{
+							"plot1": "query.variant == 1"
+						},
+						{
+							"plot3": "query.variant == 3"
+						},
+						{
+							"plot5": "query.variant == 5"
+						},
+						{
+							"plot7": "query.variant == 7"
+						},
+						{
+							"plot9": "query.variant == 9"
+						},
+						{
+							"plot11": "query.variant == 11"
+						},
+						{
+							"plot13": "query.variant == 13"
+						},
+						{
+							"plot15": "query.variant == 15"
+						},
+						{
+							"plot17": "query.variant == 17"
+						},
+						{
+							"plot19": "query.variant == 19"
+						},
+						{
+							"plot21": "query.variant == 21"
+						}
+					]
+				},
+				"oo": {
+					"transitions": [
+						{
+							"default": "!query.variant != 1000"
+						}
+					]
+				},
+				"plot1": {
+					"transitions": [
+						{
+							"default": "query.variant != 1"
+						}
+					],
+					"on_entry": [
+						"/tellraw @a[r=14] {\"rawtext\":[{\"translate\":\"tell.plot1x.87.name\"}]}"
+					]
+				},
+				"plot2": {
+					"transitions": [
+						{
+							"default": "query.variant != 2"
+						}
+					],
+					"on_entry": [
+						"/tellraw @a[r=14] {\"rawtext\":[{\"translate\":\"tell.plot1x.88.name\"}]}"
+					]
+				},
+				"plot3": {
+					"transitions": [
+						{
+							"default": "query.variant != 3"
+						}
+					],
+					"on_entry": [
+						"/tellraw @a[r=14] {\"rawtext\":[{\"translate\":\"tell.plot1x.89.name\"}]}"
+					]
+				},
+				"plot4": {
+					"transitions": [
+						{
+							"default": "query.variant != 4"
+						}
+					],
+					"on_entry": [
+						"/tellraw @a[r=14] {\"rawtext\":[{\"translate\":\"tell.plot1x.90.name\"}]}"
+					]
+				},
+				"plot5": {
+					"transitions": [
+						{
+							"default": "query.variant != 5"
+						}
+					],
+					"on_entry": [
+						"/tellraw @a[r=14] {\"rawtext\":[{\"translate\":\"tell.plot1x.91.name\"}]}"
+					]
+				},
+				"plot6": {
+					"transitions": [
+						{
+							"default": "query.variant != 6"
+						}
+					],
+					"on_entry": [
+						"/tellraw @a[r=14] {\"rawtext\":[{\"translate\":\"tell.plot1x.92.name\"}]}"
+					]
+				},
+				"plot7": {
+					"transitions": [
+						{
+							"default": "query.variant != 7"
+						}
+					],
+					"on_entry": [
+						"/tellraw @a[r=14] {\"rawtext\":[{\"translate\":\"tell.plot1x.93.name\"}]}"
+					]
+				},
+				"plot8": {
+					"transitions": [
+						{
+							"default": "query.variant != 8"
+						}
+					],
+					"on_entry": [
+						"/tellraw @a[r=14] {\"rawtext\":[{\"translate\":\"tell.plot1x.94.name\"}]}"
+					]
+				},
+				"plot9": {
+					"transitions": [
+						{
+							"default": "query.variant != 9"
+						}
+					],
+					"on_entry": [
+						"/tellraw @a[r=14] {\"rawtext\":[{\"translate\":\"tell.plot1x.95.name\"}]}"
+					]
+				},
+				"plot10": {
+					"transitions": [
+						{
+							"default": "query.variant != 10"
+						}
+					],
+					"on_entry": [
+						"/tellraw @a[r=14] {\"rawtext\":[{\"translate\":\"tell.plot1x.96.name\"}]}"
+					]
+				},
+				"plot11": {
+					"transitions": [
+						{
+							"default": "query.variant != 11"
+						}
+					],
+					"on_entry": [
+						"/tellraw @a[r=14] {\"rawtext\":[{\"translate\":\"tell.plot1x.97.name\"}]}"
+					]
+				},
+				"plot12": {
+					"transitions": [
+						{
+							"default": "query.variant != 12"
+						}
+					],
+					"on_entry": [
+						"/tellraw @a[r=14] {\"rawtext\":[{\"translate\":\"tell.plot1x.98.name\"}]}"
+					]
+				},
+				"plot13": {
+					"transitions": [
+						{
+							"default": "query.variant != 13"
+						}
+					],
+					"on_entry": [
+						"/tellraw @a[r=14] {\"rawtext\":[{\"translate\":\"tell.plot1x.99.name\"}]}"
+					]
+				},
+				"plot14": {
+					"transitions": [
+						{
+							"default": "query.variant != 14"
+						}
+					],
+					"on_entry": [
+						"/tellraw @a[r=14] {\"rawtext\":[{\"translate\":\"tell.plot1x.100.name\"}]}"
+					]
+				},
+				"plot15": {
+					"transitions": [
+						{
+							"default": "query.variant != 15"
+						}
+					],
+					"on_entry": [
+						"/tellraw @a[r=14] {\"rawtext\":[{\"translate\":\"tell.plot1x.101.name\"}]}"
+					]
+				},
+				"plot16": {
+					"transitions": [
+						{
+							"default": "query.variant != 16"
+						}
+					],
+					"on_entry": [
+						"/tellraw @a[r=14] {\"rawtext\":[{\"translate\":\"tell.plot1x.102.name\"}]}"
+					]
+				},
+				"plot17": {
+					"transitions": [
+						{
+							"default": "query.variant != 17"
+						}
+					],
+					"on_entry": [
+						"/tellraw @a[r=14] {\"rawtext\":[{\"translate\":\"tell.plot1x.103.name\"}]}"
+					]
+				},
+				"plot18": {
+					"transitions": [
+						{
+							"default": "query.variant != 18"
+						}
+					],
+					"on_entry": [
+						"/tellraw @a[r=14] {\"rawtext\":[{\"translate\":\"tell.plot1x.104.name\"}]}",
+						"/tellraw @a[r=14] {\"rawtext\":[{\"translate\":\"tell.plot1x.105.name\"}]}",
+						"/tellraw @a[r=14] {\"rawtext\":[{\"translate\":\"tell.plot1x.106.name\"}]}"
+					]
+				},
+				"plot19": {
+					"transitions": [
+						{
+							"default": "query.variant != 19"
+						}
+					],
+					"on_entry": [
+						"/tellraw @a[r=14] {\"rawtext\":[{\"translate\":\"tell.plot1x.107.name\"}]}"
+					]
+				},
+				"plot20": {
+					"transitions": [
+						{
+							"default": "query.variant != 20"
+						}
+					],
+					"on_entry": [
+						"/tellraw @a[r=14] {\"rawtext\":[{\"translate\":\"tell.plot1x.108.name\"}]}"
+					]
+				},
+				"plot21": {
+					"transitions": [
+						{
+							"default": "query.variant != 21"
+						}
+					],
+					"on_entry": [
+						"/tellraw @a[r=14] {\"rawtext\":[{\"translate\":\"tell.plot1x.109.name\"}]}",
+						"/scoreboard players add @a[r=100] wbjqbf 1",
+						"/function plot/clear"
+					]
+				}
+			}
+		}
+	}
+}

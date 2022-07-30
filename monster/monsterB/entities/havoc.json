@@ -1,0 +1,1212 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "takile:havoc_monster",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "takile:havoc_monster",
+      "animations": {
+        "effect": "controller.animation.takile.effect",
+        "effect2": "animation.takile.effect",
+        "sign": "animation.takile.havoc.target_sign",
+        "meltdown": "animation.takile.havoc.meltdown",
+        "reinforce": "animation.takile.havoc.reinforce",
+        "circuitous": "controller.animation.takile.havoc.circuitous",
+        "strike": "controller.animation.takile.havoc.strike",
+        "coordination": "controller.animation.takile.havoc.coordination",
+        "coordinationa": "controller.animation.takile.havoc.coordination.a"
+      },
+      "scripts": {
+        "animate": [
+          "effect",
+          "effect2",
+          {
+            "circuitous": "query.variant==2"
+          },
+          "sign",
+          {
+            "meltdown": "query.variant==1"
+          },
+          {
+            "reinforce": "query.variant==3"
+          },
+          {
+            "coordination": "query.variant==4"
+          },
+          {
+            "coordinationa": "query.variant==4"
+          },
+          {
+            "strike": "query.variant==5"
+          }
+        ]
+      }
+    },
+    "component_groups": {
+      "minecraft:exploding": {
+        "minecraft:explode": {
+          "fuse_length": 0,
+          "fuse_lit": true,
+          "power": 8,
+          "causes_fire": false,
+          "breaks_blocks": false,
+          "destroy_affected_by_griefing": true
+        }
+      },
+      "skill:reinforce_5": {
+        "minecraft:behavior.knockback_roar": {
+          "priority": 0,
+          "duration": 0.2,
+          "attack_time": 0.1,
+          "knockback_damage": 15,
+          "knockback_strength": 0,
+          "knockback_range": 4,
+          "knockback_filters": {
+            "test": "is_owner",
+            "subject": "other",
+            "operator": "!=",
+            "value": true
+          },
+          "damage_filters": {
+            "test": "is_owner",
+            "subject": "other",
+            "operator": "!=",
+            "value": true
+          },
+          "on_roar_end": {
+            "event": "skill:reinforce_5_cancel"
+          },
+          "cooldown_time": 0.1
+        }
+      },
+      "coordination_5": {
+        "minecraft:healable": {
+          "items": [{
+              "item": "emerald",
+              "heal_amount": 40
+            },
+            {
+              "item": "apple",
+              "heal_amount": 6
+            },
+            {
+              "item": "golden_carrot",
+              "heal_amount": 8
+            },
+            {
+              "item": "golden_apple",
+              "heal_amount": 20
+            },
+            {
+              "item": "appleEnchanted",
+              "heal_amount": 20
+            }
+          ]
+        },
+        "minecraft:attack": {
+          "damage": 60
+        },
+        "minecraft:variant": {
+          "value": 4
+        },
+        "minecraft:behavior.delayed_attack": {
+          "priority": 3,
+          "reach_multiplier": 2.5,
+          "attack_duration": 1,
+          "hit_delay_pct": 0.3,
+          "track_target": false,
+          "sound_event": "attack.strong"
+        },
+        "minecraft:behavior.follow_owner": {
+          "priority": 0,
+          "speed_multiplier": 1.8,
+          "start_distance": 9,
+          "stop_distance": 2
+        },
+        "minecraft:target_nearby_sensor": {
+          "inside_range": 8,
+          "outside_range": 8.5,
+          "must_see": false,
+          "on_inside_range": {
+            "event": "skill:stop_shoot_enemy",
+            "target": "self"
+          },
+          "on_outside_range": {
+            "event": "skill:shoot_enemy_coordination",
+            "target": "self"
+          },
+          "on_vision_lost_inside_range": {
+            "event": "skill:stop_shoot_enemy",
+            "target": "self"
+          }
+        }
+      },
+      "reinforce_5": {
+        "minecraft:target_nearby_sensor": {
+          "inside_range": 4,
+          "outside_range": 6,
+          "must_see": false,
+          "on_inside_range": {
+            "event": "skill:stop_shoot_enemy",
+            "target": "self"
+          },
+          "on_outside_range": {
+            "event": "skill:stop_shoot_enemy",
+            "target": "self"
+          },
+          "on_vision_lost_inside_range": {
+            "event": "skill:stop_shoot_enemy",
+            "target": "self"
+          }
+        },
+        "minecraft:type_family": {
+          "family": [
+            "pet",
+            "havoc",
+            "player"
+          ]
+        },
+        "minecraft:attack": {
+          "damage": 0
+        },
+        "minecraft:movement": {
+          "value": 0
+        },
+        "minecraft:underwater_movement": {
+          "value": 0
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [{
+              "cause": "fall",
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "event": "skill:reinforce_5_ondamage"
+              }
+            },
+            {
+              "cause": "entity_explosion",
+              "deals_damage": false
+            }
+          ]
+        },
+        "minecraft:behavior.delayed_attack": {
+          "priority": 4,
+          "reach_multiplier": 10,
+          "attack_duration": 10000,
+          "hit_delay_pct": 1,
+          "track_target": true,
+          "sound_event": "attack.strong"
+        },
+        "minecraft:variant": {
+          "value": 3
+        }
+      },
+      "circuitous_5": {
+        "minecraft:behavior.delayed_attack": {
+          "priority": 1,
+          "reach_multiplier": 7,
+          "attack_duration": 4.8,
+          "speed_multiplier": 1.4,
+          "hit_delay_pct": 0.5,
+          "track_target": true,
+          "sound_event": "meltdown_att"
+        },
+        "minecraft:variant": {
+          "value": 2
+        }
+      },
+      "skill:circuitous_attack": {
+        "minecraft:timer": {
+          "looping": false,
+          "time": 0.5,
+          "randomInterval": false,
+          "time_down_event": {
+            "event": "skill:circuitous_attack_start"
+          }
+        }
+      },
+      "skill:circuitous_attack_end": {
+        "minecraft:timer": {
+          "looping": false,
+          "time": 1,
+          "randomInterval": false,
+          "time_down_event": {
+            "event": "skill:circuitous_attack_tran"
+          }
+        }
+      },
+      "skill:circuitous_attack_start": {
+        "minecraft:timer": {
+          "looping": false,
+          "time": 4,
+          "randomInterval": false,
+          "time_down_event": {
+            "event": "skill:circuitous_attack_end"
+          }
+        }
+      },
+      "meltdown_5": {
+        "minecraft:attack": {
+          "damage": 60
+        },
+        "minecraft:target_nearby_sensor": {
+          "inside_range": 4,
+          "outside_range": 5,
+          "must_see": false,
+          "on_inside_range": {
+            "event": "skill:stop_shoot_enemy",
+            "target": "self"
+          },
+          "on_outside_range": {
+            "event": "skill:shoot_enemy_meltdown",
+            "target": "self"
+          },
+          "on_vision_lost_inside_range": {
+            "event": "skill:stop_shoot_enemy",
+            "target": "self"
+          }
+        },
+        "minecraft:behavior.delayed_attack": {
+          "priority": 3,
+          "reach_multiplier": 3,
+          "attack_duration": 2.5,
+          "speed_multiplier": 1.4,
+          "hit_delay_pct": 0.6,
+          "track_target": true,
+          "sound_event": "meltdown_att"
+        },
+        "minecraft:movement": {
+          "value": 0.4
+        },
+        "minecraft:underwater_movement": {
+          "value": 0.35
+        },
+        "minecraft:variant": {
+          "value": 1
+        }
+      },
+      "strike_5": {
+        "minecraft:movement": {
+          "value": 0.38
+        },
+        "minecraft:target_nearby_sensor": {
+          "inside_range": 4,
+          "outside_range": 6,
+          "must_see": false,
+          "on_inside_range": {
+            "event": "skill:stop_shoot_enemy",
+            "target": "self"
+          },
+          "on_outside_range": {
+            "event": "skill:stop_shoot_enemy",
+            "target": "self"
+          },
+          "on_vision_lost_inside_range": {
+            "event": "skill:stop_shoot_enemy",
+            "target": "self"
+          }
+        },
+        "minecraft:underwater_movement": {
+          "value": 0.26
+        },
+        "minecraft:timer": {
+          "time": 18,
+          "looping": false,
+          "time_down_event": {
+            "event": "Rank_V",
+            "target": "self"
+          }
+        },
+        "minecraft:attack": {
+          "damage": 70
+        },
+        "minecraft:variant": {
+          "value": 5
+        },
+        "minecraft:behavior.delayed_attack": {
+          "priority": 3,
+          "reach_multiplier": 4,
+          "attack_duration": 0.8,
+          "hit_delay_pct": 0,
+          "speed_multiplier": 1.4,
+          "track_target": true,
+          "sound_event": "attack.strong"
+        },
+        "minecraft:environment_sensor": {
+          "triggers": [{
+              "filters": {
+                "test": "has_tag",
+                "operator": "==",
+                "subject": "target",
+                "value": "havoc_target"
+              },
+              "event": "skill:strike"
+            },
+            {
+              "filters": {
+                "test": "has_tag",
+                "operator": "!=",
+                "subject": "target",
+                "value": "havoc_target"
+              },
+              "event": "skill:strike_5_cancel"
+            }
+          ]
+        },
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 1,
+          "entity_types": [{
+            "filters": {
+              "test": "has_tag",
+              "subject": "other",
+              "value": "havoc_target"
+            },
+            "max_dist": 32
+          }],
+          "must_see": true
+        }
+      },
+      "normal_5": {
+        "minecraft:healable": {
+          "items": [{
+              "item": "emerald",
+              "heal_amount": 20
+            },
+            {
+              "item": "apple",
+              "heal_amount": 3
+            },
+            {
+              "item": "golden_carrot",
+              "heal_amount": 4
+            },
+            {
+              "item": "golden_apple",
+              "heal_amount": 10
+            },
+            {
+              "item": "appleEnchanted",
+              "heal_amount": 10
+            }
+          ]
+        },
+        "minecraft:type_family": {
+          "family": [
+            "pet",
+            "havoc"
+          ]
+        },
+        "minecraft:follow_range": {
+          "value": 64,
+          "max": 64
+        },
+
+        "minecraft:variant": {
+          "value": 0
+        },
+        "minecraft:movement": {
+          "value": 0.27
+        },
+        "minecraft:underwater_movement": {
+          "value": 0.22
+        },
+        "minecraft:attack": {
+          "damage": [40, 50]
+        },
+        "minecraft:behavior.delayed_attack": {
+          "priority": 3,
+          "reach_multiplier": 2,
+          "attack_duration": 1.5,
+          "hit_delay_pct": 0.58,
+          "track_target": true,
+          "speed_multiplier": 1.4,
+          "sound_event": "attack"
+        }
+      },
+      "skill:shoot_enemy": {
+        "minecraft:shooter": {
+          "def": "takile:havoc_roar_proj<45>"
+        },
+        "minecraft:behavior.ranged_attack": {
+          "priority": 1,
+          "attack_interval_min": 0,
+          "attack_interval_max": 1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 1.2,
+          "attack_radius": 64,
+          "burst_shots": 3,
+          "burst_interval": 1
+        }
+      },
+      "skill:shoot_enemy_coordination": {
+        "minecraft:shooter": {
+          "def": "takile:havoc_roar_proj"
+        },
+        "minecraft:behavior.ranged_attack": {
+          "priority": 1,
+          "attack_interval_min": 0,
+          "attack_interval_max": 1,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 0.8,
+          "attack_radius": 64,
+          "burst_shots": 3,
+          "burst_interval": 0.01
+        }
+      },
+      "skill:shoot_enemy_meltdown": {
+        "minecraft:behavior.delayed_attack": {
+          "priority": 3,
+          "reach_multiplier": 20,
+          "attack_duration": 5.25,
+          "speed_multiplier": 1.4,
+          "hit_delay_pct": 2.5,
+          "track_target": false,
+          "sound_event": "meltdown_att"
+        }
+      },
+      "skill:stop_shoot_enemy_meltdown": {
+        "minecraft:behavior.delayed_attack": {
+          "priority": 3,
+          "reach_multiplier": 3,
+          "attack_duration": 2.5,
+          "speed_multiplier": 1.4,
+          "hit_delay_pct": 1,
+          "track_target": true,
+          "sound_event": "meltdown_att"
+        }
+      },
+      "Rank_V": {
+        "minecraft:boss": {
+          "name": ">HAVOC<",
+          "should_darken_sky": false,
+          "hud_range": 10
+        },
+
+        "minecraft:target_nearby_sensor": {
+          "inside_range": 8,
+          "outside_range": 8.5,
+          "must_see": false,
+          "on_inside_range": {
+            "event": "skill:stop_shoot_enemy",
+            "target": "self"
+          },
+          "on_outside_range": {
+            "event": "skill:shoot_enemy",
+            "target": "self"
+          },
+          "on_vision_lost_inside_range": {
+            "event": "skill:stop_shoot_enemy",
+            "target": "self"
+          }
+        },
+        "minecraft:health": {
+          "value": 765,
+          "max": 765
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [{
+              "cause": "fall",
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "has_damage",
+                  "value": "fatal"
+                },
+                "event": "skill:end"
+              },
+              "deals_damage": false
+            },
+            {
+              "cause": "entity_explosion",
+              "deals_damage": false
+            }
+          ]
+        },
+        "minecraft:hurt_on_condition": {}
+      },
+      "tamed": {
+        "minecraft:timer": {
+          "time": 10,
+          "looping": false,
+          "time_down_event": {
+            "event": "Rank_V",
+            "target": "self"
+          }
+        },
+        "minecraft:is_tamed": {},
+        "minecraft:is_saddled": {},
+        "minecraft:is_chested": {},
+        "minecraft:inventory": {
+          "additional_slots_per_strength": 0,
+          "can_be_siphoned_from": false,
+          "inventory_size": 36,
+          "container_type": "horse",
+          "private": false,
+          "restrict_to_owner": true
+        },
+        "minecraft:behavior.player_ride_tamed": {},
+        "minecraft:input_ground_controlled": {},
+        "minecraft:can_power_jump": {},
+        "minecraft:horse.jump_strength": {
+          "value": {
+            "range_min": 1,
+            "range_max": 1
+          }
+        },
+        "minecraft:behavior.controlled_by_player": {},
+        "minecraft:behavior.owner_hurt_by_target": {
+          "priority": 2
+        },
+        "minecraft:behavior.owner_hurt_target": {
+          "priority": 3
+        },
+        "minecraft:behavior.follow_owner": {
+          "priority": 4,
+          "speed_multiplier": 1,
+          "start_distance": 32,
+          "stop_distance": 5
+        },
+        "minecraft:behavior.breed": {
+          "priority": 3,
+          "speed_multiplier": 1
+        },
+
+        "minecraft:sittable": {},
+        "minecraft:rideable": {
+          "seat_count": 2,
+          "interact_text": "乘骑",
+          "pull_in_entities": false,
+          "seats": [{
+              "position": [0, 3.8, 0]
+            },
+            {
+              "position": [0, 3.8, 1]
+            }
+          ]
+        }
+      },
+      "untamed": {
+        "minecraft:tameable": {
+          "probability": 0.33,
+          "tame_items": "emerald",
+          "tame_event": {
+            "event": "on_tame",
+            "target": "self"
+          }
+        }
+      },
+      "noumenon": {
+
+        "minecraft:damage_sensor": {
+          "triggers": [{
+              "cause": "fall",
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "has_damage",
+                  "value": "fatal"
+                },
+                "event": "skill:end"
+              },
+              "deals_damage": false
+            },
+            {
+              "cause": "entity_explosion",
+              "deals_damage": false
+            }
+          ]
+        },
+        "minecraft:boss": {
+          "name": ">HAVOC<",
+          "should_darken_sky": false,
+          "hud_range": 10
+        },
+        "minecraft:physics": {},
+        "minecraft:behavior.delayed_attack": {
+          "priority": 4,
+          "reach_multiplier": 1.5,
+          "attack_duration": 1.5,
+          "hit_delay_pct": 0.5,
+          "track_target": true,
+          "sound_event": "attack.strong"
+        },
+        "minecraft:behavior.look_at_player": {
+          "priority": 7,
+          "look_distance": 6,
+          "probability": 0.02
+        },
+        "minecraft:behavior.random_look_around": {
+          "priority": 9
+        },
+        "minecraft:fire_immune": true,
+        "minecraft:behavior.hurt_by_target": {
+          "priority": 1,
+          "entity_types": {
+            "filters": {
+              "test": "is_owner",
+              "operator": "!="
+            }
+          }
+        },
+        "minecraft:balloonable": {}
+      },
+      "proj_skill:circuitous_center_start": {
+        "minecraft:explode": {
+          "fuse_length": 4,
+          "fuse_lit": true,
+          "power": 0,
+          "causes_fire": false,
+          "max_resistance": 4,
+          "destroy_affected_by_griefing": true
+        },
+        "minecraft:behavior.knockback_roar": {
+          "priority": 0,
+          "duration": 0.3,
+          "attack_time": 0.1,
+          "knockback_damage": 15,
+          "knockback_strength": -1,
+          "knockback_range": 7,
+          "knockback_filters": {
+            "all_of": [{
+                "test": "is_owner",
+                "subject": "other",
+                "operator": "!="
+              },
+              {
+                "test": "is_family",
+                "subject": "other",
+                "value": "havoc",
+                "operator": "!="
+              }
+            ]
+          },
+          "damage_filters": {
+            "all_of": [{
+                "test": "is_owner",
+                "subject": "other",
+                "operator": "!="
+              },
+              {
+                "test": "is_family",
+                "subject": "other",
+                "value": "havoc",
+                "operator": "!="
+              }
+            ]
+          },
+          "cooldown_time": 0.01
+        }
+      },
+      "proj_skill:circuitous_center_end": {
+        "minecraft:behavior.knockback_roar": {
+          "priority": 0,
+          "duration": 1,
+          "attack_time": 0.1,
+          "knockback_damage": 15,
+          "knockback_strength": 0,
+          "knockback_range": 7,
+          "knockback_filters": {
+            "all_of": [{
+                "test": "is_owner",
+                "subject": "other",
+                "operator": "==",
+                "value": false
+              },
+              {
+                "test": "is_family",
+                "subject": "other",
+                "value": "havoc",
+                "operator": "!="
+              }
+            ]
+          },
+          "damage_filters": {
+            "all_of": [{
+                "test": "is_owner",
+                "subject": "other",
+                "operator": "==",
+                "value": false
+              },
+              {
+                "test": "is_family",
+                "subject": "other",
+                "value": "havoc",
+                "operator": "!="
+              }
+            ]
+          },
+          "cooldown_time": 0.01
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 0.5,
+          "time_down_event": {
+            "event": "proj_skill:circuitous_attack_end"
+          }
+        }
+      },
+      "proj_skill:circuitous_attack_end": {
+        "minecraft:explode": {
+          "fuse_length": 1,
+          "fuse_lit": true,
+          "power": 6,
+          "causes_fire": false,
+          "max_resistance": 4,
+          "breaks_blocks": false,
+          "destroy_affected_by_griefing": true
+        }
+      },
+      "state:invisible": {
+        "minecraft:collision_box": {
+          "width": 0.1,
+          "height": 0.1
+        },
+        "minecraft:scale": {
+          "value": 0.01
+        }
+      },
+      "skill:end": {
+        "minecraft:explode": {
+          "fuse_length": 0,
+          "fuse_lit": true,
+          "power": 10,
+          "breaks_blocks": false,
+          "causes_fire": false,
+          "destroy_affected_by_griefing": true
+        }
+      }
+    },
+    "components": {
+      "minecraft:scale": {
+        "value": 1
+      },
+      "minecraft:variant": {
+        "value": 0
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:type_family": {
+        "family": [
+          "pet",
+          "havoc"
+        ]
+      },
+      "minecraft:breathable": {
+        "totalSupply": 15,
+        "suffocateTime": 0,
+        "breathes_air": true,
+        "breathes_water": true
+      },
+      "minecraft:navigation.walk": {
+        "can_path_over_water": true,
+        "avoid_water": true,
+        "avoid_damage_blocks": true,
+        "can_path_over_lava": true
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:behavior.random_stroll": {
+        "priority": 6,
+        "speed_multiplier": 0.6
+      },
+      "minecraft:can_climb": {},
+      "minecraft:underwater_movement": {
+        "value": 0.1
+      },
+      "minecraft:collision_box": {
+        "width": 1,
+        "height": 1.5
+      },
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:nameable": {},
+      "minecraft:health": {
+        "value": 765,
+        "max": 765
+      },
+      "minecraft:movement": {
+        "value": 0.45
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 11
+      },
+      "minecraft:follow_range": {
+        "value": 64,
+        "max": 64
+      }
+    },
+    "events": {
+      "proj_skill_circuitous_center_start": {
+        "add": {
+          "component_groups": [
+            "proj_skill:circuitous_center_start",
+            "state:invisible"
+          ]
+        }
+      },
+      "proj_skill_circuitous_center_end": {
+        "add": {
+          "component_groups": [
+            "proj_skill:circuitous_center_end",
+            "state:invisible"
+          ]
+        }
+      },
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "untamed",
+            "noumenon"
+          ]
+        }
+      },
+      "on_tame": {
+        "add": {
+          "component_groups": [
+            "tamed"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "untamed"
+          ]
+        }
+      },
+      "Rank_V": {
+        "add": {
+          "component_groups": [
+            "Rank_V",
+            "normal_5"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "strike_5",
+            "meltdown_5",
+            "circuitous_5",
+            "reinforce_5",
+            "coordination_5",
+            "skill:shoot_enemy_coordination",
+            "skill:stop_shoot_enemy_meltdown",
+            "skill:shoot_enemy_meltdown"
+          ]
+        },
+        "run_command": {
+          "command": [
+            "tag @s add Rank_V",
+            "tag @s remove skill_strike",
+            "tag @s remove skill_meltdown",
+            "tag @s remove skill_circuitous",
+            "tag @s remove skill_void",
+            "tag @s remove skill_coordination",
+            "tag @s remove skill_reinforce",
+            "scoreboard players set @s regeneration 2",
+            "scoreboard players set @s dabsorption 2",
+            "scoreboard players set @s strength 0",
+            "scoreboard players set @s resistance 1"
+          ],
+          "target": "self"
+        }
+      },
+      "command:strike_5": {
+        "filters": {
+          "test": "has_tag",
+          "subject": "self",
+          "operator": "!=",
+          "value": "skill_void"
+        },
+        "run_command": {
+          "command": [
+            "tag @s add skill_strike",
+            "tag @s add skill_void",
+            "scoreboard players set @s dabsorption 1",
+            "scoreboard players set @s resistance 0"
+          ],
+          "target": "self"
+        },
+        "add": {
+          "component_groups": [
+            "strike_5"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "skill:shoot_enemy"
+          ]
+        }
+      },
+      "command:meltdown_5": {
+        "filters": {
+          "test": "has_tag",
+          "subject": "self",
+          "operator": "!=",
+          "value": "skill_void"
+        },
+        "run_command": {
+          "command": [
+            "tag @s add skill_meltdown",
+            "tag @s add skill_void",
+            "scoreboard players set @s dabsorption 3",
+            "scoreboard players set @s resistance 3",
+            "scoreboard players set @s strength 7",
+            "playsound mob.havoc.monster.meltdown @a ~ ~ ~ 1 1"
+          ],
+          "target": "self"
+        },
+        "add": {
+          "component_groups": [
+            "meltdown_5"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "skill:shoot_enemy"
+          ]
+        }
+      },
+      "command:circuitous_5": {
+        "filters": {
+          "test": "has_tag",
+          "subject": "self",
+          "operator": "!=",
+          "value": "skill_void"
+        },
+        "run_command": {
+          "command": [
+            "tag @s add skill_void",
+            "tag @s add skill_circuitous"
+          ],
+          "target": "self"
+        },
+        "add": {
+          "component_groups": [
+            "circuitous_5"
+          ]
+        }
+      },
+      "command:reinforce_5": {
+        "filters": {
+          "test": "has_tag",
+          "subject": "self",
+          "operator": "!=",
+          "value": "skill_void"
+        },
+        "run_command": {
+          "command": [
+            "tag @s add skill_void",
+            "tag @s add skill_reinforce",
+            "scoreboard players set @s dabsorption 3",
+            "scoreboard players set @s resistance 2"
+          ],
+          "target": "self"
+        },
+        "add": {
+          "component_groups": [
+            "reinforce_5"
+          ]
+        }
+      },
+      "command:unreinforce_5": {
+        "filters": {
+          "test": "has_tag",
+          "subject": "self",
+          "operator": "==",
+          "value": "skill_reinforce"
+        },
+        "run_command": {
+          "command": [
+            "event entity @s Rank_V"
+          ],
+          "target": "self"
+        }
+      },
+      "command:coordination_5": {
+        "filters": {
+          "test": "has_tag",
+          "subject": "self",
+          "operator": "!=",
+          "value": "skill_void"
+        },
+        "run_command": {
+          "command": [
+            "tag @s add skill_void",
+            "tag @s add skill_coordination",
+            "scoreboard players set @s dabsorption 1"
+          ],
+          "target": "self"
+        },
+        "add": {
+          "component_groups": [
+            "coordination_5"
+          ]
+        }
+      },
+      "command:uncoordination_5": {
+        "filters": {
+          "test": "has_tag",
+          "subject": "self",
+          "operator": "==",
+          "value": "skill_coordination"
+        },
+        "run_command": {
+          "command": [
+            "event entity @s Rank_V"
+          ],
+          "target": "self"
+        }
+      },
+      "skill:strike_5": {
+        "run_command": {
+          "command": [
+            "scoreboard players set @s strength 3"
+          ],
+          "target": "self"
+        }
+      },
+      "skill:circuitous_attack": {
+        "add": {
+          "component_groups": [
+            "skill:circuitous_attack"
+          ]
+        }
+      },
+      "skill:circuitous_attack_start": {
+        "run_command": {
+          "command": [
+            "summon takile:havoc_monster ^ ^+2 ^+6 proj_skill_circuitous_center_start"
+          ],
+          "target": "self"
+        },
+        "add": {
+          "component_groups": [
+            "skill:circuitous_attack_start"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "skill:circuitous_attack"
+          ]
+        }
+      },
+      "skill:circuitous_attack_end": {
+        "run_command": {
+          "command": [
+            "execute @e[type=!player,type=!takile:havoc_monster,r=8] ~~~ summon takile:havoc_proj ~ ~ ~ instantdamage_2",
+            "summon takile:havoc_monster ^ ^+2 ^+6 proj_skill_circuitous_center_end"
+          ],
+          "target": "self"
+        },
+        "add": {
+          "component_groups": [
+            "skill:circuitous_attack_end"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "skill:circuitous_attack_start"
+          ]
+        }
+      },
+      "skill:circuitous_attack_tran": {
+        "run_command": {
+          "command": [
+            "event entity @s Rank_V"
+          ],
+          "target": "self"
+        },
+        "remove": {
+          "component_groups": [
+            "skill:circuitous_attack_end"
+          ]
+        }
+      },
+      "skill:strike_5_cancel": {
+        "run_command": {
+          "command": [
+            "scoreboard players set @s strength 0"
+          ],
+          "target": "self"
+        }
+      },
+      "skill:reinforce_5_ondamage": {
+        "add": {
+          "component_groups": [
+            "skill:reinforce_5"
+          ]
+        }
+      },
+      "skill:reinforce_5_cancel": {
+        "remove": {
+          "component_groups": [
+            "skill:reinforce_5"
+          ]
+        }
+      },
+      "skill:shoot_enemy": {
+        "add": {
+          "component_groups": [
+            "skill:shoot_enemy"
+          ]
+        }
+      },
+      "skill:stop_shoot_enemy": {
+        "remove": {
+          "component_groups": [
+            "skill:shoot_enemy",
+            "skill:shoot_enemy_coordination"
+          ]
+        }
+      },
+      "skill:stop_shoot_enemy_meltdown": {
+        "remove": {
+          "component_groups": [
+            "skill:shoot_enemy",
+            "skill:shoot_enemy_coordination",
+            "skill:shoot_enemy_meltdown"
+          ]
+        },
+        "add": {
+          "component_groups": ["skill:stop_shoot_enemy_meltdown"]
+        }
+      },
+      "skill:shoot_enemy_coordination": {
+        "add": {
+          "component_groups": [
+            "skill:shoot_enemy_coordination"
+          ]
+        }
+      },
+      "skill:shoot_enemy_meltdown": {
+        "add": {
+          "component_groups": [
+            "skill:shoot_enemy_meltdown"
+          ]
+        }
+      },
+
+      "proj_skill:circuitous_attack_end": {
+        "run_command": {
+          "command": ["execute @e[type=!player,type=!takile:havoc_monster,r=8] ~~~ summon takile:havoc_proj ~ ~ ~ instantdamage120_4"]
+        },
+        "add": {
+          "component_groups": ["proj_skill:circuitous_attack_end"]
+        }
+      },
+      "skill:end": {
+        "add": {
+          "component_groups": ["skill:end"]
+        }
+      }
+    }
+  }
+}

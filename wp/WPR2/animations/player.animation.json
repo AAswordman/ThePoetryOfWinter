@@ -1,0 +1,16 @@
+{
+	"format_version" : "1.8.0",
+	"animations" : {
+		"animation.player.hold" : {
+			"loop" : true,
+			"bones" : {
+				"leftarm" : {
+					"rotation" : [ "query.is_swimming ? 0.0 : -93.0 + query.target_x_rotation - query.is_sneaking * 27.0 -this", "query.is_swimming ? 0.0 : 42.0 + math.clamp(query.target_y_rotation, -45.0, 5.0) -this", "query.is_sneaking * -15.0" ]
+				},
+				"rightarm" : {
+					"rotation" : [ "query.is_swimming ? 0.0 : -93.0 + query.target_x_rotation - query.is_sneaking * 27.0 -this", "query.is_swimming ? 0.0 : math.clamp(query.target_y_rotation, -60.0, 45.0) -this", 0.0 ]
+				}
+			}
+		}
+	}
+}

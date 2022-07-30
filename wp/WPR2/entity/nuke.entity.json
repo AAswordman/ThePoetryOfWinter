@@ -1,0 +1,19 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:nuke",
+      "materials": { "default": "zombie" },
+      "textures": {
+        "default": "textures/entity/nuke"
+      },
+      "scripts": {
+        "scale": "0.5"
+      },
+      "geometry": {
+        "default": "geometry.block"
+      },
+      "render_controllers": [ "controller.render.tnt" ]
+    }
+  }
+}

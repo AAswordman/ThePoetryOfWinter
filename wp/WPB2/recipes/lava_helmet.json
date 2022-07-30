@@ -1,0 +1,26 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:lava_helmet"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XAX",
+      "X X"
+    ],
+    "key": {
+      "A": {
+        "item": "dec:lava_ingot"
+      },
+      "X": {
+        "item": "minecraft:magma"
+      }
+    },
+    "result": {
+      "item": "dec:lava_helmet"
+    }
+  }
+}

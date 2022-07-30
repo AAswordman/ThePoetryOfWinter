@@ -1,0 +1,157 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:chester",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+
+    "component_groups": {
+      "minecraft:wild": {
+        "minecraft:tameable": {
+          "probability": 1,
+          "tame_items": "dec:iron_key",
+          "tame_event": {
+            "event": "minecraft:on_tame",
+            "target": "self"
+          }
+        }
+      },
+      "minecraft:tame": {
+        "minecraft:leashable": {
+          "soft_distance": 2.0,
+          "hard_distance": 10.0,
+          "max_distance": 10000.0,
+          "on_leash": {
+            "event": "minecraft:on_leash",
+            "target": "self"
+          },
+          "on_unleash": {
+            "event": "minecraft:on_unleash",
+            "target": "self"
+          }
+        },
+        "minecraft:inventory": {
+          "container_type": "minecart_chest",
+          "inventory_size": 27,
+          "can_be_siphoned_from": true
+        },
+        "minecraft:is_tamed": {
+        },
+        "minecraft:health": {
+          "value": 20,
+          "max": 20
+        }
+      }
+    },
+
+
+    "components": {
+      "minecraft:nameable": {
+      },
+      "minecraft:type_family": {
+        "family": [ "chester" ]
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0
+      },
+      "minecraft:collision_box": {
+        "width": 0.56,
+        "height": 0.56
+      },
+      "minecraft:health": {
+        "value": 20,
+        "max": 20
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:movement": {
+        "value": 0.3
+      },
+      "minecraft:navigation.walk": {
+        "can_path_over_water": true,
+        "avoid_damage_blocks": true
+      },
+      "minecraft:movement.basic": {
+      },
+      "minecraft:jump.static": {
+      },
+      "minecraft:can_climb": {
+      },
+      "minecraft:attack": {
+        "damage": 3
+      },
+      "minecraft:healable": {
+        "items": [
+          {
+            "item": "stick",
+            "heal_amount": 1
+          },
+          {
+            "item": "planks",
+            "heal_amount": 3
+          },
+          {
+            "item": "log",
+            "heal_amount": 13
+          },
+          {
+            "item": "chest",
+            "heal_amount": 20
+          }
+        ]
+      },
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.mount_pathing": {
+        "priority": 1,
+        "speed_multiplier": 1.25,
+        "target_dist": 0,
+        "track_target": true
+      },
+      "minecraft:behavior.stay_while_sitting": {
+        "priority": 3
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      }
+    },
+
+
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "minecraft:wild"
+          ]
+        }
+      },
+      "minecraft:on_tame": {
+        "remove": {
+          "component_groups": [
+            "minecraft:wild"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:tame"
+          ]
+        }
+      }
+    }
+  }
+}

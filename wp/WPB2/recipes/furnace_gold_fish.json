@@ -1,0 +1,13 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_furnace": {
+    "description": {
+    "identifier": "dec:furnace_gold_fish"
+    },
+
+    
+    "tags": ["furnace", "blast_furnace","smoker", "campfire"],
+    "input": "dec:gold_fish",
+    "output": "minecraft:gold_ingot"
+  }
+}

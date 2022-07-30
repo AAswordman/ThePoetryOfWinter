@@ -1,0 +1,12 @@
+{
+	"format_version" : "1.8.0",
+	"animations" : {
+		"animation.spell_wind.move" : {
+			"bones" : {
+				"body1":{"rotation":[0,"query.life_time*1080",0]},
+				"body2":{"rotation":[0,"query.life_time*1080",0]}
+			},
+			"loop" : true
+		}
+	}
+}

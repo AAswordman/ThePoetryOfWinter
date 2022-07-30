@@ -1,0 +1,26 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:shulker_helmet"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XXX",
+      "A A"
+    ],
+    "key": {
+      "X": {
+        "item": "minecraft:shulker_shell"
+      },
+      "A": {
+        "item": "dec:hemp_rope"
+      }
+    },
+    "result": {
+      "item": "dec:shulker_helmet"
+    }
+  }
+}

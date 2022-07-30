@@ -1,0 +1,40 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:mushroom_spawner",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+    },
+
+    "components": {
+      "minecraft:spawn_entity": [
+        {
+          "min_wait_time": 0,
+          "max_wait_time": 0,
+          "spawn_entity": "dec:mushroom_monster",
+          "spawn_event": "minecraft:entity_spawned",
+          "single_use": true,
+          "num_to_spawn": 4
+        }
+      ],
+      "minecraft:physics": {
+        "has_gravity": true
+      },
+      "minecraft:explode": {
+        "fuse_length": 0.01,
+        "fuse_lit": true,
+        "power": 0,
+        "causes_fire": false,
+        "destroy_affected_by_griefing": true
+      },
+      "minecraft:health": {
+        "value": 1,
+        "max": 1
+      }
+    }
+  }
+}

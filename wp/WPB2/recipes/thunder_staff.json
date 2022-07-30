@@ -1,0 +1,31 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:thunder_staff"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "BA#",
+      " XA",
+      "X B"
+    ],
+    "key": {
+      "#": {
+        "item": "dec:lightning_stone"
+      },
+      "B": {
+        "item": "minecraft:diamond"
+      },
+      "A": {
+        "item": "minecraft:lapis_block"
+      },
+      "X": {
+        "item": "dec:iron_stick"
+      }
+    },
+    "result": {
+      "item": "dec:thunder_staff"
+    }
+  }
+}

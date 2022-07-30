@@ -1,0 +1,13 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "wb:mineral_magic_barrier",
+      "category": "Nature"
+    },
+    "components": {
+      "minecraft:icon": "mineral_magic_barrier",
+      "minecraft:hover_text_color": "light_purple"
+    }
+  }
+}

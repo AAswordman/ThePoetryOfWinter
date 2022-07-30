@@ -1,0 +1,77 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.player.ui_tech_explorer": {
+      "geometry": "Geometry.ui_tech_explorer",
+      "materials": [ { "*": "Material.ui_plot_progress" } ],
+      "textures": [ "Texture.ui_tech_explorer" ],
+      "part_visibility": [{ "*": "query.get_equipped_item_name == 'technology_world_explorer'" }]
+    },
+    "controller.render.player.ui_tech_explorer_a": {
+      "geometry": "Geometry.ui_tech_explorer_a",
+      "materials": [ { "*": "Material.ui_plot_progress" } ],
+      "arrays": {
+        "textures": {
+          "Array.nums": [
+            "Texture.ui_tech_num0",
+            "Texture.ui_tech_num1",
+            "Texture.ui_tech_num2",
+            "Texture.ui_tech_num3",
+            "Texture.ui_tech_num4",
+            "Texture.ui_tech_num5",
+            "Texture.ui_tech_num6",
+            "Texture.ui_tech_num7",
+            "Texture.ui_tech_num8",
+            "Texture.ui_tech_num9"
+          ]
+        }
+      },
+      "textures": [ "Array.nums[(query.get_equipped_item_name == 'technology_world_explorer') ? Math.floor(Math.mod(variable.wb_tech_explorer_h,1000)/100)]" ],
+      "part_visibility": [{ "*": "query.get_equipped_item_name == 'technology_world_explorer'" }]
+    },
+    "controller.render.player.ui_tech_explorer_b": {
+      "geometry": "Geometry.ui_tech_explorer_b",
+      "materials": [ { "*": "Material.ui_plot_progress" } ],
+      "arrays": {
+        "textures": {
+          "Array.nums": [
+            "Texture.ui_tech_num0",
+            "Texture.ui_tech_num1",
+            "Texture.ui_tech_num2",
+            "Texture.ui_tech_num3",
+            "Texture.ui_tech_num4",
+            "Texture.ui_tech_num5",
+            "Texture.ui_tech_num6",
+            "Texture.ui_tech_num7",
+            "Texture.ui_tech_num8",
+            "Texture.ui_tech_num9"
+          ]
+        }
+      },
+      "textures": [ "Array.nums[(query.get_equipped_item_name == 'technology_world_explorer') ? Math.floor(Math.mod(variable.wb_tech_explorer_h,100)/10)]" ],
+      "part_visibility": [{ "*": "query.get_equipped_item_name == 'technology_world_explorer'" }]
+    },
+    "controller.render.player.ui_tech_explorer_c": {
+      "geometry": "Geometry.ui_tech_explorer_c",
+      "materials": [ { "*": "Material.ui_plot_progress" } ],
+      "arrays": {
+        "textures": {
+          "Array.nums": [
+            "Texture.ui_tech_num0",
+            "Texture.ui_tech_num1",
+            "Texture.ui_tech_num2",
+            "Texture.ui_tech_num3",
+            "Texture.ui_tech_num4",
+            "Texture.ui_tech_num5",
+            "Texture.ui_tech_num6",
+            "Texture.ui_tech_num7",
+            "Texture.ui_tech_num8",
+            "Texture.ui_tech_num9"
+          ]
+        }
+      },
+      "textures": [ "Array.nums[(query.get_equipped_item_name == 'technology_world_explorer') ? Math.floor(Math.mod(variable.wb_tech_explorer_h,10)/1)]" ],
+      "part_visibility": [{ "*": "query.get_equipped_item_name == 'technology_world_explorer'" }]
+    }
+  }
+}

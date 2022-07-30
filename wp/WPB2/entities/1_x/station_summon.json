@@ -1,0 +1,135 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "wb:station_summon",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier":"minecraft:shulker"/*,
+    "animations":{
+      	"base":"animation.station_summon.wb"
+      },
+      "scripts":{
+      	"animate":[
+      	 "base"
+      	 ]
+      }
+      */
+    },
+    "component_groups": {
+        "imp_2_5":{
+        "minecraft:transformation": {
+          "into": "wb:magic_stone_a<minecraft:entity_spawned>"
+        }
+        },
+        "imp_1_5":{
+        "minecraft:transformation": {
+          "into": "wb:plot_1_1<minecraft:entity_spawned>"
+        }
+        },
+        "into":{
+    "minecraft:explode": {
+     "fuseLength": 0,
+     "fuseLit": true,
+     "power": 8,
+     "causesFire": true,
+     "fireAffectedByGriefing": true,
+     "destroyAffectedByGriefing": true
+    }
+        }
+    },
+
+    "components": {
+        "minecraft:interact": [
+          {
+            "on_interact": {
+              "event":"imp_2_5",
+              "filters": { 
+                "all_of": [
+                  { "test": "has_equipment", "domain": "hand", "subject": "other", "value": "wb:message"}
+                ] 
+              }
+            },
+            "use_item": true,
+            "interact_text": "[功能&事件]解读纸&寻找魔化石块"
+          },
+          {
+            "on_interact": {
+              "event":"imp_1_1",
+              "filters": { 
+                "all_of": [
+                  { "test": "has_equipment", "domain": "hand", "subject": "other", "value": "wb:start_key"}
+                ] 
+              }
+            },
+            "use_item": true,
+            "interact_text": "1-1 启程"
+          }
+        ],
+     "minecraft:damage_sensor": [
+        {
+          "on_damage": {
+            "filters": {
+			    "test": "has_damage", "value": "fatal"
+            },
+            "event": "into"
+          }
+        }
+      ],
+      "minecraft:type_family": {
+        "family": [ "summon","station" ]
+      },
+      "minecraft:collision_box": {
+        "width": 1,
+        "height": 1
+      },
+      "minecraft:breathable": {
+        "totalSupply": 15,
+        "suffocateTime": 0
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:health": {
+        "value": 1000,
+        "max": 1000
+      },
+      "minecraft:movement": {
+        "value": 0.0,
+        "max": 0.0
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 1,
+        "look_distance": 6.0,
+        "probability": 0.02
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 8
+      },
+      "minecraft:navigation.walk": {
+      },
+      "minecraft:movement.basic": {
+      },
+	  "minecraft:physics": {
+      }
+    },
+
+    "events": {
+        "imp_1_1":{
+            "add":{
+                "component_groups":["imp_1_1"]
+            }
+        },
+        "imp_2_5":{
+            "add":{
+                "component_groups":["imp_2_5"]
+            }
+        },
+        "into":{
+            "add":{
+                "component_groups":["into"]
+            }
+        }
+    }
+  }
+}

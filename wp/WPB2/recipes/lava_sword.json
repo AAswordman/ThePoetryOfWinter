@@ -1,0 +1,36 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:lava_sword"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "CXC",
+      "BXB",
+      "A#A"
+    ],
+    "key": {
+      "#": {
+        "item": "dec:iron_stick"
+      },
+      "X": {
+        "item": "dec:lava_ingot"
+      },
+      "A": {
+        "item": "minecraft:bucket",
+        "data": 10
+      },
+      "B": {
+        "item": "minecraft:magma"
+      },
+      "C": {
+        "item": "minecraft:magma_cream"
+      }
+    },
+    "result": [
+      { "item": "dec:lava_sword" },
+      { "item": "minecraft:bucket", "count": 2, "data": 0 }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:dark_pearl"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "#A#",
+      "AXA",
+      "#A#"
+    ],
+    "key": {
+      "#": {
+        "item": "dec:pollution_algae"
+      },
+      "X": {
+        "item": "minecraft:ender_pearl"
+      },
+      "A": {
+        "item": "dec:blue_gem_debris"
+      }
+    },
+    "result": {
+      "item": "dec:dark_pearl"
+    }
+  }
+}

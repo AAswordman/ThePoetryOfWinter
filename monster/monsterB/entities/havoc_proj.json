@@ -1,0 +1,196 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "takile:havoc_proj",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball"
+    },
+    "component_groups": {
+      "blast_4": {
+        "minecraft:explode": {
+          "fuse_length": 0,
+          "fuse_lit": true,
+          "power": 4,
+          "causes_fire": false,
+          "breaks_blocks": false,
+          "destroy_affected_by_griefing": true
+        }
+      },
+      "instantdamage_6": {
+
+        "minecraft:projectile": {
+          "on_hit": {
+            "mob_effect": {
+              "effect": "instant_damage",
+              "durationeasy": 1,
+              "durationnormal": 1,
+              "durationhard": 1,
+              "amplifier": 6
+            },
+            "remove_on_hit": {}
+          },
+          "power": 1.7,
+          "gravity": 0.05,
+          "inertia": 1,
+          "anchor": 2,
+          "offset": [0, 0, 0],
+          "semirandomdiffdamage": false,
+          "uncertaintyBase": 0,
+          "reflectOnHurt": true
+        }
+      },
+      "instantdamage120_4": {
+
+        "minecraft:projectile": {
+          "on_hit": {
+            "impact_damage":{
+              "damage":120,
+              "knockback": true,
+              "catchFire": false,
+              "semirandomdiffdamage": false
+            },
+            "mob_effect": {
+              "effect": "instant_damage",
+              "durationeasy": 1,
+              "durationnormal": 1,
+              "durationhard": 1,
+              "amplifier": 4
+            },
+            "remove_on_hit": {}
+          },
+          "power": 1.7,
+          "gravity": 0.05,
+          "inertia": 1,
+          "anchor": 2,
+          "offset": [0, 0, 0],
+          "semirandomdiffdamage": false,
+          "uncertaintyBase": 0,
+          "reflectOnHurt": true
+        }
+      },
+      "damage_60": {
+        "minecraft:explode": {
+          "fuseLength": 0.2,
+          "fuseLit": true,
+          "power": 0,
+          "causesFire": false
+        },
+        "minecraft:projectile": {
+          "on_hit": {
+            "impact_damage": {
+              "damage": 60,
+              "knockback": true,
+              "catchFire": false,
+              "semirandomdiffdamage": false
+            },
+            "remove_on_hit": {}
+          },
+          "power": 1.7,
+          "gravity": 0.05,
+          "inertia": 1,
+          
+          "anchor": 2,
+          "offset": [0, 0, 0],
+          "semirandomdiffdamage": false,
+          "uncertaintyBase": 0,
+          "reflectOnHurt": true
+        }
+      },
+      "instantdamage_2": {
+        
+        "minecraft:projectile": {
+          "on_hit": {
+            "mob_effect": {
+              "effect": "instant_damage",
+              "durationeasy": 1,
+              "durationnormal": 1,
+              "durationhard": 1,
+              "amplifier": 2
+            },
+            "remove_on_hit": {}
+          },
+          "power": 1.7,
+          "gravity": 0.05,
+          "inertia": 1,
+          "anchor": 2,
+          "offset": [0, 0, 0],
+          "semirandomdiffdamage": false,
+          "uncertaintyBase": 0,
+          "reflectOnHurt": true
+        }
+      }
+    },
+    "components": {
+      "minecraft:explode": {
+        "fuseLength": 1,
+        "fuseLit": true,
+        "power": 0,
+        "causesFire": false
+      },
+      "minecraft:collision_box": {
+        "width": 0.18,
+        "height": 0.18
+      },
+      "minecraft:projectile": {
+        "on_hit": {
+          "impact_damage": {
+            "damage": 25,
+            "knockback": true,
+            "catchFire": false,
+            "semirandomdiffdamage": false
+          },
+          "remove_on_hit": {}
+        },
+        "power": 1.7,
+        "gravity": 0.05,
+        "inertia": 1,
+        "anchor": 2,
+        "offset": [0, 0, 0],
+        "semirandomdiffdamage": false,
+        "uncertaintyBase": 0,
+        "reflectOnHurt": true
+      },
+      "minecraft:physics": {}
+    },
+    "events": {
+      "instantdamage_6": {
+        "add": {
+          "component_groups": [
+            "instantdamage_6"
+          ]
+        }
+      },
+      "damage_60": {
+        "add": {
+          "component_groups": [
+            "damage_60"
+          ]
+        }
+      },
+      "instantdamage120_4": {
+        "add": {
+          "component_groups": [
+            "instantdamage120_4"
+          ]
+        }
+      },
+      "instantdamage_2": {
+        "add": {
+          "component_groups": [
+            "instantdamage_2"
+          ]
+        }
+      },
+      "blast_4": {
+        "add": {
+          "component_groups": [
+            "blast_4"
+          ]
+        }
+      }
+    }
+  }
+}

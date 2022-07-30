@@ -1,0 +1,21 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "minecraft:book",
+                    "weight": 6,
+                    "functions": [
+                        {
+                            "function": "enchant_with_levels",
+                            "levels": 2,
+                            "treasure": true
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

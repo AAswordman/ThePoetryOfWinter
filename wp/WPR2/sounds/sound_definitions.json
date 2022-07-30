@@ -1,0 +1,39 @@
+{
+  "mob.mcow.say": {
+    "category": "hostile",
+    "sounds": [
+      "sounds/wb_entity/1_x/cow"
+    ]
+  },
+  "mob.mbook.say": {
+    "category": "hostile",
+    "sounds": [
+      "sounds/wb_entity/2_x/book"
+    ]
+  },
+  "mob.magic_insect.say": {
+    "category": "hostile",
+    "sounds": [
+      "sounds/wb_entity/2_x/magic_insect"
+    ]
+  },
+  "mob.mstone.hurt": {
+    "category": "hostile",
+    "sounds": [
+      "sounds/wb_entity/2_x/stone_hurt"
+    ]
+  },
+  "mob.mstone.say": {
+    "category": "hostile",
+    "sounds": [
+      "sounds/wb_entity/2_x/stone"
+    ]
+  },
+  "music.wb.anger_of_ancient": {
+    "category": "music",
+    "min_distance": 100.0,
+    "sounds": [
+      "sounds/wb/anger_of_ancient"
+    ]
+  }
+}

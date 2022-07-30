@@ -1,0 +1,45 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.snow_energy_fuse": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "/summon dec:snow_energy ~~5~",
+            "/summon dec:snow_energy ~1~5~",
+            "/summon dec:snow_energy ~~5~1",
+            "/summon dec:snow_energy ~-1~5~",
+            "/summon dec:snow_energy ~~5~-1",
+            "/summon dec:snow_energy ~1~5~1",
+            "/summon dec:snow_energy ~-1~5~-1",
+            "/summon dec:snow_energy ~1~5~-1",
+            "/summon dec:snow_energy ~-1~5~1"
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "/summon dec:snow_energy ~~5~",
+            "/summon dec:snow_energy ~1~5~",
+            "/summon dec:snow_energy ~~5~1",
+            "/summon dec:snow_energy ~-1~5~",
+            "/summon dec:snow_energy ~~5~-1",
+            "/summon dec:snow_energy ~1~5~1",
+            "/summon dec:snow_energy ~-1~5~-1",
+            "/summon dec:snow_energy ~1~5~-1",
+            "/summon dec:snow_energy ~-1~5~1"
+          ]
+        }
+      }
+    }
+  }
+}

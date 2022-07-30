@@ -1,0 +1,100 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "minecraft:fishing_hook",
+      "is_spawnable": false,
+      "is_summonable": false,
+      "is_experimental": false
+    },
+    
+    "component_groups": {
+      "loot_jungle": {
+        "minecraft:loot": {
+          "table": "loot_tables/gameplay/jungle_fishing.json"
+        }
+      },
+      "loot_desert": {
+        "minecraft:loot": {
+          "table": "loot_tables/gameplay/desert_fishing.json"
+        }
+      },
+      "loot_end": {
+        "minecraft:loot": {
+          "table": "loot_tables/gameplay/end_fishing.json"
+        }
+      },
+      "loot_ocean": {
+        "minecraft:loot": {
+          "table": "loot_tables/gameplay/ocean_fishing.json"
+        }
+      },
+      "loot_ice": {
+        "minecraft:loot": {
+          "table": "loot_tables/gameplay/ice_fishing.json"
+        }
+      }
+    },
+
+      "components": {
+        "minecraft:collision_box": {
+          "width": 0.15,
+          "height": 0.15
+        },
+        "minecraft:projectile": {
+          "on_hit": { "stick_in_ground": {} }
+        },
+        "minecraft:loot": {
+          "table": "loot_tables/gameplay/fishing.json"
+        },
+        "minecraft:physics": {
+        },
+        "minecraft:pushable": {
+          "is_pushable": false,
+          "is_pushable_by_piston": true
+        }
+      },
+
+      "events": {
+        "minecraft:entity_spawned": {
+          "sequence": [
+            {
+              "filters": {
+                "test": "is_biome",
+                "value": "jungle"
+              },
+              "add": { "component_groups": [ "loot_jungle" ] }
+            },
+            {
+              "filters": {
+                "test": "is_biome",
+                "value": "desert"
+              },
+              "add": { "component_groups": [ "loot_desert" ] }
+            },
+            {
+              "filters": {
+                "test": "is_biome",
+                "value": "the_end"
+              },
+              "add": { "component_groups": [ "loot_end" ] }
+            },
+            {
+              "filters": {
+                "test": "is_biome",
+                "value": "ocean"
+              },
+              "add": { "component_groups": [ "loot_ocean" ] }
+            },
+            {
+              "filters": {
+                "test": "is_biome",
+                "value": "ice"
+              },
+              "add": { "component_groups": [ "loot_ice" ] }
+            }
+          ]
+        }
+      }
+    }
+  }

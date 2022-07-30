@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "wb:turbine"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "X#X",
+      "X#X",
+      "X X"
+    ],
+    "key": {
+      "#": {
+        "item": "wb:impeller"
+      },
+      "X": {
+        "item":"minecraft:iron_ingot"
+      }
+    },
+    "result": {
+      "item": "wb:turbine"
+    }
+  }
+}

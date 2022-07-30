@@ -1,0 +1,40 @@
+{
+  "format_version": "1.8.0",
+  "animation_controllers": {
+    "controller.animation.illusioner.base": {
+      "states": {
+        "default": {
+          "animations": [
+            { "vindicator_base": [] },
+            { "vindicator_attack": [] },
+            { "vindicator_walk": [] },
+            { "look_at_target": [] },
+            { "general": [] }
+          ],
+          "transitions": [
+            { "casting": "query.is_casting" }
+          ]
+        },
+        "casting": {
+          "animations": [
+            { "look_at_target": [] },
+            { "casting": [] }
+          ],
+          "particle_effects": [
+            {
+              "effect": "spell",
+              "locator": "leftArm"
+            },
+            {
+              "effect": "spell",
+              "locator": "rightArm"
+	    }
+          ],
+          "transitions": [
+            { "default": "!query.is_casting" }
+          ]
+        }
+      }
+    }
+  }
+}

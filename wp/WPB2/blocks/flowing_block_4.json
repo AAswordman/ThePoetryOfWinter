@@ -1,0 +1,17 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:block": {
+    "description": {
+      "identifier": "dec:flowing_block_4"
+    },
+    "components": {
+      "minecraft:block_light_absorption": 1,
+      "minecraft:block_light_emission": 0.8,
+      "minecraft:destroy_time": 3,
+      "minecraft:explosion_resistance": 100,
+      "minecraft:loot": "loot_tables/blocks/flowing_block.json",
+      "minecraft:map_color": "#130672",
+      "tag:stone": {}
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+    "format_version": "1.16.0",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dec:lurk_mushroom_lit"
+        },
+        "components": {
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "lurk_mushroom_lit",
+                    "render_method": "alpha_test"
+                }
+            },
+            "minecraft:geometry": "geometry.crop.sparse.flower",
+            "minecraft:entity_collision": false,
+            "minecraft:pick_collision": {
+                "origin": [-5,0,-5],
+                "size": [10,9,10]
+            },
+            "minecraft:destroy_time": 0.001,
+            "minecraft:block_light_emission": 0.5,
+            "minecraft:map_color": "#00847D",
+            "minecraft:block_light_absorption": 0.0,
+            "minecraft:loot": "loot_tables/blocks/lurk_mushroom.json",
+            "minecraft:placement_filter": {
+                "conditions": [
+                    {
+                        "allowed_faces": [
+                            "up"
+                        ],
+                        "block_filter": [
+                            "end_stone",
+                            "dec:lurk_end_stone"
+                        ]
+                    }
+                ]
+            },
+            "minecraft:ticking": {
+                "looping": true,
+                "range": [
+                    3,
+                    5
+                ],
+                "on_tick": {
+                    "event": "turn_off",
+                    "target": "self"
+                }
+            }
+        },
+        "events": {
+			"turn_off": {
+				"set_block": {
+					"block_type": "dec:lurk_mushroom"
+				}
+			}
+		}
+    }
+}

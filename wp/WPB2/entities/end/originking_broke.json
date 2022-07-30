@@ -1,0 +1,82 @@
+{
+  "format_version": "1.8.0",
+ "minecraft:entity": {
+  "description": {
+    "identifier": "wb:originking_broke",
+    "is_spawnable": false,
+    "is_summonable": true,
+    "is_experimental": false,
+    "runtime_identifier": "minecraft:snowball",
+      "animations": {
+        "summon":"controller.animation.originking.broke",
+        "broke":"animation.originking.broke"
+      },
+       "scripts": {
+         "animate": [
+           "summon"
+         ]
+      }
+  },
+
+  "component_groups": {
+   "minecraft:exploding": {
+   	"minecraft:is_baby":{},
+       "minecraft:explode": {
+     "fuseLength": 0.6,
+     "fuseLit": true,
+     "breaks_blocks":true,
+     "power": 80,
+    // "max_resistance":4.0,
+     "destroyAffectedByGriefing": true
+    }
+   }
+  },
+
+  "components": {
+     "minecraft:explode": {
+     "fuseLength": 8,
+     "fuseLit": true,
+     "breaks_blocks":true,
+     "power": 10,
+     "causesFire": true,
+     "fireAffectedByGriefing": true,
+     "destroyAffectedByGriefing": true
+    },
+  	"minecraft:physics":{
+},
+   "minecraft:collision_box": {
+    "width": 0.18,
+    "height": 0.18
+   },
+   "minecraft:projectile": {
+    
+    "onHit": {
+     "definition_event": {
+      "affectProjectile": true,
+      "eventTrigger": {
+            "event": "minecraft:explode",
+            "target": "self"
+      }
+     }
+    },
+    "power": 1.1,
+    "gravity": 0.00,
+    "inertia": 1,
+    "uncertaintyBase": 0,
+    "uncertaintyMultiplier": 0,
+    "anchor": 1,
+    "reflectOnHurt": true,
+    "catchFire": true
+   }
+  },
+  "events": {
+   "minecraft:explode": {
+    "add": {
+     "component_groups": [
+      "minecraft:exploding"
+     ]
+    }
+   }
+  }
+ }
+}

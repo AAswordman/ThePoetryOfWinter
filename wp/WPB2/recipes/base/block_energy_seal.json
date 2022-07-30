@@ -1,0 +1,22 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "wb:block_energy_seal"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "###",
+      "###",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "wb:mineral_energy_seal"
+      }
+    },
+    "result": {
+      "item": "wb:block_energy_seal"
+    }
+  }
+}

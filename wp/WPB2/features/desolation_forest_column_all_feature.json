@@ -1,0 +1,14 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:aggregate_feature": {
+		"description": {
+			"identifier": "wb:desolation_forest_column_all_feature"
+		},
+		"features": [
+			"wb:desolation_forest_column_1_feature",
+			"wb:desolation_forest_column_2_feature",
+			"wb:desolation_forest_column_3_feature",
+			"wb:desolation_forest_column_4_feature"
+		]
+	}
+}

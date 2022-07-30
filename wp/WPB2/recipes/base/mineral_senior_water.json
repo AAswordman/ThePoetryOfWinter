@@ -1,0 +1,23 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "wb:mineral_senior_water"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "#"
+    ],
+    "key": {
+      "#": {
+        "item": "wb:block_senior_water"
+      }
+    },
+    "result": {
+      "item": "wb:mineral_senior_water",
+      "count": 9
+    }
+  }
+}

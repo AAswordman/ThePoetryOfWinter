@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:pluse_stone"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "###",
+      "#X#",
+      "###"
+    ],
+    "key": {
+      "X": {
+        "item": "dec:stream_stone"
+      },
+      "#": {
+        "item": "minecraft:redstone"
+      }
+    },
+    "result": {
+      "item": "dec:pluse_stone"
+    }
+  }
+}

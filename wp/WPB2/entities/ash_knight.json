@@ -1,0 +1,421 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:ash_knight",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "minecraft:spawn": {
+        "minecraft:timer": {
+          "looping": false,
+          "time": 5,
+          "time_down_event": {
+            "event": "minecraft:change_attack"
+          }
+        },
+        "minecraft:spell_effects": {
+          "add_effects": [
+            {
+              "effect": "slowness",
+              "amplifier": 50,
+              "visible": 0,
+              "ambient": 0,
+              "duration": 5,
+              "display_on_screen_animation": true
+            }
+          ]
+        }
+      },
+      "minecraft:angry": {
+        "minecraft:boss": {
+          "should_darken_sky": false,
+          "name": "boss.dec:ash_knight_angry.name",
+          "hud_range": 64
+        },
+        "minecraft:health": {
+          "value": 1200,
+          "max": 1200
+        }
+      },
+      "minecraft:summon_mode": {
+        "minecraft:timer": {
+          "looping": false,
+          "time": 5,
+          "time_down_event": {
+            "event": "minecraft:change_attack"
+          }
+        },
+        "minecraft:behavior.summon_entity": {
+          "priority": 2,
+          "summon_choices": [
+            {
+              "cooldown_time": 5.0,
+              "weight": 5,
+              "cast_duration": 3.0,
+              "particle_color": "#FF664D59",
+              "start_sound_event": "cast.spell",
+              "sequence": [
+                {
+                  "shape": "circle",
+                  "target": "self",
+                  "base_delay": 0.15,
+                  "delay_per_summon": 0.0,
+                  "num_entities_spawned": 4,
+                  "entity_type": "dec:ash_bomb",
+                  "size": 6
+                },
+                {
+                  "shape": "circle",
+                  "target": "self",
+                  "base_delay": 0,
+                  "delay_per_summon": 0.0,
+                  "num_entities_spawned": 4,
+                  "entity_type": "dec:ash_bomb",
+                  "size": 12
+                },
+                {
+                  "shape": "circle",
+                  "target": "self",
+                  "base_delay": 0,
+                  "delay_per_summon": 0.0,
+                  "num_entities_spawned": 6,
+                  "entity_type": "dec:ash_bomb",
+                  "size": 16
+                }
+              ]
+            },
+            {
+              "weight": 4,
+              "cooldown_time": 0.0,
+              "cast_duration": 2.0,
+              "particle_color": "#FFB3B3CC",
+              "sequence": [
+                {
+                  "shape": "circle",
+                  "target": "self",
+                  "base_delay": 0.0,
+                  "num_entities_spawned": 4,
+                  "entity_type": "dec:elf_of_ash",
+                  "summon_cap": 32,
+                  "summon_cap_radius": 16.0,
+                  "size": 8.0,
+                  "sound_event": "prepare.summon",
+                  "entity_lifespan": 40
+                }
+              ]
+            },
+            {
+              "weight": 3,
+              "cooldown_time": 0.0,
+              "cast_duration": 3.0,
+              "particle_color": "#FFB3B3CC",
+              "sequence": [
+                {
+                  "shape": "circle",
+                  "target": "self",
+                  "base_delay": 0.0,
+                  "num_entities_spawned": 1,
+                  "entity_type": "dec:elf_of_chaos",
+                  "summon_cap": 8,
+                  "summon_cap_radius": 16.0,
+                  "size": 8.0,
+                  "sound_event": "prepare.summon",
+                  "entity_lifespan": 40
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "minecraft:attack_mode": {
+        "minecraft:teleport": {
+          "random_teleports": true,
+          "max_random_teleport_time": 20,
+          "random_teleport_cube": [
+            8,
+            8,
+            8
+          ],
+          "target_distance": 16,
+          "target_teleport_chance": 0.05,
+          "light_teleport_chance": 0.05
+        },
+        "minecraft:behavior.melee_attack": {
+          "priority": 4,
+          "target_dist": 1.2,
+          "speed_multiplier": 1,
+          "track_target": true
+        },
+        "minecraft:attack": {
+          "damage": 7,
+          "effect_name": "wither",
+          "effect_duration": 5
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 10,
+          "time_down_event": {
+            "event": "minecraft:change_attack"
+          }
+        }
+      },
+      "minecraft:assault_mode": {
+        "minecraft:behavior.melee_attack": {
+          "priority": 4,
+          "target_dist": 1.2,
+          "speed_multiplier": 1.5,
+          "track_target": true
+        },
+        "minecraft:attack": {
+          "damage": 7,
+          "effect_name": "wither",
+          "effect_duration": 5
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 3,
+          "time_down_event": {
+            "event": "minecraft:change_attack"
+          }
+        }
+      }
+    },
+    "components": {
+      "minecraft:despawn": {
+        "despawn_from_distance": {
+          "min_distance": 256,
+          "max_distance": 256
+        }
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "fall",
+            "deals_damage": false
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "ash"
+              }
+            },
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:fire_immune": true,
+      "minecraft:experience_reward": {
+        "on_death": "query.last_hit_by_player ? 600 : 0"
+      },
+      "minecraft:type_family": {
+        "family": [
+          "monster",
+          "ash_knight",
+          "undead",
+          "ash",
+          "boss"
+        ]
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/ash_knight.json"
+      },
+      "minecraft:nameable": {},
+      "minecraft:health": {
+        "value": 400,
+        "max": 400
+      },
+      "minecraft:physics": {},
+      "minecraft:breathable": {
+        "totalSupply": 15,
+        "suffocateTime": 0,
+        "breathesAir": true,
+        "breathesWater": false
+      },
+      "minecraft:collision_box": {
+        "width": 1.4,
+        "height": 3.5
+      },
+      "minecraft:movement": {
+        "value": 0.3
+      },
+      "minecraft:follow_range": {
+        "value": 256,
+        "max": 256
+      },
+      "minecraft:navigation.walk": {
+        "can_path_over_water": true
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:boss": {
+        "should_darken_sky": false,
+        "name": "boss.dec:ash_knight.name",
+        "hud_range": 64
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1,
+        "entity_types": {
+          "filters": {
+            "test": "is_family",
+            "subject": "other",
+            "operator": "!=",
+            "value": "ash"
+          },
+          "max_dist": 64
+        }
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "within_radius": 16.0,
+        "reselect_targets": true,
+        "entity_types": [
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "wandering_trader"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "villager"
+                }
+              ]
+            },
+            "max_dist": 16
+          }
+        ],
+        "must_see": true
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 7,
+        "speed_multiplier": 1
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 8,
+        "look_distance": 8
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 8
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "sequence": [
+          {
+            "add": {
+              "component_groups": [
+                "minecraft:spawn"
+              ]
+            }
+          },
+          {
+            "filters": {
+              "test": "has_biome_tag",
+              "operator": "!=",
+              "value": "basalt_deltas"
+            },
+            "randomize": [
+              {
+                "add": {
+                  "component_groups": [
+                    "minecraft:angry"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "minecraft:change_attack": {
+        "sequence": [
+          {
+            "randomize": [
+              {
+                "weight": 1,
+                "sequence": [
+                  {
+                    "randomize": [
+                      {
+                        "weight": 2,
+                        "remove": {
+                          "component_groups": [
+                            "minecraft:summon_mode",
+                            "minecraft:attack_mode",
+                            "minecraft:assault_mode"
+                          ]
+                        },
+                        "add": {
+                          "component_groups": [
+                            "minecraft:summon_mode"
+                          ]
+                        }
+                      },
+                      {
+                        "weight": 3,
+                        "remove": {
+                          "component_groups": [
+                            "minecraft:summon_mode",
+                            "minecraft:attack_mode",
+                            "minecraft:assault_mode"
+                          ]
+                        },
+                        "add": {
+                          "component_groups": [
+                            "minecraft:attack_mode"
+                          ]
+                        }
+                      },
+                      {
+                        "weight": 1,
+                        "remove": {
+                          "component_groups": [
+                            "minecraft:summon_mode",
+                            "minecraft:attack_mode",
+                            "minecraft:assault_mode"
+                          ]
+                        },
+                        "add": {
+                          "component_groups": [
+                            "minecraft:assault_mode"
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

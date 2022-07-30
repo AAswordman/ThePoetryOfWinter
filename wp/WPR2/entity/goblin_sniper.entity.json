@@ -1,0 +1,34 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:goblin_sniper",
+      "materials": { "default": "zombie" },
+      "textures": { "default": "textures/entity/goblin_sniper" },
+      "geometry": { "default": "geometry.goblin_wizard" },
+      "animations": {
+        "look_at_target": "animation.common.look_at_target",
+        "walk": "animation.humanoid.move.v1.0",
+        "bow_and_arrow": "animation.humanoid.bow_and_arrow.v1.0",
+        "staying": "animation.goblin.stay"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;"
+        ],
+        "animate": [
+          "walk",
+          {"bow_and_arrow":"query.has_target"},
+          "staying",
+          "look_at_target"
+        ]
+      },
+      "render_controllers": [ "controller.render.zombie" ],
+      "enable_attachables": true,
+      "spawn_egg": {
+        "base_color": "#847D1B",
+        "overlay_color": "#5E5746"
+      }
+    }
+  }
+}

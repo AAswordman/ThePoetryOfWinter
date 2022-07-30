@@ -1,0 +1,22 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:straw_rope"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "X",
+      "X"
+    ],
+    "key": {
+      "X": {
+        "item": "minecraft:tallgrass",
+        "data": 1
+      }
+    },
+    "result": {
+      "item": "dec:straw_rope"
+    }
+  }
+}

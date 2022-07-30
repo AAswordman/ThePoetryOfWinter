@@ -1,0 +1,23 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "wb:mineral_energy_boundary"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "#"
+    ],
+    "key": {
+      "#": {
+        "item": "wb:block_energy_boundary"
+      }
+    },
+    "result": {
+      "item": "wb:mineral_energy_boundary",
+      "count": 9
+    }
+  }
+}

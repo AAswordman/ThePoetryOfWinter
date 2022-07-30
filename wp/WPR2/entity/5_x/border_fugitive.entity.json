@@ -1,0 +1,49 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "wb:border_fugitive",
+      "materials": { 
+          "default": "skeleton",
+          "charged":"wbarmor",
+          "roaring":"wbarmor"
+      },
+      "textures": { 
+          "default": "textures/wb/5_x/border_fugitive",
+          "charged":"textures/wb/3_x/ball_staff",
+          "roaring":"textures/wb/3_x/ball_staff"
+      },
+      "geometry": { 
+          "default": "geometry.border_fugitive",
+          "roaring":"geometry.block_ballxb",
+          "charged":"geometry.block_ballxa"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
+          "variable.tcos1 = -variable.tcos0;"
+        ]
+      },
+      "animations": {
+        "look_at_target_default": "animation.humanoid.look_at_target.default.v1.0",
+        "look_at_target_gliding": "animation.humanoid.look_at_target.gliding.v1.0",
+        "look_at_target_swimming": "animation.humanoid.look_at_target.swimming.v1.0",
+        "move": "animation.border_fugitive.move",
+        "roaring":"animation.border_fugitive.roaring"
+      },
+      "animation_controllers": [
+        { "look_at_target": "controller.animation.humanoid.look_at_target" },
+        { "move": "controller.animation.border_fugitive.move" },
+        { "roaring":"controller.animation.base.roaring" }
+      ],
+     "particle_effects": {
+        "spell": "wb:border_fugitive_para"
+      },
+      "render_controllers": [ "controller.render.border_fugitive","controller.render.border_fugitive_armora","controller.render.border_fugitive_armorb"],
+      "spawn_egg": {
+        "texture": "border_fugitive",
+        "texture_index": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:abyssal_controller",
+      "materials": { "default": "drowned" },
+      "textures": { "default": "textures/entity/abyssal_controller" },
+      "geometry": { "default": "geometry.abyssal_controller" },
+      "scripts": {
+        "animate": [
+          "look_at_target",
+          "spawn",
+          "float"
+        ]
+      },
+      "animations": {
+        "look_at_target": "animation.common.look_at_target",
+        "float": "animation.abyssal_controller.float",
+        "spawn": "animation.abyssal_controller.spawn"
+      },
+      "render_controllers": [ "controller.render.drowned" ],
+      "enable_attachables": true,
+      "spawn_egg": {
+        "base_color": "#27247F",
+        "overlay_color": "#1414B7"
+      }
+    }
+  }
+}

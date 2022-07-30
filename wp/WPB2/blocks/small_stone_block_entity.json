@@ -1,0 +1,37 @@
+{
+    "format_version": "1.16.0",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dec:small_stone_block_entity"
+        },
+        "components": {
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "small_stone",
+                    "render_method": "alpha_test"
+                }
+            },
+            "minecraft:pick_collision": {
+                "origin": [ -2, 0, -2 ],
+                "size": [ 3, 2, 3 ]
+            },
+            "minecraft:entity_collision": {
+                "origin": [ -2, 0, -2 ],
+                "size": [ 3, 2, 3 ]
+            },
+            "minecraft:placement_filter": {
+                "conditions": [
+                    {
+                        "allowed_faces": ["up"]
+                    }
+                ]
+            },
+            "minecraft:geometry": "geometry.small_stone",
+            "minecraft:map_color": "#A36FD5",
+            "minecraft:loot": "loot_tables/blocks/small_stone.json",
+            "minecraft:block_light_emission": 0.0,
+            "minecraft:block_light_absorption": 0.0,
+            "minecraft:destroy_time": 0.01
+        }
+    }
+}

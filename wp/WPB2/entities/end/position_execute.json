@@ -1,0 +1,43 @@
+{
+  "format_version": "1.8.0",
+ "minecraft:entity": {
+  "description": {
+    "identifier": "wb:position_execute",
+    "is_spawnable": false,
+    "is_summonable": true,
+    "is_experimental": false,
+    "runtime_identifier": "minecraft:snowball"
+  },
+  "components": {
+  
+       "minecraft:tick_world":{
+    	"distance_to_players": true,
+    	"radius":2
+      },
+  	  "minecraft:explode": {
+     "fuseLength": 10,
+     "fuseLit": true,
+     "power": 0,
+     "causesFire": false
+    },
+    "minecraft:collision_box": {
+    "width": 0.18,
+    "height": 0.18
+   },
+   "minecraft:projectile": {
+    "onHit": {
+    },
+    "power": 0,
+    "gravity": 0.00,
+    "inertia": 1,
+    "anchor": 2,
+    "offset": [ 0, 0.0, 0.0],
+    "semirandomdiffdamage": false,
+    "uncertaintyBase": 0.0,
+    "reflectOnHurt": true
+   },
+   "minecraft:physics": {
+   }
+  }
+ }
+}

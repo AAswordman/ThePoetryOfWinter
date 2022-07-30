@@ -1,0 +1,29 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:wood_helmet"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "AXA",
+      "B B"
+    ],
+    "key": {
+      "X": {
+        "item": "minecraft:log"
+      },
+      "A": {
+        "item": "dec:eye_of_nature"
+      },
+      "B": {
+        "item": "minecraft:vine"
+      }
+    },
+    "result": {
+      "item": "dec:wood_helmet"
+    }
+  }
+}

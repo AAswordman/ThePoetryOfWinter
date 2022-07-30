@@ -1,0 +1,21 @@
+{
+  "format_version": "1.8.0", 
+  "animations": {
+      "animation.diamond_staff": {
+        "timeline": {
+            "0.4": [
+                "/tag @s[scores={wbfl=3..}] add shot",
+                "/execute @s[scores={wbfl=3..}] ~~~ playsound item.book.put @a ~~~",
+                "/scoreboard players remove @s[scores={wbfl=3..}] wbfl 3"
+            ],
+            "0.6": [
+                "/tag @s[scores={wbfl=3..}] add shot",
+                "/execute @s[scores={wbfl=3..}] ~~~ playsound item.book.put @a ~~~",
+                "/scoreboard players remove @s[scores={wbfl=3..}] wbfl 3"
+            ]
+        }, 
+        "animation_length": 0.9, 
+        "loop": true
+      }
+   }
+}

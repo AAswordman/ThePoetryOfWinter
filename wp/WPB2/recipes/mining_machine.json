@@ -1,0 +1,31 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:mining_machine"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XBX",
+      "A#A",
+      "XAX"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:smoker"
+      },
+      "A": {
+        "item": "minecraft:redstone_block"
+      },
+      "B": {
+        "item": "minecraft:tnt"
+      },
+      "X": {
+        "item": "minecraft:ender_pearl"
+      }
+    },
+    "result": {
+      "item": "dec:mining_machine"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:entity_soul",
+      "materials": { "default": "husk" },
+      "textures": { "default": "textures/entity/entity_soul" },
+      "geometry": { "default": "geometry.entity_soul" },
+      "scripts": {
+        "animate": [
+          "spawn",
+          {"summon":"query.is_casting"},
+          {"walk" : "query.modified_move_speed"},
+          "span",
+          "look_at_target"
+        ]
+      },
+      "animations": {
+        "spawn": "animation.entity_soul.spawn",
+        "walk": "animation.entity_soul.walk",
+        "look_at_target": "animation.common.look_at_target",
+        "span": "animation.entity_soul.span",
+        "summon": "animation.entity_soul.summon"
+      },
+      "render_controllers": [ "controller.render.star" ],
+      "enable_attachables": true,
+      "spawn_egg": {
+        "base_color": "#FFFFFF",
+        "overlay_color": "#F5F5F5"
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:ash_bomb",
+      "materials": { "default": "zombie" },
+      "textures": {
+        "default": "textures/entity/ash_bomb"
+      },
+      "scripts": {
+        "scale": "0.25"
+      },
+      "geometry": {
+        "default": "geometry.half_block"
+      },
+      "render_controllers": [ "controller.render.tnt" ]
+    }
+  }
+}

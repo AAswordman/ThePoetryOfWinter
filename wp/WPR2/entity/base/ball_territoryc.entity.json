@@ -1,0 +1,16 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "wb:ball_territoryc",
+      "materials": { "default": "ball_staff" },
+      "textures": {
+        "default": "textures/wb/base/ball_territory"
+      },
+      "geometry": {
+        "default": "geometry.ball_staff"
+      },
+      "render_controllers": [ "controller.render.base" ]
+    }
+  }
+}

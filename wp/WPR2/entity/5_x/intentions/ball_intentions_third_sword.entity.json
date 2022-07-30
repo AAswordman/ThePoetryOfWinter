@@ -1,0 +1,24 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "wb:ball_intentions_third_sword",
+      "materials": {
+          "default": "skeleton",
+          "charged":"wbarmor"
+      },
+      "textures": { 
+          "default": "textures/wb/5_x/ball_intentions_first_sword",
+          "charged":"textures/wb/3_x/ball_staff"
+      },
+      "geometry": { 
+          "default": "geometry.ball_intentions_first_sword",
+          "charged":"geometry.ball_intentions_third_sword"
+      },
+      "render_controllers": [
+          "controller.render.base",
+          "controller.render.ball_intentions_third_sword"
+    ]
+    }
+  }
+}

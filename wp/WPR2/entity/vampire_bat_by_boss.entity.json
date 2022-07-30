@@ -1,0 +1,26 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:vampire_bat_by_boss",
+      "materials": { "default": "bat" },
+      "textures": {
+        "default": "textures/entity/vampire_bat"
+      },
+      "geometry": {
+        "default": "geometry.bat"
+      },
+      "scripts": {
+        "scale": "0.28"
+      },
+      "animations": {
+        "resting": "animation.bat.resting",
+        "flying": "animation.bat.flying"
+      },
+      "animation_controllers": [
+        { "move": "controller.animation.bat.move" }
+      ],
+      "render_controllers": [ "controller.render.bat" ]
+    }
+  }
+}

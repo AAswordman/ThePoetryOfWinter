@@ -1,0 +1,44 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:bomber",
+      "materials": {
+        "default": "husk"
+      },
+      "textures": {
+        "default": "textures/entity/bomber"
+      },
+      "geometry": {
+        "default": "geometry.zombie.v1.8"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;"
+        ],
+        "scale": "1",
+        "animate": [
+          "look_at_target",
+          {
+            "attack": "query.has_target"
+          },
+          {
+            "walk": "query.modified_move_speed"
+          }
+        ]
+      },
+      "animations": {
+        "look_at_target": "animation.common.look_at_target",
+        "walk": "animation.humanoid.move",
+        "attack": "animation.bomber.attack"
+      },
+      "render_controllers": [
+        "controller.render.star"
+      ],
+      "spawn_egg": {
+        "base_color": "#723232",
+        "overlay_color": "#CA4E06"
+      }
+    }
+  }
+}

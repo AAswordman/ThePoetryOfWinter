@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "wb:base_core_c"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "###",
+      "#Y#",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "wb:mineral_senior_equipment"
+      },
+      "Y": {
+        "item":"wb:base_core_b"
+      }
+    },
+    "result": {
+      "item": "wb:base_core_c"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+        "animation.illusioner.crossbow.hold": {
+      "loop": true,
+      "bones": {
+        "rightArm": {
+          "rotation": [ "-90.0 + 5.73 + query.target_x_rotation -this", "-17.19 + Math.clamp(query.target_y_rotation, -25, 45) -this", "0.0" ]
+        },
+        "leftArm": {
+          "rotation": [ "-85.94 + query.target_x_rotation -this", "34.38 + Math.clamp(query.target_y_rotation, -45, 25) -this", "0.0" ]
+        }
+      }
+    },
+		"animation.illusioner.casting" : {
+			"bones" : {
+				"arms" : {
+					"scale" : 0.0
+				},
+				"leftArm" : {
+					"rotation" : [ "math.cos(query.life_time * 763.4) * 14.3239 - this", "-this", "-135.0 - this" ],
+					"scale" : 1.0
+				},
+				"rightArm" : {
+					"rotation" : [ "math.cos(query.life_time * 763.4) * 14.3239 - this", "-this", "135.0 - this" ],
+					"scale" : 1.0
+	      }
+		},
+	  "loop" : true
+	}
+  }
+}

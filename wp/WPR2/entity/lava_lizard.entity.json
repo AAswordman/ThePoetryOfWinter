@@ -1,0 +1,29 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:lava_lizard",
+      "materials": { "default": "husk" },
+      "textures": {
+        "default": "textures/entity/lava_lizard"
+      },
+      "geometry": {
+        "default": "geometry.lava_lizard"
+      },
+      "scripts": {
+        "scale": "2",
+        "animate": [
+          {"walk" : "query.modified_move_speed"}
+        ]
+      },
+      "animations": {
+        "walk": "animation.lava_lizard.move"
+      },
+      "render_controllers": [ "controller.render.star" ],
+      "spawn_egg": {
+        "base_color": "#501B1B",
+        "overlay_color": "#CA4E06"
+      }
+    }
+  }
+}

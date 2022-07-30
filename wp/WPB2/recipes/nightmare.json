@@ -1,0 +1,37 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:nightmare"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XXX",
+      "BAB",
+      "CDE"
+    ],
+    "key": {
+      "X": {
+        "item": "dec:dark_debris"
+      },
+      "A": {
+        "item": "dec:god_of_sun"
+      },
+      "B": {
+        "item": "dec:complete_bat_wing"
+      },
+      "C": {
+        "item": "dec:diamond_staff"
+      },
+      "D": {
+        "item": "dec:everlasting_winter_staff"
+      },
+      "E": {
+        "item": "dec:wave_magic_book"
+      }
+    },
+    "result": {
+      "item": "dec:nightmare"
+    }
+  }
+}

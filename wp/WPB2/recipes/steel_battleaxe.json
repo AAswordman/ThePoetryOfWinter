@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:steel_battleaxe"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "BB",
+      "AB",
+      "X "
+    ],
+    "key": {
+      "B": {
+        "item": "dec:steel_ingot"
+      },
+      "X": {
+        "item": "dec:iron_stick"
+      },
+      "A": {
+        "item": "minecraft:iron_axe"
+      }
+    },
+    "result": {
+      "item": "dec:steel_battleaxe"
+    }
+  }
+}

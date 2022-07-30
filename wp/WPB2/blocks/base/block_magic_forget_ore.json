@@ -1,0 +1,16 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "wb:block_magic_forget_ore",
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:destroy_time": 3,
+			"minecraft:explosion_resistance": 3,
+			"minecraft:creative_category": {
+				"category": "construction"
+			}
+		}
+	}
+}

@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:vortex"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "A#A",
+      "AXA",
+      "AAA"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:heart_of_the_sea"
+      },
+      "A": {
+        "item": "dec:pollution_algae"
+      },
+      "X": {
+        "item": "dec:coral_sword"
+      }
+    },
+    "result": {
+      "item": "dec:vortex"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_furnace": {
+    "description": {
+    "identifier": "wb:block_senior_equipment_ore"
+    },
+
+    
+    "tags": ["furnace", "blast_furnace"],
+    "input": "wb:block_senior_equipment_ore",
+    "output": "wb:mineral_senior_equipment"
+  }
+  
+}

@@ -1,0 +1,13 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "wb:jet_pack",
+      "category": "Nature"
+    },
+    "components": {
+      "minecraft:icon": "jet_pack",
+      "minecraft:hover_text_color": "light_purple"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "format_version": "1.8.0",
+  "animation_controllers": {
+    "controller.animation.werewolf": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "werewolf1": "query.has_target"
+            }
+          ]
+        },
+        "werewolf1": {
+          "transitions": [
+            {
+              "werewolf": "query.has_target"
+            }
+          ]
+        },
+        "werewolf": {
+          "transitions": [
+            {
+              "werewolf1": "query.has_target"
+            }
+          ],
+          "on_entry": [
+            "/effect @s speed 3 2 true"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "wb:ball_ancient_stoneb",
+      "materials": { "default": "skeleton" },
+      "textures": {
+        "default": "textures/wb/5_x/ball_border_fugitivec"
+      },
+      "geometry": {
+        "default": "geometry.block_ball"
+      },
+      "render_controllers": [ "controller.render.base" ]
+    }
+  }
+}

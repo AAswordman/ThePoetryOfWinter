@@ -1,0 +1,21 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "wb:sword_intentions",
+          "weight": 1,
+          "functions": [
+                        {
+                            "function": "enchant_with_levels",
+                            "levels": 80,
+                            "treasure": true
+                        }
+		  ]
+        }
+      ]
+    }
+  ]
+}

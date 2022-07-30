@@ -1,0 +1,47 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.wooden_staff",
+				"texture_width": 32,
+				"texture_height": 32,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2,
+				"visible_bounds_offset": [0, 0, 0]
+			},
+			"bones": [
+				{
+					"name": "wooden_staff",
+					"pivot": [0, 12, 0],
+					"rotation": [-90, 0, 45],
+					"cubes": [
+						{"origin": [5, 11, 5], "size": [3, 1, 3], "uv": [0, 0]},
+						{"origin": [4, 11, 4], "size": [2, 1, 1], "uv": [13, 0]},
+						{"origin": [3, 11, 3], "size": [2, 1, 1], "uv": [6, 13]},
+						{"origin": [2, 11, 2], "size": [2, 1, 1], "uv": [0, 13]},
+						{"origin": [1, 11, 1], "size": [2, 1, 1], "uv": [11, 12]},
+						{"origin": [0, 11, 0], "size": [2, 1, 1], "uv": [6, 11]},
+						{"origin": [-1, 11, -1], "size": [2, 1, 1], "uv": [0, 11]},
+						{"origin": [-2, 11, -2], "size": [2, 1, 1], "uv": [10, 7]},
+						{"origin": [-3, 11, -3], "size": [2, 1, 1], "uv": [10, 4]},
+						{"origin": [-6, 11, -4], "size": [4, 1, 1], "uv": [0, 7]},
+						{"origin": [4, 11, 5], "size": [1, 1, 1], "uv": [15, 10]},
+						{"origin": [3, 11, 4], "size": [1, 1, 1], "uv": [15, 8]},
+						{"origin": [2, 11, 3], "size": [1, 1, 1], "uv": [15, 5]},
+						{"origin": [1, 11, 2], "size": [1, 1, 1], "uv": [14, 15]},
+						{"origin": [0, 11, 1], "size": [1, 1, 1], "uv": [8, 15]},
+						{"origin": [-1, 11, 0], "size": [1, 1, 1], "uv": [4, 15]},
+						{"origin": [-2, 11, -1], "size": [1, 1, 1], "uv": [0, 15]},
+						{"origin": [-3, 11, -2], "size": [1, 1, 1], "uv": [14, 2]},
+						{"origin": [-4, 11, -3], "size": [1, 1, 1], "uv": [11, 14]},
+						{"origin": [-7, 11, -6], "size": [4, 1, 2], "uv": [0, 4]},
+						{"origin": [-7, 11, -7], "size": [3, 1, 1], "uv": [8, 9]},
+						{"origin": [-8, 11, -8], "size": [3, 1, 1], "uv": [0, 9]},
+						{"origin": [-8, 11, -7], "size": [1, 1, 2], "uv": [9, 0]}
+					]
+				}
+			]
+		}
+	]
+}

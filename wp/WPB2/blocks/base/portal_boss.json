@@ -1,0 +1,17 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "wb:portal_boss",
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:destroy_time": 32767,
+			"minecraft:explosion_resistance": 5,
+			"minecraft:block_light_emission": 1,
+			"minecraft:creative_category": {
+				"category": "construction"
+			}
+		}
+	}
+}

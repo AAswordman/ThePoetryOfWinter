@@ -1,0 +1,28 @@
+{
+  "format_version": "1.8.0",
+  "animation_controllers": {
+    "controller.animation.sweep.wb": {
+      "states": {
+        "default": {
+           "transitions":[
+               { "oo":"(1.0)" }
+              ]
+        },
+        "oo": {
+          "on_entry":[
+              "/execute @p[r=2] ~ ~ ~ tp @e[type=wb:sweep_damage1,r=3] ~ ~ ~ facing ^ ^+0.7 ^+3",
+              "/execute @p[r=2] ~ ~ ~ tp @e[type=wb:sweep_damage2,r=3] ~ ~ ~ facing ^ ^+0.7 ^+3"
+           ],
+           "transitions":[
+               { "o":"(1.0)" }
+              ]
+        },
+       "o": {
+           "transitions":[
+               { "oo":"(1.0)" }
+              ]
+        }
+      }
+    }
+  }
+}

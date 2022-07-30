@@ -1,0 +1,14 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_furnace": {
+    "description": {
+    "identifier": "dec:furnace_diamond_shovel"
+    },
+
+    
+    "tags": ["furnace", "blast_furnace"],
+    "input": "minecraft:diamond_shovel",
+    "output": "dec:diamond_nugget"
+  }
+  
+}

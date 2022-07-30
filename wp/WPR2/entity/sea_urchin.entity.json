@@ -1,0 +1,23 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:sea_urchin",
+      "materials": { "default": "husk" },
+      "textures": {
+        "default": "textures/entity/sea_urchin"
+      },
+      "geometry": {
+        "default": "geometry.sea_urchin"
+      },
+      "scripts": {
+        "scale": "1"
+      },
+      "render_controllers": [ "controller.render.sea_urchin" ],
+      "spawn_egg": {
+        "base_color": "#000000",
+        "overlay_color": "#272727"
+      }
+    }
+  }
+}

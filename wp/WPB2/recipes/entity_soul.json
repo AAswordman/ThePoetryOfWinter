@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:entity_soul"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XXX",
+      "X#X",
+      "XXX"
+    ],
+    "key": {
+      "X": {
+        "item": "dec:soul"
+      },
+      "#": {
+        "item": "dec:ice_heart"
+      }
+    },
+    "result": {
+      "item": "dec:entity_soul"
+    }
+  }
+}

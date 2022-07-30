@@ -1,0 +1,22 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:block": {
+    "description": {
+      "identifier": "dec:ancient_ice"
+    },
+    "components": {
+		  "minecraft:creative_category": {
+        "group": "itemGroup.name.outside",
+				"category": "nature"
+			},
+      "minecraft:block_light_absorption": 0.5,
+      "minecraft:block_light_emission": 0,
+      "minecraft:destroy_time": 5,
+      "minecraft:explosion_resistance": 15,
+      "minecraft:friction": 1,
+      "minecraft:map_color": "#547CC6",
+      "minecraft:loot": "loot_tables/blocks/ancient_ice.json",
+      "tag:stone": {}
+    }
+  }
+}

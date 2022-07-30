@@ -1,0 +1,22 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "wb:impeller"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " X ",
+      "XXX",
+      " X "
+    ],
+    "key": {
+      "X": {
+        "item":"minecraft:iron_ingot"
+      }
+    },
+    "result": {
+      "item": "wb:impeller"
+    }
+  }
+}

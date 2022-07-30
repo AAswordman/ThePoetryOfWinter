@@ -1,0 +1,30 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:spawn_rules": {
+    "description": {
+      "identifier": "dec:sea_urchin",
+      "population_control": "animal"
+    },
+    "conditions": [
+      {
+        "minecraft:spawns_on_surface": {},
+        "minecraft:spawns_underwater": {},
+
+        "minecraft:weight": {
+          "default": 50
+        },
+        "minecraft:herd": {
+          "min_size": 1,
+          "max_size": 2
+        },
+        "minecraft:density_limit": {
+          "surface": 10,
+          "underground": 0
+        },
+        "minecraft:biome_filter": [
+          { "test": "has_biome_tag", "operator": "==", "value": "ocean" }
+        ]
+      }
+    ]
+  }
+}

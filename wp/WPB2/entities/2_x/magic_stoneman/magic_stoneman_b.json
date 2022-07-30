@@ -1,0 +1,524 @@
+{
+  "format_version": "1.11.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "wb:magic_stoneman_b",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "wb:magic_stoneman_b",
+      "animations": {
+        "base": "controller.animation.wb_magic_stoneman_b"
+      },
+      "scripts": {
+        "animate": [
+          "base"
+        ]
+      }
+    },
+    "component_groups": {
+      "basex": {
+        "minecraft:interact": {
+          "interact_text": "对话",
+          "use_item": false,
+          "on_interact": {
+            "event": "rhcvkemfjllt",
+            "target": "self"
+          }
+        }
+      },
+      "rhcvkemfjllt": {
+        "minecraft:variant": {
+          "value": 100
+        },
+        "minecraft:interact": {
+          "use_item": false,
+          "interact_text": "对话",
+          "on_interact": {
+            "target": "self",
+            "event": "watprqwnoape"
+          }
+        }
+      },
+      "watprqwnoape": {
+        "minecraft:variant": {
+          "value": 101
+        },
+        "minecraft:interact": {
+          "use_item": false,
+          "interact_text": "对话",
+          "on_interact": {
+            "target": "self",
+            "event": "qxgoeuyqcrzv"
+          }
+        }
+      },
+      "qxgoeuyqcrzv": {
+        "minecraft:variant": {
+          "value": 102
+        },
+        "minecraft:interact": {
+          "use_item": false,
+          "interact_text": "对话",
+          "on_interact": {
+            "target": "self",
+            "event": "fwbllltfbbmb"
+          }
+        }
+      },
+      "fwbllltfbbmb": {
+        "minecraft:variant": {
+          "value": 103
+        },
+        "minecraft:interact": {
+          "use_item": false,
+          "interact_text": "对话",
+          "on_interact": {
+            "target": "self",
+            "event": "vpzhkxhcubui"
+          }
+        }
+      },
+      "vpzhkxhcubui": {
+        "minecraft:variant": {
+          "value": 104
+        },
+        "minecraft:interact": {
+          "use_item": false,
+          "interact_text": "对话",
+          "on_interact": {
+            "target": "self",
+            "event": "ejsjqelztrtm"
+          }
+        }
+      },
+      "ejsjqelztrtm": {
+        "minecraft:variant": {
+          "value": 105
+        },
+        "minecraft:interact": {
+          "use_item": false,
+          "interact_text": "对话",
+          "on_interact": {
+            "target": "self",
+            "event": "cquumgmhmdwa"
+          }
+        }
+      },
+      "cquumgmhmdwa": {
+        "minecraft:variant": {
+          "value": 106
+        },
+        "minecraft:interact": {
+          "use_item": false,
+          "interact_text": "对话",
+          "on_interact": {
+            "target": "self",
+            "event": "jynnogbfnpcp"
+          }
+        }
+      },
+      "jynnogbfnpcp": {
+        "minecraft:variant": {
+          "value": 107
+        },
+        "minecraft:interact": {
+          "use_item": false,
+          "interact_text": "对话",
+          "on_interact": {
+            "target": "self",
+            "event": "tsgysryxzjwr"
+          }
+        }
+      },
+      "tsgysryxzjwr": {
+        "minecraft:variant": {
+          "value": 108
+        },
+        "minecraft:interact": {
+          "use_item": false,
+          "interact_text": "对话",
+          "on_interact": {
+            "target": "self",
+            "event": "lruotbwixfsk"
+          }
+        }
+      },
+      "lruotbwixfsk": {
+        "minecraft:variant": {
+          "value": 109
+        },
+        "minecraft:interact": {
+          "use_item": false,
+          "interact_text": "对话",
+          "on_interact": {
+            "target": "self",
+            "event": "ioayamnaufai"
+          }
+        }
+      },
+      "ioayamnaufai": {
+        "minecraft:variant": {
+          "value": 110
+        },
+        "minecraft:interact": {
+          "use_item": false,
+          "interact_text": "对话",
+          "on_interact": {
+            "target": "self",
+            "event": "nzqgerzhjxbu"
+          }
+        }
+      },
+      "nzqgerzhjxbu": {
+        "minecraft:variant": {
+          "value": 111
+        },
+        "minecraft:interact": {
+          "use_item": false,
+          "interact_text": "对话",
+          "on_interact": {
+            "target": "self",
+            "event": "qwabjaghtkrl"
+          }
+        }
+      },
+      "qwabjaghtkrl": {
+        "minecraft:variant": {
+          "value": 112
+        },
+        "minecraft:interact": {
+          "use_item": false,
+          "interact_text": "对话",
+          "on_interact": {
+            "target": "self",
+            "event": "rauzqiwlikwb"
+          }
+        }
+      },
+      "rauzqiwlikwb": {
+        "minecraft:variant": {
+          "value": 113
+        },
+        "minecraft:interact": {
+          "use_item": false,
+          "interact_text": "对话",
+          "on_interact": {
+            "target": "self",
+            "event": "pvgjmgmpyphs"
+          }
+        }
+      },
+      "pvgjmgmpyphs": {
+        "minecraft:variant": {
+          "value": 114
+        },
+        "minecraft:interact": {
+          "use_item": false,
+          "interact_text": "对话",
+          "on_interact": {
+            "target": "self",
+            "event": "heijfeqbgpat"
+          }
+        }
+      },
+      "heijfeqbgpat": {
+        "minecraft:variant": {
+          "value": 115
+        },
+        "minecraft:interact": {
+          "use_item": false,
+          "interact_text": "对话",
+          "on_interact": {
+            "target": "self",
+            "event": "umxhanggymfj"
+          }
+        }
+      },
+      "umxhanggymfj": {
+        "minecraft:variant": {
+          "value": 116
+        },
+        "minecraft:health": {
+          "value": 0,
+          "max": 0
+        }
+      }
+    },
+    "components": {
+      "minecraft:damage_sensor": [
+        {
+          "cause": "all",
+          "deals_damage": false
+        }
+      ],
+      "minecraft:loot": {
+        "table": "loot_tables/wb/2_x/magic_stoneman.json"
+      },
+      "minecraft:fire_immune": true,
+      "minecraft:type_family": {
+        "family": [
+          "npc"
+        ]
+      },
+      "minecraft:scale": {
+        "value": 1
+      },
+      "minecraft:collision_box": {
+        "width": 0.9,
+        "height": 1.8
+      },
+      "minecraft:health": {
+        "value": 0,
+        "max": 0
+      },
+      "minecraft:movement": {
+        "value": 0.23
+      },
+      "minecraft:navigation.walk": {},
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
+      "minecraft:behavior.random_stroll": {
+        "priority": 6,
+        "speed_multiplier": 1,
+        "xz_dist": 16
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 7,
+        "look_distance": 6,
+        "probability": 0.02
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 8
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 2
+      },
+      "minecraft:physics": {},
+      "minecraft:follow_range": {
+        "value": 64
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "basex"
+          ]
+        }
+      },
+      "base": {
+        "add": {
+          "component_groups": [
+            "base"
+          ]
+        }
+      },
+      "rhcvkemfjllt": {
+        "add": {
+          "component_groups": [
+            "rhcvkemfjllt"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "base"
+          ]
+        }
+      },
+      "watprqwnoape": {
+        "add": {
+          "component_groups": [
+            "watprqwnoape"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "rhcvkemfjllt"
+          ]
+        }
+      },
+      "qxgoeuyqcrzv": {
+        "add": {
+          "component_groups": [
+            "qxgoeuyqcrzv"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "watprqwnoape"
+          ]
+        }
+      },
+      "fwbllltfbbmb": {
+        "add": {
+          "component_groups": [
+            "fwbllltfbbmb"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "qxgoeuyqcrzv"
+          ]
+        }
+      },
+      "vpzhkxhcubui": {
+        "add": {
+          "component_groups": [
+            "vpzhkxhcubui"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "fwbllltfbbmb"
+          ]
+        }
+      },
+      "ejsjqelztrtm": {
+        "add": {
+          "component_groups": [
+            "ejsjqelztrtm"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "vpzhkxhcubui"
+          ]
+        }
+      },
+      "cquumgmhmdwa": {
+        "add": {
+          "component_groups": [
+            "cquumgmhmdwa"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "ejsjqelztrtm"
+          ]
+        }
+      },
+      "jynnogbfnpcp": {
+        "add": {
+          "component_groups": [
+            "jynnogbfnpcp"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "cquumgmhmdwa"
+          ]
+        }
+      },
+      "tsgysryxzjwr": {
+        "add": {
+          "component_groups": [
+            "tsgysryxzjwr"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "jynnogbfnpcp"
+          ]
+        }
+      },
+      "lruotbwixfsk": {
+        "add": {
+          "component_groups": [
+            "lruotbwixfsk"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "tsgysryxzjwr"
+          ]
+        }
+      },
+      "ioayamnaufai": {
+        "add": {
+          "component_groups": [
+            "ioayamnaufai"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "lruotbwixfsk"
+          ]
+        }
+      },
+      "nzqgerzhjxbu": {
+        "add": {
+          "component_groups": [
+            "nzqgerzhjxbu"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "ioayamnaufai"
+          ]
+        }
+      },
+      "qwabjaghtkrl": {
+        "add": {
+          "component_groups": [
+            "qwabjaghtkrl"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "nzqgerzhjxbu"
+          ]
+        }
+      },
+      "rauzqiwlikwb": {
+        "add": {
+          "component_groups": [
+            "rauzqiwlikwb"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "qwabjaghtkrl"
+          ]
+        }
+      },
+      "pvgjmgmpyphs": {
+        "add": {
+          "component_groups": [
+            "pvgjmgmpyphs"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "rauzqiwlikwb"
+          ]
+        }
+      },
+      "heijfeqbgpat": {
+        "add": {
+          "component_groups": [
+            "heijfeqbgpat"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "pvgjmgmpyphs"
+          ]
+        }
+      },
+      "umxhanggymfj": {
+        "add": {
+          "component_groups": [
+            "umxhanggymfj"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "heijfeqbgpat"
+          ]
+        }
+      }
+    }
+  }
+}

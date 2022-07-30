@@ -1,0 +1,25 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:block": {
+    "description": {
+      "identifier": "dec:white_flower_block"
+    },
+    "components": {
+		  "minecraft:creative_category": {
+				"group": "itemGroup.name.leaves",
+				"category": "nature"
+			},
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "white_flower_block",
+          "render_method": "alpha_test"
+        }
+      },
+      "minecraft:block_light_absorption": 1,
+      "minecraft:block_light_emission": 0,
+      "minecraft:destroy_time": 0.2,
+      "minecraft:explosion_resistance": 0,
+      "minecraft:map_color": "#9BBDBD"
+    }
+  }
+}

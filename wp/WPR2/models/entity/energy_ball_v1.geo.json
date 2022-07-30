@@ -1,0 +1,31 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.energy_ball_v1",
+				"texture_width": 256,
+				"texture_height": 256,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 3,
+				"visible_bounds_offset": [0, 0, 0]
+			},
+			"bones": [
+				{
+					"name": "outside",
+					"pivot": [0, 16, 0],
+					"cubes": [
+						{"origin": [-20, -4, -20], "size": [40, 40, 40], "uv": [0, 64]}
+					]
+				},
+				{
+					"name": "inside",
+					"pivot": [0, 16, 0],
+					"cubes": [
+						{"origin": [-16, 0, -16], "size": [32, 32, 32], "uv": [0, 0]}
+					]
+				}
+			]
+		}
+	]
+}

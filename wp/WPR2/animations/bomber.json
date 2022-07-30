@@ -1,0 +1,19 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.bomber.attack": {
+			"loop": true,
+			"animation_length": 5.12,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"1.04": [-90, 0, 0],
+						"4.84": [-90, 0, 0],
+						"5.0": [0, 0, 0]
+					}
+				}
+			}
+		}
+	}
+}

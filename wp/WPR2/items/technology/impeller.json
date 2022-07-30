@@ -1,0 +1,13 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "wb:impeller",
+      "category": "Nature"
+    },
+    "components": {
+      "minecraft:icon": "impeller",
+      "minecraft:hover_text_color": "light_purple"
+    }
+  }
+}

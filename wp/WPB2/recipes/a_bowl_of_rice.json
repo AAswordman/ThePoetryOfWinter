@@ -1,0 +1,24 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:a_bowl_of_rice"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "###",
+      " X "
+    ],
+    "key": {
+      "#": {
+        "item": "dec:rice"
+      },
+      "X": {
+        "item": "minecraft:bowl"
+      }
+    },
+    "result": {
+      "item": "dec:a_bowl_of_rice"
+    }
+  }
+}

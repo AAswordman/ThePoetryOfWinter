@@ -1,0 +1,27 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:book_of_deep"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " B ",
+      "AXA"
+    ],
+    "key": {
+      "B": {
+        "item": "minecraft:netherite_scrap"
+      },
+      "X": {
+        "item": "minecraft:book"
+      },
+      "A": {
+        "item": "minecraft:crimson_fungus"
+      }
+    },
+    "result": {
+      "item": "dec:book_of_deep"
+    }
+  }
+}

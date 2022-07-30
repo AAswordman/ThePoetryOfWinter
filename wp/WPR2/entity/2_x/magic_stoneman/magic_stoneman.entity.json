@@ -1,0 +1,26 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "wb:magic_stoneman",
+      "materials": { "default": "skeleton" },
+      "textures": {
+        "default": "textures/wb/2_x/magic_stoneman"
+      },
+      "geometry": {
+        "default": "geometry.magic_stoneman"
+      },
+      "animations": {
+      	"base":"animation.magic_stoneman.move"
+      },
+      "animation_controllers": [
+      	{ "base": "controller.animation.base.base" }
+      ],
+      "render_controllers": [ "controller.render.base" ],
+      "spawn_egg": {
+        "texture": "magic_stoneman",
+        "texture_index": 0
+      }
+    }
+  }
+}

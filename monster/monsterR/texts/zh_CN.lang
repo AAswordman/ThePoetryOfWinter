@@ -1,0 +1,17 @@
+item.takile:havoc_sign_add.name=目标选择 增加
+item.takile:havoc_sign_remove.name=目标选择 减少
+
+item.takile:havoc_skill_strike.name=指令 突袭
+item.takile:havoc_skill_meltdown.name=指令 熔毁
+item.takile:havoc_skill_circuitous.name=指令 迂回战术
+
+item.takile:havoc_skill_reinforce.name=指令 结构加固
+item.takile:havoc_skill_unreinforce.name=指令 取消结构加固
+
+
+entity.takile:havoc_monster.name=HAVOC
+item.spawn_egg.entity.takile:havoc_monster.name=生成 HAVOC
+
+entity.takile:havoc_proj.name=HAVOC弹射物
+entity.takile:havoc_sign_add.name=目标选择 增加
+entity.takile:havoc_sign_remove.name=目标选择 减少

@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:dark_stone"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XXX",
+      "XAX",
+      "XXX"
+    ],
+    "key": {
+      "X": {
+        "item": "dec:pollution_algae"
+      },
+      "A": {
+        "item": "dec:stream_stone"
+      }
+    },
+    "result": {
+      "item": "dec:dark_stone"
+    }
+  }
+}

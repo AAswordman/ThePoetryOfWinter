@@ -1,0 +1,27 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "wb:jet_pack"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "YXY",
+      "# #"
+    ],
+    "key": {
+      "#": {
+        "item": "wb:gas_ejector"
+      },
+      "Y": {
+        "item":"minecraft:iron_ingot"
+      },
+      "X": {
+        "item":"minecraft:chest"
+      }
+    },
+    "result": {
+      "item": "wb:jet_pack"
+    }
+  }
+}

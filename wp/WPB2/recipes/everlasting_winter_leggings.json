@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:everlasting_winter_leggings"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " X ",
+      "BAB",
+      "X X"
+    ],
+    "key": {
+      "X": {
+        "item": "dec:everlasting_winter_ingot"
+      },
+      "B": {
+        "item": "dec:everlasting_winter_stick"
+      },
+      "A": {
+        "item": "dec:frozen_leggings"
+      }
+    },
+    "result": {
+      "item": "dec:everlasting_winter_leggings"
+    }
+  }
+}

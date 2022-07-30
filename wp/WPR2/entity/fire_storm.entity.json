@@ -1,0 +1,33 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:fire_storm",
+      "materials": {
+        "body": "blaze_head", // this is backwards because the code had it backwards in the old rendering system.  :(
+        "head": "blaze_body"
+      },
+      "textures": {
+        "default": "textures/entity/fire_storm"
+      },
+      "geometry": {
+        "default": "geometry.blaze"
+      },
+      "animations": {
+        "look_at_target": "animation.common.look_at_target",
+        "move": "animation.blaze.move"
+      },
+      "particle_effects": {
+        "charged_flames": "minecraft:mobflame_emitter"
+      },
+      "scripts": {
+        "scale": "0.5"
+      },
+      "animation_controllers": [
+        { "move": "controller.animation.blaze.move" },
+        { "flame": "controller.animation.blaze.flame" }
+      ],
+      "render_controllers": [ "controller.render.blaze" ]
+    }
+  }
+}

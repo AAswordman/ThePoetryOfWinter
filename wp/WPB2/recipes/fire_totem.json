@@ -1,0 +1,35 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:fire_totem"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "B#B",
+      "AXA",
+      "C#C"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:gold_ingot"
+      },
+      "B": {
+        "item": "minecraft:blaze_rod"
+      },
+      "C": {
+        "item": "minecraft:magma_cream"
+      },
+      "A": {
+        "item": "minecraft:skull",
+        "data": 1
+      },
+      "X": {
+        "item": "dec:empty_totem"
+      }
+    },
+    "result": {
+      "item": "dec:fire_totem"
+    }
+  }
+}

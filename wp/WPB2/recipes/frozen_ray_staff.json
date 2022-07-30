@@ -1,0 +1,31 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:frozen_ray_staff"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " BX",
+      " AB",
+      "#  "
+    ],
+    "key": {
+      "A": {
+        "item": "dec:energy_ray_staff"
+      },
+      "#": {
+        "item": "dec:ice_rod"
+      },
+      "X": {
+        "item": "dec:ice_heart"
+      },
+      "B": {
+        "item": "dec:ice_ingot"
+      }
+    },
+    "result": {
+      "item": "dec:frozen_ray_staff"
+    }
+  }
+}

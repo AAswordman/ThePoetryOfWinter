@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:challenge_of_ash"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "AXA",
+      "XBX",
+      "AXA"
+    ],
+    "key": {
+      "B": {
+        "item": "minecraft:netherite_scrap"
+      },
+      "X": {
+        "item": "dec:ash"
+      },
+      "A": {
+        "item": "minecraft:gold_ingot"
+      }
+    },
+    "result": {
+      "item": "dec:challenge_of_ash"
+    }
+  }
+}

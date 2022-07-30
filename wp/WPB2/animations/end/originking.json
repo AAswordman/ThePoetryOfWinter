@@ -1,0 +1,84 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+     "animation.originking.broke": {
+       "animation_length": 0.5,
+       "loop":true,
+       "timeline": {
+      	"0.3":["/fill ~+5 ~-2 ~+5 ~-5 ~+3 ~-5 air 0 replace"]
+      }
+     },
+     "animation.originking.block": {
+       "animation_length": 1.0,
+       "loop":false,
+       "timeline": {
+      	"0.1":["/spreadplayers ~ ~ 2 64 @s"],
+      	"0.5":["/summon minecraft:lightning_bolt ~ ~ ~"],
+      	"0.8":["/particle wb:blast_par_small ~ ~ ~","@s start"]
+      }
+     },
+     "animation.originking.endphalanx": {
+       "animation_length": 0.1,
+       "loop":true,
+       "timeline": {
+      	"0.0":["/summon wb:end_energy ~~~"]
+      }
+     },
+     "animation.originking.end_energy": {
+       "animation_length": 0.1,
+       "loop":false,
+       "timeline": {
+      	"0.0":["/spreadplayers ~ ~ 2 64 @s"]
+      }
+     },
+     "animation.originking.save": {
+       "animation_length": 0.6,
+       "loop":true,
+       "timeline": {
+       	"0.1":["/tag @s remove wbqysv"],
+      	"0.3":["/execute @e[type=wb:originking] ~ ~ ~ tag @e[type=wb:originsave] add wbqysv"],
+      	"0.4":["/execute @s[tag=!wbqysv] ~ ~ ~ summon wb:originking ~ ~ ~ save"],
+      	"0.5":["@s start"]
+      }
+     },
+     "animation.originking.passive": {
+       "animation_length": 0.12,
+       "loop":true,
+       "timeline": {
+      	"0.1":["/execute @e[type=wb:originking,rm=4] ~ ~ ~ kill @s","/execute @s[x=~,z=~,y=0,dy=-10000] ~ ~ ~ spreadplayers ~ ~ 2 64 @s","/fill ~+3 ~ ~+3 ~-3 ~+3 ~-3 air 0 replace","/gamerule commandblocksenabled false","/gamerule mobgriefing true","/execute @p[rm=256] ~ ~ ~ tp @e[type=wb:originking] @s","/tp @e[tag=wbdie] ~99999 ~-9999 ~99999"]
+      }
+     },
+    "animation.originking.summon": {
+      "timeline": {
+      	"0.5":"/particle wb:originflame_summon ~ ~ ~",
+      	"1.0":"/particle wb:originflame_summon ~ ~ ~",
+      	"1.3":[
+      	    "@s again"
+      	],
+      	"1.5":"/particle wb:originflame_summon ~ ~ ~",
+      	"2.0":"/particle wb:originflame_summon ~ ~ ~",
+      	"2.5":"/particle wb:originflame_summon ~ ~ ~",
+      	"3.0":"/particle wb:originflame_summon ~ ~ ~",
+      	"3.25":"/particle wb:originflame_summon ~ ~ ~",
+      	"3.5":"/particle wb:originflame_summon ~ ~ ~",
+      	"3.75":"/particle wb:originflame_summon ~ ~ ~",
+      	"4.0":"/particle wb:originflame_summon ~ ~ ~",
+      	"4.25":"/particle wb:originflame_summon ~ ~ ~",
+      	"4.5":"/particle wb:originflame_summon ~ ~ ~",
+      	"4.75":"/particle wb:originflame_summon ~ ~ ~",
+      	"5.0":"/particle wb:originflame_summon ~ ~ ~",
+      	"5.5":["/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~"],
+      	"6.0":"/particle wb:originflame_summon ~ ~ ~",
+      	"6.5":["/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~"],
+      	"7.0":"/particle wb:originflame_summon ~ ~ ~",
+      	"7.5":["/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~"],
+      	"8.0":["/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~"],
+      	"8.5":["/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~"],
+      	"9.0":["/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~","/particle wb:originflame_summon ~ ~ ~"]
+      	
+      },
+      "animation_length": 10.0,
+      "loop":false
+    }
+  }
+}

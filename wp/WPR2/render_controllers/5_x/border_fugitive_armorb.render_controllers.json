@@ -1,0 +1,26 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.border_fugitive_armorb": {
+      "geometry": "Geometry.roaring",
+      "part_visibility": [
+        { "*": "query.is_roaring" }
+      ],
+      "materials": [ { "*": "Material.roaring" } ],
+      "textures": [ "Texture.roaring" ],
+      "overlay_color": {
+          "r": 1.0,
+          "g": 0.0,
+          "b": 0.0,
+          "a": 1.0
+      },
+      "uv_anim": {
+          "offset": [ "(query.is_roaring) ? (Math.floor(query.life_time * 20.0) + query.frame_alpha) * 0.01 : 0.0", 
+                      "(query.is_roaring) ? (Math.floor(query.life_time * 20.0) + query.frame_alpha) * 0.01 : 0.0" ],
+          "scale": [ 1.0,1.0 ]
+      },
+      "light_color_multiplier": 0.5,
+      "ignore_lighting" : true
+    }
+  }
+}

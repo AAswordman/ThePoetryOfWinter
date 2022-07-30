@@ -1,0 +1,17 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.entity_spin_up": {
+			"loop": true,
+			"animation_length": 1,
+			"bones": {
+				"global": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"1.0": [0, -360, 0]
+					}
+				}
+			}
+		}
+	}
+}

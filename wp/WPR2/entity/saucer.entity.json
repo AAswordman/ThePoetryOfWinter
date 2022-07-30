@@ -1,0 +1,20 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:saucer",
+      "materials": { "default": "ghast" },
+      "textures": {
+        "default": "textures/entity/saucer"
+      },
+      "geometry": {
+        "default": "geometry.saucer"
+      },
+      "spawn_egg": {
+        "base_color": "#798996",
+        "overlay_color": "#6261AD"
+      },
+      "render_controllers": [ "controller.render.spots" ]
+    }
+  }
+}

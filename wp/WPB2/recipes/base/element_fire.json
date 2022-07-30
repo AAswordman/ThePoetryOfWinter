@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "wb:element_fire"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "###",
+      "#Y#",
+      "#X#"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:flint_and_steel"
+      },
+      "Y": {
+        "item":"wb:element_base"
+      },
+      "X":{
+        "item":"wb:crystal_evolution"
+      }
+    },
+    "result": {
+      "item": "wb:element_flame"
+    }
+  }
+}

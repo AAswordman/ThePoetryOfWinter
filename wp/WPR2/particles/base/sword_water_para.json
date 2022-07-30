@@ -1,0 +1,61 @@
+{
+	"format_version": "1.10.0",
+	"particle_effect": {
+		"description": {
+			"identifier": "wb:sword_water_para",
+			"basic_render_parameters": {
+				"material": "particles_alpha",
+				"texture": "textures/wb_par/sword_water_par"
+			}
+		},
+		"curves": {
+			"variable.sizex": {
+				"type": "linear",
+				"input": "variable.particle_age",
+				"horizontal_range": "variable.particle_lifetime",
+				"nodes": [0.34, 0]
+			}
+		},
+		"components": {
+			"minecraft:emitter_initialization": {
+				"creation_expression": "variable.radius = 3;variable.size = 2;"
+			},
+			"minecraft:emitter_rate_steady": {
+				"spawn_rate": 120,
+				"max_particles": 60
+			},
+			"minecraft:emitter_lifetime_once": {
+				"active_time": 0.5
+			},
+			"minecraft:emitter_shape_point": {
+				"offset": ["variable.radius*-math.sin(variable.emitter_age*2*360)", 0.2, "variable.radius*-math.cos(variable.emitter_age*2*360)"]
+			},
+			"minecraft:particle_lifetime_expression": {
+				"max_lifetime": 0.6
+			},
+			"minecraft:particle_initial_speed": "(Math.Random(0, 1) + Math.Random(0, 1) + 1) * 1.0",
+			"minecraft:particle_motion_dynamic": {
+				"linear_acceleration": [0, 0.02, 0]
+			},
+			"minecraft:particle_appearance_billboard": {
+				"size": ["variable.sizex", "variable.sizex"],
+				"facing_camera_mode": "lookat_xyz",
+				"uv": {
+					"texture_width": 2,
+					"texture_height": 1,
+					"flipbook": {
+						"base_UV": [0, 0],
+						"size_UV": [1, 1],
+						"step_UV": [1, 0],
+						"frames_per_second": 2,
+						"max_frame": 2,
+						"stretch_to_lifetime": true
+					}
+				}
+			},
+			"minecraft:particle_motion_collision": {
+				"collision_radius": 0.001
+			}
+		}
+	}
+}

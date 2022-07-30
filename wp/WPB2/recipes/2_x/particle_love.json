@@ -1,0 +1,27 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "wb:particle_love"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "###",
+      "#Y#",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:emerald"
+      },
+      "Y": {
+        "item":"minecraft:glass_bottle"
+      }
+    },
+    "result": {
+      "item": "wb:particle_love"
+    }
+  }
+}

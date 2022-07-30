@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:steel_sickle"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "  A",
+      " XA",
+      "X A"
+    ],
+    "key": {
+      "X": {
+        "item": "dec:iron_stick"
+      },
+      "A": {
+        "item": "dec:steel_ingot"
+      }
+    },
+    "result": {
+      "item": "dec:steel_sickle"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.entity_spin_up": {
+      "states": {
+        "default": {
+          "animations": [
+            "spinning"
+          ]
+        }
+      }
+    }
+  }
+}

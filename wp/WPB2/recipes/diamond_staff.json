@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:diamond_staff"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "  X",
+      " # ",
+      "#  "
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:diamond"
+      },
+      "X": {
+        "item": "dec:stream_stone"
+      }
+    },
+    "result": {
+      "item": "dec:diamond_staff"
+    }
+  }
+}

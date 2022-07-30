@@ -1,0 +1,39 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:king_of_pillager",
+      "materials": {
+        "default": "pillager"
+      },
+      "textures": {
+        "default": "textures/entity/king_of_pillager"
+      },
+      "geometry": {
+        "default": "geometry.king_of_pillager"
+      },
+      "spawn_egg": {
+        "base_color": "#47282E",
+        "overlay_color": "#7C6344"
+      },
+      "scripts": {
+        "animate": [
+          "spawn",
+          {"summon":"query.is_casting"},
+          {"walk" : "query.modified_move_speed"},
+          {"attacking":"variable.attack_time"},
+          "look_at_target"
+        ]
+      },
+      "animations": {
+        "spawn": "animation.king_of_pillager.spawn",
+        "look_at_target": "animation.common.look_at_target",
+        "summon": "animation.king_of_pillager.summon",
+        "walk": "animation.king_of_pillager.move",
+        "attack": "animation.king_of_pillager.attack"
+      },
+      "render_controllers": [ "controller.render.king_of_pillager" ],
+      "enable_attachables": true
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "format_version": "1.8.0",
+  "animation_controllers": {
+    "controller.animation.wb.magic_crystal.base": {
+      "states": {
+        "default":{
+         "transitions": [
+            {
+              "b": "(1.0)"
+            }
+           ]
+        },
+        "b":{
+         "transitions": [
+           {
+              "player": "variable.has_boss_in=0;for_each(variable.i,query.get_nearby_entities_except_self(57),{variable.has_boss_in=((variable.i -> query.has_any_family('real_player'))&&(Math.abs(query.position(0)-(variable.i -> query.position(0)))<=40)&&(Math.abs(query.position(2)-(variable.i -> query.position(2)))<=40)&&(Math.abs(query.position(1)-(variable.i -> query.position(1)))<=11));variable.has_boss_in ? break;});return variable.has_boss_in==0;"
+            },
+            {
+              "beg": "variable.has_boss_in=0;for_each(variable.i,query.get_nearby_entities_except_self(57),{variable.has_boss_in=((variable.i -> query.has_any_family('aboss'))&&(Math.abs(query.position(0)-(variable.i -> query.position(0)))<=40)&&(Math.abs(query.position(2)-(variable.i -> query.position(2)))<=40)&&(Math.abs(query.position(1)-(variable.i -> query.position(1)))<=11));variable.has_boss_in ? break;});return variable.has_boss_in;"
+            }
+           ]
+        },
+        "beg": {
+          "transitions": [
+            {
+              "player": "variable.has_boss_in=0;for_each(variable.i,query.get_nearby_entities_except_self(57),{variable.has_boss_in=((variable.i -> query.has_any_family('real_player'))&&(Math.abs(query.position(0)-(variable.i -> query.position(0)))<=40)&&(Math.abs(query.position(2)-(variable.i -> query.position(2)))<=40)&&(Math.abs(query.position(1)-(variable.i -> query.position(1)))<=11));variable.has_boss_in ? break;});return variable.has_boss_in==0;"
+            },
+            {
+              "boss": "variable.has_boss_in=0;for_each(variable.i,query.get_nearby_entities_except_self(57),{variable.has_boss_in=((variable.i -> query.has_any_family('aboss'))&&(Math.abs(query.position(0)-(variable.i -> query.position(0)))<=40)&&(Math.abs(query.position(2)-(variable.i -> query.position(2)))<=40)&&(Math.abs(query.position(1)-(variable.i -> query.position(1)))<=11));variable.has_boss_in ? break;});return variable.has_boss_in==0;"
+            }
+          ]
+        },
+        "player": {
+          "on_entry": [
+            "/event entity @e[tag=wbboss,r=200] disappear",
+            "/title @a[r=128] title 挑战失败",
+            "/function portal/endboss",
+            "/effect @a[r=64] resistance 20 255 true",
+            "/kill @s"
+            
+          ]
+        },
+        "boss": {
+          "on_entry": [
+            "/event entity @e[tag=wbboss,r=200] disappear",
+            "/function portal/endboss",
+            "/effect @a[r=64] resistance 20 255 true",
+            "/kill @s"
+          ]
+        }
+      }
+    }
+  }
+}

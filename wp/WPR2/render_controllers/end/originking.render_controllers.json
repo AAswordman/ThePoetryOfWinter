@@ -1,0 +1,146 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.originking.exsword": {
+        "arrays": {
+        "textures": {
+          "Array.field": [
+            "Texture.fieldlight",
+            "Texture.fielddrak",
+            "Texture.fieldice",
+            "Texture.fieldfire",
+            "Texture.fieldsoil",
+            "Texture.fieldcolor"
+          ]
+        }
+      },
+      "geometry": "Geometry.exsword",
+      "part_visibility": [
+        { "*": "query.is_baby" }
+      ],
+      "materials": [ { "*": "Material.ex" } ],
+      "textures": [
+        "Array.field[query.mark_variant]"
+      ],
+        "overlay_color": {
+          "r": 0.0,
+          "g": 0.0,
+          "b": 1.0,
+          "a": 0.0
+      },
+      "uv_anim": {
+          "offset": [ "(Math.floor(query.life_time * 20.0) + query.frame_alpha) * 0.01", 
+                      "(Math.floor(query.life_time * 20.0) + query.frame_alpha) * 0.01 " ],
+          "scale": [ 1.0, 1.0 ]
+      },
+      "light_color_multiplier": 0.5,
+      "ignore_lighting" : true
+    },
+     "controller.render.originking.field": {
+      "part_visibility": [
+        { "*": "query.variant == 9 || query.variant == 10 || query.variant == 13" }
+      ],
+      "arrays": {
+        "textures": {
+          "Array.field": [
+            "Texture.fieldlight",
+            "Texture.fielddrak",
+            "Texture.fieldice",
+            "Texture.fieldfire",
+            "Texture.fieldsoil",
+            "Texture.fieldcolor"
+          ]
+        }
+      },
+      "geometry": "Geometry.field",
+      "materials": [
+        { "*": "Material.field" }
+      ],
+      "textures": [
+        "Array.field[query.mark_variant]"
+      ],
+      "overlay_color": {
+          "r": 1.0,
+          "g": 1.0,
+          "b": 1.0,
+          "a": 0.0
+      },
+      "uv_anim": {
+          "offset": [ "(Math.floor(query.life_time * 20.0) + query.frame_alpha) * 0.01", 
+                      "(Math.floor(query.life_time * 20.0) + query.frame_alpha) * 0.01 " ],
+          "scale": [ 1.0, 1.0 ]
+      },
+      "light_color_multiplier": 0.5,
+      "ignore_lighting" : true
+    },
+  	 "controller.render.originking.sword": {
+      "geometry": "Geometry.sword",
+      "materials": [ { "*": "Material.sword" } ],
+      "textures": [ "Texture.sword" ]
+    },
+    "controller.render.originking.summona": {
+      "geometry": "Geometry.summona",
+      "part_visibility": [
+        { "*": "query.variant == 1" }
+      ],
+      "materials": [ { "*": "Material.summona" } ],
+      "textures": [ "Texture.summona" ],
+        "overlay_color": {
+          "r": "(10-query.life_time)/10",
+          "g": "(query.life_time)/10",
+          "b": 0.0,
+          "a": 1.0
+      },
+      "uv_anim": {
+          "offset": [ "(query.is_powered) ? (Math.floor(query.life_time * 20.0) + query.frame_alpha) * 0.01 : 0.0", 
+                      "(query.is_powered) ? (Math.floor(query.life_time * 20.0) + query.frame_alpha) * 0.01 : 0.0" ],
+          "scale": [ 1.0, 1.0 ]
+      },
+      "light_color_multiplier": 0.5,
+      "ignore_lighting" : true
+    },
+    "controller.render.originking.ex": {
+      "geometry": "Geometry.ex",
+      "part_visibility": [
+        { "*": "query.is_baby" }
+      ],
+      "materials": [ { "*": "Material.ex" } ],
+      "textures": [ "Texture.ex" ],
+        "overlay_color": {
+          "r": 0.0,
+          "g": 0.0,
+          "b": 1.0,
+          "a": 1.0
+      },
+      "uv_anim": {
+          "offset": [ "(query.is_powered) ? (Math.floor(query.life_time * 20.0) + query.frame_alpha) * 0.01 : 0.0", 
+                      "(query.is_powered) ? (Math.floor(query.life_time * 20.0) + query.frame_alpha) * 0.01 : 0.0" ],
+          "scale": [ 1.0, 1.0 ]
+      },
+      "light_color_multiplier": 0.3,
+      "ignore_lighting" : true
+    },
+    "controller.render.originking.summonb": {
+      "part_visibility": [
+        { "*": "query.variant >= 0" }
+      ],
+      "arrays": {
+        "materials": {
+          "Array.materials": [ "Material.summonbase", "Material.summonb" ]
+        }
+      },
+      "geometry": "Geometry.summonb",
+      "materials": [ { "*": "Array.materials[query.is_invisible]" } ],
+      "textures": [ "Texture.summonb" ]
+    }
+  }
+}
+
+
+     /* "overlay_color": {
+          "r": "query.life_time < 2 ? 1.0:(query.life_time < 4 ? ((4.0-query.life_time)/2):(query.life_time < 8 ? 0.0 :(query.life_time < 10 ? (query.life_time-8)/2 : 1.0)))",
+          "g": "query.life_time < 2 ? (query.life_time-2)/2 : (query.life_time < 6 ? 1.0 : (query.life_time < 8 ? (8-query.life_time)/2 : 0.0))",
+          "b": "query.life_time < 4 ? 0.0 : (query.life_time < 6 ? (query.life_time-6)/2 : (query.life_time < 10 ? 1.0 : (query.life_time < 12 ? (12-query.life_time)/2 : 0.0)))",
+          "a": 1.0
+      },
+      */

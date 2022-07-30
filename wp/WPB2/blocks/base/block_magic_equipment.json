@@ -1,0 +1,16 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "wb:block_magic_equipment",
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:destroy_time": 12,
+			"minecraft:explosion_resistance": 3,
+			"minecraft:creative_category": {
+				"category": "construction"
+			}
+		}
+	}
+}

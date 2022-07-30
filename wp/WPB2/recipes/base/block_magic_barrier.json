@@ -1,0 +1,22 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "wb:block_magic_barrier"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "###",
+      "###",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "wb:mineral_magic_barrier"
+      }
+    },
+    "result": {
+      "item": "wb:block_magic_barrier"
+    }
+  }
+}

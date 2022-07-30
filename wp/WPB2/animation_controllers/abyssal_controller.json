@@ -1,0 +1,43 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.abyssal_controller": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "/execute @s ~~~ particle dec:bubble_line_particle ~29 60 ~",
+            "/execute @s ~~~ particle dec:bubble_line_particle ~-29 60 ~",
+            "/execute @s ~~~ particle dec:bubble_line_particle ~ 60 ~29",
+            "/execute @s ~~~ particle dec:bubble_line_particle ~ 60 ~-29",
+            "/execute @s ~~~ particle dec:bubble_line_particle ~-21 60 ~-21",
+            "/execute @s ~~~ particle dec:bubble_line_particle ~21 60 ~-21",
+            "/execute @s ~~~ particle dec:bubble_line_particle ~-21 60 ~21",
+            "/execute @s ~~~ particle dec:bubble_line_particle ~21 60 ~21"
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "/execute @s ~~~ particle dec:bubble_line_particle ~29 60 ~",
+            "/execute @s ~~~ particle dec:bubble_line_particle ~-29 60 ~",
+            "/execute @s ~~~ particle dec:bubble_line_particle ~ 60 ~29",
+            "/execute @s ~~~ particle dec:bubble_line_particle ~ 60 ~-29",
+            "/execute @s ~~~ particle dec:bubble_line_particle ~-21 60 ~-21",
+            "/execute @s ~~~ particle dec:bubble_line_particle ~21 60 ~-21",
+            "/execute @s ~~~ particle dec:bubble_line_particle ~-21 60 ~21",
+            "/execute @s ~~~ particle dec:bubble_line_particle ~21 60 ~21"
+          ]
+        }
+      }
+    }
+  }
+}

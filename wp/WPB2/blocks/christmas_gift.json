@@ -1,0 +1,30 @@
+{
+    "format_version": "1.16.0",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dec:christmas_gift"
+        },
+        "components": {
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "christmas_gift",
+                    "render_method": "alpha_test"
+                }
+            },
+            "minecraft:pick_collision": {
+                "origin": [ -4, 0, -4 ],
+                "size": [ 8, 8, 8 ]
+            },
+            "minecraft:entity_collision": {
+                "origin": [ -4, 0, -4 ],
+                "size": [ 8, 8, 8 ]
+            },
+            "minecraft:geometry": "geometry.christmas_gift",
+            "minecraft:map_color": "#79180C",
+            "minecraft:loot": "loot_tables/blocks/christmas_gift.json",
+            "minecraft:block_light_emission": 0.0,
+            "minecraft:block_light_absorption": 0.0,
+            "minecraft:destroy_time": 0.3
+        }
+    }
+}

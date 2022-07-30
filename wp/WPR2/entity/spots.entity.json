@@ -1,0 +1,16 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:spots",
+      "textures": {
+        "default": "textures/entity/spots"
+      },
+      "geometry": {
+        "default": "geometry.spots"
+      },
+      "render_controllers": [ "controller.render.spots" ],
+      "materials": { "default": "husk" }
+      }
+   }
+}

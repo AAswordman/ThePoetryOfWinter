@@ -1,0 +1,39 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "wb:cannon_ancient_stone",
+      "materials": {
+        "default": "spider",
+        "invisible": "spider_invisible",
+        "charged": "wbarmor"
+      },
+      "animations": {
+        "look_at_target": "animation.common.look_at_target"
+      },
+      "scripts": {
+        "animate": [
+          {
+            "look_at_target": "query.is_baby"
+          }
+        ]
+      },
+      "textures": {
+        "default": "textures/wb/4_x/cannon_ancient_stone",
+        "charged": "textures/wb/4_x/ball_green"
+      },
+      "geometry": {
+        "default": "geometry.cannon_ancient_stone",
+        "charged": "geometry.cannon_ancient_stonex"
+      },
+      "render_controllers": [
+        "controller.render.spider",
+        "controller.render.cannon_ancient_stone"
+      ],
+      "spawn_egg": {
+        "texture": "ancient_stone",
+        "texture_index": 0
+      }
+    }
+  }
+}

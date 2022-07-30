@@ -1,0 +1,43 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "takile:havoc_monster",
+      "materials": {
+        "default": "skeleton"
+      },
+      "textures": {
+        "default": "textures/entity/havoc"
+      },
+      "geometry": {
+        "default": "geometry.havoc_v2"
+      },
+      "render_controllers": [
+        "controller.render.base.base"
+      ],
+      "scripts": {
+        "animate": [
+          "reinforce",
+          {"walk":"query.modified_move_speed"},
+          "attack"
+        ]
+      },
+      "animations": {
+        "walk":"animation.havoc.normal2",
+        "attack":"controller.animation.havoc.attack",
+        "att_normal":"animation.havoc.attack",
+        "reinforce": "controller.animation.havoc.par"
+      },
+      "particle_effects": {
+        "reinforce_par": "takile:havoc_reinforce_par",
+        "meltdown_par": "takile:havoc_meltdown_par",
+        "strike_par": "takile:havoc_strike_par",
+        "coordination_par": "takile:havoc_coordination_par"
+      },
+      "spawn_egg": {
+        "texture": "havoc_egg",
+        "texture_index": 0
+      }
+    }
+  }
+}

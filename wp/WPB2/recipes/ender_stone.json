@@ -1,0 +1,27 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:ender_stone"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "###",
+      "###",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "dec:ender_powder",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "dec:ender_stone",
+      "data": 0,
+      "count": 1
+    }
+  }
+}

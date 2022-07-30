@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:lapis_dagger"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "A",
+      "X"
+    ],
+    "key": {
+      "X": {
+        "item": "minecraft:stick"
+      },
+      "A": {
+        "item": "minecraft:dye",
+        "data": 4
+      }
+    },
+    "result": {
+      "item": "dec:lapis_dagger"
+    }
+  }
+}

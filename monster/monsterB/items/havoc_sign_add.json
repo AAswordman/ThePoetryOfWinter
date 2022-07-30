@@ -1,0 +1,26 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "items",
+      "identifier": "takile:havoc_sign_add"
+    },
+    "components": {
+      "minecraft:display_name": {},
+      "minecraft:icon": {
+        "texture": "havoc_sign_add"
+      },
+      "minecraft:use_animation": "crossbow",
+      "minecraft:render_offsets": "apple",
+      "minecraft:hand_equipped": false,
+      "minecraft:stacked_by_data": true,
+      "minecraft:use_duration": 1.2,
+      "minecraft:throwable": {
+        "do_swing_animation": true
+      },
+      "minecraft:projectile": {
+        "projectile_entity": "takile:havoc_sign_add"
+      }
+    }
+  }
+}

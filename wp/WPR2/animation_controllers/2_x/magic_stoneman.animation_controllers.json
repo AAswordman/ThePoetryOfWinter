@@ -1,0 +1,22 @@
+{
+  "format_version": "1.8.0",
+  "animation_controllers": {
+    "controller.animation.ball_magic_stoneman_a.base": {
+      "states": {
+        "default": {
+            					"animations":[{"rise":[]}],
+           "transitions":[
+               { "oo":"query.is_baby" }
+              ]
+        },
+        "oo": {
+            					"animations":[{"look":[]}],
+           "transitions":[
+               { "default":"!query.is_baby" }
+            ]
+        }
+      }
+    }
+  }
+
+}

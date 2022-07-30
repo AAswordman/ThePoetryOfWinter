@@ -1,0 +1,354 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:everlasting_winter_ghast",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "minecraft:next": {
+        "minecraft:transformation": {
+          "into": "dec:everlasting_winter_ghast_1<minecraft:entity_spawned>"
+        }
+      },
+      "minecraft:spawn": {
+        "minecraft:timer": {
+          "looping": false,
+          "time": 5,
+          "time_down_event": {
+            "event": "minecraft:summon_mode"
+          }
+        },
+        "minecraft:spell_effects": {
+          "add_effects": [
+            {
+              "effect": "slowness",
+              "amplifier": 50,
+              "visible": 0,
+              "ambient": 0,
+              "duration": 5,
+              "display_on_screen_animation": true
+            }
+          ]
+        }
+      },
+      "minecraft:angry": {
+        "minecraft:boss": {
+          "should_darken_sky": false,
+          "name": "boss.dec:everlasting_winter_ghast_angry.name",
+          "hud_range": 64
+        },
+        "minecraft:health": {
+          "value": 900,
+          "max": 900
+        }
+      },
+      "minecraft:summon_mode_shadow": {
+        "minecraft:timer": {
+          "looping": false,
+          "time": 3,
+          "time_down_event": {
+            "event": "minecraft:attack_mode"
+          }
+        },
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "dec:frozen_shadow",
+              "spawn_event": "minecraft:entity_spawned",
+              "single_use": true,
+              "num_to_spawn": 1
+            }
+          ]
+        }
+      },
+      "minecraft:summon_mode_frozen": {
+        "minecraft:timer": {
+          "looping": false,
+          "time": 3,
+          "time_down_event": {
+            "event": "minecraft:attack_mode"
+          }
+        },
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "dec:frozen_ghast",
+              "spawn_event": "minecraft:entity_spawned",
+              "single_use": true,
+              "num_to_spawn": 1
+            }
+          ]
+        }
+      },
+      "minecraft:attack_mode": {
+        "minecraft:behavior.melee_attack": {
+          "priority": 4,
+          "target_dist": 1.2,
+          "speed_multiplier": 1,
+          "track_target": true
+        },
+        "minecraft:attack": {
+          "damage": 5,
+          "effect_name": "slowness",
+          "effect_duration": 5
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 7,
+          "time_down_event": {
+            "event": "minecraft:summon_mode"
+          }
+        }
+      }
+    },
+    "components": {
+      "minecraft:despawn": {
+        "despawn_from_distance": {
+          "min_distance": 256,
+          "max_distance": 256
+        }
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "fall",
+            "deals_damage": false
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "frozen"
+              }
+            },
+            "deals_damage": false
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "fatal"
+                  }
+                ]
+              },
+              "event": "minecraft:next"
+            }
+          }
+        ]
+      },
+      "minecraft:type_family": {
+        "family": [
+          "monster",
+          "ghast",
+          "everlasting_winter_ghast",
+          "boss",
+          "mob",
+          "frozen"
+        ]
+      },
+      "minecraft:boss": {
+        "should_darken_sky": false,
+        "name": "boss.dec:everlasting_winter_ghast.name",
+        "hud_range": 64
+      },
+      "minecraft:breathable": {
+        "totalSupply": 15,
+        "suffocateTime": 0
+      },
+      "minecraft:nameable": {},
+      "minecraft:health": {
+        "value": 200,
+        "max": 200
+      },
+      "minecraft:collision_box": {
+        "width": 0.6,
+        "height": 1.8
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:movement": {
+        "value": 0.25
+      },
+      "minecraft:navigation.walk": {
+        "can_path_over_water": true,
+        "can_pass_doors": true,
+        "can_open_doors": true,
+        "avoid_water": true
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:fire_immune": true,
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
+      "minecraft:behavior.float": {
+        "priority": 20
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 8,
+        "speed_multiplier": 0.6
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "entity_types": [
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "snowgolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "wandering_trader"
+                }
+              ]
+            },
+            "max_dist": 20
+          }
+        ],
+        "must_see": true
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 9,
+        "look_distance": 3.0,
+        "probability": 1.0
+      },
+      "minecraft:behavior.look_at_entity": {
+        "priority": 10,
+        "look_distance": 8.0,
+        "filters": {
+          "test": "is_family",
+          "subject": "other",
+          "value": "mob"
+        }
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1,
+        "entity_types": {
+          "filters": {
+            "test": "is_family",
+            "subject": "other",
+            "operator": "!=",
+            "value": "frozen"
+          },
+          "max_dist": 64
+        }
+      },
+      "minecraft:physics": {},
+      "minecraft:follow_range": {
+        "value": 256
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "sequence": [
+          {
+            "filters": {
+              "test": "has_biome_tag",
+              "operator": "!=",
+              "value": "frozen"
+            },
+            "randomize": [
+              {
+                "add": {
+                  "component_groups": [
+                    "minecraft:angry"
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "add": {
+              "component_groups": [
+                "minecraft:spawn"
+              ]
+            }
+          }
+        ]
+      },
+      "minecraft:summon_mode": {
+        "sequence": [
+          {
+            "remove": {
+              "component_groups": [
+                "minecraft:attack_mode"
+              ]
+            }
+          },
+          {
+            "randomize": [
+              {
+                "weight": 1,
+                "sequence": [
+                  {
+                    "randomize": [
+                      {
+                        "weight": 3,
+                        "add": {
+                          "component_groups": [
+                            "minecraft:summon_mode_frozen"
+                          ]
+                        }
+                      },
+                      {
+                        "weight": 2,
+                        "add": {
+                          "component_groups": [
+                            "minecraft:summon_mode_shadow"
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "minecraft:attack_mode": {
+        "remove": {
+          "component_groups": [
+            "minecraft:summon_mode_frozen",
+            "minecraft:summon_mode_shadow"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:attack_mode"
+          ]
+        }
+      },
+      "minecraft:next": {
+        "add": {
+          "component_groups": [
+            "minecraft:next"
+          ]
+        }
+      }
+    }
+  }
+}

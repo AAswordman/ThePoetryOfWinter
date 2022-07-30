@@ -1,0 +1,38 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.mushroom_monster",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "global",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "body",
+					"parent": "global",
+					"pivot": [2, 0, -3],
+					"cubes": [
+						{"origin": [-3, 0, -3], "size": [5, 5, 5], "uv": [0, 19]}
+					]
+				},
+				{
+					"name": "head",
+					"parent": "global",
+					"pivot": [2, 0, -3],
+					"cubes": [
+						{"origin": [-5, 5, -5], "size": [9, 2, 9], "uv": [0, 0]},
+						{"origin": [-4, 7, -4], "size": [7, 1, 7], "uv": [0, 11]}
+					]
+				}
+			]
+		}
+	]
+}

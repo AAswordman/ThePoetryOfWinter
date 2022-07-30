@@ -1,0 +1,29 @@
+{
+  "format_version": "1.8.0",
+  "animation_controllers": {
+    "controller.animation.illusioner_blindness": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "walking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "/execute @s ~~~ effect @e[r=2] blindness 20 1"
+          ]
+        },
+        "walking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "/execute @s ~~~ effect @e[r=2] blindness 20 1"
+          ]
+        }
+      }
+    }
+  }
+}

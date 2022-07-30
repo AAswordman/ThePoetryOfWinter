@@ -1,0 +1,26 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:gold_dart"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " X ",
+      "XAX",
+      " X "
+    ],
+    "key": {
+      "X": {
+        "item": "minecraft:gold_nugget"
+      },
+      "A": {
+        "item": "minecraft:gold_ingot"
+      }
+    },
+    "result": {
+      "item": "dec:gold_dart",
+      "count": 8
+    }
+  }
+}

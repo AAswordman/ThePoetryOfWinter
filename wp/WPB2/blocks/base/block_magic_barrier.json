@@ -1,0 +1,16 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "wb:block_magic_barrier",
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:destroy_time": 0.01,
+			"minecraft:explosion_resistance": 100,
+			"minecraft:creative_category": {
+				"category": "construction"
+			}
+		}
+	}
+}

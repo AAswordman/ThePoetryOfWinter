@@ -1,0 +1,29 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.carnager_rushing": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "/execute @e[r=3,type=!dec:carnager] ~~~ effect @e[r=3,type=dec:carnager] speed 1 2 true"
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "/execute @e[r=3,type=!dec:carnager] ~~~ effect @e[r=3,type=dec:carnager] speed 1 2 true"
+          ]
+        }
+      }
+    }
+  }
+}

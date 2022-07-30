@@ -1,0 +1,62 @@
+{
+  "format_version": "1.8.0",
+ "minecraft:entity": {
+  "description": {
+    "identifier": "wb:originflame_down",
+    "is_spawnable": false,
+    "is_summonable": true,
+    "is_experimental": false,
+    "runtime_identifier": "minecraft:snowball"
+  },
+  "component_groups":{
+  	"boom":{
+  	 "minecraft:transformation": {
+          "into": "wb:originking_black"
+      }
+  	}
+  },
+  "components": {
+    "minecraft:collision_box": {
+    "width": 0.18,
+    "height": 0.18
+   },
+     "minecraft:timer": {
+          "time": 1,
+          "looping": false,
+          "time_down_event": {
+            "event": "boom",
+            "target": "self"
+          }
+      },
+   "minecraft:projectile": {
+    "onHit": {
+      "impact_damage": {
+        "damage": 100000,
+        "knockback": true,
+        "catchFire": true,
+        "semirandomdiffdamage": false,
+        "destroy_on_hit":false
+      }
+    },
+    "power": 1.0,
+    "gravity": 0.00,
+    "inertia": 1,
+    "anchor": 2,
+    "offset": [ 0, 1.0, 0 ],
+    "semirandomdiffdamage": false,
+    "uncertaintyBase": 0.0,
+    "reflectOnHurt": true,
+    "multiple_targets":false
+   },
+   "minecraft:physics": {
+   }
+  },
+  "events":{
+  	"boom":{
+  		"add":{
+  			"component_groups":["boom"]
+  		}
+  	}
+  }
+ }
+}

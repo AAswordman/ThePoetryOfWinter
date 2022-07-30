@@ -1,0 +1,42 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "dec:bamboo_yataghan_thrown",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"cause": "all",
+					"deals_damage": false
+				}
+			},
+			"minecraft:spawn_entity": {
+				"entities": {
+					"min_wait_time": 0,
+					"max_wait_time": 0,
+					"spawn_sound": "hit",
+					"spawn_item": "dec:bamboo_yataghan"
+				}
+			},
+			"minecraft:collision_box": {
+				"width": 0,
+				"height": 0
+			},
+			"minecraft:explode": {
+				"fuse_length": 0.001,
+				"fuse_lit": true,
+				"power": 0,
+				"causes_fire": false
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			}
+		}
+	}
+}

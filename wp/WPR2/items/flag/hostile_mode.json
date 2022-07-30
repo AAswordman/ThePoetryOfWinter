@@ -1,0 +1,15 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "wb:hostile_mode",
+      "category": "Nature"
+    },
+    "components": {
+      "minecraft:icon": "hostile_mode",
+      "minecraft:render_offsets": "appl",
+      "minecraft:use_animation": "eat",
+      "minecraft:hover_text_color": "light_purple"
+    }
+  }
+}

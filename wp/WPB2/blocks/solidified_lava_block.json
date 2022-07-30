@@ -1,0 +1,20 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:block": {
+    "description": {
+      "identifier": "dec:solidified_lava_block"
+    },
+    "components": {
+		  "minecraft:creative_category": {
+				"category": "construction"
+			},
+      "minecraft:block_light_absorption": 1,
+      "minecraft:block_light_emission": 0,
+      "minecraft:destroy_time": 2.5,
+      "minecraft:explosion_resistance": 10,
+      "minecraft:map_color": "#FF9643",
+      "minecraft:loot": "loot_tables/blocks/solidified_lava_block.json",
+      "tag:stone": {}
+    }
+  }
+}

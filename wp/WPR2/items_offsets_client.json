@@ -1,0 +1,19 @@
+{
+  "render_offsets": {
+    "hide": {
+      "VR_hand_controller_position_adjust": [ -99, -99, 0.0 ],
+      "VR_hand_controller_rotation_adjust": [ 0, 0.0, 0.0 ],
+      "VR_hand_controller_scale": 0.0
+    },
+   "appl": {
+      "VR_hand_controller_position_adjust": [ -0.0, -0.25, 0.2 ],
+      "VR_hand_controller_rotation_adjust": [ 0, 90.0, 0.0 ],
+      "VR_hand_controller_scale": 0.5
+    },
+        "apple": {
+      "VR_hand_controller_position_adjust": [ 0.0, -0.25, 0.2 ],
+      "VR_hand_controller_rotation_adjust": [ -22.5, 5.0, 0.0 ],
+      "VR_hand_controller_scale": 0.5
+    }
+  }
+}

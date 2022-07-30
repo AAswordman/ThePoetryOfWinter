@@ -1,0 +1,13 @@
+{
+    "format_version":"1.8.0",
+    "animations":{
+    "animation.ball_border_fugitivea.par" : {
+			"bones" : {
+				"body" : {
+					"rotation" : [0,0,0]
+				}
+			},
+			"loop" : true
+		}
+    }
+}

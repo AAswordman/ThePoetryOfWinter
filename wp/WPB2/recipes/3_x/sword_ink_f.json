@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "wb:sword_ink_f"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "###",
+      "#X#",
+      "#Y#"
+    ],
+    "key": {
+      "#": {
+        "item": "wb:mineral_senior_ink"
+      },
+      "X": {
+        "item": "wb:sword_ink_e"
+      },
+      "Y": {
+        "item": "wb:crystal_fuse"
+      }
+    },
+    "result": {
+      "item": "wb:sword_ink_f"
+    }
+  }
+}

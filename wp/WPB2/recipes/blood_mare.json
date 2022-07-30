@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:blood_mare"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XXX",
+      "XAX",
+      "XXX"
+    ],
+    "key": {
+      "X": {
+        "item": "dec:health_stone"
+      },
+      "A": {
+        "item": "dec:the_blade"
+      }
+    },
+    "result": {
+      "item": "dec:blood_mare"
+    }
+  }
+}

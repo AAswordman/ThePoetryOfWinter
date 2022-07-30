@@ -1,0 +1,22 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:ash_by_waste"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XXX",
+      "XXX",
+      "XXX"
+    ],
+      "key": {
+      "X": {
+        "item": "dec:waste"
+      }
+    },
+    "result": {
+      "item": "dec:ash"
+    }
+  }
+}
