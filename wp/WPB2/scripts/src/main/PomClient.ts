@@ -1,5 +1,5 @@
 import ExGameClient from "../modules/exmc/ExGameClient.js";
-import { MinecraftItemTypes, Player } from 'mojang-minecraft';
+import { Player } from 'mojang-minecraft';
 import MenuUIAlert from "./ui/MenuUIAlert.js";
 import menuFunctionUI from "./data/menuFunctionUI.js";
 import ExGameServer from '../modules/exmc/ExGameServer.js';
@@ -7,17 +7,30 @@ import ExPlayer from "../modules/exmc/entity/ExPlayer.js";
 import GlobalSettings from "./cache/GlobalSettings.js";
 import { Objective } from "../modules/exmc/entity/ExScoresManager.js";
 import ExGameConfig from '../modules/exmc/ExGameConfig.js';
-import { to } from "../modules/exmc/ExErrorStack.js";
+import TagCache from "../modules/exmc/storage/cache/TagCache.js";
+import PomData from "./cache/PomData.js";
+import TimeLoopTask from "../modules/exmc/utils/TimeLoopTask.js";
 
 export default class PomClient extends ExGameClient {
 	gameId !: number;
 	globalSettings: GlobalSettings;
+	cache: TagCache<PomData>;
+	data: PomData;
+	looper: TimeLoopTask;
 	constructor(server: ExGameServer, id: string, player: Player) {
 		super(server, id, player);
 		this.globalSettings = new GlobalSettings(new Objective("wpsetting"));
-		if(ExGameConfig.debug){
+		if (ExGameConfig.debug) {
 			this.globalSettings.debug();
 		}
+
+		this.cache = new TagCache(this.exPlayer);
+		this.looper = new TimeLoopTask(this, () => {
+			this.cache.save();
+		});
+		this.looper.delay(10000);
+		this.looper.start();
+		this.data = this.cache.get(new PomData());
 		this.register();
 	}
 	register() {
@@ -30,6 +43,25 @@ export default class PomClient extends ExGameClient {
 				new MenuUIAlert(this, menuFunctionUI).showPage(["main", "notice"]);
 			}
 		});
+		this.getEvents().exEvents.playerHitEntity.subscribe((e) => {
+			ExGameConfig.console.info("hit" + e.damage);
+		});
+		this.getEvents().exEvents.playerHurt.subscribe((e) => {
+			let beforeHealth = (<any>this.exPlayer)["nowHealth"] ?? this.exPlayer.getMaxHealth();
+			let realDamage = Math.max(0, beforeHealth - this.exPlayer.getHealth());
+
+			
+			ExGameConfig.console.info("hurt by" + e.damage + " health:");
+			(<any>this.exPlayer)["nowHealth"] = this.exPlayer.getHealth();
+		});
+
+		new TimeLoopTask(this,()=>{
+			ExGameConfig.console.info("health:" + this.exPlayer.getHealth());
+		}).delay(0).start();
+
+		this.getEvents().exEvents.itemOnHandChange.subscribe((e) => {
+			ExGameConfig.console.info("onHandChange:"+e.beforeItem?.id+" -> " + e.afterItem?.id);
+		});
 	}
 	override onLoaded(): void {
 		this.gameId = ExPlayer.getInstance(this.player).getScoresManager().getScore("wbldid");
@@ -38,6 +70,13 @@ export default class PomClient extends ExGameClient {
 		} else {
 			this.player.nameTag = "§c" + this.player.nameTag;
 		}
+
+	}
+
+	override onLeave(): void {
+		this.looper.stop();
+		this.cache.save();
+		super.onLeave();
 	}
 
 	getPlayersAndIds() {

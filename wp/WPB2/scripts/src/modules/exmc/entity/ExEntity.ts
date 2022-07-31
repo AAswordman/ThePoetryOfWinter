@@ -46,6 +46,7 @@ export default class ExEntity implements ExCommandRunner, ExTagManager {
 		return this._entity.hasTag(str);
 	}
 	removeTag(str: string) {
+		//console.warn("removeTag called"+str);
 		this._entity.removeTag(str);
 		return str;
 	}

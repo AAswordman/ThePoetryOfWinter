@@ -1,8 +1,7 @@
 import ExGameConfig from "../ExGameConfig.js";
 export default class LoreUtil {
-    constructor(client, item) {
+    constructor(item) {
         this.item = item;
-        this.client = client;
         this.defFlag = LoreUtil.LoreFlag.DEFAULT;
     }
     append(str) {
@@ -16,13 +15,8 @@ export default class LoreUtil {
         this.setLore(l);
     }
     getLore() {
-        let lore = this.item.getLore();
-        if (lore != null) {
-            return lore;
-        }
-        else {
-            return [];
-        }
+        var _a;
+        return (_a = this.item.getLore()) !== null && _a !== void 0 ? _a : [];
     }
     setLore(lore) {
         this.item.setLore(lore);
@@ -31,8 +25,6 @@ export default class LoreUtil {
         this.defFlag = flag;
     }
     search(lore, key) {
-        if (key == null)
-            throw new Error("Key cannot be empty");
         for (let i = 0; i < lore.length; i++) {
             if (lore[i].startsWith(key + " : ")) {
                 return new Piece(this.item, this.getLore(), i);
@@ -78,7 +70,7 @@ export default class LoreUtil {
         if (piece == null)
             return null;
         // key : value
-        return piece.get().substr(key.length + 3, piece.get().length);
+        return piece.get().substring(key.length + 3);
     }
     hasTag(key) {
         if (key == null)
@@ -105,7 +97,7 @@ export default class LoreUtil {
             piece.next();
             if (piece.get().startsWith(tab)) {
                 if (piece.get().startsWith(tab + use + " : ")) {
-                    return piece.get().substr(tab.length + 3 + use.length, piece.get().length);
+                    return piece.get().substring(tab.length + 3 + use.length);
                 }
             }
             else {
@@ -207,22 +199,22 @@ class Piece {
         this.item = item;
         this.lore = lore;
         this.index = index;
-        this.set = function () {
-            this.item.setLore(this.lore);
-        };
-        this.revise = function (str) {
-            this.lore[this.index] = str;
-            return this;
-        };
-        this.get = function () {
-            return this.lore[this.index];
-        };
-        this.hasNext = function () {
-            return this.index + 1 < this.lore.length;
-        };
-        this.next = function () {
-            this.index++;
-        };
+    }
+    set() {
+        this.item.setLore(this.lore);
+    }
+    revise(str) {
+        this.lore[this.index] = str;
+        return this;
+    }
+    get() {
+        return this.lore[this.index];
+    }
+    hasNext() {
+        return this.index + 1 < this.lore.length;
+    }
+    next() {
+        this.index++;
     }
 }
 //# sourceMappingURL=ExLoreUtil.js.map

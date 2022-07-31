@@ -36,6 +36,7 @@ export default class ExEntity {
         return this._entity.hasTag(str);
     }
     removeTag(str) {
+        //console.warn("removeTag called"+str);
         this._entity.removeTag(str);
         return str;
     }

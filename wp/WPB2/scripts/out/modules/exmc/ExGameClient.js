@@ -94,7 +94,7 @@ export default class ExGameClient {
     }
     setTimeout(fun, timeout) {
         let time = 0;
-        const method = (e) => {
+        let method = (e) => {
             time += e.deltaTime * 1000;
             if (time > timeout) {
                 this.getEvents().exEvents.tick.unsubscribe(method);

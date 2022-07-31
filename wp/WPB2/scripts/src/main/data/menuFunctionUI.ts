@@ -178,6 +178,24 @@ export default {
 						}
 					}
 				]
+			},
+			"talent": {
+				"text": "天赋",
+				"page": (client: PomClient, ui: MenuUIAlert): MenuUIAlertView[] => {
+					let arr: MenuUIAlertView[];
+
+					if (client.data.talent.hasOccupation()) {
+						arr = [
+
+						];
+					} else {
+						arr = [
+						];
+					}
+
+
+					return arr;
+				}
 			}
 		}
 	},
@@ -240,7 +258,7 @@ export default {
 						return [{
 							"type": "text",
 							"msg": "不允许使用传送"
-						}]
+						}];
 					};
 					let arr: MenuUIAlertView[] = [];
 					arr.push({
@@ -366,12 +384,9 @@ export default {
 					}
 				}
 			},
-			"gc":{
-				"text":"实体清理",
-				"page":[
-					{
-
-					}
+			"gc": {
+				"text": "实体清理",
+				"page": [
 				]
 			}
 		}

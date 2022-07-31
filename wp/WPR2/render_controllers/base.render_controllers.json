@@ -6,6 +6,14 @@
       "geometry": "Geometry.default",
       "materials": [ { "*": "Material.default" } ],
       "textures": [ "Texture.default" ]
+    },
+    "controller.render.light": {
+      "rebuild_animation_matrices": true,
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.default" ],
+      "light_color_multiplier": 0.5,
+      "ignore_lighting" : true
     }
   }
 }

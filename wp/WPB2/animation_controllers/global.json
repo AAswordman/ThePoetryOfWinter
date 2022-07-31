@@ -10,7 +10,6 @@
             }
           ],
           "on_entry": [
-            "/function global",
             "/tag @s remove shot",
             "/tag @s remove shot_offhand"
           ]
@@ -22,7 +21,6 @@
             }
           ],
           "on_entry": [
-            "/function global",
             "/tag @s remove shot",
             "/tag @s remove shot_offhand"
           ]

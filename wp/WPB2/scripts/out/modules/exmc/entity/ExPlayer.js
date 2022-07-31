@@ -1,5 +1,5 @@
 import ExEntity from "./ExEntity.js";
-import ExPlayerBag from "./ExEntityBag.js";
+import { ExPlayerBag } from "./ExEntityBag.js";
 export default class ExPlayer extends ExEntity {
     get selectedSlot() {
         return this.entity.selectedSlot;
@@ -10,7 +10,7 @@ export default class ExPlayer extends ExEntity {
     constructor(player) {
         super(player);
     }
-    getPlayerBag() {
+    getBag() {
         return new ExPlayerBag(this);
     }
     static getInstance(source) {
