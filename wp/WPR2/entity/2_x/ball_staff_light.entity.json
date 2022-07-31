@@ -3,14 +3,14 @@
   "minecraft:client_entity": {
     "description": {
       "identifier": "wb:ball_staff_light",
-      "materials": { "default": "skeleton" },
+      "materials": { "default": "wbarmor" },
       "textures": {
         "default": "textures/wb/2_x/ball_staff_light"
       },
       "geometry": {
         "default": "geometry.ball_staff_light"
       },
-      "render_controllers": [ "controller.render.base" ]
+      "render_controllers": [ "controller.render.light" ]
     }
   }
 }

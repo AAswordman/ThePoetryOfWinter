@@ -6,8 +6,9 @@ import {
 } from "mojang-minecraft";
 import ExEventManager from "./interface/ExEventManager.js";
 import ExGameServer from './ExGameServer';
-import { Player } from 'mojang-minecraft';
-
+import { Player, EntityHurtEvent, ItemStack } from 'mojang-minecraft';
+import ExPlayer from './entity/ExPlayer';
+import { ItemOnHandChangeEvent } from "./events.js";
 export default class ExClientEvents implements ExEventManager {
 
 	/*
@@ -21,8 +22,8 @@ export default class ExClientEvents implements ExEventManager {
 
 	}
 
-	_registerToServerByEntity = (server: ExGameServer, k: string) => {
-		server.getEvents().register(k, (e: any) => {
+	_registerToServerByEntity = (server: ExGameServer, registerName: string, k: string) => {
+		server.getEvents().register(registerName, (e: any) => {
 			let player = e[(<any>this.exEvents)[k].filter.name];
 			let fArr = ExClientEvents.monitorMap[k].get(player);
 			if (fArr != null) {
@@ -33,8 +34,8 @@ export default class ExClientEvents implements ExEventManager {
 		});
 	}
 
-	_registerToServerByServerEvent = (server: ExGameServer, k: string) => {
-		server.getEvents().register(k, (e: any) => {
+	_registerToServerByServerEvent = (server: ExGameServer, registerName: string, k: string) => {
+		server.getEvents().register(registerName, (e: any) => {
 			for (let i of ExClientEvents.monitorMap[k]) {
 				(<((arg0: any) => void)[]>i[1]).forEach((f) => {
 					f(e);
@@ -79,8 +80,64 @@ export default class ExClientEvents implements ExEventManager {
 				this._unsubscribe("tick", callback);
 			},
 			pattern: this._registerToServerByServerEvent
+		},
+		playerHitEntity: {
+			subscribe: (callback: (arg: EntityHurtEvent) => void) => {
+				this._subscribe("playerHitEntity", callback);
+			},
+			unsubscribe: (callback: (arg: EntityHurtEvent) => void) => {
+				this._unsubscribe("playerHitEntity", callback);
+			},
+			pattern: this._registerToServerByEntity,
+			filter: {
+				"name": "damagingEntity"
+			},
+			name: "entityHurt"
+		},
+		playerHurt: {
+			subscribe: (callback: (arg: EntityHurtEvent) => void) => {
+				this._subscribe("playerHurt", callback);
+			},
+			unsubscribe: (callback: (arg: EntityHurtEvent) => void) => {
+				this._unsubscribe("playerHurt", callback);
+			},
+			pattern: this._registerToServerByEntity,
+			filter: {
+				"name": "hurtEntity"
+			},
+			name: "entityHurt"
+		},
+		itemOnHandChange: {
+			subscribe: (callback: (arg: ItemOnHandChangeEvent) => void) => {
+				this._subscribe("itemOnHandChange", callback);
+			},
+			unsubscribe: (callback: (arg: ItemOnHandChangeEvent) => void) => {
+				this._unsubscribe("itemOnHandChange", callback);
+			},
+			pattern: (server: ExGameServer, registerName: string, k: string) => {
+				this.onHandItemMap = new Map<Player, [ ItemStack | undefined,number]>();
+				server.getEvents().register(registerName, (e: TickEvent) => {
+					for(let i of (<Map<Player,(()=>void)[]>>ExClientEvents.monitorMap[k])){
+						let lastItemCache=this.onHandItemMap.get(i[0]);
+						let lastItem = lastItemCache?.[0];
+						let nowItem=ExPlayer.getInstance(i[0]).getBag().getItemOnHand();
+
+						if(lastItem?.id!==nowItem?.id || nowItem?.nameTag!==lastItem?.nameTag || i[0].selectedSlot !== lastItemCache?.[1]){
+							i[1].forEach((f: (arg0: ItemOnHandChangeEvent) => void) => {
+								f(new ItemOnHandChangeEvent(lastItem, nowItem,i[0]));
+							});
+
+							this.onHandItemMap.set(i[0],[nowItem,i[0].selectedSlot]);
+						}
+					}
+					
+				});
+			},
+			name: "tick"
 		}
 	}
+	onHandItemMap!: Map<Player, [ItemStack | undefined,number]>;
+
 	_subscribe(name: string, callback: (arg: any) => void) {
 		let e = ExClientEvents.monitorMap[name];
 		if (!e.has(this._client.player)) {
@@ -94,7 +151,9 @@ export default class ExClientEvents implements ExEventManager {
 	_unsubscribe(name: string, callback: (arg: any) => void) {
 		let e = ExClientEvents.monitorMap[name];
 		let arr: ((arg2: any) => void)[] = e.get(this._client.player);
-		arr.splice(arr.findIndex(callback), 1);
+		arr.splice(arr.findIndex((v,i)=>{
+			if(v === callback) return true;
+		}), 1);
 	}
 
 	private static init = false;
@@ -107,7 +166,12 @@ export default class ExClientEvents implements ExEventManager {
 			}
 			this._client.runOnServer((server) => {
 				for (let k in ExClientEvents.monitorMap) {
-					(<any>this.exEvents)[k].pattern(server, k);
+					let p = (<any>this.exEvents)[k];
+					let registerName = k;
+					if ("name" in p) {
+						registerName = p.name;
+					}
+					p.pattern(server, registerName, k);
 				}
 			});
 		}

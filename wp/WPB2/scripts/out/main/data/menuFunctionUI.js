@@ -184,6 +184,19 @@ export default {
                         }
                     }
                 ]
+            },
+            "talent": {
+                "text": "天赋",
+                "page": (client, ui) => {
+                    let arr;
+                    if (client.data.talent.hasOccupation()) {
+                        arr = [];
+                    }
+                    else {
+                        arr = [];
+                    }
+                    return arr;
+                }
             }
         }
     },
@@ -375,9 +388,7 @@ export default {
             },
             "gc": {
                 "text": "实体清理",
-                "page": [
-                    {}
-                ]
+                "page": []
             }
         }
     }

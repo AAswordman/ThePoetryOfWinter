@@ -15,7 +15,7 @@ export default class ExEntityBag {
     }
 
     getItem(id: string): ItemStack | undefined;
-    getItem(slot: number): ItemStack;
+    getItem(slot: number): ItemStack | undefined;
     getItem(arg: any) {
         if (typeof (arg) === "number") {
             return this.bagComponent.container.getItem(arg);

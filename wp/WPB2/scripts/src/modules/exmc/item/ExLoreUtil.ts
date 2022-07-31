@@ -11,9 +11,8 @@ export default class LoreUtil implements ExLoreManager {
 		MAP: 3
 	};
 
-	
+
 	item: ExLoreManager;
-	client: ExGameClient;
 	defFlag: number;
 
 	append(str: string) {
@@ -29,21 +28,15 @@ export default class LoreUtil implements ExLoreManager {
 	}
 
 	getLore() {
-		let lore = this.item.getLore();
-		if (lore != null) {
-			return lore;
-		} else {
-			return [];
-		}
+		return this.item.getLore() ?? [];
 	}
 
 	setLore(lore: string[]) {
 		this.item.setLore(lore);
 	}
 
-	constructor(client: ExGameClient, item: ExLoreManager) {
+	constructor(item: ExLoreManager) {
 		this.item = item;
-		this.client = client;
 		this.defFlag = LoreUtil.LoreFlag.DEFAULT;
 	}
 
@@ -52,7 +45,6 @@ export default class LoreUtil implements ExLoreManager {
 	}
 
 	search(lore: string[], key: string) {
-		if (key == null) throw new Error("Key cannot be empty");
 		for (let i = 0; i < lore.length; i++) {
 			if (lore[i].startsWith(key + " : ")) {
 				return new Piece(this.item, this.getLore(), i);
@@ -61,6 +53,14 @@ export default class LoreUtil implements ExLoreManager {
 		return null;
 	}
 
+	get(flag: number, key: string): string;
+	get(key: string): string;
+	get(flag: number, key: string, subkey: string): string;
+	get(key: string, subkey: string): string;
+	get(flag: number, key: string): string;
+	get(key: string): string;
+	get(flag: number, tag: string): boolean;
+	get(tag: string): boolean;
 	get() {
 		let index = 0;
 		if (arguments.length < 1) {
@@ -92,8 +92,9 @@ export default class LoreUtil implements ExLoreManager {
 		let piece = this.search(this.getLore(), key);
 		if (piece == null) return null;
 		// key : value
-		return piece.get().substr(key.length + 3, piece.get().length);
+		return piece.get().substring(key.length + 3);
 	}
+
 
 	hasTag(key: string) {
 		if (key == null) throw new Error("Key cannot be empty");
@@ -118,7 +119,7 @@ export default class LoreUtil implements ExLoreManager {
 			piece.next();
 			if (piece.get().startsWith(tab)) {
 				if (piece.get().startsWith(tab + use + " : ")) {
-					return piece.get().substr(tab.length + 3 + use.length, piece.get().length);
+					return piece.get().substring(tab.length + 3 + use.length);
 				}
 			} else {
 				break;
@@ -127,6 +128,14 @@ export default class LoreUtil implements ExLoreManager {
 		return null;
 	}
 
+	set(flag: number, key: string, value: string): void;
+	set(key: string, value: string): void;
+	set(flag: number, key: string, value: string, subvalue: string): void;
+	set(key: string, value: string, subvalue: string): void;
+	set(flag: number, key: string, value: string, repeat: number): void;
+	set(key: string, value: string, repeat: number): void;
+	set(flag: number, tag: string): void;
+	set(tag: string): void;
 	set() {
 		let index = 0;
 		if (arguments.length < 1) {
@@ -195,7 +204,7 @@ export default class LoreUtil implements ExLoreManager {
 			}
 		}
 		piece = this.search(this.getLore(), key);
-		if(piece == null) {
+		if (piece == null) {
 			ExGameConfig.console.error("Could not find " + key + " : " + value + " in lore");
 			return;
 		}
@@ -209,30 +218,25 @@ class Piece {
 	item: ExLoreManager;
 	lore: string[];
 	index: number;
-	set: () => void;
-	revise: (str: string) => this;
-	get: () => any;
-	hasNext: () => boolean;
-	next: () => void;
 	constructor(item: ExLoreManager, lore: string[], index: number) {
 		this.item = item;
 		this.lore = lore;
 		this.index = index;
-		this.set = function () {
-			this.item.setLore(this.lore);
-		}
-		this.revise = function (str: string) {
-			this.lore[this.index] = str;
-			return this;
-		}
-		this.get = function () {
-			return this.lore[this.index];
-		}
-		this.hasNext = function () {
-			return this.index + 1 < this.lore.length;
-		}
-		this.next = function () {
-			this.index++;
-		}
+	}
+	set() {
+		this.item.setLore(this.lore);
+	}
+	revise(str: string) {
+		this.lore[this.index] = str;
+		return this;
+	}
+	get() {
+		return this.lore[this.index];
+	}
+	hasNext() {
+		return this.index + 1 < this.lore.length;
+	}
+	next() {
+		this.index++;
 	}
 }

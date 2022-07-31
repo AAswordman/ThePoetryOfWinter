@@ -7,8 +7,9 @@ import ExTransmissionMsg from "./ExTransmissionMsg.js";
 import ExServerEvents from "./ExServerEvents.js";
 import UUID from "./utils/UUID.js";
 import ExErrorStack from './ExErrorStack.js';
+import SetTimeOutSupport from "./interface/SetTimeOutSupport.js";
 
-export default class ExGameServer {
+export default class ExGameServer implements SetTimeOutSupport{
 	clients;
 	_events;
 
@@ -135,7 +136,7 @@ export default class ExGameServer {
 
 	setTimeout(fun: () => void, timeout: number) {
 		let time = 0;
-		const method = (e: TickEvent) => {
+		let method = (e: TickEvent) => {
 			time += e.deltaTime * 1000;
 			if (time > timeout) {
 				this.getEvents().events.tick.unsubscribe(method);

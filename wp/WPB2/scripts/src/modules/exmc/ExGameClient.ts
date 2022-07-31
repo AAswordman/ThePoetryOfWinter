@@ -4,8 +4,9 @@ import ExTransmissionMsg from "./ExTransmissionMsg.js";
 import ExClientEvents from "./ExClientEvents.js";
 import { ChatEvent, Dimension, Player, TickEvent, world } from 'mojang-minecraft';
 import ExPlayer from "./entity/ExPlayer.js";
+import SetTimeOutSupport from "./interface/SetTimeOutSupport.js";
 
-export default class ExGameClient {
+export default class ExGameClient implements SetTimeOutSupport{
 	private _events: ExClientEvents;
 
 	debuggerChatTest = (e: ChatEvent) => {
@@ -103,7 +104,7 @@ export default class ExGameClient {
 
 	setTimeout(fun: () => void, timeout: number) {
 		let time = 0;
-		const method = (e: TickEvent) => {
+		let method = (e: TickEvent) => {
 			time += e.deltaTime * 1000;
 			if (time > timeout) {
 				this.getEvents().exEvents.tick.unsubscribe(method);

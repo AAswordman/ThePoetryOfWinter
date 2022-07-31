@@ -48,7 +48,7 @@
         "gravity": 0,
         "inertia": 1,
         "anchor": 2,
-        "offset": [0,1,0],
+        "offset": [0,0,0],
         "semirandomdiffdamage": false,
         "uncertaintyBase": 0,
         "reflectOnHurt": true

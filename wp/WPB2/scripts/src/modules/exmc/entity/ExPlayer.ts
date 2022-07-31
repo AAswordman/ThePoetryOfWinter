@@ -1,6 +1,6 @@
 import { Player } from "mojang-minecraft";
 import ExEntity from "./ExEntity.js";
-import ExPlayerBag from "./ExEntityBag.js";
+import { ExPlayerBag } from "./ExEntityBag.js";
 
 
 export default class ExPlayer extends ExEntity{
@@ -15,7 +15,7 @@ export default class ExPlayer extends ExEntity{
 		super(player);
 	}
 
-	public getPlayerBag() {
+	public override getBag() {
 		return new ExPlayerBag(this);
 	}
 
