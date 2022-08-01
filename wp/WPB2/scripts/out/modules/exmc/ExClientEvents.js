@@ -96,7 +96,7 @@ export default class ExClientEvents {
                             let lastItemCache = this.onHandItemMap.get(i[0]);
                             let lastItem = lastItemCache === null || lastItemCache === void 0 ? void 0 : lastItemCache[0];
                             let nowItem = ExPlayer.getInstance(i[0]).getBag().getItemOnHand();
-                            if ((lastItem === null || lastItem === void 0 ? void 0 : lastItem.id) !== (nowItem === null || nowItem === void 0 ? void 0 : nowItem.id) || (nowItem === null || nowItem === void 0 ? void 0 : nowItem.nameTag) !== (lastItem === null || lastItem === void 0 ? void 0 : lastItem.nameTag) || i[0].selectedSlot !== (lastItemCache === null || lastItemCache === void 0 ? void 0 : lastItemCache[1])) {
+                            if ((lastItem === null || lastItem === void 0 ? void 0 : lastItem.id) !== (nowItem === null || nowItem === void 0 ? void 0 : nowItem.id) || i[0].selectedSlot !== (lastItemCache === null || lastItemCache === void 0 ? void 0 : lastItemCache[1])) {
                                 i[1].forEach((f) => {
                                     f(new ItemOnHandChangeEvent(lastItem, nowItem, i[0]));
                                 });

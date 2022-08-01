@@ -24,7 +24,8 @@ export default class TagCache {
                 return def;
             }
             else {
-                return res;
+                this.cache = this.recovery(def, res);
+                return this.cache;
             }
         }
     }
@@ -32,6 +33,17 @@ export default class TagCache {
         this.manager.removeTag(this.tagFrom);
         this.tagFrom = "__cache:" + JSON.stringify(this.cache);
         this.manager.addTag(this.tagFrom);
+    }
+    recovery(def, res) {
+        for (let i in res) {
+            if (def[i] === undefined) {
+                def[i] = res[i];
+                if (typeof (res[i]) === "object" && typeof (def[i]) === "object") {
+                    this.recovery(def[i], res[i]);
+                }
+            }
+        }
+        return def;
     }
 }
 //# sourceMappingURL=TagCache.js.map

@@ -26,12 +26,27 @@ export default class TagCache<T>{
                 this.tagFrom = "__cache:" + JSON.stringify(this.cache);
                 this.manager.addTag(this.tagFrom);
                 return def;
-            } else { return res; }
+            } else {
+                this.cache = this.recovery(def,res);
+                return this.cache;
+            }
         }
+        
     }
     save() {
         this.manager.removeTag(this.tagFrom);
         this.tagFrom = "__cache:" + JSON.stringify(this.cache);
         this.manager.addTag(this.tagFrom);
+    }
+    recovery(def: any, res: any) {
+        for(let i in res){
+            if(def[i] === undefined) {
+                def[i] = res[i];
+                if(typeof(res[i])==="object" && typeof(def[i])==="object"){
+                    this.recovery(def[i], res[i]);
+                }
+            }
+        }
+        return def;
     }
 }

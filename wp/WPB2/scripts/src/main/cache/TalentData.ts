@@ -75,7 +75,7 @@ export default class TalentData {
                 Math.round((parseFloat(lore.get("enchanting", t.getCharacter()) ?? 0) + add)*10)/10
             );
         }
-
+        
     }
     isOccupationTalent(id: number) {
         return this.occupation.talentId.indexOf(id) !== -1;
