@@ -133,7 +133,7 @@ export default class ExClientEvents implements ExEventManager {
 					
 				});
 			},
-			name: "tick"
+			name: "onLongTick"
 		}
 	}
 	onHandItemMap!: Map<Player, [ItemStack | undefined,number]>;

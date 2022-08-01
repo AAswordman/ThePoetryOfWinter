@@ -105,7 +105,7 @@ export default class ExClientEvents {
                         }
                     });
                 },
-                name: "tick"
+                name: "onLongTick"
             }
         };
         this._client = client;

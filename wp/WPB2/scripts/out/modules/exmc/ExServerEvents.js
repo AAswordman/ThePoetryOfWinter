@@ -30,12 +30,22 @@ export default class ExServerEvents {
         };
         this.tickNum = 0;
         this.tickTime = 0;
+        this.init = false;
         this._server = server;
         this.events = world.events;
+        if (!this.init) {
+            this.init = true;
+            for (let i in this.exEvents) {
+                this.exEvents[i].pattern();
+            }
+        }
     }
     _subscribe(name, callback) {
-        var _a;
-        let e = (_a = ExServerEvents.monitorMap.get(name)) !== null && _a !== void 0 ? _a : [];
+        let e = ExServerEvents.monitorMap.get(name);
+        if (e === undefined) {
+            e = [];
+            ExServerEvents.monitorMap.set(name, e);
+        }
         e.push(callback);
     }
     _unsubscribe(name, callback) {
