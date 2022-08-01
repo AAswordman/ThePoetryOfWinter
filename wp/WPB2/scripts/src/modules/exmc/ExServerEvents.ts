@@ -10,17 +10,24 @@ export default class ExServerEvents implements ExEventManager {
 	public exEvents = {
 		"onLongTick": {
 			subscribe: (callback: (arg: TickEvent) => void) => {
-				this._subscribe("tick", callback);
+				this._subscribe("onLongTick", callback);
 			},
 			unsubscribe: (callback: (arg: TickEvent) => void) => {
-				this._unsubscribe("tick", callback)
+				this._unsubscribe("onLongTick", callback)
 			},
 			pattern: () => {
 				this.events.tick.subscribe((e) => {
-					this.tickNum++;
-					this.tickTime+=e.deltaTime
-					if(this.tickNum >= 5){
-
+					this.tickTime+=e.deltaTime;
+					if(e.currentTick % 5 === 0){
+						this.tickNum++;
+						let event:TickEvent={
+							currentTick: this.tickNum,
+							deltaTime: this.tickTime
+						};
+						ExServerEvents.monitorMap.get("onLongTick")?.forEach((fun) => {
+							fun(event);
+						});
+						this.tickTime = 0;
 					}
 				});
 			}
