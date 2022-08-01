@@ -1,4 +1,6 @@
+import ExColorLoreUtil from "../../modules/exmc/item/ExColorLoreUtil.js";
 import LoreUtil from "../../modules/exmc/item/ExLoreUtil.js";
+import MathUtil from "../../modules/exmc/utils/MathUtil.js";
 export default class TalentData {
     constructor() {
         this.occupation = Occupation.EMPTY;
@@ -8,6 +10,7 @@ export default class TalentData {
         return this.occupation !== Occupation.EMPTY;
     }
     chooseOccupation(occupation) {
+        this.occupation = occupation;
         let set = new Set([
             Tanlent.VIENTIANE,
             Tanlent.CLOAD_PIERCING,
@@ -26,8 +29,7 @@ export default class TalentData {
         });
     }
     calculateTalent(manager) {
-        var _a;
-        let lore = new LoreUtil(manager);
+        let lore = new ExColorLoreUtil(manager);
         lore.setFlag(LoreUtil.LoreFlag.MAP);
         for (let t of this.talents) {
             let add;
@@ -66,7 +68,7 @@ export default class TalentData {
                     add = 0;
                     break;
             }
-            lore.set("addition", t.getCharacter(), Math.round((parseFloat((_a = lore.get("enchanting", t.getCharacter())) !== null && _a !== void 0 ? _a : 0) + add) * 10) / 10);
+            lore.set("addition", t.getCharacter(), Math.round(MathUtil.zeroIfNaN(parseFloat(lore.get("enchanting", t.getCharacter())) + add) * 10) / 10);
         }
     }
     isOccupationTalent(id) {
@@ -116,16 +118,18 @@ Tanlent.SOURCE = 8;
 Tanlent.SUDDEN_STRIKE = 9;
 Tanlent.REGENERATE = 10;
 export class Occupation {
-    constructor(occupation, talentId) {
+    constructor(occupation, talentId, character) {
         this.id = occupation;
         this.talentId = talentId;
+        this.character = character;
     }
 }
-Occupation.EMPTY = new Occupation(0, []);
-Occupation.GUARD = new Occupation(1, [Tanlent.VIENTIANE, Tanlent.ARMOR_BREAKING]);
-Occupation.WARRIOR = new Occupation(2, [Tanlent.SANCTION, Tanlent.DEFENSE]);
-Occupation.ASSASSIN = new Occupation(3, [Tanlent.SANCTION, Tanlent.SUDDEN_STRIKE]);
-Occupation.ARCHER = new Occupation(4, [Tanlent.CLOAD_PIERCING, Tanlent.ARMOR_BREAKING]);
-Occupation.WARLOCK = new Occupation(5, [Tanlent.RELOAD, Tanlent.SOURCE, Tanlent.CHARGING]);
-Occupation.PRIEST = new Occupation(6, [Tanlent.SOURCE, Tanlent.REGENERATE]);
+Occupation.EMPTY = new Occupation(0, [], "空");
+Occupation.GUARD = new Occupation(1, [Tanlent.VIENTIANE, Tanlent.ARMOR_BREAKING], "近卫");
+Occupation.WARRIOR = new Occupation(2, [Tanlent.SANCTION, Tanlent.DEFENSE], "战士");
+Occupation.ASSASSIN = new Occupation(3, [Tanlent.SANCTION, Tanlent.SUDDEN_STRIKE], "暗杀者");
+Occupation.ARCHER = new Occupation(4, [Tanlent.CLOAD_PIERCING, Tanlent.ARMOR_BREAKING], "射手");
+Occupation.WARLOCK = new Occupation(5, [Tanlent.RELOAD, Tanlent.SOURCE, Tanlent.CHARGING], "术士");
+Occupation.PRIEST = new Occupation(6, [Tanlent.SOURCE, Tanlent.REGENERATE], "牧师");
+Occupation.keys = [Occupation.GUARD, Occupation.WARRIOR, Occupation.ASSASSIN, Occupation.ARCHER, Occupation.WARLOCK, Occupation.PRIEST];
 //# sourceMappingURL=TalentData.js.map

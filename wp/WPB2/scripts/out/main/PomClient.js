@@ -47,10 +47,8 @@ export default class PomClient extends ExGameClient {
             var _a, _b, _c;
             ExGameConfig.console.info("onHandChange:" + ((_a = e.beforeItem) === null || _a === void 0 ? void 0 : _a.id) + " -> " + ((_b = e.afterItem) === null || _b === void 0 ? void 0 : _b.id));
             if ((_c = e.afterItem) === null || _c === void 0 ? void 0 : _c.id.startsWith("wb:sword_")) {
-                console.warn(this.data.talent);
-                console.warn(this.data.talent.calculateTalent);
                 this.data.talent.calculateTalent(e.afterItem);
-                //this.exPlayer.getBag().setItem(this.exPlayer.selectedSlot, e.afterItem);
+                this.exPlayer.getBag().setItem(this.exPlayer.selectedSlot, e.afterItem);
             }
         });
     }

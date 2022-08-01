@@ -11,6 +11,7 @@ import ExGameConfig from "../../modules/exmc/ExGameConfig.js";
 import ExPlayer from '../../modules/exmc/entity/ExPlayer.js';
 import MenuUIAlert from '../ui/MenuUIAlert.js';
 import ExMessageAlert from "../../modules/exmc/ui/ExMessageAlert.js";
+import { Occupation } from "../cache/TalentData.js";
 export default {
     "main": {
         "img": "textures/items/wet_paper",
@@ -191,9 +192,49 @@ export default {
                     let arr;
                     if (client.data.talent.hasOccupation()) {
                         arr = [];
+                        for (let i of client.data.talent.talents) {
+                            arr.push({
+                                "type": "text",
+                                "msg": i.getCharacter() + ":" + i.level + " : " + function () {
+                                    let useChr = "";
+                                    let a = Math.floor(i.level / 4);
+                                    let b = i.level % 4;
+                                    let c = 10 - a - b;
+                                    let s = "";
+                                    while (a > 0) {
+                                        s += useChr[0];
+                                        a--;
+                                    }
+                                    s += useChr[b];
+                                    while (c > 0) {
+                                        s += useChr[0];
+                                        c--;
+                                    }
+                                    return s;
+                                }()
+                            });
+                        }
                     }
                     else {
-                        arr = [];
+                        arr = [
+                            {
+                                "type": "text_title",
+                                "msg": "选择你的职业"
+                            },
+                            {
+                                "type": "padding",
+                            }
+                        ];
+                        for (const i of Occupation.keys) {
+                            arr.push({
+                                "type": "button",
+                                "msg": i.character,
+                                "function": (client, ui) => {
+                                    client.data.talent.chooseOccupation(i);
+                                    return true;
+                                }
+                            });
+                        }
                     }
                     return arr;
                 }

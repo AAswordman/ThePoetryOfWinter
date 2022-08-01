@@ -1,7 +1,8 @@
 import ExGameConfig from "../../modules/exmc/ExGameConfig.js";
 import ExLoreManager from '../../modules/exmc/interface/ExLoreManager.js';
+import ExColorLoreUtil from "../../modules/exmc/item/ExColorLoreUtil.js";
 import LoreUtil from "../../modules/exmc/item/ExLoreUtil.js";
-import ExGameClient from '../../modules/exmc/ExGameClient';
+import MathUtil from "../../modules/exmc/utils/MathUtil.js";
 
 export default class TalentData {
     hasOccupation() {
@@ -11,6 +12,7 @@ export default class TalentData {
 
     talents: Tanlent[] = [];
     chooseOccupation(occupation: Occupation) {
+        this.occupation = occupation; 
         let set = new Set<number>([
             Tanlent.VIENTIANE,
             Tanlent.CLOAD_PIERCING,
@@ -31,7 +33,7 @@ export default class TalentData {
     }
 
     calculateTalent(manager: ExLoreManager) {
-        let lore = new LoreUtil(manager);
+        let lore = new ExColorLoreUtil(manager);
         lore.setFlag(LoreUtil.LoreFlag.MAP);
 
         for (let t of this.talents) {
@@ -72,10 +74,10 @@ export default class TalentData {
                     break;
             }
             lore.set("addition", t.getCharacter(),
-                Math.round((parseFloat(lore.get("enchanting", t.getCharacter()) ?? 0) + add)*10)/10
+                Math.round(MathUtil.zeroIfNaN(parseFloat(lore.get("enchanting", t.getCharacter())) + add) * 10) / 10
             );
         }
-        
+
     }
     isOccupationTalent(id: number) {
         return this.occupation.talentId.indexOf(id) !== -1;
@@ -132,19 +134,22 @@ export class Tanlent {
 }
 
 export class Occupation {
-    public static readonly EMPTY = new Occupation(0, []);
-    public static readonly GUARD = new Occupation(1, [Tanlent.VIENTIANE, Tanlent.ARMOR_BREAKING]);
-    public static readonly WARRIOR = new Occupation(2, [Tanlent.SANCTION, Tanlent.DEFENSE]);
-    public static readonly ASSASSIN = new Occupation(3, [Tanlent.SANCTION, Tanlent.SUDDEN_STRIKE]);
-    public static readonly ARCHER = new Occupation(4, [Tanlent.CLOAD_PIERCING, Tanlent.ARMOR_BREAKING]);
-    public static readonly WARLOCK = new Occupation(5, [Tanlent.RELOAD, Tanlent.SOURCE, Tanlent.CHARGING]);
-    public static readonly PRIEST = new Occupation(6, [Tanlent.SOURCE, Tanlent.REGENERATE]);
+    public static readonly EMPTY = new Occupation(0, [], "空");
+    public static readonly GUARD = new Occupation(1, [Tanlent.VIENTIANE, Tanlent.ARMOR_BREAKING], "近卫");
+    public static readonly WARRIOR = new Occupation(2, [Tanlent.SANCTION, Tanlent.DEFENSE], "战士");
+    public static readonly ASSASSIN = new Occupation(3, [Tanlent.SANCTION, Tanlent.SUDDEN_STRIKE], "暗杀者");
+    public static readonly ARCHER = new Occupation(4, [Tanlent.CLOAD_PIERCING, Tanlent.ARMOR_BREAKING], "射手");
+    public static readonly WARLOCK = new Occupation(5, [Tanlent.RELOAD, Tanlent.SOURCE, Tanlent.CHARGING], "术士");
+    public static readonly PRIEST = new Occupation(6, [Tanlent.SOURCE, Tanlent.REGENERATE], "牧师");
 
+    static keys = [Occupation.GUARD,Occupation.WARRIOR,Occupation.ASSASSIN,Occupation.ARCHER,Occupation.WARLOCK,Occupation.PRIEST];
 
     id: number;
     talentId: number[];
-    constructor(occupation: number, talentId: number[]) {
+    character: string;
+    constructor(occupation: number, talentId: number[], character: string) {
         this.id = occupation;
         this.talentId = talentId;
+        this.character = character;
     }
 }
