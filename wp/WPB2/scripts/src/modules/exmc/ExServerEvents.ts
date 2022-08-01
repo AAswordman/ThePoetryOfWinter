@@ -37,8 +37,13 @@ export default class ExServerEvents implements ExEventManager {
 	static monitorMap = new Map<string, ((arg: any) => void)[]>;
 	tickNum: number = 0;
 	tickTime: number = 0;
+	init: boolean =false;
 	_subscribe(name: string, callback: (arg: any) => void) {
-		let e = ExServerEvents.monitorMap.get(name) ?? [];
+		let e = ExServerEvents.monitorMap.get(name);
+		if(e === undefined){
+			e = [];
+			ExServerEvents.monitorMap.set(name,e);
+		}
 		e.push(callback);
 
 	}
@@ -54,6 +59,14 @@ export default class ExServerEvents implements ExEventManager {
 	constructor(server: ExGameServer) {
 		this._server = server;
 		this.events = world.events;
+
+		if(!this.init){
+			this.init=true;
+			for(let i in this.exEvents){
+				(<any>this.exEvents)[i].pattern();
+			}
+		}
+
 	}
 
 	register(name: string, fun: (arg: any) => void) {
