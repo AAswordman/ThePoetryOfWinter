@@ -4,16 +4,25 @@ export default class ExServerEvents {
         this.exEvents = {
             "onLongTick": {
                 subscribe: (callback) => {
-                    this._subscribe("tick", callback);
+                    this._subscribe("onLongTick", callback);
                 },
                 unsubscribe: (callback) => {
-                    this._unsubscribe("tick", callback);
+                    this._unsubscribe("onLongTick", callback);
                 },
                 pattern: () => {
                     this.events.tick.subscribe((e) => {
-                        this.tickNum++;
+                        var _a;
                         this.tickTime += e.deltaTime;
-                        if (this.tickNum >= 5) {
+                        if (e.currentTick % 5 === 0) {
+                            this.tickNum++;
+                            let event = {
+                                currentTick: this.tickNum,
+                                deltaTime: this.tickTime
+                            };
+                            (_a = ExServerEvents.monitorMap.get("onLongTick")) === null || _a === void 0 ? void 0 : _a.forEach((fun) => {
+                                fun(event);
+                            });
+                            this.tickTime = 0;
                         }
                     });
                 }
