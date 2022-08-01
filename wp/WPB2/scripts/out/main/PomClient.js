@@ -34,6 +34,8 @@ export default class PomClient extends ExGameClient {
         this.getEvents().exEvents.playerHitEntity.subscribe((e) => {
             ExGameConfig.console.info("hit" + e.damage);
         });
+        this.getEvents().exEvents.tick.subscribe((e) => {
+        });
         this.getEvents().exEvents.playerHurt.subscribe((e) => {
             var _a;
             let beforeHealth = (_a = this.exPlayer["nowHealth"]) !== null && _a !== void 0 ? _a : this.exPlayer.getMaxHealth();
@@ -41,12 +43,15 @@ export default class PomClient extends ExGameClient {
             ExGameConfig.console.info("hurt by" + e.damage + " health:");
             this.exPlayer["nowHealth"] = this.exPlayer.getHealth();
         });
-        new TimeLoopTask(this, () => {
-            ExGameConfig.console.info("health:" + this.exPlayer.getHealth());
-        }).delay(0).start();
         this.getEvents().exEvents.itemOnHandChange.subscribe((e) => {
-            var _a, _b;
+            var _a, _b, _c;
             ExGameConfig.console.info("onHandChange:" + ((_a = e.beforeItem) === null || _a === void 0 ? void 0 : _a.id) + " -> " + ((_b = e.afterItem) === null || _b === void 0 ? void 0 : _b.id));
+            if ((_c = e.afterItem) === null || _c === void 0 ? void 0 : _c.id.startsWith("wb:sword_")) {
+                console.warn(this.data.talent);
+                console.warn(this.data.talent.calculateTalent);
+                this.data.talent.calculateTalent(e.afterItem);
+                //this.exPlayer.getBag().setItem(this.exPlayer.selectedSlot, e.afterItem);
+            }
         });
     }
     onLoaded() {
