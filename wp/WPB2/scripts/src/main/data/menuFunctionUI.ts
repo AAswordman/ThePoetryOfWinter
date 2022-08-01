@@ -5,6 +5,7 @@ import MenuUIAlert, { MenuUIAlertView } from '../ui/MenuUIAlert.js';
 import ExMessageAlert from "../../modules/exmc/ui/ExMessageAlert.js";
 import { ItemStack } from "mojang-minecraft";
 import { ExPlayerBag } from "../../modules/exmc/entity/ExEntityBag.js";
+import { Occupation } from "../cache/TalentData.js";
 
 export default {
 	"main": {
@@ -186,11 +187,49 @@ export default {
 
 					if (client.data.talent.hasOccupation()) {
 						arr = [
-
 						];
+						for (let i of client.data.talent.talents) {
+							arr.push({
+								"type": "text",
+								"msg": i.getCharacter() + ":" + i.level + " : " + function () {
+									let useChr = "";
+									let a = Math.floor(i.level / 4);
+									let b = i.level % 4;
+									let c = 10 - a - b;
+									let s = ""
+									while (a > 0) {
+										s += useChr[0];
+										a--;
+									}
+									s += useChr[b];
+									while (c > 0) {
+										s += useChr[0];
+										c--;
+									}
+									return s;
+								}()
+							});
+						}
 					} else {
 						arr = [
+							{
+								"type": "text_title",
+								"msg": "选择你的职业"
+							},
+							{
+								"type": "padding",
+							}
 						];
+						for (const i of Occupation.keys) {
+							arr.push({
+								"type": "button",
+								"msg": i.character,
+								"function": (client: PomClient, ui: MenuUIAlert) => {
+									client.data.talent.chooseOccupation(i);
+									return true;
+								}
+							});
+						}
 					}
 
 
