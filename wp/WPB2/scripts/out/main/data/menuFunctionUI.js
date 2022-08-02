@@ -194,8 +194,8 @@ export default {
                         arr = [];
                         for (let i of client.data.talent.talents) {
                             arr.push({
-                                "type": "text",
-                                "msg": i.getCharacter() + ":" + i.level + "\n" + function () {
+                                "type": "textAndAddButton",
+                                "msg": i.getCharacter() + ":" + i.level + "\n" + (function () {
                                     let useChr = "";
                                     let a = Math.floor(i.level / 4);
                                     let b = i.level % 4;
@@ -211,7 +211,10 @@ export default {
                                         c--;
                                     }
                                     return s;
-                                }()
+                                })(),
+                                "function": () => {
+                                    return true;
+                                }
                             });
                         }
                     }

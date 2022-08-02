@@ -1,3 +1,4 @@
+import { Serialize } from '../../utils/Serialize.js';
 export default class TagCache {
     constructor(manager) {
         this.manager = manager;
@@ -6,7 +7,7 @@ export default class TagCache {
         for (const tag of this.manager.getTags()) {
             if (tag.startsWith("__cache:")) {
                 this.tagFrom = tag;
-                return (this.cache = JSON.parse(tag.substring("__cache:".length)));
+                return tag.substring("__cache:".length);
             }
         }
         return undefined;
@@ -24,26 +25,15 @@ export default class TagCache {
                 return def;
             }
             else {
-                this.cache = this.recovery(def, res);
+                this.cache = Serialize.fromJSON(res, def);
                 return this.cache;
             }
         }
     }
     save() {
         this.manager.removeTag(this.tagFrom);
-        this.tagFrom = "__cache:" + JSON.stringify(this.cache);
+        this.tagFrom = "__cache:" + Serialize.toJSON(this.cache);
         this.manager.addTag(this.tagFrom);
-    }
-    recovery(def, res) {
-        for (let i in res) {
-            if (typeof (res[i]) === "object" && typeof (def[i]) === "object") {
-                this.recovery(def[i], res[i]);
-            }
-            else {
-                def[i] = res[i];
-            }
-        }
-        return def;
     }
 }
 //# sourceMappingURL=TagCache.js.map

@@ -3,11 +3,12 @@ import LoreUtil from "../../modules/exmc/item/ExLoreUtil.js";
 import MathUtil from "../../modules/exmc/utils/MathUtil.js";
 export default class TalentData {
     constructor() {
+        this.isSerializeAble = true;
         this.occupation = Occupation.EMPTY;
         this.talents = [];
     }
     hasOccupation() {
-        return this.occupation !== Occupation.EMPTY;
+        return this.occupation.id !== Occupation.EMPTY.id;
     }
     chooseOccupation(occupation) {
         this.occupation = occupation;
@@ -78,6 +79,7 @@ export default class TalentData {
 }
 export class Tanlent {
     constructor(id, level) {
+        this.isSerializeAble = true;
         this.id = id;
         this.level = level;
     }
@@ -120,6 +122,7 @@ Tanlent.SUDDEN_STRIKE = 9;
 Tanlent.REGENERATE = 10;
 export class Occupation {
     constructor(occupation, talentId, character) {
+        this.isSerializeAble = true;
         this.id = occupation;
         this.talentId = talentId;
         this.character = character;

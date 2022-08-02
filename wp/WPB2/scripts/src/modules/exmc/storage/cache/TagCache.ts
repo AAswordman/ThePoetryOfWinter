@@ -1,4 +1,5 @@
 import ExTagManager from '../../interface/ExTagManager.js';
+import { Serialize } from '../../utils/Serialize.js';
 export default class TagCache<T>{
     manager: ExTagManager;
     cache!: T;
@@ -11,7 +12,7 @@ export default class TagCache<T>{
         for (const tag of this.manager.getTags()) {
             if (tag.startsWith("__cache:")) {
                 this.tagFrom = tag;
-                return <T>(this.cache = JSON.parse(tag.substring("__cache:".length)));
+                return tag.substring("__cache:".length);
             }
         }
         return undefined;
@@ -27,7 +28,7 @@ export default class TagCache<T>{
                 this.manager.addTag(this.tagFrom);
                 return def;
             } else {
-                this.cache = this.recovery(def, res);
+                this.cache = Serialize.fromJSON(res,def);
                 return this.cache;
             }
         }
@@ -35,18 +36,7 @@ export default class TagCache<T>{
     }
     save() {
         this.manager.removeTag(this.tagFrom);
-        this.tagFrom = "__cache:" + JSON.stringify(this.cache);
+        this.tagFrom = "__cache:" + Serialize.toJSON(this.cache);
         this.manager.addTag(this.tagFrom);
-    }
-    recovery(def: any, res: any) {
-        for (let i in res) {
-            if (typeof (res[i]) === "object" && typeof (def[i]) === "object") {
-                this.recovery(def[i], res[i]);
-            } else {
-                def[i] = res[i];
-            }
-
-        }
-        return def;
     }
 }

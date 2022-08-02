@@ -3,10 +3,12 @@ import ExLoreManager from '../../modules/exmc/interface/ExLoreManager.js';
 import ExColorLoreUtil from "../../modules/exmc/item/ExColorLoreUtil.js";
 import LoreUtil from "../../modules/exmc/item/ExLoreUtil.js";
 import MathUtil from "../../modules/exmc/utils/MathUtil.js";
+import { SerializeAble } from "../../modules/exmc/utils/Serialize.js";
 
-export default class TalentData {
+export default class TalentData implements SerializeAble{
+    isSerializeAble: true = true;
     hasOccupation() {
-        return this.occupation !== Occupation.EMPTY;
+        return this.occupation.id !== Occupation.EMPTY.id;
     }
     occupation: Occupation = Occupation.EMPTY;
 
@@ -85,7 +87,7 @@ export default class TalentData {
 }
 
 
-export class Tanlent {
+export class Tanlent implements SerializeAble{
     public static readonly VIENTIANE = 1;
     public static readonly CLOAD_PIERCING = 2;
     public static readonly ARMOR_BREAKING = 3;
@@ -103,6 +105,7 @@ export class Tanlent {
         this.id = id;
         this.level = level;
     }
+    isSerializeAble: true = true;
 
     getCharacter() {
         switch (this.id) {
@@ -133,7 +136,7 @@ export class Tanlent {
 
 }
 
-export class Occupation {
+export class Occupation implements SerializeAble{
     public static readonly EMPTY = new Occupation(0, [], "空");
     public static readonly GUARD = new Occupation(1, [Tanlent.VIENTIANE, Tanlent.ARMOR_BREAKING], "近卫");
     public static readonly WARRIOR = new Occupation(2, [Tanlent.SANCTION, Tanlent.DEFENSE], "战士");
@@ -152,4 +155,5 @@ export class Occupation {
         this.talentId = talentId;
         this.character = character;
     }
+    isSerializeAble: true = true;
 }
