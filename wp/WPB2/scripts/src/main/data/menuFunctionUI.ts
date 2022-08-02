@@ -185,16 +185,21 @@ export default {
 				"page": (client: PomClient, ui: MenuUIAlert): MenuUIAlertView[] => {
 					let arr: MenuUIAlertView[];
 					if (TalentData.hasOccupation(client.data.talent)) {
+						const point = (client.exPlayer.getScoresManager().getScore("wbdjcg") - (client.data.talent.pointUsed ?? 0));
 						arr = [
+							{
+								"type": "text",
+								"msg": "剩余可使用点数 ： " + point
+							}
 						];
 						for (let i of client.data.talent.talents) {
 							arr.push({
-								"type": "textAndAddButton",
-								"msg": Tanlent.getCharacter(i) + ":" + i.level + "\n" + (function () {
+								"type": point > 0 ?  "textAndAddButton" : "textAndNoButton",
+								"msg": Tanlent.getCharacter(i.id) + ":" + i.level + "\n" + (function () {
 									let useChr = "";
 									let a = Math.floor(i.level / 4);
 									let b = i.level % 4;
-									let c = 10 - a - (b == 0 ? 0 : 1);
+									let c = 10 - a - 1;
 									let s = ""
 									while (a > 0) {
 										s += useChr[0];
@@ -208,7 +213,10 @@ export default {
 									return s;
 								})(),
 								"function": () => {
-									i.level++;
+									if (point > 0) {
+										i.level++;
+										client.data.talent.pointUsed = 1 + (client.data.talent.pointUsed ?? 0);
+									}
 									return true;
 								}
 							});
