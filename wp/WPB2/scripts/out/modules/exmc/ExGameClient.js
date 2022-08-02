@@ -32,6 +32,11 @@ export default class ExGameClient {
         }
         this.onJoin();
     }
+    debug_removeAllTag() {
+        for (let i of this.exPlayer.getTags()) {
+            this.exPlayer.removeTag(i);
+        }
+    }
     getDimension(type) {
         return world.getDimension(type);
     }

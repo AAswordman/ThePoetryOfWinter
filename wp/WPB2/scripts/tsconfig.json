@@ -11,8 +11,7 @@
 		"rootDir": "src",
 		"strict": true,
 		"noImplicitOverride": true,
-		"strictNullChecks": true,
-		"emitDecoratorMetadata": true
+		"strictNullChecks": true
 		/*
 		"module":"system",
 		"outFile": "./out.js",

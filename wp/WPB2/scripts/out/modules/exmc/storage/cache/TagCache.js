@@ -25,14 +25,14 @@ export default class TagCache {
                 return def;
             }
             else {
-                this.cache = Serialize.fromJSON(res, def);
+                this.cache = Serialize.from(res, def);
                 return this.cache;
             }
         }
     }
     save() {
         this.manager.removeTag(this.tagFrom);
-        this.tagFrom = "__cache:" + Serialize.toJSON(this.cache);
+        this.tagFrom = "__cache:" + Serialize.to(this.cache);
         this.manager.addTag(this.tagFrom);
     }
 }
