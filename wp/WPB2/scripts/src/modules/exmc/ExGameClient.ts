@@ -6,7 +6,7 @@ import { ChatEvent, Dimension, Player, TickEvent, world } from 'mojang-minecraft
 import ExPlayer from "./entity/ExPlayer.js";
 import SetTimeOutSupport from "./interface/SetTimeOutSupport.js";
 
-export default class ExGameClient implements SetTimeOutSupport{
+export default class ExGameClient implements SetTimeOutSupport {
 	private _events: ExClientEvents;
 
 	debuggerChatTest = (e: ChatEvent) => {
@@ -18,6 +18,12 @@ export default class ExGameClient implements SetTimeOutSupport{
 	private _server: ExGameServer;
 	clientId: string;
 	playerName: string;
+
+	debug_removeAllTag() {
+		for (let i of this.exPlayer.getTags()) {
+			this.exPlayer.removeTag(i);
+		}
+	}
 
 	constructor(server: ExGameServer, id: string, player: Player) {
 		this._server = server;

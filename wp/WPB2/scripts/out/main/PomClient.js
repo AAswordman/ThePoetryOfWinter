@@ -8,6 +8,7 @@ import ExGameConfig from '../modules/exmc/ExGameConfig.js';
 import TagCache from "../modules/exmc/storage/cache/TagCache.js";
 import PomData from "./cache/PomData.js";
 import TimeLoopTask from "../modules/exmc/utils/TimeLoopTask.js";
+import TalentData from "./cache/TalentData.js";
 export default class PomClient extends ExGameClient {
     constructor(server, id, player) {
         super(server, id, player);
@@ -47,7 +48,7 @@ export default class PomClient extends ExGameClient {
             var _a, _b, _c;
             ExGameConfig.console.info("onHandChange:" + ((_a = e.beforeItem) === null || _a === void 0 ? void 0 : _a.id) + " -> " + ((_b = e.afterItem) === null || _b === void 0 ? void 0 : _b.id));
             if ((_c = e.afterItem) === null || _c === void 0 ? void 0 : _c.id.startsWith("wb:sword_")) {
-                this.data.talent.calculateTalent(e.afterItem);
+                TalentData.calculateTalent(this.data.talent, e.afterItem);
                 this.exPlayer.getBag().setItem(this.exPlayer.selectedSlot, e.afterItem);
             }
         });

@@ -5,7 +5,7 @@ import MenuUIAlert, { MenuUIAlertView } from '../ui/MenuUIAlert.js';
 import ExMessageAlert from "../../modules/exmc/ui/ExMessageAlert.js";
 import { ItemStack } from "mojang-minecraft";
 import { ExPlayerBag } from "../../modules/exmc/entity/ExEntityBag.js";
-import { Occupation } from "../cache/TalentData.js";
+import TalentData, { Occupation, Tanlent } from "../cache/TalentData.js";
 
 export default {
 	"main": {
@@ -184,30 +184,31 @@ export default {
 				"text": "天赋",
 				"page": (client: PomClient, ui: MenuUIAlert): MenuUIAlertView[] => {
 					let arr: MenuUIAlertView[];
-					if (client.data.talent.hasOccupation()) {
+					if (TalentData.hasOccupation(client.data.talent)) {
 						arr = [
 						];
 						for (let i of client.data.talent.talents) {
 							arr.push({
 								"type": "textAndAddButton",
-								"msg": i.getCharacter() + ":" + i.level + "\n" + (function () {
+								"msg": Tanlent.getCharacter(i) + ":" + i.level + "\n" + (function () {
 									let useChr = "";
 									let a = Math.floor(i.level / 4);
 									let b = i.level % 4;
-									let c = 10 - a - b;
+									let c = 10 - a - (b == 0 ? 0 : 1);
 									let s = ""
 									while (a > 0) {
 										s += useChr[0];
 										a--;
 									}
-									s += useChr[b];
+									s += useChr[4 - b];
 									while (c > 0) {
-										s += useChr[0];
+										s += useChr[4];
 										c--;
 									}
 									return s;
 								})(),
-								"function" : () => {
+								"function": () => {
+									i.level++;
 									return true;
 								}
 							});
@@ -227,7 +228,7 @@ export default {
 								"type": "button",
 								"msg": i.character,
 								"function": (client: PomClient, ui: MenuUIAlert) => {
-									client.data.talent.chooseOccupation(i);
+									TalentData.chooseOccupation(client.data.talent, i);
 									return true;
 								}
 							});

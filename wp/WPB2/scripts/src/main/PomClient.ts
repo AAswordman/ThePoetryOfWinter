@@ -10,6 +10,7 @@ import ExGameConfig from '../modules/exmc/ExGameConfig.js';
 import TagCache from "../modules/exmc/storage/cache/TagCache.js";
 import PomData from "./cache/PomData.js";
 import TimeLoopTask from "../modules/exmc/utils/TimeLoopTask.js";
+import TalentData from "./cache/TalentData.js";
 
 export default class PomClient extends ExGameClient {
 	gameId !: number;
@@ -61,7 +62,7 @@ export default class PomClient extends ExGameClient {
 		this.getEvents().exEvents.itemOnHandChange.subscribe((e) => {
 			ExGameConfig.console.info("onHandChange:"+e.beforeItem?.id+" -> " + e.afterItem?.id);
 			if(e.afterItem?.id.startsWith("wb:sword_")){
-				this.data.talent.calculateTalent(e.afterItem);
+				TalentData.calculateTalent(this.data.talent,e.afterItem);
 				this.exPlayer.getBag().setItem(this.exPlayer.selectedSlot, e.afterItem);
 			}
 		});

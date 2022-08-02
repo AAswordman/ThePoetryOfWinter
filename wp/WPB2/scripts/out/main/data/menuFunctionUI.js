@@ -11,7 +11,7 @@ import ExGameConfig from "../../modules/exmc/ExGameConfig.js";
 import ExPlayer from '../../modules/exmc/entity/ExPlayer.js';
 import MenuUIAlert from '../ui/MenuUIAlert.js';
 import ExMessageAlert from "../../modules/exmc/ui/ExMessageAlert.js";
-import { Occupation } from "../cache/TalentData.js";
+import TalentData, { Occupation, Tanlent } from "../cache/TalentData.js";
 export default {
     "main": {
         "img": "textures/items/wet_paper",
@@ -190,29 +190,30 @@ export default {
                 "text": "天赋",
                 "page": (client, ui) => {
                     let arr;
-                    if (client.data.talent.hasOccupation()) {
+                    if (TalentData.hasOccupation(client.data.talent)) {
                         arr = [];
                         for (let i of client.data.talent.talents) {
                             arr.push({
                                 "type": "textAndAddButton",
-                                "msg": i.getCharacter() + ":" + i.level + "\n" + (function () {
+                                "msg": Tanlent.getCharacter(i) + ":" + i.level + "\n" + (function () {
                                     let useChr = "";
                                     let a = Math.floor(i.level / 4);
                                     let b = i.level % 4;
-                                    let c = 10 - a - b;
+                                    let c = 10 - a - (b == 0 ? 0 : 1);
                                     let s = "";
                                     while (a > 0) {
                                         s += useChr[0];
                                         a--;
                                     }
-                                    s += useChr[b];
+                                    s += useChr[4 - b];
                                     while (c > 0) {
-                                        s += useChr[0];
+                                        s += useChr[4];
                                         c--;
                                     }
                                     return s;
                                 })(),
                                 "function": () => {
+                                    i.level++;
                                     return true;
                                 }
                             });
@@ -233,7 +234,7 @@ export default {
                                 "type": "button",
                                 "msg": i.character,
                                 "function": (client, ui) => {
-                                    client.data.talent.chooseOccupation(i);
+                                    TalentData.chooseOccupation(client.data.talent, i);
                                     return true;
                                 }
                             });
