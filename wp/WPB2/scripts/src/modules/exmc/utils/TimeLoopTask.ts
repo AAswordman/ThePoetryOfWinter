@@ -13,7 +13,15 @@ export default class TimeLoopTask {
         this.time = time;
         return this;
     }
-
+    startOnce(){
+        this.isStopped = false;
+        let func = () => {
+            if (!this.isStopped) {
+                this.looper();
+            }
+        }
+        this.setTimeout(func, this.time);
+    }
     start() {
         this.isStopped = false;
         let func = () => {

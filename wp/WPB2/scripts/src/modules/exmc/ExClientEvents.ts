@@ -9,6 +9,7 @@ import ExGameServer from './ExGameServer';
 import { Player, EntityHurtEvent, ItemStack } from 'mojang-minecraft';
 import ExPlayer from './entity/ExPlayer';
 import { ItemOnHandChangeEvent } from "./events.js";
+import ExGameConfig from "./ExGameConfig.js";
 export default class ExClientEvents implements ExEventManager {
 
 	/*
@@ -192,5 +193,6 @@ export default class ExClientEvents implements ExEventManager {
 		for (let m in ExClientEvents.monitorMap) {
 			ExClientEvents.monitorMap[m].delete(this._client.player);
 		}
+		ExGameConfig.console.info("Unsubscribed to ExClientEvents");
 	}
 }

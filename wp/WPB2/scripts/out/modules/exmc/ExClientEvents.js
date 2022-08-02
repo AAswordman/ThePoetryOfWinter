@@ -1,5 +1,6 @@
 import ExPlayer from './entity/ExPlayer';
 import { ItemOnHandChangeEvent } from "./events.js";
+import ExGameConfig from "./ExGameConfig.js";
 export default class ExClientEvents {
     constructor(client) {
         this._registerToServerByEntity = (server, registerName, k) => {
@@ -155,6 +156,7 @@ export default class ExClientEvents {
         for (let m in ExClientEvents.monitorMap) {
             ExClientEvents.monitorMap[m].delete(this._client.player);
         }
+        ExGameConfig.console.info("Unsubscribed to ExClientEvents");
     }
 }
 /*
