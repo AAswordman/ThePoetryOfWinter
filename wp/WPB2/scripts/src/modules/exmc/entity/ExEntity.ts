@@ -5,9 +5,27 @@ import ExEntityComponentId from './ExEntityComponentId.js';
 import ExScoresManager from './ExScoresManager.js';
 import Vector3 from '../utils/Vector3.js';
 import ExEntityBag from './ExEntityBag.js';
+import SetTimeOutSupport from '../interface/SetTimeOutSupport';
 
 
 export default class ExEntity implements ExCommandRunner, ExTagManager {
+
+	private _damage: number | undefined;
+	removeHealth(timeout: SetTimeOutSupport, damage: number) {
+		if (this._damage === undefined) {
+			this._damage = damage;
+			timeout.setTimeout(() => {
+				let health = this.getHealthComponent();
+				if (health.current > 0) health.setCurrent(health.current - (this._damage ?? 0));
+				this._damage = undefined;
+			}, 0);
+		} else {
+			this._damage += damage;
+		}
+	}
+	addHealth(timeout: SetTimeOutSupport, n: number) {
+		this.removeHealth(timeout, -n);
+	}
 	static propertyNameCache = "exCache";
 	private _entity: Entity;
 
@@ -94,7 +112,7 @@ export default class ExEntity implements ExCommandRunner, ExTagManager {
 	getInventoryComponent() {
 		return <EntityInventoryComponent>this.getComponent(ExEntityComponentId.inventory);
 	}
-	getBag(){
+	getBag() {
 		return new ExEntityBag(this);
 	}
 }

@@ -6,6 +6,24 @@ export default class ExEntity {
     constructor(entity) {
         this._entity = entity;
     }
+    removeHealth(timeout, damage) {
+        if (this._damage === undefined) {
+            this._damage = damage;
+            timeout.setTimeout(() => {
+                var _a;
+                let health = this.getHealthComponent();
+                if (health.current > 0)
+                    health.setCurrent(health.current - ((_a = this._damage) !== null && _a !== void 0 ? _a : 0));
+                this._damage = undefined;
+            }, 0);
+        }
+        else {
+            this._damage += damage;
+        }
+    }
+    addHealth(timeout, n) {
+        this.removeHealth(timeout, -n);
+    }
     get nameTag() {
         return this._entity.nameTag;
     }

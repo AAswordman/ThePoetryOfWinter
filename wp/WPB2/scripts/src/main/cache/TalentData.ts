@@ -5,15 +5,16 @@ import LoreUtil from "../../modules/exmc/item/ExLoreUtil.js";
 import MathUtil from "../../modules/exmc/utils/MathUtil.js";
 import { SerializeAble } from "../../modules/exmc/utils/Serialize.js";
 
-export default class TalentData implements SerializeAble{
+export default class TalentData implements SerializeAble {
     isSerializeAble: true = true;
-    static hasOccupation(data:TalentData) {
+	pointUsed: number | undefined;
+    static hasOccupation(data: TalentData) {
         return data.occupation.id !== Occupation.EMPTY.id;
     }
     occupation: Occupation = Occupation.EMPTY;
 
     talents: Tanlent[] = [];
-    static chooseOccupation(data:TalentData,occupation: Occupation) {
+    static chooseOccupation(data: TalentData, occupation: Occupation) {
         data.occupation = occupation;
         let set = new Set<number>([
             Tanlent.VIENTIANE,
@@ -34,60 +35,61 @@ export default class TalentData implements SerializeAble{
         });
     }
 
-    static calculateTalent(data:TalentData, manager: ExLoreManager) {
+    static calculateTalent(data: TalentData, manager: ExLoreManager) {
         let lore = new ExColorLoreUtil(manager);
         lore.setFlag(LoreUtil.LoreFlag.MAP);
 
         for (let t of data.talents) {
-            let add;
+            let add = 0;
+            let level = MathUtil.zeroIfNaN(parseFloat(lore.get("enchanting", Tanlent.getCharacter(t.id)))) + t.level;
             switch (t.id) {
                 case Tanlent.VIENTIANE:
-                    add = t.level * (TalentData.isOccupationTalent(data,t.id) ? 20 : 10) / 40;
+                    add = level * (TalentData.isOccupationTalent(data, t.id) ? 20 : 10) / 40;
                     break;
                 case Tanlent.CLOAD_PIERCING:
-                    add = t.level * (TalentData.isOccupationTalent(data,t.id) ? 80 : 40) / 40;
+                    add = level * (TalentData.isOccupationTalent(data, t.id) ? 80 : 40) / 40;
                     break;
                 case Tanlent.ARMOR_BREAKING:
-                    add = t.level * (TalentData.isOccupationTalent(data,t.id) ? 20 : 10) / 40;
+                    add = level * (TalentData.isOccupationTalent(data, t.id) ? 20 : 10) / 40;
                     break;
                 case Tanlent.SANCTION:
-                    add = t.level * (TalentData.isOccupationTalent(data,t.id) ? 50 : 25) / 40;
+                    add = level * (TalentData.isOccupationTalent(data, t.id) ? 50 : 25) / 40;
                     break;
                 case Tanlent.DEFENSE:
-                    add = t.level * (TalentData.isOccupationTalent(data,t.id) ? 30 : 15) / 40;
+                    add = level * (TalentData.isOccupationTalent(data, t.id) ? 30 : 15) / 40;
                     break;
                 case Tanlent.CHARGING:
-                    add = t.level * (TalentData.isOccupationTalent(data,t.id) ? 30 : 15) / 40;
+                    add = level * (TalentData.isOccupationTalent(data, t.id) ? 30 : 15) / 40;
                     break;
                 case Tanlent.RELOAD:
-                    add = t.level * (TalentData.isOccupationTalent(data,t.id) ? 25 : 15) / 40;
+                    add = level * (TalentData.isOccupationTalent(data, t.id) ? 25 : 15) / 40;
                     break;
                 case Tanlent.SOURCE:
-                    add = t.level * (TalentData.isOccupationTalent(data,t.id) ? 100 : 40) / 40;
+                    add = level * (TalentData.isOccupationTalent(data, t.id) ? 100 : 40) / 40;
                     break;
                 case Tanlent.SUDDEN_STRIKE:
-                    add = t.level * (TalentData.isOccupationTalent(data,t.id) ? 80 : 0) / 40;
+                    add = level * (TalentData.isOccupationTalent(data, t.id) ? 80 : 0) / 40;
                     break;
                 case Tanlent.REGENERATE:
-                    add = t.level * (TalentData.isOccupationTalent(data,t.id) ? 20 : 0) / 40;
+                    add = level * (TalentData.isOccupationTalent(data, t.id) ? 20 : 0) / 40;
                     break;
                 default:
                     add = 0;
                     break;
             }
-            lore.set("addition", Tanlent.getCharacter(t), Math.round(MathUtil.zeroIfNaN(parseFloat(lore.get("enchanting", Tanlent.getCharacter(t)))) * 10) / 10 + " -> " +
-                Math.round(MathUtil.zeroIfNaN(parseFloat(lore.get("enchanting", Tanlent.getCharacter(t))) + add) * 10) / 10
+            lore.set("addition", Tanlent.getCharacter(t.id),MathUtil.zeroIfNaN(parseFloat(lore.get("enchanting", Tanlent.getCharacter(t.id)))) + " -> " +
+                Math.round((MathUtil.zeroIfNaN(parseFloat(lore.get("enchanting", Tanlent.getCharacter(t.id)))) + add) * 10) / 10
             );
         }
 
     }
-    static isOccupationTalent(data:TalentData,id: number) {
+    static isOccupationTalent(data: TalentData, id: number) {
         return data.occupation.talentId.indexOf(id) !== -1;
     }
 }
 
 
-export class Tanlent implements SerializeAble{
+export class Tanlent implements SerializeAble {
     public static readonly VIENTIANE = 1;
     public static readonly CLOAD_PIERCING = 2;
     public static readonly ARMOR_BREAKING = 3;
@@ -107,8 +109,8 @@ export class Tanlent implements SerializeAble{
     }
     isSerializeAble: true = true;
 
-    static getCharacter(data:Tanlent) {
-        switch (data.id) {
+    static getCharacter(id:number) {
+        switch (id) {
             case Tanlent.VIENTIANE:
                 return "万象";
             case Tanlent.CLOAD_PIERCING:
@@ -136,7 +138,7 @@ export class Tanlent implements SerializeAble{
 
 }
 
-export class Occupation implements SerializeAble{
+export class Occupation implements SerializeAble {
     public static readonly EMPTY = new Occupation(0, [], "空");
     public static readonly GUARD = new Occupation(1, [Tanlent.VIENTIANE, Tanlent.ARMOR_BREAKING], "近卫");
     public static readonly WARRIOR = new Occupation(2, [Tanlent.SANCTION, Tanlent.DEFENSE], "战士");

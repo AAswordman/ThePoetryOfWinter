@@ -10,14 +10,25 @@ import ExGameConfig from '../modules/exmc/ExGameConfig.js';
 import TagCache from "../modules/exmc/storage/cache/TagCache.js";
 import PomData from "./cache/PomData.js";
 import TimeLoopTask from "../modules/exmc/utils/TimeLoopTask.js";
-import TalentData from "./cache/TalentData.js";
+import TalentData, { Tanlent } from "./cache/TalentData.js";
+import ExColorLoreUtil from "../modules/exmc/item/ExColorLoreUtil.js";
+import ExItem from "../modules/exmc/item/ExItem.js";
+import ExEntity from '../modules/exmc/entity/ExEntity';
+import MathUtil from "../modules/exmc/utils/MathUtil.js";
 
 export default class PomClient extends ExGameClient {
 	gameId !: number;
 	globalSettings: GlobalSettings;
+
 	cache: TagCache<PomData>;
+	strikeSkill = true;
+	strikeLoop = new TimeLoopTask(this,() => {
+		this.strikeSkill = true;
+	}).delay(10000);
+
 	data: PomData;
 	looper: TimeLoopTask;
+	
 	constructor(server: ExGameServer, id: string, player: Player) {
 		super(server, id, player);
 		this.globalSettings = new GlobalSettings(new Objective("wpsetting"));
@@ -45,24 +56,47 @@ export default class PomClient extends ExGameClient {
 			}
 		});
 		this.getEvents().exEvents.playerHitEntity.subscribe((e) => {
-			ExGameConfig.console.info("hit" + e.damage);
-		});
-		this.getEvents().exEvents.tick.subscribe((e) => {
+			let item = this.exPlayer.getBag().getItemOnHand();
+			if (!item) return;
+			let lore = new ExColorLoreUtil(item);
+			let damageFac = 0;
+			let extraDamage = 0;
+			let target = ExEntity.getInstance(e.hurtEntity);
+			let CLOAD_PIERCING = MathUtil.zeroIfNaN(parseFloat((lore.getValueUseMap("addtion", Tanlent.getCharacter(Tanlent.CLOAD_PIERCING)) ?? "->0").split("->")[1]));
+			let dis = target.getPosition().distance(this.exPlayer.getPosition());
+			damageFac += Math.min(64, dis) / 64 * CLOAD_PIERCING / 100;
+			let ARMOR_BREAKING = MathUtil.zeroIfNaN(parseFloat((lore.getValueUseMap("addtion", Tanlent.getCharacter(Tanlent.ARMOR_BREAKING)) ?? "->0").split("->")[1]));
+			extraDamage += this.exPlayer.getMaxHealth() * ARMOR_BREAKING / 100;
+			let SANCTION = MathUtil.zeroIfNaN(parseFloat((lore.getValueUseMap("addtion", Tanlent.getCharacter(Tanlent.SANCTION)) ?? "->0").split("->")[1]));
+			damageFac += (16-Math.min(16,dis))/16 * SANCTION / 100;
 
+
+			let SUDDEN_STRIKE = MathUtil.zeroIfNaN(parseFloat((lore.getValueUseMap("addtion", Tanlent.getCharacter(Tanlent.SUDDEN_STRIKE)) ?? "->0").split("->")[1]));
+			if(item.id.startsWith("dec:")) damageFac += 0.4;
+			if(this.strikeSkill){
+				this.strikeLoop.startOnce();
+				this.strikeSkill = false;
+				damageFac += SUDDEN_STRIKE/100;
+			}
+
+
+			let damage = e.damage * damageFac + extraDamage;
+			target.removeHealth(this,damage);
+			ExGameConfig.console.info("hit" + (e.damage + damage),`damageFac:${damageFac} extraDamage:${extraDamage}`);
 		});
+		
 		this.getEvents().exEvents.playerHurt.subscribe((e) => {
 			let beforeHealth = (<any>this.exPlayer)["nowHealth"] ?? this.exPlayer.getMaxHealth();
 			let realDamage = Math.max(0, beforeHealth - this.exPlayer.getHealth());
-
 			
 			ExGameConfig.console.info("hurt by" + e.damage + " health:");
 			(<any>this.exPlayer)["nowHealth"] = this.exPlayer.getHealth();
 		});
 
 		this.getEvents().exEvents.itemOnHandChange.subscribe((e) => {
-			ExGameConfig.console.info("onHandChange:"+e.beforeItem?.id+" -> " + e.afterItem?.id);
-			if(e.afterItem?.id.startsWith("wb:sword_")){
-				TalentData.calculateTalent(this.data.talent,e.afterItem);
+			ExGameConfig.console.info("onHandChange:" + e.beforeItem?.id + " -> " + e.afterItem?.id);
+			if (e.afterItem?.id.startsWith("wb:sword_") || e.afterItem?.id.startsWith("wb:staff_")) {
+				TalentData.calculateTalent(this.data.talent, e.afterItem);
 				this.exPlayer.getBag().setItem(this.exPlayer.selectedSlot, e.afterItem);
 			}
 		});

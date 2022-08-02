@@ -281,6 +281,90 @@
                 }
             },
             {
+                "textAndNoButton": {
+                    "layer": 21,
+                    "type": "stack_panel",
+                    "orientation": "horizontal",
+                    "size": [
+                        "100%",
+                        "28px"
+                    ],
+                    "bindings": [
+                        {
+                            "binding_type": "collection",
+                            "binding_collection_name": "form_buttons",
+                            "binding_name": "((#form_button_text = 'textAndNoButton'))",
+                            "binding_name_override": "#visible"
+                        }
+                    ],
+                    "controls": [
+                        {
+                            "left": {
+                                "type": "panel",
+                                "size": [
+                                    "100% - 30px",
+                                    "100%"
+                                ],
+                                "controls": [
+                                    {
+                                        "back": {
+                                            "type": "image",
+                                            "texture": "textures/ui/button_borderless_dark",
+                                            "size": [
+                                                "100%",
+                                                "100%"
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "header_label": {
+                                            "type": "label",
+                                            "color": "$body_text_color",
+                                            "layer": 1,
+                                            "anchor_from": "left_middle",
+                                            "anchor_to": "left_middle",
+                                            "offset": [
+                                                10,
+                                                0
+                                            ],
+                                            "text": "#form_button_texture",
+                                            "bindings": [
+                                                {
+                                                    "binding_name": "#form_button_texture",
+                                                    "binding_type": "collection",
+                                                    "binding_collection_name": "form_buttons"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "right@common_buttons.dark_content_button": {
+                                "$button_image": "server_form.addbutton",
+                                "$button_image_size": [
+                                    0,
+                                    0
+                                ],
+                                "size": [
+                                    28,
+                                    "100%"
+                                ],
+                                "$pressed_button_name": "button.form_button_click",
+                                "bindings": [
+                                    {
+                                        "binding_type": "collection_details",
+                                        "binding_collection_name": "form_buttons"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            },
+            
+            {
                 "toggle_on": {
                     "type": "stack_panel",
                     "orientation": "horizontal",

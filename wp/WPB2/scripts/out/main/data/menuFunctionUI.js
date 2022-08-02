@@ -189,17 +189,24 @@ export default {
             "talent": {
                 "text": "天赋",
                 "page": (client, ui) => {
+                    var _a;
                     let arr;
                     if (TalentData.hasOccupation(client.data.talent)) {
-                        arr = [];
+                        const point = (client.exPlayer.getScoresManager().getScore("wbdjcg") - ((_a = client.data.talent.pointUsed) !== null && _a !== void 0 ? _a : 0));
+                        arr = [
+                            {
+                                "type": "text",
+                                "msg": "剩余可使用点数 ： " + point
+                            }
+                        ];
                         for (let i of client.data.talent.talents) {
                             arr.push({
-                                "type": "textAndAddButton",
-                                "msg": Tanlent.getCharacter(i) + ":" + i.level + "\n" + (function () {
+                                "type": point > 0 ? "textAndAddButton" : "textAndNoButton",
+                                "msg": Tanlent.getCharacter(i.id) + ":" + i.level + "\n" + (function () {
                                     let useChr = "";
                                     let a = Math.floor(i.level / 4);
                                     let b = i.level % 4;
-                                    let c = 10 - a - (b == 0 ? 0 : 1);
+                                    let c = 10 - a - 1;
                                     let s = "";
                                     while (a > 0) {
                                         s += useChr[0];
@@ -213,7 +220,11 @@ export default {
                                     return s;
                                 })(),
                                 "function": () => {
-                                    i.level++;
+                                    var _a;
+                                    if (point > 0) {
+                                        i.level++;
+                                        client.data.talent.pointUsed = 1 + ((_a = client.data.talent.pointUsed) !== null && _a !== void 0 ? _a : 0);
+                                    }
                                     return true;
                                 }
                             });
