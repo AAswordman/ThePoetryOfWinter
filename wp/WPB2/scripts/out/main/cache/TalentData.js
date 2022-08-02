@@ -68,7 +68,8 @@ export default class TalentData {
                     add = 0;
                     break;
             }
-            lore.set("addition", t.getCharacter(), Math.round(MathUtil.zeroIfNaN(parseFloat(lore.get("enchanting", t.getCharacter())) + add) * 10) / 10);
+            lore.set("addition", t.getCharacter(), Math.round(MathUtil.zeroIfNaN(parseFloat(lore.get("enchanting", t.getCharacter()))) * 10) / 10 + " -> " +
+                Math.round(MathUtil.zeroIfNaN(parseFloat(lore.get("enchanting", t.getCharacter())) + add) * 10) / 10);
         }
     }
     isOccupationTalent(id) {

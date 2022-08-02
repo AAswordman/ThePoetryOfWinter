@@ -36,11 +36,11 @@ export default class TagCache {
     }
     recovery(def, res) {
         for (let i in res) {
-            if (def[i] === undefined) {
+            if (typeof (res[i]) === "object" && typeof (def[i]) === "object") {
+                this.recovery(def[i], res[i]);
+            }
+            else {
                 def[i] = res[i];
-                if (typeof (res[i]) === "object" && typeof (def[i]) === "object") {
-                    this.recovery(def[i], res[i]);
-                }
             }
         }
         return def;
