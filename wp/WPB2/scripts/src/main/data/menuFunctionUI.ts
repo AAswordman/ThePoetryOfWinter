@@ -184,14 +184,13 @@ export default {
 				"text": "天赋",
 				"page": (client: PomClient, ui: MenuUIAlert): MenuUIAlertView[] => {
 					let arr: MenuUIAlertView[];
-
 					if (client.data.talent.hasOccupation()) {
 						arr = [
 						];
 						for (let i of client.data.talent.talents) {
 							arr.push({
 								"type": "text",
-								"msg": i.getCharacter() + ":" + i.level + " : " + function () {
+								"msg": i.getCharacter() + ":" + i.level + "\n" + function () {
 									let useChr = "";
 									let a = Math.floor(i.level / 4);
 									let b = i.level % 4;

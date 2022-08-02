@@ -16,7 +16,7 @@ export default class TagCache<T>{
         }
         return undefined;
     }
-    get(def:T) {
+    get(def: T) {
         if (this.cache) {
             return this.cache;
         } else {
@@ -27,11 +27,11 @@ export default class TagCache<T>{
                 this.manager.addTag(this.tagFrom);
                 return def;
             } else {
-                this.cache = this.recovery(def,res);
+                this.cache = this.recovery(def, res);
                 return this.cache;
             }
         }
-        
+
     }
     save() {
         this.manager.removeTag(this.tagFrom);
@@ -39,13 +39,13 @@ export default class TagCache<T>{
         this.manager.addTag(this.tagFrom);
     }
     recovery(def: any, res: any) {
-        for(let i in res){
-            if(def[i] === undefined) {
+        for (let i in res) {
+            if (typeof (res[i]) === "object" && typeof (def[i]) === "object") {
+                this.recovery(def[i], res[i]);
+            } else {
                 def[i] = res[i];
-                if(typeof(res[i])==="object" && typeof(def[i])==="object"){
-                    this.recovery(def[i], res[i]);
-                }
             }
+
         }
         return def;
     }

@@ -12,7 +12,7 @@ export default class TalentData {
 
     talents: Tanlent[] = [];
     chooseOccupation(occupation: Occupation) {
-        this.occupation = occupation; 
+        this.occupation = occupation;
         let set = new Set<number>([
             Tanlent.VIENTIANE,
             Tanlent.CLOAD_PIERCING,
@@ -73,7 +73,7 @@ export default class TalentData {
                     add = 0;
                     break;
             }
-            lore.set("addition", t.getCharacter(),
+            lore.set("addition", t.getCharacter(), Math.round(MathUtil.zeroIfNaN(parseFloat(lore.get("enchanting", t.getCharacter()))) * 10) / 10 + " -> " +
                 Math.round(MathUtil.zeroIfNaN(parseFloat(lore.get("enchanting", t.getCharacter())) + add) * 10) / 10
             );
         }
@@ -142,7 +142,7 @@ export class Occupation {
     public static readonly WARLOCK = new Occupation(5, [Tanlent.RELOAD, Tanlent.SOURCE, Tanlent.CHARGING], "术士");
     public static readonly PRIEST = new Occupation(6, [Tanlent.SOURCE, Tanlent.REGENERATE], "牧师");
 
-    static keys = [Occupation.GUARD,Occupation.WARRIOR,Occupation.ASSASSIN,Occupation.ARCHER,Occupation.WARLOCK,Occupation.PRIEST];
+    static keys = [Occupation.GUARD, Occupation.WARRIOR, Occupation.ASSASSIN, Occupation.ARCHER, Occupation.WARLOCK, Occupation.PRIEST];
 
     id: number;
     talentId: number[];
