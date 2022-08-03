@@ -1,6 +1,9 @@
 import SetTimeOutSupport from "../interface/SetTimeOutSupport.js";
 
 export default class TimeLoopTask {
+	getDelay() {
+		return this.time;
+	}
     setTimeout: (fun: () => void, timeout: number) => void;
     looper: () => void;
     time: number = 1000;

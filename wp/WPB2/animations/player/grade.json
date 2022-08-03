@@ -46,12 +46,7 @@
           "/execute @s[tag=!wbgxa] ~ ~ ~ scoreboard players set @s wbkjlqjs 0",
           "/execute @s[tag=!wbgxa] ~ ~ ~ scoreboard players set @s wbwqlqjs 0",
           "/tag @s[scores={wbwqlqjs=-1..}] add wbgxa",
-          "/scoreboard players add @s[scores={wbfl=..199}] wbfl 3",
-          "/scoreboard players add @s[scores={wbfl=..199,wbdjcg=20..}] wbfl 1",
-          "/scoreboard players add @s[scores={wbfl=..199,wbdjcg=40..}] wbfl 1",
-          "/scoreboard players add @s[scores={wbfl=..199,wbdjcg=60..}] wbfl 1",
-          "/scoreboard players add @s[scores={wbfl=..199,wbdjcg=80..}] wbfl 1",
-          "/scoreboard players add @s[scores={wbfl=..199,wbdjcg=100..}] wbfl 1",
+          // 回蓝写gt了
           "/tag @s remove wbngxa",
           "/tag @s remove wbngxb"
         ]
@@ -79,7 +74,7 @@
           "/scoreboard players operation @s wbldpd -= @s wbldid",
           "/execute @s[m=survival,tag=wbldkzb,scores={wbldpd=!0}] ~ ~ ~ tag @s add wbldbq",
           "/execute @s[m=survival,tag=wbldkzb,scores={wbldpd=!0}] ~ ~ ~ gamemode adventure @s",
-          "/execute @s[scores={wbkjlq=1..}] ~~~ scoreboard players remove @s wbkjlq 1",
+          //盔甲冷却写gt了
           "/function armor/skill_update",
           "/function player/die",
           "/tag @s remove wbnearboss",

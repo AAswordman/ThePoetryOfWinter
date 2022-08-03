@@ -4,6 +4,9 @@ export default class TimeLoopTask {
         this.setTimeout = timeOut.setTimeout.bind(timeOut);
         this.looper = looper;
     }
+    getDelay() {
+        return this.time;
+    }
     delay(time) {
         this.time = time;
         return this;

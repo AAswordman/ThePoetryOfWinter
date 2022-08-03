@@ -11,7 +11,7 @@ import ExGameConfig from "../../modules/exmc/ExGameConfig.js";
 import ExPlayer from '../../modules/exmc/entity/ExPlayer.js';
 import MenuUIAlert from '../ui/MenuUIAlert.js';
 import ExMessageAlert from "../../modules/exmc/ui/ExMessageAlert.js";
-import TalentData, { Occupation, Tanlent } from "../cache/TalentData.js";
+import TalentData, { Occupation, Talent } from "../cache/TalentData.js";
 export default {
     "main": {
         "img": "textures/items/wet_paper",
@@ -202,7 +202,7 @@ export default {
                         for (let i of client.data.talent.talents) {
                             arr.push({
                                 "type": point > 0 && i.level < 40 ? "textAndAddButton" : "textAndNoButton",
-                                "msg": Tanlent.getCharacter(i.id) + ":" + i.level + "\n" + (function () {
+                                "msg": Talent.getCharacter(i.id) + ":" + i.level + "\n" + (function () {
                                     let useChr = "";
                                     let a = Math.floor(i.level / 4);
                                     let b = i.level % 4;
@@ -224,10 +224,17 @@ export default {
                                     if (point > 0 && i.level < 40) {
                                         i.level++;
                                         client.data.talent.pointUsed = 1 + ((_a = client.data.talent.pointUsed) !== null && _a !== void 0 ? _a : 0);
+                                        client.data.talent.talents.splice(client.data.talent.talents.findIndex(t => t.id === i.id), 1);
+                                        client.data.talent.talents.unshift(i);
                                         client.updateTalentRes();
                                     }
                                     return true;
                                 }
+                            }, {
+                                "type": "text",
+                                "msg": TalentData.getDescription(client.data.talent, i.id, i.level)
+                            }, {
+                                "type": "padding"
                             });
                         }
                     }
