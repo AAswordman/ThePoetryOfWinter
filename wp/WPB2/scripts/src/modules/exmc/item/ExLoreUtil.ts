@@ -210,6 +210,7 @@ export default class LoreUtil implements ExLoreManager {
 		}
 		this.insert(piece.index + 1, tab + use + " : " + value);
 	}
+	
 
 }
 

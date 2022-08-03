@@ -185,7 +185,7 @@ export default {
 				"page": (client: PomClient, ui: MenuUIAlert): MenuUIAlertView[] => {
 					let arr: MenuUIAlertView[];
 					if (TalentData.hasOccupation(client.data.talent)) {
-						const point = (client.exPlayer.getScoresManager().getScore("wbdjcg") - (client.data.talent.pointUsed ?? 0));
+						const point = (client.exPlayer.getScoresManager().getScore("wbdjcg") * 2 - (client.data.talent.pointUsed ?? 0));
 						arr = [
 							{
 								"type": "text",
@@ -194,7 +194,7 @@ export default {
 						];
 						for (let i of client.data.talent.talents) {
 							arr.push({
-								"type": point > 0 ?  "textAndAddButton" : "textAndNoButton",
+								"type": point > 0 && i.level < 40 ? "textAndAddButton" : "textAndNoButton",
 								"msg": Tanlent.getCharacter(i.id) + ":" + i.level + "\n" + (function () {
 									let useChr = "";
 									let a = Math.floor(i.level / 4);
@@ -213,9 +213,10 @@ export default {
 									return s;
 								})(),
 								"function": () => {
-									if (point > 0) {
+									if (point > 0 && i.level < 40) {
 										i.level++;
 										client.data.talent.pointUsed = 1 + (client.data.talent.pointUsed ?? 0);
+										client.updateTalentRes();
 									}
 									return true;
 								}

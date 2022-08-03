@@ -11,6 +11,9 @@ import SetTimeOutSupport from '../interface/SetTimeOutSupport';
 export default class ExEntity implements ExCommandRunner, ExTagManager {
 
 	private _damage: number | undefined;
+	getPreRemoveHealth(){
+		return this._damage;
+	}
 	removeHealth(timeout: SetTimeOutSupport, damage: number) {
 		if (this._damage === undefined) {
 			this._damage = damage;

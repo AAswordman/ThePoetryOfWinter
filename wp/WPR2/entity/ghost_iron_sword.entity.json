@@ -3,7 +3,7 @@
   "minecraft:client_entity": {
     "description": {
       "identifier": "dec:ghost_iron_sword",
-      "min_engine_version": "1.8.0",
+      
       "materials": {
         "default": "zombie"
       },

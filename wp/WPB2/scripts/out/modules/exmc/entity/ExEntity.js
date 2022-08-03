@@ -6,6 +6,9 @@ export default class ExEntity {
     constructor(entity) {
         this._entity = entity;
     }
+    getPreRemoveHealth() {
+        return this._damage;
+    }
     removeHealth(timeout, damage) {
         if (this._damage === undefined) {
             this._damage = damage;
