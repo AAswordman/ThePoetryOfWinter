@@ -5,7 +5,7 @@ import MenuUIAlert, { MenuUIAlertView } from '../ui/MenuUIAlert.js';
 import ExMessageAlert from "../../modules/exmc/ui/ExMessageAlert.js";
 import { ItemStack } from "mojang-minecraft";
 import { ExPlayerBag } from "../../modules/exmc/entity/ExEntityBag.js";
-import TalentData, { Occupation, Tanlent } from "../cache/TalentData.js";
+import TalentData, { Occupation, Talent } from "../cache/TalentData.js";
 
 export default {
 	"main": {
@@ -195,7 +195,7 @@ export default {
 						for (let i of client.data.talent.talents) {
 							arr.push({
 								"type": point > 0 && i.level < 40 ? "textAndAddButton" : "textAndNoButton",
-								"msg": Tanlent.getCharacter(i.id) + ":" + i.level + "\n" + (function () {
+								"msg": Talent.getCharacter(i.id) + ":" + i.level + "\n" + (function () {
 									let useChr = "";
 									let a = Math.floor(i.level / 4);
 									let b = i.level % 4;
@@ -216,10 +216,19 @@ export default {
 									if (point > 0 && i.level < 40) {
 										i.level++;
 										client.data.talent.pointUsed = 1 + (client.data.talent.pointUsed ?? 0);
+										client.data.talent.talents.splice(client.data.talent.talents.findIndex(t => t.id === i.id),1);
+										client.data.talent.talents.unshift(i);
 										client.updateTalentRes();
 									}
 									return true;
 								}
+							},
+							{
+								"type":"text",
+								"msg":TalentData.getDescription(client.data.talent,i.id,i.level)
+							},
+							{
+								"type":"padding"
 							});
 						}
 					} else {
@@ -238,13 +247,12 @@ export default {
 								"msg": i.character,
 								"function": (client: PomClient, ui: MenuUIAlert) => {
 									TalentData.chooseOccupation(client.data.talent, i);
+									
 									return true;
 								}
 							});
 						}
 					}
-
-
 					return arr;
 				}
 			}
