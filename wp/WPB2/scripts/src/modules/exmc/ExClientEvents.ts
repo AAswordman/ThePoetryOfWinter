@@ -135,7 +135,16 @@ export default class ExClientEvents implements ExEventManager {
 				});
 			},
 			name: "onLongTick"
-		}
+		},
+		onLongTick: {
+			subscribe: (callback: (arg: TickEvent) => void) => {
+				this._subscribe("onLongTick", callback);
+			},
+			unsubscribe: (callback: (arg: TickEvent) => void) => {
+				this._unsubscribe("onLongTick", callback);
+			},
+			pattern: this._registerToServerByServerEvent
+		},
 	}
 	onHandItemMap!: Map<Player, [ItemStack | undefined,number]>;
 

@@ -107,7 +107,16 @@ export default class ExClientEvents {
                     });
                 },
                 name: "onLongTick"
-            }
+            },
+            onLongTick: {
+                subscribe: (callback) => {
+                    this._subscribe("onLongTick", callback);
+                },
+                unsubscribe: (callback) => {
+                    this._unsubscribe("onLongTick", callback);
+                },
+                pattern: this._registerToServerByServerEvent
+            },
         };
         this._client = client;
         if (!ExClientEvents.init) {

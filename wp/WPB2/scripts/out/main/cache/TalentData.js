@@ -7,6 +7,13 @@ export default class TalentData {
         this.occupation = Occupation.EMPTY;
         this.talents = [];
     }
+    static getLevel(data, id) {
+        for (let i of data.talents) {
+            if (i.id === id)
+                return i.level;
+        }
+        return 0;
+    }
     static hasOccupation(data) {
         return data.occupation.id !== Occupation.EMPTY.id;
     }
@@ -29,47 +36,50 @@ export default class TalentData {
             data.talents.push(new Tanlent(i, 0));
         });
     }
-    static calculateTalent(data, manager) {
+    static calculateTalent(data, talentId, level) {
+        switch (talentId) {
+            case Tanlent.VIENTIANE:
+                return level * (TalentData.isOccupationTalent(data, talentId) ? 20 : 10) / 40;
+                break;
+            case Tanlent.CLOAD_PIERCING:
+                return level * (TalentData.isOccupationTalent(data, talentId) ? 80 : 40) / 40;
+                break;
+            case Tanlent.ARMOR_BREAKING:
+                return level * (TalentData.isOccupationTalent(data, talentId) ? 20 : 10) / 40;
+                break;
+            case Tanlent.SANCTION:
+                return level * (TalentData.isOccupationTalent(data, talentId) ? 50 : 25) / 40;
+                break;
+            case Tanlent.DEFENSE:
+                return level * (TalentData.isOccupationTalent(data, talentId) ? 45 : 25) / 40;
+                break;
+            case Tanlent.CHARGING:
+                return level * (TalentData.isOccupationTalent(data, talentId) ? 30 : 15) / 40;
+                break;
+            case Tanlent.RELOAD:
+                return level * (TalentData.isOccupationTalent(data, talentId) ? 25 : 15) / 40;
+                break;
+            case Tanlent.SOURCE:
+                return level * (TalentData.isOccupationTalent(data, talentId) ? 100 : 40) / 40;
+                break;
+            case Tanlent.SUDDEN_STRIKE:
+                return level * (TalentData.isOccupationTalent(data, talentId) ? 80 : 0) / 40;
+                break;
+            case Tanlent.REGENERATE:
+                return level * (TalentData.isOccupationTalent(data, talentId) ? 20 : 0) / 40;
+                break;
+            default:
+                return 0;
+                break;
+        }
+    }
+    static calculateTalentToLore(data, manager) {
         let lore = new ExColorLoreUtil(manager);
         lore.setFlag(LoreUtil.LoreFlag.MAP);
         for (let t of data.talents) {
             let add = 0;
             let level = MathUtil.zeroIfNaN(parseFloat(lore.get("enchanting", Tanlent.getCharacter(t.id)))) + t.level;
-            switch (t.id) {
-                case Tanlent.VIENTIANE:
-                    add = level * (TalentData.isOccupationTalent(data, t.id) ? 20 : 10) / 40;
-                    break;
-                case Tanlent.CLOAD_PIERCING:
-                    add = level * (TalentData.isOccupationTalent(data, t.id) ? 80 : 40) / 40;
-                    break;
-                case Tanlent.ARMOR_BREAKING:
-                    add = level * (TalentData.isOccupationTalent(data, t.id) ? 20 : 10) / 40;
-                    break;
-                case Tanlent.SANCTION:
-                    add = level * (TalentData.isOccupationTalent(data, t.id) ? 50 : 25) / 40;
-                    break;
-                case Tanlent.DEFENSE:
-                    add = level * (TalentData.isOccupationTalent(data, t.id) ? 30 : 15) / 40;
-                    break;
-                case Tanlent.CHARGING:
-                    add = level * (TalentData.isOccupationTalent(data, t.id) ? 30 : 15) / 40;
-                    break;
-                case Tanlent.RELOAD:
-                    add = level * (TalentData.isOccupationTalent(data, t.id) ? 25 : 15) / 40;
-                    break;
-                case Tanlent.SOURCE:
-                    add = level * (TalentData.isOccupationTalent(data, t.id) ? 100 : 40) / 40;
-                    break;
-                case Tanlent.SUDDEN_STRIKE:
-                    add = level * (TalentData.isOccupationTalent(data, t.id) ? 80 : 0) / 40;
-                    break;
-                case Tanlent.REGENERATE:
-                    add = level * (TalentData.isOccupationTalent(data, t.id) ? 20 : 0) / 40;
-                    break;
-                default:
-                    add = 0;
-                    break;
-            }
+            add = TalentData.calculateTalent(data, t.id, level);
             lore.set("addition", Tanlent.getCharacter(t.id), MathUtil.zeroIfNaN(parseFloat(lore.get("enchanting", Tanlent.getCharacter(t.id)))) + " -> " +
                 Math.round((MathUtil.zeroIfNaN(parseFloat(lore.get("enchanting", Tanlent.getCharacter(t.id)))) + add) * 10) / 10);
         }
