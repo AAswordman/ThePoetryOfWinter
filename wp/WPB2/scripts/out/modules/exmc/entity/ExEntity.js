@@ -2,6 +2,7 @@ import ExEntityComponentId from './ExEntityComponentId.js';
 import ExScoresManager from './ExScoresManager.js';
 import Vector3 from '../utils/Vector3.js';
 import ExEntityBag from './ExEntityBag.js';
+import ExDimension from '../ExDimension.js';
 export default class ExEntity {
     constructor(entity) {
         this._entity = entity;
@@ -45,6 +46,9 @@ export default class ExEntity {
             return entity[this.propertyNameCache];
         }
         return (entity[this.propertyNameCache] = new ExEntity(entity));
+    }
+    getDimension() {
+        return new ExDimension(this._entity.dimension);
     }
     addTag(str) {
         this._entity.addTag(str);

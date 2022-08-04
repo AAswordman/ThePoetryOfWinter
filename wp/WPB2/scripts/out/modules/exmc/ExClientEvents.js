@@ -1,6 +1,8 @@
+import { Player } from 'mojang-minecraft';
 import ExPlayer from './entity/ExPlayer';
 import { ItemOnHandChangeEvent } from "./events.js";
 import ExGameConfig from "./ExGameConfig.js";
+import TickDelayTask from "./utils/TickDelayTask.js";
 export default class ExClientEvents {
     constructor(client) {
         this._registerToServerByEntity = (server, registerName, k) => {
@@ -80,6 +82,57 @@ export default class ExClientEvents {
                 filter: {
                     "name": "source"
                 }
+            },
+            beforeItemUseOn: {
+                subscribe: (callback) => {
+                    this._subscribe("beforeItemUseOn", callback);
+                },
+                unsubscribe: (callback) => {
+                    this._unsubscribe("beforeItemUseOn", callback);
+                },
+                pattern: this._registerToServerByEntity,
+                filter: {
+                    "name": "source"
+                }
+            },
+            onceItemUseOn: {
+                subscribe: (callback) => {
+                    this._subscribe("onceItemUseOn", callback);
+                },
+                unsubscribe: (callback) => {
+                    this._unsubscribe("onceItemUseOn", callback);
+                },
+                pattern: (server, registerName, k) => {
+                    this.onceItemUseOnMap = new Map();
+                    server.getEvents().register(registerName, (e) => {
+                        var _a;
+                        if (!(e.source instanceof Player))
+                            return;
+                        let part = ExClientEvents.monitorMap[k];
+                        if (!this.onceItemUseOnMap.has(e.source)) {
+                            const player = e.source;
+                            this.onceItemUseOnMap.set(e.source, [new TickDelayTask(server.getEvents(), () => {
+                                    let res = this.onceItemUseOnMap.get(player);
+                                    if (res === undefined)
+                                        return;
+                                    res[1] = true;
+                                }).delay(3), true]);
+                        }
+                        let res = this.onceItemUseOnMap.get(e.source);
+                        if (res === undefined)
+                            return;
+                        if (res[1]) {
+                            res[1] = false;
+                            (_a = part.get(e.source)) === null || _a === void 0 ? void 0 : _a.forEach((v) => v(e));
+                        }
+                        res[0].stop();
+                        res[0].startOnce();
+                    });
+                },
+                filter: {
+                    "name": "source"
+                },
+                name: "itemUseOn"
             },
             playerHitEntity: {
                 subscribe: (callback) => {

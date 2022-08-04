@@ -1,4 +1,4 @@
-import { Dimension, EntityQueryOptions, Block } from 'mojang-minecraft';
+import { Dimension, EntityQueryOptions, Block, ItemStack } from 'mojang-minecraft';
 import ExCommandRunner from './interface/ExCommandRunner.js';
 import Vector3 from "./utils/Vector3.js";
 
@@ -22,8 +22,13 @@ export default class ExDimension implements ExCommandRunner{
 	}
 	setBlock(vec:Vector3,blockId:string){
 		this.runCommand(`setBlock ${vec.x} ${vec.y} ${vec.z} ${blockId}`)
+		
 	}
-	
+	spawnItem(item:ItemStack,v:Vector3){
+		this._dimension.spawnItem(item,v.getLocation());
+	}
+
+
 	runCommand(str:string){
 		return this._dimension.runCommand(str);
 	}

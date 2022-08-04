@@ -160,6 +160,31 @@ export default class LoreUtil {
             throw new Error("Empty parameter");
         this.setValueUseDefault(key, new Array(num).fill(value).join(""));
     }
+    *entrys(key) {
+        if (key) {
+            let tab = "  ";
+            let piece = this.search(this.getLore(), key);
+            if (piece == null) {
+                return;
+            }
+            while (piece.hasNext()) {
+                piece.next();
+                if (piece.get().startsWith(tab)) {
+                    yield [...piece.get().trim().split(" : ")];
+                }
+                else {
+                    break;
+                }
+            }
+            return;
+        }
+        else {
+            for (let i of this.getLore()) {
+                yield [...i.trim().split(" : ")];
+            }
+            return;
+        }
+    }
     setValueUseMap(key, use, value) {
         let tab = "  ";
         let piece = this.search(this.getLore(), key);

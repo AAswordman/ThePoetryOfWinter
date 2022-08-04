@@ -41,8 +41,13 @@ export default class ExGameClient implements SetTimeOutSupport {
 		}
 		this.onJoin();
 	}
-	getDimension(type: string) {
-		return new ExDimension(world.getDimension(type));
+
+	getDimension(type?: string) {
+		if (type !== undefined) {
+			return new ExDimension(world.getDimension(type));
+		} else {
+			return this.exPlayer.getDimension();
+		}
 	}
 	getPlayers() {
 		return world.getPlayers();
