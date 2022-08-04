@@ -6,7 +6,7 @@ import {
 } from "mojang-minecraft";
 import ExEventManager from "./interface/ExEventManager.js";
 import ExGameServer from './ExGameServer';
-import { Player, EntityHurtEvent, ItemStack } from 'mojang-minecraft';
+import { Player, EntityHurtEvent, ItemStack, EntityHitEvent } from 'mojang-minecraft';
 import ExPlayer from './entity/ExPlayer';
 import { ItemOnHandChangeEvent } from "./events.js";
 import ExGameConfig from "./ExGameConfig.js";
@@ -81,6 +81,30 @@ export default class ExClientEvents implements ExEventManager {
 				this._unsubscribe("tick", callback);
 			},
 			pattern: this._registerToServerByServerEvent
+		},
+		entityHit: {
+			subscribe: (callback: (arg: EntityHitEvent) => void) => {
+				this._subscribe("entityHit", callback);
+			},
+			unsubscribe: (callback: (arg: EntityHitEvent) => void) => {
+				this._unsubscribe("entityHit", callback);
+			},
+			pattern: this._registerToServerByEntity,
+			filter: {
+				"name": "entity"
+			}
+		},
+		itemUseOn: {
+			subscribe: (callback: (arg: EntityHitEvent) => void) => {
+				this._subscribe("itemUseOn", callback);
+			},
+			unsubscribe: (callback: (arg: EntityHitEvent) => void) => {
+				this._unsubscribe("itemUseOn", callback);
+			},
+			pattern: this._registerToServerByEntity,
+			filter: {
+				"name": "source"
+			}
 		},
 		playerHitEntity: {
 			subscribe: (callback: (arg: EntityHurtEvent) => void) => {

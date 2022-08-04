@@ -1,10 +1,11 @@
 import ExGameClient from "../modules/exmc/ExGameClient.js";
-import { EntityQueryOptions } from 'mojang-minecraft';
+import { EntityQueryOptions, MinecraftItemTypes } from 'mojang-minecraft';
 import MenuUIAlert from "./ui/MenuUIAlert.js";
 import menuFunctionUI from "./data/menuFunctionUI.js";
 import ExPlayer from "../modules/exmc/entity/ExPlayer.js";
 import GlobalSettings from "./cache/GlobalSettings.js";
 import { Objective } from "../modules/exmc/entity/ExScoresManager.js";
+import ExGameConfig from '../modules/exmc/ExGameConfig.js';
 import TagCache from "../modules/exmc/storage/cache/TagCache.js";
 import PomData from "./cache/PomData.js";
 import TimeLoopTask from "../modules/exmc/utils/TimeLoopTask.js";
@@ -12,6 +13,9 @@ import TalentData, { Talent, Occupation } from "./cache/TalentData.js";
 import ExColorLoreUtil from "../modules/exmc/item/ExColorLoreUtil.js";
 import ExEntity from '../modules/exmc/entity/ExEntity';
 import MathUtil from "../modules/exmc/utils/MathUtil.js";
+import ExItem from "../modules/exmc/item/ExItem.js";
+import Vector3 from "../modules/exmc/utils/Vector3.js";
+import ExBlock from "../modules/exmc/block/ExBlock.js";
 export default class PomClient extends ExGameClient {
     constructor(server, id, player) {
         super(server, id, player);
@@ -43,6 +47,7 @@ export default class PomClient extends ExGameClient {
             if (scores.getScore("wbkjlq") > 0)
                 scores.removeScore("wbkjlq", 1);
         }).delay(1000);
+        this.blockTranslateData = new Map();
         this.talentRes = new Map();
         this.globalSettings = new GlobalSettings(new Objective("wpsetting"));
         this.cache = new TagCache(this.exPlayer);
@@ -123,6 +128,33 @@ export default class PomClient extends ExGameClient {
             }
             this.exPlayer.triggerEvent("hp:" + Math.round((20 + ((_c = this.talentRes.get(Talent.VIENTIANE)) !== null && _c !== void 0 ? _c : 0))));
         });
+        //附魔
+        this.getEvents().exEvents.entityHit.subscribe((e) => {
+            var _a, _b, _c;
+            ExGameConfig.console.log((_a = e === null || e === void 0 ? void 0 : e.hitBlock) === null || _a === void 0 ? void 0 : _a.id);
+            if (((_b = e.hitBlock) === null || _b === void 0 ? void 0 : _b.id) === "wb:block_translate") {
+                let bag = this.exPlayer.getBag();
+                let item = bag.getItemOnHand();
+                if (item) {
+                    if (item.id === MinecraftItemTypes.book.id) {
+                        ExItem.getInstance(item).getEnchantsComponent().enchantments;
+                        this.blockTranslateData.set(new Vector3(e.hitBlock), item);
+                    }
+                }
+            }
+            else if (((_c = e.hitBlock) === null || _c === void 0 ? void 0 : _c.id) === "wb:block_translate_book") {
+                let bag = this.exPlayer.getBag();
+                let item = bag.getItemOnHand();
+                let saveItem = this.blockTranslateData.get(new Vector3(e.hitBlock));
+                ExBlock.getInstance(e.hitBlock).transTo("wb:block_translate");
+                if (item) {
+                    if (item.id === MinecraftItemTypes.book.id) {
+                        ExItem.getInstance(item).getEnchantsComponent().enchantments;
+                        this.blockTranslateData.set(new Vector3(e.hitBlock), item);
+                    }
+                }
+            }
+        });
     }
     updateTalentRes() {
         var _a, _b, _c, _d;
@@ -144,6 +176,9 @@ export default class PomClient extends ExGameClient {
         else {
             this.player.nameTag = "§c" + this.player.nameTag;
         }
+        (function (c) {
+            c.sayTo("本addon由aa剑侠和Lileyi制作，若发现其他地方信息被修改过请及时通知我们！");
+        })(this);
     }
     onLeave() {
         this.looper.stop();

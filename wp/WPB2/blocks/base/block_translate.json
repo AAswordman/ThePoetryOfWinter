@@ -1,0 +1,35 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "wb:block_translate"
+		},
+		"components": {
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "block_translate",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:geometry": "geometry.block_translate",
+			"minecraft:entity_collision": true,
+			"minecraft:pick_collision": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					12,
+					16
+				]
+			},
+			"minecraft:destroy_time": 10,
+			"minecraft:map_color": "#00847D",
+			"minecraft:creative_category": {
+				"category": "construction"
+			}
+		}
+	}
+}

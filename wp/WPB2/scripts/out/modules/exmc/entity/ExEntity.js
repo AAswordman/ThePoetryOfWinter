@@ -71,7 +71,7 @@ export default class ExEntity {
         this._entity.triggerEvent(name);
     }
     getPosition() {
-        return new Vector3(this.entity.location.x, this.entity.location.y, this.entity.location.z);
+        return new Vector3(this.entity.location);
     }
     setPosition(position) {
         this.entity.teleport(position.getLocation(), this.entity.dimension, this.entity.rotation.x, this.entity.rotation.y);

@@ -1,5 +1,6 @@
-import { Dimension, EntityQueryOptions } from "mojang-minecraft";
+import { Dimension, EntityQueryOptions, Block } from 'mojang-minecraft';
 import ExCommandRunner from './interface/ExCommandRunner.js';
+import Vector3 from "./utils/Vector3.js";
 
 export default class ExDimension implements ExCommandRunner{
 	private _dimension: Dimension;
@@ -16,10 +17,24 @@ export default class ExDimension implements ExCommandRunner{
 	getEntities(entityQueryOptions:EntityQueryOptions | undefined = undefined){
 			return this._dimension.getEntities(entityQueryOptions);
 	}
+	getBlock(vec:Vector3){
+		return this._dimension.getBlock(vec.getBlockLocation());
+	}
+	setBlock(vec:Vector3,blockId:string){
+		this.runCommand(`setBlock ${vec.x} ${vec.y} ${vec.z} ${blockId}`)
+	}
 	
 	runCommand(str:string){
 		return this._dimension.runCommand(str);
 	}
 
+	static propertyNameCache = "exCache";
+	static getInstance(source: Dimension): ExDimension {
+		let dimension = <any>source;
+		if (this.propertyNameCache in dimension) {
+			return dimension[this.propertyNameCache];
+		}
+		return (dimension[this.propertyNameCache] = new ExDimension(dimension));
+	}
 	
 }
