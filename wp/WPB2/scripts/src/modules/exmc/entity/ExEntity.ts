@@ -6,6 +6,7 @@ import ExScoresManager from './ExScoresManager.js';
 import Vector3 from '../utils/Vector3.js';
 import ExEntityBag from './ExEntityBag.js';
 import SetTimeOutSupport from '../interface/SetTimeOutSupport';
+import ExDimension from '../ExDimension.js';
 
 
 export default class ExEntity implements ExCommandRunner, ExTagManager {
@@ -56,6 +57,11 @@ export default class ExEntity implements ExCommandRunner, ExTagManager {
 		}
 		return (entity[this.propertyNameCache] = new ExEntity(entity));
 	}
+
+	getDimension() {
+		return new ExDimension(this._entity.dimension);
+	}
+
 	addTag(str: string) {
 		this._entity.addTag(str);
 		return str;

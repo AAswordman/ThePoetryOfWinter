@@ -184,6 +184,30 @@ export default class LoreUtil implements ExLoreManager {
 		this.setValueUseDefault(key, new Array(num).fill(value).join(""));
 	}
 
+	*entrys(key?: string) {
+		if (key) {
+			let tab = "  ";
+			let piece = this.search(this.getLore(), key);
+			if (piece == null) {
+				return;
+			}
+			while (piece.hasNext()) {
+				piece.next();
+				if (piece.get().startsWith(tab)) {
+					yield [...piece.get().trim().split(" : ")];
+				} else {
+					break;
+				}
+			}
+			return;
+		}else{
+			for(let i of this.getLore()){
+				yield [...i.trim().split(" : ")];
+			}
+			return;
+		}
+	}
+
 	setValueUseMap(key: string, use: string, value: string) {
 		let tab = "  ";
 		let piece = this.search(this.getLore(), key);
@@ -210,7 +234,7 @@ export default class LoreUtil implements ExLoreManager {
 		}
 		this.insert(piece.index + 1, tab + use + " : " + value);
 	}
-	
+
 
 }
 

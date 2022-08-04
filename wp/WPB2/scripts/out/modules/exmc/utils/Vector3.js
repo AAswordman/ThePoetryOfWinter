@@ -4,11 +4,11 @@ export default class Vector3 {
         if (a instanceof Vector) {
             this.vector = a;
         }
-        else if (a instanceof Location) {
-            this.vector = new Vector(a.x, a.y, a.z);
+        else if (a !== undefined && b !== undefined && c !== undefined) {
+            this.vector = new Vector(a, b, c);
         }
         else {
-            this.vector = new Vector(a, b, c);
+            this.vector = new Vector(a.x, a.y, a.z);
         }
     }
     get x() { return this.vector.x; }

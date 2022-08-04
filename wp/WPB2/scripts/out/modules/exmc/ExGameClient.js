@@ -39,7 +39,12 @@ export default class ExGameClient {
         }
     }
     getDimension(type) {
-        return new ExDimension(world.getDimension(type));
+        if (type !== undefined) {
+            return new ExDimension(world.getDimension(type));
+        }
+        else {
+            return this.exPlayer.getDimension();
+        }
     }
     getPlayers() {
         return world.getPlayers();

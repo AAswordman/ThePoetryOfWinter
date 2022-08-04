@@ -2,6 +2,9 @@ import { ItemEnchantsComponent, ItemStack } from "mojang-minecraft";
 import ExLoreManager from "../interface/ExLoreManager.js";
 
 export default class ExItem implements ExLoreManager{
+	getItem(): ItemStack {
+		return this._item;
+	}
 	static propertyNameCache = "exCache";
 
 	private _item: ItemStack;
@@ -21,10 +24,16 @@ export default class ExItem implements ExLoreManager{
 	setLore(lore: string[]): void {
 		this._item.setLore(lore);
 	}
-	getEnchantsComponent() {
-		return <ItemEnchantsComponent>this.getComponent("minecraft:enchants");
-	}
 	getComponent(str: string) {
 		return this._item.getComponent(str);
+	}
+	hasComponent(str: string) {
+		return this._item.hasComponent(str);
+	}
+	getEnchantsComponent():ItemEnchantsComponent{
+		return <ItemEnchantsComponent>this.getComponent("minecraft:enchants");
+	}
+	hasEnchantsComponent() {
+		return this.hasComponent("minecraft:enchants");
 	}
 }

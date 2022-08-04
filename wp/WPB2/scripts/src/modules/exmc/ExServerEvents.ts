@@ -59,7 +59,7 @@ export default class ExServerEvents implements ExEventManager {
 	constructor(server: ExGameServer) {
 		this._server = server;
 		this.events = world.events;
-
+		
 		if(!this.init){
 			this.init=true;
 			for(let i in this.exEvents){

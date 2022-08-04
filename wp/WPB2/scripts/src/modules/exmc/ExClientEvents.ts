@@ -1,15 +1,18 @@
 import ExGameClient from "./ExGameClient.js";
 import {
+	BeforeItemUseOnEvent,
 	ChatEvent,
 	ItemUseEvent,
+	ItemUseOnEvent,
 	TickEvent
 } from "mojang-minecraft";
 import ExEventManager from "./interface/ExEventManager.js";
 import ExGameServer from './ExGameServer';
-import { Player, EntityHurtEvent, ItemStack, EntityHitEvent } from 'mojang-minecraft';
+import { Player, EntityHurtEvent, ItemStack, EntityHitEvent, Entity } from 'mojang-minecraft';
 import ExPlayer from './entity/ExPlayer';
 import { ItemOnHandChangeEvent } from "./events.js";
 import ExGameConfig from "./ExGameConfig.js";
+import TickDelayTask from "./utils/TickDelayTask.js";
 export default class ExClientEvents implements ExEventManager {
 
 	/*
@@ -95,16 +98,66 @@ export default class ExClientEvents implements ExEventManager {
 			}
 		},
 		itemUseOn: {
-			subscribe: (callback: (arg: EntityHitEvent) => void) => {
+			subscribe: (callback: (arg: ItemUseOnEvent) => void) => {
 				this._subscribe("itemUseOn", callback);
 			},
-			unsubscribe: (callback: (arg: EntityHitEvent) => void) => {
+			unsubscribe: (callback: (arg: ItemUseOnEvent) => void) => {
 				this._unsubscribe("itemUseOn", callback);
 			},
 			pattern: this._registerToServerByEntity,
 			filter: {
 				"name": "source"
 			}
+		},
+		
+		beforeItemUseOn: {
+			subscribe: (callback: (arg: BeforeItemUseOnEvent) => void) => {
+				this._subscribe("beforeItemUseOn", callback);
+			},
+			unsubscribe: (callback: (arg: BeforeItemUseOnEvent) => void) => {
+				this._unsubscribe("beforeItemUseOn", callback);
+			},
+			pattern: this._registerToServerByEntity,
+			filter: {
+				"name": "source"
+			}
+		},
+		onceItemUseOn: {
+			subscribe: (callback: (arg: ItemUseOnEvent) => void) => {
+				this._subscribe("onceItemUseOn", callback);
+			},
+			unsubscribe: (callback: (arg: ItemUseOnEvent) => void) => {
+				this._unsubscribe("onceItemUseOn", callback);
+			},
+			pattern: (server: ExGameServer, registerName: string, k: string) => {
+				this.onceItemUseOnMap = new Map<Entity, [TickDelayTask,boolean]>();
+				server.getEvents().register(registerName, (e: ItemUseOnEvent) => {
+					if(!(e.source instanceof Player)) return;
+					let part = (<Map<Player,((i:ItemUseOnEvent)=>void)[]>>ExClientEvents.monitorMap[k]);
+					if(!this.onceItemUseOnMap.has(e.source)){
+						const player = e.source;
+						this.onceItemUseOnMap.set(e.source, [new TickDelayTask(server.getEvents(),()=>{
+							let res = this.onceItemUseOnMap.get(player);
+							if(res === undefined) return;
+							res[1] = true;
+						}).delay(3),true]);
+					}
+
+					let res = this.onceItemUseOnMap.get(e.source);
+					if(res === undefined) return;
+					if(res[1]){
+						res[1] = false;
+						part.get(e.source)?.forEach((v) => v(e));
+					}
+					res[0].stop();
+					res[0].startOnce();
+					
+				});
+			},
+			filter: {
+				"name": "source"
+			},
+			name: "itemUseOn"
 		},
 		playerHitEntity: {
 			subscribe: (callback: (arg: EntityHurtEvent) => void) => {
@@ -142,13 +195,13 @@ export default class ExClientEvents implements ExEventManager {
 			pattern: (server: ExGameServer, registerName: string, k: string) => {
 				this.onHandItemMap = new Map<Player, [ ItemStack | undefined,number]>();
 				server.getEvents().register(registerName, (e: TickEvent) => {
-					for(let i of (<Map<Player,(()=>void)[]>>ExClientEvents.monitorMap[k])){
+					for(let i of (<Map<Player,((e: ItemOnHandChangeEvent)=>void)[]>>ExClientEvents.monitorMap[k])){
 						let lastItemCache=this.onHandItemMap.get(i[0]);
 						let lastItem = lastItemCache?.[0];
 						let nowItem=ExPlayer.getInstance(i[0]).getBag().getItemOnHand();
 
 						if(lastItem?.id!==nowItem?.id || i[0].selectedSlot !== lastItemCache?.[1]){
-							i[1].forEach((f: (arg0: ItemOnHandChangeEvent) => void) => {
+							i[1].forEach((f) => {
 								f(new ItemOnHandChangeEvent(lastItem, nowItem,i[0]));
 							});
 
@@ -171,6 +224,7 @@ export default class ExClientEvents implements ExEventManager {
 		},
 	}
 	onHandItemMap!: Map<Player, [ItemStack | undefined,number]>;
+	onceItemUseOnMap!: Map<Entity, [TickDelayTask, boolean]>;
 
 	_subscribe(name: string, callback: (arg: any) => void) {
 		let e = ExClientEvents.monitorMap[name];

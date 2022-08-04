@@ -3,7 +3,7 @@
     "minecraft:item": {
         "description": {
             "category": "equipment",
-            "identifier": "wb:block_cache"
+            "identifier": "wb:book_cache"
         },
         "components": {
             "minecraft:creative_category": {

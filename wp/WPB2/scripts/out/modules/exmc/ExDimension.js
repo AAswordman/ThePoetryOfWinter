@@ -14,6 +14,9 @@ export default class ExDimension {
     setBlock(vec, blockId) {
         this.runCommand(`setBlock ${vec.x} ${vec.y} ${vec.z} ${blockId}`);
     }
+    spawnItem(item, v) {
+        this._dimension.spawnItem(item, v.getLocation());
+    }
     runCommand(str) {
         return this._dimension.runCommand(str);
     }

@@ -2,6 +2,9 @@ export default class ExItem {
     constructor(item) {
         this._item = item;
     }
+    getItem() {
+        return this._item;
+    }
     static getInstance(source) {
         let item = source;
         if (this.propertyNameCache in item) {
@@ -15,11 +18,17 @@ export default class ExItem {
     setLore(lore) {
         this._item.setLore(lore);
     }
+    getComponent(str) {
+        return this._item.getComponent(str);
+    }
+    hasComponent(str) {
+        return this._item.hasComponent(str);
+    }
     getEnchantsComponent() {
         return this.getComponent("minecraft:enchants");
     }
-    getComponent(str) {
-        return this._item.getComponent(str);
+    hasEnchantsComponent() {
+        return this.hasComponent("minecraft:enchants");
     }
 }
 ExItem.propertyNameCache = "exCache";

@@ -1,10 +1,11 @@
 import ExGameClient from "../modules/exmc/ExGameClient.js";
-import { EntityQueryOptions, ItemStack, MinecraftBlockTypes } from 'mojang-minecraft';
+import { EntityQueryOptions, MinecraftItemTypes, ItemStack, MinecraftBlockTypes } from 'mojang-minecraft';
 import MenuUIAlert from "./ui/MenuUIAlert.js";
 import menuFunctionUI from "./data/menuFunctionUI.js";
 import ExPlayer from "../modules/exmc/entity/ExPlayer.js";
 import GlobalSettings from "./cache/GlobalSettings.js";
 import { Objective } from "../modules/exmc/entity/ExScoresManager.js";
+import ExGameConfig from '../modules/exmc/ExGameConfig.js';
 import TagCache from "../modules/exmc/storage/cache/TagCache.js";
 import PomData from "./cache/PomData.js";
 import TimeLoopTask from "../modules/exmc/utils/TimeLoopTask.js";
@@ -129,8 +130,8 @@ export default class PomClient extends ExGameClient {
         });
         //附魔
         this.getEvents().exEvents.onceItemUseOn.subscribe((e) => {
-            let pos = new Vector3(e.blockLocation);
-            let block = this.getDimension().getBlock(pos);
+            var _a, _b;
+            let block = this.getDimension().getBlock(new Vector3(e.blockLocation));
             if (!block || block.id === MinecraftBlockTypes.air.id)
                 return;
             //ExGameConfig.console.log(block.id,e.item.id);
@@ -138,10 +139,10 @@ export default class PomClient extends ExGameClient {
                 let bag = this.exPlayer.getBag();
                 let item = bag.getItemOnHand();
                 if (item) {
-                    if (item.id === "wb:book_cache") {
-                        this.blockTranslateData.set(new Vector3(block).toString(), item);
+                    if (item.id === MinecraftItemTypes.enchantedBook.id || item.id === MinecraftItemTypes.enchantedBook.id) {
+                        this.blockTranslateData.set(new Vector3(block).toString(), [item.id, item.getLore(), (_a = ExItem.getInstance(item).getEnchantsComponent()) === null || _a === void 0 ? void 0 : _a.enchantments]);
                         ExBlock.getInstance(block).transTo("wb:block_translate_book");
-                        //item.amount--;
+                        item.amount--;
                         bag.setItem(this.exPlayer.selectedSlot, item);
                     }
                 }
@@ -150,34 +151,37 @@ export default class PomClient extends ExGameClient {
                 let bag = this.exPlayer.getBag();
                 let item = bag.getItemOnHand();
                 let saveItem = this.blockTranslateData.get(new Vector3(block).toString());
+                ExGameConfig.console.log("item", saveItem === null || saveItem === void 0 ? void 0 : saveItem[0]);
                 if (!saveItem)
                     return ExBlock.getInstance(block).transTo("wb:block_translate");
                 if (item) {
                     let exItem = ExItem.getInstance(item);
-                    let befexItem = ExItem.getInstance(saveItem);
-                    let newItem = new ExItem(new ItemStack());
+                    let newItem = new ExItem(new ItemStack(MinecraftItemTypes.enchantedBook));
                     let lore = new ExColorLoreUtil(newItem);
                     if (exItem.hasEnchantsComponent()) {
+                        /*
                         for (let i of exItem.getEnchantsComponent().enchantments) {
-                            newItem.getEnchantsComponent().enchantments.addEnchantment(i);
+                            lore.setValueUseMap("enchants", i.type.id, i.level + "");
                         }
-                        exItem.getEnchantsComponent().removeAllEnchantments();
+                        */
+                        (_b = exItem.getEnchantsComponent()) === null || _b === void 0 ? void 0 : _b.removeAllEnchantments();
                     }
                     newItem.setLore(exItem.getLore());
                     lore = new ExColorLoreUtil(item);
-                    if (befexItem.hasEnchantsComponent() && exItem.hasEnchantsComponent()) {
-                        for (let i of befexItem.getEnchantsComponent().enchantments) {
-                            exItem.getEnchantsComponent().enchantments.addEnchantment(i);
-                        }
-                        befexItem.getEnchantsComponent().removeAllEnchantments();
+                    /*
+                    for (let i of saveItem[2]) {
+                        lore.setValueUseMap("enchants", i.type.id, i.level + "");
                     }
-                    lore.setLore(befexItem.getLore());
+                    */
+                    //saveItem.getEnchantsComponent().removeAllEnchantments();
+                    lore.setLore(saveItem[1]);
                     this.blockTranslateData.delete(new Vector3(block).toString());
                     ExBlock.getInstance(block).transTo("wb:block_translate");
                     bag.setItem(this.exPlayer.selectedSlot, item);
-                    this.getDimension().spawnItem(newItem.getItem(), pos.add(new Vector3(0, 1, 0)));
                 }
             }
+            let saveItem = this.blockTranslateData.get(new Vector3(block).toString());
+            ExGameConfig.console.log("item", saveItem === null || saveItem === void 0 ? void 0 : saveItem[0]);
         });
     }
     updateTalentRes() {

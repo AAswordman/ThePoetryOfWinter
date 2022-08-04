@@ -9,10 +9,10 @@ export default class Vector3 {
     constructor(a: any, b?: any, c?: any) {
         if (a instanceof Vector) {
             this.vector = a;
-        }else if (a instanceof Location) {
-            this.vector = new Vector(a.x,a.y,a.z);
-        } else {
+        }else if (a !== undefined && b !== undefined && c !== undefined) {
             this.vector = new Vector(a, b, c);
+        } else {
+            this.vector = new Vector(a.x, a.y, a.z);
         }
     }
     public get x(): number { return this.vector.x; }
