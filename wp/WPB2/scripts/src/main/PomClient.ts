@@ -1,5 +1,5 @@
 import ExGameClient from "../modules/exmc/ExGameClient.js";
-import { Player, EntityQueryOptions } from 'mojang-minecraft';
+import { Player, EntityQueryOptions, MinecraftItemTypes, ItemStack } from 'mojang-minecraft';
 import MenuUIAlert from "./ui/MenuUIAlert.js";
 import menuFunctionUI from "./data/menuFunctionUI.js";
 import ExGameServer from '../modules/exmc/ExGameServer.js';
@@ -14,6 +14,9 @@ import TalentData, { Talent, Occupation } from "./cache/TalentData.js";
 import ExColorLoreUtil from "../modules/exmc/item/ExColorLoreUtil.js";
 import ExEntity from '../modules/exmc/entity/ExEntity';
 import MathUtil from "../modules/exmc/utils/MathUtil.js";
+import ExItem from "../modules/exmc/item/ExItem.js";
+import Vector3 from "../modules/exmc/utils/Vector3.js";
+import ExBlock from "../modules/exmc/block/ExBlock.js";
 
 export default class PomClient extends ExGameClient {
 	gameId !: number;
@@ -48,6 +51,7 @@ export default class PomClient extends ExGameClient {
 	}).delay(1000);
 	data: PomData;
 	looper: TimeLoopTask;
+	blockTranslateData: Map<Vector3, ItemStack> = new Map<Vector3, ItemStack>();
 
 	constructor(server: ExGameServer, id: string, player: Player) {
 		super(server, id, player);
@@ -140,6 +144,33 @@ export default class PomClient extends ExGameClient {
 			this.exPlayer.triggerEvent("hp:" + Math.round((20 + (this.talentRes.get(Talent.VIENTIANE) ?? 0))));
 		});
 
+
+		//附魔
+		this.getEvents().exEvents.entityHit.subscribe((e) => {
+			ExGameConfig.console.log(e?.hitBlock?.id);
+			if (e.hitBlock?.id === "wb:block_translate") {
+				let bag = this.exPlayer.getBag();
+				let item = bag.getItemOnHand();
+				if (item) {
+					if (item.id === MinecraftItemTypes.book.id) {
+						ExItem.getInstance(item).getEnchantsComponent().enchantments
+						this.blockTranslateData.set(new Vector3(e.hitBlock), item);
+					}
+				}
+			} else if (e.hitBlock?.id === "wb:block_translate_book") {
+				let bag = this.exPlayer.getBag();
+				let item = bag.getItemOnHand();
+				let saveItem = this.blockTranslateData.get(new Vector3(e.hitBlock));
+				ExBlock.getInstance(e.hitBlock).transTo("wb:block_translate");
+				if (item) {
+					if (item.id === MinecraftItemTypes.book.id) {
+						ExItem.getInstance(item).getEnchantsComponent().enchantments;
+						this.blockTranslateData.set(new Vector3(e.hitBlock), item);
+					}
+				}
+			}
+		});
+
 	}
 	talentRes: Map<number, number> = new Map<number, number>();
 	updateTalentRes() {
@@ -164,6 +195,12 @@ export default class PomClient extends ExGameClient {
 		} else {
 			this.player.nameTag = "§c" + this.player.nameTag;
 		}
+
+
+		(function (c: PomClient) {
+			c.sayTo("本addon由aa剑侠和Lileyi制作，若发现其他地方信息被修改过请及时通知我们！")
+		})(this);
+
 
 	}
 

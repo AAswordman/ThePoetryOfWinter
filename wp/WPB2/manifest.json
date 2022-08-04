@@ -32,6 +32,15 @@
       // Minecraft UI module
       "uuid": "2BD50A27-AB5F-4F40-A596-3641627C635E",
       "version": [ 0, 1, 0 ]
+    },
+    {
+      // 方块修复
+      "uuid": "008f2e56-7e74-48b4-8f6b-457208e24e63",
+      "version": [ 0, 1, 0 ]
+    },
+    {
+      "uuid": "c2021c95-08e8-9ade-0916-6cd21931fac5",
+      "version": [ 0, 1, 0 ]
     }
   ]
 }

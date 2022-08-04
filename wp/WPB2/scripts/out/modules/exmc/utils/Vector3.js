@@ -1,8 +1,11 @@
-import { Location, Vector } from "mojang-minecraft";
+import { BlockLocation, Location, Vector } from "mojang-minecraft";
 export default class Vector3 {
     constructor(a, b, c) {
         if (a instanceof Vector) {
             this.vector = a;
+        }
+        else if (a instanceof Location) {
+            this.vector = new Vector(a.x, a.y, a.z);
         }
         else {
             this.vector = new Vector(a, b, c);
@@ -64,6 +67,9 @@ export default class Vector3 {
     }
     getLocation() {
         return new Location(this.x, this.y, this.z);
+    }
+    getBlockLocation() {
+        return new BlockLocation(this.x, this.y, this.z);
     }
 }
 //# sourceMappingURL=Vector3.js.map

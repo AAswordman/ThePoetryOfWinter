@@ -1,4 +1,4 @@
-import { ItemStack } from "mojang-minecraft";
+import { ItemEnchantsComponent, ItemStack } from "mojang-minecraft";
 import ExLoreManager from "../interface/ExLoreManager.js";
 
 export default class ExItem implements ExLoreManager{
@@ -20,5 +20,11 @@ export default class ExItem implements ExLoreManager{
 	}
 	setLore(lore: string[]): void {
 		this._item.setLore(lore);
+	}
+	getEnchantsComponent() {
+		return <ItemEnchantsComponent>this.getComponent("minecraft:enchants");
+	}
+	getComponent(str: string) {
+		return this._item.getComponent(str);
 	}
 }

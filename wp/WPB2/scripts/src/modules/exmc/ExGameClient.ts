@@ -5,6 +5,7 @@ import ExClientEvents from "./ExClientEvents.js";
 import { ChatEvent, Dimension, Player, TickEvent, world } from 'mojang-minecraft';
 import ExPlayer from "./entity/ExPlayer.js";
 import SetTimeOutSupport from "./interface/SetTimeOutSupport.js";
+import ExDimension from "./ExDimension.js";
 
 export default class ExGameClient implements SetTimeOutSupport {
 	private _events: ExClientEvents;
@@ -41,7 +42,7 @@ export default class ExGameClient implements SetTimeOutSupport {
 		this.onJoin();
 	}
 	getDimension(type: string) {
-		return world.getDimension(type);
+		return new ExDimension(world.getDimension(type));
 	}
 	getPlayers() {
 		return world.getPlayers();

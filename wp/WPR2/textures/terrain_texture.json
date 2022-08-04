@@ -4,6 +4,7 @@
   "padding": 8,
   "num_mip_levels": 4,
   "texture_data": {
+
     "ancient_ice": {
       "textures": [
         "textures/blocks/ancient_ice"
@@ -763,6 +764,12 @@
     },
     "block_senior_water": {
       "textures": "textures/wb_blocks/base/block_senior_water"
+    },
+    "block_translate_book":{
+      "textures": "textures/wb_blocks/base/block_translate_book"
+    },
+    "block_translate":{
+      "textures": "textures/wb_blocks/base/block_translate"
     }
   }
 }

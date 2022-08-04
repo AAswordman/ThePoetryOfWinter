@@ -12,6 +12,7 @@ import ExTransmissionMsg from "./ExTransmissionMsg.js";
 import ExClientEvents from "./ExClientEvents.js";
 import { world } from 'mojang-minecraft';
 import ExPlayer from "./entity/ExPlayer.js";
+import ExDimension from "./ExDimension.js";
 export default class ExGameClient {
     constructor(server, id, player) {
         this.debuggerChatTest = (e) => {
@@ -38,7 +39,7 @@ export default class ExGameClient {
         }
     }
     getDimension(type) {
-        return world.getDimension(type);
+        return new ExDimension(world.getDimension(type));
     }
     getPlayers() {
         return world.getPlayers();

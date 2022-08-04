@@ -15,6 +15,12 @@ export default class ExItem {
     setLore(lore) {
         this._item.setLore(lore);
     }
+    getEnchantsComponent() {
+        return this.getComponent("minecraft:enchants");
+    }
+    getComponent(str) {
+        return this._item.getComponent(str);
+    }
 }
 ExItem.propertyNameCache = "exCache";
 //# sourceMappingURL=ExItem.js.map

@@ -57,6 +57,30 @@ export default class ExClientEvents {
                 },
                 pattern: this._registerToServerByServerEvent
             },
+            entityHit: {
+                subscribe: (callback) => {
+                    this._subscribe("entityHit", callback);
+                },
+                unsubscribe: (callback) => {
+                    this._unsubscribe("entityHit", callback);
+                },
+                pattern: this._registerToServerByEntity,
+                filter: {
+                    "name": "entity"
+                }
+            },
+            itemUseOn: {
+                subscribe: (callback) => {
+                    this._subscribe("itemUseOn", callback);
+                },
+                unsubscribe: (callback) => {
+                    this._unsubscribe("itemUseOn", callback);
+                },
+                pattern: this._registerToServerByEntity,
+                filter: {
+                    "name": "source"
+                }
+            },
             playerHitEntity: {
                 subscribe: (callback) => {
                     this._subscribe("playerHitEntity", callback);

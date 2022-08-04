@@ -82,7 +82,7 @@ export default class ExEntity implements ExCommandRunner, ExTagManager {
 	}
 
 	getPosition() {
-		return new Vector3(this.entity.location.x, this.entity.location.y, this.entity.location.z);
+		return new Vector3(this.entity.location);
 	}
 	setPosition(position: Vector3) {
 		this.entity.teleport(position.getLocation(), this.entity.dimension, this.entity.rotation.x, this.entity.rotation.y);
