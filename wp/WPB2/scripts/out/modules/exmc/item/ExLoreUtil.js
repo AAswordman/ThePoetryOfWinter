@@ -5,18 +5,17 @@ export default class LoreUtil {
         this.defFlag = LoreUtil.LoreFlag.DEFAULT;
     }
     append(str) {
-        let l = this.getLore();
-        l.push(str);
-        this.setLore(l);
+        let i = this.getLore();
+        i.push(str);
+        this.setLore(i);
     }
     insert(index, str) {
-        let l = this.getLore();
-        l.splice(index, 0, str);
-        this.setLore(l);
+        let i = this.getLore();
+        i.splice(index, 0, str);
+        this.setLore(i);
     }
     getLore() {
-        var _a;
-        return (_a = this.item.getLore()) !== null && _a !== void 0 ? _a : [];
+        return this.item.getLore();
     }
     setLore(lore) {
         this.item.setLore(lore);
@@ -24,10 +23,11 @@ export default class LoreUtil {
     setFlag(flag) {
         this.defFlag = flag;
     }
-    search(lore, key) {
+    search(key) {
+        let lore = this.getLore();
         for (let i = 0; i < lore.length; i++) {
             if (lore[i].startsWith(key + " : ")) {
-                return new Piece(this.item, this.getLore(), i);
+                return new Piece(this.item, i);
             }
         }
         return null;
@@ -66,7 +66,7 @@ export default class LoreUtil {
         }
     }
     getValueUseDefault(key) {
-        let piece = this.search(this.getLore(), key);
+        let piece = this.search(key);
         if (piece == null)
             return null;
         // key : value
@@ -90,7 +90,7 @@ export default class LoreUtil {
     }
     getValueUseMap(key, use) {
         let tab = "  ";
-        let piece = this.search(this.getLore(), key);
+        let piece = this.search(key);
         if (piece == null)
             return null;
         while (piece.hasNext()) {
@@ -140,7 +140,7 @@ export default class LoreUtil {
         }
     }
     setValueUseDefault(key, value) {
-        let piece = this.search(this.getLore(), key);
+        let piece = this.search(key);
         if (piece == null) {
             this.append(key + " : " + value);
             return;
@@ -163,7 +163,7 @@ export default class LoreUtil {
     *entrys(key) {
         if (key) {
             let tab = "  ";
-            let piece = this.search(this.getLore(), key);
+            let piece = this.search(key);
             if (piece == null) {
                 return;
             }
@@ -187,7 +187,7 @@ export default class LoreUtil {
     }
     setValueUseMap(key, use, value) {
         let tab = "  ";
-        let piece = this.search(this.getLore(), key);
+        let piece = this.search(key);
         if (piece == null) {
             this.append(key + " : ");
             this.append(tab + use + " : " + value);
@@ -205,12 +205,33 @@ export default class LoreUtil {
                 break;
             }
         }
-        piece = this.search(this.getLore(), key);
+        piece = this.search(key);
         if (piece == null) {
             ExGameConfig.console.error("Could not find " + key + " : " + value + " in lore");
             return;
         }
         this.insert(piece.index + 1, tab + use + " : " + value);
+    }
+    delete(key) {
+        let tab = "  ";
+        let piece = this.search(key);
+        if (piece == null) {
+            return;
+        }
+        let l = 1;
+        let i = piece.index;
+        while (piece.hasNext()) {
+            piece.next();
+            if (piece.get().startsWith(tab)) {
+                l++;
+            }
+            else {
+                break;
+            }
+        }
+        let res = this.getLore();
+        res.splice(i, l);
+        this.setLore(res);
     }
 }
 LoreUtil.LoreFlag = {
@@ -219,10 +240,10 @@ LoreUtil.LoreFlag = {
     REPEAT: 2,
     MAP: 3
 };
-class Piece {
-    constructor(item, lore, index) {
+export class Piece {
+    constructor(item, index) {
         this.item = item;
-        this.lore = lore;
+        this.lore = item.getLore();
         this.index = index;
     }
     set() {

@@ -13,10 +13,12 @@ export default class ExItem {
         return (item[this.propertyNameCache] = new ExItem(item));
     }
     getLore() {
-        return this._item.getLore();
+        var _a;
+        return (_a = this._item.getLore()) !== null && _a !== void 0 ? _a : [];
     }
     setLore(lore) {
-        this._item.setLore(lore);
+        lore.splice(lore.indexOf(""), 1);
+        this._item.setLore(lore.length == 0 ? [Math.random() > 0.9 ? "mojang nmsl" : ""] : lore);
     }
     getComponent(str) {
         return this._item.getComponent(str);
@@ -25,10 +27,10 @@ export default class ExItem {
         return this._item.hasComponent(str);
     }
     getEnchantsComponent() {
-        return this.getComponent("minecraft:enchants");
+        return this.getComponent("minecraft:enchantments");
     }
     hasEnchantsComponent() {
-        return this.hasComponent("minecraft:enchants");
+        return this.hasComponent("minecraft:enchantments");
     }
 }
 ExItem.propertyNameCache = "exCache";

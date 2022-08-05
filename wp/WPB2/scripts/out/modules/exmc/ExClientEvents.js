@@ -132,7 +132,7 @@ export default class ExClientEvents {
                 filter: {
                     "name": "source"
                 },
-                name: "itemUseOn"
+                name: "beforeItemUseOn"
             },
             playerHitEntity: {
                 subscribe: (callback) => {

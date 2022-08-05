@@ -19,10 +19,11 @@ export default class ExItem implements ExLoreManager{
 		return (item[this.propertyNameCache] = new ExItem(item));
 	}
 	getLore(): string[] {
-		return this._item.getLore();
+		return this._item.getLore()??[];
 	}
-	setLore(lore: string[]): void {
-		this._item.setLore(lore);
+	setLore(lore: string[]) {
+		lore.splice(lore.indexOf(""),1);
+		this._item.setLore(lore.length == 0 ? [Math.random() > 0.9 ? "mojang nmsl" : ""] : lore);
 	}
 	getComponent(str: string) {
 		return this._item.getComponent(str);
@@ -31,9 +32,9 @@ export default class ExItem implements ExLoreManager{
 		return this._item.hasComponent(str);
 	}
 	getEnchantsComponent():ItemEnchantsComponent{
-		return <ItemEnchantsComponent>this.getComponent("minecraft:enchants");
+		return <ItemEnchantsComponent>this.getComponent("minecraft:enchantments");
 	}
 	hasEnchantsComponent() {
-		return this.hasComponent("minecraft:enchants");
+		return this.hasComponent("minecraft:enchantments");
 	}
 }
