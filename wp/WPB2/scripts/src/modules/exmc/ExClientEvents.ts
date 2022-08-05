@@ -266,12 +266,17 @@ export default class ExClientEvents implements ExEventManager {
 
 	}
 	register(name: string, fun: (arg: any) => void) {
-		if ((<any>this.exEvents) != null) {
-			return (<any>this.exEvents).subscribe(fun);
+		let func: (arg: any) => void = fun;
+		if (name in this.exEvents) {
+			return (<any>this.exEvents)[name].subscribe(func);
 		}
+
+		console.warn("No event registered for name " + name);
 	}
+
+
 	cancel(name: string, fun: (arg: any) => void) {
-		if ((<any>this.exEvents)[name] != null) {
+		if (name in this.exEvents) {
 			return (<any>this.exEvents)[name].unsubscribe(fun);
 		}
 	}

@@ -22,8 +22,8 @@ export default class ExItem implements ExLoreManager{
 		return this._item.getLore()??[];
 	}
 	setLore(lore: string[]) {
-		lore.splice(lore.indexOf(""),1);
-		this._item.setLore(lore.length == 0 ? [Math.random() > 0.9 ? "mojang nmsl" : ""] : lore);
+		if(lore.indexOf(" ")!==-1) lore.splice(lore.indexOf(" "),1);
+		this._item.setLore(lore.length == 0 ? [Math.random() > 0.9 ? "mojang nmsl" : " "] : lore);
 	}
 	getComponent(str: string) {
 		return this._item.getComponent(str);

@@ -17,6 +17,8 @@ import MathUtil from "../modules/exmc/utils/MathUtil.js";
 import ExItem from "../modules/exmc/item/ExItem.js";
 import Vector3 from "../modules/exmc/utils/Vector3.js";
 import ExBlock from "../modules/exmc/block/ExBlock.js";
+import isEquipment from "./items/isEquipment.js";
+import lang from "./data/lang.js";
 
 export default class PomClient extends ExGameClient {
 	gameId !: number;
@@ -24,7 +26,7 @@ export default class PomClient extends ExGameClient {
 
 	cache: TagCache<PomData>;
 	strikeSkill = true;
-	skillLoop = new TimeLoopTask(this, () => {
+	skillLoop = new TimeLoopTask(this.getEvents(), () => {
 		if (this.data.talent.occupation.id === Occupation.ASSASSIN.id) this.strikeSkill = true;
 		if (this.data.talent.occupation.id === Occupation.PRIEST.id) {
 			let query = new EntityQueryOptions();
@@ -42,22 +44,23 @@ export default class PomClient extends ExGameClient {
 			player.addHealth(this, 20);
 		}
 	}).delay(10000);
-	wbflLooper = new TimeLoopTask(this, () => {
+	wbflLooper = new TimeLoopTask(this.getEvents(), () => {
 		this.exPlayer.getScoresManager().addScore("wbfl", 2);
 	}).delay(5000);
-	armorCoolingLooper = new TimeLoopTask(this, () => {
+	armorCoolingLooper = new TimeLoopTask(this.getEvents(), () => {
 		let scores = this.exPlayer.getScoresManager();
 		if (scores.getScore("wbkjlq") > 0) scores.removeScore("wbkjlq", 1);
 	}).delay(1000);
 	data: PomData;
 	looper: TimeLoopTask;
 	blockTranslateData: Map<string, ItemStack> = new Map<string, ItemStack>();
+	equiTotalTask: TimeLoopTask | undefined;
 
 	constructor(server: ExGameServer, id: string, player: Player) {
 		super(server, id, player);
 		this.globalSettings = new GlobalSettings(new Objective("wpsetting"));
 		this.cache = new TagCache(this.exPlayer);
-		this.looper = new TimeLoopTask(this, () => {
+		this.looper = new TimeLoopTask(this.getEvents(), () => {
 			this.cache.save();
 		});
 		this.looper.delay(10000);
@@ -126,6 +129,9 @@ export default class PomClient extends ExGameClient {
 			}
 
 			let damage = e.damage * damageFac + extraDamage;
+
+			this.hasCauseDamage(damage + e.damage);
+
 			target.removeHealth(this, damage);
 		});
 
@@ -157,10 +163,28 @@ export default class PomClient extends ExGameClient {
 					}
 				}
 			}
-			let nitem = this.exPlayer.getBag().getItemOnHand();
-			if (nitem?.id.startsWith("wb:sword_") || nitem?.id.startsWith("wb:staff_")) {
+			const nitem = this.exPlayer.getBag().getItemOnHand();
+			if (nitem && isEquipment(nitem.id)) {
+				const lore = new ExColorLoreUtil(nitem);
 				TalentData.calculateTalentToLore(this.data.talent, ExItem.getInstance(nitem));
 				this.exPlayer.getBag().setItem(this.exPlayer.selectedSlot, nitem);
+				let maxSingleDamage = parseFloat(lore.getValueUseMap("total", lang.maxSingleDamage) ?? "0");
+				let maxSecondaryDamage = parseFloat(lore.getValueUseMap("total", lang.maxSecondaryDamage) ?? "0");
+				let damage = 0;
+				this.hasCauseDamage = (d) => {
+					damage += d;
+					maxSingleDamage = Math.max(d, maxSingleDamage);
+				};
+				this.equiTotalTask?.stop();
+				(this.equiTotalTask = new TimeLoopTask(this.getEvents(), () => {
+					maxSecondaryDamage = Math.max(maxSecondaryDamage, damage / 5);
+					damage = 0;
+					lore.setValueUseMap("total", lang.maxSingleDamage, maxSingleDamage + "");
+					lore.setValueUseMap("total", lang.maxSecondaryDamage, maxSecondaryDamage + "");
+					this.exPlayer.getBag().setItem(this.exPlayer.selectedSlot, nitem);
+				}).delay(5000)).start(); //
+			} else {
+				this.equiTotalTask?.stop();
 			}
 			this.exPlayer.triggerEvent("hp:" + Math.round((20 + (this.talentRes.get(Talent.VIENTIANE) ?? 0))));
 		});
@@ -179,7 +203,7 @@ export default class PomClient extends ExGameClient {
 				let bag = this.exPlayer.getBag();
 				let item = bag.getItemOnHand();
 				let item2 = bag.getItemOnHand();
-                if (item&&item2) {
+				if (item && item2) {
 					if (item.id === "wb:book_cache") {
 						this.blockTranslateData.set(new Vector3(block).toString(), item);
 						ExBlock.getInstance(block).transTo("wb:block_translate_book");
@@ -197,8 +221,9 @@ export default class PomClient extends ExGameClient {
 				if (item) {
 					let exHandItem = ExItem.getInstance(item);
 					let exSaveItem = ExItem.getInstance(saveItem);
-					let exNewItem = new ExItem(new ItemStack(Items.get("wb:book_cache")));
-
+					saveItem.data++;
+					let exNewItem = new ExItem(new ItemStack(saveItem.data >= 4 ? MinecraftItemTypes.enchantedBook : Items.get("wb:book_cache")));
+					exNewItem.getItem().data = saveItem.data;
 					// hand -> new
 					// save -> hand
 
@@ -228,6 +253,9 @@ export default class PomClient extends ExGameClient {
 				}
 			}
 		});
+
+	}
+	hasCauseDamage(arg0: number) {
 
 	}
 	talentRes: Map<number, number> = new Map<number, number>();

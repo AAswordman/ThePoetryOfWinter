@@ -1,42 +1,55 @@
+import { Events, TickEvent } from 'mojang-minecraft';
+import ExEventManager from "../interface/ExEventManager.js";
 import SetTimeOutSupport from "../interface/SetTimeOutSupport.js";
 
 export default class TimeLoopTask {
-	getDelay() {
-		return this.time;
-	}
-    setTimeout: (fun: () => void, timeout: number) => void;
+    timeOut: ExEventManager;
+    func ?: (e: TickEvent) => void;
+    getDelay() {
+        return this.time;
+    }
+
     looper: () => void;
     time: number = 1000;
-    isStopped!: boolean;
-    constructor(timeOut: SetTimeOutSupport, looper: () => void) {
-        this.setTimeout = timeOut.setTimeout.bind(timeOut);
+    constructor(timeOut: ExEventManager, looper: () => void) {
+        this.timeOut = timeOut;
         this.looper = looper;
     }
     delay(time: number) {
         this.time = time;
         return this;
     }
-    startOnce(){
-        this.isStopped = false;
-        let func = () => {
-            if (!this.isStopped) {
+    isStarted(): boolean {
+        return this.func !== undefined;
+    }
+    startOnce() {
+        let times = 0;
+        if(this.isStarted()) return;
+        this.func = (e: TickEvent) => {
+            times += e.deltaTime*1000;
+            if (times >= this.time) {
                 this.looper();
+                this.stop();
             }
         }
-        this.setTimeout(func, this.time);
+        this.timeOut.register("tick", this.func);
     }
     start() {
-        this.isStopped = false;
-        let func = () => {
-            if (!this.isStopped) {
+        let times = 0;
+        if(this.isStarted()) return;
+        this.func = (e: TickEvent) => {
+            times += e.deltaTime*1000;
+            if (times >= this.time) {
                 this.looper();
-                this.setTimeout(func, this.time);
+                times = 0;
             }
         }
-        this.setTimeout(func, this.time);
+        this.timeOut.register("tick", this.func);
     }
 
     stop() {
-        this.isStopped = true;
+        if(!this.func) return;
+        this.timeOut.cancel("tick", this.func);
+        this.func = undefined;
     }
 }

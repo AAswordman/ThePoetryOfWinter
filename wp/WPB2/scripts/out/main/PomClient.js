@@ -1,5 +1,5 @@
 import ExGameClient from "../modules/exmc/ExGameClient.js";
-import { EntityQueryOptions, ItemStack, MinecraftBlockTypes, Items } from 'mojang-minecraft';
+import { EntityQueryOptions, MinecraftItemTypes, ItemStack, MinecraftBlockTypes, Items } from 'mojang-minecraft';
 import MenuUIAlert from "./ui/MenuUIAlert.js";
 import menuFunctionUI from "./data/menuFunctionUI.js";
 import ExPlayer from "../modules/exmc/entity/ExPlayer.js";
@@ -15,11 +15,13 @@ import MathUtil from "../modules/exmc/utils/MathUtil.js";
 import ExItem from "../modules/exmc/item/ExItem.js";
 import Vector3 from "../modules/exmc/utils/Vector3.js";
 import ExBlock from "../modules/exmc/block/ExBlock.js";
+import isEquipment from "./items/isEquipment.js";
+import lang from "./data/lang.js";
 export default class PomClient extends ExGameClient {
     constructor(server, id, player) {
         super(server, id, player);
         this.strikeSkill = true;
-        this.skillLoop = new TimeLoopTask(this, () => {
+        this.skillLoop = new TimeLoopTask(this.getEvents(), () => {
             if (this.data.talent.occupation.id === Occupation.ASSASSIN.id)
                 this.strikeSkill = true;
             if (this.data.talent.occupation.id === Occupation.PRIEST.id) {
@@ -38,10 +40,10 @@ export default class PomClient extends ExGameClient {
                 player.addHealth(this, 20);
             }
         }).delay(10000);
-        this.wbflLooper = new TimeLoopTask(this, () => {
+        this.wbflLooper = new TimeLoopTask(this.getEvents(), () => {
             this.exPlayer.getScoresManager().addScore("wbfl", 2);
         }).delay(5000);
-        this.armorCoolingLooper = new TimeLoopTask(this, () => {
+        this.armorCoolingLooper = new TimeLoopTask(this.getEvents(), () => {
             let scores = this.exPlayer.getScoresManager();
             if (scores.getScore("wbkjlq") > 0)
                 scores.removeScore("wbkjlq", 1);
@@ -50,7 +52,7 @@ export default class PomClient extends ExGameClient {
         this.talentRes = new Map();
         this.globalSettings = new GlobalSettings(new Objective("wpsetting"));
         this.cache = new TagCache(this.exPlayer);
-        this.looper = new TimeLoopTask(this, () => {
+        this.looper = new TimeLoopTask(this.getEvents(), () => {
             this.cache.save();
         });
         this.looper.delay(10000);
@@ -110,6 +112,7 @@ export default class PomClient extends ExGameClient {
                 }
             }
             let damage = e.damage * damageFac + extraDamage;
+            this.hasCauseDamage(damage + e.damage);
             target.removeHealth(this, damage);
         });
         this.getEvents().exEvents.playerHurt.subscribe((e) => {
@@ -120,7 +123,7 @@ export default class PomClient extends ExGameClient {
             this.exPlayer.addHealth(this, add);
         });
         this.getEvents().exEvents.itemOnHandChange.subscribe((e) => {
-            var _a;
+            var _a, _b, _c, _d, _e;
             if (e.afterItem) {
                 let lore = new ExColorLoreUtil(ExItem.getInstance(e.afterItem));
                 if (lore.search("enchants") !== null) {
@@ -141,12 +144,31 @@ export default class PomClient extends ExGameClient {
                     }
                 }
             }
-            let nitem = this.exPlayer.getBag().getItemOnHand();
-            if ((nitem === null || nitem === void 0 ? void 0 : nitem.id.startsWith("wb:sword_")) || (nitem === null || nitem === void 0 ? void 0 : nitem.id.startsWith("wb:staff_"))) {
+            const nitem = this.exPlayer.getBag().getItemOnHand();
+            if (nitem && isEquipment(nitem.id)) {
+                const lore = new ExColorLoreUtil(nitem);
                 TalentData.calculateTalentToLore(this.data.talent, ExItem.getInstance(nitem));
                 this.exPlayer.getBag().setItem(this.exPlayer.selectedSlot, nitem);
+                let maxSingleDamage = parseFloat((_a = lore.getValueUseMap("total", lang.maxSingleDamage)) !== null && _a !== void 0 ? _a : "0");
+                let maxSecondaryDamage = parseFloat((_b = lore.getValueUseMap("total", lang.maxSecondaryDamage)) !== null && _b !== void 0 ? _b : "0");
+                let damage = 0;
+                this.hasCauseDamage = (d) => {
+                    damage += d;
+                    maxSingleDamage = Math.max(d, maxSingleDamage);
+                };
+                (_c = this.equiTotalTask) === null || _c === void 0 ? void 0 : _c.stop();
+                (this.equiTotalTask = new TimeLoopTask(this.getEvents(), () => {
+                    maxSecondaryDamage = Math.max(maxSecondaryDamage, damage / 5);
+                    damage = 0;
+                    lore.setValueUseMap("total", lang.maxSingleDamage, maxSingleDamage + "");
+                    lore.setValueUseMap("total", lang.maxSecondaryDamage, maxSecondaryDamage + "");
+                    this.exPlayer.getBag().setItem(this.exPlayer.selectedSlot, nitem);
+                }).delay(5000)).start(); //
             }
-            this.exPlayer.triggerEvent("hp:" + Math.round((20 + ((_a = this.talentRes.get(Talent.VIENTIANE)) !== null && _a !== void 0 ? _a : 0))));
+            else {
+                (_d = this.equiTotalTask) === null || _d === void 0 ? void 0 : _d.stop();
+            }
+            this.exPlayer.triggerEvent("hp:" + Math.round((20 + ((_e = this.talentRes.get(Talent.VIENTIANE)) !== null && _e !== void 0 ? _e : 0))));
         });
         //附魔
         this.getEvents().exEvents.onceItemUseOn.subscribe((e) => {
@@ -179,7 +201,9 @@ export default class PomClient extends ExGameClient {
                 if (item) {
                     let exHandItem = ExItem.getInstance(item);
                     let exSaveItem = ExItem.getInstance(saveItem);
-                    let exNewItem = new ExItem(new ItemStack(Items.get("wb:book_cache")));
+                    saveItem.data++;
+                    let exNewItem = new ExItem(new ItemStack(saveItem.data >= 4 ? MinecraftItemTypes.enchantedBook : Items.get("wb:book_cache")));
+                    exNewItem.getItem().data = saveItem.data;
                     // hand -> new
                     // save -> hand
                     let lore = new ExColorLoreUtil(exNewItem);
@@ -205,6 +229,8 @@ export default class PomClient extends ExGameClient {
                 }
             }
         });
+    }
+    hasCauseDamage(arg0) {
     }
     updateTalentRes() {
         var _a, _b, _c, _d;
