@@ -123,10 +123,10 @@ export default class ExClientEvents implements ExEventManager {
 			}
 		},
 		onceItemUseOn: {
-			subscribe: (callback: (arg: ItemUseOnEvent) => void) => {
+			subscribe: (callback: (arg: BeforeItemUseOnEvent) => void) => {
 				this._subscribe("onceItemUseOn", callback);
 			},
-			unsubscribe: (callback: (arg: ItemUseOnEvent) => void) => {
+			unsubscribe: (callback: (arg: BeforeItemUseOnEvent) => void) => {
 				this._unsubscribe("onceItemUseOn", callback);
 			},
 			pattern: (server: ExGameServer, registerName: string, k: string) => {
@@ -157,7 +157,7 @@ export default class ExClientEvents implements ExEventManager {
 			filter: {
 				"name": "source"
 			},
-			name: "itemUseOn"
+			name: "beforeItemUseOn"
 		},
 		playerHitEntity: {
 			subscribe: (callback: (arg: EntityHurtEvent) => void) => {

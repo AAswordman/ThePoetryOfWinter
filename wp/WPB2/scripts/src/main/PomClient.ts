@@ -1,5 +1,5 @@
 import ExGameClient from "../modules/exmc/ExGameClient.js";
-import { Player, EntityQueryOptions, MinecraftItemTypes, ItemStack, MinecraftBlockTypes, ItemType } from 'mojang-minecraft';
+import { Player, EntityQueryOptions, MinecraftItemTypes, ItemStack, MinecraftBlockTypes, ItemType, Items } from 'mojang-minecraft';
 import MenuUIAlert from "./ui/MenuUIAlert.js";
 import menuFunctionUI from "./data/menuFunctionUI.js";
 import ExGameServer from '../modules/exmc/ExGameServer.js';
@@ -105,7 +105,7 @@ export default class PomClient extends ExGameClient {
 				}
 
 			} else {
-				let lore = new ExColorLoreUtil(item);
+				let lore = new ExColorLoreUtil(ExItem.getInstance(item));
 
 				let CLOAD_PIERCING = MathUtil.zeroIfNaN(parseFloat((lore.getValueUseMap("addition", Talent.getCharacter(Talent.CLOAD_PIERCING)) ?? "->0").split("->")[1]));
 
@@ -137,64 +137,94 @@ export default class PomClient extends ExGameClient {
 			this.exPlayer.addHealth(this, add);
 		});
 		this.getEvents().exEvents.itemOnHandChange.subscribe((e) => {
-			if (e.afterItem?.id.startsWith("wb:sword_") || e.afterItem?.id.startsWith("wb:staff_")) {
-				TalentData.calculateTalentToLore(this.data.talent, e.afterItem);
-				this.exPlayer.getBag().setItem(this.exPlayer.selectedSlot, e.afterItem);
+			if (e.afterItem) {
+				let lore = new ExColorLoreUtil(ExItem.getInstance(e.afterItem));
+				if (lore.search("enchants") !== null) {
+					for (let i of lore.entrys("enchants")) {
+						try {
+							this.player.runCommand("enchant @s " + i[0].replace(/[A-Z]/g, (s) => {
+								return "_" + s.toLowerCase();
+							}) + " " + i[1]);
+						} catch (e) {
+						}
+					}
+
+					let item = this.exPlayer.getBag().getItemOnHand();
+					if (item != null) {
+						lore = new ExColorLoreUtil(new ExItem(item));
+						lore.delete("enchants");
+						this.exPlayer.getBag().setItem(this.player.selectedSlot, item);
+					}
+				}
+			}
+			let nitem = this.exPlayer.getBag().getItemOnHand();
+			if (nitem?.id.startsWith("wb:sword_") || nitem?.id.startsWith("wb:staff_")) {
+				TalentData.calculateTalentToLore(this.data.talent, ExItem.getInstance(nitem));
+				this.exPlayer.getBag().setItem(this.exPlayer.selectedSlot, nitem);
 			}
 			this.exPlayer.triggerEvent("hp:" + Math.round((20 + (this.talentRes.get(Talent.VIENTIANE) ?? 0))));
 		});
 
 
+
+
 		//附魔
 		this.getEvents().exEvents.onceItemUseOn.subscribe((e) => {
-			let pos=new Vector3(e.blockLocation);
+			let pos = new Vector3(e.blockLocation);
 			let block = this.getDimension().getBlock(pos);
 			if (!block || block.id === MinecraftBlockTypes.air.id) return;
 			//ExGameConfig.console.log(block.id,e.item.id);
 			if (block.id === "wb:block_translate") {
+				e.cancel = true;
 				let bag = this.exPlayer.getBag();
 				let item = bag.getItemOnHand();
-				if (item) {
+				let item2 = bag.getItemOnHand();
+                if (item&&item2) {
 					if (item.id === "wb:book_cache") {
 						this.blockTranslateData.set(new Vector3(block).toString(), item);
 						ExBlock.getInstance(block).transTo("wb:block_translate_book");
-						//item.amount--;
-						bag.setItem(this.exPlayer.selectedSlot, item);
+						item2.amount--;
+						bag.setItem(this.exPlayer.selectedSlot, item2);
 					}
 				}
 			} else if (block.id === "wb:block_translate_book") {
+				e.cancel = true;
 				let bag = this.exPlayer.getBag();
 				let item = bag.getItemOnHand();
 				let saveItem = this.blockTranslateData.get(new Vector3(block).toString());
 				if (!saveItem) return ExBlock.getInstance(block).transTo("wb:block_translate");
+
 				if (item) {
-					let exItem = ExItem.getInstance(item);
-					let befexItem = ExItem.getInstance(saveItem);
-					let newItem = new ExItem(new ItemStack());
-					let lore = new ExColorLoreUtil(newItem);
-					if (exItem.hasEnchantsComponent()) {
+					let exHandItem = ExItem.getInstance(item);
+					let exSaveItem = ExItem.getInstance(saveItem);
+					let exNewItem = new ExItem(new ItemStack(Items.get("wb:book_cache")));
 
-						for (let i of exItem.getEnchantsComponent().enchantments) {
-							newItem.getEnchantsComponent().enchantments.addEnchantment(i);
+					// hand -> new
+					// save -> hand
+
+					let lore = new ExColorLoreUtil(exNewItem);
+					exNewItem.setLore([...exHandItem.getLore()]);
+					if (exHandItem.hasEnchantsComponent()) {
+						for (let i of exHandItem.getEnchantsComponent().enchantments) {
+							lore.setValueUseMap("enchants", i.type.id, i.level + "");
+						}
+						exHandItem.getEnchantsComponent().removeAllEnchantments();
+					}
+					lore = new ExColorLoreUtil(exHandItem);
+					lore.setLore([...exSaveItem.getLore()]);
+					if (exSaveItem.hasEnchantsComponent()) {
+
+						for (let i of exSaveItem.getEnchantsComponent().enchantments) {
+							lore.setValueUseMap("enchants", i.type.id, i.level + "");
 						}
 
-						exItem.getEnchantsComponent().removeAllEnchantments();
+						exSaveItem.getEnchantsComponent().removeAllEnchantments();
 					}
-					newItem.setLore(exItem.getLore());
-					lore = new ExColorLoreUtil(item);
-					if (befexItem.hasEnchantsComponent() && exItem.hasEnchantsComponent()) {
 
-						for (let i of befexItem.getEnchantsComponent().enchantments) {
-							exItem.getEnchantsComponent().enchantments.addEnchantment(i);
-						}
-
-						befexItem.getEnchantsComponent().removeAllEnchantments();
-					}
-					lore.setLore(befexItem.getLore());
 					this.blockTranslateData.delete(new Vector3(block).toString());
 					ExBlock.getInstance(block).transTo("wb:block_translate");
 					bag.setItem(this.exPlayer.selectedSlot, item);
-					this.getDimension().spawnItem(newItem.getItem(),pos.add(new Vector3(0,1,0)));
+					this.getDimension().spawnItem(exNewItem.getItem(), pos.add(new Vector3(0, 1, 0)));
 				}
 			}
 		});
