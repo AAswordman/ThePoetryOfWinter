@@ -5,5 +5,5 @@ tag @s add wbkjlq
 
 effect @s absorption 5 2 true
 effect @s strength 5 3 true
-execute @e[r=12,rm=2] ~ ~ ~ summon wb:damage_hurt20
+damage @e[r=12,rm=2] ~ ~ ~ 20 entity_attack entity @s
 particle wb:armor_equipment_par ~~~

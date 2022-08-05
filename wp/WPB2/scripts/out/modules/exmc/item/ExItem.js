@@ -17,8 +17,9 @@ export default class ExItem {
         return (_a = this._item.getLore()) !== null && _a !== void 0 ? _a : [];
     }
     setLore(lore) {
-        lore.splice(lore.indexOf(""), 1);
-        this._item.setLore(lore.length == 0 ? [Math.random() > 0.9 ? "mojang nmsl" : ""] : lore);
+        if (lore.indexOf(" ") !== -1)
+            lore.splice(lore.indexOf(" "), 1);
+        this._item.setLore(lore.length == 0 ? [Math.random() > 0.9 ? "mojang nmsl" : " "] : lore);
     }
     getComponent(str) {
         return this._item.getComponent(str);

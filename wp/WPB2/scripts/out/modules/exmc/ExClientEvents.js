@@ -229,12 +229,14 @@ export default class ExClientEvents {
         }), 1);
     }
     register(name, fun) {
-        if (this.exEvents != null) {
-            return this.exEvents.subscribe(fun);
+        let func = fun;
+        if (name in this.exEvents) {
+            return this.exEvents[name].subscribe(func);
         }
+        console.warn("No event registered for name " + name);
     }
     cancel(name, fun) {
-        if (this.exEvents[name] != null) {
+        if (name in this.exEvents) {
             return this.exEvents[name].unsubscribe(fun);
         }
     }

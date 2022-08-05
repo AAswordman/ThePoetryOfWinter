@@ -1,7 +1,7 @@
 export default class TimeLoopTask {
     constructor(timeOut, looper) {
         this.time = 1000;
-        this.setTimeout = timeOut.setTimeout.bind(timeOut);
+        this.timeOut = timeOut;
         this.looper = looper;
     }
     getDelay() {
@@ -11,27 +11,40 @@ export default class TimeLoopTask {
         this.time = time;
         return this;
     }
+    isStarted() {
+        return this.func !== undefined;
+    }
     startOnce() {
-        this.isStopped = false;
-        let func = () => {
-            if (!this.isStopped) {
+        let times = 0;
+        if (this.isStarted())
+            return;
+        this.func = (e) => {
+            times += e.deltaTime * 1000;
+            if (times >= this.time) {
                 this.looper();
+                this.stop();
             }
         };
-        this.setTimeout(func, this.time);
+        this.timeOut.register("tick", this.func);
     }
     start() {
-        this.isStopped = false;
-        let func = () => {
-            if (!this.isStopped) {
+        let times = 0;
+        if (this.isStarted())
+            return;
+        this.func = (e) => {
+            times += e.deltaTime * 1000;
+            if (times >= this.time) {
                 this.looper();
-                this.setTimeout(func, this.time);
+                times = 0;
             }
         };
-        this.setTimeout(func, this.time);
+        this.timeOut.register("tick", this.func);
     }
     stop() {
-        this.isStopped = true;
+        if (!this.func)
+            return;
+        this.timeOut.cancel("tick", this.func);
+        this.func = undefined;
     }
 }
 //# sourceMappingURL=TimeLoopTask.js.map
