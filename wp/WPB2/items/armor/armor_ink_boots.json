@@ -14,8 +14,18 @@
         "value": 10,
         "slot": "armor_feet"
       },
+      "minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"wb:crystal_evolution"
+						],
+						"repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.5"
+					}
+				]
+			},
       "minecraft:durability": {
-        "max_damage": 429,
+        "max_durability": 429,
         "damage_chance": {
           "min": 60,
           "max": 100

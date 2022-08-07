@@ -7,9 +7,9 @@ import {
 	TickEvent
 } from "mojang-minecraft";
 import ExEventManager from "./interface/ExEventManager.js";
-import ExGameServer from './ExGameServer';
+import ExGameServer from './ExGameServer.js';
 import { Player, EntityHurtEvent, ItemStack, EntityHitEvent, Entity } from 'mojang-minecraft';
-import ExPlayer from './entity/ExPlayer';
+import ExPlayer from './entity/ExPlayer.js';
 import { ItemOnHandChangeEvent } from "./events.js";
 import ExGameConfig from "./ExGameConfig.js";
 import TickDelayTask from "./utils/TickDelayTask.js";
@@ -285,6 +285,5 @@ export default class ExClientEvents implements ExEventManager {
 		for (let m in ExClientEvents.monitorMap) {
 			ExClientEvents.monitorMap[m].delete(this._client.player);
 		}
-		ExGameConfig.console.info("Unsubscribed to ExClientEvents");
 	}
 }

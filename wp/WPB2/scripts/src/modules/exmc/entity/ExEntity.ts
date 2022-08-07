@@ -1,18 +1,19 @@
-import { Entity, EntityHealthComponent, Vector, Location, EntityInventoryComponent } from 'mojang-minecraft';
+import { Entity, EntityHealthComponent, Vector, Location, EntityInventoryComponent, Player } from 'mojang-minecraft';
 import ExCommandRunner from '../interface/ExCommandRunner.js';
 import ExTagManager from '../interface/ExTagManager.js';
 import ExEntityComponentId from './ExEntityComponentId.js';
 import ExScoresManager from './ExScoresManager.js';
 import Vector3 from '../utils/Vector3.js';
 import ExEntityBag from './ExEntityBag.js';
-import SetTimeOutSupport from '../interface/SetTimeOutSupport';
+import SetTimeOutSupport from '../interface/SetTimeOutSupport.js';
 import ExDimension from '../ExDimension.js';
+import ExPlayer from './ExPlayer.js';
 
 
 export default class ExEntity implements ExCommandRunner, ExTagManager {
 
 	private _damage: number | undefined;
-	getPreRemoveHealth(){
+	getPreRemoveHealth() {
 		return this._damage;
 	}
 	removeHealth(timeout: SetTimeOutSupport, damage: number) {
@@ -59,7 +60,7 @@ export default class ExEntity implements ExCommandRunner, ExTagManager {
 	}
 
 	getDimension() {
-		return new ExDimension(this._entity.dimension);
+		return this._entity.dimension;
 	}
 
 	addTag(str: string) {
@@ -90,8 +91,11 @@ export default class ExEntity implements ExCommandRunner, ExTagManager {
 	getPosition() {
 		return new Vector3(this.entity.location);
 	}
-	setPosition(position: Vector3) {
-		this.entity.teleport(position.getLocation(), this.entity.dimension, this.entity.rotation.x, this.entity.rotation.y);
+
+
+	setPosition(position: Vector3, dimension = this.entity.dimension) {
+		this.entity.teleport(position.getLocation(), dimension, this.entity.rotation.x, this.entity.rotation.y);
+
 	}
 
 	hasComponent(name: string) {

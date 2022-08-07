@@ -18,5 +18,6 @@ export default function isEquipment(id) {
                 return true;
         }
     }
+    return false;
 }
 //# sourceMappingURL=isEquipment.js.map

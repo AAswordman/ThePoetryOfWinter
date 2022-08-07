@@ -1,2 +1,2 @@
-1.Crack patterns:ON
+1.Crack patterns:OFF
 

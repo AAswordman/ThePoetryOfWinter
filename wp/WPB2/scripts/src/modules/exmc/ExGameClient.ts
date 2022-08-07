@@ -44,7 +44,7 @@ export default class ExGameClient implements SetTimeOutSupport {
 
 	getDimension(type?: string) {
 		if (type !== undefined) {
-			return new ExDimension(world.getDimension(type));
+			return world.getDimension(type);
 		} else {
 			return this.exPlayer.getDimension();
 		}

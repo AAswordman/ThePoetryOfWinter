@@ -2,7 +2,7 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-      "identifier": "wb:staff_burn"
+      "identifier": "wb:book_cache"
     },
     "tags": ["crafting_table"],
     "pattern": [
