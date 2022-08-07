@@ -179,9 +179,6 @@
               "back_key": "query.get_equipped_item_name == 'back_key'"
             },
             {
-              "jet_pack": "query.get_equipped_item_name == 'jet_pack'"
-            },
-            {
               "tell": "query.get_equipped_item_name == 'wb_help'"
             },
             {
@@ -229,39 +226,7 @@
             }
           ]
         },
-        "jet_pack": {
-          "transitions": [
-            {
-              "default": "query.get_equipped_item_name != 'jet_pack'"
-            },
-            {
-              "jet_packa": "query.is_using_item"
-            }
-          ]
-        },
-        "jet_packa": {
-          "on_entry": [
-            "/summon wb:ball_jet_pack ^ ^-0.1 ^-1"
-          ],
-          "transitions": [
-            {
-              "default": "query.get_equipped_item_name != 'jet_pack'"
-            },
-            {
-              "jet_pack": "!query.is_using_item"
-            },
-            {
-              "jet_packb": "query.is_using_item"
-            }
-          ]
-        },
-        "jet_packb": {
-          "transitions": [
-            {
-              "jet_packa": "(1.0)"
-            }
-          ]
-        },
+        
         "back_key": {
           "on_entry": [
             "/tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.18.name\"}]}"

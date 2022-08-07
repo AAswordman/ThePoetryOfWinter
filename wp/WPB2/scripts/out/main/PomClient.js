@@ -181,6 +181,12 @@ export default class PomClient extends ExGameClient {
             }
             this.exPlayer.triggerEvent("hp:" + Math.round((20 + ((_e = this.talentRes.get(Talent.VIENTIANE)) !== null && _e !== void 0 ? _e : 0))));
         });
+        // jet pack
+        this.getEvents().exEvents.itemUse.subscribe(e => {
+            if (e.item.id === "wb:jet_pack") {
+                this.exPlayer.setPosition(this.exPlayer.getPosition().add(this.exPlayer.getViewVector().mul(0.4)));
+            }
+        });
         //附魔
         this.getEvents().exEvents.onceItemUseOn.subscribe((e) => {
             let pos = new Vector3(e.blockLocation);

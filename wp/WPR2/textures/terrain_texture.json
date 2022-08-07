@@ -4,7 +4,6 @@
   "padding": 8,
   "num_mip_levels": 4,
   "texture_data": {
-
     "ancient_ice": {
       "textures": [
         "textures/blocks/ancient_ice"
@@ -598,6 +597,36 @@
     "red_lantern": {
       "textures": [
         "textures/blocks/red_lantern"
+      ]
+    },
+    "enchanted_summoner_up": {
+      "textures": [
+        "textures/blocks/enchanted_summoner_up"
+      ]
+    },
+    "enchanted_summoner_side": {
+      "textures": [
+        "textures/blocks/enchanted_summoner_side"
+      ]
+    },
+    "enchanted_summoner_activated_side": {
+      "textures": [
+        "textures/blocks/enchanted_summoner_activated_side"
+      ]
+    },
+    "plain_tower_summoner_up": {
+      "textures": [
+        "textures/blocks/plain_tower_summoner_up"
+      ]
+    },
+    "plain_tower_summoner_side": {
+      "textures": [
+        "textures/blocks/plain_tower_summoner_side"
+      ]
+    },
+    "plain_tower_summoner_activated_up": {
+      "textures": [
+        "textures/blocks/plain_tower_summoner_activated_up"
       ]
     },
     "waste_recovery": {

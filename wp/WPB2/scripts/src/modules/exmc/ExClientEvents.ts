@@ -221,7 +221,7 @@ export default class ExClientEvents implements ExEventManager {
 				this._unsubscribe("onLongTick", callback);
 			},
 			pattern: this._registerToServerByServerEvent
-		},
+		}
 	}
 	onHandItemMap!: Map<Player, [ItemStack | undefined,number]>;
 	onceItemUseOnMap!: Map<Entity, [TickDelayTask, boolean]>;

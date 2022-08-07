@@ -1,7 +1,19 @@
 {
-  "entity_sounds": {
-    "entities": {
-      "dec:shadow_creeper": {
+	"entity_sounds": {
+		"entities": {
+			"dec:gargoyle": {
+				"volume": 1.0,
+				"pitch": [
+					0.5,
+					1.2
+				],
+				"events": {
+					"ambient": "dig.stone",
+					"hurt": "dig.stone",
+					"death": "dig.stone"
+				}
+			},
+			"dec:shadow_creeper": {
 				"volume": 1.0,
 				"pitch": [
 					1.2,
@@ -2205,83 +2217,83 @@
 					}
 				}
 			},
-      "wb:magic_cow": {
-        "volume": 1,
-        "pitch": [0.8,1.2],
-        "events": {
-          "ambient": "mob.mcow.say"
-        }
-      },
-      "wb:magic_pig": {
-        "volume": 1,
-        "pitch": [0.8,1.2],
-        "events": {
-          "ambient": "mob.pig.say",
-          "hurt": "mob.pig.say",
-          "death": "mob.pig.death",
-          "step": {
-            "sound": "mob.pig.step",
-            "volume": 0.15,
-            "pitch": 1
-          },
-          "boost": {
-            "sound": "mob.pig.boost",
-            "volume": 1,
-            "pitch": 1
-          }
-        }
-      },
-      "wb:magic_book": {
-        "volume": 1,
-        "pitch": [0.8,1.2],
-        "events": {
-          "ambient": "mob.mbook.say"
-        }
-      },
-      "wb:magic_insect": {
-        "volume": 1,
-        "pitch": [0.8,1.2],
-        "events": {
-          "ambient": "mob.magic_insect.say"
-        }
-      },
-      "wb:magic_stoneman": {
-        "volume": 1,
-        "pitch": [0.8,1.2],
-        "events": {
-          "ambient": "mob.mstone.say",
-          "hurt": "mob.mstone.hurt"
-        }
-      },
-      "wb:magic_puppet": {
-        "volume": 1,
-        "pitch": [0.8,1.2],
-        "events": {
-          "ambient": "mob.irongolem.say",
-          "hurt": "mob.irongolem.hit",
-          "death": "mob.irongolem.death",
-          "step": {
-            "sound": "mob.irongolem.walk",
-            "volume": 1,
-            "pitch": 1
-          },
-          "throw": {
-            "sound": "mob.irongolem.throw",
-            "volume": 1,
-            "pitch": 1
-          }
-        }
-      },
-      "base": {
-        "volume": 1,
-        "pitch": [0.8,1.2],
-        "events": {
-          "ambient": "mob.base.say",
-          "hurt": "mob.base.hurt",
-          "death": "mob.base.death",
-          "shoot": "mob.base.shoot"
-        }
-      }
-    }
-  }
+			"wb:magic_cow": {
+				"volume": 1,
+				"pitch": [0.8, 1.2],
+				"events": {
+					"ambient": "mob.mcow.say"
+				}
+			},
+			"wb:magic_pig": {
+				"volume": 1,
+				"pitch": [0.8, 1.2],
+				"events": {
+					"ambient": "mob.pig.say",
+					"hurt": "mob.pig.say",
+					"death": "mob.pig.death",
+					"step": {
+						"sound": "mob.pig.step",
+						"volume": 0.15,
+						"pitch": 1
+					},
+					"boost": {
+						"sound": "mob.pig.boost",
+						"volume": 1,
+						"pitch": 1
+					}
+				}
+			},
+			"wb:magic_book": {
+				"volume": 1,
+				"pitch": [0.8, 1.2],
+				"events": {
+					"ambient": "mob.mbook.say"
+				}
+			},
+			"wb:magic_insect": {
+				"volume": 1,
+				"pitch": [0.8, 1.2],
+				"events": {
+					"ambient": "mob.magic_insect.say"
+				}
+			},
+			"wb:magic_stoneman": {
+				"volume": 1,
+				"pitch": [0.8, 1.2],
+				"events": {
+					"ambient": "mob.mstone.say",
+					"hurt": "mob.mstone.hurt"
+				}
+			},
+			"wb:magic_puppet": {
+				"volume": 1,
+				"pitch": [0.8, 1.2],
+				"events": {
+					"ambient": "mob.irongolem.say",
+					"hurt": "mob.irongolem.hit",
+					"death": "mob.irongolem.death",
+					"step": {
+						"sound": "mob.irongolem.walk",
+						"volume": 1,
+						"pitch": 1
+					},
+					"throw": {
+						"sound": "mob.irongolem.throw",
+						"volume": 1,
+						"pitch": 1
+					}
+				}
+			},
+			"base": {
+				"volume": 1,
+				"pitch": [0.8, 1.2],
+				"events": {
+					"ambient": "mob.base.say",
+					"hurt": "mob.base.hurt",
+					"death": "mob.base.death",
+					"shoot": "mob.base.shoot"
+				}
+			}
+		}
+	}
 }

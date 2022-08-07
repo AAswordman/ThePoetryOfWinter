@@ -192,7 +192,7 @@ export default class ExClientEvents {
                     this._unsubscribe("onLongTick", callback);
                 },
                 pattern: this._registerToServerByServerEvent
-            },
+            }
         };
         this._client = client;
         if (!ExClientEvents.init) {

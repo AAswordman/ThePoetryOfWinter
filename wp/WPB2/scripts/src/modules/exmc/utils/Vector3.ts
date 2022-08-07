@@ -23,11 +23,29 @@ export default class Vector3 {
     public set y(y: number) { this.vector.y = y; }
     public set z(z: number) { this.vector.z = z; }
 
-    public add(vec: Vector3 | Vector) {
-        return new Vector3(Vector.add(this.vector, vec instanceof Vector3 ? vec.vector : vec));
+    public add(vec: Vector3 | Vector) : Vector3
+    public add(x: number, y: number, z: number): Vector3
+    public add(x: any, y?: number, z?: number) {
+        if(x instanceof Vector3 || x instanceof Vector3) {
+            this.add(x.x,x.y,x.z);
+        }else if(y !== undefined && z !== undefined) {
+            this.x += x;
+            this.y += y;
+            this.z += z;
+        }
+        return this;
     }
-    public sub(vec: Vector3 | Vector) {
-        return new Vector3(Vector.subtract(this.vector, vec instanceof Vector3 ? vec.vector : vec));
+    public sub(vec: Vector3) : Vector3
+    public sub(x: number, y: number, z: number): Vector3
+    public sub(x: any, y?: number, z?: number) {
+        if(x instanceof Vector3 || x instanceof Vector3) {
+            this.sub(x.x,x.y,x.z);
+        }else if(y !== undefined && z !== undefined) {
+            this.x -= x;
+            this.y -= y;
+            this.z -= z;
+        }
+        return this;
     }
     public mul(vec: Vector3 | Vector | number) {
         return new Vector3(Vector.multiply(this.vector, vec instanceof Vector3 ? vec.vector : vec));

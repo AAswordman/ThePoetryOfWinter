@@ -1,0 +1,20 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "items",
+      "identifier": "dec:mysterious_key_debris"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.decorations"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:mysterious_key_debris.name"
+      },
+      "minecraft:icon": {
+        "texture": "mysterious_key_debris"
+      }
+    }
+  }
+}

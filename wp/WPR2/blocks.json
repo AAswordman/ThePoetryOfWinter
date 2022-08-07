@@ -615,5 +615,37 @@
   "dec:forest_summoner_activated": {
     "textures": "forest_summoner_activated",
     "sound": "dirt"
+  },
+  "dec:enchanted_summoner": {
+    "textures": {
+      "up": "enchanted_summoner_up",
+      "down": "enchanted_summoner_up",
+      "side": "enchanted_summoner_side"
+    },
+    "sound": "wood"
+  },
+  "dec:enchanted_summoner_activated": {
+    "textures": {
+      "up": "enchanted_summoner_up",
+      "down": "enchanted_summoner_up",
+      "side": "enchanted_summoner_activated_side"
+    },
+    "sound": "wood"
+  },
+  "dec:plain_tower_summoner": {
+    "textures": {
+      "up": "plain_tower_summoner_up",
+      "down": "plain_tower_summoner_up",
+      "side": "plain_tower_summoner_side"
+    },
+    "sound": "wood"
+  },
+  "dec:plain_tower_summoner_activated": {
+    "textures": {
+      "up": "plain_tower_summoner_activated_up",
+      "down": "plain_tower_summoner_activated_up",
+      "side": "plain_tower_summoner_side"
+    },
+    "sound": "wood"
   }
 }

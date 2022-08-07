@@ -131,7 +131,7 @@ give @s[scores={unknow_book=53}] planks 2 5
 tellraw @s[scores={unknow_book=54}] { "rawtext" : [ { "translate" : "傻子村民被称作掠夺者之王，那种庞然巨兽也被称为掠夺兽。" } ] }
 
 tellraw @s[scores={unknow_book=55}] { "rawtext" : [ { "translate" : "掠夺之王战不胜，更可怕的是他的下一个目标就是你！" } ] }
-give @s[scores={unknow_book=55}] dec:mysterious_invitation
+give @s[scores={unknow_book=55}] dec:mysterious_key
 
 
 

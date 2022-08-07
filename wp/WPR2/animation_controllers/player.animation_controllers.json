@@ -536,7 +536,7 @@
 					"blend_transition": 0.2,
 					"transitions": [
 						{
-							"hold": "!query.is_sprinting&&query.get_equipped_item_name=='flintlock"
+							"hold": "!query.is_sprinting&&query.get_equipped_item_name=='flintlock'"
 						}
 					]
 				},
