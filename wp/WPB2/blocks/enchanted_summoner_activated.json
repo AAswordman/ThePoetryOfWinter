@@ -1,0 +1,38 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:block": {
+    "description": {
+      "identifier": "dec:enchanted_summoner_activated"
+    },
+    "components": {
+      "minecraft:block_light_absorption": 1,
+      "minecraft:block_light_emission": 1,
+      "minecraft:destroy_time": 3.0,
+      "minecraft:explosion_resistance": 100,
+      "minecraft:map_color": "#897053",
+      "minecraft:loot": "loot_tables/empty.json",
+      "minecraft:on_interact": {
+        "event": "summon",
+        "condition": "query.get_equipped_item_name('main_hand') == 'iron_key'"
+      }
+    },
+    "events": {
+      "summon": {
+        "play_sound": {
+          "target": "other",
+          "sound": "conduit.activate"
+        },
+        "set_block": {
+          "block_type": "dec:enchanted_summoner"
+        },
+        "run_command": {
+          "command": [
+            "tellraw @a { \"rawtext\" : [ { \"translate\" : \"text.dec:summon_enchant_illager.name\" } ] }",
+            "summon dec:enchant_illager ~~1~"
+          ]
+        },
+        "decrement_stack": {}
+      }
+    }
+  }
+}

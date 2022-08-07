@@ -218,7 +218,7 @@
                   {
                     "boss2@section_toggle_button": {
                       "$section_topic": "help1",
-                      "$boss_icon": "textures/items/mysterious_invitation",
+                      "$boss_icon": "textures/items/mysterious_key",
                       "$toggle_group_forced_index": 1
                     }
                   },
@@ -786,7 +786,7 @@
           ],
           "$boss_info": "难度:简单\n主题地形:平原",
           "$boss_name": "boss.dec:king_of_pillager.name",
-          "$item_icon": "textures/items/mysterious_invitation",
+          "$item_icon": "textures/items/mysterious_key",
           "$boss_threed_img": "textures/wb_ui/boss1",
           "$loot_tabel_item_a": "textures/items/iron_ingot",
           "$loot_tabel_item_b": "textures/items/amethyst_shard",

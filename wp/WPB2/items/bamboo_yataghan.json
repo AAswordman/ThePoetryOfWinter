@@ -82,16 +82,21 @@
 			"throw": {
 				"sequence": [
 					{
-						"damage": {
-							"type": "magic",
-							"amount": 7
-						}
-					},
-					{
-						"shoot": {
-							"projectile": "dec:bamboo_yataghan",
-							"launch_power": 1
-						}
+						"condition": "query.remaining_durability > 7",
+						"sequence": [
+							{
+								"damage": {
+									"type": "magic",
+									"amount": 7
+								}
+							},
+							{
+								"shoot": {
+									"projectile": "dec:bamboo_yataghan",
+									"launch_power": 1
+								}
+							}
+						]
 					}
 				]
 			}

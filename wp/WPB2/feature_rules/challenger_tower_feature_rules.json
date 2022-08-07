@@ -49,7 +49,7 @@
           16
         ]
       },
-      "y": "query.heightmap(variable.worldx, variable.worldz) - 1",
+      "y": "query.heightmap(variable.worldx, variable.worldz) - 65",
       "z": {
         "distribution": "uniform",
         "extent": [

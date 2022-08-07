@@ -365,8 +365,8 @@
     "dark_stone": {
       "textures": "textures/items/dark_stone"
     },
-    "mysterious_invitation": {
-      "textures": "textures/items/mysterious_invitation"
+    "mysterious_key": {
+      "textures": "textures/items/mysterious_key"
     },
     "flare_magic_book": {
       "textures": "textures/items/flare_magic_book"
@@ -1186,6 +1186,9 @@
     },
     "bomber_bullet": {
       "textures": "textures/items/bomber_bullet"
+    },
+    "mysterious_key_debris": {
+      "textures": "textures/items/mysterious_key_debris"
     },
     "energy_core_a": {
       "textures": "textures/wb_item/technology/energy_core_a"

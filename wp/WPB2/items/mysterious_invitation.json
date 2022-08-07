@@ -3,17 +3,17 @@
   "minecraft:item": {
 	"description": {
       "category": "equipment",
-      "identifier": "dec:mysterious_invitation"
+      "identifier": "dec:mysterious_key"
     },
     "components": {
       "minecraft:creative_category": {
         "parent": "itemGroup.name.navigation"
       },
       "minecraft:display_name": {
-        "value": "item.dec:mysterious_invitation.name"
+        "value": "item.dec:mysterious_key.name"
       },
      "minecraft:icon": {
-        "texture": "mysterious_invitation"
+        "texture": "mysterious_key"
      },
       "minecraft:foil": true,
       "minecraft:stacked_by_data": false,

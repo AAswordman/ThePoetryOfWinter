@@ -17,11 +17,27 @@ export default class Vector3 {
     set x(x) { this.vector.x = x; }
     set y(y) { this.vector.y = y; }
     set z(z) { this.vector.z = z; }
-    add(vec) {
-        return new Vector3(Vector.add(this.vector, vec instanceof Vector3 ? vec.vector : vec));
+    add(x, y, z) {
+        if (x instanceof Vector3 || x instanceof Vector3) {
+            this.add(x.x, x.y, x.z);
+        }
+        else if (y !== undefined && z !== undefined) {
+            this.x += x;
+            this.y += y;
+            this.z += z;
+        }
+        return this;
     }
-    sub(vec) {
-        return new Vector3(Vector.subtract(this.vector, vec instanceof Vector3 ? vec.vector : vec));
+    sub(x, y, z) {
+        if (x instanceof Vector3 || x instanceof Vector3) {
+            this.sub(x.x, x.y, x.z);
+        }
+        else if (y !== undefined && z !== undefined) {
+            this.x -= x;
+            this.y -= y;
+            this.z -= z;
+        }
+        return this;
     }
     mul(vec) {
         return new Vector3(Vector.multiply(this.vector, vec instanceof Vector3 ? vec.vector : vec));

@@ -30,7 +30,7 @@
         },
         "run_command": {
           "command": [
-            "scoreboard players remove @a[x=~,y=~1,z=~,r=1] wbfl 1"
+            "scoreboard players remove @a[x=~,y=~1,z=~,r=1] magicpoint 1"
           ]
         }
       }

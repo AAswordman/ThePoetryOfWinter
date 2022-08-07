@@ -1,0 +1,57 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:block": {
+    "description": {
+      "identifier": "dec:enchanted_summoner"
+    },
+    "components": {
+		  "minecraft:creative_category": {
+        "group": "itemGroup.name.outside",
+				"category": "items"
+			},
+      "minecraft:block_light_absorption": 1,
+      "minecraft:block_light_emission": 0,
+      "minecraft:destroy_time": 3.0,
+      "minecraft:explosion_resistance": 100,
+      "minecraft:map_color": "#63513C",
+      "minecraft:loot": "loot_tables/empty.json",
+      "minecraft:on_interact": {
+        "event": "activate",
+        "condition": "query.get_equipped_item_name('main_hand') == 'dark_pearl'"
+      },
+      "minecraft:ticking": {
+        "looping": true,
+        "range": [
+          600,
+          1200
+        ],
+        "on_tick": {
+          "event": "minecraft:activate_naturally"
+        }
+      }
+    },
+    "events": {
+      "activate": {
+        "set_block": {
+          "block_type": "dec:enchanted_summoner_activated"
+        },
+        "run_command": {
+          "command": [
+            "playsound conduit.activate @a ~~~"
+          ]
+        },
+        "decrement_stack": {}
+      },
+      "activate_naturally": {
+        "set_block": {
+          "block_type": "dec:enchanted_summoner_activated"
+        },
+        "run_command": {
+          "command": [
+            "playsound conduit.activate @a ~~~"
+          ]
+        }
+      }
+    }
+  }
+}

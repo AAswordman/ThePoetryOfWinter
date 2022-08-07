@@ -28,7 +28,16 @@
         "run_command": {
           "command": [
             "tellraw @a { \"rawtext\" : [ { \"translate\" : \"text.dec:summon_leaves_golem.name\" } ] }",
-            "summon dec:leaves_golem ~~1~"
+            "summon dec:leaves_golem ~~1~",
+
+            "fill ~-2~~-2 ~-1~~2 air 0 destroy",
+            "fill ~~~1 ~2~~2 air 0 destroy",
+            "fill ~1~~ ~2~~-2 air 0 destroy",
+            "fill ~~~-1 ~~~-2 air 0 destroy",
+
+            "fill ~-3~1~-3 ~3~1~3 air 0 destroy",
+
+            "fill ~-5~2~-5 ~5~6~5 air 0 destroy"
           ]
         },
         "decrement_stack": {}

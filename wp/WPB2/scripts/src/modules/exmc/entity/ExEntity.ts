@@ -98,6 +98,10 @@ export default class ExEntity implements ExCommandRunner, ExTagManager {
 
 	}
 
+	getViewVector(){
+		return new Vector3(this.entity.viewVector);
+	}
+
 	hasComponent(name: string) {
 		return this._entity.hasComponent(name);
 	}

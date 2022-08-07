@@ -16,8 +16,7 @@
         "texture": "dark_pearl"
       },
       "minecraft:foil": true,
-      "minecraft:stacked_by_data": false,
-      "minecraft:max_stack_size": 1
+      "minecraft:stacked_by_data": false
 	  }
   }
 }

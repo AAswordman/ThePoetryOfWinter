@@ -13,7 +13,7 @@
       "minecraft:block_light_emission": 0,
       "minecraft:destroy_time": 3.0,
       "minecraft:explosion_resistance": 100,
-      "minecraft:map_color": "#BBDBFF",
+      "minecraft:map_color": "#081908",
       "minecraft:loot": "loot_tables/empty.json",
       "minecraft:on_interact": {
         "event": "activate",

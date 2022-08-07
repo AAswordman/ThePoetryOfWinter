@@ -79,6 +79,9 @@ export default class ExEntity {
     setPosition(position, dimension = this.entity.dimension) {
         this.entity.teleport(position.getLocation(), dimension, this.entity.rotation.x, this.entity.rotation.y);
     }
+    getViewVector() {
+        return new Vector3(this.entity.viewVector);
+    }
     hasComponent(name) {
         return this._entity.hasComponent(name);
     }
