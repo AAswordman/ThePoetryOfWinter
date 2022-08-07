@@ -148,15 +148,15 @@
         },
         "down": {
           "on_entry":[
-              "/execute @e[rm=3,c=15] ~ ~ ~ summon wb:originflame_down ~ ~ ~"
+              "/execute positioned as @e[rm=3,c=15] run summon wb:originflame_down ~ ~ ~"
               ],
           "transitions": [ { "default": "query.variant != 2||!query.has_target" } ]
         },
         "lyattack": {
           "on_entry":[
               "/scoreboard players add @s wbqywpg 1",
-              "/execute @s[scores={wbqywpg=3..}] ~ ~ ~ execute @e[type=!wb:originking,r=128,type=!wb:damage_n] ~ ~ ~ summon wb:damage_n ~ ~ ~",
-              "/execute @s[scores={wbqywpg=4..}] ~ ~ ~ kill @e[type=!wb:originking,type=!minecraft:item,type=!wb:damage_n,r=128]"
+              "/execute positioned as @s[scores={wbqywpg=3..}] run execute positioned as @e[type=!wb:originking,r=128,type=!wb:damage_n] run summon wb:damage_n ~ ~ ~",
+              "/execute positioned as @s[scores={wbqywpg=4..}] run kill @e[type=!wb:originking,type=!minecraft:item,type=!wb:damage_n,r=128]"
               ],
           "transitions": [ 
               { "default": "query.variant != 9" },
@@ -168,13 +168,13 @@
             ]
         },
         "lybrokea":{
-            "on_entry":["/execute @e[c=20] ~ ~ ~ summon wb:originking_black ~ ~ ~","/time set noon"],
+            "on_entry":["/execute positioned as @e[c=20] run summon wb:originking_black ~ ~ ~","/time set noon"],
             "transitions":[
                 { "default":"!query.is_charged || query.variant != 9 || variable.origin_random_element != 0" }
             ]
         },
         "lybrokeb":{
-            "on_entry":["/summon wb:originking_black ~ ~ ~","/execute @e ~ ~ ~ spreadplayers ~ ~ 1 3 @s"],
+            "on_entry":["/summon wb:originking_black ~ ~ ~","/execute positioned as @e run spreadplayers ~ ~ 1 3 @s"],
             "transitions":[
                 { "default":"!query.is_charged || query.variant != 9 || variable.origin_random_element != 1" }
             ]
@@ -198,7 +198,7 @@
             ]
         },
         "lyattacka":{
-            "on_entry":["/effect @e[r=64,type=!wb:originking] blindness 3 255 true","/execute @e[r=64,type=!wb:originking] ~ ~ ~ summon minecraft:lightning_bolt ~ ~ ~","/effect @e[r=64,type=!wb:originking] weakness 3 255 true"],
+            "on_entry":["/effect @e[r=64,type=!wb:originking] blindness 3 255 true","/execute positioned as @e[r=64,type=!wb:originking] run summon minecraft:lightning_bolt ~ ~ ~","/effect @e[r=64,type=!wb:originking] weakness 3 255 true"],
             "transitions":[
                 { "lyattack":"!query.is_delayed_attacking || query.variant != 9 || variable.origin_random_element != 0" }
             ]
@@ -210,28 +210,28 @@
             ]
         },
         "lyattackc":{
-            "on_entry":["/particle wb:end_snow_par ~ ~ ~","/execute @e[r=64,type=!minecraft:item,type=!wb:damage_n] ~ ~ ~ fill ~+1 ~-1 ~+1 ~-1 ~-1 ~-1 ice","/execute @e[type=!minecraft:item,type=!wb:damage_n,r=20,type=!wb:originking] ~ ~ ~ fill ~+1 ~-1 ~+1 ~-1 ~+3 ~-1 ice 0 hollow"],
+            "on_entry":["/particle wb:end_snow_par ~ ~ ~","/execute positioned as @e[r=64,type=!minecraft:item,type=!wb:damage_n] run fill ~+1 ~-1 ~+1 ~-1 ~-1 ~-1 ice","/execute positioned as @e[type=!minecraft:item,type=!wb:damage_n,r=20,type=!wb:originking] run fill ~+1 ~-1 ~+1 ~-1 ~+3 ~-1 ice 0 hollow"],
             "transitions":[
                 { "lyattack":"!query.is_delayed_attacking || query.variant != 9 || variable.origin_random_element != 2" }
             ]
         },
         "lyattackd":{
-            "on_entry":["/particle wb:end_fire_par ~ ~ ~","/weather clear","/execute @e[r=64] ~ ~ ~ summon wb:endblock_magma ~ ~ ~","/fill ~+50 ~ +50 ~-50 ~+1 ~-50 fire 0 keep"],
+            "on_entry":["/particle wb:end_fire_par ~ ~ ~","/weather clear","/execute positioned as @e[r=64] run summon wb:endblock_magma ~ ~ ~","/fill ~+50 ~ +50 ~-50 ~+1 ~-50 fire 0 keep"],
             "transitions":[
                 { "lyattack":"!query.is_delayed_attacking || query.variant != 9 || variable.origin_random_element != 3" }
             ]
         },
         "lyattacke":{
-            "on_entry":["/execute @e ~ ~+3 ~ summon wb:endblock_dirt ~ ~ ~","/effect @e[type=!wb:originking] levitation 2 12 true"],
+            "on_entry":["/execute positioned as @e run +3 ~ summon wb:endblock_dirt ~ ~ ~","/effect @e[type=!wb:originking] levitation 2 12 true"],
             "transitions":[
                 { "lyattack":"!query.is_delayed_attacking || query.variant != 9 || variable.origin_random_element != 4" }
             ]
         },
         "rise": {
           "on_entry":[
-              "/execute @e[c=30] ~ ~ ~ particle wb:originflame_rise ~ ~ ~",
+              "/execute positioned as @e[c=30] run particle wb:originflame_rise ~ ~ ~",
               "/effect @e[rm=3] levitation 2 50 true",
-              "/execute @e[rm=3,type=!item] ~ ~ ~ summon wb:originflame_through ~ ~ ~"
+              "/execute positioned as @e[rm=3,type=!item] run summon wb:originflame_through ~ ~ ~"
               ],
           "transitions": [ { "default": "query.variant != 3||!query.has_target" } ]
         },
@@ -244,9 +244,9 @@
         "attackx": {
           "on_entry":[
             "/gamemode survival @a[r=5]",
-            "/execute @e[type=wb:originking_block,r=8] ~ ~ ~ effect @e[type=wb:originking] instant_health 2 5 true",
+            "/execute positioned as @e[type=wb:originking_block,r=8] run effect @e[type=wb:originking] instant_health 2 5 true",
             "/kill @e[r=5,type=!wb:originking]",
-            "/execute @e[type=minecraft:item] ~ ~ ~ kill @s",
+            "/execute positioned as @e[type=minecraft:item] run kill @s",
             "/summon wb:originking_block ~ ~ ~"
           ],
           "transitions": [ { "default": "query.variant != 5||!query.has_target" },{ "attack": "query.variant == 5&&query.has_target" } ]
@@ -260,8 +260,8 @@
         "exattack": {
            "on_entry":[
               "/scoreboard players add @s wbqywpg 1",
-              "/execute @s[scores={wbqywpg=3..}] ~ ~ ~ execute @e[type=!wb:originking,r=128,type=!wb:damage_n] ~ ~ ~ summon wb:damage_n ~ ~ ~",
-              "/execute @s[scores={wbqywpg=4..}] ~ ~ ~ execute @e[type=!wb:originking,type=!minecraft:item,type=!wb:damage_n,r=128] ~ ~ ~ summon minecraft:lightning_bolt ~ ~ ~"
+              "/execute positioned as @s[scores={wbqywpg=3..}] run execute positioned as @e[type=!wb:originking,r=128,type=!wb:damage_n] run summon wb:damage_n ~ ~ ~",
+              "/execute positioned as @s[scores={wbqywpg=4..}] run execute positioned as @e[type=!wb:originking,type=!minecraft:item,type=!wb:damage_n,r=128] run summon minecraft:lightning_bolt ~ ~ ~"
               ],
           "transitions": [ { "default": "query.variant != 7" },
           { "exattackx": "query.variant == 7&&query.is_delayed_attacking" } ]
@@ -272,8 +272,8 @@
         "endattack": {
            "on_entry":[
               "/scoreboard players add @s wbqywpg 1",
-              "/execute @s[scores={wbqywpg=2..}] ~ ~ ~ execute @e[type=!wb:originking,r=128,type=!wb:damage_n,type=!wb:end_energy,type=!wb:originking_endphalanx] ~ ~ ~ summon wb:damage_n ~ ~ ~",
-              "/execute @s[scores={wbqywpg=3..}] ~ ~ ~ kill @e[type=!wb:originking,type=!minecraft:item,type=!wb:damage_n,r=128,type=!wb:end_energy,type=!wb:originking_endphalanx]",
+              "/execute positioned as @s[scores={wbqywpg=2..}] run execute positioned as @e[type=!wb:originking,r=128,type=!wb:damage_n,type=!wb:end_energy,type=!wb:originking_endphalanx] run summon wb:damage_n ~ ~ ~",
+              "/execute positioned as @s[scores={wbqywpg=3..}] run kill @e[type=!wb:originking,type=!minecraft:item,type=!wb:damage_n,r=128,type=!wb:end_energy,type=!wb:originking_endphalanx]",
               "/summon wb:originking_endphalanx ~ ~ ~"
               ],
           "transitions": [ { "default": "query.variant != 13" },

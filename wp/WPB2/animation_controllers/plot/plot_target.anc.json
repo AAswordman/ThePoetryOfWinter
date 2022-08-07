@@ -243,10 +243,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.0.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120008 101 120017 plot2",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.0.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120008 101 120017 plot2",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"qpmqctayltx": {
@@ -269,10 +269,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.1.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120008 101 120024 plot3",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.1.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120008 101 120024 plot3",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"psxsksjflux": {
@@ -295,10 +295,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.2.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120008 101 120031 plot4",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.2.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120008 101 120031 plot4",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"bluzmwtqibx": {
@@ -321,10 +321,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.3.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120008 101 120039 plot5",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.3.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120008 101 120039 plot5",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"vjswfrpicnx": {
@@ -347,10 +347,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.4.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120008 101 120045 plot6",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.4.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120008 101 120045 plot6",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"phuhqdofupx": {
@@ -373,10 +373,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.5.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120008 101 120053 plot7",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.5.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120008 101 120053 plot7",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"jdalhtbknqx": {
@@ -399,10 +399,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.6.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120010 101 120069 plot8",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.6.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120010 101 120069 plot8",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"wmsseoxiamx": {
@@ -425,10 +425,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.7.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120029 101 120074 plot9",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.7.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120029 101 120074 plot9",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"fweoexnkjhx": {
@@ -451,9 +451,9 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120031 101 120085 plot10",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120031 101 120085 plot10",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"rvkourzsrkx": {
@@ -476,9 +476,9 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120030 101 120094 plot11",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120030 101 120094 plot11",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"guuflzmzipx": {
@@ -501,9 +501,9 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120040 101 120101 plot12",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120040 101 120101 plot12",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"lmdigohaqax": {
@@ -526,9 +526,9 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120040 102 120108 plot13",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120040 102 120108 plot13",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"kwuwmsgsgkx": {
@@ -551,10 +551,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.8.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120047 102 120109 plot14",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.8.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120047 102 120109 plot14",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"xfcxjwkgdlx": {
@@ -577,10 +577,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.9.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120060 102 120104 plot15",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.9.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120060 102 120104 plot15",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"dybbsskpjux": {
@@ -603,10 +603,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.10.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120060 86 120096 plot16",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.10.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120060 86 120096 plot16",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"jjqafigapkx": {
@@ -629,10 +629,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.11.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120055 86 120088 plot17",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.11.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120055 86 120088 plot17",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"nviwlnzfdlx": {
@@ -655,10 +655,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.12.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120051 86 120101 plot18",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.12.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120051 86 120101 plot18",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"fgwserhuolx": {
@@ -681,10 +681,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120042 86 120100 plot19",
-						"/execute @s[tag=wdie] ~ ~ ~ tp @a[r=14] 120046 86 120101",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120042 86 120100 plot19",
+						"/execute positioned as @s[tag=wdie] run tp @a[r=14] 120046 86 120101",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"bufwdotxemx": {
@@ -707,11 +707,11 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.13.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120034 86 120090 plot20",
-						"/execute @s[tag=wdie] ~ ~ ~ tp @a[r=14] 120036 86 120100",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.13.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120034 86 120090 plot20",
+						"/execute positioned as @s[tag=wdie] run tp @a[r=14] 120036 86 120100",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"pmnbydgmdkx": {
@@ -734,9 +734,9 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120029 86 120076 plot21",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120029 86 120076 plot21",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"qkmtanoyfcx": {
@@ -759,10 +759,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.14.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120019 86 120078 plot22",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.14.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120019 86 120078 plot22",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"poskbprdxtx": {
@@ -785,10 +785,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.15.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120013 86 120097 plot23",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.15.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120013 86 120097 plot23",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"tjzkxksfpbx": {
@@ -811,10 +811,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.16.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120011 86 120105 plot24",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.16.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120011 86 120105 plot24",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"sftrizplggx": {
@@ -837,10 +837,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.17.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120010 86 120116 plot25",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.17.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120010 86 120116 plot25",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"xylmmgvxxbx": {
@@ -863,10 +863,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.18.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120006 86 120123 plot26",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.18.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120006 86 120123 plot26",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"zfxgweupsxx": {
@@ -889,10 +889,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.19.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120006 86 120124 plot27",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.19.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120006 86 120124 plot27",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"uujgrkgzqox": {
@@ -915,10 +915,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.20.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120007 86 120126 plot28",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.20.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120007 86 120126 plot28",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"rbxqyfwtngx": {
@@ -941,10 +941,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.21.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120009 86 120126 plot29",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.21.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120009 86 120126 plot29",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"fhiiqvjfayx": {
@@ -967,11 +967,11 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.22.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120533 103 120584 plot30",
-						"/execute @s[tag=wdie] ~ ~ ~ scoreboard players set @a[r=100] wbjqbf 3",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.22.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120533 103 120584 plot30",
+						"/execute positioned as @s[tag=wdie] run scoreboard players set @a[r=100] wbjqbf 3",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"sxtsblprnyx": {
@@ -994,10 +994,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.23.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120533 102 120573 plot31",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.23.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120533 102 120573 plot31",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie",
 						"/title @a[r=100] title 世界边境 序幕",
 						"/title @a[r=100] subtitle §baa剑侠 制作"
 					]
@@ -1022,10 +1022,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.24.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120543 102 120573 plot32",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.24.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120543 102 120573 plot32",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"jarlkksbtbx": {
@@ -1048,10 +1048,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.25.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120543 102 120565 plot33",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.25.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120543 102 120565 plot33",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"pvmjfrfbvcx": {
@@ -1074,10 +1074,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.26.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120536 102 120565 plot34",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.26.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120536 102 120565 plot34",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"zdfsexixvlx": {
@@ -1100,10 +1100,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.27.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120536 102 120559 plot35",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.27.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120536 102 120559 plot35",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"bqaouhikcox": {
@@ -1126,9 +1126,9 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120543 102 120559 plot36",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120543 102 120559 plot36",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"hyicludqdwx": {
@@ -1151,9 +1151,9 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120543 103 120553 plot37",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120543 103 120553 plot37",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"cqosqyzwxfx": {
@@ -1176,9 +1176,9 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120570 103 120553 plot38",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120570 103 120553 plot38",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"znommsbjsmx": {
@@ -1201,9 +1201,9 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120576 103 120553 plot39",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120576 103 120553 plot39",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"jlgyccjqslx": {
@@ -1226,10 +1226,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120543 103 120553 plot40",
-						"/execute @s[tag=wdie] ~ ~ ~ summon xxxxx 120579 103 120553",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120543 103 120553 plot40",
+						"/execute positioned as @s[tag=wdie] run summon xxxxx 120579 103 120553",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"eaxxgfbtftx": {
@@ -1252,9 +1252,9 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120543 103 120544 plot41",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120543 103 120544 plot41",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"ietnjqbxxex": {
@@ -1277,9 +1277,9 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120554 104 120544 plot42",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120554 104 120544 plot42",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"xptksapuczx": {
@@ -1302,9 +1302,9 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120554 104 120527 plot43",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120554 104 120527 plot43",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"wfkveqcmwqx": {
@@ -1327,9 +1327,9 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120543 104 120527 plot44",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120543 104 120527 plot44",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"lucrzprpanx": {
@@ -1352,9 +1352,9 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120543 103 120518 plot45",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120543 103 120518 plot45",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"oerychdlvix": {
@@ -1377,9 +1377,9 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120531 102 120518 plot46",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120531 102 120518 plot46",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"yorthgxaaxx": {
@@ -1402,9 +1402,9 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120531 102 120508 plot47",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120531 102 120508 plot47",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"ttmxcweyzhx": {
@@ -1427,9 +1427,9 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120556 104 120508 plot48",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120556 104 120508 plot48",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"hvglsoyurlx": {
@@ -1452,11 +1452,11 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.28.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120581 102 120507 plot49",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:magic_spider_a 120581 102 120508",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.28.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120581 102 120507 plot49",
+						"/execute positioned as @s[tag=wdie] run summon wb:magic_spider_a 120581 102 120508",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"bpabznmtdjx": {
@@ -1479,10 +1479,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.29.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120582 102 120514 plot50",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.29.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120582 102 120514 plot50",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie",
 						"/tp @e[type=wb:magic_spider_a] ~~~ facing @p"
 					]
 				},
@@ -1506,10 +1506,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.30.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120582 103 120520 plot51",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.30.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120582 103 120520 plot51",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie",
 						"/tp @e[type=wb:magic_spider_a] ~~~ facing @p"
 					]
 				},
@@ -1533,10 +1533,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.31.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120582 103 120528 plot52",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.31.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120582 103 120528 plot52",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie",
 						"/tp @e[type=wb:magic_spider_a] ~~~ facing @p"
 					]
 				},
@@ -1560,10 +1560,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.32.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120582 104 120534 plot53",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.32.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120582 104 120534 plot53",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie",
 						"/tp @e[type=wb:magic_spider_a] ~~~ facing @p"
 					]
 				},
@@ -1587,10 +1587,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.33.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120594 102 120533 plot54",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.33.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120594 102 120533 plot54",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie",
 						"/tp @e[type=wb:magic_spider_a] ~~~ facing @p"
 					]
 				},
@@ -1614,10 +1614,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.34.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120594 102 120542 plot55",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.34.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120594 102 120542 plot55",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie",
 						"/tp @e[type=wb:magic_spider_a] ~~~ facing @p"
 					]
 				},
@@ -1641,10 +1641,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.35.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120593 103 120556 plot56",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.35.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120593 103 120556 plot56",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie",
 						"/tp @e[type=wb:magic_spider_a] ~~~ facing @p"
 					]
 				},
@@ -1668,10 +1668,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.36.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120593 103 120568 plot57",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.36.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120593 103 120568 plot57",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie",
 						"/tp @e[type=wb:magic_spider_a] ~~~ facing @p"
 					]
 				},
@@ -1695,10 +1695,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.37.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120618 103 120569 plot58",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.37.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120618 103 120569 plot58",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie",
 						"/tp @e[type=wb:magic_spider_a] ~~~ facing @p"
 					]
 				},
@@ -1722,10 +1722,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.38.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120636 103 120569 plot59",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.38.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120636 103 120569 plot59",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie",
 						"/tp @e[type=wb:magic_spider_a] ~~~ facing @p"
 					]
 				},
@@ -1749,10 +1749,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.39.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120651 104 120564 plot60",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.39.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120651 104 120564 plot60",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie",
 						"/tp @e[type=wb:magic_spider_a] ~~~ facing @p"
 					]
 				},
@@ -1776,10 +1776,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.40.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120661 104 120564 plot61",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.40.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120661 104 120564 plot61",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie",
 						"/tp @e[type=wb:magic_spider_a] ~~~ facing @p"
 					]
 				},
@@ -1803,11 +1803,11 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.41.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.42.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120671 104 120559 plot62",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.41.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.42.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120671 104 120559 plot62",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie",
 						"/tp @e[type=wb:magic_spider_a] ~~~ facing @p"
 					]
 				},
@@ -1831,10 +1831,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.43.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120671 104 120554 plot63",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.43.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120671 104 120554 plot63",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie",
 						"/tp @e[type=wb:magic_spider_a] ~~~ facing @p"
 					]
 				},
@@ -1858,10 +1858,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.44.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120671 104 120549 plot64",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.44.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120671 104 120549 plot64",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie",
 						"/tp @e[type=wb:magic_spider_a] ~~~ facing @p"
 					]
 				},
@@ -1885,11 +1885,11 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.45.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.46.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120671 104 120544 plot65",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.45.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.46.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120671 104 120544 plot65",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie",
 						"/tp @e[type=wb:magic_spider_a] ~~~ facing @p"
 					]
 				},
@@ -1913,10 +1913,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.47.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120671 104 120539 plot66",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.47.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120671 104 120539 plot66",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie",
 						"/tp @e[type=wb:magic_spider_a] ~~~ facing @p"
 					]
 				},
@@ -1940,10 +1940,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.48.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ scoreboard players set @a[r=100] wbjqbf 4",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.48.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run scoreboard players set @a[r=100] wbjqbf 4",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"jadhkqehtcx": {
@@ -1966,10 +1966,10 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.49.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120665 104 120528 plot68",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.49.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120665 104 120528 plot68",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"cygorfabxgx": {
@@ -1992,11 +1992,11 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.50.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.51.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120653 104 120528 plot69",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.50.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.51.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120653 104 120528 plot69",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"qbunszmhzpx": {
@@ -2019,12 +2019,12 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.52.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120653 104 120528 plot70",
-						"/execute @s[tag=wdie] ~ ~ ~ tp @e[type=wb:magic_spider_a] ~ ~-50 ~",
-						"/execute @s[tag=wdie] ~ ~ ~ kill @e[type=wb:magic_spider_a]",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.52.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120653 104 120528 plot70",
+						"/execute positioned as @s[tag=wdie] run tp @e[type=wb:magic_spider_a] ~ ~-50 ~",
+						"/execute positioned as @s[tag=wdie] run kill @e[type=wb:magic_spider_a]",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"fwwyetjifgx": {
@@ -2047,12 +2047,12 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.53.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.54.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.55.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120644 103 120528 plot71",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.53.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.54.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.55.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 120644 103 120528 plot71",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"augmnyiwiax": {
@@ -2075,12 +2075,12 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.56.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 9999999 99999 99 plot72",
-						"/execute @s[tag=wdie] ~ ~ ~ tp @a[r=100] 120623 102 120540",
-						"/execute @s[tag=wdie] ~ ~ ~ scoreboard players set @a[r=100] wbjqbf 6",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.56.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 9999999 99999 99 plot72",
+						"/execute positioned as @s[tag=wdie] run tp @a[r=100] 120623 102 120540",
+						"/execute positioned as @s[tag=wdie] run scoreboard players set @a[r=100] wbjqbf 6",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie"
 					]
 				},
 				"hxlhjttidix": {
@@ -2103,42 +2103,42 @@
 						}
 					],
 					"on_entry": [
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.57.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.58.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.59.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.60.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.61.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.62.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.63.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.64.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.65.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.66.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.67.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.68.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.69.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.70.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.71.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.72.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.73.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.74.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.75.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.76.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.77.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.78.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.79.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.80.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.81.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.82.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.83.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.84.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.85.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.86.name\"}]}",
-						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
-						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 我是永远不可能替换的坐标 plot1",
-						"/execute @s[tag=wdie] ~ ~ ~ scoreboard players set @a[r=100] wbjqbf 1",
-						"/execute @s[tag=wdie] ~ ~ ~ scoreboard players set @a[r=100] wbjqzj 2",
-						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie",
-						"/execute @s[tag=wdie] ~~~ tp @a[r=200] 120613 102 120511"
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.57.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.58.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.59.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.60.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.61.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.62.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.63.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.64.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.65.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.66.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.67.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.68.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.69.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.70.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.71.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.72.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.73.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.74.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.75.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.76.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.77.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.78.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.79.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.80.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.81.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.82.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.83.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.84.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.85.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tellraw @a[r=200] {\"rawtext\":[{\"translate\":\"tell.plot1x.86.name\"}]}",
+						"/execute positioned as @p[r=2,tag=wbdwdz] run tag @e[r=3,type=wb:plot_target] add wdie",
+						"/execute positioned as @s[tag=wdie] run summon wb:plot_target 我是永远不可能替换的坐标 plot1",
+						"/execute positioned as @s[tag=wdie] run scoreboard players set @a[r=100] wbjqbf 1",
+						"/execute positioned as @s[tag=wdie] run scoreboard players set @a[r=100] wbjqzj 2",
+						"/execute positioned as @s[tag=wdie] run tag @s add plotdie",
+						"/execute positioned as @s[tag=wdie] run tp @a[r=200] 120613 102 120511"
 					]
 				},
 				"vwcpmwgqgkx": {

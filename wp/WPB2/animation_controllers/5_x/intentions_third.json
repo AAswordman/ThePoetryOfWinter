@@ -147,7 +147,7 @@
         },
         "aa": {
           "on_entry": [
-            "/execute @e[r=6,c=1,type=!wb:intentions_third] ~ ~ ~ tp @e[r=6,type=wb:intentions_third,c=1] ^ ^+1.8 ^-2 facing @s"
+            "/execute positioned as @e[r=6,c=1,type=!wb:intentions_third] run tp @e[r=6,type=wb:intentions_third,c=1] ^ ^+1.8 ^-2 facing @s"
           ],
           "transitions": [
             {
@@ -170,7 +170,7 @@
         },
         "bb": {
           "on_entry": [
-            "/execute @e[r=6,c=1,type=!wb:intentions_third] ~ ~ ~ tp @e[r=6,type=wb:intentions_third,c=1] ^ ^+1.8 ^+2 facing @s"
+            "/execute positioned as @e[r=6,c=1,type=!wb:intentions_third] run tp @e[r=6,type=wb:intentions_third,c=1] ^ ^+1.8 ^+2 facing @s"
           ],
           "transitions": [
             {
@@ -193,7 +193,7 @@
         },
         "cc": {
           "on_entry": [
-            "/execute @e[r=6,c=1,type=!wb:intentions_third] ~ ~ ~ tp @e[r=6,type=wb:intentions_third,c=1] ^ ^+1.8 ^-2 facing @s"
+            "/execute positioned as @e[r=6,c=1,type=!wb:intentions_third] run tp @e[r=6,type=wb:intentions_third,c=1] ^ ^+1.8 ^-2 facing @s"
           ],
           "transitions": [
             {

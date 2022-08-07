@@ -39,7 +39,7 @@
       "states": {
         "default": {
           "on_entry": [
-            "/execute @s[tag=wbflx] ~ ~ ~ function magic/text3",
+            "/execute positioned as @s[tag=wbflx] run function magic/text3",
             "/tag @s remove wbgjx",
             "/scoreboard players set @s wbxlgj 0"
           ],
@@ -51,7 +51,7 @@
         },
         "base": {
           "on_entry": [
-            "/execute @s[tag=wbflx] ~ ~ ~ function magic/text3"
+            "/execute positioned as @s[tag=wbflx] run function magic/text3"
           ],
           "transitions": [
             {
@@ -68,7 +68,7 @@
         },
         "basex": {
           "on_entry": [
-            "/execute @s[tag=wbgjx] ~ ~ ~ function magic/text2"
+            "/execute positioned as @s[tag=wbgjx] run function magic/text2"
           ],
           "transitions": [
             {
@@ -78,7 +78,7 @@
         },
         "basexx": {
           "on_entry": [
-            "/execute @s[tag=wbgjx] ~ ~ ~ function magic/text2"
+            "/execute positioned as @s[tag=wbgjx] run function magic/text2"
           ],
           "transitions": [
             {
@@ -106,10 +106,10 @@
         },
         "particle_storea": {
           "on_entry": [
-            "/execute @s[scores={wblzxz=1}] ~ ~ ~ function particle/stop1",
-            "/execute @s[scores={wblzxz=2}] ~ ~ ~ function particle/stop2",
-            "/execute @s[scores={wblzxz=3}] ~ ~ ~ function particle/stop3",
-            "/execute @s[scores={wblzxz=4}] ~ ~ ~ function particle/stop4"
+            "/execute positioned as @s[scores={wblzxz=1}] run function particle/stop1",
+            "/execute positioned as @s[scores={wblzxz=2}] run function particle/stop2",
+            "/execute positioned as @s[scores={wblzxz=3}] run function particle/stop3",
+            "/execute positioned as @s[scores={wblzxz=4}] run function particle/stop4"
           ],
           "transitions": [
             {

@@ -4,12 +4,12 @@
       "animation.warden_sword": {
         "timeline": {
             "0.5": [
-                "/execute @s[scores={wbfl=20..}] ~~~ playsound mob.warden.roar @a ~~~",
-                "/execute @s[scores={wbfl=20..}] ~~~ effect @s blindness 10 0 true",
-                "/execute @s[scores={wbfl=20..}] ~~~ effect @s darkness 30 0 true"
+                "/execute positioned as @s[scores={wbfl=20..}] run playsound mob.warden.roar @a ~~~",
+                "/execute positioned as @s[scores={wbfl=20..}] run effect @s blindness 10 0 true",
+                "/execute positioned as @s[scores={wbfl=20..}] run effect @s darkness 30 0 true"
             ],
             "1.5": [
-                "/execute @s[scores={wbfl=20..}] ~~~ playsound mob.warden.roar @a ~~~",
+                "/execute positioned as @s[scores={wbfl=20..}] run playsound mob.warden.roar @a ~~~",
                 "/effect @s[scores={wbfl=20..}] strength 8 0 true",
                 "/effect @s[scores={wbfl=20..}] speed 8 1 true",
                 "/effect @s[scores={wbfl=20..}] resistance 8 1 true",
