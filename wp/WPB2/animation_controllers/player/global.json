@@ -12,9 +12,9 @@
         },
         "die": {
           "on_entry":[
-              "/execute @s[tag=!wbdie] ~~~ summon dec:gravestone 墓碑 ~~~",
-              "/execute @s[tag=!wbdie,tag=!diemode] ~~~ summon dec:player_ghost 鬼魂 ~~~",
-              "/execute @s[tag=!wbdie,tag=diemode] ~~~ summon dec:vengeful_ghost 怨魂 ~~~",
+              "/execute positioned as @s[tag=!wbdie] run summon dec:gravestone 墓碑 ~~~",
+              "/execute positioned as @s[tag=!wbdie,tag=!diemode] run summon dec:player_ghost 鬼魂 ~~~",
+              "/execute positioned as @s[tag=!wbdie,tag=diemode] run summon dec:vengeful_ghost 怨魂 ~~~",
               "/tag @s add alreadydie",
               "/tag @s add wbdie",
               "/scoreboard players set @s wbwjswjs 18"

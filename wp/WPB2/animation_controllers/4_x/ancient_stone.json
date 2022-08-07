@@ -27,7 +27,7 @@
         },
         "01": {
           "on_entry": [
-            "/execute @p ~~~ function 4_x/cannon_ancient_stone_a",
+            "/execute positioned as @p run function 4_x/cannon_ancient_stone_a",
             "variable.use_time=query.life_time;"
           ],
           "transitions": [
@@ -38,7 +38,7 @@
         },
         "02": {
           "on_entry": [
-            "/execute @p ~~~ function 4_x/cannon_ancient_stone_b",
+            "/execute positioned as @p run function 4_x/cannon_ancient_stone_b",
             "variable.use_time=query.life_time;"
           ],
           "transitions": [
@@ -49,7 +49,7 @@
         },
         "03": {
           "on_entry": [
-            "/execute @p ~~~ function 4_x/cannon_ancient_stone_c",
+            "/execute positioned as @p run function 4_x/cannon_ancient_stone_c",
             "variable.use_time=query.life_time;"
           ],
           "transitions": [
@@ -60,7 +60,7 @@
         },
         "04": {
           "on_entry": [
-            "/execute @p ~~~ function 4_x/cannon_ancient_stone_d",
+            "/execute positioned as @p run function 4_x/cannon_ancient_stone_d",
             "variable.use_time=query.life_time;"
           ],
           "transitions": [
@@ -71,7 +71,7 @@
         },
         "05": {
           "on_entry": [
-            "/execute @p ~~~ function 4_x/cannon_ancient_stone_e",
+            "/execute positioned as @p run function 4_x/cannon_ancient_stone_e",
             "variable.use_time=query.life_time;"
           ],
           "transitions": [
@@ -140,7 +140,7 @@
         "shootx": {
           "on_entry": [
             "/function base/lightning",
-            "/execute @e[type=minecraft:item] ~ ~ ~ summon minecraft:lightning ~ ~ ~",
+            "/execute positioned as @e[type=minecraft:item] run summon minecraft:lightning ~ ~ ~",
             "/function base/magmablock2",
             "/title @a[r=32] title §d电光石火"
           ],

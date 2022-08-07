@@ -27,12 +27,12 @@
             "/tag @e[type=skeleton,r=100] add radiate",
             "/effect @e[r=40,type=dec:radiate_creeper] resistance 5 5",
             "/particle minecraft:knockback_roar_particle ~~~",
-            "/execute @e[type=creeper,tag=radiate] ~~~ summon dec:radiate_creeper",
-            "/execute @e[type=enderman,tag=radiate] ~~~ summon dec:radiate_enderman",
-            "/execute @e[type=spider,tag=radiate] ~~~ summon dec:radiate_spider",
-            "/execute @e[type=cave_spider,tag=radiate] ~~~ summon dec:radiate_spider",
-            "/execute @e[type=skeleton,tag=radiate] ~~~ summon dec:radiate_skeleton",
-            "/execute @e[type=!player,tag=radiate] ~~~ tp ~ -41 ~"
+            "/execute positioned as @e[type=creeper,tag=radiate] run summon dec:radiate_creeper",
+            "/execute positioned as @e[type=enderman,tag=radiate] run summon dec:radiate_enderman",
+            "/execute positioned as @e[type=spider,tag=radiate] run summon dec:radiate_spider",
+            "/execute positioned as @e[type=cave_spider,tag=radiate] run summon dec:radiate_spider",
+            "/execute positioned as @e[type=skeleton,tag=radiate] run summon dec:radiate_skeleton",
+            "/execute positioned as @e[type=!player,tag=radiate] run tp ~ -41 ~"
           ]
         }
       }

@@ -350,7 +350,7 @@
       "attack_tp": {
         "run_command": {
           "command": [
-            "execute @p ~~~ tp @e[r=128,type=wb:headless_guard] ~ ~+6 ~"
+            "execute positioned as @p run tp @e[r=128,type=wb:headless_guard] ~ ~+6 ~"
           ],
           "target": "self"
         },

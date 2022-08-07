@@ -10,8 +10,8 @@
         },
         "oo": {
           "on_entry":[
-              "/execute @p[r=2] ~ ~ ~ tp @e[type=wb:sweep_damage1,r=3] ~ ~ ~ facing ^ ^+0.7 ^+3",
-              "/execute @p[r=2] ~ ~ ~ tp @e[type=wb:sweep_damage2,r=3] ~ ~ ~ facing ^ ^+0.7 ^+3"
+              "/execute positioned as @p[r=2] run tp @e[type=wb:sweep_damage1,r=3] ~ ~ ~ facing ^ ^+0.7 ^+3",
+              "/execute positioned as @p[r=2] run tp @e[type=wb:sweep_damage2,r=3] ~ ~ ~ facing ^ ^+0.7 ^+3"
            ],
            "transitions":[
                { "o":"(1.0)" }
