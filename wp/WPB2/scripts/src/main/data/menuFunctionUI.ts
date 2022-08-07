@@ -348,7 +348,7 @@ export default {
 									.button1("是", () => {
 										client.sayTo("§b传送成功");
 										client.sayTo("§b传送成功", i[0]);
-										client.exPlayer.setPosition(p.getPosition());
+										client.exPlayer.setPosition(p.getPosition(),p.getDimension());
 									})
 									.button2("否", () => {
 										client.sayTo("§b对方拒绝了你的请求");
@@ -386,7 +386,7 @@ export default {
 									.button1("是", () => {
 										client.sayTo("§b传送成功");
 										client.sayTo("§b传送成功", i[0]);
-										p.setPosition(client.exPlayer.getPosition());
+										p.setPosition(client.exPlayer.getPosition(),client.exPlayer.getDimension());
 									})
 									.button2("否", () => {
 										client.sayTo("§b对方拒绝了你的邀请");

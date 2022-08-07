@@ -10,7 +10,7 @@ import PomData from "./cache/PomData.js";
 import TimeLoopTask from "../modules/exmc/utils/TimeLoopTask.js";
 import TalentData, { Talent, Occupation } from "./cache/TalentData.js";
 import ExColorLoreUtil from "../modules/exmc/item/ExColorLoreUtil.js";
-import ExEntity from '../modules/exmc/entity/ExEntity';
+import ExEntity from '../modules/exmc/entity/ExEntity.js';
 import MathUtil from "../modules/exmc/utils/MathUtil.js";
 import ExItem from "../modules/exmc/item/ExItem.js";
 import Vector3 from "../modules/exmc/utils/Vector3.js";
@@ -22,6 +22,7 @@ export default class PomClient extends ExGameClient {
         super(server, id, player);
         this.strikeSkill = true;
         this.skillLoop = new TimeLoopTask(this.getEvents(), () => {
+            var _a;
             if (this.data.talent.occupation.id === Occupation.ASSASSIN.id)
                 this.strikeSkill = true;
             if (this.data.talent.occupation.id === Occupation.PRIEST.id) {
@@ -37,7 +38,7 @@ export default class PomClient extends ExGameClient {
                         player = exp;
                     }
                 }
-                player.addHealth(this, 20);
+                player.addHealth(this, ((_a = this.talentRes.get(Talent.REGENERATE)) !== null && _a !== void 0 ? _a : 0));
             }
         }).delay(10000);
         this.wbflLooper = new TimeLoopTask(this.getEvents(), () => {
@@ -57,7 +58,6 @@ export default class PomClient extends ExGameClient {
         });
         this.looper.delay(10000);
         this.looper.start();
-        this.wbflLooper.start();
         this.data = this.cache.get(new PomData());
         if (this.data.talent.occupation.id === Occupation.PRIEST.id)
             this.skillLoop.start();
@@ -124,6 +124,7 @@ export default class PomClient extends ExGameClient {
         });
         this.getEvents().exEvents.itemOnHandChange.subscribe((e) => {
             var _a, _b, _c, _d, _e;
+            const bag = this.exPlayer.getBag();
             if (e.afterItem) {
                 let lore = new ExColorLoreUtil(ExItem.getInstance(e.afterItem));
                 if (lore.search("enchants") !== null) {
@@ -136,7 +137,7 @@ export default class PomClient extends ExGameClient {
                         catch (e) {
                         }
                     }
-                    let item = this.exPlayer.getBag().getItemOnHand();
+                    let item = bag.getItemOnHand();
                     if (item != null) {
                         lore = new ExColorLoreUtil(new ExItem(item));
                         lore.delete("enchants");
@@ -144,11 +145,11 @@ export default class PomClient extends ExGameClient {
                     }
                 }
             }
-            const nitem = this.exPlayer.getBag().getItemOnHand();
+            const nitem = bag.getItemOnHand();
             if (nitem && isEquipment(nitem.id)) {
                 const lore = new ExColorLoreUtil(nitem);
                 TalentData.calculateTalentToLore(this.data.talent, ExItem.getInstance(nitem));
-                this.exPlayer.getBag().setItem(this.exPlayer.selectedSlot, nitem);
+                bag.setItem(this.exPlayer.selectedSlot, nitem);
                 let maxSingleDamage = parseFloat((_a = lore.getValueUseMap("total", lang.maxSingleDamage)) !== null && _a !== void 0 ? _a : "0");
                 let maxSecondaryDamage = parseFloat((_b = lore.getValueUseMap("total", lang.maxSecondaryDamage)) !== null && _b !== void 0 ? _b : "0");
                 let damage = 0;
@@ -158,11 +159,21 @@ export default class PomClient extends ExGameClient {
                 };
                 (_c = this.equiTotalTask) === null || _c === void 0 ? void 0 : _c.stop();
                 (this.equiTotalTask = new TimeLoopTask(this.getEvents(), () => {
+                    var _a, _b, _c;
+                    let shouldUpstate = false;
                     maxSecondaryDamage = Math.max(maxSecondaryDamage, damage / 5);
                     damage = 0;
-                    lore.setValueUseMap("total", lang.maxSingleDamage, maxSingleDamage + "");
-                    lore.setValueUseMap("total", lang.maxSecondaryDamage, maxSecondaryDamage + "");
-                    this.exPlayer.getBag().setItem(this.exPlayer.selectedSlot, nitem);
+                    if (((_a = lore.getValueUseMap("total", lang.maxSingleDamage)) !== null && _a !== void 0 ? _a : "0") !== maxSingleDamage + "") {
+                        lore.setValueUseMap("total", lang.maxSingleDamage, maxSingleDamage + "");
+                        shouldUpstate = true;
+                    }
+                    if (((_b = lore.getValueUseMap("total", lang.maxSecondaryDamage)) !== null && _b !== void 0 ? _b : "0") !== maxSecondaryDamage + "") {
+                        lore.setValueUseMap("total", lang.maxSecondaryDamage, maxSecondaryDamage + "");
+                        shouldUpstate = true;
+                    }
+                    if (shouldUpstate && ((_c = bag.getItemOnHand()) === null || _c === void 0 ? void 0 : _c.id) === nitem.id) {
+                        bag.setItem(this.exPlayer.selectedSlot, nitem);
+                    }
                 }).delay(5000)).start(); //
             }
             else {
@@ -173,7 +184,7 @@ export default class PomClient extends ExGameClient {
         //附魔
         this.getEvents().exEvents.onceItemUseOn.subscribe((e) => {
             let pos = new Vector3(e.blockLocation);
-            let block = this.getDimension().getBlock(pos);
+            let block = this.getDimension().getBlock(pos.getBlockLocation());
             if (!block || block.id === MinecraftBlockTypes.air.id)
                 return;
             //ExGameConfig.console.log(block.id,e.item.id);
@@ -225,7 +236,7 @@ export default class PomClient extends ExGameClient {
                     this.blockTranslateData.delete(new Vector3(block).toString());
                     ExBlock.getInstance(block).transTo("wb:block_translate");
                     bag.setItem(this.exPlayer.selectedSlot, item);
-                    this.getDimension().spawnItem(exNewItem.getItem(), pos.add(new Vector3(0, 1, 0)));
+                    this.getDimension().spawnItem(exNewItem.getItem(), pos.getBlockLocation().above());
                 }
             }
         });
@@ -245,6 +256,8 @@ export default class PomClient extends ExGameClient {
     }
     onLoaded() {
         this.gameId = ExPlayer.getInstance(this.player).getScoresManager().getScore("wbldid");
+        this.wbflLooper.start();
+        this.armorCoolingLooper.start();
         this.updateTalentRes();
         if (this.player.hasTag("wbmsyh")) {
             this.player.nameTag = "§a" + this.player.nameTag;

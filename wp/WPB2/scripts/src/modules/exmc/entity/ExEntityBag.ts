@@ -1,5 +1,5 @@
 import ExEntityComponentId from './ExEntityComponentId.js';
-import ExEntity from './ExEntity';
+import ExEntity from './ExEntity.js';
 import {
     EntityInventoryComponent,
     ItemStack

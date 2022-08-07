@@ -19,4 +19,5 @@ export default function isEquipment(id: string) {
         }
 
     }
+    return false;
 }
