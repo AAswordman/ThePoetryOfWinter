@@ -1,0 +1,38 @@
+{
+	"format_version": "1.10.0",
+	"geometry.havoc_fx": {
+		"texturewidth": 256,
+		"textureheight": 256,
+		"visible_bounds_width": 202,
+		"visible_bounds_height": 40,
+		"visible_bounds_offset": [0, -14, 0],
+		"bones": [
+			{
+				"name": "all",
+				"pivot": [0, 38.81089, -0.72992],
+				"rotation": [22.5, 0, 0]
+			},
+			{
+				"name": "body",
+				"parent": "all",
+				"pivot": [0, 43.9653, 4.74062],
+				"rotation": [2.5, 0, 0]
+			},
+			{
+				"name": "laser",
+				"parent": "body",
+				"pivot": [0, 38.81089, -0.72992],
+				"rotation": [-22.5, 0, 0]
+			},
+			{
+				"name": "laser1",
+				"parent": "laser",
+				"pivot": [0.5, 44.81089, -5.72992],
+				"rotation": [17.5, 0, 0],
+				"cubes": [
+					{"origin": [-0.5, 44.81089, -1720.72992], "size": [1, 1, 1716], "uv": [0, 0]}
+				]
+			}
+		]
+	}
+}

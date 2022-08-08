@@ -4,20 +4,49 @@
     "controller.animation.takile.havoc.circuitous": {
       "states": {
         "default": {
+          "on_entry": [
+            "variable.num = 0;"
+          ],
           "transitions": [
             {
-              "attack": "query.is_delayed_attacking"
+              "start": "variable.num == 0"
+            }
+          ]
+        },
+        "start": {
+          "on_entry": [
+            "/say gj"
+          ],
+          "transitions": [
+            {
+              "attack": "query.is_charged && variable.num < 7"
+            },
+            {
+              "attack2": "query.is_charged && variable.num >= 7"
             }
           ]
         },
         "attack": {
           "on_entry": [
+            "/say gj2",
+            "variable.num = 1 + variable.num;",
             "/summon takile:havoc_proj ~ ~ ~ instantdamage_2",
-            "/event entity @s skill:circuitous_attack"
+            "@s skill:circuitous_attack_start2"
           ],
           "transitions": [
             {
-              "default": "!query.is_delayed_attacking"
+              "start": "!query.is_charged"
+            }
+          ]
+        },
+        "attack2": {
+          "on_entry": [
+            "/summon takile:havoc_proj ~ ~ ~ instantdamage_2",
+            "@s skill:circuitous_attack_start"
+          ],
+          "transitions": [
+            {
+              "start": "!query.is_charged"
             }
           ]
         }
@@ -34,7 +63,8 @@
         },
         "attack": {
           "on_entry": [
-            "/effect @e[type=minecraft:player,r=5] ~ ~ ~ effect @s strength 6 1"
+            "/effect @e[type=minecraft:player,r=5] strength 6 1",
+            "/effect @s strength 6 1"
           ],
           "transitions": [
             {
@@ -83,13 +113,13 @@
               "default": "!query.is_delayed_attacking"
             },
             {
-              "attack2": "query.is_delayed_attacking && variable.test > 0.4"
+              "attack2": "query.is_delayed_attacking && variable.test > 0.5"
             }
           ]
         },
         "attack2": {
           "on_entry": [
-            "/execute @e[r=6,c=1,type=!takile:havoc_monster] ~ ~ ~ tp @s ^ ^+3 ^-4"
+            "/execute @e[r=6,c=1,type=!takile:havoc_monster] ~ ~ ~ tp @s ^ ^+4 ^-7"
           ],
           "transitions": [
             {

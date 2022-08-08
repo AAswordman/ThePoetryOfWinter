@@ -57,18 +57,18 @@
         },
         "axex_equipment_a": {
           "on_entry": [
-            "/execute positioned as @s[tag=!wbplot] run execute positioned as @e[r=10,type=minecraft:item] run +1 ~ detect ~ ~ ~ log -1 setblock ~ ~ ~ air 0 destroy",
-            "/execute positioned as @s[tag=!wbplot] run execute positioned as @e[r=10,type=minecraft:item] run -1 ~ detect ~ ~ ~ log -1 setblock ~ ~ ~ air 0 destroy",
-            "/execute positioned as @s[tag=!wbplot] run execute positioned as @e[r=10,type=minecraft:item] run +1 ~ ~ detect ~ ~ ~ log -1 setblock ~ ~ ~ air 0 destroy",
-            "/execute positioned as @s[tag=!wbplot] run execute positioned as @e[r=10,type=minecraft:item] run -1 ~ ~ detect ~ ~ ~ log -1 setblock ~ ~ ~ air 0 destroy",
-            "/execute positioned as @s[tag=!wbplot] run execute positioned as @e[r=10,type=minecraft:item] run +1 detect ~ ~ ~ log -1 setblock ~ ~ ~ air 0 destroy",
-            "/execute positioned as @s[tag=!wbplot] run execute positioned as @e[r=10,type=minecraft:item] run -1 detect ~ ~ ~ log -1 setblock ~ ~ ~ air 0 destroy",
-            "/execute positioned as @s[tag=!wbplot] run execute positioned as @e[r=10,type=minecraft:item] run +1 ~ detect ~ ~ ~ log2 -1 setblock ~ ~ ~ air 0 destroy",
-            "/execute positioned as @s[tag=!wbplot] run execute positioned as @e[r=10,type=minecraft:item] run -1 ~ detect ~ ~ ~ log2 -1 setblock ~ ~ ~ air 0 destroy",
-            "/execute positioned as @s[tag=!wbplot] run execute positioned as @e[r=10,type=minecraft:item] run +1 ~ ~ detect ~ ~ ~ log2 -1 setblock ~ ~ ~ air 0 destroy",
-            "/execute positioned as @s[tag=!wbplot] run execute positioned as @e[r=10,type=minecraft:item] run -1 ~ ~ detect ~ ~ ~ log2 -1 setblock ~ ~ ~ air 0 destroy",
-            "/execute positioned as @s[tag=!wbplot] run execute positioned as @e[r=10,type=minecraft:item] run +1 detect ~ ~ ~ log2 -1 setblock ~ ~ ~ air 0 destroy",
-            "/execute positioned as @s[tag=!wbplot] run execute positioned as @e[r=10,type=minecraft:item] run -1 detect ~ ~ ~ log2 -1 setblock ~ ~ ~ air 0 destroy"
+            "/execute @s[tag=!wbplot] ~ ~ ~ execute @e[r=10,type=minecraft:item] ~ +1 ~ detect ~ ~ ~ log -1 setblock ~ ~ ~ air 0 destroy",
+            "/execute @s[tag=!wbplot] ~ ~ ~ execute @e[r=10,type=minecraft:item] ~ -1 ~ detect ~ ~ ~ log -1 setblock ~ ~ ~ air 0 destroy",
+            "/execute @s[tag=!wbplot] ~ ~ ~ execute @e[r=10,type=minecraft:item] +1 ~ ~ detect ~ ~ ~ log -1 setblock ~ ~ ~ air 0 destroy",
+            "/execute @s[tag=!wbplot] ~ ~ ~ execute @e[r=10,type=minecraft:item] -1 ~ ~ detect ~ ~ ~ log -1 setblock ~ ~ ~ air 0 destroy",
+            "/execute @s[tag=!wbplot] ~ ~ ~ execute @e[r=10,type=minecraft:item] ~ ~ +1 detect ~ ~ ~ log -1 setblock ~ ~ ~ air 0 destroy",
+            "/execute @s[tag=!wbplot] ~ ~ ~ execute @e[r=10,type=minecraft:item] ~ ~ -1 detect ~ ~ ~ log -1 setblock ~ ~ ~ air 0 destroy",
+            "/execute @s[tag=!wbplot] ~ ~ ~ execute @e[r=10,type=minecraft:item] ~ +1 ~ detect ~ ~ ~ log2 -1 setblock ~ ~ ~ air 0 destroy",
+            "/execute @s[tag=!wbplot] ~ ~ ~ execute @e[r=10,type=minecraft:item] ~ -1 ~ detect ~ ~ ~ log2 -1 setblock ~ ~ ~ air 0 destroy",
+            "/execute @s[tag=!wbplot] ~ ~ ~ execute @e[r=10,type=minecraft:item] +1 ~ ~ detect ~ ~ ~ log2 -1 setblock ~ ~ ~ air 0 destroy",
+            "/execute @s[tag=!wbplot] ~ ~ ~ execute @e[r=10,type=minecraft:item] -1 ~ ~ detect ~ ~ ~ log2 -1 setblock ~ ~ ~ air 0 destroy",
+            "/execute @s[tag=!wbplot] ~ ~ ~ execute @e[r=10,type=minecraft:item] ~ ~ +1 detect ~ ~ ~ log2 -1 setblock ~ ~ ~ air 0 destroy",
+            "/execute @s[tag=!wbplot] ~ ~ ~ execute @e[r=10,type=minecraft:item] ~ ~ -1 detect ~ ~ ~ log2 -1 setblock ~ ~ ~ air 0 destroy"
           ],
           "transitions": [
             {
@@ -199,7 +199,7 @@
         "technology_world_explorer": {
           "on_entry": [
             "/tellraw @s {\"rawtext\":[{\"text\":\"§d周围32半径实体:\"},{\"selector\":\"@e[rm=1,r=32,type=!item]\"}]}",
-            "/execute positioned as @e[r=32,rm=1] run +1 ~ particle wb:tech_explorer_para ~~~"
+            "/execute @e[r=32,rm=1] ~ ~ ~ particle wb:tech_explorer_para ~ ~+1 ~"
           ],
           "transitions": [
             {
@@ -244,10 +244,10 @@
           "on_entry": [
             "/effect @s resistance 10 255",
             "/spreadplayers 0 0 10 200 @s",
-            "/execute positioned as @s[tag=wbplot] run scoreboard players set 剧情线 wbqjsz 1",
-            "/execute positioned as @s[tag=wbplot] run gamemode survival @s",
-            "/execute positioned as @s[tag=wbplot] run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.19.name\"}]}",
-            "/execute positioned as @s[tag=wbplot] run tag @s remove wbplot"
+            "/execute @s[tag=wbplot] ~ ~ ~ scoreboard players set 剧情线 wbqjsz 1",
+            "/execute @s[tag=wbplot] ~ ~ ~ gamemode survival @s",
+            "/execute @s[tag=wbplot] ~ ~ ~ tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.19.name\"}]}",
+            "/execute @s[tag=wbplot] ~ ~ ~ tag @s remove wbplot"
           ],
           "transitions": [
             {
@@ -278,9 +278,9 @@
             }
           ],
           "on_entry": [
-            "/execute positioned as @s[scores={wbfl=..39}] run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.20.name\"}]}",
-            "/execute positioned as @s[tag=!wbplot,scores={wbfl=40..},m=!adventure] run fill ~+4 ~+4 ~+4 ~-4 ~ ~-4 air 0 replace stone -1",
-            "/execute positioned as @s[scores={wbfl=40..}] run scoreboard players remove @s wbfl 40"
+            "/execute @s[scores={wbfl=..39}] ~ ~ ~ tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.20.name\"}]}",
+            "/execute @s[tag=!wbplot,scores={wbfl=40..},m=!adventure] ~ ~ ~ fill ~+4 ~+4 ~+4 ~-4 ~ ~-4 air 0 replace stone -1",
+            "/execute @s[scores={wbfl=40..}] ~ ~ ~ scoreboard players remove @s wbfl 40"
           ]
         },
         "axex_equipment_a": {
@@ -338,11 +338,11 @@
             }
           ],
           "on_entry": [
-            "/execute positioned as @s[tag=wbldczb] run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.27.name\"}]}",
-            "/execute positioned as @s[tag=!wbldczb] run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.28.name\"}]}",
-            "/execute positioned as @s[tag=!wbldczb] run replaceitem entity @s slot.weapon.mainhand 0 air",
-            "/execute positioned as @s[tag=!wbldczb] run summon wb:territory ~ ~ ~",
-            "/execute positioned as @s[tag=!wbldczb] run scoreboard players operation @e[r=4,type=wb:territory] wbldzr = @s wbldid"
+            "/execute @s[tag=wbldczb] ~ ~ ~ tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.27.name\"}]}",
+            "/execute @s[tag=!wbldczb] ~ ~ ~ tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.28.name\"}]}",
+            "/execute @s[tag=!wbldczb] ~ ~ ~ replaceitem entity @s slot.weapon.mainhand 0 air",
+            "/execute @s[tag=!wbldczb] ~ ~ ~ summon wb:territory ~ ~ ~",
+            "/execute @s[tag=!wbldczb] ~ ~ ~ scoreboard players operation @e[r=4,type=wb:territory] wbldzr = @s wbldid"
           ]
         },
         "sword_water_aa": {
@@ -357,10 +357,10 @@
         },
         "sword_water_ab": {
           "on_entry": [
-            "/execute positioned as @s run summon wb:damage_execute ^ ^+0.35 ^+3.0",
+            "/execute @s ~ ~ ~ summon wb:damage_execute ^ ^+0.35 ^+3.0",
             "/particle wb:sword_water_para ~ ~ ~",
-            "/execute positioned as @s[tag=wbmsyh] run execute positioned as @e[r=5,type=wb:damage_execute] run execute positioned as @e[r=2.5] run effect @s[tag=!wbmsyh] wither 2 2 true",
-            "/execute positioned as @s[tag=!wbmsyh] run execute positioned as @e[r=5,type=wb:damage_execute] run execute positioned as @e[r=2.5] run effect @s wither 2 2 true",
+            "/execute @s[tag=wbmsyh] ~ ~ ~ execute @e[r=5,type=wb:damage_execute] ~ ~ ~ execute @e[r=2.5] ~ ~ ~ effect @s[tag=!wbmsyh] wither 2 2 true",
+            "/execute @s[tag=!wbmsyh] ~ ~ ~ execute @e[r=5,type=wb:damage_execute] ~ ~ ~ execute @e[r=2.5] ~ ~ ~ effect @s wither 2 2 true",
             "/kill @e[type=wb:damage_execute,r=5]"
           ],
           "transitions": [
@@ -387,10 +387,10 @@
         },
         "sword_water_bb": {
           "on_entry": [
-            "/execute positioned as @s run summon wb:damage_execute ^ ^+0.35 ^+3.0",
+            "/execute @s ~ ~ ~ summon wb:damage_execute ^ ^+0.35 ^+3.0",
             "/particle wb:sword_water_para ~ ~ ~",
-            "/execute positioned as @s[tag=wbmsyh] run execute positioned as @e[r=5,type=wb:damage_execute] run execute positioned as @e[r=2.5] run effect @s[tag=!wbmsyh] wither 6 2 true",
-            "/execute positioned as @s[tag=!wbmsyh] run execute positioned as @e[r=5,type=wb:damage_execute] run execute positioned as @e[r=2.5] run effect @s wither 6 2 true",
+            "/execute @s[tag=wbmsyh] ~ ~ ~ execute @e[r=5,type=wb:damage_execute] ~ ~ ~ execute @e[r=2.5] ~ ~ ~ effect @s[tag=!wbmsyh] wither 6 2 true",
+            "/execute @s[tag=!wbmsyh] ~ ~ ~ execute @e[r=5,type=wb:damage_execute] ~ ~ ~ execute @e[r=2.5] ~ ~ ~ effect @s wither 6 2 true",
             "/kill @e[type=wb:damage_execute,r=5]"
           ],
           "transitions": [
@@ -404,15 +404,15 @@
         },
         "sword_water_bc": {
           "on_entry": [
-            "/execute positioned as @s[scores={wbfl=..49}] run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.29.name\"}]}",
-            "/execute positioned as @s[scores={wbfl=50..}] run particle wb:sword_water_parb ^ ^+0.3 ^+5.0",
-            "/execute positioned as @s[scores={wbfl=50..}] run summon wb:damage_execute ^ ^+0.35 ^+5.0",
-            "/execute positioned as @s[tag=wbmsyh,scores={wbfl=50..}] run execute positioned as @e[r=6,type=wb:damage_execute] run damage @e[r=4.5,tag=!wbmsyh] ~ ~ ~ 15 entity_attack entity @s",
-            "/execute positioned as @s[tag=!wbmsyh,scores={wbfl=50..}] run execute positioned as @e[r=6,type=wb:damage_execute] run damage @e[r=4.5] ~ ~ ~ 15 entity_attack entity @s",
-            "/execute positioned as @s[tag=wbmsyh,scores={wbfl=50..}] run execute positioned as @e[r=6,type=wb:damage_execute] run execute positioned as @e[r=4.5] run effect @s[tag=!wbmsyh] wither 3 1 true",
-            "/execute positioned as @s[tag=!wbmsyh,scores={wbfl=50..}] run execute positioned as @e[r=6,type=wb:damage_execute] run execute positioned as @e[r=4.5] run effect @s wither 3 1 true",
-            "/execute positioned as @s[scores={wbfl=50..}] run kill @e[type=wb:damage_execute,r=6]",
-            "/execute positioned as @s[scores={wbfl=50..}] run scoreboard players remove @s wbfl 50",
+            "/execute @s[scores={wbfl=..49}] ~ ~ ~ tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.29.name\"}]}",
+            "/execute @s[scores={wbfl=50..}] ~ ~ ~ particle wb:sword_water_parb ^ ^+0.3 ^+5.0",
+            "/execute @s[scores={wbfl=50..}] ~ ~ ~ summon wb:damage_execute ^ ^+0.35 ^+5.0",
+            "/execute @s[tag=wbmsyh,scores={wbfl=50..}] ~ ~ ~ execute @e[r=6,type=wb:damage_execute] ~ ~ ~ damage @e[r=4.5,tag=!wbmsyh] ~ ~ ~ 15 entity_attack entity @s",
+            "/execute @s[tag=!wbmsyh,scores={wbfl=50..}] ~ ~ ~ execute @e[r=6,type=wb:damage_execute] ~ ~ ~ damage @e[r=4.5] ~ ~ ~ 15 entity_attack entity @s",
+            "/execute @s[tag=wbmsyh,scores={wbfl=50..}] ~ ~ ~ execute @e[r=6,type=wb:damage_execute] ~ ~ ~ execute @e[r=4.5] ~ ~ ~ effect @s[tag=!wbmsyh] wither 3 1 true",
+            "/execute @s[tag=!wbmsyh,scores={wbfl=50..}] ~ ~ ~ execute @e[r=6,type=wb:damage_execute] ~ ~ ~ execute @e[r=4.5] ~ ~ ~ effect @s wither 3 1 true",
+            "/execute @s[scores={wbfl=50..}] ~ ~ ~ kill @e[type=wb:damage_execute,r=6]",
+            "/execute @s[scores={wbfl=50..}] ~ ~ ~ scoreboard players remove @s wbfl 50",
             "variable.global_cooling=4;",
             "variable.global_cooling_total=4;"
           ],
@@ -443,10 +443,10 @@
         },
         "sword_water_cb": {
           "on_entry": [
-            "/execute positioned as @s run summon wb:damage_execute ^ ^+0.35 ^+3.0",
+            "/execute @s ~ ~ ~ summon wb:damage_execute ^ ^+0.35 ^+3.0",
             "/particle wb:sword_water_para ~ ~ ~",
-            "/execute positioned as @s[tag=wbmsyh] run execute positioned as @e[r=5,type=wb:damage_execute] run execute positioned as @e[r=2.5] run effect @s[tag=!wbmsyh] wither 3 3 true",
-            "/execute positioned as @s[tag=!wbmsyh] run execute positioned as @e[r=5,type=wb:damage_execute] run execute positioned as @e[r=2.5] run effect @s wither 3 3 true",
+            "/execute @s[tag=wbmsyh] ~ ~ ~ execute @e[r=5,type=wb:damage_execute] ~ ~ ~ execute @e[r=2.5] ~ ~ ~ effect @s[tag=!wbmsyh] wither 3 3 true",
+            "/execute @s[tag=!wbmsyh] ~ ~ ~ execute @e[r=5,type=wb:damage_execute] ~ ~ ~ execute @e[r=2.5] ~ ~ ~ effect @s wither 3 3 true",
             "/kill @e[type=wb:damage_execute,r=5]"
           ],
           "transitions": [
@@ -460,15 +460,15 @@
         },
         "sword_water_cc": {
           "on_entry": [
-            "/execute positioned as @s[scores={wbfl=..29}] run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.30.name\"}]}",
-            "/execute positioned as @s[scores={wbfl=30..}] run particle wb:sword_water_parb ^ ^+0.3 ^+5.0",
-            "/execute positioned as @s[scores={wbfl=30..}] run summon wb:damage_execute ^ ^+0.35 ^+5.0",
-            "/execute positioned as @s[tag=wbmsyh,scores={wbfl=30..}] run execute positioned as @e[r=6,type=wb:damage_execute] run damage @e[r=4.5,tag=!wbmsyh] ~ ~ ~ 15 entity_attack entity @s",
-            "/execute positioned as @s[tag=!wbmsyh,scores={wbfl=30..}] run execute positioned as @e[r=6,type=wb:damage_execute] run damage @e[r=4.5] ~ ~ ~ 15 entity_attack entity @s",
-            "/execute positioned as @s[tag=wbmsyh,scores={wbfl=30..}] run execute positioned as @e[r=6,type=wb:damage_execute] run execute positioned as @e[r=4.5] run effect @s[tag=!wbmsyh] wither 3 1 true",
-            "/execute positioned as @s[tag=!wbmsyh,scores={wbfl=30..}] run execute positioned as @e[r=6,type=wb:damage_execute] run execute positioned as @e[r=4.5] run effect @s wither 3 1 true",
-            "/execute positioned as @s[scores={wbfl=30..}] run kill @e[type=wb:damage_execute,r=6]",
-            "/execute positioned as @s[scores={wbfl=30..}] run scoreboard players remove @s wbfl 30",
+            "/execute @s[scores={wbfl=..29}] ~ ~ ~ tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.30.name\"}]}",
+            "/execute @s[scores={wbfl=30..}] ~ ~ ~ particle wb:sword_water_parb ^ ^+0.3 ^+5.0",
+            "/execute @s[scores={wbfl=30..}] ~ ~ ~ summon wb:damage_execute ^ ^+0.35 ^+5.0",
+            "/execute @s[tag=wbmsyh,scores={wbfl=30..}] ~ ~ ~ execute @e[r=6,type=wb:damage_execute] ~ ~ ~ damage @e[r=4.5,tag=!wbmsyh] ~ ~ ~ 15 entity_attack entity @s",
+            "/execute @s[tag=!wbmsyh,scores={wbfl=30..}] ~ ~ ~ execute @e[r=6,type=wb:damage_execute] ~ ~ ~ damage @e[r=4.5] ~ ~ ~ 15 entity_attack entity @s",
+            "/execute @s[tag=wbmsyh,scores={wbfl=30..}] ~ ~ ~ execute @e[r=6,type=wb:damage_execute] ~ ~ ~ execute @e[r=4.5] ~ ~ ~ effect @s[tag=!wbmsyh] wither 3 1 true",
+            "/execute @s[tag=!wbmsyh,scores={wbfl=30..}] ~ ~ ~ execute @e[r=6,type=wb:damage_execute] ~ ~ ~ execute @e[r=4.5] ~ ~ ~ effect @s wither 3 1 true",
+            "/execute @s[scores={wbfl=30..}] ~ ~ ~ kill @e[type=wb:damage_execute,r=6]",
+            "/execute @s[scores={wbfl=30..}] ~ ~ ~ scoreboard players remove @s wbfl 30",
             "variable.global_cooling=3;",
             "variable.global_cooling_total=3;"
           ],
@@ -483,16 +483,16 @@
         },
         "sword_water_cd": {
           "on_entry": [
-            "/execute positioned as @s[scores={wbfl=..49}] run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.31.name\"}]}",
-            "/execute positioned as @s[tag=wbmsyh,scores={wbfl=50..}] run effect @e[tag=!wbmsyh,rm=2,r=10] slowness 6 2 true",
-            "/execute positioned as @s[tag=!wbmsyh,scores={wbfl=50..}] run effect @e[rm=2,r=10] slowness 6 2 true",
-            "/execute positioned as @s[tag=wbmsyh,scores={wbfl=50..}] run damage @e[rm=2,r=10,tag=!wbmsyh] ~ ~ ~ 35 entity_attack entity @s",
-            "/execute positioned as @s[tag=!wbmsyh,scores={wbfl=50..}] run damage @e[rm=2,r=10] ~ ~ ~ 35 entity_attack entity @s",
-            "/execute positioned as @s[tag=wbmsyh,scores={wbfl=50..}] run effect @e[tag=!wbmsyh,r=10,rm=2] wither 6 4 true",
-            "/execute positioned as @s[tag=!wbmsyh,scores={wbfl=50..}] run effect @e[r=10,rm=2] wither 6 4 true",
-            "/execute positioned as @s[scores={wbfl=50..}] run particle wb:sword_water_par ~ ~ ~",
-            "/execute positioned as @s[scores={wbfl=50..}] run title @a[r=10] title §d水尽鹅飞",
-            "/execute positioned as @s[scores={wbfl=50..}] run scoreboard players remove @s wbfl 50",
+            "/execute @s[scores={wbfl=..49}] ~ ~ ~ tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.31.name\"}]}",
+            "/execute @s[tag=wbmsyh,scores={wbfl=50..}] ~ ~ ~ effect @e[tag=!wbmsyh,rm=2,r=10] slowness 6 2 true",
+            "/execute @s[tag=!wbmsyh,scores={wbfl=50..}] ~ ~ ~ effect @e[rm=2,r=10] slowness 6 2 true",
+            "/execute @s[tag=wbmsyh,scores={wbfl=50..}] ~ ~ ~ damage @e[rm=2,r=10,tag=!wbmsyh] ~ ~ ~ 35 entity_attack entity @s",
+            "/execute @s[tag=!wbmsyh,scores={wbfl=50..}] ~ ~ ~ damage @e[rm=2,r=10] ~ ~ ~ 35 entity_attack entity @s",
+            "/execute @s[tag=wbmsyh,scores={wbfl=50..}] ~ ~ ~ effect @e[tag=!wbmsyh,r=10,rm=2] wither 6 4 true",
+            "/execute @s[tag=!wbmsyh,scores={wbfl=50..}] ~ ~ ~ effect @e[r=10,rm=2] wither 6 4 true",
+            "/execute @s[scores={wbfl=50..}] ~ ~ ~ particle wb:sword_water_par ~ ~ ~",
+            "/execute @s[scores={wbfl=50..}] ~ ~ ~ title @a[r=10] title §d水尽鹅飞",
+            "/execute @s[scores={wbfl=50..}] ~ ~ ~ scoreboard players remove @s wbfl 50",
             "variable.global_cooling=5;",
             "variable.global_cooling_total=5;"
           ],
@@ -518,9 +518,9 @@
         "sword_seal_ab": {
           "on_entry": [
             "/particle wb:sword_seal_para ~ ~ ~",
-            "/execute positioned as @s run summon wb:damage_execute ^ ^+0.35 ^+3.0",
-            "/execute positioned as @s[tag=wbmsyh] run execute positioned as @e[r=5,type=wb:damage_execute] run execute positioned as @e[r=2.5] run effect @s[tag=!wbmsyh] slowness 2 1 true",
-            "/execute positioned as @s[tag=!wbmsyh] run execute positioned as @e[r=5,type=wb:damage_execute] run execute positioned as @e[r=2.5] run effect @s slowness 2 1 true",
+            "/execute @s ~ ~ ~ summon wb:damage_execute ^ ^+0.35 ^+3.0",
+            "/execute @s[tag=wbmsyh] ~ ~ ~ execute @e[r=5,type=wb:damage_execute] ~ ~ ~ execute @e[r=2.5] ~ ~ ~ effect @s[tag=!wbmsyh] slowness 2 1 true",
+            "/execute @s[tag=!wbmsyh] ~ ~ ~ execute @e[r=5,type=wb:damage_execute] ~ ~ ~ execute @e[r=2.5] ~ ~ ~ effect @s slowness 2 1 true",
             "/kill @e[type=wb:damage_execute,r=5]"
           ],
           "transitions": [
@@ -548,9 +548,9 @@
         "sword_seal_bb": {
           "on_entry": [
             "/particle wb:sword_seal_para ~ ~ ~",
-            "/execute positioned as @s run summon wb:damage_execute ^ ^+0.35 ^+3.0",
-            "/execute positioned as @s[tag=wbmsyh] run execute positioned as @e[r=5,type=wb:damage_execute] run execute positioned as @e[r=2.5] run effect @s[tag=!wbmsyh] slowness 4 1 true",
-            "/execute positioned as @s[tag=!wbmsyh] run execute positioned as @e[r=5,type=wb:damage_execute] run execute positioned as @e[r=2.5] run effect @s slowness 4 1 true",
+            "/execute @s ~ ~ ~ summon wb:damage_execute ^ ^+0.35 ^+3.0",
+            "/execute @s[tag=wbmsyh] ~ ~ ~ execute @e[r=5,type=wb:damage_execute] ~ ~ ~ execute @e[r=2.5] ~ ~ ~ effect @s[tag=!wbmsyh] slowness 4 1 true",
+            "/execute @s[tag=!wbmsyh] ~ ~ ~ execute @e[r=5,type=wb:damage_execute] ~ ~ ~ execute @e[r=2.5] ~ ~ ~ effect @s slowness 4 1 true",
             "/kill @e[type=wb:damage_execute,r=5]"
           ],
           "transitions": [
@@ -564,17 +564,17 @@
         },
         "sword_seal_bc": {
           "on_entry": [
-            "/execute positioned as @s[scores={wbfl=..99}] run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.32.name\"}]}",
-            "/execute positioned as @s[scores={wbfl=100..}] run particle wb:sword_seal_parb ^ ^+0.35 ^+3.0",
-            "/execute positioned as @s[scores={wbfl=100..}] run summon wb:damage_execute ^ ^+0.35 ^+3.0",
-            "/execute positioned as @s[tag=wbmsyh,scores={wbfl=100..}] run execute positioned as @e[r=10,rm=2] run effect @s[tag=!wbmsyh] clear",
-            "/execute positioned as @s[tag=!wbmsyh,scores={wbfl=100..}] run execute positioned as @e[r=10,rm=2] run effect @s clear",
-            "/execute positioned as @s[tag=wbmsyh,scores={wbfl=100..}] run execute positioned as @e[r=5,type=wb:damage_execute] run damage @e[r=2.5,tag=!wbmsyh] ~ ~ ~ 20 entity_attack entity @s",
-            "/execute positioned as @s[tag=!wbmsyh,scores={wbfl=100..}] run execute positioned as @e[r=5,type=wb:damage_execute] run damage @e[r=2.5] ~ ~ ~ 20 entity_attack entity @s",
-            "/execute positioned as @s[tag=wbmsyh,scores={wbfl=100..}] run effect @s[tag=wbmsyh] clear",
-            "/execute positioned as @s[tag=!wbmsyh,scores={wbfl=100..}] run effect @s clear",
-            "/execute positioned as @s[scores={wbfl=100..}] run kill @e[type=wb:damage_execute,r=5]",
-            "/execute positioned as @s[scores={wbfl=100..}] run scoreboard players remove @s wbfl 100",
+            "/execute @s[scores={wbfl=..99}] ~ ~ ~ tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.32.name\"}]}",
+            "/execute @s[scores={wbfl=100..}] ~ ~ ~ particle wb:sword_seal_parb ^ ^+0.35 ^+3.0",
+            "/execute @s[scores={wbfl=100..}] ~ ~ ~ summon wb:damage_execute ^ ^+0.35 ^+3.0",
+            "/execute @s[tag=wbmsyh,scores={wbfl=100..}] ~ ~ ~ execute @e[r=10,rm=2] ~ ~ ~ effect @s[tag=!wbmsyh] clear",
+            "/execute @s[tag=!wbmsyh,scores={wbfl=100..}] ~ ~ ~ execute @e[r=10,rm=2] ~ ~ ~ effect @s clear",
+            "/execute @s[tag=wbmsyh,scores={wbfl=100..}] ~ ~ ~ execute @e[r=5,type=wb:damage_execute] ~ ~ ~ damage @e[r=2.5,tag=!wbmsyh] ~ ~ ~ 20 entity_attack entity @s",
+            "/execute @s[tag=!wbmsyh,scores={wbfl=100..}] ~ ~ ~ execute @e[r=5,type=wb:damage_execute] ~ ~ ~ damage @e[r=2.5] ~ ~ ~ 20 entity_attack entity @s",
+            "/execute @s[tag=wbmsyh,scores={wbfl=100..}] ~ ~ ~ effect @s[tag=wbmsyh] clear",
+            "/execute @s[tag=!wbmsyh,scores={wbfl=100..}] ~ ~ ~ effect @s clear",
+            "/execute @s[scores={wbfl=100..}] ~ ~ ~ kill @e[type=wb:damage_execute,r=5]",
+            "/execute @s[scores={wbfl=100..}] ~ ~ ~ scoreboard players remove @s wbfl 100",
             "variable.global_cooling=3;",
             "variable.global_cooling_total=3;"
           ],
@@ -605,10 +605,10 @@
         },
         "sword_seal_cb": {
           "on_entry": [
-            "/execute positioned as @s run summon wb:damage_execute ^ ^+0.35 ^+3.0",
+            "/execute @s ~ ~ ~ summon wb:damage_execute ^ ^+0.35 ^+3.0",
             "/particle wb:sword_seal_para ~ ~ ~",
-            "/execute positioned as @s[tag=wbmsyh] run execute positioned as @e[r=5,type=wb:damage_execute] run execute positioned as @e[r=2.5] run effect @s[tag=!wbmsyh] slowness 3 2 true",
-            "/execute positioned as @s[tag=!wbmsyh] run execute positioned as @e[r=5,type=wb:damage_execute] run execute positioned as @e[r=2.5] run effect @s slowness 3 2 true",
+            "/execute @s[tag=wbmsyh] ~ ~ ~ execute @e[r=5,type=wb:damage_execute] ~ ~ ~ execute @e[r=2.5] ~ ~ ~ effect @s[tag=!wbmsyh] slowness 3 2 true",
+            "/execute @s[tag=!wbmsyh] ~ ~ ~ execute @e[r=5,type=wb:damage_execute] ~ ~ ~ execute @e[r=2.5] ~ ~ ~ effect @s slowness 3 2 true",
             "/kill @e[type=wb:damage_execute,r=5]"
           ],
           "transitions": [
@@ -622,17 +622,17 @@
         },
         "sword_seal_cc": {
           "on_entry": [
-            "/execute positioned as @s[scores={wbfl=60..}] run particle wb:sword_seal_parb ^ ^+0.35 ^+3.0",
-            "/execute positioned as @s[scores={wbfl=..59}] run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.33.name\"}]}",
-            "/execute positioned as @s[scores={wbfl=60..}] run summon wb:damage_execute ^ ^+0.35 ^+3.0",
-            "/execute positioned as @s[tag=wbmsyh,scores={wbfl=60..}] run execute positioned as @e[r=10,rm=2] run effect @s[tag=!wbmsyh] clear",
-            "/execute positioned as @s[tag=!wbmsyh,scores={wbfl=60..}] run execute positioned as @e[r=10,rm=2] run effect @s clear",
-            "/execute positioned as @s[tag=wbmsyh,scores={wbfl=60..}] run execute positioned as @e[r=5,type=wb:damage_execute] run damage @e[r=2.5,tag=!wbmsyh] ~ ~ ~ 20 entity_attack entity @s",
-            "/execute positioned as @s[tag=!wbmsyh,scores={wbfl=60..}] run execute positioned as @e[r=5,type=wb:damage_execute] run damage @e[r=2.5] ~ ~ ~ 20 entity_attack entity @s",
-            "/execute positioned as @s[tag=wbmsyh,scores={wbfl=60..}] run effect @s[tag=wbmsyh] clear",
-            "/execute positioned as @s[tag=!wbmsyh,scores={wbfl=60..}] run effect @s clear",
-            "/execute positioned as @s[scores={wbfl=60..}] run kill @e[type=wb:damage_execute,r=5]",
-            "/execute positioned as @s[scores={wbfl=60..}] run scoreboard players remove @s wbfl 60",
+            "/execute @s[scores={wbfl=60..}] ~ ~ ~ particle wb:sword_seal_parb ^ ^+0.35 ^+3.0",
+            "/execute @s[scores={wbfl=..59}] ~ ~ ~ tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.33.name\"}]}",
+            "/execute @s[scores={wbfl=60..}] ~ ~ ~ summon wb:damage_execute ^ ^+0.35 ^+3.0",
+            "/execute @s[tag=wbmsyh,scores={wbfl=60..}] ~ ~ ~ execute @e[r=10,rm=2] ~ ~ ~ effect @s[tag=!wbmsyh] clear",
+            "/execute @s[tag=!wbmsyh,scores={wbfl=60..}] ~ ~ ~ execute @e[r=10,rm=2] ~ ~ ~ effect @s clear",
+            "/execute @s[tag=wbmsyh,scores={wbfl=60..}] ~ ~ ~ execute @e[r=5,type=wb:damage_execute] ~ ~ ~ damage @e[r=2.5,tag=!wbmsyh] ~ ~ ~ 20 entity_attack entity @s",
+            "/execute @s[tag=!wbmsyh,scores={wbfl=60..}] ~ ~ ~ execute @e[r=5,type=wb:damage_execute] ~ ~ ~ damage @e[r=2.5] ~ ~ ~ 20 entity_attack entity @s",
+            "/execute @s[tag=wbmsyh,scores={wbfl=60..}] ~ ~ ~ effect @s[tag=wbmsyh] clear",
+            "/execute @s[tag=!wbmsyh,scores={wbfl=60..}] ~ ~ ~ effect @s clear",
+            "/execute @s[scores={wbfl=60..}] ~ ~ ~ kill @e[type=wb:damage_execute,r=5]",
+            "/execute @s[scores={wbfl=60..}] ~ ~ ~ scoreboard players remove @s wbfl 60",
             "variable.global_cooling=2.5;",
             "variable.global_cooling_total=2.5;"
           ],
@@ -647,16 +647,16 @@
         },
         "sword_seal_cd": {
           "on_entry": [
-            "/execute positioned as @s[scores={wbfl=..79}] run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.34.name\"}]}",
-            "/execute positioned as @s[tag=wbmsyh,scores={wbfl=80..}] run damage @e[r=10,rm=2,tag=!wbmsyh] ~ ~ ~ 70 entity_attack entity @s",
-            "/execute positioned as @s[tag=!wbmsyh,scores={wbfl=80..}] run damage @e[r=10,rm=2] ~ ~ ~ 70 entity_attack entity @s",
-            "/execute positioned as @s[tag=wbmsyh,scores={wbfl=80..}] run execute positioned as @e[r=10,rm=2] run effect @s[tag=!wbmsyh] slowness 5 3 true",
-            "/execute positioned as @s[tag=!wbmsyh,scores={wbfl=80..}] run execute positioned as @e[r=10,rm=2] run effect @s slowness 5 3 true",
-            "/execute positioned as @s[tag=wbmsyh,scores={wbfl=80..}] run execute positioned as @e[r=10,rm=2] run effect @s[tag=!wbmsyh] levitation 1 12 true",
-            "/execute positioned as @s[tag=!wbmsyh,scores={wbfl=80..}] run execute positioned as @e[r=10,rm=2] run effect @s levitation 1 12 true",
-            "/execute positioned as @s[scores={wbfl=80..}] run execute positioned as @e[r=10,rm=2] run particle wb:sword_seal_par ~ ~ ~",
-            "/execute positioned as @s[scores={wbfl=80..}] run title @a[r=10] title §d土崩瓦解",
-            "/execute positioned as @s[scores={wbfl=80..}] run scoreboard players remove @s wbfl 80",
+            "/execute @s[scores={wbfl=..79}] ~ ~ ~ tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.34.name\"}]}",
+            "/execute @s[tag=wbmsyh,scores={wbfl=80..}] ~ ~ ~ damage @e[r=10,rm=2,tag=!wbmsyh] ~ ~ ~ 70 entity_attack entity @s",
+            "/execute @s[tag=!wbmsyh,scores={wbfl=80..}] ~ ~ ~ damage @e[r=10,rm=2] ~ ~ ~ 70 entity_attack entity @s",
+            "/execute @s[tag=wbmsyh,scores={wbfl=80..}] ~ ~ ~ execute @e[r=10,rm=2] ~ ~ ~ effect @s[tag=!wbmsyh] slowness 5 3 true",
+            "/execute @s[tag=!wbmsyh,scores={wbfl=80..}] ~ ~ ~ execute @e[r=10,rm=2] ~ ~ ~ effect @s slowness 5 3 true",
+            "/execute @s[tag=wbmsyh,scores={wbfl=80..}] ~ ~ ~ execute @e[r=10,rm=2] ~ ~ ~ effect @s[tag=!wbmsyh] levitation 1 12 true",
+            "/execute @s[tag=!wbmsyh,scores={wbfl=80..}] ~ ~ ~ execute @e[r=10,rm=2] ~ ~ ~ effect @s levitation 1 12 true",
+            "/execute @s[scores={wbfl=80..}] ~ ~ ~ execute @e[r=10,rm=2] ~ ~ ~ particle wb:sword_seal_par ~ ~ ~",
+            "/execute @s[scores={wbfl=80..}] ~ ~ ~ title @a[r=10] title §d土崩瓦解",
+            "/execute @s[scores={wbfl=80..}] ~ ~ ~ scoreboard players remove @s wbfl 80",
             "variable.global_cooling=5;",
             "variable.global_cooling_total=5;"
           ],
@@ -682,7 +682,7 @@
         "sword_ink_ab": {
           "on_entry": [
             "/particle wb:sword_ink_para ~ ~ ~",
-            "/execute positioned as @s run tp @s ^ ^+0.35 ^+2.0",
+            "/execute @s ~ ~ ~ tp @s ^ ^+0.35 ^+2.0",
             "variable.global_cooling=1;",
             "variable.global_cooling_total=1;"
           ],
@@ -711,7 +711,7 @@
         "sword_ink_bb": {
           "on_entry": [
             "/particle wb:sword_ink_para ~ ~ ~",
-            "/execute positioned as @s run tp @s ^ ^+0.35 ^+3.0",
+            "/execute @s ~ ~ ~ tp @s ^ ^+0.35 ^+3.0",
             "variable.global_cooling=1;",
             "variable.global_cooling_total=1;"
           ],
@@ -726,14 +726,14 @@
         },
         "sword_ink_bc": {
           "on_entry": [
-            "/execute positioned as @s[scores={wbfl=30..}] run particle wb:sword_ink_parb ~ ~ ~",
-            "/execute positioned as @s[scores={wbfl=..29}] run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.35.name\"}]}",
-            "/execute positioned as @s[scores={wbfl=30..}] run summon wb:damage_execute ^ ^+0.35 ^+3.0",
-            "/execute positioned as @s[tag=wbmsyh,scores={wbfl=30..}] run execute positioned as @e[r=5,type=wb:damage_execute] run execute positioned as @e[c=1,r=2.5,tag=!wbmsyh] run summon wb:damage_blast2 ~ ~ ~",
-            "/execute positioned as @s[tag=!wbmsyh,scores={wbfl=30..}] run execute positioned as @e[r=5,type=wb:damage_execute] run execute positioned as @e[c=1,r=2.5] run summon wb:damage_blast2 ~ ~ ~",
-            "/execute positioned as @s run tp @s ^ ^+0.35 ^-2.0",
-            "/execute positioned as @s[scores={wbfl=30..}] run kill @e[type=wb:damage_execute,r=5]",
-            "/execute positioned as @s[scores={wbfl=30..}] run scoreboard players remove @s wbfl 30",
+            "/execute @s[scores={wbfl=30..}] ~ ~ ~ particle wb:sword_ink_parb ~ ~ ~",
+            "/execute @s[scores={wbfl=..29}] ~ ~ ~ tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.35.name\"}]}",
+            "/execute @s[scores={wbfl=30..}] ~ ~ ~ summon wb:damage_execute ^ ^+0.35 ^+3.0",
+            "/execute @s[tag=wbmsyh,scores={wbfl=30..}] ~ ~ ~ execute @e[r=5,type=wb:damage_execute] ~ ~ ~ execute @e[c=1,r=2.5,tag=!wbmsyh] ~ ~ ~ summon wb:damage_blast2 ~ ~ ~",
+            "/execute @s[tag=!wbmsyh,scores={wbfl=30..}] ~ ~ ~ execute @e[r=5,type=wb:damage_execute] ~ ~ ~ execute @e[c=1,r=2.5] ~ ~ ~ summon wb:damage_blast2 ~ ~ ~",
+            "/execute @s ~ ~ ~ tp @s ^ ^+0.35 ^-2.0",
+            "/execute @s[scores={wbfl=30..}] ~ ~ ~ kill @e[type=wb:damage_execute,r=5]",
+            "/execute @s[scores={wbfl=30..}] ~ ~ ~ scoreboard players remove @s wbfl 30",
             "variable.global_cooling=2.5;",
             "variable.global_cooling_total=2.5;"
           ],
@@ -765,7 +765,7 @@
         "sword_ink_cb": {
           "on_entry": [
             "/particle wb:sword_ink_para ~ ~ ~",
-            "/execute positioned as @s run tp @s ^ ^+0.35 ^+3.5",
+            "/execute @s ~ ~ ~ tp @s ^ ^+0.35 ^+3.5",
             "variable.global_cooling=1;",
             "variable.global_cooling_total=1;"
           ],
@@ -780,15 +780,15 @@
         },
         "sword_ink_cc": {
           "on_entry": [
-            "/execute positioned as @s[scores={wbfl=30..}] run particle wb:sword_ink_parb ~ ~ ~",
-            "/execute positioned as @s[scores={wbfl=..29}] run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.36.name\"}]}",
-            "/execute positioned as @s[scores={wbfl=30..}] run summon wb:damage_execute ^ ^+0.35 ^+3.0",
-            "/execute positioned as @s[tag=wbmsyh,scores={wbfl=30..}] run execute positioned as @e[r=5,type=wb:damage_execute] run damage @e[r=2.5,tag=!wbmsyh] ~ ~ ~ 10 entity_attack entity @s",
-            "/execute positioned as @s[tag=!wbmsyh,scores={wbfl=30..}] run execute positioned as @e[r=5,type=wb:damage_execute] run damage @e[r=2.5] ~ ~ ~ 10 entity_attack entity @s",
-            "/execute positioned as @s[scores={wbfl=30..}] run tp @s @e[c=1,r=256,type=wb:ball_sword_ink]",
-            "/execute positioned as @s[scores={wbfl=30..}] run execute positioned as @e[c=1,r=3,type=wb:ball_sword_ink] run scoreboard players add @a[r=4] wbfl 20",
-            "/execute positioned as @s[scores={wbfl=30..}] run kill @e[type=wb:ball_sword_ink,r=3,c=1]",
-            "/execute positioned as @s[scores={wbfl=30..}] run scoreboard players remove @s wbfl 30"
+            "/execute @s[scores={wbfl=30..}] ~ ~ ~ particle wb:sword_ink_parb ~ ~ ~",
+            "/execute @s[scores={wbfl=..29}] ~ ~ ~ tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.36.name\"}]}",
+            "/execute @s[scores={wbfl=30..}] ~ ~ ~ summon wb:damage_execute ^ ^+0.35 ^+3.0",
+            "/execute @s[tag=wbmsyh,scores={wbfl=30..}] ~ ~ ~ execute @e[r=5,type=wb:damage_execute] ~ ~ ~ damage @e[r=2.5,tag=!wbmsyh] ~ ~ ~ 10 entity_attack entity @s",
+            "/execute @s[tag=!wbmsyh,scores={wbfl=30..}] ~ ~ ~ execute @e[r=5,type=wb:damage_execute] ~ ~ ~ damage @e[r=2.5] ~ ~ ~ 10 entity_attack entity @s",
+            "/execute @s[scores={wbfl=30..}] ~ ~ ~ tp @s @e[c=1,r=256,type=wb:ball_sword_ink]",
+            "/execute @s[scores={wbfl=30..}] ~ ~ ~ execute @e[c=1,r=3,type=wb:ball_sword_ink] ~ ~ ~ scoreboard players add @a[r=4] wbfl 20",
+            "/execute @s[scores={wbfl=30..}] ~ ~ ~ kill @e[type=wb:ball_sword_ink,r=3,c=1]",
+            "/execute @s[scores={wbfl=30..}] ~ ~ ~ scoreboard players remove @s wbfl 30"
           ],
           "transitions": [
             {
@@ -801,11 +801,11 @@
         },
         "sword_ink_cd": {
           "on_entry": [
-            "/execute positioned as @s[scores={wbfl=..79}] run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.37.name\"}]}",
-            "/execute positioned as @s[scores={wbfl=80..}] run summon wb:ball_sword_ink ~ ~ ~",
-            "/execute positioned as @s[scores={wbfl=80..}] run particle wb:sword_ink_par ~ ~ ~",
-            "/execute positioned as @s[scores={wbfl=80..}] run title @a[r=10] title §d笔走龙蛇",
-            "/execute positioned as @s[scores={wbfl=80..}] run scoreboard players remove @s wbfl 40"
+            "/execute @s[scores={wbfl=..79}] ~ ~ ~ tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.37.name\"}]}",
+            "/execute @s[scores={wbfl=80..}] ~ ~ ~ summon wb:ball_sword_ink ~ ~ ~",
+            "/execute @s[scores={wbfl=80..}] ~ ~ ~ particle wb:sword_ink_par ~ ~ ~",
+            "/execute @s[scores={wbfl=80..}] ~ ~ ~ title @a[r=10] title §d笔走龙蛇",
+            "/execute @s[scores={wbfl=80..}] ~ ~ ~ scoreboard players remove @s wbfl 40"
           ],
           "transitions": [
             {
@@ -960,9 +960,9 @@
         },
         "sword_forget_ab": {
           "on_entry": [
-            "/execute positioned as @s run summon wb:damage_execute ^ ^+0.35 ^+3.0",
-            "/execute positioned as @s[tag=wbmsyh] run execute positioned as @e[r=5,type=wb:damage_execute] run execute positioned as @e[r=2.5] run effect @s[tag=!wbmsyh] blindness 1 1 true",
-            "/execute positioned as @s[tag=!wbmsyh] run execute positioned as @e[r=5,type=wb:damage_execute] run execute positioned as @e[r=2.5] run effect @s blindness 1 1 true",
+            "/execute @s ~ ~ ~ summon wb:damage_execute ^ ^+0.35 ^+3.0",
+            "/execute @s[tag=wbmsyh] ~ ~ ~ execute @e[r=5,type=wb:damage_execute] ~ ~ ~ execute @e[r=2.5] ~ ~ ~ effect @s[tag=!wbmsyh] blindness 1 1 true",
+            "/execute @s[tag=!wbmsyh] ~ ~ ~ execute @e[r=5,type=wb:damage_execute] ~ ~ ~ execute @e[r=2.5] ~ ~ ~ effect @s blindness 1 1 true",
             "/kill @e[type=wb:damage_execute,r=5]"
           ],
           "transitions": [
@@ -989,9 +989,9 @@
         },
         "sword_forget_bb": {
           "on_entry": [
-            "/execute positioned as @s run summon wb:damage_execute ^ ^+0.35 ^+3.0",
-            "/execute positioned as @s[tag=wbmsyh] run execute positioned as @e[r=5,type=wb:damage_execute] run execute positioned as @e[r=2.5] run effect @s[tag=!wbmsyh] blindness 3 1 true",
-            "/execute positioned as @s[tag=!wbmsyh] run execute positioned as @e[r=5,type=wb:damage_execute] run execute positioned as @e[r=2.5] run effect @s blindness 3 1 true",
+            "/execute @s ~ ~ ~ summon wb:damage_execute ^ ^+0.35 ^+3.0",
+            "/execute @s[tag=wbmsyh] ~ ~ ~ execute @e[r=5,type=wb:damage_execute] ~ ~ ~ execute @e[r=2.5] ~ ~ ~ effect @s[tag=!wbmsyh] blindness 3 1 true",
+            "/execute @s[tag=!wbmsyh] ~ ~ ~ execute @e[r=5,type=wb:damage_execute] ~ ~ ~ execute @e[r=2.5] ~ ~ ~ effect @s blindness 3 1 true",
             "/kill @e[type=wb:damage_execute,r=5]"
           ],
           "transitions": [
@@ -1005,14 +1005,14 @@
         },
         "sword_forget_bc": {
           "on_entry": [
-            "/execute positioned as @s[scores={wbfl=..79}] run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.38.name\"}]}",
-            "/execute positioned as @s[scores={wbfl=80..}] run summon wb:damage_execute ^ ^+0.35 ^+3.0",
-            "/execute positioned as @s[tag=wbmsyh,scores={wbfl=80..}] run execute positioned as @e[r=5,type=wb:damage_execute] run damage @e[r=2.5,tag=!wbmsyh] ~ ~ ~ 20 entity_attack entity @s",
-            "/execute positioned as @s[tag=!wbmsyh,scores={wbfl=80..}] run execute positioned as @e[r=5,type=wb:damage_execute] run damage @e[r=2.5] ~ ~ ~ 20 entity_attack entity @s",
-            "/execute positioned as @s[tag=wbmsyh,scores={wbfl=80..}] run effect @s[tag=wbmsyh] invisibility 3 1 true",
-            "/execute positioned as @s[tag=!wbmsyh,scores={wbfl=80..}] run effect @s invisibility 3 1 true",
-            "/execute positioned as @s[scores={wbfl=80..}] run kill @e[type=wb:damage_execute,r=5]",
-            "/execute positioned as @s[scores={wbfl=80..}] run scoreboard players remove @s wbfl 80",
+            "/execute @s[scores={wbfl=..79}] ~ ~ ~ tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.38.name\"}]}",
+            "/execute @s[scores={wbfl=80..}] ~ ~ ~ summon wb:damage_execute ^ ^+0.35 ^+3.0",
+            "/execute @s[tag=wbmsyh,scores={wbfl=80..}] ~ ~ ~ execute @e[r=5,type=wb:damage_execute] ~ ~ ~ damage @e[r=2.5,tag=!wbmsyh] ~ ~ ~ 20 entity_attack entity @s",
+            "/execute @s[tag=!wbmsyh,scores={wbfl=80..}] ~ ~ ~ execute @e[r=5,type=wb:damage_execute] ~ ~ ~ damage @e[r=2.5] ~ ~ ~ 20 entity_attack entity @s",
+            "/execute @s[tag=wbmsyh,scores={wbfl=80..}] ~ ~ ~ effect @s[tag=wbmsyh] invisibility 3 1 true",
+            "/execute @s[tag=!wbmsyh,scores={wbfl=80..}] ~ ~ ~ effect @s invisibility 3 1 true",
+            "/execute @s[scores={wbfl=80..}] ~ ~ ~ kill @e[type=wb:damage_execute,r=5]",
+            "/execute @s[scores={wbfl=80..}] ~ ~ ~ scoreboard players remove @s wbfl 80",
             "variable.global_cooling=3;",
             "variable.global_cooling_total=3;"
           ],
@@ -1043,9 +1043,9 @@
         },
         "sword_forget_cb": {
           "on_entry": [
-            "/execute positioned as @s run summon wb:damage_execute ^ ^+0.35 ^+3.0",
-            "/execute positioned as @s[tag=wbmsyh] run execute positioned as @e[r=5,type=wb:damage_execute] run execute positioned as @e[r=2.5] run effect @s[tag=!wbmsyh] blindness 5 1 true",
-            "/execute positioned as @s[tag=!wbmsyh] run execute positioned as @e[r=5,type=wb:damage_execute] run execute positioned as @e[r=2.5] run effect @s blindness 5 1 true",
+            "/execute @s ~ ~ ~ summon wb:damage_execute ^ ^+0.35 ^+3.0",
+            "/execute @s[tag=wbmsyh] ~ ~ ~ execute @e[r=5,type=wb:damage_execute] ~ ~ ~ execute @e[r=2.5] ~ ~ ~ effect @s[tag=!wbmsyh] blindness 5 1 true",
+            "/execute @s[tag=!wbmsyh] ~ ~ ~ execute @e[r=5,type=wb:damage_execute] ~ ~ ~ execute @e[r=2.5] ~ ~ ~ effect @s blindness 5 1 true",
             "/kill @e[type=wb:damage_execute,r=5]"
           ],
           "transitions": [
@@ -1059,14 +1059,14 @@
         },
         "sword_forget_cc": {
           "on_entry": [
-            "/execute positioned as @s[scores={wbfl=..39}] run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.39.name\"}]}",
-            "/execute positioned as @s[scores={wbfl=40..}] run summon wb:damage_execute ^ ^+0.35 ^+3.0",
-            "/execute positioned as @s[tag=wbmsyh,scores={wbfl=40..}] run execute positioned as @e[r=5,type=wb:damage_execute] run damage @e[r=2.5,tag=!wbmsyh] ~ ~ ~ 45 entity_attack entity @s",
-            "/execute positioned as @s[tag=!wbmsyh,scores={wbfl=40..}] run execute positioned as @e[r=5,type=wb:damage_execute] run damage @e[r=2.5] ~ ~ ~ 45 entity_attack entity @s",
-            "/execute positioned as @s[tag=wbmsyh,scores={wbfl=40..}] run effect @s[tag=wbmsyh] invisibility 3 1 true",
-            "/execute positioned as @s[tag=!wbmsyh,scores={wbfl=40..}] run effect @s invisibility 3 1 true",
-            "/execute positioned as @s[scores={wbfl=40..}] run kill @e[type=wb:damage_execute,r=5]",
-            "/execute positioned as @s[scores={wbfl=40..}] run scoreboard players remove @s wbfl 40",
+            "/execute @s[scores={wbfl=..39}] ~ ~ ~ tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.39.name\"}]}",
+            "/execute @s[scores={wbfl=40..}] ~ ~ ~ summon wb:damage_execute ^ ^+0.35 ^+3.0",
+            "/execute @s[tag=wbmsyh,scores={wbfl=40..}] ~ ~ ~ execute @e[r=5,type=wb:damage_execute] ~ ~ ~ damage @e[r=2.5,tag=!wbmsyh] ~ ~ ~ 45 entity_attack entity @s",
+            "/execute @s[tag=!wbmsyh,scores={wbfl=40..}] ~ ~ ~ execute @e[r=5,type=wb:damage_execute] ~ ~ ~ damage @e[r=2.5] ~ ~ ~ 45 entity_attack entity @s",
+            "/execute @s[tag=wbmsyh,scores={wbfl=40..}] ~ ~ ~ effect @s[tag=wbmsyh] invisibility 3 1 true",
+            "/execute @s[tag=!wbmsyh,scores={wbfl=40..}] ~ ~ ~ effect @s invisibility 3 1 true",
+            "/execute @s[scores={wbfl=40..}] ~ ~ ~ kill @e[type=wb:damage_execute,r=5]",
+            "/execute @s[scores={wbfl=40..}] ~ ~ ~ scoreboard players remove @s wbfl 40",
             "variable.global_cooling=3;",
             "variable.global_cooling_total=3;"
           ],
@@ -1081,17 +1081,17 @@
         },
         "sword_forget_cd": {
           "on_entry": [
-            "/execute positioned as @s[scores={wbfl=..59}] run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.40.name\"}]}",
-            "/execute positioned as @s[tag=wbmsyh,scores={wbfl=60..}] run execute positioned as @e[r=10,rm=2] run effect @s[tag=!wbmsyh] blindness 5 1",
-            "/execute positioned as @s[tag=!wbmsyh,scores={wbfl=60..}] run execute positioned as @e[r=10,rm=2] run effect @s blindness 5 1",
-            "/execute positioned as @s[tag=wbmsyh,scores={wbfl=60..}] run effect @s[tag=wbmsyh] invisibility 5 1",
-            "/execute positioned as @s[tag=!wbmsyh,scores={wbfl=60..}] run effect @s invisibility 5 1",
-            "/execute positioned as @s[scores={wbfl=60..}] run execute positioned as @e[r=10] run particle wb:sword_forget_par ~ ~ ~",
-            "/execute positioned as @s[tag=wbmsyh,scores={wbfl=60..}] run damage @e[r=10,rm=2,tag=!wbmsyh] ~ ~ ~ 15 entity_attack entity @s",
-            "/execute positioned as @s[tag=!wbmsyh,scores={wbfl=60..}] run damage @e[r=10,rm=2] ~ ~ ~ 15 entity_attack entity @s",
-            "/execute positioned as @s[scores={wbfl=60..}] run particle wb:sword_forget_par ~ ~ ~",
-            "/execute positioned as @s[scores={wbfl=60..}] run title @a[r=10] title §d遗忘之光",
-            "/execute positioned as @s[scores={wbfl=60..}] run scoreboard players remove @s wbfl 60",
+            "/execute @s[scores={wbfl=..59}] ~ ~ ~ tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.40.name\"}]}",
+            "/execute @s[tag=wbmsyh,scores={wbfl=60..}] ~ ~ ~ execute @e[r=10,rm=2] ~ ~ ~ effect @s[tag=!wbmsyh] blindness 5 1",
+            "/execute @s[tag=!wbmsyh,scores={wbfl=60..}] ~ ~ ~ execute @e[r=10,rm=2] ~ ~ ~ effect @s blindness 5 1",
+            "/execute @s[tag=wbmsyh,scores={wbfl=60..}] ~ ~ ~ effect @s[tag=wbmsyh] invisibility 5 1",
+            "/execute @s[tag=!wbmsyh,scores={wbfl=60..}] ~ ~ ~ effect @s invisibility 5 1",
+            "/execute @s[scores={wbfl=60..}] ~ ~ ~ execute @e[r=10] ~ ~ ~ particle wb:sword_forget_par ~ ~ ~",
+            "/execute @s[tag=wbmsyh,scores={wbfl=60..}] ~ ~ ~ damage @e[r=10,rm=2,tag=!wbmsyh] ~ ~ ~ 15 entity_attack entity @s",
+            "/execute @s[tag=!wbmsyh,scores={wbfl=60..}] ~ ~ ~ damage @e[r=10,rm=2] ~ ~ ~ 15 entity_attack entity @s",
+            "/execute @s[scores={wbfl=60..}] ~ ~ ~ particle wb:sword_forget_par ~ ~ ~",
+            "/execute @s[scores={wbfl=60..}] ~ ~ ~ title @a[r=10] title §d遗忘之光",
+            "/execute @s[scores={wbfl=60..}] ~ ~ ~ scoreboard players remove @s wbfl 60",
             "variable.global_cooling=5;",
             "variable.global_cooling_total=5;"
           ],
@@ -1161,15 +1161,15 @@
         },
         "sword_bloodsucking_bc": {
           "on_entry": [
-            "/execute positioned as @s[scores={wbfl=140..}] run particle wb:sword_bloodsucking_parb ~ ~ ~",
-            "/execute positioned as @s[scores={wbfl=..139}] run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.41.name\"}]}",
-            "/execute positioned as @s[tag=wbmsyh,scores={wbfl=140..}] run effect @s[tag=wbmsyh] absorption 16 3 true",
-            "/execute positioned as @s[tag=!wbmsyh,scores={wbfl=140..}] run effect @s absorption 16 3 true",
-            "/execute positioned as @s[tag=wbmsyh,scores={wbfl=140..}] run effect @s[tag=wbmsyh] haste 4 2",
-            "/execute positioned as @s[tag=!wbmsyh,scores={wbfl=140..}] run effect @s haste 4 2",
-            "/execute positioned as @s[tag=wbmsyh,scores={wbfl=140..}] run effect @s[tag=wbmsyh] strength 2 3 true",
-            "/execute positioned as @s[tag=!wbmsyh,scores={wbfl=140..}] run effect @s strength 2 3 true",
-            "/execute positioned as @s[scores={wbfl=140..}] run scoreboard players remove @s wbfl 140",
+            "/execute @s[scores={wbfl=140..}] ~ ~ ~ particle wb:sword_bloodsucking_parb ~ ~ ~",
+            "/execute @s[scores={wbfl=..139}] ~ ~ ~ tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.41.name\"}]}",
+            "/execute @s[tag=wbmsyh,scores={wbfl=140..}] ~ ~ ~ effect @s[tag=wbmsyh] absorption 16 3 true",
+            "/execute @s[tag=!wbmsyh,scores={wbfl=140..}] ~ ~ ~ effect @s absorption 16 3 true",
+            "/execute @s[tag=wbmsyh,scores={wbfl=140..}] ~ ~ ~ effect @s[tag=wbmsyh] haste 4 2",
+            "/execute @s[tag=!wbmsyh,scores={wbfl=140..}] ~ ~ ~ effect @s haste 4 2",
+            "/execute @s[tag=wbmsyh,scores={wbfl=140..}] ~ ~ ~ effect @s[tag=wbmsyh] strength 2 3 true",
+            "/execute @s[tag=!wbmsyh,scores={wbfl=140..}] ~ ~ ~ effect @s strength 2 3 true",
+            "/execute @s[scores={wbfl=140..}] ~ ~ ~ scoreboard players remove @s wbfl 140",
             "variable.global_cooling=10;",
             "variable.global_cooling_total=10;"
           ],
@@ -1216,15 +1216,15 @@
         },
         "sword_bloodsucking_cc": {
           "on_entry": [
-            "/execute positioned as @s[scores={wbfl=100..}] run particle wb:sword_bloodsucking_parb ~ ~ ~",
-            "/execute positioned as @s[scores={wbfl=..99}] run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.42.name\"}]}",
-            "/execute positioned as @s[tag=wbmsyh,scores={wbfl=100..}] run effect @s[tag=wbmsyh] absorption 16 4 true",
-            "/execute positioned as @s[tag=!wbmsyh,scores={wbfl=100..}] run effect @s absorption 16 4 true",
-            "/execute positioned as @s[tag=wbmsyh,scores={wbfl=100..}] run effect @s[tag=wbmsyh] haste 4 2",
-            "/execute positioned as @s[tag=!wbmsyh,scores={wbfl=100..}] run effect @s haste 4 2",
-            "/execute positioned as @s[tag=wbmsyh,scores={wbfl=100..}] run effect @s[tag=wbmsyh] strength 3 3 true",
-            "/execute positioned as @s[tag=!wbmsyh,scores={wbfl=100..}] run effect @s strength 3 3 true",
-            "/execute positioned as @s[scores={wbfl=100..}] run scoreboard players remove @s wbfl 100",
+            "/execute @s[scores={wbfl=100..}] ~ ~ ~ particle wb:sword_bloodsucking_parb ~ ~ ~",
+            "/execute @s[scores={wbfl=..99}] ~ ~ ~ tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.42.name\"}]}",
+            "/execute @s[tag=wbmsyh,scores={wbfl=100..}] ~ ~ ~ effect @s[tag=wbmsyh] absorption 16 4 true",
+            "/execute @s[tag=!wbmsyh,scores={wbfl=100..}] ~ ~ ~ effect @s absorption 16 4 true",
+            "/execute @s[tag=wbmsyh,scores={wbfl=100..}] ~ ~ ~ effect @s[tag=wbmsyh] haste 4 2",
+            "/execute @s[tag=!wbmsyh,scores={wbfl=100..}] ~ ~ ~ effect @s haste 4 2",
+            "/execute @s[tag=wbmsyh,scores={wbfl=100..}] ~ ~ ~ effect @s[tag=wbmsyh] strength 3 3 true",
+            "/execute @s[tag=!wbmsyh,scores={wbfl=100..}] ~ ~ ~ effect @s strength 3 3 true",
+            "/execute @s[scores={wbfl=100..}] ~ ~ ~ scoreboard players remove @s wbfl 100",
             "variable.global_cooling=10;",
             "variable.global_cooling_total=10;"
           ],
@@ -1239,15 +1239,15 @@
         },
         "sword_bloodsucking_cd": {
           "on_entry": [
-            "/execute positioned as @s[scores={wbfl=..39}] run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.43.name\"}]}",
-            "/execute positioned as @s[tag=wbmsyh,scores={wbfl=40..}] run damage @e[r=10,rm=2,tag=!wbmsyh] ~ ~ ~ 12 entity_attack entity @s",
-            "/execute positioned as @s[tag=!wbmsyh,scores={wbfl=40..}] run damage @e[r=10,rm=2] ~ ~ ~ 12 entity_attack entity @s",
-            "/execute positioned as @s[tag=wbmsyh,scores={wbfl=40..}] run effect @s[tag=wbmsyh] regeneration 2 2",
-            "/execute positioned as @s[tag=!wbmsyh,scores={wbfl=40..}] run effect @s regeneration 2 2",
-            "/execute positioned as @s[scores={wbfl=40..}] run particle wb:sword_bloodsucking_par ~ ~ ~",
-            "/execute positioned as @s[scores={wbfl=40..}] run title @a[r=12] title §d嗜血风暴",
-            "/execute positioned as @s[scores={wbfl=40..}] run execute positioned as @e[type=!minecraft:player,r=12] run scoreboard players add @p wbfl 2",
-            "/execute positioned as @s[scores={wbfl=40..}] run scoreboard players remove @s wbfl 40",
+            "/execute @s[scores={wbfl=..39}] ~ ~ ~ tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.43.name\"}]}",
+            "/execute @s[tag=wbmsyh,scores={wbfl=40..}] ~ ~ ~ damage @e[r=10,rm=2,tag=!wbmsyh] ~ ~ ~ 12 entity_attack entity @s",
+            "/execute @s[tag=!wbmsyh,scores={wbfl=40..}] ~ ~ ~ damage @e[r=10,rm=2] ~ ~ ~ 12 entity_attack entity @s",
+            "/execute @s[tag=wbmsyh,scores={wbfl=40..}] ~ ~ ~ effect @s[tag=wbmsyh] regeneration 2 2",
+            "/execute @s[tag=!wbmsyh,scores={wbfl=40..}] ~ ~ ~ effect @s regeneration 2 2",
+            "/execute @s[scores={wbfl=40..}] ~ ~ ~ particle wb:sword_bloodsucking_par ~ ~ ~",
+            "/execute @s[scores={wbfl=40..}] ~ ~ ~ title @a[r=12] title §d嗜血风暴",
+            "/execute @s[scores={wbfl=40..}] ~ ~ ~ execute @e[type=!minecraft:player,r=12] ~ ~ ~ scoreboard players add @p wbfl 2",
+            "/execute @s[scores={wbfl=40..}] ~ ~ ~ scoreboard players remove @s wbfl 40",
             "variable.global_cooling=3;",
             "variable.global_cooling_total=3;"
           ],
@@ -1273,8 +1273,8 @@
         },
         "sword_fly": {
           "on_entry": [
-            "/execute positioned as @s[scores={wbfl=150..}] run tp @s ~ ~+4 ~",
-            "/execute positioned as @s[scores={wbfl=150..}] run scoreboard players remove @s wbfl 10",
+            "/execute @s[scores={wbfl=150..}] ~ ~ ~ tp @s ~ ~+4 ~",
+            "/execute @s[scores={wbfl=150..}] ~ ~ ~ scoreboard players remove @s wbfl 10",
             "/particle wb:sword_fly_para ~ ~ ~"
           ],
           "transitions": [
@@ -1313,9 +1313,9 @@
           ],
           "on_entry": [
             "/particle wb:sword_fly_para ~ ~ ~",
-            "/execute positioned as @s[tag=wbmsyh,scores={wbfl=20..}] run effect @s[tag=wbmsyh] speed 8 3",
-            "/execute positioned as @s[tag=!wbmsyh,scores={wbfl=20..}] run effect @s speed 8 3",
-            "/execute positioned as @s[scores={wbfl=20..}] run scoreboard players remove @s wbfl 20"
+            "/execute @s[tag=wbmsyh,scores={wbfl=20..}] ~ ~ ~ effect @s[tag=wbmsyh] speed 8 3",
+            "/execute @s[tag=!wbmsyh,scores={wbfl=20..}] ~ ~ ~ effect @s speed 8 3",
+            "/execute @s[scores={wbfl=20..}] ~ ~ ~ scoreboard players remove @s wbfl 20"
           ]
         },
         "sword_flyd": {
@@ -1335,11 +1335,11 @@
         "sword_flyb": {
           "on_entry": [
             "/particle wb:sword_fly_parb ~ ~ ~",
-            "/execute positioned as @s[tag=wbmsyh] run damage @e[r=8,rm=2,tag=!wbmsyh] ~ ~ ~ 60 entity_attack entity @s",
-            "/execute positioned as @s[tag=!wbmsyh] run damage @e[r=8,rm=2] ~ ~ ~ 60 entity_attack entity @s",
+            "/execute @s[tag=wbmsyh] ~ ~ ~ damage @e[r=8,rm=2,tag=!wbmsyh] ~ ~ ~ 60 entity_attack entity @s",
+            "/execute @s[tag=!wbmsyh] ~ ~ ~ damage @e[r=8,rm=2] ~ ~ ~ 60 entity_attack entity @s",
             "/title @a[r=10] title §4凌空斩",
-            "/execute positioned as @s[tag=wbmsyh] run execute positioned as @e[r=8,rm=2] run effect @s[tag=!wbmsyh] levitation 2 5",
-            "/execute positioned as @s[tag=!wbmsyh] run execute positioned as @e[r=8,rm=2] run effect @s levitation 2 5",
+            "/execute @s[tag=wbmsyh] ~ ~ ~ execute @e[r=8,rm=2] ~ ~ ~ effect @s[tag=!wbmsyh] levitation 2 5",
+            "/execute @s[tag=!wbmsyh] ~ ~ ~ execute @e[r=8,rm=2] ~ ~ ~ effect @s levitation 2 5",
             "/effect @s levitation 4 1",
             "/particle wb:sword_fly_parb ~ ~ ~",
             "/tp @s ~ ~+4 ~ facing ~ ~ ~",
@@ -1357,10 +1357,10 @@
         },
         "sword_bluemark": {
           "on_entry": [
-            "/execute positioned as @s[scores={wbfl=1..}] run particle wb:sword_bluemark_para ~ ~ ~",
-            "/execute positioned as @s[tag=wbmsyh,scores={wbfl=1..}] run effect @e[tag=!wbmsyh,r=10,rm=3] slowness 2 1",
-            "/execute positioned as @s[tag=!wbmsyh,scores={wbfl=1..}] run effect @e[r=10,rm=3] slowness 2 1",
-            "/execute positioned as @s[scores={wbfl=1..}] run scoreboard players remove @s wbfl 1"
+            "/execute @s[scores={wbfl=1..}] ~ ~ ~ particle wb:sword_bluemark_para ~ ~ ~",
+            "/execute @s[tag=wbmsyh,scores={wbfl=1..}] ~ ~ ~ effect @e[tag=!wbmsyh,r=10,rm=3] slowness 2 1",
+            "/execute @s[tag=!wbmsyh,scores={wbfl=1..}] ~ ~ ~ effect @e[r=10,rm=3] slowness 2 1",
+            "/execute @s[scores={wbfl=1..}] ~ ~ ~ scoreboard players remove @s wbfl 1"
           ],
           "transitions": [
             {
@@ -1394,20 +1394,20 @@
             }
           ],
           "on_entry": [
-            "/execute positioned as @s[scores={wbfl=0..}] run particle wb:sword_bluemark_parb ~ ~ ~",
-            "/execute positioned as @s[scores={wbfl=0..}] run scoreboard players add @s wbfl 50",
+            "/execute @s[scores={wbfl=0..}] ~ ~ ~ particle wb:sword_bluemark_parb ~ ~ ~",
+            "/execute @s[scores={wbfl=0..}] ~ ~ ~ scoreboard players add @s wbfl 50",
             "variable.global_cooling=6;",
             "variable.global_cooling_total=6;"
           ]
         },
         "sword_bluemarkb": {
           "on_entry": [
-            "/execute positioned as @s[scores={wbfl=..19}] run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.44.name\"}]}",
-            "/execute positioned as @s[tag=wbmsyh,scores={wbfl=20..}] run damage @e[rm=3,r=10,tag=!wbmsyh] ~ ~ ~ 45 entity_attack entity @s",
-            "/execute positioned as @s[tag=!wbmsyh,scores={wbfl=20..}] run damage @e[rm=3,r=10] ~ ~ ~ 45 entity_attack entity @s",
-            "/execute positioned as @s[scores={wbfl=20..}] run title @a[r=8] title §d痕.耀",
-            "/execute positioned as @s[scores={wbfl=20..}] run execute positioned as @e[rm=3,r=10] run particle wb:sword_bluemark_parc ~ ~ ~",
-            "/execute positioned as @s[scores={wbfl=20..}] run scoreboard players remove @s wbfl 20",
+            "/execute @s[scores={wbfl=..19}] ~ ~ ~ tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.44.name\"}]}",
+            "/execute @s[tag=wbmsyh,scores={wbfl=20..}] ~ ~ ~ damage @e[rm=3,r=10,tag=!wbmsyh] ~ ~ ~ 45 entity_attack entity @s",
+            "/execute @s[tag=!wbmsyh,scores={wbfl=20..}] ~ ~ ~ damage @e[rm=3,r=10] ~ ~ ~ 45 entity_attack entity @s",
+            "/execute @s[scores={wbfl=20..}] ~ ~ ~ title @a[r=8] title §d痕.耀",
+            "/execute @s[scores={wbfl=20..}] ~ ~ ~ execute @e[rm=3,r=10] ~ ~ ~ particle wb:sword_bluemark_parc ~ ~ ~",
+            "/execute @s[scores={wbfl=20..}] ~ ~ ~ scoreboard players remove @s wbfl 20",
             "variable.global_cooling=4;",
             "variable.global_cooling_total=4;"
           ],
@@ -1422,9 +1422,9 @@
         },
         "sword_guard": {
           "on_entry": [
-            "/execute positioned as @s[tag=wbmsyh,scores={wbfl=5..}] run effect @s[tag=wbmsyh] resistance 1 5 true",
-            "/execute positioned as @s[tag=!wbmsyh,scores={wbfl=5..}] run effect @s resistance 1 5 true",
-            "/execute positioned as @s[scores={wbfl=5..}] run scoreboard players remove @s wbfl 5",
+            "/execute @s[tag=wbmsyh,scores={wbfl=5..}] ~ ~ ~ effect @s[tag=wbmsyh] resistance 1 5 true",
+            "/execute @s[tag=!wbmsyh,scores={wbfl=5..}] ~ ~ ~ effect @s resistance 1 5 true",
+            "/execute @s[scores={wbfl=5..}] ~ ~ ~ scoreboard players remove @s wbfl 5",
             "variable.global_cooling=2;",
             "variable.global_cooling_total=2;"
           ],
@@ -1460,21 +1460,21 @@
             }
           ],
           "on_entry": [
-            "/execute positioned as @s[tag=wbmsyh,scores={wbfl=20..}] run effect @s[tag=wbmsyh] resistance 4 3 true",
-            "/execute positioned as @s[tag=!wbmsyh,scores={wbfl=20..}] run effect @s resistance 4 3 true",
-            "/execute positioned as @s[scores={wbfl=20..}] run scoreboard players remove @s wbfl 20",
+            "/execute @s[tag=wbmsyh,scores={wbfl=20..}] ~ ~ ~ effect @s[tag=wbmsyh] resistance 4 3 true",
+            "/execute @s[tag=!wbmsyh,scores={wbfl=20..}] ~ ~ ~ effect @s resistance 4 3 true",
+            "/execute @s[scores={wbfl=20..}] ~ ~ ~ scoreboard players remove @s wbfl 20",
             "variable.global_cooling=3;",
             "variable.global_cooling_total=3;"
           ]
         },
         "sword_guardb": {
           "on_entry": [
-            "/execute positioned as @s[scores={wbfl=..79}] run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.45.name\"}]}",
-            "/execute positioned as @s[tag=wbmsyh,scores={wbfl=80..}] run effect @a[tag=wbmsyh,r=8] resistance 6 4 false",
-            "/execute positioned as @s[tag=!wbmsyh,scores={wbfl=80..}] run effect @s[r=8] resistance 6 4 false",
-            "/execute positioned as @s[scores={wbfl=80..}] run title @a[r=8] title §b绝对防御",
-            "/execute positioned as @s[scores={wbfl=80..}] run particle wb:sword_guard_par ~ ~ ~",
-            "/execute positioned as @s[scores={wbfl=80..}] run scoreboard players remove @s wbfl 80",
+            "/execute @s[scores={wbfl=..79}] ~ ~ ~ tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.45.name\"}]}",
+            "/execute @s[tag=wbmsyh,scores={wbfl=80..}] ~ ~ ~ effect @a[tag=wbmsyh,r=8] resistance 6 4 false",
+            "/execute @s[tag=!wbmsyh,scores={wbfl=80..}] ~ ~ ~ effect @s[r=8] resistance 6 4 false",
+            "/execute @s[scores={wbfl=80..}] ~ ~ ~ title @a[r=8] title §b绝对防御",
+            "/execute @s[scores={wbfl=80..}] ~ ~ ~ particle wb:sword_guard_par ~ ~ ~",
+            "/execute @s[scores={wbfl=80..}] ~ ~ ~ scoreboard players remove @s wbfl 80",
             "variable.global_cooling=8;",
             "variable.global_cooling_total=8;"
           ],
@@ -1507,10 +1507,10 @@
             }
           ],
           "on_entry": [
-            "/execute positioned as @s[tag=pflame] run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.46.name\"}]}",
-            "/execute positioned as @s[tag=!pflame] run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.47.name\"}]}",
-            "/execute positioned as @s[tag=!pflame] run replaceitem entity @s slot.weapon.mainhand 0 glass_bottle 1",
-            "/execute positioned as @s[tag=!pflame] run tag @s add pflame"
+            "/execute @s[tag=pflame] ~ ~ ~ tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.46.name\"}]}",
+            "/execute @s[tag=!pflame] ~ ~ ~ tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.47.name\"}]}",
+            "/execute @s[tag=!pflame] ~ ~ ~ replaceitem entity @s slot.weapon.mainhand 0 glass_bottle 1",
+            "/execute @s[tag=!pflame] ~ ~ ~ tag @s add pflame"
           ]
         },
         "stop": {
@@ -1533,10 +1533,10 @@
             }
           ],
           "on_entry": [
-            "/execute positioned as @s[scores={wblzxz=1}] run function particle/sflame",
-            "/execute positioned as @s[scores={wblzxz=2}] run function particle/slove",
-            "/execute positioned as @s[scores={wblzxz=3}] run function particle/shalo",
-            "/execute positioned as @s[scores={wblzxz=4}] run function particle/srune"
+            "/execute @s[scores={wblzxz=1}] ~ ~ ~ function particle/sflame",
+            "/execute @s[scores={wblzxz=2}] ~ ~ ~ function particle/slove",
+            "/execute @s[scores={wblzxz=3}] ~ ~ ~ function particle/shalo",
+            "/execute @s[scores={wblzxz=4}] ~ ~ ~ function particle/srune"
           ]
         },
         "p_love": {
@@ -1559,10 +1559,10 @@
             }
           ],
           "on_entry": [
-            "/execute positioned as @s[tag=plove] run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.48.name\"}]}",
-            "/execute positioned as @s[tag=!plove] run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.49.name\"}]}",
-            "/execute positioned as @s[tag=!plove] run replaceitem entity @s slot.weapon.mainhand 0 glass_bottle 1",
-            "/execute positioned as @s[tag=!plove] run tag @s add plove"
+            "/execute @s[tag=plove] ~ ~ ~ tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.48.name\"}]}",
+            "/execute @s[tag=!plove] ~ ~ ~ tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.49.name\"}]}",
+            "/execute @s[tag=!plove] ~ ~ ~ replaceitem entity @s slot.weapon.mainhand 0 glass_bottle 1",
+            "/execute @s[tag=!plove] ~ ~ ~ tag @s add plove"
           ]
         },
         "p_halo": {
@@ -1585,10 +1585,10 @@
             }
           ],
           "on_entry": [
-            "/execute positioned as @s[tag=phalo] run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.50.name\"}]}",
-            "/execute positioned as @s[tag=!phalo] run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.51.name\"}]}",
-            "/execute positioned as @s[tag=!phalo] run replaceitem entity @s slot.weapon.mainhand 0 glass_bottle 1",
-            "/execute positioned as @s[tag=!phalo] run tag @s add phalo"
+            "/execute @s[tag=phalo] ~ ~ ~ tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.50.name\"}]}",
+            "/execute @s[tag=!phalo] ~ ~ ~ tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.51.name\"}]}",
+            "/execute @s[tag=!phalo] ~ ~ ~ replaceitem entity @s slot.weapon.mainhand 0 glass_bottle 1",
+            "/execute @s[tag=!phalo] ~ ~ ~ tag @s add phalo"
           ]
         },
         "p_rune": {
@@ -1611,10 +1611,10 @@
             }
           ],
           "on_entry": [
-            "/execute positioned as @s[tag=prune] run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.52.name\"}]}",
-            "/execute positioned as @s[tag=!prune] run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.53.name\"}]}",
-            "/execute positioned as @s[tag=!prune] run replaceitem entity @s slot.weapon.mainhand 0 glass_bottle 1",
-            "/execute positioned as @s[tag=!prune] run tag @s add prune"
+            "/execute @s[tag=prune] ~ ~ ~ tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.52.name\"}]}",
+            "/execute @s[tag=!prune] ~ ~ ~ tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.53.name\"}]}",
+            "/execute @s[tag=!prune] ~ ~ ~ replaceitem entity @s slot.weapon.mainhand 0 glass_bottle 1",
+            "/execute @s[tag=!prune] ~ ~ ~ tag @s add prune"
           ]
         }
       }

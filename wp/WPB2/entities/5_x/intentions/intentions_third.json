@@ -573,7 +573,7 @@
               "command": [
                 "particle wb:intentions_third_attack_par ~~~",
                 "summon wb:array_intentions_thirda",
-                "execute positioned as @p run summon wb:array_intentions_third"
+                "execute @p ~ ~ ~ summon wb:array_intentions_third"
               ],
               "target": "self"
             },
