@@ -5,38 +5,71 @@
       "initial_state": "default",
       "states": {
         "default": {
-          "transitions": [
+          "transitions": [{
+              "attack_strike": "query.variant == 5 && query.is_delayed_attacking"
+            },
             {
-              "attack_normal": "query.variant == 0 && query.is_delayed_attacking"
+              "attack_normal": "(query.variant == 0 || query.variant == 2||query.variant == 3||query.variant == 4) && query.is_delayed_attacking"
+            },
+            {
+              "attack_meltdown": "query.variant == 1 && query.is_delayed_attacking"
+            },
+            {
+              "attack_meltdown2": "query.variant == 6 && query.is_delayed_attacking"
             }
           ]
         },
-        "attack_normal":{
-          "animations":[
+
+        "attack_normal": {
+          "animations": [
             "att_normal"
           ],
-          "transitions": [
-            {
-              "default": "query.all_animations_finished"
-            }
-          ]
+          "transitions": [{
+            "default": "query.all_animations_finished"
+          }]
+        },
+        "attack_strike": {
+          "animations": [
+            "strike.att"
+          ],
+          "transitions": [{
+            "default": "query.all_animations_finished"
+          }]
+        },
+        "attack_meltdown": {
+          "animations": [
+            "meltdown.att"
+          ],
+          "transitions": [{
+            "default": "query.all_animations_finished"
+          }]
+        },
+        "attack_meltdown2": {
+          "particle_effects": [{
+            "effect": "fx"
+          }],
+          "animations": [
+            "fx"
+          ],
+          "transitions": [{
+            "default": "query.all_animations_finished"
+          }]
         }
-      
+
       }
     },
     "controller.animation.havoc.par": {
       "initial_state": "default",
       "states": {
         "default": {
-          "transitions": [
-            {
+          "transitions": [{
               "strike": "query.variant == 5"
             },
             {
               "reinforce": "query.variant == 3"
             },
             {
-              "meltdown": "query.variant == 1"
+              "meltdown": "query.variant == 1 || query.variant == 6"
             },
             {
               "coordination": "query.variant == 4"
@@ -44,52 +77,55 @@
           ]
         },
         "reinforce": {
-          "particle_effects": [
-            {
-              "effect": "reinforce_par"
-            }
-          ],
-          "transitions": [
-            {
-              "default": "query.variant != 3"
+          "particle_effects": [{
+            "effect": "reinforce_par"
+          }],
+          "transitions": [{
+            "default": "query.variant != 3"
+          }]
+        },
+        "strike": {
+          "particle_effects": [{
+            "effect": "strike_par"
+          }],
+          "transitions": [{
+            "default": "query.variant != 5"
+          }]
+        },
+        "coordination": {
+          "particle_effects": [{
+            "effect": "coordination_par"
+          }],
+          "transitions": [{
+            "default": "query.variant != 4"
+          }]
+        },
+        "meltdown": {
+          "particle_effects": [{
+            "effect": "meltdown_par"
+          }],
+          "transitions": [{
+            "default": "query.variant != 1 && query.variant != 6"
+          }]
+        }
+      }
+    },
+    "controller.animation.havoc.egg": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [{
+              "strike": "query.variant == 1"
             }
           ]
         },
         "strike": {
-          "particle_effects": [
-            {
-              "effect": "strike_par"
-            }
-          ],
-          "transitions": [
-            {
-              "default": "query.variant != 5"
-            }
-          ]
-        },
-        "coordination": {
-          "particle_effects": [
-            {
-              "effect": "coordination_par"
-            }
-          ],
-          "transitions": [
-            {
-              "default": "query.variant != 4"
-            }
-          ]
-        },
-        "meltdown": {
-          "particle_effects": [
-            {
-              "effect": "meltdown_par"
-            }
-          ],
-          "transitions": [
-            {
-              "default": "query.variant != 1"
-            }
-          ]
+          "particle_effects": [{
+            "effect": "spell"
+          }],
+          "transitions": [{
+            "default": "query.variant != 1"
+          }]
         }
       }
     }

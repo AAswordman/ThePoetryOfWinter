@@ -10,8 +10,8 @@
         },
         "oo": {
           "on_entry":[
-          	"/execute positioned as @e[r=6,rm=3] run particle wb:border_fugitive_parc ~ ~ ~",
-          	"/execute positioned as @e[r=6,rm=3] run summon wb:ball_border_fugitiveb ~ ~+5 ~",
+          	"/execute @e[r=6,rm=3] ~ ~ ~ particle wb:border_fugitive_parc ~ ~ ~",
+          	"/execute @e[r=6,rm=3] ~ ~ ~ summon wb:ball_border_fugitiveb ~ ~+5 ~",
           	"/title @a[r=7] title §4炎之咆哮"
            ],
            "transitions":[

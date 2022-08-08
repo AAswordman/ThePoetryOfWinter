@@ -16,8 +16,8 @@
 
           "variable.global_cooling = variable.global_cooling > 0 ? variable.global_cooling - 0.5 * query.scoreboard('wbwqlqjs') / 100:0;",
           "variable.global_cooling_result = Math.round(20*variable.global_cooling/variable.global_cooling_total);",
-          "/execute positioned as @s[scores={wbkjlq=1..}] run tag @s add wbkjlq",
-          "/execute positioned as @s[scores={wbkjlq=..0}] run tag @s remove wbkjlq"
+          "/execute @s[scores={wbkjlq=1..}] ~ ~ ~ tag @s add wbkjlq",
+          "/execute @s[scores={wbkjlq=..0}] ~ ~ ~ tag @s remove wbkjlq"
         ]
       }
     }

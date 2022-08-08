@@ -5,17 +5,17 @@
         "timeline": {
             "0.1": [
                 "/tag @s[scores={wbfl=1..}] add shot",
-                "/execute positioned as @s[scores={wbfl=1..}] run playsound dig.snow @a ~~~",
+                "/execute @s[scores={wbfl=1..}] ~ ~ ~ playsound dig.snow @a ~~~",
                 "/scoreboard players remove @s[scores={wbfl=1..}] wbfl 1"
             ],
             "0.2": [
                 "/tag @s[scores={wbfl=1..}] add shot",
-                "/execute positioned as @s[scores={wbfl=1..}] run playsound dig.snow @a ~~~",
+                "/execute @s[scores={wbfl=1..}] ~ ~ ~ playsound dig.snow @a ~~~",
                 "/scoreboard players remove @s[scores={wbfl=1..}] wbfl 1"
             ],
             "0.3": [
                 "/tag @s[scores={wbfl=1..}] add shot",
-                "/execute positioned as @s[scores={wbfl=1..}] run playsound dig.snow @a ~~~",
+                "/execute @s[scores={wbfl=1..}] ~ ~ ~ playsound dig.snow @a ~~~",
                 "/scoreboard players remove @s[scores={wbfl=1..}] wbfl 1"
             ]
         }, 

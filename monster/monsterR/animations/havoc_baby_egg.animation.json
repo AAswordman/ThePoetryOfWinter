@@ -1,0 +1,17 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.havoc_baby_egg": {
+			"loop": true,
+			"animation_length": 1.00667,
+			"bones": {
+				"part1": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"1.0": [0, 0, 180]
+					}
+				}
+			}
+		}
+	}
+}

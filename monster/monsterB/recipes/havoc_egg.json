@@ -1,0 +1,28 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+      "description": {
+      "identifier": "takile:havoc_baby_egg_spawn_egg"
+      },  
+      "tags": [ "crafting_table" ],
+      "pattern": [
+        "A#A",
+        "#X#",
+        "A#A"
+      ],
+      "key": {
+        "#": {
+          "item": "minecraft:netherite_block"
+        },
+        "X": {
+          "item": "minecraft:nether_star"
+        },
+        "A":{
+            "item":"minecraft:emerald"
+        }
+      },
+      "result": {
+        "item": "takile:havoc_baby_egg_spawn_egg"
+      }
+    }
+  }

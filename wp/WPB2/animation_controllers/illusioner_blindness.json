@@ -10,7 +10,7 @@
             }
           ],
           "on_entry": [
-            "/execute positioned as @s run effect @e[r=2] blindness 20 1"
+            "/execute @s ~ ~ ~ effect @e[r=2] blindness 20 1"
           ]
         },
         "walking": {
@@ -20,7 +20,7 @@
             }
           ],
           "on_entry": [
-            "/execute positioned as @s run effect @e[r=2] blindness 20 1"
+            "/execute @s ~ ~ ~ effect @e[r=2] blindness 20 1"
           ]
         }
       }
