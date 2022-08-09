@@ -824,7 +824,6 @@
           "$loot_tabel_item_f": "textures/items/sword_of_guard",
           "$loot_tabel_item_g": "textures/items/storm_giant_sword",
           "$loot_tabel_item_h": "textures/items/decrepit_atlantis",
-          "$loot_tabel_item_i": "textures/wb_item/base/mineral_senior_water",
           "anchor_from": "top_left",
           "anchor_to": "top_left"
         }
@@ -843,7 +842,6 @@
           "$boss_name": "boss.dec:predators.name",
           "$item_icon": "textures/items/bat_bait",
           "$boss_threed_img": "textures/wb_ui/boss3",
-          "$loot_tabel_item_a": "textures/wb_item/base/mineral_senior_boundary",
           "$loot_tabel_item_b": "textures/items/bone",
           "$loot_tabel_item_c": "textures/items/mutton_raw",
           "$loot_tabel_item_d": "textures/items/beef_raw",
@@ -870,7 +868,6 @@
           "$boss_name": "boss.dec:enchant_illager.name",
           "$item_icon": "textures/items/dark_pearl",
           "$boss_threed_img": "textures/wb_ui/boss4",
-          "$loot_tabel_item_a": "textures/wb_item/base/mineral_senior_ink",
           "$loot_tabel_item_b": "textures/items/wooden_enchant_book",
           "$loot_tabel_item_c": "textures/items/iron_sword",
           "$loot_tabel_item_d": "textures/items/iron_axe",
@@ -903,7 +900,6 @@
           "$boss_name": "boss.dec:everlasting_winter_ghast.name",
           "$item_icon": "textures/ui/none",
           "$boss_threed_img": "textures/wb_ui/boss5",
-          "$loot_tabel_item_a": "textures/wb_item/base/mineral_senior_forget",
           "$loot_tabel_item_b": "textures/items/snowball_magic_book",
           "$loot_tabel_item_c": "textures/items/frozen_ball",
           "$loot_tabel_item_d": "textures/items/grapeshot_frozen_ball",
@@ -931,7 +927,6 @@
           "$item_icon": "textures/items/entity_soul",
           "$boss_threed_img": "textures/wb_ui/boss6",
           "$loot_tabel_item_a": "textures/items/ghost_essence",
-          "$loot_tabel_item_b": "textures/wb_item/base/mineral_senior_seal",
           "$loot_tabel_item_c": "textures/items/nether_star",
           "$loot_tabel_item_d": "textures/items/ghost_ingot",
           "$loot_tabel_item_e": "textures/items/ice_heart",
@@ -960,7 +955,6 @@
           "$loot_tabel_item_e": "textures/blocks/crimson_fungus",
           "$loot_tabel_item_f": "textures/blocks/huge_fungus/crimson_log_top",
           "$loot_tabel_item_g": "textures/blocks/nether_wart_block",
-          "$loot_tabel_item_h": "textures/wb_item/base/mineral_senior_equipment",
           "anchor_from": "top_left",
           "anchor_to": "top_left"
         }
@@ -982,7 +976,6 @@
           "$loot_tabel_item_a": "textures/items/dust_destroyer",
           "$loot_tabel_item_b": "textures/items/dust_staff",
           "$loot_tabel_item_c": "textures/items/chaos_staff",
-          "$loot_tabel_item_d": "textures/wb_item/base/mineral_senior_boundary",
           "$loot_tabel_item_e": "textures/blocks/ash",
           "$loot_tabel_item_f": "textures/items/nether_star",
           "$loot_tabel_item_g": "textures/items/blaze_rod",

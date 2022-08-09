@@ -1,14 +1,26 @@
 {
-  "format_version": "1.12",
-  "minecraft:recipe_furnace": {
-    "description": {
-    "identifier": "wb:block_senior_boundary_ore"
-    },
-
-    
-    "tags": ["furnace", "blast_furnace"],
-    "input": "wb:block_senior_boundary_ore",
-    "output": "wb:mineral_senior_boundary"
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+      "description": {
+      "identifier": "wb:block_senior_boundary_ore"
+      },
+      "tags": [ "crafting_table" ],
+      "pattern": [
+        "###",
+        "#Y#",
+        "###"
+      ],
+      "key": {
+        "#": {
+          "item": "wb:mineral_energy_boundary"
+        },
+        "Y":{
+            "item": "minecraft:diamond"
+        }
+      },
+      "result": {
+        "item": "wb:block_senior_boundary_ore"
+      }
+    }
   }
   
-}

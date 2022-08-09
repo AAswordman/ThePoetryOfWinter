@@ -30,7 +30,8 @@
       "minecraft:explode": {
         "fuse_length": 15,
         "fuse_lit": true,
-        "power": 134,
+        "power": 1000,
+        "max_resistance":10,
         "causes_fire": true
       },
 	    "minecraft:physics": {

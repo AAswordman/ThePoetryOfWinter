@@ -40,7 +40,7 @@ export default class PomServer extends ExGameServer {
 			if(entities.length > 400){
 				entities.forEach(e => {
 					if(e == undefined) return;
-					if(e.id === max[1] && e.nameTag) e.kill();
+					if(e.id === max[1] && !e.nameTag) e.kill();
 				});
 			}
 
