@@ -8,7 +8,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import ExGameClient from "./ExGameClient.js";
-import ExDimension from "./ExDimension.js";
 import { world } from "mojang-minecraft";
 import ExGameConfig from "./ExGameConfig.js";
 import initConsole from "./utils/Console.js";
@@ -26,7 +25,7 @@ export default class ExGameServer {
         this._events.events.playerLeave.subscribe(this.onClientLeave.bind(this));
     }
     getDimension(dimensionId) {
-        return new ExDimension(world.getDimension(dimensionId));
+        return world.getDimension(dimensionId);
     }
     getEvents() {
         return this._events;

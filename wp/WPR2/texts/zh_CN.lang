@@ -115,7 +115,7 @@ item.spawn_egg.entity.base.name=生成 实体
 entity.base.name=实体名	
 item.base.name=物品名称	
 
-item.hostile_mode=§6Lv.? §r菜单
+item.hostile_mode=§6Lv.? §r暂时没用
 
 item.wb:wb_help.name=§d§l请打开聊天栏仔细看完全部内容。游戏指南里有本add详细介绍。	
 item.wb:element_base.name=§6Lv.? §r魔法能量基础	
@@ -272,7 +272,7 @@ item.wb:conveyor_accept.name=§6Lv.6 §f传送石_接收端
 
 item.wb:currency_1.name=§6Lv.6 §f黄宝石
 
-item.wb:start_key.name=§6Lv.1 §f启程钥匙
+item.wb:start_key=§6Lv.1 §f启程钥匙
 item.wb:hostile_mode.name=§6Lv.1 §f模式菜单
 item.wb:back_key.name=§6Lv.1 §f反程钥匙(长按退出剧情线)
 
@@ -365,7 +365,7 @@ entity.wb:ball_staff_firea.name=烈焰法杖的炮弹
 entity.wb:ball_sword_ink.name=墨痕剑
 entity.wb:ball_bluemark.name=痕.耀.
 
-item.wb:power.name=§6Lv.25 §a状态查看器
+item.wb:power.name=§6Lv.25 §a菜单
 
 item.wb:currency_3.name=§6Lv.25 §a紫宝石
 

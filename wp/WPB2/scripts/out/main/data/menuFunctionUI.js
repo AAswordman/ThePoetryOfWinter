@@ -439,6 +439,18 @@ export default {
                                     client.globalSettings.tpNeedItem = !client.globalSettings.tpNeedItem;
                                     return true;
                                 }
+                            },
+                            {
+                                "type": "toggle",
+                                "msg": "开启实体清理",
+                                "state": (client, ui) => client.globalSettings.entityCleaner,
+                                "function": (client, ui) => {
+                                    client.globalSettings.entityCleaner = !client.globalSettings.entityCleaner;
+                                    client.runOnServer((server) => {
+                                        server.upDateEntityCleaner();
+                                    });
+                                    return true;
+                                }
                             }
                         ];
                     }

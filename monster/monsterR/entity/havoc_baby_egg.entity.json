@@ -14,20 +14,20 @@
       },
       "scripts": {
         "animate": [
-          "base","par"
+          "base", "par"
         ]
       },
       "animations": {
         "base": "animation.havoc_baby_egg",
-        "par":"controller.animation.havoc.egg"
+        "par": "controller.animation.havoc.egg"
       },
-      "particle_effects":{
-        "spell":"takile:havoc_baby_egg_par"
+      "particle_effects": {
+        "spell": "takile:havoc_baby_egg_par"
       },
       "render_controllers": ["controller.render.base.base"],
-      "spawn_egg":{
-        "base_color":"#0x095656",
-        "overlay_color":"#39D6E0"
+      "spawn_egg": {
+        "texture": "havoc_baby_egg",
+        "texture_index": 0
       }
     }
   }

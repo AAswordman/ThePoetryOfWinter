@@ -5,19 +5,21 @@
       "identifier": "takile:havoc_monster",
       "materials": {
         "default": "skeleton",
-        "charged":"charged_creeper"
+        "charged": "charged_creeper"
       },
       "textures": {
         "default": "textures/entity/havoc",
-        "charged":"textures/entity/havoc_fx"
+        "charged": "textures/entity/havoc_fx"
       },
       "geometry": {
         "default": "geometry.havoc_v2",
-        "charged":"geometry.havoc_fx"
+        "charged": "geometry.havoc_fx"
       },
       "render_controllers": [
         "controller.render.base.base",
-        "controller.render.creeper_armor"
+        {
+          "controller.render.creeper_armor": "query.is_delayed_attacking"
+        }
       ],
       "scripts": {
         "animate": [
@@ -27,19 +29,19 @@
         ]
       },
       "animations": {
-        "meltdown.att":"animation.havoc.meltdown_attack",
-        "walk":"animation.havoc.normal2",
-        "strike.att":"animation.havoc.strike.attack",
-        "attack":"controller.animation.havoc.attack",
-        "att_normal":"animation.havoc.attack",
+        "meltdown.att": "animation.havoc.meltdown_attack",
+        "walk": "animation.havoc.normal2",
+        "strike.att": "animation.havoc.strike.attack",
+        "attack": "controller.animation.havoc.attack",
+        "att_normal": "animation.havoc.attack",
         "reinforce": "controller.animation.havoc.par",
-        "fx":"animation.havoc.fx"
+        "fx": "animation.havoc.fx"
       },
       "particle_effects": {
         "reinforce_par": "takile:havoc_reinforce_par",
         "meltdown_par": "takile:havoc_meltdown_par",
         "strike_par": "takile:havoc_strike_par",
-        "fx":"takile:havoc_test",
+        "fx": "takile:havoc_test",
         "coordination_par": "takile:havoc_coordination_par"
       },
       "spawn_egg": {

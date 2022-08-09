@@ -25,7 +25,7 @@
             "att_normal"
           ],
           "transitions": [{
-            "default": "query.all_animations_finished"
+            "default": "query.all_animations_finished || !query.is_delayed_attacking"
           }]
         },
         "attack_strike": {
@@ -33,7 +33,7 @@
             "strike.att"
           ],
           "transitions": [{
-            "default": "query.all_animations_finished"
+            "default": "query.all_animations_finished || !query.is_delayed_attacking"
           }]
         },
         "attack_meltdown": {
@@ -41,7 +41,7 @@
             "meltdown.att"
           ],
           "transitions": [{
-            "default": "query.all_animations_finished"
+            "default": "query.all_animations_finished || !query.is_delayed_attacking"
           }]
         },
         "attack_meltdown2": {
@@ -52,7 +52,7 @@
             "fx"
           ],
           "transitions": [{
-            "default": "query.all_animations_finished"
+            "default": "query.all_animations_finished || !query.is_delayed_attacking"
           }]
         }
 

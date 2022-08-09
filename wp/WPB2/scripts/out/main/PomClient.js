@@ -184,7 +184,7 @@ export default class PomClient extends ExGameClient {
         // jet pack
         this.getEvents().exEvents.itemUse.subscribe(e => {
             if (e.item.id === "wb:jet_pack") {
-                this.exPlayer.setPosition(this.exPlayer.getPosition().add(this.exPlayer.getViewVector().mul(0.4)));
+                this.player.setVelocity(this.exPlayer.getViewVector().mul(5).getVector());
             }
         });
         //附魔

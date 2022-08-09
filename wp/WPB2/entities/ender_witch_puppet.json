@@ -11,7 +11,7 @@
 		},
 		"components": {
 			"minecraft:explode": {
-				"fuseLength": 10,
+				"fuseLength": 5,
 				"fuseLit": true,
 				"power": 0,
 				"causesFire": false
@@ -47,8 +47,8 @@
 			"minecraft:jump.static": {},
 			"minecraft:can_climb": {},
 			"minecraft:health": {
-				"value": 5,
-				"max": 5
+				"value": 2,
+				"max": 2
 			},
 			"minecraft:breathable": {
 				"total_supply": 15,
