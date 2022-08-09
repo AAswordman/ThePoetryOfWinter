@@ -6,6 +6,7 @@ import ExMessageAlert from "../../modules/exmc/ui/ExMessageAlert.js";
 import { ItemStack } from "mojang-minecraft";
 import { ExPlayerBag } from "../../modules/exmc/entity/ExEntityBag.js";
 import TalentData, { Occupation, Talent } from "../cache/TalentData.js";
+import PomServer from '../PomServer.js';
 
 export default {
 	"main": {
@@ -431,6 +432,18 @@ export default {
 								"state": (client: PomClient, ui: MenuUIAlert) => client.globalSettings.tpNeedItem,
 								"function": (client: PomClient, ui: MenuUIAlert) => {
 									client.globalSettings.tpNeedItem = !client.globalSettings.tpNeedItem;
+									return true;
+								}
+							},
+							{
+								"type": "toggle",
+								"msg": "开启实体清理",
+								"state": (client: PomClient, ui: MenuUIAlert) => client.globalSettings.entityCleaner,
+								"function": (client: PomClient, ui: MenuUIAlert) => {
+									client.globalSettings.entityCleaner = !client.globalSettings.entityCleaner;
+									client.runOnServer((server) =>{
+										(<PomServer>server).upDateEntityCleaner();
+									});
 									return true;
 								}
 							}

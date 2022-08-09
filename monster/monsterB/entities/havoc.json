@@ -64,16 +64,16 @@
           "knockback_strength": 0,
           "knockback_range": 4,
           "knockback_filters": {
-            "test": "is_owner",
+            "test": "is_family",
             "subject": "other",
             "operator": "!=",
-            "value": true
+            "value": "player"
           },
-          "damage_filters": {
-            "test": "is_owner",
+          "damage_filters":  {
+            "test": "is_family",
             "subject": "other",
             "operator": "!=",
-            "value": true
+            "value": "player"
           },
           "on_roar_end": {
             "event": "skill:reinforce_5_cancel"
@@ -985,6 +985,19 @@
         }
       },
       "on_tame": {
+        "run_command": {
+          "command": [
+            "give @p takile:havoc_sign_add",
+            "give @p takile:havoc_skill_circuitous",
+            "give @p takile:havoc_sign_remove",
+            "give @p takile:havoc_skill_coordination",
+            "give @p takile:havoc_skill_meltdown",
+            "give @p takile:havoc_skill_reinforce",
+            "give @p takile:havoc_skill_strike",
+            "give @p takile:havoc_skill_unreinforce",
+            "give @p takile:havoc_skill_uncoordination"
+          ]
+        },
         "add": {
           "component_groups": [
             "tamed"

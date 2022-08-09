@@ -18,5 +18,11 @@ export default class GlobalSettings extends GlobalScoreBoardCache {
     set gameOpList(value) {
         this.setList("gameOpList", value);
     }
+    get entityCleaner() {
+        return this.getBoolean("entityCleaner");
+    }
+    set entityCleaner(value) {
+        this.setBoolean("entityCleaner", value);
+    }
 }
 //# sourceMappingURL=GlobalSettings.js.map

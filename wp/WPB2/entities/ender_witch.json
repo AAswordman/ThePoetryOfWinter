@@ -41,8 +41,8 @@
         "table": "loot_tables/entities/enderman.json"
       },
       "minecraft:health": {
-        "value": 56,
-        "max":56
+        "value": 10,
+        "max":10
       },
       "minecraft:collision_box": {
         "width": 0.6,

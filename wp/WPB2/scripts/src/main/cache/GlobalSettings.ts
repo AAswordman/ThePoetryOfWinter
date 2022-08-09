@@ -20,4 +20,10 @@ export default class GlobalSettings extends GlobalScoreBoardCache {
     public set gameOpList(value: number[]) {
         this.setList("gameOpList", value);
     }
+    public get entityCleaner() {
+        return this.getBoolean("entityCleaner");
+    }
+    public set entityCleaner(value: boolean) {
+        this.setBoolean("entityCleaner", value);
+    }
 }

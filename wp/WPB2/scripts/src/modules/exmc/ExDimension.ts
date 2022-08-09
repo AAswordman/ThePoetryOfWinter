@@ -15,7 +15,7 @@ export default class ExDimension implements ExCommandRunner{
 	}
 
 	getEntities(entityQueryOptions:EntityQueryOptions | undefined = undefined){
-			return this._dimension.getEntities(entityQueryOptions);
+		return this._dimension.getEntities(entityQueryOptions);
 	}
 	getBlock(vec:Vector3){
 		return this._dimension.getBlock(vec.getBlockLocation());

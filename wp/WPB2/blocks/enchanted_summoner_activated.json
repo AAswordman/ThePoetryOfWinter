@@ -28,7 +28,12 @@
         "run_command": {
           "command": [
             "tellraw @a { \"rawtext\" : [ { \"translate\" : \"text.dec:summon_enchant_illager.name\" } ] }",
-            "summon dec:enchant_illager ~~1~"
+            "summon dec:enchant_illager ~~1~",
+            "fill ~-2~~-2 ~-1~5~2 air 0 destroy",
+            "fill ~~~1 ~2~5~2 air 0 destroy",
+            "fill ~1~~ ~2~5~-2 air 0 destroy",
+            "fill ~~~-1 ~~5~-2 air 0 destroy",
+            "fill ~~1~ ~~5~ air 0 destroy"
           ]
         },
         "decrement_stack": {}

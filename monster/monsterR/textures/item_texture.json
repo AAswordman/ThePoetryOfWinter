@@ -20,6 +20,9 @@
     "havoc_egg": {
       "textures": "textures/items/havoc_egg.png"
     },
+    "havoc_baby_egg": {
+      "textures": "textures/items/havoc_baby_egg.png"
+    },
     "havoc_skill_reinforce": {
       "textures": "textures/items/havoc_skill_reinforce.png"
     },
