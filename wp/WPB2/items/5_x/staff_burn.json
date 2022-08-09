@@ -6,9 +6,6 @@
       "category": "equipment"
     },
     "components": {
-      "minecraft:creative_category": {
-        "parent": "itemGroup.name.sword"
-      },
       "minecraft:icon": {
         "texture": "staff_burn"
       },
@@ -91,8 +88,8 @@
         "max_durability": 2000
       },
       "minecraft:creative_category": {
-				"parent": "itemGroup.name.sword"
-			},
+        "parent": "itemGroup.name.sword"
+      },
       "minecraft:repairable": {
         "repair_items": [{
           "items": [

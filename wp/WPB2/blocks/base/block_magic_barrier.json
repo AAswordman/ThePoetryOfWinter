@@ -8,6 +8,7 @@
 		"components": {
 			"minecraft:destroy_time": 0.01,
 			"minecraft:explosion_resistance": 100,
+			
 			"minecraft:creative_category": {
 				"category": "construction"
 			}

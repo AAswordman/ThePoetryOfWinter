@@ -20,7 +20,7 @@
       }
     },
     "component_groups": {
-     "dragon_sitting": {
+      "dragon_sitting": {
         "minecraft:behavior.dragonlanding": {
           "priority": 0
         },
@@ -192,7 +192,7 @@
         }
       },
       "awake": {
-        "minecraft:damage_sensor":{},
+        "minecraft:damage_sensor": {},
         "minecraft:variant": {
           "value": 1
         },
@@ -219,31 +219,29 @@
         "minecraft:teleport": {
           "lightTeleportChance": 0.01,
           "maxRandomTeleportTime": 30,
-          "randomTeleportCube": [32,32,32],
+          "randomTeleportCube": [32, 32, 32],
           "randomTeleports": true,
           "targetDistance": 32
         }
       }
     },
     "components": {
-     "minecraft:boss": {
+      "minecraft:boss": {
         "should_darken_sky": false,
         "hud_range": 125
       },
       "minecraft:damage_sensor": {
-          "triggers": [
-            {
-              "on_damage": {
-                "filters": {
-                  "test": "has_damage",
-                  "value": "fatal"
-                },
-                "event": "to_awake"
-              },
-              "deals_damage": false
-            }
-          ]
-       },
+        "triggers": [{
+          "on_damage": {
+            "filters": {
+              "test": "has_damage",
+              "value": "fatal"
+            },
+            "event": "to_awake"
+          },
+          "deals_damage": false
+        }]
+      },
       "minecraft:on_start_landing": {
         "event": "minecraft:start_land",
         "target": "self"
@@ -257,24 +255,22 @@
         "target": "self"
       },
       "minecraft:behavior.nearest_attackable_target": {
-        "entity_types": [
-          {
-            "filters": {
-              "other_with_color": 0,
-              "other_with_families": [
-                "player",
-                "snowgolem",
-                "irongolem",
-                "wither"
-              ]
-            },
-            "max_dist": 35,
-            "must_see": false,
-            "sprint_speed_multiplier": 1,
-            "walk_speed_multiplier": 1,
-            "within_default": 1
-          }
-        ],
+        "entity_types": [{
+          "filters": {
+            "other_with_color": 0,
+            "other_with_families": [
+              "player",
+              "snowgolem",
+              "irongolem",
+              "wither"
+            ]
+          },
+          "max_dist": 35,
+          "must_see": false,
+          "sprint_speed_multiplier": 1,
+          "walk_speed_multiplier": 1,
+          "within_default": 1
+        }],
         "must_see": false,
         "within_radius": 25,
         "priority": 1,
@@ -296,7 +292,7 @@
       "minecraft:health": {
         "max": 200,
         "value": 200
-       
+
       },
       "minecraft:knockback_resistance": {
         "max": 100,
@@ -371,24 +367,22 @@
         }
       },
       "awake": {
-        "sequence": [
-          {
-            "add": {
-              "component_groups": [
-                "进化前",
-                "awake",
-                "fdragon_flying"
-              ]
-            },
-            "remove": {
-              "component_groups": [
-                "dragon_flying",
-                "dragon_sitting",
-                "to_awake"
-              ]
-            }
+        "sequence": [{
+          "add": {
+            "component_groups": [
+              "进化前",
+              "awake",
+              "fdragon_flying"
+            ]
+          },
+          "remove": {
+            "component_groups": [
+              "dragon_flying",
+              "dragon_sitting",
+              "to_awake"
+            ]
           }
-        ]
+        }]
       },
       "fminecraft:start_death": {
         "add": {

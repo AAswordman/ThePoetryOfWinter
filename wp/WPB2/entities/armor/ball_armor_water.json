@@ -33,7 +33,6 @@
           "event": "sss"
         },
         "knockback_filters": {
-        
           "test": "has_tag",
           "subject": "other",
           "operator": "!=",

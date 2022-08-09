@@ -10,7 +10,7 @@ export default class ExGameConfig {
     }
 }
 ExGameConfig.gameVersion = "1.9.10";
-ExGameConfig.addonVersion = "1.5.2";
+ExGameConfig.addonVersion = "1.6.0";
 ExGameConfig.debug = true;
 ExGameConfig.serverId = "Server";
 ExGameConfig.transmissionType = {
