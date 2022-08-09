@@ -2645,15 +2645,6 @@
         }
       },
       {
-        "centerpoint": {
-          "type": "image",
-          "size": [14, 14],
-          "anchor_from": "center",
-          "anchor_to": "center",
-          "texture": "textures/ui/centerpoint"
-        }
-      },
-      {
         "mob_effects_renderer@mob_effects_renderer": {
           "size": [
             "100%",

@@ -30,6 +30,9 @@ howtoplay.category.plot=剧情线
 howtoplay.wb8.title=剧情线
 howtoplay.wb8=剧情线
 
+item.wb:book_cache=转移附魔书
+tile.wb:block_translate.name=未激活的转移台
+tile.wb:block_translate_book.name=激活了但没卵用的转移台
 
 item.wb:armor_bloodsucking_helmet=嗜血头盔
 item.wb:armor_bloodsucking_boots=嗜血靴子
@@ -93,7 +96,7 @@ item.wb:armor_senior_equipment_chestplate=魔能胸甲
 
 
 item.wb:technology_world_explorer.name=世界探索者
-item.wb:integrated_circuit_boar.name=集成电路板
+item.wb:integrated_circuit_board.name=集成电路板
 item.wb:jet_pack.name=喷气背包(长按起飞)
 item.wb:turbine.name=涡轮
 item.wb:impeller.name=叶轮
@@ -132,7 +135,7 @@ item.wb:base_core_g.name=§6Lv.? §r传神的魔法核心
 item.wb:element_bright.name=§6Lv.? §r光之能量	
 item.wb:element_frost.name=§6Lv.? §r冰之能量	
 item.wb:element_soil.name=§6Lv.? §r土之能量	
-item.wb:element_fire.name=§6Lv.? §r火之能量	
+item.wb:element_flame.name=§6Lv.? §r火之能量	
 item.wb:element_summon.name=§6Lv.? §r圣灵能量	
 item.wb:element_wind.name=§6Lv.? §r风之能量	
 item.wb:element_bluemark.name=§6Lv.? §r蓝痕logo
@@ -861,6 +864,12 @@ howtoplay.wb.ui.279.name=历史和真相，在你面前徐徐展开。
 howtoplay.wb.ui.280.name=§e
 howtoplay.wb.ui.281.name='这就是 世界。'
 howtoplay.wb.ui.282.name='一切都只是时间的事情罢了。'
+
+text.wb:summon_awake_dragon.name=§e觉醒末影龙已苏醒
+text.wb:awake_dragon_die.name=§e觉醒末影龙已被击败，启程钥匙开启，高级锭解锁
+
+
+
 item.dec:rice.name=大米
 item.dec:a_bowl_of_rice.name=一碗饭
 item.dec:potato_rice.name=土豆焖饭

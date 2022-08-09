@@ -107,6 +107,9 @@
               "sword_guard": "query.get_equipped_item_name == 'sword_guard'"
             },
             {
+              "staff_barrier": "query.get_equipped_item_name == 'staff_barrier'"
+            },
+            {
               "sword_bluemark": "query.get_equipped_item_name == 'sword_bluemark'"
             },
             {
@@ -308,7 +311,7 @@
         },
         "start_key": {
           "on_entry": [
-            "/tellraw @s {\"rawtext\":[{\"text\":\"§e长按开始流程\n强烈建议用屏障法杖创建大空地玩，因为随时可能出boss\n再强调一遍，长按启动BOSS和剧情流程(建议生存后期打)\n还有，是长按钥匙而不是长按问号！！！\"}]}",
+            "/tellraw @s {\"rawtext\":[{\"text\":\"§e长按钥匙开始流程\"}]}",
             "/summon wb:plot_talk_npc ~~~",
             "/gamemode survival @s[m=creative]"
           ],
@@ -1417,6 +1420,29 @@
             },
             {
               "default": "query.get_equipped_item_name != 'sword_bluemark'&&variable.global_cooling==0"
+            }
+          ]
+        },
+        "staff_barrier":{
+          "transitions": [
+            {
+              "default": "query.get_equipped_item_name != 'staff_barrier'"
+            },
+            {
+              "staff_barriera": "query.is_using_item"
+            }
+          ]
+        },
+        "staff_barriera":{
+          "on_entry": [
+            "/setblock ~ ~-1 ~ wb:block_magic_barrier keep"
+          ],
+          "transitions": [
+            {
+              "default": "query.get_equipped_item_name != 'staff_barrier'"
+            },
+            {
+              "staff_barrier": "!query.is_using_item"
             }
           ]
         },

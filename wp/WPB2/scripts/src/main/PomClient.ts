@@ -201,7 +201,7 @@ export default class PomClient extends ExGameClient {
 
 		// jet pack
 		this.getEvents().exEvents.itemUse.subscribe(e => {
-			if(e.item.id === "wb:jet_pack") {
+			if (e.item.id === "wb:jet_pack") {
 				this.player.setVelocity(this.exPlayer.getViewVector().mul(5).getVector());
 			}
 		});
@@ -300,8 +300,14 @@ export default class PomClient extends ExGameClient {
 		}
 
 
-		(function (c: PomClient) {
-			c.sayTo("本addon由aa剑侠和Lileyi制作，若发现其他地方信息被修改过请及时通知我们！")
+		//职业核心
+		(function (c: any) {
+			let a, b, d, e, f, g, h, i, j;
+			f = "sdgdfhfacfhllyzsFsxdTLLBo";
+			a = f?.[0] + f?.[7] + f?.[13] + f[20] + f[24];
+			e = "%AF%B7%E5%8F%8A%E6%97%B6%E9%80%9A%E7%9F%A5%E6%88%91%E4%BB%AC%EF%BC%81";
+			d = "%E6%9C%ACaddon%E7%94%B1aa%E5%89%91%E4%BE%A0%E5%92%8CLileyi%E5%88%B6%E4%BD%9C%EF%BC%8C%E8%8B%A5%E5%8F%91%E7%8E%B0%E5%85%B6%E4%BB";
+			c[a](decodeURIComponent((d ?? 0) + "%96%E5%9C%B0%E6%96%B9%E4%BF%A1%E6%81%AF%E8%A2%AB%E4%BF%AE%E6%94%B9%E8%BF%87%E8" + e));
 		})(this);
 
 
