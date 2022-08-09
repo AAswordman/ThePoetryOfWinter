@@ -3,7 +3,7 @@
         {
             "rolls": {
                 "min": 2,
-                "max": 2
+                "max": 3
               },
             "entries": [
                 {
@@ -94,6 +94,35 @@
                         "treasure": true
                        }
                     ]
+                },
+                {
+                  "type": "item",
+                  "name": "dec:lapis_sword",
+                  "weight": 1,
+                  "functions": [
+                    {
+                      "function": "enchant_with_levels",
+                      "levels": 50,
+                      "treasure": true
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "name": "dec:lapis_dagger",
+                  "weight": 1,
+                  "functions": [
+                    {
+                      "function": "enchant_with_levels",
+                      "levels": 50,
+                      "treasure": true
+                    }
+                  ]
+                },
+                {
+                  "type": "item",
+                  "name": "dec:lapis_magic_book",
+                  "weight": 2
                 }
             ]
         },
