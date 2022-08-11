@@ -29,7 +29,7 @@ export default class PomServer extends ExGameServer {
             });
             ExGameConfig.console.log("最多实体数：" + max[0]);
             ExGameConfig.console.log("最多实体数：" + max[1]);
-            if (entities.length > 400) {
+            if (entities.length > 500) {
                 entities.forEach(e => {
                     if (e == undefined)
                         return;

@@ -1,0 +1,54 @@
+effect @s[scores={speed=1}] speed 1 1
+effect @s[scores={speed=2}] speed 1 2
+effect @s[scores={speed=3}] speed 1 3
+effect @s[scores={speed=4}] speed 1 4
+effect @s[scores={speed=5}] speed 1 5
+effect @s[scores={speed=6}] speed 1 6
+effect @s[scores={speed=7}] speed 1 7
+effect @s[scores={speed=8}] speed 1 8
+effect @s[scores={speed=9}] speed 1 9
+effect @s[scores={speed=0}] speed 1 0
+
+effect @s[scores={resistance=1}] resistance 1 1
+effect @s[scores={resistance=2}] resistance 1 2
+effect @s[scores={resistance=3}] resistance 1 3
+effect @s[scores={resistance=4}] resistance 1 4
+effect @s[scores={resistance=5}] resistance 1 5
+effect @s[scores={resistance=6}] resistance 1 6
+effect @s[scores={resistance=7}] resistance 1 7
+effect @s[scores={resistance=8}] resistance 1 8
+effect @s[scores={resistance=9}] resistance 1 9
+effect @s[scores={resistance=0}] resistance 1 0
+
+effect @s[scores={absorption=1}] absorption 1 1
+effect @s[scores={absorption=2}] absorption 1 2
+effect @s[scores={absorption=3}] absorption 1 3
+effect @s[scores={absorption=4}] absorption 1 4
+effect @s[scores={absorption=5}] absorption 1 5
+effect @s[scores={absorption=6}] absorption 1 6
+effect @s[scores={absorption=7}] absorption 1 7
+effect @s[scores={absorption=8}] absorption 1 8
+effect @s[scores={absorption=9}] absorption 1 9
+effect @s[scores={absorption=0}] absorption 1 0
+
+effect @s[scores={regeneration=1}] regeneration 1 1
+effect @s[scores={regeneration=2}] regeneration 1 2
+effect @s[scores={regeneration=3}] regeneration 1 3
+effect @s[scores={regeneration=4}] regeneration 1 4
+effect @s[scores={regeneration=5}] regeneration 1 5
+effect @s[scores={regeneration=6}] regeneration 1 6
+effect @s[scores={regeneration=7}] regeneration 1 7
+effect @s[scores={regeneration=8}] regeneration 1 8
+effect @s[scores={regeneration=9}] regeneration 1 9
+effect @s[scores={regeneration=0}] regeneration 1 0
+
+effect @s[scores={strength=1}] strength 1 1
+effect @s[scores={strength=2}] strength 1 2
+effect @s[scores={strength=3}] strength 1 3
+effect @s[scores={strength=4}] strength 1 4
+effect @s[scores={strength=5}] strength 1 5
+effect @s[scores={strength=6}] strength 1 6
+effect @s[scores={strength=7}] strength 1 7
+effect @s[scores={strength=8}] strength 1 8
+effect @s[scores={strength=9}] strength 1 9
+effect @s[scores={strength=0}] strength 1 0

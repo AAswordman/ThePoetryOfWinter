@@ -1,1 +1,0 @@
-{"version":3,"file":"MathUtil.js","sourceRoot":"","sources":["../../../../src/modules/exmc/utils/MathUtil.ts"],"names":[],"mappings":"AAAA,MAAM,CAAC,OAAO,OAAO,QAAQ;IAC5B,MAAM,CAAC,QAAQ,CAAC,GAAU;QACzB,IAAI,MAAM,GAAG,eAAe,CAAC,CAAC,OAAO;QACrC,IAAI,MAAM,GAAG,oFAAoF,CAAC;QAClG,OAAO,MAAM,CAAC,IAAI,CAAC,GAAG,CAAC,IAAI,MAAM,CAAC,IAAI,CAAC,GAAG,CAAC,CAAC;IAC7C,CAAC;CACD"}

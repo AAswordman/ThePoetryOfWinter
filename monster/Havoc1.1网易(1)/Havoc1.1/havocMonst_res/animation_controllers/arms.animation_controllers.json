@@ -1,0 +1,199 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.de.player.de_arms": {
+      "initial_state" : "default",
+      "states": {
+        "default": {
+          "blend_transition": 0.2,
+          "blend_via_shortest_path": true,
+          "transitions": [
+            {
+              "arms_sickle": "query.get_equipped_item_name == 'arms_sickle'"
+            }
+          ]
+        },
+        "arms_sickle": {
+          "blend_transition": 0.2,
+          "blend_via_shortest_path": true,
+          
+          "animations": [
+            "de_arms_base"
+          ],
+          "transitions": [
+            {
+              "default": "query.get_equipped_item_name != 'arms_sickle'"
+            },
+            {
+              "arms_sickle_a": "query.is_using_item"
+            },
+            {
+              "arms_sickle_ba": "variable.attack_time > 0"
+            }
+          ]
+        },
+        "arms_sickle_a": {
+          "blend_transition": 0.2,
+          "blend_via_shortest_path": true,
+          "particle_effects": [
+            {
+              "effect": "arms_sickle_par",
+              "locator": "start_arms_sickle_par"
+            }
+          ],
+          "animations": [
+            "de_arms_sickle_d"
+          ],
+          "transitions": [
+            {
+              "default": "query.get_equipped_item_name != 'arms_sickle'"
+            },
+            {
+              "arms_sickle": "query.all_animations_finished&&!query.is_using_item"
+            }
+          ]
+        },
+        "arms_sickle_ba": {
+          "blend_transition": 0.2,
+          "particle_effects": [
+            {
+              "effect": "arms_sickle_par",
+              "locator": "start_arms_sickle_par"
+            }
+          ],
+          "animations": [
+            "de_arms_sickle_a"
+          ],
+          "transitions": [
+            {
+              "default": "query.get_equipped_item_name != 'arms_sickle'"
+            },
+            {
+              "arms_sickle_bb": "query.all_animations_finished&&variable.attack_time > 0"
+            },
+            {
+              "arms_sickle_bax": "query.all_animations_finished&&variable.attack_time <= 0"
+            }
+          ]
+        },
+        "arms_sickle_bax": {
+          "blend_transition": 0.2,
+          "animations": [
+            "de_arms_base"
+          ],
+          "transitions": [
+          {
+              "arms_sickle_a": "query.is_using_item"
+            },
+            {
+              "default": "query.get_equipped_item_name != 'arms_sickle'"
+            },
+            {
+              "arms_sickle_bb": "variable.attack_time > 0"
+            }
+          ]
+        },
+        "arms_sickle_bb": {
+          "blend_transition": 0.4,
+          "particle_effects": [
+            {
+              "effect": "arms_sickle_par",
+              "locator": "start_arms_sickle_par"
+            }
+          ],
+          "animations": [
+            "de_arms_sickle_b"
+          ],
+          "transitions": [
+            {
+              "default": "query.get_equipped_item_name != 'arms_sickle'"
+            },
+            {
+              "arms_sickle_bc": "query.all_animations_finished&&variable.attack_time > 0"
+            },
+            {
+              "arms_sickle_bbx": "query.all_animations_finished&&variable.attack_time <= 0"
+            }
+          ]
+        },
+        "arms_sickle_bbx": {
+          "blend_transition": 0.2,
+          "animations": [
+            "de_arms_base"
+          ],
+          "transitions": [
+          {
+              "arms_sickle_a": "query.is_using_item"
+            },
+            {
+              "default": "query.get_equipped_item_name != 'arms_sickle'"
+            },
+            {
+              "arms_sickle_bc": "variable.attack_time > 0"
+            }
+          ]
+        },
+        "arms_sickle_bc": {
+          "blend_transition": 0.2,
+          "particle_effects": [
+            {
+              "effect": "arms_sickle_par",
+              "locator": "start_arms_sickle_par"
+            }
+          ],
+          "animations": [
+            "de_arms_sickle_c"
+          ],
+          "transitions": [
+            {
+              "default": "query.get_equipped_item_name != 'arms_sickle'"
+            },
+            {
+              "arms_sickle_bd": "query.all_animations_finished&&variable.attack_time > 0"
+            },
+            {
+              "arms_sickle_bcx": "query.all_animations_finished&&variable.attack_time <= 0"
+            }
+          ]
+        },
+        "arms_sickle_bcx": {
+          "blend_transition": 0.2,
+          "animations": [
+            "de_arms_base"
+          ],
+          "transitions": [
+          {
+              "arms_sickle_a": "query.is_using_item"
+            },
+            {
+              "default": "query.get_equipped_item_name != 'arms_sickle'"
+            },
+            {
+              "arms_sickle_bd": "variable.attack_time > 0"
+            }
+          ]
+        },
+        "arms_sickle_bd": {
+          "blend_transition": 0.2,
+          "particle_effects": [
+            {
+              "effect": "arms_sickle_par",
+              "locator": "start_arms_sickle_par"
+            }
+          ],
+          "animations": [
+            "de_arms_sickle_e"
+          ],
+          "transitions": [
+            {
+              "default": "query.get_equipped_item_name != 'arms_sickle'"
+            },
+            {
+              "arms_sickle": "query.all_animations_finished"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

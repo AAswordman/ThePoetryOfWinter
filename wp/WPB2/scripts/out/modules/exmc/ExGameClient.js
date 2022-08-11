@@ -100,7 +100,6 @@ export default class ExGameClient {
     }
     notDebugger() {
         this.player.removeTag("debugger");
-        this._events.exEvents.chat.unsubscribe(this.debuggerChatTest);
     }
     setTimeout(fun, timeout) {
         let time = 0;

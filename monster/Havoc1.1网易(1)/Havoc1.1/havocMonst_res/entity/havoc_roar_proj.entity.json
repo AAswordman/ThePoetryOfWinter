@@ -1,0 +1,21 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "takile:havoc_roar_proj",
+            "materials": {
+                "default": "slime_outer"
+            },
+            "textures": {
+                "default": "textures/entity/proj_havoc"
+            },
+            "geometry": {
+                "default": "geometry.fire_blast"
+            },
+            "scripts": {
+                "scale": "1.0"
+            },
+            "render_controllers": ["controller.render.base.base"]
+        }
+    }
+}

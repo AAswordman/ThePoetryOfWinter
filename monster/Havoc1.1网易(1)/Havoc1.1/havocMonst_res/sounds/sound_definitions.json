@@ -1,0 +1,20 @@
+{
+  "mob.havoc.monster.attack": {
+    "category": "hostile",
+    "sounds": [
+      "sounds/entities/havoc/attack"
+    ]
+  },
+  "mob.havoc.monster.meltdown.att": {
+    "category": "hostile",
+    "sounds": [
+      "sounds/entities/havoc/meltdown_att"
+    ]
+  },
+  "mob.havoc.monster.meltdown": {
+    "category": "hostile",
+    "sounds": [
+      "sounds/entities/havoc/meltdown"
+    ]
+  }
+}

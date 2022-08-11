@@ -1,0 +1,59 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.takile.havoc.target_sign": {
+      "timeline": {
+        "0.1": [
+          "/execute @e[tag=havoc_target] ~~~ particle takile:havoc_sign_par ~~~"
+        ]
+      },
+      "animation_length": 0.2,
+      "loop": true
+    },
+    "animation.takile.havoc.reinforce": {
+      "timeline": {
+        "0.1": [
+          "/effect @e[r=5,type=minecraft:player] resistance 3 1 true",
+          "/effect @e[r=5,type=minecraft:player] invisibility 3 2 true"
+        ]
+      },
+      "animation_length": 1,
+      "loop": true
+    },
+    "animation.takile.havoc.meltdown": {
+      "timeline": {
+        "4": [
+          "/scoreboard players remove @s strength 1"
+        ],
+        "8": [
+          "/scoreboard players remove @s strength 1"
+        ],
+        "12": [
+          "/scoreboard players remove @s strength 1"
+        ],
+        "16": [
+          "/scoreboard players remove @s strength 1"
+        ],
+        "20": [
+          "/scoreboard players remove @s strength 1"
+        ],
+        "24": [
+          "/scoreboard players remove @s strength 1"
+        ],
+        "28": [
+          "/scoreboard players remove @s strength 1"
+        ],
+        "31.9": [
+          "/scoreboard players remove @s strength 1",
+          "/effect @s clear",
+          "/summon takile:havoc_proj ~ ~ ~ instantdamage_6"
+        ],
+        "31.93": [
+          "/event entity @s Rank_V"
+        ]
+      },
+      "animation_length": 32,
+      "loop": true
+    }
+  }
+}

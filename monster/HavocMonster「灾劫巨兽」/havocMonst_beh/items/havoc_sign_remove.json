@@ -1,0 +1,44 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "items",
+      "identifier": "takile:havoc_sign_remove"
+    },
+    
+    "components": {
+      "minecraft:display_name": {},
+      "minecraft:icon": {
+        "texture": "havoc_sign_remove"
+      },
+	  "minecraft:use_animation": "crossbow",
+      "minecraft:render_offsets": "apple",
+      "minecraft:hand_equipped": false,
+      "minecraft:stacked_by_data": true,
+      "minecraft:use_duration": 1.2,
+        "minecraft:on_use": {
+        "on_use": {
+          "event": "attack"
+        }
+       },
+      "minecraft:throwable": {
+        "do_swing_animation": true
+      },
+      "minecraft:projectile": {
+        "projectile_entity": "takile:havoc_sign_remove"
+      }
+    },
+          "events": {
+      "attack": {
+        "run_command": {
+          "command": [
+            "replaceitem entity @a slot.weapon.mainhand 1 takile:havoc_sign_remove",
+            "give @p[r=1,m=0] takile:havoc_sign_remove 64",
+            "give @p[r=1,m=2] takile:havoc_sign_remove 64"
+          ]
+        }
+      }
+    }
+    
+  }
+}
