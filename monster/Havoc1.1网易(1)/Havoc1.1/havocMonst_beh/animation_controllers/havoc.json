@@ -1,0 +1,139 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.takile.havoc.circuitous": {
+      "states": {
+        "default": {
+          "on_entry": [
+            "variable.num = 0;"
+          ],
+          "transitions": [
+            {
+              "start": "variable.num == 0"
+            }
+          ]
+        },
+        "start": {
+          "on_entry": [
+            ""
+          ],
+          "transitions": [
+            {
+              "attack": "query.is_charged && variable.num < 7"
+            },
+            {
+              "attack2": "query.is_charged && variable.num >= 7"
+            }
+          ]
+        },
+        "attack": {
+          "on_entry": [
+            "",
+            "variable.num = 1 + variable.num;",
+            "/summon takile:havoc_proj ~ ~ ~ instantdamage_2",
+            "@s skill:circuitous_attack_start2"
+          ],
+          "transitions": [
+            {
+              "start": "!query.is_charged"
+            }
+          ]
+        },
+        "attack2": {
+          "on_entry": [
+            "/summon takile:havoc_proj ~ ~ ~ instantdamage_2",
+            "@s skill:circuitous_attack_start"
+          ],
+          "transitions": [
+            {
+              "start": "!query.is_charged"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.takile.havoc.coordination.a": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "attack": "(1.0)"
+            }
+          ]
+        },
+        "attack": {
+          "on_entry": [
+            "/effect @e[type=minecraft:player,r=5] strength 6 1",
+            "/effect @s strength 6 1"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.takile.havoc.coordination": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "attack": "query.is_delayed_attacking"
+            }
+          ]
+        },
+        "attack": {
+          "on_entry": [
+            "/effect @e[type=!takile:havoc_monster,type=!player,type=!item,family=!undead,r=6] instant_damage 1 1 true",
+            "/effect @e[type=!takile:havoc_monster,type=!player,type=!item,family=undead,r=6] instant_health 1 1 true"
+            
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.takile.havoc.strike": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "attack": "query.is_delayed_attacking"
+            }
+          ]
+        },
+        "attack": {
+          "on_entry": [
+            "variable.test = Math.random(0,1);"
+          ],
+          "transitions": [
+            {
+              "default": "query.is_delayed_attacking && variable.test <= 0.9"
+            },
+            {
+              "attack2": "query.is_delayed_attacking && variable.test > 0.9"
+            }
+          ]
+        },
+        "attack2": {
+          "on_entry": [
+            "/effect @e[tag=havoc_target,r=6,c=3,type=!item,type=!player,type=!takile:havoc_monster,family=!undead] instant_damage 1 3 true",
+            "/effect @e[tag=havoc_target,r=6,c=3,type=!item,type=!player,type=!takile:havoc_monster,family=undead] instant_health 1 3 true",
+            "/effect @e[tag=havoc_target,r=6,c=3,type=!item,type=!player,type=!takile:havoc_monster] weakness 6 255 true",
+            "/effect @e[tag=havoc_target,r=6,c=3,type=!item,type=!player,type=!takile:havoc_monster] slowness 6 255 true",    
+            "/execute @e[tag=havoc_target,r=6,c=3,type=!item,type=!player,type=!takile:havoc_monster] ~ ~ ~ tp @s ^ ^+4 ^-7"
+          ],
+          "transitions": [
+            {
+              "default": "!query.is_delayed_attacking"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

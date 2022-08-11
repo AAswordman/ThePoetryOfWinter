@@ -1,0 +1,39 @@
+{
+  "resource_pack_name": "vanilla",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "havoc_sign_add": {
+      "textures": "textures/items/havoc_sign_add.png"
+    },
+    "havoc_sign_remove": {
+      "textures": "textures/items/havoc_sign_remove.png"
+    },
+    "havoc_skill_strike": {
+      "textures": "textures/items/havoc_skill_strike.png"
+    },
+    "havoc_skill_meltdown": {
+      "textures": "textures/items/havoc_skill_meltdown.png"
+    },
+    "havoc_skill_circuitous": {
+      "textures": "textures/items/havoc_skill_circuitous.png"
+    },
+    "havoc_egg": {
+      "textures": "textures/items/havoc_egg.png"
+    },
+    "havoc_baby_egg": {
+      "textures": "textures/items/havoc_baby_egg.png"
+    },
+    "havoc_skill_reinforce": {
+      "textures": "textures/items/havoc_skill_reinforce.png"
+    },
+    "havoc_skill_unreinforce": {
+      "textures": "textures/items/havoc_skill_unreinforce.png"
+    },
+    "havoc_skill_coordination": {
+      "textures": "textures/items/havoc_skill_coordination.png"
+    },
+    "havoc_skill_uncoordination": {
+      "textures": "textures/items/havoc_skill_uncoordination.png"
+    }
+  }
+}
