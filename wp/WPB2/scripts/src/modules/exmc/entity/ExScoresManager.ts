@@ -26,6 +26,35 @@ export default class ExScoresManager {
 			return 0;
 		}
 	}
+	setScoreAsync(objective: Objective | string, num: number) {
+		let name = typeof objective === "string" ? objective : objective.name;
+		this.entity.runCommandAsync(`scoreboard players set "${this.entity.nameTag}" ${name} ${num}`);
+	}
+	addScoreAsync(objective: Objective | string, num: number) {
+		let name = typeof objective === "string" ? objective : objective.name;
+		this.entity.runCommandAsync(`scoreboard players add "${this.entity.nameTag}" ${name} ${num}`);
+	}
+	removeScoreAsync(objective: Objective | string, num: number) {
+		let name = typeof objective === "string" ? objective : objective.name;
+		this.entity.runCommandAsync(`scoreboard players remove "${this.entity.nameTag}" ${name} ${num}`);
+	}
+	deleteScoreAsync(objective: Objective | string) {
+		let name = typeof objective === "string" ? objective : objective.name;
+		this.entity.runCommandAsync(`scoreboard players reset "${this.entity.nameTag}" ${name}`);
+	}
+	async getScoreAsync(objective: Objective | string): Promise<number> {
+		let name = typeof objective === "string" ? objective : objective.name;
+		try {
+			let n = parseInt((await this.entity.runCommandAsync(`scoreboard players test "${this.entity.nameTag}" ${name} * *`)).statusMessage.split(" ")[1]);
+			if (n !== n) {
+				return 0;
+			} else {
+				return n;
+			}
+		} catch (e) {
+			return 0;
+		}
+	}
 	setScore(objective: Objective | string, num: number) {
 		let name = typeof objective === "string" ? objective : objective.name;
 		this.entity.runCommand(`scoreboard players set "${this.entity.nameTag}" ${name} ${num}`);

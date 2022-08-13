@@ -7,6 +7,9 @@ export default class ExNullEntity {
     runCommand(command) {
         return world.getDimension(MinecraftDimensionTypes.overworld).runCommand(command);
     }
+    runCommandAsync(command) {
+        return world.getDimension(MinecraftDimensionTypes.overworld).runCommandAsync(command);
+    }
     getScoresManager() {
         return new ExScoresManager(this);
     }

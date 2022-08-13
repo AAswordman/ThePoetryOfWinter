@@ -1,4 +1,4 @@
-import { Entity, EntityHealthComponent, Vector, Location, EntityInventoryComponent, Player } from 'mojang-minecraft';
+import { Entity, EntityHealthComponent, Vector, Location, EntityInventoryComponent, Player, Dimension } from 'mojang-minecraft';
 import ExCommandRunner from '../interface/ExCommandRunner.js';
 import ExTagManager from '../interface/ExTagManager.js';
 import ExEntityComponentId from './ExEntityComponentId.js';
@@ -6,8 +6,6 @@ import ExScoresManager from './ExScoresManager.js';
 import Vector3 from '../utils/Vector3.js';
 import ExEntityBag from './ExEntityBag.js';
 import SetTimeOutSupport from '../interface/SetTimeOutSupport.js';
-import ExDimension from '../ExDimension.js';
-import ExPlayer from './ExPlayer.js';
 
 
 export default class ExEntity implements ExCommandRunner, ExTagManager {
@@ -21,7 +19,7 @@ export default class ExEntity implements ExCommandRunner, ExTagManager {
 			this._damage = damage;
 			timeout.setTimeout(() => {
 				let health = this.getHealthComponent();
-				if (health.current > 0) health.setCurrent(health.current - (this._damage ?? 0));
+				if (health.current > 0) health.setCurrent(Math.max(0,health.current - (this._damage ?? 0)));
 				this._damage = undefined;
 			}, 0);
 		} else {
@@ -81,6 +79,9 @@ export default class ExEntity implements ExCommandRunner, ExTagManager {
 	runCommand(str: string) {
 		return this._entity.runCommand(str);
 	}
+	runCommandAsync(str: string) {
+		return this._entity.runCommandAsync(str);
+	}
 	getScoresManager() {
 		return new ExScoresManager(this._entity);
 	}
@@ -96,6 +97,9 @@ export default class ExEntity implements ExCommandRunner, ExTagManager {
 	setPosition(position: Vector3, dimension = this.entity.dimension) {
 		this.entity.teleport(position.getLocation(), dimension, this.entity.rotation.x, this.entity.rotation.y);
 
+	}
+	setDimension(dimension: Dimension){
+		this.setPosition(this.getPosition(), dimension);
 	}
 
 	getViewVector(){

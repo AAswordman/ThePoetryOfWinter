@@ -11,6 +11,9 @@ export default class ExNullEntity implements ExCommandRunner{
     runCommand(command: string){
         return world.getDimension(MinecraftDimensionTypes.overworld).runCommand(command);
     }
+    runCommandAsync(command: string){
+        return world.getDimension(MinecraftDimensionTypes.overworld).runCommandAsync(command);
+    }
     getScoresManager() {
 		return new ExScoresManager(this);
 	}

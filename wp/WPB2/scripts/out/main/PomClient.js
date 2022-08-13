@@ -1,5 +1,5 @@
 import ExGameClient from "../modules/exmc/ExGameClient.js";
-import { EntityQueryOptions, MinecraftItemTypes, ItemStack, MinecraftBlockTypes, Items } from 'mojang-minecraft';
+import { EntityQueryOptions, MinecraftItemTypes, ItemStack, MinecraftBlockTypes, Items, MinecraftEffectTypes } from 'mojang-minecraft';
 import MenuUIAlert from "./ui/MenuUIAlert.js";
 import menuFunctionUI from "./data/menuFunctionUI.js";
 import ExPlayer from "../modules/exmc/entity/ExPlayer.js";
@@ -42,12 +42,12 @@ export default class PomClient extends ExGameClient {
             }
         }).delay(10000);
         this.wbflLooper = new TimeLoopTask(this.getEvents(), () => {
-            this.exPlayer.getScoresManager().addScore("wbfl", 2);
+            this.exPlayer.getScoresManager().addScoreAsync("wbfl", 2);
         }).delay(5000);
         this.armorCoolingLooper = new TimeLoopTask(this.getEvents(), () => {
             let scores = this.exPlayer.getScoresManager();
             if (scores.getScore("wbkjlq") > 0)
-                scores.removeScore("wbkjlq", 1);
+                scores.removeScoreAsync("wbkjlq", 1);
         }).delay(1000);
         this.blockTranslateData = new Map();
         this.talentRes = new Map();
@@ -184,7 +184,9 @@ export default class PomClient extends ExGameClient {
         // jet pack
         this.getEvents().exEvents.itemUse.subscribe(e => {
             if (e.item.id === "wb:jet_pack") {
-                this.player.setVelocity(this.exPlayer.getViewVector().mul(5).getVector());
+                this.player.addEffect(MinecraftEffectTypes.levitation, 7, 15, false);
+                this.player.addEffect(MinecraftEffectTypes.slowFalling, 150, 3, false);
+                this.player.dimension.spawnEntity("wb:ball_jet_pack", this.exPlayer.getPosition().sub(this.exPlayer.getViewVector().mul(2)).getLocation());
             }
         });
         //附魔

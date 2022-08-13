@@ -10,7 +10,10 @@
 		"sourceMap": true,
 		"rootDir": "src",
 		"strict": true,
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
 		"noImplicitOverride": true,
+		"alwaysStrict": true,
 		"strictNullChecks": true
 		/*
 		"module":"system",

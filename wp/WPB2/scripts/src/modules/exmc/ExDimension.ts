@@ -32,6 +32,9 @@ export default class ExDimension implements ExCommandRunner{
 	runCommand(str:string){
 		return this._dimension.runCommand(str);
 	}
+	runCommandAsync(str:string){
+		return this._dimension.runCommandAsync(str);
+	}
 
 	static propertyNameCache = "exCache";
 	static getInstance(source: Dimension): ExDimension {

@@ -63,7 +63,7 @@
     "$boss_icon|default": "",
     "size": [
       "24px",
-      "100%"
+      "24px"
     ],
     "controls": [
       {
@@ -117,7 +117,7 @@
         "arrow": {
           "type": "image",
           "anchor_from": "left_middle",
-          "layer": 103,
+          "layer": 106,
           "anchor_to": "left_middle",
           "texture": "textures/ui/arrow_right",
           "size": [15,22],
@@ -162,7 +162,7 @@
   "left_next_boss": {
     "type": "image",
     "anchor_from": "top_middle",
-    "layer": 103,
+    "layer": 106,
     "anchor_to": "top_middle",
     "texture": "textures/ui/dialog_background_opaque",
     "size": [22,22],
@@ -196,7 +196,7 @@
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "orientation": "horizontal",
-                "layer": 103,
+                "layer": 106,
                 "size": [264,28],
                 "controls": [
                   {
@@ -251,7 +251,7 @@
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "orientation": "horizontal",
-                "layer": 103,
+                "layer": 106,
                 "size": [264,28],
                 "controls": [
                   {
@@ -286,7 +286,7 @@
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "orientation": "horizontal",
-                "layer": 103,
+                "layer": 106,
                 "size": [264,28],
                 "controls": [
                   {
@@ -331,7 +331,7 @@
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "orientation": "horizontal",
-                "layer": 103,
+                "layer": 106,
                 "size": [264,28],
                 "controls": [
                   {
@@ -356,7 +356,7 @@
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "orientation": "horizontal",
-                "layer": 103,
+                "layer": 106,
                 "size": [264,28],
                 "controls": [
                   {
@@ -744,7 +744,7 @@
     "type": "stack_panel",
     "anchor_from": "top_middle",
     "anchor_to": "top_middle",
-    "layer": 103,
+    "layer": 106,
     "offset": [0,0],
     "size": [
       264,
@@ -769,7 +769,7 @@
           "$loot_tabel_item_d": "textures/items/leaves_knife",
           "$loot_tabel_item_c": "textures/items/emerald_nugget",
           "$loot_tabel_item_e": "textures/items/natura_spear",
-          "$boss_info": "难度:傻瓜难度\n主题地形:森林",
+          "$boss_info": "难度:傻瓜难度\n森林 专属建筑",
           "anchor_from": "top_left",
           "anchor_to": "top_left"
         }
@@ -784,7 +784,7 @@
               "target_property_name": "#visible"
             }
           ],
-          "$boss_info": "难度:简单\n主题地形:平原",
+          "$boss_info": "难度:简单\n平原 专属建筑",
           "$boss_name": "boss.dec:king_of_pillager.name",
           "$item_icon": "textures/items/mysterious_key",
           "$boss_threed_img": "textures/wb_ui/boss1",
@@ -864,7 +864,7 @@
               "target_property_name": "#visible"
             }
           ],
-          "$boss_info": "难度:普通\n主题地形:神秘森林",
+          "$boss_info": "难度:普通\n丛林 专属建筑",
           "$boss_name": "boss.dec:enchant_illager.name",
           "$item_icon": "textures/items/dark_pearl",
           "$boss_threed_img": "textures/wb_ui/boss4",
@@ -1125,7 +1125,7 @@
                 "$scrolling_content": "hud_boss_notes.message",
                 "$show_background": false,
                 "$scroll_size": [264,110],
-                "layer": 103,
+                "layer": 106,
                 "$scroll_bar_left_padding_size": [0,0]
               }
             }
@@ -1145,7 +1145,7 @@
                 "$scrolling_content": "hud_boss_notes.bottom_process",
                 "$show_background": false,
                 "$scroll_size": [280,33],
-                "layer": 103,
+                "layer": 106,
                 "$scroll_bar_left_padding_size": [0,0]
               }
             }

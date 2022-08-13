@@ -24,5 +24,24 @@ export default class GlobalSettings extends GlobalScoreBoardCache {
     set entityCleaner(value) {
         this.setBoolean("entityCleaner", value);
     }
+    get deathRecord() {
+        return this.getBoolean("deathRecord");
+    }
+    set deathRecord(value) {
+        this.setBoolean("deathRecord", value);
+    }
+    get tpPointRecord() {
+        return this.getBoolean("tpPointRecord");
+    }
+    set tpPointRecord(value) {
+        this.setBoolean("tpPointRecord", value);
+    }
+    get entityCleanerLeastNum() {
+        var _a;
+        return (_a = this.getNumber("entityCleanerLeastNum")) !== null && _a !== void 0 ? _a : 350;
+    }
+    set entityCleanerLeastNum(value) {
+        this.setNumber("entityCleanerLeastNum", value);
+    }
 }
 //# sourceMappingURL=GlobalSettings.js.map

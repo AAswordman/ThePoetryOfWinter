@@ -1,6 +1,7 @@
 import GlobalScoreBoardCache from "../../modules/exmc/storage/cache/GlobalScoreBoardCache.js";
 
 export default class GlobalSettings extends GlobalScoreBoardCache {
+	
     public get playerCanTp(): boolean {
         return this.getBoolean("playerCanTp");
     }
@@ -26,4 +27,23 @@ export default class GlobalSettings extends GlobalScoreBoardCache {
     public set entityCleaner(value: boolean) {
         this.setBoolean("entityCleaner", value);
     }
+    public get deathRecord() {
+        return this.getBoolean("deathRecord");
+    }
+    public set deathRecord(value: boolean) {
+        this.setBoolean("deathRecord", value);
+    }
+    public get tpPointRecord() {
+        return this.getBoolean("tpPointRecord");
+    }
+    public set tpPointRecord(value: boolean) {
+        this.setBoolean("tpPointRecord", value);
+    }
+    public get entityCleanerLeastNum() {
+        return this.getNumber("entityCleanerLeastNum") ?? 350;
+    }
+    public set entityCleanerLeastNum(value: number) {
+        this.setNumber("entityCleanerLeastNum", value);
+    }
+    
 }

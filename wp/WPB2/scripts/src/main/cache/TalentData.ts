@@ -28,7 +28,7 @@ export default class TalentData implements SerializeAble {
         return 0;
 	}
     isSerializeAble: true = true;
-	pointUsed: number | undefined;
+	pointUsed: number | undefined = 0;
     static hasOccupation(data: TalentData) {
         return data.occupation.id !== Occupation.EMPTY.id;
     }
