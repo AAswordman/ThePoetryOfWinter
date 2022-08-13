@@ -70,7 +70,10 @@ export default {
 1│200￥
 2│100￥
 3│50￥
-				`.split("\n"))).concat([
+
+参与方式：在 https://docs.qq.com/form/page/DTEhxWHNoaVJmTUJu 报名。
+
+`.split("\n"))).concat([
                     {
                         "type": "padding"
                     },
@@ -218,7 +221,7 @@ You understand and agree that:
                 }
             },
             "QA": {
-                "name": "Q & A",
+                "text": "Q & A",
                 "page": [
                     {
                         "type": "padding"
