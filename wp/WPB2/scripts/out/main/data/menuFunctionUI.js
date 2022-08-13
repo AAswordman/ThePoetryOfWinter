@@ -12,6 +12,9 @@ import ExPlayer from '../../modules/exmc/entity/ExPlayer.js';
 import MenuUIAlert from '../ui/MenuUIAlert.js';
 import ExMessageAlert from "../../modules/exmc/ui/ExMessageAlert.js";
 import TalentData, { Occupation, Talent } from "../cache/TalentData.js";
+import { ModalFormData } from "mojang-minecraft-ui";
+import ExErrorStack from "../../modules/exmc/ExErrorStack.js";
+import Vector3 from '../../modules/exmc/utils/Vector3';
 export default {
     "main": {
         "img": "textures/items/wet_paper",
@@ -26,36 +29,61 @@ export default {
                         "msg": "textures/ui/title.png"
                     },
                     {
-                        "type": "text",
-                        "msg": "暂无公告"
-                    },
-                    {
-                        "type": "text",
-                        "msg": "如果以后有，可能会通过某个方式提供"
-                    },
-                    {
                         "type": "padding"
+                    },
+                    {
+                        "type": "text",
+                        "msg": "稳定版更新啦！本次更新2个活动，快去看看吧！"
                     }
-                    /*
-                    ,{
-                        "msg":"伤害显示 关",
-                        "type":"button",
-                        "function":(client: PomClient,ui: MenuUIAlert) => {
-                            ExGameConfig.console.log("伤害显示 关");
-                            client.postMessage(ExGameConfig.serverId,ExGameConfig.transmissionType.sendToServer,"setDamageListenerOff");
-                        }
-                    }
-                    */
                 ]
             },
             "activity": {
                 "text": "活动",
-                "page": [
+                "page": (client, ui) => [
                     {
                         "type": "text_title",
-                        "msg": "当前没有活动哦"
+                        "msg": "宣传赢好礼"
+                    },
+                    {
+                        "type": "padding"
+                    },
+                    {
+                        "type": "text",
+                        "msg": "由于本Addon工程量巨大，耗时很久，但是知道的人寥寥无几，冬诗开发者绝对举办这个活动。"
+                    },
+                    {
+                        "type": "img_adjustToScreen",
+                        "msg": "textures/ui/active_action.png"
+                    },
+                ].concat(MenuUIAlert.getLabelViews(`
+1.活动时间: 2022年8月13日一2022年8月31日23点59分。
+2.活动稿件必须是首次投递的原创作品，且符合创作投稿规范，禁止低创、搬运、抄袭、旧稿重投等。同一篇作品不能由多人提交，重复参加，且活动稿件需要在2022年9月20日前保持开放浏览。
+3.瓜分奖金将于活动结束结果公示后20个工作日内发放完毕。
+4.禁止一切违规刷票、刷赞、刷人气等作弊行为，一经发现将取消作品参赛资格。
+5.若活动有更改，请以最新Addon包中信息为准。
+
+带话题#冬之纪行诗在 西瓜视频 、 bilibili 投稿
+1、所有投稿中抽取十位送出大会员(可折现25)
+2、单稿件播放达1w瓜分1k现金奖励
+3、活动截止后按播放量额外发放奖励:
+单稿件播放量排名│奖励
+1│200￥
+2│100￥
+3│50￥
+				`.split("\n"))).concat([
+                    {
+                        "type": "padding"
+                    },
+                    {
+                        "type": "text_title",
+                        "msg": "征稿活动："
                     }
-                ]
+                ]).concat(MenuUIAlert.getLabelViews(`
+主题：永冬塔
+大小限制：64xnx64
+联系作者或b站发视频并at剑侠（id自己去b站搜）或@Sonality进行投稿
+有机会被加入Add中哦~
+`.split("\n")))
             },
             "version": {
                 "text": "版本",
@@ -188,6 +216,39 @@ You understand and agree that:
 3. The contents of this agreement also include the agreements or rules in the annexes to this agreement, and other relevant agreements and rules on this service that we may continuously publish. Once the above contents are officially released, they shall be an integral part of this agreement, and you shall also abide by them.
 `.split("\n"));
                 }
+            },
+            "QA": {
+                "name": "Q & A",
+                "page": [
+                    {
+                        "type": "padding"
+                    },
+                    {
+                        "type": "text_title",
+                        "msg": "为什么无法召唤BOSS"
+                    },
+                    {
+                        "type": "padding"
+                    },
+                    {
+                        "type": "text",
+                        "msg": "现在部分boss有专属的召唤者方块了。在他们的群系中，概率生成BOSS建筑，建筑内有召唤者方块。使用 钥匙 类物品点击即可召唤boss。对于未激活的召唤者方块，使用特定物品可以再次激活。如果找不到特定建筑，说明脸黑。请在特定的群系找。"
+                    },
+                    {
+                        "type": "padding"
+                    },
+                    {
+                        "type": "text_title",
+                        "msg": "为什么那么卡"
+                    },
+                    {
+                        "type": "padding"
+                    },
+                    {
+                        "type": "text",
+                        "msg": "卡顿多半是因为实体过多导致的。请尝试在 管理 界面打开实体清理功能，并调整最低保留实体数。建议350，配置好就往上调，配置差就往下调。"
+                    }
+                ]
             }
         }
     },
@@ -368,6 +429,107 @@ You understand and agree that:
                     }
                     return arr;
                 }
+            },
+            "deathback": {
+                "text": "传送点",
+                "page": (client, ui) => {
+                    if (client.data.pointRecord == undefined)
+                        client.data.pointRecord = {
+                            deathPoint: [],
+                            point: []
+                        };
+                    let arr = [
+                        {
+                            "type": "text_title",
+                            "msg": "传送点记录"
+                        },
+                        {
+                            "type": "padding"
+                        }
+                    ];
+                    if (client.globalSettings.tpPointRecord) {
+                        for (let j = 0; j < client.data.pointRecord.point.length; j++) {
+                            const i = client.data.pointRecord.point[j];
+                            const v = new Vector3(i[2]);
+                            arr.push({
+                                "type": "text",
+                                "msg": "传送点：" + (i[0] + v.toString())
+                            }, {
+                                "type": "button",
+                                "msg": "前往点：" + (i[1] == "" ? (i[0] + v.toString()) : i[1]),
+                                "function": (client, ui) => {
+                                    client.exPlayer.setPosition(v, client.getDimension(i[0]));
+                                    return false;
+                                }
+                            }, {
+                                "type": "button",
+                                "msg": "备注点：" + (i[1] == "" ? (i[0] + v.toString()) : i[1]),
+                                "function": (client, ui) => {
+                                    new ModalFormData().textField("输入备注", (i[0] + v.toString()))
+                                        .show(client.player)
+                                        .then(e => {
+                                        if (e.isCanceled)
+                                            return;
+                                        i[1] = e.formValues[0];
+                                    }).catch(e => {
+                                        ExErrorStack.throwError(e);
+                                    });
+                                    return false;
+                                }
+                            }, {
+                                "type": "button",
+                                "msg": "删除点：" + (i[1] == "" ? (i[0] + v.toString()) : i[1]),
+                                "function": (client, ui) => {
+                                    client.data.pointRecord.point.splice(j, 1);
+                                    return true;
+                                }
+                            }, {
+                                "type": "padding"
+                            });
+                        }
+                        arr.push({
+                            "msg": "记录当前点" + client.exPlayer.getPosition().floor().toString(),
+                            "type": "button",
+                            "function": (client, ui) => {
+                                client.data.pointRecord.point.push([client.exPlayer.getDimension().id, "", client.exPlayer.getPosition().floor()]);
+                                return true;
+                            }
+                        });
+                    }
+                    else {
+                        arr.push({
+                            "type": "text",
+                            "msg": "禁止记录传送点"
+                        });
+                    }
+                    // if (client.globalSettings.deathRecord) {
+                    // 	for (let j = 0; j < client.data.pointRecord.deathPoint.length; j++) {
+                    // 		let i = client.data.pointRecord.deathPoint[j];
+                    // 		let v = new Vector3(i[1]);
+                    // 		arr.push(
+                    // 			{
+                    // 				"type": "text",
+                    // 				"msg": "死亡点：" + v.toString()
+                    // 			},
+                    // 			{
+                    // 				"type": "button",
+                    // 				"msg": "前往点" + v.toString()
+                    // 			},
+                    // 			{
+                    // 				"type": "padding"
+                    // 			}
+                    // 		);
+                    // 	}
+                    // } else {
+                    // 	arr.push(
+                    // 		{
+                    // 			"type": "text",
+                    // 			"msg": "禁止死亡回溯"
+                    // 		}
+                    // 	)
+                    // }
+                    return arr;
+                }
             }
         }
     },
@@ -455,7 +617,10 @@ You understand and agree that:
                                     return false;
                                 }
                                 if (client.globalSettings.tpNeedItem) {
-                                    bag.getItem("wb:conveyor_issue").amount -= 1;
+                                    let pos = (bag.searchItem("wb:conveyor_issue"));
+                                    let item = bag.getItem(pos);
+                                    item.amount--;
+                                    bag.setItem(pos, item);
                                 }
                                 client.sayTo("§b你向对方发起了请求");
                                 new ExMessageAlert().title("传送请求").body(`玩家 ${client.player.nameTag} §r想要传送到你的位置，是否接受？`)
@@ -492,7 +657,10 @@ You understand and agree that:
                                     return false;
                                 }
                                 if (client.globalSettings.tpNeedItem) {
-                                    bag.getItem("wb:conveyor_issue").amount -= 1;
+                                    let pos = (bag.searchItem("wb:conveyor_issue"));
+                                    let item = bag.getItem(pos);
+                                    item.amount--;
+                                    bag.setItem(pos, item);
                                 }
                                 client.sayTo("§b你向对方发起了邀请");
                                 new ExMessageAlert().title("传送请求").body(`玩家 ${client.player.nameTag} §r邀请你传送到 pos:${client.exPlayer.getPosition().floor()} ，是否接受？`)
@@ -558,6 +726,25 @@ You understand and agree that:
                                     });
                                     return true;
                                 }
+                            },
+                            //,
+                            // {
+                            // 	"type": "toggle",
+                            // 	"msg": "开启死亡点回溯",
+                            // 	"state": (client: PomClient, ui: MenuUIAlert) => client.globalSettings.deathRecord,
+                            // 	"function": (client: PomClient, ui: MenuUIAlert) => {
+                            // 		client.globalSettings.deathRecord = !client.globalSettings.deathRecord;
+                            // 		return true;
+                            // 	}
+                            // },
+                            {
+                                "type": "toggle",
+                                "msg": "允许记录传送点",
+                                "state": (client, ui) => client.globalSettings.tpPointRecord,
+                                "function": (client, ui) => {
+                                    client.globalSettings.tpPointRecord = !client.globalSettings.tpPointRecord;
+                                    return true;
+                                }
                             }
                         ];
                     }
@@ -569,9 +756,37 @@ You understand and agree that:
                     }
                 }
             },
-            "gc": {
-                "text": "实体清理",
-                "page": []
+            "set": {
+                "text": "高级设置",
+                "page": (client, ui) => {
+                    if (client.player.hasTag("owner")) {
+                        return [{
+                                "type": "button",
+                                "msg": "实体清理设置",
+                                "function": (client, ui) => {
+                                    new ModalFormData()
+                                        .toggle("开启实体清理", client.globalSettings.entityCleaner)
+                                        .slider("保留实体数", 100, 1000, 50, client.globalSettings.entityCleanerLeastNum)
+                                        .show(client.player).then((e) => {
+                                        if (e.isCanceled)
+                                            return;
+                                        client.globalSettings.entityCleaner = e.formValues[0];
+                                        client.globalSettings.entityCleanerLeastNum = e.formValues[1];
+                                    })
+                                        .catch((e) => {
+                                        ExErrorStack.throwError(e);
+                                    });
+                                    return false;
+                                }
+                            }];
+                    }
+                    else {
+                        return [{
+                                "type": "text",
+                                "msg": "无权限访问此页面。如果你是 op ，请输入/tag @s add owner 来获取管理权限"
+                            }];
+                    }
+                }
             }
         }
     }

@@ -4,6 +4,7 @@ import MathUtil from "../../modules/exmc/utils/MathUtil.js";
 export default class TalentData {
     constructor() {
         this.isSerializeAble = true;
+        this.pointUsed = 0;
         this.occupation = Occupation.EMPTY;
         this.talents = [];
     }

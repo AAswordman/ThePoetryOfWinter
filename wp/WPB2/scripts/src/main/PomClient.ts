@@ -1,5 +1,5 @@
 import ExGameClient from "../modules/exmc/ExGameClient.js";
-import { Player, EntityQueryOptions, MinecraftItemTypes, ItemStack, MinecraftBlockTypes, ItemType, Items, Location } from 'mojang-minecraft';
+import { Player, EntityQueryOptions, MinecraftItemTypes, ItemStack, MinecraftBlockTypes, ItemType, Items, Location, MinecraftEffectTypes } from 'mojang-minecraft';
 import MenuUIAlert from "./ui/MenuUIAlert.js";
 import menuFunctionUI from "./data/menuFunctionUI.js";
 import ExGameServer from '../modules/exmc/ExGameServer.js';
@@ -45,11 +45,11 @@ export default class PomClient extends ExGameClient {
 		}
 	}).delay(10000);
 	wbflLooper = new TimeLoopTask(this.getEvents(), () => {
-		this.exPlayer.getScoresManager().addScore("wbfl", 2);
+		this.exPlayer.getScoresManager().addScoreAsync("wbfl", 2);
 	}).delay(5000);
 	armorCoolingLooper = new TimeLoopTask(this.getEvents(), () => {
 		let scores = this.exPlayer.getScoresManager();
-		if (scores.getScore("wbkjlq") > 0) scores.removeScore("wbkjlq", 1);
+		if (scores.getScore("wbkjlq") > 0) scores.removeScoreAsync("wbkjlq", 1);
 	}).delay(1000);
 	data: PomData;
 	looper: TimeLoopTask;
@@ -139,7 +139,7 @@ export default class PomClient extends ExGameClient {
 			let damage = (this.exPlayer.getPreRemoveHealth() ?? 0) + e.damage;
 			let add = 0;
 			add += damage * (this.talentRes.get(Talent.DEFENSE) ?? 0) / 100;
-
+			
 			this.exPlayer.addHealth(this, add);
 		});
 		this.getEvents().exEvents.itemOnHandChange.subscribe((e) => {
@@ -202,7 +202,10 @@ export default class PomClient extends ExGameClient {
 		// jet pack
 		this.getEvents().exEvents.itemUse.subscribe(e => {
 			if (e.item.id === "wb:jet_pack") {
-				this.player.setVelocity(this.exPlayer.getViewVector().mul(5).getVector());
+				this.player.addEffect(MinecraftEffectTypes.levitation,7,15,false);
+				this.player.addEffect(MinecraftEffectTypes.slowFalling,150,3,false);
+
+				this.player.dimension.spawnEntity("wb:ball_jet_pack",this.exPlayer.getPosition().sub(this.exPlayer.getViewVector().mul(2)).getLocation())
 			}
 		});
 

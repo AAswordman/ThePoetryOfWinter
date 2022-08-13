@@ -111,7 +111,6 @@ export default class ExGameClient implements SetTimeOutSupport {
 	}
 	notDebugger() {
 		this.player.removeTag("debugger");
-		this._events.exEvents.chat.unsubscribe(this.debuggerChatTest);
 	}
 
 	setTimeout(fun: () => void, timeout: number) {

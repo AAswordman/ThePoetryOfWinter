@@ -16,7 +16,7 @@ export default class ExEntity {
                 var _a;
                 let health = this.getHealthComponent();
                 if (health.current > 0)
-                    health.setCurrent(health.current - ((_a = this._damage) !== null && _a !== void 0 ? _a : 0));
+                    health.setCurrent(Math.max(0, health.current - ((_a = this._damage) !== null && _a !== void 0 ? _a : 0)));
                 this._damage = undefined;
             }, 0);
         }
@@ -67,6 +67,9 @@ export default class ExEntity {
     runCommand(str) {
         return this._entity.runCommand(str);
     }
+    runCommandAsync(str) {
+        return this._entity.runCommandAsync(str);
+    }
     getScoresManager() {
         return new ExScoresManager(this._entity);
     }
@@ -78,6 +81,9 @@ export default class ExEntity {
     }
     setPosition(position, dimension = this.entity.dimension) {
         this.entity.teleport(position.getLocation(), dimension, this.entity.rotation.x, this.entity.rotation.y);
+    }
+    setDimension(dimension) {
+        this.setPosition(this.getPosition(), dimension);
     }
     getViewVector() {
         return new Vector3(this.entity.viewVector);

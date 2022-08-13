@@ -24,6 +24,7 @@ export default class PomServer extends ExGameServer {
 			//ExGameConfig.console.log("当前实体数：" + entities.length);
 			let map = new Map<string, number>();
 			entities.forEach(e => {
+				if(e?.id == undefined) return;
 				map.set(e.id, (map.get(e.id) ?? 0) + 1);
 			});
 
@@ -37,7 +38,7 @@ export default class PomServer extends ExGameServer {
 			ExGameConfig.console.log("最多实体数：" + max[0]);
 			ExGameConfig.console.log("最多实体数：" + max[1]);
 
-			if(entities.length > 500){
+			if(entities.length > this.setting.entityCleanerLeastNum){
 				entities.forEach(e => {
 					if(e == undefined) return;
 					if(e.id === max[1] && !e.nameTag) e.kill();

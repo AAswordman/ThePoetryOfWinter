@@ -1,22 +1,17 @@
 import { BlockLocation, Location, Vector } from "mojang-minecraft";
 export default class Vector3 {
     constructor(a, b, c) {
-        if (a instanceof Vector) {
-            this.vector = a;
-        }
-        else if (a !== undefined && b !== undefined && c !== undefined) {
-            this.vector = new Vector(a, b, c);
+        if (a !== undefined && b !== undefined && c !== undefined) {
+            this.x = a;
+            this.y = b;
+            this.z = c;
         }
         else {
-            this.vector = new Vector(a.x, a.y, a.z);
+            this.x = a.x;
+            this.y = a.y;
+            this.z = a.z;
         }
     }
-    get x() { return this.vector.x; }
-    get y() { return this.vector.y; }
-    get z() { return this.vector.z; }
-    set x(x) { this.vector.x = x; }
-    set y(y) { this.vector.y = y; }
-    set z(z) { this.vector.z = z; }
     add(x, y, z) {
         if (x instanceof Vector3 || x instanceof Vector3) {
             this.add(x.x, x.y, x.z);
@@ -39,47 +34,59 @@ export default class Vector3 {
         }
         return this;
     }
-    mul(vec) {
-        return new Vector3(Vector.multiply(this.vector, vec instanceof Vector3 ? vec.vector : vec));
+    mul(n) {
+        this.x *= n;
+        this.y *= n;
+        this.z *= n;
+        return this;
     }
-    div(vec) {
-        return new Vector3(Vector.divide(this.vector, vec instanceof Vector3 ? vec.vector : vec));
+    div(n) {
+        this.x /= n;
+        this.y /= n;
+        this.z /= n;
+        return this;
     }
     len() {
-        return this.vector.length();
+        return Math.sqrt(this.x ** 2 + this.y ** 2 + this.z ** 2);
+    }
+    len2() {
+        return this.x ** 2 + this.y ** 2 + this.z ** 2;
     }
     equals(other) {
-        return this.vector.equals(other instanceof Vector3 ? other.vector : other);
+        return this.x === other.x && this.y === other.y && this.z === other.z;
     }
     distance(vec) {
-        return Vector.distance(this.vector, vec instanceof Vector3 ? vec.vector : vec);
+        return this.clone().sub(vec).len();
     }
     toString() {
-        return `(${this.vector.x}, ${this.vector.y}, ${this.vector.z})`;
+        return `(${this.x}, ${this.y}, ${this.z})`;
     }
     [Symbol.toStringTag]() {
         return this.toString();
     }
     floor() {
-        this.vector.x = Math.floor(this.vector.x);
-        this.vector.y = Math.floor(this.vector.y);
-        this.vector.z = Math.floor(this.vector.z);
+        this.x = Math.floor(this.x);
+        this.y = Math.floor(this.y);
+        this.z = Math.floor(this.z);
         return this;
     }
     round() {
-        this.vector.x = Math.round(this.vector.x);
-        this.vector.y = Math.round(this.vector.y);
-        this.vector.z = Math.round(this.vector.z);
+        this.x = Math.round(this.x);
+        this.y = Math.round(this.y);
+        this.z = Math.round(this.z);
         return this;
     }
     ceil() {
-        this.vector.x = Math.ceil(this.vector.x);
-        this.vector.y = Math.ceil(this.vector.y);
-        this.vector.z = Math.ceil(this.vector.z);
+        this.x = Math.ceil(this.x);
+        this.y = Math.ceil(this.y);
+        this.z = Math.ceil(this.z);
         return this;
     }
     getVector() {
-        return this.vector;
+        return new Vector(this.x, this.y, this.z);
+    }
+    clone() {
+        return new Vector3(this.x, this.y, this.z);
     }
     getLocation() {
         return new Location(this.x, this.y, this.z);

@@ -20,6 +20,9 @@ export default class ExDimension {
     runCommand(str) {
         return this._dimension.runCommand(str);
     }
+    runCommandAsync(str) {
+        return this._dimension.runCommandAsync(str);
+    }
     static getInstance(source) {
         let dimension = source;
         if (this.propertyNameCache in dimension) {
