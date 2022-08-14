@@ -2053,12 +2053,10 @@
     "controls": [{
         "gamepad_tooltip@hud.tooltip_helper": {
           "$icon_image_ref": "hud.base_icon_image",
-          "bindings": [
-            {
-              "binding_name": "#is_gamepad_tip",
-              "binding_name_override": "#visible"
-            }
-          ]
+          "bindings": [{
+            "binding_name": "#is_gamepad_tip",
+            "binding_name_override": "#visible"
+          }]
         }
       },
       {
@@ -2565,6 +2563,14 @@
       "$xp_control_offset": [0, -11]
     }],
     "controls": [{
+        "c": {
+          "type": "image",
+          "size": [4, 4],
+          "texture": "textures/ui/centerpoint",
+          "alpha": 0.7,
+          "layer": 0
+        }
+      }, {
         "left_helpers@hud.left_helpers": {}
       },
       {

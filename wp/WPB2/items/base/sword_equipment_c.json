@@ -6,6 +6,8 @@
       "identifier": "wb:sword_equipment_c"
     },
     "components": {
+      "minecraft:weapon": {
+      },
       "minecraft:creative_category": {
 				"parent": "itemGroup.name.sword"
 			},
@@ -21,7 +23,7 @@
         ]
       },
       "minecraft:can_destroy_in_creative": false,
-      "minecraft:damage": 15,
+      "minecraft:damage": 25,
       "minecraft:damageable": {
         "max_damage": 2400
       },
@@ -42,6 +44,7 @@
         "slot": "sword",
         "value": 10
       },
+
       "minecraft:hand_equipped": true,
       "minecraft:max_stack_size": 1,
       "minecraft:mining_speed": 1.5,

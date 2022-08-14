@@ -1,60 +1,54 @@
 {
-  "pools": [
-    {
-      "rolls": 1,
-      "entries": [
-        {
-          "type": "item",
-          "name": "minecraft:ender_eye",
-          "weight": 60
-        },
-        {
-          "type": "item",
-          "name": "minecraft:ender_pearl",
-          "weight": 40
-        },
-        {
-          "type": "item",
-          "name": "minecraft:ender_crystal",
-          "weight": 5
-        },
-        {
-          "type": "item",
-          "name": "minecraft:shulker_shell",
-          "weight": 20
-        },
-        {
-          "type": "item",
-          "name": "minecraft:skull",
-          "weight": 1,
-          "functions": [
-            {
-              "function": "set_data",
-              "data": 5
-            }
-          ]
-        },
+  "pools": [{
+    "rolls": 1,
+    "entries": [{
+        "type": "item",
+        "name": "minecraft:ender_eye",
+        "weight": 60
+      },
+      {
+        "type": "item",
+        "name": "minecraft:ender_pearl",
+        "weight": 40
+      },
+      {
+        "type": "item",
+        "name": "minecraft:ender_crystal",
+        "weight": 5
+      },
+      {
+        "type": "item",
+        "name": "minecraft:shulker_shell",
+        "weight": 20
+      },
+      {
+        "type": "item",
+        "name": "minecraft:skull",
+        "weight": 1,
+        "functions": [{
+          "function": "set_data",
+          "data": 5
+        }]
+      },
 
-                {
-                    "type": "item",
-                    "name": "minecraft:elytra",
-                    "weight": 5,
-                    "functions": [
-                        {
-                            "function": "set_damage",
-                            "damage": {
-                                "min": 0,
-                                "max": 0.25
-                            }
-                        },
-                        {
-                            "function": "enchant_with_levels",
-                            "levels": 30,
-                            "treasure": true
-               }
-            ]
-         }
-      ]
-    }
-  ]
+      {
+        "type": "item",
+        "name": "minecraft:elytra",
+        "weight": 5,
+        "functions": [{
+            "function": "set_damage",
+            "damage": {
+              "min": 0,
+              "max": 0.25
+            }
+          },
+          {
+            "function": "enchant_with_levels",
+            "levels": 30,
+            "treasure": true
+          }
+        ]
+      }
+    ]
+  }]
 }

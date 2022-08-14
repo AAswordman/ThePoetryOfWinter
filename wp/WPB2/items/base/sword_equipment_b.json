@@ -6,6 +6,8 @@
       "identifier": "wb:sword_equipment_b"
     },
     "components": {
+      "minecraft:weapon": {
+      },
       "minecraft:creative_category": {
 				"parent": "itemGroup.name.sword"
 			},
@@ -21,7 +23,7 @@
         ]
       },
       "minecraft:can_destroy_in_creative": false,
-      "minecraft:damage": 10,
+      "minecraft:damage": 15,
       "minecraft:damageable": {
         "max_damage": 2200
       },

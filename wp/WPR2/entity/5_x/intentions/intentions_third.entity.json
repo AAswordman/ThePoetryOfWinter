@@ -15,12 +15,6 @@
           "default": "geometry.intentions_first",
           "charged": "geometry.lightning_intentions_third"
       },
-      "scripts": {
-        "pre_animation": [
-          "variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
-          "variable.tcos1 = -variable.tcos0;"
-        ]
-      },
       "animations": {
         "pre":"animation.intentions_third.pre",
         "look_at_target_default": "animation.humanoid.look_at_target.default.v1.0",
@@ -38,6 +32,10 @@
         "basec": "controller.animation.base.base" 
       },
       "scripts": {
+        "pre_animation": [
+          "variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
+          "variable.tcos1 = -variable.tcos0;"
+        ],
         "animate": [
           {"pre":"query.variant==9"},
           "basec","roaringc","delayed_attackingc","movec","look_at_targetc"

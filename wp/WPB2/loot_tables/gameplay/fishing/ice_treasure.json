@@ -90,18 +90,6 @@
                             "treasure": true
                         }
                     ]
-                },
-                {
-                    "type": "item",
-                    "name": "minecraft:book",
-                    "weight": 6,
-                    "functions": [
-                        {
-                            "function": "enchant_with_levels",
-                            "levels": 30,
-                            "treasure": true
-                        }
-                    ]
                 }
             ]
         }
