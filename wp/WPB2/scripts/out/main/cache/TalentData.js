@@ -12,7 +12,7 @@ export default class TalentData {
         let s = TalentData.calculateTalent(data, id, level);
         switch (id) {
             case Talent.VIENTIANE: return `生命值增加 §o§e${s}§r 点`;
-            case Talent.CLOAD_PIERCING: return `对0 ~ 64距离远处目标造成 §o§e${s}§r 额外伤害，距离越近额外伤害越小`;
+            case Talent.CLOAD_PIERCING: return `对0 ~ 64距离远处目标造成 §o§b${s}％§r 额外伤害，距离越近额外伤害越小`;
             case Talent.ARMOR_BREAKING: return `对目标造成 §o§b${s}％§r * (自身最大生命值) 额外伤害`;
             case Talent.SANCTION: return `对0 ~ 16距离远处目标造成 §o§b${s}％§r 额外伤害，距离越远额外伤害越小`;
             case Talent.DEFENSE: return `受到一切伤害减免 §o§b${s}％§r ，致命伤无效`;

@@ -72,8 +72,8 @@
         "summon_choices": [
           {
             "weight": 1,
-            "cooldown_time": 1.0,
-            "cast_duration": 0.5,
+            "cooldown_time": 1.4,
+            "cast_duration": 1.0,
             "particle_color": "#FFB3B3CC",
             "sequence": [
               {

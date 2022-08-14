@@ -28,9 +28,9 @@ export default class ExGameConfig {
         });
     }
 }
-ExGameConfig.gameVersion = "1.9.10";
-ExGameConfig.addonVersion = "1.6.0";
-ExGameConfig.debug = true;
+ExGameConfig.gameVersion = "1.9.20";
+ExGameConfig.addonVersion = "1.6.04";
+ExGameConfig.debug = false;
 ExGameConfig.serverId = "Server";
 ExGameConfig.transmissionType = {
     sendToServer: 0,
