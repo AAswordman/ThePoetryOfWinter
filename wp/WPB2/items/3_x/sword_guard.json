@@ -6,6 +6,8 @@
       "identifier": "wb:sword_guard"
     },
     "components": {
+      "minecraft:weapon": {
+      },
       "minecraft:creative_category": {
 				"parent": "itemGroup.name.sword"
 			},

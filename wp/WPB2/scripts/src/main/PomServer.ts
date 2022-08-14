@@ -3,7 +3,7 @@ import ExGameConfig from "../modules/exmc/ExGameConfig.js";
 import ExGameServer from "../modules/exmc/ExGameServer.js";
 import ExTransmissionMsg from "../modules/exmc/ExTransmissionMsg.js";
 import PomClient from "./PomClient.js";
-import { Entity, EntityHitEvent, EntityHurtEvent, MinecraftDimensionTypes, Player } from 'mojang-minecraft';
+import { Entity, EntityHitEvent, EntityHurtEvent, MinecraftDimensionTypes, MinecraftEntityTypes, Player, MinecraftItemTypes, Items } from 'mojang-minecraft';
 import GlobalSettings from './cache/GlobalSettings.js';
 import { Objective } from "../modules/exmc/entity/ExScoresManager.js";
 import TimeLoopTask from "../modules/exmc/utils/TimeLoopTask.js";
@@ -13,9 +13,13 @@ export default class PomServer extends ExGameServer {
 	entityCleaner: TimeLoopTask;
 	tpsListener: TimeLoopTask;
 	tps = 20;
+	entityCleanerPre: TimeLoopTask;
 	constructor() {
 		super();
 		this.setting = new GlobalSettings(new Objective("wpsetting"));
+		this.entityCleanerPre = new TimeLoopTask(this.getEvents(), () => {
+			this.entityCleaner.start();
+		});
 		this.entityCleaner = new TimeLoopTask(this.getEvents(), () => {
 			let entities: Entity[] = Array.from(this.getDimension(MinecraftDimensionTypes.overworld).getEntities())
 				.concat(Array.from(this.getDimension(MinecraftDimensionTypes.theEnd).getEntities()))
@@ -30,7 +34,7 @@ export default class PomServer extends ExGameServer {
 
 			let max = [0, ""];
 			map.forEach((v, k) => {
-				if (v > max[0]) {
+				if (v > max[0] && [MinecraftEntityTypes.player.id,MinecraftEntityTypes.villager.id,MinecraftEntityTypes.villagerV2.id].indexOf(k) === -1) {
 					max[0] = v;
 					max[1] = k;
 				}
@@ -40,13 +44,13 @@ export default class PomServer extends ExGameServer {
 
 			if(entities.length > this.setting.entityCleanerLeastNum){
 				entities.forEach(e => {
-					if(e == undefined) return;
+					if(!e|| !e.id) return;
+					if(e.id === "minecraft:item" && e.viewVector.y !== 0) return;
 					if(e.id === max[1] && !e.nameTag) e.kill();
 				});
 			}
-
-
-		}).delay(60000);
+			if(this.tps <= 12) this.entityCleaner.delay(200);
+		}).delay(8000);
 		this.upDateEntityCleaner();
 
 
@@ -54,7 +58,8 @@ export default class PomServer extends ExGameServer {
 		this.tpsListener = new TimeLoopTask(this.getEvents(), () => {
 			this.tps = ticks;
 			//ExGameConfig.console.log("tps：" + this.tps);
-			this.entityCleaner.delay(2 ** (this.tps));
+			this.entityCleanerPre.delay(2 ** (this.tps));
+			if(this.tps > 17) this.entityCleaner.delay(8000).stop();
 			ticks = 0;
 		}).delay(1000);
 
@@ -66,9 +71,9 @@ export default class PomServer extends ExGameServer {
 	}
 	upDateEntityCleaner() {
 		if (this.setting.entityCleaner) {
-			this.entityCleaner.start();
+			this.entityCleanerPre.start();
 		} else {
-			this.entityCleaner.stop();
+			this.entityCleanerPre.stop();
 		}
 	}
 	override newClient(id: string, player: Player): PomClient {

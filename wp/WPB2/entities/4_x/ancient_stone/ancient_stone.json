@@ -33,6 +33,19 @@
     "component_groups": {
       "isboss_b": {
         "minecraft:is_charged": {},
+        "minecraft:behavior.melee_attack": {
+          "priority": 3,
+          "speed_multiplier": 1,
+          "track_target": false
+        },
+        "minecraft:is_baby": {},
+        "minecraft:health": {
+          "value": 1500,
+          "max": 1500
+        },
+        "minecraft:movement": {
+          "value": 0.15
+        },
         "minecraft:damage_sensor": {
           "triggers": [
             {
@@ -525,7 +538,6 @@
       "second2": {
         "add": {
           "component_groups": [
-            "second",
             "secondx",
             "isboss_b"
           ]

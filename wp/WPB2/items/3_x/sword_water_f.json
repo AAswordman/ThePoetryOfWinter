@@ -6,6 +6,8 @@
       "identifier": "wb:sword_water_f"
     },
     "components": {
+      "minecraft:weapon": {
+      },
       "minecraft:creative_category": {
 				"parent": "itemGroup.name.sword"
 			},
