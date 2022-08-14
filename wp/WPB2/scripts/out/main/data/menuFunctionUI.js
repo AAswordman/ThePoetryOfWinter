@@ -14,7 +14,7 @@ import ExMessageAlert from "../../modules/exmc/ui/ExMessageAlert.js";
 import TalentData, { Occupation, Talent } from "../cache/TalentData.js";
 import { ModalFormData } from "mojang-minecraft-ui";
 import ExErrorStack from "../../modules/exmc/ExErrorStack.js";
-import Vector3 from '../../modules/exmc/utils/Vector3';
+import Vector3 from '../../modules/exmc/utils/Vector3.js';
 export default {
     "main": {
         "img": "textures/items/wet_paper",
@@ -157,7 +157,7 @@ WINDes
 
 感谢宣传者
 BunBun不是笨笨    在矿里的小金呀
-					`.split("\n")));
+`.split("\n")));
                 }
             },
             "imp": {
@@ -472,7 +472,19 @@ You understand and agree that:
                                 "type": "button",
                                 "msg": "前往点：" + (i[1] == "" ? (i[0] + v.toString()) : i[1]),
                                 "function": (client, ui) => {
+                                    let bag = client.exPlayer.getBag();
+                                    if (!bag.hasItem("wb:conveyor_issue") && client.globalSettings.tpNeedItem) {
+                                        client.sayTo("§b背包无传送石，传送失败");
+                                        return false;
+                                    }
+                                    if (client.globalSettings.tpNeedItem) {
+                                        let pos = (bag.searchItem("wb:conveyor_issue"));
+                                        let item = bag.getItem(pos);
+                                        item.amount--;
+                                        bag.setItem(pos, item);
+                                    }
                                     client.exPlayer.setPosition(v, client.getDimension(i[0]));
+                                    client.sayTo("§b传送成功");
                                     return false;
                                 }
                             }, {
@@ -722,7 +734,7 @@ You understand and agree that:
                             },
                             {
                                 "type": "toggle",
-                                "msg": "传送需要传送石",
+                                "msg": "任何传送需要传送石",
                                 "state": (client, ui) => client.globalSettings.tpNeedItem,
                                 "function": (client, ui) => {
                                     client.globalSettings.tpNeedItem = !client.globalSettings.tpNeedItem;

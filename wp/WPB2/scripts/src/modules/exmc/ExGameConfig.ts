@@ -3,9 +3,9 @@ import ExCommandRunner from './interface/ExCommandRunner.js';
 import GameConsole from './interface/GameConsole.js';
 
 export default class ExGameConfig{
-	static gameVersion = "1.9.10";
-	static addonVersion = "1.6.0";
-	static debug = true;
+	static gameVersion = "1.9.20";
+	static addonVersion = "1.6.04";
+	static debug = false;
 
 	static console: GameConsole;
 

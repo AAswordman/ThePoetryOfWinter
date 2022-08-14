@@ -8,7 +8,7 @@ import TalentData, { Occupation, Talent } from "../cache/TalentData.js";
 import PomServer from '../PomServer.js';
 import { ModalFormData } from "mojang-minecraft-ui";
 import ExErrorStack from "../../modules/exmc/ExErrorStack.js";
-import Vector3 from '../../modules/exmc/utils/Vector3';
+import Vector3 from '../../modules/exmc/utils/Vector3.js';
 
 export default {
 	"main": {
@@ -152,7 +152,7 @@ WINDes
 
 感谢宣传者
 BunBun不是笨笨    在矿里的小金呀
-					`.split("\n")));
+`.split("\n")));
 				}
 			},
 			"imp": {
@@ -212,53 +212,53 @@ You understand and agree that:
 `.split("\n"));
 				}
 			},
-			"QA":{
+			"QA": {
 				"text": "Q & A",
 				"page": [
 					{
-						"type":"padding"
+						"type": "padding"
 					},
 					{
-						"type":"text_title",
-						"msg":"为什么无法召唤BOSS"
+						"type": "text_title",
+						"msg": "为什么无法召唤BOSS"
 					},
 					{
-						"type":"padding"
+						"type": "padding"
 					},
-					
+
 					{
-						"type":"text",
-						"msg":"现在部分boss有专属的召唤者方块了。在他们的群系中，概率生成BOSS建筑，建筑内有召唤者方块。使用 钥匙 类物品点击即可召唤boss。对于未激活的召唤者方块，使用特定物品可以再次激活。如果找不到特定建筑，说明脸黑。请在特定的群系找。"
-					},
-					{
-						"type":"padding"
+						"type": "text",
+						"msg": "现在部分boss有专属的召唤者方块了。在他们的群系中，概率生成BOSS建筑，建筑内有召唤者方块。使用 钥匙 类物品点击即可召唤boss。对于未激活的召唤者方块，使用特定物品可以再次激活。如果找不到特定建筑，说明脸黑。请在特定的群系找。"
 					},
 					{
-						"type":"text_title",
-						"msg":"为什么那么卡"
+						"type": "padding"
 					},
 					{
-						"type":"padding"
-					},
-					
-					{
-						"type":"text",
-						"msg":"卡顿多半是因为实体过多导致的。请尝试在 管理 界面（只有带有owner tag的玩家才能进入）打开实体清理功能，并调整最低保留实体数。建议350，配置好就往上调，配置差就往下调。"
+						"type": "text_title",
+						"msg": "为什么那么卡"
 					},
 					{
-						"type":"padding"
+						"type": "padding"
+					},
+
+					{
+						"type": "text",
+						"msg": "卡顿多半是因为实体过多导致的。请尝试在 管理 界面（只有带有owner tag的玩家才能进入）打开实体清理功能，并调整最低保留实体数。建议350，配置好就往上调，配置差就往下调。"
 					},
 					{
-						"type":"text_title",
-						"msg":"如何升级、天赋点数怎么获得"
+						"type": "padding"
 					},
 					{
-						"type":"padding"
+						"type": "text_title",
+						"msg": "如何升级、天赋点数怎么获得"
 					},
-					
 					{
-						"type":"text",
-						"msg":"可以通过升级台挂机，以及在线时间来升级。升级可获得点数。"
+						"type": "padding"
+					},
+
+					{
+						"type": "text",
+						"msg": "可以通过升级台挂机，以及在线时间来升级。升级可获得点数。"
 					}
 				]
 			}
@@ -471,7 +471,19 @@ You understand and agree that:
 									"type": "button",
 									"msg": "前往点：" + (i[1] == "" ? (i[0] + v.toString()) : i[1]),
 									"function": (client: PomClient, ui: MenuUIAlert) => {
+										let bag = client.exPlayer.getBag();
+										if (!bag.hasItem("wb:conveyor_issue") && client.globalSettings.tpNeedItem) {
+											client.sayTo("§b背包无传送石，传送失败");
+											return false;
+										}
+										if (client.globalSettings.tpNeedItem) {
+											let pos = (bag.searchItem("wb:conveyor_issue"));
+											let item = <ItemStack>bag.getItem(pos);
+											item.amount--;
+											bag.setItem(pos, item);
+										}
 										client.exPlayer.setPosition(v, client.getDimension(i[0]));
+										client.sayTo("§b传送成功");
 										return false;
 									}
 								},
@@ -728,7 +740,7 @@ You understand and agree that:
 							},
 							{
 								"type": "toggle",
-								"msg": "传送需要传送石",
+								"msg": "任何传送需要传送石",
 								"state": (client: PomClient, ui: MenuUIAlert) => client.globalSettings.tpNeedItem,
 								"function": (client: PomClient, ui: MenuUIAlert) => {
 									client.globalSettings.tpNeedItem = !client.globalSettings.tpNeedItem;
