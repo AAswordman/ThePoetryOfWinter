@@ -37,11 +37,22 @@ export default class GlobalSettings extends GlobalScoreBoardCache {
         this.setBoolean("tpPointRecord", value);
     }
     get entityCleanerLeastNum() {
-        var _a;
-        return (_a = this.getNumber("entityCleanerLeastNum")) !== null && _a !== void 0 ? _a : 350;
+        return this.getNumber("entityCleanerLeastNum") || 350;
     }
     set entityCleanerLeastNum(value) {
         this.setNumber("entityCleanerLeastNum", value);
+    }
+    get entityCleanerStrength() {
+        return this.getNumber("entityCleanerStrength") || 5;
+    }
+    set entityCleanerStrength(value) {
+        this.setNumber("entityCleanerStrength", value);
+    }
+    get entityCleanerDelay() {
+        return this.getNumber("entityCleanerDelay") || 30;
+    }
+    set entityCleanerDelay(value) {
+        this.setNumber("entityCleanerDelay", value);
     }
 }
 //# sourceMappingURL=GlobalSettings.js.map

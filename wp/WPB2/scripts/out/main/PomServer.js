@@ -9,10 +9,12 @@ export default class PomServer extends ExGameServer {
     constructor() {
         super();
         this.tps = 20;
+        this._mtps = 20;
         this.setting = new GlobalSettings(new Objective("wpsetting"));
-        this.entityCleanerPre = new TimeLoopTask(this.getEvents(), () => {
-            this.entityCleaner.start();
-        });
+        (this.clearEntityNumUpdate = new TimeLoopTask(this.getEvents(), () => {
+            this.updateClearEntityNum();
+        }).delay(10000)).start();
+        this.updateClearEntityNum();
         this.entityCleaner = new TimeLoopTask(this.getEvents(), () => {
             let entities = Array.from(this.getDimension(MinecraftDimensionTypes.overworld).getEntities())
                 .concat(Array.from(this.getDimension(MinecraftDimensionTypes.theEnd).getEntities()))
@@ -34,7 +36,7 @@ export default class PomServer extends ExGameServer {
             });
             ExGameConfig.console.log("最多实体数：" + max[0]);
             ExGameConfig.console.log("最多实体数：" + max[1]);
-            if (entities.length > this.setting.entityCleanerLeastNum) {
+            if (entities.length > this.entityCleanerLeastNum) {
                 entities.forEach(e => {
                     if (!e || !e.id)
                         return;
@@ -44,17 +46,15 @@ export default class PomServer extends ExGameServer {
                         e.kill();
                 });
             }
-            if (this.tps <= 12)
-                this.entityCleaner.delay(200);
         }).delay(8000);
         this.upDateEntityCleaner();
         let ticks = 0;
         this.tpsListener = new TimeLoopTask(this.getEvents(), () => {
             this.tps = ticks;
-            //ExGameConfig.console.log("tps：" + this.tps);
-            this.entityCleanerPre.delay(2 ** (this.tps));
-            if (this.tps > 17)
-                this.entityCleaner.delay(8000).stop();
+            let liner = (this.tps - this._mtps) > 0 ? this.entityCleanerStrength : 11 - this.entityCleanerStrength;
+            this._mtps = this._mtps * (liner - 1) / liner + this.tps / liner;
+            //ExGameConfig.console.log("tps：" + this.tps, "myps : " + this._mtps,"delay:"+this.entityCleanerDelay ** (this._mtps));
+            this.entityCleaner.delay(this.entityCleanerDelay ** (this._mtps));
             ticks = 0;
         }).delay(1000);
         this.getEvents().events.tick.subscribe(e => {
@@ -62,12 +62,17 @@ export default class PomServer extends ExGameServer {
         });
         this.tpsListener.start();
     }
+    updateClearEntityNum() {
+        this.entityCleanerStrength = this.setting.entityCleanerStrength;
+        this.entityCleanerLeastNum = this.setting.entityCleanerLeastNum;
+        this.entityCleanerDelay = (60 - this.setting.entityCleanerDelay) / 100 + 1.8;
+    }
     upDateEntityCleaner() {
         if (this.setting.entityCleaner) {
-            this.entityCleanerPre.start();
+            this.entityCleaner.start();
         }
         else {
-            this.entityCleanerPre.stop();
+            this.entityCleaner.stop();
         }
     }
     newClient(id, player) {

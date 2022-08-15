@@ -19,6 +19,7 @@ import Vector3 from "../modules/exmc/utils/Vector3.js";
 import ExBlock from "../modules/exmc/block/ExBlock.js";
 import isEquipment from "./items/isEquipment.js";
 import lang from "./data/lang.js";
+import PomServer from "./PomServer.js";
 
 export default class PomClient extends ExGameClient {
 	gameId !: number;
@@ -49,7 +50,7 @@ export default class PomClient extends ExGameClient {
 	}).delay(5000);
 	armorCoolingLooper = new TimeLoopTask(this.getEvents(), () => {
 		let scores = this.exPlayer.getScoresManager();
-		if (scores.getScore("wbkjlq") > 0) scores.removeScoreAsync("wbkjlq", 1);
+		if (scores.getScore("wbkjlq") > 0) scores.removeScore("wbkjlq", 1);
 	}).delay(1000);
 	data: PomData;
 	looper: TimeLoopTask;
@@ -65,6 +66,7 @@ export default class PomClient extends ExGameClient {
 		});
 		this.looper.delay(10000);
 		this.looper.start();
+
 
 		this.data = this.cache.get(new PomData());
 

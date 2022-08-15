@@ -47,7 +47,7 @@ export default class PomClient extends ExGameClient {
         this.armorCoolingLooper = new TimeLoopTask(this.getEvents(), () => {
             let scores = this.exPlayer.getScoresManager();
             if (scores.getScore("wbkjlq") > 0)
-                scores.removeScoreAsync("wbkjlq", 1);
+                scores.removeScore("wbkjlq", 1);
         }).delay(1000);
         this.blockTranslateData = new Map();
         this.talentRes = new Map();
