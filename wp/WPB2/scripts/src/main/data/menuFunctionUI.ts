@@ -260,6 +260,7 @@ You understand and agree that:
 						"type": "text",
 						"msg": "可以通过升级台挂机，以及在线时间来升级。升级可获得点数。"
 					}
+					
 				]
 			}
 		}
@@ -797,11 +798,15 @@ You understand and agree that:
 							"function": (client: PomClient, ui: MenuUIAlert) => {
 								new ModalFormData()
 									.toggle("开启实体清理", client.globalSettings.entityCleaner)
-									.slider("保留实体数", 100, 1000, 50, client.globalSettings.entityCleanerLeastNum)
+									.slider("保留实体数(最低实体数)", 100, 1000, 50, client.globalSettings.entityCleanerLeastNum)
+									.slider("清理灵敏度(瞬时卡顿处理)", 2, 10, 1, client.globalSettings.entityCleanerStrength)
+									.slider("清理频次(长期清理强度)", 1, 60, 1, client.globalSettings.entityCleanerDelay)
 									.show(client.player).then((e) => {
 										if (e.isCanceled) return;
 										client.globalSettings.entityCleaner = e.formValues[0];
 										client.globalSettings.entityCleanerLeastNum = e.formValues[1];
+										client.globalSettings.entityCleanerStrength = e.formValues[2];
+										client.globalSettings.entityCleanerDelay = e.formValues[3];
 									})
 									.catch((e) => {
 										ExErrorStack.throwError(e);
