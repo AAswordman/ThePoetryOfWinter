@@ -141,6 +141,8 @@ export default {
         "menuUIMsgBailan98": "盔甲技能冷却",
         "menuUIMsgBailan99": "友好模式是否开启",
         "menuUIMsgBailan100": "等级加成是否开启",
+        "menuUIMsgBailan101": "个人设置",
+        "menuUIMsgBailan102": "语言选择"
     },
     "en": {
         "maxSingleDamage": "Maximum monomer damage",
@@ -232,7 +234,7 @@ export default {
         "menuUIMsgBailan46": "Exchanges",
         "menuUIMsgBailan47": "Associated settings",
         "menuUIMsgBailan48": "Hostile mode",
-        "menuUIMsgBailan49": "In the hostile mode, you can attack any player, the name is displayed as red; in the friendly mode, you cannot attack the player in the friendly mode, the name is green.",
+        "menuUIMsgBailan49": "In the hostile mode, you can attack any player, the name is displayed as red; in the friendly mode, you cannot attack the player who is in the friendly mode,and your name is displayed as green",
         "menuUIMsgBailan50": "That is, if a player's name is green, then he is not threatened; if he starts red, then he may have a tendency to attack.",
         "menuUIMsgBailan51": "Friendly mode",
         "menuUIMsgBailan52": "Hostile mode",
@@ -283,7 +285,9 @@ export default {
         "menuUIMsgBailan97": "Weapon skill cooling",
         "menuUIMsgBailan98": "Armor skills cooling",
         "menuUIMsgBailan99": "Whether the friendly mode is opened",
-        "menuUIMsgBailan100": "Whether the level bonus is turned on"
+        "menuUIMsgBailan100": "Whether the level bonus is turned on",
+        "menuUIMsgBailan101": "Personal settings",
+        "menuUIMsgBailan102": "language selection"
     }
 };
 //# sourceMappingURL=lang.js.map

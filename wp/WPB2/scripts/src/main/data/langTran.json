@@ -1,20 +1,10 @@
 {
   "zh": {
-    "menuUIMsgBailan94": "玩家ID",
-    "menuUIMsgBailan95": "玩家等级",
-    "menuUIMsgBailan96": "法力值",
-    "menuUIMsgBailan97": "武器技能冷却",
-    "menuUIMsgBailan98": "盔甲技能冷却",
-    "menuUIMsgBailan99": "友好模式是否开启",
-    "menuUIMsgBailan100": "等级加成是否开启"
+    "menuUIMsgBailan101": "个人设置",
+    "menuUIMsgBailan102": "语言选择"
   },
   "en": {
-    "menuUIMsgBailan94": "Player ID",
-    "menuUIMsgBailan95": "Player level",
-    "menuUIMsgBailan96": "Mana",
-    "menuUIMsgBailan97": "Weapon skill cooling",
-    "menuUIMsgBailan98": "Armor skills cooling",
-    "menuUIMsgBailan99": "Whether the friendly mode is opened",
-    "menuUIMsgBailan100": "Whether the level bonus is turned on"
+    "menuUIMsgBailan101": "Personal settings",
+    "menuUIMsgBailan102": "language selection"
   }
 }
