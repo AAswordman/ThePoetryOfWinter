@@ -724,6 +724,29 @@ You understand and agree that:
 			"text": lang.menuUIMsgBailan75,
 			"default": "op",
 			"page": {
+				"personal": {
+					"text": lang.menuUIMsgBailan101,
+					"page": [
+						{
+							"type": "button",
+							"msg": lang.menuUIMsgBailan102,
+							"function": (client: PomClient, ui: MenuUIAlert): boolean => {
+								new ModalFormData()
+									.title("Choose a language")
+									.dropdown("Language List", ["English", "简体中文"], 0)
+									.show(client.player).then((e) => {
+										if (!e.isCanceled) {
+											client.data.lang = e.formValues[0] == "English" ? "en" : "zh";
+										}
+									})
+									.catch((e) => {
+										ExErrorStack.throwError(e);
+									});
+								return false;
+							}
+						}
+					]
+				},
 				"op": {
 					"text": lang.menuUIMsgBailan76,
 					"page": (client: PomClient, ui: MenuUIAlert): MenuUIAlertView[] => {
