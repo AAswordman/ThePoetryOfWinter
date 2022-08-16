@@ -133,7 +133,14 @@ export default {
         "menuUIMsgBailan90": "无权限访问此页面。如果你是 op ，请输入/tag @s add owner 来获取管理权限",
         "menuUIMsgBailan91": "保留实体数(最低实体数)",
         "menuUIMsgBailan92": "清理灵敏度(瞬时卡顿处理)",
-        "menuUIMsgBailan93": "清理频次(长期清理强度)"
+        "menuUIMsgBailan93": "清理频次(长期清理强度)",
+        "menuUIMsgBailan94": "玩家ID",
+        "menuUIMsgBailan95": "玩家等级",
+        "menuUIMsgBailan96": "法力值",
+        "menuUIMsgBailan97": "武器技能冷却",
+        "menuUIMsgBailan98": "盔甲技能冷却",
+        "menuUIMsgBailan99": "友好模式是否开启",
+        "menuUIMsgBailan100": "等级加成是否开启",
     },
     "en": {
         "maxSingleDamage": "Maximum monomer damage",
@@ -269,7 +276,14 @@ export default {
         "menuUIMsgBailan90": "Access to this page without permissions.If you are OP, enter/tag @s add owner to obtain management permissions",
         "menuUIMsgBailan91": "Reserve the number of entities (minimum entity)",
         "menuUIMsgBailan92": "Clean up sensitivity (instantaneous stuck processing)",
-        "menuUIMsgBailan93": "Cleaning frequency (long -term cleaning intensity)"
+        "menuUIMsgBailan93": "Cleaning frequency (long -term cleaning intensity)",
+        "menuUIMsgBailan94": "Player ID",
+        "menuUIMsgBailan95": "Player level",
+        "menuUIMsgBailan96": "Mana",
+        "menuUIMsgBailan97": "Weapon skill cooling",
+        "menuUIMsgBailan98": "Armor skills cooling",
+        "menuUIMsgBailan99": "Whether the friendly mode is opened",
+        "menuUIMsgBailan100": "Whether the level bonus is turned on"
     }
 };
 //# sourceMappingURL=lang.js.map

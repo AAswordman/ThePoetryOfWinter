@@ -277,13 +277,13 @@ You understand and agree that:
                     "page": (client, ui) => {
                         let source = client.player;
                         let scores = ExPlayer.getInstance(source).getScoresManager();
-                        let msg = [`玩家ID: ${client.gameId}`,
-                            `玩家等级: ${scores.getScore("wbdj")}`,
-                            `当前法力值: ${scores.getScore("wbfl")}`,
-                            `武器技能冷却: ${scores.getScore("wbwqlq")}`,
-                            `盔甲技能冷却: ${scores.getScore("wbkjlqcg")}`,
-                            `友好模式是否开启: ${source.hasTag("wbmsyh") ? lang.menuUIMsgBailan15 : lang.menuUIMsgBailan16}`,
-                            `等级效果是否启用: ${source.hasTag("wbdjeff") ? lang.menuUIMsgBailan15 : lang.menuUIMsgBailan16}`];
+                        let msg = [`${lang.menuUIMsgBailan94}: ${client.gameId}`,
+                            `${lang.menuUIMsgBailan95}: ${scores.getScore("wbdj")}`,
+                            `${lang.menuUIMsgBailan96}: ${scores.getScore("wbfl")}`,
+                            `${lang.menuUIMsgBailan97}: ${scores.getScore("wbwqlq")}`,
+                            `${lang.menuUIMsgBailan98}: ${scores.getScore("wbkjlqcg")}`,
+                            `${lang.menuUIMsgBailan99}: ${source.hasTag("wbmsyh") ? lang.menuUIMsgBailan15 : lang.menuUIMsgBailan16}`,
+                            `${lang.menuUIMsgBailan100}: ${source.hasTag("wbdjeff") ? lang.menuUIMsgBailan15 : lang.menuUIMsgBailan16}`];
                         return MenuUIAlert.getLabelViews(msg);
                     }
                 },
