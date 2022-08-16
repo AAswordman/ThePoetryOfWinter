@@ -61,6 +61,18 @@ export class GlobalScoreBoardCacheList implements Array<number>{
         }
         
     }
+    includes(searchElement: number, fromIndex?: number | undefined): boolean {
+        throw new Error("Method not implemented.");
+    }
+    flatMap<U, This = undefined>(callback: (this: This, value: number, index: number, array: number[]) => U | readonly U[], thisArg?: This | undefined): U[] {
+        throw new Error("Method not implemented.");
+    }
+    flat<A, D extends number = 1>(this: A, depth?: D | undefined): FlatArray<A, D>[] {
+        throw new Error("Method not implemented.");
+    }
+    at(index: number): number | undefined {
+        throw new Error("Method not implemented.");
+    }
     public reset(src: number[]) {
         this.clearData();
         this.push(...src);

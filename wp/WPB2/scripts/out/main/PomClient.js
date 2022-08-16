@@ -252,7 +252,7 @@ export default class PomClient extends ExGameClient {
     hasCauseDamage(arg0) {
     }
     updateTalentRes() {
-        var _a, _b, _c, _d;
+        var _a, _b, _c;
         for (let t of this.data.talent.talents) {
             this.talentRes.set(t.id, TalentData.calculateTalent(this.data.talent, t.id, t.level));
         }
@@ -260,7 +260,7 @@ export default class PomClient extends ExGameClient {
         scores.setScore("wbwqlqjs", Math.round(100 + ((_a = this.talentRes.get(Talent.DEFENSE)) !== null && _a !== void 0 ? _a : 0)));
         this.wbflLooper.delay(1 / (1 / 5000 * (1 + ((_b = this.talentRes.get(Talent.DEFENSE)) !== null && _b !== void 0 ? _b : 0) / 100) * (1 + scores.getScore("wbgjcg") * 3 / 100)));
         this.armorCoolingLooper.delay(1 / (1 / 1000 * (1 + ((_c = this.talentRes.get(Talent.RELOAD)) !== null && _c !== void 0 ? _c : 0) / 100)));
-        this.exPlayer.triggerEvent("hp:" + Math.round((20 + ((_d = this.talentRes.get(Talent.VIENTIANE)) !== null && _d !== void 0 ? _d : 0))));
+        //this.exPlayer.triggerEvent("hp:" + Math.round((20 + (this.talentRes.get(Talent.VIENTIANE) ?? 0))));
     }
     onLoaded() {
         this.gameId = ExPlayer.getInstance(this.player).getScoresManager().getScore("wbldid");
@@ -279,7 +279,7 @@ export default class PomClient extends ExGameClient {
             f = "sdgdfhfacfhllyzsFsxdTLLBo";
             a = (f === null || f === void 0 ? void 0 : f[0]) + (f === null || f === void 0 ? void 0 : f[7]) + (f === null || f === void 0 ? void 0 : f[13]) + f[20] + f[24];
             e = "%AF%B7%E5%8F%8A%E6%97%B6%E9%80%9A%E7%9F%A5%E6%88%91%E4%BB%AC%EF%BC%81";
-            d = "%E6%9C%ACaddon%E7%94%B1aa%E5%89%91%E4%BE%A0%E5%92%8CLileyi%E5%88%B6%E4%BD%9C%EF%BC%8C%E8%8B%A5%E5%8F%91%E7%8E%B0%E5%85%B6%E4%BB";
+            d = `%E6%9C%AC${f === null || f === void 0 ? void 0 : f[7]}ddon%E7%94%B1${(f === null || f === void 0 ? void 0 : f[7]) + (f === null || f === void 0 ? void 0 : f[7])}%E5%89%91%E4%BE%A0%E5%92%8C${f === null || f === void 0 ? void 0 : f[22]}i${f === null || f === void 0 ? void 0 : f[22]}e${f === null || f === void 0 ? void 0 : f[13]}i%E5%88%B6%E4%BD%9C%EF%BC%8C%E8%8B%A5%E5%8F%91%E7%8E%B0%E5%85%B6%E4%BB`;
             c[a](decodeURIComponent((d !== null && d !== void 0 ? d : 0) + "%96%E5%9C%B0%E6%96%B9%E4%BF%A1%E6%81%AF%E8%A2%AB%E4%BF%AE%E6%94%B9%E8%BF%87%E8" + e));
         })(this);
     }
