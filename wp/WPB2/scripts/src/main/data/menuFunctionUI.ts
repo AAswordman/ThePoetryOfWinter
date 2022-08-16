@@ -9,48 +9,50 @@ import PomServer from '../PomServer.js';
 import { ModalFormData } from "mojang-minecraft-ui";
 import ExErrorStack from "../../modules/exmc/ExErrorStack.js";
 import Vector3 from '../../modules/exmc/utils/Vector3.js';
+import { langType } from './langType.js';
 
-export default {
-	"main": {
-		"img": "textures/items/wet_paper",
-		"text": "主页",
-		"default": "notice",
-		"page": {
-			"notice": {
-				"text": "公告",
-				"page": [
-					{
-						"type": "img_adjustToScreen",
-						"msg": "textures/ui/title.png"
-					},
-					{
-						"type": "padding"
-					},
-					{
-						"type": "text",
-						"msg": "稳定版更新啦！本次更新2个活动，快去看看吧！"
-					}
-				]
-			},
-			"activity": {
-				"text": "活动",
-				"page": (client: PomClient, ui: MenuUIAlert) => [
-					{
-						"type": "text_title",
-						"msg": "宣传赢好礼"
-					},
-					{
-						"type": "padding"
-					},
-					{
-						"type": "text",
-						"msg": "本作品是耗时三年制作的大型模组，但奈何并无人气，我们决定举办本活动"
-					},
-					{
-						"type": "img_adjustToScreen",
-						"msg": "textures/ui/active_action.png"
-					},
-				].concat(MenuUIAlert.getLabelViews(`
+export default function menuFunctionUI(lang: langType) {
+	return {
+		"main": {
+			"img": "textures/items/wet_paper",
+			"text": lang.menuUIMsgBailan1,
+			"default": "notice",
+			"page": {
+				"notice": {
+					"text": lang.menuUISubtitleGonggao,
+					"page": [
+						{
+							"type": "img_adjustToScreen",
+							"msg": "textures/ui/title.png"
+						},
+						{
+							"type": "padding"
+						},
+						{
+							"type": "text",
+							"msg": lang.menuUIMsgGonggao1
+						}
+					]
+				},
+				"activity": {
+					"text": lang.menuUISubtitleHuodong,
+					"page": (client: PomClient, ui: MenuUIAlert) => [
+						{
+							"type": "text_title",
+							"msg": lang.menuUIMsgBailan2
+						},
+						{
+							"type": "padding"
+						},
+						{
+							"type": "text",
+							"msg": lang.menuUIMsgBailan3
+						},
+						{
+							"type": "img_adjustToScreen",
+							"msg": "textures/ui/active_action.png"
+						},
+					].concat(MenuUIAlert.getLabelViews(`
 1.活动时间: 2022年8月13日一2022年8月31日23点59分。
 2.活动稿件必须是首次投递的原创作品，且符合创作投稿规范，禁止低创、搬运、抄袭、旧稿重投等。同一篇作品不能由多人提交，重复参加，且活动稿件需要在2022年9月20日前保持开放浏览。
 3.瓜分奖金将于活动结束结果公示后20个工作日内发放完毕。
@@ -66,69 +68,70 @@ export default {
 3│50￥
 
 `.split("\n"))).concat([
-					{
-						"type": "padding"
-					},
-					{
-						"type": "text_title",
-						"msg": "征稿活动："
-					}
-				]).concat(MenuUIAlert.getLabelViews(`
+						{
+							"type": "padding"
+						},
+						{
+							"type": "text_title",
+							"msg": lang.menuUIMsgBailan4
+						}
+					]).concat(MenuUIAlert.getLabelViews(`
 主题：永冬塔
 大小限制：64xnx64
 联系作者或b站发视频并at剑侠（id自己去b站搜）或@Sonality进行投稿
 有机会被加入Add中哦~
 `.split("\n")))
-			},
-			"version": {
-				"text": "版本",
-				"page": (client: PomClient, ui: MenuUIAlert) => {
-					return [
-						{
-							"type": "text_title",
-							"msg": "版本信息"
-						},
-						{
-							"type": "text",
-							"msg": "当前Addon版本: "
-						},
-						{
-							"type": "text",
-							"msg": ExGameConfig.addonVersion
-						},
-						{
-							"type": "text",
-							"msg": "补丁包信息请到以下链接查看："
-						},
-						{
-							"type": "text",
-							"msg": "https://aaswordman.github.io/ThePoetryOfWinter/"
-						},
-						{
-							"type": "padding"
-						},
-						{
-							"type": "text_title",
-							"msg": "版本须知"
-						},
-						{
-							"type": "padding"
-						},
-						{
-							"type": "text",
-							"msg": "冬诗可能存在卡顿现象，因此我们建议您先输入/tag @s add owner，再前往菜单设置中，打开实体清理选项。如果您担心重要实体被清，请不要开启。"
-						},
-						{
-							"type": "padding"
-						},
-						{
-							"type": "text_title",
-							"msg": "致谢名单"
-						},
-						{
-							"type": "padding"
-						}
-					].concat(MenuUIAlert.getLabelViews(`
+				},
+				"version": {
+					"text": lang.menuUIMsgBailan5,
+					"page": (client: PomClient, ui: MenuUIAlert) => {
+						return [
+							{
+								"type": "text_title",
+								"msg": lang.menuUIMsgBanben1
+							},
+							{
+								"type": "text",
+								"msg": lang.menuUIMsgBanben2
+							},
+							{
+								"type": "text",
+								"msg": ExGameConfig.addonVersion
+							},
+							{
+								"type": "text",
+								"msg": lang.menuUIMsgBanben3
+							},
+							{
+								"type": "text",
+								"msg": "https://aaswordman.github.io/ThePoetryOfWinter/"
+							},
+							{
+								"type": "padding"
+							},
+							{
+								"type": "text_title",
+								"msg": lang.menuUIMsgBanben4
+							},
+							{
+								"type": "padding"
+							},
+							{
+								"type": "text",
+								"msg": lang.menuUIMsgBanben5
+							},
+							{
+								"type": "padding"
+							},
+							{
+								"type": "text_title",
+								"msg": lang.menuUIMsgBanben6
+
+							},
+							{
+								"type": "padding"
+							}
+						].concat(MenuUIAlert.getLabelViews(`
 名字排序为随机排序
 
 主要制作者   - LiLeyi   AAswordsman
@@ -153,12 +156,12 @@ WINDes
 感谢宣传者
 BunBun不是笨笨    在矿里的小金呀
 `.split("\n")));
-				}
-			},
-			"imp": {
-				"text": "最终用户许可协议",
-				"page": (client: PomClient, ui: MenuUIAlert) => {
-					return MenuUIAlert.getLabelViews(`
+					}
+				},
+				"imp": {
+					"text": lang.menuUIMsgBailan6,
+					"page": (client: PomClient, ui: MenuUIAlert) => {
+						return MenuUIAlert.getLabelViews(`
 冬之纪行诗最终用户许可协议
 
 一、为保护玩家乐趣、利益及维护开发者利益，我们需要这些最终用户许可条款为冬之纪行诗Add-Ons(以下简称本作品)的下载和使用制定一些规则。本许可是您与本作品的开发者(包括但不限于剑侠、LiLeyi及其他未列出或将来加入开发的人员，以下简称我们)之间达成的协议，描述使用游戏的条款和条件，这些条款应在中国法律所允许的范围内最大程度地适用。
@@ -210,615 +213,616 @@ You understand and agree that:
 2. Your archives in the game minecraft may be damaged due to loading the updates of this work. Please back up your archives before updating, otherwise you will bear all the consequences.
 3. The contents of this agreement also include the agreements or rules in the annexes to this agreement, and other relevant agreements and rules on this service that we may continuously publish. Once the above contents are officially released, they shall be an integral part of this agreement, and you shall also abide by them.
 `.split("\n"));
-				}
-			},
-			"QA": {
-				"text": "Q & A",
-				"page": [
-					{
-						"type": "padding"
-					},
-					{
-						"type": "text_title",
-						"msg": "为什么无法召唤BOSS"
-					},
-					{
-						"type": "padding"
-					},
-
-					{
-						"type": "text",
-						"msg": "现在部分boss有专属的召唤者方块了。在他们的群系中，概率生成BOSS建筑，建筑内有召唤者方块。使用 钥匙 类物品点击即可召唤boss。对于未激活的召唤者方块，使用特定物品可以再次激活。如果找不到特定建筑，说明脸黑。请在特定的群系找。"
-					},
-					{
-						"type": "padding"
-					},
-					{
-						"type": "text_title",
-						"msg": "为什么那么卡"
-					},
-					{
-						"type": "padding"
-					},
-
-					{
-						"type": "text",
-						"msg": "卡顿多半是因为实体过多导致的。请尝试在 管理 界面（只有带有owner tag的玩家才能进入）打开实体清理功能，并调整最低保留实体数。建议350，配置好就往上调，配置差就往下调。"
-					},
-					{
-						"type": "padding"
-					},
-					{
-						"type": "text_title",
-						"msg": "如何升级、天赋点数怎么获得"
-					},
-					{
-						"type": "padding"
-					},
-
-					{
-						"type": "text",
-						"msg": "可以通过升级台挂机，以及在线时间来升级。升级可获得点数。"
 					}
-					
-				]
-			}
-		}
-	},
-	"person": {
-		"img": "textures/items/amethyst_chestplate.png",
-		"text": "个人",
-		"default": "info",
-		"page": {
-			"info": {
-				"text": "信息",
-				"page": (client: PomClient, ui: MenuUIAlert) => {
-					let source = client.player;
-					let scores = ExPlayer.getInstance(source).getScoresManager();
-					let msg = [`玩家ID: ${client.gameId}`,
-					`玩家等级: ${scores.getScore("wbdj")}`,
-					`当前法力值: ${scores.getScore("wbfl")}`,
-					`武器技能冷却: ${scores.getScore("wbwqlq")}`,
-					`盔甲技能冷却: ${scores.getScore("wbkjlqcg")}`,
-					`友好模式是否开启: ${source.hasTag("wbmsyh") ? "是" : "否"}`,
-					`等级效果是否启用: ${source.hasTag("wbdjeff") ? "是" : "否"}`];
-					return MenuUIAlert.getLabelViews(msg);
-				}
-			},
-			"add": {
-				"text": "加成",
-				"page": [
-					{
-						"type": "text_title",
-						"msg": "等级效果"
-					},
-					{
-						"type": "padding"
-					},
-					{
-						"type": "text",
-						"msg": "到达一定等级可以获得药水增益"
-					},
-					{
-						"type": "padding"
-					},
-					{
-						"type": "toggle",
-						"msg": "等级效果 开",
-						"state": (client: PomClient, ui: MenuUIAlert) => client.player.hasTag("wbdjeff"),
-						"function": (client: PomClient, ui: MenuUIAlert) => {
-							if (!client.player.hasTag("wbdjeff")) {
-								client.player.addTag("wbdjeff");
-							} else {
-								client.player.removeTag("wbdjeff");
-							}
-							return true;
-						}
-					},
-					{
-						"type": "padding"
-					},
-					{
-						"type": "text_title",
-						"msg": "粒子效果"
-					},
-					{
-						"type": "padding"
-					},
-					{
-						"type": "text",
-						"msg": "可以通过合成相应的药水来获得粒子，用腻了再来这里取消"
-					},
-					{
-						"type": "padding"
-					},
-					{
-						"type": "button",
-						"msg": "去除火焰",
-						"function": (client: PomClient, ui: MenuUIAlert) => {
-							client.player.removeTag("pflame");
-							return true;
-						}
-					},
-					{
-						"type": "button",
-						"msg": "去除光环",
-						"function": (client: PomClient, ui: MenuUIAlert) => {
-							client.player.removeTag("phalo");
-							return true;
-						}
-					},
-					{
-						"type": "button",
-						"msg": "去除符文",
-						"function": (client: PomClient, ui: MenuUIAlert) => {
-							client.player.removeTag("prune");
-							return true;
-						}
-					},
-					{
-						"type": "button",
-						"msg": "去除爱心",
-						"function": (client: PomClient, ui: MenuUIAlert) => {
-							client.player.removeTag("plove");
-							return true;
-						}
-					}
-				]
-			},
-			"talent": {
-				"text": "天赋",
-				"page": (client: PomClient, ui: MenuUIAlert): MenuUIAlertView[] => {
-					let arr: MenuUIAlertView[];
-					if (TalentData.hasOccupation(client.data.talent)) {
-						const point = (client.exPlayer.getScoresManager().getScore("wbdjcg") * 2 - (client.data.talent.pointUsed ?? 0));
-						arr = [
-							{
-								"type": "text",
-								"msg": "剩余可使用点数 ： " + point
-							}
-						];
-						for (let i of client.data.talent.talents) {
-							arr.push({
-								"type": point > 0 && i.level < 40 ? "textAndAddButton" : "textAndNoButton",
-								"msg": Talent.getCharacter(i.id) + ":" + i.level + "\n" + (function () {
-									let useChr = "";
-									let a = Math.floor(i.level / 4);
-									let b = i.level % 4;
-									let c = 10 - a - 1;
-									let s = ""
-									while (a > 0) {
-										s += useChr[0];
-										a--;
-									}
-									s += useChr[4 - b];
-									while (c > 0) {
-										s += useChr[4];
-										c--;
-									}
-									return s;
-								})(),
-								"function": () => {
-									if (point > 0 && i.level < 40) {
-										i.level++;
-										client.data.talent.pointUsed = 1 + (client.data.talent.pointUsed ?? 0);
-										client.data.talent.talents.splice(client.data.talent.talents.findIndex(t => t.id === i.id), 1);
-										client.data.talent.talents.unshift(i);
-										client.updateTalentRes();
-									}
-									return true;
-								}
-							},
-								{
-									"type": "text",
-									"msg": TalentData.getDescription(client.data.talent, i.id, i.level)
-								},
-								{
-									"type": "padding"
-								});
-						}
-					} else {
-						arr = [
-							{
-								"type": "text_title",
-								"msg": "选择你的职业"
-							},
-							{
-								"type": "padding",
-							}
-						];
-						for (const i of Occupation.keys) {
-							arr.push({
-								"type": "button",
-								"msg": i.character,
-								"function": (client: PomClient, ui: MenuUIAlert) => {
-									TalentData.chooseOccupation(client.data.talent, i);
-
-									return true;
-								}
-							});
-						}
-					}
-					return arr;
-				}
-			},
-			"deathback": {
-				"text": "传送点",
-				"page": (client: PomClient, ui: MenuUIAlert): MenuUIAlertView[] => {
-					if (client.data.pointRecord == undefined) client.data.pointRecord = {
-						deathPoint: <[string, Vector3][]>[],
-						point: <[string, string, Vector3][]>[]
-					};
-					let arr = <MenuUIAlertView[]>[
+				},
+				"QA": {
+					"text": "Q & A",
+					"page": [
+						{
+							"type": "padding"
+						},
 						{
 							"type": "text_title",
-							"msg": "传送点记录"
+							"msg": lang.menuUIMsgBailan7
 						},
 						{
 							"type": "padding"
+						},
+
+						{
+							"type": "text",
+							"msg": lang.menuUIMsgBailan8
+						},
+						{
+							"type": "padding"
+						},
+						{
+							"type": "text_title",
+							"msg": lang.menuUIMsgBailan9
+						},
+						{
+							"type": "padding"
+						},
+
+						{
+							"type": "text",
+							"msg": lang.menuUIMsgBailan10
+						},
+						{
+							"type": "padding"
+						},
+						{
+							"type": "text_title",
+							"msg": lang.menuUIMsgBailan11
+						},
+						{
+							"type": "padding"
+						},
+
+						{
+							"type": "text",
+							"msg": lang.menuUIMsgBailan12
+						}
+
+					]
+				}
+			}
+		},
+		"person": {
+			"img": "textures/items/amethyst_chestplate.png",
+			"text": lang.menuUIMsgBailan13,
+			"default": "info",
+			"page": {
+				"info": {
+					"text": lang.menuUIMsgBailan14,
+					"page": (client: PomClient, ui: MenuUIAlert) => {
+						let source = client.player;
+						let scores = ExPlayer.getInstance(source).getScoresManager();
+						let msg = [`玩家ID: ${client.gameId}`,
+						`玩家等级: ${scores.getScore("wbdj")}`,
+						`当前法力值: ${scores.getScore("wbfl")}`,
+						`武器技能冷却: ${scores.getScore("wbwqlq")}`,
+						`盔甲技能冷却: ${scores.getScore("wbkjlqcg")}`,
+						`友好模式是否开启: ${source.hasTag("wbmsyh") ? lang.menuUIMsgBailan15 : lang.menuUIMsgBailan16}`,
+						`等级效果是否启用: ${source.hasTag("wbdjeff") ? lang.menuUIMsgBailan15 : lang.menuUIMsgBailan16}`];
+						return MenuUIAlert.getLabelViews(msg);
+					}
+				},
+				"add": {
+					"text": lang.menuUIMsgBailan19,
+					"page": [
+						{
+							"type": "text_title",
+							"msg": lang.menuUIMsgBailan20
+						},
+						{
+							"type": "padding"
+						},
+						{
+							"type": "text",
+							"msg": lang.menuUIMsgBailan21
+						},
+						{
+							"type": "padding"
+						},
+						{
+							"type": "toggle",
+							"msg": lang.menuUIMsgBailan22,
+							"state": (client: PomClient, ui: MenuUIAlert) => client.player.hasTag("wbdjeff"),
+							"function": (client: PomClient, ui: MenuUIAlert) => {
+								if (!client.player.hasTag("wbdjeff")) {
+									client.player.addTag("wbdjeff");
+								} else {
+									client.player.removeTag("wbdjeff");
+								}
+								return true;
+							}
+						},
+						{
+							"type": "padding"
+						},
+						{
+							"type": "text_title",
+							"msg": lang.menuUIMsgBailan23
+						},
+						{
+							"type": "padding"
+						},
+						{
+							"type": "text",
+							"msg": lang.menuUIMsgBailan24
+						},
+						{
+							"type": "padding"
+						},
+						{
+							"type": "button",
+							"msg": lang.menuUIMsgBailan25,
+							"function": (client: PomClient, ui: MenuUIAlert) => {
+								client.player.removeTag("pflame");
+								return true;
+							}
+						},
+						{
+							"type": "button",
+							"msg": lang.menuUIMsgBailan26,
+							"function": (client: PomClient, ui: MenuUIAlert) => {
+								client.player.removeTag("phalo");
+								return true;
+							}
+						},
+						{
+							"type": "button",
+							"msg": lang.menuUIMsgBailan27,
+							"function": (client: PomClient, ui: MenuUIAlert) => {
+								client.player.removeTag("prune");
+								return true;
+							}
+						},
+						{
+							"type": "button",
+							"msg": lang.menuUIMsgBailan28,
+							"function": (client: PomClient, ui: MenuUIAlert) => {
+								client.player.removeTag("plove");
+								return true;
+							}
 						}
 					]
+				},
+				"talent": {
+					"text": lang.menuUIMsgBailan29,
+					"page": (client: PomClient, ui: MenuUIAlert): MenuUIAlertView[] => {
+						let arr: MenuUIAlertView[];
+						if (TalentData.hasOccupation(client.data.talent)) {
+							const point = (client.exPlayer.getScoresManager().getScore("wbdjcg") * 2 - (client.data.talent.pointUsed ?? 0));
+							arr = [
+								{
+									"type": "text",
+									"msg": lang.menuUIMsgBailan30 + point
+								}
+							];
+							for (let i of client.data.talent.talents) {
+								arr.push({
+									"type": point > 0 && i.level < 40 ? "textAndAddButton" : "textAndNoButton",
+									"msg": Talent.getCharacter(client.getLang(), i.id) + ":" + i.level + "\n" + (function () {
+										let useChr = "";
+										let a = Math.floor(i.level / 4);
+										let b = i.level % 4;
+										let c = 10 - a - 1;
+										let s = ""
+										while (a > 0) {
+											s += useChr[0];
+											a--;
+										}
+										s += useChr[4 - b];
+										while (c > 0) {
+											s += useChr[4];
+											c--;
+										}
+										return s;
+									})(),
+									"function": () => {
+										if (point > 0 && i.level < 40) {
+											i.level++;
+											client.data.talent.pointUsed = 1 + (client.data.talent.pointUsed ?? 0);
+											client.data.talent.talents.splice(client.data.talent.talents.findIndex(t => t.id === i.id), 1);
+											client.data.talent.talents.unshift(i);
+											client.updateTalentRes();
+										}
+										return true;
+									}
+								},
+									{
+										"type": "text",
+										"msg": TalentData.getDescription(client.getLang(), client.data.talent.occupation, i.id, i.level)
+									},
+									{
+										"type": "padding"
+									});
+							}
+						} else {
+							arr = [
+								{
+									"type": "text_title",
+									"msg": lang.menuUIMsgBailan31
+								},
+								{
+									"type": "padding",
+								}
+							];
+							for (const i of Occupation.keys) {
+								arr.push({
+									"type": "button",
+									"msg": i.getCharacter(client.getLang()),
+									"function": (client: PomClient, ui: MenuUIAlert) => {
+										TalentData.chooseOccupation(client.data.talent, i);
 
-					if (client.globalSettings.tpPointRecord) {
-						for (let j = 0; j < client.data.pointRecord.point.length; j++) {
-							const i = client.data.pointRecord.point[j];
-							const v = new Vector3(i[2]);
+										return true;
+									}
+								});
+							}
+						}
+						return arr;
+					}
+				},
+				"deathback": {
+					"text": lang.menuUIMsgBailan32,
+					"page": (client: PomClient, ui: MenuUIAlert): MenuUIAlertView[] => {
+						if (client.data.pointRecord == undefined) client.data.pointRecord = {
+							deathPoint: <[string, Vector3][]>[],
+							point: <[string, string, Vector3][]>[]
+						};
+						let arr = <MenuUIAlertView[]>[
+							{
+								"type": "text_title",
+								"msg": lang.menuUIMsgBailan33
+							},
+							{
+								"type": "padding"
+							}
+						]
+
+						if (client.globalSettings.tpPointRecord) {
+							for (let j = 0; j < client.data.pointRecord.point.length; j++) {
+								const i = client.data.pointRecord.point[j];
+								const v = new Vector3(i[2]);
+								arr.push(
+									{
+										"type": "text",
+										"msg": lang.menuUIMsgBailan34 + (i[0] + v.toString())
+									},
+									{
+										"type": "button",
+										"msg": lang.menuUIMsgBailan35 + (i[1] == "" ? (i[0] + v.toString()) : i[1]),
+										"function": (client: PomClient, ui: MenuUIAlert) => {
+											let bag = client.exPlayer.getBag();
+											if (!bag.hasItem("wb:conveyor_issue") && client.globalSettings.tpNeedItem) {
+												client.sayTo(lang.menuUIMsgBailan36);
+												return false;
+											}
+											if (client.globalSettings.tpNeedItem) {
+												let pos = (bag.searchItem("wb:conveyor_issue"));
+												let item = <ItemStack>bag.getItem(pos);
+												item.amount--;
+												bag.setItem(pos, item);
+											}
+											client.exPlayer.setPosition(v, client.getDimension(i[0]));
+											client.sayTo(lang.menuUIMsgBailan37);
+											return false;
+										}
+									},
+									{
+										"type": "button",
+										"msg": lang.menuUIMsgBailan38 + (i[1] == "" ? (i[0] + v.toString()) : i[1]),
+										"function": (client: PomClient, ui: MenuUIAlert) => {
+											new ModalFormData().textField(lang.menuUIMsgBailan39, (i[0] + v.toString()))
+												.show(client.player)
+												.then(e => {
+													if (e.isCanceled) return;
+													i[1] = e.formValues[0];
+												}).catch(e => {
+													ExErrorStack.throwError(e);
+												})
+											return false;
+										}
+									},
+									{
+										"type": "button",
+										"msg": lang.menuUIMsgBailan40 + (i[1] == "" ? (i[0] + v.toString()) : i[1]),
+										"function": (client: PomClient, ui: MenuUIAlert) => {
+											client.data.pointRecord.point.splice(j, 1);
+											return true;
+										}
+
+									},
+									{
+										"type": "padding"
+									}
+								);
+							}
+							arr.push({
+								"msg": lang.menuUIMsgBailan41 + client.exPlayer.getPosition().floor().toString(),
+								"type": "button",
+								"function": (client: PomClient, ui: MenuUIAlert) => {
+									client.data.pointRecord.point.push([client.exPlayer.getDimension().id, "", client.exPlayer.getPosition().floor()]);
+									return true;
+								}
+							});
+
+						} else {
 							arr.push(
 								{
 									"type": "text",
-									"msg": "传送点：" + (i[0] + v.toString())
-								},
-								{
-									"type": "button",
-									"msg": "前往点：" + (i[1] == "" ? (i[0] + v.toString()) : i[1]),
-									"function": (client: PomClient, ui: MenuUIAlert) => {
-										let bag = client.exPlayer.getBag();
-										if (!bag.hasItem("wb:conveyor_issue") && client.globalSettings.tpNeedItem) {
-											client.sayTo("§b背包无传送石，传送失败");
-											return false;
-										}
-										if (client.globalSettings.tpNeedItem) {
-											let pos = (bag.searchItem("wb:conveyor_issue"));
-											let item = <ItemStack>bag.getItem(pos);
-											item.amount--;
-											bag.setItem(pos, item);
-										}
-										client.exPlayer.setPosition(v, client.getDimension(i[0]));
-										client.sayTo("§b传送成功");
-										return false;
-									}
-								},
-								{
-									"type": "button",
-									"msg": "备注点：" + (i[1] == "" ? (i[0] + v.toString()) : i[1]),
-									"function": (client: PomClient, ui: MenuUIAlert) => {
-										new ModalFormData().textField("输入备注", (i[0] + v.toString()))
-											.show(client.player)
-											.then(e => {
-												if (e.isCanceled) return;
-												i[1] = e.formValues[0];
-											}).catch(e => {
-												ExErrorStack.throwError(e);
-											})
-										return false;
-									}
-								},
-								{
-									"type": "button",
-									"msg": "删除点：" + (i[1] == "" ? (i[0] + v.toString()) : i[1]),
-									"function": (client: PomClient, ui: MenuUIAlert) => {
-										client.data.pointRecord.point.splice(j, 1);
-										return true;
-									}
-
-								},
-								{
-									"type": "padding"
+									"msg": lang.menuUIMsgBailan42
 								}
-							);
+							)
 						}
-						arr.push({
-							"msg": "记录当前点" + client.exPlayer.getPosition().floor().toString(),
+
+						// if (client.globalSettings.deathRecord) {
+						// 	for (let j = 0; j < client.data.pointRecord.deathPoint.length; j++) {
+						// 		let i = client.data.pointRecord.deathPoint[j];
+						// 		let v = new Vector3(i[1]);
+						// 		arr.push(
+						// 			{
+						// 				"type": "text",
+						// 				"msg": lang.menuUIMsgBailan43 + v.toString()
+						// 			},
+						// 			{
+						// 				"type": "button",
+						// 				"msg": lang.menuUIMsgBailan44 + v.toString()
+						// 			},
+						// 			{
+						// 				"type": "padding"
+						// 			}
+						// 		);
+						// 	}
+						// } else {
+						// 	arr.push(
+						// 		{
+						// 			"type": "text",
+						// 			"msg": lang.menuUIMsgBailan45
+						// 		}
+						// 	)
+						// }
+						return arr;
+					}
+				}
+			}
+		},
+		"social": {
+			"img": "textures/items/gingerbread_totem.png",
+			"text": lang.menuUIMsgBailan46,
+			"default": "setting",
+			"page": {
+				"setting": {
+					"text": lang.menuUIMsgBailan47,
+					"page": [
+						{
+							"type": "text_title",
+							"msg": lang.menuUIMsgBailan48
+						},
+						{
+							"type": "padding"
+						},
+						{
+							"type": "text",
+							"msg": lang.menuUIMsgBailan49
+						},
+						{
+							"type": "text",
+							"msg": lang.menuUIMsgBailan50
+						},
+						{
+							"type": "padding"
+						},
+						{
 							"type": "button",
+							"msg": lang.menuUIMsgBailan51,
 							"function": (client: PomClient, ui: MenuUIAlert) => {
-								client.data.pointRecord.point.push([client.exPlayer.getDimension().id, "", client.exPlayer.getPosition().floor()]);
+								client.player.addTag("wbmsyh");
+								if (client.player.nameTag.startsWith("§")) {
+									client.player.nameTag = client.player.nameTag.substring(2);
+								}
+								client.player.nameTag = "§a" + client.player.nameTag;
 								return true;
 							}
-						});
-
-					} else {
-						arr.push(
-							{
+						},
+						{
+							"type": "button",
+							"msg": lang.menuUIMsgBailan48,
+							"function": (client: PomClient, ui: MenuUIAlert) => {
+								client.player.removeTag("wbmsyh");
+								if (client.player.nameTag.startsWith("§")) {
+									client.player.nameTag = client.player.nameTag.substring(2);
+								}
+								client.player.nameTag = "§c" + client.player.nameTag;
+								return true;
+							}
+						}
+					]
+				},
+				"tp": {
+					"text": lang.menuUIMsgBailan53,
+					"page": async (client: PomClient, ui: MenuUIAlert): Promise<MenuUIAlertView[]> => {
+						if (!client.globalSettings.playerCanTp) {
+							return [{
 								"type": "text",
-								"msg": "禁止记录传送点"
-							}
-						)
-					}
-
-					// if (client.globalSettings.deathRecord) {
-					// 	for (let j = 0; j < client.data.pointRecord.deathPoint.length; j++) {
-					// 		let i = client.data.pointRecord.deathPoint[j];
-					// 		let v = new Vector3(i[1]);
-					// 		arr.push(
-					// 			{
-					// 				"type": "text",
-					// 				"msg": "死亡点：" + v.toString()
-					// 			},
-					// 			{
-					// 				"type": "button",
-					// 				"msg": "前往点" + v.toString()
-					// 			},
-					// 			{
-					// 				"type": "padding"
-					// 			}
-					// 		);
-					// 	}
-					// } else {
-					// 	arr.push(
-					// 		{
-					// 			"type": "text",
-					// 			"msg": "禁止死亡回溯"
-					// 		}
-					// 	)
-					// }
-					return arr;
-				}
-			}
-		}
-	},
-	"social": {
-		"img": "textures/items/gingerbread_totem.png",
-		"text": "交往",
-		"default": "setting",
-		"page": {
-			"setting": {
-				"text": "交往设置",
-				"page": [
-					{
-						"type": "text_title",
-						"msg": "敌对模式"
-					},
-					{
-						"type": "padding"
-					},
-					{
-						"type": "text",
-						"msg": "在敌对模式下，你可以攻击任何玩家，名字显示为红色；在友好模式下你无法攻击处于友好模式的玩家，名字显示为绿色。"
-					},
-					{
-						"type": "text",
-						"msg": "即：如果一个玩家名字是绿色，那么他是无威胁的；如果他开了红，那么他可能有攻击倾向。"
-					},
-					{
-						"type": "padding"
-					},
-					{
-						"type": "button",
-						"msg": "友好模式",
-						"function": (client: PomClient, ui: MenuUIAlert) => {
-							client.player.addTag("wbmsyh");
-							if (client.player.nameTag.startsWith("§")) {
-								client.player.nameTag = client.player.nameTag.substring(2);
-							}
-							client.player.nameTag = "§a" + client.player.nameTag;
-							return true;
-						}
-					},
-					{
-						"type": "button",
-						"msg": "敌对模式",
-						"function": (client: PomClient, ui: MenuUIAlert) => {
-							client.player.removeTag("wbmsyh");
-							if (client.player.nameTag.startsWith("§")) {
-								client.player.nameTag = client.player.nameTag.substring(2);
-							}
-							client.player.nameTag = "§c" + client.player.nameTag;
-							return true;
-						}
-					}
-				]
-			},
-			"tp": {
-				"text": "传送",
-				"page": async (client: PomClient, ui: MenuUIAlert): Promise<MenuUIAlertView[]> => {
-					if (!client.globalSettings.playerCanTp) {
-						return [{
-							"type": "text",
-							"msg": "不允许使用传送"
-						}];
-					};
-					let arr: MenuUIAlertView[] = [];
-					arr.push({
-						"msg": "传送至",
-						"type": "text_title"
-					});
-					arr.push({
-						"type": "padding"
-					});
-					let players = await client.getPlayersAndIds() ?? [];
-					for (const i of players) {
-						const p = ExPlayer.getInstance(i[0]);
+								"msg": lang.menuUIMsgBailan54
+							}];
+						};
+						let arr: MenuUIAlertView[] = [];
 						arr.push({
-							"type": "button",
-							"msg": `${p.nameTag} pos:${p.getPosition().floor()}`,
-							"function": (client: PomClient, ui: MenuUIAlert) => {
-								let bag = client.exPlayer.getBag();
-								if (!bag.hasItem("wb:conveyor_issue") && client.globalSettings.tpNeedItem) {
-									client.sayTo("§b背包无传送石，传送失败");
+							"msg": lang.menuUIMsgBailan55,
+							"type": "text_title"
+						});
+						arr.push({
+							"type": "padding"
+						});
+						let players = await client.getPlayersAndIds() ?? [];
+						for (const i of players) {
+							const p = ExPlayer.getInstance(i[0]);
+							arr.push({
+								"type": "button",
+								"msg": `${p.nameTag} pos:${p.getPosition().floor()}`,
+								"function": (client: PomClient, ui: MenuUIAlert) => {
+									let bag = client.exPlayer.getBag();
+									if (!bag.hasItem("wb:conveyor_issue") && client.globalSettings.tpNeedItem) {
+										client.sayTo(lang.menuUIMsgBailan36);
+										return false;
+									}
+									if (client.globalSettings.tpNeedItem) {
+										let pos = (bag.searchItem("wb:conveyor_issue"));
+										let item = <ItemStack>bag.getItem(pos);
+										item.amount--;
+										bag.setItem(pos, item);
+									}
+									client.sayTo(lang.menuUIMsgBailan57);
+
+									new ExMessageAlert().title(lang.menuUIMsgBailan58).body(`玩家 ${client.player.nameTag} §r想要传送到你的位置，是否接受？`)
+										.button1(lang.menuUIMsgBailan15, () => {
+											client.sayTo(lang.menuUIMsgBailan37);
+											client.sayTo(lang.menuUIMsgBailan37, i[0]);
+											client.exPlayer.setPosition(p.getPosition(), p.getDimension());
+										})
+										.button2(lang.menuUIMsgBailan16, () => {
+											client.sayTo(lang.menuUIMsgBailan63);
+											client.sayTo(lang.menuUIMsgBailan64, i[0]);
+										})
+										.show(i[0]);
 									return false;
 								}
-								if (client.globalSettings.tpNeedItem) {
-									let pos = (bag.searchItem("wb:conveyor_issue"));
-									let item = <ItemStack>bag.getItem(pos);
-									item.amount--;
-									bag.setItem(pos, item);
-								}
-								client.sayTo("§b你向对方发起了请求");
-
-								new ExMessageAlert().title("传送请求").body(`玩家 ${client.player.nameTag} §r想要传送到你的位置，是否接受？`)
-									.button1("是", () => {
-										client.sayTo("§b传送成功");
-										client.sayTo("§b传送成功", i[0]);
-										client.exPlayer.setPosition(p.getPosition(), p.getDimension());
-									})
-									.button2("否", () => {
-										client.sayTo("§b对方拒绝了你的请求");
-										client.sayTo("§b你拒绝了对方的请求", i[0]);
-									})
-									.show(i[0]);
-								return false;
-							}
-						});
-					}
-					arr.push({
-						"msg": "邀请传送到你的位置",
-						"type": "text_title"
-					});
-					arr.push({
-						"type": "padding"
-					});
-					for (const i of players) {
-						const p = ExPlayer.getInstance(i[0]);
+							});
+						}
 						arr.push({
-							"type": "button",
-							"msg": `${p.nameTag} (pos:${p.getPosition().floor()})`,
-							"function": (client: PomClient, ui: MenuUIAlert) => {
-								let bag = client.exPlayer.getBag();
-								if (!bag.hasItem("wb:conveyor_issue") && client.globalSettings.tpNeedItem) {
-									client.sayTo("§b背包无传送石，传送失败");
+							"msg": lang.menuUIMsgBailan65,
+							"type": "text_title"
+						});
+						arr.push({
+							"type": "padding"
+						});
+						for (const i of players) {
+							const p = ExPlayer.getInstance(i[0]);
+							arr.push({
+								"type": "button",
+								"msg": `${p.nameTag} (pos:${p.getPosition().floor()})`,
+								"function": (client: PomClient, ui: MenuUIAlert) => {
+									let bag = client.exPlayer.getBag();
+									if (!bag.hasItem("wb:conveyor_issue") && client.globalSettings.tpNeedItem) {
+										client.sayTo(lang.menuUIMsgBailan36);
+										return false;
+									}
+									if (client.globalSettings.tpNeedItem) {
+										let pos = (bag.searchItem("wb:conveyor_issue"));
+										let item = <ItemStack>bag.getItem(pos);
+										item.amount--;
+										bag.setItem(pos, item);
+									}
+									client.sayTo(lang.menuUIMsgBailan67);
+
+									new ExMessageAlert().title(lang.menuUIMsgBailan58).body(`玩家 ${client.player.nameTag} §r邀请你传送到 pos:${client.exPlayer.getPosition().floor()} ，是否接受？`)
+										.button1(lang.menuUIMsgBailan15, () => {
+											client.sayTo(lang.menuUIMsgBailan37);
+											client.sayTo(lang.menuUIMsgBailan37, i[0]);
+											p.setPosition(client.exPlayer.getPosition(), client.exPlayer.getDimension());
+										})
+										.button2(lang.menuUIMsgBailan16, () => {
+											client.sayTo(lang.menuUIMsgBailan73);
+											client.sayTo(lang.menuUIMsgBailan74, i[0]);
+										})
+										.show(i[0]);
 									return false;
 								}
-								if (client.globalSettings.tpNeedItem) {
-									let pos = (bag.searchItem("wb:conveyor_issue"));
-									let item = <ItemStack>bag.getItem(pos);
-									item.amount--;
-									bag.setItem(pos, item);
-								}
-								client.sayTo("§b你向对方发起了邀请");
-
-								new ExMessageAlert().title("传送请求").body(`玩家 ${client.player.nameTag} §r邀请你传送到 pos:${client.exPlayer.getPosition().floor()} ，是否接受？`)
-									.button1("是", () => {
-										client.sayTo("§b传送成功");
-										client.sayTo("§b传送成功", i[0]);
-										p.setPosition(client.exPlayer.getPosition(), client.exPlayer.getDimension());
-									})
-									.button2("否", () => {
-										client.sayTo("§b对方拒绝了你的邀请");
-										client.sayTo("§b你拒绝了对方的邀请", i[0]);
-									})
-									.show(i[0]);
-								return false;
-							}
-						});
+							});
+						}
+						return arr;
 					}
-					return arr;
 				}
 			}
-		}
-	},
-	"setting": {
-		"img": "textures/items/artificial_meat_creator_on.png",
-		"text": "设置",
-		"default": "op",
-		"page": {
-			"op": {
-				"text": "管理",
-				"page": (client: PomClient, ui: MenuUIAlert): MenuUIAlertView[] => {
-					if (client.player.hasTag("owner")) {
-						return [
-							{
-								"type": "text_title",
-								"msg": "游戏内容"
-							},
-							{
-								"type": "toggle",
-								"msg": "玩家传送",
-								"state": (client: PomClient, ui: MenuUIAlert) => client.globalSettings.playerCanTp,
-								"function": (client: PomClient, ui: MenuUIAlert) => {
-									client.globalSettings.playerCanTp = !client.globalSettings.playerCanTp;
-									return true;
+		},
+		"setting": {
+			"img": "textures/items/artificial_meat_creator_on.png",
+			"text": lang.menuUIMsgBailan75,
+			"default": "op",
+			"page": {
+				"op": {
+					"text": lang.menuUIMsgBailan76,
+					"page": (client: PomClient, ui: MenuUIAlert): MenuUIAlertView[] => {
+						if (client.player.hasTag("owner")) {
+							return [
+								{
+									"type": "text_title",
+									"msg": lang.menuUIMsgBailan77
+								},
+								{
+									"type": "toggle",
+									"msg": lang.menuUIMsgBailan78,
+									"state": (client: PomClient, ui: MenuUIAlert) => client.globalSettings.playerCanTp,
+									"function": (client: PomClient, ui: MenuUIAlert) => {
+										client.globalSettings.playerCanTp = !client.globalSettings.playerCanTp;
+										return true;
+									}
+								},
+								{
+									"type": "toggle",
+									"msg": lang.menuUIMsgBailan79,
+									"state": (client: PomClient, ui: MenuUIAlert) => client.globalSettings.tpNeedItem,
+									"function": (client: PomClient, ui: MenuUIAlert) => {
+										client.globalSettings.tpNeedItem = !client.globalSettings.tpNeedItem;
+										return true;
+									}
+								},
+								{
+									"type": "toggle",
+									"msg": lang.menuUIMsgBailan80,
+									"state": (client: PomClient, ui: MenuUIAlert) => client.globalSettings.entityCleaner,
+									"function": (client: PomClient, ui: MenuUIAlert) => {
+										client.globalSettings.entityCleaner = !client.globalSettings.entityCleaner;
+										client.runOnServer((server) => {
+											(<PomServer>server).upDateEntityCleaner();
+										});
+										return true;
+									}
+								},
+								//,
+								// {
+								// 	"type": "toggle",
+								// 	"msg": lang.menuUIMsgBailan81,
+								// 	"state": (client: PomClient, ui: MenuUIAlert) => client.globalSettings.deathRecord,
+								// 	"function": (client: PomClient, ui: MenuUIAlert) => {
+								// 		client.globalSettings.deathRecord = !client.globalSettings.deathRecord;
+								// 		return true;
+								// 	}
+								// },
+								{
+									"type": "toggle",
+									"msg": lang.menuUIMsgBailan82,
+									"state": (client: PomClient, ui: MenuUIAlert) => client.globalSettings.tpPointRecord,
+									"function": (client: PomClient, ui: MenuUIAlert) => {
+										client.globalSettings.tpPointRecord = !client.globalSettings.tpPointRecord;
+										return true;
+									}
 								}
-							},
-							{
-								"type": "toggle",
-								"msg": "任何传送需要传送石",
-								"state": (client: PomClient, ui: MenuUIAlert) => client.globalSettings.tpNeedItem,
-								"function": (client: PomClient, ui: MenuUIAlert) => {
-									client.globalSettings.tpNeedItem = !client.globalSettings.tpNeedItem;
-									return true;
-								}
-							},
-							{
-								"type": "toggle",
-								"msg": "开启实体清理",
-								"state": (client: PomClient, ui: MenuUIAlert) => client.globalSettings.entityCleaner,
-								"function": (client: PomClient, ui: MenuUIAlert) => {
-									client.globalSettings.entityCleaner = !client.globalSettings.entityCleaner;
-									client.runOnServer((server) => {
-										(<PomServer>server).upDateEntityCleaner();
-									});
-									return true;
-								}
-							},
-							//,
-							// {
-							// 	"type": "toggle",
-							// 	"msg": "开启死亡点回溯",
-							// 	"state": (client: PomClient, ui: MenuUIAlert) => client.globalSettings.deathRecord,
-							// 	"function": (client: PomClient, ui: MenuUIAlert) => {
-							// 		client.globalSettings.deathRecord = !client.globalSettings.deathRecord;
-							// 		return true;
-							// 	}
-							// },
-							{
-								"type": "toggle",
-								"msg": "允许记录传送点",
-								"state": (client: PomClient, ui: MenuUIAlert) => client.globalSettings.tpPointRecord,
-								"function": (client: PomClient, ui: MenuUIAlert) => {
-									client.globalSettings.tpPointRecord = !client.globalSettings.tpPointRecord;
-									return true;
-								}
-							}
-						];
-					} else {
-						return [{
-							"type": "text",
-							"msg": "无权限访问此页面。如果你是 op ，请输入/tag @s add owner 来获取管理权限"
-						}];
+							];
+						} else {
+							return [{
+								"type": "text",
+								"msg": lang.menuUIMsgBailan83
+							}];
+						}
 					}
-				}
-			},
-			"set": {
-				"text": "高级设置",
-				"page": (client: PomClient, ui: MenuUIAlert): MenuUIAlertView[] => {
-					if (client.player.hasTag("owner")) {
-						return [{
-							"type": "button",
-							"msg": "实体清理设置",
-							"function": (client: PomClient, ui: MenuUIAlert) => {
-								new ModalFormData()
-									.toggle("开启实体清理", client.globalSettings.entityCleaner)
-									.slider("保留实体数(最低实体数)", 100, 1000, 50, client.globalSettings.entityCleanerLeastNum)
-									.slider("清理灵敏度(瞬时卡顿处理)", 2, 10, 1, client.globalSettings.entityCleanerStrength)
-									.slider("清理频次(长期清理强度)", 1, 60, 1, client.globalSettings.entityCleanerDelay)
-									.show(client.player).then((e) => {
-										if (e.isCanceled) return;
-										client.globalSettings.entityCleaner = e.formValues[0];
-										client.globalSettings.entityCleanerLeastNum = e.formValues[1];
-										client.globalSettings.entityCleanerStrength = e.formValues[2];
-										client.globalSettings.entityCleanerDelay = e.formValues[3];
-									})
-									.catch((e) => {
-										ExErrorStack.throwError(e);
-									})
-								return false;
-							}
-						}];
-					} else {
-						return [{
-							"type": "text",
-							"msg": "无权限访问此页面。如果你是 op ，请输入/tag @s add owner 来获取管理权限"
-						}];
+				},
+				"set": {
+					"text": lang.menuUIMsgBailan84,
+					"page": (client: PomClient, ui: MenuUIAlert): MenuUIAlertView[] => {
+						if (client.player.hasTag("owner")) {
+							return [{
+								"type": "button",
+								"msg": lang.menuUIMsgBailan85,
+								"function": (client: PomClient, ui: MenuUIAlert) => {
+									new ModalFormData()
+										.toggle(lang.menuUIMsgBailan80, client.globalSettings.entityCleaner)
+										.slider(lang.menuUIMsgBailan91, 100, 1000, 50, client.globalSettings.entityCleanerLeastNum)
+										.slider(lang.menuUIMsgBailan92, 2, 10, 1, client.globalSettings.entityCleanerStrength)
+										.slider(lang.menuUIMsgBailan93, 1, 60, 1, client.globalSettings.entityCleanerDelay)
+										.show(client.player).then((e) => {
+											if (e.isCanceled) return;
+											client.globalSettings.entityCleaner = e.formValues[0];
+											client.globalSettings.entityCleanerLeastNum = e.formValues[1];
+											client.globalSettings.entityCleanerStrength = e.formValues[2];
+											client.globalSettings.entityCleanerDelay = e.formValues[3];
+										})
+										.catch((e) => {
+											ExErrorStack.throwError(e);
+										})
+									return false;
+								}
+							}];
+						} else {
+							return [{
+								"type": "text",
+								"msg": lang.menuUIMsgBailan83
+							}];
+						}
 					}
 				}
 			}

@@ -20,11 +20,14 @@ import ExBlock from "../modules/exmc/block/ExBlock.js";
 import isEquipment from "./items/isEquipment.js";
 import lang from "./data/lang.js";
 import PomServer from "./PomServer.js";
+import { ModalFormData } from "mojang-minecraft-ui";
+import ExErrorStack from "../modules/exmc/ExErrorStack.js";
+import { langType } from "./data/langType.js";
+
 
 export default class PomClient extends ExGameClient {
 	gameId !: number;
 	globalSettings: GlobalSettings;
-
 	cache: TagCache<PomData>;
 	strikeSkill = true;
 	skillLoop = new TimeLoopTask(this.getEvents(), () => {
@@ -56,7 +59,7 @@ export default class PomClient extends ExGameClient {
 	looper: TimeLoopTask;
 	blockTranslateData: Map<string, ItemStack> = new Map<string, ItemStack>();
 	equiTotalTask: TimeLoopTask | undefined;
-
+	
 	constructor(server: ExGameServer, id: string, player: Player) {
 		super(server, id, player);
 		this.globalSettings = new GlobalSettings(new Objective("wpsetting"));
@@ -66,7 +69,6 @@ export default class PomClient extends ExGameClient {
 		});
 		this.looper.delay(10000);
 		this.looper.start();
-
 
 		this.data = this.cache.get(new PomData());
 
@@ -80,7 +82,21 @@ export default class PomClient extends ExGameClient {
 			} = e;
 
 			if (item.id == "wb:power") {
-				new MenuUIAlert(this, menuFunctionUI).showPage(["main", "notice"]);
+				if (!this.data.lang) {
+					new ModalFormData()
+						.title("Choose a language")
+						.dropdown("Language List", ["English", "简体中文"], 0)
+						.show(this.player).then((e) => {
+							if (!e.isCanceled) {
+								this.data.lang = e.formValues[0] == "English" ? "en" : "zh";
+							}
+						})
+						.catch((e) => {
+							ExErrorStack.throwError(e);
+						});
+				} else {
+					new MenuUIAlert(this, menuFunctionUI(this.getLang())).showPage(["main", "notice"]);
+				}
 			}
 		});
 
@@ -112,16 +128,16 @@ export default class PomClient extends ExGameClient {
 			} else {
 				let lore = new ExColorLoreUtil(ExItem.getInstance(item));
 
-				let CLOAD_PIERCING = MathUtil.zeroIfNaN(parseFloat((lore.getValueUseMap("addition", Talent.getCharacter(Talent.CLOAD_PIERCING)) ?? "->0").split("->")[1]));
+				let CLOAD_PIERCING = MathUtil.zeroIfNaN(parseFloat((lore.getValueUseMap("addition", Talent.getCharacter(this.getLang(),Talent.CLOAD_PIERCING)) ?? "->0").split("->")[1]));
 
 				damageFac += Math.min(64, dis) / 64 * CLOAD_PIERCING / 100;
-				let ARMOR_BREAKING = MathUtil.zeroIfNaN(parseFloat((lore.getValueUseMap("addition", Talent.getCharacter(Talent.ARMOR_BREAKING)) ?? "->0").split("->")[1]));
+				let ARMOR_BREAKING = MathUtil.zeroIfNaN(parseFloat((lore.getValueUseMap("addition", Talent.getCharacter(this.getLang(),Talent.ARMOR_BREAKING)) ?? "->0").split("->")[1]));
 				extraDamage += this.exPlayer.getMaxHealth() * ARMOR_BREAKING / 100;
-				let SANCTION = MathUtil.zeroIfNaN(parseFloat((lore.getValueUseMap("addition", Talent.getCharacter(Talent.SANCTION)) ?? "->0").split("->")[1]));
+				let SANCTION = MathUtil.zeroIfNaN(parseFloat((lore.getValueUseMap("addition", Talent.getCharacter(this.getLang(),Talent.SANCTION)) ?? "->0").split("->")[1]));
 				damageFac += (16 - Math.min(16, dis)) / 16 * SANCTION / 100;
 
 
-				let SUDDEN_STRIKE = MathUtil.zeroIfNaN(parseFloat((lore.getValueUseMap("addition", Talent.getCharacter(Talent.SUDDEN_STRIKE)) ?? "->0").split("->")[1]));
+				let SUDDEN_STRIKE = MathUtil.zeroIfNaN(parseFloat((lore.getValueUseMap("addition", Talent.getCharacter(this.getLang(),Talent.SUDDEN_STRIKE)) ?? "->0").split("->")[1]));
 				if (item.id.startsWith("dec:")) damageFac += 0.4;
 				if (this.strikeSkill) {
 					if (this.data.talent.occupation.id === Occupation.ASSASSIN.id) this.skillLoop.startOnce();
@@ -169,10 +185,10 @@ export default class PomClient extends ExGameClient {
 			const nitem = bag.getItemOnHand();
 			if (nitem && isEquipment(nitem.id)) {
 				const lore = new ExColorLoreUtil(nitem);
-				TalentData.calculateTalentToLore(this.data.talent, ExItem.getInstance(nitem));
+				TalentData.calculateTalentToLore(this.data.talent.talents,this.data.talent.occupation, ExItem.getInstance(nitem),this.getLang());
 				bag.setItem(this.exPlayer.selectedSlot, nitem);
-				let maxSingleDamage = parseFloat(lore.getValueUseMap("total", lang.maxSingleDamage) ?? "0");
-				let maxSecondaryDamage = parseFloat(lore.getValueUseMap("total", lang.maxSecondaryDamage) ?? "0");
+				let maxSingleDamage = parseFloat(lore.getValueUseMap("total", this.getLang().maxSingleDamage) ?? "0");
+				let maxSecondaryDamage = parseFloat(lore.getValueUseMap("total", this.getLang().maxSecondaryDamage) ?? "0");
 				let damage = 0;
 				this.hasCauseDamage = (d) => {
 					damage += d;
@@ -183,12 +199,12 @@ export default class PomClient extends ExGameClient {
 					let shouldUpstate = false;
 					maxSecondaryDamage = Math.max(maxSecondaryDamage, damage / 5);
 					damage = 0;
-					if ((lore.getValueUseMap("total", lang.maxSingleDamage) ?? "0") !== maxSingleDamage + "") {
-						lore.setValueUseMap("total", lang.maxSingleDamage, maxSingleDamage + "");
+					if ((lore.getValueUseMap("total", this.getLang().maxSingleDamage) ?? "0") !== maxSingleDamage + "") {
+						lore.setValueUseMap("total", this.getLang().maxSingleDamage, maxSingleDamage + "");
 						shouldUpstate = true;
 					}
-					if ((lore.getValueUseMap("total", lang.maxSecondaryDamage) ?? "0") !== maxSecondaryDamage + "") {
-						lore.setValueUseMap("total", lang.maxSecondaryDamage, maxSecondaryDamage + "");
+					if ((lore.getValueUseMap("total", this.getLang().maxSecondaryDamage) ?? "0") !== maxSecondaryDamage + "") {
+						lore.setValueUseMap("total", this.getLang().maxSecondaryDamage, maxSecondaryDamage + "");
 						shouldUpstate = true;
 					}
 					if (shouldUpstate && bag.getItemOnHand()?.id === nitem.id) {
@@ -275,13 +291,16 @@ export default class PomClient extends ExGameClient {
 		});
 
 	}
+	getLang():langType {
+		return lang[this.data.lang ?? "en"];
+	}
 	hasCauseDamage(arg0: number) {
 
 	}
 	talentRes: Map<number, number> = new Map<number, number>();
 	updateTalentRes() {
 		for (let t of this.data.talent.talents) {
-			this.talentRes.set(t.id, TalentData.calculateTalent(this.data.talent, t.id, t.level));
+			this.talentRes.set(t.id, TalentData.calculateTalent(this.data.talent.occupation, t.id, t.level));
 		}
 		let scores = this.exPlayer.getScoresManager();
 		scores.setScore("wbwqlqjs", Math.round(100 + (this.talentRes.get(Talent.DEFENSE) ?? 0)));
@@ -337,4 +356,3 @@ export default class PomClient extends ExGameClient {
 		p.runCommand(`tellraw @s {"rawtext": [{"text": "${str}"}]}`);
 	}
 }
-

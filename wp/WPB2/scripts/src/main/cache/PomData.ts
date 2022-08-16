@@ -4,11 +4,13 @@ import TalentData from "./TalentData.js";
 
 export default class PomData implements SerializeAble {
     isSerializeAble: true = true;
-    
+
     talent: TalentData = new TalentData();
 
     pointRecord = {
-        deathPoint: <[string,Vector3][]>[],
-        point: <[string,string,Vector3][]>[]
+        deathPoint: <[string, Vector3][]>[],
+        point: <[string, string, Vector3][]>[]
     };
+
+    lang!: "en"|"zh";
 }

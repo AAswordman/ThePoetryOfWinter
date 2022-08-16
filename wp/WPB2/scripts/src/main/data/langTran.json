@@ -1,0 +1,12 @@
+{
+  "zh": {
+    "menuUIMsgBailan91": "保留实体数(最低实体数)",
+    "menuUIMsgBailan92": "清理灵敏度(瞬时卡顿处理)",
+    "menuUIMsgBailan93": "清理频次(长期清理强度)"
+  },
+  "en": {
+    "menuUIMsgBailan91": "Reserve the number of entities (minimum entity)",
+    "menuUIMsgBailan92": "Clean up sensitivity (instantaneous stuck processing)",
+    "menuUIMsgBailan93": "Cleaning frequency (long -term cleaning intensity)"
+  }
+}
