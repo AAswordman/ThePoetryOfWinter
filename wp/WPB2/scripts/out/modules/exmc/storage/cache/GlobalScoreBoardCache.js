@@ -52,6 +52,18 @@ export class GlobalScoreBoardCacheList {
             this[i] = this.src[i];
         }
     }
+    includes(searchElement, fromIndex) {
+        throw new Error("Method not implemented.");
+    }
+    flatMap(callback, thisArg) {
+        throw new Error("Method not implemented.");
+    }
+    flat(depth) {
+        throw new Error("Method not implemented.");
+    }
+    at(index) {
+        throw new Error("Method not implemented.");
+    }
     reset(src) {
         this.clearData();
         this.push(...src);

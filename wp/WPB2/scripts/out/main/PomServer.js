@@ -54,7 +54,7 @@ export default class PomServer extends ExGameServer {
             let liner = (this.tps - this._mtps) > 0 ? this.entityCleanerStrength : 11 - this.entityCleanerStrength;
             this._mtps = this._mtps * (liner - 1) / liner + this.tps / liner;
             //ExGameConfig.console.log("tps：" + this.tps, "myps : " + this._mtps,"delay:"+this.entityCleanerDelay ** (this._mtps));
-            this.entityCleaner.delay(this.entityCleanerDelay ** (this._mtps));
+            this.entityCleaner.delay(Math.pow(this.entityCleanerDelay, (this._mtps)));
             ticks = 0;
         }).delay(1000);
         this.getEvents().events.tick.subscribe(e => {

@@ -47,10 +47,10 @@ export default class Vector3 {
         return this;
     }
     len() {
-        return Math.sqrt(this.x ** 2 + this.y ** 2 + this.z ** 2);
+        return Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2) + Math.pow(this.z, 2));
     }
     len2() {
-        return this.x ** 2 + this.y ** 2 + this.z ** 2;
+        return Math.pow(this.x, 2) + Math.pow(this.y, 2) + Math.pow(this.z, 2);
     }
     equals(other) {
         return this.x === other.x && this.y === other.y && this.z === other.z;
