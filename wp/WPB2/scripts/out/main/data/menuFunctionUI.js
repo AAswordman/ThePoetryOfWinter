@@ -727,7 +727,8 @@ You understand and agree that:
                                     .dropdown("Language List", ["English", "简体中文"], 0)
                                     .show(client.player).then((e) => {
                                     if (!e.isCanceled) {
-                                        client.data.lang = e.formValues[0] == "English" ? "en" : "zh";
+                                        client.data.lang = e.formValues[0] == 0 ? "en" : "zh";
+                                        ExGameConfig.console.log(client.data.lang, e.formValues[0]);
                                     }
                                 })
                                     .catch((e) => {

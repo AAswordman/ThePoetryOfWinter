@@ -289,7 +289,7 @@
         "default": {
           "on_entry":[
               "/kill @e[type=!wb:originking]",
-              "/title @a title §b关于作者",
+              "/titleraw @a title {\"rawtext\":[{\"translate\":\"§b关于作者\"}]}",
               "/title @a subtitle §e本addon由 §b传奇夜侠aa剑侠 §e制作"
            ],
           "transitions": [ 

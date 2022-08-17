@@ -35,5 +35,19 @@
     "sounds": [
       "sounds/wb/anger_of_ancient"
     ]
+  },
+  "music.wb.unknow_world": {
+    "category": "music",
+    "min_distance": 100.0,
+    "sounds": [
+      "sounds/wb/unknow_world"
+    ]
+  },
+  "music.wb.candlelight_afterthought": {
+    "category": "music",
+    "min_distance": 100.0,
+    "sounds": [
+      "sounds/wb/candlelight_afterthought"
+    ]
   }
 }

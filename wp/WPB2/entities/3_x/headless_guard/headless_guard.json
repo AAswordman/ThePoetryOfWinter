@@ -9,11 +9,13 @@
       "runtime_identifier": "wb:headless_guard",
       "animations": {
         "base": "controller.animation.headless_guard.base",
-        "boss": "animation.boss.testplayer"
+        "boss": "animation.boss.testplayer",
+        "msic":"animation.headless_guard.wb.music"
       },
       "scripts": {
         "animate": [
           "base",
+          "music",
           {
             "boss": "query.health>1"
           }
@@ -313,6 +315,13 @@
       "minecraft:physics": {}
     },
     "events": {
+      "minecraft:entity_spawned":{
+        "add": {
+          "component_groups": [
+            "isboss"
+          ]
+        }
+      },
       "disappear": {
         "add": {
           "component_groups": [
@@ -324,6 +333,7 @@
         "run_command": {
           "command": [
             "scoreboard players set @a[scores={wbnjqbf=9},r=200] wbnjqbf 10",
+            "/function base/stopmusic",
             "kill @s"
           ],
           "target": "self"
@@ -340,11 +350,6 @@
             "event entity @s minecraft:entity_spawned"
           ],
           "target": "self"
-        },
-        "add": {
-          "component_groups": [
-            "isboss"
-          ]
         }
       },
       "attack_tp": {

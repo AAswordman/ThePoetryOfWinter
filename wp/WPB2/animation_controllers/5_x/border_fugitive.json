@@ -12,7 +12,7 @@
           "on_entry":[
           	"/execute @e[r=6,rm=3] ~ ~ ~ particle wb:border_fugitive_parc ~ ~ ~",
           	"/execute @e[r=6,rm=3] ~ ~ ~ summon wb:ball_border_fugitiveb ~ ~+5 ~",
-          	"/title @a[r=7] title §4炎之咆哮"
+          	"/titleraw @a[r=7] title {\"rawtext\":[{\"translate\":\"wb.boss.showname.yanzhipaoxiao\"}]}"
            ],
            "transitions":[
                { "default":"!query.is_baby" }
