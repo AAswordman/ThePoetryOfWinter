@@ -33,7 +33,7 @@
         "player": {
           "on_entry": [
             "/event entity @e[tag=wbboss,r=200] disappear",
-            "/title @a[r=128] title 挑战失败",
+            "/title @a[r=128] titleraw {\"rawtext\":[{\"translate\":\"text.wb.item.power.start\"}",
             "/function portal/endboss",
             "/effect @a[r=64] resistance 20 255 true",
             "/kill @s"

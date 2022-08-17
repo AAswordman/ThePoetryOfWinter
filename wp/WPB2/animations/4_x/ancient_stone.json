@@ -10,10 +10,10 @@
         ],
         "137": [
           "/summon wb:damage_execute"
-          
+
         ]
       },
-        "loop": true
+      "loop": true
     },
     "animation.ancient_stone.wb": {
       "timeline": {

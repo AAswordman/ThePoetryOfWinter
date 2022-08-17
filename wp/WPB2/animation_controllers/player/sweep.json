@@ -72,7 +72,7 @@
         },
         "sword_intentionsx_a": {
           "on_entry": [
-            "/execute @s[scores={wbnldx=..5}] ~ ~ ~ tellraw @s {\"rawtext\":[{\"text\":\"§b[系统]能量不足\"}]}",
+            "/execute @s[scores={wbnldx=..5}] ~ ~ ~ tellraw @s {\"rawtext\":[{\"translate\":\"item.skill.wb.sword_intentionsx_a\"}]}",
             "/execute @s[scores={wbnldx=6..11}] ~ ~ ~ summon wb:ball_intentions_first_sword ^-0.18455780003001943 ^+6.488909668721896 ^+4.602024645750209",
             "/execute @s[scores={wbnldx=6..11}] ~ ~ ~ summon wb:ball_intentions_first_sword ^0.5498492933172683 ^+5.0273625592857005 ^+3.4846523635656963",
             "/execute @s[scores={wbnldx=6..11}] ~ ~ ~ summon wb:ball_intentions_first_sword ^-0.4593432153585226 ^+5.308916550640911 ^+5.236150165673667",
@@ -91,7 +91,7 @@
             "/execute @s[scores={wbnldx=20..}] ~ ~ ~ summon wb:shadow_intentions_second ~-1 ~ ~-1",
             "/execute @s[scores={wbnldx=20..}] ~ ~ ~ summon wb:shadow_intentions_second ~-1 ~ ~+1",
             "/execute @s[scores={wbnldx=20..}] ~ ~ ~ effect @s invisibility 8 1 true",
-            "/execute @s[scores={wbnldx=20..}] ~ ~ ~ title @a[r=16] title §e极念狂想",
+            "/execute @s[scores={wbnldx=20..}] ~ ~ ~ titleraw @a[r=16] title {\"rawtext\":[{\"translate\":\"item.skill.wb.sword_intentionsx\"}]}",
             "/scoreboard players remove @s[scores={wbnldx=6..11}] wbnldx 6",
             "/scoreboard players remove @s[scores={wbnldx=12..19}] wbnldx 12",
             "/scoreboard players remove @s[scores={wbnldx=20..}] wbnldx 20"

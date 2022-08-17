@@ -998,7 +998,7 @@
 						"/execute @p[r=2,tag=wbdwdz] ~ ~ ~ tag @e[r=3,type=wb:plot_target] add wdie",
 						"/execute @s[tag=wdie] ~ ~ ~ summon wb:plot_target 120533 102 120573 plot31",
 						"/execute @s[tag=wdie] ~ ~ ~ tag @s add plotdie",
-						"/title @a[r=100] title 世界边境 序幕",
+						"/titleraw @a[r=100] title {\"rawtext\":[{\"translate\":\"世界边境 序幕\"}]}",
 						"/title @a[r=100] subtitle §baa剑侠 制作"
 					]
 				},

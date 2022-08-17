@@ -18,7 +18,7 @@
             "/tag @s add gj",
             "/effect @s invisibility 8 1 true",
             "/weather thunder 100",
-            "/title @a[r=64] title §e极念狂想"
+            "/titleraw @a[r=64] title {\"rawtext\":[{\"translate\":\"wb.boss.showname.jiniankuangxiang\"}]}"
           ],
           "transitions": [
             {

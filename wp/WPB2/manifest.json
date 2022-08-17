@@ -1,14 +1,14 @@
 {
   "format_version": 1,
   "header": {
-    "description": "这是一个新的世界，为你的生存添加趣味。由 aa剑侠、LiLeyi 和其他许多的小伙伴们制作.Ver. 1.6.1稳定版",
-    "name": "冬之纪行诗",
+    "description": "Explore the new World!!!Made by AA swordsman,LiLeyi and many their friends.Ver. 1.6.1",
+    "name": "The Peotry Of Winter",
     "uuid": "c2021c25-08e8-9ade-0916-6cd21931fac5",
     "version": [1, 6, 0],
     "min_engine_version": [1, 9, 0]
   },
   "modules": [{
-      "description": "这是一个新的世界，为你的生存添加趣味。由 aa剑侠、LiLeyi 和其他许多的小伙伴们制作 Ver. 1.6.1稳定版",
+      "description": "Explore the new World!!!Made by AA swordsman,LiLeyi and many their friends.Ver. 1.6.1",
       "type": "script",
       "uuid": "c2021c83-08e8-9ade-0916-6cd21931fac5",
       "version": [1, 6, 0],

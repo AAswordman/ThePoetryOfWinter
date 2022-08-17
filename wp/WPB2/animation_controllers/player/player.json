@@ -12,7 +12,7 @@
         },
         "b": {
           "on_entry": [
-            "/title @s title 未知"
+            "/titleraw @s title {\"rawtext\":[{\"translate\":\"unknown\"}]}"
           ],
           "transitions": [
             {
@@ -201,7 +201,7 @@
         },
         "technology_world_explorer": {
           "on_entry": [
-            "/tellraw @s {\"rawtext\":[{\"text\":\"§d周围32半径实体:\"},{\"selector\":\"@e[rm=1,r=32,type=!item]\"}]}",
+            "/tellraw @s {\"rawtext\":[{\"translate\":\"item.skill.wb.technology_world_explorer\"},{\"selector\":\"@e[rm=1,r=32,type=!item]\"}]}",
             "/execute @e[r=32,rm=1] ~ ~ ~ particle wb:tech_explorer_para ~ ~+1 ~"
           ],
           "transitions": [
@@ -311,7 +311,7 @@
         },
         "start_key": {
           "on_entry": [
-            "/tellraw @s {\"rawtext\":[{\"text\":\"§e长按钥匙开始流程\"}]}",
+            "/tellraw @s {\"rawtext\":[{\"translate\":\"item.skill.wb.start_key\"}]}",
             "/summon wb:plot_talk_npc ~~~",
             "/gamemode survival @s[m=creative]"
           ],
@@ -494,7 +494,7 @@
             "/execute @s[tag=wbmsyh,scores={wbfl=50..}] ~ ~ ~ effect @e[tag=!wbmsyh,r=10,rm=2] wither 6 4 true",
             "/execute @s[tag=!wbmsyh,scores={wbfl=50..}] ~ ~ ~ effect @e[r=10,rm=2] wither 6 4 true",
             "/execute @s[scores={wbfl=50..}] ~ ~ ~ particle wb:sword_water_par ~ ~ ~",
-            "/execute @s[scores={wbfl=50..}] ~ ~ ~ title @a[r=10] title §d水尽鹅飞",
+            "/execute @s[scores={wbfl=50..}] ~ ~ ~ titleraw @a[r=10] title {\"rawtext\":[{\"translate\":\"item.skill.wb.sword_water_cd\"}]}",
             "/execute @s[scores={wbfl=50..}] ~ ~ ~ scoreboard players remove @s wbfl 50",
             "variable.global_cooling=5;",
             "variable.global_cooling_total=5;"
@@ -658,7 +658,7 @@
             "/execute @s[tag=wbmsyh,scores={wbfl=80..}] ~ ~ ~ execute @e[r=10,rm=2] ~ ~ ~ effect @s[tag=!wbmsyh] levitation 1 12 true",
             "/execute @s[tag=!wbmsyh,scores={wbfl=80..}] ~ ~ ~ execute @e[r=10,rm=2] ~ ~ ~ effect @s levitation 1 12 true",
             "/execute @s[scores={wbfl=80..}] ~ ~ ~ execute @e[r=10,rm=2] ~ ~ ~ particle wb:sword_seal_par ~ ~ ~",
-            "/execute @s[scores={wbfl=80..}] ~ ~ ~ title @a[r=10] title §d土崩瓦解",
+            "/execute @s[scores={wbfl=80..}] ~ ~ ~ titleraw @a[r=10] title {\"rawtext\":[{\"translate\":\"item.skill.wb.sword_seal_cd\"}]}",
             "/execute @s[scores={wbfl=80..}] ~ ~ ~ scoreboard players remove @s wbfl 80",
             "variable.global_cooling=5;",
             "variable.global_cooling_total=5;"
@@ -807,7 +807,7 @@
             "/execute @s[scores={wbfl=..79}] ~ ~ ~ tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.37.name\"}]}",
             "/execute @s[scores={wbfl=80..}] ~ ~ ~ summon wb:ball_sword_ink ~ ~ ~",
             "/execute @s[scores={wbfl=80..}] ~ ~ ~ particle wb:sword_ink_par ~ ~ ~",
-            "/execute @s[scores={wbfl=80..}] ~ ~ ~ title @a[r=10] title §d笔走龙蛇",
+            "/execute @s[scores={wbfl=80..}] ~ ~ ~ titleraw @a[r=10] title {\"rawtext\":[{\"translate\":\"item.skill.wb.sword_ink_cd\"}]}",
             "/execute @s[scores={wbfl=80..}] ~ ~ ~ scoreboard players remove @s wbfl 40"
           ],
           "transitions": [
@@ -1093,7 +1093,7 @@
             "/execute @s[tag=wbmsyh,scores={wbfl=60..}] ~ ~ ~ damage @e[r=10,rm=2,tag=!wbmsyh] 15 entity_attack entity @s",
             "/execute @s[tag=!wbmsyh,scores={wbfl=60..}] ~ ~ ~ damage @e[r=10,rm=2] 15 entity_attack entity @s",
             "/execute @s[scores={wbfl=60..}] ~ ~ ~ particle wb:sword_forget_par ~ ~ ~",
-            "/execute @s[scores={wbfl=60..}] ~ ~ ~ title @a[r=10] title §d遗忘之光",
+            "/execute @s[scores={wbfl=60..}] ~ ~ ~ titleraw @a[r=10] title {\"rawtext\":[{\"translate\":\"item.skill.wb.sword_forget_cd\"}]}",
             "/execute @s[scores={wbfl=60..}] ~ ~ ~ scoreboard players remove @s wbfl 60",
             "variable.global_cooling=5;",
             "variable.global_cooling_total=5;"
@@ -1248,7 +1248,7 @@
             "/execute @s[tag=wbmsyh,scores={wbfl=40..}] ~ ~ ~ effect @s[tag=wbmsyh] regeneration 2 2",
             "/execute @s[tag=!wbmsyh,scores={wbfl=40..}] ~ ~ ~ effect @s regeneration 2 2",
             "/execute @s[scores={wbfl=40..}] ~ ~ ~ particle wb:sword_bloodsucking_par ~ ~ ~",
-            "/execute @s[scores={wbfl=40..}] ~ ~ ~ title @a[r=12] title §d嗜血风暴",
+            "/execute @s[scores={wbfl=40..}] ~ ~ ~ titleraw @a[r=12] title {\"rawtext\":[{\"translate\":\"item.skill.wb.sword_bloodsucking_cd\"}]}",
             "/execute @s[scores={wbfl=40..}] ~ ~ ~ execute @e[type=!minecraft:player,r=12] ~ ~ ~ scoreboard players add @p wbfl 2",
             "/execute @s[scores={wbfl=40..}] ~ ~ ~ scoreboard players remove @s wbfl 40",
             "variable.global_cooling=3;",
@@ -1340,7 +1340,7 @@
             "/particle wb:sword_fly_parb ~ ~ ~",
             "/execute @s[tag=wbmsyh] ~ ~ ~ damage @e[r=8,rm=2,tag=!wbmsyh] 60 entity_attack entity @s",
             "/execute @s[tag=!wbmsyh] ~ ~ ~ damage @e[r=8,rm=2] 60 entity_attack entity @s",
-            "/title @a[r=10] title §4凌空斩",
+            "/titleraw @a[r=10] title {\"rawtext\":[{\"translate\":\"item.skill.wb.sword_flyb\"}]}",
             "/execute @s[tag=wbmsyh] ~ ~ ~ execute @e[r=8,rm=2] ~ ~ ~ effect @s[tag=!wbmsyh] levitation 2 5",
             "/execute @s[tag=!wbmsyh] ~ ~ ~ execute @e[r=8,rm=2] ~ ~ ~ effect @s levitation 2 5",
             "/effect @s levitation 4 1",
@@ -1408,7 +1408,7 @@
             "/execute @s[scores={wbfl=..19}] ~ ~ ~ tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.44.name\"}]}",
             "/execute @s[tag=wbmsyh,scores={wbfl=20..}] ~ ~ ~ damage @e[rm=3,r=10,tag=!wbmsyh] 45 entity_attack entity @s",
             "/execute @s[tag=!wbmsyh,scores={wbfl=20..}] ~ ~ ~ damage @e[rm=3,r=10] 45 entity_attack entity @s",
-            "/execute @s[scores={wbfl=20..}] ~ ~ ~ title @a[r=8] title §d痕.耀",
+            "/execute @s[scores={wbfl=20..}] ~ ~ ~ titleraw @a[r=8] title {\"rawtext\":[{\"translate\":\"item.skill.wb.sword_bluemarkb\"}]}",
             "/execute @s[scores={wbfl=20..}] ~ ~ ~ execute @e[rm=3,r=10] ~ ~ ~ particle wb:sword_bluemark_parc ~ ~ ~",
             "/execute @s[scores={wbfl=20..}] ~ ~ ~ scoreboard players remove @s wbfl 20",
             "variable.global_cooling=4;",
@@ -1498,7 +1498,7 @@
             "/execute @s[scores={wbfl=..79}] ~ ~ ~ tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.45.name\"}]}",
             "/execute @s[tag=wbmsyh,scores={wbfl=80..}] ~ ~ ~ effect @a[tag=wbmsyh,r=8] resistance 6 4 false",
             "/execute @s[tag=!wbmsyh,scores={wbfl=80..}] ~ ~ ~ effect @s[r=8] resistance 6 4 false",
-            "/execute @s[scores={wbfl=80..}] ~ ~ ~ title @a[r=8] title §b绝对防御",
+            "/execute @s[scores={wbfl=80..}] ~ ~ ~ titleraw @a[r=8] title {\"rawtext\":[{\"translate\":\"item.skill.wb.sword_guardb\"}]}",
             "/execute @s[scores={wbfl=80..}] ~ ~ ~ particle wb:sword_guard_par ~ ~ ~",
             "/execute @s[scores={wbfl=80..}] ~ ~ ~ scoreboard players remove @s wbfl 80",
             "variable.global_cooling=8;",

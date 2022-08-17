@@ -80,8 +80,8 @@
           "/execute @s[scores={wbnjqbf=-1}] ~ ~ ~ effect @s blindness 3 5 true",
           "/execute @s[scores={wbnjqbf=-1}] ~ ~ ~ effect @s slowness 3 5 true",
           "/execute @s[scores={wbnjqbf=-1}] ~ ~ ~ effect @s resistance 60 100 true",
-          "/execute @s[scores={wbnjqbf=-1},tag=!wbjcks] ~ ~ ~ titleraw @s subtitle {\"rawtext\":[{\"text\":[\"手持物品栏中钥匙图标的物品并长按\n开启实验玩法和后面的一系列开关\"]}]}",
-          "/execute @s[scores={wbnjqbf=-1},tag=!wbjcks] ~ ~ ~ title @s title 请进行新手教程",
+          "/execute @s[scores={wbnjqbf=-1},tag=!wbjcks] ~ ~ ~ titleraw @s subtitle {\"rawtext\":[{\"translate\":[\"enter.text.wb.text2\"]}]}",
+          "/execute @s[scores={wbnjqbf=-1},tag=!wbjcks] ~ ~ ~ titleraw @s title {\"rawtext\":[{\"translate\":\"enter.text.wb.text1\"}]}",
           "/execute @s[scores={wbnjqbf=1..},tag=!wbstartkeyok] ~ ~ ~ scoreboard players set @s wbnjqzj 0",
           "/execute @s[scores={wbnjqbf=1..},tag=!wbstartkeyok] ~ ~ ~ scoreboard players set @s wbnjqbf 0"
         ]

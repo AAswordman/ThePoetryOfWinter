@@ -195,123 +195,123 @@
     "controls": [
       {
         "header_1@how_to_play_common.header": {
-          "$text": "BOSS推荐流程和召唤方法"
+          "$text": "text.help.wb.new.how_to_play.1"
         }
       },
       {
         "paragraph_1@how_to_play_common.paragraph": {
-          "$text": "需要用到的:召唤者方块(使用泥土围住原木合成)"
+          "$text": "text.help.wb.new.how_to_play.2"
         }
       },
       {
         "paragraph_2@how_to_play_common.paragraph": {
-          "$text": "接着，只要在上面丢BOSS召唤物就行了。(至于BOSS召唤物是什么，请自己对照着boss名字找)"
+          "$text": "text.help.wb.new.how_to_play.3"
         }
       },
       {
         "paragraph_3@how_to_play_common.paragraph": {
-          "$text": "(ps.以下BOSS如果不在主题群系召唤就会狂怒，名字变成红色) (第二个括号是相应的召唤物，扔召唤者方块上面)"
+          "$text": "text.help.wb.new.how_to_play.4"
         }
       },
       {
         "header_3@how_to_play_common.paragraph": {
-          "$text": "绿叶精华（主题地形：森林）（自然精华）"
+          "$text": "text.help.wb.new.how_to_play.5"
         }
       },
       {
         "paragraph_8@how_to_play_common.paragraph": {
-          "$text": "掠夺者之王（主题地形：平原）（神秘的邀请函）"
+          "$text": "text.help.wb.new.how_to_play.6"
         }
       },
       {
         "paragraph_9@how_to_play_common.paragraph": {
-          "$text": "深海牢笼（主题地形：海洋）（黑暗石）"
+          "$text": "text.help.wb.new.how_to_play.7"
         }
       },
       {
         "paragraph_10@how_to_play_common.paragraph": {
-          "$text": "扑食者（主题群系：恶地）（蝙蝠诱饵）"
+          "$text": "text.help.wb.new.how_to_play.8"
         }
       },
       {
         "paragraph_11@how_to_play_common.paragraph": {
-          "$text": "附魔师（主题地形: 神秘森林）（黑暗珍珠）"
+          "$text": "text.help.wb.new.how_to_play.9"
         }
       },
       
       {
         "paragraph_13@how_to_play_common.paragraph": {
-          "$text": "永冬恶魂（主题地形：雪地）（无）"
+          "$text": "text.help.wb.new.how_to_play.10"
         }
       },
       {
         "paragraph_14@how_to_play_common.paragraph": {
-          "$text": "凋灵"
+          "$text": "text.help.wb.new.how_to_play.11"
         }
       },
       {
         "paragraph_15@how_to_play_common.paragraph": {
-          "$text": "实体灵魂（主题地形：灵魂峡谷）（实体灵魂）"
+          "$text": "text.help.wb.new.how_to_play.12"
         }
       },
       {
         "paragraph_16@how_to_play_common.paragraph": {
-          "$text": "深渊之主（主题地形：绯红森林）（深渊之书）"
+          "$text": "text.help.wb.new.how_to_play.13"
         }
       },
       {
         "paragraph_17@how_to_play_common.paragraph": {
-          "$text": "灰烬骑士（主题地形：玄武岩三角洲）（灰烬挑战书）"
+          "$text": "text.help.wb.new.how_to_play.14"
         }
       },
       {
         "paragraph_12@how_to_play_common.paragraph": {
-          "$text": "末影龙"
+          "$text": "text.help.wb.new.how_to_play.15"
         }
       },
       {
         "paragraph_18@how_to_play_common.paragraph": {
-          "$text": "需要用到的:启程钥匙，屏障法杖"
+          "$text": "text.help.wb.new.how_to_play.16"
         }
       },
       {
         "paragraph_19@how_to_play_common.paragraph": {
-          "$text": "使用屏障法杖可以快速创建平坦地形，然后在上面使用启程钥匙;请注意，玩家团灭后boss会消失"
+          "$text": "text.help.wb.new.how_to_play.17"
         }
       },
       {
         "paragraph_20@how_to_play_common.paragraph": {
-          "$text": "魔化石块"
+          "$text": "text.help.wb.new.how_to_play.18"
         }
       },
       {
         "paragraph_21@how_to_play_common.paragraph": {
-          "$text": "无头守卫"
+          "$text": "text.help.wb.new.how_to_play.19"
         }
       },
       {
         "paragraph_22@how_to_play_common.paragraph": {
-          "$text": "远古石像"
+          "$text": "text.help.wb.new.how_to_play.20"
         }
       },
       {
         "paragraph_23@how_to_play_common.paragraph": {
-          "$text": "念"
+          "$text": "text.help.wb.new.how_to_play.21"
         }
       },
       {
         "header_24@how_to_play_common.header": {
-          "$text": "其他小Tips"
+          "$text": "text.help.wb.new.how_to_play.22"
         }
       },
       {
         "paragraph_25@how_to_play_common.paragraph": {
-          "$text": "储存者：\n1、 获得：击败附魔师有几率获得魔法箱子碎片\n2、 召唤：把魔法箱子碎片丢在召唤者方块上召唤\n3、 驯服：使用铁钥匙驯服\n4、 使用：驯服后可打开，想让它跟着你的话需要栓绳拴着"
+          "$text": "text.help.wb.new.how_to_play.23"
         }
       },
       {
         "paragraph_26@how_to_play_common.paragraph": {
-          "$text": "永冬塔：\n生成在雪地。在楼顶的正中央有一个激活的永冬召唤者，使用铁钥匙即可召唤Boss冰霜恶魂，激活的永冬召唤者也将变为未激活的永冬召唤者。当你击败Boss之后，会掉落永冬能量条，对未激活的永冬召唤者使用即可激活"
+          "$text": "text.help.wb.new.how_to_play.24"
         }
       }
     ]
@@ -328,12 +328,12 @@
     "controls": [
       {
         "header_1@how_to_play_common.header": {
-          "$text": "生存指南"
+          "$text": "text.help.wb.new.how_to_play.25"
         }
       },
       {
         "paragraph_0@how_to_play_common.paragraph": {
-          "$text": "\n没死亡的情况下可输入指令/function diemode来开启死亡模式，死亡模式下死亡无法复活。§r"
+          "$text": "text.help.wb.new.how_to_play.26"
         }
       },
       {
@@ -343,7 +343,7 @@
       },
       {
         "paragraph_2@how_to_play_common.paragraph": {
-          "$text": "进入游戏，首先选择钥匙长按进行新手教程。§r"
+          "$text": "text.help.wb.new.how_to_play.27"
         }
       },
       {
@@ -353,7 +353,7 @@
       },
       {
         "paragraph_4@how_to_play_common.paragraph": {
-          "$text": "前期可以合成铁钥匙（三个铁粒）去开野外的上锁板条箱，然后打掉，有几率掉落高级物资。§r"
+          "$text": "text.help.wb.new.how_to_play.28"
         }
       },
       {
@@ -363,57 +363,57 @@
       },
       {
         "paragraph_6@how_to_play_common.paragraph": {
-          "$text": "如果有村庄，就找个村庄过去存档。按照正常流程，砍树，发展石器，挖矿。§r"
+          "$text": "text.help.wb.new.how_to_play.29"
         }
       },
       {
         "paragraph_7@how_to_play_common.paragraph": {
-          "$text": "前期时小心周围的怪物，建议晚上别乱跑。§r"
+          "$text": "text.help.wb.new.how_to_play.30"
         }
       },
       {
         "paragraph_8@how_to_play_common.paragraph": {
-          "$text": "下矿后，注意这么几个矿物:§r"
+          "$text": "text.help.wb.new.how_to_play.31"
         }
       },
       {
         "paragraph_9@how_to_play_common.paragraph": {
-          "$text": "墨痕矿(出墨痕盔甲，受伤瞬移)§r"
+          "$text": "text.help.wb.new.how_to_play.32"
         }
       },
       {
         "paragraph_10@how_to_play_common.paragraph": {
-          "$text": "朱红矿(出嗜血盔甲和嗜血剑)§r"
+          "$text": "text.help.wb.new.how_to_play.33"
         }
       },
       {
         "paragraph_11@how_to_play_common.paragraph": {
-          "$text": "水源矿(出水源剑，攻击带范围凋零)§r"
+          "$text": "text.help.wb.new.how_to_play.34"
         }
       },
       {
         "paragraph_12@how_to_play_common.paragraph": {
-          "$text": "魔能锭(出魔能斧，潜行砍树一键砍树，出魔能镐，范围挖掘)§r"
+          "$text": "text.help.wb.new.how_to_play.35"
         }
       },
       {
         "paragraph_13@how_to_play_common.paragraph": {
-          "$text": "屏障矿(出屏障法杖，长按搭建16*16平坦平台，潜行长按删除16*16平台)§r"
+          "$text": "text.help.wb.new.how_to_play.36"
         }
       },
       {
         "paragraph_14@how_to_play_common.paragraph": {
-          "$text": "溪流矿(后期来激活机器)§r"
+          "$text": "text.help.wb.new.how_to_play.37"
         }
       },
       {
         "paragraph_15@how_to_play_common.paragraph": {
-          "$text": "高级矿在y轴-20到8，可以用来进阶装备。这里注意！你在打败觉醒末影龙是拿不到高级锭的，所以，老老实实打boss掉材料吧§r"
+          "$text": "text.help.wb.new.how_to_play.38"
         }
       },
       {
         "paragraph_16@how_to_play_common.paragraph": {
-          "$text": "其他的各位根据自己情况出装备。§r"
+          "$text": "text.help.wb.new.how_to_play.39"
         }
       },
       {
@@ -423,7 +423,7 @@
       },
       {
         "paragraph_18@how_to_play_common.paragraph": {
-          "$text": "部分矿物需要高炉烧制§r"
+          "$text": "text.help.wb.new.how_to_play.40"
         }
       },
       {
@@ -433,7 +433,7 @@
       },
       {
         "paragraph_20@how_to_play_common.paragraph": {
-          "$text": "倘若包中废物过多，可以选择用铁锭围住工作台来做一个废物回收站，东西扔上去，有一定的可能会出矿。§r"
+          "$text": "text.help.wb.new.how_to_play.41"
         }
       },
       {
@@ -443,7 +443,7 @@
       },
       {
         "paragraph_22@how_to_play_common.paragraph": {
-          "$text": "如果周围有魔化森林(一片紫色)，那么注意一下刷出来的魔化书，打死可以掉高级附魔书(虽然都带绑定诅咒和消失诅咒)§r"
+          "$text": "text.help.wb.new.how_to_play.42"
         }
       },
       {
@@ -453,12 +453,12 @@
       },
       {
         "paragraph_24@how_to_play_common.paragraph": {
-          "$text": "如果挖到铜了，可以选择先合成一个木法杖，然后继续合成能量射线杖。§r"
+          "$text": "text.help.wb.new.how_to_play.43"
         }
       },
       {
         "paragraph_25@how_to_play_common.paragraph": {
-          "$text": "玩家死亡后，小心墓碑旁边的鬼魂。§r"
+          "$text": "text.help.wb.new.how_to_play.44"
         }
       },
       {
@@ -468,7 +468,7 @@
       },
       {
         "paragraph_27@how_to_play_common.paragraph": {
-          "$text": "如果你生活在大型地下洞穴，小心周围的蝙蝠一类的怪物。可以使用物品 世界探索者 来标记周围生物并获取血量信息。§r"
+          "$text": "text.help.wb.new.how_to_play.45"
         }
       },
       {
@@ -478,7 +478,7 @@
       },
       {
         "paragraph_29@how_to_play_common.paragraph": {
-          "$text": "前期如果遇到了什么塔什么的，不要去打。§r"
+          "$text": "text.help.wb.new.how_to_play.46"
         }
       },
       {
@@ -488,7 +488,7 @@
       },
       {
         "paragraph_31@how_to_play_common.paragraph": {
-          "$text": "在前往地狱的时候，注意地狱幻翼，地狱铁傀儡，地狱苦力怕。用屏障法杖搭路是个好方法。§r"
+          "$text": "text.help.wb.new.how_to_play.47"
         }
       },
       {
@@ -498,7 +498,7 @@
       },
       {
         "paragraph_33@how_to_play_common.paragraph": {
-          "$text": "部分有主题地形的Boss离开主题地形召唤会暴怒，变得极为棘手。§r"
+          "$text": "text.help.wb.new.how_to_play.48"
         }
       },
       {
@@ -513,7 +513,7 @@
       },
       {
         "paragraph_36@how_to_play_common.paragraph": {
-          "$text": "绿叶精华：主题地形森林。在森林里面找特定的建筑，找到特定的召唤者方块。建议使用远程武器，保持一定距离，及时清理召唤出的绿叶精灵。§r"
+          "$text": "text.help.wb.new.how_to_play.49"
         }
       },
       {
@@ -523,7 +523,7 @@
       },
       {
         "paragraph_38@how_to_play_common.paragraph": {
-          "$text": "掠夺者之王：主题地形平原。建议近战远程结合，在其召唤时近距离输出，其冲过来攻击时保持距离。§r"
+          "$text": "text.help.wb.new.how_to_play.50"
         }
       },
       {
@@ -533,7 +533,7 @@
       },
       {
         "paragraph_40@how_to_play_common.paragraph": {
-          "$text": "深海牢笼：主题地形海洋。建议先在海上搭建平台，使用投掷武器，保持较高速度位移，并时刻处于八个气泡柱中间围成的圆中，出去会受到持续伤害。§r"
+          "$text": "text.help.wb.new.how_to_play.51"
         }
       },
       {
@@ -543,7 +543,7 @@
       },
       {
         "paragraph_42@how_to_play_common.paragraph": {
-          "$text": "扑食者：主题地形恶地。如果对自己的预判没有信心的话建议使用高速射击的武器。§r"
+          "$text": "text.help.wb.new.how_to_play.52"
         }
       },
       {
@@ -553,7 +553,7 @@
       },
       {
         "paragraph_44@how_to_play_common.paragraph": {
-          "$text": "附魔师：主题地形神秘森林。建议1-2阶段近战，并及时清理召唤出的小怪，三阶段附魔师变为近战，此时建议远程。§r"
+          "$text": "text.help.wb.new.how_to_play.53"
         }
       },
       {
@@ -563,7 +563,7 @@
       },
       {
         "paragraph_46@how_to_play_common.paragraph": {
-          "$text": "永冬恶魂：主题地形雪地。在永冬塔上有一个激活的永冬召唤者，对其使用铁钥匙即可召唤Boss永冬恶魂，并变为未激活状态。在击败永冬恶魂后会掉落冰霜能量，对未激活的永冬召唤者使用后将其变为激活状态。一阶段建议保持一定距离近战并及时拉开距离清理小怪，二阶段利用掩体远程输出。§r"
+          "$text": "text.help.wb.new.how_to_play.54"
         }
       },
       {
@@ -573,7 +573,7 @@
       },
       {
         "paragraph_48@how_to_play_common.paragraph": {
-          "$text": "实体灵魂：主题地形地狱。一阶段建议贴脸输出，不要拉开距离，适当清理距离较近的小怪。二阶段会召唤两个暗影之魂，两个暗影之魂分别给予实体灵魂力量与速度，需要先被打掉，再去打实体灵魂就比较简单了。§r"
+          "$text": "text.help.wb.new.how_to_play.55"
         }
       },
       {
@@ -583,7 +583,7 @@
       },
       {
         "paragraph_50@how_to_play_common.paragraph": {
-          "$text": "深渊之主：主题地形绯红森林。建议1-2阶段保持距离输出，及时清理小怪。三阶段需刻意保持距离输出。§r"
+          "$text": "text.help.wb.new.how_to_play.56"
         }
       },
       {
@@ -593,7 +593,7 @@
       },
       {
         "paragraph_52@how_to_play_common.paragraph": {
-          "$text": "灰烬骑士：主题地形玄武岩三角洲。注意别踩到地上的灰烬炸弹，不然会召唤更多小怪。小怪不需刻意清理，注意躲避子弹和小怪就好。§r"
+          "$text": "text.help.wb.new.how_to_play.57"
         }
       },
       {
@@ -608,17 +608,17 @@
       },
       {
         "paragraph_55@how_to_play_common.paragraph": {
-          "$text": "当打完了灰烬骑士后，开始生存收尾式BOSS:§r"
+          "$text": "text.help.wb.new.how_to_play.58"
         }
       },
       {
         "paragraph_56@how_to_play_common.paragraph": {
-          "$text": "这个时候可以长按启程钥匙，进行剧情线。§r"
+          "$text": "text.help.wb.new.how_to_play.59"
         }
       },
       {
         "paragraph_57@how_to_play_common.paragraph": {
-          "$text": "注意其中的boss:§r"
+          "$text": "text.help.wb.new.how_to_play.60"
         }
       },
       {
@@ -628,7 +628,7 @@
       },
       {
         "paragraph_59@how_to_play_common.paragraph": {
-          "$text": "魔化石块:建议用屏障法杖出一个大一点的平台。准备法杖或者弓，当石头升起时，可以打;砸过来的时候，赶紧跑。两次攻击有间隔。切勿直接上去刚。§r"
+          "$text": "text.help.wb.new.how_to_play.61"
         }
       },
       {
@@ -638,7 +638,7 @@
       },
       {
         "paragraph_61@how_to_play_common.paragraph": {
-          "$text": "无头守卫:平台搭大，然后打远程消耗就行。配上法杖和弓，加墨痕剑或者末影珍珠或者一桶水。远程攻击时，如果boss突然跳起来了，赶紧跑，注意斜着躲避地刺。可以使用墨痕剑或者末影珍珠瞬移开，如果被击飞，也可以使用落地水。消耗就行了。§r"
+          "$text": "text.help.wb.new.how_to_play.62"
         }
       },
       {
@@ -648,12 +648,12 @@
       },
       {
         "paragraph_63@how_to_play_common.paragraph": {
-          "$text": "远古石像:自己探索§r"
+          "$text": "text.help.wb.new.how_to_play.63"
         }
       },
       {
         "paragraph_64@how_to_play_common.paragraph": {
-          "$text": "念:自己探索"
+          "$text": "text.help.wb.new.how_to_play.64"
         }
       }
     ]
@@ -1857,52 +1857,52 @@
     "controls": [
       {
         "header_1@how_to_play_common.header": {
-          "$text": "机器简介"
+          "$text": "text.help.wb.new.how_to_play.65"
         }
       },
       {
         "paragraph_1@how_to_play_common.paragraph": {
-          "$text": "有了机器，你就可以干更多的事情了。"
+          "$text": "text.help.wb.new.how_to_play.66"
         }
       },
       {
         "header_2@how_to_play_common.header": {
-          "$text": "机器合成和使用"
+          "$text": "text.help.wb.new.how_to_play.67"
         }
       },
       {
         "paragraph_4@how_to_play_common.paragraph": {
-          "$text": "废物回收站:将你不需要的东西丢在上面。过几秒钟后会产出铁/钻石/石头/附魔书/金锭 0或者1个。用铁锭围住一个工作台来合成。"
+          "$text": "text.help.wb.new.how_to_play.68"
         }
       },
       {
         "paragraph_5@how_to_play_common.paragraph": {
-          "$text": "脉冲石，用来激活溪流机械，丢在溪流机械上激活机械。溪流机械(下面的)需要脉冲石丢在上面激活。"
+          "$text": "text.help.wb.new.how_to_play.69"
         }
       },
       {
         "paragraph_6@how_to_play_common.paragraph": {
-          "$text": "雷电召唤者，求雨者，晴天召唤者，为切换天气；"
+          "$text": "text.help.wb.new.how_to_play.70"
         }
       },
       {
         "paragraph_7@how_to_play_common.paragraph": {
-          "$text": "物品捡拾机可以捡拾周围的掉落物；"
+          "$text": "text.help.wb.new.how_to_play.71"
         }
       },
       {
         "paragraph_8@how_to_play_common.paragraph": {
-          "$text": "挖掘机可以将脚下3*3范围的泥土，石头等非矿物方块摧毁（不掉东西）；"
+          "$text": "text.help.wb.new.how_to_play.72"
         }
       },
       {
         "paragraph_9@how_to_play_common.paragraph": {
-          "$text": "引雷者需丢一个脉冲石上去激活，吸引一定范围内的雷电；"
+          "$text": "text.help.wb.new.how_to_play.73"
         }
       },
       {
         "paragraph_10@how_to_play_common.paragraph": {
-          "$text": "末影祭坛玩家踩上去随机传送，消耗魔法值，前提是要有一定魔法值。"
+          "$text": "text.help.wb.new.how_to_play.74"
         }
       }
     ]

@@ -89,7 +89,7 @@ export default class PomClient extends ExGameClient {
 						.dropdown("Language List", ["English", "简体中文"], 0)
 						.show(this.player).then((e) => {
 							if (!e.isCanceled) {
-								this.data.lang = e.formValues[0] == "English" ? "en" : "zh";
+								this.data.lang = e.formValues[0] == 0 ? "en" : "zh";
 							}
 						})
 						.catch((e) => {
