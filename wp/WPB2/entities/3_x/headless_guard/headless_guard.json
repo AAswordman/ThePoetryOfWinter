@@ -10,7 +10,7 @@
       "animations": {
         "base": "controller.animation.headless_guard.base",
         "boss": "animation.boss.testplayer",
-        "msic":"animation.headless_guard.wb.music"
+        "music":"animation.headless_guard.wb.music"
       },
       "scripts": {
         "animate": [
@@ -333,7 +333,7 @@
         "run_command": {
           "command": [
             "scoreboard players set @a[scores={wbnjqbf=9},r=200] wbnjqbf 10",
-            "/function base/stopmusic",
+            "function base/stopmusic",
             "kill @s"
           ],
           "target": "self"

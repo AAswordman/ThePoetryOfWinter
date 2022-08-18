@@ -514,7 +514,7 @@
                         "10px",
                         "10px"
                       ],
-                      "text": "召唤物:",
+                      "text": "召唤物(SpawnItem):",
                       "color": [0,0,0]
                     }
                   },
@@ -587,7 +587,7 @@
                         "10px",
                         "10px"
                       ],
-                      "text": "掉落物:",
+                      "text": "掉落物(DropItem):",
                       "color": [0,0,0]
                     }
                   },
@@ -761,7 +761,7 @@
               "target_property_name": "#visible"
             }
           ],
-          "$boss_name": "绿叶精华",
+          "$boss_name": "boss.dec:leaves_golem.name",
           "$item_icon": "textures/items/natura_essence",
           "$boss_threed_img": "textures/wb_ui/boss0",
           "$loot_tabel_item_a": "textures/items/poison_dart",
@@ -769,7 +769,7 @@
           "$loot_tabel_item_d": "textures/items/leaves_knife",
           "$loot_tabel_item_c": "textures/items/emerald_nugget",
           "$loot_tabel_item_e": "textures/items/natura_spear",
-          "$boss_info": "难度:傻瓜难度\n森林 专属建筑",
+          "$boss_info": "森林 专属建筑\nForest exclusive building",
           "anchor_from": "top_left",
           "anchor_to": "top_left"
         }
@@ -784,7 +784,7 @@
               "target_property_name": "#visible"
             }
           ],
-          "$boss_info": "难度:简单\n平原 专属建筑",
+          "$boss_info": "平原 专属建筑\nPlain exclusive building",
           "$boss_name": "boss.dec:king_of_pillager.name",
           "$item_icon": "textures/items/mysterious_key",
           "$boss_threed_img": "textures/wb_ui/boss1",
@@ -812,7 +812,7 @@
               "target_property_name": "#visible"
             }
           ],
-          "$boss_info": "难度:简单\n主题地形:海洋",
+          "$boss_info": "主题地形:海洋\nTheme Biome: Ocean ",
           "$boss_name": "boss.dec:abyssal_controller.name",
           "$item_icon": "textures/items/dark_stone",
           "$boss_threed_img": "textures/wb_ui/boss2",
@@ -838,7 +838,7 @@
               "target_property_name": "#visible"
             }
           ],
-          "$boss_info": "难度:简单\n主题地形:恶地",
+          "$boss_info": "主题地形:恶地\nTheme Biome: evil",
           "$boss_name": "boss.dec:predators.name",
           "$item_icon": "textures/items/bat_bait",
           "$boss_threed_img": "textures/wb_ui/boss3",
@@ -864,7 +864,7 @@
               "target_property_name": "#visible"
             }
           ],
-          "$boss_info": "难度:普通\n丛林 专属建筑",
+          "$boss_info": "丛林 专属建筑\nJungle exclusive building",
           "$boss_name": "boss.dec:enchant_illager.name",
           "$item_icon": "textures/items/dark_pearl",
           "$boss_threed_img": "textures/wb_ui/boss4",
@@ -896,7 +896,7 @@
               "target_property_name": "#visible"
             }
           ],
-          "$boss_info": "难度:普通\n召唤方式:在永冬塔用铁钥匙",
+          "$boss_info": "雪地 专属建筑\nSnow exclusive building",
           "$boss_name": "boss.dec:everlasting_winter_ghast.name",
           "$item_icon": "textures/ui/none",
           "$boss_threed_img": "textures/wb_ui/boss5",
@@ -922,7 +922,7 @@
               "target_property_name": "#visible"
             }
           ],
-          "$boss_info": "难度:困难\n主题地形:地狱-灵魂峡谷",
+          "$boss_info": "主题地形:地狱-灵魂峡谷\nTheme Biome:nether-soul valley",
           "$boss_name": "boss.dec:entity_soul.name",
           "$item_icon": "textures/items/entity_soul",
           "$boss_threed_img": "textures/wb_ui/boss6",
@@ -944,7 +944,7 @@
               "target_property_name": "#visible"
             }
           ],
-          "$boss_info": "难度:困难\n主题地形:地狱-绯红森林",
+          "$boss_info": "主题地形:地狱-绯红森林\nTheme Biome:nether-crimson forest",
           "$boss_name": "boss.dec:host_of_deep.name",
           "$item_icon": "textures/items/book_of_deep",
           "$boss_threed_img": "textures/wb_ui/boss7",
@@ -969,7 +969,7 @@
               "target_property_name": "#visible"
             }
           ],
-          "$boss_info": "难度:困难\n主题地形:玄武岩三角洲",
+          "$boss_info": "主题地形:玄武岩三角洲\nTheme Biome:Basalt delta",
           "$boss_name": "boss.dec:ash_knight.name",
           "$item_icon": "textures/items/challenge_of_ash",
           "$boss_threed_img": "textures/wb_ui/boss8",
@@ -994,8 +994,8 @@
               "target_property_name": "#visible"
             }
           ],
-          "$boss_info": "难度:困难\n召唤方式:击败末影龙",
-          "$boss_name": "觉醒末影龙",
+          "$boss_info": "召唤方式:击败末影龙\nSummon method: defeat the EnderDragon",
+          "$boss_name": "text.help.wb.new.how_to_play.15",
           "$item_icon": "textures/ui/none",
           "$boss_threed_img": "textures/wb_ui/boss9",
           "anchor_from": "top_left",
@@ -1012,8 +1012,8 @@
               "target_property_name": "#visible"
             }
           ],
-          "$boss_info": "难度:超困难\n召唤方式:剧情线",
-          "$boss_name": "魔化石块",
+          "$boss_info": "召唤方式:剧情线\nSummon method: plot line",
+          "$boss_name": "text.help.wb.new.how_to_play.18",
           "$item_icon": "textures/ui/none",
           "$boss_threed_img": "textures/wb_ui/boss10",
           "anchor_from": "top_left",
@@ -1030,8 +1030,8 @@
               "target_property_name": "#visible"
             }
           ],
-          "$boss_info": "难度:超困难\n召唤方式:剧情线",
-          "$boss_name": "无头守卫",
+          "$boss_info": "召唤方式:剧情线\nSummon method: plot line",
+          "$boss_name": "text.help.wb.new.how_to_play.19",
           "$item_icon": "textures/ui/none",
           "$boss_threed_img": "textures/wb_ui/boss11",
           "anchor_from": "top_left",
@@ -1048,8 +1048,8 @@
               "target_property_name": "#visible"
             }
           ],
-          "$boss_info": "难度:超困难\n召唤方式:剧情线",
-          "$boss_name": "远古石像",
+          "$boss_info": "召唤方式:剧情线\nSummon method: plot line",
+          "$boss_name": "text.help.wb.new.how_to_play.20",
           "$item_icon": "textures/ui/none",
           "$boss_threed_img": "textures/wb_ui/boss12",
           "anchor_from": "top_left",
@@ -1066,8 +1066,8 @@
               "target_property_name": "#visible"
             }
           ],
-          "$boss_info": "难度:炼狱\n召唤方式:剧情线",
-          "$boss_name": "念",
+          "$boss_info": "召唤方式:剧情线\nSummon method: plot line",
+          "$boss_name": "text.help.wb.new.how_to_play.21",
           "$item_icon": "textures/ui/none",
           "$boss_threed_img": "textures/wb_ui/boss14",
           "anchor_from": "top_left",
