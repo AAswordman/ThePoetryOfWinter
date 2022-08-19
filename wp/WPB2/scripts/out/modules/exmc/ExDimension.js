@@ -6,7 +6,13 @@ export default class ExDimension {
         return this._dimension.getPlayers(entityQueryOptions);
     }
     getEntities(entityQueryOptions = undefined) {
-        return this._dimension.getEntities(entityQueryOptions);
+        let entities = this._dimension.getEntities(entityQueryOptions);
+        let res = [];
+        for (let entity of entities) {
+            if (entity.dimension === this._dimension)
+                res.push(entity);
+        }
+        return res;
     }
     getBlock(vec) {
         return this._dimension.getBlock(vec.getBlockLocation());

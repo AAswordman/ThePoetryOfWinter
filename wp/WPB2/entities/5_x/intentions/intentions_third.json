@@ -179,7 +179,7 @@
           "priority": 0,
           "duration": 0.8,
           "attack_time": 0.8,
-          "knockback_damage": 80,
+          "knockback_damage": 120,
           "knockback_strength": 1,
           "knockback_range": 8,
           "on_roar_end": {
@@ -193,7 +193,7 @@
           "priority": 0,
           "duration": 0.8,
           "attack_time": 0.8,
-          "knockback_damage": 100,
+          "knockback_damage": 200,
           "knockback_strength": -1,
           "knockback_range": 8,
           "on_roar_end": {
@@ -244,7 +244,7 @@
       },
       "attack_b": {
         "minecraft:attack": {
-          "damage": 120
+          "damage": 180
         },
         "minecraft:behavior.delayed_attack": {
           "priority": 4,
@@ -321,7 +321,7 @@
           "value": 0.28
         },
         "minecraft:attack": {
-          "damage": 80
+          "damage": 100
         },
         "minecraft:variant": {
           "value": 1

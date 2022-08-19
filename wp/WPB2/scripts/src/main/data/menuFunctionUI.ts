@@ -407,7 +407,7 @@ You understand and agree that:
 											client.data.talent.pointUsed = 1 + (client.data.talent.pointUsed ?? 0);
 											client.data.talent.talents.splice(client.data.talent.talents.findIndex(t => t.id === i.id), 1);
 											client.data.talent.talents.unshift(i);
-											client.updateTalentRes();
+											client.talentSystem.updateTalentRes();
 										}
 										return true;
 									}
@@ -825,7 +825,7 @@ You understand and agree that:
 								"function": (client: PomClient, ui: MenuUIAlert) => {
 									new ModalFormData()
 										.toggle(lang.menuUIMsgBailan80, client.globalSettings.entityCleaner)
-										.slider(lang.menuUIMsgBailan91, 100, 1000, 50, client.globalSettings.entityCleanerLeastNum)
+										.slider(lang.menuUIMsgBailan91, 40, 1000, 20, client.globalSettings.entityCleanerLeastNum)
 										.slider(lang.menuUIMsgBailan92, 2, 10, 1, client.globalSettings.entityCleanerStrength)
 										.slider(lang.menuUIMsgBailan93, 1, 60, 1, client.globalSettings.entityCleanerDelay)
 										.show(client.player).then((e) => {

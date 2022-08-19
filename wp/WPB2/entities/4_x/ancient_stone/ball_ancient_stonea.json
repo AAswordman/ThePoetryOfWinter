@@ -33,7 +33,7 @@
             "amplifier": 1
           },
           "impact_damage": {
-            "damage": 15,
+            "damage": 40,
             "knockback": true,
             "catchFire": false,
             "semirandomdiffdamage": false,

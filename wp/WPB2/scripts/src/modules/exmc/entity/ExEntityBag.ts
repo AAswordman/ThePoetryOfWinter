@@ -60,8 +60,8 @@ export default class ExEntityBag {
         return this.bagComponent.restrictToOwner;
     }
 
-    setItem(slot: number, item: ItemStack) {
-        return this.bagComponent.container.setItem(slot, item);
+    setItem(slot: number, item: ItemStack | undefined) {
+        return this.bagComponent.container.setItem(slot, <ItemStack>item);
     }
 
     hasItem(itemId: string) {
@@ -77,5 +77,8 @@ export class ExPlayerBag extends ExEntityBag{
     }
     getItemOnHand() {
         return this.getItem(this._player.selectedSlot);
+    }
+    setItemOnHand(i:ItemStack | undefined) {
+        return this.setItem(this._player.selectedSlot,i);
     }
 }

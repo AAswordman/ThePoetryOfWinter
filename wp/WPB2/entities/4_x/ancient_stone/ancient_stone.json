@@ -141,7 +141,7 @@
           "priority": 0,
           "duration": 3,
           "attack_time": 2,
-          "knockback_damage": 40,
+          "knockback_damage": 80,
           "knockback_strength": 12,
           "knockback_range": 6,
           "on_roar_end": {
@@ -163,8 +163,8 @@
           "priority": 0,
           "duration": 4,
           "attack_time": 3,
-          "knockback_damage": 10,
-          "knockback_strength": 3,
+          "knockback_damage": 140,
+          "knockback_strength": 5,
           "knockback_range": 12,
           "on_roar_end": {
             "event": "sssx"
@@ -481,7 +481,7 @@
       "minecraft:navigation.walk": {},
       "minecraft:movement.basic": {},
       "minecraft:attack": {
-        "damage": 40
+        "damage": 90
       },
       "minecraft:damage_sensor": {
         "cause": "fall",

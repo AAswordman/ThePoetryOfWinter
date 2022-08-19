@@ -7,6 +7,7 @@ import { Entity, EntityHitEvent, EntityHurtEvent, MinecraftDimensionTypes, Minec
 import GlobalSettings from './cache/GlobalSettings.js';
 import { Objective } from "../modules/exmc/entity/ExScoresManager.js";
 import TimeLoopTask from "../modules/exmc/utils/TimeLoopTask.js";
+import ExDimension from "../modules/exmc/ExDimension.js";
 
 export default class PomServer extends ExGameServer {
 	setting;
@@ -30,9 +31,9 @@ export default class PomServer extends ExGameServer {
 		this.updateClearEntityNum();
 
 		this.entityCleaner = new TimeLoopTask(this.getEvents(), () => {
-			let entities: Entity[] = Array.from(this.getDimension(MinecraftDimensionTypes.overworld).getEntities())
-				.concat(Array.from(this.getDimension(MinecraftDimensionTypes.theEnd).getEntities()))
-				.concat(Array.from(this.getDimension(MinecraftDimensionTypes.nether).getEntities()));
+			let entities: Entity[] = Array.from(ExDimension.getInstance(this.getDimension(MinecraftDimensionTypes.overworld)).getEntities())
+				.concat(Array.from(ExDimension.getInstance(this.getDimension(MinecraftDimensionTypes.theEnd)).getEntities()))
+				.concat(Array.from(ExDimension.getInstance(this.getDimension(MinecraftDimensionTypes.nether)).getEntities()));
 
 			//ExGameConfig.console.log("当前实体数：" + entities.length);
 			let map = new Map<string, number>();
@@ -48,14 +49,16 @@ export default class PomServer extends ExGameServer {
 					max[1] = k;
 				}
 			});
-			ExGameConfig.console.log("最多实体数：" + max[0]);
-			ExGameConfig.console.log("最多实体数：" + max[1]);
 
 			if (entities.length > this.entityCleanerLeastNum) {
+
+				ExGameConfig.console.log("最多实体数：" + max[0]);
+				ExGameConfig.console.log("最多实体数：" + max[1]);
+
 				entities.forEach(e => {
-					if (!e || !e.id) return;
+					if (!e || !e.id || e.id !== max[1]) return;
 					if (e.id === "minecraft:item" && e.viewVector.y !== 0) return;
-					if (e.id === max[1] && !e.nameTag) e.kill();
+					e.kill();
 				});
 			}
 		}).delay(8000);
@@ -87,7 +90,7 @@ export default class PomServer extends ExGameServer {
 	updateClearEntityNum() {
 		this.entityCleanerStrength = this.setting.entityCleanerStrength;
 		this.entityCleanerLeastNum = this.setting.entityCleanerLeastNum;
-		this.entityCleanerDelay = (60-this.setting.entityCleanerDelay)/100 + 1.8;
+		this.entityCleanerDelay = (60 - this.setting.entityCleanerDelay) / 100 + 1.8;
 	}
 	upDateEntityCleaner() {
 		if (this.setting.entityCleaner) {
