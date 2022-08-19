@@ -260,7 +260,7 @@
         "must_see_forget_duration": 64
       },
       "minecraft:attack": {
-        "damage": 30
+        "damage": 70
       },
       "minecraft:type_family": {
         "family": [

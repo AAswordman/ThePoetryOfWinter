@@ -5,6 +5,7 @@ import { MinecraftDimensionTypes, MinecraftEntityTypes } from 'mojang-minecraft'
 import GlobalSettings from './cache/GlobalSettings.js';
 import { Objective } from "../modules/exmc/entity/ExScoresManager.js";
 import TimeLoopTask from "../modules/exmc/utils/TimeLoopTask.js";
+import ExDimension from "../modules/exmc/ExDimension.js";
 export default class PomServer extends ExGameServer {
     constructor() {
         super();
@@ -16,9 +17,9 @@ export default class PomServer extends ExGameServer {
         }).delay(10000)).start();
         this.updateClearEntityNum();
         this.entityCleaner = new TimeLoopTask(this.getEvents(), () => {
-            let entities = Array.from(this.getDimension(MinecraftDimensionTypes.overworld).getEntities())
-                .concat(Array.from(this.getDimension(MinecraftDimensionTypes.theEnd).getEntities()))
-                .concat(Array.from(this.getDimension(MinecraftDimensionTypes.nether).getEntities()));
+            let entities = Array.from(ExDimension.getInstance(this.getDimension(MinecraftDimensionTypes.overworld)).getEntities())
+                .concat(Array.from(ExDimension.getInstance(this.getDimension(MinecraftDimensionTypes.theEnd)).getEntities()))
+                .concat(Array.from(ExDimension.getInstance(this.getDimension(MinecraftDimensionTypes.nether)).getEntities()));
             //ExGameConfig.console.log("当前实体数：" + entities.length);
             let map = new Map();
             entities.forEach(e => {
@@ -34,16 +35,15 @@ export default class PomServer extends ExGameServer {
                     max[1] = k;
                 }
             });
-            ExGameConfig.console.log("最多实体数：" + max[0]);
-            ExGameConfig.console.log("最多实体数：" + max[1]);
             if (entities.length > this.entityCleanerLeastNum) {
+                ExGameConfig.console.log("最多实体数：" + max[0]);
+                ExGameConfig.console.log("最多实体数：" + max[1]);
                 entities.forEach(e => {
-                    if (!e || !e.id)
+                    if (!e || !e.id || e.id !== max[1])
                         return;
                     if (e.id === "minecraft:item" && e.viewVector.y !== 0)
                         return;
-                    if (e.id === max[1] && !e.nameTag)
-                        e.kill();
+                    e.kill();
                 });
             }
         }).delay(8000);

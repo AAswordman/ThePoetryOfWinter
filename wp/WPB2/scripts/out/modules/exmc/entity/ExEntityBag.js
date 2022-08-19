@@ -60,5 +60,8 @@ export class ExPlayerBag extends ExEntityBag {
     getItemOnHand() {
         return this.getItem(this._player.selectedSlot);
     }
+    setItemOnHand(i) {
+        return this.setItem(this._player.selectedSlot, i);
+    }
 }
 //# sourceMappingURL=ExEntityBag.js.map

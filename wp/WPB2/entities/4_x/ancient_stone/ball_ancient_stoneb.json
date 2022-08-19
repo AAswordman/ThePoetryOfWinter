@@ -13,7 +13,7 @@
         "minecraft:explode": {
           "fuseLength": 0,
           "fuseLit": true,
-          "power": 3,
+          "power": 5,
           "causesFire": true,
           "breaks_blocks": false,
           "fireAffectedByGriefing": true,
@@ -22,15 +22,15 @@
       }
     },
     "components": {
-     "minecraft:explode": {
-          "fuseLength": 2.5,
-          "fuseLit": true,
-          "power": 0,
-          "causesFire": true,
-          "breaks_blocks": false,
-          "fireAffectedByGriefing": true,
-          "destroyAffectedByGriefing": true
-        },
+      "minecraft:explode": {
+        "fuseLength": 2.5,
+        "fuseLit": true,
+        "power": 0,
+        "causesFire": true,
+        "breaks_blocks": false,
+        "fireAffectedByGriefing": true,
+        "destroyAffectedByGriefing": true
+      },
       "minecraft:collision_box": {
         "width": 0.18,
         "height": 0.18

@@ -37,7 +37,7 @@ export default class GlobalSettings extends GlobalScoreBoardCache {
         this.setBoolean("tpPointRecord", value);
     }
     get entityCleanerLeastNum() {
-        return this.getNumber("entityCleanerLeastNum") || 350;
+        return this.getNumber("entityCleanerLeastNum") || 200;
     }
     set entityCleanerLeastNum(value) {
         this.setNumber("entityCleanerLeastNum", value);

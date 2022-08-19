@@ -202,9 +202,9 @@ export default class ExClientEvents implements ExEventManager {
 
 						if(lastItem?.id!==nowItem?.id || i[0].selectedSlot !== lastItemCache?.[1]){
 							i[1].forEach((f) => {
-								f(new ItemOnHandChangeEvent(lastItem, nowItem,i[0]));
+								f(new ItemOnHandChangeEvent(lastItem, ExPlayer.getInstance(i[0]).getBag().getItemOnHand(),i[0]));
 							});
-
+							
 							this.onHandItemMap.set(i[0],[nowItem,i[0].selectedSlot]);
 						}
 					}

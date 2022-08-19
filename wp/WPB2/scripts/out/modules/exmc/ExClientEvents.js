@@ -175,7 +175,7 @@ export default class ExClientEvents {
                             let nowItem = ExPlayer.getInstance(i[0]).getBag().getItemOnHand();
                             if ((lastItem === null || lastItem === void 0 ? void 0 : lastItem.id) !== (nowItem === null || nowItem === void 0 ? void 0 : nowItem.id) || i[0].selectedSlot !== (lastItemCache === null || lastItemCache === void 0 ? void 0 : lastItemCache[1])) {
                                 i[1].forEach((f) => {
-                                    f(new ItemOnHandChangeEvent(lastItem, nowItem, i[0]));
+                                    f(new ItemOnHandChangeEvent(lastItem, ExPlayer.getInstance(i[0]).getBag().getItemOnHand(), i[0]));
                                 });
                                 this.onHandItemMap.set(i[0], [nowItem, i[0].selectedSlot]);
                             }
