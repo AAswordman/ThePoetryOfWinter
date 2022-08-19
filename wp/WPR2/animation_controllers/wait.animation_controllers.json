@@ -1,0 +1,161 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.wait.par": {
+      "states": {
+        "default": {
+          "particle_effects": [{
+            "effect": "flame"
+          }],
+          "animations": [
+            "par"
+          ]
+        }
+      }
+    },
+    "controller.animation.wait.base": {
+      "states": {
+        "default": {
+          "animations": [
+            "base"
+          ]
+        }
+      }
+    },
+    "controller.animation.wait.summon": {
+      "states": {
+        "default": {
+          "transitions": [{
+            "summon": "query.is_casting"
+          }]
+        },
+        "summon": {
+          "transitions": [{
+            "default": "!query.is_casting && query.all_animations_finished"
+          }],
+          "animations": [
+            "summon"
+          ]
+        }
+      }
+    },
+    "controller.animation.wait.roaring": {
+      "states": {
+        "default": {
+          "transitions": [{
+            "roaring": "query.is_roaring"
+          }]
+        },
+        "roaring": {
+          "transitions": [{
+            "default": "!query.is_roaring"
+          }],
+          "animations": [
+            "roaring"
+          ]
+        }
+      }
+    },
+    "controller.animation.wait.delayed_attacking": {
+      "states": {
+        "default": {
+          "blend_transition": 0.2,
+
+          "transitions": [{
+            "roaring": "query.is_delayed_attacking"
+          }]
+        },
+        "roaring": {
+          "blend_transition": 0.2,
+
+          "transitions": [{
+            "default": "!query.is_delayed_attacking && query.all_animations_finished"
+          }],
+          "animations": [
+            "delayed_attacking"
+          ]
+        }
+      }
+    },
+    "controller.animation.wait.charged": {
+      "states": {
+        "default": {
+          "animations": [
+            "basex"
+          ],
+          "transitions": [{
+            "charged": "query.is_charged"
+          }]
+        },
+        "charged": {
+          "transitions": [{
+            "default": "!query.is_charged && query.all_animations_finished"
+          }],
+          "animations": [
+            "charged"
+          ]
+        }
+      }
+    },
+    "controller.animation.wait.baby": {
+      "states": {
+        "default": {
+          "transitions": [{
+            "baby": "query.is_baby"
+          }]
+        },
+        "baby": {
+          "transitions": [{
+            "default": "!query.is_baby && query.all_animations_finished"
+          }],
+          "animations": [
+            "baby"
+          ]
+        }
+      }
+    },
+    "controller.animation.wait.attack": {
+      "states": {
+        "default": {
+          "animations": [
+            "attack"
+          ]
+        }
+      }
+    },
+    "controller.animation.wait.attackx": {
+      "states": {
+        "default": {
+          "transitions": [{
+            "attack": "variable.attack_time > 0"
+          }]
+        },
+        "attack": {
+          "transitions": [{
+            "default": "!variable.attack_time <= 0 && query.all_animations_finished"
+          }],
+          "animations": [
+            "attack"
+          ]
+        }
+      }
+    },
+    "controller.animation.wait.attacky": {
+      "states": {
+        "default": {
+          "transitions": [{
+            "attack": "variable.attack_animation_tick"
+          }]
+        },
+        "attack": {
+          "transitions": [{
+            "default": "!variable.attack_animation_tick && query.all_animations_finished"
+          }],
+          "animations": [
+            "attack"
+          ]
+        }
+      }
+    }
+  }
+}

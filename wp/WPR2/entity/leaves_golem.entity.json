@@ -14,9 +14,9 @@
       "scripts": {
         "animate": [
           "spawn",
-          {"roar" : "query.is_roaring > 0"},
+          "roar_ac",
           {"walk" : "query.modified_move_speed"},
-          {"attacking":"variable.attack_animation_tick > 0.0"},
+          "attacking_ac",
           "look_at_target"
         ]
       },
@@ -25,10 +25,12 @@
       },
       "animations": {
         "spawn": "animation.leaves_golem.spawn",
-        "roar": "animation.leaves_golem.roar",
+        "roaring": "animation.leaves_golem.roar",
+        "roar_ac": "controller.animation.wait.roaring",
         "look_at_target": "animation.common.look_at_target",
         "walk": "animation.leaves_golem.move",
-        "attacking": "animation.leaves_golem.attack"
+        "attack": "animation.leaves_golem.attack",
+        "attacking_ac": "controller.animation.wait.attacky"
       },
       "render_controllers": [ "controller.render.spider" ]
     }
