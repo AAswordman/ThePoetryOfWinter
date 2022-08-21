@@ -43,6 +43,7 @@ export default class PomServer extends ExGameServer {
                         return;
                     if (e.id === "minecraft:item" && e.viewVector.y !== 0)
                         return;
+                    //if (e.nameTag) return;
                     e.kill();
                 });
             }

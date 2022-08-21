@@ -12,6 +12,7 @@ import ExTransmissionMsg from "./ExTransmissionMsg.js";
 import ExClientEvents from "./ExClientEvents.js";
 import { world } from 'mojang-minecraft';
 import ExPlayer from "./entity/ExPlayer.js";
+import ExErrorStack from "./ExErrorStack.js";
 export default class ExGameClient {
     constructor(server, id, player) {
         this.debuggerChatTest = (e) => {
@@ -52,7 +53,12 @@ export default class ExGameClient {
         let func = () => {
             try {
                 this.player.runCommand(`testfor @s`);
-                this.onLoaded();
+                try {
+                    this.onLoaded();
+                }
+                catch (e) {
+                    ExErrorStack.throwError(e);
+                }
             }
             catch (e) {
                 this.setTimeout(func, 2000);

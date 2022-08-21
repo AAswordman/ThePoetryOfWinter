@@ -114,6 +114,23 @@
         }
       }
     },
+    "controller.animation.wait.move": {
+      "states": {
+        "default": {
+          "transitions": [{
+            "baby": "query.modified_move_speed"
+          }]
+        },
+        "baby": {
+          "transitions": [{
+            "default": "!query.modified_move_speed && query.all_animations_finished"
+          }],
+          "animations": [
+            "move"
+          ]
+        }
+      }
+    },
     "controller.animation.wait.attack": {
       "states": {
         "default": {
@@ -132,7 +149,7 @@
         },
         "attack": {
           "transitions": [{
-            "default": "!variable.attack_time <= 0 && query.all_animations_finished"
+            "default": "variable.attack_time <= 0 && query.all_animations_finished"
           }],
           "animations": [
             "attack"

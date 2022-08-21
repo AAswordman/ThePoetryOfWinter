@@ -31,9 +31,12 @@ export default class TagCache {
         }
     }
     save() {
-        this.manager.removeTag(this.tagFrom);
-        this.tagFrom = "__cache:" + Serialize.to(this.cache);
-        this.manager.addTag(this.tagFrom);
+        let nfrom = "__cache:" + Serialize.to(this.cache);
+        if (nfrom !== this.tagFrom) {
+            this.manager.removeTag(this.tagFrom);
+            this.manager.addTag(nfrom);
+            this.tagFrom = nfrom;
+        }
     }
 }
 //# sourceMappingURL=TagCache.js.map

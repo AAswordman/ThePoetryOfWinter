@@ -149,6 +149,23 @@
         }
       }
     },
+    "controller.animation.base.move": {
+      "states": {
+        "default": {
+          "transitions": [{
+            "baby": "query.modified_move_speed"
+          }]
+        },
+        "baby": {
+          "transitions": [{
+            "default": "!query.modified_move_speed"
+          }],
+          "animations": [
+            "move"
+          ]
+        }
+      }
+    },
     "controller.animation.base.attackx": {
       "states": {
         "default": {

@@ -2,7 +2,7 @@
 	"format_version": "1.8.0",
 	"animations": {
 		"animation.ancient_stone.chopping": {
-			"animation_length": 2.0,
+			"animation_length": 2,
 			"bones": {
 				"rightArm": {
 					"rotation": {
@@ -14,14 +14,35 @@
 				"rightArm2": {
 					"rotation": {
 						"0.1": [-10, 15, 0],
-						"1.4": [-10, 15, 0],
+						"1.4": [-45, 15, 0],
 						"1.9": [30, 15, 0]
+					}
+				},
+				"body": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"2.0": [0, 360, 0]
+					}
+				},
+				"ZHE": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"2.0": [0, -360, 0]
+					},
+					"position": [0, 3, 0]
+				},
+				"ALIFaNG": {
+					"rotation": [0, 0, 0],
+					"position": {
+						"0.0": [0, 0, 0],
+						"1.0": [0, -2, 0],
+						"2.0": [0, 0, 0]
 					}
 				}
 			}
 		},
 		"animation.ancient_stone.swordx": {
-			"animation_length": 4.0,
+			"animation_length": 4,
 			"bones": {
 				"rightArm": {
 					"rotation": {
@@ -37,11 +58,58 @@
 						"0.9": [0, 0, -5000],
 						"1.0": [0, 0, -10000]
 					}
+				},
+				"body": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"2.0": [0, 360, 0]
+					}
+				},
+				"rightArm2": {
+					"rotation": {
+						"0.3": [0, 0, 0],
+						"0.9": [-52.5, 0, 0]
+					},
+					"position": [0, 0, 0]
+				},
+				"ZHE": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"2.0": [0, -360, 0]
+					},
+					"position": [0, 3, 0]
+				},
+				"ALIFaNG": {
+					"rotation": [0, 0, 0],
+					"position": {
+						"0.0": [0, 0, 0],
+						"1.0": [0, -2, 0],
+						"2.0": [0, 0, 0]
+					}
+				},
+				"bone": {
+					"position": {
+						"0.0": [0, 0, 0],
+						"2.0": [4, 0, 0],
+						"4.0": [0, 0, 0]
+					}
+				},
+				"leftArm3": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.9": [0, 0, -25]
+					}
+				},
+				"leftArm4": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.9": [-17.5, 0, 5]
+					}
 				}
 			}
 		},
 		"animation.ancient_stone.sword": {
-			"animation_length": 3.0,
+			"animation_length": 3,
 			"bones": {
 				"rightArm": {
 					"rotation": {
@@ -56,7 +124,7 @@
 					"rotation": {
 						"0.0": [-20, 0, 0],
 						"1.0": [-20, 0, 0],
-						"1.1": [-10, 15, 0],
+						"1.1": [-43.64983, 42.51314, -27.38759],
 						"2.4": [-10, 15, 0],
 						"2.9": [30, 15, 0]
 					}
@@ -66,6 +134,27 @@
 						"0.0": [0, 0, 0],
 						"1.0": [1, 1, 1]
 					}
+				},
+				"body": {
+					"position": {
+						"0.0": [0, 0, 0],
+						"1.4": [0, -2, 0],
+						"3.0": [0, 0, 0]
+					}
+				},
+				"ZHE": {
+					"position": {
+						"0.0": [0, 0, 0],
+						"1.5": [0, -3, 0],
+						"3.0": [0, 0, 0]
+					}
+				},
+				"bone": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"3.0": [0, 0, 270]
+					},
+					"position": [0, 0, 0]
 				}
 			}
 		},
@@ -83,6 +172,16 @@
 						"0.01": [-60, 0, 0],
 						"0.4": [-20, 0, 0]
 					}
+				},
+				"body": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [0, -2.5, 0],
+						"0.39": [0, 0, 0]
+					}
+				},
+				"bone": {
+					"rotation": [0, 0, 0]
 				}
 			}
 		},
@@ -90,36 +189,31 @@
 			"loop": true,
 			"bones": {
 				"rightArm": {
-					"rotation": ["query.is_baby ? 0 : -25", 0, "query.is_baby ? 0 : 15"]
+					"rotation": ["query.is_baby ? 0 : -32.5", 0, "0+query.is_baby ? 0 : 15"]
 				},
 				"rightArm2": {
-					"rotation": ["query.is_baby ? 0 : -15", 0, "query.is_baby ? 0 : -40"]
+					"rotation": ["query.is_baby ? 0 : -98.8895", 41.07469, "query.is_baby ? 0 : -86.0952"]
+				},
+				"head": {
+					"rotation": [0, 7.5, 0]
+				},
+				"body": {
+					"rotation": [0, -2.5, 0]
+				},
+				"leftArm3": {
+					"rotation": [7.47178, 0.65182, -4.95744]
+				},
+				"leftArm4": {
+					"rotation": [-20, 0, 0]
 				}
 			}
 		},
 		"animation.ancient_stone.spell": {
 			"loop": true,
 			"bones": {
-				"leftArm": {
-					"rotation": [-55, 35, 20]
-				},
 				"leftArm1": {
-					"rotation": [10,0,-80]
+					"rotation": [10, 0, -80]
 				}
-				/*
-				"leftArma": {
-					"rotation": [-55, 35, 20]
-				},
-				"leftArm1a": {
-					"rotation": ["10+query.target_x_rotation", 0, "query.target_y_rotation-80"]
-				},
-				"leftArmb": {
-					"rotation": [-55, 35, 20]
-				},
-				"leftArm1b": {
-					"rotation": [10,0,-80]
-				}
-				*/
 			}
 		}
 	}

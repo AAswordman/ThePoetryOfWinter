@@ -12,5 +12,5 @@ export default class PomData implements SerializeAble {
         point: <[string, string, Vector3][]>[]
     };
 
-    lang!: "en"|"zh";
+    lang?: "en" | "zh";
 }

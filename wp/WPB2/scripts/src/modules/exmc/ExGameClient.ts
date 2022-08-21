@@ -6,6 +6,7 @@ import { ChatEvent, Dimension, Player, TickEvent, world } from 'mojang-minecraft
 import ExPlayer from "./entity/ExPlayer.js";
 import SetTimeOutSupport from "./interface/SetTimeOutSupport.js";
 import ExDimension from "./ExDimension.js";
+import ExErrorStack from "./ExErrorStack.js";
 
 export default class ExGameClient implements SetTimeOutSupport {
 	private _events: ExClientEvents;
@@ -59,7 +60,11 @@ export default class ExGameClient implements SetTimeOutSupport {
 		let func = () => {
 			try {
 				this.player.runCommand(`testfor @s`);
-				this.onLoaded();
+				try {
+					this.onLoaded();
+				} catch (e) {
+					ExErrorStack.throwError(e);
+				}
 			} catch (e) {
 				this.setTimeout(func, 2000);
 			}

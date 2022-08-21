@@ -137,8 +137,8 @@ export default function menuFunctionUI(lang) {
                         ].concat(MenuUIAlert.getLabelViews(`
 名字排序为随机排序
 
-主要制作者   - LiLeyi   AAswordsman
-提供部分内容与技术支持   -  
+Main creator:   - LiLeyi   AAswordsman
+Assistants:  -  
 EnderghostScale     haveyouwantto
 huo鱼一只            AR_UnryAllenCN
 世心                 論娘
@@ -151,12 +151,13 @@ SpiffyTerror         悸动天使
 Lone114514            Mr.龙灵
 Hanyi寒翼             鸥吃鱼
 某不知名的琦玉        Him1025(kALE)
-WINDes
+WINDes              ALiFang ZHE
+屑屑猹               灵言
 
-感谢支持团队
-竹翼团队      无上蓝痕工作室
+Our Team
+竹翼团队     无上蓝痕(BlueMark Studio)
 
-感谢宣传者
+Special Thanks
 BunBun不是笨笨    在矿里的小金呀
 `.split("\n")));
                     }
@@ -221,6 +222,20 @@ You understand and agree that:
                 "QA": {
                     "text": "Q & A",
                     "page": [
+                        {
+                            "type": "padding"
+                        },
+                        {
+                            "type": "text_title",
+                            "msg": lang.menuUIMsgBailan103
+                        },
+                        {
+                            "type": "padding"
+                        },
+                        {
+                            "type": "text",
+                            "msg": lang.menuUIMsgBailan104
+                        },
                         {
                             "type": "padding"
                         },
@@ -385,7 +400,7 @@ You understand and agree that:
                             for (let i of client.data.talent.talents) {
                                 arr.push({
                                     "type": point > 0 && i.level < 40 ? "textAndAddButton" : "textAndNoButton",
-                                    "msg": Talent.getCharacter(client.getLang(), i.id) + ":" + i.level + "\n" + (function () {
+                                    "msg": Talent.getCharacter(client.getLang(), i.id) + ": " + i.level + "\n" + (function () {
                                         let useChr = "";
                                         let a = Math.floor(i.level / 4);
                                         let b = i.level % 4;

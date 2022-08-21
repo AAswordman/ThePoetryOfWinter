@@ -4,11 +4,32 @@
     "controller.animation.headless_guard.base": {
       "states": {
         "default": {
-          "transitions":[{ "attack":"variable.attack_time>0" }]
+          "transitions": [{
+              "attack": "variable.attack_time>0"
+
+            },
+            {
+              "fly": "query.is_casting"
+            }
+          ]
         },
         "attack": {
-          "transitions":[{ "default":"variable.attack_time<=0" }],
-          "on_entry":["/summon wb:ball_headless_guard_a ~~~"]
+          "transitions": [{
+            "default": "variable.attack_time<=0"
+          }],
+          "on_entry": ["/summon wb:ball_headless_guard_a ~~~"]
+        },
+        "fly": {
+          "transitions": [{
+            "fly2": "!query.is_casting"
+          }],
+          "on_entry": ["/effect @s levitation 2 4 true"]
+        },
+        "fly2": {
+          "transitions": [{
+            "default": "(1.0)"
+          }],
+          "on_entry": ["@s attack_tp"]
         }
       }
     }

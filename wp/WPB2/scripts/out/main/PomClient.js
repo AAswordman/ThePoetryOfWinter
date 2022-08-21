@@ -31,6 +31,10 @@ export default class PomClient extends ExGameClient {
         this.addCtrller(this.talentSystem);
         this.addCtrller(this.itemUseFunc);
         this.gameControllers.forEach(controller => controller.onJoin());
+        if (!this.globalSettings.ownerExists) {
+            player.addTag("owner");
+            this.globalSettings.ownerExists = true;
+        }
     }
     addCtrller(system) {
         this.gameControllers.push(system);
@@ -40,8 +44,26 @@ export default class PomClient extends ExGameClient {
         return lang[(_a = this.data.lang) !== null && _a !== void 0 ? _a : "en"];
     }
     onLoaded() {
-        this.gameId = ExPlayer.getInstance(this.player).getScoresManager().getScore("wbldid");
+        let looper = new TimeLoopTask(this.getEvents(), () => {
+            this.gameId = ExPlayer.getInstance(this.player).getScoresManager().getScore("wbldid");
+            if (this.gameId !== 0)
+                looper.stop();
+        }).delay(1000);
+        looper.start();
         this.gameControllers.forEach(controller => controller.onLoaded());
+        if (!this.data.lang) {
+            try {
+                this.player.runCommand("mojang nmsl");
+            }
+            catch (e) {
+                if ((JSON.stringify(e)).indexOf("未知") !== -1) {
+                    this.data.lang = "zh";
+                }
+                else {
+                    this.data.lang = "en";
+                }
+            }
+        }
         if (this.player.hasTag("wbmsyh")) {
             this.player.nameTag = "§a" + this.player.nameTag;
         }
