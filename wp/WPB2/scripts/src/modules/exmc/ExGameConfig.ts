@@ -4,7 +4,7 @@ import GameConsole from './interface/GameConsole.js';
 
 export default class ExGameConfig{
 	static gameVersion = "1.9.20";
-	static addonVersion = "1.6.2";
+	static addonVersion = "1.6.3";
 	static debug = false;
 
 	static console: GameConsole;
