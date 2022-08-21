@@ -54,10 +54,11 @@ export default class PomServer extends ExGameServer {
 
 				ExGameConfig.console.log("最多实体数：" + max[0]);
 				ExGameConfig.console.log("最多实体数：" + max[1]);
-
+				
 				entities.forEach(e => {
 					if (!e || !e.id || e.id !== max[1]) return;
 					if (e.id === "minecraft:item" && e.viewVector.y !== 0) return;
+					//if (e.nameTag) return;
 					e.kill();
 				});
 			}

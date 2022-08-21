@@ -2,6 +2,7 @@ import GlobalScoreBoardCache from "../../modules/exmc/storage/cache/GlobalScoreB
 
 export default class GlobalSettings extends GlobalScoreBoardCache {
 	
+	
     public get playerCanTp(): boolean {
         return this.getBoolean("playerCanTp");
     }
@@ -38,6 +39,12 @@ export default class GlobalSettings extends GlobalScoreBoardCache {
     }
     public set tpPointRecord(value: boolean) {
         this.setBoolean("tpPointRecord", value);
+    }
+    public get ownerExists() {
+        return this.getBoolean("ownerExists");
+    }
+    public set ownerExists(value: boolean) {
+        this.setBoolean("ownerExists", value);
     }
     public get entityCleanerLeastNum() {
         return this.getNumber("entityCleanerLeastNum") || 200;
