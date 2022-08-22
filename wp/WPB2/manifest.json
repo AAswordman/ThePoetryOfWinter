@@ -1,18 +1,18 @@
 {
   "format_version": 1,
   "header": {
-    "description": "Explore the new World!!!Made by AA swordsman,LiLeyi and many their friends.Ver. 1.6.3",
+    "description": "Explore the new World!!!Made by AA swordsman,LiLeyi and many their friends.Ver. 1.6.31",
     "name": "The Peotry Of Winter",
     "uuid": "c2021c25-08e8-9ade-0916-6cd21931fac5",
     "version": [1, 6, 0],
     "min_engine_version": [1, 9, 0]
   },
   "modules": [{
-      "description": "Explore the new World!!!Made by AA swordsman,LiLeyi and many their friends.Ver. 1.6.3",
+      "description": "Explore the new World!!!Made by AA swordsman,LiLeyi and many their friends.Ver. 1.6.31",
       "type": "script",
       "uuid": "c2021c83-08e8-9ade-0916-6cd21931fac5",
       "version": [1, 6, 0],
-      "entry": "scripts/over/index.js"
+      "entry": "scripts/mix/index.js"
     },
     {
       "type": "data",
