@@ -13,6 +13,7 @@ import ExClientEvents from "./ExClientEvents.js";
 import { world } from 'mojang-minecraft';
 import ExPlayer from "./entity/ExPlayer.js";
 import ExErrorStack from "./ExErrorStack.js";
+import ExActionAlert from "./ui/ExActionAlert.js";
 export default class ExGameClient {
     constructor(server, id, player) {
         this.debuggerChatTest = (e) => {
@@ -37,6 +38,11 @@ export default class ExGameClient {
         for (let i of this.exPlayer.getTags()) {
             this.exPlayer.removeTag(i);
         }
+    }
+    debug_alert() {
+        new ExActionAlert().title("aaa").body("bbbb").button("alert", () => { })
+            .button("alert", () => { })
+            .show(this.player);
     }
     getDimension(type) {
         if (type !== undefined) {
