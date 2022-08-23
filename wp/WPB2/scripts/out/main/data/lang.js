@@ -184,7 +184,7 @@ export default {
         "menuUISubtitleBanben": "Version",
         "menuUIMsgBanben1": "Version Information",
         "menuUIMsgBanben2": "Basic information",
-        "menuUIMsgBanben3": "Addon's version: 1.6.311, more info about the addon: ",
+        "menuUIMsgBanben3": "Addon's version: 1.6.32, more info about the addon: ",
         "menuUIMsgBanben4": "Edition notice",
         "menuUIMsgBanben6": "Thanks list",
         "menuUIMsgBanben5": "Winter poetry may have a stuttering phenomenon, so we recommend that you first enter/tag @s add owner, then go to the menu settings to open the entity cleanup option.If you are worried that the important entity will be cleared, please don't open it.",
@@ -291,7 +291,7 @@ export default {
         "menuUIMsgBailan101": "Personal settings",
         "menuUIMsgBailan102": "language selection",
         "menuUIMsgBailan103": "How can I contact the creator?",
-        "menuUIMsgBailan104": "Twitter: @le_lyii or @EAT_YOUR_PANTS      (issues)Github: https://github.com/AAswordman/ThePoetryOfWinter"
+        "menuUIMsgBailan104": "Twitter: @le_lyii or @EAT_YOUR_PANTS     (issues)Github: https://github.com/AAswordman/ThePoetryOfWinter"
     }
 };
 //# sourceMappingURL=lang.js.map

@@ -7,6 +7,7 @@ import ExPlayer from "./entity/ExPlayer.js";
 import SetTimeOutSupport from "./interface/SetTimeOutSupport.js";
 import ExDimension from "./ExDimension.js";
 import ExErrorStack from "./ExErrorStack.js";
+import ExActionAlert from "./ui/ExActionAlert.js";
 
 export default class ExGameClient implements SetTimeOutSupport {
 	private _events: ExClientEvents;
@@ -25,6 +26,11 @@ export default class ExGameClient implements SetTimeOutSupport {
 		for (let i of this.exPlayer.getTags()) {
 			this.exPlayer.removeTag(i);
 		}
+	}
+	debug_alert() {
+		new ExActionAlert().title("aaa").body("bbbb").button("alert", () => { })
+			.button("alert", () => { })
+			.show(this.player);
 	}
 
 	constructor(server: ExGameServer, id: string, player: Player) {
