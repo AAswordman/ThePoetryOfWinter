@@ -413,7 +413,8 @@
                 "value": "fatal"
               },
               "event": "into"
-            }
+            },
+            "deals_damage": false
           },
           {
             "on_damage": {

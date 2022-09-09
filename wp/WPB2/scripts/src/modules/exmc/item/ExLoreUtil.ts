@@ -185,7 +185,7 @@ export default class LoreUtil implements ExLoreManager {
 		this.setValueUseDefault(key, new Array(num).fill(value).join(""));
 	}
 
-	*entrys(key?: string) {
+	*entries(key?: string) {
 		if (key) {
 			let tab = "  ";
 			let piece = this.search(key);

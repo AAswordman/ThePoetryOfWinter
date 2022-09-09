@@ -177,7 +177,8 @@
                 ]
               },
               "event": "minecraft:next"
-            }
+            },
+            "deals_damage": false
           }
         ]
       },
