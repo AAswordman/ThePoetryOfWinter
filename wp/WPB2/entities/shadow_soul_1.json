@@ -7,13 +7,11 @@
       "is_summonable": true,
       "is_experimental": false
     },
-    "component_groups": {
-    },
+    "component_groups": {},
 
     "components": {
       "minecraft:damage_sensor": {
-        "triggers": [
-          {
+        "triggers": [{
             "cause": "fall",
             "deals_damage": false
           },
@@ -23,8 +21,8 @@
                 "test": "is_family",
                 "subject": "other",
                 "value": "soul"
-                }
-              },
+              }
+            },
             "deals_damage": false
           }
         ]
@@ -45,14 +43,14 @@
       "minecraft:boss": {
         "should_darken_sky": false,
         "hud_range": 64,
-        "name":"boss.dec:shadow_soul.name"
+        "name": "boss.dec:shadow_soul.name"
       },
       "minecraft:collision_box": {
         "width": 0.6,
         "height": 1.8
       },
       "minecraft:type_family": {
-        "family": [ "soul", "shadow_soul", "monster", "boss", "mob" ]
+        "family": ["soul", "shadow_soul", "monster", "boss", "mob"]
       },
       "minecraft:breathable": {
         "totalSupply": 15,
@@ -75,14 +73,10 @@
         "avoid_sun": true,
         "avoid_water": true
       },
-      "minecraft:movement.basic": {
-      },
-      "minecraft:jump.static": {
-      },
-      "minecraft:can_climb": {
-      },
-      "minecraft:nameable": {
-      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
+      "minecraft:nameable": {},
 
       "minecraft:behavior.hurt_by_target": {
         "priority": 1,
@@ -99,8 +93,7 @@
       "minecraft:behavior.nearest_attackable_target": {
         "priority": 2,
         "reselect_targets": true,
-        "entity_types": [
-          {
+        "entity_types": [{
             "filters": {
               "test": "is_family",
               "subject": "other",
@@ -118,8 +111,7 @@
           },
           {
             "filters": {
-              "all_of": [
-                {
+              "all_of": [{
                   "test": "is_family",
                   "subject": "other",
                   "value": "baby_turtle"
@@ -152,8 +144,7 @@
       "minecraft:behavior.random_look_around": {
         "priority": 6
       },
-      "minecraft:physics": {
-      }
+      "minecraft:physics": {}
     },
 
     "events": {

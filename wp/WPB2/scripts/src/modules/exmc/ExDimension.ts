@@ -25,8 +25,7 @@ export default class ExDimension implements ExCommandRunner{
 		return this._dimension.getBlock(vec.getBlockLocation());
 	}
 	setBlock(vec:Vector3,blockId:string){
-		this.runCommand(`setBlock ${vec.x} ${vec.y} ${vec.z} ${blockId}`)
-		
+		this.runCommand(`setBlock ${vec.x} ${vec.y} ${vec.z} ${blockId}`);
 	}
 	spawnItem(item:ItemStack,v:Vector3){
 		this._dimension.spawnItem(item,v.getLocation());
