@@ -6,9 +6,6 @@ export default class MonitorMixer {
         this.paraLength = paraLength;
     }
     addMonitor(monitor: any) {
-        if (!(typeof monitor === "function")) {
-            throw new Error("Monitor isn't a function");
-        }
         if (this.paraLength != monitor.length) {
             throw new Error("Wrong parameter length");
         }

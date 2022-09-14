@@ -7,8 +7,8 @@ export default class ExColorLoreUtil extends LoreUtil {
     setValueUseMap(key, use, value) {
         super.setValueUseMap("§r§l§f" + key, "§r§o§b" + use, "§r§o§e" + value);
     }
-    *entrys(key) {
-        for (let i of super.entrys(key)) {
+    *entries(key) {
+        for (let i of super.entries(key)) {
             yield [i[0].startsWith("§") ? i[0].substring(6) : i[0], i[1].startsWith("§") ? i[1].substring(6) : i[1]];
         }
     }

@@ -16,9 +16,10 @@ export default class PomTalentSystem extends GameController{
 	skillLoop = new TimeLoopTask(this.getEvents(), () => {
 		if (this.data.talent.occupation.id === Occupation.ASSASSIN.id) this.strikeSkill = true;
 		if (this.data.talent.occupation.id === Occupation.PRIEST.id) {
-			let query = new EntityQueryOptions();
-			query.maxDistance = 20;
-			query.location = this.player.location;
+			let query:EntityQueryOptions = {
+				maxDistance : 20,
+				location : this.player.location
+			};
 			let health = 999;
 			let player: ExPlayer = this.exPlayer;
 			for (let p of this.player.dimension.getPlayers(query)) {

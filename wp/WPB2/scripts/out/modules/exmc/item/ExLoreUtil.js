@@ -160,7 +160,7 @@ export default class LoreUtil {
             throw new Error("Empty parameter");
         this.setValueUseDefault(key, new Array(num).fill(value).join(""));
     }
-    *entrys(key) {
+    *entries(key) {
         if (key) {
             let tab = "  ";
             let piece = this.search(key);
