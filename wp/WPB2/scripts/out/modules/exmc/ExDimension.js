@@ -2,10 +2,10 @@ export default class ExDimension {
     constructor(dimension) {
         this._dimension = dimension;
     }
-    getPlayers(entityQueryOptions = undefined) {
+    getPlayers(entityQueryOptions) {
         return this._dimension.getPlayers(entityQueryOptions);
     }
-    getEntities(entityQueryOptions = undefined) {
+    getEntities(entityQueryOptions) {
         let entities = this._dimension.getEntities(entityQueryOptions);
         let res = [];
         for (let entity of entities) {

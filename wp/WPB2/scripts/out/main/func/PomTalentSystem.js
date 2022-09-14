@@ -1,4 +1,3 @@
-import { EntityQueryOptions } from "mojang-minecraft";
 import ExEntity from "../../modules/exmc/entity/ExEntity.js";
 import ExPlayer from "../../modules/exmc/entity/ExPlayer.js";
 import ExColorLoreUtil from "../../modules/exmc/item/ExColorLoreUtil.js";
@@ -19,9 +18,10 @@ export default class PomTalentSystem extends GameController {
             if (this.data.talent.occupation.id === Occupation.ASSASSIN.id)
                 this.strikeSkill = true;
             if (this.data.talent.occupation.id === Occupation.PRIEST.id) {
-                let query = new EntityQueryOptions();
-                query.maxDistance = 20;
-                query.location = this.player.location;
+                let query = {
+                    maxDistance: 20,
+                    location: this.player.location
+                };
                 let health = 999;
                 let player = this.exPlayer;
                 for (let p of this.player.dimension.getPlayers(query)) {

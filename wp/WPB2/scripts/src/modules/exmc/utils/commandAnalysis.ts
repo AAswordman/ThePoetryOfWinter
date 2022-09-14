@@ -8,7 +8,7 @@ export default function(command:string) {
         command = command.substring(1, command.length);
     }
     let arr = command.split(" ");
-    let res = new Array();
+    let res = [];
 
     for (let i in arr) {
         let s = arr[i];
