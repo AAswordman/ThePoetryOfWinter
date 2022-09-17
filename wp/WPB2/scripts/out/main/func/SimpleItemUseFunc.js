@@ -1,11 +1,19 @@
-import { MinecraftEffectTypes } from "mojang-minecraft";
+import { MinecraftEffectTypes, MinecraftBlockTypes } from 'mojang-minecraft';
 import { ModalFormData } from "mojang-minecraft-ui";
+import ExDimension from '../../modules/exmc/ExDimension.js';
 import ExErrorStack from "../../modules/exmc/ExErrorStack.js";
+import Vector3 from '../../modules/exmc/utils/Vector3.js';
 import menuFunctionUI from "../data/menuFunctionUI.js";
 import MenuUIAlert from "../ui/MenuUIAlert.js";
 import GameController from "./GameController.js";
 export default class SimpleItemUseFunc extends GameController {
     onJoin() {
+        this.getEvents().exEvents.blockBreak.subscribe(e => {
+            var _a;
+            if ((e.brokenBlockPermutation.type.id === MinecraftBlockTypes.log.id || e.brokenBlockPermutation.type.id === MinecraftBlockTypes.log2.id) && ((_a = this.exPlayer.getBag().getItemOnHand()) === null || _a === void 0 ? void 0 : _a.id) === "wb:axex_equipment_a") {
+                this.chainDiggingLogs(new Vector3(e.block), true);
+            }
+        });
         this.getEvents().exEvents.itemUse.subscribe((e) => {
             const { item } = e;
             if (item.id == "wb:power") {
@@ -35,6 +43,16 @@ export default class SimpleItemUseFunc extends GameController {
                 this.player.dimension.spawnEntity("wb:ball_jet_pack", this.exPlayer.getPosition().sub(this.exPlayer.getViewVector().scl(2)).getLocation());
             }
         });
+    }
+    chainDiggingLogs(v, origin) {
+        const dim = ExDimension.getInstance(this.getDimension());
+        const id = ExDimension.getInstance(this.getDimension()).getBlock(v).id;
+        if (id === MinecraftBlockTypes.log.id || id === MinecraftBlockTypes.log2.id || origin) {
+            dim.digBlock(v);
+            this.chainDiggingLogs(v.add(0, 1, 0), false);
+            //this.chainDiggingLogs(v.sub(0,1,0).add(1,0,0),false);
+            //v.sub(0,1,0);
+        }
     }
     onLoaded() {
     }

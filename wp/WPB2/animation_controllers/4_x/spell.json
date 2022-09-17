@@ -24,7 +24,7 @@
         "default": {
           "on_entry":[
               "/summon minecraft:lightning_bolt ~ ~ ~",
-              "/execute @e[r=8] ~ ~ ~ summon minecraft:lightning_bolt ~ ~ ~",
+              "/execute as @e[r=8] at @s run summon minecraft:lightning_bolt ~ ~ ~",
               "/effect @e[r=8] blindness 8 255"
            ]
         }

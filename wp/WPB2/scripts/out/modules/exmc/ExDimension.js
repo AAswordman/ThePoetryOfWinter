@@ -26,6 +26,15 @@ export default class ExDimension {
             return false;
         }
     }
+    digBlock(vec) {
+        try {
+            this.runCommand(`setBlock ${vec.x} ${vec.y} ${vec.z} air 0 destroy`);
+            return true;
+        }
+        catch (e) {
+            return false;
+        }
+    }
     spawnItem(item, v) {
         this._dimension.spawnItem(item, v.getLocation());
     }

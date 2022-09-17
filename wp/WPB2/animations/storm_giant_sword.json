@@ -5,12 +5,12 @@
         "timeline": {
             "0.5": [
                 "/tag @s[scores={wbfl=3..}] add shot",
-                "/execute @s[scores={wbfl=3..}] ~ ~ ~ playsound item.book.put @a ~~~",
+                "/execute as @s[scores={wbfl=3..}] at @s run playsound item.book.put @a ~~~",
                 "/scoreboard players remove @s[scores={wbfl=3..}] wbfl 3"
             ],
             "1.5": [
                 "/tag @s[scores={wbfl=3..}] add shot",
-                "/execute @s[scores={wbfl=3..}] ~ ~ ~ playsound item.book.put @a ~~~",
+                "/execute as @s[scores={wbfl=3..}] at @s run playsound item.book.put @a ~~~",
                 "/scoreboard players remove @s[scores={wbfl=3..}] wbfl 3"
             ]
         }, 

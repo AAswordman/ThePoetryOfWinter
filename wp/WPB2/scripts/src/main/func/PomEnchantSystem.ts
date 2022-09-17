@@ -56,8 +56,8 @@ export default class PomEnChantSystem extends GameController{
 				let item = bag.getItemOnHand();
 				let saveItem = this.blockTranslateData.get(new Vector3(block).toString());
 				if (!saveItem) return ExBlock.getInstance(block).transTo("wb:block_translate");
-
-				if (item) {
+                
+				if (item && item.amount === 1) {
 					let exHandItem = ExItem.getInstance(item);
 					let exSaveItem = ExItem.getInstance(saveItem);
 					saveItem.data++;

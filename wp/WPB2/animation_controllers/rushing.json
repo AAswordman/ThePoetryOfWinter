@@ -10,7 +10,7 @@
             }
           ],
           "on_entry": [
-            "/execute @e[r=3,type=!dec:carnager] ~ ~ ~ effect @e[r=3,type=dec:carnager] speed 1 2 true"
+            "/execute as @e[r=3,type=!dec:carnager] at @s run effect @e[r=3,type=dec:carnager] speed 1 2 true"
           ]
         },
         "ticking": {
@@ -20,7 +20,7 @@
             }
           ],
           "on_entry": [
-            "/execute @e[r=3,type=!dec:carnager] ~ ~ ~ effect @e[r=3,type=dec:carnager] speed 1 2 true"
+            "/execute as @e[r=3,type=!dec:carnager] at @s run effect @e[r=3,type=dec:carnager] speed 1 2 true"
           ]
         }
       }
