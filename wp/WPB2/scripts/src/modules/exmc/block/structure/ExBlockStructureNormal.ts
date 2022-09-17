@@ -39,7 +39,7 @@ export default class ExBlockStructureNormal implements ExBlockStructure {
         if (this.area === undefined) throw new Error("area is undefined");
 
         const childArea = new ExBlockArea(new Vector3(),
-            new Vector3(this.structure.length, this.structure[0].length, this.structure[0][0].length));
+            new Vector3(this.structure[0][0].length, this.structure[0].length, this.structure.length));
         let tmpArea = childArea.clone();
         let res: undefined | ExBlockArea = undefined;
         if ((this.direction >> 0) & 1) {
@@ -148,7 +148,7 @@ export default class ExBlockStructureNormal implements ExBlockStructure {
                     const str = structure[vec.z][vec.y];
                     for (vec.x = 0; vec.x < str.length; vec.x++) {
                         const c = str.charAt(vec.x);
-                        
+
                         if (c == ' ') continue;
                         res.calculateRelPos(vec, tmpV).add(res.start);
 

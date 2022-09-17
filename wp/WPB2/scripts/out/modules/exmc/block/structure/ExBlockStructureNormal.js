@@ -19,7 +19,7 @@ export default class ExBlockStructureNormal {
             throw new Error("analysisMap is undefined");
         if (this.area === undefined)
             throw new Error("area is undefined");
-        const childArea = new ExBlockArea(new Vector3(), new Vector3(this.structure.length, this.structure[0].length, this.structure[0][0].length));
+        const childArea = new ExBlockArea(new Vector3(), new Vector3(this.structure[0][0].length, this.structure[0].length, this.structure.length));
         let tmpArea = childArea.clone();
         let res = undefined;
         if ((this.direction >> 0) & 1) {
