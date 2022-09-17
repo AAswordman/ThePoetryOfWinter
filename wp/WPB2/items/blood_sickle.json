@@ -104,7 +104,7 @@
                   "command": [
                     "tag @s add blood_sickle",
                     "effect @e[r=4,rm=2] wither 3 1",
-                    "execute @e[r=4,rm=2] ~ ~ ~ effect @a[scores={wbfl=1..},tag=blood_sickle,rm=2,r=4] regeneration 3 0",
+                    "execute as @e[r=4,rm=2] at @s run effect @a[scores={wbfl=1..},tag=blood_sickle,rm=2,r=4] regeneration 3 0",
                     "scoreboard players remove @s wbfl 1",
                     "tag @s remove blood_sickle"
                   ],

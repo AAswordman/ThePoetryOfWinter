@@ -4,10 +4,10 @@
         "animation.host_of_deep_track_attack": {
           "timeline": {
               "5": [
-                "/execute @a[m=!1,c=3,r=128] ~ ~ ~ summon evocation_fang ~~~"
+                "/execute as @a[m=!1,c=3,r=128] at @s run summon evocation_fang ~~~"
               ],
               "10": [
-                "/execute @a[m=!1,c=3,r=128] ~ ~ ~ summon evocation_fang ~~~"
+                "/execute as @a[m=!1,c=3,r=128] at @s run summon evocation_fang ~~~"
               ]
           }, 
           "animation_length": 10, 

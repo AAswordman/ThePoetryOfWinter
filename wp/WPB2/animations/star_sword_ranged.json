@@ -4,30 +4,30 @@
       "animation.star_sword_ranged": {
         "timeline": {
             "0.5": [
-                "/execute @s[scores={wbfl=15..}] ~ ~ ~ particle dec:fire_powering_particle ~~0.5~",
-                "/execute @s[scores={wbfl=15..}] ~ ~ ~ playsound fire.fire @a ~~~ 0.3"
+                "/execute as @s[scores={wbfl=15..}] at @s run particle dec:fire_powering_particle ~~0.5~",
+                "/execute as @s[scores={wbfl=15..}] at @s run playsound fire.fire @a ~~~ 0.3"
             ],
             "1": [
-                "/execute @s[scores={wbfl=15..}] ~ ~ ~ particle dec:fire_powering_particle ~~0.5~",
-                "/execute @s[scores={wbfl=15..}] ~ ~ ~ playsound fire.fire @a ~~~ 0.5"
+                "/execute as @s[scores={wbfl=15..}] at @s run particle dec:fire_powering_particle ~~0.5~",
+                "/execute as @s[scores={wbfl=15..}] at @s run playsound fire.fire @a ~~~ 0.5"
             ],
             "1.5": [
-                "/execute @s[scores={wbfl=15..}] ~ ~ ~ particle dec:fire_powering_particle ~~0.5~",
-                "/execute @s[scores={wbfl=15..}] ~ ~ ~ playsound fire.fire @a ~~~ 0.7"
+                "/execute as @s[scores={wbfl=15..}] at @s run particle dec:fire_powering_particle ~~0.5~",
+                "/execute as @s[scores={wbfl=15..}] at @s run playsound fire.fire @a ~~~ 0.7"
             ],
             "2": [
-                "/execute @s[scores={wbfl=15..}] ~ ~ ~ particle dec:fire_powering_particle ~~0.5~",
-                "/execute @s[scores={wbfl=15..}] ~ ~ ~ playsound fire.fire @a ~~~ 1"
+                "/execute as @s[scores={wbfl=15..}] at @s run particle dec:fire_powering_particle ~~0.5~",
+                "/execute as @s[scores={wbfl=15..}] at @s run playsound fire.fire @a ~~~ 1"
             ],
             "2.5": [
-                "/execute @s[scores={wbfl=15..}] ~ ~ ~ particle dec:fire_powering_particle ~~0.5~",
-                "/execute @s[scores={wbfl=15..}] ~ ~ ~ playsound fire.fire @a ~~~ 1.2"
+                "/execute as @s[scores={wbfl=15..}] at @s run particle dec:fire_powering_particle ~~0.5~",
+                "/execute as @s[scores={wbfl=15..}] at @s run playsound fire.fire @a ~~~ 1.2"
             ],
             "2.99995": [
-                "/execute @s[scores={wbfl=15..}] ~ ~ ~ particle dec:fire_powering_particle ~~0.5~",
+                "/execute as @s[scores={wbfl=15..}] at @s run particle dec:fire_powering_particle ~~0.5~",
                 "/tag @s[scores={wbfl=15..}] add shot",
-                "/execute @s[scores={wbfl=15..}] ~ ~ ~ playsound fire.fire @a ~~~ 1.4",
-                "/execute @s[scores={wbfl=15..}] ~ ~ ~ playsound mob.blaze.shoot @a ~~~",
+                "/execute as @s[scores={wbfl=15..}] at @s run playsound fire.fire @a ~~~ 1.4",
+                "/execute as @s[scores={wbfl=15..}] at @s run playsound mob.blaze.shoot @a ~~~",
                 "/scoreboard players remove @s[scores={wbfl=15..}] wbfl 15"
             ]
         }, 

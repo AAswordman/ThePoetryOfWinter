@@ -5,11 +5,11 @@
         "timeline": {
             "1.5": [
                 "/scoreboard players add @s[scores={wbfl=..29}] wbfl 1",
-                "/execute @s[scores={wbfl=..29}] ~ ~ ~ particle dec:amethyst_armor_magic_increase_particle ~~~"
+                "/execute as @s[scores={wbfl=..29}] at @s run particle dec:amethyst_armor_magic_increase_particle ~~~"
             ],
             "0.5": [
                 "/scoreboard players add @s[scores={wbfl=..29}] wbfl 1",
-                "/execute @s[scores={wbfl=..29}] ~ ~ ~ particle dec:amethyst_armor_magic_increase_particle ~~~"
+                "/execute as @s[scores={wbfl=..29}] at @s run particle dec:amethyst_armor_magic_increase_particle ~~~"
             ]
         }, 
         "animation_length": 2, 

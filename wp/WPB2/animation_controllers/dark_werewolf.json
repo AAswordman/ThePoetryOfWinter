@@ -24,9 +24,9 @@
             }
           ],
           "on_entry": [
-            "/execute @a[r=3] ~ ~ ~ effect @e[family=werewolf,family=monster,r=20] regeneration 5 0",
-            "/execute @a[r=3] ~ ~ ~ effect @e[family=radiate,family=monster,r=20] resistance 5 2",
-            "/execute @a[r=3] ~ ~ ~ effect @e[family=radiate,family=monster,r=5] resistance 5 3"
+            "/execute as @a[r=3] at @s run effect @e[family=werewolf,family=monster,r=20] regeneration 5 0",
+            "/execute as @a[r=3] at @s run effect @e[family=radiate,family=monster,r=20] resistance 5 2",
+            "/execute as @a[r=3] at @s run effect @e[family=radiate,family=monster,r=5] resistance 5 3"
           ]
         }
       }

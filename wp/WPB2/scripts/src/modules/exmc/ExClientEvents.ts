@@ -1,6 +1,7 @@
 import ExGameClient from "./ExGameClient.js";
 import {
 	BeforeItemUseOnEvent,
+	BlockBreakEvent,
 	ChatEvent,
 	ItemUseEvent,
 	ItemUseOnEvent,
@@ -221,7 +222,19 @@ export default class ExClientEvents implements ExEventManager {
 				this._unsubscribe("onLongTick", callback);
 			},
 			pattern: this._registerToServerByServerEvent
-		}
+		},
+        blockBreak:{
+            subscribe: (callback: (arg: BlockBreakEvent) => void) => {
+				this._subscribe("blockBreak", callback);
+			},
+			unsubscribe: (callback: (arg: BlockBreakEvent) => void) => {
+				this._unsubscribe("blockBreak", callback);
+			},
+			pattern: this._registerToServerByEntity,
+            filter: {
+				"name": "player"
+			}
+        }
 	}
 	onHandItemMap!: Map<Player, [ItemStack | undefined,number]>;
 	onceItemUseOnMap!: Map<Entity, [TickDelayTask, boolean]>;

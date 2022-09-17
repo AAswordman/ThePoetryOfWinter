@@ -192,6 +192,18 @@ export default class ExClientEvents {
                     this._unsubscribe("onLongTick", callback);
                 },
                 pattern: this._registerToServerByServerEvent
+            },
+            blockBreak: {
+                subscribe: (callback) => {
+                    this._subscribe("blockBreak", callback);
+                },
+                unsubscribe: (callback) => {
+                    this._unsubscribe("blockBreak", callback);
+                },
+                pattern: this._registerToServerByEntity,
+                filter: {
+                    "name": "player"
+                }
             }
         };
         this._client = client;

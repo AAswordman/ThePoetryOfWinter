@@ -22,12 +22,12 @@
 								"tp @e[tag=wbboss,x=~+36,z=~-40,dz=81,y=190,dy=21,dx=4] ~ ~ ~",
 								"tp @e[tag=wbboss,x=~-40,dx=81,z=~-40,y=190,dy=21,dz=4] ~ ~ ~",
 								"tp @e[tag=wbboss,x=~-40,dx=81,z=~+36,y=190,dy=21,dz=4] ~ ~ ~",
-								"execute @e[tag=wbboss,x=~-40,z=~-40,dx=81,dz=81,y=205,dy=6] ~ ~ ~ tp @s ~ ~-4 ~",
+								"execute as @e[tag=wbboss,x=~-40,z=~-40,dx=81,dz=81,y=205,dy=6] at @s run tp @s ~ ~-4 ~",
 								"tp @a[x=~-40,z=~-40,dz=81,y=190,dy=21,dx=4] ~ ~ ~",
 								"tp @a[x=~+36,z=~-40,dz=81,y=190,dy=21,dx=4] ~ ~ ~",
 								"tp @a[x=~-40,dx=81,z=~-40,y=190,dy=21,dz=4] ~ ~ ~",
 								"tp @a[x=~-40,dx=81,z=~+36,y=190,dy=21,dz=4] ~ ~ ~",
-								"execute @a[x=~-40,z=~-40,dx=81,dz=81,y=205,dy=6] ~ ~ ~ tp @s ~ ~-4 ~",
+								"execute as @a[x=~-40,z=~-40,dx=81,dz=81,y=205,dy=6] at @s run tp @s ~ ~-4 ~",
 								"tp @a[tag=wbdie] ~ ~-58 ~"
 							]
 						}

@@ -11,39 +11,39 @@
           "/tag @s remove wbldcza"
         ],
         "4.0": [
-          "/execute @s[tag=!wbldkza] ~ ~ ~ tag @s remove wbldkzb",
-          "/execute @s[tag=!wbldcza] ~ ~ ~ tag @s remove wbldczb",
-          "/execute @s[tag=wbldkzc,tag=!wbldkzb,tag=wbldbq,m=adventure] ~ ~ ~ gamemode survival @s",
-          "/execute @s[tag=wbldkzc,tag=!wbldkzb,tag=wbldbq,m=adventure] ~ ~ ~ tag @s remove wbldbq",
-          "/execute @s[tag=wbldkzc,tag=!wbldkzb] ~ ~ ~ tag @s remove wbldkzc",
+          "/execute as @s[tag=!wbldkza] at @s run tag @s remove wbldkzb",
+          "/execute as @s[tag=!wbldcza] at @s run tag @s remove wbldczb",
+          "/execute as @s[tag=wbldkzc,tag=!wbldkzb,tag=wbldbq,m=adventure] at @s run gamemode survival @s",
+          "/execute as @s[tag=wbldkzc,tag=!wbldkzb,tag=wbldbq,m=adventure] at @s run tag @s remove wbldbq",
+          "/execute as @s[tag=wbldkzc,tag=!wbldkzb] at @s run tag @s remove wbldkzc",
           "/scoreboard players add @s wbdjjf 1",
-          "/execute @s[tag=wbdjeff] ~ ~ ~ function grade/effect",
-          "/execute @s[lm=30] ~ ~ ~ scoreboard players add @s wbdjjf 1",
-          "/execute @s[lm=80] ~ ~ ~ scoreboard players add @s wbdjjf 1",
-          "/execute @s[lm=200] ~ ~ ~ scoreboard players add @s wbdjjf 1",
-          "/execute @s[tag=!wbyzc] ~ ~ ~ scoreboard players add @s wbef 0",
-          "/execute @s[tag=!wbyzc] ~ ~ ~ scoreboard players set @s wbdj 0",
-          "/execute @s[tag=!wbyzc] ~ ~ ~ scoreboard players set @s wbdjcg 0",
-          "/execute @s[tag=!wbyzc] ~ ~ ~ scoreboard players set @s wbdjjf 0",
-          "/execute @s[tag=!wbyzc] ~ ~ ~ give @s wb:power 1 0 {\"minecraft:keep_on_death\":{}}",
-          "/execute @s[tag=!wbyzc] ~ ~ ~ scoreboard players set @s wbcsjs -1",
-          "/execute @s[tag=!wbyzc] ~ ~ ~ scoreboard players set @s wbnldx 0",
-          "/execute @s[tag=!wbyzc] ~ ~ ~ scoreboard players random @s wbldid 1000000 99999999",
-          "/execute @s[tag=!wbyzc] ~ ~ ~ scoreboard players set @s wbldpd 0",
-          "/execute @s[tag=!wbyzc] ~ ~ ~ scoreboard players set @s wbldcg 0",
-          "/execute @s[tag=!wbyzc] ~ ~ ~ scoreboard players set @s wbptbt 0",
-          "/execute @s[tag=!wbyzc] ~ ~ ~ scoreboard players set @s wbdwcg -1",
-          "/execute @s[tag=!wbyzc] ~ ~ ~ scoreboard players set @s wbdwgs 0",
-          "/execute @s[tag=!wbyzc] ~ ~ ~ scoreboard players set @s wbdwqz 0",
-          "/execute @s[tag=!wbyzc] ~ ~ ~ scoreboard players set @s wbfl 200",
-          "/execute @s[tag=!wbyzc] ~ ~ ~ scoreboard players set @s wbwqlq 0",
-          "/execute @s[tag=!wbyzc] ~ ~ ~ scoreboard players set @s wbkjlqcg 0",
-          "/execute @s[tag=!wbyzc] ~ ~ ~ scoreboard players set @s wbnjqbf -1",
-          "/execute @s[tag=!wbyzc] ~ ~ ~ scoreboard players set @s wbnjqzj 0",
-          "/execute @s[tag=!wbyzc] ~ ~ ~ give @s wb:start_key 1 0 {\"minecraft:keep_on_death\":{}}",
+          "/execute as @s[tag=wbdjeff] at @s run function grade/effect",
+          "/execute as @s[lm=30] at @s run scoreboard players add @s wbdjjf 1",
+          "/execute as @s[lm=80] at @s run scoreboard players add @s wbdjjf 1",
+          "/execute as @s[lm=200] at @s run scoreboard players add @s wbdjjf 1",
+          "/execute as @s[tag=!wbyzc] at @s run scoreboard players add @s wbef 0",
+          "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbdj 0",
+          "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbdjcg 0",
+          "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbdjjf 0",
+          "/execute as @s[tag=!wbyzc] at @s run give @s wb:power 1 0 {\"minecraft:keep_on_death\":{}}",
+          "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbcsjs -1",
+          "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbnldx 0",
+          "/execute as @s[tag=!wbyzc] at @s run scoreboard players random @s wbldid 1000000 99999999",
+          "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbldpd 0",
+          "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbldcg 0",
+          "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbptbt 0",
+          "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbdwcg -1",
+          "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbdwgs 0",
+          "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbdwqz 0",
+          "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbfl 200",
+          "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbwqlq 0",
+          "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbkjlqcg 0",
+          "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbnjqbf -1",
+          "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbnjqzj 0",
+          "/execute as @s[tag=!wbyzc] at @s run give @s wb:start_key 1 0 {\"minecraft:keep_on_death\":{}}",
           "/tag @s[scores={wbdj=-100..}] add wbyzc",
-          "/execute @s[tag=!wbgxa] ~ ~ ~ scoreboard players set @s wbkjlqjs 0",
-          "/execute @s[tag=!wbgxa] ~ ~ ~ scoreboard players set @s wbwqlqjs 0",
+          "/execute as @s[tag=!wbgxa] at @s run scoreboard players set @s wbkjlqjs 0",
+          "/execute as @s[tag=!wbgxa] at @s run scoreboard players set @s wbwqlqjs 0",
           "/tag @s[scores={wbwqlqjs=-1..}] add wbgxa",
           // 回蓝写gt了
           "/tag @s remove wbngxa",
@@ -56,10 +56,10 @@
     "animation.player.wb.order.normal": {
       "timeline": {
         "0.25": [
-          "/execute @s[scores={wbdjcg=101..}] ~ ~ ~ scoreboard players set @s wbdjcg 100",
-          "/execute @s[scores={wbfl=201..}] ~ ~ ~ scoreboard players set @s wbfl 200",
-          "/execute @s[tag=!wbflx,tag=!wbgjx] ~ ~ ~ function combat/combat1",
-          "/execute @s[tag=wbflx,tag=!wbgjx] ~ ~ ~ function magic/text3"
+          "/execute as @s[scores={wbdjcg=101..}] at @s run scoreboard players set @s wbdjcg 100",
+          "/execute as @s[scores={wbfl=201..}] at @s run scoreboard players set @s wbfl 200",
+          "/execute as @s[tag=!wbflx,tag=!wbgjx] at @s run function combat/combat1",
+          "/execute as @s[tag=wbflx,tag=!wbgjx] at @s run function magic/text3"
         ]
       },
       "animation_length": 0.5,
@@ -68,22 +68,22 @@
     "animation.player.wb.delivery": {
       "timeline": {
         "0.5": [
-          "/execute @s[scores={wbef=1..}] ~ ~ ~ scoreboard players remove @s wbef 1",
+          "/execute as @s[scores={wbef=1..}] at @s run scoreboard players remove @s wbef 1",
           "/scoreboard players operation @s wbldpd = @s wbldcg",
           "/scoreboard players operation @s wbldpd -= @s wbldid",
-          "/execute @s[m=survival,tag=wbldkzb,scores={wbldpd=!0}] ~ ~ ~ tag @s add wbldbq",
-          "/execute @s[m=survival,tag=wbldkzb,scores={wbldpd=!0}] ~ ~ ~ gamemode adventure @s",
+          "/execute as @s[m=survival,tag=wbldkzb,scores={wbldpd=!0}] at @s run tag @s add wbldbq",
+          "/execute as @s[m=survival,tag=wbldkzb,scores={wbldpd=!0}] at @s run gamemode adventure @s",
           //盔甲冷却写gt了
           "/function armor/skill_update",
           "/function player/die",
           "/tag @s remove wbnearboss",
-          "/execute @s[scores={wbnjqbf=-1}] ~ ~ ~ effect @s blindness 3 5 true",
-          "/execute @s[scores={wbnjqbf=-1}] ~ ~ ~ effect @s slowness 3 5 true",
-          "/execute @s[scores={wbnjqbf=-1}] ~ ~ ~ effect @s resistance 60 100 true",
-          "/execute @s[scores={wbnjqbf=-1},tag=!wbjcks] ~ ~ ~ titleraw @s subtitle {\"rawtext\":[{\"translate\":[\"enter.text.wb.text2\"]}]}",
-          "/execute @s[scores={wbnjqbf=-1},tag=!wbjcks] ~ ~ ~ titleraw @s title {\"rawtext\":[{\"translate\":\"enter.text.wb.text1\"}]}",
-          "/execute @s[scores={wbnjqbf=1..},tag=!wbstartkeyok] ~ ~ ~ scoreboard players set @s wbnjqzj 0",
-          "/execute @s[scores={wbnjqbf=1..},tag=!wbstartkeyok] ~ ~ ~ scoreboard players set @s wbnjqbf 0"
+          "/execute as @s[scores={wbnjqbf=-1}] at @s run effect @s blindness 3 5 true",
+          "/execute as @s[scores={wbnjqbf=-1}] at @s run effect @s slowness 3 5 true",
+          "/execute as @s[scores={wbnjqbf=-1}] at @s run effect @s resistance 60 100 true",
+          "/execute as @s[scores={wbnjqbf=-1},tag=!wbjcks] at @s run titleraw @s subtitle {\"rawtext\":[{\"translate\":[\"enter.text.wb.text2\"]}]}",
+          "/execute as @s[scores={wbnjqbf=-1},tag=!wbjcks] at @s run titleraw @s title {\"rawtext\":[{\"translate\":\"enter.text.wb.text1\"}]}",
+          "/execute as @s[scores={wbnjqbf=1..},tag=!wbstartkeyok] at @s run scoreboard players set @s wbnjqzj 0",
+          "/execute as @s[scores={wbnjqbf=1..},tag=!wbstartkeyok] at @s run scoreboard players set @s wbnjqbf 0"
         ]
       },
       "animation_length": 1,
@@ -92,10 +92,10 @@
     "animation.player.wb.order": {
       "timeline": {
         "0.1": [
-          "/execute @s[tag=prune] ~ ~ ~ particle wb:rune ~ ~ ~",
-          "/execute @s[tag=pflame] ~ ~ ~ particle wb:wbflame ~ ~ ~",
-          "/execute @s[tag=plove] ~ ~ ~ particle wb:love ~ ~ ~",
-          "/execute @s[tag=phalo] ~ ~ ~ particle wb:halo ~ ~ ~"
+          "/execute as @s[tag=prune] at @s run particle wb:rune ~ ~ ~",
+          "/execute as @s[tag=pflame] at @s run particle wb:wbflame ~ ~ ~",
+          "/execute as @s[tag=plove] at @s run particle wb:love ~ ~ ~",
+          "/execute as @s[tag=phalo] at @s run particle wb:halo ~ ~ ~"
         ]
       },
       "animation_length": 0.13,
@@ -104,11 +104,11 @@
     "animation.player.wb.longorder": {
       "timeline": {
         "5": [
-          "/execute @s[scores={wbdwgs=!0}] ~ ~ ~ scoreboard players operation @s wbdwqz = @a[scores={wbdwcg=0}] wbjqzj",
-          "/execute @s[scores={wbdwgs=!0}] ~ ~ ~ scoreboard players operation @s wbdwqz = @a[scores={wbdwcg=0}] wbjqbf",
-          "/execute @s[scores={wbdwgs=!0}] ~ ~ ~ scoreboard players operation @s wbdwqz = @a[scores={wbdwcg=0}] wbdwqz",
-          "/execute @e[type=minecraft:item,r=8] ~ ~ ~ detect ~ ~-1 ~ wb:waste_recovery -1 summon wb:item_waste_recovery ~ ~+1 ~",
-          "/execute @e[type=minecraft:item,r=8] ~ ~ ~ detect ~ ~-1 ~ wb:waste_recovery -1 kill @s"
+          "/execute as @s[scores={wbdwgs=!0}] at @s run scoreboard players operation @s wbdwqz = @a[scores={wbdwcg=0}] wbjqzj",
+          "/execute as @s[scores={wbdwgs=!0}] at @s run scoreboard players operation @s wbdwqz = @a[scores={wbdwcg=0}] wbjqbf",
+          "/execute as @s[scores={wbdwgs=!0}] at @s run scoreboard players operation @s wbdwqz = @a[scores={wbdwcg=0}] wbdwqz",
+          "/execute as @e[type=minecraft:item,r=8] at @s if block ~ ~-1 ~ wb:waste_recovery -1 run summon wb:item_waste_recovery ~ ~+1 ~",
+          "/execute as @e[type=minecraft:item,r=8] at @s if block ~ ~-1 ~ wb:waste_recovery -1 run kill @s"
         ]
       },
       "animation_length": 10,

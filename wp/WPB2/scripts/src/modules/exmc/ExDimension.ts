@@ -33,6 +33,14 @@ export default class ExDimension implements ExCommandRunner {
             return false;
         }
 	}
+    digBlock(vec: Vector3) {
+        try {
+            this.runCommand(`setBlock ${vec.x} ${vec.y} ${vec.z} air 0 destroy`);
+            return true;
+        }catch (e) {
+            return false;
+        }
+	}
     spawnItem(item: ItemStack, v: Vector3) {
         this._dimension.spawnItem(item, v.getLocation());
     }
