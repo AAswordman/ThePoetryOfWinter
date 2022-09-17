@@ -12,7 +12,7 @@
       "type": "script",
       "uuid": "c2021c83-08e8-9ade-0916-6cd21931fac5",
       "version": [1, 6, 0],
-      "entry": "scripts/mix/index.js"
+      "entry": "scripts/out/index.js"
     },
     {
       "type": "data",
