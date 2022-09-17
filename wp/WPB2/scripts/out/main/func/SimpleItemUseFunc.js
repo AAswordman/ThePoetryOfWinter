@@ -32,7 +32,7 @@ export default class SimpleItemUseFunc extends GameController {
             if (e.item.id === "wb:jet_pack") {
                 this.player.addEffect(MinecraftEffectTypes.levitation, 7, 15, false);
                 this.player.addEffect(MinecraftEffectTypes.slowFalling, 150, 3, false);
-                this.player.dimension.spawnEntity("wb:ball_jet_pack", this.exPlayer.getPosition().sub(this.exPlayer.getViewVector().mul(2)).getLocation());
+                this.player.dimension.spawnEntity("wb:ball_jet_pack", this.exPlayer.getPosition().sub(this.exPlayer.getViewVector().scl(2)).getLocation());
             }
         });
     }

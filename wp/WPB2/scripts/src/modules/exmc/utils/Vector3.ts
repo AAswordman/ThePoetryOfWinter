@@ -38,7 +38,7 @@ export default class Vector3 {
                 this.z = z;
             }
         } else {
-            this.add(x.x, x.y, x.z);
+            this.set(x.x, x.y, x.z);
         }
         return this;
     }
@@ -131,6 +131,12 @@ export default class Vector3 {
         this.x = Math.ceil(this.x);
         this.y = Math.ceil(this.y);
         this.z = Math.ceil(this.z);
+        return this;
+    }
+    public abs() {
+        this.x = Math.abs(this.x);
+        this.y = Math.abs(this.y);
+        this.z = Math.abs(this.z);
         return this;
     }
 

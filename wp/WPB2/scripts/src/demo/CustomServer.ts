@@ -6,6 +6,7 @@ import CustomClient from "./CustomClient.js";
 export default class CustomServer extends ExGameServer{
     constructor(){
         super();
+        
     }
 
     override newClient(id: string, player: Player): ExGameClient {
