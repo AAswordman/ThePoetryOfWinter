@@ -85,7 +85,7 @@
         }
       },
       "minecraft:durability": {
-        "max_durability": 2000
+        "max_durability": 140
       },
       "minecraft:creative_category": {
         "parent": "itemGroup.name.sword"
