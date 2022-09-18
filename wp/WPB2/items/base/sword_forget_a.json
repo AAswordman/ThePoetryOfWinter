@@ -7,6 +7,14 @@
     },
     "components": {
       "minecraft:weapon": {
+        "on_hurt_entity": {
+          "event": "attack",
+          "target": "self"
+        },
+        "on_hit_block": {
+          "event": "attack",
+          "target": "self"
+        }
       },
       "minecraft:creative_category": {
 				"parent": "itemGroup.name.sword"
@@ -24,8 +32,8 @@
       },
       "minecraft:can_destroy_in_creative": false,
       "minecraft:damage": 3,
-      "minecraft:damageable": {
-        "max_damage": 2000
+      "minecraft:durability": {
+        "max_durability": 140
       },
       "minecraft:digger": {
         "destroy_speeds": [
@@ -110,6 +118,14 @@
           }
         }
       }
+    },
+    "events": {
+        "attack": {
+            "damage": {
+                "type": "magic",
+                "amount": 1
+            }
+        }
     }
   }
 }
