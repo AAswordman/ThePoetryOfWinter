@@ -6,6 +6,16 @@ export default class Vector3 {
     private _tempLocation?: Location;
     private _tempBlockLocation?: BlockLocation;
 
+    public static readonly down = new Vector3(0, -1, 0);
+    public static readonly forward = new Vector3(0, 0, 1);
+    public static readonly back = new Vector3(0, 0, -1);
+    public static readonly left = new Vector3(-1, 0, 0);
+    public static readonly one = new Vector3(1, 1, 1);
+    public static readonly right = new Vector3(1, 0, 0);
+    public static readonly up = new Vector3(0, 1, 0);
+    public static readonly zero = new Vector3(0, 0, 0);
+
+
     constructor()
     constructor(v: IVector3)
     constructor(x: number, y: number, z: number)
@@ -139,8 +149,6 @@ export default class Vector3 {
         this.z = Math.abs(this.z);
         return this;
     }
-
-    private static _tempA = new Vector3(0, 0, 0);
 
     public mul(n: IVector3): number;
     public mul(n: Matrix4): Vector3;

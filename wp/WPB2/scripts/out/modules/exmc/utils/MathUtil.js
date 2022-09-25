@@ -1,4 +1,7 @@
 export default class MathUtil {
+    static IEEEremainder(dividend, divisor) {
+        return dividend - (divisor * Math.round(dividend / divisor));
+    }
     static isNumber(val) {
         var regPos = /^\d+(\.\d+)?$/; //非负浮点数
         var regNeg = /^(-(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*)))$/;

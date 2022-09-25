@@ -169,5 +169,12 @@ export default class Vector3 {
         }
     }
 }
-Vector3._tempA = new Vector3(0, 0, 0);
+Vector3.down = new Vector3(0, -1, 0);
+Vector3.forward = new Vector3(0, 0, 1);
+Vector3.back = new Vector3(0, 0, -1);
+Vector3.left = new Vector3(-1, 0, 0);
+Vector3.one = new Vector3(1, 1, 1);
+Vector3.right = new Vector3(1, 0, 0);
+Vector3.up = new Vector3(0, 1, 0);
+Vector3.zero = new Vector3(0, 0, 0);
 //# sourceMappingURL=Vector3.js.map
