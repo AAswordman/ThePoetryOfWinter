@@ -1,1 +1,105 @@
-class t{static IEEEremainder(t,s){return t-s*Math.round(t/s)}static isNumber(t){return/^\d+(\.\d+)?$/.test(t)&&/^(-(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*)))$/.test(t)}static zeroIfNaN(t){return isNaN(t)?0:t}}class s{constructor(t){this.seed=(t||Date.now())%999999999}next(){return this.seed=(9301*this.seed+49297)%233280,this.seed/233280}nextDouble(){return this.next()}nextLong(){return Math.floor(this.nextDouble()*s.MAX_VALUE)}nextInt(){return Math.floor(this.nextDouble()*s.MAX_VALUE)}}s.MAX_VALUE=Math.pow(2,32)-1;const i=new class{constructor(t){this.P=8,this.B=1<<this.P,this.M=this.B-1,this.NP=8,this.N=1<<this.NP,this.p=new Array(this.B+this.B+2),this.g2=new Array(this.B+this.B+2).fill(new Array(2)),this.g1=new Array(this.B+this.B+2),this.points=new Array(32).fill(new Array(3)),this.seed=null!=t?t:100,this.init()}lerp(t,s,i){return s+t*(i-s)}s_curve(t){return t*t*(3-t-t)}noise(s,i,h){if(void 0!==i&&void 0!==h){let e,r,o,n,a,l,p,M,u,f,b,B,c,g,d,x,E,m,w,A,v,N,D,_;return e=0|t.IEEEremainder(Math.floor(s),this.B),e<0&&(e+=this.B),f=s-Math.floor(s),b=f-1,r=0|t.IEEEremainder(Math.floor(i),this.B),r<0&&(r+=this.B),B=i-Math.floor(i),c=B-1,o=0|t.IEEEremainder(Math.floor(h),this.B),o<0&&(o+=this.B),g=h-Math.floor(h),(e<0||e>=this.B+this.B+2)&&console.log("unknown"+e),n=this.p[e],e++,a=this.p[e],l=this.p[n+r],p=this.p[a+r],r++,M=this.p[n+r],u=this.p[a+r],d=this.s_curve(f),x=this.s_curve(B),E=this.s_curve(g),_=this.G(l+o),N=f*_[0]+B*_[1]+g*_[2],_=this.G(p+o),D=b*_[0]+B*_[1]+g*_[2],m=this.lerp(d,N,D),_=this.G(M+o),N=f*_[0]+c*_[1]+g*_[2],_=this.G(u+o),D=b*_[0]+c*_[1]+g*_[2],w=this.lerp(d,N,D),A=this.lerp(x,m,w),o++,g--,_=this.G(l+o),N=f*_[0]+B*_[1]+g*_[2],_=this.G(p+o),D=b*_[0]+B*_[1]+g*_[2],m=this.lerp(d,N,D),_=this.G(M+o),N=f*_[0]+c*_[1]+g*_[2],_=this.G(u+o),D=b*_[0]+c*_[1]+g*_[2],w=this.lerp(d,N,D),v=this.lerp(x,m,w),this.lerp(E,A,v)}if(void 0!==i&&void 0===h){let t,h,e,r,o,n,a,l,p,M,u,f,b,B,c,g,d,x,E,m,w,A;return d=s+this.N,t=(0|d)&this.M,h=t+1&this.M,p=d-(0|d),M=p-1,d=i+this.N,e=(0|d)&this.M,r=e+1&this.M,u=d-(0|d),f=u-1,w=this.p[t],A=this.p[h],o=this.p[w+e],n=this.p[A+e],a=this.p[w+r],l=this.p[A+r],b=this.s_curve(p),B=this.s_curve(u),m=this.g2[o],x=p*m[0]+u*m[1],m=this.g2[n],E=M*m[0]+u*m[1],c=this.lerp(b,x,E),m=this.g2[a],x=p*m[0]+f*m[1],m=this.g2[l],E=M*m[0]+f*m[1],g=this.lerp(b,x,E),this.lerp(B,c,g)}{let t,i,h,e,r,o,n,a;return o=s+this.N,t=(0|o)&this.M,i=t+1&this.M,h=o-(0|o),e=h-1,r=this.s_curve(h),n=h*this.g1[this.p[t]],a=e*this.g1[this.p[i]],this.lerp(r,n,a)}}G(t){return this.points[t%32]}init(){let t,i,h,e,r,o,n,a,l,p,M,u=new s(this.seed);for(t=0;t<this.B;t++){this.p[t]=t,this.g1[t]=2*u.nextDouble()-1;do{e=2*u.nextDouble()-1,r=2*u.nextDouble()-1}while(e*e+r*r>1||Math.abs(e)>2.5*Math.abs(r)||Math.abs(r)>2.5*Math.abs(e)||Math.abs(Math.abs(e)-Math.abs(r))<.4);this.g2[t][0]=e,this.g2[t][1]=r,this.normalize2(this.g2[t]);do{e=2*u.nextDouble()-1,r=2*u.nextDouble()-1,o=2*u.nextDouble()-1,n=Math.abs(e),a=Math.abs(r),l=Math.abs(o),M=Math.min(n,Math.min(a,l)),p=Math.max(n,Math.max(a,l))}while(e*e+r*r+o*o>1||p>4*M||Math.min(Math.abs(n-a),Math.min(Math.abs(n-l),Math.abs(a-l)))<.2)}for(;--t>0;)h=this.p[t],i=0|u.nextLong()&this.M,this.p[t]=this.p[i],this.p[i]=h;for(t=0;t<this.B+2;t++)for(this.p[this.B+t]=this.p[t],this.g1[this.B+t]=this.g1[t],i=0;i<2;i++)this.g2[this.B+t][i]=this.g2[t][i];this.points[3][0]=this.points[3][1]=this.points[3][2]=Math.sqrt(1/3);let f=Math.sqrt(.5),b=Math.sqrt(2+f+f);for(t=0;t<3;t++)for(i=0;i<3;i++)this.points[t][i]=(t==i?1+f+f:f)/b;for(t=0;t<=1;t++)for(i=0;i<=1;i++)for(h=0;h<=1;h++){let s=t+2*i+4*h;if(s>0)for(let e=0;e<4;e++)this.points[4*s+e][0]=(0==t?1:-1)*this.points[e][0],this.points[4*s+e][1]=(0==i?1:-1)*this.points[e][1],this.points[4*s+e][2]=(0==h?1:-1)*this.points[e][2]}}normalize2(t){let s;s=Math.sqrt(t[0]*t[0]+t[1]*t[1]),t[0]=t[0]/s,t[1]=t[1]/s}}(12362);for(let t=0;t<100;t++)for(let s=0;s<100;s++)console.log(20+Math.floor(100*i.noise(t/40,s/40)));
+class t {
+    constructor(t) {
+        this.seed = (t || Date.now()) % 999999999
+    }
+    next() {
+        return this.seed = (9301 * this.seed + 49297) % 233280, this.seed / 233280
+    }
+    nextDouble() {
+        return this.next()
+    }
+    nextLong() {
+        return Math.floor(this.nextDouble() * t.MAX_VALUE)
+    }
+    nextInt(e = t.MAX_VALUE) {
+        return Math.floor(this.nextDouble() * e)
+    }
+}
+t.MAX_VALUE = Math.pow(2, 32) - 1;
+class e {
+    constructor(t, e) {
+        "number" == typeof t && "number" == typeof e ? (this.x = t, this.y = e) : void 0 === t && void 0 === e ? (this.x = 0, this.y = 0) : (this.x = t.x, this.y = t.y)
+    }
+    set(t, e) {
+        return "number" == typeof t ? "number" == typeof e && (this.x = t, this.y = e) : this.set(t.x, t.y), this
+    }
+    add(t, e) {
+        return "number" == typeof t ? "number" == typeof e && (this.x += t, this.y += e) : this.add(t.x, t.y), this
+    }
+    sub(t, e) {
+        return "number" == typeof t ? "number" == typeof e && (this.x -= t, this.y -= e) : this.sub(t.x, t.y), this
+    }
+    scl(t, e, r) {
+        return "number" == typeof t ? "number" == typeof e && "number" == typeof r ? (this.x *= t, this.y *= e) : void 0 === e && void 0 === r && (this.x *= t, this.y *= t) : this.sub(t.x, t.y), this
+    }
+    div(t) {
+        return this.x /= t, this.y /= t, this
+    }
+    len() {
+        return Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2))
+    }
+    len2() {
+        return Math.pow(this.x, 2) + Math.pow(this.y, 2)
+    }
+    equals(t) {
+        return this.x === t.x && this.y === t.y
+    }
+    distance(t) {
+        return this.clone().sub(t).len()
+    }
+    toString() {
+        return `(${this.x}, ${this.y})`
+    } [Symbol.toStringTag]() {
+        return this.toString()
+    }
+    floor() {
+        return this.x = Math.floor(this.x), this.y = Math.floor(this.y), this
+    }
+    round() {
+        return this.x = Math.round(this.x), this.y = Math.round(this.y), this
+    }
+    ceil() {
+        return this.x = Math.ceil(this.x), this.y = Math.ceil(this.y), this
+    }
+    abs() {
+        return this.x = Math.abs(this.x), this.y = Math.abs(this.y), this
+    }
+    mul(t) {
+        return t.x * this.x + t.y * this.y
+    }
+    clone() {
+        return new e(this.x, this.y)
+    }
+}
+e.back = new e(0, -1), e.forward = new e(0, 1), e.left = new e(-1, 0), e.one = new e(1, 1), e.right = new e(1, 0), e.zero = new e(0, 0);
+const r = Array.from(new Array(32), (() => new Array(32).fill(0)));
+let s = 64,
+    h = new t(623546),
+    i = (t, e) => {
+        try {
+            return r[e][t]
+        } catch (t) {
+            return 3
+        }
+    };
+for (r[15][15] = 4, r[15][16] = 4, r[16][15] = 4, r[16][16] = 4; s > 0;) r[h.nextInt(32)][h.nextInt(32)] = 1, s--;
+let n = [
+    [new e, e.forward]
+];
+r[1][0] = 0;
+let o = new e;
+for (; n.length > 0;) {
+    let t = [];
+    t = [];
+    for (let s of n)
+        if (o.set(s[0]).add(s[1]), !(0 !== i(o.x, o.y) || (s[1] !== e.right && s[1] !== e.left || 2 === i(o.x, o.y + 1) && 2 === i(o.x - 1, o.y + 1) || 2 === i(o.x, o.y + 1) && 2 === i(o.x + 1, o.y + 1) || 2 === i(o.x, o.y - 1) && 2 === i(o.x - 1, o.y - 1) || 2 === i(o.x, o.y - 1) && 2 === i(o.x + 1, o.y - 1)) && (s[1] !== e.forward && s[1] !== e.back || 2 === i(o.x + 1, o.y + 1) && 2 === i(o.x + 1, o.y) || 2 === i(o.x + 1, o.y - 1) && 2 === i(o.x + 1, o.y) || 2 === i(o.x - 1, o.y + 1) && 2 === i(o.x - 1, o.y) || 2 === i(o.x - 1, o.y - 1) && 2 === i(o.x - 1, o.y)))) {
+            r[o.y][o.x] = 2;
+            let s = n.length < 30 ? 4 : Math.min(4, h.nextInt(6)),
+                i = [e.forward, e.back, e.left, e.right];
+            for (; s > 0;) {
+                let e = h.nextInt(i.length);
+                t.push([o.clone(), i[e]]), i.splice(e, 1), s--
+            }
+        } n = t
+}
+for (let t of r) console.log(JSON.stringify(t));

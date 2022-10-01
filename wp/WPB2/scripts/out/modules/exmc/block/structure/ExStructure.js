@@ -1,14 +1,15 @@
-import Vector2 from '../../utils/Vector2.js';
+import ExDimension from '../../ExDimension.js';
 export default class ExStructure {
-    constructor(id, pos, rotation = new Vector2()) {
+    constructor(id, pos, rotation = 0) {
         this.mirror = false;
         this.structureId = id;
         this.position = pos;
         this.rotation = rotation;
     }
     generate(dim) {
-        let rot = this.rotation.x;
-        dim.runCommand(`structure load ${this.structureId} ${this.position.x} ${this.position.y} ${this.position.z} ${Math.round(rot)}_degrees`);
+        let rot = this.rotation;
+        let exdim = ExDimension.getInstance(dim);
+        exdim.runCommandAsync(`structure load ${this.structureId} ${this.position.x} ${this.position.y} ${this.position.z} ${Math.round(rot)}_degrees`);
     }
 }
 //# sourceMappingURL=ExStructure.js.map
