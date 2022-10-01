@@ -22,14 +22,12 @@ export default class ExStructureJigsaw {
         return this.jigsawData[c][b][a] === undefined;
     }
 
-    setStructurePlane(x: number, z: number, offsetX: number, offsetY: number, offsetZ: number, structureName: string,
-        structureLength: number, structureWidth: number, structureHeight: number, structureRot = 0,
-        coverGridLength = 1, coverGridWidth = 1) {
-        this.setStructure(x, z, 0, offsetX, offsetY, offsetZ, structureName, structureLength, structureWidth, structureHeight,
-            structureRot, coverGridLength, coverGridWidth, 1);
+    setStructurePlane(x: number, z: number, offsetX: number, offsetY: number, offsetZ: number, structureName: string, structureRot = 0, mirrow = false
+        , coverGridLength = 1, coverGridWidth = 1) {
+        this.setStructure(x, z, 0, offsetX, offsetY, offsetZ, structureName,
+            structureRot, mirrow, coverGridLength, coverGridWidth, 1);
     }
-    setStructure(x: number, z: number, y: number, offsetX: number, offsetY: number, offsetZ: number, structureName: string,
-        structureLength: number, structureWidth: number, structureHeight: number, structureRot = 0,
+    setStructure(x: number, z: number, y: number, offsetX: number, offsetY: number, offsetZ: number, structureName: string, structureRot = 0, mirrow = false,
         coverGridLength = 1, coverGridWidth = 1, coverGridHeight = 1) {
         this.clearStructure(x, z, 0);
         for (let ix = x; ix < coverGridLength + x; ix++) {
@@ -50,8 +48,7 @@ export default class ExStructureJigsaw {
             }
         }
         this.jigsawData[y][z][x] = [offsetX, offsetY, offsetZ, structureName, structureRot,
-            structureLength, structureWidth, structureHeight,
-            coverGridLength, coverGridWidth, coverGridHeight];
+            mirrow, coverGridLength, coverGridWidth, coverGridHeight];
 
     }
 
@@ -66,9 +63,9 @@ export default class ExStructureJigsaw {
                 if (typeof (stc) === "number") {
                     throw new Error("Error clearing");
                 } else {
-                    for (let ix = 0; ix < stc[8]; ix++) {
-                        for (let iz = 0; iz < stc[9]; iz++) {
-                            for (let iy = 0; iy < stc[10]; iy++) {
+                    for (let ix = 0; ix < stc[6]; ix++) {
+                        for (let iz = 0; iz < stc[7]; iz++) {
+                            for (let iy = 0; iy < stc[8]; iy++) {
                                 this.jigsawData[iy + c][iz + b][ix + a] = undefined;
                             }
                         }
@@ -110,12 +107,15 @@ export default class ExStructureJigsaw {
         return this.size * this.height;
     }
 
-    generate(x: number, y: number, z: number, dim: Dimension) {
+    generate(wordlX: number, wordlY: number, wordlZ: number, dim: Dimension) {
         let structure = new ExStructure("", new Vector3(), 0);
-        this.jigsawData.forEach((arr0,y) => {
-            arr0.forEach((arr1,z) => {
-                arr1.forEach((arr2,x) => {
-                    
+        this.jigsawData.forEach((arr0, y) => {
+            arr0.forEach((arr1, z) => {
+                arr1.forEach((v, x) => {
+                    if (typeof v !== "number" && v !== undefined) {
+                        structure.position.set(wordlX + x * this.width, wordlY + y * this.height, wordlZ + z * this.width);
+                        structure.structureId = v[3];
+                    }
                 });
             });
         })
@@ -123,6 +123,6 @@ export default class ExStructureJigsaw {
 }
 
 /**
- * offsetX, offsetY, offsetZ,  structureName, structureRot, structureLength, structureWidth, structureHeight,coverGridLength, coverGridWidth, coverGridHeight
+ * offsetX, offsetY, offsetZ,  structureName, structureRot,mirrow,coverGridLength, coverGridWidth, coverGridHeight
  */
-export type ExStructureData = [number, number, number, string, number, number, number, number, number, number, number];
+export type ExStructureData = [number, number, number, string, number, boolean, number, number, number];
