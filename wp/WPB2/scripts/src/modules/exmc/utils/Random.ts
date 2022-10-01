@@ -15,7 +15,7 @@ export default class Random {
     nextLong() {
         return Math.floor(this.nextDouble() * Random.MAX_VALUE);
     }
-    nextInt() {
-        return Math.floor(this.nextDouble() * Random.MAX_VALUE);
+    nextInt(max = Random.MAX_VALUE) {
+        return Math.floor(this.nextDouble() * (max));
     }
 }

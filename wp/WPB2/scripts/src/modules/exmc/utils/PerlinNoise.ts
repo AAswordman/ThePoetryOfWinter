@@ -17,7 +17,7 @@ export default class PerlinNoise {
     //private final int NM = N-1;
 
     private p = new Array<number>(this.B + this.B + 2);
-    private g2 = new Array<number[]>(this.B + this.B + 2).fill(new Array<number>(2));
+    private g2 = Array.from(new Array<number[]>(this.B + this.B + 2),() => new Array<number>(2));
     private g1 = new Array<number>(this.B + this.B + 2);
     //private int start = 1;
     private points = new Array<number[]>(32).fill(new Array<number>(3));

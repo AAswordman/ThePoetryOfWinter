@@ -12,7 +12,7 @@ export default class PerlinNoise {
         this.N = 1 << this.NP;
         //private final int NM = N-1;
         this.p = new Array(this.B + this.B + 2);
-        this.g2 = new Array(this.B + this.B + 2).fill(new Array(2));
+        this.g2 = Array.from(new Array(this.B + this.B + 2), () => new Array(2));
         this.g1 = new Array(this.B + this.B + 2);
         //private int start = 1;
         this.points = new Array(32).fill(new Array(3));

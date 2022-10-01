@@ -18,13 +18,14 @@ export default class ExDimension {
         return this._dimension.getBlock(vec.getBlockLocation());
     }
     setBlock(vec, blockId) {
-        try {
-            this.runCommand(`setBlock ${vec.x} ${vec.y} ${vec.z} ${blockId}`);
-            return true;
-        }
-        catch (e) {
-            return false;
-        }
+        var _a;
+        if (typeof blockId === "string")
+            this.runCommandAsync(`setBlock ${vec.x} ${vec.y} ${vec.z} ${blockId}`);
+        else
+            (_a = this.getBlock(vec)) === null || _a === void 0 ? void 0 : _a.setType(blockId);
+    }
+    setBlockAsync(vec, blockId) {
+        this.runCommandAsync(`setBlock ${vec.x} ${vec.y} ${vec.z} ${blockId}`);
     }
     digBlock(vec) {
         try {
@@ -42,7 +43,7 @@ export default class ExDimension {
         return this._dimension.runCommand(str);
     }
     runCommandAsync(str) {
-        return this._dimension.runCommandAsync(str);
+        return this._dimension.runCommandAsync(str).then((e) => { });
     }
     static getInstance(source) {
         let dimension = source;
