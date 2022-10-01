@@ -10,10 +10,10 @@ export default class ExStructureJigsaw {
     isEmpty(a, b, c = 0) {
         return this.jigsawData[c][b][a] === undefined;
     }
-    setStructurePlane(x, z, offsetX, offsetY, offsetZ, structureName, structureLength, structureWidth, structureHeight, structureRot = 0, coverGridLength = 1, coverGridWidth = 1) {
-        this.setStructure(x, z, 0, offsetX, offsetY, offsetZ, structureName, structureLength, structureWidth, structureHeight, structureRot, coverGridLength, coverGridWidth, 1);
+    setStructurePlane(x, z, offsetX, offsetY, offsetZ, structureName, structureRot = 0, mirrow = false, coverGridLength = 1, coverGridWidth = 1) {
+        this.setStructure(x, z, 0, offsetX, offsetY, offsetZ, structureName, structureRot, mirrow, coverGridLength, coverGridWidth, 1);
     }
-    setStructure(x, z, y, offsetX, offsetY, offsetZ, structureName, structureLength, structureWidth, structureHeight, structureRot = 0, coverGridLength = 1, coverGridWidth = 1, coverGridHeight = 1) {
+    setStructure(x, z, y, offsetX, offsetY, offsetZ, structureName, structureRot = 0, mirrow = false, coverGridLength = 1, coverGridWidth = 1, coverGridHeight = 1) {
         this.clearStructure(x, z, 0);
         for (let ix = x; ix < coverGridLength + x; ix++) {
             for (let iz = z; iz < coverGridWidth + z; iz++) {
@@ -32,8 +32,7 @@ export default class ExStructureJigsaw {
             }
         }
         this.jigsawData[y][z][x] = [offsetX, offsetY, offsetZ, structureName, structureRot,
-            structureLength, structureWidth, structureHeight,
-            coverGridLength, coverGridWidth, coverGridHeight];
+            mirrow, coverGridLength, coverGridWidth, coverGridHeight];
     }
     clearStructure(a, b, c = 0) {
         const pos = this.findBaseStructure(a, b, c);
@@ -45,9 +44,9 @@ export default class ExStructureJigsaw {
                     throw new Error("Error clearing");
                 }
                 else {
-                    for (let ix = 0; ix < stc[8]; ix++) {
-                        for (let iz = 0; iz < stc[9]; iz++) {
-                            for (let iy = 0; iy < stc[10]; iy++) {
+                    for (let ix = 0; ix < stc[6]; ix++) {
+                        for (let iz = 0; iz < stc[7]; iz++) {
+                            for (let iy = 0; iy < stc[8]; iy++) {
                                 this.jigsawData[iy + c][iz + b][ix + a] = undefined;
                             }
                         }
@@ -85,11 +84,15 @@ export default class ExStructureJigsaw {
     getHeight() {
         return this.size * this.height;
     }
-    generate(x, y, z, dim) {
+    generate(wordlX, wordlY, wordlZ, dim) {
         let structure = new ExStructure("", new Vector3(), 0);
         this.jigsawData.forEach((arr0, y) => {
             arr0.forEach((arr1, z) => {
-                arr1.forEach((arr2, x) => {
+                arr1.forEach((v, x) => {
+                    if (typeof v !== "number" && v !== undefined) {
+                        structure.position.set(wordlX + x * this.width, wordlY + y * this.height, wordlZ + z * this.width);
+                        structure.structureId = v[3];
+                    }
                 });
             });
         });
