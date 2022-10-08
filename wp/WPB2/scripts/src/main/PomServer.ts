@@ -1,13 +1,13 @@
-import ExEntity from "../modules/exmc/entity/ExEntity.js";
-import ExGameConfig from "../modules/exmc/ExGameConfig.js";
-import ExGameServer from "../modules/exmc/ExGameServer.js";
-import ExTransmissionMsg from "../modules/exmc/ExTransmissionMsg.js";
-import PomClient from "./PomClient.js";
-import { Entity, EntityHitEvent, EntityHurtEvent, MinecraftDimensionTypes, MinecraftEntityTypes, Player, MinecraftItemTypes, Items } from 'mojang-minecraft';
-import GlobalSettings from './cache/GlobalSettings.js';
-import { Objective } from "../modules/exmc/entity/ExScoresManager.js";
+import { Entity, MinecraftDimensionTypes, MinecraftEntityTypes, Player } from "mojang-minecraft";
+import ExConfig from "../modules/exmc/ExConfig.js";
+import { Objective } from "../modules/exmc/server/entity/ExScoresManager.js";
+import ExDimension from "../modules/exmc/server/ExDimension.js";
+import ExGameConfig from "../modules/exmc/server/ExGameConfig.js";
+import ExGameServer from "../modules/exmc/server/ExGameServer.js";
 import TimeLoopTask from "../modules/exmc/utils/TimeLoopTask.js";
-import ExDimension from "../modules/exmc/ExDimension.js";
+import GlobalSettings from "./cache/GlobalSettings.js";
+import PomClient from "./PomClient.js";
+
 
 export default class PomServer extends ExGameServer {
 	setting;
@@ -20,8 +20,8 @@ export default class PomServer extends ExGameServer {
 	entityCleanerLeastNum!: number;
 	entityCleanerStrength!: number;
 	entityCleanerDelay!: number;
-	constructor() {
-		super();
+	constructor(config:ExConfig) {
+		super(config);
 		this.setting = new GlobalSettings(new Objective("wpsetting"));
 
 		(this.clearEntityNumUpdate = new TimeLoopTask(this.getEvents(), () => {

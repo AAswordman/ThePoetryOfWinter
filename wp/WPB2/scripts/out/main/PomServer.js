@@ -1,14 +1,14 @@
-import ExGameConfig from "../modules/exmc/ExGameConfig.js";
-import ExGameServer from "../modules/exmc/ExGameServer.js";
-import PomClient from "./PomClient.js";
-import { MinecraftDimensionTypes, MinecraftEntityTypes } from 'mojang-minecraft';
-import GlobalSettings from './cache/GlobalSettings.js';
-import { Objective } from "../modules/exmc/entity/ExScoresManager.js";
+import { MinecraftDimensionTypes, MinecraftEntityTypes } from "mojang-minecraft";
+import { Objective } from "../modules/exmc/server/entity/ExScoresManager.js";
+import ExDimension from "../modules/exmc/server/ExDimension.js";
+import ExGameConfig from "../modules/exmc/server/ExGameConfig.js";
+import ExGameServer from "../modules/exmc/server/ExGameServer.js";
 import TimeLoopTask from "../modules/exmc/utils/TimeLoopTask.js";
-import ExDimension from "../modules/exmc/ExDimension.js";
+import GlobalSettings from "./cache/GlobalSettings.js";
+import PomClient from "./PomClient.js";
 export default class PomServer extends ExGameServer {
-    constructor() {
-        super();
+    constructor(config) {
+        super(config);
         this.tps = 20;
         this._mtps = 20;
         this.setting = new GlobalSettings(new Objective("wpsetting"));

@@ -1,0 +1,26 @@
+{
+    "format_version": 1,
+    "header": {
+        "description": "Sound Pack!!!Made by AA swordsman.Ver. 1.6.33",
+        "name": "The Poetry Of Winter",
+        "uuid": "c2021c95-18e8-9ade-0916-6cd21931fac5",
+        "version": [1, 6, 0],
+        "min_engine_version": [1, 9, 0]
+    },
+    "modules": [{
+        "description": "Sound Pack!!!Made by AA swordsman.Ver. 1.6.33",
+        "type": "resources",
+        "uuid": "c2021c98-18e8-9ade-0916-6cd21931fac5",
+        "version": [1, 6, 0]
+    }],
+    "dependencies": [
+        {
+            "uuid": "c2021c25-08e8-9ade-0916-6cd21931fac5",
+            "version": [1, 6, 0]
+        },
+        {
+            "uuid": "c2021c95-08e8-9ade-0916-6cd21931fac5",
+            "version": [1, 6, 0]
+        }
+    ]
+}

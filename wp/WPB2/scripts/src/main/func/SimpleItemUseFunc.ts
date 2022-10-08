@@ -1,9 +1,9 @@
 import { MinecraftEffectTypes, MinecraftBlockTypes } from 'mojang-minecraft';
 import { ModalFormData } from "mojang-minecraft-ui";
-import ExDimension from '../../modules/exmc/ExDimension.js';
-import ExErrorStack from "../../modules/exmc/ExErrorStack.js";
-import ExGameConfig from '../../modules/exmc/ExGameConfig.js';
-import Vector3 from '../../modules/exmc/utils/Vector3.js';
+import Vector3 from '../../modules/exmc/math/Vector3.js';
+import ExDimension from '../../modules/exmc/server/ExDimension.js';
+import ExErrorStack from '../../modules/exmc/server/ExErrorStack.js';
+import ExGameVector3 from '../../modules/exmc/server/math/ExGameVector3.js';
 import menuFunctionUI from "../data/menuFunctionUI.js";
 import MenuUIAlert from "../ui/MenuUIAlert.js";
 import GameController from "./GameController.js";
@@ -46,7 +46,7 @@ export default class SimpleItemUseFunc extends GameController {
                 this.player.addEffect(MinecraftEffectTypes.levitation, 7, 15, false);
                 this.player.addEffect(MinecraftEffectTypes.slowFalling, 150, 3, false);
 
-                this.player.dimension.spawnEntity("wb:ball_jet_pack", this.exPlayer.getPosition().sub(this.exPlayer.getViewVector().scl(2)).getLocation())
+                this.player.dimension.spawnEntity("wb:ball_jet_pack", ExGameVector3.getBlockLocation(this.exPlayer.getPosition().sub(this.exPlayer.getViewVector().scl(2))))
             }
         });
     }

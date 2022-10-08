@@ -1,11 +1,9 @@
-import { system } from "mojang-minecraft";
 import CustomServer from "./demo/CustomServer.js";
-import ExGameConfig from './modules/exmc/ExGameConfig.js';
-ExGameConfig.addonVersion = "1.6.32";
-ExGameConfig.debug = true;
-system.events.beforeWatchdogTerminate.subscribe((e) => {
-    e.cancel = true;
-});
+import ExConfig from "./modules/exmc/ExConfig.js";
+let config = new ExConfig();
+config.addonVersion = "1.6.33";
+config.gameVersion = "1.9.30";
+config.watchDog = false;
 //let server=new PomServer();
-let server = new CustomServer();
+let server = new CustomServer(config);
 //# sourceMappingURL=index.js.map

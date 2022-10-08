@@ -1,10 +1,10 @@
 import { Dimension, PlayerIterator } from "mojang-minecraft";
-import ExGameServer from "../../modules/exmc/ExGameServer.js";
-import ExTransmissionMsg from "../../modules/exmc/ExTransmissionMsg.js";
+import ExGameServer from "../../modules/exmc/server/ExGameServer.js";
 import ExCommandRunner from "../../modules/exmc/interface/ExCommandRunner.js";
 import SetTimeOutSupport from "../../modules/exmc/interface/SetTimeOutSupport.js";
 import PomClient from '../PomClient.js';
-import ExGameConfig from '../../modules/exmc/ExGameConfig.js';
+import ExGameConfig from "../../modules/exmc/server/ExGameConfig.js";
+import ExTransmissionMsg from "../../modules/exmc/server/ExTransmissionMsg.js";
 
 export default abstract class GameController implements ExCommandRunner,SetTimeOutSupport{
     private _client: PomClient;
@@ -35,6 +35,9 @@ export default abstract class GameController implements ExCommandRunner,SetTimeO
     getDimension(type: string | undefined = undefined){
         return this._client.getDimension(type);
     }
+    getExDimension(type: string | undefined = undefined){
+        return this._client.getExDimension(type);
+    }
 	getPlayers(){
         return this._client.getPlayers();
     }
@@ -43,15 +46,6 @@ export default abstract class GameController implements ExCommandRunner,SetTimeO
 	abstract onLeave():void;
 	getEvents(){
         return this._client.getEvents();
-    }
-	receiveMessage(msg: ExTransmissionMsg<any>){
-        
-    }
-	postMessage(id: string, useType: number, msg: any){
-        this._client.postMessage(id,useType,msg);
-    }
-	runOnServer<T>(msg: (arg: ExGameServer) => T){
-        this._client.runOnServer(msg);
     }
     sayTo(str: string, p = this.player) {
 		this._client.sayTo(str, p);

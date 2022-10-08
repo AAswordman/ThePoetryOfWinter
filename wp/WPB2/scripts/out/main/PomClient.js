@@ -1,14 +1,14 @@
-import ExGameClient from "../modules/exmc/ExGameClient.js";
-import ExPlayer from "../modules/exmc/entity/ExPlayer.js";
-import GlobalSettings from "./cache/GlobalSettings.js";
-import { Objective } from "../modules/exmc/entity/ExScoresManager.js";
-import TagCache from "../modules/exmc/storage/cache/TagCache.js";
-import PomData from "./cache/PomData.js";
+import ExPlayer from "../modules/exmc/server/entity/ExPlayer.js";
+import { Objective } from "../modules/exmc/server/entity/ExScoresManager.js";
+import ExGameClient from "../modules/exmc/server/ExGameClient.js";
+import TagCache from "../modules/exmc/server/storage/cache/TagCache.js";
 import TimeLoopTask from "../modules/exmc/utils/TimeLoopTask.js";
+import GlobalSettings from "./cache/GlobalSettings.js";
+import PomData from "./cache/PomData.js";
 import lang from "./data/lang.js";
 import PomEnchantSystem from "./func/PomEnchantSystem.js";
-import PomTalentSystem from "./func/PomTalentSystem.js";
 import PomMagicSystem from "./func/PomMagicSystem.js";
+import PomTalentSystem from "./func/PomTalentSystem.js";
 import SimpleItemUseFunc from "./func/SimpleItemUseFunc.js";
 export default class PomClient extends ExGameClient {
     constructor(server, id, player) {
@@ -77,13 +77,11 @@ export default class PomClient extends ExGameClient {
         super.onLeave();
     }
     getPlayersAndIds() {
-        return this.runOnServer((server) => {
-            let arr = [];
-            for (let i of server.getClients()) {
-                arr.push([i.player, i.gameId]);
-            }
-            return arr;
-        });
+        let arr = [];
+        for (let i of this.getServer().getClients()) {
+            arr.push([i.player, i.gameId]);
+        }
+        return arr;
     }
     sayTo(str, p = this.player) {
         p.runCommand(`tellraw @s {"rawtext": [{"text": "${str}"}]}`);

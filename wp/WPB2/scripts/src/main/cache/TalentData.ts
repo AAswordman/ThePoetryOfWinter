@@ -1,11 +1,11 @@
-import ExGameConfig from "../../modules/exmc/ExGameConfig.js";
-import ExLoreManager from '../../modules/exmc/interface/ExLoreManager.js';
-import ExColorLoreUtil from "../../modules/exmc/item/ExColorLoreUtil.js";
-import LoreUtil from "../../modules/exmc/item/ExLoreUtil.js";
-import MathUtil from "../../modules/exmc/utils/MathUtil.js";
+
+import MathUtil from "../../modules/exmc/math/MathUtil.js";
 import { SerializeAble } from "../../modules/exmc/utils/Serialize.js";
 import { langType } from '../data/langType.js';
 import format from '../../modules/exmc/utils/format.js';
+import ExLoreManager from "../../modules/exmc/interface/ExLoreManager.js";
+import ExColorLoreUtil from "../../modules/exmc/server/item/ExColorLoreUtil.js";
+import LoreUtil from "../../modules/exmc/server/item/ExLoreUtil.js";
 export default class TalentData implements SerializeAble {
 	static getDescription(lang:langType, occupation: Occupation, id: number, level: number): string {
 		let s=TalentData.calculateTalent(occupation,id,level);

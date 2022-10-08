@@ -1,4 +1,4 @@
-import MathUtil from "./MathUtil.js";
+import MathUtil from "../math/MathUtil.js";
 import Random from "./Random.js";
 /**
  * Copyright 2001 Ken Perlin

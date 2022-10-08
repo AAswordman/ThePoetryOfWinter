@@ -7,14 +7,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import ExGameConfig from "../../modules/exmc/ExGameConfig.js";
-import ExPlayer from '../../modules/exmc/entity/ExPlayer.js';
 import MenuUIAlert from '../ui/MenuUIAlert.js';
-import ExMessageAlert from "../../modules/exmc/ui/ExMessageAlert.js";
+import ExMessageAlert from "../../modules/exmc/server/ui/ExMessageAlert.js";
 import TalentData, { Occupation, Talent } from "../cache/TalentData.js";
 import { ModalFormData } from "mojang-minecraft-ui";
-import ExErrorStack from "../../modules/exmc/ExErrorStack.js";
-import Vector3 from '../../modules/exmc/utils/Vector3.js';
+import Vector3 from '../../modules/exmc/math/Vector3.js';
+import ExPlayer from "../../modules/exmc/server/entity/ExPlayer.js";
+import ExErrorStack from "../../modules/exmc/server/ExErrorStack.js";
+import ExGameConfig from "../../modules/exmc/server/ExGameConfig.js";
 export default function menuFunctionUI(lang) {
     return {
         "main": {
@@ -100,7 +100,7 @@ export default function menuFunctionUI(lang) {
                             },
                             {
                                 "type": "text",
-                                "msg": ExGameConfig.addonVersion
+                                "msg": ExGameConfig.config.addonVersion
                             },
                             {
                                 "type": "text",
@@ -787,9 +787,7 @@ You understand and agree that:
                                     "state": (client, ui) => client.globalSettings.entityCleaner,
                                     "function": (client, ui) => {
                                         client.globalSettings.entityCleaner = !client.globalSettings.entityCleaner;
-                                        client.runOnServer((server) => {
-                                            server.upDateEntityCleaner();
-                                        });
+                                        client.getServer().upDateEntityCleaner();
                                         return true;
                                     }
                                 },

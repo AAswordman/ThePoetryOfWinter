@@ -1,4 +1,4 @@
-import MathUtil from "./MathUtil.js";
+import MathUtil from "../math/MathUtil.js";
 export default function (command) {
     if (!(typeof command === "string")) {
         throw new Error("Command is not the expected type");
