@@ -1,5 +1,6 @@
 import Random from "../modules/exmc/utils/Random.js";
-import Vector2 from "../modules/exmc/utils/Vector2.js";
+import Vector2 from "../modules/exmc/math/Vector2.js";
+import ExStructureJigsaw from "../modules/exmc/server/block/structure/ExStructureJigsaw.js";
 
 const maze = Array.from(new Array<number>(32), () => new Array<number>(32).fill(0));
 
@@ -9,7 +10,7 @@ let r = new Random(seed);
 const EMPTY = 0, BLOCK = 1, PATH = 2, UNDEF = 3, CENTER = 4;
 let getMsg = (x: number, y: number) => {
     try {
-         return maze[y][x] 
+        return maze[y][x]
     } catch (e) { return UNDEF; }
 }
 maze[15][15] = CENTER;
@@ -44,7 +45,7 @@ while (arrows.length > 0) {
                     !(getMsg(tempV.x - 1, tempV.y - 1) === PATH && getMsg(tempV.x - 1, tempV.y) === PATH))
             ) {
                 maze[tempV.y][tempV.x] = PATH;
-                let pointNum = arrows.length < 30 ? 4 : Math.min(4,r.nextInt(6));
+                let pointNum = arrows.length < 30 ? 4 : Math.min(4, r.nextInt(6));
                 let d = [Vector2.forward, Vector2.back, Vector2.left, Vector2.right];
                 while (pointNum > 0) {
                     let i = r.nextInt(d.length);
@@ -61,3 +62,79 @@ while (arrows.length > 0) {
 for (let e of maze) {
     console.log(JSON.stringify(e));
 }
+
+
+let jigsaw = new ExStructureJigsaw(16, 32);
+const structure_bossArea = "mystructure:boss_desert_1",
+    structure_straightLine = "mystructure:boss_desert_2",// |
+    structure_curve = "mystructure:boss_desert_3",// _|
+    structure_triple = "mystructure:boss_desert_4",//-|
+    structure_crossing = "mystructure:boss_desert_5",// +
+    structure_straightLineTower = "mystructure:boss_desert_6",//|
+    structure_towerBlock = "mystructure:boss_desert_7",// O
+    structure_block = "mystructure:boss_desert_8"; //O
+
+// jigsaw.setStructurePlane(15, 15, 0, 0, 0, structure_bossArea, 0);
+// jigsaw.setStructurePlane(16, 15, 0, 0, 0, structure_bossArea, 90);
+// jigsaw.setStructurePlane(16, 16, 0, 0, 0, structure_bossArea, 180);
+// jigsaw.setStructurePlane(15, 16, 0, 0, 0, structure_bossArea, 270);
+
+maze.forEach((v, y) => {
+    v.forEach((i, x) => {
+        if (i === BLOCK) {
+            jigsaw.setStructurePlane(x, y, 0, 0, 0, structure_block, r.nextInt(4) * 90);
+        } else if (i === EMPTY) {
+            jigsaw.setStructurePlane(x, y, 0, 0, 0, structure_block, r.nextInt(4) * 90);
+        } else if (i === PATH) {
+            let top = getMsg(x, y + 1) === PATH ? 0 : 1;
+            let bottom = getMsg(x, y - 1) === PATH ? 0 : 1;
+            let right = getMsg(x + 1, y) === PATH ? 0 : 1;
+            let left = getMsg(x - 1, y) === PATH ? 0 : 1;
+
+            let pathNum = top + left + right + bottom;
+            switch (pathNum) {
+                case 2:
+                    if (top + bottom === 2) {
+                        jigsaw.setStructurePlane(x, y, 0, 0, 0, structure_straightLine, 0);
+                    } else if (left + right === 2) {
+                        jigsaw.setStructurePlane(x, y, 0, 0, 0, structure_straightLine, 90);
+                    } else if (left === 1) {
+                        if (top === 1) {
+                            jigsaw.setStructurePlane(x, y, 0, 0, 0, structure_curve, 90);
+                        } else if (bottom === 1) {
+                            jigsaw.setStructurePlane(x, y, 0, 0, 0, structure_curve, 270);
+                        } else {
+                            throw new Error("num error");
+                        }
+                    } else if (right === 1) {
+                        if (top === 1) {
+                            jigsaw.setStructurePlane(x, y, 0, 0, 0, structure_curve, 0);
+                        } else if (bottom === 1) {
+                            jigsaw.setStructurePlane(x, y, 0, 0, 0, structure_curve, 180);
+                        } else {
+                            throw new Error("num error");
+                        }
+                    }
+                    break;
+                case 3:
+                    if (left === 0) {
+                        jigsaw.setStructurePlane(x, y, 0, 0, 0, structure_triple, 0);
+                    } else if (bottom === 0) {
+                        jigsaw.setStructurePlane(x, y, 0, 0, 0, structure_triple, 90);
+                    } else if (right === 0) {
+                        jigsaw.setStructurePlane(x, y, 0, 0, 0, structure_triple, 180);
+                    } else if (top === 0) {
+                        jigsaw.setStructurePlane(x, y, 0, 0, 0, structure_triple, 270);
+                    }
+                    break;
+                case 4:
+                    jigsaw.setStructurePlane(x, y, 0, 0, 0, structure_crossing, 0);
+                    break;
+                default:
+                    break;
+            }
+        }
+    });
+});
+
+//jigsaw.generate(0, 0, 0,dim);

@@ -1,15 +1,20 @@
 import { Player } from "mojang-minecraft";
-import ExGameClient from "../modules/exmc/ExGameClient.js";
-import ExGameServer from "../modules/exmc/ExGameServer.js";
+import ExConfig from "../modules/exmc/ExConfig.js";
+import ExGameClient from "../modules/exmc/server/ExGameClient.js";
+import ExGameServer from "../modules/exmc/server/ExGameServer.js";
 import CustomClient from "./CustomClient.js";
 
-export default class CustomServer extends ExGameServer{
-    constructor(){
-        super();
-        
+export default class CustomServer extends ExGameServer {
+    constructor(config: ExConfig) {
+        super(config);
+
+        this.getEvents().events.entityCreate.subscribe(e => {
+
+        });
+
     }
 
     override newClient(id: string, player: Player): ExGameClient {
-        return new CustomClient(this,id,player);
+        return new CustomClient(this, id, player);
     }
 }

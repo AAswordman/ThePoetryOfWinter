@@ -1,4 +1,4 @@
-import ExGameConfig from "../ExGameConfig.js";
+import ExGameConfig from '../server/ExGameConfig.js';
 
 export default function format(str: string, ...msg: unknown[]) {
     var formatted = str;

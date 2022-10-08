@@ -243,7 +243,7 @@
         "must_see_forget_duration": 64
       },
       "minecraft:attack": {
-        "damage": 65
+        "damage": 40
       },
       "minecraft:type_family": {
         "family": [
@@ -275,7 +275,7 @@
         "max": 1512
       },
       "minecraft:movement": {
-        "value": 0.32
+        "value": 0.27
       },
       "minecraft:behavior.float": {
         "priority": 0

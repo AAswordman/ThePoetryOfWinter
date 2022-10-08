@@ -1,8 +1,9 @@
 import { Items, ItemStack, MinecraftBlockTypes, MinecraftItemTypes } from "mojang-minecraft";
-import ExBlock from "../../modules/exmc/block/ExBlock.js";
-import ExColorLoreUtil from "../../modules/exmc/item/ExColorLoreUtil.js";
-import ExItem from "../../modules/exmc/item/ExItem.js";
-import Vector3 from "../../modules/exmc/utils/Vector3.js";
+import Vector3 from "../../modules/exmc/math/Vector3.js";
+import ExBlock from "../../modules/exmc/server/block/ExBlock.js";
+import ExColorLoreUtil from "../../modules/exmc/server/item/ExColorLoreUtil.js";
+import ExItem from "../../modules/exmc/server/item/ExItem.js";
+import ExGameVector3 from "../../modules/exmc/server/math/ExGameVector3.js";
 import GameController from "./GameController.js";
 
 export default class PomEnChantSystem extends GameController{
@@ -34,7 +35,7 @@ export default class PomEnChantSystem extends GameController{
         //附魔
 		this.getEvents().exEvents.onceItemUseOn.subscribe((e) => {
 			let pos = new Vector3(e.blockLocation);
-			let block = this.getDimension().getBlock(pos.getBlockLocation());
+			let block = this.getExDimension().getBlock(pos);
 			if (!block || block.id === MinecraftBlockTypes.air.id) return;
 			//ExGameConfig.console.log(block.id,e.item.id);
 			if (block.id === "wb:block_translate") {
@@ -88,7 +89,7 @@ export default class PomEnChantSystem extends GameController{
 					this.blockTranslateData.delete(new Vector3(block).toString());
 					ExBlock.getInstance(block).transTo("wb:block_translate");
 					bag.setItem(this.exPlayer.selectedSlot, item);
-					this.getDimension().spawnItem(exNewItem.getItem(), pos.getBlockLocation().above());
+					this.getDimension().spawnItem(exNewItem.getItem(), ExGameVector3.getBlockLocation(pos).above());
 				}
 			}
 		});

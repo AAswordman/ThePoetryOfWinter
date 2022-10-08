@@ -1,9 +1,9 @@
 import { EntityQueryOptions } from "mojang-minecraft";
-import ExEntity from "../../modules/exmc/entity/ExEntity.js";
-import ExPlayer from "../../modules/exmc/entity/ExPlayer.js";
-import ExColorLoreUtil from "../../modules/exmc/item/ExColorLoreUtil.js";
-import ExItem from "../../modules/exmc/item/ExItem.js";
-import MathUtil from "../../modules/exmc/utils/MathUtil.js";
+import MathUtil from "../../modules/exmc/math/MathUtil.js";
+import ExEntity from "../../modules/exmc/server/entity/ExEntity.js";
+import ExPlayer from "../../modules/exmc/server/entity/ExPlayer.js";
+import ExColorLoreUtil from "../../modules/exmc/server/item/ExColorLoreUtil.js";
+import ExItem from "../../modules/exmc/server/item/ExItem.js";
 import TimeLoopTask from "../../modules/exmc/utils/TimeLoopTask.js";
 import { decodeUnicode } from "../../modules/exmc/utils/Unicode.js";
 import TalentData, { Occupation, Talent } from "../cache/TalentData.js";

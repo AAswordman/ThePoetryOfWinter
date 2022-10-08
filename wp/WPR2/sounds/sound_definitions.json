@@ -36,11 +36,32 @@
       "sounds/wb/anger_of_ancient"
     ]
   },
-  "music.wb.unknow_world": {
+  "music.wb.unknown_world": {
     "category": "music",
     "min_distance": 100.0,
     "sounds": [
-      "sounds/wb/unknow_world"
+      "sounds/wb/unknown_world"
+    ]
+  },
+  "music.wb.everlasting_winter_ambient": {
+    "category": "music",
+    "min_distance": 100.0,
+    "sounds": [
+      "sounds/wb/everlasting_winter_ambient"
+    ]
+  },
+  "music.wb.ghost_tears": {
+    "category": "music",
+    "min_distance": 100.0,
+    "sounds": [
+      "sounds/wb/ghost_tears"
+    ]
+  },
+  "music.wb.the_peotry_of_ghost": {
+    "category": "music",
+    "min_distance": 100.0,
+    "sounds": [
+      "sounds/wb/the_peotry_of_ghost"
     ]
   },
   "music.wb.candlelight_afterthought": {

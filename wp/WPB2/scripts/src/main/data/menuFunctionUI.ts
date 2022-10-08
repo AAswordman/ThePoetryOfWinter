@@ -1,58 +1,58 @@
 import PomClient from "../PomClient.js";
-import ExGameConfig from "../../modules/exmc/ExGameConfig.js";
-import ExPlayer from '../../modules/exmc/entity/ExPlayer.js';
 import MenuUIAlert, { MenuUIAlertView } from '../ui/MenuUIAlert.js';
-import ExMessageAlert from "../../modules/exmc/ui/ExMessageAlert.js";
+import ExMessageAlert from "../../modules/exmc/server/ui/ExMessageAlert.js";
 import { ItemStack } from "mojang-minecraft";
 import TalentData, { Occupation, Talent } from "../cache/TalentData.js";
 import PomServer from '../PomServer.js';
 import { ModalFormData } from "mojang-minecraft-ui";
-import ExErrorStack from "../../modules/exmc/ExErrorStack.js";
-import Vector3 from '../../modules/exmc/utils/Vector3.js';
+import Vector3 from '../../modules/exmc/math/Vector3.js';
 import { langType } from './langType.js';
+import ExPlayer from "../../modules/exmc/server/entity/ExPlayer.js";
+import ExErrorStack from "../../modules/exmc/server/ExErrorStack.js";
+import ExGameConfig from "../../modules/exmc/server/ExGameConfig.js";
 
 export default function menuFunctionUI(lang: langType) {
-	return {
-		"main": {
-			"img": "textures/items/wet_paper",
-			"text": lang.menuUIMsgBailan1,
-			"default": "notice",
-			"page": {
-				"notice": {
-					"text": lang.menuUISubtitleGonggao,
-					"page": [
-						{
-							"type": "img_adjustToScreen",
-							"msg": "textures/ui/title.png"
-						},
-						{
-							"type": "padding"
-						},
-						{
-							"type": "text",
-							"msg": lang.menuUIMsgGonggao1
-						}
-					]
-				},
-				"activity": {
-					"text": lang.menuUISubtitleHuodong,
-					"page": (client: PomClient, ui: MenuUIAlert) => [
-						{
-							"type": "text_title",
-							"msg": lang.menuUIMsgBailan2
-						},
-						{
-							"type": "padding"
-						},
-						{
-							"type": "text",
-							"msg": lang.menuUIMsgBailan3
-						},
-						{
-							"type": "img_adjustToScreen",
-							"msg": "textures/ui/active_action.png"
-						},
-					].concat(MenuUIAlert.getLabelViews(`
+    return {
+        "main": {
+            "img": "textures/items/wet_paper",
+            "text": lang.menuUIMsgBailan1,
+            "default": "notice",
+            "page": {
+                "notice": {
+                    "text": lang.menuUISubtitleGonggao,
+                    "page": [
+                        {
+                            "type": "img_adjustToScreen",
+                            "msg": "textures/ui/title.png"
+                        },
+                        {
+                            "type": "padding"
+                        },
+                        {
+                            "type": "text",
+                            "msg": lang.menuUIMsgGonggao1
+                        }
+                    ]
+                },
+                "activity": {
+                    "text": lang.menuUISubtitleHuodong,
+                    "page": (client: PomClient, ui: MenuUIAlert) => [
+                        {
+                            "type": "text_title",
+                            "msg": lang.menuUIMsgBailan2
+                        },
+                        {
+                            "type": "padding"
+                        },
+                        {
+                            "type": "text",
+                            "msg": lang.menuUIMsgBailan3
+                        },
+                        {
+                            "type": "img_adjustToScreen",
+                            "msg": "textures/ui/active_action.png"
+                        },
+                    ].concat(MenuUIAlert.getLabelViews(`
 1.活动时间: 2022年8月13日一2022年8月31日23点59分。
 2.活动稿件必须是首次投递的原创作品，且符合创作投稿规范，禁止低创、搬运、抄袭、旧稿重投等。同一篇作品不能由多人提交，重复参加，且活动稿件需要在2022年9月20日前保持开放浏览。
 3.瓜分奖金将于活动结束结果公示后20个工作日内发放完毕。
@@ -68,70 +68,70 @@ export default function menuFunctionUI(lang: langType) {
 3│50￥
 
 `.split("\n"))).concat([
-						{
-							"type": "padding"
-						},
-						{
-							"type": "text_title",
-							"msg": lang.menuUIMsgBailan4
-						}
-					]).concat(MenuUIAlert.getLabelViews(`
+                        {
+                            "type": "padding"
+                        },
+                        {
+                            "type": "text_title",
+                            "msg": lang.menuUIMsgBailan4
+                        }
+                    ]).concat(MenuUIAlert.getLabelViews(`
 主题：永冬塔
 大小限制：64xnx64
 联系作者或b站发视频并at剑侠（id自己去b站搜）或@Sonality进行投稿
 有机会被加入Add中哦~
 `.split("\n")))
-				},
-				"version": {
-					"text": lang.menuUIMsgBailan5,
-					"page": (client: PomClient, ui: MenuUIAlert) => {
-						return [
-							{
-								"type": "text_title",
-								"msg": lang.menuUIMsgBanben1
-							},
-							{
-								"type": "text",
-								"msg": lang.menuUIMsgBanben2
-							},
-							{
-								"type": "text",
-								"msg": ExGameConfig.addonVersion
-							},
-							{
-								"type": "text",
-								"msg": lang.menuUIMsgBanben3
-							},
-							{
-								"type": "text",
-								"msg": "https://aaswordman.github.io/ThePoetryOfWinter/"
-							},
-							{
-								"type": "padding"
-							},
-							{
-								"type": "text_title",
-								"msg": lang.menuUIMsgBanben4
-							},
-							{
-								"type": "padding"
-							},
-							{
-								"type": "text",
-								"msg": lang.menuUIMsgBanben5
-							},
-							{
-								"type": "padding"
-							},
-							{
-								"type": "text_title",
-								"msg": lang.menuUIMsgBanben6
+                },
+                "version": {
+                    "text": lang.menuUIMsgBailan5,
+                    "page": (client: PomClient, ui: MenuUIAlert) => {
+                        return [
+                            {
+                                "type": "text_title",
+                                "msg": lang.menuUIMsgBanben1
+                            },
+                            {
+                                "type": "text",
+                                "msg": lang.menuUIMsgBanben2
+                            },
+                            {
+                                "type": "text",
+                                "msg": ExGameConfig.config.addonVersion
+                            },
+                            {
+                                "type": "text",
+                                "msg": lang.menuUIMsgBanben3
+                            },
+                            {
+                                "type": "text",
+                                "msg": "https://aaswordman.github.io/ThePoetryOfWinter/"
+                            },
+                            {
+                                "type": "padding"
+                            },
+                            {
+                                "type": "text_title",
+                                "msg": lang.menuUIMsgBanben4
+                            },
+                            {
+                                "type": "padding"
+                            },
+                            {
+                                "type": "text",
+                                "msg": lang.menuUIMsgBanben5
+                            },
+                            {
+                                "type": "padding"
+                            },
+                            {
+                                "type": "text_title",
+                                "msg": lang.menuUIMsgBanben6
 
-							},
-							{
-								"type": "padding"
-							}
-						].concat(MenuUIAlert.getLabelViews(`
+                            },
+                            {
+                                "type": "padding"
+                            }
+                        ].concat(MenuUIAlert.getLabelViews(`
 名字排序为随机排序
 
 Main creator:   - LiLeyi   AAswordsman
@@ -157,12 +157,12 @@ Our Team
 Special Thanks
 BunBun不是笨笨    在矿里的小金呀
 `.split("\n")));
-					}
-				},
-				"imp": {
-					"text": lang.menuUIMsgBailan6,
-					"page": (client: PomClient, ui: MenuUIAlert) => {
-						return MenuUIAlert.getLabelViews(`
+                    }
+                },
+                "imp": {
+                    "text": lang.menuUIMsgBailan6,
+                    "page": (client: PomClient, ui: MenuUIAlert) => {
+                        return MenuUIAlert.getLabelViews(`
 冬之纪行诗最终用户许可协议
 
 一、为保护玩家乐趣、利益及维护开发者利益，我们需要这些最终用户许可条款为冬之纪行诗Add-Ons(以下简称本作品)的下载和使用制定一些规则。本许可是您与本作品的开发者(包括但不限于剑侠、LiLeyi及其他未列出或将来加入开发的人员，以下简称我们)之间达成的协议，描述使用游戏的条款和条件，这些条款应在中国法律所允许的范围内最大程度地适用。
@@ -214,658 +214,658 @@ You understand and agree that:
 2. Your archives in the game minecraft may be damaged due to loading the updates of this work. Please back up your archives before updating, otherwise you will bear all the consequences.
 3. The contents of this agreement also include the agreements or rules in the annexes to this agreement, and other relevant agreements and rules on this service that we may continuously publish. Once the above contents are officially released, they shall be an integral part of this agreement, and you shall also abide by them.
 `.split("\n"));
-					}
-				},
-				"QA": {
-					"text": "Q & A",
-					"page": [
-						{
-							"type": "padding"
-						},
-						{
-							"type": "text_title",
-							"msg": lang.menuUIMsgBailan103
-						},
-						{
-							"type": "padding"
-						},
+                    }
+                },
+                "QA": {
+                    "text": "Q & A",
+                    "page": [
+                        {
+                            "type": "padding"
+                        },
+                        {
+                            "type": "text_title",
+                            "msg": lang.menuUIMsgBailan103
+                        },
+                        {
+                            "type": "padding"
+                        },
 
-						{
-							"type": "text",
-							"msg": lang.menuUIMsgBailan104
-						},
-						{
-							"type": "padding"
-						},
-						{
-							"type": "text_title",
-							"msg": lang.menuUIMsgBailan7
-						},
-						{
-							"type": "padding"
-						},
+                        {
+                            "type": "text",
+                            "msg": lang.menuUIMsgBailan104
+                        },
+                        {
+                            "type": "padding"
+                        },
+                        {
+                            "type": "text_title",
+                            "msg": lang.menuUIMsgBailan7
+                        },
+                        {
+                            "type": "padding"
+                        },
 
-						{
-							"type": "text",
-							"msg": lang.menuUIMsgBailan8
-						},
-						{
-							"type": "padding"
-						},
-						{
-							"type": "text_title",
-							"msg": lang.menuUIMsgBailan9
-						},
-						{
-							"type": "padding"
-						},
+                        {
+                            "type": "text",
+                            "msg": lang.menuUIMsgBailan8
+                        },
+                        {
+                            "type": "padding"
+                        },
+                        {
+                            "type": "text_title",
+                            "msg": lang.menuUIMsgBailan9
+                        },
+                        {
+                            "type": "padding"
+                        },
 
-						{
-							"type": "text",
-							"msg": lang.menuUIMsgBailan10
-						},
-						{
-							"type": "padding"
-						},
-						{
-							"type": "text_title",
-							"msg": lang.menuUIMsgBailan11
-						},
-						{
-							"type": "padding"
-						},
+                        {
+                            "type": "text",
+                            "msg": lang.menuUIMsgBailan10
+                        },
+                        {
+                            "type": "padding"
+                        },
+                        {
+                            "type": "text_title",
+                            "msg": lang.menuUIMsgBailan11
+                        },
+                        {
+                            "type": "padding"
+                        },
 
-						{
-							"type": "text",
-							"msg": lang.menuUIMsgBailan12
-						}
+                        {
+                            "type": "text",
+                            "msg": lang.menuUIMsgBailan12
+                        }
 
-					]
-				}
-			}
-		},
-		"person": {
-			"img": "textures/items/amethyst_chestplate.png",
-			"text": lang.menuUIMsgBailan13,
-			"default": "info",
-			"page": {
-				"info": {
-					"text": lang.menuUIMsgBailan14,
-					"page": (client: PomClient, ui: MenuUIAlert) => {
-						let source = client.player;
-						let scores = ExPlayer.getInstance(source).getScoresManager();
-						let msg = [`${lang.menuUIMsgBailan94}: ${client.gameId}`,
-						`${lang.menuUIMsgBailan95}: ${scores.getScore("wbdj")}`,
-						`${lang.menuUIMsgBailan96}: ${scores.getScore("wbfl")}`,
-						`${lang.menuUIMsgBailan97}: ${scores.getScore("wbwqlq")}`,
-						`${lang.menuUIMsgBailan98}: ${scores.getScore("wbkjlqcg")}`,
-						`${lang.menuUIMsgBailan99}: ${source.hasTag("wbmsyh") ? lang.menuUIMsgBailan15 : lang.menuUIMsgBailan16}`,
-						`${lang.menuUIMsgBailan100}: ${source.hasTag("wbdjeff") ? lang.menuUIMsgBailan15 : lang.menuUIMsgBailan16}`];
-						return MenuUIAlert.getLabelViews(msg);
-					}
-				},
-				"add": {
-					"text": lang.menuUIMsgBailan19,
-					"page": [
-						{
-							"type": "text_title",
-							"msg": lang.menuUIMsgBailan20
-						},
-						{
-							"type": "padding"
-						},
-						{
-							"type": "text",
-							"msg": lang.menuUIMsgBailan21
-						},
-						{
-							"type": "padding"
-						},
-						{
-							"type": "toggle",
-							"msg": lang.menuUIMsgBailan22,
-							"state": (client: PomClient, ui: MenuUIAlert) => client.player.hasTag("wbdjeff"),
-							"function": (client: PomClient, ui: MenuUIAlert) => {
-								if (!client.player.hasTag("wbdjeff")) {
-									client.player.addTag("wbdjeff");
-								} else {
-									client.player.removeTag("wbdjeff");
-								}
-								return true;
-							}
-						},
-						{
-							"type": "padding"
-						},
-						{
-							"type": "text_title",
-							"msg": lang.menuUIMsgBailan23
-						},
-						{
-							"type": "padding"
-						},
-						{
-							"type": "text",
-							"msg": lang.menuUIMsgBailan24
-						},
-						{
-							"type": "padding"
-						},
-						{
-							"type": "button",
-							"msg": lang.menuUIMsgBailan25,
-							"function": (client: PomClient, ui: MenuUIAlert) => {
-								client.player.removeTag("pflame");
-								return true;
-							}
-						},
-						{
-							"type": "button",
-							"msg": lang.menuUIMsgBailan26,
-							"function": (client: PomClient, ui: MenuUIAlert) => {
-								client.player.removeTag("phalo");
-								return true;
-							}
-						},
-						{
-							"type": "button",
-							"msg": lang.menuUIMsgBailan27,
-							"function": (client: PomClient, ui: MenuUIAlert) => {
-								client.player.removeTag("prune");
-								return true;
-							}
-						},
-						{
-							"type": "button",
-							"msg": lang.menuUIMsgBailan28,
-							"function": (client: PomClient, ui: MenuUIAlert) => {
-								client.player.removeTag("plove");
-								return true;
-							}
-						}
-					]
-				},
-				"talent": {
-					"text": lang.menuUIMsgBailan29,
-					"page": (client: PomClient, ui: MenuUIAlert): MenuUIAlertView[] => {
-						let arr: MenuUIAlertView[];
-						if (TalentData.hasOccupation(client.data.talent)) {
-							const point = (client.exPlayer.getScoresManager().getScore("wbdjcg") * 2 - (client.data.talent.pointUsed ?? 0));
-							arr = [
-								{
-									"type": "text",
-									"msg": lang.menuUIMsgBailan30 + point
-								}
-							];
-							for (let i of client.data.talent.talents) {
-								arr.push({
-									"type": point > 0 && i.level < 40 ? "textAndAddButton" : "textAndNoButton",
-									"msg": Talent.getCharacter(client.getLang(), i.id) + ": " + i.level + "\n" + (function () {
-										let useChr = "";
-										let a = Math.floor(i.level / 4);
-										let b = i.level % 4;
-										let c = 10 - a - 1;
-										let s = ""
-										while (a > 0) {
-											s += useChr[0];
-											a--;
-										}
-										s += useChr[4 - b];
-										while (c > 0) {
-											s += useChr[4];
-											c--;
-										}
-										return s;
-									})(),
-									"function": () => {
-										if (point > 0 && i.level < 40) {
-											i.level++;
-											client.data.talent.pointUsed = 1 + (client.data.talent.pointUsed ?? 0);
-											client.data.talent.talents.splice(client.data.talent.talents.findIndex(t => t.id === i.id), 1);
-											client.data.talent.talents.unshift(i);
-											client.talentSystem.updateTalentRes();
-										}
-										return true;
-									}
-								},
-									{
-										"type": "text",
-										"msg": TalentData.getDescription(client.getLang(), client.data.talent.occupation, i.id, i.level)
-									},
-									{
-										"type": "padding"
-									});
-							}
-						} else {
-							arr = [
-								{
-									"type": "text_title",
-									"msg": lang.menuUIMsgBailan31
-								},
-								{
-									"type": "padding",
-								}
-							];
-							for (const i of Occupation.keys) {
-								arr.push({
-									"type": "button",
-									"msg": i.getCharacter(client.getLang()),
-									"function": (client: PomClient, ui: MenuUIAlert) => {
-										TalentData.chooseOccupation(client.data.talent, i);
+                    ]
+                }
+            }
+        },
+        "person": {
+            "img": "textures/items/amethyst_chestplate.png",
+            "text": lang.menuUIMsgBailan13,
+            "default": "info",
+            "page": {
+                "info": {
+                    "text": lang.menuUIMsgBailan14,
+                    "page": (client: PomClient, ui: MenuUIAlert) => {
+                        let source = client.player;
+                        let scores = ExPlayer.getInstance(source).getScoresManager();
+                        let msg = [`${lang.menuUIMsgBailan94}: ${client.gameId}`,
+                        `${lang.menuUIMsgBailan95}: ${scores.getScore("wbdj")}`,
+                        `${lang.menuUIMsgBailan96}: ${scores.getScore("wbfl")}`,
+                        `${lang.menuUIMsgBailan97}: ${scores.getScore("wbwqlq")}`,
+                        `${lang.menuUIMsgBailan98}: ${scores.getScore("wbkjlqcg")}`,
+                        `${lang.menuUIMsgBailan99}: ${source.hasTag("wbmsyh") ? lang.menuUIMsgBailan15 : lang.menuUIMsgBailan16}`,
+                        `${lang.menuUIMsgBailan100}: ${source.hasTag("wbdjeff") ? lang.menuUIMsgBailan15 : lang.menuUIMsgBailan16}`];
+                        return MenuUIAlert.getLabelViews(msg);
+                    }
+                },
+                "add": {
+                    "text": lang.menuUIMsgBailan19,
+                    "page": [
+                        {
+                            "type": "text_title",
+                            "msg": lang.menuUIMsgBailan20
+                        },
+                        {
+                            "type": "padding"
+                        },
+                        {
+                            "type": "text",
+                            "msg": lang.menuUIMsgBailan21
+                        },
+                        {
+                            "type": "padding"
+                        },
+                        {
+                            "type": "toggle",
+                            "msg": lang.menuUIMsgBailan22,
+                            "state": (client: PomClient, ui: MenuUIAlert) => client.player.hasTag("wbdjeff"),
+                            "function": (client: PomClient, ui: MenuUIAlert) => {
+                                if (!client.player.hasTag("wbdjeff")) {
+                                    client.player.addTag("wbdjeff");
+                                } else {
+                                    client.player.removeTag("wbdjeff");
+                                }
+                                return true;
+                            }
+                        },
+                        {
+                            "type": "padding"
+                        },
+                        {
+                            "type": "text_title",
+                            "msg": lang.menuUIMsgBailan23
+                        },
+                        {
+                            "type": "padding"
+                        },
+                        {
+                            "type": "text",
+                            "msg": lang.menuUIMsgBailan24
+                        },
+                        {
+                            "type": "padding"
+                        },
+                        {
+                            "type": "button",
+                            "msg": lang.menuUIMsgBailan25,
+                            "function": (client: PomClient, ui: MenuUIAlert) => {
+                                client.player.removeTag("pflame");
+                                return true;
+                            }
+                        },
+                        {
+                            "type": "button",
+                            "msg": lang.menuUIMsgBailan26,
+                            "function": (client: PomClient, ui: MenuUIAlert) => {
+                                client.player.removeTag("phalo");
+                                return true;
+                            }
+                        },
+                        {
+                            "type": "button",
+                            "msg": lang.menuUIMsgBailan27,
+                            "function": (client: PomClient, ui: MenuUIAlert) => {
+                                client.player.removeTag("prune");
+                                return true;
+                            }
+                        },
+                        {
+                            "type": "button",
+                            "msg": lang.menuUIMsgBailan28,
+                            "function": (client: PomClient, ui: MenuUIAlert) => {
+                                client.player.removeTag("plove");
+                                return true;
+                            }
+                        }
+                    ]
+                },
+                "talent": {
+                    "text": lang.menuUIMsgBailan29,
+                    "page": (client: PomClient, ui: MenuUIAlert): MenuUIAlertView[] => {
+                        let arr: MenuUIAlertView[];
+                        if (TalentData.hasOccupation(client.data.talent)) {
+                            const point = (client.exPlayer.getScoresManager().getScore("wbdjcg") * 2 - (client.data.talent.pointUsed ?? 0));
+                            arr = [
+                                {
+                                    "type": "text",
+                                    "msg": lang.menuUIMsgBailan30 + point
+                                }
+                            ];
+                            for (let i of client.data.talent.talents) {
+                                arr.push({
+                                    "type": point > 0 && i.level < 40 ? "textAndAddButton" : "textAndNoButton",
+                                    "msg": Talent.getCharacter(client.getLang(), i.id) + ": " + i.level + "\n" + (function () {
+                                        let useChr = "";
+                                        let a = Math.floor(i.level / 4);
+                                        let b = i.level % 4;
+                                        let c = 10 - a - 1;
+                                        let s = ""
+                                        while (a > 0) {
+                                            s += useChr[0];
+                                            a--;
+                                        }
+                                        s += useChr[4 - b];
+                                        while (c > 0) {
+                                            s += useChr[4];
+                                            c--;
+                                        }
+                                        return s;
+                                    })(),
+                                    "function": () => {
+                                        if (point > 0 && i.level < 40) {
+                                            i.level++;
+                                            client.data.talent.pointUsed = 1 + (client.data.talent.pointUsed ?? 0);
+                                            client.data.talent.talents.splice(client.data.talent.talents.findIndex(t => t.id === i.id), 1);
+                                            client.data.talent.talents.unshift(i);
+                                            client.talentSystem.updateTalentRes();
+                                        }
+                                        return true;
+                                    }
+                                },
+                                    {
+                                        "type": "text",
+                                        "msg": TalentData.getDescription(client.getLang(), client.data.talent.occupation, i.id, i.level)
+                                    },
+                                    {
+                                        "type": "padding"
+                                    });
+                            }
+                        } else {
+                            arr = [
+                                {
+                                    "type": "text_title",
+                                    "msg": lang.menuUIMsgBailan31
+                                },
+                                {
+                                    "type": "padding",
+                                }
+                            ];
+                            for (const i of Occupation.keys) {
+                                arr.push({
+                                    "type": "button",
+                                    "msg": i.getCharacter(client.getLang()),
+                                    "function": (client: PomClient, ui: MenuUIAlert) => {
+                                        TalentData.chooseOccupation(client.data.talent, i);
 
-										return true;
-									}
-								});
-							}
-						}
-						return arr;
-					}
-				},
-				"deathback": {
-					"text": lang.menuUIMsgBailan32,
-					"page": (client: PomClient, ui: MenuUIAlert): MenuUIAlertView[] => {
-						if (client.data.pointRecord == undefined) client.data.pointRecord = {
-							deathPoint: <[string, Vector3][]>[],
-							point: <[string, string, Vector3][]>[]
-						};
-						let arr = <MenuUIAlertView[]>[
-							{
-								"type": "text_title",
-								"msg": lang.menuUIMsgBailan33
-							},
-							{
-								"type": "padding"
-							}
-						]
+                                        return true;
+                                    }
+                                });
+                            }
+                        }
+                        return arr;
+                    }
+                },
+                "deathback": {
+                    "text": lang.menuUIMsgBailan32,
+                    "page": (client: PomClient, ui: MenuUIAlert): MenuUIAlertView[] => {
+                        if (client.data.pointRecord == undefined) client.data.pointRecord = {
+                            deathPoint: <[string, Vector3][]>[],
+                            point: <[string, string, Vector3][]>[]
+                        };
+                        let arr = <MenuUIAlertView[]>[
+                            {
+                                "type": "text_title",
+                                "msg": lang.menuUIMsgBailan33
+                            },
+                            {
+                                "type": "padding"
+                            }
+                        ]
 
-						if (client.globalSettings.tpPointRecord) {
-							for (let j = 0; j < client.data.pointRecord.point.length; j++) {
-								const i = client.data.pointRecord.point[j];
-								const v = new Vector3(i[2]);
-								arr.push(
-									{
-										"type": "text",
-										"msg": lang.menuUIMsgBailan34 + (i[0] + v.toString())
-									},
-									{
-										"type": "button",
-										"msg": lang.menuUIMsgBailan35 + (i[1] == "" ? (i[0] + v.toString()) : i[1]),
-										"function": (client: PomClient, ui: MenuUIAlert) => {
-											let bag = client.exPlayer.getBag();
-											if (!bag.hasItem("wb:conveyor_issue") && client.globalSettings.tpNeedItem) {
-												client.sayTo(lang.menuUIMsgBailan36);
-												return false;
-											}
-											if (client.globalSettings.tpNeedItem) {
-												let pos = (bag.searchItem("wb:conveyor_issue"));
-												let item = <ItemStack>bag.getItem(pos);
-												item.amount--;
-												bag.setItem(pos, item);
-											}
-											client.exPlayer.setPosition(v, client.getDimension(i[0]));
-											client.sayTo(lang.menuUIMsgBailan37);
-											return false;
-										}
-									},
-									{
-										"type": "button",
-										"msg": lang.menuUIMsgBailan38 + (i[1] == "" ? (i[0] + v.toString()) : i[1]),
-										"function": (client: PomClient, ui: MenuUIAlert) => {
-											new ModalFormData().textField(lang.menuUIMsgBailan39, (i[0] + v.toString()))
-												.show(client.player)
-												.then(e => {
-													if (e.isCanceled) return;
-													i[1] = e.formValues[0];
-												}).catch(e => {
-													ExErrorStack.throwError(e);
-												})
-											return false;
-										}
-									},
-									{
-										"type": "button",
-										"msg": lang.menuUIMsgBailan40 + (i[1] == "" ? (i[0] + v.toString()) : i[1]),
-										"function": (client: PomClient, ui: MenuUIAlert) => {
-											client.data.pointRecord.point.splice(j, 1);
-											return true;
-										}
+                        if (client.globalSettings.tpPointRecord) {
+                            for (let j = 0; j < client.data.pointRecord.point.length; j++) {
+                                const i = client.data.pointRecord.point[j];
+                                const v = new Vector3(i[2]);
+                                arr.push(
+                                    {
+                                        "type": "text",
+                                        "msg": lang.menuUIMsgBailan34 + (i[0] + v.toString())
+                                    },
+                                    {
+                                        "type": "button",
+                                        "msg": lang.menuUIMsgBailan35 + (i[1] == "" ? (i[0] + v.toString()) : i[1]),
+                                        "function": (client: PomClient, ui: MenuUIAlert) => {
+                                            let bag = client.exPlayer.getBag();
+                                            if (!bag.hasItem("wb:conveyor_issue") && client.globalSettings.tpNeedItem) {
+                                                client.sayTo(lang.menuUIMsgBailan36);
+                                                return false;
+                                            }
+                                            if (client.globalSettings.tpNeedItem) {
+                                                let pos = (bag.searchItem("wb:conveyor_issue"));
+                                                let item = <ItemStack>bag.getItem(pos);
+                                                item.amount--;
+                                                bag.setItem(pos, item);
+                                            }
+                                            client.exPlayer.setPosition(v, client.getDimension(i[0]));
+                                            client.sayTo(lang.menuUIMsgBailan37);
+                                            return false;
+                                        }
+                                    },
+                                    {
+                                        "type": "button",
+                                        "msg": lang.menuUIMsgBailan38 + (i[1] == "" ? (i[0] + v.toString()) : i[1]),
+                                        "function": (client: PomClient, ui: MenuUIAlert) => {
+                                            new ModalFormData().textField(lang.menuUIMsgBailan39, (i[0] + v.toString()))
+                                                .show(client.player)
+                                                .then(e => {
+                                                    if (e.isCanceled) return;
+                                                    i[1] = e.formValues[0];
+                                                }).catch(e => {
+                                                    ExErrorStack.throwError(e);
+                                                })
+                                            return false;
+                                        }
+                                    },
+                                    {
+                                        "type": "button",
+                                        "msg": lang.menuUIMsgBailan40 + (i[1] == "" ? (i[0] + v.toString()) : i[1]),
+                                        "function": (client: PomClient, ui: MenuUIAlert) => {
+                                            client.data.pointRecord.point.splice(j, 1);
+                                            return true;
+                                        }
 
-									},
-									{
-										"type": "padding"
-									}
-								);
-							}
-							arr.push({
-								"msg": lang.menuUIMsgBailan41 + client.exPlayer.getPosition().floor().toString(),
-								"type": "button",
-								"function": (client: PomClient, ui: MenuUIAlert) => {
-									client.data.pointRecord.point.push([client.exPlayer.getDimension().id, "", client.exPlayer.getPosition().floor()]);
-									return true;
-								}
-							});
+                                    },
+                                    {
+                                        "type": "padding"
+                                    }
+                                );
+                            }
+                            arr.push({
+                                "msg": lang.menuUIMsgBailan41 + client.exPlayer.getPosition().floor().toString(),
+                                "type": "button",
+                                "function": (client: PomClient, ui: MenuUIAlert) => {
+                                    client.data.pointRecord.point.push([client.exPlayer.getDimension().id, "", client.exPlayer.getPosition().floor()]);
+                                    return true;
+                                }
+                            });
 
-						} else {
-							arr.push(
-								{
-									"type": "text",
-									"msg": lang.menuUIMsgBailan42
-								}
-							)
-						}
+                        } else {
+                            arr.push(
+                                {
+                                    "type": "text",
+                                    "msg": lang.menuUIMsgBailan42
+                                }
+                            )
+                        }
 
-						// if (client.globalSettings.deathRecord) {
-						// 	for (let j = 0; j < client.data.pointRecord.deathPoint.length; j++) {
-						// 		let i = client.data.pointRecord.deathPoint[j];
-						// 		let v = new Vector3(i[1]);
-						// 		arr.push(
-						// 			{
-						// 				"type": "text",
-						// 				"msg": lang.menuUIMsgBailan43 + v.toString()
-						// 			},
-						// 			{
-						// 				"type": "button",
-						// 				"msg": lang.menuUIMsgBailan44 + v.toString()
-						// 			},
-						// 			{
-						// 				"type": "padding"
-						// 			}
-						// 		);
-						// 	}
-						// } else {
-						// 	arr.push(
-						// 		{
-						// 			"type": "text",
-						// 			"msg": lang.menuUIMsgBailan45
-						// 		}
-						// 	)
-						// }
-						return arr;
-					}
-				}
-			}
-		},
-		"social": {
-			"img": "textures/items/gingerbread_totem.png",
-			"text": lang.menuUIMsgBailan46,
-			"default": "setting",
-			"page": {
-				"setting": {
-					"text": lang.menuUIMsgBailan47,
-					"page": [
-						{
-							"type": "text_title",
-							"msg": lang.menuUIMsgBailan48
-						},
-						{
-							"type": "padding"
-						},
-						{
-							"type": "text",
-							"msg": lang.menuUIMsgBailan49
-						},
-						{
-							"type": "text",
-							"msg": lang.menuUIMsgBailan50
-						},
-						{
-							"type": "padding"
-						},
-						{
-							"type": "button",
-							"msg": lang.menuUIMsgBailan51,
-							"function": (client: PomClient, ui: MenuUIAlert) => {
-								client.player.addTag("wbmsyh");
-								if (client.player.nameTag.startsWith("§")) {
-									client.player.nameTag = client.player.nameTag.substring(2);
-								}
-								client.player.nameTag = "§a" + client.player.nameTag;
-								return true;
-							}
-						},
-						{
-							"type": "button",
-							"msg": lang.menuUIMsgBailan48,
-							"function": (client: PomClient, ui: MenuUIAlert) => {
-								client.player.removeTag("wbmsyh");
-								if (client.player.nameTag.startsWith("§")) {
-									client.player.nameTag = client.player.nameTag.substring(2);
-								}
-								client.player.nameTag = "§c" + client.player.nameTag;
-								return true;
-							}
-						}
-					]
-				},
-				"tp": {
-					"text": lang.menuUIMsgBailan53,
-					"page": async (client: PomClient, ui: MenuUIAlert): Promise<MenuUIAlertView[]> => {
-						if (!client.globalSettings.playerCanTp) {
-							return [{
-								"type": "text",
-								"msg": lang.menuUIMsgBailan54
-							}];
-						};
-						let arr: MenuUIAlertView[] = [];
-						arr.push({
-							"msg": lang.menuUIMsgBailan55,
-							"type": "text_title"
-						});
-						arr.push({
-							"type": "padding"
-						});
-						let players = await client.getPlayersAndIds() ?? [];
-						for (const i of players) {
-							const p = ExPlayer.getInstance(i[0]);
-							arr.push({
-								"type": "button",
-								"msg": `${p.nameTag} pos:${p.getPosition().floor()}`,
-								"function": (client: PomClient, ui: MenuUIAlert) => {
-									let bag = client.exPlayer.getBag();
-									if (!bag.hasItem("wb:conveyor_issue") && client.globalSettings.tpNeedItem) {
-										client.sayTo(lang.menuUIMsgBailan36);
-										return false;
-									}
-									if (client.globalSettings.tpNeedItem) {
-										let pos = (bag.searchItem("wb:conveyor_issue"));
-										let item = <ItemStack>bag.getItem(pos);
-										item.amount--;
-										bag.setItem(pos, item);
-									}
-									client.sayTo(lang.menuUIMsgBailan57);
+                        // if (client.globalSettings.deathRecord) {
+                        // 	for (let j = 0; j < client.data.pointRecord.deathPoint.length; j++) {
+                        // 		let i = client.data.pointRecord.deathPoint[j];
+                        // 		let v = new Vector3(i[1]);
+                        // 		arr.push(
+                        // 			{
+                        // 				"type": "text",
+                        // 				"msg": lang.menuUIMsgBailan43 + v.toString()
+                        // 			},
+                        // 			{
+                        // 				"type": "button",
+                        // 				"msg": lang.menuUIMsgBailan44 + v.toString()
+                        // 			},
+                        // 			{
+                        // 				"type": "padding"
+                        // 			}
+                        // 		);
+                        // 	}
+                        // } else {
+                        // 	arr.push(
+                        // 		{
+                        // 			"type": "text",
+                        // 			"msg": lang.menuUIMsgBailan45
+                        // 		}
+                        // 	)
+                        // }
+                        return arr;
+                    }
+                }
+            }
+        },
+        "social": {
+            "img": "textures/items/gingerbread_totem.png",
+            "text": lang.menuUIMsgBailan46,
+            "default": "setting",
+            "page": {
+                "setting": {
+                    "text": lang.menuUIMsgBailan47,
+                    "page": [
+                        {
+                            "type": "text_title",
+                            "msg": lang.menuUIMsgBailan48
+                        },
+                        {
+                            "type": "padding"
+                        },
+                        {
+                            "type": "text",
+                            "msg": lang.menuUIMsgBailan49
+                        },
+                        {
+                            "type": "text",
+                            "msg": lang.menuUIMsgBailan50
+                        },
+                        {
+                            "type": "padding"
+                        },
+                        {
+                            "type": "button",
+                            "msg": lang.menuUIMsgBailan51,
+                            "function": (client: PomClient, ui: MenuUIAlert) => {
+                                client.player.addTag("wbmsyh");
+                                if (client.player.nameTag.startsWith("§")) {
+                                    client.player.nameTag = client.player.nameTag.substring(2);
+                                }
+                                client.player.nameTag = "§a" + client.player.nameTag;
+                                return true;
+                            }
+                        },
+                        {
+                            "type": "button",
+                            "msg": lang.menuUIMsgBailan48,
+                            "function": (client: PomClient, ui: MenuUIAlert) => {
+                                client.player.removeTag("wbmsyh");
+                                if (client.player.nameTag.startsWith("§")) {
+                                    client.player.nameTag = client.player.nameTag.substring(2);
+                                }
+                                client.player.nameTag = "§c" + client.player.nameTag;
+                                return true;
+                            }
+                        }
+                    ]
+                },
+                "tp": {
+                    "text": lang.menuUIMsgBailan53,
+                    "page": async (client: PomClient, ui: MenuUIAlert): Promise<MenuUIAlertView[]> => {
+                        if (!client.globalSettings.playerCanTp) {
+                            return [{
+                                "type": "text",
+                                "msg": lang.menuUIMsgBailan54
+                            }];
+                        };
+                        let arr: MenuUIAlertView[] = [];
+                        arr.push({
+                            "msg": lang.menuUIMsgBailan55,
+                            "type": "text_title"
+                        });
+                        arr.push({
+                            "type": "padding"
+                        });
+                        let players = await client.getPlayersAndIds() ?? [];
+                        for (const i of players) {
+                            const p = ExPlayer.getInstance(i[0]);
+                            arr.push({
+                                "type": "button",
+                                "msg": `${p.nameTag} pos:${p.getPosition().floor()}`,
+                                "function": (client: PomClient, ui: MenuUIAlert) => {
+                                    let bag = client.exPlayer.getBag();
+                                    if (!bag.hasItem("wb:conveyor_issue") && client.globalSettings.tpNeedItem) {
+                                        client.sayTo(lang.menuUIMsgBailan36);
+                                        return false;
+                                    }
+                                    if (client.globalSettings.tpNeedItem) {
+                                        let pos = (bag.searchItem("wb:conveyor_issue"));
+                                        let item = <ItemStack>bag.getItem(pos);
+                                        item.amount--;
+                                        bag.setItem(pos, item);
+                                    }
+                                    client.sayTo(lang.menuUIMsgBailan57);
 
-									new ExMessageAlert().title(lang.menuUIMsgBailan58).body(`玩家 ${client.player.nameTag} §r想要传送到你的位置，是否接受？`)
-										.button1(lang.menuUIMsgBailan15, () => {
-											client.sayTo(lang.menuUIMsgBailan37);
-											client.sayTo(lang.menuUIMsgBailan37, i[0]);
-											client.exPlayer.setPosition(p.getPosition(), p.getDimension());
-										})
-										.button2(lang.menuUIMsgBailan16, () => {
-											client.sayTo(lang.menuUIMsgBailan63);
-											client.sayTo(lang.menuUIMsgBailan64, i[0]);
-										})
-										.show(i[0]);
-									return false;
-								}
-							});
-						}
-						arr.push({
-							"msg": lang.menuUIMsgBailan65,
-							"type": "text_title"
-						});
-						arr.push({
-							"type": "padding"
-						});
-						for (const i of players) {
-							const p = ExPlayer.getInstance(i[0]);
-							arr.push({
-								"type": "button",
-								"msg": `${p.nameTag} (pos:${p.getPosition().floor()})`,
-								"function": (client: PomClient, ui: MenuUIAlert) => {
-									let bag = client.exPlayer.getBag();
-									if (!bag.hasItem("wb:conveyor_issue") && client.globalSettings.tpNeedItem) {
-										client.sayTo(lang.menuUIMsgBailan36);
-										return false;
-									}
-									if (client.globalSettings.tpNeedItem) {
-										let pos = (bag.searchItem("wb:conveyor_issue"));
-										let item = <ItemStack>bag.getItem(pos);
-										item.amount--;
-										bag.setItem(pos, item);
-									}
-									client.sayTo(lang.menuUIMsgBailan67);
+                                    new ExMessageAlert().title(lang.menuUIMsgBailan58).body(`玩家 ${client.player.nameTag} §r想要传送到你的位置，是否接受？`)
+                                        .button1(lang.menuUIMsgBailan15, () => {
+                                            client.sayTo(lang.menuUIMsgBailan37);
+                                            client.sayTo(lang.menuUIMsgBailan37, i[0]);
+                                            client.exPlayer.setPosition(p.getPosition(), p.getDimension());
+                                        })
+                                        .button2(lang.menuUIMsgBailan16, () => {
+                                            client.sayTo(lang.menuUIMsgBailan63);
+                                            client.sayTo(lang.menuUIMsgBailan64, i[0]);
+                                        })
+                                        .show(i[0]);
+                                    return false;
+                                }
+                            });
+                        }
+                        arr.push({
+                            "msg": lang.menuUIMsgBailan65,
+                            "type": "text_title"
+                        });
+                        arr.push({
+                            "type": "padding"
+                        });
+                        for (const i of players) {
+                            const p = ExPlayer.getInstance(i[0]);
+                            arr.push({
+                                "type": "button",
+                                "msg": `${p.nameTag} (pos:${p.getPosition().floor()})`,
+                                "function": (client: PomClient, ui: MenuUIAlert) => {
+                                    let bag = client.exPlayer.getBag();
+                                    if (!bag.hasItem("wb:conveyor_issue") && client.globalSettings.tpNeedItem) {
+                                        client.sayTo(lang.menuUIMsgBailan36);
+                                        return false;
+                                    }
+                                    if (client.globalSettings.tpNeedItem) {
+                                        let pos = (bag.searchItem("wb:conveyor_issue"));
+                                        let item = <ItemStack>bag.getItem(pos);
+                                        item.amount--;
+                                        bag.setItem(pos, item);
+                                    }
+                                    client.sayTo(lang.menuUIMsgBailan67);
 
-									new ExMessageAlert().title(lang.menuUIMsgBailan58).body(`玩家 ${client.player.nameTag} §r邀请你传送到 pos:${client.exPlayer.getPosition().floor()} ，是否接受？`)
-										.button1(lang.menuUIMsgBailan15, () => {
-											client.sayTo(lang.menuUIMsgBailan37);
-											client.sayTo(lang.menuUIMsgBailan37, i[0]);
-											p.setPosition(client.exPlayer.getPosition(), client.exPlayer.getDimension());
-										})
-										.button2(lang.menuUIMsgBailan16, () => {
-											client.sayTo(lang.menuUIMsgBailan73);
-											client.sayTo(lang.menuUIMsgBailan74, i[0]);
-										})
-										.show(i[0]);
-									return false;
-								}
-							});
-						}
-						return arr;
-					}
-				}
-			}
-		},
-		"setting": {
-			"img": "textures/items/artificial_meat_creator_on.png",
-			"text": lang.menuUIMsgBailan75,
-			"default": "op",
-			"page": {
-				"personal": {
-					"text": lang.menuUIMsgBailan101,
-					"page": [
-						{
-							"type": "button",
-							"msg": lang.menuUIMsgBailan102,
-							"function": (client: PomClient, ui: MenuUIAlert): boolean => {
-								new ModalFormData()
-									.title("Choose a language")
-									.dropdown("Language List", ["English", "简体中文"], 0)
-									.show(client.player).then((e) => {
-										if (!e.isCanceled) {
-											client.data.lang = e.formValues[0] == 0 ? "en" : "zh";
-											ExGameConfig.console.log(client.data.lang,e.formValues[0]);
-										}
-									})
-									.catch((e) => {
-										ExErrorStack.throwError(e);
-									});
-								return false;
-							}
-						}
-					]
-				},
-				"op": {
-					"text": lang.menuUIMsgBailan76,
-					"page": (client: PomClient, ui: MenuUIAlert): MenuUIAlertView[] => {
-						if (client.player.hasTag("owner")) {
-							return [
-								{
-									"type": "text_title",
-									"msg": lang.menuUIMsgBailan77
-								},
-								{
-									"type": "toggle",
-									"msg": lang.menuUIMsgBailan78,
-									"state": (client: PomClient, ui: MenuUIAlert) => client.globalSettings.playerCanTp,
-									"function": (client: PomClient, ui: MenuUIAlert) => {
-										client.globalSettings.playerCanTp = !client.globalSettings.playerCanTp;
-										return true;
-									}
-								},
-								{
-									"type": "toggle",
-									"msg": lang.menuUIMsgBailan79,
-									"state": (client: PomClient, ui: MenuUIAlert) => client.globalSettings.tpNeedItem,
-									"function": (client: PomClient, ui: MenuUIAlert) => {
-										client.globalSettings.tpNeedItem = !client.globalSettings.tpNeedItem;
-										return true;
-									}
-								},
-								{
-									"type": "toggle",
-									"msg": lang.menuUIMsgBailan80,
-									"state": (client: PomClient, ui: MenuUIAlert) => client.globalSettings.entityCleaner,
-									"function": (client: PomClient, ui: MenuUIAlert) => {
-										client.globalSettings.entityCleaner = !client.globalSettings.entityCleaner;
-										client.runOnServer((server) => {
-											(<PomServer>server).upDateEntityCleaner();
-										});
-										return true;
-									}
-								},
-								//,
-								// {
-								// 	"type": "toggle",
-								// 	"msg": lang.menuUIMsgBailan81,
-								// 	"state": (client: PomClient, ui: MenuUIAlert) => client.globalSettings.deathRecord,
-								// 	"function": (client: PomClient, ui: MenuUIAlert) => {
-								// 		client.globalSettings.deathRecord = !client.globalSettings.deathRecord;
-								// 		return true;
-								// 	}
-								// },
-								{
-									"type": "toggle",
-									"msg": lang.menuUIMsgBailan82,
-									"state": (client: PomClient, ui: MenuUIAlert) => client.globalSettings.tpPointRecord,
-									"function": (client: PomClient, ui: MenuUIAlert) => {
-										client.globalSettings.tpPointRecord = !client.globalSettings.tpPointRecord;
-										return true;
-									}
-								}
-							];
-						} else {
-							return [{
-								"type": "text",
-								"msg": lang.menuUIMsgBailan83
-							}];
-						}
-					}
-				},
-				"set": {
-					"text": lang.menuUIMsgBailan84,
-					"page": (client: PomClient, ui: MenuUIAlert): MenuUIAlertView[] => {
-						if (client.player.hasTag("owner")) {
-							return [{
-								"type": "button",
-								"msg": lang.menuUIMsgBailan85,
-								"function": (client: PomClient, ui: MenuUIAlert) => {
-									new ModalFormData()
-										.toggle(lang.menuUIMsgBailan80, client.globalSettings.entityCleaner)
-										.slider(lang.menuUIMsgBailan91, 40, 1000, 20, client.globalSettings.entityCleanerLeastNum)
-										.slider(lang.menuUIMsgBailan92, 2, 10, 1, client.globalSettings.entityCleanerStrength)
-										.slider(lang.menuUIMsgBailan93, 1, 60, 1, client.globalSettings.entityCleanerDelay)
-										.show(client.player).then((e) => {
-											if (e.isCanceled) return;
-											client.globalSettings.entityCleaner = e.formValues[0];
-											client.globalSettings.entityCleanerLeastNum = e.formValues[1];
-											client.globalSettings.entityCleanerStrength = e.formValues[2];
-											client.globalSettings.entityCleanerDelay = e.formValues[3];
-										})
-										.catch((e) => {
-											ExErrorStack.throwError(e);
-										})
-									return false;
-								}
-							}];
-						} else {
-							return [{
-								"type": "text",
-								"msg": lang.menuUIMsgBailan83
-							}];
-						}
-					}
-				}
-			}
-		}
-	}
+                                    new ExMessageAlert().title(lang.menuUIMsgBailan58).body(`玩家 ${client.player.nameTag} §r邀请你传送到 pos:${client.exPlayer.getPosition().floor()} ，是否接受？`)
+                                        .button1(lang.menuUIMsgBailan15, () => {
+                                            client.sayTo(lang.menuUIMsgBailan37);
+                                            client.sayTo(lang.menuUIMsgBailan37, i[0]);
+                                            p.setPosition(client.exPlayer.getPosition(), client.exPlayer.getDimension());
+                                        })
+                                        .button2(lang.menuUIMsgBailan16, () => {
+                                            client.sayTo(lang.menuUIMsgBailan73);
+                                            client.sayTo(lang.menuUIMsgBailan74, i[0]);
+                                        })
+                                        .show(i[0]);
+                                    return false;
+                                }
+                            });
+                        }
+                        return arr;
+                    }
+                }
+            }
+        },
+        "setting": {
+            "img": "textures/items/artificial_meat_creator_on.png",
+            "text": lang.menuUIMsgBailan75,
+            "default": "op",
+            "page": {
+                "personal": {
+                    "text": lang.menuUIMsgBailan101,
+                    "page": [
+                        {
+                            "type": "button",
+                            "msg": lang.menuUIMsgBailan102,
+                            "function": (client: PomClient, ui: MenuUIAlert): boolean => {
+                                new ModalFormData()
+                                    .title("Choose a language")
+                                    .dropdown("Language List", ["English", "简体中文"], 0)
+                                    .show(client.player).then((e) => {
+                                        if (!e.isCanceled) {
+                                            client.data.lang = e.formValues[0] == 0 ? "en" : "zh";
+                                            ExGameConfig.console.log(client.data.lang, e.formValues[0]);
+                                        }
+                                    })
+                                    .catch((e) => {
+                                        ExErrorStack.throwError(e);
+                                    });
+                                return false;
+                            }
+                        }
+                    ]
+                },
+                "op": {
+                    "text": lang.menuUIMsgBailan76,
+                    "page": (client: PomClient, ui: MenuUIAlert): MenuUIAlertView[] => {
+                        if (client.player.hasTag("owner")) {
+                            return [
+                                {
+                                    "type": "text_title",
+                                    "msg": lang.menuUIMsgBailan77
+                                },
+                                {
+                                    "type": "toggle",
+                                    "msg": lang.menuUIMsgBailan78,
+                                    "state": (client: PomClient, ui: MenuUIAlert) => client.globalSettings.playerCanTp,
+                                    "function": (client: PomClient, ui: MenuUIAlert) => {
+                                        client.globalSettings.playerCanTp = !client.globalSettings.playerCanTp;
+                                        return true;
+                                    }
+                                },
+                                {
+                                    "type": "toggle",
+                                    "msg": lang.menuUIMsgBailan79,
+                                    "state": (client: PomClient, ui: MenuUIAlert) => client.globalSettings.tpNeedItem,
+                                    "function": (client: PomClient, ui: MenuUIAlert) => {
+                                        client.globalSettings.tpNeedItem = !client.globalSettings.tpNeedItem;
+                                        return true;
+                                    }
+                                },
+                                {
+                                    "type": "toggle",
+                                    "msg": lang.menuUIMsgBailan80,
+                                    "state": (client: PomClient, ui: MenuUIAlert) => client.globalSettings.entityCleaner,
+                                    "function": (client: PomClient, ui: MenuUIAlert) => {
+                                        client.globalSettings.entityCleaner = !client.globalSettings.entityCleaner;
+
+                                        (<PomServer>client.getServer()).upDateEntityCleaner();
+
+                                        return true;
+                                    }
+                                },
+                                //,
+                                // {
+                                // 	"type": "toggle",
+                                // 	"msg": lang.menuUIMsgBailan81,
+                                // 	"state": (client: PomClient, ui: MenuUIAlert) => client.globalSettings.deathRecord,
+                                // 	"function": (client: PomClient, ui: MenuUIAlert) => {
+                                // 		client.globalSettings.deathRecord = !client.globalSettings.deathRecord;
+                                // 		return true;
+                                // 	}
+                                // },
+                                {
+                                    "type": "toggle",
+                                    "msg": lang.menuUIMsgBailan82,
+                                    "state": (client: PomClient, ui: MenuUIAlert) => client.globalSettings.tpPointRecord,
+                                    "function": (client: PomClient, ui: MenuUIAlert) => {
+                                        client.globalSettings.tpPointRecord = !client.globalSettings.tpPointRecord;
+                                        return true;
+                                    }
+                                }
+                            ];
+                        } else {
+                            return [{
+                                "type": "text",
+                                "msg": lang.menuUIMsgBailan83
+                            }];
+                        }
+                    }
+                },
+                "set": {
+                    "text": lang.menuUIMsgBailan84,
+                    "page": (client: PomClient, ui: MenuUIAlert): MenuUIAlertView[] => {
+                        if (client.player.hasTag("owner")) {
+                            return [{
+                                "type": "button",
+                                "msg": lang.menuUIMsgBailan85,
+                                "function": (client: PomClient, ui: MenuUIAlert) => {
+                                    new ModalFormData()
+                                        .toggle(lang.menuUIMsgBailan80, client.globalSettings.entityCleaner)
+                                        .slider(lang.menuUIMsgBailan91, 40, 1000, 20, client.globalSettings.entityCleanerLeastNum)
+                                        .slider(lang.menuUIMsgBailan92, 2, 10, 1, client.globalSettings.entityCleanerStrength)
+                                        .slider(lang.menuUIMsgBailan93, 1, 60, 1, client.globalSettings.entityCleanerDelay)
+                                        .show(client.player).then((e) => {
+                                            if (e.isCanceled) return;
+                                            client.globalSettings.entityCleaner = e.formValues[0];
+                                            client.globalSettings.entityCleanerLeastNum = e.formValues[1];
+                                            client.globalSettings.entityCleanerStrength = e.formValues[2];
+                                            client.globalSettings.entityCleanerDelay = e.formValues[3];
+                                        })
+                                        .catch((e) => {
+                                            ExErrorStack.throwError(e);
+                                        })
+                                    return false;
+                                }
+                            }];
+                        } else {
+                            return [{
+                                "type": "text",
+                                "msg": lang.menuUIMsgBailan83
+                            }];
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

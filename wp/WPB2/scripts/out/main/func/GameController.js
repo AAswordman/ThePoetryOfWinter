@@ -1,4 +1,4 @@
-import ExGameConfig from '../../modules/exmc/ExGameConfig.js';
+import ExGameConfig from "../../modules/exmc/server/ExGameConfig.js";
 export default class GameController {
     constructor(client) {
         this._client = client;
@@ -27,19 +27,14 @@ export default class GameController {
     getDimension(type = undefined) {
         return this._client.getDimension(type);
     }
+    getExDimension(type = undefined) {
+        return this._client.getExDimension(type);
+    }
     getPlayers() {
         return this._client.getPlayers();
     }
     getEvents() {
         return this._client.getEvents();
-    }
-    receiveMessage(msg) {
-    }
-    postMessage(id, useType, msg) {
-        this._client.postMessage(id, useType, msg);
-    }
-    runOnServer(msg) {
-        this._client.runOnServer(msg);
     }
     sayTo(str, p = this.player) {
         this._client.sayTo(str, p);

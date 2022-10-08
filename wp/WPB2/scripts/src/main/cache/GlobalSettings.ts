@@ -1,4 +1,4 @@
-import GlobalScoreBoardCache from "../../modules/exmc/storage/cache/GlobalScoreBoardCache.js";
+import GlobalScoreBoardCache from "../../modules/exmc/server/storage/cache/GlobalScoreBoardCache.js";
 
 export default class GlobalSettings extends GlobalScoreBoardCache {
 	

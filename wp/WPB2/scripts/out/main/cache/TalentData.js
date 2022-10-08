@@ -1,7 +1,7 @@
-import ExColorLoreUtil from "../../modules/exmc/item/ExColorLoreUtil.js";
-import LoreUtil from "../../modules/exmc/item/ExLoreUtil.js";
-import MathUtil from "../../modules/exmc/utils/MathUtil.js";
+import MathUtil from "../../modules/exmc/math/MathUtil.js";
 import format from '../../modules/exmc/utils/format.js';
+import ExColorLoreUtil from "../../modules/exmc/server/item/ExColorLoreUtil.js";
+import LoreUtil from "../../modules/exmc/server/item/ExLoreUtil.js";
 export default class TalentData {
     constructor() {
         this.isSerializeAble = true;
