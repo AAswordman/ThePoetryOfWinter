@@ -1,0 +1,1 @@
+export type basicFinalType = number | string | boolean | undefined | null;
