@@ -1,21 +1,17 @@
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-import MenuUIAlert from '../ui/MenuUIAlert.js';
+import PomClient from "../PomClient.js";
+import MenuUIAlert, { MenuUIAlertView } from '../ui/MenuUIAlert.js';
 import ExMessageAlert from "../../../modules/exmc/server/ui/ExMessageAlert.js";
+import { ItemStack } from "mojang-minecraft";
 import TalentData, { Occupation, Talent } from "../cache/TalentData.js";
+import PomServer from '../PomServer.js';
 import { ModalFormData } from "mojang-minecraft-ui";
 import Vector3 from '../../../modules/exmc/math/Vector3.js';
+import { langType } from './langType.js';
 import ExPlayer from "../../../modules/exmc/server/entity/ExPlayer.js";
 import ExErrorStack from "../../../modules/exmc/server/ExErrorStack.js";
 import ExGameConfig from "../../../modules/exmc/server/ExGameConfig.js";
-export default function menuFunctionUI(lang) {
+
+export default function menuFunctionUI(lang: langType) {
     return {
         "main": {
             "img": "textures/items/wet_paper",
@@ -40,7 +36,7 @@ export default function menuFunctionUI(lang) {
                 },
                 "activity": {
                     "text": lang.menuUISubtitleHuodong,
-                    "page": (client, ui) => [
+                    "page": (client: PomClient, ui: MenuUIAlert) => [
                         {
                             "type": "text_title",
                             "msg": lang.menuUIMsgBailan2
@@ -88,7 +84,7 @@ export default function menuFunctionUI(lang) {
                 },
                 "version": {
                     "text": lang.menuUIMsgBailan5,
-                    "page": (client, ui) => {
+                    "page": (client: PomClient, ui: MenuUIAlert) => {
                         return [
                             {
                                 "type": "text_title",
@@ -130,6 +126,7 @@ export default function menuFunctionUI(lang) {
                             {
                                 "type": "text_title",
                                 "msg": lang.menuUIMsgBanben6
+
                             },
                             {
                                 "type": "padding"
@@ -164,7 +161,7 @@ BunBun不是笨笨    在矿里的小金呀
                 },
                 "imp": {
                     "text": lang.menuUIMsgBailan6,
-                    "page": (client, ui) => {
+                    "page": (client: PomClient, ui: MenuUIAlert) => {
                         return MenuUIAlert.getLabelViews(`
 冬之纪行诗最终用户许可协议
 
@@ -232,6 +229,7 @@ You understand and agree that:
                         {
                             "type": "padding"
                         },
+
                         {
                             "type": "text",
                             "msg": lang.menuUIMsgBailan104
@@ -246,6 +244,7 @@ You understand and agree that:
                         {
                             "type": "padding"
                         },
+
                         {
                             "type": "text",
                             "msg": lang.menuUIMsgBailan8
@@ -260,6 +259,7 @@ You understand and agree that:
                         {
                             "type": "padding"
                         },
+
                         {
                             "type": "text",
                             "msg": lang.menuUIMsgBailan10
@@ -274,10 +274,12 @@ You understand and agree that:
                         {
                             "type": "padding"
                         },
+
                         {
                             "type": "text",
                             "msg": lang.menuUIMsgBailan12
                         }
+
                     ]
                 }
             }
@@ -289,16 +291,16 @@ You understand and agree that:
             "page": {
                 "info": {
                     "text": lang.menuUIMsgBailan14,
-                    "page": (client, ui) => {
+                    "page": (client: PomClient, ui: MenuUIAlert) => {
                         let source = client.player;
                         let scores = ExPlayer.getInstance(source).getScoresManager();
                         let msg = [`${lang.menuUIMsgBailan94}: ${client.gameId}`,
-                            `${lang.menuUIMsgBailan95}: ${scores.getScore("wbdj")}`,
-                            `${lang.menuUIMsgBailan96}: ${scores.getScore("wbfl")}`,
-                            `${lang.menuUIMsgBailan97}: ${scores.getScore("wbwqlq")}`,
-                            `${lang.menuUIMsgBailan98}: ${scores.getScore("wbkjlqcg")}`,
-                            `${lang.menuUIMsgBailan99}: ${source.hasTag("wbmsyh") ? lang.menuUIMsgBailan15 : lang.menuUIMsgBailan16}`,
-                            `${lang.menuUIMsgBailan100}: ${source.hasTag("wbdjeff") ? lang.menuUIMsgBailan15 : lang.menuUIMsgBailan16}`];
+                        `${lang.menuUIMsgBailan95}: ${scores.getScore("wbdj")}`,
+                        `${lang.menuUIMsgBailan96}: ${scores.getScore("wbfl")}`,
+                        `${lang.menuUIMsgBailan97}: ${scores.getScore("wbwqlq")}`,
+                        `${lang.menuUIMsgBailan98}: ${scores.getScore("wbkjlqcg")}`,
+                        `${lang.menuUIMsgBailan99}: ${source.hasTag("wbmsyh") ? lang.menuUIMsgBailan15 : lang.menuUIMsgBailan16}`,
+                        `${lang.menuUIMsgBailan100}: ${source.hasTag("wbdjeff") ? lang.menuUIMsgBailan15 : lang.menuUIMsgBailan16}`];
                         return MenuUIAlert.getLabelViews(msg);
                     }
                 },
@@ -322,12 +324,11 @@ You understand and agree that:
                         {
                             "type": "toggle",
                             "msg": lang.menuUIMsgBailan22,
-                            "state": (client, ui) => client.player.hasTag("wbdjeff"),
-                            "function": (client, ui) => {
+                            "state": (client: PomClient, ui: MenuUIAlert) => client.player.hasTag("wbdjeff"),
+                            "function": (client: PomClient, ui: MenuUIAlert) => {
                                 if (!client.player.hasTag("wbdjeff")) {
                                     client.player.addTag("wbdjeff");
-                                }
-                                else {
+                                } else {
                                     client.player.removeTag("wbdjeff");
                                 }
                                 return true;
@@ -353,7 +354,7 @@ You understand and agree that:
                         {
                             "type": "button",
                             "msg": lang.menuUIMsgBailan25,
-                            "function": (client, ui) => {
+                            "function": (client: PomClient, ui: MenuUIAlert) => {
                                 client.player.removeTag("pflame");
                                 return true;
                             }
@@ -361,7 +362,7 @@ You understand and agree that:
                         {
                             "type": "button",
                             "msg": lang.menuUIMsgBailan26,
-                            "function": (client, ui) => {
+                            "function": (client: PomClient, ui: MenuUIAlert) => {
                                 client.player.removeTag("phalo");
                                 return true;
                             }
@@ -369,7 +370,7 @@ You understand and agree that:
                         {
                             "type": "button",
                             "msg": lang.menuUIMsgBailan27,
-                            "function": (client, ui) => {
+                            "function": (client: PomClient, ui: MenuUIAlert) => {
                                 client.player.removeTag("prune");
                                 return true;
                             }
@@ -377,7 +378,7 @@ You understand and agree that:
                         {
                             "type": "button",
                             "msg": lang.menuUIMsgBailan28,
-                            "function": (client, ui) => {
+                            "function": (client: PomClient, ui: MenuUIAlert) => {
                                 client.player.removeTag("plove");
                                 return true;
                             }
@@ -386,11 +387,10 @@ You understand and agree that:
                 },
                 "talent": {
                     "text": lang.menuUIMsgBailan29,
-                    "page": (client, ui) => {
-                        var _a;
-                        let arr;
+                    "page": (client: PomClient, ui: MenuUIAlert): MenuUIAlertView[] => {
+                        let arr: MenuUIAlertView[];
                         if (TalentData.hasOccupation(client.data.talent)) {
-                            const point = (client.exPlayer.getScoresManager().getScore("wbdjcg") * 2 - ((_a = client.data.talent.pointUsed) !== null && _a !== void 0 ? _a : 0));
+                            const point = (client.exPlayer.getScoresManager().getScore("wbdjcg") * 2 - (client.data.talent.pointUsed ?? 0));
                             arr = [
                                 {
                                     "type": "text",
@@ -405,7 +405,7 @@ You understand and agree that:
                                         let a = Math.floor(i.level / 4);
                                         let b = i.level % 4;
                                         let c = 10 - a - 1;
-                                        let s = "";
+                                        let s = ""
                                         while (a > 0) {
                                             s += useChr[0];
                                             a--;
@@ -418,25 +418,25 @@ You understand and agree that:
                                         return s;
                                     })(),
                                     "function": () => {
-                                        var _a;
                                         if (point > 0 && i.level < 40) {
                                             i.level++;
-                                            client.data.talent.pointUsed = 1 + ((_a = client.data.talent.pointUsed) !== null && _a !== void 0 ? _a : 0);
+                                            client.data.talent.pointUsed = 1 + (client.data.talent.pointUsed ?? 0);
                                             client.data.talent.talents.splice(client.data.talent.talents.findIndex(t => t.id === i.id), 1);
                                             client.data.talent.talents.unshift(i);
                                             client.talentSystem.updateTalentRes();
                                         }
                                         return true;
                                     }
-                                }, {
-                                    "type": "text",
-                                    "msg": TalentData.getDescription(client.getLang(), client.data.talent.occupation, i.id, i.level)
-                                }, {
-                                    "type": "padding"
-                                });
+                                },
+                                    {
+                                        "type": "text",
+                                        "msg": TalentData.getDescription(client.getLang(), client.data.talent.occupation, i.id, i.level)
+                                    },
+                                    {
+                                        "type": "padding"
+                                    });
                             }
-                        }
-                        else {
+                        } else {
                             arr = [
                                 {
                                     "type": "text_title",
@@ -450,8 +450,9 @@ You understand and agree that:
                                 arr.push({
                                     "type": "button",
                                     "msg": i.getCharacter(client.getLang()),
-                                    "function": (client, ui) => {
+                                    "function": (client: PomClient, ui: MenuUIAlert) => {
                                         TalentData.chooseOccupation(client.data.talent, i);
+
                                         return true;
                                     }
                                 });
@@ -462,13 +463,12 @@ You understand and agree that:
                 },
                 "deathback": {
                     "text": lang.menuUIMsgBailan32,
-                    "page": (client, ui) => {
-                        if (client.data.pointRecord == undefined)
-                            client.data.pointRecord = {
-                                deathPoint: [],
-                                point: []
-                            };
-                        let arr = [
+                    "page": (client: PomClient, ui: MenuUIAlert): MenuUIAlertView[] => {
+                        if (client.data.pointRecord == undefined) client.data.pointRecord = {
+                            deathPoint: <[string, Vector3][]>[],
+                            point: <[string, string, Vector3][]>[]
+                        };
+                        let arr = <MenuUIAlertView[]>[
                             {
                                 "type": "text_title",
                                 "msg": lang.menuUIMsgBailan33
@@ -476,74 +476,84 @@ You understand and agree that:
                             {
                                 "type": "padding"
                             }
-                        ];
+                        ]
+
                         if (client.globalSettings.tpPointRecord) {
                             for (let j = 0; j < client.data.pointRecord.point.length; j++) {
                                 const i = client.data.pointRecord.point[j];
                                 const v = new Vector3(i[2]);
-                                arr.push({
-                                    "type": "text",
-                                    "msg": lang.menuUIMsgBailan34 + (i[0] + v.toString())
-                                }, {
-                                    "type": "button",
-                                    "msg": lang.menuUIMsgBailan35 + (i[1] == "" ? (i[0] + v.toString()) : i[1]),
-                                    "function": (client, ui) => {
-                                        let bag = client.exPlayer.getBag();
-                                        if (!bag.hasItem("wb:conveyor_issue") && client.globalSettings.tpNeedItem) {
-                                            client.sayTo(lang.menuUIMsgBailan36);
+                                arr.push(
+                                    {
+                                        "type": "text",
+                                        "msg": lang.menuUIMsgBailan34 + (i[0] + v.toString())
+                                    },
+                                    {
+                                        "type": "button",
+                                        "msg": lang.menuUIMsgBailan35 + (i[1] == "" ? (i[0] + v.toString()) : i[1]),
+                                        "function": (client: PomClient, ui: MenuUIAlert) => {
+                                            let bag = client.exPlayer.getBag();
+                                            if (!bag.hasItem("wb:conveyor_issue") && client.globalSettings.tpNeedItem) {
+                                                client.sayTo(lang.menuUIMsgBailan36);
+                                                return false;
+                                            }
+                                            if (client.globalSettings.tpNeedItem) {
+                                                let pos = (bag.searchItem("wb:conveyor_issue"));
+                                                let item = <ItemStack>bag.getItem(pos);
+                                                item.amount--;
+                                                bag.setItem(pos, item);
+                                            }
+                                            client.exPlayer.setPosition(v, client.getDimension(i[0]));
+                                            client.sayTo(lang.menuUIMsgBailan37);
                                             return false;
                                         }
-                                        if (client.globalSettings.tpNeedItem) {
-                                            let pos = (bag.searchItem("wb:conveyor_issue"));
-                                            let item = bag.getItem(pos);
-                                            item.amount--;
-                                            bag.setItem(pos, item);
+                                    },
+                                    {
+                                        "type": "button",
+                                        "msg": lang.menuUIMsgBailan38 + (i[1] == "" ? (i[0] + v.toString()) : i[1]),
+                                        "function": (client: PomClient, ui: MenuUIAlert) => {
+                                            new ModalFormData().textField(lang.menuUIMsgBailan39, (i[0] + v.toString()))
+                                                .show(client.player)
+                                                .then(e => {
+                                                    if (e.isCanceled) return;
+                                                    i[1] = e.formValues[0];
+                                                }).catch(e => {
+                                                    ExErrorStack.throwError(e);
+                                                })
+                                            return false;
                                         }
-                                        client.exPlayer.setPosition(v, client.getDimension(i[0]));
-                                        client.sayTo(lang.menuUIMsgBailan37);
-                                        return false;
+                                    },
+                                    {
+                                        "type": "button",
+                                        "msg": lang.menuUIMsgBailan40 + (i[1] == "" ? (i[0] + v.toString()) : i[1]),
+                                        "function": (client: PomClient, ui: MenuUIAlert) => {
+                                            client.data.pointRecord.point.splice(j, 1);
+                                            return true;
+                                        }
+
+                                    },
+                                    {
+                                        "type": "padding"
                                     }
-                                }, {
-                                    "type": "button",
-                                    "msg": lang.menuUIMsgBailan38 + (i[1] == "" ? (i[0] + v.toString()) : i[1]),
-                                    "function": (client, ui) => {
-                                        new ModalFormData().textField(lang.menuUIMsgBailan39, (i[0] + v.toString()))
-                                            .show(client.player)
-                                            .then(e => {
-                                            if (e.isCanceled)
-                                                return;
-                                            i[1] = e.formValues[0];
-                                        }).catch(e => {
-                                            ExErrorStack.throwError(e);
-                                        });
-                                        return false;
-                                    }
-                                }, {
-                                    "type": "button",
-                                    "msg": lang.menuUIMsgBailan40 + (i[1] == "" ? (i[0] + v.toString()) : i[1]),
-                                    "function": (client, ui) => {
-                                        client.data.pointRecord.point.splice(j, 1);
-                                        return true;
-                                    }
-                                }, {
-                                    "type": "padding"
-                                });
+                                );
                             }
                             arr.push({
                                 "msg": lang.menuUIMsgBailan41 + client.exPlayer.getPosition().floor().toString(),
                                 "type": "button",
-                                "function": (client, ui) => {
+                                "function": (client: PomClient, ui: MenuUIAlert) => {
                                     client.data.pointRecord.point.push([client.exPlayer.getDimension().id, "", client.exPlayer.getPosition().floor()]);
                                     return true;
                                 }
                             });
+
+                        } else {
+                            arr.push(
+                                {
+                                    "type": "text",
+                                    "msg": lang.menuUIMsgBailan42
+                                }
+                            )
                         }
-                        else {
-                            arr.push({
-                                "type": "text",
-                                "msg": lang.menuUIMsgBailan42
-                            });
-                        }
+
                         // if (client.globalSettings.deathRecord) {
                         // 	for (let j = 0; j < client.data.pointRecord.deathPoint.length; j++) {
                         // 		let i = client.data.pointRecord.deathPoint[j];
@@ -604,7 +614,7 @@ You understand and agree that:
                         {
                             "type": "button",
                             "msg": lang.menuUIMsgBailan51,
-                            "function": (client, ui) => {
+                            "function": (client: PomClient, ui: MenuUIAlert) => {
                                 client.player.addTag("wbmsyh");
                                 if (client.player.nameTag.startsWith("§")) {
                                     client.player.nameTag = client.player.nameTag.substring(2);
@@ -616,7 +626,7 @@ You understand and agree that:
                         {
                             "type": "button",
                             "msg": lang.menuUIMsgBailan48,
-                            "function": (client, ui) => {
+                            "function": (client: PomClient, ui: MenuUIAlert) => {
                                 client.player.removeTag("wbmsyh");
                                 if (client.player.nameTag.startsWith("§")) {
                                     client.player.nameTag = client.player.nameTag.substring(2);
@@ -629,16 +639,14 @@ You understand and agree that:
                 },
                 "tp": {
                     "text": lang.menuUIMsgBailan53,
-                    "page": (client, ui) => __awaiter(this, void 0, void 0, function* () {
-                        var _a;
+                    "page": async (client: PomClient, ui: MenuUIAlert): Promise<MenuUIAlertView[]> => {
                         if (!client.globalSettings.playerCanTp) {
                             return [{
-                                    "type": "text",
-                                    "msg": lang.menuUIMsgBailan54
-                                }];
-                        }
-                        ;
-                        let arr = [];
+                                "type": "text",
+                                "msg": lang.menuUIMsgBailan54
+                            }];
+                        };
+                        let arr: MenuUIAlertView[] = [];
                         arr.push({
                             "msg": lang.menuUIMsgBailan55,
                             "type": "text_title"
@@ -646,13 +654,13 @@ You understand and agree that:
                         arr.push({
                             "type": "padding"
                         });
-                        let players = (_a = yield client.getPlayersAndIds()) !== null && _a !== void 0 ? _a : [];
+                        let players = await client.getPlayersAndIds() ?? [];
                         for (const i of players) {
                             const p = ExPlayer.getInstance(i[0]);
                             arr.push({
                                 "type": "button",
                                 "msg": `${p.nameTag} pos:${p.getPosition().floor()}`,
-                                "function": (client, ui) => {
+                                "function": (client: PomClient, ui: MenuUIAlert) => {
                                     let bag = client.exPlayer.getBag();
                                     if (!bag.hasItem("wb:conveyor_issue") && client.globalSettings.tpNeedItem) {
                                         client.sayTo(lang.menuUIMsgBailan36);
@@ -660,21 +668,22 @@ You understand and agree that:
                                     }
                                     if (client.globalSettings.tpNeedItem) {
                                         let pos = (bag.searchItem("wb:conveyor_issue"));
-                                        let item = bag.getItem(pos);
+                                        let item = <ItemStack>bag.getItem(pos);
                                         item.amount--;
                                         bag.setItem(pos, item);
                                     }
                                     client.sayTo(lang.menuUIMsgBailan57);
+
                                     new ExMessageAlert().title(lang.menuUIMsgBailan58).body(`玩家 ${client.player.nameTag} §r想要传送到你的位置，是否接受？`)
                                         .button1(lang.menuUIMsgBailan15, () => {
-                                        client.sayTo(lang.menuUIMsgBailan37);
-                                        client.sayTo(lang.menuUIMsgBailan37, i[0]);
-                                        client.exPlayer.setPosition(p.getPosition(), p.getDimension());
-                                    })
+                                            client.sayTo(lang.menuUIMsgBailan37);
+                                            client.sayTo(lang.menuUIMsgBailan37, i[0]);
+                                            client.exPlayer.setPosition(p.getPosition(), p.getDimension());
+                                        })
                                         .button2(lang.menuUIMsgBailan16, () => {
-                                        client.sayTo(lang.menuUIMsgBailan63);
-                                        client.sayTo(lang.menuUIMsgBailan64, i[0]);
-                                    })
+                                            client.sayTo(lang.menuUIMsgBailan63);
+                                            client.sayTo(lang.menuUIMsgBailan64, i[0]);
+                                        })
                                         .show(i[0]);
                                     return false;
                                 }
@@ -692,7 +701,7 @@ You understand and agree that:
                             arr.push({
                                 "type": "button",
                                 "msg": `${p.nameTag} (pos:${p.getPosition().floor()})`,
-                                "function": (client, ui) => {
+                                "function": (client: PomClient, ui: MenuUIAlert) => {
                                     let bag = client.exPlayer.getBag();
                                     if (!bag.hasItem("wb:conveyor_issue") && client.globalSettings.tpNeedItem) {
                                         client.sayTo(lang.menuUIMsgBailan36);
@@ -700,28 +709,29 @@ You understand and agree that:
                                     }
                                     if (client.globalSettings.tpNeedItem) {
                                         let pos = (bag.searchItem("wb:conveyor_issue"));
-                                        let item = bag.getItem(pos);
+                                        let item = <ItemStack>bag.getItem(pos);
                                         item.amount--;
                                         bag.setItem(pos, item);
                                     }
                                     client.sayTo(lang.menuUIMsgBailan67);
+
                                     new ExMessageAlert().title(lang.menuUIMsgBailan58).body(`玩家 ${client.player.nameTag} §r邀请你传送到 pos:${client.exPlayer.getPosition().floor()} ，是否接受？`)
                                         .button1(lang.menuUIMsgBailan15, () => {
-                                        client.sayTo(lang.menuUIMsgBailan37);
-                                        client.sayTo(lang.menuUIMsgBailan37, i[0]);
-                                        p.setPosition(client.exPlayer.getPosition(), client.exPlayer.getDimension());
-                                    })
+                                            client.sayTo(lang.menuUIMsgBailan37);
+                                            client.sayTo(lang.menuUIMsgBailan37, i[0]);
+                                            p.setPosition(client.exPlayer.getPosition(), client.exPlayer.getDimension());
+                                        })
                                         .button2(lang.menuUIMsgBailan16, () => {
-                                        client.sayTo(lang.menuUIMsgBailan73);
-                                        client.sayTo(lang.menuUIMsgBailan74, i[0]);
-                                    })
+                                            client.sayTo(lang.menuUIMsgBailan73);
+                                            client.sayTo(lang.menuUIMsgBailan74, i[0]);
+                                        })
                                         .show(i[0]);
                                     return false;
                                 }
                             });
                         }
                         return arr;
-                    })
+                    }
                 }
             }
         },
@@ -736,19 +746,19 @@ You understand and agree that:
                         {
                             "type": "button",
                             "msg": lang.menuUIMsgBailan102,
-                            "function": (client, ui) => {
+                            "function": (client: PomClient, ui: MenuUIAlert): boolean => {
                                 new ModalFormData()
                                     .title("Choose a language")
                                     .dropdown("Language List", ["English", "简体中文"], 0)
                                     .show(client.player).then((e) => {
-                                    if (!e.isCanceled) {
-                                        client.data.lang = e.formValues[0] == 0 ? "en" : "zh";
-                                        ExGameConfig.console.log(client.data.lang, e.formValues[0]);
-                                    }
-                                })
+                                        if (!e.isCanceled) {
+                                            client.data.lang = e.formValues[0] == 0 ? "en" : "zh";
+                                            ExGameConfig.console.log(client.data.lang, e.formValues[0]);
+                                        }
+                                    })
                                     .catch((e) => {
-                                    ExErrorStack.throwError(e);
-                                });
+                                        ExErrorStack.throwError(e);
+                                    });
                                 return false;
                             }
                         }
@@ -756,7 +766,7 @@ You understand and agree that:
                 },
                 "op": {
                     "text": lang.menuUIMsgBailan76,
-                    "page": (client, ui) => {
+                    "page": (client: PomClient, ui: MenuUIAlert): MenuUIAlertView[] => {
                         if (client.player.hasTag("owner")) {
                             return [
                                 {
@@ -766,8 +776,8 @@ You understand and agree that:
                                 {
                                     "type": "toggle",
                                     "msg": lang.menuUIMsgBailan78,
-                                    "state": (client, ui) => client.globalSettings.playerCanTp,
-                                    "function": (client, ui) => {
+                                    "state": (client: PomClient, ui: MenuUIAlert) => client.globalSettings.playerCanTp,
+                                    "function": (client: PomClient, ui: MenuUIAlert) => {
                                         client.globalSettings.playerCanTp = !client.globalSettings.playerCanTp;
                                         return true;
                                     }
@@ -775,8 +785,8 @@ You understand and agree that:
                                 {
                                     "type": "toggle",
                                     "msg": lang.menuUIMsgBailan79,
-                                    "state": (client, ui) => client.globalSettings.tpNeedItem,
-                                    "function": (client, ui) => {
+                                    "state": (client: PomClient, ui: MenuUIAlert) => client.globalSettings.tpNeedItem,
+                                    "function": (client: PomClient, ui: MenuUIAlert) => {
                                         client.globalSettings.tpNeedItem = !client.globalSettings.tpNeedItem;
                                         return true;
                                     }
@@ -784,10 +794,12 @@ You understand and agree that:
                                 {
                                     "type": "toggle",
                                     "msg": lang.menuUIMsgBailan80,
-                                    "state": (client, ui) => client.globalSettings.entityCleaner,
-                                    "function": (client, ui) => {
+                                    "state": (client: PomClient, ui: MenuUIAlert) => client.globalSettings.entityCleaner,
+                                    "function": (client: PomClient, ui: MenuUIAlert) => {
                                         client.globalSettings.entityCleaner = !client.globalSettings.entityCleaner;
-                                        client.getServer().upDateEntityCleaner();
+
+                                        (<PomServer>client.getServer()).upDateEntityCleaner();
+
                                         return true;
                                     }
                                 },
@@ -804,60 +816,56 @@ You understand and agree that:
                                 {
                                     "type": "toggle",
                                     "msg": lang.menuUIMsgBailan82,
-                                    "state": (client, ui) => client.globalSettings.tpPointRecord,
-                                    "function": (client, ui) => {
+                                    "state": (client: PomClient, ui: MenuUIAlert) => client.globalSettings.tpPointRecord,
+                                    "function": (client: PomClient, ui: MenuUIAlert) => {
                                         client.globalSettings.tpPointRecord = !client.globalSettings.tpPointRecord;
                                         return true;
                                     }
                                 }
                             ];
-                        }
-                        else {
+                        } else {
                             return [{
-                                    "type": "text",
-                                    "msg": lang.menuUIMsgBailan83
-                                }];
+                                "type": "text",
+                                "msg": lang.menuUIMsgBailan83
+                            }];
                         }
                     }
                 },
                 "set": {
                     "text": lang.menuUIMsgBailan84,
-                    "page": (client, ui) => {
+                    "page": (client: PomClient, ui: MenuUIAlert): MenuUIAlertView[] => {
                         if (client.player.hasTag("owner")) {
                             return [{
-                                    "type": "button",
-                                    "msg": lang.menuUIMsgBailan85,
-                                    "function": (client, ui) => {
-                                        new ModalFormData()
-                                            .toggle(lang.menuUIMsgBailan80, client.globalSettings.entityCleaner)
-                                            .slider(lang.menuUIMsgBailan91, 40, 1000, 20, client.globalSettings.entityCleanerLeastNum)
-                                            .slider(lang.menuUIMsgBailan92, 2, 10, 1, client.globalSettings.entityCleanerStrength)
-                                            .slider(lang.menuUIMsgBailan93, 1, 60, 1, client.globalSettings.entityCleanerDelay)
-                                            .show(client.player).then((e) => {
-                                            if (e.isCanceled)
-                                                return;
+                                "type": "button",
+                                "msg": lang.menuUIMsgBailan85,
+                                "function": (client: PomClient, ui: MenuUIAlert) => {
+                                    new ModalFormData()
+                                        .toggle(lang.menuUIMsgBailan80, client.globalSettings.entityCleaner)
+                                        .slider(lang.menuUIMsgBailan91, 40, 1000, 20, client.globalSettings.entityCleanerLeastNum)
+                                        .slider(lang.menuUIMsgBailan92, 2, 10, 1, client.globalSettings.entityCleanerStrength)
+                                        .slider(lang.menuUIMsgBailan93, 1, 60, 1, client.globalSettings.entityCleanerDelay)
+                                        .show(client.player).then((e) => {
+                                            if (e.isCanceled) return;
                                             client.globalSettings.entityCleaner = e.formValues[0];
                                             client.globalSettings.entityCleanerLeastNum = e.formValues[1];
                                             client.globalSettings.entityCleanerStrength = e.formValues[2];
                                             client.globalSettings.entityCleanerDelay = e.formValues[3];
                                         })
-                                            .catch((e) => {
+                                        .catch((e) => {
                                             ExErrorStack.throwError(e);
-                                        });
-                                        return false;
-                                    }
-                                }];
-                        }
-                        else {
+                                        })
+                                    return false;
+                                }
+                            }];
+                        } else {
                             return [{
-                                    "type": "text",
-                                    "msg": lang.menuUIMsgBailan83
-                                }];
+                                "type": "text",
+                                "msg": lang.menuUIMsgBailan83
+                            }];
                         }
                     }
                 }
             }
         }
-    };
+    }
 }
-//# sourceMappingURL=menuFunctionUI.js.map

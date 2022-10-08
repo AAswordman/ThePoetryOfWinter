@@ -3,12 +3,11 @@ import ExDimension from "./ExDimension.js";
 import { world, MinecraftDimensionTypes, PlayerJoinEvent, Player, TickEvent, PlayerLeaveEvent, system } from "mojang-minecraft";
 import ExGameConfig from "./ExGameConfig.js";
 import initConsole from "../utils/Console.js";
-import ExTransmissionMsg from "./ExTransmissionMsg.js";
 import ExServerEvents from "./ExServerEvents.js";
 import UUID from "../utils/UUID.js";
 import ExErrorStack from './ExErrorStack.js';
 import SetTimeOutSupport from "../interface/SetTimeOutSupport.js";
-import ExConfig from '../ExConfig';
+import ExConfig from '../ExConfig.js';
 
 export default class ExGameServer implements SetTimeOutSupport {
     clients;
@@ -23,7 +22,7 @@ export default class ExGameServer implements SetTimeOutSupport {
             });
         }
 
-        this.clients = new Map<string, ExGameClient>()
+        this.clients = new Map<string, ExGameClient>();
         ExGameConfig.console = initConsole(ExGameConfig);
 
         this._events = new ExServerEvents(this);

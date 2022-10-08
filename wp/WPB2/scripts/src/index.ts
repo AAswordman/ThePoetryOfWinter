@@ -1,5 +1,5 @@
 import CustomServer from "./demo/CustomServer.js";
-import PomServer from "./main/PomServer.js";
+import PomServer from "./main/server/PomServer.js";
 import ExConfig from "./modules/exmc/ExConfig.js";
 
 let config = new ExConfig();

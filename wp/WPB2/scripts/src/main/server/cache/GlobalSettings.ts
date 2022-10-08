@@ -1,64 +1,69 @@
 import GlobalScoreBoardCache from "../../../modules/exmc/server/storage/cache/GlobalScoreBoardCache.js";
+
 export default class GlobalSettings extends GlobalScoreBoardCache {
-    get playerCanTp() {
+	
+	
+    public get playerCanTp(): boolean {
         return this.getBoolean("playerCanTp");
     }
-    set playerCanTp(value) {
+    public set playerCanTp(value: boolean) {
         this.setBoolean("playerCanTp", value);
     }
-    get tpNeedItem() {
+    public get tpNeedItem() {
         return this.getBoolean("tpNeedItem");
     }
-    set tpNeedItem(value) {
+    public set tpNeedItem(value: boolean) {
         this.setBoolean("tpNeedItem", value);
     }
-    get gameOpList() {
+
+    public get gameOpList() {
         return this.getList("gameOpList");
     }
-    set gameOpList(value) {
+    public set gameOpList(value: number[]) {
         this.setList("gameOpList", value);
     }
-    get entityCleaner() {
+    public get entityCleaner() {
         return this.getBoolean("entityCleaner");
     }
-    set entityCleaner(value) {
+    public set entityCleaner(value: boolean) {
         this.setBoolean("entityCleaner", value);
     }
-    get deathRecord() {
+    public get deathRecord() {
         return this.getBoolean("deathRecord");
     }
-    set deathRecord(value) {
+    public set deathRecord(value: boolean) {
         this.setBoolean("deathRecord", value);
     }
-    get tpPointRecord() {
+    public get tpPointRecord() {
         return this.getBoolean("tpPointRecord");
     }
-    set tpPointRecord(value) {
+    public set tpPointRecord(value: boolean) {
         this.setBoolean("tpPointRecord", value);
     }
-    get ownerExists() {
+    public get ownerExists() {
         return this.getBoolean("ownerExists");
     }
-    set ownerExists(value) {
+    public set ownerExists(value: boolean) {
         this.setBoolean("ownerExists", value);
     }
-    get entityCleanerLeastNum() {
+    public get entityCleanerLeastNum() {
         return this.getNumber("entityCleanerLeastNum") || 200;
     }
-    set entityCleanerLeastNum(value) {
+    public set entityCleanerLeastNum(value: number) {
         this.setNumber("entityCleanerLeastNum", value);
     }
-    get entityCleanerStrength() {
+
+    public get entityCleanerStrength() {
         return this.getNumber("entityCleanerStrength") || 5;
     }
-    set entityCleanerStrength(value) {
+    public set entityCleanerStrength(value: number) {
         this.setNumber("entityCleanerStrength", value);
     }
-    get entityCleanerDelay() {
+    public get entityCleanerDelay() {
         return this.getNumber("entityCleanerDelay") || 30;
     }
-    set entityCleanerDelay(value) {
+    public set entityCleanerDelay(value: number) {
         this.setNumber("entityCleanerDelay", value);
     }
+    
 }
-//# sourceMappingURL=GlobalSettings.js.map

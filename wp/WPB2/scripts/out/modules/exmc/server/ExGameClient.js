@@ -52,6 +52,43 @@ export default class ExGameClient {
     getServer() {
         return this._server;
     }
+    setInterworkingPool(pool) {
+        this._pool = pool;
+        this._poolCache = {};
+        for (const name in this._pool) {
+            this._poolCache[name] = this._pool[name];
+            Object.defineProperty(this._pool, name, {
+                set: (v) => {
+                    this._poolCache[name] = v;
+                    // TODO: send to client
+                },
+                get: () => {
+                    const value = this._poolCache[name];
+                    if (typeof value === "function") {
+                        return () => {
+                            const msg = {
+                                "type": "pool",
+                                "name": name,
+                                "args": [...arguments]
+                            };
+                            // TODO: send to client
+                            return new Promise((v, e) => {
+                                const res = value(...msg.args);
+                                v(res);
+                            });
+                        };
+                    }
+                    else {
+                        return value;
+                    }
+                },
+                enumerable: true
+            });
+        }
+    }
+    getInterworkingPool() {
+        return this._pool;
+    }
     onJoin() {
         let func = () => {
             try {
