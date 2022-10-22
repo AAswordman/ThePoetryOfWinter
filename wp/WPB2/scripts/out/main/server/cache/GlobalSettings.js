@@ -1,4 +1,5 @@
 import GlobalScoreBoardCache from "../../../modules/exmc/server/storage/cache/GlobalScoreBoardCache.js";
+import Random from "../../../modules/exmc/utils/Random.js";
 export default class GlobalSettings extends GlobalScoreBoardCache {
     get playerCanTp() {
         return this.getBoolean("playerCanTp");
@@ -59,6 +60,18 @@ export default class GlobalSettings extends GlobalScoreBoardCache {
     }
     set entityCleanerDelay(value) {
         this.setNumber("entityCleanerDelay", value);
+    }
+    get worldSeed() {
+        return this.getNumber("worldSeed") || (this.worldSeed = Math.random() * Random.MAX_VALUE);
+    }
+    set worldSeed(value) {
+        this.setNumber("worldSeed", value);
+    }
+    get ruinsExsitsData() {
+        return this.getNumber("ruinsExsitsData") || 0;
+    }
+    set ruinsExsitsData(value) {
+        this.setNumber("ruinsExsitsData", value);
     }
 }
 //# sourceMappingURL=GlobalSettings.js.map

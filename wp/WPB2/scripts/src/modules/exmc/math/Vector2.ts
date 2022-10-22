@@ -1,5 +1,6 @@
 
 export default class Vector2 {
+    
     public static readonly back = new Vector2(0, -1);
     public static readonly forward = new Vector2(0, 1);
     public static readonly left = new Vector2(-1, 0);
@@ -132,7 +133,10 @@ export default class Vector2 {
         return n.x * this.x + n.y * this.y;
     }
 
-
+    public normalize() {
+        this.div(this.len());
+        return this;
+    }
 
     public clone() {
         return new Vector2(this.x, this.y);

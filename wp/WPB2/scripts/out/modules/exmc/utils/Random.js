@@ -16,6 +16,9 @@ export default class Random {
     nextInt(max = Random.MAX_VALUE) {
         return Math.floor(this.nextDouble() * (max));
     }
+    nextBoolean() {
+        return this.nextDouble() >= 0.5;
+    }
 }
-Random.MAX_VALUE = Math.pow(2, 32) - 1;
+Random.MAX_VALUE = 1 << 32 - 1;
 //# sourceMappingURL=Random.js.map

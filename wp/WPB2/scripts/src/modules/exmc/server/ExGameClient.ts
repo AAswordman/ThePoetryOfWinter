@@ -84,7 +84,7 @@ export default class ExGameClient<T extends ExInterworkingPool = ExInterworkingP
                 get: () => {
                     const value = this._poolCache[name];
                     if (typeof value === "function") {
-                        return () => {
+                        return function () {
                             const msg = {
                                 "type": "pool",
                                 "name": name,

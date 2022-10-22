@@ -1,12 +1,13 @@
 import Random from "../modules/exmc/utils/Random.js";
 import Vector2 from "../modules/exmc/math/Vector2.js";
 import ExStructureJigsaw from "../modules/exmc/server/block/structure/ExStructureJigsaw.js";
+import Vector3 from "../modules/exmc/math/Vector3.js";
 const maze = Array.from(new Array(32), () => new Array(32).fill(0));
 let block = 64;
 let seed = 1346;
-let r = new Random(seed);
-const EMPTY = 0, BLOCK = 1, PATH = 2, UNDEF = 3, CENTER = 4;
-let getMsg = (x, y) => {
+const r = new Random(seed);
+const EMPTY = 0, BLOCK = 1, PATH = 2, UNDEF = 3, CENTER = 4, TOWER = 5;
+const getMsg = (x, y) => {
     try {
         return maze[y][x];
     }
@@ -14,17 +15,18 @@ let getMsg = (x, y) => {
         return UNDEF;
     }
 };
-maze[15][15] = CENTER;
-maze[15][16] = CENTER;
-maze[16][15] = CENTER;
-maze[16][16] = CENTER;
+for (let i = 14; i < 18; i++) {
+    for (let j = 14; j < 18; j++) {
+        maze[i][j] = CENTER;
+    }
+}
 while (block > 0) {
     maze[r.nextInt(32)][r.nextInt(32)] = BLOCK;
     block--;
 }
 let arrows = [[new Vector2(), Vector2.forward]];
 maze[1][0] = EMPTY;
-let tempV = new Vector2();
+const tempV = new Vector2();
 while (arrows.length > 0) {
     let next = [];
     next = [];
@@ -56,17 +58,79 @@ while (arrows.length > 0) {
     }
     arrows = next;
 }
-for (let e of maze) {
-    console.log(JSON.stringify(e));
+class Tower {
+    constructor(x, y, height) {
+        this.height = height;
+        this.connections = [];
+        this.x = x;
+        this.y = y;
+    }
+    *[Symbol.iterator]() {
+        for (let v of this.connections) {
+            yield v;
+        }
+    }
+    connect(t) {
+        this.connections.push(t);
+        //console.log("Connect",this.toString(),t.toString());
+    }
+    [Symbol.toStringTag]() {
+        return this.toString();
+    }
+    toString() {
+        return `(${this.x},${this.y},${this.height})`;
+    }
 }
-let jigsaw = new ExStructureJigsaw(16, 32);
+const vertex = Array.from(new Array(16), () => new Array(16).fill(EMPTY));
+const getVertex = (x, y) => {
+    try {
+        return vertex[y][x];
+    }
+    catch (e) {
+        return UNDEF;
+    }
+};
+for (let i = 6; i < 10; i++) {
+    for (let j = 6; j < 10; j++) {
+        vertex[i][j] = CENTER;
+    }
+}
+const vertexs = [];
+block = 24;
+while (block > 0) {
+    let y = r.nextInt(16), x = r.nextInt(16);
+    const [mx, my] = [16 - vertex.length / 2 + x, 16 - vertex.length / 2 + y], m = getMsg(mx, my);
+    if (getVertex(x, y) !== CENTER && m == BLOCK || m == EMPTY) {
+        const t = new Tower(y, x, 3 + Math.floor(block / 4));
+        vertexs.push(t);
+        vertex[y][x] = t;
+        maze[my][mx] = TOWER;
+        block--;
+    }
+}
+vertexs.forEach(t => {
+    for (let i = -4; i <= 4; i++) {
+        for (let j = -4; j <= 4; j++) {
+            if (!(i == 0 && j == 0)) {
+                let v = getVertex(t.x + i, t.y + j);
+                if (v instanceof Tower)
+                    t.connect(v);
+            }
+        }
+    }
+});
+let jigsaw = new ExStructureJigsaw(16, 32, 10);
 const structure_bossArea = "mystructure:boss_desert_1", structure_straightLine = "mystructure:boss_desert_2", // |
 structure_curve = "mystructure:boss_desert_3", // _|
 structure_triple = "mystructure:boss_desert_4", //-|
 structure_crossing = "mystructure:boss_desert_5", // +
 structure_straightLineTower = "mystructure:boss_desert_6", //|
-structure_towerBlock = "mystructure:boss_desert_7", // O
-structure_block = "mystructure:boss_desert_8"; //O
+structure_towerBlock1 = "mystructure:boss_desert_7", // O
+structure_towerBlock2 = "mystructure:boss_desert_8", // O
+structure_towerBlock3 = "mystructure:boss_desert_10", // O
+structure_towerBlock4 = "mystructure:boss_desert_12", // O
+structure_upplain = "mystructure:boss_desert_13", structure_upstairs = "mystructure:boss_desert_14", structure_towerPiece = "mystructure:boss_desert_15", structure_boss = "mystructure:boss_desert_16", structure_block1 = "mystructure:boss_desert_9", // O
+structure_block2 = "mystructure:boss_desert_11"; //O
 // jigsaw.setStructurePlane(15, 15, 0, 0, 0, structure_bossArea, 0);
 // jigsaw.setStructurePlane(16, 15, 0, 0, 0, structure_bossArea, 90);
 // jigsaw.setStructurePlane(16, 16, 0, 0, 0, structure_bossArea, 180);
@@ -74,18 +138,36 @@ structure_block = "mystructure:boss_desert_8"; //O
 maze.forEach((v, y) => {
     v.forEach((i, x) => {
         if (i === BLOCK) {
-            jigsaw.setStructurePlane(x, y, 0, 0, 0, structure_block, r.nextInt(4) * 90);
+            jigsaw.setStructurePlane(x, y, 0, 0, 0, [structure_block1, structure_block2][r.nextInt(2)], r.nextInt(4) * 90);
         }
         else if (i === EMPTY) {
-            jigsaw.setStructurePlane(x, y, 0, 0, 0, structure_block, r.nextInt(4) * 90);
+            jigsaw.setStructurePlane(x, y, 0, 0, 0, [structure_towerBlock1, structure_towerBlock2, structure_towerBlock3, structure_towerBlock4][r.nextInt(4)], r.nextInt(4) * 90);
+        }
+        else if (i === TOWER) {
+            let vt = getVertex(x - 16 + vertex.length / 2, y - 16 + vertex.length / 2);
+            if (vt instanceof Tower) {
+                let h = vt.height;
+                while (h >= 0) {
+                    jigsaw.setStructure(x, y, h, 0, 0, 0, structure_towerPiece, 0);
+                    h--;
+                }
+            }
         }
         else if (i === PATH) {
-            let top = getMsg(x, y + 1) === PATH ? 0 : 1;
-            let bottom = getMsg(x, y - 1) === PATH ? 0 : 1;
-            let right = getMsg(x + 1, y) === PATH ? 0 : 1;
-            let left = getMsg(x - 1, y) === PATH ? 0 : 1;
+            let top = getMsg(x, y + 1) === PATH ? 1 : 0;
+            let bottom = getMsg(x, y - 1) === PATH ? 1 : 0;
+            let right = getMsg(x + 1, y) === PATH ? 1 : 0;
+            let left = getMsg(x - 1, y) === PATH ? 1 : 0;
             let pathNum = top + left + right + bottom;
             switch (pathNum) {
+                case 1:
+                    if (top + bottom === 1) {
+                        jigsaw.setStructurePlane(x, y, 0, 0, 0, structure_straightLine, 0);
+                    }
+                    else if (left + right === 1) {
+                        jigsaw.setStructurePlane(x, y, 0, 0, 0, structure_straightLine, 90);
+                    }
+                    break;
                 case 2:
                     if (top + bottom === 2) {
                         jigsaw.setStructurePlane(x, y, 0, 0, 0, structure_straightLine, 0);
@@ -98,7 +180,7 @@ maze.forEach((v, y) => {
                             jigsaw.setStructurePlane(x, y, 0, 0, 0, structure_curve, 90);
                         }
                         else if (bottom === 1) {
-                            jigsaw.setStructurePlane(x, y, 0, 0, 0, structure_curve, 270);
+                            jigsaw.setStructurePlane(x, y, 0, 0, 0, structure_curve, 180);
                         }
                         else {
                             throw new Error("num error");
@@ -109,7 +191,7 @@ maze.forEach((v, y) => {
                             jigsaw.setStructurePlane(x, y, 0, 0, 0, structure_curve, 0);
                         }
                         else if (bottom === 1) {
-                            jigsaw.setStructurePlane(x, y, 0, 0, 0, structure_curve, 180);
+                            jigsaw.setStructurePlane(x, y, 0, 0, 0, structure_curve, 270);
                         }
                         else {
                             throw new Error("num error");
@@ -139,5 +221,50 @@ maze.forEach((v, y) => {
         }
     });
 });
-//jigsaw.generate(0, 0, 0,dim);
+const tempA = new Vector3();
+const tempC = new Vector3();
+vertexs.forEach((v) => {
+    for (const next of v) {
+        if (next.height > v.height) {
+            tempA.set(v.x, v.height, v.y);
+            tempC.set(next.x, v.height, next.y).sub(tempA);
+            tempC.set(tempC.x > 0 ? 1 : -1, v.height, tempC.z > 0 ? 1 : -1);
+            let tran = 16 - vertex.length / 2;
+            let path = r.nextBoolean();
+            if (path) {
+                for (; tempA.x != next.x; tempA.x += tempC.x) {
+                    if (jigsaw.isEmpty(tempA.x + tran, tempA.z + tran, tempA.y)) {
+                        jigsaw.setStructure(tempA.x + tran, tempA.z + tran, tempA.y, 0, 1, 0, structure_upplain);
+                    }
+                }
+                for (; tempA.z != next.y; tempA.z += tempC.z) {
+                    if (jigsaw.isEmpty(tempA.x + tran, tempA.z + tran, tempA.y)) {
+                        jigsaw.setStructure(tempA.x + tran, tempA.z + tran, tempA.y, 0, 1, 0, structure_upplain);
+                    }
+                }
+            }
+            else {
+                for (; tempA.z != next.y; tempA.z += tempC.z) {
+                    if (jigsaw.isEmpty(tempA.x + tran, tempA.z + tran, tempA.y)) {
+                        jigsaw.setStructure(tempA.x + tran, tempA.z + tran, tempA.y, 0, 1, 0, structure_upplain);
+                    }
+                }
+                for (; tempA.x != next.x; tempA.x += tempC.x) {
+                    if (jigsaw.isEmpty(tempA.x + tran, tempA.z + tran, tempA.y)) {
+                        jigsaw.setStructure(tempA.x + tran, tempA.z + tran, tempA.y, 0, 1, 0, structure_upplain);
+                    }
+                }
+            }
+        }
+    }
+});
+jigsaw.setStructurePlane(14, 14, 0, 0, 0, structure_boss);
+jigsaw.setStructurePlane(14, 16, 0, 0, 0, structure_boss, 270);
+jigsaw.setStructurePlane(16, 14, 0, 0, 0, structure_boss, 90);
+jigsaw.setStructurePlane(16, 16, 0, 0, 0, structure_boss, 180);
+jigsaw.jigsawData.forEach((v) => {
+    v.forEach((v2 => {
+        console.log(JSON.stringify(v2.map(v => v == undefined ? 0 : 1)));
+    }));
+});
 //# sourceMappingURL=mazeBuilder.js.map

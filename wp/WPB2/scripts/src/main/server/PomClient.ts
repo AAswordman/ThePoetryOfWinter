@@ -15,6 +15,8 @@ import PomMagicSystem from "./func/PomMagicSystem.js";
 import PomTalentSystem from "./func/PomTalentSystem.js";
 import SimpleItemUseFunc from "./func/SimpleItemUseFunc.js";
 import PomTransmission from '../PomTransmission.js';
+import PomDimRuinsSystem from "./func/PomDimRuinsSystem.js";
+import PomServer from "./PomServer.js";
 
 
 export default class PomClient extends ExGameClient<PomTransmission> {
@@ -29,6 +31,7 @@ export default class PomClient extends ExGameClient<PomTransmission> {
     talentSystem = new PomTalentSystem(this);
     magicSystem = new PomMagicSystem(this);
     itemUseFunc = new SimpleItemUseFunc(this);
+    ruinsSystem = new PomDimRuinsSystem(this);
 
 
     constructor(server: ExGameServer, id: string, player: Player) {
@@ -46,6 +49,7 @@ export default class PomClient extends ExGameClient<PomTransmission> {
         this.addCtrller(this.magicSystem);
         this.addCtrller(this.talentSystem);
         this.addCtrller(this.itemUseFunc);
+        this.addCtrller(this.ruinsSystem);
 
         this.gameControllers.forEach(controller => controller.onJoin());
 
@@ -115,5 +119,9 @@ export default class PomClient extends ExGameClient<PomTransmission> {
 
     sayTo(str: string, p = this.player) {
         p.runCommand(`tellraw @s {"rawtext": [{"text": "${str}"}]}`);
+    }
+
+    override getServer(): PomServer {
+        return <PomServer>super.getServer();
     }
 }

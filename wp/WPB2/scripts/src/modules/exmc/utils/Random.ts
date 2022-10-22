@@ -1,6 +1,6 @@
 export default class Random {
     seed: number;
-    static MAX_VALUE = 2 ** 32 - 1;
+    static MAX_VALUE = 1 << 32 - 1;
     constructor(seed?: number) {
         this.seed = (seed || Date.now()) % 999999999;
     }
@@ -17,5 +17,8 @@ export default class Random {
     }
     nextInt(max = Random.MAX_VALUE) {
         return Math.floor(this.nextDouble() * (max));
+    }
+    nextBoolean(){
+        return this.nextDouble() >= 0.5;
     }
 }
