@@ -111,6 +111,10 @@ export default class Vector2 {
     mul(n) {
         return n.x * this.x + n.y * this.y;
     }
+    normalize() {
+        this.div(this.len());
+        return this;
+    }
     clone() {
         return new Vector2(this.x, this.y);
     }

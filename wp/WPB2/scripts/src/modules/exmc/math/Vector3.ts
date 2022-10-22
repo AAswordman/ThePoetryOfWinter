@@ -162,6 +162,12 @@ export default class Vector3 {
         }
     }
 
+    public normalize() {
+        console.log("nor0: " + this);
+        this.div(this.len());
+        console.log("nor1: " + this);
+        return this;
+    }
 
     public clone() {
         return new Vector3(this.x, this.y, this.z);

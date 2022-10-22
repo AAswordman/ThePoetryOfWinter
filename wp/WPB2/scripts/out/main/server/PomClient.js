@@ -19,6 +19,7 @@ import PomEnchantSystem from "./func/PomEnchantSystem.js";
 import PomMagicSystem from "./func/PomMagicSystem.js";
 import PomTalentSystem from "./func/PomTalentSystem.js";
 import SimpleItemUseFunc from "./func/SimpleItemUseFunc.js";
+import PomDimRuinsSystem from "./func/PomDimRuinsSystem.js";
 export default class PomClient extends ExGameClient {
     constructor(server, id, player) {
         super(server, id, player);
@@ -27,6 +28,7 @@ export default class PomClient extends ExGameClient {
         this.talentSystem = new PomTalentSystem(this);
         this.magicSystem = new PomMagicSystem(this);
         this.itemUseFunc = new SimpleItemUseFunc(this);
+        this.ruinsSystem = new PomDimRuinsSystem(this);
         this.globalSettings = new GlobalSettings(new Objective("wpsetting"));
         this.cache = new TagCache(this.exPlayer);
         this.looper = new TimeLoopTask(this.getEvents(), () => {
@@ -39,6 +41,7 @@ export default class PomClient extends ExGameClient {
         this.addCtrller(this.magicSystem);
         this.addCtrller(this.talentSystem);
         this.addCtrller(this.itemUseFunc);
+        this.addCtrller(this.ruinsSystem);
         this.gameControllers.forEach(controller => controller.onJoin());
         if (!this.globalSettings.ownerExists) {
             player.addTag("owner");
@@ -101,6 +104,9 @@ export default class PomClient extends ExGameClient {
     }
     sayTo(str, p = this.player) {
         p.runCommand(`tellraw @s {"rawtext": [{"text": "${str}"}]}`);
+    }
+    getServer() {
+        return super.getServer();
     }
 }
 //# sourceMappingURL=PomClient.js.map

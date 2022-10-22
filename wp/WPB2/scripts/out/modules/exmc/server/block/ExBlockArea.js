@@ -103,5 +103,18 @@ export class ExBlockArea {
         this.mat = mat;
         this.calculateWidth();
     }
+    static randomPoint(e, bound = 0) {
+        let area = e[Math.floor(Math.random() * e.length)];
+        ExBlockArea.tempV.set(area.start).add(bound, bound, bound);
+        ExBlockArea.tempP.set(area.end).sub(bound, bound, bound);
+        ExBlockArea.tempP.sub(this.tempV);
+        if (ExBlockArea.tempP.x < 0 || ExBlockArea.tempP.y < 0 || ExBlockArea.tempP.z < 0) {
+            throw new Error("Bound is too large");
+        }
+        ExBlockArea.tempP.set(ExBlockArea.tempP.x * Math.random(), ExBlockArea.tempP.y * Math.random(), ExBlockArea.tempP.z * Math.random());
+        return ExBlockArea.tempV.add(ExBlockArea.tempP).clone();
+    }
 }
+ExBlockArea.tempV = new Vector3();
+ExBlockArea.tempP = new Vector3();
 //# sourceMappingURL=ExBlockArea.js.map
