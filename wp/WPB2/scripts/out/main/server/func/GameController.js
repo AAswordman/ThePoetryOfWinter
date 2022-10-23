@@ -12,6 +12,9 @@ export default class GameController {
     get client() {
         return this._client;
     }
+    get globalSettings() {
+        return this._client.globalSettings;
+    }
     get data() {
         return this._client.data;
     }

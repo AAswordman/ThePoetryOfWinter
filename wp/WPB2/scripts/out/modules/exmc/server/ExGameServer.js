@@ -4,19 +4,21 @@ import ExGameConfig from "./ExGameConfig.js";
 import initConsole from "../utils/Console.js";
 import ExServerEvents from "./ExServerEvents.js";
 import UUID from "../utils/UUID.js";
-import ExErrorStack from './ExErrorStack.js';
+import ExErrorQueue from './ExErrorQueue.js';
+import ExTickQueue from "./ExTickQueue.js";
 export default class ExGameServer {
     constructor(config) {
         ExGameConfig.config = config;
         if (!config.watchDog) {
             system.events.beforeWatchdogTerminate.subscribe((e) => {
-                e.cancel = false;
+                e.cancel = true;
             });
         }
         this.clients = new Map();
         ExGameConfig.console = initConsole(ExGameConfig);
         this._events = new ExServerEvents(this);
-        ExErrorStack.init(this);
+        ExErrorQueue.init(this);
+        ExTickQueue.init(this);
         this._events.events.playerJoin.subscribe(this.onClientJoin.bind(this));
         this._events.events.playerLeave.subscribe(this.onClientLeave.bind(this));
     }

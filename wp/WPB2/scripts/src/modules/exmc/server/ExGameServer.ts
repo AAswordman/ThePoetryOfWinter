@@ -5,9 +5,10 @@ import ExGameConfig from "./ExGameConfig.js";
 import initConsole from "../utils/Console.js";
 import ExServerEvents from "./ExServerEvents.js";
 import UUID from "../utils/UUID.js";
-import ExErrorStack from './ExErrorStack.js';
+import ExErrorQueue from './ExErrorQueue.js';
 import SetTimeOutSupport from "../interface/SetTimeOutSupport.js";
 import ExConfig from '../ExConfig.js';
+import ExTickQueue from "./ExTickQueue.js";
 
 export default class ExGameServer implements SetTimeOutSupport {
     clients;
@@ -18,7 +19,7 @@ export default class ExGameServer implements SetTimeOutSupport {
 
         if (!config.watchDog) {
             system.events.beforeWatchdogTerminate.subscribe((e) => {
-                e.cancel = false;
+                e.cancel = true;
             });
         }
 
@@ -26,7 +27,8 @@ export default class ExGameServer implements SetTimeOutSupport {
         ExGameConfig.console = initConsole(ExGameConfig);
 
         this._events = new ExServerEvents(this);
-        ExErrorStack.init(this);
+        ExErrorQueue.init(this);
+        ExTickQueue.init(this);
 
         this._events.events.playerJoin.subscribe(this.onClientJoin.bind(this));
         this._events.events.playerLeave.subscribe(this.onClientLeave.bind(this));

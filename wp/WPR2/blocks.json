@@ -24,6 +24,10 @@
     "textures": "portal_boss",
     "sound": "stone"
   },
+  "wb:portal_desertboss": {
+    "textures": "portal_boss",
+    "sound": "stone"
+  },
   "wb:quartz_blue": {
     "textures": "quartz_blue",
     "sound": "stone"

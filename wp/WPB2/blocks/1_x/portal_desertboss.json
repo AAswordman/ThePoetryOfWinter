@@ -6,12 +6,6 @@
 			"is_experimental": false
 		},
 		"components": {
-            "minecraft:material_instances": {
-				"*": {
-					"texture": "portal_boss",
-					"render_method": "alpha_test"
-				}
-			},
 			"minecraft:destroy_time": 32767,
 			"minecraft:explosion_resistance": 5,
 			"minecraft:block_light_emission": 1,

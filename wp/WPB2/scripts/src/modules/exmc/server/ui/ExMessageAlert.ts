@@ -1,6 +1,6 @@
 import { MessageFormData } from "mojang-minecraft-ui";
 import { Player } from 'mojang-minecraft';
-import ExErrorStack from "../ExErrorStack.js";
+import ExErrorQueue from "../ExErrorQueue.js";
 
 export default class ExMessageAlert {
 	_alert = new MessageFormData();
@@ -26,7 +26,7 @@ export default class ExMessageAlert {
 		this._alert.show(player).then(e => {
 			if(e.isCanceled) return;
 			this.buttonEvent[e.selection]();
-		}).catch(e => ExErrorStack.throwError(e));;
+		}).catch(e => ExErrorQueue.throwError(e));;
 		return this;
 	}
 	title(titleText: string) {

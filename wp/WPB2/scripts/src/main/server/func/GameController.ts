@@ -19,6 +19,9 @@ export default abstract class GameController implements ExCommandRunner,SetTimeO
     public get client(){
         return this._client;
     }
+    public get globalSettings(){
+        return this._client.globalSettings;
+    }
     public get data(){
         return this._client.data;
     }

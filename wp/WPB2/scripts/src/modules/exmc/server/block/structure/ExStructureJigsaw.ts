@@ -55,7 +55,7 @@ export default class ExStructureJigsaw {
         coverGridLength = 1, coverGridWidth = 1, coverGridHeight = 1) {
         const i:ExStructureData = [offsetX, offsetY, offsetZ, structureName, structureRot,
             mirror, coverGridLength, coverGridWidth, coverGridHeight];
-        for (let ix = 0; ix < length; ix++) {
+        for (let ix = 0; ix < this.width; ix++) {
             for (let iz = 0; iz < this.width; iz++) {
                 for (let iy = 0; iy < this.height; iy++) {
                     this.jigsawData[iy][iz][ix] = i;
@@ -161,15 +161,15 @@ export default class ExStructureJigsaw {
     [Symbol.toStringTag]() {
         return "symbol";
     }
-    *foreach(fun: (data: ExStructureExportData, x: number, z: number, y: number) => void) {
+    foreach(fun: (data: ExStructureExportData, x: number, z: number, y: number) => void) {
         const data = new ExStructureExportData(0, 0, 0, "", 0, false, 1, 1, 1);
         for (let y = 0; y < this.height; y++) {
             for (let z = 0; z < this.width; z++) {
-                for (let x = 0; x < length; x++) {
+                for (let x = 0; x < this.width; x++) {
                     let d = this.jigsawData[y][z][x];
                     if (d instanceof Array) {
                         data.set(...d);
-                        yield data;
+                        fun(data,x,z,y);
                     }
                 }
             }

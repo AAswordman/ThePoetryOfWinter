@@ -5,7 +5,7 @@ import { ChatEvent, Dimension, Player, TickEvent, world } from 'mojang-minecraft
 import ExPlayer from "./entity/ExPlayer.js";
 import SetTimeOutSupport from "../interface/SetTimeOutSupport.js";
 import ExDimension from "./ExDimension.js";
-import ExErrorStack from "./ExErrorStack.js";
+import ExErrorQueue from "./ExErrorQueue.js";
 import ExActionAlert from "./ui/ExActionAlert.js";
 import ExInterworkingPool from '../interface/ExInterworkingPool.js';
 import { basicFinalType } from "../interface/types.js";
@@ -49,6 +49,22 @@ export default class ExGameClient<T extends ExInterworkingPool = ExInterworkingP
         } else {
             this.notDebugger();
         }
+        
+
+        let func = () => {
+            try {
+                this.player.runCommand(`testfor @s`);
+                try {
+                    this.onLoaded();
+                } catch (e) {
+                    ExErrorQueue.throwError(e);
+                }
+            } catch (e) {
+                this.setTimeout(func, 2000);
+            }
+        };
+        func();
+
         this.onJoin();
     }
 
@@ -109,19 +125,7 @@ export default class ExGameClient<T extends ExInterworkingPool = ExInterworkingP
     }
 
     onJoin() {
-        let func = () => {
-            try {
-                this.player.runCommand(`testfor @s`);
-                try {
-                    this.onLoaded();
-                } catch (e) {
-                    ExErrorStack.throwError(e);
-                }
-            } catch (e) {
-                this.setTimeout(func, 2000);
-            }
-        };
-        func();
+        
     }
     onLoaded() {
     }

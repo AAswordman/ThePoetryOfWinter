@@ -20,6 +20,7 @@ import PomMagicSystem from "./func/PomMagicSystem.js";
 import PomTalentSystem from "./func/PomTalentSystem.js";
 import SimpleItemUseFunc from "./func/SimpleItemUseFunc.js";
 import PomDimRuinsSystem from "./func/PomDimRuinsSystem.js";
+import Random from "../../modules/exmc/utils/Random.js";
 export default class PomClient extends ExGameClient {
     constructor(server, id, player) {
         super(server, id, player);
@@ -63,12 +64,12 @@ export default class PomClient extends ExGameClient {
         return lang[(_a = this.data.lang) !== null && _a !== void 0 ? _a : "en"];
     }
     onLoaded() {
-        let looper = new TimeLoopTask(this.getEvents(), () => {
-            this.gameId = ExPlayer.getInstance(this.player).getScoresManager().getScore("wbldid");
-            if (this.gameId !== 0)
-                looper.stop();
-        }).delay(1000);
-        looper.start();
+        let scores = ExPlayer.getInstance(this.player).getScoresManager();
+        this.gameId = scores.getScore("wbldid");
+        if (this.gameId === 0) {
+            this.gameId = Math.floor(Math.random() * Random.MAX_VALUE);
+            scores.setScore("wbldid", this.gameId);
+        }
         this.gameControllers.forEach(controller => controller.onLoaded());
         if (!this.data.lang) {
             try {

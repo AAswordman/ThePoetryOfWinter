@@ -1,5 +1,5 @@
 import { ActionFormData } from "mojang-minecraft-ui";
-import ExErrorStack from '../ExErrorStack.js';
+import ExErrorQueue from '../ExErrorQueue.js';
 export default class ExActionAlert {
     constructor() {
         this._alert = new ActionFormData();
@@ -19,7 +19,7 @@ export default class ExActionAlert {
             if (e.isCanceled)
                 return;
             this.buttonEvent[e.selection]();
-        }).catch(e => ExErrorStack.throwError(e));
+        }).catch(e => ExErrorQueue.throwError(e));
         return this;
     }
     title(titleText) {

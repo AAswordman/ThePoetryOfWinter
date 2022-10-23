@@ -2,7 +2,7 @@ import { MinecraftEffectTypes, MinecraftBlockTypes } from 'mojang-minecraft';
 import { ModalFormData } from "mojang-minecraft-ui";
 import Vector3 from '../../../modules/exmc/math/Vector3.js';
 import ExDimension from '../../../modules/exmc/server/ExDimension.js';
-import ExErrorStack from '../../../modules/exmc/server/ExErrorStack.js';
+import ExErrorQueue from '../../../modules/exmc/server/ExErrorQueue.js';
 import ExGameVector3 from '../../../modules/exmc/server/math/ExGameVector3.js';
 import menuFunctionUI from "../data/menuFunctionUI.js";
 import MenuUIAlert from "../ui/MenuUIAlert.js";
@@ -28,7 +28,7 @@ export default class SimpleItemUseFunc extends GameController {
                         }
                     })
                         .catch((e) => {
-                        ExErrorStack.throwError(e);
+                        ExErrorQueue.throwError(e);
                     });
                 }
                 else {

@@ -1,11 +1,16 @@
-import { MinecraftDimensionTypes, MinecraftEntityTypes } from "mojang-minecraft";
+import { MinecraftDimensionTypes, MinecraftEntityTypes, MinecraftBlockTypes } from 'mojang-minecraft';
 import { Objective } from "../../modules/exmc/server/entity/ExScoresManager.js";
 import ExDimension from "../../modules/exmc/server/ExDimension.js";
 import ExGameConfig from "../../modules/exmc/server/ExGameConfig.js";
 import ExGameServer from "../../modules/exmc/server/ExGameServer.js";
+import ExTickQueue from "../../modules/exmc/server/ExTickQueue.js";
+import Random from "../../modules/exmc/utils/Random.js";
 import TimeLoopTask from "../../modules/exmc/utils/TimeLoopTask.js";
 import GlobalSettings from "./cache/GlobalSettings.js";
+import PomDesertBossRuin from "./func/ruins/PomDesertBossRuin.js";
+import RuinsLoaction from "./func/ruins/RuinsLoaction.js";
 import PomClient from "./PomClient.js";
+import ExBlockStructureNormal from '../../modules/exmc/server/block/structure/ExBlockStructureNormal';
 export default class PomServer extends ExGameServer {
     constructor(config) {
         super(config);
@@ -62,6 +67,26 @@ export default class PomServer extends ExGameServer {
             ticks++;
         });
         this.tpsListener.start();
+        let r = new Random(this.setting.worldSeed);
+        this.portal_desertBoss = new ExBlockStructureNormal();
+        this.portal_desertBoss.setDirection(ExBlockStructureNormal.DIRECTION_LAY_MIRROR)
+            .setStructure([[
+                "XXXXX",
+                "XZZZX",
+                "XZYZX",
+                "XZZZX",
+                "XXXXX"
+            ]])
+            .analysis({
+            X: MinecraftBlockTypes.sandstone.id,
+            Y: "wb:block_magic_equipment",
+            Z: MinecraftBlockTypes.air.id
+        });
+        this.ruin_desertBoss = new PomDesertBossRuin(r.nextInt());
+        ExTickQueue.push(() => {
+            this.ruin_desertBoss.init(RuinsLoaction.DESERT_RUIN_LOCATION.x, RuinsLoaction.DESERT_RUIN_LOCATION.y, RuinsLoaction.DESERT_RUIN_LOCATION.z, this.getDimension(MinecraftDimensionTypes.theEnd));
+            this.ruin_desertBoss.dispose();
+        });
     }
     updateClearEntityNum() {
         this.entityCleanerStrength = this.setting.entityCleanerStrength;

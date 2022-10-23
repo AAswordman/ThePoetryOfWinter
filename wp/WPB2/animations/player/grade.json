@@ -28,7 +28,7 @@
           "/execute as @s[tag=!wbyzc] at @s run give @s wb:power 1 0 {\"minecraft:keep_on_death\":{}}",
           "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbcsjs -1",
           "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbnldx 0",
-          "/execute as @s[tag=!wbyzc] at @s run scoreboard players random @s wbldid 1000000 99999999",
+          //wbldid
           "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbldpd 0",
           "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbldcg 0",
           "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbptbt 0",

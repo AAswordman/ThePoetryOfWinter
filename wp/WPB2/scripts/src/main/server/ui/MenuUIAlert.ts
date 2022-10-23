@@ -1,6 +1,6 @@
 import PomClient from "../PomClient.js";
 import ExActionAlert from "../../../modules/exmc/server/ui/ExActionAlert.js";
-import { to } from "../../../modules/exmc/server/ExErrorStack.js";
+import { to } from "../../../modules/exmc/server/ExErrorQueue.js";
 import ExGameConfig from "../../../modules/exmc/server/ExGameConfig.js";
 
 export class MenuUIAlertView {
