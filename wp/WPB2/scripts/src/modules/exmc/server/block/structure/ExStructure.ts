@@ -16,6 +16,6 @@ export default class ExStructure {
     generate(dim: Dimension) {
         let rot = this.rotation;
         let exdim = ExDimension.getInstance(dim);
-        console.warn(JSON.stringify(exdim.runCommand(`structure load ${this.structureId} ${this.position.x} ${this.position.y} ${this.position.z} ${Math.round(rot)}_degrees`)));
+        exdim.runCommand(`structure load ${this.structureId} ${this.position.x} ${this.position.y} ${this.position.z} ${Math.round(rot)}_degrees`);
     }
 }

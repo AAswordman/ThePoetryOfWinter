@@ -7,7 +7,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+import ExNullEntity from "./ExNullEntity.js";
 import ExGameConfig from '../ExGameConfig.js';
+import MathUtil from "../../math/MathUtil.js";
 export default class ExScoresManager {
     constructor(e) {
         this.entity = e;
@@ -15,13 +17,8 @@ export default class ExScoresManager {
     getScore(objective) {
         let name = typeof objective === "string" ? objective : objective.name;
         try {
-            let n = parseInt(this.entity.runCommand(`scoreboard players test "${this.entity.nameTag}" ${name} * *`).statusMessage.split(" ")[1]);
-            if (n !== n) {
-                return 0;
-            }
-            else {
-                return n;
-            }
+            let n = parseInt(this.entity.runCommand(`scoreboard players test ${this.entity instanceof ExNullEntity ? '"' + this.entity.nameTag + '"' : "@s"} ${name} * *`).statusMessage.split(" ")[1]);
+            return (MathUtil.zeroIfNaN(n) || 0);
         }
         catch (e) {
             return 0;
@@ -29,25 +26,25 @@ export default class ExScoresManager {
     }
     setScoreAsync(objective, num) {
         let name = typeof objective === "string" ? objective : objective.name;
-        this.entity.runCommandAsync(`scoreboard players set "${this.entity.nameTag}" ${name} ${num}`);
+        this.entity.runCommandAsync(`scoreboard players set ${this.entity instanceof ExNullEntity ? '"' + this.entity.nameTag + '"' : "@s"} ${name} ${num}`);
     }
     addScoreAsync(objective, num) {
         let name = typeof objective === "string" ? objective : objective.name;
-        this.entity.runCommandAsync(`scoreboard players add "${this.entity.nameTag}" ${name} ${num}`);
+        this.entity.runCommandAsync(`scoreboard players add ${this.entity instanceof ExNullEntity ? '"' + this.entity.nameTag + '"' : "@s"} ${name} ${num}`);
     }
     removeScoreAsync(objective, num) {
         let name = typeof objective === "string" ? objective : objective.name;
-        this.entity.runCommandAsync(`scoreboard players remove "${this.entity.nameTag}" ${name} ${num}`);
+        this.entity.runCommandAsync(`scoreboard players remove ${this.entity instanceof ExNullEntity ? '"' + this.entity.nameTag + '"' : "@s"} ${name} ${num}`);
     }
     deleteScoreAsync(objective) {
         let name = typeof objective === "string" ? objective : objective.name;
-        this.entity.runCommandAsync(`scoreboard players reset "${this.entity.nameTag}" ${name}`);
+        this.entity.runCommandAsync(`scoreboard players reset ${this.entity instanceof ExNullEntity ? '"' + this.entity.nameTag + '"' : "@s"} ${name}`);
     }
     getScoreAsync(objective) {
         return __awaiter(this, void 0, void 0, function* () {
             let name = typeof objective === "string" ? objective : objective.name;
             try {
-                let n = parseInt((yield this.entity.runCommandAsync(`scoreboard players test "${this.entity.nameTag}" ${name} * *`)).statusMessage.split(" ")[1]);
+                let n = parseInt((yield this.entity.runCommandAsync(`scoreboard players test ${this.entity instanceof ExNullEntity ? '"' + this.entity.nameTag + '"' : "@s"} ${name} * *`)).statusMessage.split(" ")[1]);
                 if (n !== n) {
                     return 0;
                 }
@@ -62,19 +59,19 @@ export default class ExScoresManager {
     }
     setScore(objective, num) {
         let name = typeof objective === "string" ? objective : objective.name;
-        this.entity.runCommand(`scoreboard players set "${this.entity.nameTag}" ${name} ${num}`);
+        this.entity.runCommand(`scoreboard players set ${this.entity instanceof ExNullEntity ? '"' + this.entity.nameTag + '"' : "@s"} ${name} ${num}`);
     }
     addScore(objective, num) {
         let name = typeof objective === "string" ? objective : objective.name;
-        this.entity.runCommand(`scoreboard players add "${this.entity.nameTag}" ${name} ${num}`);
+        this.entity.runCommand(`scoreboard players add ${this.entity instanceof ExNullEntity ? '"' + this.entity.nameTag + '"' : "@s"} ${name} ${num}`);
     }
     removeScore(objective, num) {
         let name = typeof objective === "string" ? objective : objective.name;
-        this.entity.runCommand(`scoreboard players remove "${this.entity.nameTag}" ${name} ${num}`);
+        this.entity.runCommand(`scoreboard players remove ${this.entity instanceof ExNullEntity ? '"' + this.entity.nameTag + '"' : "@s"} ${name} ${num}`);
     }
     deleteScore(objective) {
         let name = typeof objective === "string" ? objective : objective.name;
-        this.entity.runCommand(`scoreboard players reset "${this.entity.nameTag}" ${name}`);
+        this.entity.runCommand(`scoreboard players reset ${this.entity instanceof ExNullEntity ? '"' + this.entity.nameTag + '"' : "@s"} ${name}`);
     }
 }
 export class Objective {

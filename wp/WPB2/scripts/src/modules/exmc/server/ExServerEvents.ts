@@ -2,7 +2,7 @@ import { world, Events, TickEvent } from 'mojang-minecraft';
 import ExEventManager from "../interface/ExEventManager.js";
 import ExGameServer from "./ExGameServer.js";
 import ExGameConfig from './ExGameConfig.js';
-import ExErrorStack from './ExErrorStack.js';
+import ExErrorQueue from './ExErrorQueue.js';
 
 export default class ExServerEvents implements ExEventManager {
 	public events: Events;

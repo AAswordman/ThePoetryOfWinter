@@ -8,7 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import ExActionAlert from "../../../modules/exmc/server/ui/ExActionAlert.js";
-import { to } from "../../../modules/exmc/server/ExErrorStack.js";
+import { to } from "../../../modules/exmc/server/ExErrorQueue.js";
 export class MenuUIAlertView {
 }
 export default class MenuUIAlert {

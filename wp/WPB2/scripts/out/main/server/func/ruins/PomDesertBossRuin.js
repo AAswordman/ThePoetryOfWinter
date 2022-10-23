@@ -51,7 +51,9 @@ export default class PomDesertBossRuin {
         this.jigsaw = new ExStructureJigsaw(1, 1, 1);
     }
     generate() {
+        this.init(this.x, this.y, this.z, this.dim);
         this.jigsaw.generate(this.x, this.y, this.z, this.dim);
+        this.dispose();
     }
     init(x, y, z, dim) {
         this.x = x;
@@ -176,6 +178,7 @@ export default class PomDesertBossRuin {
             }
         });
         this.jigsaw = new ExStructureJigsaw(16, 32, 10);
+        //this.jigsaw.fillStructure(0,0,0,"mystructure:air_clear");
         // jigsaw.setStructurePlane(15, 15, 0, 0, 0, structure_bossArea, 0);
         // jigsaw.setStructurePlane(16, 15, 0, 0, 0, structure_bossArea, 90);
         // jigsaw.setStructurePlane(16, 16, 0, 0, 0, structure_bossArea, 180);
@@ -307,6 +310,12 @@ export default class PomDesertBossRuin {
         this.jigsaw.setStructurePlane(14, 16, 0, -1, 0, this.structure_boss, 270);
         this.jigsaw.setStructurePlane(16, 14, 0, -1, 0, this.structure_boss, 90);
         this.jigsaw.setStructurePlane(16, 16, 0, -1, 0, this.structure_boss, 180);
+        this._airMonsterArea = [];
+        this._airPathArea = [];
+        this._bossArea = [];
+        this._monsterArea = [];
+        this._pathArea = [];
+        this._playerArea = [];
         this.jigsaw.foreach((data, ix, iz, iy) => {
             if (data.structureName === this.structure_straightLine || data.structureName === this.structure_triple
                 || data.structureName === this.structure_curve || data.structureName === this.structure_crossing) {

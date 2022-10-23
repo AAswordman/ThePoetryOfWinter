@@ -1,4 +1,4 @@
-import 'reflect-metadata'
+
 const cacheName = "__nameType__";
 
 export class Serialize {

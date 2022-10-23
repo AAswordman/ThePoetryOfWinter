@@ -13,7 +13,7 @@ import TalentData, { Occupation, Talent } from "../cache/TalentData.js";
 import { ModalFormData } from "mojang-minecraft-ui";
 import Vector3 from '../../../modules/exmc/math/Vector3.js';
 import ExPlayer from "../../../modules/exmc/server/entity/ExPlayer.js";
-import ExErrorStack from "../../../modules/exmc/server/ExErrorStack.js";
+import ExErrorQueue from "../../../modules/exmc/server/ExErrorQueue.js";
 import ExGameConfig from "../../../modules/exmc/server/ExGameConfig.js";
 export default function menuFunctionUI(lang) {
     return {
@@ -514,7 +514,7 @@ You understand and agree that:
                                                 return;
                                             i[1] = e.formValues[0];
                                         }).catch(e => {
-                                            ExErrorStack.throwError(e);
+                                            ExErrorQueue.throwError(e);
                                         });
                                         return false;
                                     }
@@ -747,7 +747,7 @@ You understand and agree that:
                                     }
                                 })
                                     .catch((e) => {
-                                    ExErrorStack.throwError(e);
+                                    ExErrorQueue.throwError(e);
                                 });
                                 return false;
                             }
@@ -842,7 +842,7 @@ You understand and agree that:
                                             client.globalSettings.entityCleanerDelay = e.formValues[3];
                                         })
                                             .catch((e) => {
-                                            ExErrorStack.throwError(e);
+                                            ExErrorQueue.throwError(e);
                                         });
                                         return false;
                                     }
