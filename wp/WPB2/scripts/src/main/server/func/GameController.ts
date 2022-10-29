@@ -1,4 +1,4 @@
-import { Dimension, PlayerIterator } from "mojang-minecraft";
+import { Dimension, PlayerIterator } from "@minecraft/server";
 import ExGameServer from "../../../modules/exmc/server/ExGameServer.js";
 import ExCommandRunner from "../../../modules/exmc/interface/ExCommandRunner.js";
 import SetTimeOutSupport from "../../../modules/exmc/interface/SetTimeOutSupport.js";

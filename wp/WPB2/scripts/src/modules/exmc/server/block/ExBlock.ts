@@ -1,4 +1,4 @@
-import { Block, world } from 'mojang-minecraft';
+import { Block, world } from '@minecraft/server';
 import ExDimension from '../ExDimension.js';
 import Vector3 from "../../math/Vector3.js";
 

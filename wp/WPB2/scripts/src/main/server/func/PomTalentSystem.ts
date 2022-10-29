@@ -1,4 +1,4 @@
-import { EntityQueryOptions } from "mojang-minecraft";
+import { EntityQueryOptions } from "@minecraft/server";
 import MathUtil from "../../../modules/exmc/math/MathUtil.js";
 import ExEntity from "../../../modules/exmc/server/entity/ExEntity.js";
 import ExPlayer from "../../../modules/exmc/server/entity/ExPlayer.js";
@@ -82,7 +82,7 @@ export default class PomTalentSystem extends GameController{
 
 
 				let SUDDEN_STRIKE = MathUtil.zeroIfNaN(parseFloat((lore.getValueUseMap("addition", Talent.getCharacter(this.getLang(),Talent.SUDDEN_STRIKE)) ?? "->0").split("->")[1]));
-				if (item.id.startsWith("dec:")) damageFac += 0.4;
+				if (item.typeId.startsWith("dec:")) damageFac += 0.4;
 				if (this.strikeSkill) {
 					if (this.data.talent.occupation.id === Occupation.ASSASSIN.id) this.skillLoop.startOnce();
 					this.strikeSkill = false;
@@ -107,7 +107,7 @@ export default class PomTalentSystem extends GameController{
 
         this.getEvents().exEvents.itemOnHandChange.subscribe((e) => {
             let bag = this.exPlayer.getBag();
-			if (e.afterItem && isEquipment(e.afterItem.id)) {
+			if (e.afterItem && isEquipment(e.afterItem.typeId)) {
 				const lore = new ExColorLoreUtil(e.afterItem);
 				TalentData.calculateTalentToLore(this.data.talent.talents,this.data.talent.occupation, ExItem.getInstance(e.afterItem),this.getLang());
 				bag.setItem(this.exPlayer.selectedSlot, e.afterItem);
@@ -131,7 +131,7 @@ export default class PomTalentSystem extends GameController{
 						lore.setValueUseMap("total", this.getLang().maxSecondaryDamage, maxSecondaryDamage + "");
 						shouldUpstate = true;
 					}
-					if (shouldUpstate && bag.getItemOnHand()?.id === e?.afterItem?.id) {
+					if (shouldUpstate && bag.getItemOnHand()?.typeId === e?.afterItem?.typeId) {
 						bag.setItem(this.exPlayer.selectedSlot, e.afterItem);
 					}
 				}).delay(5000)).start(); //

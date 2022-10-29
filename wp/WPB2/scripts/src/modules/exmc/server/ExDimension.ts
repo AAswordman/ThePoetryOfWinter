@@ -1,4 +1,4 @@
-import { Dimension, EntityQueryOptions, Block, ItemStack, Entity, BlockType, BlockLocation } from 'mojang-minecraft';
+import { Dimension, EntityQueryOptions, Block, ItemStack, Entity, BlockType, BlockLocation } from '@minecraft/server';
 import ExCommandRunner from '../interface/ExCommandRunner.js';
 import Vector3 from "../math/Vector3.js";
 import ExGameVector3 from './math/ExGameVector3.js';

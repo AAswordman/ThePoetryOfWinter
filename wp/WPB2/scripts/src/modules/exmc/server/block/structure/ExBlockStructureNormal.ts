@@ -1,4 +1,4 @@
-import { Dimension, MinecraftBlockTypes } from "mojang-minecraft";
+import { Dimension, MinecraftBlockTypes } from "@minecraft/server";
 import Vector3 from "../../../math/Vector3.js";
 import ExDimension from "../../../server/ExDimension.js";
 import { ExBlockArea } from "../ExBlockArea.js";
@@ -151,7 +151,7 @@ export default class ExBlockStructureNormal implements ExBlockStructure {
                         if (c == ' ') continue;
                         res.calculateRelPos(vec, tmpV).add(res.start);
 
-                        if (dimension?.getBlock(tmpV)?.id !== (this.analysisMap?.get(c) ?? MinecraftBlockTypes.air.id)) {
+                        if (dimension?.getBlock(tmpV)?.typeId !== (this.analysisMap?.get(c) ?? MinecraftBlockTypes.air.id)) {
                             return;
                         }
                     }

@@ -3,7 +3,7 @@ import {
     Player,
     EntityInventoryComponent,
     ItemStack
-} from "mojang-minecraft";
+} from "@minecraft/server";
 
 export default class ExPlayerBag {
     private _player: Player;
@@ -29,7 +29,7 @@ export default class ExPlayerBag {
         let items = this.getAllItems();
         for (let i = 0; i < items.length; i++) {
             if (items[i] === undefined) { continue; }
-            if (items[i].id === id) {
+            if (items[i].typeId === id) {
                 return i;
             }
         }

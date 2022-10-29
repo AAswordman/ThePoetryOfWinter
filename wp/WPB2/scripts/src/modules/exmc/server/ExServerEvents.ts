@@ -1,4 +1,4 @@
-import { world, Events, TickEvent } from 'mojang-minecraft';
+import { world, Events, TickEvent } from '@minecraft/server';
 import ExEventManager from "../interface/ExEventManager.js";
 import ExGameServer from "./ExGameServer.js";
 import ExGameConfig from './ExGameConfig.js';

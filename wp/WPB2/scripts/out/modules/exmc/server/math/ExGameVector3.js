@@ -1,4 +1,4 @@
-import { Vector, BlockLocation, Location } from "mojang-minecraft";
+import { Vector, BlockLocation, Location } from "@minecraft/server";
 export default class ExGameVector3 {
     static getVector(vec) {
         if (!this._tempVector) {

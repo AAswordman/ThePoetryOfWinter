@@ -1,4 +1,4 @@
-import { Player } from "mojang-minecraft";
+import { Player } from "@minecraft/server";
 import ExConfig from "../modules/exmc/ExConfig.js";
 import ExGameClient from "../modules/exmc/server/ExGameClient.js";
 import ExGameServer from "../modules/exmc/server/ExGameServer.js";

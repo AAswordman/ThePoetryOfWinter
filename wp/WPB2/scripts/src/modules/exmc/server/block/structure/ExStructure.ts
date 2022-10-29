@@ -1,5 +1,5 @@
 import Vector3 from '../../../math/Vector3.js';
-import { Dimension } from 'mojang-minecraft';
+import { Dimension } from '@minecraft/server';
 import Vector2 from '../../../math/Vector2.js';
 import ExDimension from '../../ExDimension.js';
 export default class ExStructure {

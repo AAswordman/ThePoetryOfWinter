@@ -1,4 +1,4 @@
-import { MinecraftDimensionTypes, MinecraftEntityTypes, MinecraftBlockTypes } from 'mojang-minecraft';
+import { MinecraftDimensionTypes, MinecraftEntityTypes, MinecraftBlockTypes } from '@minecraft/server';
 import { Objective } from "../../modules/exmc/server/entity/ExScoresManager.js";
 import ExDimension from "../../modules/exmc/server/ExDimension.js";
 import ExGameConfig from "../../modules/exmc/server/ExGameConfig.js";
@@ -29,9 +29,9 @@ export default class PomServer extends ExGameServer {
             let map = new Map();
             entities.forEach(e => {
                 var _a;
-                if ((e === null || e === void 0 ? void 0 : e.id) == undefined)
+                if ((e === null || e === void 0 ? void 0 : e.typeId) == undefined)
                     return;
-                map.set(e.id, ((_a = map.get(e.id)) !== null && _a !== void 0 ? _a : 0) + 1);
+                map.set(e.typeId, ((_a = map.get(e.typeId)) !== null && _a !== void 0 ? _a : 0) + 1);
             });
             let max = [0, ""];
             map.forEach((v, k) => {
@@ -44,9 +44,9 @@ export default class PomServer extends ExGameServer {
                 ExGameConfig.console.log("最多实体数：" + max[0]);
                 ExGameConfig.console.log("最多实体数：" + max[1]);
                 entities.forEach(e => {
-                    if (!e || !e.id || e.id !== max[1])
+                    if (!e || !e.typeId || e.typeId !== max[1])
                         return;
-                    if (e.id === "minecraft:item" && e.viewVector.y !== 0)
+                    if (e.typeId === "minecraft:item" && e.viewVector.y !== 0)
                         return;
                     //if (e.nameTag) return;
                     e.kill();
@@ -67,7 +67,6 @@ export default class PomServer extends ExGameServer {
             ticks++;
         });
         this.tpsListener.start();
-        let r = new Random(this.setting.worldSeed);
         this.portal_desertBoss = new ExBlockStructureNormal();
         this.portal_desertBoss.setDirection(ExBlockStructureNormal.DIRECTION_LAY_MIRROR)
             .setStructure([[
@@ -82,6 +81,7 @@ export default class PomServer extends ExGameServer {
             Y: "wb:block_magic_equipment",
             Z: MinecraftBlockTypes.air.id
         });
+        let r = new Random(this.setting.worldSeed);
         this.ruin_desertBoss = new PomDesertBossRuin(r.nextInt());
         ExTickQueue.push(() => {
             this.ruin_desertBoss.init(RuinsLoaction.DESERT_RUIN_LOCATION.x, RuinsLoaction.DESERT_RUIN_LOCATION.y, RuinsLoaction.DESERT_RUIN_LOCATION.z, this.getDimension(MinecraftDimensionTypes.theEnd));

@@ -1,4 +1,4 @@
-import { BlockLocation, MinecraftBlockTypes, MinecraftDimensionTypes } from 'mojang-minecraft';
+import { BlockLocation, MinecraftBlockTypes, MinecraftDimensionTypes } from '@minecraft/server';
 import ExBlockStructureNormal from "../../../modules/exmc/server/block/structure/ExBlockStructureNormal.js";
 import GameController from "./GameController.js";
 import RuinsLoaction from "./ruins/RuinsLoaction.js";
@@ -20,7 +20,7 @@ export default class PomDimRuinsSystem extends GameController {
                 block = this.getDimension().getBlock(loc);
             }
             catch (e) { }
-            if ((block === null || block === void 0 ? void 0 : block.id) === "wb:portal_desertboss") {
+            if ((block === null || block === void 0 ? void 0 : block.typeId) === "wb:portal_desertboss") {
                 //TODO: tp to end
                 this.exPlayer.setPosition(ExBlockArea.randomPoint(this.client.getServer().ruin_desertBoss.getPlayerSpawnArea(), 4), this.getDimension(MinecraftDimensionTypes.theEnd));
                 if (((this.globalSettings.ruinsExsitsData >> RuinsLoaction.DESERT_RUIN_NUM) & 1) == 0) {
@@ -36,9 +36,9 @@ export default class PomDimRuinsSystem extends GameController {
                 block = this.getDimension().getBlock(e.blockLocation);
             }
             catch (e) { }
-            if (e.item.id === "wb:mineral_magic_equipment") {
+            if (e.item.typeId === "wb:mineral_magic_equipment") {
                 const p = this.client.getServer().portal_desertBoss;
-                if ((block === null || block === void 0 ? void 0 : block.id) === "wb:block_magic_equipment") {
+                if ((block === null || block === void 0 ? void 0 : block.typeId) === "wb:block_magic_equipment") {
                     const v2 = new Vector3(e.blockLocation).add(2, 0, 2);
                     const v1 = new Vector3(e.blockLocation).sub(2, 0, 2);
                     let m = p.setArea(new ExBlockArea(v1, v2, true))

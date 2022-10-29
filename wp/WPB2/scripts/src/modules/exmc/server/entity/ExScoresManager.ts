@@ -1,4 +1,4 @@
-import { Entity } from "mojang-minecraft";
+import { Entity } from "@minecraft/server";
 import ExNullEntity from "./ExNullEntity.js";
 import ExGameConfig from '../ExGameConfig.js';
 import ExCommandRunner from "../../interface/ExCommandRunner.js";

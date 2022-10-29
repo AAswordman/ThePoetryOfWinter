@@ -76,7 +76,7 @@ export default class PomTalentSystem extends GameController {
                 let SANCTION = MathUtil.zeroIfNaN(parseFloat(((_g = lore.getValueUseMap("addition", Talent.getCharacter(this.getLang(), Talent.SANCTION))) !== null && _g !== void 0 ? _g : "->0").split("->")[1]));
                 damageFac += (16 - Math.min(16, dis)) / 16 * SANCTION / 100;
                 let SUDDEN_STRIKE = MathUtil.zeroIfNaN(parseFloat(((_h = lore.getValueUseMap("addition", Talent.getCharacter(this.getLang(), Talent.SUDDEN_STRIKE))) !== null && _h !== void 0 ? _h : "->0").split("->")[1]));
-                if (item.id.startsWith("dec:"))
+                if (item.typeId.startsWith("dec:"))
                     damageFac += 0.4;
                 if (this.strikeSkill) {
                     if (this.data.talent.occupation.id === Occupation.ASSASSIN.id)
@@ -99,7 +99,7 @@ export default class PomTalentSystem extends GameController {
         this.getEvents().exEvents.itemOnHandChange.subscribe((e) => {
             var _a, _b, _c, _d, _e;
             let bag = this.exPlayer.getBag();
-            if (e.afterItem && isEquipment(e.afterItem.id)) {
+            if (e.afterItem && isEquipment(e.afterItem.typeId)) {
                 const lore = new ExColorLoreUtil(e.afterItem);
                 TalentData.calculateTalentToLore(this.data.talent.talents, this.data.talent.occupation, ExItem.getInstance(e.afterItem), this.getLang());
                 bag.setItem(this.exPlayer.selectedSlot, e.afterItem);
@@ -124,7 +124,7 @@ export default class PomTalentSystem extends GameController {
                         lore.setValueUseMap("total", this.getLang().maxSecondaryDamage, maxSecondaryDamage + "");
                         shouldUpstate = true;
                     }
-                    if (shouldUpstate && ((_c = bag.getItemOnHand()) === null || _c === void 0 ? void 0 : _c.id) === ((_d = e === null || e === void 0 ? void 0 : e.afterItem) === null || _d === void 0 ? void 0 : _d.id)) {
+                    if (shouldUpstate && ((_c = bag.getItemOnHand()) === null || _c === void 0 ? void 0 : _c.typeId) === ((_d = e === null || e === void 0 ? void 0 : e.afterItem) === null || _d === void 0 ? void 0 : _d.typeId)) {
                         bag.setItem(this.exPlayer.selectedSlot, e.afterItem);
                     }
                 }).delay(5000)).start(); //

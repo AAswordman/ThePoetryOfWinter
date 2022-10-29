@@ -1,4 +1,4 @@
-import { Vector, BlockLocation,Location } from "mojang-minecraft";
+import { Vector, BlockLocation,Location } from "@minecraft/server";
 import Vector3 from '../../math/Vector3.js';
 
 export default class ExGameVector3{

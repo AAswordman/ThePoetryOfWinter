@@ -1,5 +1,5 @@
 import Vector3 from '../../../math/Vector3.js';
-import { Dimension } from 'mojang-minecraft';
+import { Dimension } from '@minecraft/server';
 import ExStructure from './ExStructure.js';
 export default class ExStructureJigsaw {
     width: number;

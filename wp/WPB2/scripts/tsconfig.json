@@ -8,6 +8,7 @@
 		],
 		"sourceMap": true,
 		"rootDir": "src",
+        "moduleResolution": "node",
 		"strict": true,
         "downlevelIteration": true,
 		"alwaysStrict": false,

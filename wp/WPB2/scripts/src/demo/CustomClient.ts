@@ -1,4 +1,4 @@
-import { Player, MinecraftItemTypes, MinecraftBlockTypes } from "mojang-minecraft";
+import { Player, MinecraftItemTypes, MinecraftBlockTypes } from "@minecraft/server";
 import Vector2 from "../modules/exmc/math/Vector2.js";
 import Vector3 from "../modules/exmc/math/Vector3.js";
 import ExStructureJigsaw from "../modules/exmc/server/block/structure/ExStructureJigsaw.js";
@@ -12,7 +12,7 @@ export default class CustomClient extends ExGameClient {
         super(server, id, player);
 
         this.getEvents().exEvents.onceItemUseOn.subscribe(e => {
-            if (e.item.id === MinecraftItemTypes.stick.id && this.getExDimension().getBlock(e.blockLocation).id === MinecraftBlockTypes.obsidian.id) {
+            if (e.item.typeId === MinecraftItemTypes.stick.id && this.getExDimension().getBlock(e.blockLocation).typeId === MinecraftBlockTypes.obsidian.id) {
 
 
                 

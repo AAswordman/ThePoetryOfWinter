@@ -1,4 +1,4 @@
-import { world } from 'mojang-minecraft';
+import { world } from '@minecraft/server';
 export default class ExServerEvents {
     constructor(server) {
         this.exEvents = {

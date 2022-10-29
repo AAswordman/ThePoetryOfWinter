@@ -1,4 +1,4 @@
-import { Dimension, Block } from 'mojang-minecraft';
+import { Dimension, Block } from '@minecraft/server';
 import DisposeAble from "../../../../modules/exmc/interface/DisposeAble.js";
 import { ExBlockArea } from '../../../../modules/exmc/server/block/ExBlockArea.js';
 

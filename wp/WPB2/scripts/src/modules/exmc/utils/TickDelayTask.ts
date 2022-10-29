@@ -1,4 +1,4 @@
-import { Events, TickEvent } from 'mojang-minecraft';
+import { Events, TickEvent } from '@minecraft/server';
 import ExEventManager from "../interface/ExEventManager.js";
 import SetTimeOutSupport from "../interface/SetTimeOutSupport.js";
 

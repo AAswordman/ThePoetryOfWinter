@@ -1,4 +1,4 @@
-import { ItemEnchantsComponent, ItemStack } from "mojang-minecraft";
+import { ItemEnchantsComponent, ItemStack } from "@minecraft/server";
 import ExLoreManager from "../../interface/ExLoreManager.js";
 
 export default class ExItem implements ExLoreManager{

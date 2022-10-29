@@ -20,7 +20,7 @@ export default class ExPlayerBag {
             if (items[i] === undefined) {
                 continue;
             }
-            if (items[i].id === id) {
+            if (items[i].typeId === id) {
                 return i;
             }
         }
