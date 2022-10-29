@@ -1,4 +1,4 @@
-import { ItemStack, Player } from 'mojang-minecraft';
+import { ItemStack, Player } from '@minecraft/server';
 export class ItemOnHandChangeEvent {
     readonly source: Player;
     readonly beforeItem: ItemStack | undefined;

@@ -1,7 +1,7 @@
 import ExGameServer from "./ExGameServer.js";
 import ExGameConfig from "./ExGameConfig.js";
 import ExClientEvents from "./ExClientEvents.js";
-import { ChatEvent, Dimension, Player, TickEvent, world } from 'mojang-minecraft';
+import { ChatEvent, Dimension, Player, TickEvent, world } from '@minecraft/server';
 import ExPlayer from "./entity/ExPlayer.js";
 import SetTimeOutSupport from "../interface/SetTimeOutSupport.js";
 import ExDimension from "./ExDimension.js";
@@ -14,8 +14,8 @@ export default class ExGameClient<T extends ExInterworkingPool = ExInterworkingP
     private _events: ExClientEvents;
 
     debuggerChatTest = (e: ChatEvent) => {
-        if (e.message.startsWith("*/"))
-            ExGameConfig.console.info(eval(e.message.substring(2, e.message.length)));
+        // if (e.message.startsWith("*/"))
+        //     ExGameConfig.console.info(eval(e.message.substring(2, e.message.length)));
     }
     player: Player;
     exPlayer: ExPlayer;

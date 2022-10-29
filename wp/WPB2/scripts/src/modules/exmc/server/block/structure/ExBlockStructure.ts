@@ -1,5 +1,5 @@
 import { ExBlockArea } from '../ExBlockArea.js';
-import { Dimension } from 'mojang-minecraft';
+import { Dimension } from '@minecraft/server';
 export default interface ExBlockStructure {
     find(): ExBlockArea | undefined;
     setStructure(res: string[][]): ExBlockStructure;

@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { world, MinecraftDimensionTypes } from 'mojang-minecraft';
+import { world, MinecraftDimensionTypes } from '@minecraft/server';
 export default class ExGameConfig {
     static runCommand(str) {
         try {

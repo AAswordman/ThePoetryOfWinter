@@ -1,5 +1,5 @@
 import ExGameClient from "./ExGameClient.js";
-import { world, system } from "mojang-minecraft";
+import { world, system } from "@minecraft/server";
 import ExGameConfig from "./ExGameConfig.js";
 import initConsole from "../utils/Console.js";
 import ExServerEvents from "./ExServerEvents.js";

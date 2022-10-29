@@ -1,4 +1,4 @@
-import { MinecraftDimensionTypes, world } from "mojang-minecraft";
+import { MinecraftDimensionTypes, world } from "@minecraft/server";
 import ExScoresManager from "./ExScoresManager.js";
 export default class ExNullEntity {
     constructor(name) {

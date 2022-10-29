@@ -306,10 +306,10 @@ export default class PomDesertBossRuin {
                 }
             }
         });
-        this.jigsaw.setStructurePlane(14, 14, 0, -1, 0, this.structure_boss);
-        this.jigsaw.setStructurePlane(14, 16, 0, -1, 0, this.structure_boss, 270);
-        this.jigsaw.setStructurePlane(16, 14, 0, -1, 0, this.structure_boss, 90);
-        this.jigsaw.setStructurePlane(16, 16, 0, -1, 0, this.structure_boss, 180);
+        this.jigsaw.setStructurePlane(14, 14, 0, -1, 0, this.structure_boss, 0, false, 2, 2);
+        this.jigsaw.setStructurePlane(14, 16, 0, -1, 0, this.structure_boss, 270, false, 2, 2);
+        this.jigsaw.setStructurePlane(16, 14, 0, -1, 0, this.structure_boss, 90, false, 2, 2);
+        this.jigsaw.setStructurePlane(16, 16, 0, -1, 0, this.structure_boss, 180, false, 2, 2);
         this._airMonsterArea = [];
         this._airPathArea = [];
         this._bossArea = [];

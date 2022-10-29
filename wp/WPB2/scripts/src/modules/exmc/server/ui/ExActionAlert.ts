@@ -1,5 +1,5 @@
-import { ActionFormData } from "mojang-minecraft-ui";
-import { Player } from 'mojang-minecraft';
+import { ActionFormData } from "@minecraft/server-ui";
+import { Player } from '@minecraft/server';
 import ExErrorQueue from '../ExErrorQueue.js';
 
 
@@ -20,7 +20,7 @@ export default class ExActionAlert {
   }
   show(player: Player) {
     this._alert.show(player).then(e => {
-      if(e.isCanceled) return;
+      if(e.canceled || !e.selection) return;
       this.buttonEvent[e.selection]();
     }).catch(e => ExErrorQueue.throwError(e));
     return this;

@@ -1,4 +1,4 @@
-import { Entity, EntityHealthComponent, Vector, Location, EntityInventoryComponent, Player, Dimension } from 'mojang-minecraft';
+import { Entity, EntityHealthComponent, Vector, Location, EntityInventoryComponent, Player, Dimension } from '@minecraft/server';
 import ExCommandRunner from '../../interface/ExCommandRunner.js';
 import ExTagManager from '../../interface/ExTagManager.js';
 import ExEntityComponentId from './ExEntityComponentId.js';

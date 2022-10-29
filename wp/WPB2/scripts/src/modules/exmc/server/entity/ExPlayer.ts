@@ -1,4 +1,4 @@
-import { Player } from "mojang-minecraft";
+import { Player } from "@minecraft/server";
 import ExEntity from "./ExEntity.js";
 import { ExPlayerBag } from "./ExEntityBag.js";
 

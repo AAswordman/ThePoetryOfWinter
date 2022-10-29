@@ -1,4 +1,4 @@
-import { MinecraftDimensionTypes, world } from "mojang-minecraft";
+import { MinecraftDimensionTypes, world } from "@minecraft/server";
 import ExCommandRunner from '../../interface/ExCommandRunner.js';
 import ExScoresManager from "./ExScoresManager.js";
 

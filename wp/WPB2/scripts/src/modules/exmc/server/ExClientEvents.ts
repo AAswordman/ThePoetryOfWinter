@@ -6,10 +6,10 @@ import {
     ItemUseEvent,
     ItemUseOnEvent,
     TickEvent
-} from "mojang-minecraft";
+} from "@minecraft/server";
 import ExEventManager from "../interface/ExEventManager.js";
 import ExGameServer from './ExGameServer.js';
-import { Player, EntityHurtEvent, ItemStack, EntityHitEvent, Entity } from 'mojang-minecraft';
+import { Player, EntityHurtEvent, ItemStack, EntityHitEvent, Entity } from '@minecraft/server';
 import ExPlayer from './entity/ExPlayer.js';
 import { ItemOnHandChangeEvent } from "./events.js";
 import ExGameConfig from "./ExGameConfig.js";
@@ -201,7 +201,7 @@ export default class ExClientEvents implements ExEventManager {
                         let lastItem = lastItemCache?.[0];
                         let nowItem = ExPlayer.getInstance(i[0]).getBag().getItemOnHand();
 
-                        if (lastItem?.id !== nowItem?.id || i[0].selectedSlot !== lastItemCache?.[1]) {
+                        if (lastItem?.typeId !== nowItem?.typeId || i[0].selectedSlot !== lastItemCache?.[1]) {
                             i[1].forEach((f) => {
                                 f(new ItemOnHandChangeEvent(lastItem, ExPlayer.getInstance(i[0]).getBag().getItemOnHand(), i[0]));
                             });

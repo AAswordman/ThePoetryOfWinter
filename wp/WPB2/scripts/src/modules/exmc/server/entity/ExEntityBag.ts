@@ -3,7 +3,7 @@ import ExEntity from './ExEntity.js';
 import {
     EntityInventoryComponent,
     ItemStack
-} from "mojang-minecraft";
+} from "@minecraft/server";
 import ExPlayer from './ExPlayer.js';
 
 export default class ExEntityBag {
@@ -30,7 +30,7 @@ export default class ExEntityBag {
         let items = this.getAllItems();
         for (let i = 0; i < items.length; i++) {
             if (items[i] === undefined) { continue; }
-            if (items[i].id === id) {
+            if (items[i].typeId === id) {
                 return i;
             }
         }

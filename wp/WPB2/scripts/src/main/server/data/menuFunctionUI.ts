@@ -1,10 +1,10 @@
 import PomClient from "../PomClient.js";
 import MenuUIAlert, { MenuUIAlertView } from '../ui/MenuUIAlert.js';
 import ExMessageAlert from "../../../modules/exmc/server/ui/ExMessageAlert.js";
-import { ItemStack } from "mojang-minecraft";
+import { ItemStack } from "@minecraft/server";
 import TalentData, { Occupation, Talent } from "../cache/TalentData.js";
 import PomServer from '../PomServer.js';
-import { ModalFormData } from "mojang-minecraft-ui";
+import { ModalFormData } from "@minecraft/server-ui";
 import Vector3 from '../../../modules/exmc/math/Vector3.js';
 import { langType } from './langType.js';
 import ExPlayer from "../../../modules/exmc/server/entity/ExPlayer.js";
@@ -514,8 +514,8 @@ You understand and agree that:
                                             new ModalFormData().textField(lang.menuUIMsgBailan39, (i[0] + v.toString()))
                                                 .show(client.player)
                                                 .then(e => {
-                                                    if (e.isCanceled) return;
-                                                    i[1] = e.formValues[0];
+                                                    if (e.canceled) return;
+                                                    i[1] = e?.formValues?.[0] || "";
                                                 }).catch(e => {
                                                     ExErrorQueue.throwError(e);
                                                 })
@@ -751,9 +751,8 @@ You understand and agree that:
                                     .title("Choose a language")
                                     .dropdown("Language List", ["English", "简体中文"], 0)
                                     .show(client.player).then((e) => {
-                                        if (!e.isCanceled) {
-                                            client.data.lang = e.formValues[0] == 0 ? "en" : "zh";
-                                            ExGameConfig.console.log(client.data.lang, e.formValues[0]);
+                                        if (!e.canceled) {
+                                            client.data.lang = (e.formValues && e.formValues[0] == 0) ? "en" : "zh";
                                         }
                                     })
                                     .catch((e) => {
@@ -845,11 +844,11 @@ You understand and agree that:
                                         .slider(lang.menuUIMsgBailan92, 2, 10, 1, client.globalSettings.entityCleanerStrength)
                                         .slider(lang.menuUIMsgBailan93, 1, 60, 1, client.globalSettings.entityCleanerDelay)
                                         .show(client.player).then((e) => {
-                                            if (e.isCanceled) return;
-                                            client.globalSettings.entityCleaner = e.formValues[0];
-                                            client.globalSettings.entityCleanerLeastNum = e.formValues[1];
-                                            client.globalSettings.entityCleanerStrength = e.formValues[2];
-                                            client.globalSettings.entityCleanerDelay = e.formValues[3];
+                                            if (e.canceled) return;
+                                            client.globalSettings.entityCleaner = e.formValues?.[0] ?? false;
+                                            client.globalSettings.entityCleanerLeastNum = e.formValues?.[1] ?? 200;
+                                            client.globalSettings.entityCleanerStrength = e.formValues?.[2] ?? 5;
+                                            client.globalSettings.entityCleanerDelay = e.formValues?.[3] ?? 30;
                                         })
                                         .catch((e) => {
                                             ExErrorQueue.throwError(e);

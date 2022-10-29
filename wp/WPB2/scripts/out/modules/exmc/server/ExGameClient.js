@@ -1,6 +1,6 @@
 import ExGameConfig from "./ExGameConfig.js";
 import ExClientEvents from "./ExClientEvents.js";
-import { world } from 'mojang-minecraft';
+import { world } from '@minecraft/server';
 import ExPlayer from "./entity/ExPlayer.js";
 import ExDimension from "./ExDimension.js";
 import ExErrorQueue from "./ExErrorQueue.js";
@@ -8,8 +8,8 @@ import ExActionAlert from "./ui/ExActionAlert.js";
 export default class ExGameClient {
     constructor(server, id, player) {
         this.debuggerChatTest = (e) => {
-            if (e.message.startsWith("*/"))
-                ExGameConfig.console.info(eval(e.message.substring(2, e.message.length)));
+            // if (e.message.startsWith("*/"))
+            //     ExGameConfig.console.info(eval(e.message.substring(2, e.message.length)));
         };
         this._server = server;
         this.clientId = id;

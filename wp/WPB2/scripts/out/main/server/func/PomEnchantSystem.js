@@ -1,4 +1,4 @@
-import { Items, ItemStack, MinecraftBlockTypes, MinecraftItemTypes } from "mojang-minecraft";
+import { Items, ItemStack, MinecraftBlockTypes, MinecraftItemTypes } from "@minecraft/server";
 import Vector3 from "../../../modules/exmc/math/Vector3.js";
 import ExBlock from "../../../modules/exmc/server/block/ExBlock.js";
 import ExColorLoreUtil from "../../../modules/exmc/server/item/ExColorLoreUtil.js";
@@ -38,16 +38,16 @@ export default class PomEnChantSystem extends GameController {
         this.getEvents().exEvents.onceItemUseOn.subscribe((e) => {
             let pos = new Vector3(e.blockLocation);
             let block = this.getExDimension().getBlock(pos);
-            if (!block || block.id === MinecraftBlockTypes.air.id)
+            if (!block || block.typeId === MinecraftBlockTypes.air.id)
                 return;
-            //ExGameConfig.console.log(block.id,e.item.id);
-            if (block.id === "wb:block_translate") {
+            //ExGameConfig.console.log(block.typeId,e.item.typeId);
+            if (block.typeId === "wb:block_translate") {
                 e.cancel = true;
                 let bag = this.exPlayer.getBag();
                 let item = bag.getItemOnHand();
                 let item2 = bag.getItemOnHand();
                 if (item && item2) {
-                    if (item.id === "wb:book_cache") {
+                    if (item.typeId === "wb:book_cache") {
                         this.blockTranslateData.set(new Vector3(block).toString(), item);
                         ExBlock.getInstance(block).transTo("wb:block_translate_book");
                         item2.amount--;
@@ -55,7 +55,7 @@ export default class PomEnChantSystem extends GameController {
                     }
                 }
             }
-            else if (block.id === "wb:block_translate_book") {
+            else if (block.typeId === "wb:block_translate_book") {
                 e.cancel = true;
                 let bag = this.exPlayer.getBag();
                 let item = bag.getItemOnHand();

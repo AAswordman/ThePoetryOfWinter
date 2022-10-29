@@ -1,4 +1,4 @@
-import { Dimension } from 'mojang-minecraft';
+import { Dimension } from '@minecraft/server';
 import Vector2 from '../../../../modules/exmc/math/Vector2.js';
 import Vector3 from '../../../../modules/exmc/math/Vector3.js';
 import { ExBlockArea } from '../../../../modules/exmc/server/block/ExBlockArea.js';
@@ -329,10 +329,10 @@ export default class PomDesertBossRuin implements PomRuinCommon {
             }
         });
 
-        this.jigsaw.setStructurePlane(14, 14, 0, -1, 0, this.structure_boss);
-        this.jigsaw.setStructurePlane(14, 16, 0, -1, 0, this.structure_boss, 270);
-        this.jigsaw.setStructurePlane(16, 14, 0, -1, 0, this.structure_boss, 90);
-        this.jigsaw.setStructurePlane(16, 16, 0, -1, 0, this.structure_boss, 180);
+        this.jigsaw.setStructurePlane(14, 14, 0, -1, 0, this.structure_boss, 0, false, 2, 2);
+        this.jigsaw.setStructurePlane(14, 16, 0, -1, 0, this.structure_boss, 270, false, 2, 2);
+        this.jigsaw.setStructurePlane(16, 14, 0, -1, 0, this.structure_boss, 90, false, 2, 2);
+        this.jigsaw.setStructurePlane(16, 16, 0, -1, 0, this.structure_boss, 180, false, 2, 2);
 
         this._airMonsterArea = [];
         this._airPathArea = [];
@@ -340,7 +340,7 @@ export default class PomDesertBossRuin implements PomRuinCommon {
         this._monsterArea = [];
         this._pathArea = [];
         this._playerArea = [];
-        
+
         this.jigsaw.foreach((data, ix, iz, iy) => {
             if (data.structureName === this.structure_straightLine || data.structureName === this.structure_triple
                 || data.structureName === this.structure_curve || data.structureName === this.structure_crossing) {

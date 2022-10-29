@@ -1,4 +1,4 @@
-import { Entity, MinecraftDimensionTypes, MinecraftEntityTypes, Player, MinecraftBlockTypes } from 'mojang-minecraft';
+import { Entity, MinecraftDimensionTypes, MinecraftEntityTypes, Player, MinecraftBlockTypes } from '@minecraft/server';
 import ExConfig from "../../modules/exmc/ExConfig.js";
 import { Objective } from "../../modules/exmc/server/entity/ExScoresManager.js";
 import ExDimension from "../../modules/exmc/server/ExDimension.js";
@@ -48,8 +48,8 @@ export default class PomServer extends ExGameServer {
             //ExGameConfig.console.log("当前实体数：" + entities.length);
             let map = new Map<string, number>();
             entities.forEach(e => {
-                if (e?.id == undefined) return;
-                map.set(e.id, (map.get(e.id) ?? 0) + 1);
+                if (e?.typeId == undefined) return;
+                map.set(e.typeId, (map.get(e.typeId) ?? 0) + 1);
             });
 
             let max = [0, ""];
@@ -66,8 +66,8 @@ export default class PomServer extends ExGameServer {
                 ExGameConfig.console.log("最多实体数：" + max[1]);
 
                 entities.forEach(e => {
-                    if (!e || !e.id || e.id !== max[1]) return;
-                    if (e.id === "minecraft:item" && e.viewVector.y !== 0) return;
+                    if (!e || !e.typeId || e.typeId !== max[1]) return;
+                    if (e.typeId === "minecraft:item" && e.viewVector.y !== 0) return;
                     //if (e.nameTag) return;
                     e.kill();
                 });
@@ -95,7 +95,7 @@ export default class PomServer extends ExGameServer {
 
         this.tpsListener.start();
 
-        let r = new Random(this.setting.worldSeed);
+
 
         this.portal_desertBoss = new ExBlockStructureNormal();
         this.portal_desertBoss.setDirection(ExBlockStructureNormal.DIRECTION_LAY_MIRROR)
@@ -111,7 +111,7 @@ export default class PomServer extends ExGameServer {
                 Z: MinecraftBlockTypes.air.id
             });
 
-
+        let r = new Random(this.setting.worldSeed);
         this.ruin_desertBoss = new PomDesertBossRuin(r.nextInt());
 
         ExTickQueue.push(() => {
@@ -122,6 +122,7 @@ export default class PomServer extends ExGameServer {
         });
 
 
+        
 
     }
     updateClearEntityNum() {

@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import MenuUIAlert from '../ui/MenuUIAlert.js';
 import ExMessageAlert from "../../../modules/exmc/server/ui/ExMessageAlert.js";
 import TalentData, { Occupation, Talent } from "../cache/TalentData.js";
-import { ModalFormData } from "mojang-minecraft-ui";
+import { ModalFormData } from "@minecraft/server-ui";
 import Vector3 from '../../../modules/exmc/math/Vector3.js';
 import ExPlayer from "../../../modules/exmc/server/entity/ExPlayer.js";
 import ExErrorQueue from "../../../modules/exmc/server/ExErrorQueue.js";
@@ -510,9 +510,10 @@ You understand and agree that:
                                         new ModalFormData().textField(lang.menuUIMsgBailan39, (i[0] + v.toString()))
                                             .show(client.player)
                                             .then(e => {
-                                            if (e.isCanceled)
+                                            var _a;
+                                            if (e.canceled)
                                                 return;
-                                            i[1] = e.formValues[0];
+                                            i[1] = ((_a = e === null || e === void 0 ? void 0 : e.formValues) === null || _a === void 0 ? void 0 : _a[0]) || "";
                                         }).catch(e => {
                                             ExErrorQueue.throwError(e);
                                         });
@@ -741,9 +742,8 @@ You understand and agree that:
                                     .title("Choose a language")
                                     .dropdown("Language List", ["English", "简体中文"], 0)
                                     .show(client.player).then((e) => {
-                                    if (!e.isCanceled) {
-                                        client.data.lang = e.formValues[0] == 0 ? "en" : "zh";
-                                        ExGameConfig.console.log(client.data.lang, e.formValues[0]);
+                                    if (!e.canceled) {
+                                        client.data.lang = (e.formValues && e.formValues[0] == 0) ? "en" : "zh";
                                     }
                                 })
                                     .catch((e) => {
@@ -834,12 +834,13 @@ You understand and agree that:
                                             .slider(lang.menuUIMsgBailan92, 2, 10, 1, client.globalSettings.entityCleanerStrength)
                                             .slider(lang.menuUIMsgBailan93, 1, 60, 1, client.globalSettings.entityCleanerDelay)
                                             .show(client.player).then((e) => {
-                                            if (e.isCanceled)
+                                            var _a, _b, _c, _d, _e, _f, _g, _h;
+                                            if (e.canceled)
                                                 return;
-                                            client.globalSettings.entityCleaner = e.formValues[0];
-                                            client.globalSettings.entityCleanerLeastNum = e.formValues[1];
-                                            client.globalSettings.entityCleanerStrength = e.formValues[2];
-                                            client.globalSettings.entityCleanerDelay = e.formValues[3];
+                                            client.globalSettings.entityCleaner = (_b = (_a = e.formValues) === null || _a === void 0 ? void 0 : _a[0]) !== null && _b !== void 0 ? _b : false;
+                                            client.globalSettings.entityCleanerLeastNum = (_d = (_c = e.formValues) === null || _c === void 0 ? void 0 : _c[1]) !== null && _d !== void 0 ? _d : 200;
+                                            client.globalSettings.entityCleanerStrength = (_f = (_e = e.formValues) === null || _e === void 0 ? void 0 : _e[2]) !== null && _f !== void 0 ? _f : 5;
+                                            client.globalSettings.entityCleanerDelay = (_h = (_g = e.formValues) === null || _g === void 0 ? void 0 : _g[3]) !== null && _h !== void 0 ? _h : 30;
                                         })
                                             .catch((e) => {
                                             ExErrorQueue.throwError(e);

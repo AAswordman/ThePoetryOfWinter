@@ -22,15 +22,11 @@
   ],
   "dependencies": [
     {
-      "module_name": "mojang-gametest",
+      "module_name": "@minecraft/server",
       "version": "1.0.0-beta"
     },
     {
-      "module_name": "mojang-minecraft",
-      "version": "1.0.0-beta"
-    },
-    {
-      "module_name": "mojang-minecraft-ui",
+      "module_name": "@minecraft/server-ui",
       "version": "1.0.0-beta"
     },
     {
