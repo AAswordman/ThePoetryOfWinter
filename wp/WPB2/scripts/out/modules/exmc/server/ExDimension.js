@@ -1,4 +1,5 @@
 import Vector3 from "../math/Vector3.js";
+import ExGameConfig from './ExGameConfig.js';
 import ExGameVector3 from './math/ExGameVector3.js';
 export default class ExDimension {
     constructor(dimension) {
@@ -39,10 +40,31 @@ export default class ExDimension {
         }
     }
     spawnItem(item, v) {
-        this._dimension.spawnItem(item, ExGameVector3.getBlockLocation(v));
+        try {
+            return this._dimension.spawnItem(item, ExGameVector3.getBlockLocation(v));
+        }
+        catch (error) {
+            ExGameConfig.console.warn(error);
+            return undefined;
+        }
+        ;
+    }
+    spawnEntity(id, v) {
+        try {
+            return this._dimension.spawnEntity(id, ExGameVector3.getBlockLocation(v));
+        }
+        catch (error) {
+            ExGameConfig.console.warn(error);
+            return undefined;
+        }
     }
     runCommand(str) {
-        return this._dimension.runCommand(str);
+        try {
+            return this._dimension.runCommand(str);
+        }
+        catch (error) {
+            return undefined;
+        }
     }
     runCommandAsync(str) {
         return this._dimension.runCommandAsync(str).then((e) => { });

@@ -12,5 +12,8 @@ export default class PomData implements SerializeAble {
         point: <[string, string, Vector3][]>[]
     };
 
+    dimBackPoint: Vector3 | undefined;
+
     lang?: "en" | "zh";
+
 }

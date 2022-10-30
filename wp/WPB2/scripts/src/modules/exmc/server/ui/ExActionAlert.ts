@@ -20,7 +20,7 @@ export default class ExActionAlert {
   }
   show(player: Player) {
     this._alert.show(player).then(e => {
-      if(e.canceled || !e.selection) return;
+      if(e.canceled || e.selection === undefined) return;
       this.buttonEvent[e.selection]();
     }).catch(e => ExErrorQueue.throwError(e));
     return this;

@@ -120,6 +120,11 @@ export class ExBlockArea {
     private static tempV = new Vector3();
     private static tempP = new Vector3();
     static randomPoint(e: ExBlockArea[], bound = 0) {
+        // console.warn(Math.floor(Math.random() * e.length));
+        // console.warn(e[Math.floor(Math.random() * e.length)]);
+        if(e.length === 0){
+            throw new Error("empty array");
+        }
         let area = e[Math.floor(Math.random() * e.length)];
         ExBlockArea.tempV.set(area.start).add(bound, bound, bound);
         ExBlockArea.tempP.set(area.end).sub(bound, bound, bound);

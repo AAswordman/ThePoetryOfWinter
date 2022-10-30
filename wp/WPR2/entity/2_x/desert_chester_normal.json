@@ -1,0 +1,32 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "wb:desert_chester_normal",
+            "materials": {
+                "default": "zombie"
+            },
+            "textures": {
+                "default": "textures/entity/chester"
+            },
+            "geometry": {
+                "default": "geometry.chester"
+            },
+            "animations": {
+                "walk": "animation.chester.move"
+            },
+            "scripts": {
+                "scale": 1.4,
+                "animate": [{
+                    "walk": "query.modified_move_speed"
+                }]
+            },
+            "render_controllers": ["controller.render.zombie"],
+            "enable_attachables": false,
+            "spawn_egg": {
+                "base_color": "#A26B23",
+                "overlay_color": "#400040"
+            }
+        }
+    }
+}

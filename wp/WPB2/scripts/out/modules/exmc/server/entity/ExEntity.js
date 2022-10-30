@@ -2,7 +2,6 @@ import ExEntityComponentId from './ExEntityComponentId.js';
 import ExScoresManager from './ExScoresManager.js';
 import Vector3 from '../../math/Vector3.js';
 import ExEntityBag from './ExEntityBag.js';
-import ExGameVector3 from '../math/ExGameVector3.js';
 export default class ExEntity {
     constructor(entity) {
         this._entity = entity;
@@ -81,7 +80,7 @@ export default class ExEntity {
         return new Vector3(this.entity.location);
     }
     setPosition(position, dimension = this.entity.dimension) {
-        this.entity.teleport(ExGameVector3.getBlockLocation(position), dimension, this.entity.rotation.x, this.entity.rotation.y);
+        this.entity.teleport(position, dimension, this.entity.rotation.x, this.entity.rotation.y);
     }
     setDimension(dimension) {
         this.setPosition(this.getPosition(), dimension);

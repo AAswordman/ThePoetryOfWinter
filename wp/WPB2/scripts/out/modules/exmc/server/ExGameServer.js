@@ -1,4 +1,5 @@
 import ExGameClient from "./ExGameClient.js";
+import ExDimension from "./ExDimension.js";
 import { world, system } from "@minecraft/server";
 import ExGameConfig from "./ExGameConfig.js";
 import initConsole from "../utils/Console.js";
@@ -24,6 +25,9 @@ export default class ExGameServer {
     }
     getDimension(dimensionId) {
         return world.getDimension(dimensionId);
+    }
+    getExDimension(dimensionId) {
+        return ExDimension.getInstance(this.getDimension(dimensionId));
     }
     getEvents() {
         return this._events;

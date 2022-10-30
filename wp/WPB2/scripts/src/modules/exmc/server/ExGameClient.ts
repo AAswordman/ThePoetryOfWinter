@@ -14,8 +14,8 @@ export default class ExGameClient<T extends ExInterworkingPool = ExInterworkingP
     private _events: ExClientEvents;
 
     debuggerChatTest = (e: ChatEvent) => {
-        // if (e.message.startsWith("*/"))
-        //     ExGameConfig.console.info(eval(e.message.substring(2, e.message.length)));
+        if (e.message.startsWith("*/"))
+            ExGameConfig.console.info(eval(e.message.substring(2, e.message.length)));
     }
     player: Player;
     exPlayer: ExPlayer;

@@ -10,7 +10,11 @@ import GlobalSettings from "./cache/GlobalSettings.js";
 import PomDesertBossRuin from "./func/ruins/PomDesertBossRuin.js";
 import RuinsLoaction from "./func/ruins/RuinsLoaction.js";
 import PomClient from "./PomClient.js";
-import ExBlockStructureNormal from '../../modules/exmc/server/block/structure/ExBlockStructureNormal';
+import ExBlockStructureNormal from '../../modules/exmc/server/block/structure/ExBlockStructureNormal.js';
+import TickDelayTask from '../../modules/exmc/utils/TickDelayTask.js';
+import Vector3 from '../../modules/exmc/math/Vector3.js';
+import { ExBlockArea } from '../../modules/exmc/server/block/ExBlockArea';
+import ExGameVector3 from '../../modules/exmc/server/math/ExGameVector3.js';
 export default class PomServer extends ExGameServer {
     constructor(config) {
         super(config);
@@ -68,25 +72,105 @@ export default class PomServer extends ExGameServer {
         });
         this.tpsListener.start();
         this.portal_desertBoss = new ExBlockStructureNormal();
-        this.portal_desertBoss.setDirection(ExBlockStructureNormal.DIRECTION_LAY_MIRROR)
-            .setStructure([[
+        this.portal_desertBoss.setDirection(ExBlockStructureNormal.DIRECTION_LAY)
+            .setStructure([
+            [
                 "XXXXX",
-                "XZZZX",
-                "XZYZX",
-                "XZZZX",
+                "XWWWX",
+                "XWYWX",
+                "XWWWX",
                 "XXXXX"
-            ]])
+            ],
+            [
+                "XSXSX",
+                "SAAAS",
+                "XAAAX",
+                "SAAAS",
+                "XSXSX"
+            ],
+            [
+                "CAAAC",
+                "AAAAA",
+                "AAAAA",
+                "AAAAA",
+                "CAAAC"
+            ]
+        ])
             .analysis({
             X: MinecraftBlockTypes.sandstone.id,
+            W: MinecraftBlockTypes.water.id,
             Y: "wb:block_magic_equipment",
-            Z: MinecraftBlockTypes.air.id
+            A: MinecraftBlockTypes.air.id,
+            S: MinecraftBlockTypes.stoneBlockSlab2.id,
+            C: MinecraftBlockTypes.cobblestoneWall.id
         });
         let r = new Random(this.setting.worldSeed);
         this.ruin_desertBoss = new PomDesertBossRuin(r.nextInt());
         ExTickQueue.push(() => {
-            this.ruin_desertBoss.init(RuinsLoaction.DESERT_RUIN_LOCATION.x, RuinsLoaction.DESERT_RUIN_LOCATION.y, RuinsLoaction.DESERT_RUIN_LOCATION.z, this.getDimension(MinecraftDimensionTypes.theEnd));
+            this.ruin_desertBoss.init(RuinsLoaction.DESERT_RUIN_LOCATION_START.x, RuinsLoaction.DESERT_RUIN_LOCATION_START.y, RuinsLoaction.DESERT_RUIN_LOCATION_START.z, this.getDimension(MinecraftDimensionTypes.theEnd));
             this.ruin_desertBoss.dispose();
         });
+        const tmpV = new Vector3();
+        let desertEntitiesNum = 0;
+        const upDateMonster = () => {
+            let entities = Array.from(this.getExDimension(MinecraftDimensionTypes.theEnd).getEntities({
+                location: ExGameVector3.getLocation(RuinsLoaction.DESERT_RUIN_LOCATION_CENTER),
+                maxDistance: 400
+            }));
+            for (let e of entities) {
+                if (e.id === "minecraft:item" && e.viewVector.y === 0) {
+                    e.kill();
+                }
+            }
+            desertEntitiesNum = entities.length;
+        };
+        this.desertRuinRandomRules = new TimeLoopTask(this.getEvents(), () => {
+            upDateMonster();
+        }).delay(60000);
+        upDateMonster();
+        this.desertRuinRandomRules.start();
+        this.ruinFuncLooper = new TickDelayTask(this.getEvents(), () => {
+            let desertFlag = false;
+            for (let client of this.getClients()) {
+                tmpV.set(client.player.location);
+                if (this.ruin_desertBoss.isCompleted()) {
+                    if (tmpV.x >= RuinsLoaction.DESERT_RUIN_LOCATION_START.x && tmpV.x <= RuinsLoaction.DESERT_RUIN_LOCATION_END.x
+                        && tmpV.z >= RuinsLoaction.DESERT_RUIN_LOCATION_START.z && tmpV.z <= RuinsLoaction.DESERT_RUIN_LOCATION_END.z) {
+                        desertFlag = true;
+                        if (desertEntitiesNum < 80) {
+                            //summon monster
+                            let vec = ExBlockArea.randomPoint(this.ruin_desertBoss.getPathArea(), 4);
+                            this.getExDimension(MinecraftDimensionTypes.theEnd).spawnEntity("wb:desert_skeleton", vec);
+                            if (Math.random() > 0.5)
+                                this.getExDimension(MinecraftDimensionTypes.theEnd).spawnEntity("wb:desert_skeleton", vec);
+                            vec = ExBlockArea.randomPoint(this.ruin_desertBoss.getPathArea(), 4);
+                            if (Math.random() > 0.85)
+                                this.getExDimension(MinecraftDimensionTypes.theEnd).spawnEntity("wb:desert_chester_normal", vec);
+                            vec = ExBlockArea.randomPoint(this.ruin_desertBoss.getAirMonsterSpawnArea(), 4);
+                            if (Math.random() > 0.7)
+                                this.getExDimension(MinecraftDimensionTypes.theEnd).spawnEntity("wb:desert_chester_high", vec);
+                            vec = ExBlockArea.randomPoint(this.ruin_desertBoss.getAirPathArea(), 4);
+                            if (Math.random() > 0.4)
+                                this.getExDimension(MinecraftDimensionTypes.theEnd).spawnEntity("dec:stone_golem", vec);
+                            vec = ExBlockArea.randomPoint(this.ruin_desertBoss.getPathArea(), 4);
+                            if (Math.random() > 0.7)
+                                this.getExDimension(MinecraftDimensionTypes.theEnd).spawnEntity("dec:stone_golem", vec);
+                            desertEntitiesNum += 6;
+                        }
+                    }
+                }
+            }
+            if (!desertFlag) {
+                this.desertRuinRandomRules.stop();
+            }
+            else {
+                this.desertRuinRandomRules.start();
+            }
+        }).delay(20 * 12);
+        this.ruinFuncLooper.start();
+    }
+    sayTo(str) {
+        this.getExDimension(MinecraftDimensionTypes.theEnd).runCommand(`tellraw @a {"rawtext": [{"text": "${str}"}]}`);
     }
     updateClearEntityNum() {
         this.entityCleanerStrength = this.setting.entityCleanerStrength;

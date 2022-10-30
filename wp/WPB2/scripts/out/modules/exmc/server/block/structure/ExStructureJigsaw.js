@@ -123,7 +123,7 @@ export default class ExStructureJigsaw {
             arr0.forEach((arr1, z) => {
                 arr1.forEach((v, x) => {
                     if (typeof v !== "number" && v !== undefined) {
-                        structure.position.set(wordlX + x * this.size, wordlY + y * this.size, wordlZ + z * this.size);
+                        structure.position.set(wordlX + x * this.size + v[0], wordlY + y * this.size + v[1], wordlZ + z * this.size + v[2]);
                         structure.structureId = v[3];
                         structure.rotation = v[4];
                         structure.mirror = v[5];

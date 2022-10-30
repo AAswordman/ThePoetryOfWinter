@@ -24,7 +24,8 @@ export default class ExMessageAlert {
 	}
 	show(player:Player) {
 		this._alert.show(player).then(e => {
-			if(e.canceled || !e.selection) return;
+            console.warn(e.canceled,e.selection);
+			if(e.canceled || e.selection === undefined) return;
 			this.buttonEvent[e.selection]();
 		}).catch(e => ExErrorQueue.throwError(e));;
 		return this;
@@ -34,8 +35,3 @@ export default class ExMessageAlert {
 		return this;
 	}
 }
-
-
-
-
-

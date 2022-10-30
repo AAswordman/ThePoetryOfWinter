@@ -1,6 +1,5 @@
 export default class ExErrorQueue {
     static throwError(error) {
-        console.warn("find error", error);
         this.errorStack.push(error);
     }
     static init(server) {
