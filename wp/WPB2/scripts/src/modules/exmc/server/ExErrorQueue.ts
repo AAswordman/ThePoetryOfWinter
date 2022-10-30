@@ -3,7 +3,6 @@ export default class ExErrorQueue{
     private static errorStack:unknown[] = [];
 
 	public static throwError(error:unknown){
-        console.warn("find error",error);
 		this.errorStack.push(error);
 	}
     public static init(server:ExGameServer){

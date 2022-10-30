@@ -37,6 +37,9 @@ export default class ExGameServer implements SetTimeOutSupport {
     getDimension(dimensionId: string) {
         return world.getDimension(dimensionId);
     }
+    getExDimension(dimensionId: string) {
+        return ExDimension.getInstance(this.getDimension(dimensionId));
+    }
 
     getEvents() {
         return this._events;

@@ -100,7 +100,7 @@
         "minecraft:spawn_entity": {
           "min_wait_time": 8,
           "max_wait_time": 10,
-          "spawn_entity": "ender_crystal"
+          "spawn_entity": "minecraft:ender_crystal<from_dragon>"
         },
         "minecraft:timer": {
           "looping": false,

@@ -1,9 +1,11 @@
 import { Dimension, EntityQueryOptions, Block, ItemStack, Entity, BlockType, BlockLocation } from '@minecraft/server';
 import ExCommandRunner from '../interface/ExCommandRunner.js';
 import Vector3 from "../math/Vector3.js";
+import ExGameConfig from './ExGameConfig.js';
 import ExGameVector3 from './math/ExGameVector3.js';
 
 export default class ExDimension implements ExCommandRunner {
+
     private _dimension: Dimension;
 
     constructor(dimension: Dimension) {
@@ -42,12 +44,30 @@ export default class ExDimension implements ExCommandRunner {
         }
     }
     spawnItem(item: ItemStack, v: Vector3) {
-        this._dimension.spawnItem(item, ExGameVector3.getBlockLocation(v));
+        try {
+            return this._dimension.spawnItem(item, ExGameVector3.getBlockLocation(v))
+        } catch (error) {
+            ExGameConfig.console.warn(error);
+            return undefined;
+        };
+    }
+
+    spawnEntity(id: string, v: Vector3) {
+        try {
+            return this._dimension.spawnEntity(id, ExGameVector3.getBlockLocation(v));
+        } catch (error) {
+            ExGameConfig.console.warn(error);
+            return undefined;
+        }
     }
 
 
     runCommand(str: string) {
-        return this._dimension.runCommand(str);
+        try {
+            return this._dimension.runCommand(str);
+        } catch (error) {
+            return undefined;
+        }
 
     }
     runCommandAsync(str: string) {

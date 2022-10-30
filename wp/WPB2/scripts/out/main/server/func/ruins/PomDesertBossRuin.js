@@ -21,6 +21,7 @@ export default class PomDesertBossRuin {
         this.structure_boss = "mystructure:boss_desert_16";
         this.structure_block1 = "mystructure:boss_desert_9"; // O
         this.structure_block2 = "mystructure:boss_desert_11"; //O
+        this.completed = false;
         this._pathArea = [];
         this._airPathArea = [];
         this._monsterArea = [];
@@ -28,6 +29,9 @@ export default class PomDesertBossRuin {
         this._playerArea = [];
         this._bossArea = [];
         this.seed = seed;
+    }
+    isCompleted() {
+        return this.completed;
     }
     getPathArea() {
         return this._pathArea;
@@ -79,7 +83,11 @@ export default class PomDesertBossRuin {
             }
         }
         while (block > 0) {
-            maze[r.nextInt(32)][r.nextInt(32)] = BLOCK;
+            let a = r.nextInt(32), b = r.nextInt(32);
+            if (maze[a][b] === CENTER) {
+                continue;
+            }
+            maze[a][b] = BLOCK;
             block--;
         }
         let arrows = [[new Vector2(), Vector2.forward]];
@@ -282,24 +290,24 @@ export default class PomDesertBossRuin {
                     if (path) {
                         for (; tempA.x != next.x; tempA.x += tempC.x) {
                             if (this.jigsaw.isEmpty(tempA.x + tran, tempA.z + tran, tempA.y)) {
-                                this.jigsaw.setStructure(tempA.x + tran, tempA.z + tran, tempA.y, 0, 1, 0, this.structure_upplain);
+                                this.jigsaw.setStructure(tempA.x + tran, tempA.z + tran, tempA.y, 0, 0, 0, this.structure_upplain);
                             }
                         }
                         for (; tempA.z != next.y; tempA.z += tempC.z) {
                             if (this.jigsaw.isEmpty(tempA.x + tran, tempA.z + tran, tempA.y)) {
-                                this.jigsaw.setStructure(tempA.x + tran, tempA.z + tran, tempA.y, 0, 1, 0, this.structure_upplain);
+                                this.jigsaw.setStructure(tempA.x + tran, tempA.z + tran, tempA.y, 0, 0, 0, this.structure_upplain);
                             }
                         }
                     }
                     else {
                         for (; tempA.z != next.y; tempA.z += tempC.z) {
                             if (this.jigsaw.isEmpty(tempA.x + tran, tempA.z + tran, tempA.y)) {
-                                this.jigsaw.setStructure(tempA.x + tran, tempA.z + tran, tempA.y, 0, 1, 0, this.structure_upplain);
+                                this.jigsaw.setStructure(tempA.x + tran, tempA.z + tran, tempA.y, 0, 0, 0, this.structure_upplain);
                             }
                         }
                         for (; tempA.x != next.x; tempA.x += tempC.x) {
                             if (this.jigsaw.isEmpty(tempA.x + tran, tempA.z + tran, tempA.y)) {
-                                this.jigsaw.setStructure(tempA.x + tran, tempA.z + tran, tempA.y, 0, 1, 0, this.structure_upplain);
+                                this.jigsaw.setStructure(tempA.x + tran, tempA.z + tran, tempA.y, 0, 0, 0, this.structure_upplain);
                             }
                         }
                     }
@@ -335,9 +343,10 @@ export default class PomDesertBossRuin {
                 this._airPathArea.push(new ExBlockArea(new Vector3(ix, iy, iz).scl(this.jigsaw.size).add(this.x, this.y, this.z), new Vector3(1, 1, 1).scl(this.jigsaw.size)));
             }
             else if (data.structureName === this.structure_towerPiece) {
-                this._airPathArea.push(new ExBlockArea(new Vector3(ix, iy, iz).scl(this.jigsaw.size).add(this.x, this.y, this.z), new Vector3(1, 1, 1).scl(this.jigsaw.size)));
+                this._airMonsterArea.push(new ExBlockArea(new Vector3(ix, iy, iz).scl(this.jigsaw.size).add(this.x, this.y, this.z), new Vector3(1, 1, 1).scl(this.jigsaw.size)));
             }
         });
+        this.completed = true;
     }
 }
 //# sourceMappingURL=PomDesertBossRuin.js.map
