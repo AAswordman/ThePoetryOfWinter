@@ -94,7 +94,7 @@ export default class Vector3 {
                 this.z *= x;
             }
         } else {
-            this.sub(x.x, x.y, x.z);
+            this.scl(x.x, x.y, x.z);
         }
         return this;
     }
@@ -171,6 +171,10 @@ export default class Vector3 {
 
     public clone() {
         return new Vector3(this.x, this.y, this.z);
+    }
+
+    public toArray(){
+        return [this.x,this.y,this.z];
     }
 
     

@@ -5,8 +5,9 @@ export default class VarOnChangeListener {
     }
     upDate(v) {
         if (this.value !== v) {
+            const last = this.value;
             this.value = v;
-            this.trigger(v);
+            this.trigger(v, last);
         }
     }
 }

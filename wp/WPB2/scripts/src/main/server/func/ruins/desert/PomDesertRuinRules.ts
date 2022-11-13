@@ -5,8 +5,9 @@ import Random from "../../../../../modules/exmc/utils/Random.js";
 import GameController from "../../GameController.js";
 
 import * as desertCommand from "../../ruins/desert/PomDesertRuinCommmand.js";
-import { MinecraftEntityTypes } from '@minecraft/server';
-import ExGameVector3 from '../../../../../modules/exmc/server/math/ExGameVector3';
+import { MinecraftEntityTypes, MinecraftEffectTypes } from '@minecraft/server';
+import ExGameVector3 from '../../../../../modules/exmc/server/math/ExGameVector3.js';
+import ExEntity from "../../../../../modules/exmc/server/entity/ExEntity.js";
 
 export default class PomDesertRuinRules {
     clear() {
@@ -19,7 +20,8 @@ export default class PomDesertRuinRules {
         this.game = game;
     }
     public init() {
-        this.collections = [...getEnumKeys(desertCommand.MAIN), ...getEnumKeys(desertCommand.EFFECT), ...getEnumKeys(desertCommand.TARGET), ...getEnumKeys(desertCommand.VALUE)];
+        this.collections = [];
+        //this.collections = [...getEnumKeys(desertCommand.MAIN), ...getEnumKeys(desertCommand.EFFECT), ...getEnumKeys(desertCommand.TARGET), ...getEnumKeys(desertCommand.VALUE)];
     }
     public randomAddRule() {
         let id = Random.choice(getEnumKeys(Random.choice([desertCommand.EFFECT, desertCommand.MAIN, desertCommand.TARGET, desertCommand.VALUE])));
@@ -108,20 +110,35 @@ export default class PomDesertRuinRules {
             while (mainCmd === desertCommand.MAIN.EXECUTE) {
                 if (cmdArr[i] in desertCommand.MAIN) {
                     mainCmd = getEnumFlag(desertCommand.MAIN, cmdArr[i]);
-                    i+=1;
+                    i += 1;
                 } else {
                     break;
                 }
                 let type = getEnumFlag(desertCommand.TARGET, cmdArr[i]);
-                i+=1;
-
+                i += 1;
                 switch (type) {
                     case desertCommand.TARGET.X_ADD_16: {
                         pos.x += 16;
                         break;
                     }
+                    case desertCommand.TARGET.X_ADD_4: {
+                        pos.x += 4;
+                        break;
+                    }
+                    case desertCommand.TARGET.X_ADD_8: {
+                        pos.x += 8;
+                        break;
+                    }
                     case desertCommand.TARGET.X_ADD_32: {
                         pos.x += 32;
+                        break;
+                    }
+                    case desertCommand.TARGET.X_REMOVE_8: {
+                        pos.x -= 8;
+                        break;
+                    }
+                    case desertCommand.TARGET.X_REMOVE_4: {
+                        pos.x -= 4;
                         break;
                     }
                     case desertCommand.TARGET.X_REMOVE_16: {
@@ -132,12 +149,28 @@ export default class PomDesertRuinRules {
                         pos.x -= 32;
                         break;
                     }
+                    case desertCommand.TARGET.Z_ADD_8: {
+                        pos.z += 8;
+                        break;
+                    }
+                    case desertCommand.TARGET.Z_ADD_4: {
+                        pos.z += 4;
+                        break;
+                    }
                     case desertCommand.TARGET.Z_ADD_16: {
                         pos.z += 16;
                         break;
                     }
                     case desertCommand.TARGET.Z_ADD_32: {
                         pos.z += 32;
+                        break;
+                    }
+                    case desertCommand.TARGET.Z_REMOVE_8: {
+                        pos.z -= 8;
+                        break;
+                    }
+                    case desertCommand.TARGET.Z_REMOVE_4: {
+                        pos.z -= 4;
                         break;
                     }
                     case desertCommand.TARGET.Z_REMOVE_16: {
@@ -148,12 +181,28 @@ export default class PomDesertRuinRules {
                         pos.z -= 32;
                         break;
                     }
+                    case desertCommand.TARGET.Y_ADD_8: {
+                        pos.y += 8;
+                        break;
+                    }
+                    case desertCommand.TARGET.Y_ADD_4: {
+                        pos.y += 4;
+                        break;
+                    }
                     case desertCommand.TARGET.Y_ADD_16: {
                         pos.y += 16;
                         break;
                     }
                     case desertCommand.TARGET.Y_ADD_32: {
                         pos.y += 32;
+                        break;
+                    }
+                    case desertCommand.TARGET.Y_REMOVE_8: {
+                        pos.y -= 8;
+                        break;
+                    }
+                    case desertCommand.TARGET.Y_REMOVE_4: {
+                        pos.y -= 4;
                         break;
                     }
                     case desertCommand.TARGET.Y_REMOVE_16: {
@@ -165,10 +214,7 @@ export default class PomDesertRuinRules {
                         break;
                     }
                     
-
                 }
-
-                
             }
             let value = getEnumFlag(desertCommand.EFFECT, cmdArr[i]) || getEnumFlag(desertCommand.VALUE, cmdArr[i]);
             let num = 0;
@@ -186,10 +232,54 @@ export default class PomDesertRuinRules {
                 case desertCommand.MAIN.DAMAGE: {
                     this.game.getExDimension().getEntities({
                         maxDistance: 15,
-                        excludeTags: (this.game.player.hasTag("wbmsyh") ? ["wbmsyh"]:[]),
+                        excludeTags: (this.game.player.hasTag("wbmsyh") ? ["wbmsyh"] : []),
                         location: ExGameVector3.getLocation(pos)
-                    }).forEach(e => this.game.exPlayer.causeDamageTo(e,num));
-
+                    }).forEach(e => this.game.exPlayer.causeDamageTo(e, num));
+                    break;
+                }
+                case desertCommand.MAIN.HEALTH_ADD: {
+                    this.game.getExDimension().getEntities({
+                        maxDistance: 15,
+                        location: ExGameVector3.getLocation(pos)
+                    }).forEach(e => {
+                        let c = ExEntity.getInstance(e).getHealthComponent();
+                        c.setCurrent(c.current + num);
+                    });
+                    break;
+                }
+                case desertCommand.MAIN.HEALTH_REMOVE: {
+                    this.game.getExDimension().getEntities({
+                        maxDistance: 15,
+                        excludeTags: (this.game.player.hasTag("wbmsyh") ? ["wbmsyh"] : []),
+                        location: ExGameVector3.getLocation(pos)
+                    }).forEach(e => {
+                        let c = ExEntity.getInstance(e).getHealthComponent();
+                        c.setCurrent(Math.max(0,c.current - num));
+                    });
+                    break;
+                }
+                case desertCommand.MAIN.TP: {
+                    this.game.getExDimension().getEntities({
+                        maxDistance: 15,
+                        location: ExGameVector3.getLocation(pos)
+                    }).forEach(e => (ExEntity.getInstance(e).setPosition(pos.clone().sub(this.game.exPlayer.getPosition()).scl(num/2).add(pos))));
+                    break;
+                }
+                case desertCommand.MAIN.EFFECT: {
+                    let eff = MinecraftEffectTypes.absorption;
+                    switch (value) {
+                        case desertCommand.EFFECT.WITHER: eff = MinecraftEffectTypes.wither; break;
+                        case desertCommand.EFFECT.BLIND: eff = MinecraftEffectTypes.blindness; break;
+                        case desertCommand.EFFECT.DEFENSE: eff = MinecraftEffectTypes.resistance; break;
+                        case desertCommand.EFFECT.SPEED: eff = MinecraftEffectTypes.speed; break;
+                        case desertCommand.EFFECT.STRENGTH: eff = MinecraftEffectTypes.strength; break;
+                        case desertCommand.EFFECT.WEAKNESS: eff = MinecraftEffectTypes.weakness; break;
+                    }
+                    this.game.getExDimension().getEntities({
+                        maxDistance: 15,
+                        location: ExGameVector3.getLocation(pos)
+                    }).forEach(e => (e.addEffect(eff, 600, 1, false)));
+                    break;
                 }
             }
             return;

@@ -1,4 +1,4 @@
-import { MinecraftBlockTypes, MinecraftDimensionTypes } from '@minecraft/server';
+import { MinecraftBlockTypes, MinecraftDimensionTypes, MinecraftEntityTypes } from '@minecraft/server';
 import ExBlockStructureNormal from "../../../modules/exmc/server/block/structure/ExBlockStructureNormal.js";
 import GameController from "./GameController.js";
 import RuinsLoaction from "./ruins/RuinsLoaction.js";
@@ -8,7 +8,7 @@ import ExGameVector3 from '../../../modules/exmc/server/math/ExGameVector3.js';
 import VarOnChangeListener from '../../../modules/exmc/utils/VarOnChangeListener.js';
 import ExMessageAlert from '../../../modules/exmc/server/ui/ExMessageAlert.js';
 import PomDesertRuinRules from './ruins/desert/PomDesertRuinRules.js';
-import { to } from '../../../modules/exmc/server/ExErrorQueue.js';
+import ExErrorQueue from '../../../modules/exmc/server/ExErrorQueue.js';
 export default class PomDimRuinsSystem extends GameController {
     constructor() {
         super(...arguments);
@@ -57,18 +57,98 @@ export default class PomDimRuinsSystem extends GameController {
             }
         }, false);
         const desertRoomCounter = new Map();
-        const desertRuinScoreJudge = new VarOnChangeListener((v) => {
+        const desertRuinScoreJudge = new VarOnChangeListener((v, last) => {
             var _a, _b;
+            if (last && this.client.getServer().ruin_desertBoss.isInRoom(last)) {
+                let lastPos = last.split(",").map(e => parseInt(e));
+                let lastVec = new Vector3(lastPos[0], lastPos[1], lastPos[2]).scl(16).add(RuinsLoaction.DESERT_RUIN_LOCATION_START).add(8, 8, 8);
+                const tmpV = new Vector3();
+                const unclearList = [];
+                for (let e of this.getDimension().getEntities({
+                    excludeTypes: ["minecraft:item", MinecraftEntityTypes.player.id],
+                    maxDistance: 16,
+                    location: ExGameVector3.getLocation(lastVec)
+                })) {
+                    if (lastVec.clone().sub(tmpV.set(e.location)).abs().toArray().every(i => i <= 8)) {
+                        unclearList.push(e.id);
+                        this.client.magicSystem.additionHealth -= 1;
+                        e.kill();
+                    }
+                }
+                if (unclearList.length !== 0)
+                    this.sayTo("§b[遗迹]§f" + unclearList.length + "个实体未清理, 已扣除 " + unclearList.length + " 点血量");
+            }
             if (this.client.getServer().ruin_desertBoss.isInRoom(v)) {
                 desertRoomCounter.set(v, ((_a = desertRoomCounter.get(v)) !== null && _a !== void 0 ? _a : 0) + 1);
                 let point = Math.max(-2, Math.floor(Math.random() * (3 + (this.player.location.y - RuinsLoaction.DESERT_RUIN_LOCATION_START.y) / 10 - 2 * ((_b = desertRoomCounter.get(v)) !== null && _b !== void 0 ? _b : 0))));
                 this.sayTo("§b[遗迹]§f第" + desertRoomCounter.get(v) + "次进入，随机点数：" + point);
-                if (point > 3) {
+                let fpoint = point;
+                while (fpoint >= 1) {
                     this.sayTo("§b[遗迹]§f获得规则 §b§l" + this.getLang()["ruinDesertCmd_" + desertRuinRules.randomAddRule()]);
+                    fpoint--;
                 }
                 this.client.magicSystem.additionHealth += point;
-                if (Math.random() < 1) {
-                    to(desertRuinRules.show());
+                if (Math.random() < 0.7) {
+                    desertRuinRules.show().then(e => {
+                        let r = Math.floor(10 * Math.random());
+                        let pos = this.exPlayer.getPosition().div(16).floor().scl(16).add(8, 4, 8);
+                        switch (r) {
+                            case 0:
+                                break;
+                            case 1:
+                                while (point + 1 > 0) {
+                                    this.getExDimension().spawnEntity("wb:magic_book", pos);
+                                    this.getExDimension().spawnEntity("wb:magic_book", pos);
+                                    point--;
+                                }
+                                break;
+                            case 2:
+                                while (point + 1 > 0) {
+                                    this.getExDimension().spawnEntity("wb:desert_insect", pos);
+                                    this.getExDimension().spawnEntity("wb:magic_book", pos);
+                                    this.getExDimension().spawnEntity("wb:magic_book", pos);
+                                    this.getExDimension().spawnEntity("wb:desert_chester_normal", pos);
+                                    point--;
+                                }
+                                break;
+                            case 3:
+                                while (point + 1 > 0) {
+                                    this.getExDimension().spawnEntity("wb:desert_chester_high", pos);
+                                    this.getExDimension().spawnEntity("wb:desert_skeleton", pos);
+                                    this.getExDimension().spawnEntity("wb:desert_skeleton", pos);
+                                    this.getExDimension().spawnEntity("wb:desert_skeleton", pos);
+                                    this.getExDimension().spawnEntity("wb:desert_skeleton", pos);
+                                    point -= 1;
+                                }
+                                break;
+                            case 4:
+                                while (point + 1 > 0) {
+                                    this.getExDimension().spawnEntity("dec:stone_golem", pos);
+                                    this.getExDimension().spawnEntity("dec:stone_golem", pos);
+                                    this.getExDimension().spawnEntity("wb:desert_chester_high", pos);
+                                    point -= 2;
+                                }
+                                break;
+                            case 5:
+                                while (point + 1 > 0) {
+                                    this.getExDimension().spawnEntity("dec:stone_golem", pos);
+                                    this.getExDimension().spawnEntity("dec:stone_golem", pos);
+                                    this.getExDimension().spawnEntity("wb:desert_chester_high", pos);
+                                    point -= 2;
+                                }
+                                break;
+                            case 6:
+                                while (point + 1 > 0) {
+                                    this.getExDimension().spawnEntity("wb:desert_zombie", pos);
+                                    this.getExDimension().spawnEntity("wb:desert_zombie", pos);
+                                    this.getExDimension().spawnEntity("wb:desert_skeleton", pos);
+                                    point -= 1;
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+                    }).catch(e => ExErrorQueue.throwError(e));
                 }
             }
         }, "0,0,0");
