@@ -19,6 +19,21 @@ export default class Random {
     nextBoolean() {
         return this.nextDouble() >= 0.5;
     }
+    static choice(o) {
+        if (o instanceof Array) {
+            if (o.length === 0) {
+                throw new Error("array mustnot be empty");
+            }
+            return o[Math.floor(Math.random() * o.length)];
+        }
+        else {
+            let arr = [];
+            for (let i in o) {
+                arr.push(i);
+            }
+            return o[Random.choice(arr)];
+        }
+    }
 }
 Random.MAX_VALUE = 1 << 32 - 1;
 //# sourceMappingURL=Random.js.map

@@ -22,6 +22,7 @@ export default class PomDesertBossRuin {
         this.structure_block1 = "mystructure:boss_desert_9"; // O
         this.structure_block2 = "mystructure:boss_desert_11"; //O
         this.completed = false;
+        this.rooms = new Set();
         this._pathArea = [];
         this._airPathArea = [];
         this._monsterArea = [];
@@ -32,6 +33,9 @@ export default class PomDesertBossRuin {
     }
     isCompleted() {
         return this.completed;
+    }
+    isInRoom(v) {
+        return this.rooms.has(v);
     }
     getPathArea() {
         return this._pathArea;
@@ -324,6 +328,7 @@ export default class PomDesertBossRuin {
         this._monsterArea = [];
         this._pathArea = [];
         this._playerArea = [];
+        this.rooms = new Set();
         this.jigsaw.foreach((data, ix, iz, iy) => {
             if (data.structureName === this.structure_straightLine || data.structureName === this.structure_triple
                 || data.structureName === this.structure_curve || data.structureName === this.structure_crossing) {
@@ -335,6 +340,7 @@ export default class PomDesertBossRuin {
             else if (data.structureName === this.structure_towerBlock3 || data.structureName === this.structure_towerBlock4
                 || data.structureName === this.structure_towerBlock2 || data.structureName === this.structure_towerBlock1) {
                 this._monsterArea.push(new ExBlockArea(new Vector3(ix, iy, iz).scl(this.jigsaw.size).add(this.x, this.y, this.z), new Vector3(1, 1, 1).scl(this.jigsaw.size)));
+                this.rooms.add(`${ix},${iy},${iz}`);
             }
             else if (data.structureName === this.structure_boss) {
                 this._bossArea.push(new ExBlockArea(new Vector3(ix, iy, iz).scl(this.jigsaw.size).add(this.x, this.y, this.z), new Vector3(1, 1, 1).scl(this.jigsaw.size)));
@@ -343,7 +349,9 @@ export default class PomDesertBossRuin {
                 this._airPathArea.push(new ExBlockArea(new Vector3(ix, iy, iz).scl(this.jigsaw.size).add(this.x, this.y, this.z), new Vector3(1, 1, 1).scl(this.jigsaw.size)));
             }
             else if (data.structureName === this.structure_towerPiece) {
-                this._airMonsterArea.push(new ExBlockArea(new Vector3(ix, iy, iz).scl(this.jigsaw.size).add(this.x, this.y, this.z), new Vector3(1, 1, 1).scl(this.jigsaw.size)));
+                let vec = new Vector3(ix, iy, iz).scl(this.jigsaw.size).add(this.x, this.y, this.z);
+                this._airMonsterArea.push(new ExBlockArea(vec, new Vector3(1, 1, 1).scl(this.jigsaw.size)));
+                this.rooms.add(`${ix},${iy},${iz}`);
             }
         });
         this.completed = true;

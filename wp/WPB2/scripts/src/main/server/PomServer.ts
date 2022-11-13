@@ -8,14 +8,14 @@ import ExTickQueue from "../../modules/exmc/server/ExTickQueue.js";
 import Random from "../../modules/exmc/utils/Random.js";
 import TimeLoopTask from "../../modules/exmc/utils/TimeLoopTask.js";
 import GlobalSettings from "./cache/GlobalSettings.js";
-import PomDesertBossRuin from "./func/ruins/PomDesertBossRuin.js";
+import PomDesertBossRuin from "./func/ruins/desert/PomDesertBossRuin.js";
 import RuinsLoaction from "./func/ruins/RuinsLoaction.js";
 import PomClient from "./PomClient.js";
 import ExBlockStructure from '../../modules/exmc/server/block/structure/ExBlockStructure.js';
 import ExBlockStructureNormal from '../../modules/exmc/server/block/structure/ExBlockStructureNormal.js';
 import TickDelayTask from '../../modules/exmc/utils/TickDelayTask.js';
 import Vector3 from '../../modules/exmc/math/Vector3.js';
-import { ExBlockArea } from '../../modules/exmc/server/block/ExBlockArea';
+import { ExBlockArea } from '../../modules/exmc/server/block/ExBlockArea.js';
 import ExGameVector3 from '../../modules/exmc/server/math/ExGameVector3.js';
 
 
@@ -165,6 +165,7 @@ export default class PomServer extends ExGameServer {
             desertEntitiesNum = entities.length;
         }
         this.desertRuinRandomRules = new TimeLoopTask(this.getEvents(), ()=>{
+
             upDateMonster();
         }).delay(60000);
         upDateMonster();
@@ -177,23 +178,7 @@ export default class PomServer extends ExGameServer {
                     if (tmpV.x >= RuinsLoaction.DESERT_RUIN_LOCATION_START.x && tmpV.x <= RuinsLoaction.DESERT_RUIN_LOCATION_END.x
                         && tmpV.z >= RuinsLoaction.DESERT_RUIN_LOCATION_START.z && tmpV.z <= RuinsLoaction.DESERT_RUIN_LOCATION_END.z) {
                         desertFlag = true;
-                        if (desertEntitiesNum < 80) {
-                            //summon monster
-                            let vec = ExBlockArea.randomPoint(this.ruin_desertBoss.getPathArea(), 4);
-                            this.getExDimension(MinecraftDimensionTypes.theEnd).spawnEntity("wb:desert_skeleton", vec);
-                            if (Math.random() > 0.5) this.getExDimension(MinecraftDimensionTypes.theEnd).spawnEntity("wb:desert_skeleton", vec);
-
-                            vec = ExBlockArea.randomPoint(this.ruin_desertBoss.getPathArea(), 4);
-                            if (Math.random() > 0.85) this.getExDimension(MinecraftDimensionTypes.theEnd).spawnEntity("wb:desert_chester_normal", vec);
-                            vec = ExBlockArea.randomPoint(this.ruin_desertBoss.getAirMonsterSpawnArea(), 4);
-                            if (Math.random() > 0.7) this.getExDimension(MinecraftDimensionTypes.theEnd).spawnEntity("wb:desert_chester_high", vec);
-
-                            vec = ExBlockArea.randomPoint(this.ruin_desertBoss.getAirPathArea(), 4);
-                            if (Math.random() > 0.4) this.getExDimension(MinecraftDimensionTypes.theEnd).spawnEntity("dec:stone_golem", vec);
-                            vec = ExBlockArea.randomPoint(this.ruin_desertBoss.getPathArea(), 4);
-                            if (Math.random() > 0.7) this.getExDimension(MinecraftDimensionTypes.theEnd).spawnEntity("dec:stone_golem", vec);
-                            desertEntitiesNum += 6;
-                        }
+                        
                     }
                 }
             }

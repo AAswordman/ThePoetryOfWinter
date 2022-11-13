@@ -1,12 +1,10 @@
-
 import MathUtil from "../../../modules/exmc/math/MathUtil.js";
-import { SerializeAble } from "../../../modules/exmc/utils/Serialize.js";
 import { langType } from '../data/langType.js';
 import format from '../../../modules/exmc/utils/format.js';
 import ExLoreManager from "../../../modules/exmc/interface/ExLoreManager.js";
 import ExColorLoreUtil from "../../../modules/exmc/server/item/ExColorLoreUtil.js";
 import LoreUtil from "../../../modules/exmc/server/item/ExLoreUtil.js";
-export default class TalentData implements SerializeAble {
+export default class TalentData {
 	static getDescription(lang:langType, occupation: Occupation, id: number, level: number): string {
 		let s=TalentData.calculateTalent(occupation,id,level);
         switch(id){
@@ -29,7 +27,7 @@ export default class TalentData implements SerializeAble {
         }
         return 0;
 	}
-    isSerializeAble: true = true;
+
 	pointUsed: number | undefined = 0;
     static hasOccupation(data: TalentData) {
         return data.occupation.id !== Occupation.EMPTY.id;
@@ -116,7 +114,7 @@ export default class TalentData implements SerializeAble {
 }
 
 
-export class Talent implements SerializeAble {
+export class Talent {
     public static readonly VIENTIANE = 1;
     public static readonly CLOAD_PIERCING = 2;
     public static readonly ARMOR_BREAKING = 3;
@@ -134,7 +132,6 @@ export class Talent implements SerializeAble {
         this.id = id;
         this.level = level;
     }
-    isSerializeAble: true = true;
 
     
     static getCharacter(lang:langType, id:number) {
@@ -166,7 +163,7 @@ export class Talent implements SerializeAble {
 
 }
 
-export class Occupation implements SerializeAble {
+export class Occupation{
     public static readonly EMPTY = new Occupation(0, []);
     public static readonly GUARD = new Occupation(1, [Talent.VIENTIANE, Talent.ARMOR_BREAKING]);
     public static readonly WARRIOR = new Occupation(2, [Talent.SANCTION, Talent.DEFENSE]);
@@ -202,5 +199,4 @@ export class Occupation implements SerializeAble {
         this.id = occupation;
         this.talentId = talentId;
     }
-    isSerializeAble: true = true;
 }

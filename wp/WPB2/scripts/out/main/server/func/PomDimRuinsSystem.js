@@ -7,6 +7,8 @@ import Vector3 from '../../../modules/exmc/math/Vector3.js';
 import ExGameVector3 from '../../../modules/exmc/server/math/ExGameVector3.js';
 import VarOnChangeListener from '../../../modules/exmc/utils/VarOnChangeListener.js';
 import ExMessageAlert from '../../../modules/exmc/server/ui/ExMessageAlert.js';
+import PomDesertRuinRules from './ruins/desert/PomDesertRuinRules.js';
+import { to } from '../../../modules/exmc/server/ExErrorQueue.js';
 export default class PomDimRuinsSystem extends GameController {
     constructor() {
         super(...arguments);
@@ -16,6 +18,29 @@ export default class PomDimRuinsSystem extends GameController {
         const tmpV = new Vector3();
         const tmpA = new Vector3();
         const tmpB = new Vector3();
+        const addHealthListener = (damage) => {
+            this.client.magicSystem.additionHealth -= damage;
+            if (this.client.magicSystem.additionHealth <= 0) {
+                this.exPlayer.removeHealth(this, 999);
+            }
+        };
+        const desertRuinRules = new PomDesertRuinRules(this);
+        const inRuinsListener = new VarOnChangeListener((v) => {
+            if (!v) {
+                this.client.magicSystem.additionHealth = 40;
+                if (this.client.talentSystem.hasBeenDamaged.indexOf(addHealthListener) !== -1) {
+                    this.client.talentSystem.hasBeenDamaged.splice(this.client.talentSystem.hasBeenDamaged.indexOf(addHealthListener), 1);
+                }
+                desertRoomCounter.clear();
+                desertRuinRules.clear();
+            }
+            else {
+                desertRuinRules.init();
+                if (this.client.talentSystem.hasBeenDamaged.indexOf(addHealthListener) === -1) {
+                    this.client.talentSystem.hasBeenDamaged.push(addHealthListener);
+                }
+            }
+        }, false);
         const desertRuinBackJudge = new VarOnChangeListener((v) => {
             if (v) {
                 new ExMessageAlert().title("返回").body("是否返回主世界?")
@@ -31,10 +56,27 @@ export default class PomDimRuinsSystem extends GameController {
                     .show(this.player);
             }
         }, false);
+        const desertRoomCounter = new Map();
+        const desertRuinScoreJudge = new VarOnChangeListener((v) => {
+            var _a, _b;
+            if (this.client.getServer().ruin_desertBoss.isInRoom(v)) {
+                desertRoomCounter.set(v, ((_a = desertRoomCounter.get(v)) !== null && _a !== void 0 ? _a : 0) + 1);
+                let point = Math.max(-2, Math.floor(Math.random() * (3 + (this.player.location.y - RuinsLoaction.DESERT_RUIN_LOCATION_START.y) / 10 - 2 * ((_b = desertRoomCounter.get(v)) !== null && _b !== void 0 ? _b : 0))));
+                this.sayTo("§b[遗迹]§f第" + desertRoomCounter.get(v) + "次进入，随机点数：" + point);
+                if (point > 3) {
+                    this.sayTo("§b[遗迹]§f获得规则 §b§l" + this.getLang()["ruinDesertCmd_" + desertRuinRules.randomAddRule()]);
+                }
+                this.client.magicSystem.additionHealth += point;
+                if (Math.random() < 1) {
+                    to(desertRuinRules.show());
+                }
+            }
+        }, "0,0,0");
         this.getEvents().exEvents.onLongTick.subscribe(event => {
             if (event.currentTick % 4 !== 0)
                 return;
             //1s 1 tick
+            let isInRuin = false;
             tmpV.set(this.player.location);
             let loc = ExGameVector3.getBlockLocation(tmpV);
             loc.y -= 1;
@@ -66,7 +108,12 @@ export default class PomDimRuinsSystem extends GameController {
                     tmpV.y = RuinsLoaction.DESERT_RUIN_LOCATION_START.y + 4;
                     this.exPlayer.setPosition(tmpV);
                 }
+                if (3 <= tmpV.x % 16 && tmpV.x % 16 <= 13 && 3 <= tmpV.z % 16 && tmpV.z % 16 <= 13)
+                    desertRuinScoreJudge.upDate(`${Math.floor((tmpV.x - RuinsLoaction.DESERT_RUIN_LOCATION_START.x) / 16)},${Math.floor((tmpV.y - RuinsLoaction.DESERT_RUIN_LOCATION_START.y) / 16)},${Math.floor((tmpV.z - RuinsLoaction.DESERT_RUIN_LOCATION_START.z) / 16)}`);
+                isInRuin = true;
             }
+            this.client.magicSystem.additionHealthShow = isInRuin;
+            inRuinsListener.upDate(isInRuin);
         });
         // this.getEvents().exEvents.itemOnHandChange.subscribe((e) => {
         //     this.sayTo(e.afterItem?.typeId + "");

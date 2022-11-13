@@ -7,9 +7,14 @@ import Vector3 from '../../math/Vector3.js';
 import ExEntityBag from './ExEntityBag.js';
 import SetTimeOutSupport from '../../interface/SetTimeOutSupport.js';
 import ExGameVector3 from '../math/ExGameVector3.js';
+import ExCommandSelector from '../env/ExCommandSelector.js';
 
 
 export default class ExEntity implements ExCommandRunner, ExTagManager {
+    public causeDamageTo(e:Entity|ExEntity,d:number) {
+        if(e instanceof ExEntity) e=e.entity;
+        ExCommandSelector.runAsync(this,`damage {0} ${d} entity_attack entity @s`,e);
+    }
 
 	private _damage: number | undefined;
 	getPreRemoveHealth() {

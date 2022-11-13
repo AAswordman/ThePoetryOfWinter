@@ -1,4 +1,4 @@
-import { Entity } from "@minecraft/server";
+import { Entity, world } from '@minecraft/server';
 import ExNullEntity from "./ExNullEntity.js";
 import ExGameConfig from '../ExGameConfig.js';
 import ExCommandRunner from "../../interface/ExCommandRunner.js";
@@ -8,20 +8,29 @@ import MathUtil from "../../math/MathUtil.js";
 
 export default class ExScoresManager {
 
-    entity: ExCommandRunner & { nameTag: string; };
+    entity: Entity | ExNullEntity;
 
-    constructor(e: ExCommandRunner & { nameTag: string }) {
+    constructor(e: Entity | ExNullEntity) {
         this.entity = e;
     }
 
 
     getScore(objective: Objective | string): number {
         let name = typeof objective === "string" ? objective : objective.name;
-        try {
-            let n = parseInt(this.entity.runCommand(`scoreboard players test ${this.entity instanceof ExNullEntity ? '"' + this.entity.nameTag + '"' : "@s"} ${name} * *`).statusMessage.split(" ")[1]);
-            return (MathUtil.zeroIfNaN(n) || 0);
-        } catch (e) {
-            return 0;
+        if (this.entity instanceof ExNullEntity) {
+            try {
+                let n = parseInt(this.entity.runCommand(`scoreboard players test ${'"' + this.entity.nameTag + '"'} ${name} * *`).statusMessage.split(" ")[1]);
+                return (MathUtil.zeroIfNaN(n) || 0);
+            } catch (e) {
+                return 0;
+            }
+        } else {
+            try {
+                return (world.scoreboard.getObjective(name)?.getScore(this.entity.scoreboard)) ?? 0;
+            } catch (err) {
+                const e = this.entity;
+                return (world.scoreboard.getObjective(name).getScores().find((i) => (i.participant === e.scoreboard))?.score) ?? 0;
+            }
         }
     }
     setScoreAsync(objective: Objective | string, num: number) {
@@ -40,19 +49,7 @@ export default class ExScoresManager {
         let name = typeof objective === "string" ? objective : objective.name;
         this.entity.runCommandAsync(`scoreboard players reset ${this.entity instanceof ExNullEntity ? '"' + this.entity.nameTag + '"' : "@s"} ${name}`);
     }
-    async getScoreAsync(objective: Objective | string): Promise<number> {
-        let name = typeof objective === "string" ? objective : objective.name;
-        try {
-            let n = parseInt((await this.entity.runCommandAsync(`scoreboard players test ${this.entity instanceof ExNullEntity ? '"' + this.entity.nameTag + '"' : "@s"} ${name} * *`)).statusMessage.split(" ")[1]);
-            if (n !== n) {
-                return 0;
-            } else {
-                return n;
-            }
-        } catch (e) {
-            return 0;
-        }
-    }
+
     setScore(objective: Objective | string, num: number) {
         let name = typeof objective === "string" ? objective : objective.name;
         this.entity.runCommand(`scoreboard players set ${this.entity instanceof ExNullEntity ? '"' + this.entity.nameTag + '"' : "@s"} ${name} ${num}`);

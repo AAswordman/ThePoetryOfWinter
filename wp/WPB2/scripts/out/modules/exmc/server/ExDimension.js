@@ -5,6 +5,10 @@ export default class ExDimension {
     constructor(dimension) {
         this._dimension = dimension;
     }
+    createExplosion(location, radius, explosionOptions) {
+        //console.warn(location, radius, explosionOptions);
+        this._dimension.createExplosion(ExGameVector3.getLocation(location), radius, explosionOptions);
+    }
     getPlayers(entityQueryOptions) {
         return this._dimension.getPlayers(entityQueryOptions);
     }
@@ -20,12 +24,15 @@ export default class ExDimension {
     getBlock(vec) {
         return this._dimension.getBlock(vec instanceof Vector3 ? ExGameVector3.getBlockLocation(vec) : vec);
     }
-    setBlock(vec, blockId) {
-        var _a;
+    setBlock(vec, blockId, data) {
         if (typeof blockId === "string")
-            this.runCommandAsync(`setBlock ${vec.x} ${vec.y} ${vec.z} ${blockId}`);
-        else
-            (_a = this.getBlock(vec)) === null || _a === void 0 ? void 0 : _a.setType(blockId);
+            this.runCommandAsync(`setBlock ${vec.x} ${vec.y} ${vec.z} ${blockId} ${data}`);
+        else {
+            let b = this.getBlock(vec);
+            b === null || b === void 0 ? void 0 : b.setType(blockId);
+            //b?.permutation;
+        }
+        ;
     }
     setBlockAsync(vec, blockId) {
         this.runCommandAsync(`setBlock ${vec.x} ${vec.y} ${vec.z} ${blockId}`);

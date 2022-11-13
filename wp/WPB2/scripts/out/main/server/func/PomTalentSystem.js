@@ -34,17 +34,23 @@ export default class PomTalentSystem extends GameController {
                 player.addHealth(this, ((_a = this.talentRes.get(Talent.REGENERATE)) !== null && _a !== void 0 ? _a : 0));
             }
         }).delay(10000);
+        this.hasBeenDamaged = [];
+        this.hasCauseDamage = [];
     }
     updateTalentRes() {
         for (let t of this.data.talent.talents) {
             this.talentRes.set(t.id, TalentData.calculateTalent(this.data.talent.occupation, t.id, t.level));
         }
         this.client.magicSystem.upDateByTalent(this.talentRes);
+        if (this.data.talent.occupation.id === Occupation.PRIEST.id || this.data.talent.occupation.id === Occupation.ASSASSIN.id) {
+            this.skillLoop.start();
+        }
+        else {
+            this.skillLoop.stop();
+        }
         //this.exPlayer.triggerEvent("hp:" + Math.round((20 + (this.talentRes.get(Talent.VIENTIANE) ?? 0))));
     }
     onJoin() {
-        if (this.data.talent.occupation.id === Occupation.PRIEST.id)
-            this.skillLoop.start();
         this.getEvents().exEvents.playerHitEntity.subscribe((e) => {
             var _a, _b, _c, _d, _e, _f, _g, _h;
             let item = this.exPlayer.getBag().getItemOnHand();
@@ -86,7 +92,7 @@ export default class PomTalentSystem extends GameController {
                 }
             }
             let damage = e.damage * damageFac + extraDamage;
-            this.hasCauseDamage(damage + e.damage);
+            this.hasCauseDamage.forEach(i => i(e.damage + damage));
             target.removeHealth(this, damage);
         });
         this.getEvents().exEvents.playerHurt.subscribe((e) => {
@@ -95,7 +101,9 @@ export default class PomTalentSystem extends GameController {
             let add = 0;
             add += damage * ((_b = this.talentRes.get(Talent.DEFENSE)) !== null && _b !== void 0 ? _b : 0) / 100;
             this.exPlayer.addHealth(this, add);
+            this.hasBeenDamaged.forEach(i => i(e.damage - add));
         });
+        let lastListener = (d) => { };
         this.getEvents().exEvents.itemOnHandChange.subscribe((e) => {
             var _a, _b, _c, _d, _e;
             let bag = this.exPlayer.getBag();
@@ -106,10 +114,12 @@ export default class PomTalentSystem extends GameController {
                 let maxSingleDamage = parseFloat((_a = lore.getValueUseMap("total", this.getLang().maxSingleDamage)) !== null && _a !== void 0 ? _a : "0");
                 let maxSecondaryDamage = parseFloat((_b = lore.getValueUseMap("total", this.getLang().maxSecondaryDamage)) !== null && _b !== void 0 ? _b : "0");
                 let damage = 0;
-                this.hasCauseDamage = (d) => {
+                this.hasCauseDamage.splice(this.hasCauseDamage.indexOf(lastListener), 1);
+                lastListener = (d) => {
                     damage += d;
                     maxSingleDamage = Math.max(d, maxSingleDamage);
                 };
+                this.hasCauseDamage.push(lastListener);
                 (_c = this.equiTotalTask) === null || _c === void 0 ? void 0 : _c.stop();
                 (this.equiTotalTask = new TimeLoopTask(this.getEvents(), () => {
                     var _a, _b, _c, _d;
@@ -134,8 +144,6 @@ export default class PomTalentSystem extends GameController {
             }
             this.exPlayer.triggerEvent("hp:" + Math.round((20 + ((_e = this.talentRes.get(Talent.VIENTIANE)) !== null && _e !== void 0 ? _e : 0))));
         });
-    }
-    hasCauseDamage(arg0) {
     }
     onLoaded() {
         this.updateTalentRes();

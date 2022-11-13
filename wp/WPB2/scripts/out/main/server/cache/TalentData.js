@@ -4,7 +4,6 @@ import ExColorLoreUtil from "../../../modules/exmc/server/item/ExColorLoreUtil.j
 import LoreUtil from "../../../modules/exmc/server/item/ExLoreUtil.js";
 export default class TalentData {
     constructor() {
-        this.isSerializeAble = true;
         this.pointUsed = 0;
         this.occupation = Occupation.EMPTY;
         this.talents = [];
@@ -108,7 +107,6 @@ export default class TalentData {
 }
 export class Talent {
     constructor(id, level) {
-        this.isSerializeAble = true;
         this.id = id;
         this.level = level;
     }
@@ -151,7 +149,6 @@ Talent.SUDDEN_STRIKE = 9;
 Talent.REGENERATE = 10;
 export class Occupation {
     constructor(occupation, talentId) {
-        this.isSerializeAble = true;
         this.id = occupation;
         this.talentId = talentId;
     }

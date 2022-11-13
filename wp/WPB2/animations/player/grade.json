@@ -57,9 +57,7 @@
       "timeline": {
         "0.25": [
           "/execute as @s[scores={wbdjcg=101..}] at @s run scoreboard players set @s wbdjcg 100",
-          "/execute as @s[scores={wbfl=201..}] at @s run scoreboard players set @s wbfl 200",
-          "/execute as @s[tag=!wbflx,tag=!wbgjx] at @s run function combat/combat1",
-          "/execute as @s[tag=wbflx,tag=!wbgjx] at @s run function magic/text3"
+          "/execute as @s[scores={wbfl=201..}] at @s run scoreboard players set @s wbfl 200"
         ]
       },
       "animation_length": 0.5,

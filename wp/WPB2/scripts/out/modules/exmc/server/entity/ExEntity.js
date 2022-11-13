@@ -2,9 +2,15 @@ import ExEntityComponentId from './ExEntityComponentId.js';
 import ExScoresManager from './ExScoresManager.js';
 import Vector3 from '../../math/Vector3.js';
 import ExEntityBag from './ExEntityBag.js';
+import ExCommandSelector from '../env/ExCommandSelector.js';
 export default class ExEntity {
     constructor(entity) {
         this._entity = entity;
+    }
+    causeDamageTo(e, d) {
+        if (e instanceof ExEntity)
+            e = e.entity;
+        ExCommandSelector.runAsync(this, `damage {0} ${d} entity_attack entity @s`, e);
     }
     getPreRemoveHealth() {
         return this._damage;
