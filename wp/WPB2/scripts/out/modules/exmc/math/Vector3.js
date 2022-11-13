@@ -70,7 +70,7 @@ export default class Vector3 {
             }
         }
         else {
-            this.sub(x.x, x.y, x.z);
+            this.scl(x.x, x.y, x.z);
         }
         return this;
     }
@@ -139,6 +139,9 @@ export default class Vector3 {
     }
     clone() {
         return new Vector3(this.x, this.y, this.z);
+    }
+    toArray() {
+        return [this.x, this.y, this.z];
     }
 }
 Vector3.down = new Vector3(0, -1, 0);

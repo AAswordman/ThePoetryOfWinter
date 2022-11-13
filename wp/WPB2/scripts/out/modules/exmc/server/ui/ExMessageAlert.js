@@ -21,7 +21,6 @@ export default class ExMessageAlert {
     }
     show(player) {
         this._alert.show(player).then(e => {
-            console.warn(e.canceled, e.selection);
             if (e.canceled || e.selection === undefined)
                 return;
             this.buttonEvent[e.selection]();
