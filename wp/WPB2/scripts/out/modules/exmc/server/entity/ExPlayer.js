@@ -1,6 +1,14 @@
 import ExEntity from "./ExEntity.js";
 import { ExPlayerBag } from "./ExEntityBag.js";
 export default class ExPlayer extends ExEntity {
+    title(title, subtitle) {
+        this.runCommandAsync(`titleraw @s title {"rawtext":[{"text":"${title}"}]}`);
+        if (subtitle)
+            this.runCommandAsync(`titleraw @s subtitle {"rawtext":[{"text":"${subtitle}"}]}`);
+    }
+    titleActionBar(str) {
+        this.runCommandAsync(`titleraw @s actionbar {"rawtext":[{"text":"${str}"}]}`);
+    }
     get selectedSlot() {
         return this.entity.selectedSlot;
     }

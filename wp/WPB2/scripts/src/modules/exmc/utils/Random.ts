@@ -18,7 +18,21 @@ export default class Random {
     nextInt(max = Random.MAX_VALUE) {
         return Math.floor(this.nextDouble() * (max));
     }
-    nextBoolean(){
+    nextBoolean() {
         return this.nextDouble() >= 0.5;
+    }
+    static choice<T>(o: Array<T> | { [x: string]: T }) :T {
+        if (o instanceof Array) {
+            if (o.length === 0) {
+                throw new Error("array mustnot be empty");
+            }
+            return o[Math.floor(Math.random() * o.length)];
+        } else {
+            let arr:string[] = [];
+            for (let i in o) {
+                arr.push(i);
+            }
+            return o[Random.choice(arr)];
+        }
     }
 }

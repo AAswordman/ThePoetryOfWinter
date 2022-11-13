@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 module.exports = {
     //entry: './WPB2/scripts/out/index.js', // 打包对入口文件，期望打包对文件入口。 这里配置tsc05.ts的位置
-    entry: './WPB2/scripts/out/test/MazeBuilder.js',
+    entry: './WPB2/scripts/out/index.js',
     output: {
         filename: 'index.js', // 输出文件名称
         path: path.resolve(__dirname, './WPB2/scripts/mix/') //获取输出路径
@@ -25,5 +25,6 @@ module.exports = {
     externals: {
         "@minecraft/server": "@minecraft/server",
         "@minecraft/server-ui": "@minecraft/server-ui"
+        // "reflect-metadata": "reflect-metadata"
     }
 }

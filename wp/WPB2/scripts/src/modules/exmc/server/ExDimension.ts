@@ -1,10 +1,14 @@
-import { Dimension, EntityQueryOptions, Block, ItemStack, Entity, BlockType, BlockLocation } from '@minecraft/server';
+import { Dimension, EntityQueryOptions, Block, ItemStack, Entity, BlockType, BlockLocation, ExplosionOptions } from '@minecraft/server';
 import ExCommandRunner from '../interface/ExCommandRunner.js';
 import Vector3 from "../math/Vector3.js";
 import ExGameConfig from './ExGameConfig.js';
 import ExGameVector3 from './math/ExGameVector3.js';
 
 export default class ExDimension implements ExCommandRunner {
+    createExplosion(location: Vector3, radius: number, explosionOptions?: ExplosionOptions): void {
+        //console.warn(location, radius, explosionOptions);
+        this._dimension.createExplosion(ExGameVector3.getLocation(location), radius, explosionOptions);
+    }
 
     private _dimension: Dimension;
 
@@ -27,9 +31,13 @@ export default class ExDimension implements ExCommandRunner {
     getBlock(vec: Vector3 | BlockLocation) {
         return this._dimension.getBlock(vec instanceof Vector3 ? ExGameVector3.getBlockLocation(vec) : vec);
     }
-    setBlock(vec: Vector3 | BlockLocation, blockId: string | BlockType) {
-        if (typeof blockId === "string") this.runCommandAsync(`setBlock ${vec.x} ${vec.y} ${vec.z} ${blockId}`);
-        else this.getBlock(vec)?.setType(blockId);
+    setBlock(vec: Vector3 | BlockLocation, blockId: string | BlockType, data?: number) {
+        if (typeof blockId === "string") this.runCommandAsync(`setBlock ${vec.x} ${vec.y} ${vec.z} ${blockId} ${data}`);
+        else {
+            let b = this.getBlock(vec);
+            b?.setType(blockId);
+            //b?.permutation;
+        };
     }
     setBlockAsync(vec: Vector3, blockId: string) {
         this.runCommandAsync(`setBlock ${vec.x} ${vec.y} ${vec.z} ${blockId}`);

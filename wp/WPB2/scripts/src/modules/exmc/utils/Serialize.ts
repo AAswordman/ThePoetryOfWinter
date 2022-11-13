@@ -1,6 +1,5 @@
 
 const cacheName = "__nameType__";
-
 export class Serialize {
     static from<T>(from: string, def: any): T {
         let res;
@@ -34,12 +33,6 @@ async function fromJSON(res: any) {
 
     }
 }
-
-
-export interface SerializeAble {
-    isSerializeAble: true;
-}
-
 export function serialize<T>(path?:string) {
     return function (obj: any, name: string) {
         let v = obj[name];

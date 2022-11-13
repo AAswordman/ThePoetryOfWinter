@@ -196,7 +196,6 @@ export default class ExBlockStructureNormal {
         return this;
     }
     putStructure(area) {
-        var _a;
         if (this.dimension === undefined)
             throw new Error("dimension is undefined");
         if (this.analysisMap === undefined)
@@ -213,7 +212,13 @@ export default class ExBlockStructureNormal {
                     if (c == ' ')
                         continue;
                     area.calculateRelPos(vec, tmpV).add(area.start);
-                    this.dimension.setBlock(tmpV, (_a = this.analysisMap.get(c)) !== null && _a !== void 0 ? _a : MinecraftBlockTypes.air.id);
+                    let id = this.analysisMap.get(c);
+                    let data = 0;
+                    let pos = id === null || id === void 0 ? void 0 : id.indexOf("|");
+                    if (id && pos && pos !== -1) {
+                        data = parseInt(id === null || id === void 0 ? void 0 : id.slice(pos + 1));
+                    }
+                    this.dimension.setBlock(tmpV, id !== null && id !== void 0 ? id : MinecraftBlockTypes.air.id, data);
                 }
             }
         }
