@@ -16,6 +16,7 @@ export default class ExGameServer {
             });
         }
         this.clients = new Map();
+        this.clients_nameMap = new Map();
         ExGameConfig.console = initConsole(ExGameConfig);
         this._events = new ExServerEvents(this);
         ExErrorQueue.init(this);
@@ -43,12 +44,7 @@ export default class ExGameServer {
         return players;
     }
     findClientByName(playerName) {
-        for (let k of this.clients) {
-            if (k[1].playerName == playerName) {
-                return k[1];
-            }
-        }
-        return undefined;
+        return this.clients_nameMap.get(playerName);
     }
     findClientByPlayer(player) {
         for (let k of this.clients) {
@@ -60,8 +56,11 @@ export default class ExGameServer {
     }
     onClientJoin(event) {
         let player = event.player;
+        player.setDynamicProperty;
         let id = UUID.randomUUID();
-        this.clients.set(id, this.newClient(id, player));
+        let client = this.newClient(id, player);
+        this.clients.set(id, client);
+        this.clients_nameMap.set(player.name, client);
     }
     onClientLeave(event) {
         let client = this.findClientByName(event.playerName);
@@ -71,6 +70,7 @@ export default class ExGameServer {
         }
         client.onLeave();
         this.clients.delete(client.clientId);
+        this.clients_nameMap.delete(event.playerName);
     }
     newClient(id, player) {
         return new ExGameClient(this, id, player);

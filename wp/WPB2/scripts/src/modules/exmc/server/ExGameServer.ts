@@ -12,6 +12,7 @@ import ExTickQueue from "./ExTickQueue.js";
 
 export default class ExGameServer implements SetTimeOutSupport {
     clients;
+    clients_nameMap;
     _events;
 
     constructor(config: ExConfig) {
@@ -24,6 +25,7 @@ export default class ExGameServer implements SetTimeOutSupport {
         }
 
         this.clients = new Map<string, ExGameClient>();
+        this.clients_nameMap = new Map<string, ExGameClient>();
         ExGameConfig.console = initConsole(ExGameConfig);
 
         this._events = new ExServerEvents(this);
@@ -59,12 +61,7 @@ export default class ExGameServer implements SetTimeOutSupport {
     }
 
     findClientByName(playerName: string) {
-        for (let k of this.clients) {
-            if (k[1].playerName == playerName) {
-                return k[1];
-            }
-        }
-        return undefined;
+        return this.clients_nameMap.get(playerName);
     }
 
     findClientByPlayer(player: Player) {
@@ -78,9 +75,11 @@ export default class ExGameServer implements SetTimeOutSupport {
 
     onClientJoin(event: PlayerJoinEvent) {
         let player = event.player;
+        player.setDynamicProperty
         let id = UUID.randomUUID();
-        this.clients.set(id, this.newClient(id, player));
-
+        let client = this.newClient(id, player);
+        this.clients.set(id, client);
+        this.clients_nameMap.set(player.name, client);
     }
 
     onClientLeave(event: PlayerLeaveEvent) {
@@ -91,6 +90,7 @@ export default class ExGameServer implements SetTimeOutSupport {
         }
         client.onLeave();
         this.clients.delete(client.clientId);
+        this.clients_nameMap.delete(event.playerName);
     }
 
     newClient(id: string, player: Player): ExGameClient {

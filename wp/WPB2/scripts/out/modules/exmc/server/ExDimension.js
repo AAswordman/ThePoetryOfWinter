@@ -1,9 +1,13 @@
+import { MolangVariableMap } from '@minecraft/server';
 import Vector3 from "../math/Vector3.js";
 import ExGameConfig from './ExGameConfig.js';
 import ExGameVector3 from './math/ExGameVector3.js';
 export default class ExDimension {
     constructor(dimension) {
         this._dimension = dimension;
+    }
+    spawnParticle(p, v) {
+        this._dimension.spawnParticle(p, ExGameVector3.getLocation(v), new MolangVariableMap());
     }
     createExplosion(location, radius, explosionOptions) {
         //console.warn(location, radius, explosionOptions);

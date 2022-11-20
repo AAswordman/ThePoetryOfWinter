@@ -23,6 +23,7 @@ export default class PomDesertBossRuin {
         this.structure_block2 = "mystructure:boss_desert_11"; //O
         this.completed = false;
         this.rooms = new Set();
+        this.paths = new Set();
         this._pathArea = [];
         this._airPathArea = [];
         this._monsterArea = [];
@@ -36,6 +37,9 @@ export default class PomDesertBossRuin {
     }
     isInRoom(v) {
         return this.rooms.has(v);
+    }
+    isOnPath(v) {
+        return this.paths.has(v);
     }
     getPathArea() {
         return this._pathArea;
@@ -329,12 +333,15 @@ export default class PomDesertBossRuin {
         this._pathArea = [];
         this._playerArea = [];
         this.rooms = new Set();
+        this.paths = new Set();
         this.jigsaw.foreach((data, ix, iz, iy) => {
             if (data.structureName === this.structure_straightLine || data.structureName === this.structure_triple
                 || data.structureName === this.structure_curve || data.structureName === this.structure_crossing) {
                 this._pathArea.push(new ExBlockArea(new Vector3(ix, iy, iz).scl(this.jigsaw.size).add(this.x, this.y, this.z), new Vector3(1, 1, 1).scl(this.jigsaw.size)));
+                this.paths.add(`${ix},${iy},${iz}`);
                 if (data.structureName === this.structure_crossing) {
                     this._playerArea.push(new ExBlockArea(new Vector3(ix, iy, iz).scl(this.jigsaw.size).add(this.x, this.y, this.z), new Vector3(1, 1, 1).scl(this.jigsaw.size)));
+                    this.paths.add(`${ix},${iy},${iz}`);
                 }
             }
             else if (data.structureName === this.structure_towerBlock3 || data.structureName === this.structure_towerBlock4
@@ -347,6 +354,7 @@ export default class PomDesertBossRuin {
             }
             else if (data.structureName === this.structure_upplain) {
                 this._airPathArea.push(new ExBlockArea(new Vector3(ix, iy, iz).scl(this.jigsaw.size).add(this.x, this.y, this.z), new Vector3(1, 1, 1).scl(this.jigsaw.size)));
+                this.paths.add(`${ix},${iy},${iz}`);
             }
             else if (data.structureName === this.structure_towerPiece) {
                 let vec = new Vector3(ix, iy, iz).scl(this.jigsaw.size).add(this.x, this.y, this.z);

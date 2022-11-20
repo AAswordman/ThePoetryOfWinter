@@ -7,13 +7,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { ActionFormData } from "@minecraft/server-ui";
+import { ActionFormData, ModalFormData } from "@minecraft/server-ui";
 import { getEnumFlag, getEnumKeys } from "../../../../../modules/exmc/utils/enumUtil.js";
 import Random from "../../../../../modules/exmc/utils/Random.js";
 import * as desertCommand from "../../ruins/desert/PomDesertRuinCommmand.js";
 import { MinecraftEffectTypes } from '@minecraft/server';
 import ExGameVector3 from '../../../../../modules/exmc/server/math/ExGameVector3.js';
 import ExEntity from "../../../../../modules/exmc/server/entity/ExEntity.js";
+import TickDelayTask from '../../../../../modules/exmc/utils/TickDelayTask.js';
+import Vector3 from '../../../../../modules/exmc/math/Vector3.js';
 export default class PomDesertRuinRules {
     constructor(game) {
         this.collections = [];
@@ -110,7 +112,7 @@ export default class PomDesertRuinRules {
                 showCmd += this.game.getLang()["ruinDesertCmd_" + choose[res.selection]] + " / ";
                 cmdArr.push(choose[res.selection]);
                 this.collections.splice(this.collections.indexOf(choose[res.selection]), 1);
-                let pos = this.game.exPlayer.getPosition();
+                const addPos = new Vector3();
                 let i = 0;
                 mainCmd = desertCommand.MAIN.EXECUTE;
                 while (mainCmd === desertCommand.MAIN.EXECUTE) {
@@ -124,182 +126,171 @@ export default class PomDesertRuinRules {
                     let type = getEnumFlag(desertCommand.TARGET, cmdArr[i]);
                     i += 1;
                     switch (type) {
-                        case desertCommand.TARGET.X_ADD_16: {
-                            pos.x += 16;
+                        case desertCommand.TARGET.FACING_ADD_2: {
+                            addPos.add(this.game.exPlayer.getViewVector().scl(2));
                             break;
                         }
-                        case desertCommand.TARGET.X_ADD_4: {
-                            pos.x += 4;
+                        case desertCommand.TARGET.FACING_ADD_4: {
+                            addPos.add(this.game.exPlayer.getViewVector().scl(4));
                             break;
                         }
-                        case desertCommand.TARGET.X_ADD_8: {
-                            pos.x += 8;
+                        case desertCommand.TARGET.FACING_ADD_6: {
+                            addPos.add(this.game.exPlayer.getViewVector().scl(6));
                             break;
                         }
-                        case desertCommand.TARGET.X_ADD_32: {
-                            pos.x += 32;
+                        case desertCommand.TARGET.FACING_ADD_8: {
+                            addPos.add(this.game.exPlayer.getViewVector().scl(8));
                             break;
                         }
-                        case desertCommand.TARGET.X_REMOVE_8: {
-                            pos.x -= 8;
+                        case desertCommand.TARGET.FACING_ADD_10: {
+                            addPos.add(this.game.exPlayer.getViewVector().scl(10));
                             break;
                         }
-                        case desertCommand.TARGET.X_REMOVE_4: {
-                            pos.x -= 4;
+                        case desertCommand.TARGET.FACING_ADD_12: {
+                            addPos.add(this.game.exPlayer.getViewVector().scl(12));
                             break;
                         }
-                        case desertCommand.TARGET.X_REMOVE_16: {
-                            pos.x -= 16;
+                        case desertCommand.TARGET.FACING_ADD_16: {
+                            addPos.add(this.game.exPlayer.getViewVector().scl(16));
                             break;
                         }
-                        case desertCommand.TARGET.X_REMOVE_32: {
-                            pos.x -= 32;
+                        case desertCommand.TARGET.FACING_ADD_32: {
+                            addPos.add(this.game.exPlayer.getViewVector().scl(32));
                             break;
                         }
-                        case desertCommand.TARGET.Z_ADD_8: {
-                            pos.z += 8;
+                        case desertCommand.TARGET.FACING_ADD_20: {
+                            addPos.add(this.game.exPlayer.getViewVector().scl(20));
                             break;
                         }
-                        case desertCommand.TARGET.Z_ADD_4: {
-                            pos.z += 4;
-                            break;
-                        }
-                        case desertCommand.TARGET.Z_ADD_16: {
-                            pos.z += 16;
-                            break;
-                        }
-                        case desertCommand.TARGET.Z_ADD_32: {
-                            pos.z += 32;
-                            break;
-                        }
-                        case desertCommand.TARGET.Z_REMOVE_8: {
-                            pos.z -= 8;
-                            break;
-                        }
-                        case desertCommand.TARGET.Z_REMOVE_4: {
-                            pos.z -= 4;
-                            break;
-                        }
-                        case desertCommand.TARGET.Z_REMOVE_16: {
-                            pos.z -= 16;
-                            break;
-                        }
-                        case desertCommand.TARGET.Z_REMOVE_32: {
-                            pos.z -= 32;
+                        case desertCommand.TARGET.FACING_ADD_28: {
+                            addPos.add(this.game.exPlayer.getViewVector().scl(28));
                             break;
                         }
                         case desertCommand.TARGET.Y_ADD_8: {
-                            pos.y += 8;
+                            addPos.y += 8;
                             break;
                         }
                         case desertCommand.TARGET.Y_ADD_4: {
-                            pos.y += 4;
+                            addPos.y += 4;
                             break;
                         }
                         case desertCommand.TARGET.Y_ADD_16: {
-                            pos.y += 16;
+                            addPos.y += 16;
                             break;
                         }
                         case desertCommand.TARGET.Y_ADD_32: {
-                            pos.y += 32;
+                            addPos.y += 32;
                             break;
                         }
                         case desertCommand.TARGET.Y_REMOVE_8: {
-                            pos.y -= 8;
+                            addPos.y -= 8;
                             break;
                         }
                         case desertCommand.TARGET.Y_REMOVE_4: {
-                            pos.y -= 4;
+                            addPos.y -= 4;
                             break;
                         }
                         case desertCommand.TARGET.Y_REMOVE_16: {
-                            pos.y -= 16;
+                            addPos.y -= 16;
                             break;
                         }
                         case desertCommand.TARGET.Y_REMOVE_32: {
-                            pos.y -= 32;
+                            addPos.y -= 32;
                             break;
                         }
                     }
                 }
-                let value = getEnumFlag(desertCommand.EFFECT, cmdArr[i]) || getEnumFlag(desertCommand.VALUE, cmdArr[i]);
-                let num = 0;
-                if (cmdArr[i].startsWith("VALUE_"))
-                    num = parseInt(cmdArr[i].split("_")[1]);
+                const value = getEnumFlag(desertCommand.EFFECT, cmdArr[i]) || getEnumFlag(desertCommand.VALUE, cmdArr[i]);
+                const num = (cmdArr[i].startsWith("VALUE_")) ? parseInt(cmdArr[i].split("_")[1]) : 0;
+                const r = yield new ModalFormData().title("其他选项")
+                    .slider("延迟(s)", 0, 15, 0.5, 0)
+                    .show(this.game.player);
+                if (r.canceled || r.formValues === undefined)
+                    break outerLoop;
+                const delay = r.formValues[0] * 1000;
+                const tmpV = new Vector3();
+                const skillLoop = new TickDelayTask(this.game.getEvents(), () => {
+                    tmpV.set(this.game.player.location).add(addPos);
+                    this.game.getExDimension().spawnParticle("wb:ruin_desert_rulepre", tmpV);
+                }).delay(1);
+                skillLoop.start();
                 //i+=1;
-                switch (mainCmd) {
-                    case desertCommand.MAIN.BLAST: {
-                        this.game.getExDimension().createExplosion(pos, num, {
-                            breaksBlocks: false,
-                            source: this.game.player
-                        });
-                        break;
-                    }
-                    case desertCommand.MAIN.DAMAGE: {
-                        this.game.getExDimension().getEntities({
-                            maxDistance: 15,
-                            excludeTags: (this.game.player.hasTag("wbmsyh") ? ["wbmsyh"] : []),
-                            location: ExGameVector3.getLocation(pos)
-                        }).forEach(e => this.game.exPlayer.causeDamageTo(e, num));
-                        break;
-                    }
-                    case desertCommand.MAIN.HEALTH_ADD: {
-                        this.game.getExDimension().getEntities({
-                            maxDistance: 15,
-                            location: ExGameVector3.getLocation(pos)
-                        }).forEach(e => {
-                            let c = ExEntity.getInstance(e).getHealthComponent();
-                            c.setCurrent(c.current + num);
-                        });
-                        break;
-                    }
-                    case desertCommand.MAIN.HEALTH_REMOVE: {
-                        this.game.getExDimension().getEntities({
-                            maxDistance: 15,
-                            excludeTags: (this.game.player.hasTag("wbmsyh") ? ["wbmsyh"] : []),
-                            location: ExGameVector3.getLocation(pos)
-                        }).forEach(e => {
-                            let c = ExEntity.getInstance(e).getHealthComponent();
-                            c.setCurrent(Math.max(0, c.current - num));
-                        });
-                        break;
-                    }
-                    case desertCommand.MAIN.TP: {
-                        this.game.getExDimension().getEntities({
-                            maxDistance: 15,
-                            location: ExGameVector3.getLocation(pos)
-                        }).forEach(e => (ExEntity.getInstance(e).setPosition(pos.clone().sub(this.game.exPlayer.getPosition()).scl(num / 2).add(pos))));
-                        break;
-                    }
-                    case desertCommand.MAIN.EFFECT: {
-                        let eff = MinecraftEffectTypes.absorption;
-                        switch (value) {
-                            case desertCommand.EFFECT.WITHER:
-                                eff = MinecraftEffectTypes.wither;
-                                break;
-                            case desertCommand.EFFECT.BLIND:
-                                eff = MinecraftEffectTypes.blindness;
-                                break;
-                            case desertCommand.EFFECT.DEFENSE:
-                                eff = MinecraftEffectTypes.resistance;
-                                break;
-                            case desertCommand.EFFECT.SPEED:
-                                eff = MinecraftEffectTypes.speed;
-                                break;
-                            case desertCommand.EFFECT.STRENGTH:
-                                eff = MinecraftEffectTypes.strength;
-                                break;
-                            case desertCommand.EFFECT.WEAKNESS:
-                                eff = MinecraftEffectTypes.weakness;
-                                break;
+                this.game.setTimeout(() => {
+                    skillLoop.stop();
+                    switch (mainCmd) {
+                        case desertCommand.MAIN.BLAST: {
+                            this.game.getExDimension().createExplosion(tmpV, num, {
+                                breaksBlocks: false,
+                                source: this.game.player
+                            });
+                            break;
                         }
-                        this.game.getExDimension().getEntities({
-                            maxDistance: 15,
-                            location: ExGameVector3.getLocation(pos)
-                        }).forEach(e => (e.addEffect(eff, 600, 1, false)));
-                        break;
+                        case desertCommand.MAIN.DAMAGE: {
+                            this.game.getExDimension().getEntities({
+                                maxDistance: 15,
+                                excludeTags: (this.game.player.hasTag("wbmsyh") ? ["wbmsyh"] : []),
+                                location: ExGameVector3.getLocation(tmpV)
+                            }).forEach(e => this.game.exPlayer.causeDamageTo(e, num));
+                            break;
+                        }
+                        case desertCommand.MAIN.HEALTH_ADD: {
+                            this.game.getExDimension().getEntities({
+                                maxDistance: 15,
+                                location: ExGameVector3.getLocation(tmpV)
+                            }).forEach(e => {
+                                let c = ExEntity.getInstance(e).getHealthComponent();
+                                c.setCurrent(c.current + num);
+                            });
+                            break;
+                        }
+                        case desertCommand.MAIN.HEALTH_REMOVE: {
+                            this.game.getExDimension().getEntities({
+                                maxDistance: 15,
+                                excludeTags: (this.game.player.hasTag("wbmsyh") ? ["wbmsyh"] : []),
+                                location: ExGameVector3.getLocation(tmpV)
+                            }).forEach(e => {
+                                let c = ExEntity.getInstance(e).getHealthComponent();
+                                c.setCurrent(Math.max(0, c.current - num));
+                            });
+                            break;
+                        }
+                        case desertCommand.MAIN.TP: {
+                            this.game.getExDimension().getEntities({
+                                maxDistance: 15,
+                                location: ExGameVector3.getLocation(tmpV)
+                            }).forEach(e => (ExEntity.getInstance(e).setPosition(tmpV.clone().sub(this.game.exPlayer.getPosition()).scl(num / 2).add(tmpV))));
+                            break;
+                        }
+                        case desertCommand.MAIN.EFFECT: {
+                            let eff = MinecraftEffectTypes.absorption;
+                            switch (value) {
+                                case desertCommand.EFFECT.WITHER:
+                                    eff = MinecraftEffectTypes.wither;
+                                    break;
+                                case desertCommand.EFFECT.BLIND:
+                                    eff = MinecraftEffectTypes.blindness;
+                                    break;
+                                case desertCommand.EFFECT.DEFENSE:
+                                    eff = MinecraftEffectTypes.resistance;
+                                    break;
+                                case desertCommand.EFFECT.SPEED:
+                                    eff = MinecraftEffectTypes.speed;
+                                    break;
+                                case desertCommand.EFFECT.STRENGTH:
+                                    eff = MinecraftEffectTypes.strength;
+                                    break;
+                                case desertCommand.EFFECT.WEAKNESS:
+                                    eff = MinecraftEffectTypes.weakness;
+                                    break;
+                            }
+                            this.game.getExDimension().getEntities({
+                                maxDistance: 15,
+                                location: ExGameVector3.getLocation(tmpV)
+                            }).forEach(e => (e.addEffect(eff, 600, 1, false)));
+                            break;
+                        }
                     }
-                }
+                }, delay);
                 return;
             }
             this.collections = this.collections.concat(cmdArr);
