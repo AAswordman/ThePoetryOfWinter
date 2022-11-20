@@ -98,12 +98,26 @@ export default class Vector3 {
         }
         return this;
     }
-    public div(n: number) {
-        this.x /= n;
-        this.y /= n;
-        this.z /= n;
+    public div(x: number): Vector3;
+    public div(x: IVector3): Vector3;
+    public div(x: number, y: number, z: number): Vector3
+    public div(x: number | IVector3, y?: number, z?: number): Vector3 {
+        if (typeof x === 'number') {
+            if (typeof y === 'number' && typeof z === 'number') {
+                this.x /= x;
+                this.y /= y;
+                this.z /= z;
+            } else if (y === undefined && z === undefined) {
+                this.x /= x;
+                this.y /= x;
+                this.z /= x;
+            }
+        } else {
+            this.div(x.x, x.y, x.z);
+        }
         return this;
     }
+    
     public len() {
         return Math.sqrt(this.x ** 2 + this.y ** 2 + this.z ** 2);
     }

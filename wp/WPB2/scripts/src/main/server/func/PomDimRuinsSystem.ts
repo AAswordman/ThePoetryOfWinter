@@ -11,6 +11,7 @@ import Random from '../../../modules/exmc/utils/Random.js';
 import { getEnumKeys } from '../../../modules/exmc/utils/enumUtil.js';
 import PomDesertRuinRules from './ruins/desert/PomDesertRuinRules.js';
 import ExErrorQueue, { to } from '../../../modules/exmc/server/ExErrorQueue.js';
+import PomMazeMapBuilder from './ruins/PomMazeMapBuilder.js';
 
 export default class PomDimRuinsSystem extends GameController {
     portalMatching = new ExBlockStructureNormal().setStructure([["XXX"]]);
@@ -36,6 +37,7 @@ export default class PomDimRuinsSystem extends GameController {
                 }
                 desertRoomCounter.clear();
                 desertRuinRules.clear();
+                this.client.magicSystem.anotherShow = [];
 
             } else {
                 desertRuinRules.init();
@@ -64,7 +66,60 @@ export default class PomDimRuinsSystem extends GameController {
         }, false);
         const desertRoomCounter = new Map<string, number>();
         const desertRuinScoreJudge = new VarOnChangeListener((v, last) => {
-            if (last && this.client.getServer().ruin_desertBoss.isInRoom(last)) {
+            const show = [];
+            const mapSize = 8;
+            const spos = this.client.exPlayer.getPosition().sub(RuinsLoaction.DESERT_RUIN_LOCATION_START).div(16).floor();
+            spos.div(mapSize, 1, mapSize).floor().scl(mapSize, 1, mapSize);
+            const playerPos = this.client.exPlayer.getPosition().sub(RuinsLoaction.DESERT_RUIN_LOCATION_START).div(16).floor();
+            const spos2 = spos.clone();
+            const epos = spos.clone().add(mapSize, 0, mapSize);
+            const ruin = this.client.getServer().ruin_desertBoss;
+
+            // console.warn(spos);
+            // console.warn(epos);
+            for (; spos.z < epos.z; spos.z++) {
+                let line: string[] = [];
+                for (spos.x = spos2.x; spos.x < epos.x; spos.x++) {
+                    const posStr = `${spos.x},${spos.y},${spos.z}`;
+                    if (spos.x === playerPos.x && spos.z === playerPos.z) {
+                        const view = this.player.viewVector;
+                        if (ruin.isInRoom(posStr)) {
+                            if (view.x > view.z) {
+                                if (Math.abs(view.x) > Math.abs(view.z)) line.push(PomMazeMapBuilder.CHAR_MAZE_ROOM_ARROW_LEFT);
+                                else line.push(PomMazeMapBuilder.CHAR_MAZE_ROOM_ARROW_DOWN);
+                            } else {
+                                if (Math.abs(view.x) > Math.abs(view.z)) line.push(PomMazeMapBuilder.CHAR_MAZE_ROOM_ARROW_RIGHT);
+                                else line.push(PomMazeMapBuilder.CHAR_MAZE_ROOM_ARROW_UP);
+                            }
+                        } else if (ruin.isOnPath(posStr)) {
+                            if (view.x > view.z) {
+                                if (Math.abs(view.x) > Math.abs(view.z)) line.push(PomMazeMapBuilder.CHAR_MAZE_PATH_ARROW_LEFT);
+                                else line.push(PomMazeMapBuilder.CHAR_MAZE_PATH_ARROW_DOWN);
+                            } else {
+                                if (Math.abs(view.x) > Math.abs(view.z)) line.push(PomMazeMapBuilder.CHAR_MAZE_PATH_ARROW_RIGHT);
+                                else line.push(PomMazeMapBuilder.CHAR_MAZE_PATH_ARROW_UP);
+                            }
+                        } else {
+                            line.push(PomMazeMapBuilder.CHAR_MAZE_EMPTY);
+                        }
+                    } else if (ruin.isInRoom(posStr)) {
+                        if (desertRoomCounter.has(posStr)) {
+                            line.push(PomMazeMapBuilder.CHAR_MAZE_ROOM_PASSED);
+                        } else {
+                            line.push(PomMazeMapBuilder.CHAR_MAZE_ROOM);
+                        }
+                    } else if (ruin.isOnPath(posStr)) {
+                        line.push(PomMazeMapBuilder.CHAR_MAZE_PATH);
+                    } else {
+                        line.push(PomMazeMapBuilder.CHAR_MAZE_EMPTY);
+                    }
+                }
+                show.unshift(line.reverse().join(""));
+            }
+
+            this.client.magicSystem.anotherShow = show;
+
+            if (last && ruin.isInRoom(last)) {
                 let lastPos = last.split(",").map(e => parseInt(e));
                 let lastVec = new Vector3(lastPos[0], lastPos[1], lastPos[2]).scl(16).add(RuinsLoaction.DESERT_RUIN_LOCATION_START).add(8, 8, 8);
                 const tmpV = new Vector3();
@@ -242,9 +297,12 @@ export default class PomDimRuinsSystem extends GameController {
                             C: MinecraftBlockTypes.cobblestoneWall.id
                         })
                             .putStructure(m);
+                        const parLoc = new Vector3(e.blockLocation).add(0.5, 0.5, 0.5);
+                        this.getExDimension().spawnParticle("wb:portal_desertboss_par1", parLoc);
+                        this.getExDimension().spawnParticle("wb:portal_desertboss_par2", parLoc);
+
                     }
                 }
-
 
             }
         });

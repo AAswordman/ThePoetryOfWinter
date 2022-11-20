@@ -74,10 +74,22 @@ export default class Vector3 {
         }
         return this;
     }
-    div(n) {
-        this.x /= n;
-        this.y /= n;
-        this.z /= n;
+    div(x, y, z) {
+        if (typeof x === 'number') {
+            if (typeof y === 'number' && typeof z === 'number') {
+                this.x /= x;
+                this.y /= y;
+                this.z /= z;
+            }
+            else if (y === undefined && z === undefined) {
+                this.x /= x;
+                this.y /= x;
+                this.z /= x;
+            }
+        }
+        else {
+            this.div(x.x, x.y, x.z);
+        }
         return this;
     }
     len() {

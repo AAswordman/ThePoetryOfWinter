@@ -19,6 +19,8 @@ export default class PomMagicSystem extends GameController {
         if (this.scoresManager.getScore("wbkjlq") > 0) this.scoresManager.removeScore("wbkjlq", 1);
     }).delay(1000);
 
+    anotherShow = ["test","test"];
+
     actionbarShow = new TimeLoopTask(this.getEvents(), () => {
         let fromData: [string, number, boolean, boolean, string][] = [
             [PomMagicSystem.AdditionHPChar, this.additionHealth / 100, true, this.additionHealthShow, "HP"],
@@ -46,6 +48,12 @@ export default class PomMagicSystem extends GameController {
 
             arr.push(s);
         }
+
+        for(let i = 0; i < 100; i++) {
+            arr.push("");
+        }
+
+        arr = arr.concat(this.anotherShow);
 
         this.exPlayer.titleActionBar(arr.join("\n"));
 

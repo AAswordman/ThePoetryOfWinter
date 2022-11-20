@@ -32,8 +32,9 @@ export default class PomDesertBossRuin implements PomRuinCommon {
     dim!: Dimension;
     completed: boolean = false;
     rooms = new Set<string>();
+    paths = new Set<string>();
 
-    isCompleted(){
+    isCompleted() {
         return this.completed;
     }
 
@@ -48,8 +49,11 @@ export default class PomDesertBossRuin implements PomRuinCommon {
     private _playerArea: ExBlockArea[] = [];
     private _bossArea: ExBlockArea[] = [];
 
-    isInRoom(v:string){
+    isInRoom(v: string) {
         return this.rooms.has(v);
+    }
+    isOnPath(v: string) {
+        return this.paths.has(v);
     }
 
 
@@ -103,8 +107,8 @@ export default class PomDesertBossRuin implements PomRuinCommon {
             }
         }
         while (block > 0) {
-            let a = r.nextInt(32),b=r.nextInt(32);
-            if(maze[a][b] === CENTER){
+            let a = r.nextInt(32), b = r.nextInt(32);
+            if (maze[a][b] === CENTER) {
                 continue;
             }
             maze[a][b] = BLOCK;
@@ -355,27 +359,32 @@ export default class PomDesertBossRuin implements PomRuinCommon {
         this._playerArea = [];
 
         this.rooms = new Set<string>();
+        this.paths = new Set<string>();
 
         this.jigsaw.foreach((data, ix, iz, iy) => {
             if (data.structureName === this.structure_straightLine || data.structureName === this.structure_triple
                 || data.structureName === this.structure_curve || data.structureName === this.structure_crossing) {
                 this._pathArea.push(new ExBlockArea(new Vector3(ix, iy, iz).scl(this.jigsaw.size).add(this.x, this.y, this.z),
                     new Vector3(1, 1, 1).scl(this.jigsaw.size)));
+                this.paths.add(`${ix},${iy},${iz}`);
                 if (data.structureName === this.structure_crossing) {
                     this._playerArea.push(new ExBlockArea(new Vector3(ix, iy, iz).scl(this.jigsaw.size).add(this.x, this.y, this.z),
                         new Vector3(1, 1, 1).scl(this.jigsaw.size)));
+                    this.paths.add(`${ix},${iy},${iz}`);
+
                 }
             } else if (data.structureName === this.structure_towerBlock3 || data.structureName === this.structure_towerBlock4
                 || data.structureName === this.structure_towerBlock2 || data.structureName === this.structure_towerBlock1) {
                 this._monsterArea.push(new ExBlockArea(new Vector3(ix, iy, iz).scl(this.jigsaw.size).add(this.x, this.y, this.z),
                     new Vector3(1, 1, 1).scl(this.jigsaw.size)));
-                    this.rooms.add(`${ix},${iy},${iz}`);
+                this.rooms.add(`${ix},${iy},${iz}`);
             } else if (data.structureName === this.structure_boss) {
                 this._bossArea.push(new ExBlockArea(new Vector3(ix, iy, iz).scl(this.jigsaw.size).add(this.x, this.y, this.z),
                     new Vector3(1, 1, 1).scl(this.jigsaw.size)));
             } else if (data.structureName === this.structure_upplain) {
                 this._airPathArea.push(new ExBlockArea(new Vector3(ix, iy, iz).scl(this.jigsaw.size).add(this.x, this.y, this.z),
                     new Vector3(1, 1, 1).scl(this.jigsaw.size)));
+                this.paths.add(`${ix},${iy},${iz}`);
             } else if (data.structureName === this.structure_towerPiece) {
                 let vec = new Vector3(ix, iy, iz).scl(this.jigsaw.size).add(this.x, this.y, this.z);
                 this._airMonsterArea.push(new ExBlockArea(vec,

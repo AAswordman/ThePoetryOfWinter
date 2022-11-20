@@ -7,7 +7,8 @@ module.exports = {
         filename: 'index.js', // 输出文件名称
         path: path.resolve(__dirname, './WPB2/scripts/mix/') //获取输出路径
     },
-    mode: "production", // 整个mode 可以不要，模式是生产坏境就是压缩好对，这里配置开发坏境方便看生成对代码
+    //    mode: "production", // 整个mode 可以不要，模式是生产坏境就是压缩好对，这里配置开发坏境方便看生成对代码
+    //mode: "development",
     //   module:{
     //   rules: [{
     //       test: /\.tsx?$/,
