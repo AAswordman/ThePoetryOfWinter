@@ -287,9 +287,7 @@
         },
         "start_key": {
           "on_entry": [
-            "/tellraw @s {\"rawtext\":[{\"translate\":\"item.skill.wb.start_key\"}]}",
-            "/summon wb:plot_talk_npc ~~~",
-            "/gamemode survival @s[m=creative]"
+            "/tellraw @s {\"rawtext\":[{\"translate\":\"item.skill.wb.start_key\"}]}"
           ],
           "transitions": [
             {

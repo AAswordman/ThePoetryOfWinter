@@ -306,8 +306,7 @@ export default {
                                 }]
                         },
                         "commands": [
-                            "/scoreboard players set @initiator wbnjqbf 1",
-                            "/kill @s"
+                            "/scoreboard players set @initiator wbnjqbf 1"
                         ]
                     }],
                 "on_close_commands": []
@@ -430,8 +429,7 @@ export default {
                                 }]
                         },
                         "commands": [
-                            "/scoreboard players set @initiator wbnjqbf 5",
-                            "/kill @s"
+                            "/scoreboard players set @initiator wbnjqbf 5"
                         ]
                     }],
                 "on_close_commands": []
@@ -620,8 +618,7 @@ export default {
                                 }]
                         },
                         "commands": [
-                            "/scoreboard players set @initiator wbnjqbf 3",
-                            "/kill @s"
+                            "/scoreboard players set @initiator wbnjqbf 3"
                         ]
                     }],
                 "on_close_commands": []
@@ -876,8 +873,7 @@ export default {
                                 }]
                         },
                         "commands": [
-                            "/scoreboard players set @initiator wbnjqbf 5",
-                            "/kill @s"
+                            "/scoreboard players set @initiator wbnjqbf 5"
                         ]
                     }],
                 "on_close_commands": []
@@ -1066,8 +1062,7 @@ export default {
                                 }]
                         },
                         "commands": [
-                            "/scoreboard players set @initiator wbnjqbf 5",
-                            "/kill @s"
+                            "/scoreboard players set @initiator wbnjqbf 5"
                         ]
                     }],
                 "on_close_commands": []
@@ -1116,8 +1111,7 @@ export default {
                         },
                         "commands": [
                             "/function portal/startboss",
-                            "/summon wb:magic_stoneman ~ 195 ~ isboss",
-                            "/kill @s"
+                            "/summon wb:magic_stoneman ~ 195 ~ isboss"
                         ]
                     }],
                 "on_close_commands": []
@@ -1174,8 +1168,7 @@ export default {
                                 }]
                         },
                         "commands": [
-                            "/scoreboard players set @initiator wbnjqbf 7",
-                            "/kill @s"
+                            "/scoreboard players set @initiator wbnjqbf 7"
                         ]
                     }],
                 "on_close_commands": []
@@ -1562,8 +1555,7 @@ export default {
                                 }]
                         },
                         "commands": [
-                            "/scoreboard players set @initiator wbnjqbf 8",
-                            "/kill @s"
+                            "/scoreboard players set @initiator wbnjqbf 8"
                         ]
                     }],
                 "on_close_commands": []
@@ -1818,8 +1810,7 @@ export default {
                                 }]
                         },
                         "commands": [
-                            "/scoreboard players set @initiator wbnjqbf 9",
-                            "/kill @s"
+                            "/scoreboard players set @initiator wbnjqbf 9"
                         ]
                     }],
                 "on_close_commands": []
@@ -1868,8 +1859,7 @@ export default {
                         },
                         "commands": [
                             "/function portal/startboss",
-                            "/summon wb:headless_guard ~ 195 ~ isboss",
-                            "/kill @s"
+                            "/summon wb:headless_guard ~ 195 ~ isboss"
                         ]
                     }],
                 "on_close_commands": []
@@ -2058,8 +2048,7 @@ export default {
                                 }]
                         },
                         "commands": [
-                            "/scoreboard players set @initiator wbnjqbf 11",
-                            "/kill @s"
+                            "/scoreboard players set @initiator wbnjqbf 11"
                         ]
                     }],
                 "on_close_commands": []
@@ -2735,8 +2724,7 @@ export default {
                                 }]
                         },
                         "commands": [
-                            "/scoreboard players set @initiator wbnjqbf 13",
-                            "/kill @s"
+                            "/scoreboard players set @initiator wbnjqbf 13"
                         ]
                     }],
                 "on_close_commands": []
@@ -2785,8 +2773,7 @@ export default {
                         },
                         "commands": [
                             "/function portal/startboss",
-                            "/summon wb:ancient_stone ~ 195 ~ isboss",
-                            "/kill @s"
+                            "/summon wb:ancient_stone ~ 195 ~ isboss"
                         ]
                     }],
                 "on_close_commands": []
@@ -2843,8 +2830,7 @@ export default {
                                 }]
                         },
                         "commands": [
-                            "/scoreboard players set @initiator wbnjqbf 15",
-                            "/kill @s"
+                            "/scoreboard players set @initiator wbnjqbf 15"
                         ]
                     }],
                 "on_close_commands": []
@@ -3198,8 +3184,7 @@ export default {
                                 }]
                         },
                         "commands": [
-                            "/scoreboard players set @initiator wbnjqbf 16",
-                            "/kill @s"
+                            "/scoreboard players set @initiator wbnjqbf 16"
                         ]
                     }],
                 "on_close_commands": []
@@ -3247,8 +3232,7 @@ export default {
                                 }]
                         },
                         "commands": [
-                            "/scoreboard players set @initiator wbnjqbf 17",
-                            "/kill @s"
+                            "/scoreboard players set @initiator wbnjqbf 17"
                         ]
                     }],
                 "on_close_commands": []
@@ -3371,8 +3355,7 @@ export default {
                                 }]
                         },
                         "commands": [
-                            "/scoreboard players set @initiator wbnjqbf 18",
-                            "/kill @s"
+                            "/scoreboard players set @initiator wbnjqbf 18"
                         ]
                     }],
                 "on_close_commands": []
@@ -3528,8 +3511,7 @@ export default {
                                 }]
                         },
                         "commands": [
-                            "/scoreboard players set @initiator wbnjqbf 19",
-                            "/kill @s"
+                            "/scoreboard players set @initiator wbnjqbf 19"
                         ]
                     }],
                 "on_close_commands": []
@@ -3784,8 +3766,7 @@ export default {
                                 }]
                         },
                         "commands": [
-                            "/scoreboard players set @initiator wbnjqbf 20",
-                            "/kill @s"
+                            "/scoreboard players set @initiator wbnjqbf 20"
                         ]
                     }],
                 "on_close_commands": []
@@ -3974,8 +3955,7 @@ export default {
                                 }]
                         },
                         "commands": [
-                            "/scoreboard players set @initiator wbnjqbf 21",
-                            "/kill @s"
+                            "/scoreboard players set @initiator wbnjqbf 21"
                         ]
                     }],
                 "on_close_commands": []
@@ -4346,8 +4326,7 @@ export default {
                         },
                         "commands": [
                             "/function portal/startboss",
-                            "/summon wb:intentions_first ~ 195 ~",
-                            "/kill @s"
+                            "/summon wb:intentions_first ~ 195 ~"
                         ]
                     }],
                 "on_close_commands": []
@@ -4536,8 +4515,7 @@ export default {
                                 }]
                         },
                         "commands": [
-                            "/scoreboard players set @initiator wbnjqbf 24",
-                            "/kill @s"
+                            "/scoreboard players set @initiator wbnjqbf 24"
                         ]
                     }],
                 "on_close_commands": []
@@ -4660,8 +4638,7 @@ export default {
                                 }]
                         },
                         "commands": [
-                            "/scoreboard players set @initiator wbnjqbf 25",
-                            "/kill @s"
+                            "/scoreboard players set @initiator wbnjqbf 25"
                         ]
                     }],
                 "on_close_commands": []
@@ -4883,8 +4860,7 @@ export default {
                                 }]
                         },
                         "commands": [
-                            "/scoreboard players set @initiator wbnjqbf 26",
-                            "/kill @s"
+                            "/scoreboard players set @initiator wbnjqbf 26"
                         ]
                     }],
                 "on_close_commands": []
