@@ -9,14 +9,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import { world, MinecraftDimensionTypes } from '@minecraft/server';
 export default class ExGameConfig {
-    static runCommand(str) {
-        try {
-            return world.getDimension(MinecraftDimensionTypes.overworld).runCommand(str);
-        }
-        catch (e) {
-            console.warn("Console error:", e);
-        }
-    }
     static runCommandAsync(str) {
         return __awaiter(this, void 0, void 0, function* () {
             try {

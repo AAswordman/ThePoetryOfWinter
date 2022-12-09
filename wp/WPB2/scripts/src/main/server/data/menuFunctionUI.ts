@@ -478,7 +478,7 @@ You understand and agree that:
                             }
                         ]
 
-                        if (client.globalSettings.tpPointRecord) {
+                        if (client.globalSettings.tpPointRecord && !client.ruinsSystem.isInRuinJudge) {
                             for (let j = 0; j < client.data.pointRecord.point.length; j++) {
                                 const i = client.data.pointRecord.point[j];
                                 const v = new Vector3(i[2]);
@@ -640,7 +640,7 @@ You understand and agree that:
                 "tp": {
                     "text": lang.menuUIMsgBailan53,
                     "page": async (client: PomClient, ui: MenuUIAlert): Promise<MenuUIAlertView[]> => {
-                        if (!client.globalSettings.playerCanTp) {
+                        if (!client.globalSettings.playerCanTp || client.ruinsSystem.isInRuinJudge) {
                             return [{
                                 "type": "text",
                                 "msg": lang.menuUIMsgBailan54
@@ -666,6 +666,7 @@ You understand and agree that:
                                         client.sayTo(lang.menuUIMsgBailan36);
                                         return false;
                                     }
+
                                     if (client.globalSettings.tpNeedItem) {
                                         let pos = (bag.searchItem("wb:conveyor_issue"));
                                         let item = <ItemStack>bag.getItem(pos);
@@ -707,6 +708,12 @@ You understand and agree that:
                                         client.sayTo(lang.menuUIMsgBailan36);
                                         return false;
                                     }
+
+                                    if((<PomClient>client.getServer().findClientByPlayer(i[0])).ruinsSystem.isInRuinJudge){
+                                        client.sayTo("§b对方在遗迹中，申请失败");
+                                        return false;
+                                    }
+
                                     if (client.globalSettings.tpNeedItem) {
                                         let pos = (bag.searchItem("wb:conveyor_issue"));
                                         let item = <ItemStack>bag.getItem(pos);

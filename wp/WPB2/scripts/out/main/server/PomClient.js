@@ -68,21 +68,19 @@ export default class PomClient extends ExGameClient {
         this.gameId = scores.getScore("wbldid");
         if (this.gameId === 0) {
             this.gameId = Math.floor(Math.random() * Random.MAX_VALUE);
-            scores.setScore("wbldid", this.gameId);
+            scores.setScoreAsync("wbldid", this.gameId);
         }
         this.gameControllers.forEach(controller => controller.onLoaded());
         if (!this.data.lang) {
-            try {
-                this.player.runCommand("mojang nmsl");
-            }
-            catch (e) {
+            this.exPlayer.runCommandAsync("mojang nmsl").catch((e) => {
+                console.warn(JSON.stringify(e) + " catch");
                 if ((JSON.stringify(e)).indexOf("未知") !== -1) {
                     this.data.lang = "zh";
                 }
                 else {
                     this.data.lang = "en";
                 }
-            }
+            });
         }
         if (this.player.hasTag("wbmsyh")) {
             this.player.nameTag = "§a" + this.player.nameTag;
@@ -104,7 +102,7 @@ export default class PomClient extends ExGameClient {
         return arr;
     }
     sayTo(str, p = this.player) {
-        p.runCommand(`tellraw @s {"rawtext": [{"text": "${str}"}]}`);
+        p.runCommandAsync(`tellraw @s {"rawtext": [{"text": "${str}"}]}`);
     }
     getServer() {
         return super.getServer();

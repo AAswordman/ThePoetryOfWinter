@@ -8,6 +8,7 @@ import { decodeUnicode } from "../../../modules/exmc/utils/Unicode.js";
 import TalentData, { Occupation, Talent } from "../cache/TalentData.js";
 import isEquipment from "../items/isEquipment.js";
 import GameController from "./GameController.js";
+import ExGameVector3 from '../../../modules/exmc/server/math/ExGameVector3';
 export default class PomTalentSystem extends GameController {
     constructor() {
         super(...arguments);
@@ -20,7 +21,7 @@ export default class PomTalentSystem extends GameController {
             if (this.data.talent.occupation.id === Occupation.PRIEST.id) {
                 let query = {
                     maxDistance: 20,
-                    location: this.player.location
+                    location: ExGameVector3.getLocation(this.player.location)
                 };
                 let health = 999;
                 let player = this.exPlayer;

@@ -40,6 +40,7 @@ export default class TickDelayTask {
         this.func = (e: TickEvent) => {
             times += 1;
             if (times >= this.time) {
+                
                 this.looper();
                 times = 0;
             }

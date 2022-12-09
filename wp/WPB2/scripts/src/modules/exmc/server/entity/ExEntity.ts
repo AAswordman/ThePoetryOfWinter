@@ -1,5 +1,5 @@
 import { Entity, EntityHealthComponent, Vector, Location, EntityInventoryComponent, Player, Dimension } from '@minecraft/server';
-import ExCommandRunner from '../../interface/ExCommandRunner.js';
+import {ExCommandNativeRunner} from '../../interface/ExCommandRunner.js';
 import ExTagManager from '../../interface/ExTagManager.js';
 import ExEntityComponentId from './ExEntityComponentId.js';
 import ExScoresManager from './ExScoresManager.js';
@@ -7,13 +7,18 @@ import Vector3 from '../../math/Vector3.js';
 import ExEntityBag from './ExEntityBag.js';
 import SetTimeOutSupport from '../../interface/SetTimeOutSupport.js';
 import ExGameVector3 from '../math/ExGameVector3.js';
-import ExCommandSelector from '../env/ExCommandSelector.js';
+import ExCommand from '../env/ExCommand.js';
 
 
-export default class ExEntity implements ExCommandRunner, ExTagManager {
+export default class ExEntity implements ExCommandNativeRunner, ExTagManager {
+    public command = new ExCommand(this);
+
+    public damage(d: number) {
+        this.runCommandAsync(`damage @s ${d}`);
+    }
     public causeDamageTo(e:Entity|ExEntity,d:number) {
         if(e instanceof ExEntity) e=e.entity;
-        ExCommandSelector.runAsync(this,`damage {0} ${d} entity_attack entity @s`,e);
+        ExCommand.run(this,`damage {0} ${d} entity_attack entity @s`,e);
     }
 
 	private _damage: number | undefined;
@@ -78,12 +83,8 @@ export default class ExEntity implements ExCommandRunner, ExTagManager {
 		return this._entity.hasTag(str);
 	}
 	removeTag(str: string) {
-		//console.warn("removeTag called"+str);
 		this._entity.removeTag(str);
 		return str;
-	}
-	runCommand(str: string) {
-		return this._entity.runCommand(str);
 	}
 	runCommandAsync(str: string) {
 		return this._entity.runCommandAsync(str);

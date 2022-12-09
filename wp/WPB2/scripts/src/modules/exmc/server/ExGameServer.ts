@@ -9,6 +9,7 @@ import ExErrorQueue from './ExErrorQueue.js';
 import SetTimeOutSupport from "../interface/SetTimeOutSupport.js";
 import ExConfig from '../ExConfig.js';
 import ExTickQueue from "./ExTickQueue.js";
+import ExCommand from './env/ExCommand.js';
 
 export default class ExGameServer implements SetTimeOutSupport {
     clients;
@@ -29,8 +30,10 @@ export default class ExGameServer implements SetTimeOutSupport {
         ExGameConfig.console = initConsole(ExGameConfig);
 
         this._events = new ExServerEvents(this);
+
         ExErrorQueue.init(this);
         ExTickQueue.init(this);
+        ExCommand.init(this);
 
         this._events.events.playerJoin.subscribe(this.onClientJoin.bind(this));
         this._events.events.playerLeave.subscribe(this.onClientLeave.bind(this));
@@ -75,7 +78,6 @@ export default class ExGameServer implements SetTimeOutSupport {
 
     onClientJoin(event: PlayerJoinEvent) {
         let player = event.player;
-        player.setDynamicProperty
         let id = UUID.randomUUID();
         let client = this.newClient(id, player);
         this.clients.set(id, client);

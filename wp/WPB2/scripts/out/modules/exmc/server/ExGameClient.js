@@ -24,20 +24,19 @@ export default class ExGameClient {
             this.notDebugger();
         }
         let func = () => {
-            try {
-                this.player.runCommand(`testfor @s`);
+            this.exPlayer.command.run(`testfor @s`)
+                .then(e => {
                 try {
                     this.onLoaded();
                 }
                 catch (e) {
                     ExErrorQueue.throwError(e);
                 }
-            }
-            catch (e) {
+            }).catch(e => {
                 this.setTimeout(func, 2000);
-            }
+            });
         };
-        func();
+        this.setTimeout(func, 100);
         this.onJoin();
     }
     debug_removeAllTag() {

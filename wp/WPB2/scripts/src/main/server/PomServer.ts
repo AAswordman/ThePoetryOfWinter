@@ -17,6 +17,9 @@ import TickDelayTask from '../../modules/exmc/utils/TickDelayTask.js';
 import Vector3 from '../../modules/exmc/math/Vector3.js';
 import { ExBlockArea } from '../../modules/exmc/server/block/ExBlockArea.js';
 import ExGameVector3 from '../../modules/exmc/server/math/ExGameVector3.js';
+import ExPlayer from '../../modules/exmc/server/entity/ExPlayer.js';
+import ExEntity from '../../modules/exmc/server/entity/ExEntity';
+import { GameMode } from '@minecraft/server';
 
 
 export default class PomServer extends ExGameServer {
@@ -35,9 +38,11 @@ export default class PomServer extends ExGameServer {
     portal_desertBoss: ExBlockStructure;
     ruinFuncLooper: TickDelayTask;
     desertRuinRandomRules;
+    ruinDesertGuardPos: Vector3;
+    ruinDesertGuardRule: TickDelayTask;
 
     sayTo(str: string) {
-        this.getExDimension(MinecraftDimensionTypes.theEnd).runCommand(`tellraw @a {"rawtext": [{"text": "${str}"}]}`);
+        this.getExDimension(MinecraftDimensionTypes.theEnd).command.run(`tellraw @a {"rawtext": [{"text": "${str}"}]}`);
     }
 
     constructor(config: ExConfig) {
@@ -151,23 +156,65 @@ export default class PomServer extends ExGameServer {
         });
 
         const tmpV = new Vector3();
-        let desertEntitiesNum = 0;
+        const tmpP = new Vector3();
+
+        this.ruinDesertGuardPos = new Vector3(RuinsLoaction.DESERT_RUIN_LOCATION_CENTER);
         const upDateMonster = () => {
             let entities = Array.from(this.getExDimension(MinecraftDimensionTypes.theEnd).getEntities({
                 location: ExGameVector3.getLocation(RuinsLoaction.DESERT_RUIN_LOCATION_CENTER),
                 maxDistance: 400
             }));
-            for(let e of entities) {
-                if(e.id === "minecraft:item" && e.viewVector.y === 0){
+            for (let e of entities) {
+                if (e.id === "minecraft:item" && e.viewVector.y === 0) {
                     e.kill();
                 }
             }
-            desertEntitiesNum = entities.length;
         }
-        this.desertRuinRandomRules = new TimeLoopTask(this.getEvents(), ()=>{
-
+        this.desertRuinRandomRules = new TimeLoopTask(this.getEvents(), () => {
             upDateMonster();
         }).delay(60000);
+
+        const enddim = this.getExDimension(MinecraftDimensionTypes.theEnd);
+
+        let ruin_desert_count = 0;
+
+        this.ruinDesertGuardRule = new TickDelayTask(this.getEvents(), () => {
+            enddim.spawnParticle("wb:ruin_desert_guardpar", this.ruinDesertGuardPos);
+            if (ruin_desert_count > 400) {
+                ruin_desert_count = 0;
+            }
+            if (ruin_desert_count > 200) {
+                let entities = enddim.getEntities({
+                    location: ExGameVector3.getLocation(RuinsLoaction.DESERT_RUIN_LOCATION_CENTER),
+                    maxDistance: 400,
+                    closest: 1,
+                    type: MinecraftEntityTypes.player.id,
+                    gameMode: GameMode.adventure
+                });
+                if (entities.length > 0) {
+                    const loc = entities[0].location;
+                    if (loc.x && loc.y && loc.z) {
+                        tmpP.set(loc);
+                        tmpV.set(this.ruinDesertGuardPos);
+                        tmpP.sub(tmpV);
+                        if(tmpP.len() < 2){
+                            ExEntity.getInstance(entities[0]).damage(4);
+                        }
+                        
+                        tmpP.normalize();
+
+                        tmpV.set(loc).sub(RuinsLoaction.DESERT_RUIN_LOCATION_START).div(16).floor();
+                        if(!this.ruin_desertBoss.isInRoom(`${tmpV.x},${tmpV.y},${tmpV.z}`)){
+                            this.ruinDesertGuardPos.add(tmpP.scl(0.38));
+                        }else{
+                            this.ruinDesertGuardPos.add(tmpP.scl(0.2));
+                        }
+                    }
+                }
+            }
+
+            ruin_desert_count += 1;
+        }).delay(1);
         upDateMonster();
         this.desertRuinRandomRules.start();
         this.ruinFuncLooper = new TickDelayTask(this.getEvents(), () => {
@@ -178,14 +225,16 @@ export default class PomServer extends ExGameServer {
                     if (tmpV.x >= RuinsLoaction.DESERT_RUIN_LOCATION_START.x && tmpV.x <= RuinsLoaction.DESERT_RUIN_LOCATION_END.x
                         && tmpV.z >= RuinsLoaction.DESERT_RUIN_LOCATION_START.z && tmpV.z <= RuinsLoaction.DESERT_RUIN_LOCATION_END.z) {
                         desertFlag = true;
-                        
+
                     }
                 }
             }
 
             if (!desertFlag) {
+                this.ruinDesertGuardRule.stop();
                 this.desertRuinRandomRules.stop();
             } else {
+                this.ruinDesertGuardRule.start();
                 this.desertRuinRandomRules.start();
             }
         }).delay(20 * 12);

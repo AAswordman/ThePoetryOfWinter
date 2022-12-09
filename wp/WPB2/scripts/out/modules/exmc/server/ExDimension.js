@@ -2,8 +2,10 @@ import { MolangVariableMap } from '@minecraft/server';
 import Vector3 from "../math/Vector3.js";
 import ExGameConfig from './ExGameConfig.js';
 import ExGameVector3 from './math/ExGameVector3.js';
+import ExCommand from './env/ExCommand.js';
 export default class ExDimension {
     constructor(dimension) {
+        this.command = new ExCommand(this);
         this._dimension = dimension;
     }
     spawnParticle(p, v) {
@@ -43,7 +45,7 @@ export default class ExDimension {
     }
     digBlock(vec) {
         try {
-            this.runCommand(`setBlock ${vec.x} ${vec.y} ${vec.z} air 0 destroy`);
+            this.command.run(`setBlock ${vec.x} ${vec.y} ${vec.z} air 0 destroy`);
             return true;
         }
         catch (e) {
@@ -69,16 +71,8 @@ export default class ExDimension {
             return undefined;
         }
     }
-    runCommand(str) {
-        try {
-            return this._dimension.runCommand(str);
-        }
-        catch (error) {
-            return undefined;
-        }
-    }
     runCommandAsync(str) {
-        return this._dimension.runCommandAsync(str).then((e) => { });
+        return this._dimension.runCommandAsync(str);
     }
     static getInstance(source) {
         let dimension = source;

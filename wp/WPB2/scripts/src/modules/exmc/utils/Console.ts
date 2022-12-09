@@ -1,7 +1,7 @@
-import ExCommandRunner from "../interface/ExCommandRunner.js";
+import {ExCommandNativeRunner} from "../interface/ExCommandRunner.js";
 import GameConsole from "../interface/GameConsole.js";
 
-function initConsole(manager:ExCommandRunner) {
+function initConsole(manager:ExCommandNativeRunner) {
       const FORMATTINGS = {
             Red: "§c",
             DarkRed: "§4",
@@ -40,12 +40,12 @@ function initConsole(manager:ExCommandRunner) {
             return msg;
       }
 
-      const sendMsg = (msg:any) => manager.runCommand(`tellraw @a[tag=debugger] {"rawtext": [{"text": "${msg}"}]}`);
+      const sendMsg = (msg:any) => manager.runCommandAsync(`tellraw @a[tag=debugger] {"rawtext": [{"text": "${msg}"}]}`);
       // const sendMsg = msg => console.log(`/tellraw @a[tag=debugger] {"rawtext": [{"text": "${msg}"}]}`);
 
       const parseObject = (obj:any) => {
             let res = '{\n';
-            for (const key in obj) {
+            for (const key in Object.keys(obj)) {
                   const val = obj[key];
                   if (val === null) (res += `${key}: null\n`);
                   if (typeof val != 'object') (res += `${key}: ${typeof val === 'number' ? span(FORMATTINGS.Purple, val) : val}\n`);
@@ -76,7 +76,7 @@ function initConsole(manager:ExCommandRunner) {
       function log(...args:any) {
             let prefix = new Array(stack).fill('    ').join('');
             if (/%[s|d|f|o]/.test(args[0])) return printf(prefix + args.shift(), ...args);
-            args = args.map((val: any) => typeof val == 'number' ? span(FORMATTINGS.Purple, val) : val).join('\n');
+            args = args.map((val: any) => typeof val == 'number' ? span(FORMATTINGS.Purple, val) : (typeof val === "object" ? parseObject(val):val)).join('\n');
             return sendMsg(prefix + args);
       };
 

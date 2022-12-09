@@ -1,5 +1,8 @@
+import { CommandResult } from '@minecraft/server';
 
-export default interface ExCommandRunner{
-	runCommand(str:string): any;
+export interface ExCommandNativeRunner{
 	runCommandAsync(str:string): Promise<any>;
+}
+export interface ExCommandRunner{
+	run(str:string): Promise<CommandResult>;
 }

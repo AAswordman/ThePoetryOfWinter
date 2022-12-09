@@ -4,6 +4,10 @@ export default class GlobalScoreBoardCache {
         this.entity = new ExNullEntity("");
         this.objective = objective;
         objective.create("cache:" + objective.name);
+        if (!GlobalScoreBoardCache.varMap.has(objective.name)) {
+            GlobalScoreBoardCache.varMap.set(objective.name, new Map());
+        }
+        this.useMap = GlobalScoreBoardCache.varMap.get(objective.name);
     }
     debug() {
         this.objective.setDisplay();
@@ -16,182 +20,18 @@ export default class GlobalScoreBoardCache {
     }
     setNumber(name, value) {
         this.entity.nameTag = name;
-        this.entity.getScoresManager().setScore(this.objective, value);
+        this.entity.getScoresManager().setScoreAsync(this.objective, value);
+        this.useMap.set(name, value);
     }
     getNumber(name) {
         this.entity.nameTag = name;
-        return this.entity.getScoresManager().getScore(this.objective);
+        return this.useMap.get(name);
     }
     deleteNumber(name) {
         this.entity.nameTag = name;
-        return this.entity.getScoresManager().deleteScore(this.objective);
-    }
-    getList(name) {
-        if (name + "__cache" in GlobalScoreBoardCache) {
-            return GlobalScoreBoardCache[name + "__cache"];
-        }
-        else {
-            return (GlobalScoreBoardCache[name + "__cache"] = new GlobalScoreBoardCacheList(this, name));
-        }
-    }
-    setList(name, value) {
-        if (value.length > 99)
-            throw new Error("Too many childs");
-        this.getList(name)
-            .reset(value);
+        this.useMap.delete(name);
+        return this.entity.getScoresManager().deleteScoreAsync(this.objective);
     }
 }
-export class GlobalScoreBoardCacheList {
-    constructor(cache, name) {
-        this.src = [];
-        this.cache = cache;
-        this.name = name;
-        this.src = [];
-        for (let i = 0; i < this.mlength; i++) {
-            this.src.push(this.cache.getNumber(this.name + "__" + i));
-            this[i] = this.src[i];
-        }
-    }
-    includes(searchElement, fromIndex) {
-        throw new Error("Method not implemented.");
-    }
-    flatMap(callback, thisArg) {
-        throw new Error("Method not implemented.");
-    }
-    flat(depth) {
-        throw new Error("Method not implemented.");
-    }
-    at(index) {
-        throw new Error("Method not implemented.");
-    }
-    reset(src) {
-        this.clearData();
-        this.push(...src);
-    }
-    clearData() {
-        for (let i = 0; i < this.mlength; i++) {
-            this.cache.deleteNumber(this.name + "__" + i);
-            delete this[i];
-        }
-        this.mlength = 0;
-        this.src = [];
-    }
-    get length() {
-        return this.src.length;
-    }
-    get mlength() {
-        return this.cache.getNumber(this.name + "__len");
-    }
-    set mlength(len) {
-        this.cache.setNumber(this.name + "__len", len);
-    }
-    toList() {
-        return this.src;
-    }
-    toString() {
-        return this.src.toString();
-    }
-    toLocaleString() {
-        return this.src.toLocaleString();
-    }
-    pop() {
-        if (this.length === 0) {
-            return undefined;
-        }
-        this.mlength--;
-        let len = this.mlength;
-        this.cache.deleteNumber(this.name + "__" + len);
-        delete this[len];
-        return this.src.pop();
-    }
-    push(...items) {
-        for (let i of items) {
-            this.cache.setNumber(this.name + "__" + this.mlength, i);
-            this[this.mlength] = i;
-            this.mlength++;
-        }
-        this.src.push(...items);
-        return this.mlength;
-    }
-    concat(...items) {
-        throw new Error("Method not implemented.");
-    }
-    join(separator) {
-        return this.toList().join(separator);
-    }
-    reverse() {
-        return this.toList().reverse();
-    }
-    shift() {
-        throw new Error("No way!!!");
-    }
-    slice(start, end) {
-        return this.toList().slice(start, end);
-    }
-    sort(compareFn) {
-        throw new Error("Method not implemented.");
-    }
-    splice(start, deleteCount, ...rest) {
-        throw new Error("Method not implemented.");
-    }
-    unshift(...items) {
-        throw new Error("Method not implemented.");
-    }
-    indexOf(searchElement, fromIndex) {
-        return this.toList().indexOf(searchElement, fromIndex);
-    }
-    lastIndexOf(searchElement, fromIndex) {
-        return this.toList().lastIndexOf(searchElement, fromIndex);
-    }
-    every(predicate, thisArg) {
-        throw new Error("Method not implemented.");
-    }
-    some(predicate, thisArg) {
-        throw new Error("Method not implemented.");
-    }
-    forEach(callbackfn, thisArg) {
-        this.src.forEach(callbackfn, thisArg);
-    }
-    map(callbackfn, thisArg) {
-        return this.src.map(callbackfn, thisArg);
-    }
-    filter(predicate, thisArg) {
-        throw new Error("Method not implemented.");
-    }
-    reduce(callbackfn, initialValue) {
-        throw new Error("Method not implemented.");
-    }
-    reduceRight(callbackfn, initialValue) {
-        throw new Error("Method not implemented.");
-    }
-    find(predicate, thisArg) {
-        throw new Error("Method not implemented.");
-    }
-    findIndex(predicate, thisArg) {
-        throw new Error("Method not implemented.");
-    }
-    fill(value, start, end) {
-        throw new Error("Method not implemented.");
-    }
-    copyWithin(target, start, end) {
-        throw new Error("Method not implemented.");
-    }
-    entries() {
-        return this.toList().entries();
-    }
-    keys() {
-        return this.toList().keys();
-    }
-    values() {
-        return this.toList().values();
-    }
-    *[Symbol.iterator]() {
-        for (let i of this.src) {
-            yield i;
-        }
-    }
-    [Symbol.unscopables]() {
-        throw new Error("Method not implemented.");
-    }
-}
+GlobalScoreBoardCache.varMap = new Map();
 //# sourceMappingURL=GlobalScoreBoardCache.js.map

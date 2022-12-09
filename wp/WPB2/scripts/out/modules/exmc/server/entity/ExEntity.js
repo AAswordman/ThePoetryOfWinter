@@ -2,15 +2,19 @@ import ExEntityComponentId from './ExEntityComponentId.js';
 import ExScoresManager from './ExScoresManager.js';
 import Vector3 from '../../math/Vector3.js';
 import ExEntityBag from './ExEntityBag.js';
-import ExCommandSelector from '../env/ExCommandSelector.js';
+import ExCommand from '../env/ExCommand.js';
 export default class ExEntity {
     constructor(entity) {
+        this.command = new ExCommand(this);
         this._entity = entity;
+    }
+    damage(d) {
+        this.runCommandAsync(`damage @s ${d}`);
     }
     causeDamageTo(e, d) {
         if (e instanceof ExEntity)
             e = e.entity;
-        ExCommandSelector.runAsync(this, `damage {0} ${d} entity_attack entity @s`, e);
+        ExCommand.run(this, `damage {0} ${d} entity_attack entity @s`, e);
     }
     getPreRemoveHealth() {
         return this._damage;
@@ -66,12 +70,8 @@ export default class ExEntity {
         return this._entity.hasTag(str);
     }
     removeTag(str) {
-        //console.warn("removeTag called"+str);
         this._entity.removeTag(str);
         return str;
-    }
-    runCommand(str) {
-        return this._entity.runCommand(str);
     }
     runCommandAsync(str) {
         return this._entity.runCommandAsync(str);
