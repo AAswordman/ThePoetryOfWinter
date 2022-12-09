@@ -44,7 +44,11 @@ export class Objective {
         this.name = name;
     }
     create(showName) {
-        ExGameConfig.runCommandAsync(`scoreboard objectives add ${this.name} dummy "${showName}"`);
+        try {
+            world.scoreboard.addObjective(this.name, showName);
+        }
+        catch (e) { }
+        // ExGameConfig.runCommandAsync(`scoreboard objectives add ${this.name} dummy "${showName}"`);
         return this;
     }
     delete() {

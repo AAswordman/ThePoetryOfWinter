@@ -453,8 +453,7 @@ export default {
           },
           "commands": [
 
-            "/scoreboard players set @initiator wbnjqbf 0",
-            "/kill @s"
+            "/scoreboard players set @initiator wbnjqbf 0"
           ]
         }],
         "on_close_commands": []

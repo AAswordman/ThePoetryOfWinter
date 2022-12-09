@@ -73,8 +73,8 @@ export default class PomClient extends ExGameClient {
         this.gameControllers.forEach(controller => controller.onLoaded());
         if (!this.data.lang) {
             this.exPlayer.runCommandAsync("mojang nmsl").catch((e) => {
-                console.warn(JSON.stringify(e) + " catch");
-                if ((JSON.stringify(e)).indexOf("未知") !== -1) {
+                //console.warn(JSON.stringify(e)+" catch");
+                if ((JSON.stringify(e)).indexOf("意外") !== -1) {
                     this.data.lang = "zh";
                 }
                 else {

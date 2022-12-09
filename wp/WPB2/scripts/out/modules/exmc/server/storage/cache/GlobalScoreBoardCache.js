@@ -25,6 +25,9 @@ export default class GlobalScoreBoardCache {
     }
     getNumber(name) {
         this.entity.nameTag = name;
+        if (!this.useMap.has(name)) {
+            this.useMap.set(name, this.entity.getScoresManager().getScore(this.objective));
+        }
         return this.useMap.get(name);
     }
     deleteNumber(name) {

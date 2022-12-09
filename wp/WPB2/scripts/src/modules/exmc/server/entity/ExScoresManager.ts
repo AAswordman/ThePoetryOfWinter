@@ -1,4 +1,4 @@
-import { Entity, world } from '@minecraft/server';
+import { Entity, ScoreboardObjective, world } from '@minecraft/server';
 import ExNullEntity from "./ExNullEntity.js";
 import ExGameConfig from '../ExGameConfig.js';
 import MathUtil from "../../math/MathUtil.js";
@@ -53,7 +53,8 @@ export class Objective {
     }
 
     create(showName: string) {
-        ExGameConfig.runCommandAsync(`scoreboard objectives add ${this.name} dummy "${showName}"`);
+        try { world.scoreboard.addObjective(this.name, showName); } catch (e) { }
+        // ExGameConfig.runCommandAsync(`scoreboard objectives add ${this.name} dummy "${showName}"`);
         return this;
     }
     delete() {
