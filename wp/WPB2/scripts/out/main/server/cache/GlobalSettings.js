@@ -13,12 +13,6 @@ export default class GlobalSettings extends GlobalScoreBoardCache {
     set tpNeedItem(value) {
         this.setBoolean("tpNeedItem", value);
     }
-    get gameOpList() {
-        return this.getList("gameOpList");
-    }
-    set gameOpList(value) {
-        this.setList("gameOpList", value);
-    }
     get entityCleaner() {
         return this.getBoolean("entityCleaner");
     }

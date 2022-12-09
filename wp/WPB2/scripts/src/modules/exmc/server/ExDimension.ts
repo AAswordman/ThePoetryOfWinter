@@ -1,10 +1,13 @@
 import { Dimension, EntityQueryOptions, Block, ItemStack, Entity, BlockType, BlockLocation, ExplosionOptions, MolangVariableMap } from '@minecraft/server';
-import ExCommandRunner from '../interface/ExCommandRunner.js';
+import { ExCommandNativeRunner } from '../interface/ExCommandRunner.js';
 import Vector3 from "../math/Vector3.js";
 import ExGameConfig from './ExGameConfig.js';
 import ExGameVector3 from './math/ExGameVector3.js';
+import ExCommand from './env/ExCommand.js';
 
-export default class ExDimension implements ExCommandRunner {
+export default class ExDimension implements ExCommandNativeRunner {
+    public command = new ExCommand(this);
+
     spawnParticle(p: string, v: Vector3) {
         this._dimension.spawnParticle(p,ExGameVector3.getLocation(v),new MolangVariableMap())
     }
@@ -48,7 +51,7 @@ export default class ExDimension implements ExCommandRunner {
     }
     digBlock(vec: Vector3) {
         try {
-            this.runCommand(`setBlock ${vec.x} ${vec.y} ${vec.z} air 0 destroy`);
+            this.command.run(`setBlock ${vec.x} ${vec.y} ${vec.z} air 0 destroy`);
             return true;
         } catch (e) {
             return false;
@@ -72,17 +75,8 @@ export default class ExDimension implements ExCommandRunner {
         }
     }
 
-
-    runCommand(str: string) {
-        try {
-            return this._dimension.runCommand(str);
-        } catch (error) {
-            return undefined;
-        }
-
-    }
     runCommandAsync(str: string) {
-        return this._dimension.runCommandAsync(str).then((e) => { });
+        return this._dimension.runCommandAsync(str);
     }
 
     static propertyNameCache = "exCache";

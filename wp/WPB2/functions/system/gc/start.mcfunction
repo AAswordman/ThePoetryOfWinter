@@ -1,1 +1,0 @@
-kill @e[scores={wbgc=4800..}]

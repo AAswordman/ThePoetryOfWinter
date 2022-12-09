@@ -12,6 +12,7 @@ export default class PomData {
     };
 
     dimBackPoint: Vector3 | undefined;
+    dimBackMode: number | undefined;
 
     lang?: "en" | "zh";
 

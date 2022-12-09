@@ -1,12 +1,12 @@
-import { Vector, BlockLocation,Location } from "@minecraft/server";
-import Vector3 from '../../math/Vector3.js';
+import { BlockLocation,Location, Vector } from "@minecraft/server";
+import Vector3, { IVector3 } from '../../math/Vector3.js';
 
 export default class ExGameVector3{
     
     private static _tempVector?: Vector;
     private static _tempLocation?: Location;
     private static _tempBlockLocation?: BlockLocation;
-    public static getVector(vec:Vector3) {
+    public static getVector(vec:IVector3) {
         if (!this._tempVector) {
             return (this._tempVector = new Vector(vec.x, vec.y, vec.z));
         } else {
@@ -16,7 +16,7 @@ export default class ExGameVector3{
             return (this._tempVector);
         }
     }
-    public static getLocation(vec:Vector3) {
+    public static getLocation(vec:IVector3) {
         if (!this._tempLocation) {
             return (this._tempLocation = new Location(vec.x, vec.y, vec.z));
         } else {
@@ -26,7 +26,7 @@ export default class ExGameVector3{
             return (this._tempLocation);
         }
     }
-    public static getBlockLocation(vec:Vector3) {
+    public static getBlockLocation(vec:IVector3) {
         if (!this._tempBlockLocation) {
             return (this._tempBlockLocation = new BlockLocation(vec.x, vec.y, vec.z));
         } else {

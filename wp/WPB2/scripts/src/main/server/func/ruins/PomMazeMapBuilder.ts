@@ -14,5 +14,7 @@ export default class PomMazeMapBuilder{
     public static readonly CHAR_MAZE_PATH_ARROW_DOWN = "";
     public static readonly CHAR_MAZE_PATH_ARROW_LEFT = "";
 
+    public static readonly CHAR_MAZE_PATH_GUARD = "";
+
     
 }

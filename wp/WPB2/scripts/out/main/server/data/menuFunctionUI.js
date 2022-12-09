@@ -477,7 +477,7 @@ You understand and agree that:
                                 "type": "padding"
                             }
                         ];
-                        if (client.globalSettings.tpPointRecord) {
+                        if (client.globalSettings.tpPointRecord && !client.ruinsSystem.isInRuinJudge) {
                             for (let j = 0; j < client.data.pointRecord.point.length; j++) {
                                 const i = client.data.pointRecord.point[j];
                                 const v = new Vector3(i[2]);
@@ -632,7 +632,7 @@ You understand and agree that:
                     "text": lang.menuUIMsgBailan53,
                     "page": (client, ui) => __awaiter(this, void 0, void 0, function* () {
                         var _a;
-                        if (!client.globalSettings.playerCanTp) {
+                        if (!client.globalSettings.playerCanTp || client.ruinsSystem.isInRuinJudge) {
                             return [{
                                     "type": "text",
                                     "msg": lang.menuUIMsgBailan54
@@ -697,6 +697,10 @@ You understand and agree that:
                                     let bag = client.exPlayer.getBag();
                                     if (!bag.hasItem("wb:conveyor_issue") && client.globalSettings.tpNeedItem) {
                                         client.sayTo(lang.menuUIMsgBailan36);
+                                        return false;
+                                    }
+                                    if (client.getServer().findClientByPlayer(i[0]).ruinsSystem.isInRuinJudge) {
+                                        client.sayTo("§b对方在遗迹中，申请失败");
                                         return false;
                                     }
                                     if (client.globalSettings.tpNeedItem) {

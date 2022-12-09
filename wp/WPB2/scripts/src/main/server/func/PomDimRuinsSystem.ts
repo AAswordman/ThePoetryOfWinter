@@ -1,4 +1,4 @@
-import { BlockLocation, MinecraftBlockTypes, MinecraftDimensionTypes, Block, MinecraftEntityTypes } from '@minecraft/server';
+import { BlockLocation, MinecraftBlockTypes, MinecraftDimensionTypes, Block, MinecraftEntityTypes, GameMode } from '@minecraft/server';
 import ExBlockStructureNormal from "../../../modules/exmc/server/block/structure/ExBlockStructureNormal.js";
 import GameController from "./GameController.js";
 import RuinsLoaction from "./ruins/RuinsLoaction.js";
@@ -12,9 +12,12 @@ import { getEnumKeys } from '../../../modules/exmc/utils/enumUtil.js';
 import PomDesertRuinRules from './ruins/desert/PomDesertRuinRules.js';
 import ExErrorQueue, { to } from '../../../modules/exmc/server/ExErrorQueue.js';
 import PomMazeMapBuilder from './ruins/PomMazeMapBuilder.js';
+import ExGameConfig from '../../../modules/exmc/server/ExGameConfig.js';
+import ExPlayer from '../../../modules/exmc/server/entity/ExPlayer';
 
 export default class PomDimRuinsSystem extends GameController {
     portalMatching = new ExBlockStructureNormal().setStructure([["XXX"]]);
+    isInRuinJudge: boolean = false;
     onJoin(): void {
         const tmpV = new Vector3();
         const tmpA = new Vector3();
@@ -44,6 +47,7 @@ export default class PomDimRuinsSystem extends GameController {
                 if (this.client.talentSystem.hasBeenDamaged.indexOf(addHealthListener) === -1) {
                     this.client.talentSystem.hasBeenDamaged.push(addHealthListener);
                 }
+                this.client.magicSystem.anotherShow = [];
             }
         }, false);
 
@@ -66,58 +70,8 @@ export default class PomDimRuinsSystem extends GameController {
         }, false);
         const desertRoomCounter = new Map<string, number>();
         const desertRuinScoreJudge = new VarOnChangeListener((v, last) => {
-            const show = [];
-            const mapSize = 8;
-            const spos = this.client.exPlayer.getPosition().sub(RuinsLoaction.DESERT_RUIN_LOCATION_START).div(16).floor();
-            spos.div(mapSize, 1, mapSize).floor().scl(mapSize, 1, mapSize);
-            const playerPos = this.client.exPlayer.getPosition().sub(RuinsLoaction.DESERT_RUIN_LOCATION_START).div(16).floor();
-            const spos2 = spos.clone();
-            const epos = spos.clone().add(mapSize, 0, mapSize);
             const ruin = this.client.getServer().ruin_desertBoss;
 
-            // console.warn(spos);
-            // console.warn(epos);
-            for (; spos.z < epos.z; spos.z++) {
-                let line: string[] = [];
-                for (spos.x = spos2.x; spos.x < epos.x; spos.x++) {
-                    const posStr = `${spos.x},${spos.y},${spos.z}`;
-                    if (spos.x === playerPos.x && spos.z === playerPos.z) {
-                        const view = this.player.viewVector;
-                        if (ruin.isInRoom(posStr)) {
-                            if (view.x > view.z) {
-                                if (Math.abs(view.x) > Math.abs(view.z)) line.push(PomMazeMapBuilder.CHAR_MAZE_ROOM_ARROW_LEFT);
-                                else line.push(PomMazeMapBuilder.CHAR_MAZE_ROOM_ARROW_DOWN);
-                            } else {
-                                if (Math.abs(view.x) > Math.abs(view.z)) line.push(PomMazeMapBuilder.CHAR_MAZE_ROOM_ARROW_RIGHT);
-                                else line.push(PomMazeMapBuilder.CHAR_MAZE_ROOM_ARROW_UP);
-                            }
-                        } else if (ruin.isOnPath(posStr)) {
-                            if (view.x > view.z) {
-                                if (Math.abs(view.x) > Math.abs(view.z)) line.push(PomMazeMapBuilder.CHAR_MAZE_PATH_ARROW_LEFT);
-                                else line.push(PomMazeMapBuilder.CHAR_MAZE_PATH_ARROW_DOWN);
-                            } else {
-                                if (Math.abs(view.x) > Math.abs(view.z)) line.push(PomMazeMapBuilder.CHAR_MAZE_PATH_ARROW_RIGHT);
-                                else line.push(PomMazeMapBuilder.CHAR_MAZE_PATH_ARROW_UP);
-                            }
-                        } else {
-                            line.push(PomMazeMapBuilder.CHAR_MAZE_EMPTY);
-                        }
-                    } else if (ruin.isInRoom(posStr)) {
-                        if (desertRoomCounter.has(posStr)) {
-                            line.push(PomMazeMapBuilder.CHAR_MAZE_ROOM_PASSED);
-                        } else {
-                            line.push(PomMazeMapBuilder.CHAR_MAZE_ROOM);
-                        }
-                    } else if (ruin.isOnPath(posStr)) {
-                        line.push(PomMazeMapBuilder.CHAR_MAZE_PATH);
-                    } else {
-                        line.push(PomMazeMapBuilder.CHAR_MAZE_EMPTY);
-                    }
-                }
-                show.unshift(line.reverse().join(""));
-            }
-
-            this.client.magicSystem.anotherShow = show;
 
             if (last && ruin.isInRoom(last)) {
                 let lastPos = last.split(",").map(e => parseInt(e));
@@ -230,6 +184,10 @@ export default class PomDimRuinsSystem extends GameController {
             if (block?.typeId === "wb:portal_desertboss") {
                 //TODO: tp to end
                 this.data.dimBackPoint = new Vector3(this.player.location).add(3, 2, 3);
+
+                // let mode = ExPlayer.getInstance(this.player).getGameMode();
+                // this.data.dimBackMode = mode === GameMode.adventure ? 2 : (mode === GameMode.survival ? 0 : 1);
+
                 this.client.cache.save();
                 this.exPlayer.setPosition(ExBlockArea.randomPoint(this.client.getServer().ruin_desertBoss.getPlayerSpawnArea(), 4),
                     this.getDimension(MinecraftDimensionTypes.theEnd));
@@ -250,8 +208,7 @@ export default class PomDimRuinsSystem extends GameController {
                 tmpA.y <= tmpV.y && tmpV.y <= tmpB.y
                 && this.player.dimension.id === MinecraftDimensionTypes.theEnd
             );
-
-            if (tmpV.x >= RuinsLoaction.DESERT_RUIN_LOCATION_START.x && tmpV.x <= RuinsLoaction.DESERT_RUIN_LOCATION_END.x
+            if (this.getDimension(MinecraftDimensionTypes.theEnd) === this.player.dimension && tmpV.x >= RuinsLoaction.DESERT_RUIN_LOCATION_START.x && tmpV.x <= RuinsLoaction.DESERT_RUIN_LOCATION_END.x
                 && tmpV.z >= RuinsLoaction.DESERT_RUIN_LOCATION_START.z && tmpV.z <= RuinsLoaction.DESERT_RUIN_LOCATION_END.z) {
                 if (tmpV.y < RuinsLoaction.DESERT_RUIN_LOCATION_START.y - 2) {
                     tmpV.y = RuinsLoaction.DESERT_RUIN_LOCATION_START.y + 4;
@@ -262,10 +219,79 @@ export default class PomDimRuinsSystem extends GameController {
                     desertRuinScoreJudge.upDate(`${Math.floor((tmpV.x - RuinsLoaction.DESERT_RUIN_LOCATION_START.x) / 16)},${Math.floor((tmpV.y - RuinsLoaction.DESERT_RUIN_LOCATION_START.y) / 16)},${Math.floor((tmpV.z - RuinsLoaction.DESERT_RUIN_LOCATION_START.z) / 16)}`);
                 isInRuin = true;
 
+
+                const show = [];
+                const mapSize = 8;
+                const spos = this.client.exPlayer.getPosition().sub(RuinsLoaction.DESERT_RUIN_LOCATION_START).div(16).floor();
+                spos.div(mapSize, 1, mapSize).floor().scl(mapSize, 1, mapSize);
+                const playerPos = this.client.exPlayer.getPosition().sub(RuinsLoaction.DESERT_RUIN_LOCATION_START).div(16).floor();
+                const spos2 = spos.clone();
+                const epos = spos.clone().add(mapSize, 0, mapSize);
+                const ruin = this.client.getServer().ruin_desertBoss;
+                //ExGameConfig.console.warn(this.client.getServer());
+
+                // console.warn(spos);
+                // console.warn(epos);
+                tmpA.set(this.client.getServer().ruinDesertGuardPos).sub(RuinsLoaction.DESERT_RUIN_LOCATION_START).div(16).floor();
+                for (; spos.z < epos.z; spos.z++) {
+                    let line: string[] = [];
+                    for (spos.x = spos2.x; spos.x < epos.x; spos.x++) {
+                        const posStr = `${spos.x},${spos.y},${spos.z}`;
+                        if (spos.x === tmpA.x && spos.y === tmpA.y && spos.z === tmpA.z) {
+                            line.push(PomMazeMapBuilder.CHAR_MAZE_PATH_GUARD);
+                        } else if (spos.x === playerPos.x && spos.z === playerPos.z) {
+                            const view = this.player.viewVector;
+                            if (ruin.isInRoom(posStr)) {
+                                if (view.x > view.z) {
+                                    if (Math.abs(view.x) > Math.abs(view.z)) line.push(PomMazeMapBuilder.CHAR_MAZE_ROOM_ARROW_LEFT);
+                                    else line.push(PomMazeMapBuilder.CHAR_MAZE_ROOM_ARROW_DOWN);
+                                } else {
+                                    if (Math.abs(view.x) > Math.abs(view.z)) line.push(PomMazeMapBuilder.CHAR_MAZE_ROOM_ARROW_RIGHT);
+                                    else line.push(PomMazeMapBuilder.CHAR_MAZE_ROOM_ARROW_UP);
+                                }
+                            } else if (ruin.isOnPath(posStr)) {
+                                if (view.x > view.z) {
+                                    if (Math.abs(view.x) > Math.abs(view.z)) line.push(PomMazeMapBuilder.CHAR_MAZE_PATH_ARROW_LEFT);
+                                    else line.push(PomMazeMapBuilder.CHAR_MAZE_PATH_ARROW_DOWN);
+                                } else {
+                                    if (Math.abs(view.x) > Math.abs(view.z)) line.push(PomMazeMapBuilder.CHAR_MAZE_PATH_ARROW_RIGHT);
+                                    else line.push(PomMazeMapBuilder.CHAR_MAZE_PATH_ARROW_UP);
+                                }
+                            } else {
+                                line.push(PomMazeMapBuilder.CHAR_MAZE_EMPTY);
+                            }
+                        } else if (ruin.isInRoom(posStr)) {
+                            if (desertRoomCounter.has(posStr)) {
+                                line.push(PomMazeMapBuilder.CHAR_MAZE_ROOM_PASSED);
+                            } else {
+                                line.push(PomMazeMapBuilder.CHAR_MAZE_ROOM);
+                            }
+                        } else if (ruin.isOnPath(posStr)) {
+                            line.push(PomMazeMapBuilder.CHAR_MAZE_PATH);
+                        } else {
+                            line.push(PomMazeMapBuilder.CHAR_MAZE_EMPTY);
+                        }
+                    }
+                    show.unshift(line.reverse().join(""));
+                }
+
+                this.client.magicSystem.anotherShow = show;
             }
 
             this.client.magicSystem.additionHealthShow = isInRuin;
             inRuinsListener.upDate(isInRuin);
+            this.isInRuinJudge = isInRuin;
+
+            let mode = this.exPlayer.getGameMode();
+            if (this.isInRuinJudge && mode === GameMode.survival) {
+                this.exPlayer.setGameMode(GameMode.adventure);
+            } else if (!this.isInRuinJudge && mode === GameMode.adventure && this.data.dimBackMode === 0) {
+                this.exPlayer.setGameMode(GameMode.survival);
+            } else if (!this.isInRuinJudge && (mode !== GameMode.adventure)) {
+                this.data.dimBackMode = 0;
+            } else if (!this.isInRuinJudge && (mode === GameMode.adventure)) {
+                this.data.dimBackMode = 2;
+            }
 
         });
 

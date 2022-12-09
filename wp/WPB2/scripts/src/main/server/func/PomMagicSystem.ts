@@ -13,13 +13,13 @@ export default class PomMagicSystem extends GameController {
     additionHealth = 40;
     scoresManager = this.exPlayer.getScoresManager();
     wbflLooper = new TimeLoopTask(this.getEvents(), () => {
-        this.scoresManager.addScoreAsync("wbfl", 2);
+        if (this.scoresManager.getScore("wbfl") < 200) this.scoresManager.addScoreAsync("wbfl", 2);
     }).delay(5000);
     armorCoolingLooper = new TimeLoopTask(this.getEvents(), () => {
-        if (this.scoresManager.getScore("wbkjlq") > 0) this.scoresManager.removeScore("wbkjlq", 1);
+        if (this.scoresManager.getScore("wbkjlq") > 0) this.scoresManager.removeScoreAsync("wbkjlq", 1);
     }).delay(1000);
 
-    anotherShow = ["test","test"];
+    anotherShow: string[] = [];
 
     actionbarShow = new TimeLoopTask(this.getEvents(), () => {
         let fromData: [string, number, boolean, boolean, string][] = [
@@ -38,6 +38,9 @@ export default class PomMagicSystem extends GameController {
                 e[1] -= 0.2;
                 s += e[0][0];
             }
+            if (e[1] < 0) {
+                e[1] = 0;
+            }
             if (s.length < 5) {
                 s += e[0][e[0].length - 1 - Math.floor(e[1] / (0.2 / e[0].length))];
             }
@@ -49,7 +52,7 @@ export default class PomMagicSystem extends GameController {
             arr.push(s);
         }
 
-        for(let i = 0; i < 100; i++) {
+        for (let i = 0; i < 100; i++) {
             arr.push("");
         }
 
@@ -73,7 +76,7 @@ export default class PomMagicSystem extends GameController {
     }
     upDateByTalent(talentRes: Map<number, number>) {
         let scores = this.exPlayer.getScoresManager();
-        scores.setScore("wbwqlqjs", Math.round(100 + (talentRes.get(Talent.DEFENSE) ?? 0)));
+        scores.setScoreAsync("wbwqlqjs", Math.round(100 + (talentRes.get(Talent.DEFENSE) ?? 0)));
         this.wbflLooper.delay(1 / (1 / 5000 * (1 + (talentRes.get(Talent.DEFENSE) ?? 0) / 100) * (1 + scores.getScore("wbdjcg") * 3 / 100)));
         this.armorCoolingLooper.delay(1 / (1 / 1000 * (1 + (talentRes.get(Talent.RELOAD) ?? 0) / 100)));
     }

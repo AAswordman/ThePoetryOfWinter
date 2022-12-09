@@ -16,7 +16,7 @@ export default class PomEnChantSystem extends GameController{
 				if (lore.search("enchants") !== null) {
 					for (let i of lore.entries("enchants")) {
 						try {
-							this.player.runCommand("enchant @s " + i[0].replace(/[A-Z]/g, (s) => {
+							this.player.runCommandAsync("enchant @s " + i[0].replace(/[A-Z]/g, (s) => {
 								return "_" + s.toLowerCase();
 							}) + " " + i[1]);
 						} catch (e) {

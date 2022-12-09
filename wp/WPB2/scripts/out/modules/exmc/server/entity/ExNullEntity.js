@@ -1,11 +1,10 @@
 import { MinecraftDimensionTypes, world } from "@minecraft/server";
 import ExScoresManager from "./ExScoresManager.js";
+import ExCommand from '../env/ExCommand.js';
 export default class ExNullEntity {
     constructor(name) {
+        this.command = new ExCommand(this);
         this.nameTag = name;
-    }
-    runCommand(command) {
-        return world.getDimension(MinecraftDimensionTypes.overworld).runCommand(command);
     }
     runCommandAsync(command) {
         return world.getDimension(MinecraftDimensionTypes.overworld).runCommandAsync(command);

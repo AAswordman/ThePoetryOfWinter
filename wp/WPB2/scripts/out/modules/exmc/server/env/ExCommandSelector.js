@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import ExEntity from '../entity/ExEntity.js';
 import format from '../../utils/format.js';
 import UUID from '../../utils/UUID.js';
-export default class ExCommandSelector {
+export default class ExCommand {
     static run(runner, cmd, ...entities) {
         const arr = [];
         let p = runner.runCommand(format(cmd, entities.map(e => {

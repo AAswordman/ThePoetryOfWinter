@@ -18,9 +18,6 @@ export default class GameController {
     get data() {
         return this._client.data;
     }
-    runCommand(str) {
-        return ExGameConfig.runCommand(str);
-    }
     runCommandAsync(str) {
         return ExGameConfig.runCommandAsync(str);
     }

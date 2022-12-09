@@ -36,11 +36,11 @@ function initConsole(manager) {
         msg[msg.length - 1] += FORMATTINGS.Reset;
         return msg;
     };
-    const sendMsg = (msg) => manager.runCommand(`tellraw @a[tag=debugger] {"rawtext": [{"text": "${msg}"}]}`);
+    const sendMsg = (msg) => manager.runCommandAsync(`tellraw @a[tag=debugger] {"rawtext": [{"text": "${msg}"}]}`);
     // const sendMsg = msg => console.log(`/tellraw @a[tag=debugger] {"rawtext": [{"text": "${msg}"}]}`);
     const parseObject = (obj) => {
         let res = '{\n';
-        for (const key in obj) {
+        for (const key in Object.keys(obj)) {
             const val = obj[key];
             if (val === null)
                 (res += `${key}: null\n`);
@@ -75,7 +75,7 @@ function initConsole(manager) {
         let prefix = new Array(stack).fill('    ').join('');
         if (/%[s|d|f|o]/.test(args[0]))
             return printf(prefix + args.shift(), ...args);
-        args = args.map((val) => typeof val == 'number' ? span(FORMATTINGS.Purple, val) : val).join('\n');
+        args = args.map((val) => typeof val == 'number' ? span(FORMATTINGS.Purple, val) : (typeof val === "object" ? parseObject(val) : val)).join('\n');
         return sendMsg(prefix + args);
     }
     ;

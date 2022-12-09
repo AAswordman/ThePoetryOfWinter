@@ -9,6 +9,8 @@ import ExErrorQueue from "./ExErrorQueue.js";
 import ExActionAlert from "./ui/ExActionAlert.js";
 import ExInterworkingPool from '../interface/ExInterworkingPool.js';
 import { basicFinalType } from "../interface/types.js";
+import ExSystem from "../utils/ExSystem.js";
+import ExCommand from "./env/ExCommand.js";
 
 export default class ExGameClient<T extends ExInterworkingPool = ExInterworkingPool> implements SetTimeOutSupport {
     private _events: ExClientEvents;
@@ -49,21 +51,19 @@ export default class ExGameClient<T extends ExInterworkingPool = ExInterworkingP
         } else {
             this.notDebugger();
         }
-        
-
         let func = () => {
-            try {
-                this.player.runCommand(`testfor @s`);
-                try {
-                    this.onLoaded();
-                } catch (e) {
-                    ExErrorQueue.throwError(e);
-                }
-            } catch (e) {
-                this.setTimeout(func, 2000);
-            }
+            this.exPlayer.command.run(`testfor @s`)
+                .then(e => {
+                    try {
+                        this.onLoaded();
+                    } catch (e) {
+                        ExErrorQueue.throwError(e);
+                    }
+                }).catch(e => {
+                    this.setTimeout(func, 2000);
+                });
         };
-        func();
+        this.setTimeout(func, 100);
 
         this.onJoin();
     }
@@ -125,7 +125,7 @@ export default class ExGameClient<T extends ExInterworkingPool = ExInterworkingP
     }
 
     onJoin() {
-        
+
     }
     onLoaded() {
     }

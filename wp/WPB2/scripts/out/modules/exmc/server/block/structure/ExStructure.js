@@ -9,7 +9,7 @@ export default class ExStructure {
     generate(dim) {
         let rot = this.rotation;
         let exdim = ExDimension.getInstance(dim);
-        exdim.runCommand(`structure load ${this.structureId} ${this.position.x} ${this.position.y} ${this.position.z} ${Math.round(rot)}_degrees`);
+        exdim.command.run(`structure load ${this.structureId} ${this.position.x} ${this.position.y} ${this.position.z} ${Math.round(rot)}_degrees`);
     }
 }
 //# sourceMappingURL=ExStructure.js.map
