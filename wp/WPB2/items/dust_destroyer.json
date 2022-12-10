@@ -90,7 +90,7 @@
                 "run_command": {
                   "command": [
                     "scoreboard players remove @s wbfl 1",
-                    "execute as @s[scores={wbfl=1..}] at @s run summon dec:wither_cloud ^^^5"
+                    "execute @s[scores={wbfl=1..}] ~~~ summon dec:wither_cloud ^^^5"
                   ],
                   "target": "holder"
                 }
