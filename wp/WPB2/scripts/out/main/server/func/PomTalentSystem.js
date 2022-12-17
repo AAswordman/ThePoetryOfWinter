@@ -8,7 +8,7 @@ import { decodeUnicode } from "../../../modules/exmc/utils/Unicode.js";
 import TalentData, { Occupation, Talent } from "../cache/TalentData.js";
 import isEquipment from "../items/isEquipment.js";
 import GameController from "./GameController.js";
-import ExGameVector3 from '../../../modules/exmc/server/math/ExGameVector3';
+import ExGameVector3 from '../../../modules/exmc/server/math/ExGameVector3.js';
 export default class PomTalentSystem extends GameController {
     constructor() {
         super(...arguments);
