@@ -14,7 +14,7 @@ import ExBlockStructureNormal from '../../modules/exmc/server/block/structure/Ex
 import TickDelayTask from '../../modules/exmc/utils/TickDelayTask.js';
 import Vector3 from '../../modules/exmc/math/Vector3.js';
 import ExGameVector3 from '../../modules/exmc/server/math/ExGameVector3.js';
-import ExEntity from '../../modules/exmc/server/entity/ExEntity';
+import ExEntity from '../../modules/exmc/server/entity/ExEntity.js';
 import { GameMode } from '@minecraft/server';
 export default class PomServer extends ExGameServer {
     constructor(config) {

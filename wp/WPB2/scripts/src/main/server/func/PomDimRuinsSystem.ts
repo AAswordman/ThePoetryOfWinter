@@ -13,7 +13,7 @@ import PomDesertRuinRules from './ruins/desert/PomDesertRuinRules.js';
 import ExErrorQueue, { to } from '../../../modules/exmc/server/ExErrorQueue.js';
 import PomMazeMapBuilder from './ruins/PomMazeMapBuilder.js';
 import ExGameConfig from '../../../modules/exmc/server/ExGameConfig.js';
-import ExPlayer from '../../../modules/exmc/server/entity/ExPlayer';
+import ExPlayer from '../../../modules/exmc/server/entity/ExPlayer.js';
 
 export default class PomDimRuinsSystem extends GameController {
     portalMatching = new ExBlockStructureNormal().setStructure([["XXX"]]);

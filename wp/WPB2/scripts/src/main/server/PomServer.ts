@@ -18,7 +18,7 @@ import Vector3 from '../../modules/exmc/math/Vector3.js';
 import { ExBlockArea } from '../../modules/exmc/server/block/ExBlockArea.js';
 import ExGameVector3 from '../../modules/exmc/server/math/ExGameVector3.js';
 import ExPlayer from '../../modules/exmc/server/entity/ExPlayer.js';
-import ExEntity from '../../modules/exmc/server/entity/ExEntity';
+import ExEntity from '../../modules/exmc/server/entity/ExEntity.js';
 import { GameMode } from '@minecraft/server';
 
 
