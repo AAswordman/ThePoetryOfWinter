@@ -17,13 +17,13 @@ import ExGameConfig from "./ExGameConfig.js";
 import TickDelayTask from "../utils/TickDelayTask.js";
 export default class ExClientEvents implements ExEventManager {
 
-    /*
+    /**
      {
         "event" : (Map){
             Player : [ callback ]
         }
      }
-     */
+    */
     static monitorMap: any = {
 
     }

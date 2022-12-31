@@ -268,13 +268,13 @@ export default class ExClientEvents {
         }
     }
 }
-/*
+/**
  {
     "event" : (Map){
         Player : [ callback ]
     }
  }
- */
+*/
 ExClientEvents.monitorMap = {};
 ExClientEvents.init = false;
 //# sourceMappingURL=ExClientEvents.js.map

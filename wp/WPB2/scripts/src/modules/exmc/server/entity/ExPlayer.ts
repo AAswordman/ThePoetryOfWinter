@@ -8,6 +8,13 @@ import ExGameVector3 from '../math/ExGameVector3.js';
 
 
 export default class ExPlayer extends ExEntity {
+    override get entity(){
+        return super.entity as Player;
+    }
+    override set entity(e:Player){
+        super.entity = e;
+    }
+
     setGameMode(mode: GameMode) {
         switch(mode){
             case GameMode.survival: this.runCommandAsync(`gamemode 0`); break;
@@ -18,6 +25,7 @@ export default class ExPlayer extends ExEntity {
         
     }
     getGameMode(): GameMode {
+        this.entity
         let c = GameMode.creative;
         c = (Array.from(this.getDimension().getEntities({
             location: ExGameVector3.getLocation(this.entity.location),
@@ -55,18 +63,18 @@ export default class ExPlayer extends ExEntity {
     public title(title: string, subtitle?: string) {
         // this.runCommandAsync(`titleraw @s title {"rawtext":[{"text":"${title}"}]}`);
         // if (subtitle) this.runCommandAsync(`titleraw @s subtitle {"rawtext":[{"text":"${subtitle}"}]}`);
-        (<Player>this.entity).onScreenDisplay.setTitle(title);
-        if (subtitle) (<Player>this.entity).onScreenDisplay.updateSubtitle(subtitle);
+        this.entity.onScreenDisplay.setTitle(title);
+        if (subtitle) this.entity.onScreenDisplay.updateSubtitle(subtitle);
     }
     public titleActionBar(str: string) {
         //this.runCommandAsync(`titleraw @s actionbar {"rawtext":[{"text":"${str}"}]}`);
-        (<Player>this.entity).onScreenDisplay.setActionBar(str);
+        this.entity.onScreenDisplay.setActionBar(str);
     }
     public get selectedSlot() {
-        return (<Player>this.entity).selectedSlot;
+        return this.entity.selectedSlot;
     }
     public set selectedSlot(value: number) {
-        (<Player>this.entity).selectedSlot = value;
+        this.entity.selectedSlot = value;
     }
 
     constructor(player: Player) {

@@ -1,0 +1,1 @@
+{"version":3,"file":"GameControllerRuinRule.js","sourceRoot":"","sources":["../../../../../src/main/server/func/ruins/GameControllerRuinRule.ts"],"names":[],"mappings":"AAEA,MAAM,CAAC,OAAO,OAAO,sBAAsB;IAGvC,YAAY,IAAoB;QAC5B,IAAI,CAAC,IAAI,GAAG,IAAI,CAAC;IACrB,CAAC;IACD,IAAI,MAAM;QACN,OAAO,IAAI,CAAC,IAAI,CAAC,MAAM,CAAC;IAC5B,CAAC;CACJ"}

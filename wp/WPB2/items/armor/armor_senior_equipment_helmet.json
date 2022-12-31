@@ -1,47 +1,45 @@
 {
-  "format_version": "1.16.100",
-  "minecraft:item": {
-    "description": {
-      "identifier": "wb:armor_senior_equipment_helmet",
-      "category": "Items"
-    },
-    "components": {
-      "minecraft:creative_category": {
-        "parent": "itemGroup.name.items"
-      },
-      "minecraft:max_stack_size": 1,
-      "minecraft:enchantable": {
-        "value": 10,
-        "slot": "armor_head"
-      },
-      "minecraft:repairable": {
-				"repair_items": [
-					{
-						"items": [
-							"wb:crystal_evolution"
-						],
-						"repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.5"
-					}
-				]
-			},
-      "minecraft:durability": {
-        "max_durability": 429,
-        "damage_chance": {
-          "min": 60,
-          "max": 100
+    "format_version": "1.16.100",
+    "minecraft:item": {
+        "description": {
+            "identifier": "wb:armor_senior_equipment_helmet",
+            "category": "equipment"
+        },
+        "components": {
+            "minecraft:creative_category": {
+                "parent": "itemGroup.name.helmet"
+            },
+            "minecraft:max_stack_size": 1,
+            "minecraft:enchantable": {
+                "value": 10,
+                "slot": "armor_head"
+            },
+            "minecraft:repairable": {
+                "repair_items": [{
+                    "items": [
+                        "wb:crystal_evolution"
+                    ],
+                    "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.5"
+                }]
+            },
+            "minecraft:durability": {
+                "max_durability": 429,
+                "damage_chance": {
+                    "min": 60,
+                    "max": 100
+                }
+            },
+            "minecraft:mining_speed": 1.5,
+            "minecraft:damage": 3,
+            "minecraft:armor": {
+                "protection": 5
+            },
+            "minecraft:wearable": {
+                "slot": "slot.armor.head"
+            },
+            "minecraft:icon": {
+                "texture": "armor_senior_equipment_helmet"
+            }
         }
-      },
-      "minecraft:mining_speed": 1.5,
-      "minecraft:damage": 3,
-      "minecraft:armor": {
-        "protection": 5
-      },
-      "minecraft:wearable": {
-        "slot": "slot.armor.head"
-      },
-      "minecraft:icon": {
-        "texture": "armor_senior_equipment_helmet"
-      }
     }
-  }
 }
