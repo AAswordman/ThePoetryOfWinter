@@ -21,6 +21,7 @@ import PomTalentSystem from "./func/PomTalentSystem.js";
 import SimpleItemUseFunc from "./func/SimpleItemUseFunc.js";
 import PomDimRuinsSystem from "./func/PomDimRuinsSystem.js";
 import Random from "../../modules/exmc/utils/Random.js";
+import ExSystem from "../../modules/exmc/utils/ExSystem.js";
 export default class PomClient extends ExGameClient {
     constructor(server, id, player) {
         super(server, id, player);
@@ -74,7 +75,7 @@ export default class PomClient extends ExGameClient {
         if (!this.data.lang) {
             this.exPlayer.runCommandAsync("mojang nmsl").catch((e) => {
                 //console.warn(JSON.stringify(e)+" catch");
-                if ((JSON.stringify(e)).indexOf("意外") !== -1) {
+                if (ExSystem.hasChineseCharacter(JSON.stringify(e))) {
                     this.data.lang = "zh";
                 }
                 else {
