@@ -3,6 +3,12 @@ import ExEntity from "./ExEntity.js";
 import { ExPlayerBag } from "./ExEntityBag.js";
 import ExGameVector3 from '../math/ExGameVector3.js';
 export default class ExPlayer extends ExEntity {
+    get entity() {
+        return super.entity;
+    }
+    set entity(e) {
+        super.entity = e;
+    }
     setGameMode(mode) {
         switch (mode) {
             case GameMode.survival:
@@ -21,6 +27,7 @@ export default class ExPlayer extends ExEntity {
     }
     getGameMode() {
         var _a, _b, _c, _d;
+        this.entity;
         let c = GameMode.creative;
         c = (((_a = Array.from(this.getDimension().getEntities({
             location: ExGameVector3.getLocation(this.entity.location),
