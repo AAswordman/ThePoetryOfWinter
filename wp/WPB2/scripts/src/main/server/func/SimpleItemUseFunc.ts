@@ -45,7 +45,7 @@ export default class SimpleItemUseFunc extends GameController {
                 this.player.addEffect(MinecraftEffectTypes.levitation, 7, 15, false);
                 this.player.addEffect(MinecraftEffectTypes.slowFalling, 150, 3, false);
 
-                this.player.dimension.spawnEntity("wb:ball_jet_pack", ExGameVector3.getBlockLocation(this.exPlayer.getPosition().sub(this.exPlayer.getViewVector().scl(2))));
+                this.exPlayer.getDimension().spawnEntity("wb:ball_jet_pack", ExGameVector3.getBlockLocation(this.exPlayer.getPosition().sub(this.exPlayer.getViewVector().scl(2))));
             } else if (item.typeId === "wb:start_key") {
                 // start key
                 const scores = this.client.exPlayer.getScoresManager();

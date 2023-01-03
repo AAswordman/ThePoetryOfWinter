@@ -1,7 +1,6 @@
-import { Entity, EntityHealthComponent, Vector, Location, EntityInventoryComponent, Player, Dimension } from '@minecraft/server';
+import { Entity, EntityHealthComponent, Vector, Location, EntityInventoryComponent, Player, Dimension, EntityQueryOptions, EntityVariantComponent } from '@minecraft/server';
 import {ExCommandNativeRunner} from '../../interface/ExCommandRunner.js';
 import ExTagManager from '../../interface/ExTagManager.js';
-import ExEntityComponentId from './ExEntityComponentId.js';
 import ExScoresManager from './ExScoresManager.js';
 import Vector3 from '../../math/Vector3.js';
 import ExEntityBag from './ExEntityBag.js';
@@ -122,10 +121,10 @@ export default class ExEntity implements ExCommandNativeRunner, ExTagManager {
 	}
 
 	hasHealthComponent() {
-		return this.hasComponent(ExEntityComponentId.health);
+		return this.hasComponent(EntityHealthComponent.componentId);
 	}
 	getHealthComponent() {
-		return (<EntityHealthComponent>this.getComponent(ExEntityComponentId.health));
+		return (<EntityHealthComponent>this.getComponent(EntityHealthComponent.componentId));
 	}
 	getHealth() {
 		return this.getHealthComponent().current;
@@ -135,12 +134,22 @@ export default class ExEntity implements ExCommandNativeRunner, ExTagManager {
 	}
 
 	hasInventoryComponent() {
-		return this.hasComponent(ExEntityComponentId.inventory);
+		return this.hasComponent(EntityInventoryComponent.componentId);
 	}
 	getInventoryComponent() {
-		return <EntityInventoryComponent>this.getComponent(ExEntityComponentId.inventory);
+		return <EntityInventoryComponent>this.getComponent(EntityInventoryComponent.componentId);
 	}
-	getBag() {
-		return new ExEntityBag(this);
+    getBag() {
+        return new ExEntityBag(this);
+    }
+    
+	hasVariantComponent() {
+		return this.hasComponent(EntityVariantComponent.componentId);
 	}
+	getVariantComponent() {
+		return <EntityVariantComponent>this.getComponent(EntityVariantComponent.componentId);
+	}
+    getVariant(){
+        return this.getVariantComponent().value;
+    }
 }

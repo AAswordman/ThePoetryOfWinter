@@ -1,13 +1,13 @@
 import { MinecraftDimensionTypes, MinecraftEntityTypes } from "@minecraft/server";
-import Vector3 from "../../../../../exmc/math/Vector3.js";
-import ExErrorQueue from "../../../../../exmc/server/ExErrorQueue.js";
-import ExGameVector3 from "../../../../../exmc/server/math/ExGameVector3.js";
-import ExMessageAlert from "../../../../../exmc/server/ui/ExMessageAlert.js";
-import VarOnChangeListener from "../../../../../exmc/utils/VarOnChangeListener.js";
 import GameControllerRuinRule from "../GameControllerRuinRule.js";
 import RuinsLoaction from "../RuinsLoaction.js";
 import PomDesertRuinRules from "./PomDesertRuinRules.js";
 import PomMazeMapBuilder from "../PomMazeMapBuilder.js";
+import Vector3 from "../../../../../modules/exmc/math/Vector3.js";
+import ExErrorQueue from "../../../../../modules/exmc/server/ExErrorQueue.js";
+import ExGameVector3 from "../../../../../modules/exmc/server/math/ExGameVector3.js";
+import ExMessageAlert from "../../../../../modules/exmc/server/ui/ExMessageAlert.js";
+import VarOnChangeListener from "../../../../../modules/exmc/utils/VarOnChangeListener.js";
 export default class PomDesertRuinBasicRule extends GameControllerRuinRule {
     constructor(game) {
         super(game);

@@ -1,5 +1,12 @@
 import LoreUtil, { Piece } from "./ExLoreUtil.js";
 export default class ExColorLoreUtil extends LoreUtil {
+    setTag(key) {
+        super.setTag("§r§n§6" + key);
+    }
+    hasTag(key) {
+        let res = super.hasTag("§r§n§6" + key);
+        return res;
+    }
     getValueUseMap(key, use) {
         let res = super.getValueUseMap("§r§l§f" + key, "§r§o§b" + use);
         return (res === null || res === void 0 ? void 0 : res.startsWith("§")) ? res.substring(6) : res;

@@ -12,6 +12,7 @@
 		"strict": true,
         "downlevelIteration": true,
 		"alwaysStrict": false,
+        "resolveJsonModule": true,
 		"emitDecoratorMetadata": true,
 		"experimentalDecorators": true,
 		"noImplicitOverride": true,
