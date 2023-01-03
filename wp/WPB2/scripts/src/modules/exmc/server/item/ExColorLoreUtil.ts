@@ -1,7 +1,13 @@
-import LoreUtil,{Piece} from "./ExLoreUtil.js";
+import LoreUtil, { Piece } from "./ExLoreUtil.js";
 
 export default class ExColorLoreUtil extends LoreUtil {
-
+    override setTag(key: string): void {
+        super.setTag("§r§n§6" + key);
+    }
+    override hasTag(key: string): boolean {
+        let res = super.hasTag("§r§n§6" + key);
+        return res;
+    }
     override getValueUseMap(key: string, use: string): string | null {
         let res = super.getValueUseMap("§r§l§f" + key, "§r§o§b" + use);
         return res?.startsWith("§") ? res.substring(6) : res;
@@ -15,12 +21,12 @@ export default class ExColorLoreUtil extends LoreUtil {
         }
     }
     override search(key: string): Piece | null {
-        let lore= this.getLore();
+        let lore = this.getLore();
         key = (key.startsWith("§") ? key.substring(6) : key)
         for (let i = 0; i < lore.length; i++) {
-            
+
             if ((lore[i].startsWith("§") ? lore[i].substring(6) : lore[i]).startsWith(key + " : ")) {
-                return new Piece(this.item,i);
+                return new Piece(this.item, i);
             }
         }
         return null;

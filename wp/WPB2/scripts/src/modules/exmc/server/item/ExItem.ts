@@ -32,9 +32,9 @@ export default class ExItem implements ExLoreManager{
 		return this._item.hasComponent(str);
 	}
 	getEnchantsComponent():ItemEnchantsComponent{
-		return <ItemEnchantsComponent>this.getComponent("minecraft:enchantments");
+		return <ItemEnchantsComponent>this.getComponent(ItemEnchantsComponent.componentId);
 	}
 	hasEnchantsComponent() {
-		return this.hasComponent("minecraft:enchantments");
+		return this.hasComponent(ItemEnchantsComponent.componentId);
 	}
 }

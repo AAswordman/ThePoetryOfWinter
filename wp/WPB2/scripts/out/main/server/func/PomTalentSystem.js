@@ -111,6 +111,8 @@ export default class PomTalentSystem extends GameController {
             if (e.afterItem && isEquipment(e.afterItem.typeId)) {
                 const lore = new ExColorLoreUtil(e.afterItem);
                 TalentData.calculateTalentToLore(this.data.talent.talents, this.data.talent.occupation, ExItem.getInstance(e.afterItem), this.getLang());
+                if (e.afterItem.typeId.startsWith("dec:"))
+                    lore.set(ExColorLoreUtil.LoreFlag.TAG, "在主手时: +40％攻击伤害");
                 bag.setItem(this.exPlayer.selectedSlot, e.afterItem);
                 let maxSingleDamage = parseFloat((_a = lore.getValueUseMap("total", this.getLang().maxSingleDamage)) !== null && _a !== void 0 ? _a : "0");
                 let maxSecondaryDamage = parseFloat((_b = lore.getValueUseMap("total", this.getLang().maxSecondaryDamage)) !== null && _b !== void 0 ? _b : "0");
