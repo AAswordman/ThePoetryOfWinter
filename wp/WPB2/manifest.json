@@ -13,7 +13,7 @@
             "type": "script",
             "uuid": "c2021c83-08e8-9ade-0916-6cd21931fac5",
             "version": [1, 6, 0],
-            "entry": "scripts/out/index.js"
+            "entry": "scripts/out/pom.js"
         },
         {
             "type": "data",

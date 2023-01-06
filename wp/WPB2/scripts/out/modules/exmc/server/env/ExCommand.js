@@ -17,10 +17,19 @@ export default class ExCommand {
         this.runner = runner;
     }
     run(str, ...entities) {
-        const p = new Promise((resolve, reject) => {
-            ExCommand.queue.push([this.runner, str, entities, resolve, reject]);
-        });
-        return p;
+        if (typeof str === "string") {
+            const p = new Promise((resolve, reject) => {
+                ExCommand.queue.push([this.runner, str, entities, resolve, reject]);
+            });
+            return p;
+        }
+        else {
+            let arr = [];
+            for (let i of str) {
+                this.run(i, ...entities);
+            }
+            return arr;
+        }
     }
     static init(server) {
         this.queue = new Queue();

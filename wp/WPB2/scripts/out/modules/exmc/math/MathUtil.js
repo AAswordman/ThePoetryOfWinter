@@ -10,5 +10,9 @@ export default class MathUtil {
     static zeroIfNaN(num) {
         return isNaN(num) ? 0 : num;
     }
+    static randomInteger(min, max) {
+        let length = Math.floor(Math.random() * (max - min + 1));
+        return min + length;
+    }
 }
 //# sourceMappingURL=MathUtil.js.map
