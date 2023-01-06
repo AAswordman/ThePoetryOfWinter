@@ -1,3 +1,4 @@
+import { ItemEnchantsComponent } from "@minecraft/server";
 export default class ExItem {
     constructor(item) {
         this._item = item;
@@ -28,10 +29,10 @@ export default class ExItem {
         return this._item.hasComponent(str);
     }
     getEnchantsComponent() {
-        return this.getComponent("minecraft:enchantments");
+        return this.getComponent(ItemEnchantsComponent.componentId);
     }
     hasEnchantsComponent() {
-        return this.hasComponent("minecraft:enchantments");
+        return this.hasComponent(ItemEnchantsComponent.componentId);
     }
 }
 ExItem.propertyNameCache = "exCache";
