@@ -7,7 +7,7 @@
 			"ES6","DOM"
 		],
 		"sourceMap": true,
-		"rootDir": "src",
+		"rootDir": "ExcellentMInecraftscripts/src",
         "moduleResolution": "node",
 		"strict": true,
         "downlevelIteration": true,

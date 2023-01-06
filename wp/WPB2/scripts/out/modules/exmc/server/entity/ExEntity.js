@@ -1,4 +1,4 @@
-import ExEntityComponentId from './ExEntityComponentId.js';
+import { EntityHealthComponent, EntityInventoryComponent, EntityVariantComponent } from '@minecraft/server';
 import ExScoresManager from './ExScoresManager.js';
 import Vector3 from '../../math/Vector3.js';
 import ExEntityBag from './ExEntityBag.js';
@@ -101,10 +101,10 @@ export default class ExEntity {
         return this._entity.getComponent(name);
     }
     hasHealthComponent() {
-        return this.hasComponent(ExEntityComponentId.health);
+        return this.hasComponent(EntityHealthComponent.componentId);
     }
     getHealthComponent() {
-        return this.getComponent(ExEntityComponentId.health);
+        return this.getComponent(EntityHealthComponent.componentId);
     }
     getHealth() {
         return this.getHealthComponent().current;
@@ -113,13 +113,22 @@ export default class ExEntity {
         return this.getHealthComponent().value;
     }
     hasInventoryComponent() {
-        return this.hasComponent(ExEntityComponentId.inventory);
+        return this.hasComponent(EntityInventoryComponent.componentId);
     }
     getInventoryComponent() {
-        return this.getComponent(ExEntityComponentId.inventory);
+        return this.getComponent(EntityInventoryComponent.componentId);
     }
     getBag() {
         return new ExEntityBag(this);
+    }
+    hasVariantComponent() {
+        return this.hasComponent(EntityVariantComponent.componentId);
+    }
+    getVariantComponent() {
+        return this.getComponent(EntityVariantComponent.componentId);
+    }
+    getVariant() {
+        return this.getVariantComponent().value;
     }
 }
 ExEntity.propertyNameCache = "exCache";
