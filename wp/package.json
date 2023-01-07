@@ -8,7 +8,7 @@
         "@minecraft/server-ui": "^1.0.0-beta.11940b24"
     },
     "devDependencies": {
-        "reflect-metadata": "^0.1.13",
+        //"reflect-metadata": "^0.1.13",
         "ts-loader": "^9.4.1",
         "typescript": "^4.8.4",
         "webpack": "^5.74.0",

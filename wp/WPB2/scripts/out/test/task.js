@@ -1,3 +1,4 @@
+"use strict";
 function taskTranToNum(t) {
     let task_arr = ["Ao", "Jf", "Sk", "Ch", "Om", "Bs", "Hd", "Oa", "Gx", "Xe"];
     let n = "";
