@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 module.exports = {
-    //entry: './WPB2/scripts/out/index.js', // 打包对入口文件，期望打包对文件入口。 这里配置tsc05.ts的位置
+    //entry: './WPB2/scripts/out/test/task.js', // 打包对入口文件，期望打包对文件入口。 这里配置tsc05.ts的位置
     entry: './WPB2/scripts/out/index.js',
     output: {
         filename: 'index.js', // 输出文件名称
@@ -25,7 +25,7 @@ module.exports = {
     externalsType: "module",
     externals: {
         "@minecraft/server": "@minecraft/server",
-        "@minecraft/server-ui": "@minecraft/server-ui"
-        // "reflect-metadata": "reflect-metadata"
+        "@minecraft/server-ui": "@minecraft/server-ui",
+        "@minecraft/server-gametest": "@minecraft/server-gametest"
     }
 }

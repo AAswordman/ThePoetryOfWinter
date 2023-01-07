@@ -3,7 +3,7 @@ import ExDimension from "./ExDimension.js";
 import { world, system } from "@minecraft/server";
 import ExGameConfig from "./ExGameConfig.js";
 import initConsole from "../utils/Console.js";
-import ExServerEvents from "./ExServerEvents.js";
+import ExServerEvents from "./events/ExServerEvents.js";
 import UUID from "../utils/UUID.js";
 import ExErrorQueue from './ExErrorQueue.js';
 import ExTickQueue from "./ExTickQueue.js";

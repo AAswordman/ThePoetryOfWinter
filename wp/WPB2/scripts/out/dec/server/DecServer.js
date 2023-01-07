@@ -14,7 +14,7 @@ function taskTranToNum(t) {
     let n = "";
     while (t.length >= 2) {
         let msg = t.slice(0, 2);
-        n = n + (task_arr.filter((e) => e === msg)).toString();
+        n = n + (task_arr.findIndex(e => e === msg));
         t = t.slice(3);
     }
     return n;
@@ -51,19 +51,16 @@ function taskUi(p, i) {
     });
 }
 function taskUiChoose(p, id) {
-    let ui_ch = new ActionFormData();
-    ui_ch.button("text.dec:task_complete_button.name");
-    let title = "";
-    let body = "";
-    let commands = [];
-    if (tasks.findIndex(t => t.id === id) !== -1) {
+    let ui_ch = new ActionFormData().button("text.dec:task_complete_button.name");
+    const index = tasks.findIndex(t => t.id === id);
+    if (index === -1) {
         return;
     }
-    ui_ch = ui_ch.title(title);
-    ui_ch = ui_ch.body(body);
-    ui_ch.show(p).then(s => {
+    ui_ch.title(tasks[index].title())
+        .body(tasks[index].body())
+        .show(p).then(s => {
         if (s.selection == 0) {
-            ExPlayer.getInstance(p).command.run(commands);
+            ExPlayer.getInstance(p).command.run(tasks[index].commands);
         }
     });
 }
@@ -82,14 +79,17 @@ export default class DecServer extends ExGameServer {
                 let errMsg = "";
                 switch (cmds[0]) {
                     case "help":
-                        cmdRunner.command.run("function help");
+                        sender.command.run("function help");
+                        break;
+                    case "creators":
+                        sender.command.run("function test/creator_list");
                         break;
                     case "diemode":
                         if (cmds[1] === "open") {
-                            cmdRunner.command.run("function diemode/open");
+                            sender.command.run("function diemode/open");
                         }
                         else if (cmds[1] === "test") {
-                            cmdRunner.command.run("function diemode/test");
+                            sender.command.run("function diemode/test");
                         }
                         else {
                             errMsg = "Invalid command " + cmds[1];
