@@ -7,14 +7,16 @@
 			"ES6","DOM"
 		],
 		"sourceMap": true,
-		"rootDir": "ExcellentMInecraftscripts/src",
+		//"rootDir": "ExcellentMInecraftscripts/src",
         "moduleResolution": "node",
 		"strict": true,
         "downlevelIteration": true,
-		"alwaysStrict": false,
+		"alwaysStrict": true,
         "resolveJsonModule": true,
 		"emitDecoratorMetadata": true,
 		"experimentalDecorators": true,
+        "allowJs": true,
+        "skipLibCheck": true,
 		"noImplicitOverride": true,
 		"strictNullChecks": true
 		/*
@@ -28,6 +30,10 @@
 		// "noUnusedParameters": true,  /* Report errors on unused parameters. */
 	},
 	"exclude": [
-		"node_modules"
-	]
+		"node_modules",
+        "ExcellentMInecraftscripts/**/*.d.ts?"
+	],
+    "include": [
+        "ExcellentMInecraftscripts/src"
+    ]
 }

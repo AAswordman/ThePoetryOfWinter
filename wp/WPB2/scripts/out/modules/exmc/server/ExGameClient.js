@@ -132,4 +132,9 @@ export default class ExGameClient {
         this.getEvents().exEvents.tick.subscribe(method);
     }
 }
+export function registerEvent(eventName) {
+    return function (target, propertyName, descriptor) {
+        target.getEvents().register(eventName, target[propertyName].bind(target));
+    };
+}
 //# sourceMappingURL=ExGameClient.js.map
