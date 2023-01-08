@@ -12,6 +12,17 @@ export default class ExSystem {
     static hasChineseCharacter(str) {
         return this.chineseCharMatcher.test(str);
     }
+    static keys(obj) {
+        const keys = Reflect.ownKeys(obj);
+        let i = obj.__proto__;
+        while (i) {
+            for (let key of Reflect.ownKeys(i)) {
+                keys.push(key);
+            }
+            i = i.__proto__;
+        }
+        return keys;
+    }
 }
 ExSystem.idMap = new Map();
 ExSystem.chineseCharMatcher = /^([\u4E00-\u9FA5])*$/;

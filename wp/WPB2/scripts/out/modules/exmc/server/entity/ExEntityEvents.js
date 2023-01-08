@@ -8,8 +8,8 @@ export default class ExEntityEvents {
             itemUse: new Listener(this, "itemUse"),
             tick: new Listener(this, "tick"),
             entityHit: new Listener(this, "entityHit"),
-            onHitEntity: new Listener(this, "playerHitEntity"),
-            onHurt: new Listener(this, "playerHurt"),
+            onHitEntity: new Listener(this, "onHitEntity"),
+            onHurt: new Listener(this, "onHurt"),
             itemOnHandChange: new Listener(this, "itemOnHandChange"),
             onLongTick: new Listener(this, "onLongTick"),
             blockBreak: new Listener(this, "blockBreak")

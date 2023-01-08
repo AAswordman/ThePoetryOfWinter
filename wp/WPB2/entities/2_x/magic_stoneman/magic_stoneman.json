@@ -3,7 +3,7 @@
   "minecraft:entity": {
     "description": {
       "identifier": "wb:magic_stoneman",
-      "is_spawnable": false,
+      "is_spawnable": true,
       "is_summonable": true,
       "is_experimental": false,
       "runtime_identifier": "wb:magic_stoneman",

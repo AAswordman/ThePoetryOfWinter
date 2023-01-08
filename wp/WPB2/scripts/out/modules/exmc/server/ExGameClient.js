@@ -5,6 +5,8 @@ import ExPlayer from "./entity/ExPlayer.js";
 import ExDimension from "./ExDimension.js";
 import ExErrorQueue from "./ExErrorQueue.js";
 import ExActionAlert from "./ui/ExActionAlert.js";
+import "../../reflect-metadata/Reflect.js";
+import { eventDecoratorFactory } from "./events/EventDecoratorFactory.js";
 export default class ExGameClient {
     constructor(server, id, player) {
         this.debuggerChatTest = (e) => {
@@ -38,6 +40,7 @@ export default class ExGameClient {
         };
         this.setTimeout(func, 100);
         this.onJoin();
+        eventDecoratorFactory(this.getEvents(), this);
     }
     debug_removeAllTag() {
         for (let i of this.exPlayer.getTags()) {
@@ -131,10 +134,5 @@ export default class ExGameClient {
         };
         this.getEvents().exEvents.tick.subscribe(method);
     }
-}
-export function registerEvent(eventName) {
-    return function (target, propertyName, descriptor) {
-        target.getEvents().register(eventName, target[propertyName].bind(target));
-    };
 }
 //# sourceMappingURL=ExGameClient.js.map
