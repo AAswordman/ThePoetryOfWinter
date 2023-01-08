@@ -30,8 +30,7 @@
 		// "noUnusedParameters": true,  /* Report errors on unused parameters. */
 	},
 	"exclude": [
-		"node_modules",
-        "ExcellentMInecraftscripts/**/*.d.ts?"
+		"node_modules"
 	],
     "include": [
         "ExcellentMInecraftscripts/src"

@@ -16,6 +16,7 @@ import Vector3 from '../../modules/exmc/math/Vector3.js';
 import ExGameVector3 from '../../modules/exmc/server/math/ExGameVector3.js';
 import ExEntity from '../../modules/exmc/server/entity/ExEntity.js';
 import { GameMode } from '@minecraft/server';
+import PomMagicStoneBoss from './entities/PomMagicStoneBoss.js';
 export default class PomServer extends ExGameServer {
     constructor(config) {
         super(config);
@@ -188,6 +189,7 @@ export default class PomServer extends ExGameServer {
             }
         }).delay(20 * 12);
         this.ruinFuncLooper.start();
+        this.addEntityController("wb:magic_stoneman", PomMagicStoneBoss);
     }
     sayTo(str) {
         this.getExDimension(MinecraftDimensionTypes.theEnd).command.run(`tellraw @a {"rawtext": [{"text": "${str}"}]}`);

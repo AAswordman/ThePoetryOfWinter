@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import ExGameClient from "./ExGameClient.js";
 import ExDimension from "./ExDimension.js";
-import { world, PlayerJoinEvent, PlayerLeaveEvent, system } from "@minecraft/server";
+import { world, PlayerJoinEvent, PlayerLeaveEvent, system, EntityCreateEvent } from "@minecraft/server";
 import ExGameConfig from "./ExGameConfig.js";
 import initConsole from "../utils/Console.js";
 import ExServerEvents from "./events/ExServerEvents.js";
@@ -20,14 +20,7 @@ import ExCommand from './env/ExCommand.js';
 import ExClientEvents from "./events/ExClientEvents.js";
 import ExEntityEvents from "./entity/ExEntityEvents.js";
 import "../../reflect-metadata/Reflect.js";
-const rigisterData = [];
-export function registerEvent(eventName) {
-    return function (target, propertyName, descriptor) {
-        rigisterData.push([propertyName, eventName]);
-        //Reflect.defineMetadata("eventName", eventName, ExGameServer, propertyName);
-        //console.warn(format(`Reflect.defineMetadata("eventName", {0}, ExGameServer, {1});`,eventName,propertyName))
-    };
-}
+import { eventDecoratorFactory, registerEvent } from "./events/EventDecoratorFactory.js";
 export default class ExGameServer {
     constructor(config) {
         this.entityControllers = new Map();
@@ -46,14 +39,16 @@ export default class ExGameServer {
         ExCommand.init(this);
         ExClientEvents.init(this);
         ExEntityEvents.init(this);
-        for (let [propertyName, eventName] of rigisterData) {
-            // const v = Reflect.getMetadata("eventName", ExGameServer, k);
-            // console.warn(v);
-            this.getEvents().register(eventName, this[propertyName].bind(this));
-        }
+        eventDecoratorFactory(this.getEvents(), this);
     }
     addEntityController(id, ec) {
         this.entityControllers.set(id, ec);
+    }
+    onEntitySpawn(e) {
+        const entityConstructor = this.entityControllers.get(e.entity.typeId);
+        if (entityConstructor) {
+            new (entityConstructor)(e.entity, this);
+        }
     }
     getDimension(dimensionId) {
         return world.getDimension(dimensionId);
@@ -117,6 +112,12 @@ export default class ExGameServer {
         this.getEvents().events.tick.subscribe(method);
     }
 }
+__decorate([
+    registerEvent("entityCreate"),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [EntityCreateEvent]),
+    __metadata("design:returntype", void 0)
+], ExGameServer.prototype, "onEntitySpawn", null);
 __decorate([
     registerEvent("playerJoin"),
     __metadata("design:type", Function),
