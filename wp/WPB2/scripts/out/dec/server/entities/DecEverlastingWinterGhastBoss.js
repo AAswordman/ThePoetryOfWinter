@@ -12,7 +12,7 @@ export class DecEverlastingWinterGhastBoss1 extends ExEntityController {
     onSpawn() {
         this.setTimeout(() => {
             this.music.loop(this.getEvents(), this.exEntity.getExDimension(), this.entity.location);
-        }, 500);
+        }, 1000);
         super.onSpawn();
     }
 }
@@ -28,7 +28,7 @@ export class DecEverlastingWinterGhastBoss2 extends ExEntityController {
     onSpawn() {
         this.setTimeout(() => {
             this.music.loop(this.getEvents(), this.exEntity.getExDimension(), this.entity.location);
-        }, 500);
+        }, 1000);
         super.onSpawn();
     }
 }
