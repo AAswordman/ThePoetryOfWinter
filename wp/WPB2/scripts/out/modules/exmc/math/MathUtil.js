@@ -8,6 +8,10 @@ export default class MathUtil {
         return regPos.test(val) && regNeg.test(val);
     }
     static zeroIfNaN(num) {
+        if (typeof num === "string")
+            num = parseFloat(num);
+        if (num === undefined)
+            return 0;
         return isNaN(num) ? 0 : num;
     }
     static randomInteger(min, max) {

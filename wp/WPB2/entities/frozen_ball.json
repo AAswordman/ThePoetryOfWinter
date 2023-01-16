@@ -6,7 +6,15 @@
     "runtime_identifier": "minecraft:egg",
     "is_spawnable": false,
     "is_summonable": true,
-    "is_experimental": false
+    "is_experimental": false,
+    "scripts": {
+      "animate": [
+        "ticking"
+      ]
+    },
+    "animations": {
+      "ticking": "controller.animation.particle_everlasting_winter_wake"
+    }
   },
 
   "component_groups": {
@@ -18,7 +26,7 @@
     "height": 0.31
    },
    "minecraft:explode": {
-    "fuseLength": 4,
+    "fuseLength": 3,
     "fuseLit": true,
     "power": 0,
     "causesFire": false,

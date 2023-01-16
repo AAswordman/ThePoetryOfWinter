@@ -13,13 +13,16 @@
     },
 
     "components": {
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
       "minecraft:boss": {
         "should_darken_sky": false,
         "name": "mini_boss.dec:obsidian_golem.name",
         "hud_range": 16
       },
       "minecraft:type_family": {
-        "family": [ "obsidian_golem", "mob", "monster", "golem" ]
+        "family": [ "mini_boss","obsidian_golem", "mob", "monster", "golem" ]
       },
       "minecraft:experience_reward": {
         "on_death": "query.last_hit_by_player ? 60 : 0"

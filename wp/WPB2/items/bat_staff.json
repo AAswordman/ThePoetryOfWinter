@@ -28,7 +28,7 @@
         }
       },
       "minecraft:cooldown": {
-        "category": "weapon",
+        "category": "staff",
         "duration": 0.9
       },
       "minecraft:durability": {

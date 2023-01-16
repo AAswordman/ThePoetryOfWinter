@@ -5,7 +5,6 @@
       "category": "equipment",
       "identifier": "dec:potato_rice"
     },
-    
     "components": {
       "minecraft:creative_category": {
         "parent": "itemGroup.name.miscFood"
@@ -13,10 +12,10 @@
       "minecraft:display_name": {
         "value": "item.dec:potato_rice.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "potato_rice"
-     },
-	  "minecraft:use_animation": "eat",
+      },
+      "minecraft:use_animation": "eat",
       "minecraft:render_offsets": "cookie",
       "minecraft:use_duration": 2,
       "minecraft:food": {

@@ -8,7 +8,24 @@
       "is_summonable": true,
       "is_experimental": false
     },
-
+    "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "minecraft:from_night_event": {
+        "minecraft:environment_sensor": {
+          "triggers": {
+            "filters": {
+              "test": "is_daytime",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "event": "minecraft:despawn"
+          }
+        }
+      }
+    },
     "components": {
       "minecraft:experience_reward": {
         "on_death": "query.last_hit_by_player ? 5 + (query.equipment_count * Math.Random(1,6)) : 0"
@@ -31,7 +48,7 @@
         "height": 1.98
       },
       "minecraft:attack": {
-        "damage": 9,
+        "damage": 2,
         "effect_name": "wither",
         "effect_duration": 6
       },
@@ -125,6 +142,9 @@
       },
       "minecraft:physics": {
       },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
       "minecraft:pushable": {
         "is_pushable": true,
         "is_pushable_by_piston": true
@@ -132,6 +152,21 @@
     },
 
     "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
+      "minecraft:from_night_event": {
+        "trigger": "minecraft:entity_spawned",
+        "add": {
+          "component_groups": [
+            "minecraft:from_night_event"
+          ]
+        }
+      },
       "minecraft:entity_spawned": {
 
       }

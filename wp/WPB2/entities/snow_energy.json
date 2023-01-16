@@ -6,17 +6,16 @@
       "runtime_identifier": "minecraft:egg",
       "is_spawnable": false,
       "is_summonable": true,
-      "is_experimental": false,
-      "scripts": {
-        "animate": [
-          "ticking"
-        ]
-      },
-      "animations": {
-        "ticking": "controller.animation.particle_blizzard_wake"
-      }
+      "is_experimental": false
     },
     "components": {
+      "minecraft:timer": {
+        "looping": true,
+        "time": 0.3,
+        "time_down_event": {
+          "event": "minecraft:particle"
+        }
+      },
       "minecraft:collision_box": {
         "width": 0.2,
         "height": 0.2
@@ -62,6 +61,15 @@
       "minecraft:pushable": {
         "is_pushable": false,
         "is_pushable_by_piston": true
+      }
+    },
+    "events": {
+      "minecraft:particle": {
+        "run_command": {
+          "command": [
+            "particle dec:everlasting_winter_wake_particle ~~~"
+          ]
+        }
       }
     }
   }

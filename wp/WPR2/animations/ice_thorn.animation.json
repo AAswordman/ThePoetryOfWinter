@@ -1,0 +1,21 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.ice_thorn.spawn": {
+			"loop": true,
+			"animation_length": 2,
+			"bones": {
+				"main": {
+					"scale": {
+						"0.0": [1, 0, 1],
+						"0.125": [1, 1.5, 1],
+						"0.25": [1, 1, 1],
+						"1.5": [1, 1, 1],
+						"1.875": [1, 1.5, 1],
+						"2.0": [1, 0, 1]
+					}
+				}
+			}
+		}
+	}
+}

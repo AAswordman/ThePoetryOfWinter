@@ -3,16 +3,17 @@
   "minecraft:client_entity": {
     "description": {
       "identifier": "dec:tnt_creeper",
-      
       "materials": {
         "default": "creeper",
         "charged": "charged_creeper"
       },
       "textures": {
-        "default": "textures/entity/creeper/tnt_creeper"
+        "default": "textures/entity/creeper/tnt_creeper",
+        "charged": "textures/entity/creeper/creeper_armor"
       },
       "geometry": {
-        "default": "geometry.creeper.v1.8"
+        "default": "geometry.creeper",
+        "charged": "geometry.creeper.charged"
       },
       "spawn_egg": {
         "base_color": "#E25848",

@@ -1,0 +1,47 @@
+{
+    "format_version": "1.16.100",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dec:bracken_crop"
+        },
+        "components": {
+			"minecraft:breathability": "air",
+            "minecraft:geometry": "geometry.crop.hash",
+            "minecraft:entity_collision": false,
+            "minecraft:pick_collision": {
+                "origin": [
+                    -6,
+                    0,
+                    -6
+                ],
+                "size": [
+                    12,
+                    13,
+                    12
+                ]
+            },
+            "minecraft:destroy_time": 0.001,
+            "minecraft:map_color": "#9DDF7B",
+            "minecraft:light_dampening": 0.0,
+            "minecraft:loot": "loot_tables/blocks/bracken_crop.json",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "bracken_crop",
+                    "render_method": "alpha_test"
+                }
+            },
+            "minecraft:placement_filter": {
+                "conditions": [
+                    {
+                        "allowed_faces": [
+                            "up"
+                        ],
+                        "block_filter": [
+                            "grass"
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

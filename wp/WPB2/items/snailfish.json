@@ -5,7 +5,6 @@
       "category": "nature",
       "identifier": "dec:snailfish"
     },
-    
     "components": {
       "minecraft:creative_category": {
         "parent": "itemGroup.name.rawFood"
@@ -13,10 +12,10 @@
       "minecraft:display_name": {
         "value": "item.dec:snailfish.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "snailfish"
-     },
-	  "minecraft:use_animation": "eat",
+      },
+      "minecraft:use_animation": "eat",
       "minecraft:render_offsets": "fish",
       "minecraft:use_duration": 1.6,
       "minecraft:food": {

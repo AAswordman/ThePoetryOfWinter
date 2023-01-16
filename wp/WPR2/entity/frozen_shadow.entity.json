@@ -10,11 +10,7 @@
         "default": "textures/entity/frozen_shadow"
       },
       "geometry": {
-        "default": "geometry.humanoid.customSlim"
-      },
-      "spawn_egg": {
-        "base_color": "#A5D3FF",
-        "overlay_color": "#A0A5FF"
+        "default": "geometry.cuteboi"
       },
       "scripts": {
         "pre_animation": [

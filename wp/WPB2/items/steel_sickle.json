@@ -17,7 +17,7 @@
       },
       "minecraft:weapon": {
         "on_hurt_entity": {
-          "event": "attack",
+          "event": "steel_sickle_attack",
           "target": "self"
         },
         "on_hit_block": {
@@ -31,21 +31,21 @@
         "max_durability": 421
       },
       "minecraft:repairable": {
-				"repair_items": [
-					{
-						"items": [
-							"dec:steel_ingot"
-						],
-						"repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.3"
-					},
-					{
-						"items": [
-							"dec:steel_nugget"
-						],
-						"repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.03"
-					}
-				]
-			},
+        "repair_items": [
+          {
+            "items": [
+              "dec:steel_ingot"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.3"
+          },
+          {
+            "items": [
+              "dec:steel_nugget"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.03"
+          }
+        ]
+      },
       "minecraft:damage": 7,
       "minecraft:enchantable": {
         "value": 15,
@@ -59,16 +59,16 @@
           {
             "block": "minecraft:web",
             "speed": 15,
-						"on_dig": {
-							"event": "attack"
-						}
+            "on_dig": {
+              "event": "attack"
+            }
           },
           {
             "block": "minecraft:bamboo",
             "speed": 10,
-						"on_dig": {
-							"event": "attack"
-						}
+            "on_dig": {
+              "event": "attack"
+            }
           }
         ]
       },
@@ -81,6 +81,68 @@
           "type": "magic",
           "amount": 1
         }
+      },
+      "steel_sickle_attack": {
+        "sequence": [
+          {
+            "randomize": [
+              {
+                "weight": 1,
+                "sequence": [
+                  {
+                    "add_mob_effect": {
+                      "effect": "slowness",
+                      "duration": 6,
+                      "amplifier": 0,
+                      "target": "other"
+                    }
+                  },
+                  {
+                    "run_command": {
+                      "command": [
+                        "playanimation @s animation.humanoid.vertical_direction_brandish",
+                        "particle dec:steel_sickle_particle ^^^1"
+                      ],
+                      "target": "holder"
+                    }
+                  }
+                ]
+              },
+              {
+                "weight": 7
+              }
+            ]
+          },
+          {
+            "randomize": [
+              {
+                "weight": 1,
+                "sequence": [
+                  {
+                    "add_mob_effect": {
+                      "effect": "weakness",
+                      "duration": 7,
+                      "amplifier": 1,
+                      "target": "other"
+                    }
+                  },
+                  {
+                    "run_command": {
+                      "command": [
+                        "playanimation @s animation.humanoid.vertical_direction_brandish",
+                        "particle dec:steel_sickle_particle ^^^1"
+                      ],
+                      "target": "holder"
+                    }
+                  }
+                ]
+              },
+              {
+                "weight": 6
+              }
+            ]
+          }
+        ]
       }
     }
   }

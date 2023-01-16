@@ -12,7 +12,7 @@
       "minecraft:display_name": {
         "value": "item.dec:everlasting_winter_ingot.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "everlasting_winter_ingot"
       }
     }

@@ -12,7 +12,7 @@
       "minecraft:display_name": {
         "value": "item.dec:magic_powder.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "magic_powder"
       }
     }

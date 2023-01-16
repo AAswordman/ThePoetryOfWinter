@@ -1,0 +1,26 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "dec:black_shorts",
+          "weight": 1,
+          "pools": [
+            {
+              "rolls": 1,
+              "entries": [
+                {
+                  "type": "item",
+                  "name": "dec:white_t_shirt",
+                  "weight": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

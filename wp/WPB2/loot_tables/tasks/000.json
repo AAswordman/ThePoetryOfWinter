@@ -1,0 +1,30 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:lava_bucket",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "dec:lava_dart",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": 32
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

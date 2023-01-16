@@ -21,6 +21,10 @@
           "min_size": 1,
           "max_size": 2
         },
+        "minecraft:density_limit": {
+          "surface": 3,
+          "underground": 0
+        },
         "minecraft:permute_type": [
           {
             "weight": 95

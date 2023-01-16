@@ -9,15 +9,20 @@
       "scripts": {
         "animate": [
           "host_of_deep_around",
-          "host_of_deep_track_attack"
+          "host_of_deep_track_attack",
+          "host_of_deep_teleport_2"
         ]
       },
       "animations": {
         "host_of_deep_around": "controller.animation.host_of_deep_around",
-        "host_of_deep_track_attack": "animation.host_of_deep_track_attack"
+        "host_of_deep_track_attack": "animation.host_of_deep_track_attack",
+        "host_of_deep_teleport_2": "animation.host_of_deep_teleport_2"
       }
     },
     "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      },
       "minecraft:angry": {
         "minecraft:boss": {
           "should_darken_sky": false,
@@ -25,8 +30,8 @@
           "hud_range": 64
         },
         "minecraft:health": {
-          "value": 300,
-          "max": 300
+          "value": 400,
+          "max": 400
         },
         "minecraft:movement": {
           "value": 0.44
@@ -42,9 +47,13 @@
         },
         "minecraft:behavior.ranged_attack": {
           "priority": 0,
-          "attack_interval_min": 2.0,
-          "attack_interval_max": 2.0,
-          "attack_radius": 20.0
+          "burst_shots": 20,
+          "burst_interval": 0.3,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 4.0,
+          "attack_interval_min": 1.0,
+          "attack_interval_max": 1.0,
+          "attack_radius": 64.0
         },
         "minecraft:shooter": {
           "def": "dec:deep_cloud"
@@ -63,7 +72,7 @@
           "summon_choices": [
             {
               "min_activation_range": 0.0,
-              "max_activation_range": 7.0,
+              "max_activation_range": 10.0,
               "cooldown_time": 1.0,
               "weight": 2,
               "cast_duration": 2.0,
@@ -71,433 +80,205 @@
               "start_sound_event": "cast.spell",
               "sequence": [
                 {
-                  "shape": "circle",
+                  "shape": "line",
                   "target": "self",
-                  "base_delay": 1.0,
-                  "delay_per_summon": 0.0,
-                  "num_entities_spawned": 7,
+                  "base_delay": 0.5,
+                  "delay_per_summon": 0.1,
+                  "num_entities_spawned": 15,
                   "entity_type": "minecraft:evocation_fang",
-                  "size": 0.7,
+                  "size": 15,
                   "entity_lifespan": 1.1,
                   "sound_event": "prepare.attack"
                 },
                 {
                   "shape": "circle",
                   "target": "self",
-                  "base_delay": 0.8,
-                  "delay_per_summon": 0.0,
-                  "num_entities_spawned": 11,
-                  "entity_type": "minecraft:evocation_fang",
-                  "size": 1.4,
-                  "entity_lifespan": 1.1
-                },
-                {
-                  "shape": "circle",
-                  "target": "self",
-                  "base_delay": 0.8,
-                  "delay_per_summon": 0.0,
-                  "num_entities_spawned": 15,
-                  "entity_type": "minecraft:evocation_fang",
-                  "size": 2.1,
-                  "entity_lifespan": 1.1
-                },
-                {
-                  "shape": "circle",
-                  "target": "self",
-                  "base_delay": 0.8,
-                  "delay_per_summon": 0.0,
-                  "num_entities_spawned": 11,
-                  "entity_type": "minecraft:evocation_fang",
-                  "size": 1.4,
-                  "entity_lifespan": 1.1
-                },
-                {
-                  "shape": "circle",
-                  "target": "self",
-                  "base_delay": 0.8,
+                  "base_delay": 0,
                   "delay_per_summon": 0.0,
                   "num_entities_spawned": 7,
                   "entity_type": "minecraft:evocation_fang",
-                  "size": 0.7,
-                  "entity_lifespan": 1.1
+                  "size": 2,
+                  "entity_lifespan": 1.1,
+                  "sound_event": "prepare.attack"
                 },
                 {
                   "shape": "circle",
                   "target": "self",
-                  "base_delay": 0.8,
+                  "base_delay": 0.2,
                   "delay_per_summon": 0.0,
                   "num_entities_spawned": 11,
                   "entity_type": "minecraft:evocation_fang",
-                  "size": 1.4,
+                  "size": 3,
                   "entity_lifespan": 1.1
                 },
                 {
                   "shape": "circle",
                   "target": "self",
-                  "base_delay": 0.8,
+                  "base_delay": 0.2,
                   "delay_per_summon": 0.0,
                   "num_entities_spawned": 15,
                   "entity_type": "minecraft:evocation_fang",
-                  "size": 2.1,
+                  "size": 4,
                   "entity_lifespan": 1.1
                 },
                 {
                   "shape": "circle",
                   "target": "self",
-                  "base_delay": 0.8,
+                  "base_delay": 0.2,
                   "delay_per_summon": 0.0,
-                  "num_entities_spawned": 11,
+                  "num_entities_spawned": 19,
                   "entity_type": "minecraft:evocation_fang",
-                  "size": 1.4,
+                  "size": 5,
                   "entity_lifespan": 1.1
                 },
                 {
                   "shape": "circle",
                   "target": "self",
-                  "base_delay": 0.8,
+                  "base_delay": 0.2,
                   "delay_per_summon": 0.0,
-                  "num_entities_spawned": 7,
+                  "num_entities_spawned": 23,
                   "entity_type": "minecraft:evocation_fang",
-                  "size": 0.7,
+                  "size": 6,
                   "entity_lifespan": 1.1
                 },
                 {
                   "shape": "circle",
                   "target": "self",
-                  "base_delay": 0.8,
+                  "base_delay": 0.2,
                   "delay_per_summon": 0.0,
-                  "num_entities_spawned": 11,
+                  "num_entities_spawned": 23,
                   "entity_type": "minecraft:evocation_fang",
-                  "size": 1.4,
+                  "size": 7,
                   "entity_lifespan": 1.1
                 },
                 {
                   "shape": "circle",
                   "target": "self",
-                  "base_delay": 0.8,
+                  "base_delay": 0.2,
                   "delay_per_summon": 0.0,
-                  "num_entities_spawned": 15,
+                  "num_entities_spawned": 23,
                   "entity_type": "minecraft:evocation_fang",
-                  "size": 2.1,
+                  "size": 8,
                   "entity_lifespan": 1.1
                 },
                 {
                   "shape": "circle",
                   "target": "self",
-                  "base_delay": 0.8,
+                  "base_delay": 0.2,
                   "delay_per_summon": 0.0,
-                  "num_entities_spawned": 11,
+                  "num_entities_spawned": 23,
                   "entity_type": "minecraft:evocation_fang",
-                  "size": 1.4,
+                  "size": 9,
                   "entity_lifespan": 1.1
                 },
                 {
                   "shape": "circle",
                   "target": "self",
-                  "base_delay": 0.8,
+                  "base_delay": 0.2,
                   "delay_per_summon": 0.0,
-                  "num_entities_spawned": 7,
+                  "num_entities_spawned": 23,
                   "entity_type": "minecraft:evocation_fang",
-                  "size": 0.7,
+                  "size": 10,
                   "entity_lifespan": 1.1
                 },
                 {
                   "shape": "circle",
                   "target": "self",
-                  "base_delay": 0.8,
+                  "base_delay": 0.2,
                   "delay_per_summon": 0.0,
-                  "num_entities_spawned": 11,
+                  "num_entities_spawned": 23,
                   "entity_type": "minecraft:evocation_fang",
-                  "size": 1.4,
+                  "size": 9,
                   "entity_lifespan": 1.1
                 },
                 {
                   "shape": "circle",
                   "target": "self",
-                  "base_delay": 0.8,
+                  "base_delay": 0.2,
                   "delay_per_summon": 0.0,
-                  "num_entities_spawned": 15,
+                  "num_entities_spawned": 23,
                   "entity_type": "minecraft:evocation_fang",
-                  "size": 2.1,
+                  "size": 8,
                   "entity_lifespan": 1.1
                 },
                 {
                   "shape": "circle",
                   "target": "self",
-                  "base_delay": 0.8,
+                  "base_delay": 0.2,
                   "delay_per_summon": 0.0,
-                  "num_entities_spawned": 11,
+                  "num_entities_spawned": 23,
                   "entity_type": "minecraft:evocation_fang",
-                  "size": 1.4,
+                  "size": 7,
                   "entity_lifespan": 1.1
                 },
                 {
                   "shape": "circle",
                   "target": "self",
-                  "base_delay": 0.8,
+                  "base_delay": 0.2,
                   "delay_per_summon": 0.0,
-                  "num_entities_spawned": 7,
+                  "num_entities_spawned": 23,
                   "entity_type": "minecraft:evocation_fang",
-                  "size": 0.7,
+                  "size": 6,
                   "entity_lifespan": 1.1
                 },
                 {
                   "shape": "circle",
                   "target": "self",
-                  "base_delay": 0.8,
+                  "base_delay": 0.2,
                   "delay_per_summon": 0.0,
-                  "num_entities_spawned": 11,
+                  "num_entities_spawned": 19,
                   "entity_type": "minecraft:evocation_fang",
-                  "size": 1.4,
+                  "size": 5,
                   "entity_lifespan": 1.1
                 },
                 {
                   "shape": "circle",
                   "target": "self",
-                  "base_delay": 0.8,
-                  "delay_per_summon": 0.0,
-                  "num_entities_spawned": 15,
-                  "entity_type": "minecraft:evocation_fang",
-                  "size": 2.1,
-                  "entity_lifespan": 1.1
-                },
-                {
-                  "shape": "circle",
-                  "target": "self",
-                  "base_delay": 0.8,
-                  "delay_per_summon": 0.0,
-                  "num_entities_spawned": 11,
-                  "entity_type": "minecraft:evocation_fang",
-                  "size": 1.4,
-                  "entity_lifespan": 1.1
-                },
-                {
-                  "shape": "circle",
-                  "target": "self",
-                  "base_delay": 0.8,
-                  "delay_per_summon": 0.0,
-                  "num_entities_spawned": 7,
-                  "entity_type": "minecraft:evocation_fang",
-                  "size": 0.7,
-                  "entity_lifespan": 1.1
-                },
-                {
-                  "shape": "circle",
-                  "target": "self",
-                  "base_delay": 0.8,
-                  "delay_per_summon": 0.0,
-                  "num_entities_spawned": 11,
-                  "entity_type": "minecraft:evocation_fang",
-                  "size": 1.4,
-                  "entity_lifespan": 1.1
-                },
-                {
-                  "shape": "circle",
-                  "target": "self",
-                  "base_delay": 0.8,
+                  "base_delay": 0.2,
                   "delay_per_summon": 0.0,
                   "num_entities_spawned": 15,
                   "entity_type": "minecraft:evocation_fang",
-                  "size": 2.1,
+                  "size": 4,
                   "entity_lifespan": 1.1
                 },
                 {
                   "shape": "circle",
                   "target": "self",
-                  "base_delay": 0.8,
+                  "base_delay": 0.2,
                   "delay_per_summon": 0.0,
                   "num_entities_spawned": 11,
                   "entity_type": "minecraft:evocation_fang",
-                  "size": 1.4,
+                  "size": 3,
                   "entity_lifespan": 1.1
                 },
                 {
                   "shape": "circle",
                   "target": "self",
-                  "base_delay": 0.8,
+                  "base_delay": 0.2,
                   "delay_per_summon": 0.0,
                   "num_entities_spawned": 7,
                   "entity_type": "minecraft:evocation_fang",
-                  "size": 0.7,
-                  "entity_lifespan": 1.1
-                },
-                {
-                  "shape": "circle",
-                  "target": "self",
-                  "base_delay": 0.8,
-                  "delay_per_summon": 0.0,
-                  "num_entities_spawned": 11,
-                  "entity_type": "minecraft:evocation_fang",
-                  "size": 1.4,
-                  "entity_lifespan": 1.1
-                },
-                {
-                  "shape": "circle",
-                  "target": "self",
-                  "base_delay": 0.8,
-                  "delay_per_summon": 0.0,
-                  "num_entities_spawned": 15,
-                  "entity_type": "minecraft:evocation_fang",
-                  "size": 2.1,
-                  "entity_lifespan": 1.1
-                },
-                {
-                  "shape": "circle",
-                  "target": "self",
-                  "base_delay": 0.8,
-                  "delay_per_summon": 0.0,
-                  "num_entities_spawned": 11,
-                  "entity_type": "minecraft:evocation_fang",
-                  "size": 1.4,
-                  "entity_lifespan": 1.1
-                },
-                {
-                  "shape": "circle",
-                  "target": "self",
-                  "base_delay": 0.8,
-                  "delay_per_summon": 0.0,
-                  "num_entities_spawned": 7,
-                  "entity_type": "minecraft:evocation_fang",
-                  "size": 0.7,
-                  "entity_lifespan": 1.1
-                },
-                {
-                  "shape": "circle",
-                  "target": "self",
-                  "base_delay": 0.8,
-                  "delay_per_summon": 0.0,
-                  "num_entities_spawned": 11,
-                  "entity_type": "minecraft:evocation_fang",
-                  "size": 1.4,
-                  "entity_lifespan": 1.1
-                },
-                {
-                  "shape": "circle",
-                  "target": "self",
-                  "base_delay": 0.8,
-                  "delay_per_summon": 0.0,
-                  "num_entities_spawned": 15,
-                  "entity_type": "minecraft:evocation_fang",
-                  "size": 2.1,
-                  "entity_lifespan": 1.1
-                },
-                {
-                  "shape": "circle",
-                  "target": "self",
-                  "base_delay": 0.8,
-                  "delay_per_summon": 0.0,
-                  "num_entities_spawned": 11,
-                  "entity_type": "minecraft:evocation_fang",
-                  "size": 1.4,
-                  "entity_lifespan": 1.1
-                },
-                {
-                  "shape": "circle",
-                  "target": "self",
-                  "base_delay": 0.8,
-                  "delay_per_summon": 0.0,
-                  "num_entities_spawned": 7,
-                  "entity_type": "minecraft:evocation_fang",
-                  "size": 0.7,
-                  "entity_lifespan": 1.1
-                },
-                {
-                  "shape": "circle",
-                  "target": "self",
-                  "base_delay": 0.8,
-                  "delay_per_summon": 0.0,
-                  "num_entities_spawned": 11,
-                  "entity_type": "minecraft:evocation_fang",
-                  "size": 1.4,
-                  "entity_lifespan": 1.1
-                },
-                {
-                  "shape": "circle",
-                  "target": "self",
-                  "base_delay": 0.8,
-                  "delay_per_summon": 0.0,
-                  "num_entities_spawned": 15,
-                  "entity_type": "minecraft:evocation_fang",
-                  "size": 2.1,
-                  "entity_lifespan": 1.1
-                },
-                {
-                  "shape": "circle",
-                  "target": "self",
-                  "base_delay": 0.8,
-                  "delay_per_summon": 0.0,
-                  "num_entities_spawned": 11,
-                  "entity_type": "minecraft:evocation_fang",
-                  "size": 1.4,
-                  "entity_lifespan": 1.1
-                },
-                {
-                  "shape": "circle",
-                  "target": "self",
-                  "base_delay": 0.8,
-                  "delay_per_summon": 0.0,
-                  "num_entities_spawned": 7,
-                  "entity_type": "minecraft:evocation_fang",
-                  "size": 0.7,
-                  "entity_lifespan": 1.1
-                },
-                {
-                  "shape": "circle",
-                  "target": "self",
-                  "base_delay": 0.8,
-                  "delay_per_summon": 0.0,
-                  "num_entities_spawned": 11,
-                  "entity_type": "minecraft:evocation_fang",
-                  "size": 1.4,
-                  "entity_lifespan": 1.1
-                },
-                {
-                  "shape": "circle",
-                  "target": "self",
-                  "base_delay": 0.8,
-                  "delay_per_summon": 0.0,
-                  "num_entities_spawned": 15,
-                  "entity_type": "minecraft:evocation_fang",
-                  "size": 2.1,
-                  "entity_lifespan": 1.1
-                },
-                {
-                  "shape": "circle",
-                  "target": "self",
-                  "base_delay": 0.8,
-                  "delay_per_summon": 0.0,
-                  "num_entities_spawned": 11,
-                  "entity_type": "minecraft:evocation_fang",
-                  "size": 1.4,
-                  "entity_lifespan": 1.1
-                },
-                {
-                  "shape": "circle",
-                  "target": "self",
-                  "base_delay": 0.8,
-                  "delay_per_summon": 0.0,
-                  "num_entities_spawned": 7,
-                  "entity_type": "minecraft:evocation_fang",
-                  "size": 0.7,
-                  "entity_lifespan": 1.1
+                  "size": 2,
+                  "entity_lifespan": 1.1,
+                  "sound_event": "prepare.attack"
                 }
               ]
             },
             {
               "weight": 1,
               "cooldown_time": 1.0,
-              "cast_duration": 2.0,
+              "cast_duration": 4.0,
               "particle_color": "#FFB3B3CC",
               "sequence": [
                 {
                   "shape": "circle",
-                  "target": "self",
-                  "base_delay": 5.0,
-                  "num_entities_spawned": 2,
+                  "target": "target",
+                  "base_delay": 0.0,
+                  "num_entities_spawned": 1,
                   "entity_type": "dec:shadow_of_deep",
                   "summon_cap": 8,
                   "summon_cap_radius": 16.0,
-                  "size": 1.0,
+                  "size": 5.0,
                   "sound_event": "prepare.summon",
                   "entity_lifespan": 60
                 }
@@ -508,6 +289,12 @@
       }
     },
     "components": {
+      "minecraft:despawn": {
+        "despawn_from_distance": {
+          "min_distance": 64,
+          "max_distance": 64
+        }
+      },
       "minecraft:experience_reward": {
         "on_death": "query.last_hit_by_player ? 500 : 0"
       },
@@ -611,7 +398,7 @@
                 }
               ]
             },
-            "max_dist": 20
+            "max_dist": 64
           },
           {
             "filters": {
@@ -629,7 +416,7 @@
                 }
               ]
             },
-            "max_dist": 20
+            "max_dist": 64
           }
         ],
         "must_see": true
@@ -649,7 +436,16 @@
         }
       },
       "minecraft:behavior.hurt_by_target": {
-        "priority": 1
+        "priority": 1,
+        "entity_types": {
+          "filters": {
+            "test": "is_family",
+            "subject": "other",
+            "operator": "!=",
+            "value": "deep"
+          },
+          "max_dist": 64
+        }
       },
       "minecraft:persistent": {},
       "minecraft:physics": {},
@@ -662,6 +458,13 @@
       }
     },
     "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
       "minecraft:entity_spawned": {
         "sequence": [
           {

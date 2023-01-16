@@ -4,13 +4,69 @@
         "animation.host_of_deep_track_attack": {
           "timeline": {
               "5": [
-                "/execute as @a[m=!1,c=3,r=128] at @s run summon evocation_fang ~~~"
+                "/execute at @a[m=!1,c=3,r=128] run summon evocation_fang ~~~"
               ],
               "10": [
-                "/execute as @a[m=!1,c=3,r=128] at @s run summon evocation_fang ~~~"
+                "/execute at @a[m=!1,c=3,r=128] run summon evocation_fang ~~~"
               ]
           }, 
           "animation_length": 10, 
+          "loop": true
+        },
+        "animation.host_of_deep_teleport_1": {
+          "timeline": {
+              "15": [
+                "/tag @r[type=dec:shadow_of_deep,r=32,c=1] add host_of_deep_teleport",
+
+                "/execute at @e[type=dec:shadow_of_deep,tag=host_of_deep_teleport] run particle dec:host_of_deep_tip_particle ~~~"
+              ],
+              "16": [
+                "/execute at @e[type=dec:shadow_of_deep,tag=host_of_deep_teleport] run particle dec:host_of_deep_tip_particle ~~~"
+              ],
+              "17": [
+                "/execute at @e[type=dec:shadow_of_deep,tag=host_of_deep_teleport] run particle dec:host_of_deep_tip_particle ~~~"
+              ],
+              "18": [
+                "/execute at @e[type=dec:shadow_of_deep,tag=host_of_deep_teleport] run particle dec:host_of_deep_tip_particle ~~~"
+              ],
+              "19": [
+                "/execute at @e[type=dec:shadow_of_deep,tag=host_of_deep_teleport] run particle dec:host_of_deep_tip_particle ~~~"
+              ],
+              "20": [
+                "/execute at @e[type=dec:shadow_of_deep,tag=host_of_deep_teleport] run particle dec:host_of_deep_spawn_particle ~~~",
+                "/tp @s @e[type=dec:shadow_of_deep,tag=host_of_deep_teleport,c=1]",
+                "/tp @e[type=dec:shadow_of_deep,tag=host_of_deep_teleport,c=1] ~ -100 ~",
+                "/execute at ~ -100 ~ run kill @e[type=dec:shadow_of_deep,tag=host_of_deep_teleport,c=1]"
+              ]
+          }, 
+          "animation_length": 20, 
+          "loop": true
+        },
+        "animation.host_of_deep_teleport_2": {
+          "timeline": {
+              "10": [
+                "/execute at @e[type=dec:shadow_of_deep,tag=host_of_deep_teleport] run particle dec:host_of_deep_tip_particle ~~~"
+              ],
+              "11": [
+                "/execute at @e[type=dec:shadow_of_deep,tag=host_of_deep_teleport] run particle dec:host_of_deep_tip_particle ~~~"
+              ],
+              "12": [
+                "/execute at @e[type=dec:shadow_of_deep,tag=host_of_deep_teleport] run particle dec:host_of_deep_tip_particle ~~~"
+              ],
+              "13": [
+                "/execute at @e[type=dec:shadow_of_deep,tag=host_of_deep_teleport] run particle dec:host_of_deep_tip_particle ~~~"
+              ],
+              "14": [
+                "/execute at @e[type=dec:shadow_of_deep,tag=host_of_deep_teleport] run particle dec:host_of_deep_tip_particle ~~~"
+              ],
+              "15": [
+                "/execute at @e[type=dec:shadow_of_deep,tag=host_of_deep_teleport] run particle dec:host_of_deep_spawn_particle ~~~",
+                "/tp @s @e[type=dec:shadow_of_deep,tag=host_of_deep_teleport,c=1]",
+                "/tp @e[type=dec:shadow_of_deep,tag=host_of_deep_teleport,c=1] ~ -100 ~",
+                "/execute at ~ -100 ~ run kill @e[type=dec:shadow_of_deep,tag=host_of_deep_teleport,c=1]"
+              ]
+          }, 
+          "animation_length": 15, 
           "loop": true
         }
      }

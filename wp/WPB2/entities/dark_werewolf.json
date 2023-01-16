@@ -15,6 +15,22 @@
       }
     },
     "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "minecraft:from_night_event": {
+        "minecraft:environment_sensor": {
+          "triggers": {
+            "filters": {
+              "test": "is_daytime",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "event": "minecraft:despawn"
+          }
+        }
+      },
       "minecraft:zombie_baby": {
         "minecraft:is_baby": {},
         "minecraft:scale": {
@@ -59,6 +75,9 @@
     },
 
     "components": {
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
       "minecraft:experience_reward": {
         "on_death": "query.last_hit_by_player ? 50 : 0"
       },
@@ -71,7 +90,7 @@
       },
 
       "minecraft:type_family": {
-        "family": [ "undead", "monster", "werewolf", "radiate" ]
+        "family": [ "mini_boss","undead", "monster", "werewolf", "radiate" ]
       },
       "minecraft:collision_box": {
         "width": 0.6,
@@ -209,6 +228,21 @@
     },
 
     "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
+      "minecraft:from_night_event": {
+        "trigger": "minecraft:entity_spawned",
+        "add": {
+          "component_groups": [
+            "minecraft:from_night_event"
+          ]
+        }
+      },
       "minecraft:entity_spawned": {
         "randomize": [
           {

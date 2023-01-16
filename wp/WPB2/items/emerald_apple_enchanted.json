@@ -1,7 +1,7 @@
 {
   "format_version": "1.16.100",
   "minecraft:item": {
-        "description": {
+    "description": {
       "category": "nature",
       "identifier": "dec:emerald_apple_enchanted"
     },
@@ -16,7 +16,7 @@
         "texture": "emerald_apple"
       },
       "minecraft:hover_text_color": "light_purple",
-	  "minecraft:use_animation": "eat",
+      "minecraft:use_animation": "eat",
       "minecraft:render_offsets": "apple",
       "minecraft:foil": true,
       "minecraft:use_duration": 1.6,

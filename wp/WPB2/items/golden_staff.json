@@ -1,7 +1,7 @@
 {
   "format_version": "1.16.100",
   "minecraft:item": {
-	    "description": {
+    "description": {
       "category": "equipment",
       "identifier": "dec:golden_staff"
     },
@@ -28,8 +28,8 @@
         }
       },
       "minecraft:cooldown": {
-        "category": "weapon",
-        "duration": 0.7
+        "category": "staff",
+        "duration": 0.6
       },
       "minecraft:durability": {
         "max_durability": 33
@@ -45,7 +45,7 @@
       "shoot": {
         "sequence": [
           {
-            "condition": "query.scoreboard('wbfl') > 6",
+            "condition": "query.scoreboard('wbfl') > 5",
             "sequence": [
               {
                 "run_command": {
@@ -73,5 +73,5 @@
         ]
       }
     }
-	}
+  }
 }

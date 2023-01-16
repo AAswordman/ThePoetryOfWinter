@@ -1,0 +1,31 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:escaped_soul",
+      "materials": { "default": "slime_outer" },
+      "textures": {
+        "default": "textures/entity/escaped_soul/escaped_soul_soul"
+      },
+      "geometry": {
+        "default": "geometry.escaped_soul"
+      },
+      "scripts": {
+        "scale": "1",
+        "animate": [
+          "look_at_target",
+          "float"
+        ]
+      },
+      "animations": {
+        "look_at_target": "animation.common.look_at_target",
+        "float": "animation.soul.float"
+      },
+      "render_controllers": [ "controller.render.husk" ],
+      "spawn_egg": {
+        "base_color": "#D9D9D9",
+        "overlay_color": "#E6E6E6"
+      }
+    }
+  }
+}

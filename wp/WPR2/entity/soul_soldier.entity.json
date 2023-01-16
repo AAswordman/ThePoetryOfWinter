@@ -1,0 +1,32 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:soul_soldier",
+      "materials": { "default": "slime_outer" },
+      "textures": {
+        "entity": "textures/entity/soul_soldier/soul_soldier_entity",
+        "soul": "textures/entity/soul_soldier/soul_soldier_soul"
+      },
+      "geometry": {
+        "default": "geometry.soul_soldier"
+      },
+      "scripts": {
+        "scale": "1",
+        "animate": [
+          "look_at_target",
+          "float"
+        ]
+      },
+      "animations": {
+        "look_at_target": "animation.common.look_at_target",
+        "float": "animation.soul.float"
+      },
+      "render_controllers": [ "controller.render.soul_soldier" ],
+      "spawn_egg": {
+        "base_color": "#D9D9D9",
+        "overlay_color": "#E6E6E6"
+      }
+    }
+  }
+}

@@ -10,7 +10,7 @@
 		},
 		"components": {
 			"minecraft:emitter_rate_instant": {
-				"num_particles": 500
+				"num_particles": 300
 			},
 			"minecraft:emitter_lifetime_looping": {
 				"active_time": 1

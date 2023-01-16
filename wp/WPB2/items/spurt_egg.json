@@ -5,7 +5,6 @@
       "category": "items",
       "identifier": "dec:spurt_egg"
     },
-    
     "components": {
       "minecraft:creative_category": {
         "parent": "itemGroup.name.decorations"
@@ -13,7 +12,7 @@
       "minecraft:display_name": {
         "value": "item.dec:spurt_egg.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "spurt_egg"
       },
       "minecraft:use_animation": "bow",
@@ -28,7 +27,7 @@
         }
       },
       "minecraft:cooldown": {
-        "category": "magic",
+        "category": "spurt_egg",
         "duration": 1
       }
     },
@@ -40,15 +39,12 @@
             "tag @s[tag=uptohpl5] add hpl5",
             "tag @s[tag=uptohpl5] remove hpl4",
             "tellraw @s[tag=uptohpl5] { \"rawtext\" : [ { \"translate\" : \"text.dec:uptohpl5.name\" } ] }",
-
             "tag @s[tag=hpl5,tag=!uptohpl5] add uptohpl6",
             "tag @s[tag=uptohpl6] add hpl6",
             "tag @s[tag=uptohpl6] remove hpl5",
             "tellraw @s[tag=uptohpl6] { \"rawtext\" : [ { \"translate\" : \"text.dec:uptohpl6.name\" } ] }",
-
             "clear @s[tag=uptohpl5] dec:spurt_egg 0 1",
             "clear @s[tag=uptohpl6] dec:spurt_egg 0 1",
-
             "tag @s[tag=uptohpl5] remove uptohpl5",
             "tag @s[tag=uptohpl6] remove uptohpl6"
           ]

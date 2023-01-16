@@ -5,8 +5,8 @@
       "identifier": "dec:monitor_activated"
     },
     "components": {
-      "minecraft:block_light_absorption": 1,
-      "minecraft:block_light_emission": 0.3,
+      "minecraft:light_dampening": 15,
+      "minecraft:light_emission": 0.3,
       "minecraft:destroy_time": 3,
       "minecraft:explosion_resistance": 50,
       "minecraft:map_color": "#27C3C2",

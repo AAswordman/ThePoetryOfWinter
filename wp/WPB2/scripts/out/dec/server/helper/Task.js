@@ -1,3 +1,5 @@
+import { ActionFormData } from "@minecraft/server-ui";
+import ExPlayer from "../../../modules/exmc/server/entity/ExPlayer.js";
 export class Task {
     constructor(id, xp_change, commands) {
         this.id = id;
@@ -14,7 +16,7 @@ export class Task {
     }
 }
 //tag给符合条件加task_complete
-export let tasks = [
+export let Tasks = [
     new Task("000", 200, [
         "execute if entity @s[hasitem={location=slot.armor.head,item=dec:lava_helmet}] if entity @s[hasitem={location=slot.armor.chest,item=dec:lava_chestplate}] if entity @s[hasitem={location=slot.armor.legs,item=dec:lava_leggings}] if entity @s[hasitem={location=slot.armor.feet,item=dec:lava_boots}] run tag @s add task_complete",
     ]),
@@ -46,4 +48,56 @@ export let tasks = [
         "execute if entity @s[hasitem={location=slot.armor.head,item=dec:witch_hat}] run tag @s add task_complete",
     ])
 ];
+export function taskTranToNum(t) {
+    let task_arr = ["Ao", "Jf", "Sk", "Ch", "Om", "Bs", "Hd", "Oa", "Gx", "Xe"];
+    let n = "";
+    while (t.length >= 2) {
+        let msg = t.slice(0, 2);
+        n = n + (task_arr.findIndex(e => e === msg));
+        t = t.slice(3);
+    }
+    return n;
+}
+export function numTranToTask(n) {
+    let r = "";
+    let task_arr = ["Ao", "Jf", "Sk", "Ch", "Om", "Bs", "Hd", "Oa", "Gx", "Xe"];
+    for (let l = 0; l <= n.toString().length - 1; l++) {
+        r = r + task_arr.slice(parseInt(n.toString().charAt(l)), parseInt(n.toString().charAt(l)) + 1) + " ";
+    }
+    while (r.charAt(-1) == " ") {
+        r = r.slice(0, r.length - 1);
+    }
+    return r;
+}
+export function taskUi(p, i) {
+    let ui = new ActionFormData();
+    ui = ui.title("text.dec:task_choose_title.name");
+    ui = ui.body("text.dec:task_choose_body.name");
+    let lor = i.getLore();
+    lor.forEach(l => {
+        ui = ui.button(l);
+    });
+    ui.show(p).then(s => {
+        if (s.selection != undefined) {
+            let ch_t = lor[s.selection];
+            let ch_n = taskTranToNum(ch_t);
+            //p.runCommandAsync("say "+ch_n)
+            taskUiChoose(p, ch_n);
+        }
+    });
+}
+export function taskUiChoose(p, id) {
+    let ui_ch = new ActionFormData().button("text.dec:task_complete_button.name");
+    const index = Tasks.findIndex(t => t.id === id);
+    if (index === -1) {
+        return;
+    }
+    ui_ch.title(Tasks[index].title())
+        .body(Tasks[index].body())
+        .show(p).then(s => {
+        if (s.selection == 0) {
+            ExPlayer.getInstance(p).command.run(Tasks[index].commands);
+        }
+    });
+}
 //# sourceMappingURL=Task.js.map

@@ -12,7 +12,7 @@
       "minecraft:display_name": {
         "value": "item.dec:spiral_shell.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "spiral_shell"
       }
     }

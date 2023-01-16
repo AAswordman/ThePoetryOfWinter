@@ -22,6 +22,9 @@
     },
 
     "components": {
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
       "minecraft:type_family": {
         "family": [ "mob", "villager","little_bat", "player" ]
       },

@@ -96,11 +96,6 @@
                     "type": "item",
                     "name": "dec:stray_leggings",
                     "weight": 1
-                },
-                {
-                    "type": "item",
-                    "name": "dec:stray_boots",
-                    "weight": 1
                 }
             ],
             "conditions": [

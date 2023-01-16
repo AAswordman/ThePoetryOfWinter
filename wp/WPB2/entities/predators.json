@@ -6,10 +6,27 @@
       "runtime_identifier": "minecraft:bat",
       "is_spawnable": true,
       "is_summonable": true,
-      "is_experimental": false
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          {
+            "summon": "query.variant == 1"
+          },
+          {
+            "attack": "query.variant == 0"
+          }
+        ]
+      },
+      "animations": {
+        "summon": "animation.predators.summon",
+        "attack": "animation.predators.attack"
+      }
     },
 
     "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      },
       "minecraft:angry": {
         "minecraft:movement": {
           "value": 1.5
@@ -40,40 +57,21 @@
         }
       },
       "minecraft:summon_mode": {
-        "minecraft:behavior.summon_entity": {
-          "priority": 2,
-          "summon_choices": [
-            {
-              "weight": 1,
-              "cooldown_time": 0.0,
-              "cast_duration": 5.0,
-              "particle_color": "#FFB3B3CC",
-              "sequence": [
-                {
-                  "shape": "circle",
-                  "target": "self",
-                  "base_delay": 5.0,
-                  "num_entities_spawned": 3,
-                  "entity_type": "dec:vampire_bat_by_boss",
-                  "summon_cap": 8,
-                  "summon_cap_radius": 3.0,
-                  "size": 1.0,
-                  "sound_event": "prepare.summon",
-                  "entity_lifespan": 10
-                }
-              ]
-            }
-          ]
+        "minecraft:variant": {
+          "value": 1
         },
         "minecraft:timer": {
           "looping": false,
-          "time": 7,
+          "time": 5,
           "time_down_event": {
             "event": "minecraft:change_attack"
           }
         }
       },
       "minecraft:attack_mode": {
+        "minecraft:variant": {
+          "value": 0
+        },
         "minecraft:movement.glide": {
           "start_speed": 0.8,
           "speed_when_turning": 0.6
@@ -93,7 +91,7 @@
         },
         "minecraft:timer": {
           "looping": false,
-          "time": 30,
+          "time": 20,
           "time_down_event": {
             "event": "minecraft:change_attack"
           }
@@ -103,14 +101,14 @@
     
     "components": {
       "minecraft:despawn": {
-        "despawn_from_distance": { 
-          "min_distance": 256,
-          "max_distance": 256
+        "despawn_from_distance": {
+          "min_distance": 64,
+          "max_distance": 64
         }
       },
       "minecraft:fire_immune": true,
       "minecraft:experience_reward": {
-        "on_death": "query.last_hit_by_player ? 300 : 0"
+        "on_death": "query.last_hit_by_player ? 200 : 0"
       },
       "minecraft:type_family": {
         "family": [ "bat", "predators", "monster", "boss", "mob" ]
@@ -174,6 +172,13 @@
     },
     
     "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
       "minecraft:entity_spawned": {
         "sequence": [
           {
@@ -195,29 +200,20 @@
         },
         "minecraft:change_attack": {
           "sequence": [
-          {
+            {
              "randomize": [
-              {
-                "weight": 1,
-                "sequence": [
-                   {
-                    "randomize": [
-                      {
-                        "weight": 1,
-                        "remove": { "component_groups": [ "minecraft:summon_mode", "minecraft:attack_mode", "minecraft:spawn" ] },
-                        "add": { "component_groups": [ "minecraft:summon_mode" ] }
-                      },
-                      {
-                        "weight": 2,
-                        "remove": { "component_groups": [ "minecraft:summon_mode", "minecraft:attack_mode", "minecraft:spawn" ] },
-                        "add": { "component_groups": [ "minecraft:attack_mode" ] }
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
+               {
+                 "weight": 1,
+                 "remove": { "component_groups": [ "minecraft:summon_mode", "minecraft:attack_mode", "minecraft:spawn" ] },
+                 "add": { "component_groups": [ "minecraft:summon_mode" ] }
+               },
+               {
+                 "weight": 1,
+                 "remove": { "component_groups": [ "minecraft:summon_mode", "minecraft:attack_mode", "minecraft:spawn" ] },
+                 "add": { "component_groups": [ "minecraft:attack_mode" ] }
+               }
+             ]
+           }
         ]
       }
     }

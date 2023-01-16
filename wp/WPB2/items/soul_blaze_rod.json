@@ -6,18 +6,18 @@
       "identifier": "dec:soul_blaze_rod"
     },
     "components": {
-      "minecraft:fuel" : {
-        "duration" : 20.0
-     },
+      "minecraft:fuel": {
+        "duration": 20.0
+      },
       "minecraft:creative_category": {
         "parent": "itemGroup.name.decorations"
       },
       "minecraft:display_name": {
         "value": "item.dec:soul_blaze_rod.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "soul_blaze_rod"
-     },
+      },
       "minecraft:hand_equipped": true
     }
   }

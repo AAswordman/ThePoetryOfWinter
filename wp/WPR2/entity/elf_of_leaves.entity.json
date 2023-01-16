@@ -58,7 +58,7 @@
         { "use_item_progress": "controller.animation.humanoid.use_item_progress" },
         { "vex_move": "controller.animation.vex.move" }
       ],
-      "render_controllers": [ "controller.render.vex" ]
+      "render_controllers": [ "controller.render.elf_of_leaves" ]
     }
   }
 }

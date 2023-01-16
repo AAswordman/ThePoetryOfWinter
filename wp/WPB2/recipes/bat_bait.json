@@ -12,7 +12,7 @@
     ],
     "key": {
       "#": {
-        "item": "minecraft:porkchop"
+        "item": "dec:rotten_flesh_block"
       },
       "X": {
         "item": "dec:complete_bat_wing"

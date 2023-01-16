@@ -70,5 +70,12 @@
     "sounds": [
       "sounds/wb/candlelight_afterthought"
     ]
+  },
+  "music.wb.twin_guard": {
+    "category": "music",
+    "min_distance": 100.0,
+    "sounds": [
+      "sounds/wb/twin_guard"
+    ]
   }
 }

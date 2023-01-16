@@ -12,7 +12,7 @@
         "enchanted": "textures/misc/enchanted_item_glint"
       },
       "geometry": {
-        "default": "geometry.humanoid.armor.chestplate"
+        "default": "geometry.clothes"
       },
       "scripts": {
         "parent_setup": "variable.chest_layer_visible = 0.0;"

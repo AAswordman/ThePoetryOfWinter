@@ -1,2 +1,1 @@
-structure load mystructure:enchanted_house ~ ~ ~
-setblock ~~~ air
+structure load mystructure:enchanted_house ~-16 ~1 ~-12

@@ -9,6 +9,9 @@
     },
 
     "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      },
       "minecraft:angry": {
         "minecraft:boss": {
           "should_darken_sky": false,
@@ -16,8 +19,8 @@
           "hud_range": 64
         },
         "minecraft:health": {
-          "value": 400,
-          "max": 400
+          "value": 600,
+          "max": 600
         },
         "minecraft:movement": {
           "value": 0.4
@@ -87,6 +90,12 @@
     },
 
     "components": {
+      "minecraft:despawn": {
+        "despawn_from_distance": {
+          "min_distance": 64,
+          "max_distance": 64
+        }
+      },
       "minecraft:boss": {
         "should_darken_sky": false,
         "name":"boss.dec:enchant_illager.name",
@@ -96,7 +105,7 @@
         "value": 1
       },
       "minecraft:experience_reward": {
-        "on_death": "query.last_hit_by_player ? 400 : 0"
+        "on_death": "query.last_hit_by_player ? 300 : 0"
       },
       "minecraft:nameable": {
       },
@@ -115,8 +124,8 @@
         "height": 1.9
       },
       "minecraft:health": {
-        "value": 100,
-        "max": 100
+        "value": 400,
+        "max": 400
       },
       "minecraft:hurt_on_condition": {
         "damage_conditions": [
@@ -204,6 +213,13 @@
     },
 
     "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
       "minecraft:entity_spawned": {
         "sequence": [
           {

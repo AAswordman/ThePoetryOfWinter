@@ -3,7 +3,7 @@
   "minecraft:client_entity": {
     "description": {
       "identifier": "dec:vindicator_by_boss",
-      
+      "min_engine_version": "1.8.0",
       "materials": { "default": "vindicator" },
       "textures": { "default": "textures/entity/vindicator" },
       "geometry": { "default": "geometry.vindicator.v1.8" },

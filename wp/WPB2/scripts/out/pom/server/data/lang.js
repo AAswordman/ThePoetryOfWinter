@@ -75,7 +75,7 @@ export default {
         "occupationWarlock": "术士",
         "occupationPriest": "牧师",
         "menuUISubtitleGonggao": "公告",
-        "menuUIMsgGonggao1": "稳定版更新啦！本次更新2个活动，快去看看吧！",
+        "menuUIMsgGonggao1": "本版本为测试版，有bug是正常的",
         "menuUISubtitleHuodong": "活动",
         "menuUISubtitleBanben": "版本",
         "menuUIMsgBanben1": "版本信息",

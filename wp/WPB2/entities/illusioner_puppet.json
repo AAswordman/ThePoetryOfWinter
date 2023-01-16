@@ -8,7 +8,7 @@
       "is_experimental": false
     },
     "component_groups": {
-     "minecraft:aggro": {     
+      "minecraft:aggro": {
         "minecraft:angry": {
           "duration": -1,
           "broadcastAnger": false,
@@ -84,19 +84,23 @@
         }
       }
     },
-
     "components": {
       "minecraft:experience_reward": {
         "on_death": "query.last_hit_by_player ? 5 + (query.equipment_count * Math.Random(1,3)) : 0"
       },
-      "minecraft:equip_item": {
-      },
+      "minecraft:equip_item": {},
       "minecraft:collision_box": {
         "width": 0.6,
         "height": 1.9
       },
       "minecraft:type_family": {
-        "family": [ "illusioner_puppet", "illager", "monster", "mob", "puppet" ]
+        "family": [
+          "illusioner_puppet",
+          "illager",
+          "monster",
+          "mob",
+          "puppet"
+        ]
       },
       "minecraft:breathable": {
         "total_supply": 15,
@@ -104,7 +108,7 @@
         "breathes_water": true
       },
       "minecraft:behavior.float": {
-        "priority": 0      
+        "priority": 0
       },
       "minecraft:health": {
         "value": 20,
@@ -113,27 +117,28 @@
       "minecraft:hurt_on_condition": {
         "damage_conditions": [
           {
-            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
             "cause": "lava",
             "damage_per_tick": 4
           }
         ]
-      },     
+      },
       "minecraft:movement": {
         "value": 0.25
       },
       "minecraft:navigation.walk": {
-        "is_amphibious": true,       
+        "is_amphibious": true,
         "avoid_water": true
       },
-      "minecraft:movement.basic": {
-      },
-      "minecraft:jump.static": {
-      },
-      "minecraft:can_climb": {
-      },
-      "minecraft:nameable": {
-      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
+      "minecraft:nameable": {},
       "minecraft:equipment": {
         "table": "loot_tables/entities/illusioner_gear.json",
         "slot_drop_chance": [
@@ -169,25 +174,46 @@
         ]
       },
       "minecraft:despawn": {
-         "filters": {
-           "any_of": [
-             {
-               "all_of": [
-                 { "test": "is_persistent", "value": false },
-                 { "test": "distance_to_nearest_player", "operator": ">", "value": 54 }
-               ]
-             },
-             {
-               "all_of": [
-                 { "test": "is_persistent", "value": false },
-                 { "test": "inactivity_timer", "subject": "self", "value": 30 },
-                 { "test": "random_chance", "value": 800 },
-                 { "test": "distance_to_nearest_player", "operator": ">", "value": 32 }
-               ]
-             }
-           ]
-         }
-       },
+        "filters": {
+          "any_of": [
+            {
+              "all_of": [
+                {
+                  "test": "is_persistent",
+                  "value": false
+                },
+                {
+                  "test": "distance_to_nearest_player",
+                  "operator": ">",
+                  "value": 54
+                }
+              ]
+            },
+            {
+              "all_of": [
+                {
+                  "test": "is_persistent",
+                  "value": false
+                },
+                {
+                  "test": "inactivity_timer",
+                  "subject": "self",
+                  "value": 30
+                },
+                {
+                  "test": "random_chance",
+                  "value": 800
+                },
+                {
+                  "test": "distance_to_nearest_player",
+                  "operator": ">",
+                  "value": 32
+                }
+              ]
+            }
+          ]
+        }
+      },
       "minecraft:behavior.ranged_attack": {
         "attack_interval_min": 1,
         "attack_interval_max": 3,
@@ -214,7 +240,7 @@
             }
           },
           "deals_damage": false
-        }                  
+        }
       },
       "minecraft:behavior.nearest_attackable_target": {
         "priority": 2,
@@ -275,14 +301,12 @@
       "minecraft:behavior.random_look_around": {
         "priority": 8
       },
-      "minecraft:physics": {
-      },
+      "minecraft:physics": {},
       "minecraft:pushable": {
         "is_pushable": true,
         "is_pushable_by_piston": true
       }
     },
-
     "events": {
       "minecraft:entity_spawned": {
         "add": {
@@ -291,35 +315,50 @@
           ]
         }
       },
-      "holding":{
-  "add": {
-  "component_groups":[
-  "holding"
-  ]
- }
-},
-   "angry":{
-   "add": {
-   "component_groups":[
-   "minecraft:aggro"
-   ]
-  }
- },
- "stop_angry":{
- "remove": {
- "component_groups":[
- "minecraft:aggro"
- ]
- }
- },
-
+      "holding": {
+        "add": {
+          "component_groups": [
+            "holding"
+          ]
+        }
+      },
+      "angry": {
+        "add": {
+          "component_groups": [
+            "minecraft:aggro"
+          ]
+        }
+      },
+      "stop_angry": {
+        "remove": {
+          "component_groups": [
+            "minecraft:aggro"
+          ]
+        }
+      },
       "minecraft:melee_mode": {
-        "remove": { "component_groups": [ "minecraft:ranged_attack" ] },
-        "add": { "component_groups": [ "minecraft:melee_attack" ] }
+        "remove": {
+          "component_groups": [
+            "minecraft:ranged_attack"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:melee_attack"
+          ]
+        }
       },
       "minecraft:ranged_mode": {
-        "remove": { "component_groups": [ "minecraft:melee_attack" ] },
-        "add": { "component_groups": [ "minecraft:ranged_attack" ] }
+        "remove": {
+          "component_groups": [
+            "minecraft:melee_attack"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:ranged_attack"
+          ]
+        }
       }
     }
   }

@@ -1,0 +1,27 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:village_portal",
+      "materials": {
+        "default": "snowball"
+      },
+      "textures": {
+        "default": "textures/entity/village_portal"
+      },
+      "geometry": {
+        "default": "geometry.portal"
+      },
+      "render_controllers": [ "controller.render.item_sprite" ],
+      "animations": {
+        "flying": "animation.actor.billboardxz"
+      },
+      "scripts": {
+        "scale": "2",
+        "animate": [
+          "flying"
+        ]
+      }
+    }
+  }
+} 

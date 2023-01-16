@@ -38,54 +38,6 @@ export default function menuFunctionUI(lang) {
                         }
                     ]
                 },
-                "activity": {
-                    "text": lang.menuUISubtitleHuodong,
-                    "page": (client, ui) => [
-                        {
-                            "type": "text_title",
-                            "msg": lang.menuUIMsgBailan2
-                        },
-                        {
-                            "type": "padding"
-                        },
-                        {
-                            "type": "text",
-                            "msg": lang.menuUIMsgBailan3
-                        },
-                        {
-                            "type": "img_adjustToScreen",
-                            "msg": "textures/ui/active_action.png"
-                        },
-                    ].concat(MenuUIAlert.getLabelViews(`
-1.活动时间: 2022年8月13日一2022年8月31日23点59分。
-2.活动稿件必须是首次投递的原创作品，且符合创作投稿规范，禁止低创、搬运、抄袭、旧稿重投等。同一篇作品不能由多人提交，重复参加，且活动稿件需要在2022年9月20日前保持开放浏览。
-3.瓜分奖金将于活动结束结果公示后20个工作日内发放完毕。
-4.禁止一切违规刷票、刷赞、刷人气等作弊行为，一经发现将取消作品参赛资格。
-
-带话题#冬之纪行诗在 bilibili 投稿
-1、所有投稿中抽取十位送出大会员(可折现25)
-2、单稿件播放达1w瓜分1k现金奖励
-3、活动截止后按播放量额外发放奖励:
-单稿件播放量排名│奖励
-1│200￥
-2│100￥
-3│50￥
-
-`.split("\n"))).concat([
-                        {
-                            "type": "padding"
-                        },
-                        {
-                            "type": "text_title",
-                            "msg": lang.menuUIMsgBailan4
-                        }
-                    ]).concat(MenuUIAlert.getLabelViews(`
-主题：永冬塔
-大小限制：64xnx64
-联系作者或b站发视频并at剑侠（id自己去b站搜）或@Sonality进行投稿
-有机会被加入Add中哦~
-`.split("\n")))
-                },
                 "version": {
                     "text": lang.menuUIMsgBailan5,
                     "page": (client, ui) => {
@@ -811,6 +763,15 @@ You understand and agree that:
                                     "state": (client, ui) => client.globalSettings.tpPointRecord,
                                     "function": (client, ui) => {
                                         client.globalSettings.tpPointRecord = !client.globalSettings.tpPointRecord;
+                                        return true;
+                                    }
+                                },
+                                {
+                                    "type": "toggle",
+                                    "msg": "伤害显示",
+                                    "state": (client, ui) => client.globalSettings.damageShow,
+                                    "function": (client, ui) => {
+                                        client.globalSettings.damageShow = !client.globalSettings.damageShow;
                                         return true;
                                     }
                                 }

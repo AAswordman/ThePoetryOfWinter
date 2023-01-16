@@ -1,0 +1,31 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:everlasting_winter_flintlock"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " CX",
+      "XAX",
+      "B  "
+    ],
+    "key": {
+      "X": {
+        "item": "dec:everlasting_winter_ingot"
+      },
+      "B": {
+        "item": "dec:ice_rod"
+      },
+      "A": {
+        "item": "dec:flintlock_pro"
+      },
+      "C": {
+        "item": "dec:ice_heart"
+      }
+    },
+    "result": {
+      "item": "dec:everlasting_winter_flintlock"
+    }
+  }
+}

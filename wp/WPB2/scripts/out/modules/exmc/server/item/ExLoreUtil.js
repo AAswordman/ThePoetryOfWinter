@@ -2,7 +2,6 @@ import ExGameConfig from "../ExGameConfig.js";
 export default class LoreUtil {
     constructor(item) {
         this.item = item;
-        this.defFlag = LoreUtil.LoreFlag.DEFAULT;
     }
     append(str) {
         let i = this.getLore();
@@ -20,9 +19,6 @@ export default class LoreUtil {
     setLore(lore) {
         this.item.setLore(lore);
     }
-    setFlag(flag) {
-        this.defFlag = flag;
-    }
     search(key) {
         let lore = this.getLore();
         for (let i = 0; i < lore.length; i++) {
@@ -30,69 +26,34 @@ export default class LoreUtil {
                 return new Piece(this.item, i);
             }
         }
-        return null;
-    }
-    get() {
-        let index = 0;
-        if (arguments.length < 1) {
-            throw new Error("Illegal parameter");
-        }
-        let flag = arguments[index];
-        if (typeof (flag) !== "number") {
-            flag = this.defFlag;
-        }
-        else {
-            index++;
-        }
-        if (flag == LoreUtil.LoreFlag.DEFAULT) {
-            if (arguments.length > index + 1)
-                ExGameConfig.console.warn("Exceeded parameter length. Maybe you didn't mean that?");
-            return this.getValueUseDefault(arguments[index]);
-        }
-        else if (flag == LoreUtil.LoreFlag.TAG) {
-            if (arguments.length > index + 1)
-                ExGameConfig.console.warn("Exceeded parameter length. Maybe you didn't mean that?");
-            return this.hasTag(arguments[index]);
-        }
-        else if (flag == LoreUtil.LoreFlag.REPEAT) {
-            if (arguments.length > index + 1)
-                ExGameConfig.console.warn("Exceeded parameter length. Maybe you didn't mean that?");
-            return this.getValueUseRepeat(arguments[index]);
-        }
-        else if (flag == LoreUtil.LoreFlag.MAP) {
-            if (arguments.length > index + 2)
-                ExGameConfig.console.warn("Exceeded parameter length. Maybe you didn't mean that?");
-            return this.getValueUseMap(arguments[index], arguments[index + 1]);
-        }
+        return undefined;
     }
     getValueUseDefault(key) {
         let piece = this.search(key);
-        if (piece == null)
-            return null;
+        if (!piece)
+            return undefined;
         // key : value
         return piece.get().substring(key.length + 3);
     }
     hasTag(key) {
-        if (key == null)
-            throw new Error("Key cannot be empty");
         let lore = this.getLore();
-        for (let i in lore) {
-            if (lore[i] == key)
+        for (let i of lore) {
+            if (i.startsWith(key))
                 return true;
         }
         return false;
     }
     getValueUseRepeat(key) {
         let value = this.getValueUseDefault(key);
-        if (value == null)
+        if (!value)
             return 0;
         return value.length;
     }
     getValueUseMap(key, use) {
         let tab = "  ";
         let piece = this.search(key);
-        if (piece == null)
-            return null;
+        if (!piece)
+            return undefined;
         while (piece.hasNext()) {
             piece.next();
             if (piece.get().startsWith(tab)) {
@@ -104,44 +65,11 @@ export default class LoreUtil {
                 break;
             }
         }
-        return null;
-    }
-    set() {
-        let index = 0;
-        if (arguments.length < 1) {
-            throw new Error("Illegal parameter");
-        }
-        let flag = arguments[index];
-        if (typeof (flag) !== "number") {
-            flag = this.defFlag;
-        }
-        else {
-            index++;
-        }
-        if (flag == LoreUtil.LoreFlag.DEFAULT) {
-            if (arguments.length > index + 2)
-                ExGameConfig.console.warn("Exceeded parameter length. Maybe you didn't mean that?");
-            return this.setValueUseDefault(arguments[index], arguments[index + 1]);
-        }
-        else if (flag == LoreUtil.LoreFlag.TAG) {
-            if (arguments.length > index + 1)
-                ExGameConfig.console.warn("Exceeded parameter length. Maybe you didn't mean that?");
-            return this.setTag(arguments[index]);
-        }
-        else if (flag == LoreUtil.LoreFlag.REPEAT) {
-            if (arguments.length > index + 3)
-                ExGameConfig.console.warn("Exceeded parameter length. Maybe you didn't mean that?");
-            return this.setValueUseRepeat(arguments[index], arguments[index + 1], arguments[index + 2]);
-        }
-        else if (flag == LoreUtil.LoreFlag.MAP) {
-            if (arguments.length > index + 3)
-                ExGameConfig.console.warn("Exceeded parameter length. Maybe you didn't mean that?");
-            return this.setValueUseMap(arguments[index], arguments[index + 1], arguments[index + 2]);
-        }
+        return undefined;
     }
     setValueUseDefault(key, value) {
         let piece = this.search(key);
-        if (piece == null) {
+        if (!piece) {
             this.append(key + " : " + value);
             return;
         }
@@ -149,22 +77,18 @@ export default class LoreUtil {
         piece.revise(key + " : " + value).set();
     }
     setTag(key) {
-        if (key == null)
-            throw new Error("Key cannot be empty");
         if (this.hasTag(key))
             return;
         this.append(key);
     }
     setValueUseRepeat(key, value, num) {
-        if (value == null || num == null)
-            throw new Error("Empty parameter");
         this.setValueUseDefault(key, new Array(num).fill(value).join(""));
     }
     *entries(key) {
         if (key) {
             let tab = "  ";
             let piece = this.search(key);
-            if (piece == null) {
+            if (!piece) {
                 return;
             }
             while (piece.hasNext()) {
@@ -188,7 +112,7 @@ export default class LoreUtil {
     setValueUseMap(key, use, value) {
         let tab = "  ";
         let piece = this.search(key);
-        if (piece == null) {
+        if (!piece) {
             this.append(key + " : ");
             this.append(tab + use + " : " + value);
             return;
@@ -206,7 +130,7 @@ export default class LoreUtil {
             }
         }
         piece = this.search(key);
-        if (piece == null) {
+        if (!piece) {
             ExGameConfig.console.error("Could not find " + key + " : " + value + " in lore");
             return;
         }
@@ -215,7 +139,7 @@ export default class LoreUtil {
     delete(key) {
         let tab = "  ";
         let piece = this.search(key);
-        if (piece == null) {
+        if (!piece) {
             return;
         }
         let l = 1;
@@ -234,12 +158,6 @@ export default class LoreUtil {
         this.setLore(res);
     }
 }
-LoreUtil.LoreFlag = {
-    DEFAULT: 0,
-    TAG: 1,
-    REPEAT: 2,
-    MAP: 3
-};
 export class Piece {
     constructor(item, index) {
         this.item = item;

@@ -9,8 +9,8 @@
 				"group": "itemGroup.name.stoneBrick",
 				"category": "construction"
 			},
-      "minecraft:block_light_absorption": 1,
-      "minecraft:block_light_emission": 0,
+      "minecraft:light_dampening": 15,
+      "minecraft:light_emission": 0,
       "minecraft:destroy_time": 1.5,
       "minecraft:explosion_resistance": 15,
       "minecraft:map_color": "#747474",
@@ -31,7 +31,7 @@
         },
         "run_command": {
           "command": [
-            "scoreboard players remove @a[x=~,y=~1,z=~,r=1] magicpoint 1"
+            "scoreboard players remove @a[x=~,y=~1,z=~,r=1] wbfl 1"
           ]
         }
       }

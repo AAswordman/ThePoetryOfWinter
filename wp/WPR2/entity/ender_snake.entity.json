@@ -1,0 +1,50 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "dec:ender_snake",
+			"materials": {
+				"default": "drowned",
+				"glow": "drowned"
+			},
+			"textures": {
+				"default": "textures/entity/ender_snake",
+				"glow": "textures/entity/ender_snake"
+			},
+			"geometry": {
+				"default": "geometry.ender_snake"
+			},
+			"scripts": {
+				"initialize": [
+					"variable.runtimeid = 0;",
+					"variable.tailrotx = -5.0;",
+					"variable.wingrotz = 0.0;"
+				],
+				"animate": [
+					"ender_snake_base_pose_controller",
+					"ender_snake_move_controller",
+					"move",
+					"ender_snake_base_pose"
+				]
+			},
+			"animations": {
+				"ender_snake_base_pose": "animation.ender_snake.base_pose",
+				"ender_snake_base_pose_controller": "controller.animation.ender_snake.base_pose",
+				"ender_snake_move_controller": "controller.animation.ender_snake.move",
+				"move": "animation.ender_snake.move",
+				"angry": "animation.ender_snake.angry"
+			},
+			"particle_effects": {
+				"snake_body": "dec:ender_breath_particle"
+			},
+			"render_controllers": [
+                "controller.render.ender_snake",
+                "controller.render.ender_snake_glow"
+            ],
+			"spawn_egg": {
+                "base_color": "#542A59",
+                "overlay_color": "#FF99ED"
+            }
+		}
+	}
+}

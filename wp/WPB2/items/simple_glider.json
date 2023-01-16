@@ -12,14 +12,14 @@
       "minecraft:display_name": {
         "value": "item.dec:simple_glider.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "simple_glider"
-     },
+      },
       "minecraft:stacked_by_data": false,
       "minecraft:max_stack_size": 1,
       "minecraft:entity_placer": {
         "entity": "dec:simple_glider"
       }
-	  }
+    }
   }
 }

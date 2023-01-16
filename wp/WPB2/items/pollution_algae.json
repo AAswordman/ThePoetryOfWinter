@@ -5,7 +5,6 @@
       "category": "items",
       "identifier": "dec:pollution_algae"
     },
-
     "components": {
       "minecraft:creative_category": {
         "parent": "itemGroup.name.decorations"
@@ -13,10 +12,10 @@
       "minecraft:display_name": {
         "value": "item.dec:pollution_algae.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "pollution_algae"
-     },
-	  "minecraft:use_animation": "eat",
+      },
+      "minecraft:use_animation": "eat",
       "minecraft:render_offsets": "cookie",
       "minecraft:use_duration": 1.6,
       "minecraft:food": {

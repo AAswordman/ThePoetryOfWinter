@@ -12,7 +12,7 @@
       "minecraft:display_name": {
         "value": "item.dec:wine_glass.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "wine_glass"
       }
     }

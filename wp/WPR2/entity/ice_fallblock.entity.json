@@ -1,0 +1,24 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:ice_fallblock",
+      "materials": {
+        "default": "slime_outer"
+      },
+      "textures": {
+        "default": "textures/entity/ice_snow"
+      },
+      "geometry": {
+        "default": "geometry.fallblock"
+      },
+      "render_controllers": [ "controller.render.ice_fallblock" ],
+	  "scripts": { "animate": [ "root", "spawn" ] },
+      "animations": {
+        "root": "controller.animation.ice_fallblock.root",
+        "spawn": "animation.ice_fallblock.spawn",
+        "defualt": "animation.ice_fallblock.defualt"
+      }
+    }
+  }
+}

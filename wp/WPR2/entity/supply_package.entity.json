@@ -1,0 +1,19 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:supply_package",
+      "materials": { "default": "zombie" },
+      "textures": {
+        "default": "textures/entity/supply_package"
+      },
+      "scripts": {
+        "scale": "0.5"
+      },
+      "geometry": {
+        "default": "geometry.half_block"
+      },
+      "render_controllers": [ "controller.render.tnt" ]
+    }
+  }
+}

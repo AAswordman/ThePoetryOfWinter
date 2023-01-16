@@ -41,7 +41,7 @@
         },
         {
           "type": "item",
-          "name": "minecraft:gold_axe",
+          "name": "minecraft:golden_axe",
           "weight": 3,
           "functions": [
             {

@@ -15,15 +15,19 @@
         },
         "minecraft:height_filter": {
           "min": -64,
-          "max": 62
+          "max": 32
         },
         "minecraft:weight": {
-          "default": 3
+          "default": 1
         },
         "minecraft:herd": {
           "min_size": 1,
-          "max_size": 2
-        },        
+          "max_size": 1
+        },
+        "minecraft:density_limit": {
+          "surface": 1,
+          "underground": 5
+        },
         "minecraft:biome_filter": {
           "test": "has_biome_tag", "operator":"==", "value": "animal"
         }

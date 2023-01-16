@@ -12,7 +12,7 @@
       "minecraft:display_name": {
         "value": "item.dec:shell.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "shell"
       }
     }

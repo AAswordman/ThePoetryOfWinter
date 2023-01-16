@@ -5,7 +5,6 @@
       "category": "nature",
       "identifier": "dec:iron_fish"
     },
-    
     "components": {
       "minecraft:creative_category": {
         "parent": "itemGroup.name.rawFood"
@@ -13,10 +12,10 @@
       "minecraft:display_name": {
         "value": "item.dec:iron_fish.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "iron_fish"
-     },
-	  "minecraft:use_animation": "eat",
+      },
+      "minecraft:use_animation": "eat",
       "minecraft:render_offsets": "fish",
       "minecraft:use_duration": 4.0,
       "minecraft:food": {

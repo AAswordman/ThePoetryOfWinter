@@ -12,10 +12,10 @@
       "minecraft:display_name": {
         "value": "item.dec:magic_article.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "magic_article"
-     },
+      },
       "minecraft:foil": true
-	  }
+    }
   }
 }

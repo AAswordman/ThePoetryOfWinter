@@ -5,69 +5,69 @@ execute as @a[tag=tp] at @s run spreadplayers ~ ~ 1 64 @s
 tag @a[tag=tp] remove tp
 
 ##溪流矿
-execute as @e[type=lightning_bolt] at @s run fill ~-1 ~-1 ~-1 ~1 ~1 ~1 dec:stream_ore 0 replace iron_ore 0
+execute at @e[type=lightning_bolt] run fill ~-1 ~-1 ~-1 ~1 ~1 ~1 dec:stream_ore 0 replace iron_ore 0
 
 ##流动块一级
 execute as @a[scores={wbfl=..40}] at @s if block ~ ~-0.1 ~ dec:flowing_block_1 0 run tag @s add flowing_block_1
 execute as @a[scores={wbfl=..40}] at @s if block ~ ~-0.1 ~ dec:flowing_block_1 0 run setblock ~~-0.1 ~ dec:flowing_block_0
 scoreboard players add @a[tag=flowing_block_1] wbfl 20
-execute as @a[tag=flowing_block_1] at @s run particle dec:white_star_particle ~~~
-execute as @a[tag=flowing_block_1] at @s run particle dec:white_star_particle ~~~
-execute as @a[tag=flowing_block_1] at @s run particle dec:white_star_particle ~~~
-execute as @a[tag=flowing_block_1] at @s run particle dec:white_star_particle ~~~
-execute as @a[tag=flowing_block_1] at @s run particle dec:white_star_particle ~~~
+execute at @a[tag=flowing_block_1] run particle dec:white_star_particle ~~~
+execute at @a[tag=flowing_block_1] run particle dec:white_star_particle ~~~
+execute at @a[tag=flowing_block_1] run particle dec:white_star_particle ~~~
+execute at @a[tag=flowing_block_1] run particle dec:white_star_particle ~~~
+execute at @a[tag=flowing_block_1] run particle dec:white_star_particle ~~~
 tag @a remove flowing_block_1
 
 ##流动块二级
 execute as @a[scores={wbfl=..35}] at @s if block ~ ~-0.1 ~ dec:flowing_block_2 0 run tag @s add flowing_block_2
 execute as @a[scores={wbfl=..35}] at @s if block ~ ~-0.1 ~ dec:flowing_block_2 0 run setblock ~~-0.1 ~ dec:flowing_block_0
 scoreboard players add @a[tag=flowing_block_2] wbfl 25
-execute as @a[tag=flowing_block_2] at @s run particle dec:white_star_particle ~~~
-execute as @a[tag=flowing_block_2] at @s run particle dec:white_star_particle ~~~
-execute as @a[tag=flowing_block_2] at @s run particle dec:white_star_particle ~~~
-execute as @a[tag=flowing_block_2] at @s run particle dec:white_star_particle ~~~
-execute as @a[tag=flowing_block_2] at @s run particle dec:white_star_particle ~~~
+execute at @a[tag=flowing_block_2] run particle dec:white_star_particle ~~~
+execute at @a[tag=flowing_block_2] run particle dec:white_star_particle ~~~
+execute at @a[tag=flowing_block_2] run particle dec:white_star_particle ~~~
+execute at @a[tag=flowing_block_2] run particle dec:white_star_particle ~~~
+execute at @a[tag=flowing_block_2] run particle dec:white_star_particle ~~~
 tag @a remove flowing_block_2
 
 ##流动块三级
 execute as @a[scores={wbfl=..25}] at @s if block ~ ~-0.1 ~ dec:flowing_block_3 0 run tag @s add flowing_block_3
 execute as @a[scores={wbfl=..25}] at @s if block ~ ~-0.1 ~ dec:flowing_block_3 0 run setblock ~~-0.1 ~ dec:flowing_block_0
 scoreboard players add @a[tag=flowing_block_3] wbfl 35
-execute as @a[tag=flowing_block_3] at @s run particle dec:white_star_particle ~~~
-execute as @a[tag=flowing_block_3] at @s run particle dec:white_star_particle ~~~
-execute as @a[tag=flowing_block_3] at @s run particle dec:white_star_particle ~~~
-execute as @a[tag=flowing_block_3] at @s run particle dec:white_star_particle ~~~
-execute as @a[tag=flowing_block_3] at @s run particle dec:white_star_particle ~~~
+execute at @a[tag=flowing_block_3] run particle dec:white_star_particle ~~~
+execute at @a[tag=flowing_block_3] run particle dec:white_star_particle ~~~
+execute at @a[tag=flowing_block_3] run particle dec:white_star_particle ~~~
+execute at @a[tag=flowing_block_3] run particle dec:white_star_particle ~~~
+execute at @a[tag=flowing_block_3] run particle dec:white_star_particle ~~~
 tag @a remove flowing_block_3
 
 ##流动块四级
 execute as @a[scores={wbfl=..10}] at @s if block ~ ~-0.1 ~ dec:flowing_block_4 0 run tag @s add flowing_block_4
 execute as @a[scores={wbfl=..10}] at @s if block ~ ~-0.1 ~ dec:flowing_block_4 0 run setblock ~~-0.1 ~ dec:flowing_block_0
 scoreboard players add @a[tag=flowing_block_4] wbfl 50
-execute as @a[tag=flowing_block_4] at @s run particle dec:white_star_particle ~~~
-execute as @a[tag=flowing_block_4] at @s run particle dec:white_star_particle ~~~
-execute as @a[tag=flowing_block_4] at @s run particle dec:white_star_particle ~~~
-execute as @a[tag=flowing_block_4] at @s run particle dec:white_star_particle ~~~
-execute as @a[tag=flowing_block_4] at @s run particle dec:white_star_particle ~~~
+execute at @a[tag=flowing_block_4] run particle dec:white_star_particle ~~~
+execute at @a[tag=flowing_block_4] run particle dec:white_star_particle ~~~
+execute at @a[tag=flowing_block_4] run particle dec:white_star_particle ~~~
+execute at @a[tag=flowing_block_4] run particle dec:white_star_particle ~~~
+execute at @a[tag=flowing_block_4] run particle dec:white_star_particle ~~~
 tag @a remove flowing_block_4
 
 ##潜影蘑菇
-execute as @a at @s run fill ~-5 ~-5 ~-5 ~5 ~5 ~5 dec:lurk_mushroom_lit 0 replace dec:lurk_mushroom 0
+execute at @a run fill ~-5 ~-5 ~-5 ~5 ~5 ~5 dec:lurk_mushroom_lit 0 replace dec:lurk_mushroom 0
 
 ##监视者
-execute as @a[m=!1] at @s run fill ~-4 ~-4 ~-4 ~4 ~4 ~4 dec:monitor_activated 0 replace dec:monitor 0
+execute at @a[m=!1] run fill ~-4 ~-4 ~-4 ~4 ~4 ~4 dec:monitor_activated 0 replace dec:monitor 0
 
 ##潜影末地石
 execute as @e at @s if block ~~-0.1~ dec:lurk_end_stone 0 run effect @s slowness 2 0
 
 ##辐射土
-execute as @e[type=!dec:werewolf,type=!dec:dark_werewolf,type=!dec:radiate_creeper,type=!dec:radiate_skeleton,type=!dec:radiate_enderman,type=!zombie,type=!dec:radiate_spider] at @s if block ~~-0.1~ dec:radiate_dirt 0 run effect @s poison 5 0
-execute as @e[scores={wbfl=1..}] at @s if block ~~-0.1~ dec:radiate_dirt 0 run scoreboard players remove @s wbfl 1
+execute at @e[type=!dec:werewolf,type=!dec:dark_werewolf,type=!dec:radiate_creeper,type=!dec:radiate_skeleton,type=!dec:radiate_enderman,type=!zombie,type=!dec:radiate_spider] as @s if block ~~-0.1~ dec:radiate_dirt 0 run effect @s poison 5 0
+execute at @e[scores={wbfl=1..}] as @s if block ~~-0.1~ dec:radiate_dirt 0 run scoreboard players remove @s wbfl 1
 
 ##辐射石头
-execute as @e[type=!dec:werewolf,type=!dec:dark_werewolf,type=!dec:radiate_creeper,type=!dec:radiate_skeleton,type=!dec:radiate_enderman,type=!zombie,type=!dec:radiate_spider] at @s if block ~~-0.1~ dec:radiate_stone 0 run effect @s poison 5 0
-execute as @e[scores={wbfl=1..}] at @s if block ~~-0.1~ dec:radiate_stone 0 run scoreboard players remove @s wbfl 1
+execute at @e[type=!dec:werewolf,type=!dec:dark_werewolf,type=!dec:radiate_creeper,type=!dec:radiate_skeleton,type=!dec:radiate_enderman,type=!zombie,type=!dec:radiate_spider] as @s if block ~~-0.1~ dec:radiate_stone 0 run effect @s poison 5 0
+execute at @e[scores={wbfl=1..}] as @s if block ~~-0.1~ dec:radiate_stone 0 run scoreboard players remove @s wbfl 1
 
 ##辐射石砖
-execute as @e[type=!dec:werewolf,type=!dec:dark_werewolf,type=!dec:radiate_creeper,type=!dec:radiate_skeleton,type=!dec:radiate_enderman,type=!zombie,type=!dec:radiate_spider] at @s if block ~~-0.1~ dec:radiate_stonebrick 0 run effect @s poison 5 0
-execute as @e[scores={wbfl=1..}] at @s if block ~~-0.1~ dec:radiate_stonebrick 0 run scoreboard players remove @s wbfl 1
+execute at @e[type=!dec:werewolf,type=!dec:dark_werewolf,type=!dec:radiate_creeper,type=!dec:radiate_skeleton,type=!dec:radiate_enderman,type=!zombie,type=!dec:radiate_spider] as @s if block ~~-0.1~ dec:radiate_stonebrick 0 run effect @s poison 5 0
+execute at @e[scores={wbfl=1..}] as @s if block ~~-0.1~ dec:radiate_stonebrick 0 run scoreboard players remove @s wbfl 1

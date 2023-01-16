@@ -117,6 +117,9 @@
     },
 
     "components": {
+        "minecraft:despawn": {
+            "despawn_from_distance": {}
+          },
       "minecraft:nameable": {
       },
       "minecraft:type_family": {

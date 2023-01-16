@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:ice_mixed_brick"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XA",
+      "AX"
+    ],
+      "key": {
+      "X": {
+        "item": "dec:ice_brick_block"
+      },
+      "A": {
+        "item": "dec:snow_brick_block"
+      }
+    },
+    "result": {
+      "item": "dec:ice_mixed_brick",
+      "count": 4
+    }
+  }
+}

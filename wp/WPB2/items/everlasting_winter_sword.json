@@ -51,14 +51,8 @@
           }
         ]
       },
-      "minecraft:use_duration": 30000,
       "minecraft:durability": {
         "max_durability": 1712
-      },
-      "minecraft:food": {
-        "nutrition": 0,
-        "saturation_modifier": "supernatural",
-        "can_always_eat": true
       },
       "minecraft:mining_speed": 1.5,
       "minecraft:damage": 8,
@@ -81,7 +75,17 @@
         ]
       },
       "minecraft:foil": false,
-      "minecraft:hand_equipped": true
+      "minecraft:hand_equipped": true,
+      "minecraft:on_use": {
+        "on_use": {
+          "event": "everlasting_winter_sword_use",
+          "target": "self"
+        }
+      },
+      "minecraft:cooldown": {
+        "category": "sword",
+        "duration": 1
+      }
     },
     "events": {
       "attack": {
@@ -89,6 +93,23 @@
           "type": "magic",
           "amount": 1
         }
+      },
+      "everlasting_winter_sword_use": {
+        "sequence": [
+          {
+            "condition": "query.scoreboard('wbfl') > 1",
+            "sequence": [
+              {
+                "run_command": {
+                  "command": [
+                    "function item/everlasting_winter_sword"
+                  ],
+                  "target": "holder"
+                }
+              }
+            ]
+          }
+        ]
       }
     }
   }

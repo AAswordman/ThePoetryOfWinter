@@ -1,7 +1,7 @@
 {
   "format_version": "1.16.100",
   "minecraft:item": {
-        "description": {
+    "description": {
       "category": "equipment",
       "identifier": "dec:emerald_dart"
     },
@@ -18,7 +18,7 @@
       "minecraft:use_animation": "crossbow",
       "minecraft:render_offsets": "bow",
       "minecraft:cooldown": {
-        "category": "chorusfruit",
+        "category": "missile",
         "duration": 0.2
       },
       "minecraft:throwable": {

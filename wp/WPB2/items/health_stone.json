@@ -1,7 +1,7 @@
 {
   "format_version": "1.16.100",
   "minecraft:item": {
-        "description": {
+    "description": {
       "category": "items",
       "identifier": "dec:health_stone"
     },

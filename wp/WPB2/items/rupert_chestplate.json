@@ -22,7 +22,7 @@
         "slot": "armor_torso"
       },
       "minecraft:durability": {
-        "max_durability": 210,
+        "max_durability": 420,
         "damage_chance": {
           "min": 60,
           "max": 100

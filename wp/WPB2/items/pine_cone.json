@@ -5,21 +5,20 @@
       "category": "nature",
       "identifier": "dec:pine_cone"
     },
-
     "components": {
-      "minecraft:fuel" : {
-        "duration" : 5.0
-     },
+      "minecraft:fuel": {
+        "duration": 5.0
+      },
       "minecraft:creative_category": {
         "parent": "itemGroup.name.crop"
       },
       "minecraft:display_name": {
         "value": "item.dec:pine_cone.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "pine_cone"
-     },
-	  "minecraft:use_animation": "eat",
+      },
+      "minecraft:use_animation": "eat",
       "minecraft:render_offsets": "cookie",
       "minecraft:use_duration": 0.5,
       "minecraft:food": {

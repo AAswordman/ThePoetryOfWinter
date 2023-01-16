@@ -1,23 +1,23 @@
 {
   "format_version": "1.16.100",
   "minecraft:item": {
-	"description": {
+    "description": {
       "category": "equipment",
       "identifier": "dec:natura_spear"
     },
     "components": {
-      "minecraft:fuel" : {
-        "duration" : 15.0
-     },
+      "minecraft:fuel": {
+        "duration": 15.0
+      },
       "minecraft:creative_category": {
         "parent": "itemGroup.name.sword"
       },
       "minecraft:display_name": {
         "value": "item.dec:natura_spear.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "natura_spear"
-     },
+      },
       "minecraft:use_animation": "bow",
       "minecraft:render_offsets": "bow",
       "minecraft:stacked_by_data": false,
@@ -31,7 +31,7 @@
         }
       },
       "minecraft:cooldown": {
-        "category": "weapon",
+        "category": "staff",
         "duration": 1.1
       },
       "minecraft:durability": {

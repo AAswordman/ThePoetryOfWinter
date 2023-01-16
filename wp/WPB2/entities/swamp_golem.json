@@ -86,12 +86,16 @@
       },
       "minecraft:type_family": {
         "family": [
+          "mini_boss",
           "swamp_golem",
           "mob",
           "monster",
           "golem",
           "swamp"
         ]
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
       },
       "minecraft:knockback_resistance": {
         "value": 1

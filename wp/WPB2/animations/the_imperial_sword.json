@@ -4,18 +4,18 @@
         "animation.the_imperial_sword": {
             "timeline": {
                 "2": [
-                    "/execute as @s[scores={wbfl=20..}] at @s run effect @s strength 5 1",
-                    "/execute as @s[scores={wbfl=20..}] at @s run effect @s resistance 2 2",
-                    "/execute as @s[scores={wbfl=20..}] at @s run effect @e[r=5,rm=2] slowness 1 255",
-                    "/execute as @s[scores={wbfl=20..}] at @s run particle dec:frozen_shield_particle ~~~",
+                    "/execute at @s[scores={wbfl=20..}] run effect @s strength 5 1",
+                    "/execute at @s[scores={wbfl=20..}] run effect @s resistance 2 2",
+                    "/execute at @s[scores={wbfl=20..}] run effect @e[r=5,rm=2] slowness 1 255",
+                    "/execute at @s[scores={wbfl=20..}] run particle dec:frozen_shield_particle ~~~",
                     "/scoreboard players remove @s[scores={wbfl=20..},tag=frozen_power] wbfl 20"
                 ],
                 "4": [
-                    "/execute as @s[scores={wbfl=20..}] at @s run effect @s strength 5 2",
-                    "/execute as @s[scores={wbfl=20..}] at @s run effect @s resistance 2 3",
-                    "/execute as @s[scores={wbfl=20..}] at @s run effect @e[r=6,rm=2] slowness 2 255",
-                    "/execute as @s[scores={wbfl=20..}] at @s run particle dec:frozen_shield_particle ~~~",
-                    "/execute as @s[scores={wbfl=20..}] at @s run particle dec:frozen_shield_particle ~~~",
+                    "/execute at @s[scores={wbfl=20..}] run effect @s strength 5 2",
+                    "/execute at @s[scores={wbfl=20..}] run effect @s resistance 2 3",
+                    "/execute at @s[scores={wbfl=20..}] run effect @e[r=6,rm=2] slowness 2 255",
+                    "/execute at @s[scores={wbfl=20..}] run particle dec:frozen_shield_particle ~~~",
+                    "/execute at @s[scores={wbfl=20..}] run particle dec:frozen_shield_particle ~~~",
                     "/scoreboard players remove @s[scores={wbfl=20..},tag=frozen_power] wbfl 20"
                 ]
             },

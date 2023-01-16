@@ -1,7 +1,7 @@
 {
   "format_version": "1.16.100",
   "minecraft:item": {
-	    "description": {
+    "description": {
       "category": "equipment",
       "identifier": "dec:chicken_staff"
     },
@@ -28,23 +28,23 @@
         }
       },
       "minecraft:cooldown": {
-        "category": "weapon",
+        "category": "staff",
         "duration": 0.9
       },
       "minecraft:durability": {
         "max_durability": 34
       },
-			"minecraft:repairable": {
-				"repair_items": [
-					{
-						"items": [
-							"minecraft:bamboo"
-						],
-						"repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.6"
-					}
-				]
-			}
-	  },
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "minecraft:bamboo"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.6"
+          }
+        ]
+      }
+    },
     "events": {
       "attack": {
         "damage": {

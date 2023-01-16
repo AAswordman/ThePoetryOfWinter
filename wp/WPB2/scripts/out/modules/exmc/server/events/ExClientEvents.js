@@ -29,7 +29,7 @@ export default class ExClientEvents {
     _unsubscribe(arg0, callback) {
         ExClientEvents.eventHandlers.unsubscribe(this._client.player, arg0, callback);
     }
-    unsubscribeAll() {
+    cancelAll() {
         ExClientEvents.eventHandlers.unsubscribeAll(this._client.player);
     }
     static init(s) {

@@ -34,15 +34,21 @@
         "repair_items": [
           {
             "items": [
+              "minecraft:emerald"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.09"
+          },
+          {
+            "items": [
               "minecraft:iron_ingot"
             ],
-            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.3"
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.01"
           },
           {
             "items": [
               "minecraft:iron_nugget"
             ],
-            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.03"
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.001"
           }
         ]
       },
@@ -67,14 +73,60 @@
         ]
       },
       "minecraft:foil": false,
-      "minecraft:hand_equipped": true
+      "minecraft:hand_equipped": true,
+      "minecraft:on_use": {
+        "on_use": {
+          "event": "village_guardian_use",
+          "target": "self"
+        }
+      },
+      "minecraft:cooldown": {
+        "category": "village_portal",
+        "duration": 60
+      }
     },
     "events": {
       "attack": {
-        "damage": {
-          "type": "magic",
-          "amount": 1
-        }
+        "sequence": [
+          {
+            "damage": {
+              "type": "magic",
+              "amount": 1
+            }
+          },
+          {
+            "run_command": {
+              "command": [
+                "effect @e[family=villager,r=4] regeneration 10 0",
+                "particle dec:village_portal_seep_particle ~~~"
+              ],
+              "target": "other"
+            }
+          }
+        ]
+      },
+      "village_guardian_use": {
+        "sequence": [
+          {
+            "condition": "query.remaining_durability > 100 && query.scoreboard('wbfl') > 19",
+            "sequence": [
+              {
+                "damage": {
+                  "type": "magic",
+                  "amount": 100
+                }
+              },
+              {
+                "run_command": {
+                  "command": [
+                    "function item/village_guardian"
+                  ],
+                  "target": "holder"
+                }
+              }
+            ]
+          }
+        ]
       }
     }
   }

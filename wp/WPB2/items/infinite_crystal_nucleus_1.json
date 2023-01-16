@@ -1,7 +1,7 @@
 {
   "format_version": "1.16.100",
   "minecraft:item": {
-	"description": {
+    "description": {
       "category": "items",
       "identifier": "dec:infinite_crystal_nucleus_1"
     },
@@ -12,9 +12,9 @@
       "minecraft:display_name": {
         "value": "item.dec:infinite_crystal_nucleus_1.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "infinite_crystal_nucleus_1"
-     },
+      },
       "minecraft:use_animation": "bow",
       "minecraft:render_offsets": "bow",
       "minecraft:stacked_by_data": false,
@@ -27,11 +27,11 @@
         }
       },
       "minecraft:cooldown": {
-        "category": "magic",
+        "category": "infinite_crystal_nucleus_1",
         "duration": 0.05
       },
       "minecraft:durability": {
-        "max_durability": 471
+        "max_durability": 942
       },
       "minecraft:repairable": {
         "repair_items": [
@@ -66,6 +66,12 @@
                 "particle dec:white_star_particle ~~1~",
                 "scoreboard players add @s wbfl 1"
               ]
+            }
+          },
+          {
+            "damage": {
+              "type": "magic",
+              "amount": 1
             }
           }
         ]

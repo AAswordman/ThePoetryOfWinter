@@ -9,8 +9,8 @@
         "group": "itemGroup.name.outside",
 				"category": "items"
 			},
-      "minecraft:block_light_absorption": 1,
-      "minecraft:block_light_emission": 0.5,
+      "minecraft:light_dampening": 15,
+      "minecraft:light_emission": 3,
       "minecraft:destroy_time": 4,
       "minecraft:explosion_resistance": 0,
       "minecraft:map_color": "#7BE2D4",

@@ -5,6 +5,7 @@
             "identifier": "dec:small_stone_block_entity"
         },
         "components": {
+			"minecraft:breathability": "air",
             "minecraft:material_instances": {
                 "*": {
                     "texture": "small_stone",
@@ -29,8 +30,8 @@
             "minecraft:geometry": "geometry.small_stone",
             "minecraft:map_color": "#A36FD5",
             "minecraft:loot": "loot_tables/blocks/small_stone.json",
-            "minecraft:block_light_emission": 0.0,
-            "minecraft:block_light_absorption": 0.0,
+            "minecraft:light_emission": 0.0,
+            "minecraft:light_dampening": 0.0,
             "minecraft:destroy_time": 0.01
         }
     }

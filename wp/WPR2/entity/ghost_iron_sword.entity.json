@@ -3,7 +3,7 @@
   "minecraft:client_entity": {
     "description": {
       "identifier": "dec:ghost_iron_sword",
-      
+      "min_engine_version": "1.8.0",
       "materials": {
         "default": "zombie"
       },
@@ -20,12 +20,6 @@
       "scripts": {
         "scale": "1"
       },
-      "animations": {
-        "attack": "animation.sword.attack"
-      },
-      "animation_controllers": [
-        { "attack": "controller.animation.sword.attack"}
-      ],
       "render_controllers": [ "controller.render.sword" ],
       "enable_attachables": true
     }

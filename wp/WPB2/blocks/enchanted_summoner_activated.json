@@ -5,8 +5,8 @@
       "identifier": "dec:enchanted_summoner_activated"
     },
     "components": {
-      "minecraft:block_light_absorption": 1,
-      "minecraft:block_light_emission": 1,
+      "minecraft:light_dampening": 15,
+      "minecraft:light_emission": 7,
       "minecraft:destroy_time": 3.0,
       "minecraft:explosion_resistance": 100,
       "minecraft:map_color": "#897053",

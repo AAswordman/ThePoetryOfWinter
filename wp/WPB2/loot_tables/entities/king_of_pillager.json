@@ -80,7 +80,7 @@
                 },
                 {
                     "type": "item",
-                    "name": "dec:diamond",
+                    "name": "minecraft:diamond",
                     "weight": 1,
                     "functions": [
                         {
@@ -94,7 +94,7 @@
                 },
                 {
                     "type": "item",
-                    "name": "dec:emerald",
+                    "name": "minecraft:emerald",
                     "weight": 2,
                     "functions": [
                         {
@@ -119,11 +119,11 @@
                 {
                     "type": "item",
                     "name": "dec:scimitar",
-                    "weight": 2
+                    "weight": 3
                 },
                 {
                     "type": "item",
-                    "name": "dec:the_blade",
+                    "name": "dec:village_guardian",
                     "weight": 1
                 }
             ]

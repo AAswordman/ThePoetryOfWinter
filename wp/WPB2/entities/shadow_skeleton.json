@@ -9,10 +9,26 @@
 			"is_experimental": false
 		},
 		"component_groups": {
+			"minecraft:despawn": {
+				"minecraft:instant_despawn": {}
+			},
+			"minecraft:from_night_event": {
+				"minecraft:environment_sensor": {
+					"triggers": {
+						"filters": {
+							"test": "is_daytime",
+							"subject": "self",
+							"operator": "==",
+							"value": true
+						},
+						"event": "minecraft:despawn"
+					}
+				}
+			},
 			"minecraft:summon": {
 				"minecraft:timer": {
 					"looping": true,
-					"time": 5,
+					"time": 7,
 					"time_down_event": {
 						"event": "minecraft:summon_start"
 					}
@@ -70,30 +86,8 @@
 					"mob"
 				]
 			},
-			"minecraft:equipment": {
-				"table": "loot_tables/entities/skeleton_gear.json",
-				"slot_drop_chance": [
-					{
-						"slot": "slot.weapon.mainhand",
-						"drop_chance": 0.005
-					},
-					{
-						"slot": "slot.armor.head",
-						"drop_chance": 0.005
-					},
-					{
-						"slot": "slot.armor.chestplate",
-						"drop_chance": 0.005
-					},
-					{
-						"slot": "slot.armor.leggings",
-						"drop_chance": 0.005
-					},
-					{
-						"slot": "slot.armor.boots",
-						"drop_chance": 0.005
-					}
-				]
+			"minecraft:despawn": {
+			  "despawn_from_distance": {}
 			},
 			"minecraft:loot": {
 				"table": "loot_tables/entities/shadow_skeleton.json"
@@ -221,6 +215,21 @@
 			}
 		},
 		"events": {
+			"minecraft:despawn": {
+				"add": {
+					"component_groups": [
+						"minecraft:despawn"
+					]
+				}
+			},
+			"minecraft:from_night_event": {
+				"trigger": "minecraft:entity_spawned",
+				"add": {
+					"component_groups": [
+						"minecraft:from_night_event"
+					]
+				}
+			},
 			"minecraft:summon_start": {
 				"run_command": {
 					"command": [

@@ -12,7 +12,7 @@
       "minecraft:display_name": {
         "value": "item.dec:wet_paper.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "wet_paper"
       }
     }

@@ -1,7 +1,7 @@
 {
   "format_version": "1.16.100",
   "minecraft:item": {
-        "description": {
+    "description": {
       "category": "equipment",
       "identifier": "dec:witch_hat"
     },
@@ -12,10 +12,10 @@
       "minecraft:display_name": {
         "value": "item.dec:witch_hat.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "witch_hat"
-     },
-    "minecraft:render_offsets": "helmets",
+      },
+      "minecraft:render_offsets": "helmets",
       "minecraft:max_stack_size": 1,
       "minecraft:enchantable": {
         "value": 30,

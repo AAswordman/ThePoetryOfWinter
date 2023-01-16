@@ -1,0 +1,35 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:blood_meat"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "CAC",
+      "#X#",
+      "ABA"
+    ],
+    "key": {
+      "C": {
+        "item": "dec:intestine"
+      },
+      "#": {
+        "item": "dec:health_nugget"
+      },
+      "X": {
+        "item": "minecraft:rotten_flesh"
+      },
+      "A": {
+        "item": "dec:zombie_brain"
+      },
+      "B": {
+        "item": "dec:pollution_algae"
+      }
+    },
+    "result": {
+      "item": "dec:blood_meat",
+      "count": 1
+    }
+  }
+}

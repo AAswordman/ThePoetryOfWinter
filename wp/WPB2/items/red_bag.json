@@ -18,7 +18,7 @@
       "minecraft:render_offsets": "bow",
       "minecraft:use_duration": 30000,
       "minecraft:cooldown": {
-        "category": "chorusfruit",
+        "category": "red_bag",
         "duration": 3
       },
       "minecraft:on_use": {
@@ -30,89 +30,12 @@
     },
     "events": {
       "red_bag": {
-        "randomize": [
-          {
-            "weight": 3,
-            "run_command": {
-              "command": [
-                "give @s gold_nugget",
-                "clear @s dec:red_bag 0 1"
-              ]
-            }
-          },
-          {
-            "weight": 2,
-            "run_command": {
-              "command": [
-                "give @s gold_ingot",
-                "clear @s dec:red_bag 0 1"
-              ]
-            }
-          },
-          {
-            "weight": 1,
-            "run_command": {
-              "command": [
-                "give @s diamond",
-                "clear @s dec:red_bag 0 1"
-              ]
-            }
-          },
-          {
-            "weight": 2,
-            "run_command": {
-              "command": [
-                "give @s dec:diamond_nugget",
-                "clear @s dec:red_bag 0 1"
-              ]
-            }
-          },
-          {
-            "weight": 1,
-            "run_command": {
-              "command": [
-                "give @s emerald",
-                "clear @s dec:red_bag 0 1"
-              ]
-            }
-          },
-          {
-            "weight": 2,
-            "run_command": {
-              "command": [
-                "give @s dec:red_lantern",
-                "clear @s dec:red_bag 0 1"
-              ]
-            }
-          },
-          {
-            "weight": 3,
-            "run_command": {
-              "command": [
-                "give @s dec:emerald_nugget",
-                "clear @s dec:red_bag 0 1"
-              ]
-            }
-          },
-          {
-            "weight": 2,
-            "run_command": {
-              "command": [
-                "give @s dec:gold_yuanbao",
-                "clear @s dec:red_bag 0 1"
-              ]
-            }
-          },
-          {
-            "weight": 2,
-            "run_command": {
-              "command": [
-                "give @s dec:sliver_yuanbao",
-                "clear @s dec:red_bag 0 1"
-              ]
-            }
-          }
-        ]
+        "run_command": {
+          "command": [
+            "loot give @s loot \"items/red_bag\"",
+            "clear @s dec:red_bag 0 1"
+          ]
+        }
       }
     }
   }

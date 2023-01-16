@@ -4,13 +4,13 @@
     "description": {
       "identifier": "dec:everlasting_winter_ghast",
       "materials": {
-        "default": "stray"
+        "default": "slime_outer"
       },
       "textures": {
         "default": "textures/entity/everlasting_winter_ghast"
       },
       "geometry": {
-        "default": "geometry.humanoid.customSlim"
+        "default": "geometry.everlasting_winter_ghast"
       },
       "spawn_egg": {
         "base_color": "#AAFCFF",

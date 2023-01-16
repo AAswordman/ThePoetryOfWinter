@@ -42,7 +42,7 @@
         ]
       },
       "minecraft:cooldown": {
-        "category": "weapon",
+        "category": "magic_book",
         "duration": 1
       },
       "minecraft:durability": {

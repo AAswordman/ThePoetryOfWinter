@@ -1,0 +1,25 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "nature",
+      "identifier": "dec:fritillary_seeds"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.seed"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:fritillary_seeds.name"
+      },
+      "minecraft:icon": {
+        "texture": "fritillary_seeds"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "cookie",
+      "minecraft:block_placer": {
+        "block": "dec:fritillary_crop"
+      }
+    }
+  }
+}

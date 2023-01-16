@@ -8,40 +8,60 @@
       "is_experimental": false,
       "scripts": {
         "animate": [
-          "ticking"
+          "ticking",
+          "summon",
+          "teleport"
         ]
       },
       "animations": {
-        "ticking": "controller.animation.abyssal_controller"
+        "ticking": "controller.animation.abyssal_controller",
+        "summon": "animation.abyssal_controller.summon",
+        "teleport": "animation.abyssal_controller.teleport"
       }
     },
     "component_groups": {
-      "minecraft:angry": {
-        "minecraft:boss": {
-          "should_darken_sky": false,
-          "name": "boss.dec:abyssal_controller_angry.name",
-          "hud_range": 64
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "minecraft:accurate_shoot": {
+        "minecraft:timer": {
+          "looping": false,
+          "time": 7,
+          "time_down_event": {
+            "event": "minecraft:scattering"
+          }
         },
-        "minecraft:health": {
-          "value": 600,
-          "max": 600
+        "minecraft:shooter": {
+          "type": "wave_energy",
+          "def": "dec:wave_energy"
         },
         "minecraft:behavior.ranged_attack": {
           "attack_interval_min": 1,
-          "attack_interval_max": 3,
+          "attack_interval_max": 1,
           "attack_radius": 64
+        }
+      },
+      "minecraft:scattering_shoot": {
+        "minecraft:timer": {
+          "looping": false,
+          "time": 7,
+          "time_down_event": {
+            "event": "minecraft:accurate"
+          }
         },
-        "minecraft:teleport": {
-          "random_teleports": true,
-          "max_random_teleport_time": 30,
-          "random_teleport_cube": [
-            8,
-            32,
-            8
-          ],
-          "target_distance": 16,
-          "target_teleport_chance": 0.05,
-          "light_teleport_chance": 0.05
+        "minecraft:shooter": {
+          "type": "wave_energy",
+          "def": "dec:wave_energy_inaccurated"
+        },
+        "minecraft:behavior.ranged_attack": {
+          "priority": 4,
+          "burst_shots": 10,
+          "burst_interval": 0.01,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 1.0,
+          "attack_interval_min": 1.0,
+          "attack_interval_max": 1.0,
+          "attack_radius": 64.0
         }
       }
     },
@@ -54,12 +74,13 @@
       },
       "minecraft:fire_immune": true,
       "minecraft:experience_reward": {
-        "on_death": "query.last_hit_by_player ? 400 : 0"
+        "on_death": "query.last_hit_by_player ? 200 : 0"
       },
       "minecraft:type_family": {
         "family": [
           "monster",
           "abyssal_controller",
+          "abyssal",
           "mob",
           "boss"
         ]
@@ -94,15 +115,6 @@
           0.1,
           0.07
         ]
-      },
-      "minecraft:shooter": {
-        "type": "nonyl_plug_trident",
-        "def": "dec:nonyl_plug_trident"
-      },
-      "minecraft:behavior.ranged_attack": {
-        "attack_interval_min": 3,
-        "attack_interval_max": 5,
-        "attack_radius": 64
       },
       "minecraft:movement": {
         "value": 0.005
@@ -170,11 +182,6 @@
         ],
         "must_see": false
       },
-      "minecraft:behavior.melee_attack": {
-        "priority": 3,
-        "speed_multiplier": 1,
-        "track_target": true
-      },
       "minecraft:behavior.random_stroll": {
         "priority": 5,
         "speed_multiplier": 1
@@ -188,34 +195,50 @@
       }
     },
     "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
       "minecraft:entity_spawned": {
-        "sequence": [
-          {
-            "run_command": {
-              "command": [
-                "particle dec:abyssal_controller_spawn_particle ~~~",
-                "particle dec:abyssal_controller_spawn_particle ~~~",
-                "particle dec:abyssal_controller_spawn_particle ~~~"
-              ]
-            }
-          },
-          {
-            "filters": {
-              "test": "has_biome_tag",
-              "operator": "!=",
-              "value": "ocean"
-            },
-            "randomize": [
-              {
-                "add": {
-                  "component_groups": [
-                    "minecraft:angry"
-                  ]
-                }
-              }
-            ]
-          }
-        ]
+        "add": {
+          "component_groups": [
+            "minecraft:scattering_shoot"
+          ]
+        },
+        "run_command": {
+          "command": [
+            "particle dec:abyssal_controller_spawn_particle ~~~",
+            "particle dec:abyssal_controller_spawn_particle ~~~",
+            "particle dec:abyssal_controller_spawn_particle ~~~"
+          ]
+        }
+      },
+      "minecraft:scattering": {
+        "add": {
+          "component_groups": [
+            "minecraft:scattering_shoot"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "minecraft:accurate_shoot"
+          ]
+        }
+      },
+      "minecraft:accurate": {
+        "add": {
+          "component_groups": [
+            "minecraft:accurate_shoot"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "minecraft:scattering_shoot"
+          ]
+        }
       }
     }
   }

@@ -5,10 +5,9 @@
 			"identifier": "dec:tower_of_watcher_mcstructure"
 		},
 		"structure_name": "mystructure:tower_of_watcher_su",
-		"adjustment_radius": 6,
+		"adjustment_radius": 16,
 		"facing_direction": "random",
 		"constraints": {
-			"grounded": {}
 		}
 	}
 }

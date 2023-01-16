@@ -12,7 +12,7 @@
         "minecraft:on_target_acquired": {
         },
         "minecraft:block_sensor": {
-          "sensor_radius": 64,
+          "sensor_radius": 32,
           "on_break": [
             {
               "block_list": [

@@ -12,7 +12,7 @@
       "minecraft:display_name": {
         "value": "item.dec:small_stone.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "small_stone"
       },
       "minecraft:block_placer": {

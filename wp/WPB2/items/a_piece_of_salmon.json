@@ -1,7 +1,7 @@
 {
   "format_version": "1.16.100",
   "minecraft:item": {
-        "description": {
+    "description": {
       "category": "nature",
       "identifier": "dec:a_piece_of_salmon"
     },
@@ -9,13 +9,13 @@
       "minecraft:creative_category": {
         "parent": "itemGroup.name.rawFood"
       },
-			"minecraft:display_name": {
+      "minecraft:display_name": {
         "value": "item.dec:a_piece_of_salmon.name"
       },
       "minecraft:icon": {
         "texture": "a_piece_of_salmon"
       },
-	    "minecraft:use_animation": "eat",
+      "minecraft:use_animation": "eat",
       "minecraft:render_offsets": "fishes",
       "minecraft:use_duration": 0.5,
       "minecraft:food": {

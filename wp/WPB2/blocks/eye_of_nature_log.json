@@ -10,17 +10,27 @@
 				"category": "nature"
 			},
       "minecraft:loot": "loot_tables/blocks/eye_of_nature_log.json",
-      "minecraft:block_light_absorption": 0,
-      "minecraft:block_light_emission": 0,
+      "minecraft:light_dampening": 15,
+      "minecraft:light_emission": 0,
       "minecraft:destroy_time": 3,
       "minecraft:explosion_resistance": 0,
-      "minecraft:map_color": "#4C3D26"
+      "minecraft:map_color": "#4C3D26",
+      "minecraft:ticking": {
+        "looping": true,
+        "range": [
+          10,
+          10
+        ],
+        "on_tick": {
+          "event": "minecraft:effect"
+        }
+      }
     },
     "events": {
       "minecraft:effect": {
         "run_command": {
           "command": [
-            "effect @a[r=6,m=!1,tag=!wood_armor] mining_fatigue 11 1",
+            "execute as @a[r=6,m=!1] unless entity @s[hasitem={location=slot.armor.head,item=dec:wood_helmet}] unless entity @s[hasitem={location=slot.armor.chest,item=dec:wood_chestplate}] unless entity @s[hasitem={location=slot.armor.legs,item=dec:wood_leggings}] unless entity @s[hasitem={location=slot.armor.feet,item=dec:wood_boots}] run effect @s mining_fatigue 11 1",
             "particle dec:eye_of_nature_watching_particle ~~~"
           ]
         }

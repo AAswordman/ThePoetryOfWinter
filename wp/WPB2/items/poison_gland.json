@@ -5,7 +5,6 @@
       "category": "items",
       "identifier": "dec:poison_gland"
     },
-
     "components": {
       "minecraft:creative_category": {
         "parent": "itemGroup.name.decorations"
@@ -13,10 +12,10 @@
       "minecraft:display_name": {
         "value": "item.dec:poison_gland.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "poison_gland"
-     },
-	  "minecraft:use_animation": "eat",
+      },
+      "minecraft:use_animation": "eat",
       "minecraft:render_offsets": "cookie",
       "minecraft:use_duration": 1.6,
       "minecraft:food": {

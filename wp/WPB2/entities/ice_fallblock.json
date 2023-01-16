@@ -1,0 +1,81 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:ice_fallblock",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball"
+    },
+    "component_groups": {
+      "minecraft:exploding": {
+        "minecraft:explode": {
+          "fuseLength": 0,
+          "fuseLit": true,
+          "breaks_blocks": false,
+          "power": 6,
+          "causesFire": true,
+          "fireAffectedByGriefing": true,
+          "destroyAffectedByGriefing": true
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "ice_fallblock", "frozen" ]
+      },
+      "minecraft:explode": {
+        "fuseLength": 12,
+        "fuseLit": true,
+        "power": 3,
+        "causesFire": true,
+        "fireAffectedByGriefing": true,
+        "destroyAffectedByGriefing": true
+      },
+      "minecraft:physics": {},
+      "minecraft:scale": {
+        "value": 1
+      },
+      "minecraft:collision_box": {
+        "width": 0.4,
+        "height": 0.4
+      },
+      "minecraft:projectile": {
+        "onHit": {
+          "definition_event": {
+            "affectProjectile": true,
+            "eventTrigger": {
+              "event": "minecraft:explode",
+              "target": "self"
+            }
+          }
+        },
+        "power": 0.8,
+        "gravity": 0.05,
+        "inertia": 1,
+        "uncertaintyBase": 0,
+        "uncertaintyMultiplier": 0,
+        "anchor": 1,
+        "reflectOnHurt": true,
+        "catchFire": true
+      }
+    },
+    "events": {
+      "minecraft:explode": {
+        "add": {
+          "component_groups": [
+            "minecraft:exploding"
+          ]
+        }
+      },
+      "dec:tp": {
+        "run_command": {
+	      "command": [
+		    "tp @s ~ ~52 ~"
+		  ]
+	    }
+      }
+    }
+  }
+}

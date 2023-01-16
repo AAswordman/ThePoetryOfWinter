@@ -5,7 +5,6 @@
       "category": "nature",
       "identifier": "dec:lapis_apple"
     },
-
     "components": {
       "minecraft:creative_category": {
         "parent": "itemGroup.name.crop"
@@ -13,13 +12,13 @@
       "minecraft:display_name": {
         "value": "item.dec:lapis_apple.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "lapis_apple"
-     },
-	  "minecraft:use_animation": "eat",
+      },
+      "minecraft:use_animation": "eat",
       "minecraft:render_offsets": "apple",
       "minecraft:cooldown": {
-        "category": "chorusfruit",
+        "category": "apple",
         "duration": 30
       },
       "minecraft:use_duration": 1.6,

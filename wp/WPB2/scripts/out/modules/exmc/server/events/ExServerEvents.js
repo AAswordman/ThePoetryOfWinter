@@ -56,6 +56,9 @@ export default class ExServerEvents {
                 return true;
         }), 1);
     }
+    cancelAll() {
+        throw new Error('Method not implemented.');
+    }
     register(name, fun) {
         let func = fun;
         if (name in this.events) {

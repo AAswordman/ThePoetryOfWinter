@@ -1,66 +1,51 @@
+##死亡检测
+scoreboard objectives add dierandom dummy
+scoreboard objectives add dietest dummy
+scoreboard players set @a dietest 0
+scoreboard players set @e[type=player] dietest 1
+tag @a[scores={dietest=0}] add alreadydie
+execute if entity @a[scores={dietest=0}] run scoreboard players set AlreadyDie global 1
+execute if entity @a[m=1] run scoreboard players set AlreadyGmCheat global 1
+execute if score DieMode global = one global if entity @a[m=1] run tag @a[m=1] add diemode_gmcheat
+tag @a[scores={dietest=0}] add dienow
+##生成墓碑和鬼魂
+execute unless score DieMode global = one global run scoreboard players random @a[tag=dienow,tag=!dieok] dierandom 1 3
+execute at @a[tag=dienow,tag=!dieok] run summon dec:gravestone ~~~
+execute unless score DieMode global = one global at @a[tag=dienow,tag=!dieok,scores={dierandom=1}] run event entity @e[r=16,type=dec:player_ghost,family=ghost_from_player,c=1] minecraft:despawn
+execute unless score DieMode global = one global at @a[tag=dienow,tag=!dieok,scores={dierandom=1}] run summon dec:player_ghost ~~~ minecraft:from_player
+execute if score DieMode global = one global at @a[tag=dienow,tag=!dieok] run summon dec:vengeful_ghost ~~~
+xp -1L @a[tag=dienow,tag=!dieok]
+execute as @a[tag=dienow,tag=!dieok] at @s if entity @e[r=64,family=boss] run tellraw @a { "rawtext" : [ { "translate" : "text.dec:killed_by_boss.name" } ] }
+execute as @a[tag=dienow,tag=!dieok] at @s if entity @e[r=64,family=boss] run event entity @e[r=64,family=boss] minecraft:despawn
+tag @a[tag=dienow,tag=!dieok] add dieok
+tag @e[tag=dienow,tag=dieok,type=player] remove dienow
+tag @e[tag=!dienow,tag=dieok,type=player] remove dieok
 
 ##召唤标语
-execute as @a[tag=entity_soul_spawn] at @s run tellraw @a { "rawtext" : [ { "translate" : "text.dec:summon_entity_soul.name" } ] }
-execute as @a[tag=predators_spawn] at @s run tellraw @a { "rawtext" : [ { "translate" : "text.dec:summon_predators.name" } ] }
-execute as @e[tag=abyssal_controller_spawn] at @s run tellraw @a { "rawtext" : [ { "translate" : "text.dec:summon_abyssal_controller.name" } ] }
-execute as @e[tag=king_of_pillager_spawn] at @s run tellraw @a { "rawtext" : [ { "translate" : "text.dec:summon_king_of_pillager.name" } ] }
-execute as @e[tag=ash_knight_spawn] at @s run tellraw @a { "rawtext" : [ { "translate" : "text.dec:summon_ash_knight.name" } ] }
-execute as @e[tag=enchant_illager_spawn] at @s run tellraw @a { "rawtext" : [ { "translate" : "text.dec:summon_enchant_illager.name" } ] }
-execute as @e[tag=host_of_deep_spawn] at @s run tellraw @a { "rawtext" : [ { "translate" : "text.dec:summon_host_of_deep.name" } ] }
-execute as @e[tag=radiate_crystal_spawn] at @s run tellraw @a { "rawtext" : [ { "translate" : "text.dec:summon_radiate_crystal.name" } ] }
+execute as @e[tag=abyssal_controller_spawn] run tellraw @a { "rawtext" : [ { "translate" : "text.dec:summon_abyssal_controller.name" } ] }
+execute as @e[tag=ash_knight_spawn] run tellraw @a { "rawtext" : [ { "translate" : "text.dec:summon_ash_knight.name" } ] }
+execute as @e[tag=radiate_crystal_spawn] run tellraw @a { "rawtext" : [ { "translate" : "text.dec:summon_radiate_crystal.name" } ] }
 
 tag @a[tag=abyssal_controller_spawn] remove abyssal_controller_spawn
-tag @a[tag=king_of_pillager_spawn] remove king_of_pillager_spawn
-tag @a[tag=predators_spawn] remove predators_spawn
-tag @a[tag=entity_soul_spawn] remove entity_soul_spawn
 tag @a[tag=ash_knight_spawn] remove ash_knight_spawn
-tag @a[tag=enchant_illager_spawn] remove enchant_illager_spawn
-tag @a[tag=host_of_deep_spawn] remove host_of_deep_spawn
 tag @a[tag=radiate_crystal_spawn] remove radiate_crystal_spawn
-
-##实体灵魂
-execute as @e[type=dec:shadow_soul_1] at @s run effect @e[type=dec:entity_soul_1,c=1] strength 2 1
-execute as @e[type=dec:shadow_soul_2] at @s run effect @e[type=dec:entity_soul_1,c=1] speed 2 1
 
 ##储存者召唤（不是BOSS！！！！！）
 execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§r魔法箱子碎片§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner 0 run summon dec:chester
 execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§r魔法箱子碎片§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner 0 run kill @s
 
 ##Boss召唤
-
-execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§c神秘的邀请函§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner 0 run tag @p add king_of_pillager_spawn
-execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§c神秘的邀请函§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner 0 run summon dec:king_of_pillager
-execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§c神秘的邀请函§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner 0 run kill @s
-
-
-execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§c黑暗石§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner 0 run tag @p add abyssal_controller_spawn
-execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§c黑暗石§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner 0 run summon dec:abyssal_controller
-execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§c黑暗石§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner 0 run kill @s
-
-
-execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§c实体灵魂§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner 0 run tag @p add entity_soul_spawn
-execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§c实体灵魂§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner 0 run summon dec:entity_soul
-execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§c实体灵魂§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner 0 run kill @s
-
-
 execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§c灰烬挑战书§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner 0 run tag @p add ash_knight_spawn
 execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§c灰烬挑战书§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner 0 run summon dec:ash_knight
 execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§c灰烬挑战书§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner 0 run kill @s
 
-
-execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§c蝙蝠诱饵§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner 0 run tag @p add predators_spawn
-execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§c蝙蝠诱饵§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner 0 run summon dec:predators
-execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§c蝙蝠诱饵§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner 0 run kill @s
-
-execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§c暗黑珍珠§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner 0 run tag @p add enchant_illager_spawn
-execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§c暗黑珍珠§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner 0 run summon dec:enchant_illager
-execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§c暗黑珍珠§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner 0 run kill @s
-
-execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§c深渊之书§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner 0 run tag @p add host_of_deep_spawn
-execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§c深渊之书§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner 0 run particle dec:host_of_deep_spawn_particle ~~~
-execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§c深渊之书§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner 0 run summon dec:host_of_deep
-execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§c深渊之书§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner 0 run kill @s
-
 execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§c辐射水晶§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner 0 run tag @p add radiate_crystal_spawn
 execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§c辐射水晶§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner 0 run summon dec:radiate_crystal
 execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§c辐射水晶§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner 0 run kill @s
+
+##Boss战设置
+execute as @e[family=boss] run kill @e[type=boat,r=3]
+execute as @e[family=boss] run kill @e[type=minecart,r=3]
+effect @e[family=boss] levitation 0
+execute as @e[family=mini_boss] run kill @e[type=boat,r=3]
+execute as @e[family=mini_boss] run kill @e[type=minecart,r=3]

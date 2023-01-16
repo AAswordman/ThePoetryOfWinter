@@ -9,8 +9,8 @@
 				"group": "itemGroup.name.ore",
 				"category": "nature"
 			},
-        "minecraft:block_light_absorption": 1,
-        "minecraft:block_light_emission": 0,
+        "minecraft:light_dampening": 15,
+        "minecraft:light_emission": 0,
         "minecraft:destroy_time": 1.6,
         "minecraft:explosion_resistance": 10,
         "minecraft:map_color": "#49372C",

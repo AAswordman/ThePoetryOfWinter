@@ -11,7 +11,7 @@
 		},
 		"components": {
 			"minecraft:explode": {
-				"fuseLength": 20,
+				"fuseLength": 10,
 				"fuseLit": true,
 				"power": 0,
 				"causesFire": false
@@ -64,6 +64,9 @@
 			"minecraft:collision_box": {
 				"width": 0.6,
 				"height": 1.9
+			},
+			"minecraft:despawn": {
+			  "despawn_from_distance": {}
 			},
 			"minecraft:movement.basic": {},
 			"minecraft:navigation.walk": {

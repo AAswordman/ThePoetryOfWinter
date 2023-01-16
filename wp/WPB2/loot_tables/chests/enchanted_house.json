@@ -61,7 +61,7 @@
             }
           ],
           "weight": 6,
-          "name": "dec:lapis_lazuli"
+          "name": "minecraft:lapis_lazuli"
         },
         {
           "type": "item",
@@ -70,7 +70,7 @@
         },
         {
           "type": "item",
-          "name": "minecraft:enchented_book",
+          "name": "minecraft:enchanted_book",
           "weight": 2,
           "functions": [
             {
@@ -134,7 +134,7 @@
         },
         {
           "type": "item",
-          "name": "minecraft:enchented_book",
+          "name": "minecraft:enchanted_book",
           "weight": 5,
           "functions": [
             {

@@ -1,0 +1,74 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "dec:knight_helmet",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "enchant_random_gear",
+              "chance": 0.5
+            }
+          ],
+          "pools": [
+            {
+              "rolls": 1,
+              "entries": [
+                {
+                  "type": "item",
+                  "name": "minecraft:iron_chestplate",
+                  "weight": 1,
+                  "functions": [
+                    {
+                      "function": "enchant_random_gear",
+                      "chance": 0.5
+                    }
+                  ],
+                  "pools": [
+                    {
+                      "rolls": 1,
+                      "entries": [
+                        {
+                          "type": "item",
+                          "name": "minecraft:iron_leggings",
+                          "weight": 1,
+                          "functions": [
+                            {
+                              "function": "enchant_random_gear",
+                              "chance": 0.5
+                            }
+                          ],
+                          "pools": [
+                            {
+                              "rolls": 1,
+                              "entries": [
+                                {
+                                  "type": "item",
+                                  "name": "minecraft:iron_boots",
+                                  "weight": 1,
+                                  "functions": [
+                                    {
+                                      "function": "enchant_random_gear",
+                                      "chance": 0.5
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -12,7 +12,7 @@
       "minecraft:display_name": {
         "value": "item.dec:rough_steel.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "rough_steel"
       }
     }

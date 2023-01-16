@@ -27,7 +27,7 @@
         }
       },
       "minecraft:cooldown": {
-        "category": "magic",
+        "category": "magic_nucleus",
         "duration": 3
       }
     },

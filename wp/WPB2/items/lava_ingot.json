@@ -12,7 +12,7 @@
       "minecraft:display_name": {
         "value": "item.dec:lava_ingot.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "lava_ingot"
       }
     }

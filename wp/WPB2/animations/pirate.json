@@ -4,8 +4,7 @@
       "animation.pirate.run_away": {
         "timeline": {
             "1": [
-                "@s minecraft:run_away",
-                "/say animation.pirate.run_away"
+                "@s minecraft:run_away"
             ],
             "2": [
                 "/effect @s regeneration 3 1"
@@ -17,8 +16,7 @@
       "animation.pirate.join_fight": {
         "timeline": {
             "1": [
-                "@s minecraft:join_fight",
-                "/say animation.pirate.join_fight"
+                "@s minecraft:join_fight"
             ]
         }, 
         "animation_length": 2, 

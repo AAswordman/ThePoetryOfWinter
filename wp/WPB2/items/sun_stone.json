@@ -12,7 +12,7 @@
       "minecraft:display_name": {
         "value": "item.dec:sun_stone.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "sun_stone"
       }
     }

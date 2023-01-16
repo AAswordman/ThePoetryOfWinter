@@ -16,33 +16,33 @@
         "texture": "amethyst_boots"
       },
       "minecraft:repairable": {
-				"repair_items": [
-					{
-						"items": [
-							"minecraft:amethyst_shard"
-						],
-						"repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.3"
-					},
-					{
-						"items": [
-							"minecraft:amethyst_cluster"
-						],
-						"repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.3"
-					},
-					{
-						"items": [
-							"minecraft:amethyst_block"
-						],
-						"repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.2"
-					},
-					{
-						"items": [
-							"minecraft:budding_amethyst"
-						],
-						"repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.2"
-					}
-				]
-			},
+        "repair_items": [
+          {
+            "items": [
+              "minecraft:amethyst_shard"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.3"
+          },
+          {
+            "items": [
+              "minecraft:amethyst_cluster"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.3"
+          },
+          {
+            "items": [
+              "minecraft:amethyst_block"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.2"
+          },
+          {
+            "items": [
+              "minecraft:budding_amethyst"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.2"
+          }
+        ]
+      },
       "minecraft:render_offsets": "boots",
       "minecraft:max_stack_size": 1,
       "minecraft:enchantable": {
@@ -50,7 +50,7 @@
         "slot": "armor_feet"
       },
       "minecraft:durability": {
-        "max_durability": 132,
+        "max_durability": 180,
         "damage_chance": {
           "min": 60,
           "max": 100

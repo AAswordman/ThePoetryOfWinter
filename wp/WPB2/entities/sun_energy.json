@@ -23,7 +23,8 @@
           "fuse_lit": true,
           "power": 1,
           "causes_fire": false,
-          "destroy_affected_by_griefing": false
+          "destroy_affected_by_griefing": true,
+          "fire_affected_by_griefing": true
         }
       }
     },
@@ -37,7 +38,8 @@
         "fuseLit": true,
         "power": 1,
         "causesFire": false,
-        "destroy_affected_by_griefing": false
+        "destroy_affected_by_griefing": true,
+        "fire_affected_by_griefing": true
       },
       "minecraft:projectile": {
         "onHit": {

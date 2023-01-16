@@ -1,0 +1,49 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:block": {
+    "description": {
+      "identifier": "dec:soul_summoner_activated"
+    },
+    "components": {
+      "minecraft:light_dampening": 15,
+      "minecraft:light_emission": 7,
+      "minecraft:destroy_time": 3.0,
+      "minecraft:explosion_resistance": 100,
+      "minecraft:map_color": "#27221C",
+      "minecraft:loot": "loot_tables/empty.json",
+      "minecraft:on_interact": {
+        "event": "summon",
+        "condition": "query.get_equipped_item_name('main_hand') == 'iron_key'"
+      }
+    },
+    "events": {
+      "summon": {
+        "play_sound": {
+          "target": "other",
+          "sound": "conduit.activate"
+        },
+        "set_block": {
+          "block_type": "dec:soul_summoner"
+        },
+        "run_command": {
+          "command": [
+            "tellraw @a { \"rawtext\" : [ { \"translate\" : \"text.dec:summon_escaped_soul.name\" } ] }",
+            "summon dec:escaped_soul ~~1~",
+            "particle dec:ghost_spurt_big_particle ~~1~",
+            
+            "execute positioned ~24~3~ run fill ~-1~~-1 ~1~6~1 air 0 destroy",
+            "execute positioned ~-24~3~ run fill ~-1~~-1 ~1~6~1 air 0 destroy",
+            "execute positioned ~~3~24 run fill ~-1~~-1 ~1~6~1 air 0 destroy",
+            "execute positioned ~~3~-24 run fill ~-1~~-1 ~1~6~1 air 0 destroy",
+            
+            "execute positioned ~17~3~17 run fill ~-1~~-1 ~1~6~1 air 0 destroy",
+            "execute positioned ~-17~3~-17 run fill ~-1~~-1 ~1~6~1 air 0 destroy",
+            "execute positioned ~17~3~-17 run fill ~-1~~-1 ~1~6~1 air 0 destroy",
+            "execute positioned ~-17~3~17 run fill ~-1~~-1 ~1~6~1 air 0 destroy"
+          ]
+        },
+        "decrement_stack": {}
+      }
+    }
+  }
+}

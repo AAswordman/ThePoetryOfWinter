@@ -16,7 +16,7 @@
         "texture": "catapult"
       },
       "minecraft:cooldown": {
-        "category": "weapon",
+        "category": "catapult",
         "duration": 2
       },
       "minecraft:durability": {
@@ -25,13 +25,13 @@
       "minecraft:max_stack_size": 1,
       "minecraft:on_use": {
         "on_use": {
-          "event": "shoot",
+          "event": "catapult_use",
           "target": "self"
         }
       }
     },
     "events": {
-      "shoot": {
+      "catapult_use": {
         "sequence": [
           {
             "sequence": [
@@ -42,6 +42,7 @@
                     "run_command": {
                       "command": [
                         "playsound mob.snowgolem.shoot @a ~~~",
+                        "playanimation @s animation.humanoid.catapult",
                         "clear @s dec:small_stone 0 1"
                       ],
                       "target": "holder"
@@ -72,6 +73,7 @@
                     "run_command": {
                       "command": [
                         "playsound mob.snowgolem.shoot @a ~~~",
+                        "playanimation @s animation.humanoid.catapult",
                         "clear @s dec:exploding_pellets 0 1"
                       ],
                       "target": "holder"

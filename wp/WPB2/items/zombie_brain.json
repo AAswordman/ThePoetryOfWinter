@@ -5,7 +5,6 @@
       "category": "nature",
       "identifier": "dec:zombie_brain"
     },
-
     "components": {
       "minecraft:creative_category": {
         "parent": "itemGroup.name.rawFood"
@@ -13,10 +12,10 @@
       "minecraft:display_name": {
         "value": "item.dec:zombie_brain.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "zombie_brain"
-     },
-	  "minecraft:use_animation": "eat",
+      },
+      "minecraft:use_animation": "eat",
       "minecraft:render_offsets": "cookie",
       "minecraft:use_duration": 1.6,
       "minecraft:food": {
@@ -24,7 +23,7 @@
           "event": "consumed",
           "target": "self"
         },
-        "nutrition": 4,
+        "nutrition": 3,
         "saturation_modifier": "low"
       }
     },
@@ -34,10 +33,10 @@
           {
             "randomize": [
               {
-                "weight": 19,
+                "weight": 9,
                 "add_mob_effect": {
                   "effect": "poison",
-                  "duration": 30,
+                  "duration": 15,
                   "amplifier": 0,
                   "target": "holder"
                 }
@@ -53,7 +52,7 @@
                 "weight": 1,
                 "add_mob_effect": {
                   "effect": "nausea",
-                  "duration": 30,
+                  "duration": 20,
                   "amplifier": 0,
                   "target": "holder"
                 }

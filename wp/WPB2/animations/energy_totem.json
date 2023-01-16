@@ -4,12 +4,10 @@
       "animation.energy_totem": {
         "timeline": {
             "0.5": [
-                "/execute as @s[scores={wbfl=..19}] at @s run particle dec:white_star_particle ~~1~",
-                "/scoreboard players add @s[scores={wbfl=..19}] wbfl 1"
+                "/function item/energy_totem"
             ],
             "1.5": [
-                "/execute as @s[scores={wbfl=..19}] at @s run particle dec:white_star_particle ~~1~",
-                "/scoreboard players add @s[scores={wbfl=..19}] wbfl 1"
+                "/function item/energy_totem"
             ]
         }, 
         "animation_length": 2, 

@@ -4,9 +4,11 @@
     "controller.animation.wait.par": {
       "states": {
         "default": {
-          "particle_effects": [{
-            "effect": "flame"
-          }],
+          "particle_effects": [
+            {
+              "effect": "flame"
+            }
+          ],
           "animations": [
             "par"
           ]
@@ -25,14 +27,18 @@
     "controller.animation.wait.summon": {
       "states": {
         "default": {
-          "transitions": [{
-            "summon": "query.is_casting"
-          }]
+          "transitions": [
+            {
+              "summon": "query.is_casting"
+            }
+          ]
         },
         "summon": {
-          "transitions": [{
-            "default": "!query.is_casting && query.all_animations_finished"
-          }],
+          "transitions": [
+            {
+              "default": "!query.is_casting && query.all_animations_finished"
+            }
+          ],
           "animations": [
             "summon"
           ]
@@ -42,14 +48,18 @@
     "controller.animation.wait.roaring": {
       "states": {
         "default": {
-          "transitions": [{
-            "roaring": "query.is_roaring"
-          }]
+          "transitions": [
+            {
+              "roaring": "query.is_roaring"
+            }
+          ]
         },
         "roaring": {
-          "transitions": [{
-            "default": "!query.is_roaring"
-          }],
+          "transitions": [
+            {
+              "default": "!query.is_roaring"
+            }
+          ],
           "animations": [
             "roaring"
           ]
@@ -60,17 +70,19 @@
       "states": {
         "default": {
           "blend_transition": 0.2,
-
-          "transitions": [{
-            "roaring": "query.is_delayed_attacking"
-          }]
+          "transitions": [
+            {
+              "roaring": "query.is_delayed_attacking"
+            }
+          ]
         },
         "roaring": {
           "blend_transition": 0.2,
-
-          "transitions": [{
-            "default": "!query.is_delayed_attacking && query.all_animations_finished"
-          }],
+          "transitions": [
+            {
+              "default": "!query.is_delayed_attacking && query.all_animations_finished"
+            }
+          ],
           "animations": [
             "delayed_attacking"
           ]
@@ -83,14 +95,18 @@
           "animations": [
             "basex"
           ],
-          "transitions": [{
-            "charged": "query.is_charged"
-          }]
+          "transitions": [
+            {
+              "charged": "query.is_charged"
+            }
+          ]
         },
         "charged": {
-          "transitions": [{
-            "default": "!query.is_charged && query.all_animations_finished"
-          }],
+          "transitions": [
+            {
+              "default": "!query.is_charged && query.all_animations_finished"
+            }
+          ],
           "animations": [
             "charged"
           ]
@@ -100,33 +116,20 @@
     "controller.animation.wait.baby": {
       "states": {
         "default": {
-          "transitions": [{
-            "baby": "query.is_baby"
-          }]
+          "transitions": [
+            {
+              "baby": "query.is_baby"
+            }
+          ]
         },
         "baby": {
-          "transitions": [{
-            "default": "!query.is_baby && query.all_animations_finished"
-          }],
+          "transitions": [
+            {
+              "default": "!query.is_baby && query.all_animations_finished"
+            }
+          ],
           "animations": [
             "baby"
-          ]
-        }
-      }
-    },
-    "controller.animation.wait.move": {
-      "states": {
-        "default": {
-          "transitions": [{
-            "baby": "query.modified_move_speed"
-          }]
-        },
-        "baby": {
-          "transitions": [{
-            "default": "!query.modified_move_speed && query.all_animations_finished"
-          }],
-          "animations": [
-            "move"
           ]
         }
       }
@@ -143,14 +146,18 @@
     "controller.animation.wait.attackx": {
       "states": {
         "default": {
-          "transitions": [{
-            "attack": "variable.attack_time > 0"
-          }]
+          "transitions": [
+            {
+              "attack": "variable.attack_time > 0"
+            }
+          ]
         },
         "attack": {
-          "transitions": [{
-            "default": "variable.attack_time <= 0 && query.all_animations_finished"
-          }],
+          "transitions": [
+            {
+              "default": "!variable.attack_time <= 0 && query.all_animations_finished"
+            }
+          ],
           "animations": [
             "attack"
           ]
@@ -160,14 +167,18 @@
     "controller.animation.wait.attacky": {
       "states": {
         "default": {
-          "transitions": [{
-            "attack": "variable.attack_animation_tick"
-          }]
+          "transitions": [
+            {
+              "attack": "variable.attack_animation_tick"
+            }
+          ]
         },
         "attack": {
-          "transitions": [{
-            "default": "!variable.attack_animation_tick && query.all_animations_finished"
-          }],
+          "transitions": [
+            {
+              "default": "!variable.attack_animation_tick && query.all_animations_finished"
+            }
+          ],
           "animations": [
             "attack"
           ]

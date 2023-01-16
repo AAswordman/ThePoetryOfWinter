@@ -1,38 +1,25 @@
-gamerule commandblockoutput false
 gamerule doimmediaterespawn false
 
 function boss
 function block
 
-##发出声音
-execute as @e[type=dec:bullet_by_flintlock,tag=!smr] at @s run playsound random.explode @a ~~~
-execute as @e[type=dec:bullet_by_flintlock,tag=!smr] at @s run tag @a[r=2,c=1] remove flintlock_shot
-execute as @e[type=dec:bullet_by_flintlock_pro,tag=!smr] at @s run playsound random.explode @a ~~~
-execute as @e[type=dec:bullet_by_flintlock_pro,tag=!smr] at @s run tag @a[r=2,c=1] remove flintlock_pro_shot
-execute as @e[type=dec:bullet_by_short_flintlock,tag=!smr] at @s run playsound random.explode @a ~~~
-execute as @e[type=dec:bullet_by_short_flintlock,tag=!smr] at @s run tag @a[r=2,c=1] remove short_flintlock_shot
-##添加标签
-tag @e[type=dec:bullet_by_flintlock,tag=!smr] add smr
-tag @e[type=dec:bullet_by_flintlock_pro,tag=!smr] add smr
-tag @e[type=dec:bullet_by_short_flintlock,tag=!smr] add smr
-##添加完成标签
-tag @e[type=!player,tag=smr,tag=!smrkill,tag=!smrok] add smrok
+tag @a remove shot
+tag @a remove shot_offhand
 
+execute at @e[type=fireball] run particle dec:fire_wake_particle ~~~
+execute at @e[type=dragon_fireball] run particle dec:ender_wake_particle ~~~
 
-execute as @e[type=fireball] at @s run particle dec:fire_wake_particle ~~~
-execute as @e[type=dragon_fireball] at @s run particle dec:ender_wake_particle ~~~
-
-##房主标记
-##在gt中
+execute if score IsDay global = one global run scoreboard players set NightRandom global 0
+execute if score IsDay global = zero global run scoreboard players operation @a night_event = NightRandom global
 
 ##死亡模式组件
-execute as @a[tag=diemode] at @s run tag @a[tag=!diemode] add diemode
-execute as @a[tag=diemode] at @s run title @a[tag=alreadydie] actionbar §4§lYou are Died
-execute as @a[tag=diemode] at @s run tp @a[tag=alreadydie] 0 1000 0
-execute as @a[tag=diemode] at @s run effect @a[tag=alreadydie] invisibility 20 0 true
-execute as @a[tag=diemode] at @s run effect @a[tag=alreadydie] blindness 20 0 true
-execute as @a[tag=diemode] at @s run effect @a[tag=alreadydie] night_vision 20 0 true
-execute as @a[tag=diemode] at @s run gamerule sendcommandfeedback false
+execute if score DieMode global = one global if score AlreadyDie global = one global if entity @a[tag=alreadydie] run titleraw @a[tag=alreadydie] actionbar { "rawtext" : [ { "translate" : "text.dec:diemode_spectator.name" } ] }
+execute if score DieMode global = one global if score AlreadyGmCheat global = one global if entity @a[tag=diemode_gmcheat] run titleraw @a[tag=diemode_gmcheat] actionbar { "rawtext" : [ { "translate" : "text.dec:diemode_gmcheat.name" } ] }
+execute if score DieMode global = one global run gamemode spectator @a[tag=alreadydie]
+execute if score DieMode global = one global if entity @a[tag=alreadydie] run gamerule sendcommandfeedback false
+execute if score DieMode global = one global run gamemode spectator @a[tag=diemode_gmcheat]
+execute if score DieMode global = one global if entity @a[tag=diemode_gmcheat] run gamerule sendcommandfeedback false
+execute if score DieMode global = one global run difficulty hard
 
 ##打败末影龙标记
 execute as @r[tag=wbstartkeyok] at @s run tag @r[tag=!wbstartkeyok] add wbstartkeyok

@@ -12,7 +12,7 @@
       "minecraft:display_name": {
         "value": "item.dec:energy_totem.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "energy_totem"
       },
       "minecraft:stacked_by_data": false,

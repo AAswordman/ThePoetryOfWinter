@@ -15,6 +15,9 @@
       "minecraft:icon": {
         "texture": "wood_boots"
       },
+      "minecraft:fuel": {
+        "duration": 10.0
+      },
       "minecraft:render_offsets": "boots",
       "minecraft:max_stack_size": 1,
       "minecraft:enchantable": {
@@ -22,7 +25,7 @@
         "slot": "armor_feet"
       },
       "minecraft:durability": {
-        "max_durability": 42,
+        "max_durability": 126,
         "damage_chance": {
           "min": 70,
           "max": 100

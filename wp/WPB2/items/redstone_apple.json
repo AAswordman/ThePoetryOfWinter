@@ -5,7 +5,6 @@
       "category": "nature",
       "identifier": "dec:redstone_apple"
     },
-
     "components": {
       "minecraft:creative_category": {
         "parent": "itemGroup.name.crop"
@@ -13,10 +12,10 @@
       "minecraft:display_name": {
         "value": "item.dec:redstone_apple.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "redstone_apple"
-     },
-	  "minecraft:use_animation": "eat",
+      },
+      "minecraft:use_animation": "eat",
       "minecraft:render_offsets": "apple",
       "minecraft:use_duration": 1.6,
       "minecraft:food": {

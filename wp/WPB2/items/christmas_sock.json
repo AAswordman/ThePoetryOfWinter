@@ -12,13 +12,13 @@
       "minecraft:display_name": {
         "value": "item.dec:christmas_sock.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "christmas_sock"
       },
       "minecraft:render_offsets": "bow",
       "minecraft:use_duration": 30000,
       "minecraft:cooldown": {
-        "category": "chorusfruit",
+        "category": "christmas_sock",
         "duration": 3
       },
       "minecraft:on_use": {
@@ -30,53 +30,12 @@
     },
     "events": {
       "christmas_sock": {
-        "randomize": [
-          {
-            "weight": 3,
-            "run_command": {
-              "command": [
-                "give @s dec:christmas_cap",
-                "clear @s dec:christmas_sock 0 1"
-              ]
-            }
-          },
-          {
-            "weight": 1,
-            "run_command": {
-              "command": [
-                "give @s dec:gingerbread_totem",
-                "clear @s dec:christmas_sock 0 1"
-              ]
-            }
-          },
-          {
-            "weight": 2,
-            "run_command": {
-              "command": [
-                "give @s dec:gingerbread_sword",
-                "clear @s dec:christmas_sock 0 1"
-              ]
-            }
-          },
-          {
-            "weight": 3,
-            "run_command": {
-              "command": [
-                "give @s dec:candy_cane",
-                "clear @s dec:christmas_sock 0 1"
-              ]
-            }
-          },
-          {
-            "weight": 5,
-            "run_command": {
-              "command": [
-                "give @s dec:gingerbread_man",
-                "clear @s dec:christmas_sock 0 1"
-              ]
-            }
-          }
-        ]
+        "run_command": {
+          "command": [
+            "loot give @s loot \"items/christmas_sock\"",
+            "clear @s dec:christmas_sock 0 1"
+          ]
+        }
       }
     }
   }

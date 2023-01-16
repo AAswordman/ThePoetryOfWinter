@@ -1,11 +1,10 @@
 {
   "format_version": "1.16.100",
   "minecraft:item": {
-        "description": {
+    "description": {
       "category": "items",
       "identifier": "dec:ender_egg"
     },
-    
     "components": {
       "minecraft:creative_category": {
         "parent": "itemGroup.name.decorations"
@@ -28,7 +27,7 @@
         }
       },
       "minecraft:cooldown": {
-        "category": "magic",
+        "category": "ender_egg",
         "duration": 1
       }
     },
@@ -40,15 +39,12 @@
             "tag @s[tag=uptohpl7] add hpl7",
             "tag @s[tag=uptohpl7] remove hpl6",
             "tellraw @s[tag=uptohpl7] { \"rawtext\" : [ { \"translate\" : \"text.dec:uptohpl7.name\" } ] }",
-
             "tag @s[tag=hpl7,tag=!uptohpl7] add uptohpl8",
             "tag @s[tag=uptohpl8] add hpl8",
             "tag @s[tag=uptohpl8] remove hpl7",
             "tellraw @s[tag=uptohpl8] { \"rawtext\" : [ { \"translate\" : \"text.dec:uptohpl8.name\" } ] }",
-
             "clear @s[tag=uptohpl7] dec:ender_egg 0 1",
             "clear @s[tag=uptohpl8] dec:ender_egg 0 1",
-
             "tag @s[tag=uptohpl7] remove uptohpl7",
             "tag @s[tag=uptohpl8] remove uptohpl8"
           ]

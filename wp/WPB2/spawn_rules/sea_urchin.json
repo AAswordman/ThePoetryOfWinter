@@ -18,7 +18,7 @@
           "max_size": 2
         },
         "minecraft:density_limit": {
-          "surface": 10,
+          "surface": 5,
           "underground": 0
         },
         "minecraft:biome_filter": [

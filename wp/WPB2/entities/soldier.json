@@ -41,6 +41,15 @@
     },
 
     "components": {
+      "minecraft:behavior.move_through_village": {
+        "priority": 10,
+        "speed_multiplier": 0.6,
+        "only_at_night": true
+      },
+      "minecraft:behavior.move_towards_restriction": {
+        "priority": 9,
+        "speed_multiplier": 1
+      },
       "minecraft:dweller": {
         "dwelling_type": "village",
         "dweller_role": "defender",
@@ -82,8 +91,8 @@
       },
       "minecraft:health": {
         "value": {
-          "range_min": 30,
-          "range_max": 50
+          "range_min": 18,
+          "range_max": 30
         }
       },
       "minecraft:hurt_on_condition": {
@@ -96,7 +105,7 @@
         ]
       },
       "minecraft:attack": {
-        "damage": 10
+        "damage": 2
       },
       "minecraft:movement": {
         "value": 0.30
@@ -128,7 +137,7 @@
       },
       "minecraft:behavior.melee_attack": {
         "priority": 3,
-        "speed_multiplier": 1,
+        "speed_multiplier": 1.2,
         "track_target": false
       },
       "minecraft:behavior.random_stroll": {
@@ -184,13 +193,6 @@
         }
       },
       "minecraft:stop_aggro": {
-         "run_command": {
-          "command": [
-            "effect @s regeneration 5 3 true",
-            "effect @s strength 3 3 true",
-            "effect @s resistance 5 3 true"
-          ]
-        },
         "remove": {
           "component_groups": [
             "minecraft:vindicator_aggro"

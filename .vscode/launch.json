@@ -1,0 +1,13 @@
+{
+    "version": "0.3.0",
+    "configurations": [
+      {
+        "type": "minecraft-js",
+        "request": "attach",
+        "name": "Wait for Minecraft Debug Connections",
+        "mode": "listen",
+        "localRoot": "${workspaceFolder}/wp/WPB2/scripts",
+        "port": 19144
+      }
+    ]
+  }

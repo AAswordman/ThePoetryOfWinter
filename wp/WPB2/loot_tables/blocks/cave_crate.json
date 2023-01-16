@@ -202,7 +202,7 @@
         },
         {
           "type": "item",
-          "name": "minecraft:gold_sword",
+          "name": "minecraft:golden_sword",
           "weight": 30,
           "functions": [
             {

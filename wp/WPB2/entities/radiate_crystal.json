@@ -8,6 +8,9 @@
       "is_experimental": false
     },
     "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      },
       "minecraft:wait": {
         "minecraft:timer": {
           "looping": false,
@@ -55,10 +58,6 @@
         }
       },
       "minecraft:second_spawn": {
-        "minecraft:health": {
-          "value": 80000,
-          "max": 100000
-        },
         "minecraft:timer": {
           "looping": false,
           "time": 20,
@@ -111,10 +110,6 @@
         }
       },
       "minecraft:third_spawn": {
-        "minecraft:health": {
-          "value": 60000,
-          "max": 100000
-        },
         "minecraft:timer": {
           "looping": false,
           "time": 20,
@@ -167,10 +162,6 @@
         }
       },
       "minecraft:fourth_spawn": {
-        "minecraft:health": {
-          "value": 40000,
-          "max": 100000
-        },
         "minecraft:timer": {
           "looping": false,
           "time": 20,
@@ -223,10 +214,6 @@
         }
       },
       "minecraft:fifth_spawn": {
-        "minecraft:health": {
-          "value": 20000,
-          "max": 100000
-        },
         "minecraft:timer": {
           "looping": false,
           "time": 20,
@@ -311,6 +298,11 @@
         "width": 0,
         "height": 0
       },
+      "minecraft:type_family": {
+        "family": [
+          "boss"
+        ]
+      },
       "minecraft:boss": {
         "should_darken_sky": false,
         "name": "event.dec:radiate_crystal.name",
@@ -318,6 +310,13 @@
       }
     },
     "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
       "minecraft:entity_spawned": {
         "add": {
           "component_groups": [
@@ -347,6 +346,11 @@
           "component_groups": [
             "minecraft:first_spawn"
           ]
+        },
+        "run_command": {
+          "command": [
+            "damage @s 20000 magic"
+          ]
         }
       },
       "minecraft:third": {
@@ -358,6 +362,11 @@
         "remove": {
           "component_groups": [
             "minecraft:second_spawn"
+          ]
+        },
+        "run_command": {
+          "command": [
+            "damage @s 20000 magic"
           ]
         }
       },
@@ -371,6 +380,11 @@
           "component_groups": [
             "minecraft:third_spawn"
           ]
+        },
+        "run_command": {
+          "command": [
+            "damage @s 20000 magic"
+          ]
         }
       },
       "minecraft:fifth": {
@@ -382,6 +396,11 @@
         "remove": {
           "component_groups": [
             "minecraft:fourth_spawn"
+          ]
+        },
+        "run_command": {
+          "command": [
+            "damage @s 20000 magic"
           ]
         }
       },

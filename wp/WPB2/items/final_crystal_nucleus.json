@@ -1,7 +1,7 @@
 {
   "format_version": "1.16.100",
   "minecraft:item": {
-	    "description": {
+    "description": {
       "category": "items",
       "identifier": "dec:final_crystal_nucleus"
     },
@@ -20,7 +20,6 @@
       "minecraft:stacked_by_data": false,
       "minecraft:max_stack_size": 1,
       "minecraft:foil": true,
-
       "minecraft:on_use": {
         "on_use": {
           "event": "use",
@@ -28,11 +27,11 @@
         }
       },
       "minecraft:cooldown": {
-        "category": "magic",
+        "category": "final_crystal_nucleus",
         "duration": 0.02
       },
       "minecraft:durability": {
-        "max_durability": 785
+        "max_durability": 2340
       },
       "minecraft:repairable": {
         "repair_items": [
@@ -65,8 +64,14 @@
             "run_command": {
               "command": [
                 "particle dec:white_star_particle ~~1~",
-                "scoreboard players add @s wbfl 1"
+                "scoreboard players add @s wbfl 2"
               ]
+            }
+          },
+          {
+            "damage": {
+              "type": "magic",
+              "amount": 1
             }
           }
         ]

@@ -1,0 +1,40 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:block": {
+    "description": {
+      "identifier": "dec:bat_summoner_activated"
+    },
+    "components": {
+      "minecraft:light_dampening": 15,
+      "minecraft:light_emission": 7,
+      "minecraft:destroy_time": 3.0,
+      "minecraft:explosion_resistance": 100,
+      "minecraft:map_color": "#897053",
+      "minecraft:loot": "loot_tables/empty.json",
+      "minecraft:on_interact": {
+        "event": "summon",
+        "condition": "query.get_equipped_item_name('main_hand') == 'iron_key'"
+      }
+    },
+    "events": {
+      "summon": {
+        "play_sound": {
+          "target": "other",
+          "sound": "conduit.activate"
+        },
+        "set_block": {
+          "block_type": "dec:bat_summoner"
+        },
+        "run_command": {
+          "command": [
+            "tellraw @a { \"rawtext\" : [ { \"translate\" : \"text.dec:summon_predators.name\" } ] }",
+            "particle dec:bat_dust_rising_particle ~~~",
+            "particle dec:bat_dust_spurt_big_particle ~~15~",
+            "summon dec:predators ~~15~"
+          ]
+        },
+        "decrement_stack": {}
+      }
+    }
+  }
+}

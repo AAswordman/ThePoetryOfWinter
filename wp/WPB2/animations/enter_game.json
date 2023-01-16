@@ -4,10 +4,11 @@
       "animation.enter_game": {
         "timeline": {
             "10": [
-              "/function test/creator_list"
+              "/function enter_game"
             ],
             "10.5": [
-              "/function test/load_ok"
+              "/function test/load_ok",
+              "/tellraw @s { \"rawtext\" : [ { \"translate\" : \"text.dec:command_help.name\" } ] }"
             ]
         }, 
         "animation_length": 10.6, 

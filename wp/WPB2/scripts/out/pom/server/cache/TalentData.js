@@ -1,7 +1,6 @@
 import MathUtil from "../../../modules/exmc/math/MathUtil.js";
 import format from '../../../modules/exmc/utils/format.js';
 import ExColorLoreUtil from "../../../modules/exmc/server/item/ExColorLoreUtil.js";
-import LoreUtil from "../../../modules/exmc/server/item/ExLoreUtil.js";
 export default class TalentData {
     constructor() {
         this.pointUsed = 0;
@@ -92,13 +91,15 @@ export default class TalentData {
     }
     static calculateTalentToLore(talents, occupation, manager, lang) {
         let lore = new ExColorLoreUtil(manager);
-        lore.setFlag(LoreUtil.LoreFlag.MAP);
+        lore.delete("addition");
         for (let t of talents) {
             let add = 0;
-            let level = MathUtil.zeroIfNaN(parseFloat(lore.get("enchanting", Talent.getCharacter(lang, t.id)))) + t.level;
+            let level = MathUtil.zeroIfNaN(lore.getValueUseMap("enchanting", Talent.getCharacter(lang, t.id))) + t.level;
             add = TalentData.calculateTalent(occupation, t.id, level);
-            lore.set("addition", Talent.getCharacter(lang, t.id), MathUtil.zeroIfNaN(parseFloat(lore.get("enchanting", Talent.getCharacter(lang, t.id)))) + " -> " +
-                Math.round((MathUtil.zeroIfNaN(parseFloat(lore.get("enchanting", Talent.getCharacter(lang, t.id)))) + add) * 10) / 10);
+            let a = MathUtil.zeroIfNaN(lore.getValueUseMap("enchanting", Talent.getCharacter(lang, t.id)));
+            let b = Math.round(a + add * 10) / 10;
+            if (b !== 0)
+                lore.setValueUseMap("addition", Talent.getCharacter(lang, t.id), a + " -> " + b);
         }
     }
     static isOccupationTalent(occupation, id) {

@@ -1,7 +1,7 @@
 {
   "format_version": "1.16.100",
   "minecraft:item": {
-	"description": {
+    "description": {
       "category": "equipment",
       "identifier": "dec:jellyfish_staff"
     },
@@ -12,9 +12,9 @@
       "minecraft:display_name": {
         "value": "item.dec:jellyfish_staff.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "jellyfish_staff"
-     },
+      },
       "minecraft:use_animation": "bow",
       "minecraft:render_offsets": "bow",
       "minecraft:stacked_by_data": false,
@@ -28,7 +28,7 @@
         }
       },
       "minecraft:cooldown": {
-        "category": "weapon",
+        "category": "staff",
         "duration": 0.3
       },
       "minecraft:durability": {
@@ -73,5 +73,5 @@
         ]
       }
     }
-	}
+  }
 }

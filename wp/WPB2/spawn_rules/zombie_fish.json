@@ -8,11 +8,11 @@
     "conditions": [
       {
         "minecraft:density_limit": {
-          "surface":4
+          "surface": 3,
+          "underground": 4
         },
         "minecraft:spawns_on_surface": {},
         "minecraft:spawns_underwater": {},
-
         "minecraft:distance_filter": {
           "min": 12,
           "max": 32
@@ -21,13 +21,20 @@
           "default": 3
         },
         "minecraft:herd": {
-          "min_size":1,
-          "max_size":2
+          "min_size": 1,
+          "max_size": 2
         },
-    
         "minecraft:biome_filter": [
-          {"test": "has_biome_tag", "operator":"==", "value": "river"},
-          {"test": "has_biome_tag", "operator":"==", "value": "jungle"}
+          {
+            "test": "has_biome_tag",
+            "operator": "==",
+            "value": "river"
+          },
+          {
+            "test": "has_biome_tag",
+            "operator": "==",
+            "value": "jungle"
+          }
         ]
       }
     ]

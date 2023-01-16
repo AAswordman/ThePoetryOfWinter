@@ -69,6 +69,9 @@
     },
 
     "components": {
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
       "minecraft:type_family": {
         "family": [ "carnager", "monster", "illager", "mob" ]
       },
@@ -99,7 +102,7 @@
         ]
       },
       "minecraft:attack": {
-        "damage": 8
+        "damage": 2
       },
       "minecraft:movement": {
         "value": 0.29

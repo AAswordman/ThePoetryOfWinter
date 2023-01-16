@@ -4,7 +4,7 @@ export default class ExColorLoreUtil extends LoreUtil {
         super.setTag("§r§n§6" + key);
     }
     hasTag(key) {
-        let res = super.hasTag("§r§n§6" + key);
+        let res = super.hasTag(key.startsWith("§") ? key : "§r§n§6" + key);
         return res;
     }
     getValueUseMap(key, use) {
@@ -27,7 +27,7 @@ export default class ExColorLoreUtil extends LoreUtil {
                 return new Piece(this.item, i);
             }
         }
-        return null;
+        return undefined;
     }
 }
 //# sourceMappingURL=ExColorLoreUtil.js.map

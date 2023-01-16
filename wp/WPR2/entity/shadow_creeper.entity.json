@@ -3,7 +3,7 @@
   "minecraft:client_entity": {
     "description": {
       "identifier": "dec:shadow_creeper",
-      
+      "min_engine_version": "1.8.0",
       "materials": {
         "default": "creeper",
         "charged": "charged_creeper"

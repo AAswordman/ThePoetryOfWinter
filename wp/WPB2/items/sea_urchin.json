@@ -12,10 +12,10 @@
       "minecraft:display_name": {
         "value": "item.dec:sea_urchin.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "sea_urchin"
-     },
-	  "minecraft:use_animation": "eat",
+      },
+      "minecraft:use_animation": "eat",
       "minecraft:render_offsets": "fish",
       "minecraft:hand_equipped": false,
       "minecraft:stacked_by_data": false,

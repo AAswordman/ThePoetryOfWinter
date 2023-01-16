@@ -27,6 +27,9 @@
       },
       "minecraft:nameable": {
       },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
       "minecraft:type_family": {
         "family": [ "undead", "monster","enchant_armor", "mob" ]
       },

@@ -30,13 +30,8 @@
                     "looting_multiplier": 1
                 }
             ],
-            "rolls": 1,
+            "rolls": 2,
             "entries": [
-                {
-                    "type": "item",
-                    "name": "minecraft:red_flower",
-                    "weight": 1
-                },
                 {
                     "type": "item",
                     "name": "minecraft:quartz",
@@ -61,6 +56,20 @@
                             "count": {
                                 "min": 10,
                                 "max": 20
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "dec:lava_ingot",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 1
                             }
                         }
                     ]

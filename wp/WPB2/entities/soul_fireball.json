@@ -17,7 +17,9 @@
     "fuseLength": 3,
     "fuseLit": true,
     "power": 2,
-    "causesFire": false
+    "causesFire": false,
+    "destroy_affected_by_griefing": true,
+    "fire_affected_by_griefing": true
     },
    "minecraft:projectile": {
 

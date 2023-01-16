@@ -8,12 +8,6 @@
       "is_experimental": false
     },
     "component_groups": {
-      "minecraft:died": {
-        "minecraft:transformation": {
-          "into": "dec:mushroom_spawner",
-          "delay": 0.0
-        }
-      },
       "minecraft:look_to_start_drowned_transformation": {
         "minecraft:environment_sensor": {
           "triggers": {
@@ -531,9 +525,12 @@
 
     "events": {
       "minecraft:died": {
-        "add": {
-          "component_groups": [
-            "minecraft:died"
+        "run_command": {
+          "command": [
+            "summon dec:mushroom_monster ~~~ minecraft:entity_spawned",
+            "summon dec:mushroom_monster ~~~ minecraft:entity_spawned",
+            "summon dec:mushroom_monster ~~~ minecraft:entity_spawned",
+            "summon dec:mushroom_monster ~~~ minecraft:entity_spawned"
           ]
         }
       },

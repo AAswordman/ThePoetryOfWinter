@@ -1,8 +1,13 @@
-import { GameMode, MinecraftEntityTypes } from '@minecraft/server';
+import { GameMode } from '@minecraft/server';
 import ExEntity from "./ExEntity.js";
-import { ExPlayerBag } from "./ExEntityBag.js";
 import ExGameVector3 from '../math/ExGameVector3.js';
+import ExPlayerBag from './ExPlayerBag.js';
 export default class ExPlayer extends ExEntity {
+    constructor(player) {
+        super(player);
+        this.bag = new ExPlayerBag(this);
+        this.scoresManager = super.getScoresManager();
+    }
     get entity() {
         return super.entity;
     }
@@ -27,32 +32,31 @@ export default class ExPlayer extends ExEntity {
     }
     getGameMode() {
         var _a, _b, _c, _d;
-        this.entity;
         let c = GameMode.creative;
-        c = (((_a = Array.from(this.getDimension().getEntities({
+        c = (((_a = Array.from(this.getDimension().getPlayers({
             location: ExGameVector3.getLocation(this.entity.location),
-            type: MinecraftEntityTypes.player.id,
+            //type: MinecraftEntityTypes.player.id,
             closest: 1,
             maxDistance: 1,
             gameMode: GameMode.adventure
         }))) === null || _a === void 0 ? void 0 : _a[0]) === this.entity ? GameMode.adventure : c);
-        c = (((_b = Array.from(this.getDimension().getEntities({
+        c = (((_b = Array.from(this.getDimension().getPlayers({
             location: ExGameVector3.getLocation(this.entity.location),
-            type: MinecraftEntityTypes.player.id,
+            //type: MinecraftEntityTypes.player.id,
             closest: 1,
             maxDistance: 1,
             gameMode: GameMode.creative
         }))) === null || _b === void 0 ? void 0 : _b[0]) === this.entity ? GameMode.creative : c);
-        c = (((_c = Array.from(this.getDimension().getEntities({
+        c = (((_c = Array.from(this.getDimension().getPlayers({
             location: ExGameVector3.getLocation(this.entity.location),
-            type: MinecraftEntityTypes.player.id,
+            //type: MinecraftEntityTypes.player.id,
             closest: 1,
             maxDistance: 1,
             gameMode: GameMode.spectator
         }))) === null || _c === void 0 ? void 0 : _c[0]) === this.entity ? GameMode.spectator : c);
-        c = (((_d = Array.from(this.getDimension().getEntities({
+        c = (((_d = Array.from(this.getDimension().getPlayers({
             location: ExGameVector3.getLocation(this.entity.location),
-            type: MinecraftEntityTypes.player.id,
+            //type: MinecraftEntityTypes.player.id,
             closest: 1,
             maxDistance: 1,
             gameMode: GameMode.survival
@@ -76,11 +80,8 @@ export default class ExPlayer extends ExEntity {
     set selectedSlot(value) {
         this.entity.selectedSlot = value;
     }
-    constructor(player) {
-        super(player);
-    }
     getBag() {
-        return new ExPlayerBag(this);
+        return this.bag;
     }
     static getInstance(source) {
         let entity = source;
@@ -88,6 +89,9 @@ export default class ExPlayer extends ExEntity {
             return entity[this.propertyNameCache];
         }
         return (entity[this.propertyNameCache] = new ExPlayer(entity));
+    }
+    getScoresManager() {
+        return this.scoresManager;
     }
 }
 //# sourceMappingURL=ExPlayer.js.map

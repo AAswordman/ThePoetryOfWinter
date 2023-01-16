@@ -40,22 +40,25 @@
           "can_sink": false
         },
         "minecraft:environment_sensor": {
-          "triggers": [{
-            "filters": {
-              "all_of": [{
-                  "test": "on_ground",
-                  "operator": "==",
-                  "value": true
-                },
-                {
-                  "test": "in_water",
-                  "operator": "!=",
-                  "value": true
-                }
-              ]
-            },
-            "event": "minecraft:navigation_on_land"
-          }]
+          "triggers": [
+            {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "on_ground",
+                    "operator": "==",
+                    "value": true
+                  },
+                  {
+                    "test": "in_water",
+                    "operator": "!=",
+                    "value": true
+                  }
+                ]
+              },
+              "event": "minecraft:navigation_on_land"
+            }
+          ]
         }
       },
       "minecraft:shadow_of_sea_on_land": {
@@ -75,14 +78,16 @@
           }
         },
         "minecraft:environment_sensor": {
-          "triggers": [{
-            "filters": {
-              "test": "in_water_or_rain",
-              "operator": "==",
-              "value": true
-            },
-            "event": "minecraft:stop_dryingout"
-          }]
+          "triggers": [
+            {
+              "filters": {
+                "test": "in_water_or_rain",
+                "operator": "==",
+                "value": true
+              },
+              "event": "minecraft:stop_dryingout"
+            }
+          ]
         }
       },
       "minecraft:shadow_of_sea_on_land_in_rain": {
@@ -95,7 +100,8 @@
           "can_jump": false
         },
         "minecraft:environment_sensor": {
-          "triggers": [{
+          "triggers": [
+            {
               "filters": {
                 "test": "in_water",
                 "operator": "==",
@@ -123,10 +129,13 @@
         "within_radius": 12.0,
         "must_see_forget_duration": 17.0,
         "persist_time": 0.5,
-        "entity_types": [{
+        "entity_types": [
+          {
             "filters": {
-              "all_of": [{
-                  "any_of": [{
+              "all_of": [
+                {
+                  "any_of": [
+                    {
                       "test": "is_family",
                       "subject": "other",
                       "value": "player"
@@ -144,11 +153,13 @@
                   ]
                 },
                 {
-                  "any_of": [{
-                    "test": "in_water",
-                    "subject": "other",
-                    "value": true
-                  }]
+                  "any_of": [
+                    {
+                      "test": "in_water",
+                      "subject": "other",
+                      "value": true
+                    }
+                  ]
                 }
               ]
             },
@@ -156,8 +167,10 @@
           },
           {
             "filters": {
-              "all_of": [{
-                  "any_of": [{
+              "all_of": [
+                {
+                  "any_of": [
+                    {
                       "test": "is_family",
                       "subject": "other",
                       "value": "villager"
@@ -170,11 +183,13 @@
                   ]
                 },
                 {
-                  "any_of": [{
-                    "test": "in_water",
-                    "subject": "other",
-                    "value": true
-                  }]
+                  "any_of": [
+                    {
+                      "test": "in_water",
+                      "subject": "other",
+                      "value": true
+                    }
+                  ]
                 }
               ]
             },
@@ -184,11 +199,13 @@
         ]
       },
       "minecraft:damage_sensor": {
-        "triggers": {
-          "on_damage": {
-            "event": "minecraft:invisibility"
+        "triggers": [
+          {
+            "on_damage": {
+              "event": "minecraft:invisibility"
+            }
           }
-        }
+        ]
       },
       "minecraft:experience_reward": {
         "on_death": "query.last_hit_by_player ? Math.Random(5,10) : 0"
@@ -217,16 +234,18 @@
         }
       },
       "minecraft:hurt_on_condition": {
-        "damage_conditions": [{
-          "filters": {
-            "test": "in_lava",
-            "subject": "self",
-            "operator": "==",
-            "value": true
-          },
-          "cause": "lava",
-          "damage_per_tick": 4
-        }]
+        "damage_conditions": [
+          {
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
       },
       "minecraft:follow_range": {
         "value": 64,
@@ -329,7 +348,8 @@
         "is_pushable": true,
         "is_pushable_by_piston": true
       },
-      "minecraft:movement.basic": {}
+      "minecraft:movement.basic": {
+      }
     },
     "events": {
       "minecraft:invisibility": {
@@ -352,7 +372,7 @@
             "minecraft:shadow_of_sea_angry"
           ]
         },
-        "run_command": {
+        "run_command":  {
           "command": [
             "effect @s invisibility 3 0 true"
           ]

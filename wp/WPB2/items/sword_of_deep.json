@@ -77,7 +77,7 @@
         }
       },
       "minecraft:cooldown": {
-        "category": "weapon",
+        "category": "sword",
         "duration": 2
       }
     },

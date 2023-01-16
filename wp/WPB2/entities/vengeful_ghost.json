@@ -8,6 +8,22 @@
       "is_experimental": false
     },
     "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "minecraft:from_night_event": {
+        "minecraft:environment_sensor": {
+          "triggers": {
+            "filters": {
+              "test": "is_daytime",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "event": "minecraft:despawn"
+          }
+        }
+      }
     },
 
     "components": {
@@ -250,7 +266,7 @@
 				"always_show": true
 			},
       "minecraft:type_family": {
-        "family": [ "player_ghost" ]
+        "family": [ "player_ghost","mini_boss" ]
       },
       "minecraft:collision_box": {
         "width": 0.6,
@@ -316,6 +332,21 @@
     },
 
     "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
+      "minecraft:from_night_event": {
+        "trigger": "minecraft:entity_spawned",
+        "add": {
+          "component_groups": [
+            "minecraft:from_night_event"
+          ]
+        }
+      }
     }
   }
 }

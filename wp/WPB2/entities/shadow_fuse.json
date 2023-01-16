@@ -1,0 +1,63 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:shadow_fuse",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "shadow_fuse"
+        ]
+      },
+      "animations": {
+        "shadow_fuse": "animation.shadow_fuse"
+      }
+    },
+    "component_groups": {
+      "minecraft:spawn_dragon": {
+        "minecraft:timer": {
+          "looping": true,
+          "time": 2,
+          "time_down_event": {
+            "event": "minecraft:set_dragon"
+          }
+        }
+      }
+    },
+    "components": {
+      "minecraft:health": {
+        "value": 100000,
+        "max": 100000
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": false
+      },
+      "minecraft:collision_box": {
+        "width": 0,
+        "height": 0
+      }
+    },
+    "events": {
+      "minecraft:spawn_dragon": {
+        "add": {
+          "component_groups": [
+            "minecraft:spawn_dragon"
+          ]
+        }
+      },
+      "minecraft:set_dragon": {
+        "run_command": {
+          "command": [
+            "scoreboard players set @s random -1"
+          ]
+        }
+      }
+    }
+  }
+}

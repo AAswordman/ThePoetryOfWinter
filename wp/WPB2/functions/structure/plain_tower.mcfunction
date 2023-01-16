@@ -1,2 +1,1 @@
-structure load mystructure:plain_tower ~ ~ ~
-setblock ~~~ air
+structure load mystructure:plain_tower ~-22 ~ ~-17

@@ -8,32 +8,32 @@
       "entries": [
         {
           "type": "loot_table",
-          "name": "loot_tables/template/harmful_lingering_potion.json",
+          "name": "loot_tables/template/potion/harmful/lingering_potion.json",
           "weight": 1
         },
         {
           "type": "loot_table",
-          "name": "loot_tables/template/benefit_lingering_potion.json",
+          "name": "loot_tables/template/potion/benefit/lingering_potion.json",
           "weight": 1
         },
         {
           "type": "loot_table",
-          "name": "loot_tables/template/harmful_splash_potion.json",
+          "name": "loot_tables/template/potion/harmful/splash_potion.json",
           "weight": 1
         },
         {
           "type": "loot_table",
-          "name": "loot_tables/template/benefit_splash_potion.json",
+          "name": "loot_tables/template/potion/benefit/splash_potion.json",
           "weight": 1
         },
         {
           "type": "loot_table",
-          "name": "loot_tables/template/harmful_potion.json",
+          "name": "loot_tables/template/potion/harmful/potion.json",
           "weight": 2
         },
         {
           "type": "loot_table",
-          "name": "loot_tables/template/benefit_potion.json",
+          "name": "loot_tables/template/potion/benefit/potion.json",
           "weight": 2
         },
         {

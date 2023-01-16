@@ -12,7 +12,7 @@
       "minecraft:display_name": {
         "value": "item.dec:stream_stone.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "stream_stone"
       }
     }

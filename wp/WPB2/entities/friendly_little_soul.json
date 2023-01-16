@@ -1,0 +1,148 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "dec:friendly_little_soul",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"minecraft:disappear": {
+				"minecraft:explode": {
+					"fuseLength": 0.01,
+					"fuseLit": true,
+					"power": 0,
+					"causesFire": false
+				}
+			}
+		},
+		"components": {
+			"minecraft:despawn": {
+				"despawn_from_distance": {}
+			},
+			"minecraft:explode": {
+				"fuseLength": 10,
+				"fuseLit": true,
+				"power": 0,
+				"causesFire": false
+			},
+			"minecraft:follow_range": {
+				"value": 64,
+				"max": 64
+			},
+			"minecraft:nameable": {},
+			"minecraft:type_family": {
+				"family": [
+					"friendly_little_soul",
+					"villager",
+					"mob",
+					"player"
+				]
+			},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 1.5
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:navigation.walk": {
+				"is_amphibious": true,
+				"can_pass_doors": true,
+				"can_walk": true,
+				"can_break_doors": true
+			},
+			"minecraft:jump.static": {},
+			"minecraft:can_climb": {},
+			"minecraft:health": {
+				"value": 8,
+				"max": 8
+			},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": 0,
+				"breathes_air": true,
+				"breathes_water": true
+			},
+			"minecraft:behavior.melee_attack": {
+				"priority": 3,
+				"speed_multiplier": 1.1,
+				"track_target": true
+			},
+			"minecraft:attack": {
+				"damage": 4
+			},
+			"minecraft:behavior.leap_at_target": {
+			  "priority": 4,
+			  "target_dist": 0.3
+			},
+			"minecraft:behavior.random_stroll": {
+				"priority": 6,
+				"speed_multiplier": 1
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 7,
+				"look_distance": 6,
+				"probability": 0.02
+			},
+			"minecraft:behavior.random_look_around": {
+				"priority": 7
+			},
+			"minecraft:movement": {
+				"value": 0.2
+			},
+			"minecraft:damage_sensor": {
+			  "triggers": [
+				{
+				  "on_damage": {
+					"filters": {
+					  "test": "is_family",
+					  "subject": "other",
+					  "operator": "==",
+					  "value": "bullet_by_ghost_flintlock"
+					}
+				  },
+				  "deals_damage": false
+				}
+			  ]
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+			  "priority": 2,
+			  "entity_types": [
+				{
+				  "filters": {
+					"any_of": [
+					  {
+						"test": "is_family",
+						"subject": "other",
+						"value": "monster"
+					  }
+					]
+				  },
+				  "max_dist": 16
+				}
+			  ],
+			  "attack_interval": 5,
+			  "must_see": true
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			}
+		},
+		"events": {
+			"minecraft:disappear": {
+				"run_command": {
+					"command": [
+						"particle dec:summon_staff_spawn_disappear ~~~"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"minecraft:disappear"
+					]
+				}
+			}
+		}
+	}
+}

@@ -22,7 +22,7 @@
         "slot": "armor_legs"
       },
       "minecraft:durability": {
-        "max_durability": 190,
+        "max_durability": 380,
         "damage_chance": {
           "min": 60,
           "max": 100

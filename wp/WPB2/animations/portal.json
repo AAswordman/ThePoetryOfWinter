@@ -1,0 +1,14 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.portal": {
+            "timeline": {
+                "0.5": [
+                    "/tp ~~~ 0 ~"
+                ]
+            },
+            "animation_length": 2,
+            "loop": true
+        }
+    }
+}

@@ -10,14 +10,14 @@
             }
           ],
           "on_entry": [
-            "/execute as @s at @s run particle dec:bubble_line_particle ~29 60 ~",
-            "/execute as @s at @s run particle dec:bubble_line_particle ~-29 60 ~",
-            "/execute as @s at @s run particle dec:bubble_line_particle ~ 60 ~29",
-            "/execute as @s at @s run particle dec:bubble_line_particle ~ 60 ~-29",
-            "/execute as @s at @s run particle dec:bubble_line_particle ~-21 60 ~-21",
-            "/execute as @s at @s run particle dec:bubble_line_particle ~21 60 ~-21",
-            "/execute as @s at @s run particle dec:bubble_line_particle ~-21 60 ~21",
-            "/execute as @s at @s run particle dec:bubble_line_particle ~21 60 ~21"
+            "/execute positioned ~29 60 ~ run particle dec:bubble_line_particle ~~~",
+            "/execute positioned ~-29 60 ~ run particle dec:bubble_line_particle ~~~",
+            "/execute positioned ~ 60 ~29 run particle dec:bubble_line_particle ~~~",
+            "/execute positioned ~ 60 ~-29 run particle dec:bubble_line_particle ~~~",
+            "/execute positioned ~-21 60 ~-21 run particle dec:bubble_line_particle ~~~",
+            "/execute positioned ~21 60 ~-21 run particle dec:bubble_line_particle ~~~",
+            "/execute positioned ~-21 60 ~21 run particle dec:bubble_line_particle ~~~",
+            "/execute positioned ~21 60 ~21 run particle dec:bubble_line_particle ~~~"
           ]
         },
         "ticking": {
@@ -27,14 +27,14 @@
             }
           ],
           "on_entry": [
-            "/execute as @s at @s run particle dec:bubble_line_particle ~29 60 ~",
-            "/execute as @s at @s run particle dec:bubble_line_particle ~-29 60 ~",
-            "/execute as @s at @s run particle dec:bubble_line_particle ~ 60 ~29",
-            "/execute as @s at @s run particle dec:bubble_line_particle ~ 60 ~-29",
-            "/execute as @s at @s run particle dec:bubble_line_particle ~-21 60 ~-21",
-            "/execute as @s at @s run particle dec:bubble_line_particle ~21 60 ~-21",
-            "/execute as @s at @s run particle dec:bubble_line_particle ~-21 60 ~21",
-            "/execute as @s at @s run particle dec:bubble_line_particle ~21 60 ~21"
+            "/execute positioned ~29 60 ~ run particle dec:bubble_line_particle ~~~",
+            "/execute positioned ~-29 60 ~ run particle dec:bubble_line_particle ~~~",
+            "/execute positioned ~ 60 ~29 run particle dec:bubble_line_particle ~~~",
+            "/execute positioned ~ 60 ~-29 run particle dec:bubble_line_particle ~~~",
+            "/execute positioned ~-21 60 ~-21 run particle dec:bubble_line_particle ~~~",
+            "/execute positioned ~21 60 ~-21 run particle dec:bubble_line_particle ~~~",
+            "/execute positioned ~-21 60 ~21 run particle dec:bubble_line_particle ~~~",
+            "/execute positioned ~21 60 ~21 run particle dec:bubble_line_particle ~~~"
           ]
         }
       }

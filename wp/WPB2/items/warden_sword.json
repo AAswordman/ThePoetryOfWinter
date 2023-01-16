@@ -10,7 +10,7 @@
         "parent": "itemGroup.name.sword"
       },
       "minecraft:cooldown": {
-        "category": "chorusfruit",
+        "category": "sword",
         "duration": 15
       },
       "minecraft:display_name": {

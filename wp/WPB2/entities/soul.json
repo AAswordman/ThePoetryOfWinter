@@ -66,14 +66,17 @@
         "value": 15,
         "max": 15
       },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
       "minecraft:attack": {
         "damage": 4,
         "effect_name": "blindness",
         "effect_duration": 1
       },
       "minecraft:collision_box": {
-        "width": 0.6,
-        "height": 1.8
+        "width": 0.35,
+        "height": 0.6
       },
       "minecraft:movement": {
         "value": 3.0

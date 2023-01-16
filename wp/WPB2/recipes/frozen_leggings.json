@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:frozen_leggings"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XAX",
+      "XBX",
+      "X X"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:golden_leggings"
+      },
+      "X": {
+        "item": "dec:ice_brick"
+      },
+      "B": {
+        "item": "dec:ice_ingot"
+      }
+    },
+    "result": {
+      "item": "dec:frozen_leggings"
+    }
+  }
+}

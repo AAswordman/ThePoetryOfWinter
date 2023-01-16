@@ -30,22 +30,22 @@
       "minecraft:durability": {
         "max_durability": 256
       },
-			"minecraft:repairable": {
-				"repair_items": [
-					{
-						"items": [
-							"dec:sharp_coral"
-						],
-						"repair_amount": "context.other->query.remaining_durability + query.max_durability * 1"
-					},
-					{
-						"items": [
-							"dec:coral_ingot"
-						],
-						"repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.3"
-					}
-				]
-			},
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "dec:sharp_coral"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 1"
+          },
+          {
+            "items": [
+              "dec:coral_ingot"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.3"
+          }
+        ]
+      },
       "minecraft:mining_speed": 1.5,
       "minecraft:damage": 6,
       "minecraft:enchantable": {

@@ -13,14 +13,6 @@
         "width": 0.25,
         "height": 0.25
       },
-       "minecraft:explode": {
-     "fuseLength": 2,
-     "fuseLit": true,
-     "power": 0,
-     "causesFire": true,
-     "fireAffectedByGriefing": true,
-     "destroyAffectedByGriefing": true
-    },
       "minecraft:projectile": {
         "onHit": {
           "impact_damage": {

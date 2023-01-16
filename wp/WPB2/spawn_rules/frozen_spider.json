@@ -8,9 +8,10 @@
     "conditions": [
       {
         "minecraft:spawns_on_surface": {},
+        "minecraft:spawns_underground": {},
         "minecraft:brightness_filter": {
-          "min": 7,
-          "max": 15,
+          "min": 0,
+          "max": 5,
           "adjust_for_weather": true
         },
         "minecraft:difficulty_filter": {
@@ -22,7 +23,11 @@
         },
         "minecraft:herd": {
           "min_size": 1,
-          "max_size": 2
+          "max_size": 1
+        },
+        "minecraft:density_limit": {
+          "surface": 2,
+          "underground": 4
         },
         "minecraft:permute_type": [
           {

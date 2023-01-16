@@ -1,0 +1,15 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.frozen_heart.go_forward": {
+      "timeline": {
+        "0.05": [
+          "/tp ~~~ facing @p[m=!1]",
+          "/execute if block ^^^1 air run tp ^^^1"
+        ]
+      },
+      "animation_length": 0.1,
+      "loop": true
+    }
+  }
+}

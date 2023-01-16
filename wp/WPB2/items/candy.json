@@ -1,7 +1,7 @@
 {
   "format_version": "1.16.100",
   "minecraft:item": {
-        "description": {
+    "description": {
       "category": "equipment",
       "identifier": "dec:candy"
     },
@@ -15,7 +15,7 @@
       "minecraft:icon": {
         "texture": "candy"
       },
-	  "minecraft:use_animation": "eat",
+      "minecraft:use_animation": "eat",
       "minecraft:render_offsets": "cookie",
       "minecraft:use_duration": 1.6,
       "minecraft:food": {

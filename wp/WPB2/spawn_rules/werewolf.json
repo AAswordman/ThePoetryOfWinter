@@ -34,6 +34,10 @@
             "entity_type": "dec:dark_werewolf"
           }
         ],
+        "minecraft:density_limit": {
+          "surface": 2,
+          "underground": 1
+        },
         "minecraft:biome_filter": {
           "test": "has_biome_tag", "operator": "==", "value": "mesa"
         }

@@ -1,0 +1,36 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:ice_monster",
+      "materials": {
+        "default": "slime_outer"
+      },
+      "textures": {
+        "default": "textures/entity/ice_monster"
+      },
+      "geometry": {
+        "default": "geometry.ice_monster"
+      },
+      "spawn_egg": {
+        "base_color": "#FFFFFFFF",
+        "overlay_color": "#87A8FAFF"
+      },
+      "render_controllers": [ "controller.render.ice_monster" ],
+	  "scripts": { "animate": [ "root", "look", "shoot_controller", "summon_controller", "spawn" ] },
+      "animations": {
+        "root": "controller.animation.ice_monster.root",
+        "shoot_controller": "controller.animation.ice_monster.shoot",
+        "summon_controller": "controller.animation.ice_monster.summon",
+        "look": "controller.animation.ice_monster.look",
+        "spawn": "animation.ice_monster.spawn",
+        "defualt": "animation.ice_monster.defualt",
+        "look_at_target": "animation.common.look_at_target",
+        "move": "animation.ice_monster.move",
+        "attack": "animation.ice_monster.attack",
+        "shoot": "animation.ice_monster.shoot",
+        "summon": "animation.ice_monster.summon"
+      }
+    }
+  }
+}

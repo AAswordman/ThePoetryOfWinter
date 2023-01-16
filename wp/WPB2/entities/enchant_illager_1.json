@@ -9,6 +9,9 @@
       "is_experimental": false
     },
     "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      },
       "minecraft:next": {
         "minecraft:transformation": {
           "into": "dec:enchant_illager_2<minecraft:entity_spawned>"
@@ -21,8 +24,8 @@
           "hud_range": 64
         },
         "minecraft:health": {
-          "value": 800,
-          "max": 800
+          "value": 1000,
+          "max": 1000
         },
         "minecraft:movement": {
           "value": 0.6
@@ -134,7 +137,7 @@
                   "entity_type": "dec:ghost_diamond_axe",
                   "summon_cap": 30,
                   "summon_cap_radius": 6.0,
-                  "size": 10.0,
+                  "size": 6.0,
                   "sound_event": "prepare.summon",
                   "entity_lifespan": 20
                 },
@@ -146,7 +149,7 @@
                   "entity_type": "dec:ghost_diamond_axe",
                   "summon_cap": 30,
                   "summon_cap_radius": 6.0,
-                  "size": 3.0,
+                  "size": 2.0,
                   "sound_event": "prepare.summon",
                   "entity_lifespan": 30
                 }
@@ -157,6 +160,12 @@
       }
     },
     "components": {
+      "minecraft:despawn": {
+        "despawn_from_distance": {
+          "min_distance": 64,
+          "max_distance": 64
+        }
+      },
       "minecraft:damage_sensor": {
         "triggers": [
           {
@@ -195,8 +204,8 @@
       "minecraft:nameable": {
       },
       "minecraft:health": {
-        "value": 300,
-        "max": 300
+        "value": 700,
+        "max": 700
       },
       "minecraft:boss": {
         "should_darken_sky": false,
@@ -217,7 +226,7 @@
         "height": 1.9
       },
       "minecraft:movement": {
-        "value": 0.5
+        "value": 0.55
       },
       "minecraft:navigation.walk": {
         "can_path_over_water": true,
@@ -302,6 +311,13 @@
       }
     },
     "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
       "minecraft:entity_spawned": {
         "sequence": [
           {

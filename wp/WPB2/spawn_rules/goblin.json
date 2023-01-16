@@ -20,6 +20,10 @@
         "minecraft:weight": {
           "default": 2
         },
+        "minecraft:density_limit": {
+          "surface": 1,
+          "underground": 9
+        },
         "minecraft:permute_type": [
           {
             "weight": 25

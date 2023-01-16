@@ -77,7 +77,7 @@
         },
         {
           "type": "item",
-          "name": "minecraft:diamond_dagger",
+          "name": "dec:diamond_dagger",
           "weight": 1,
           "functions": [
             {

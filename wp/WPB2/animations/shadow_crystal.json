@@ -1,0 +1,118 @@
+{
+  "format_version": "1.8.0", 
+  "animations": {
+      "animation.shadow_crystal": {
+        "timeline": {
+            "10": [
+                "/particle dec:ender_fuse_particle ~~~",
+                "/summon dec:shadow_fuse ~~~",
+                "/summon dec:shadow_fuse ~~~",
+                "/summon dec:shadow_fuse ~~~"
+            ],
+            "20": [
+                "/particle dec:ender_fuse_particle ~~~",
+                "/execute at @a[r=64,m=0] run summon dec:shadow_fuse ~~~",
+                "/execute at @a[r=64,m=2] run summon dec:shadow_fuse ~~~",
+                "/execute at @a[r=64,m=0] run summon dec:shadow_fuse ~~~",
+                "/execute at @a[r=64,m=2] run summon dec:shadow_fuse ~~~"
+            ],
+            "30": [
+                "/particle dec:ender_fuse_particle ~~~",
+                "/summon dec:shadow_fuse ~~~",
+                "/summon dec:shadow_fuse ~~~",
+                "/summon dec:shadow_fuse ~~~"
+            ],
+            "40": [
+                "/particle dec:ender_fuse_particle ~~~",
+                "/execute at @a[r=64,m=0] run summon dec:shadow_fuse ~~~",
+                "/execute at @a[r=64,m=2] run summon dec:shadow_fuse ~~~",
+                "/execute at @a[r=64,m=0] run summon dec:shadow_fuse ~~~",
+                "/execute at @a[r=64,m=2] run summon dec:shadow_fuse ~~~",
+                "/damage @s 20000 magic"
+            ],
+
+            "60": [
+                "/particle dec:ender_fuse_particle ~~~",
+                "/summon dec:shadow_fuse ~~~",
+                "/summon dec:shadow_fuse ~~~",
+                "/summon dec:shadow_fuse ~~~",
+                "/summon dec:shadow_fuse ~~~"
+            ],
+            "70": [
+                "/particle dec:ender_fuse_particle ~~~",
+                "/execute at @a[r=64,m=0] run summon dec:shadow_fuse ~~~",
+                "/execute at @a[r=64,m=2] run summon dec:shadow_fuse ~~~",
+                "/execute at @a[r=64,m=0] run summon dec:shadow_fuse ~~~",
+                "/execute at @a[r=64,m=2] run summon dec:shadow_fuse ~~~"
+            ],
+            "80": [
+                "/particle dec:ender_fuse_particle ~~~",
+                "/summon dec:shadow_fuse ~~~",
+                "/summon dec:shadow_fuse ~~~",
+                "/summon dec:shadow_fuse ~~~",
+                "/summon dec:shadow_fuse ~~~",
+                "/damage @s 20000 magic"
+            ],
+            "90": [
+                "/particle dec:ender_fuse_particle ~~~",
+                "/summon dec:shadow_fuse ~~~ minecraft:spawn_dragon"
+            ],
+
+            "120": [
+                "/particle dec:ender_fuse_particle ~~~",
+                "/summon dec:shadow_fuse ~~~",
+                "/summon dec:shadow_fuse ~~~",
+                "/summon dec:shadow_fuse ~~~",
+                "/summon dec:shadow_fuse ~~~",
+                "/summon dec:shadow_fuse ~~~",
+                "/summon dec:shadow_fuse ~~~",
+                "/summon dec:shadow_fuse ~~~",
+                "/summon dec:shadow_fuse ~~~",
+                "/damage @s 20000 magic"
+            ],
+            "150": [
+                "/particle dec:ender_fuse_particle ~~~",
+                "/summon dec:shadow_fuse ~~~",
+                "/summon dec:shadow_fuse ~~~",
+                "/summon dec:shadow_fuse ~~~",
+                "/summon dec:shadow_fuse ~~~",
+                "/summon dec:shadow_fuse ~~~",
+                "/summon dec:shadow_fuse ~~~",
+                "/summon dec:shadow_fuse ~~~",
+                "/summon dec:shadow_fuse ~~~",
+                "/summon dec:shadow_fuse ~~~ minecraft:spawn_dragon"
+            ],
+            "160": [
+                "/particle dec:ender_fuse_particle ~~~",
+                "/execute at @a[r=64,m=0] run summon dec:shadow_fuse ~~~",
+                "/execute at @a[r=64,m=2] run summon dec:shadow_fuse ~~~",
+                "/execute at @a[r=64,m=0] run summon dec:shadow_fuse ~~~",
+                "/execute at @a[r=64,m=2] run summon dec:shadow_fuse ~~~",
+                "/damage @s 20000 magic"
+            ],
+            "190": [
+                "/particle dec:ender_fuse_particle ~~~",
+                "/summon dec:shadow_fuse ~~~",
+                "/summon dec:shadow_fuse ~~~",
+                "/summon dec:shadow_fuse ~~~",
+                "/summon dec:shadow_fuse ~~~",
+                "/summon dec:shadow_fuse ~~~",
+                "/summon dec:shadow_fuse ~~~",
+                "/summon dec:shadow_fuse ~~~",
+                "/summon dec:shadow_fuse ~~~",
+                "/summon dec:shadow_fuse ~~~",
+                "/summon dec:shadow_fuse ~~~",
+                "/summon dec:shadow_fuse ~~~",
+                "/summon dec:shadow_fuse ~~~",
+                "/summon dec:shadow_fuse ~~~ minecraft:spawn_dragon",
+                "/tellraw @a { \"rawtext\" : [ { \"translate\" : \"text.dec:shadow_crystal_defeated.name\" } ] }"
+            ],
+            "193": [
+                "/event entity @s minecraft:despawn"
+            ]
+        }, 
+        "animation_length": 194,
+        "loop": true
+      }
+   }
+}

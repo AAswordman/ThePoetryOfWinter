@@ -19,9 +19,10 @@
         "texture": "short_flintlock"
       },
       "minecraft:cooldown": {
-        "category": "weapon",
-        "duration": 2
+        "category": "gun",
+        "duration": 4
       },
+      "minecraft:hand_equipped": true,
       "minecraft:durability": {
         "max_durability": 120
       },

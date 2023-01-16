@@ -8,6 +8,22 @@
       "is_experimental": false
     },
     "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "minecraft:from_night_event": {
+        "minecraft:environment_sensor": {
+          "triggers": {
+            "filters": {
+              "test": "is_daytime",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "event": "minecraft:despawn"
+          }
+        }
+      },
       "minecraft:iron_dart": {
         "minecraft:loot": {
           "table": "loot_tables/entities/skeleton_assassin_iron_dart.json"
@@ -154,6 +170,9 @@
       "minecraft:type_family": {
         "family": [ "skeleton", "undead", "monster", "mob" ]
       },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
       "minecraft:breathable": {
         "total_supply": 15,
         "suffocate_time": 0,
@@ -269,6 +288,21 @@
     },
 
     "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
+      "minecraft:from_night_event": {
+        "trigger": "minecraft:entity_spawned",
+        "add": {
+          "component_groups": [
+            "minecraft:from_night_event"
+          ]
+        }
+      },
       "minecraft:entity_spawned": {
         "randomize": [
           {

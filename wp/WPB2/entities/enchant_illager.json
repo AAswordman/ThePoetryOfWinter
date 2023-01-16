@@ -9,6 +9,9 @@
       "is_experimental": false
     },
     "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      },
       "minecraft:next": {
         "minecraft:transformation": {
           "into": "dec:enchant_illager_1<minecraft:entity_spawned>"
@@ -17,18 +20,33 @@
       "minecraft:angry": {
         "minecraft:boss": {
           "should_darken_sky": false,
-          "name":"boss.dec:enchant_illager_angry.name",
+          "name": "boss.dec:enchant_illager_angry.name",
           "hud_range": 64
         },
         "minecraft:health": {
-          "value": 800,
-          "max": 800
+          "value": 1000,
+          "max": 1000
         },
         "minecraft:movement": {
           "value": 0.6
         }
       },
       "minecraft:spawn": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "empty_family"
+                }
+              },
+              "deals_damage": false
+            }
+          ]
+        },
         "minecraft:timer": {
           "looping": false,
           "time": 5,
@@ -37,19 +55,44 @@
           }
         },
         "minecraft:spell_effects": {
-					"add_effects": [
+          "add_effects": [
             {
-						"effect": "slowness",
-						"amplifier": 50,
-						"visible": 0,
-						"ambient": 0,
-						"duration": 5,
-						"display_on_screen_animation": true
-					  }
+              "effect": "slowness",
+              "amplifier": 50,
+              "visible": 0,
+              "ambient": 0,
+              "duration": 5,
+              "display_on_screen_animation": true
+            }
           ]
-		    }
+        }
       },
       "minecraft:roar": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "ghost"
+                  }
+                },
+              "deals_damage": false
+              },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {"test": "has_damage", "value": "fatal"}
+                  ]
+                },
+                "event": "minecraft:next"
+              },
+              "deals_damage": false
+            }
+          ]
+        },
         "minecraft:behavior.knockback_roar": {
           "priority": 1,
           "duration": 2,
@@ -70,6 +113,34 @@
         }
       },
       "minecraft:summon": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "ghost"
+                }
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_damage",
+                      "value": "fatal"
+                    }
+                  ]
+                },
+                "event": "minecraft:next"
+              },
+              "deals_damage": false
+            }
+          ]
+        },
         "minecraft:timer": {
           "looping": false,
           "time": 20,
@@ -79,7 +150,6 @@
         },
         "minecraft:behavior.summon_entity": {
           "priority": 2,
-  
           "summon_choices": [
             {
               "min_activation_range": 3.0,
@@ -155,7 +225,7 @@
                   "entity_type": "dec:ghost_iron_axe",
                   "summon_cap": 30,
                   "summon_cap_radius": 6.0,
-                  "size": 10.0,
+                  "size": 6.0,
                   "sound_event": "prepare.summon",
                   "entity_lifespan": 20
                 }
@@ -166,6 +236,12 @@
       }
     },
     "components": {
+      "minecraft:despawn": {
+        "despawn_from_distance": {
+          "min_distance": 64,
+          "max_distance": 64
+        }
+      },
       "minecraft:damage_sensor": {
         "triggers": [
           {
@@ -174,15 +250,18 @@
                 "test": "is_family",
                 "subject": "other",
                 "value": "ghost"
-                }
-              },
-            "deals_damage": false
+              }
             },
+            "deals_damage": false
+          },
           {
             "on_damage": {
               "filters": {
                 "all_of": [
-                  {"test": "has_damage", "value": "fatal"}
+                  {
+                    "test": "has_damage",
+                    "value": "fatal"
+                  }
                 ]
               },
               "event": "minecraft:next"
@@ -194,31 +273,38 @@
       "minecraft:knockback_resistance": {
         "value": 0.5
       },
-      "minecraft:experience_reward": {
-        "on_death": "50"
-      },
       "minecraft:type_family": {
-        "family": [ "enchant_illager", "monster", "illager", "mob", "boss" ]
+        "family": [
+          "enchant_illager",
+          "monster",
+          "illager",
+          "mob",
+          "boss"
+        ]
       },
       "minecraft:breathable": {
         "total_supply": 15,
         "suffocate_time": 0
       },
-      "minecraft:nameable": {
-      },
+      "minecraft:nameable": {},
       "minecraft:health": {
-        "value": 300,
-        "max": 300
+        "value": 700,
+        "max": 700
       },
       "minecraft:boss": {
         "should_darken_sky": false,
-        "name":"boss.dec:enchant_illager.name",
+        "name": "boss.dec:enchant_illager.name",
         "hud_range": 64
       },
       "minecraft:hurt_on_condition": {
         "damage_conditions": [
           {
-            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
             "cause": "lava",
             "damage_per_tick": 4
           }
@@ -229,7 +315,7 @@
         "height": 1.9
       },
       "minecraft:movement": {
-        "value": 0.5
+        "value": 0.55
       },
       "minecraft:navigation.walk": {
         "can_path_over_water": true,
@@ -237,12 +323,9 @@
         "can_open_doors": true,
         "avoid_water": true
       },
-      "minecraft:movement.basic": {
-      },
-      "minecraft:jump.static": {
-      },
-      "minecraft:can_climb": {
-      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
       "minecraft:behavior.float": {
         "priority": 0
       },
@@ -250,7 +333,11 @@
         "priority": 5,
         "entity_types": [
           {
-            "filters": { "test" :  "is_family", "subject" : "other", "value" :  "player"},
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "player"
+            },
             "max_dist": 8,
             "walk_speed_multiplier": 0.6,
             "sprint_speed_multiplier": 1.0
@@ -265,21 +352,46 @@
         "priority": 2,
         "entity_types": [
           {
-            "filters": {  
-                "any_of": [
-                  { "test" :  "is_family", "subject" : "other", "value" :  "player"},
-                  { "test" :  "is_family", "subject" : "other", "value" :  "snowgolem"},
-                  { "test" :  "is_family", "subject" : "other", "value" :  "irongolem"},
-                  { "test" :  "is_family", "subject" : "other", "value" :  "wandering_trader"}
-                ] 
+            "filters": {
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "snowgolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "wandering_trader"
+                }
+              ]
             },
             "max_dist": 20
           },
           {
             "filters": {
               "all_of": [
-                { "test": "is_family", "subject": "other", "value": "villager" },
-                { "test": "has_component", "subject": "other", "operator": "!=", "value": "minecraft:is_baby" }
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "villager"
+                },
+                {
+                  "test": "has_component",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "minecraft:is_baby"
+                }
               ]
             },
             "max_dist": 20
@@ -287,7 +399,6 @@
         ],
         "must_see": true
       },
-
       "minecraft:behavior.look_at_player": {
         "priority": 9,
         "look_distance": 3.0,
@@ -296,7 +407,11 @@
       "minecraft:behavior.look_at_entity": {
         "priority": 10,
         "look_distance": 8.0,
-        "filters": { "test" :  "is_family", "subject" : "other", "value" :  "mob" }
+        "filters": {
+          "test": "is_family",
+          "subject": "other",
+          "value": "mob"
+        }
       },
       "minecraft:behavior.hurt_by_target": {
         "priority": 1,
@@ -310,10 +425,8 @@
           "max_dist": 64
         }
       },
-      "minecraft:persistent": {
-      },
-      "minecraft:physics": {
-      },
+      "minecraft:persistent": {},
+      "minecraft:physics": {},
       "minecraft:pushable": {
         "is_pushable": true,
         "is_pushable_by_piston": true
@@ -323,6 +436,13 @@
       }
     },
     "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
       "minecraft:entity_spawned": {
         "sequence": [
           {
@@ -333,10 +453,18 @@
             }
           },
           {
-            "filters": { "test" :  "has_biome_tag", "operator": "!=", "value" :  "jungle"},
+            "filters": {
+              "test": "has_biome_tag",
+              "operator": "!=",
+              "value": "jungle"
+            },
             "randomize": [
               {
-                "add": { "component_groups": [ "minecraft:angry" ] }
+                "add": {
+                  "component_groups": [
+                    "minecraft:angry"
+                  ]
+                }
               }
             ]
           }
@@ -344,35 +472,53 @@
       },
       "minecraft:change_attack": {
         "sequence": [
-        {
-           "randomize": [
-            {
-              "weight": 1,
-              "sequence": [
-                 {
-                  "randomize": [
-                    {
-                      "weight": 1,
-                      "remove": { "component_groups": [ "minecraft:summon", "minecraft:roar"] },
-                      "add": { "component_groups": [ "minecraft:summon" ] }
-                    },
-                    {
-                      "weight": 2,
-                      "remove": { "component_groups": [ "minecraft:summon", "minecraft:roar"] },
-                      "add": { "component_groups": [ "minecraft:roar" ] }
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    "minecraft:next": {
-      "add": {
-        "component_groups": [
-          "minecraft:next"
+          {
+            "randomize": [
+              {
+                "weight": 1,
+                "sequence": [
+                  {
+                    "randomize": [
+                      {
+                        "weight": 1,
+                        "remove": {
+                          "component_groups": [
+                            "minecraft:summon",
+                            "minecraft:roar"
+                          ]
+                        },
+                        "add": {
+                          "component_groups": [
+                            "minecraft:summon"
+                          ]
+                        }
+                      },
+                      {
+                        "weight": 2,
+                        "remove": {
+                          "component_groups": [
+                            "minecraft:summon",
+                            "minecraft:roar"
+                          ]
+                        },
+                        "add": {
+                          "component_groups": [
+                            "minecraft:roar"
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "minecraft:next": {
+        "add": {
+          "component_groups": [
+            "minecraft:next"
           ]
         }
       }
