@@ -9,14 +9,6 @@
       "is_experimental": false
     },
     "components": {
-     "minecraft:explode": {
-     "fuseLength": 2,
-     "fuseLit": true,
-     "power": 0,
-     "causesFire": true,
-     "fireAffectedByGriefing": true,
-     "destroyAffectedByGriefing": true
-    },
       "minecraft:collision_box": {
         "width": 0.25,
         "height": 0.25

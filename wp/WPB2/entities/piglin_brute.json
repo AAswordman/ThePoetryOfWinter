@@ -173,6 +173,7 @@
       },
       "minecraft:type_family": {
         "family": [
+          "mini_boss",
           "piglin",
           "adult_piglin",
           "piglin_brute",

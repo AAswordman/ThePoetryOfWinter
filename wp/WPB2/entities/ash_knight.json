@@ -8,6 +8,9 @@
       "is_experimental": false
     },
     "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      },
       "minecraft:spawn": {
         "minecraft:timer": {
           "looping": false,
@@ -186,8 +189,8 @@
     "components": {
       "minecraft:despawn": {
         "despawn_from_distance": {
-          "min_distance": 256,
-          "max_distance": 256
+          "min_distance": 64,
+          "max_distance": 64
         }
       },
       "minecraft:damage_sensor": {
@@ -327,6 +330,13 @@
       }
     },
     "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
       "minecraft:entity_spawned": {
         "sequence": [
           {

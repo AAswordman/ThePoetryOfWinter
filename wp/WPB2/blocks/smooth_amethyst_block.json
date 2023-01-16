@@ -9,8 +9,8 @@
         "group": "itemGroup.name.outside",
 				"category": "construction"
 			},
-      "minecraft:block_light_absorption": 1,
-      "minecraft:block_light_emission": 0.3,
+      "minecraft:light_dampening": 7,
+      "minecraft:light_emission": 1,
       "minecraft:destroy_time": 2.3,
       "minecraft:explosion_resistance": 10,
       "minecraft:loot": "loot_tables/blocks/smooth_amethyst_block.json",

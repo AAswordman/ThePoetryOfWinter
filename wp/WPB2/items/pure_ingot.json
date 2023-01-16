@@ -12,9 +12,9 @@
       "minecraft:display_name": {
         "value": "item.dec:pure_ingot.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "pure_ingot"
-     }
+      }
     }
   }
 }

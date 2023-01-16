@@ -9,8 +9,8 @@
         "group": "itemGroup.name.outside",
 				"category": "items"
 			},
-      "minecraft:block_light_absorption": 1,
-      "minecraft:block_light_emission": 0,
+      "minecraft:light_dampening": 15,
+      "minecraft:light_emission": 0,
       "minecraft:destroy_time": 3,
       "minecraft:explosion_resistance": 10,
       "minecraft:map_color": "#3C3B3B",
@@ -18,7 +18,7 @@
       "tag:stone": {},
       "minecraft:on_interact": {
         "event": "activate",
-        "condition": "query.get_equipped_item_name('main_hand') == 'pluse_stone'"
+        "condition": "query.get_equipped_item_name('main_hand') == 'pulse_stone'"
       }
     },
     "events": {
@@ -29,6 +29,8 @@
             "fill ~-1~-1~-1~1 0 ~1 air 0 replace stone -1",
             "fill ~-1~-1~-1~1 0 ~1 air 0 replace dirt -1",
             "fill ~-1~-1~-1~1 0 ~1 air 0 replace sand -1",
+            "fill ~-1~-1~-1~1 0 ~1 air 0 replace sandstone -1",
+            "fill ~-1~-1~-1~1 0 ~1 air 0 replace red_sandstone -1",
             "fill ~-1~-1~-1~1 0 ~1 air 0 replace end_stone 0",
             "fill ~-1~-1~-1~1 0 ~1 air 0 replace grass 0",
             "fill ~-1~-1~-1~1 0 ~1 air 0 replace netherrack 0"

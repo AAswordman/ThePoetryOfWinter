@@ -24,22 +24,28 @@ import { eventDecoratorFactory, registerEvent } from "./events/EventDecoratorFac
 export default class ExGameServer {
     constructor(config) {
         this.entityControllers = new Map();
-        ExGameConfig.config = config;
-        if (!config.watchDog) {
-            system.events.beforeWatchdogTerminate.subscribe((e) => {
-                e.cancel = true;
-            });
-        }
         this.clients = new Map();
         this.clients_nameMap = new Map();
-        ExGameConfig.console = initConsole(ExGameConfig);
         this._events = new ExServerEvents(this);
-        ExErrorQueue.init(this);
-        ExTickQueue.init(this);
-        ExCommand.init(this);
-        ExClientEvents.init(this);
-        ExEntityEvents.init(this);
+        if (!ExGameServer.isInitialized) {
+            ExGameServer.isInitialized = true;
+            ExGameConfig.config = config;
+            if (!config.watchDog) {
+                system.events.beforeWatchdogTerminate.subscribe((e) => {
+                    e.cancel = true;
+                });
+            }
+            ExGameConfig.console = initConsole(ExGameConfig);
+            ExErrorQueue.init(this);
+            ExTickQueue.init(this);
+            ExCommand.init(this);
+            ExClientEvents.init(this);
+            ExEntityEvents.init(this);
+        }
         eventDecoratorFactory(this.getEvents(), this);
+    }
+    say(msg) {
+        world.say(msg);
     }
     addEntityController(id, ec) {
         this.entityControllers.set(id, ec);

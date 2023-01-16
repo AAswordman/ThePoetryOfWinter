@@ -3,7 +3,7 @@
     "minecraft:feature_rules": {
         "description": {
             "identifier": "dec:enchanted_house_feature_rule",
-            "places_feature": "dec:enchanted_house_mcstructure"
+            "places_feature": "dec:enchanted_house_slat_feature"
         },
         "conditions": {
             "placement_pass": "surface_pass",
@@ -40,9 +40,9 @@
         },
         "distribution": {
             "iterations": 1,
-            "scatter_chance": 0.13,
+            "scatter_chance": 0.06,
             "x": 0,
-            "y": "query.heightmap(variable.worldx, variable.worldz) - 1",
+            "y": "query.heightmap(variable.worldx, variable.worldz) - 2",
             "z": 0
         }
     }

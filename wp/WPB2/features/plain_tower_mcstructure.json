@@ -5,10 +5,9 @@
 			"identifier": "dec:plain_tower_mcstructure"
 		},
 		"structure_name": "mystructure:plain_tower_su",
-		"adjustment_radius": 6,
+		"adjustment_radius": 16,
 		"facing_direction": "random",
 		"constraints": {
-			"grounded": {}
 		}
 	}
 }

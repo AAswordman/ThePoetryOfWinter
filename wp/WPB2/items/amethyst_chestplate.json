@@ -22,35 +22,35 @@
         "slot": "armor_torso"
       },
       "minecraft:repairable": {
-				"repair_items": [
-					{
-						"items": [
-							"minecraft:amethyst_shard"
-						],
-						"repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.3"
-					},
-					{
-						"items": [
-							"minecraft:amethyst_cluster"
-						],
-						"repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.3"
-					},
-					{
-						"items": [
-							"minecraft:amethyst_block"
-						],
-						"repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.2"
-					},
-					{
-						"items": [
-							"minecraft:budding_amethyst"
-						],
-						"repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.2"
-					}
-				]
-			},
+        "repair_items": [
+          {
+            "items": [
+              "minecraft:amethyst_shard"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.3"
+          },
+          {
+            "items": [
+              "minecraft:amethyst_cluster"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.3"
+          },
+          {
+            "items": [
+              "minecraft:amethyst_block"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.2"
+          },
+          {
+            "items": [
+              "minecraft:budding_amethyst"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.2"
+          }
+        ]
+      },
       "minecraft:durability": {
-        "max_durability": 217,
+        "max_durability": 237,
         "damage_chance": {
           "min": 60,
           "max": 100

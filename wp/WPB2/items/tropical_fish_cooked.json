@@ -5,7 +5,6 @@
       "category": "equipment",
       "identifier": "dec:tropical_fish_cooked"
     },
-    
     "components": {
       "minecraft:creative_category": {
         "parent": "itemGroup.name.cookedFood"
@@ -13,10 +12,10 @@
       "minecraft:display_name": {
         "value": "item.dec:tropical_fish_cooked.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "tropical_fish_cooked"
-     },
-	  "minecraft:use_animation": "eat",
+      },
+      "minecraft:use_animation": "eat",
       "minecraft:render_offsets": "fish",
       "minecraft:use_duration": 1.6,
       "minecraft:food": {

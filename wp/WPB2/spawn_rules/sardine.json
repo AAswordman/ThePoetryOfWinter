@@ -9,7 +9,6 @@
       {
         "minecraft:spawns_on_surface": {},
         "minecraft:spawns_underwater": {},
-
         "minecraft:distance_filter": {
           "min": 12,
           "max": 32
@@ -18,22 +17,28 @@
           "default": 2
         },
         "minecraft:density_limit": {
-          "surface":20
+          "surface": 20
         },
         "minecraft:herd": {
-          "min_size":2,
-          "max_size":3
+          "min_size": 2,
+          "max_size": 3
         },
-
         "minecraft:biome_filter": [
-          {"test": "has_biome_tag", "operator":"==", "value": "ocean"},
-          {"test": "has_biome_tag", "operator":"==", "value": "warm"}
+          {
+            "test": "has_biome_tag",
+            "operator": "==",
+            "value": "ocean"
+          },
+          {
+            "test": "has_biome_tag",
+            "operator": "==",
+            "value": "warm"
+          }
         ]
       },
       {
         "minecraft:spawns_on_surface": {},
         "minecraft:spawns_underwater": {},
-
         "minecraft:distance_filter": {
           "min": 12,
           "max": 32
@@ -42,16 +47,23 @@
           "default": 2
         },
         "minecraft:density_limit": {
-          "surface":20
+          "surface": 20
         },
         "minecraft:herd": {
-          "min_size":2,
-          "max_size":3
+          "min_size": 2,
+          "max_size": 3
         },
-
         "minecraft:biome_filter": [
-          {"test": "has_biome_tag", "operator":"==", "value": "ocean"},
-          {"test": "has_biome_tag", "operator":"==", "value": "cold"}
+          {
+            "test": "has_biome_tag",
+            "operator": "==",
+            "value": "ocean"
+          },
+          {
+            "test": "has_biome_tag",
+            "operator": "==",
+            "value": "cold"
+          }
         ]
       }
     ]

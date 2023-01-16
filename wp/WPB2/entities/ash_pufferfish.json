@@ -83,7 +83,8 @@
           "fuse_lit": true,
           "power": 3,
           "causes_fire": false,
-          "destroy_affected_by_griefing": true
+          "destroy_affected_by_griefing": true,
+          "fire_affected_by_griefing": true
         },
         "minecraft:loot": {
           "table": "loot_tables/entities/ash_pufferfish.json"

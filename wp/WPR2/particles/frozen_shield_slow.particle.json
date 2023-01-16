@@ -17,7 +17,7 @@
         "expiration_expression": 0
       },
       "minecraft:emitter_shape_point": {
-        "offset": [ 0.0, "Math.random(-0.9, -0.5)", 0.0 ],
+        "offset": [ 0.0, 1, 0.0 ],
         "direction": [ "Math.random(-1.0, 1.0)", "Math.random(-1.0, 1.0)", "Math.random(-1.0, 1.0)" ]
       },
 

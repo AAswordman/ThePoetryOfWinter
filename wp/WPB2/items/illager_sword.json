@@ -17,7 +17,7 @@
       },
       "minecraft:weapon": {
         "on_hurt_entity": {
-          "event": "attack",
+          "event": "illager_sword_attack",
           "target": "self"
         },
         "on_hit_block": {
@@ -67,7 +67,17 @@
         ]
       },
       "minecraft:foil": false,
-      "minecraft:hand_equipped": true
+      "minecraft:hand_equipped": true,
+      "minecraft:cooldown": {
+        "category": "katana",
+        "duration": 2.3
+      },
+      "minecraft:on_use": {
+        "on_use": {
+          "event": "illager_sword_use_attack",
+          "target": "self"
+        }
+      }
     },
     "events": {
       "attack": {
@@ -75,6 +85,34 @@
           "type": "magic",
           "amount": 1
         }
+      },
+      "illager_sword_use_attack": {
+        "run_command": {
+          "command": [
+            "function item/illager_sword"
+          ],
+          "target": "holder"
+        }
+      },
+      "illager_sword_attack": {
+        "sequence": [
+          {
+            "randomize": [
+              {
+                "weight": 1,
+                "run_command": {
+                  "command": [
+                    "function item/illager_sword"
+                  ],
+                  "target": "holder"
+                }
+              },
+              {
+                "weight": 7
+              }
+            ]
+          }
+        ]
       }
     }
   }

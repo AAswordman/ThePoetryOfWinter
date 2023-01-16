@@ -1,7 +1,7 @@
 {
   "format_version": "1.16.100",
   "minecraft:item": {
-	"description": {
+    "description": {
       "category": "equipment",
       "identifier": "dec:sword_fish"
     },
@@ -12,12 +12,12 @@
       "minecraft:display_name": {
         "value": "item.dec:sword_fish.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "sword_fish"
-     },
-	  "minecraft:use_animation": "eat",
+      },
+      "minecraft:use_animation": "eat",
       "minecraft:render_offsets": "fish",
-            "minecraft:weapon": {
+      "minecraft:weapon": {
         "on_hurt_entity": {
           "event": "attack",
           "target": "self"

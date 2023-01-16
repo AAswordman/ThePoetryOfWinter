@@ -4,7 +4,7 @@
         "description": {
             "identifier": "dec:everlasting_winter_tower_mcstructure"
         },
-        "structure_name": "mystructure:everlasting_winter_tower",
+        "structure_name": "mystructure:everlasting_winter_tower_su",
         "adjustment_radius": 8,
         "facing_direction": "random",
         "constraints": {

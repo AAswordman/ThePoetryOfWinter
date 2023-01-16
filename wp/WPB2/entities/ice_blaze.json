@@ -7,8 +7,28 @@
       "is_summonable": true,
       "is_experimental": false
     },
-
+    "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "minecraft:from_night_event": {
+        "minecraft:environment_sensor": {
+          "triggers": {
+            "filters": {
+              "test": "is_daytime",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "event": "minecraft:despawn"
+          }
+        }
+      }
+    },
     "components": {
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
       "minecraft:damage_sensor": {
         "triggers": {
           "cause": "fall",
@@ -16,7 +36,13 @@
         }
       },
       "minecraft:type_family": {
-        "family": [ "monster","ice_blaze", "mob", "frozen", "blaze" ]
+        "family": [
+          "monster",
+          "ice_blaze",
+          "mob",
+          "frozen",
+          "blaze"
+        ]
       },
       "minecraft:loot": {
         "table": "loot_tables/entities/ice_blaze.json"
@@ -38,18 +64,20 @@
         "has_gravity": false,
         "has_collision": true
       },
-      "minecraft:can_fly": {
-      },
+      "minecraft:can_fly": {},
       "minecraft:behavior.float_wander": {
         "xz_dist": 10,
         "y_dist": 7,
         "y_offset": -2.0,
         "random_reselect": true,
-        "float_duration": [0.1, 0.35]
+        "float_duration": [
+          0.1,
+          0.35
+        ]
       },
       "minecraft:shooter": {
-        "type": "snowball",
-        "def": "minecraft:snowball"
+        "type": "concentratedIce",
+        "def": "dec:concentrated_ice"
       },
       "minecraft:behavior.flee_sun": {
         "priority": 0,
@@ -65,12 +93,12 @@
         "charge_charged_trigger": 1,
         "attack_interval_min": 1,
         "attack_interval_max": 4,
-        "burst_shots": 10,
-        "burst_interval": 0.3
+        "burst_shots": 3,
+        "burst_interval": 0.5
       },
-        "minecraft:movement": {
-          "value": 0.005
-        },
+      "minecraft:movement": {
+        "value": 0.005
+      },
       "minecraft:collision_box": {
         "width": 0.6,
         "height": 1.8
@@ -78,12 +106,9 @@
       "minecraft:navigation.walk": {
         "can_float": true
       },
-      "minecraft:movement.basic": {
-      },
-      "minecraft:jump.static": {
-      },
-      "minecraft:can_climb": {
-      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
       "minecraft:behavior.float": {
         "priority": 0
       },
@@ -149,9 +174,21 @@
         "priority": 6
       }
     },
-
     "events": {
-
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
+      "minecraft:from_night_event": {
+        "add": {
+          "component_groups": [
+            "minecraft:from_night_event"
+          ]
+        }
+      }
     }
   }
 }

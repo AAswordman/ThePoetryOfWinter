@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+  "format_version": "1.10.0",
   "minecraft:client_entity": {
     "description": {
       "identifier": "dec:spots_by_sword",
@@ -8,6 +8,14 @@
       },
       "geometry": {
         "default": "geometry.spots"
+      },
+      "scripts": {
+        "animate": [
+          "spinning"
+        ]
+      },
+      "animations": {
+        "spinning": "animation.spots.spinning"
       },
       "render_controllers": [ "controller.render.spots" ],
       "materials": { "default": "husk" }

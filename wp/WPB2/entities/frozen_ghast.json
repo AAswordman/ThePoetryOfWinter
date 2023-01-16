@@ -9,6 +9,30 @@
       "is_experimental": false
     },
     "component_groups": {
+      "minecraft:from_boss": {
+        "minecraft:explode": {
+          "fuseLength": 30,
+          "fuseLit": true,
+          "power": 0,
+          "causesFire": false
+        }
+      },
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "minecraft:from_night_event": {
+        "minecraft:environment_sensor": {
+          "triggers": {
+            "filters": {
+              "test": "is_daytime",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "event": "minecraft:despawn"
+          }
+        }
+      },
       "minecraft:repeat": {
         "minecraft:timer": {
           "looping": false,
@@ -150,6 +174,29 @@
       }
     },
     "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
+      "minecraft:from_night_event": {
+        "trigger": "minecraft:entity_spawned",
+        "add": {
+          "component_groups": [
+            "minecraft:from_night_event"
+          ]
+        }
+      },
+      "minecraft:from_boss": {
+        "trigger": "minecraft:entity_spawned",
+        "add": {
+          "component_groups": [
+            "minecraft:from_boss"
+          ]
+        }
+      },
       "minecraft:entity_spawned": {
         "sequence": [
           {

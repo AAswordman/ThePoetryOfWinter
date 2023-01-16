@@ -9,6 +9,9 @@
     },
     "component_groups": {},
     "components": {
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
       "minecraft:equipment": {
         "table": "loot_tables/entities/gingerbread_man.json",
         "slot_drop_chance": [

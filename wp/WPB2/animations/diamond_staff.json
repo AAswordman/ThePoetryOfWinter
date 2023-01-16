@@ -4,14 +4,10 @@
       "animation.diamond_staff": {
         "timeline": {
             "0.4": [
-                "/tag @s[scores={wbfl=3..}] add shot",
-                "/execute as @s[scores={wbfl=3..}] at @s run playsound item.book.put @a ~~~",
-                "/scoreboard players remove @s[scores={wbfl=3..}] wbfl 3"
+                "/function item/diamond_staff"
             ],
             "0.6": [
-                "/tag @s[scores={wbfl=3..}] add shot",
-                "/execute as @s[scores={wbfl=3..}] at @s run playsound item.book.put @a ~~~",
-                "/scoreboard players remove @s[scores={wbfl=3..}] wbfl 3"
+                "/function item/diamond_staff"
             ]
         }, 
         "animation_length": 0.9, 

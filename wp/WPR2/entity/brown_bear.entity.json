@@ -7,7 +7,8 @@
         "default": "polar_bear"
       },
       "textures": {
-        "default": "textures/entity/brown_bear"
+        "default": "textures/entity/brown_bear/brown_bear",
+        "saddled": "textures/entity/brown_bear/brown_bear_saddle"
       },
       "geometry": {
         "default": "geometry.polarbear"
@@ -30,7 +31,7 @@
         }
       ],
       "render_controllers": [
-        "controller.render.polarbear"
+        "controller.render.brown_bear"
       ],
       "spawn_egg": {
         "base_color": "#7A4C24",

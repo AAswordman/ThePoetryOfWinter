@@ -1,0 +1,419 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:frozen_heart",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          {
+            "go_forward": "query.variant == 1"
+          }
+        ]
+      },
+      "animations": {
+        "go_forward": "animation.frozen_heart.go_forward"
+      }
+    },
+    "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "minecraft:from_night_event": {
+        "minecraft:environment_sensor": {
+          "triggers": {
+            "filters": {
+              "test": "is_daytime",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "event": "minecraft:despawn"
+          }
+        }
+      },
+      "minecraft:go_forward": {
+        "minecraft:variant": {
+          "value": 1
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 3,
+          "time_down_event": {
+            "event": "minecraft:change_mode_attack"
+          }
+        }
+      },
+      "minecraft:cure": {
+        "minecraft:variant": {
+          "value": 0
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 2.4,
+          "time_down_event": {
+            "event": "minecraft:change_mode_attack"
+          }
+        }
+      },
+      "minecraft:repeat": {
+        "minecraft:variant": {
+          "value": 0
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 5,
+          "time_down_event": {
+            "event": "minecraft:change_mode"
+          }
+        },
+        "minecraft:shooter": {
+          "def": "dec:frozen_ball_inaccurated"
+        },
+        "minecraft:behavior.ranged_attack": {
+          "priority": 4,
+          "burst_shots": 20,
+          "burst_interval": 0.01,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 1.0,
+          "attack_interval_min": 1.0,
+          "attack_interval_max": 1.0,
+          "attack_radius": 64.0
+        }
+      },
+      "minecraft:single": {
+        "minecraft:variant": {
+          "value": 0
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 15,
+          "time_down_event": {
+            "event": "minecraft:change_mode"
+          }
+        },
+        "minecraft:shooter": {
+          "def": "dec:frozen_ball"
+        },
+        "minecraft:behavior.ranged_attack": {
+          "priority": 4,
+          "burst_shots": 20,
+          "burst_interval": 0.2,
+          "charge_charged_trigger": 0.0,
+          "charge_shoot_trigger": 4.0,
+          "attack_interval_min": 2.0,
+          "attack_interval_max": 2.0,
+          "attack_radius": 64.0
+        }
+      }
+    },
+    "components": {
+      "minecraft:loot": {
+        "table": "loot_tables/entities/frozen_heart.json"
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:boss": {
+        "should_darken_sky": false,
+        "name": "mini_boss.dec:frozen_heart.name",
+        "hud_range": 32
+      },
+      "minecraft:experience_reward": {
+        "on_death": "query.last_hit_by_player ? 100 : 0"
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0
+      },
+      "minecraft:fire_immune": {},
+      "minecraft:nameable": {},
+      "minecraft:health": {
+        "value": 150,
+        "max": 150
+      },
+      "minecraft:collision_box": {
+        "width": 1,
+        "height": 1
+      },
+      "minecraft:movement": {
+        "value": 0.01
+      },
+      "minecraft:navigation.float": {
+        "can_path_over_water": true
+      },
+      "minecraft:behavior.float_wander": {
+        "priority": 2,
+        "must_reach": true
+      },
+      "minecraft:can_fly": {},
+      "minecraft:type_family": {
+        "family": [
+          "frozen_heart",
+          "monster",
+          "ghast",
+          "mini_boss",
+          "mob",
+          "frozen"
+        ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "fall",
+            "deals_damage": false
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "frozen"
+              }
+            },
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:jump.static": {},
+      "minecraft:despawn": {
+        "despawn_from_distance": {
+          "min_distance": 64,
+          "max_distance": 64
+        }
+      },
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:follow_range": {
+        "value": 64,
+        "max": 64
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1,
+        "entity_types": {
+          "filters": {
+            "test": "is_family",
+            "subject": "other",
+            "operator": "!=",
+            "value": "frozen"
+          },
+          "max_dist": 64
+        }
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "entity_types": [
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "snowgolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "wandering_trader"
+                }
+              ]
+            },
+            "max_dist": 64
+          }
+        ],
+        "must_see": true
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      }
+    },
+    "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
+      "minecraft:from_night_event": {
+        "trigger": "minecraft:entity_spawned",
+        "add": {
+          "component_groups": [
+            "minecraft:from_night_event"
+          ]
+        }
+      },
+      "minecraft:entity_spawned": {
+        "sequence": [
+          {
+            "randomize": [
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "minecraft:repeat"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "add": {
+                  "component_groups": [
+                    "minecraft:single"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "minecraft:change_mode": {
+        "sequence": [
+          {
+            "randomize": [
+              {
+                "weight": 2,
+                "trigger": "minecraft:single"
+              },
+              {
+                "weight": 2,
+                "trigger": "minecraft:repeat"
+              },
+              {
+                "weight": 1,
+                "trigger": "minecraft:cure"
+              },
+              {
+                "weight": 1,
+                "trigger": "minecraft:go_forward"
+              }
+            ]
+          }
+        ]
+      },
+      "minecraft:change_mode_attack": {
+        "sequence": [
+          {
+            "randomize": [
+              {
+                "weight": 1,
+                "trigger": "minecraft:single"
+              },
+              {
+                "weight": 1,
+                "trigger": "minecraft:repeat"
+              }
+            ]
+          }
+        ]
+      },
+      "minecraft:single": {
+        "remove": {
+          "component_groups": [
+            "minecraft:repeat",
+            "minecraft:go_forward",
+            "minecraft:cure"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:single"
+          ]
+        }
+      },
+      "minecraft:repeat": {
+        "remove": {
+          "component_groups": [
+            "minecraft:single",
+            "minecraft:go_forward",
+            "minecraft:cure"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:repeat"
+          ]
+        }
+      },
+      "minecraft:cure": {
+        "remove": {
+          "component_groups": [
+            "minecraft:single",
+            "minecraft:go_forward",
+            "minecraft:repeat"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:cure"
+          ]
+        },
+        "run_command": {
+          "command": [
+            "effect @s regeneration 2 6",
+            "playanimation @s animation.frozen_heart.cure"
+          ]
+        }
+      },
+      "minecraft:go_forward": {
+        "sequence": [
+          {
+            "remove": {
+              "component_groups": [
+                "minecraft:single",
+                "minecraft:cure",
+                "minecraft:repeat"
+              ]
+            }
+          },
+          {
+            "condition": "!query.has_target",
+            "sequence": [
+              {
+                "add": {
+                  "component_groups": [
+                    "minecraft:cure"
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "condition": "query.has_target",
+            "sequence": [
+              {
+                "run_command": {
+                  "command": [
+                    "playanimation @s animation.frozen_heart.go_forward"
+                  ]
+                }
+              },
+              {
+                "add": {
+                  "component_groups": [
+                    "minecraft:go_forward"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

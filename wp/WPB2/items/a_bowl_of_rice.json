@@ -1,19 +1,19 @@
 {
   "format_version": "1.16.100",
- "minecraft:item": {
-        "description": {
+  "minecraft:item": {
+    "description": {
       "category": "equipment",
       "identifier": "dec:a_bowl_of_rice"
     },
     "components": {
       "minecraft:use_animation": "eat",
       "minecraft:creative_category": {
-				"parent": "itemGroup.name.miscFood"
-			},
-			"minecraft:icon": {
-				"texture": "a_bowl_of_rice"
-			},
-			"minecraft:display_name": {
+        "parent": "itemGroup.name.miscFood"
+      },
+      "minecraft:icon": {
+        "texture": "a_bowl_of_rice"
+      },
+      "minecraft:display_name": {
         "value": "item.dec:a_bowl_of_rice.name"
       },
       "minecraft:use_duration": 2.0,

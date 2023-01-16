@@ -17,14 +17,21 @@
           "default": 2
         },
         "minecraft:herd": {
-          "min_size":1,
-          "max_size":3
+          "min_size": 1,
+          "max_size": 3
         },
-    
+        "minecraft:density_limit": {
+          "surface": 3,
+          "underground": 0
+        },
         "minecraft:biome_filter": {
-		  "all_of": [
-            { "test": "has_biome_tag", "operator":"==", "value": "frozen"}
-		  ]
+          "all_of": [
+            {
+              "test": "has_biome_tag",
+              "operator": "==",
+              "value": "frozen"
+            }
+          ]
         }
       }
     ]

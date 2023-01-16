@@ -39,7 +39,8 @@
         "knockback": false,
         "catchFire": false,
         "semirandomdiffdamage": false
-      }
+      },
+      "remove_on_hit": {}
     },
     "power": 0.4,
     "gravity": 0.00,

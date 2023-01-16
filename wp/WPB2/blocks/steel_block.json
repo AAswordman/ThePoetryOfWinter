@@ -9,13 +9,13 @@
         "group": "itemGroup.name.outside",
 				"category": "construction"
 			},
-      "minecraft:block_light_absorption": 1,
-      "minecraft:block_light_emission": 0,
+      "minecraft:light_dampening": 15,
+      "minecraft:light_emission": 0,
       "minecraft:destroy_time": 3.5,
       "minecraft:explosion_resistance": 10,
       "minecraft:map_color": "#565656",
       "minecraft:loot": "loot_tables/blocks/steel_block.json",
-      "tag:stone": {}
+      "tag:metal": {}
     }
   }
 }

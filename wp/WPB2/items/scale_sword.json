@@ -46,12 +46,6 @@
           },
           {
             "items": [
-              "dec:coral_sword"
-            ],
-            "repair_amount": "context.other->query.remaining_health + 0.05 * context.other->context.other->query.remaining_durability + query.max_durability"
-          },
-          {
-            "items": [
               "dec:scale_block"
             ],
             "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.7"

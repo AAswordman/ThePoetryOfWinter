@@ -5,7 +5,6 @@
       "category": "nature",
       "identifier": "dec:iron_apple_enchanted"
     },
-
     "components": {
       "minecraft:creative_category": {
         "parent": "itemGroup.name.crop"
@@ -13,10 +12,10 @@
       "minecraft:display_name": {
         "value": "item.dec:iron_apple_enchanted.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "iron_apple"
-     },
-	  "minecraft:use_animation": "eat",
+      },
+      "minecraft:use_animation": "eat",
       "minecraft:render_offsets": "apple",
       "minecraft:hover_text_color": "light_purple",
       "minecraft:foil": true,

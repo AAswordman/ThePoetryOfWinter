@@ -81,13 +81,23 @@
             "entries": [
                 {
                     "type": "item",
-                    "name": "minecraft:iron_ingot",
+                    "name": "dec:magic_ice_cream",
                     "weight": 1
                 },
                 {
                     "type": "item",
+                    "name": "dec:ice_cream",
+                    "weight": 3
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:iron_ingot",
+                    "weight": 10
+                },
+                {
+                    "type": "item",
                     "name": "dec:ice_nugget",
-                    "weight": 1
+                    "weight": 10
                 }
             ]
         }

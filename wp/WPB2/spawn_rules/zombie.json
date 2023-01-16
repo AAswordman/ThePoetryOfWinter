@@ -7,6 +7,10 @@
     },
     "conditions": [
       {
+        "minecraft:density_limit": {
+          "surface": 7,
+          "underground": 5
+        },
         "minecraft:spawns_on_surface": {},
         "minecraft:spawns_underground": {},
         "minecraft:brightness_filter": {

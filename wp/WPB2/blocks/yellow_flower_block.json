@@ -15,8 +15,8 @@
           "render_method": "alpha_test"
         }
       },
-      "minecraft:block_light_absorption": 1,
-      "minecraft:block_light_emission": 0,
+      "minecraft:light_dampening": 15,
+      "minecraft:light_emission": 0,
       "minecraft:destroy_time": 0.2,
       "minecraft:explosion_resistance": 0,
       "minecraft:map_color": "#FED639"

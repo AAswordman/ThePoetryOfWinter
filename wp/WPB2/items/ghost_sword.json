@@ -17,7 +17,7 @@
       },
       "minecraft:weapon": {
         "on_hurt_entity": {
-          "event": "attack",
+          "event": "ghost_sword_attack",
           "target": "self"
         },
         "on_hit_block": {
@@ -75,6 +75,34 @@
           "type": "magic",
           "amount": 1
         }
+      },
+      "ghost_sword_attack": {
+        "randomize": [
+          {
+            "weight": 1,
+            "sequence": [
+              {
+                "run_command": {
+                  "command": [
+                    "particle dec:ghost_sickle_particle ~~~"
+                  ],
+                  "target": "other"
+                }
+              },
+              {
+                "add_mob_effect": {
+                  "effect": "invisibility",
+                  "duration": 3,
+                  "amplifier": 0,
+                  "target": "other"
+                }
+              }
+            ]
+          },
+          {
+            "weight": 5
+          }
+        ]
       }
     }
   }

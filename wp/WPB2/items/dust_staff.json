@@ -1,7 +1,7 @@
 {
   "format_version": "1.16.100",
   "minecraft:item": {
-	    "description": {
+    "description": {
       "category": "equipment",
       "identifier": "dec:dust_staff"
     },
@@ -28,7 +28,7 @@
         }
       },
       "minecraft:cooldown": {
-        "category": "weapon",
+        "category": "staff",
         "duration": 1
       },
       "minecraft:repairable": {
@@ -44,7 +44,7 @@
       "minecraft:durability": {
         "max_durability": 268
       }
-	  },
+    },
     "events": {
       "attack": {
         "damage": {

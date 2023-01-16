@@ -1,0 +1,40 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:ice_wizard",
+      "materials": {
+        "default": "husk"
+      },
+      "textures": {
+        "default": "textures/entity/ice_wizard"
+      },
+      "geometry": {
+        "default": "geometry.ice_wizard"
+      },
+      "spawn_egg": {
+        "base_color": "#F7FEFEFF",
+        "overlay_color": "#61E2FAFF"
+      },
+      "particle_effects": {
+        "spell": "minecraft:evoker_spell",
+        "flyiceblock": "dec:particles_flyiceblock"
+      },
+      "render_controllers": [ "controller.render.ice_wizard" ],
+	  "scripts": { "animate": [ "root", "look", "shoot_controller", "summon_controller" ] },
+      "animations": {
+        "root": "controller.animation.ice_wizard.root",
+        "shoot_controller": "controller.animation.ice_wizard.shoot",
+        "summon_controller": "controller.animation.ice_wizard.summon",
+        "look": "controller.animation.ice_wizard.look",
+        "spawn": "animation.ice_wizard.spawn",
+        "defualt": "animation.ice_wizard.defualt",
+        "look_at_target": "animation.ice_wizard.look_at_target",
+        "move": "animation.ice_wizard.move",
+        "attack": "animation.ice_wizard.attack",
+        "shoot": "animation.ice_wizard.shoot",
+        "summon": "animation.ice_wizard.summon"
+      }
+    }
+  }
+}

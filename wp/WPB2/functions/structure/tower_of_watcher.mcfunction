@@ -1,2 +1,1 @@
-structure load mystructure:tower_of_watcher ~ ~ ~
-setblock ~~~ air
+structure load mystructure:tower_of_watcher ~-21 ~ ~-14

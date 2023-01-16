@@ -1,7 +1,7 @@
 {
   "format_version": "1.16.100",
   "minecraft:item": {
-	    "description": {
+    "description": {
       "category": "equipment",
       "identifier": "dec:radiate_crystal"
     },
@@ -17,7 +17,16 @@
       },
       "minecraft:foil": true,
       "minecraft:stacked_by_data": false,
-      "minecraft:max_stack_size": 1
-	  }
+      "minecraft:max_stack_size": 1,
+      "minecraft:entity_placer": {
+        "entity": "dec:radiate_crystal",
+        "use_on": [
+          "dec:summoner"
+        ],
+        "dispense_on": [
+          "dec:summoner"
+        ]
+      }
+    }
   }
 }

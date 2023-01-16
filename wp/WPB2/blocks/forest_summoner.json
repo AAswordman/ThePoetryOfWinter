@@ -9,15 +9,15 @@
         "group": "itemGroup.name.outside",
 				"category": "items"
 			},
-      "minecraft:block_light_absorption": 1,
-      "minecraft:block_light_emission": 0,
+      "minecraft:light_dampening": 15,
+      "minecraft:light_emission": 0,
       "minecraft:destroy_time": 3.0,
       "minecraft:explosion_resistance": 100,
       "minecraft:map_color": "#081908",
       "minecraft:loot": "loot_tables/empty.json",
       "minecraft:on_interact": {
         "event": "activate",
-        "condition": "query.get_equipped_item_name('main_hand') == 'natura_essence'"
+        "condition": "query.get_equipped_item_name('main_hand') == 'nature_essence'"
       },
       "minecraft:ticking": {
         "looping": true,

@@ -5,7 +5,7 @@
             "entries": [
                 {
                     "type": "item",
-                    "name": "dec:lava_fuse",
+                    "name": "dec:fuse",
                     "weight": 1,
                     "functions": [
                         {

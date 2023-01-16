@@ -1,0 +1,20 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "items",
+      "identifier": "dec:frozen_power_debris"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.decorations"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:frozen_power_debris.name"
+      },
+      "minecraft:icon": {
+        "texture": "frozen_power_debris"
+      }
+    }
+  }
+}

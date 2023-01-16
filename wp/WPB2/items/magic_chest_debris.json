@@ -12,12 +12,12 @@
       "minecraft:display_name": {
         "value": "item.dec:magic_chest_debris.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "magic_chest_debris"
       },
       "minecraft:stacked_by_data": false,
       "minecraft:max_stack_size": 1,
       "minecraft:foil": true
-	 }
+    }
   }
 }

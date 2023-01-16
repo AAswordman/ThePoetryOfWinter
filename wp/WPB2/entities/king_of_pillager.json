@@ -8,9 +8,26 @@
       "is_summonable": true,
       "is_experimental": false
     },
-
     "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      },
       "minecraft:spawn": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "empty_family"
+                }
+              },
+              "deals_damage": false
+            }
+          ]
+        },
         "minecraft:timer": {
           "looping": false,
           "time": 5,
@@ -19,22 +36,33 @@
           }
         },
         "minecraft:spell_effects": {
-					"add_effects": [
+          "add_effects": [
             {
-						"effect": "slowness",
-						"amplifier": 50,
-						"visible": 0,
-						"ambient": 0,
-						"duration": 5,
-						"display_on_screen_animation": true
-					  }
+              "effect": "slowness",
+              "amplifier": 50,
+              "visible": 0,
+              "ambient": 0,
+              "duration": 5,
+              "display_on_screen_animation": true
+            },
+            {
+              "effect": "resistance",
+              "amplifier": 5,
+              "visible": 0,
+              "ambient": 0,
+              "duration": 5,
+              "display_on_screen_animation": true
+            }
           ]
-		    }
+        }
       },
       "minecraft:angry": {
+        "minecraft:attack": {
+          "damage": 6
+        },
         "minecraft:boss": {
           "should_darken_sky": false,
-          "name":"boss.dec:king_of_pillager_angry.name",
+          "name": "boss.dec:king_of_pillager_angry.name",
           "hud_range": 64
         },
         "minecraft:health": {
@@ -46,6 +74,21 @@
         }
       },
       "minecraft:summon_mode": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "empty_family"
+                }
+              },
+              "deals_damage": true
+            }
+          ]
+        },
         "minecraft:timer": {
           "looping": false,
           "time": 5,
@@ -201,32 +244,45 @@
           ]
         }
       },
-
       "minecraft:attack_mode": {
-          "minecraft:behavior.melee_attack": {
-            "priority": 4,
-            "target_dist": 1.2,
-            "speed_multiplier": 1,
-            "track_target": true
-          },
-          "minecraft:attack": {
-            "damage": 10
-          },
-          "minecraft:timer": {
-            "looping": false,
-            "time": 15,
-            "time_down_event": {
-              "event": "minecraft:change_attack"
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "empty_family"
+                }
+              },
+              "deals_damage": true
+            }
+          ]
+        },
+        "minecraft:behavior.melee_attack": {
+          "priority": 4,
+          "target_dist": 1.2,
+          "speed_multiplier": 1,
+          "track_target": true
+        },
+        "minecraft:attack": {
+          "damage": 4
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 15,
+          "time_down_event": {
+            "event": "minecraft:change_attack"
           }
         }
       }
     },
-    
     "components": {
       "minecraft:despawn": {
-        "despawn_from_distance": { 
-          "min_distance": 256,
-          "max_distance": 256
+        "despawn_from_distance": {
+          "min_distance": 64,
+          "max_distance": 64
         }
       },
       "minecraft:fire_immune": true,
@@ -234,19 +290,23 @@
         "on_death": "query.last_hit_by_player ? 110 : 0"
       },
       "minecraft:type_family": {
-        "family": [ "illager", "monster", "illager", "mob", "king_of_pillager", "boss" ]
+        "family": [
+          "illager",
+          "monster",
+          "mob",
+          "king_of_pillager",
+          "boss"
+        ]
       },
       "minecraft:loot": {
         "table": "loot_tables/entities/king_of_pillager.json"
       },
-      "minecraft:nameable": {
-      },
+      "minecraft:nameable": {},
       "minecraft:health": {
         "value": 200,
         "max": 200
       },
-      "minecraft:physics": {
-      },
+      "minecraft:physics": {},
       "minecraft:breathable": {
         "totalSupply": 15,
         "suffocateTime": 0,
@@ -267,13 +327,11 @@
       "minecraft:navigation.walk": {
         "can_path_over_water": true
       },
-      "minecraft:movement.basic": {
-      },
-      "minecraft:jump.static": {
-      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
       "minecraft:boss": {
         "should_darken_sky": false,
-        "name":"boss.dec:king_of_pillager.name",
+        "name": "boss.dec:king_of_pillager.name",
         "hud_range": 64
       },
       "minecraft:pushable": {
@@ -312,9 +370,21 @@
           {
             "filters": {
               "any_of": [
-                { "test": "is_family", "subject": "other", "value": "player" },
-                { "test": "is_family", "subject": "other", "value": "irongolem" },
-                { "test": "is_family", "subject": "other", "value": "wandering_trader" }
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "wandering_trader"
+                }
               ]
             },
             "max_dist": 16
@@ -322,8 +392,17 @@
           {
             "filters": {
               "all_of": [
-                { "test": "is_family", "subject": "other", "value": "villager" },
-                { "test": "has_component", "subject": "other", "operator": "!=", "value": "minecraft:is_baby" }
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "villager"
+                },
+                {
+                  "test": "has_component",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "minecraft:is_baby"
+                }
               ]
             },
             "max_dist": 16
@@ -343,8 +422,14 @@
         "priority": 8
       }
     },
-    
     "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
       "minecraft:entity_spawned": {
         "sequence": [
           {
@@ -354,34 +439,60 @@
               ]
             }
           },
-            {
-              "filters": { "test" :  "has_biome_tag", "operator": "!=", "value" :  "plains"},
-              "randomize": [
-                {
-                  "add": { "component_groups": [ "minecraft:angry" ] }
-                }
-              ]
-            }
-          ]
-        },
-        "minecraft:change_attack": {
-          "sequence": [
           {
-             "randomize": [
+            "filters": {
+              "test": "has_biome_tag",
+              "operator": "!=",
+              "value": "plains"
+            },
+            "randomize": [
+              {
+                "add": {
+                  "component_groups": [
+                    "minecraft:angry"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "minecraft:change_attack": {
+        "sequence": [
+          {
+            "randomize": [
               {
                 "weight": 1,
                 "sequence": [
-                   {
+                  {
                     "randomize": [
                       {
                         "weight": 5,
-                        "remove": { "component_groups": [ "minecraft:summon_mode", "minecraft:attack_mode"] },
-                        "add": { "component_groups": [ "minecraft:summon_mode" ] }
+                        "remove": {
+                          "component_groups": [
+                            "minecraft:summon_mode",
+                            "minecraft:attack_mode"
+                          ]
+                        },
+                        "add": {
+                          "component_groups": [
+                            "minecraft:summon_mode"
+                          ]
+                        }
                       },
                       {
                         "weight": 3,
-                        "remove": { "component_groups": [ "minecraft:summon_mode", "minecraft:attack_mode"] },
-                        "add": { "component_groups": [ "minecraft:attack_mode" ] }
+                        "remove": {
+                          "component_groups": [
+                            "minecraft:summon_mode",
+                            "minecraft:attack_mode"
+                          ]
+                        },
+                        "add": {
+                          "component_groups": [
+                            "minecraft:attack_mode"
+                          ]
+                        }
                       }
                     ]
                   }

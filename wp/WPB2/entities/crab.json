@@ -94,6 +94,7 @@
         ]
       },
       "minecraft:navigation.walk": {
+        "is_amphibious": true,
         "can_path_over_water": false
       },
       "minecraft:experience_reward": {
@@ -118,9 +119,6 @@
         "suffocateTime": 0,
         "breathesAir": false,
         "breathesWater": true
-      },
-      "minecraft:navigation.generic": {
-        "is_amphibious": true
       },
       "minecraft:nameable": {},
       "minecraft:behavior.melee_attack": {
@@ -190,6 +188,9 @@
       },
       "minecraft:physics": {
         "has_gravity": true
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
       }
     },
     "events": {

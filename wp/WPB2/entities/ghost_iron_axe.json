@@ -8,6 +8,9 @@
       "is_experimental": false
     },
       "components": {
+        "minecraft:despawn": {
+          "despawn_from_distance": {}
+        },
         "minecraft:balloonable": {
         },
         "minecraft:experience_reward": {

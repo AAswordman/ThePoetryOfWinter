@@ -1,0 +1,27 @@
+{
+  "format_version": "1.8.0", 
+  "animations": {
+      "animation.abyssal_controller.summon": {
+        "timeline": {
+            "5": [
+                "/summon dec:abyssal_shadow",
+                "/summon dec:abyssal_shadow",
+                "/summon dec:abyssal_shadow",
+                "/spreadplayers ~~ 8 16 @e[r=2,type=dec:abyssal_shadow]"
+            ]
+        }, 
+        "animation_length": 10, 
+        "loop": true
+      },
+      "animation.abyssal_controller.teleport": {
+        "timeline": {
+            "5": [
+                "/particle dec:abyssal_controller_spawn_particle ~~~",
+                "/execute at @p[m=!1] run spreadplayers ~~ 8 16 @s"
+            ]
+        }, 
+        "animation_length": 30,
+        "loop": true
+      }
+   }
+}

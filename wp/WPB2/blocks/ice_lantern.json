@@ -1,0 +1,20 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:block": {
+    "description": {
+      "identifier": "dec:ice_lantern"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "group": "itemGroup.name.outside",
+        "category": "items"
+      },
+      "minecraft:light_dampening": 0,
+      "minecraft:light_emission": 15,
+      "minecraft:destroy_time": 2,
+      "minecraft:explosion_resistance": 10,
+      "minecraft:loot": "loot_tables/blocks/ice_lantern.json",
+      "minecraft:map_color": "#BBDBFF"
+    }
+  }
+}

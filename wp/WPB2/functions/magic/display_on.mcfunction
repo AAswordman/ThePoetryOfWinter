@@ -1,2 +1,1 @@
-tag @a remove display_on
-tag @s add display_on
+scoreboard players set MagicDisplay global 1

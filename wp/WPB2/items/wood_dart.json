@@ -1,13 +1,16 @@
 {
   "format_version": "1.16.100",
   "minecraft:item": {
-        "description": {
+    "description": {
       "category": "equipment",
       "identifier": "dec:wood_dart"
     },
     "components": {
       "minecraft:creative_category": {
         "parent": "itemGroup.name.sword"
+      },
+      "minecraft:fuel": {
+        "duration": 10.0
       },
       "minecraft:display_name": {
         "value": "item.dec:wood_dart.name"
@@ -18,7 +21,7 @@
       "minecraft:use_animation": "crossbow",
       "minecraft:render_offsets": "bow",
       "minecraft:cooldown": {
-        "category": "chorusfruit",
+        "category": "missile",
         "duration": 0.6
       },
       "minecraft:throwable": {

@@ -1,7 +1,7 @@
 {
   "format_version": "1.16.100",
   "minecraft:item": {
-	    "description": {
+    "description": {
       "category": "items",
       "identifier": "dec:blue_gem"
     },
@@ -26,16 +26,15 @@
         }
       },
       "minecraft:cooldown": {
-        "category": "magic",
+        "category": "blue_gem",
         "duration": 1
       }
-	  },
+    },
     "events": {
       "use": {
         "run_command": {
           "command": [
             "tag @s[scores={maxmagic=..9}] add clear_blue_gem",
-            
             "tellraw @s[scores={maxmagic=0}] { \"rawtext\" : [ { \"translate\" : \"text.dec:uptomm1.name\" } ] }",
             "tellraw @s[scores={maxmagic=1}] { \"rawtext\" : [ { \"translate\" : \"text.dec:uptomm2.name\" } ] }",
             "tellraw @s[scores={maxmagic=2}] { \"rawtext\" : [ { \"translate\" : \"text.dec:uptomm3.name\" } ] }",
@@ -48,7 +47,6 @@
             "tellraw @s[scores={maxmagic=9}] { \"rawtext\" : [ { \"translate\" : \"text.dec:uptomm10.name\" } ] }",
             "tellraw @s[scores={maxmagic=10..19}] { \"rawtext\" : [ { \"translate\" : \"text.dec:blue_gem_max.name\" } ] }",
             "tellraw @s[scores={maxmagic=20}] { \"rawtext\" : [ { \"translate\" : \"text.dec:red_gem_max.name\" } ] }",
-
             "scoreboard players add @s[scores={maxmagic=..9}] maxmagic 1",
             "clear @s[tag=clear_blue_gem,scores={maxmagic=..10}] dec:blue_gem 0 1",
             "tag @s[scores={maxmagic=..10}] remove clear_blue_gem"

@@ -1,0 +1,247 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:ice_block",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball"
+    },
+    "component_groups": {
+      "small": {
+        "minecraft:projectile": {
+          "onHit": {
+          "impact_damage": {
+            "damage": 15,
+            "knockback": true
+          },
+          "remove_on_hit": { },
+            "particle_on_hit": {
+              "particle_type": "snowballpoof",
+              "particle_color": "#87AFFFFF",
+              "num_particles": 12,
+              "on_entity_hit": true,
+              "on_other_hit": true
+            },
+            "mob_effect": {
+              "effect": "slowness",
+              "durationeasy": 90,
+              "durationnormal": 90,
+              "durationhard": 90,
+              "amplifier": 1
+            }
+          },
+          "power": 1,
+          "gravity": 0.05,
+          "inertia": 1.0,
+          "hitSound": "glass",
+          "particle_color": "#FF664D59",
+          "uncertaintyBase": 0.5,
+          "uncertaintyMultiplier": 1,
+          "anchor": 1,
+          "offset": [ 0, 0.75, 0 ],
+          "reflectOnHurt": false
+        },
+        "minecraft:environment_sensor": {
+          "triggers": {
+            "filters": { "test": "in_water", "operator": "==", "value": true },
+            "event": "minecraft:explode"
+          }
+        }
+      },
+      "medium": {
+        "minecraft:scale": {
+          "value": 1.5
+        },
+        "minecraft:projectile": {
+          "onHit": {
+          "impact_damage": {
+            "damage": 20,
+            "knockback": true
+          },
+          "remove_on_hit": { },
+            "particle_on_hit": {
+              "particle_type": "snowballpoof",
+              "particle_color": "#FF664D59",
+              "num_particles": 12,
+              "on_entity_hit": true,
+              "on_other_hit": true
+            }
+          },
+          "power": 1,
+          "gravity": 0.05,
+          "inertia": 1.0,
+          "hitSound": "glass",
+          "particle_color": "#FF664D59",
+          "uncertaintyBase": 0.5,
+          "uncertaintyMultiplier": 1,
+          "anchor": 1,
+          "offset": [ 0, 0.75, 0 ],
+          "reflectOnHurt": false
+        },
+        "minecraft:environment_sensor": {
+          "triggers": {
+            "filters": { "test": "in_water", "operator": "==", "value": true },
+            "event": "minecraft:explode2"
+          }
+        }
+      },
+      "big": {
+        "minecraft:scale": {
+          "value": 2
+        },
+        "minecraft:projectile": {
+          "onHit": {
+          "impact_damage": {
+            "damage": 30,
+            "knockback": true
+          },
+          "remove_on_hit": { },
+            "particle_on_hit": {
+              "particle_type": "snowballpoof",
+              "particle_color": "#FF664D59",
+              "num_particles": 12,
+              "on_entity_hit": true,
+              "on_other_hit": true
+            }
+          },
+          "power": 1,
+          "gravity": 0.05,
+          "inertia": 1.0,
+          "hitSound": "glass",
+          "particle_color": "#FF664D59",
+          "uncertaintyBase": 0.5,
+          "uncertaintyMultiplier": 1,
+          "anchor": 1,
+          "offset": [ 0, 0.75, 0 ],
+          "reflectOnHurt": false
+        }
+      },
+      "minecraft:exploding": {
+        "minecraft:explode": {
+          "fuseLength": 0,
+          "fuseLit": true,
+          "breaks_blocks": false,
+          "power": 4,
+          "causesFire": true,
+          "fireAffectedByGriefing": true,
+          "destroyAffectedByGriefing": true
+        }
+      },
+      "minecraft:exploding2": {
+        "minecraft:explode": {
+          "fuseLength": 0,
+          "fuseLit": true,
+          "breaks_blocks": false,
+          "power": 7,
+          "causesFire": true,
+          "fireAffectedByGriefing": true,
+          "destroyAffectedByGriefing": true
+        }
+      },
+      "minecraft:exploding3": {
+        "minecraft:explode": {
+          "fuseLength": 0,
+          "fuseLit": true,
+          "breaks_blocks": false,
+          "power": 10,
+          "causesFire": true,
+          "fireAffectedByGriefing": true,
+          "destroyAffectedByGriefing": true
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "ice_block", "frozen" ]
+      },
+      "minecraft:explode": {
+        "fuseLength": 12,
+        "fuseLit": true,
+        "power": 4,
+        "causesFire": true,
+        "fireAffectedByGriefing": true,
+        "destroyAffectedByGriefing": true
+      },
+      "minecraft:physics": {},
+      "minecraft:scale": {
+        "value": 1
+      },
+      "minecraft:collision_box": {
+        "width": 0.8,
+        "height": 0.8
+      },
+      "minecraft:projectile": {
+        "onHit": {
+          "impact_damage": {
+            "damage": 15,
+            "knockback": true
+          },
+          "remove_on_hit": { },
+               "particle_on_hit": {
+            "particle_type": "snowballpoof",
+               "particle_color": "#FF664D59",
+            "num_particles": 12,
+            "on_entity_hit": true,
+            "on_other_hit": true
+          }
+        },
+        "power": 1,
+        "gravity": 0.05,
+        "inertia": 1.0,
+        "hitSound": "glass",
+        "particle_color": "#FF664D59",
+        "uncertaintyBase": 0.5,
+        "uncertaintyMultiplier": 1,
+        "anchor": 1,
+        "offset": [ 0, 0.75, 0 ],
+        "reflectOnHurt": false
+      }
+    },
+    "events": {
+      "small": {
+        "add": {
+          "component_groups": [
+            "small"
+          ]
+        }
+      },
+      "medium": {
+        "add": {
+          "component_groups": [
+            "medium"
+          ]
+        }
+      },
+      "big": {
+        "add": {
+          "component_groups": [
+            "big"
+          ]
+        }
+      },
+      "minecraft:explode": {
+        "add": {
+          "component_groups": [
+            "minecraft:exploding"
+          ]
+        }
+      },
+      "minecraft:explode2": {
+        "add": {
+          "component_groups": [
+            "minecraft:exploding2"
+          ]
+        }
+      },
+      "minecraft:explode3": {
+        "add": {
+          "component_groups": [
+            "minecraft:exploding3"
+          ]
+        }
+      }
+    }
+  }
+}

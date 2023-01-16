@@ -22,6 +22,8 @@
       }
     },
     "component_groups": {
+      "minecraft:join_fight": {
+      },
       "minecraft:run_away": {
         "minecraft:behavior.avoid_mob_type": {
           "priority": 3,
@@ -33,10 +35,15 @@
                     "test": "is_family",
                     "subject": "other",
                     "value": "player"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "villager"
                   }
                 ]
               },
-              "max_dist": 16,
+              "max_dist": 22,
               "sprint_speed_multiplier": 1.2
             }
           ]
@@ -47,9 +54,9 @@
           "table": "loot_tables/entities/pirate_ranged_gear.json"
         },
         "minecraft:behavior.ranged_attack": {
-          "priority": 4,
-          "attack_interval_min": 2.0,
-          "attack_interval_max": 2.0,
+          "priority": 0,
+          "attack_interval_min": 1.0,
+          "attack_interval_max": 3.0,
           "attack_radius": 32.0
         },
         "minecraft:shooter": {
@@ -57,12 +64,12 @@
         }
       },
       "minecraft:melee_attack": {
-        "minecraft:equipment": {
-          "table": "loot_tables/entities/pirate_melee_gear.json"
-        },
         "minecraft:behavior.melee_attack": {
           "priority": 4,
           "track_target": true
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/entities/pirate_melee_gear.json"
         },
         "minecraft:attack": {
           "damage": 3
@@ -71,8 +78,8 @@
     },
     "components": {
       "minecraft:target_nearby_sensor": {
-        "inside_range": 4,
-        "outside_range": 5,
+        "inside_range": 3,
+        "outside_range": 6,
         "must_see": true,
         "on_inside_range": {
           "event": "minecraft:melee_mode",
@@ -133,7 +140,10 @@
         "value": 0.37
       },
       "minecraft:navigation.walk": {
-        "can_path_over_water": true
+        "can_path_over_water": true,
+        "can_pass_doors": true,
+        "can_open_doors": true,
+        "avoid_water": true
       },
       "minecraft:movement.basic": {},
       "minecraft:jump.static": {},
@@ -153,14 +163,14 @@
             "operator": "!=",
             "value": "illager"
           },
-          "max_dist": 64
+          "max_dist": 32
         }
       },
       "minecraft:behavior.nearest_attackable_target": {
         "priority": 2,
         "must_see": true,
         "reselect_targets": true,
-        "within_radius": 16.0,
+        "within_radius": 32.0,
         "entity_types": [
           {
             "filters": {
@@ -219,7 +229,7 @@
       },
       "minecraft:behavior.look_at_player": {
         "priority": 9,
-        "look_distance": 8
+        "look_distance": 32
       },
       "minecraft:behavior.random_look_around": {
         "priority": 10
@@ -230,14 +240,15 @@
         "is_pushable_by_piston": true
       },
       "minecraft:follow_range": {
-        "value": 64
+        "value": 32
       }
     },
     "events": {
       "minecraft:entity_spawned": {
         "add": {
           "component_groups": [
-            "minecraft:ranged_attack"
+            "minecraft:ranged_attack",
+            "minecraft:join_fight"
           ]
         }
       },
@@ -266,28 +277,28 @@
         }
       },
       "minecraft:run_away": {
-        "sequence": [
-          {
-            "filters": {
-              "test": "has_component",
-              "operator": "!=",
-              "value": "minecraft:run_away"
-            },
-            "add": { "component_groups": [ "minecraft:run_away" ] }
-          }
-        ]
+        "remove": {
+          "component_groups": [
+            "minecraft:join_fight"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:run_away"
+          ]
+        }
       },
       "minecraft:join_fight": {
-        "sequence": [
-          {
-            "filters": {
-              "test": "has_component",
-              "operator": "==",
-              "value": "minecraft:run_away"
-            },
-            "remove": { "component_groups": [ "minecraft:run_away" ] }
-          }
-        ]
+        "remove": {
+          "component_groups": [
+            "minecraft:run_away"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:join_fight"
+          ]
+        }
       }
     }
   }

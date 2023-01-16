@@ -17,7 +17,7 @@
       },
       "minecraft:weapon": {
         "on_hurt_entity": {
-          "event": "attack",
+          "event": "netherite_sickle_attack",
           "target": "self"
         },
         "on_hit_block": {
@@ -53,16 +53,16 @@
           {
             "block": "minecraft:web",
             "speed": 15,
-						"on_dig": {
-							"event": "attack"
-						}
+            "on_dig": {
+              "event": "attack"
+            }
           },
           {
             "block": "minecraft:bamboo",
             "speed": 10,
-						"on_dig": {
-							"event": "attack"
-						}
+            "on_dig": {
+              "event": "attack"
+            }
           }
         ]
       },
@@ -75,6 +75,68 @@
           "type": "magic",
           "amount": 1
         }
+      },
+      "netherite_sickle_attack": {
+        "sequence": [
+          {
+            "randomize": [
+              {
+                "weight": 1,
+                "sequence": [
+                  {
+                    "add_mob_effect": {
+                      "effect": "slowness",
+                      "duration": 9,
+                      "amplifier": 0,
+                      "target": "other"
+                    }
+                  },
+                  {
+                    "run_command": {
+                      "command": [
+                        "playanimation @s animation.humanoid.vertical_direction_brandish",
+                        "particle dec:netherite_sickle_particle ^^^1"
+                      ],
+                      "target": "holder"
+                    }
+                  }
+                ]
+              },
+              {
+                "weight": 6
+              }
+            ]
+          },
+          {
+            "randomize": [
+              {
+                "weight": 1,
+                "sequence": [
+                  {
+                    "add_mob_effect": {
+                      "effect": "weakness",
+                      "duration": 9,
+                      "amplifier": 1,
+                      "target": "other"
+                    }
+                  },
+                  {
+                    "run_command": {
+                      "command": [
+                        "playanimation @s animation.humanoid.vertical_direction_brandish",
+                        "particle dec:netherite_sickle_particle ^^^1"
+                      ],
+                      "target": "holder"
+                    }
+                  }
+                ]
+              },
+              {
+                "weight": 4
+              }
+            ]
+          }
+        ]
       }
     }
   }

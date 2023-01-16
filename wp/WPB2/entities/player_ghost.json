@@ -8,8 +8,38 @@
       "is_experimental": false
     },
     "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "minecraft:from_player": {
+        "minecraft:type_family": {
+          "family": [
+            "player_ghost",
+            "ghost_from_player"
+          ]
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 300,
+          "time_down_event": {
+            "event": "minecraft:despawn"
+          }
+        }
+      },
+      "minecraft:from_night_event": {
+        "minecraft:environment_sensor": {
+          "triggers": {
+            "filters": {
+              "test": "is_daytime",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "event": "minecraft:despawn"
+          }
+        }
+      }
     },
-
     "components": {
       "minecraft:movement": {
         "value": 0.27
@@ -20,30 +50,28 @@
         "target_dist": 0.0,
         "track_target": true
       },
-			"minecraft:nameable": {
-				"always_show": true
-			},
+      "minecraft:nameable": {
+        "always_show": true
+      },
       "minecraft:type_family": {
-        "family": [ "player_ghost" ]
+        "family": [
+          "player_ghost"
+        ]
       },
       "minecraft:collision_box": {
         "width": 0.6,
         "height": 1.9
       },
-      "minecraft:movement.basic": {
-      },
+      "minecraft:movement.basic": {},
       "minecraft:navigation.walk": {
         "is_amphibious": true,
         "can_pass_doors": true,
         "can_walk": true,
         "can_break_doors": true
       },
-      "minecraft:annotation.break_door": {
-      },
-      "minecraft:jump.static": {
-      },
-      "minecraft:can_climb": {
-      },
+      "minecraft:annotation.break_door": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
       "minecraft:health": {
         "value": {
           "range_min": 20,
@@ -86,15 +114,34 @@
           }
         ]
       },
-      "minecraft:physics": {
-      },
+      "minecraft:physics": {},
       "minecraft:pushable": {
         "is_pushable": true,
         "is_pushable_by_piston": true
       }
     },
-
     "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
+      "minecraft:from_player": {
+        "add": {
+          "component_groups": [
+            "minecraft:from_player"
+          ]
+        }
+      },
+      "minecraft:from_night_event": {
+        "add": {
+          "component_groups": [
+            "minecraft:from_night_event"
+          ]
+        }
+      }
     }
   }
 }

@@ -1,23 +1,23 @@
 {
   "format_version": "1.16.100",
   "minecraft:item": {
-	"description": {
+    "description": {
       "category": "equipment",
       "identifier": "dec:paraffin_bucket"
     },
     "components": {
-      "minecraft:fuel" : {
-        "duration" : 100.0
-     },
+      "minecraft:fuel": {
+        "duration": 100.0
+      },
       "minecraft:creative_category": {
         "parent": "itemGroup.name.navigation"
       },
       "minecraft:display_name": {
         "value": "item.dec:paraffin_bucket.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "paraffin_bucket"
-     },
+      },
       "minecraft:stacked_by_data": false,
       "minecraft:max_stack_size": 1,
       "minecraft:durability": {
@@ -25,6 +25,6 @@
       },
       "minecraft:foil": false,
       "minecraft:hand_equipped": false
-	 }
+    }
   }
 }

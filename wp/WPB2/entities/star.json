@@ -8,13 +8,23 @@
       "is_summonable": true,
       "is_experimental": false
     },
-
     "components": {
+      "minecraft:boss": {
+        "should_darken_sky": false,
+        "name": "mini_boss.dec:star.name",
+        "hud_range": 16
+      },
       "minecraft:experience_reward": {
         "on_death": "query.last_hit_by_player ? 15 : 0"
       },
       "minecraft:type_family": {
-        "family": [ "star", "monster", "basalt", "mob" ]
+        "family": [
+          "star",
+          "monster",
+          "basalt",
+          "mob",
+          "mini_boss"
+        ]
       },
       "minecraft:loot": {
         "table": "loot_tables/entities/star.json"
@@ -28,18 +38,23 @@
       "minecraft:knockback_resistance": {
         "value": 1
       },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
       "minecraft:physics": {
         "has_gravity": false,
         "has_collision": true
       },
-      "minecraft:can_fly": {
-      },
+      "minecraft:can_fly": {},
       "minecraft:behavior.float_wander": {
         "xz_dist": 7,
         "y_dist": 10,
         "y_offset": -2.0,
         "random_reselect": true,
-        "float_duration": [0.1, 0.07]
+        "float_duration": [
+          0.1,
+          0.07
+        ]
       },
       "minecraft:shooter": {
         "type": "spots",
@@ -59,8 +74,8 @@
         "burst_shots": 30,
         "burst_interval": 0.3
       },
-        "minecraft:movement": {
-          "value": 0.005
+      "minecraft:movement": {
+        "value": 0.005
       },
       "minecraft:collision_box": {
         "width": 1,
@@ -69,12 +84,9 @@
       "minecraft:navigation.walk": {
         "can_float": true
       },
-      "minecraft:movement.basic": {
-      },
-      "minecraft:jump.static": {
-      },
-      "minecraft:can_climb": {
-      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
       "minecraft:behavior.float": {
         "priority": 0
       },
@@ -140,9 +152,6 @@
         "priority": 6
       }
     },
-
-    "events": {
-
-    }
+    "events": {}
   }
 }

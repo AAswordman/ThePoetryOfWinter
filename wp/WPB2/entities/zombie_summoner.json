@@ -67,6 +67,9 @@
           "width": 0.6,
           "height": 1.9
         },
+        "minecraft:despawn": {
+          "despawn_from_distance": {}
+        },
         "minecraft:movement": {
           "value": 0.20
         },

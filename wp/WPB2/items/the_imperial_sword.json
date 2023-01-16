@@ -16,7 +16,7 @@
         "texture": "the_imperial_sword"
       },
       "minecraft:cooldown": {
-        "category": "chorusfruit",
+        "category": "sword",
         "duration": 10
       },
       "minecraft:weapon": {

@@ -291,7 +291,7 @@
         },
         {
           "type": "item",
-          "name": "dec:golden_sickle",
+          "name": "dec:gold_sickle",
           "weight": 1,
           "functions": [
             {

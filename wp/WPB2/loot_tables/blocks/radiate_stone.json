@@ -33,7 +33,7 @@
                 },
                 {
                     "type": "item",
-                    "name": "dec:cobblestone",
+                    "name": "minecraft:cobblestone",
                     "weight": 1,
                     "functions": [
                         {

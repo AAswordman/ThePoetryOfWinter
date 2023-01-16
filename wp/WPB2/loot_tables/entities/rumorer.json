@@ -19,7 +19,7 @@
                 },
                 {
                     "type": "item",
-                    "name": "dec:leather",
+                    "name": "minecraft:leather",
                     "weight": 4,
                     "functions": [
                         {
@@ -33,7 +33,7 @@
                 },
                 {
                     "type": "item",
-                    "name": "dec:coal",
+                    "name": "minecraft:coal",
                     "weight": 1,
                     "functions": [
                         {

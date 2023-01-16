@@ -13,6 +13,10 @@
           "max": 10,
           "adjust_for_weather": false
         },
+        "minecraft:density_limit": {
+          "surface": 2,
+          "underground": 0
+        },
         "minecraft:weight": {
           "default": 5
         },

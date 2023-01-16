@@ -8,7 +8,7 @@
     "components": {
       "minecraft:weapon": {
         "on_hurt_entity": {
-          "event": "attack",
+          "event": "blood_sickle_attack",
           "target": "self"
         },
         "on_hit_block": {
@@ -78,12 +78,12 @@
       },
       "minecraft:on_use": {
         "on_use": {
-          "event": "shoot",
+          "event": "blood_sickle_use_attack",
           "target": "self"
         }
       },
       "minecraft:cooldown": {
-        "category": "weapon",
+        "category": "blood_sickle",
         "duration": 0.4
       }
     },
@@ -94,7 +94,7 @@
           "amount": 1
         }
       },
-      "shoot": {
+      "blood_sickle_use_attack": {
         "sequence": [
           {
             "condition": "query.scoreboard('wbfl') > 1",
@@ -102,11 +102,7 @@
               {
                 "run_command": {
                   "command": [
-                    "tag @s add blood_sickle",
-                    "effect @e[r=4,rm=2] wither 3 1",
-                    "execute @e[r=4,rm=2] ~~~ effect @a[scores={wbfl=1..},tag=blood_sickle,rm=2,r=4] regeneration 3 0",
-                    "scoreboard players remove @s wbfl 1",
-                    "tag @s remove blood_sickle"
+                    "function item/blood_sickle"
                   ],
                   "target": "holder"
                 }
@@ -116,6 +112,84 @@
                   "type": "magic",
                   "amount": 1
                 }
+              }
+            ]
+          }
+        ]
+      },
+      "blood_sickle_attack": {
+        "sequence": [
+          {
+            "randomize": [
+              {
+                "weight": 1,
+                "sequence": [
+                  {
+                    "add_mob_effect": {
+                      "effect": "slowness",
+                      "duration": 5,
+                      "amplifier": 0,
+                      "target": "other"
+                    }
+                  },
+                  {
+                    "run_command": {
+                      "command": [
+                        "particle dec:blood_spore_parasitic_particle ~~3~"
+                      ],
+                      "target": "other"
+                    }
+                  },
+                  {
+                    "run_command": {
+                      "command": [
+                        "playanimation @s animation.humanoid.vertical_direction_brandish",
+                        "particle dec:blood_sickle_particle ^^^1"
+                      ],
+                      "target": "holder"
+                    }
+                  }
+                ]
+              },
+              {
+                "weight": 8
+              }
+            ]
+          },
+          {
+            "randomize": [
+              {
+                "weight": 1,
+                "sequence": [
+                  {
+                    "add_mob_effect": {
+                      "effect": "weakness",
+                      "duration": 5,
+                      "amplifier": 0,
+                      "target": "other"
+                    }
+                  },
+                  {
+                    "run_command": {
+                      "command": [
+                        "particle dec:blood_spore_parasitic_particle ~~3~"
+                      ],
+                      "target": "other"
+                    }
+                  },
+                  {
+                    "run_command": {
+                      "command": [
+                        "playanimation @s animation.humanoid.vertical_direction_brandish",
+                        "particle dec:blood_sickle_particle ^^^1"
+                      ],
+                      "target": "holder"
+                    }
+                  }
+                ]
+              },
+              {
+                "weight": 7
               }
             ]
           }

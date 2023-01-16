@@ -8,6 +8,22 @@
       "is_experimental": false
     },
     "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "minecraft:from_night_event": {
+        "minecraft:environment_sensor": {
+          "triggers": {
+            "filters": {
+              "test": "is_daytime",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "event": "minecraft:despawn"
+          }
+        }
+      },
       "become_soul": {
         "minecraft:transformation": {
           "into": "dec:soul<minecraft:from_summoner>"
@@ -62,6 +78,9 @@
         "total_supply": 15,
         "suffocate_time": 0,
         "breathes_water": true
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
       },
       "minecraft:health": {
         "value": {
@@ -169,6 +188,21 @@
       }
     },
     "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
+      "minecraft:from_night_event": {
+        "trigger": "minecraft:entity_spawned",
+        "add": {
+          "component_groups": [
+            "minecraft:from_night_event"
+          ]
+        }
+      },
       "become_soul": {
         "add": {
           "component_groups": [

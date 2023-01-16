@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:star_flintlock"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " XB",
+      "XAX",
+      "BX "
+    ],
+    "key": {
+      "X": {
+        "item": "dec:star_debris"
+      },
+      "A": {
+        "item": "dec:lava_flintlock"
+      },
+      "B": {
+        "item": "dec:lava_ingot"
+      }
+    },
+    "result": {
+      "item": "dec:star_flintlock"
+    }
+  }
+}

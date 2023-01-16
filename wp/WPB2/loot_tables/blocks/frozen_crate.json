@@ -6,7 +6,7 @@
         {
           "type": "item",
           "name": "dec:ice_brick",
-          "weight": 1,
+          "weight": 5,
           "functions": [
             {
               "function": "set_count",
@@ -48,7 +48,7 @@
         {
           "type": "item",
           "name": "dec:frozen_boots",
-          "weight": 1,
+          "weight": 7,
           "functions": [
             {
               "function": "set_damage",
@@ -62,7 +62,7 @@
         {
           "type": "item",
           "name": "dec:frozen_leggings",
-          "weight": 1,
+          "weight": 7,
           "functions": [
             {
               "function": "set_damage",
@@ -76,7 +76,7 @@
         {
           "type": "item",
           "name": "dec:frozen_chestplate",
-          "weight": 1,
+          "weight": 7,
           "functions": [
             {
               "function": "set_damage",
@@ -90,7 +90,7 @@
         {
           "type": "item",
           "name": "dec:frozen_helmet",
-          "weight": 1,
+          "weight": 7,
           "functions": [
             {
               "function": "set_damage",

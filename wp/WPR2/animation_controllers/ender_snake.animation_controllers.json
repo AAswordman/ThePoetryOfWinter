@@ -1,0 +1,40 @@
+{
+	"format_version" : "1.10.0",
+	"animation_controllers" : {
+		"controller.animation.ender_snake.base_pose" : {
+			"initial_state" : "default",
+			"states" : {
+				"default" : {
+					"animations" : [ "ender_snake_base_pose" ],
+					"particle_effects" : [
+						{
+							"effect" : "snake_body",
+							"locator" : "head_bone"
+						},
+						{
+							"effect" : "snake_body",
+							"locator" : "body"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.ender_snake.move" : {
+			"initial_state" : "default",
+			"states" : {
+				"default" : {
+					"animations" : [
+						{
+							"move" : "query.modified_move_speed"
+						},
+                        {
+                            "angry": "query.has_target"
+                        },
+						"move",
+						"look_at_target"
+					]
+				}
+			}
+		}
+	}
+}

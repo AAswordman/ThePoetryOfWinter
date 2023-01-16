@@ -1,0 +1,17 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.event_cold_wave": {
+      "timeline": {
+        "0": [
+          "/execute if entity @s[tag=dOverworld] run fog @s push dec:event_cold_wave \"night_event\""
+        ],
+        "5": [
+          "/execute if entity @s[tag=dOverworld] run summon dec:event_cold_wave ~~~"
+        ]
+      },
+      "animation_length": 10,
+      "loop": true
+    }
+  }
+}

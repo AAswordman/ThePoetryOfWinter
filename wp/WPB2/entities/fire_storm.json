@@ -15,11 +15,15 @@
           "fuse_lit": true,
           "power": 0.3,
           "causes_fire": false,
-          "destroy_affected_by_griefing": false
+          "destroy_affected_by_griefing": true,
+          "fire_affected_by_griefing": true
         }
       }
     },
     "components": {
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
       "minecraft:collision_box": {
         "width": 0.25,
         "height": 0.9

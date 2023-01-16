@@ -19,7 +19,11 @@
           "max": "hard"
         },
         "minecraft:weight": {
-          "default": 20
+          "default": 1
+        },
+        "minecraft:density_limit": {
+          "surface": 4,
+          "underground": 3
         },
         "minecraft:permute_type": [
           {
@@ -39,8 +43,59 @@
           "max_size": 3
         },
         "minecraft:biome_filter": {
-          "test": "has_biome_tag", "operator":"==", "value": "frozen"
+          "test": "has_biome_tag",
+          "operator": "==",
+          "value": "frozen"
         }
+      },
+      {
+        "minecraft:spawns_on_surface": {},
+        "minecraft:spawns_underground": {},
+        "minecraft:brightness_filter": {
+          "min": 0,
+          "max": 7,
+          "adjust_for_weather": true
+        },
+        "minecraft:difficulty_filter": {
+          "min": "easy",
+          "max": "hard"
+        },
+        "minecraft:weight": {
+          "default": 2
+        },
+        "minecraft:permute_type": [
+          {
+            "weight": 5
+          },
+          {
+            "weight": 5,
+            "entity_type": "dec:evil_snow_man"
+          },
+          {
+            "weight": 1,
+            "entity_type": "dec:tnt_snow_man"
+          }
+        ],
+        "minecraft:herd": {
+          "min_size": 1,
+          "max_size": 3
+        },
+        "minecraft:biome_filter": [
+          {
+            "all_of": [
+              {
+                "test": "has_biome_tag",
+                "operator": "==",
+                "value": "cold"
+              },
+              {
+                "test": "has_biome_tag",
+                "operator": "==",
+                "value": "forest"
+              }
+            ]
+          }
+        ]
       }
     ]
   }

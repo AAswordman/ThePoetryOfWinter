@@ -3,7 +3,7 @@
   "minecraft:client_entity": {
     "description": {
       "identifier": "dec:enchant_illager_2",
-      
+      "min_engine_version": "1.8.0",
       "materials": { "default": "vindicator" },
       "textures": { "default": "textures/entity/illager/enchant_illager_2" },
       "geometry": { "default": "geometry.vindicator.v1.8" },

@@ -24,6 +24,10 @@
           "max_size": 6
         },
 
+        "minecraft:density_limit": {
+          "surface": 10,
+          "underground": 12
+        },
         "minecraft:difficulty_filter": {
           "min": "easy",
           "max": "hard"

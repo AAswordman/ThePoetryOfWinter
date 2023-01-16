@@ -1,7 +1,7 @@
 {
   "format_version": "1.16.100",
   "minecraft:item": {
-	    "description": {
+    "description": {
       "category": "equipment",
       "identifier": "dec:bomber"
     },
@@ -22,7 +22,7 @@
       "minecraft:foil": false,
       "minecraft:hand_equipped": true,
       "minecraft:cooldown": {
-        "category": "weapon",
+        "category": "gun",
         "duration": 3
       },
       "minecraft:durability": {
@@ -34,16 +34,16 @@
           "target": "self"
         }
       },
-			"minecraft:repairable": {
-				"repair_items": [
-					{
-						"items": [
-							"dec:lava_ingot"
-						],
-						"repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.6"
-					}
-				]
-			}
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "dec:lava_ingot"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.6"
+          }
+        ]
+      }
     },
     "events": {
       "shoot": {
@@ -90,5 +90,5 @@
         ]
       }
     }
-	}
+  }
 }

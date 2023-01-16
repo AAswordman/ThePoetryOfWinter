@@ -5,7 +5,6 @@
       "category": "equipment",
       "identifier": "dec:poison_bag"
     },
-
     "components": {
       "minecraft:creative_category": {
         "parent": "itemGroup.name.sword"
@@ -13,9 +12,9 @@
       "minecraft:display_name": {
         "value": "item.dec:poison_bag.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "poison_bag"
-     },
+      },
       "minecraft:render_offsets": "bow",
       "minecraft:on_use": {
         "on_use": {
@@ -24,7 +23,7 @@
         }
       },
       "minecraft:cooldown": {
-        "category": "weapon",
+        "category": "missile",
         "duration": 2.5
       }
     },

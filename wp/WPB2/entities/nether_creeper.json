@@ -15,7 +15,8 @@
             "fuse_lit": true,
             "power": 7,
             "causes_fire": true,
-            "destroy_affected_by_griefing": true
+            "destroy_affected_by_griefing": true,
+            "fire_affected_by_griefing": true
           }
         },
         "minecraft:charged_creeper": {
@@ -28,7 +29,8 @@
             "fuse_lit": true,
             "power": 12,
             "causes_fire": true,
-            "destroy_affected_by_griefing": true
+            "destroy_affected_by_griefing": true,
+            "fire_affected_by_griefing": true
           }
         },
         "minecraft:forced_exploding": {
@@ -39,7 +41,8 @@
             "fuse_lit": true,
             "power": 7,
             "causes_fire": true,
-            "destroy_affected_by_griefing": true
+            "destroy_affected_by_griefing": true,
+            "fire_affected_by_griefing": true
           },
           "minecraft:on_target_escape": {
           }
@@ -52,7 +55,8 @@
             "fuse_lit": true,
             "power": 12,
             "causes_fire": true,
-            "destroy_affected_by_griefing": true
+            "destroy_affected_by_griefing": true,
+            "fire_affected_by_griefing": true
           },
           "minecraft:on_target_escape": {
           }
@@ -60,6 +64,9 @@
       },
 
       "components": {
+        "minecraft:despawn": {
+          "despawn_from_distance": {}
+        },
         "minecraft:experience_reward": {
           "on_death": "query.last_hit_by_player ? 7 : 0"
         },

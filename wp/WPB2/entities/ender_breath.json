@@ -6,13 +6,7 @@
     "runtime_identifier": "minecraft:egg",
     "is_spawnable": false,
     "is_summonable": true,
-    "is_experimental": false,
-    "scripts":{
-      "animate":["ticking"]
-    },
-      "animations":{
-        "ticking":"controller.animation.particle_ender_wake"
-    }
+    "is_experimental": false
   },
   "components": {
    "minecraft:collision_box": {
@@ -20,7 +14,7 @@
     "height": 0.8
    },
    "minecraft:explode": {
-    "fuseLength": 10,
+    "fuseLength": 5,
     "fuseLit": true,
     "power": 0,
     "causesFire": false
@@ -28,11 +22,12 @@
    "minecraft:projectile": {
     "onHit": {
       "impact_damage": {
-        "damage": 43,
-        "knockback": true,
+        "damage": 28,
+        "knockback": false,
         "catchFire": false,
         "semirandomdiffdamage": false
-      }
+      },
+      "remove_on_hit": { }
     },
     "power": 0.2,
     "gravity": 0.00,

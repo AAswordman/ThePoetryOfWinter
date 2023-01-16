@@ -8,11 +8,56 @@
       "is_summonable": true,
       "is_experimental": false
     },
-
     "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "minecraft:from_night_event": {
+        "minecraft:environment_sensor": {
+          "triggers": {
+            "filters": {
+              "test": "is_daytime",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "event": "minecraft:despawn"
+          }
+        }
+      },
+      "minecraft:teleport": {
+        "minecraft:timer": {
+          "looping": false,
+          "time": 3,
+          "time_down_event": {
+            "event": "minecraft:unteleport"
+          }
+        },
+        "minecraft:teleport": {
+          "randomTeleports": true,
+          "maxRandomTeleportTime": 20,
+          "randomTeleportCube": [
+            8,
+            8,
+            8
+          ],
+          "targetDistance": 8,
+          "target_teleport_chance": 0.05,
+          "lightTeleportChance": 0.05
+        }
+      },
+      "minecraft:normal": {
+        "minecraft:timer": {
+          "looping": false,
+          "time": 4,
+          "time_down_event": {
+            "event": "minecraft:teleport"
+          }
+        }
+      },
       "minecraft:ranged_attack": {
         "minecraft:behavior.ranged_attack": {
-          "attack_interval_min": 0.1,
+          "attack_interval_min": 2,
           "attack_interval_max": 4,
           "attack_radius": 64
         },
@@ -22,7 +67,12 @@
         },
         "minecraft:environment_sensor": {
           "on_environment": {
-            "filters": { "test": "is_underwater", "subject": "self", "operator": "==", "value": true },
+            "filters": {
+              "test": "is_underwater",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
             "event": "minecraft:melee_mode"
           }
         }
@@ -45,13 +95,17 @@
         },
         "minecraft:environment_sensor": {
           "on_environment": {
-            "filters": { "test": "in_water", "subject": "self", "operator": "==", "value": false },
+            "filters": {
+              "test": "in_water",
+              "subject": "self",
+              "operator": "==",
+              "value": false
+            },
             "event": "minecraft:ranged_mode"
           }
         }
       }
     },
-
     "components": {
       "minecraft:breathable": {
         "totalSupply": 15,
@@ -62,18 +116,10 @@
         "width": 0.6,
         "height": 1.8
       },
-      "minecraft:teleport": {
-        "randomTeleports": true,
-        "maxRandomTeleportTime": 100,
-        "randomTeleportCube": [ 16, 16, 16 ],
-        "targetDistance": 16,
-        "target_teleport_chance": 0.05,
-        "lightTeleportChance": 0.05
-      },
       "minecraft:nameable": {},
       "minecraft:health": {
-        "value": 2,
-        "max": 2
+        "value": 23,
+        "max": 23
       },
       "minecraft:loot": {
         "table": "loot_tables/empty.json"
@@ -86,12 +132,9 @@
         "avoid_sun": true,
         "avoid_water": true
       },
-      "minecraft:movement.basic": {
-      },
-      "minecraft:jump.static": {
-      },
-      "minecraft:can_climb": {
-      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
       "minecraft:equipment": {
         "table": "loot_tables/entities/shadow_archer_gear.json",
         "slot_drop_chance": [
@@ -107,7 +150,12 @@
       },
       "minecraft:environment_sensor": {
         "on_environment": {
-          "filters": { "test": "is_underwater", "subject": "self", "operator": "==", "value": true  },
+          "filters": {
+            "test": "is_underwater",
+            "subject": "self",
+            "operator": "==",
+            "value": true
+          },
           "event": "minecraft:melee_mode"
         }
       },
@@ -176,7 +224,6 @@
         ],
         "must_see": true
       },
-
       "minecraft:behavior.flee_sun": {
         "priority": 2,
         "speed_multiplier": 1
@@ -208,27 +255,88 @@
         "priority": 6
       },
       "minecraft:type_family": {
-        "family": [ "monster", "undead", "shadow_archer", "mob" ]
+        "family": [
+          "monster",
+          "undead",
+          "shadow_archer",
+          "mob"
+        ]
       },
-      "minecraft:physics": {
-      }
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
+      "minecraft:physics": {}
     },
-
     "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
+      "minecraft:from_night_event": {
+        "add": {
+          "component_groups": [
+            "minecraft:from_night_event"
+          ]
+        }
+      },
       "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "minecraft:ranged_attack",
+            "minecraft:teleport"
+          ]
+        }
+      },
+      "minecraft:unteleport": {
+        "remove": {
+          "component_groups": [
+            "minecraft:teleport"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:normal"
+          ]
+        }
+      },
+      "minecraft:teleport": {
+        "remove": {
+          "component_groups": [
+            "minecraft:normal"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:teleport"
+          ]
+        }
+      },
+      "minecraft:melee_mode": {
+        "remove": {
+          "component_groups": [
+            "minecraft:ranged_attack"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:melee_attack"
+          ]
+        }
+      },
+      "minecraft:ranged_mode": {
+        "remove": {
+          "component_groups": [
+            "minecraft:melee_attack"
+          ]
+        },
         "add": {
           "component_groups": [
             "minecraft:ranged_attack"
           ]
         }
-      },
-      "minecraft:melee_mode": {
-        "remove": { "component_groups": [ "minecraft:ranged_attack" ] },
-        "add": { "component_groups": [ "minecraft:melee_attack" ] }
-      },
-      "minecraft:ranged_mode": {
-        "remove": { "component_groups": [ "minecraft:melee_attack" ] },
-        "add": { "component_groups": [ "minecraft:ranged_attack" ] }
       }
     }
   }

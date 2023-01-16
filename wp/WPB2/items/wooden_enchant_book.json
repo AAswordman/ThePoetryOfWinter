@@ -1,23 +1,23 @@
 {
   "format_version": "1.16.100",
   "minecraft:item": {
-	"description": {
+    "description": {
       "category": "equipment",
       "identifier": "dec:wooden_enchant_book"
     },
     "components": {
-      "minecraft:fuel" : {
-        "duration" : 10.0
-     },
+      "minecraft:fuel": {
+        "duration": 10.0
+      },
       "minecraft:creative_category": {
         "parent": "itemGroup.name.sword"
       },
       "minecraft:display_name": {
         "value": "item.dec:wooden_enchant_book.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "wooden_enchant_book"
-     },
+      },
       "minecraft:use_animation": "bow",
       "minecraft:render_offsets": "bow",
       "minecraft:stacked_by_data": false,
@@ -31,7 +31,7 @@
         }
       },
       "minecraft:cooldown": {
-        "category": "weapon",
+        "category": "magic_book",
         "duration": 1
       },
       "minecraft:durability": {
@@ -47,7 +47,7 @@
           }
         ]
       }
-	  },
+    },
     "events": {
       "attack": {
         "damage": {

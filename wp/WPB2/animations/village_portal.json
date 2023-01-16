@@ -1,0 +1,61 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.village_portal": {
+            "timeline": {
+                "0.0": [
+                    "/scoreboard players random @s random 0 10"
+                ],
+                "3": [
+                    "/particle dec:village_portal_spurt_particle ~~~"
+                ],
+                "9": [
+                    "/particle dec:village_portal_spurt_particle ~~~"
+                ],
+                "12": [
+                    "/particle dec:village_portal_spurt_particle ~~~",
+                    "/execute if entity @s[scores={random=0..4}] run summon dec:soldier ~~~",
+                    "/execute if entity @s[scores={random=5..9}] run summon dec:archer ~~~",
+                    "/execute if entity @s[scores={random=10}] run summon iron_golem ~~~"
+                ],
+                "15": [
+                    "/particle dec:village_portal_spurt_particle ~~~",
+                    "/scoreboard players random @s random 0 16"
+                ],
+                "18": [
+                    "/particle dec:village_portal_spurt_particle ~~~"
+                ],
+                "21": [
+                    "/particle dec:village_portal_spurt_particle ~~~",
+                    "/execute if entity @s[scores={random=0..4}] run summon dec:soldier ~~~",
+                    "/execute if entity @s[scores={random=5..9}] run summon dec:archer ~~~",
+                    "/execute if entity @s[scores={random=10}] run summon iron_golem ~~~",
+                    "/execute if entity @s[scores={random=11..15}] run summon villager ~~~",
+                    "/event entity @s[scores={random=16}] minecraft:despawn"
+                ],
+                "24": [
+                    "/particle dec:village_portal_spurt_particle ~~~",
+                    "/scoreboard players random @s random 0 16"
+                ],
+                "27": [
+                    "/particle dec:village_portal_spurt_particle ~~~"
+                ],
+                "30": [
+                    "/particle dec:village_portal_spurt_particle ~~~",
+                    "/execute if entity @s[scores={random=0..4}] run summon dec:soldier ~~~",
+                    "/execute if entity @s[scores={random=5..9}] run summon dec:archer ~~~",
+                    "/execute if entity @s[scores={random=10}] run summon iron_golem ~~~",
+                    "/execute if entity @s[scores={random=11..15}] run summon villager ~~~",
+                    "/event entity @s[scores={random=16}] minecraft:despawn"
+                ],
+                "33": [
+                    "/particle dec:village_portal_spurt_particle ~~~",
+                    "/scoreboard players reset @s random",
+                    "/event entity @s minecraft:despawn"
+                ]
+            },
+            "animation_length": 34,
+            "loop": true
+        }
+    }
+}

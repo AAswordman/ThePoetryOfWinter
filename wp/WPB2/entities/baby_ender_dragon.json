@@ -10,6 +10,9 @@
     },
     "component_groups": {
 
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      },
       "minecraft:fly": {
         "minecraft:behavior.circle_around_anchor": {
           "priority": 3,
@@ -43,38 +46,11 @@
       },
 
       "minecraft:ranged_attack": {
-        "minecraft:behavior.look_at_player": {
-          "priority": 0,
-          "look_distance": 64
-        },
-        "minecraft:shooter": {
-          "def": "dec:ender_breath"
-        },
-        "minecraft:behavior.ranged_attack": {
-          "priority": 4,
-          "burst_shots": 5,
-          "burst_interval": 0.1,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 1.0,
-          "attack_interval_min": 1.0,
-          "attack_interval_max": 1.0,
-          "attack_radius": 64.0
-        },
         "minecraft:timer": {
           "looping": false,
-          "time": 10,
+          "time": 3,
           "time_down_event": {
             "event": "minecraft:melee_attack"
-          }
-        }
-      },
-      
-      "minecraft:spawn": {
-        "minecraft:timer": {
-          "looping": false,
-          "time": 5,
-          "time_down_event": {
-            "event": "minecraft:start_attack"
           }
         }
       },
@@ -122,8 +98,8 @@
     "components": {
       "minecraft:despawn": {
         "despawn_from_distance": {
-          "min_distance": 256,
-          "max_distance": 256
+          "min_distance": 64,
+          "max_distance": 64
         }
       },
       "minecraft:fire_immune": true,
@@ -132,9 +108,11 @@
       },
       "minecraft:type_family": {
         "family": [
+          "baby_ender_dragon",
           "monster",
-          "boss",
-          "mob"
+          "mini_boss",
+          "mob",
+          "shadow"
         ]
       },
       "minecraft:loot": {
@@ -142,8 +120,8 @@
       },
       "minecraft:nameable": {},
       "minecraft:health": {
-        "value": 200,
-        "max": 200
+        "value": 300,
+        "max": 300
       },
       "minecraft:physics": {
         "has_gravity": false
@@ -170,7 +148,7 @@
       },
       "minecraft:boss": {
         "should_darken_sky": false,
-        "name": "boss.dec:baby_ender_dragon.name",
+        "name": "mini_boss.dec:baby_ender_dragon.name",
         "hud_range": 64
       },
       "minecraft:knockback_resistance": {
@@ -229,7 +207,7 @@
       "minecraft:entity_spawned": {
         "add": {
           "component_groups": [
-            "minecraft:spawn"
+            "minecraft:fly"
           ]
         }
       },
@@ -246,6 +224,14 @@
         }
       },
       "minecraft:melee_attack": {
+        "run_command": {
+          "command": [
+            "summon dec:dragon_head ^^2^",
+            "summon dec:dragon_head ^^-2^",
+            "summon dec:dragon_head ^2^^",
+            "summon dec:dragon_head ^-2^^"
+          ]
+        },
         "remove": {
           "component_groups": [
             "minecraft:ranged_attack"

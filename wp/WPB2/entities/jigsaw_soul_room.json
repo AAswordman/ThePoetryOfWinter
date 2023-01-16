@@ -1,0 +1,150 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:jigsaw_soul_room",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "minecraft:transfer": {
+        "minecraft:transformation": {
+          "into": "dec:jigsaw_soul_room_already"
+        }
+      }
+    },
+    "components": {
+      "minecraft:explode": {
+        "fuseLength": 30,
+        "fuseLit": true,
+        "power": 0,
+        "causesFire": false
+      },
+      "minecraft:type_family": {
+        "family": [
+          "jigsaw",
+          "jigsaw_soul_room"
+        ]
+      },
+      "minecraft:timer": {
+        "looping": true,
+        "time": 0.2,
+        "time_down_event": {
+          "event": "minecraft:jigsaw_test"
+        }
+      },
+      "minecraft:health": {
+        "value": 100000,
+        "max": 100000
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": false
+      },
+      "minecraft:collision_box": {
+        "width": 0,
+        "height": 0
+      }
+    },
+    "events": {
+      "minecraft:transfer": {
+        "add": {
+          "component_groups": [
+            "minecraft:transfer"
+          ]
+        }
+      },
+      "minecraft:jigsaw": {
+        "randomize": [
+          {
+            "weight": 2,
+            "run_command": {
+              "command": [
+                "execute unless entity @e[family=jigsaw_soul_room,x=~16,y=~,z=~,r=2] run function structure/soul_room/xp_room"
+              ],
+              "target": "self"
+            }
+          },
+          {
+            "weight": 2,
+            "run_command": {
+              "command": [
+                "execute unless entity @e[family=jigsaw_soul_room,x=~-16,y=~,z=~,r=2] run function structure/soul_room/xn_room"
+              ],
+              "target": "self"
+            }
+          },
+          {
+            "weight": 2,
+            "run_command": {
+              "command": [
+                "execute unless entity @e[family=jigsaw_soul_room,x=~,y=~,z=~16,r=2] run function structure/soul_room/zp_room"
+              ],
+              "target": "self"
+            }
+          },
+          {
+            "weight": 2,
+            "run_command": {
+              "command": [
+                "execute unless entity @e[family=jigsaw_soul_room,x=~,y=~,z=~-16,r=2] run function structure/soul_room/zn_room"
+              ],
+              "target": "self"
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "execute unless entity @e[family=jigsaw_soul_room,x=~16,y=~,z=~,r=2] unless entity @e[family=jigsaw_soul_room,x=~16,y=~8,z=~,r=2] run function structure/soul_room/xp_stair"
+              ],
+              "target": "self"
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "execute unless entity @e[family=jigsaw_soul_room,x=~-16,y=~,z=~,r=2] unless entity @e[family=jigsaw_soul_room,x=~-16,y=~8,z=~,r=2] run function structure/soul_room/xn_stair"
+              ],
+              "target": "self"
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "execute unless entity @e[family=jigsaw_soul_room,x=~,y=~,z=~16,r=2] unless entity @e[family=jigsaw_soul_room,x=~,y=~8,z=~16,r=2] run function structure/soul_room/zp_stair"
+              ],
+              "target": "self"
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "execute unless entity @e[family=jigsaw_soul_room,x=~,y=~,z=~-16,r=2] unless entity @e[family=jigsaw_soul_room,x=~,y=~8,z=~-16,r=2] run function structure/soul_room/zn_stair"
+              ],
+              "target": "self"
+            }
+          }
+        ]
+      },
+      "minecraft:jigsaw_test": {
+        "run_command": {
+          "command": [
+            "execute if entity @e[family=jigsaw_soul_room,x=~16,y=~,z=~,r=2] if entity @e[family=jigsaw_soul_room,x=~-16,y=~,z=~,r=2] if entity @e[family=jigsaw_soul_room,x=~,y=~,z=~16,r=2] if entity @e[family=jigsaw_soul_room,x=~,y=~,z=~-16,r=2] run tag @s add transfer",
+            "execute if entity @e[family=jigsaw_soul_room,x=~-64,dx=128,y=~6,dy=59,z=~-64,dz=128] run tag @s add transfer",
+            "execute if entity @s[tag=transfer] run event entity @s minecraft:transfer",
+            "execute unless entity @s[tag=transfer] run event entity @s minecraft:jigsaw"
+          ],
+          "target": "self"
+        }
+      }
+    }
+  }
+}

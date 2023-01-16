@@ -7,26 +7,24 @@
     },
     "conditions": [
       {
-        "minecraft:spawns_on_surface": {
-        },
-
-        "minecraft:spawns_underground": {
-        },
-
+        "minecraft:spawns_on_surface": {},
+        "minecraft:spawns_underground": {},
         "minecraft:spawns_on_block_prevented_filter": [
           "minecraft:nether_wart_block",
           "minecraft:shroomlight"
         ],
-
         "minecraft:brightness_filter": {
           "min": 0,
           "max": 7,
           "adjust_for_weather": true
         },
-
         "minecraft:difficulty_filter": {
           "min": "easy",
           "max": "hard"
+        },
+        "minecraft:density_limit": {
+          "surface": 10,
+          "underground": 0
         },
         "minecraft:permute_type": [
           {
@@ -48,12 +46,10 @@
         "minecraft:weight": {
           "default": 80
         },
-
         "minecraft:herd": {
           "min_size": 1,
           "max_size": 2
         },
-
         "minecraft:biome_filter": {
           "any_of": [
             {

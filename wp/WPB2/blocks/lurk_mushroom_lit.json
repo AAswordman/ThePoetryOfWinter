@@ -11,16 +11,16 @@
                     "render_method": "alpha_test"
                 }
             },
-            "minecraft:geometry": "geometry.crop.sparse.flower",
+            "minecraft:geometry": "geometry.crop.sparse",
             "minecraft:entity_collision": false,
             "minecraft:pick_collision": {
                 "origin": [-5,0,-5],
                 "size": [10,9,10]
             },
             "minecraft:destroy_time": 0.001,
-            "minecraft:block_light_emission": 0.5,
+            "minecraft:light_emission": 6,
             "minecraft:map_color": "#00847D",
-            "minecraft:block_light_absorption": 0.0,
+            "minecraft:light_dampening": 0.0,
             "minecraft:loot": "loot_tables/blocks/lurk_mushroom.json",
             "minecraft:placement_filter": {
                 "conditions": [

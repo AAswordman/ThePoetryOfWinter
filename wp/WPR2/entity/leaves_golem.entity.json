@@ -32,7 +32,7 @@
         "attack": "animation.leaves_golem.attack",
         "attacking_ac": "controller.animation.wait.attacky"
       },
-      "render_controllers": [ "controller.render.spider" ]
+      "render_controllers": [ "controller.render.leaves_golem" ]
     }
   }
 }

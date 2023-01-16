@@ -2,7 +2,7 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "minecraft:diamond_axe"
+    "identifier": "dec:amethyst_axe"
     },
 
     
@@ -17,11 +17,11 @@
         "item": "minecraft:stick"
       },
       "X": {
-        "item": "minecraft:diamond"
+        "item": "minecraft:amethyst_shard"
       }
     },
     "result": {
-      "item": "minecraft:diamond_axe"
+      "item": "dec:amethyst_axe"
     }
   }
 }

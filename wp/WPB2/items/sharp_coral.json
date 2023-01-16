@@ -30,16 +30,16 @@
       "minecraft:durability": {
         "max_durability": 64
       },
-			"minecraft:repairable": {
-				"repair_items": [
-					{
-						"items": [
-							"dec:coral_ingot"
-						],
-						"repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.3"
-					}
-				]
-			},
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "dec:coral_ingot"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.3"
+          }
+        ]
+      },
       "minecraft:mining_speed": 1.5,
       "minecraft:damage": 4,
       "minecraft:enchantable": {

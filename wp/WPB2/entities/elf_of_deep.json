@@ -64,15 +64,18 @@
           "mob"
         ]
       },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
       "minecraft:loot": {
         "table": "loot_tables/entities/elf_of_deep.json"
       },
       "minecraft:health": {
-        "value": 20,
-        "max": 20
+        "value": 10,
+        "max": 10
       },
       "minecraft:attack": {
-        "damage": 3
+        "damage": 1
       },
       "minecraft:collision_box": {
         "width": 0.4,
@@ -153,7 +156,16 @@
         }
       },
       "minecraft:behavior.hurt_by_target": {
-        "priority": 1
+        "priority": 1,
+        "entity_types": {
+          "filters": {
+            "test": "is_family",
+            "subject": "other",
+            "operator": "!=",
+            "value": "deep"
+          },
+          "max_dist": 64
+        }
       },
       "minecraft:physics": {
         "has_gravity": false,

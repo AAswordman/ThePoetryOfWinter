@@ -1,0 +1,54 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.shadow_fuse": {
+            "timeline": {
+                "0.0": [
+                    "/spreadplayers ~~ 1 16 @s",
+                    "/scoreboard players random @s random 0 5"
+                ],
+                "0.5": [
+                    "/particle dec:ender_fuse_particle ~~~"
+                ],
+                "1.5": [
+                    "/particle dec:ender_fuse_particle ~~~"
+                ],
+                "2.5": [
+                    "/particle dec:ender_fuse_particle ~~~"
+                ],
+                "3": [
+                    "/particle dec:ender_fuse_particle ~~~"
+                ],
+                "3.3": [
+                    "/particle dec:ender_fuse_particle ~~~"
+                ],
+                "3.6": [
+                    "/particle dec:ender_fuse_particle ~~~"
+                ],
+                "3.8": [
+                    "/particle dec:ender_fuse_particle ~~~"
+                ],
+                "3.9": [
+                    "/particle dec:ender_fuse_particle ~~~"
+                ],
+                "4": [
+                    "/particle dec:ender_spot_particle ~~~",
+                    "/execute as @s[scores={random=0}] run summon dec:shadow_archer ~~~",
+                    "/execute as @s[scores={random=1}] run summon dec:shadow_creeper ~~~",
+                    "/execute as @s[scores={random=2}] run summon dec:shadow_zombie ~~~",
+                    "/execute as @s[scores={random=3}] run summon dec:shadow_skeleton ~~~",
+                    "/execute as @s[scores={random=4}] run summon dec:end_stone_golem ~~~",
+                    "/execute as @s[scores={random=5}] run summon dec:shadow_portal ~~~",
+
+                    "/execute as @s[scores={random=-1}] run summon dec:baby_ender_dragon ~~~",
+                    "/scoreboard players reset @s random"
+                ],
+                "4.3": [
+                    "/kill @s"
+                ]
+            },
+            "animation_length": 6,
+            "loop": true
+        }
+    }
+}

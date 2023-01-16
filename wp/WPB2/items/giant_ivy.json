@@ -1,7 +1,7 @@
 {
   "format_version": "1.16.100",
   "minecraft:item": {
-	    "description": {
+    "description": {
       "category": "equipment",
       "identifier": "dec:giant_ivy"
     },
@@ -28,7 +28,7 @@
         }
       },
       "minecraft:cooldown": {
-        "category": "weapon",
+        "category": "staff",
         "duration": 0.2
       },
       "minecraft:durability": {
@@ -73,5 +73,5 @@
         ]
       }
     }
-	}
+  }
 }

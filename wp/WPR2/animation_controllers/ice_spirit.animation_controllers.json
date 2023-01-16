@@ -1,0 +1,85 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.ice_spirit.root" : {
+	  "initial_state" : "default",
+		"states" : {
+		  "default" : {
+		    "animations" : [
+		      "default",
+		      {
+		      "move": "query.ground_speed>0"
+		      },
+		      { 
+			  "attack" : "variable.attack_time > 0.0"
+			  }
+		    ],
+		    "particle_effects" : [
+		    {
+		      "effect" : "particle",
+		      "locator" : "body"
+		    }
+		  ]
+		}
+	  }
+	},
+	"controller.animation.ice_spirit.look" : {
+	  "initial_state" : "default",
+        "states" : {
+	      "default" : {
+		    "animations" : [
+			  {
+			    "move" : "query.modified_move_speed"
+			  },
+			  "look_at_target"
+			  ]
+			}
+		}
+	},
+	"controller.animation.ice_spirit.jump" : {
+	  "initial_state" : "default",
+	  "states" : {
+	    "default" : {
+		  "animations" : [ "default" ],
+		    "transitions" : [
+			  {
+			    "jump" : "query.is_jumping"
+			  }
+			]
+		},
+		"jump" : {
+		  "animations" : [ "jump" ],
+		    "transitions" : [
+			{
+			  "default" : "!query.is_jumping"
+			}
+		  ]
+		}
+	  }
+	},
+	"controller.animation.ice_spirit.shoot": {
+      "states": {
+        "default": {
+          "animations": [
+            "default"
+          ],
+          "transitions": [
+            {
+              "shoot": "query.is_charged"
+            }
+          ]
+        },
+        "shoot": {
+          "transitions": [
+            {
+              "default": "!query.is_charged"
+            }
+          ],
+          "animations": [
+            "shoot"
+          ]
+        }
+      }
+    }
+  }
+}

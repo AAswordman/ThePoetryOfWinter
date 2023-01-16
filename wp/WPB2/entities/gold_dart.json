@@ -9,14 +9,6 @@
       "is_experimental": false
     },
     "components": {
-      "minecraft:explode": {
-        "fuseLength": 2,
-        "fuseLit": true,
-        "power": 0,
-        "causesFire": true,
-        "fireAffectedByGriefing": true,
-        "destroyAffectedByGriefing": true
-      },
       "minecraft:collision_box": {
         "width": 0.25,
         "height": 0.25
@@ -27,14 +19,14 @@
             "damage": 5,
             "knockback": true
           },
-          "remove_on_hit": {}
+          "remove_on_hit": { }
         },
         "power": 2.4,
         "gravity": 0.025,
         "inertia": 1.2,
-        "offset": [0,0.5,0],
-        "uncertaintyBase": 3,
-        "angleoffset": 0
+        "offset": [ 0, 0.5, 0 ],
+        "uncertaintyBase": 3.0,
+        "angleoffset": 0.0
       },
       "minecraft:pushable": {
         "is_pushable": false,

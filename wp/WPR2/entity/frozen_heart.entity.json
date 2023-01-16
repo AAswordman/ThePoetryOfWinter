@@ -1,0 +1,30 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:frozen_heart",
+      "materials": { "default": "spider" },
+      "textures": {
+        "default": "textures/entity/frozen_heart"
+      },
+      "geometry": {
+        "default": "geometry.frozen_heart"
+      },
+      "scripts": {
+        "animate": [
+          "move",
+          "look_at_target"
+        ]
+      },
+      "animations": {
+        "look_at_target": "animation.common.look_at_target",
+        "move": "animation.frozen_heart.move"
+      },
+      "render_controllers": [ "controller.render.star" ],
+      "spawn_egg": {
+        "base_color": "#43D3D3",
+        "overlay_color": "#87DDDD"
+      }
+    }
+  }
+}

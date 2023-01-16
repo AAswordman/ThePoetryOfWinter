@@ -108,6 +108,46 @@
         }
       },
 
+      "minecraft:frank": {
+        "minecraft:experience_reward": {
+          "on_death": "query.last_hit_by_player ? 5 + (query.equipment_count * Math.Random(10,17)) : 0"
+        },
+        "minecraft:movement": {
+          "value": 0.36
+        },
+        "minecraft:behavior.mount_pathing": {
+          "priority": 2,
+          "speed_multiplier": 1.25,
+          "target_dist": 0.0,
+          "track_target": true
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/entities/frank_equipment.json",
+          "slot_drop_chance": [
+            {
+              "slot": "slot.weapon.mainhand",
+              "drop_chance": 0.005
+            },
+            {
+              "slot": "slot.armor.head",
+              "drop_chance": 0.5
+            },
+            {
+              "slot": "slot.armor.chestplate",
+              "drop_chance": 0.5
+            },
+            {
+              "slot": "slot.armor.leggings",
+              "drop_chance": 0.5
+            },
+            {
+              "slot": "slot.armor.boots",
+              "drop_chance": 0.5
+            }
+          ]
+        }
+      },
+
       "minecraft:zombie_jockey": {
         "minecraft:behavior.find_mount": {
           "priority": 1,
@@ -514,7 +554,7 @@
       "minecraft:entity_spawned": {
         "randomize": [
           {
-            "weight": 70,
+            "weight": 140,
             "remove": {},
             "add": {
               "component_groups": [
@@ -524,7 +564,7 @@
             }
           },
           {
-            "weight": 25,
+            "weight": 50,
             "remove": {
             },
             "add": {
@@ -536,7 +576,7 @@
             }
           },
           {
-            "weight": 5,
+            "weight": 10,
             "remove": {
             },
             "add": {
@@ -544,6 +584,16 @@
                 "minecraft:zombie_baby",
                 "minecraft:zombie_jockey",
                 "minecraft:can_have_equipment"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "remove": {
+            },
+            "add": {
+              "component_groups": [
+                "minecraft:frank"
               ]
             }
           }

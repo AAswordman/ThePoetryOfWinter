@@ -20,7 +20,7 @@
     "height": 0.31
    },
    "minecraft:explode": {
-    "fuseLength": 5,
+    "fuseLength": 3,
     "fuseLit": true,
     "power": 0,
     "causesFire": false
@@ -28,7 +28,7 @@
    "minecraft:projectile": {
     "onHit": {
       "impact_damage": {
-        "damage": 7,
+        "damage": 14,
         "knockback": false,
         "catchFire": true,
         "semirandomdiffdamage": false
@@ -40,8 +40,8 @@
     },
     "power": 1,
     "gravity": 0.00,
-    "liquid_inertia": 1,
-    "inertia": 1,
+    "liquid_inertia": 0.95,
+    "inertia": 1.05,
     "anchor": 1,
     "offset": [ 0, 0.5, 0 ],
     "semirandomdiffdamage": true,

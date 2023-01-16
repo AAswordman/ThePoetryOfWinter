@@ -63,7 +63,7 @@
         { "zombie_attack_bare_hand": "controller.animation.zombie.attack_bare_hand" },
         { "zombie_swimming": "controller.animation.zombie.swimming" }
       ],
-      "render_controllers": [ "controller.render.spider" ],
+      "render_controllers": [ "controller.render.vengeful_ghost" ],
       "enable_attachables": true,
       "spawn_egg": {
         "base_color": "#8C6E6E",

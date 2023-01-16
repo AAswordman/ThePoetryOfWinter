@@ -30,22 +30,22 @@
       "minecraft:durability": {
         "max_durability": 312
       },
-			"minecraft:repairable": {
-				"repair_items": [
-					{
-						"items": [
-							"minecraft:copper_ingot"
-						],
-						"repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.3"
-					},
-					{
-						"items": [
-							"minecraft:copper_nugget"
-						],
-						"repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.03"
-					}
-				]
-			},
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "minecraft:copper_ingot"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.3"
+          },
+          {
+            "items": [
+              "minecraft:copper_nugget"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.03"
+          }
+        ]
+      },
       "minecraft:mining_speed": 1.5,
       "minecraft:damage": 6.2,
       "minecraft:enchantable": {

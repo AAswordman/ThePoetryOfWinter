@@ -9,6 +9,22 @@
       "is_experimental": false
     },
     "component_groups": {
+			"minecraft:despawn": {
+				"minecraft:instant_despawn": {}
+			},
+			"minecraft:from_night_event": {
+				"minecraft:environment_sensor": {
+					"triggers": {
+						"filters": {
+							"test": "is_daytime",
+							"subject": "self",
+							"operator": "==",
+							"value": true
+						},
+						"event": "minecraft:despawn"
+					}
+				}
+			},
       "minecraft:exploding": {
         "minecraft:behavior.swell": {
           "start_distance": 20,
@@ -20,13 +36,14 @@
           "fuse_lit": true,
           "power": 2.5,
           "causes_fire": false,
-          "destroy_affected_by_griefing": true
+          "destroy_affected_by_griefing": true,
+          "fire_affected_by_griefing": true
         }
       }
     },
     "components": {
 			"minecraft:movement": {
-				"value": 0.1
+				"value": 0.3
 			},
 			"minecraft:knockback_resistance": {
 				"value": 1.0
@@ -181,6 +198,21 @@
       }
     },
     "events": {
+			"minecraft:despawn": {
+				"add": {
+					"component_groups": [
+						"minecraft:despawn"
+					]
+				}
+			},
+			"minecraft:from_night_event": {
+				"trigger": "minecraft:entity_spawned",
+				"add": {
+					"component_groups": [
+						"minecraft:from_night_event"
+					]
+				}
+			},
       "minecraft:explode": {
         "add": {
           "component_groups": [

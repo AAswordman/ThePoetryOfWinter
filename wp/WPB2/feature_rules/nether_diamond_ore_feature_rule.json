@@ -31,7 +31,7 @@
 				"distribution": "uniform",
 				"extent": [
 					0,
-					30
+					128
 				]
 			},
 			"z": {

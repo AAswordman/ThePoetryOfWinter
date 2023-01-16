@@ -1,14 +1,14 @@
 {
   "format_version": "1.16.100",
   "minecraft:item": {
-        "description": {
+    "description": {
       "category": "items",
       "identifier": "dec:experience_book_empty"
     },
     "components": {
-      "minecraft:fuel" : {
-        "duration" : 10.0
-     },
+      "minecraft:fuel": {
+        "duration": 10.0
+      },
       "minecraft:creative_category": {
         "parent": "itemGroup.name.enchantedBook"
       },
@@ -29,7 +29,7 @@
         }
       },
       "minecraft:cooldown": {
-        "category": "magic",
+        "category": "experience_book",
         "duration": 0.5
       }
     },
@@ -37,8 +37,9 @@
       "use": {
         "run_command": {
           "command": [
+            "tellraw @s[scores={maxmagic=0}] { \"rawtext\" : [ { \"translate\" : \"text.dec:experience_book_empty_fail.name\" } ] }",
             "clear @s[lm=12] dec:experience_book_empty 0 1",
-            "give @s[lm=12] dec:experience_book",
+            "loot give @s[lm=12] loot \"items/experience_book\"",
             "xp -2L @s[lm=12]"
           ],
           "target": "holder"

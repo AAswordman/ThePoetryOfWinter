@@ -1,0 +1,185 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "dec:dragon_head",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+		},
+		"components": {
+			"minecraft:explode": {
+				"fuseLength": 20,
+				"fuseLit": true,
+				"power": 0,
+				"causesFire": false
+			},
+			"minecraft:behavior.hurt_by_target": {
+				"priority": 1,
+				"entity_types": {
+				  "filters": {
+					"test": "is_family",
+					"subject": "other",
+					"operator": "!=",
+					"value": "shadow"
+				  },
+				  "max_dist": 64
+				}
+			  },
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "fall",
+						"deals_damage": false
+					},
+					{
+						"on_damage": {
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "shadow"
+							}
+						},
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1.0
+			},
+			"minecraft:physics": {
+				"has_gravity": false
+			},
+			"minecraft:experience_reward": {
+				"on_death": "query.last_hit_by_player ? 10 + (query.equipment_count * Math.Random(1,3)) : 0"
+			},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 0.6
+			},
+			"minecraft:type_family": {
+			  "family": [
+				"baby_ender_dragon_head",
+				"monster",
+				"mob",
+				"shadow"
+			  ]
+			},
+			"minecraft:despawn": {
+			  "despawn_from_distance": {}
+			},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": 0,
+				"breathes_water": true
+			},
+			"minecraft:health": {
+				"value": 48,
+				"max": 48
+			},
+			"minecraft:hurt_on_condition": {
+				"damage_conditions": [
+					{
+						"filters": {
+							"test": "in_lava",
+							"subject": "self",
+							"operator": "==",
+							"value": true
+						},
+						"cause": "lava",
+						"damage_per_tick": 4
+					}
+				]
+			},
+			"minecraft:navigation.walk": {
+				"is_amphibious": true,
+				"avoid_sun": true,
+				"avoid_water": true
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:jump.static": {},
+			"minecraft:can_climb": {},
+			"minecraft:nameable": {},
+			"minecraft:shooter": {
+			  "def": "dec:ender_breath"
+			},
+			"minecraft:behavior.ranged_attack": {
+			  "priority": 4,
+			  "burst_shots": 2,
+			  "burst_interval": 0.1,
+			  "charge_charged_trigger": 0.0,
+			  "charge_shoot_trigger": 1.0,
+			  "attack_interval_min": 1.0,
+			  "attack_interval_max": 1.0,
+			  "attack_radius": 64.0
+			},
+			"minecraft:follow_range": {
+				"value": 64,
+				"max": 64
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 0,
+				"within_radius": 64,
+				"reselect_targets": true,
+				"entity_types": [
+					{
+						"filters": {
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "player"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "snowgolem"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "irongolem"
+								}
+							]
+						},
+						"max_dist": 64
+					},
+					{
+						"filters": {
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "villager"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "wandering_trader"
+								}
+							]
+						},
+						"max_dist": 64,
+						"must_see": false
+					}
+				],
+				"must_see": true
+			},
+			"minecraft:behavior.random_stroll": {
+				"priority": 5,
+				"speed_multiplier": 1
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 6,
+				"look_distance": 8
+			},
+			"minecraft:behavior.random_look_around": {
+				"priority": 6
+			}
+		},
+		"events": {
+		}
+	}
+}

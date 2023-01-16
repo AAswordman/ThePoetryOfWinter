@@ -15,6 +15,10 @@
           "min_size": 1,
           "max_size": 2
         },
+        "minecraft:density_limit": {
+          "surface": 7,
+          "underground": 0
+        },
         "minecraft:biome_filter": [
           { "test": "has_biome_tag", "operator": "==", "value": "soulsand_valley" }
         ]

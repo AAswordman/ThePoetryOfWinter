@@ -24,7 +24,7 @@
       "animation_controllers": [
         { "move": "controller.animation.snowgolem.move" }
       ],
-      "render_controllers": [ "controller.render.snowgolem" ]
+      "render_controllers": [ "controller.render.dark_snow_man" ]
     }
   }
 }

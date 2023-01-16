@@ -1,0 +1,33 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:ender_breath",
+      "materials": {
+        "default": "snowball"
+      },
+      "textures": {
+        "default": "textures/entity/empty"
+      },
+      "geometry": {
+        "default": "geometry.item_sprite"
+      },
+      "render_controllers": [
+        "controller.render.item_sprite"
+      ],
+      "animations": {
+        "flying": "animation.actor.billboard",
+        "ender_snake_base_pose_controller": "controller.animation.ender_snake.base_pose"
+      },
+      "particle_effects": {
+        "snake_body": "dec:ender_breath_fireball_particle"
+      },
+      "scripts": {
+        "animate": [
+          "flying",
+          "ender_snake_base_pose_controller"
+        ]
+      }
+    }
+  }
+}

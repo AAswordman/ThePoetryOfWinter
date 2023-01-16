@@ -22,7 +22,7 @@ export default class ExEntityEvents {
     _unsubscribe(arg0, callback) {
         ExEntityEvents.eventHandlers.unsubscribe(this._ctrl.entity, arg0, callback);
     }
-    unsubscribeAll() {
+    cancelAll() {
         ExEntityEvents.eventHandlers.unsubscribeAll(this._ctrl.entity);
     }
     static init(s) {

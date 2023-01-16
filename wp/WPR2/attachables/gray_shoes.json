@@ -8,11 +8,11 @@
         "enchanted": "armor_enchanted"
       },
       "textures": {
-        "default": "textures/models/armor/vindicator_1",
+        "default": "textures/models/armor/grey_shoes",
         "enchanted": "textures/misc/enchanted_item_glint"
       },
       "geometry": {
-        "default": "geometry.humanoid.armor.boots"
+        "default": "geometry.clothes"
       },
       "scripts": {
         "parent_setup": "variable.boot_layer_visible = 0.0;"

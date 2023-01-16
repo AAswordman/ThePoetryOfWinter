@@ -50,6 +50,9 @@
       },
 	  "minecraft:nameable": {
 	  },
+    "minecraft:despawn": {
+      "despawn_from_distance": {}
+    },
     "minecraft:loot": {
       "table": "loot_tables/entities/soul_insect.json"
     },

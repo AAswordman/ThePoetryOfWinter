@@ -1,0 +1,25 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "nature",
+      "identifier": "dec:bizarre_chilli_seeds"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.seed"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:bizarre_chilli_seeds.name"
+      },
+      "minecraft:icon": {
+        "texture": "bizarre_chilli_seeds"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "cookie",
+      "minecraft:block_placer": {
+        "block": "dec:bizarre_chilli_crop"
+      }
+    }
+  }
+}

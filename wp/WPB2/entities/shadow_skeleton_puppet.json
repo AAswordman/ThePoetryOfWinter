@@ -11,7 +11,7 @@
 		"component_groups": {
 			"minecraft:timer": {
 				"minecraft:explode": {
-					"fuseLength": 20,
+					"fuseLength": 10,
 					"fuseLit": true,
 					"power": 0,
 					"causesFire": false
@@ -22,15 +22,15 @@
 			"minecraft:behavior.hurt_by_target": {
 				"priority": 1,
 				"entity_types": {
-				  "filters": {
-					"test": "is_family",
-					"subject": "other",
-					"operator": "!=",
-					"value": "shadow"
-				  },
-				  "max_dist": 64
+					"filters": {
+						"test": "is_family",
+						"subject": "other",
+						"operator": "!=",
+						"value": "shadow"
+					},
+					"max_dist": 64
 				}
-			  },
+			},
 			"minecraft:damage_sensor": {
 				"triggers": [
 					{
@@ -72,6 +72,9 @@
 					"puppet"
 				]
 			},
+			"minecraft:despawn": {
+				"despawn_from_distance": {}
+			},
 			"minecraft:breathable": {
 				"total_supply": 15,
 				"suffocate_time": 0,
@@ -104,38 +107,11 @@
 			"minecraft:jump.static": {},
 			"minecraft:can_climb": {},
 			"minecraft:nameable": {},
-			"minecraft:equipment": {
-				"table": "loot_tables/entities/skeleton_gear.json",
-				"slot_drop_chance": [
-				  {
-					"slot": "slot.weapon.mainhand",
-					"drop_chance": 0
-				  },
-				  {
-					"slot": "slot.armor.head",
-					"drop_chance": 0
-				  },
-				  {
-					"slot": "slot.armor.chestplate",
-					"drop_chance": 0
-				  },
-				  {
-					"slot": "slot.armor.leggings",
-					"drop_chance": 0
-				  },
-				  {
-					"slot": "slot.armor.boots",
-					"drop_chance": 0
-				  }
-				]
-			},
 			"minecraft:shooter": {
-				"type": "Arrow",
-				"def": "minecraft:arrow",
-				"auxVal": 25
+				"def": "dec:ender_breath"
 			},
 			"minecraft:behavior.ranged_attack": {
-				"attack_interval_min": 1,
+				"attack_interval_min": 3,
 				"attack_interval_max": 3,
 				"attack_radius": 64
 			},

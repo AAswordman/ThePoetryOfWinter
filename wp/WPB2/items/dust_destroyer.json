@@ -37,7 +37,7 @@
         }
       },
       "minecraft:cooldown": {
-        "category": "weapon",
+        "category": "dust_destroyer",
         "duration": 0.1
       },
       "minecraft:durability": {
@@ -89,8 +89,7 @@
               {
                 "run_command": {
                   "command": [
-                    "scoreboard players remove @s wbfl 1",
-                    "execute @s[scores={wbfl=1..}] ~~~ summon dec:wither_cloud ^^^5"
+                    "function item/dust_destroyer"
                   ],
                   "target": "holder"
                 }

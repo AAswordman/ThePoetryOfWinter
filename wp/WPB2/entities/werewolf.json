@@ -14,6 +14,22 @@
       }
     },
     "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "minecraft:from_night_event": {
+        "minecraft:environment_sensor": {
+          "triggers": {
+            "filters": {
+              "test": "is_daytime",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "event": "minecraft:despawn"
+          }
+        }
+      },
       "minecraft:zombie_baby": {
         "minecraft:is_baby": {},
         "minecraft:scale": {
@@ -64,6 +80,9 @@
       "minecraft:collision_box": {
         "width": 0.6,
         "height": 1.9
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
       },
       "minecraft:movement.basic": {
       },
@@ -199,6 +218,21 @@
     },
 
     "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
+      "minecraft:from_night_event": {
+        "trigger": "minecraft:entity_spawned",
+        "add": {
+          "component_groups": [
+            "minecraft:from_night_event"
+          ]
+        }
+      },
       "minecraft:entity_spawned": {
         "randomize": [
           {

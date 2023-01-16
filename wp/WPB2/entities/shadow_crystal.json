@@ -1,0 +1,90 @@
+ {
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:shadow_crystal",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "shadow_crystal"
+        ]
+      },
+      "animations": {
+        "shadow_crystal": "animation.shadow_crystal"
+      }
+    },
+    "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "minecraft:start_judge": {
+        "minecraft:timer": {
+          "looping": false,
+          "time": 1,
+          "time_down_event": {
+            "event": "minecraft:success_judge"
+          }
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "boss"
+        ]
+      },
+      "minecraft:health": {
+        "value": 100000,
+        "max": 100000
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": false
+      },
+      "minecraft:collision_box": {
+        "width": 0,
+        "height": 0
+      },
+      "minecraft:boss": {
+        "should_darken_sky": false,
+        "name": "event.dec:shadow_crystal.name",
+        "hud_range": 64
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "minecraft:start_judge"
+          ]
+        },
+        "run_command": {
+          "command": [
+            "execute if block ~~-1~ dec:purpur_summoner if block ~-1~-1~ purpur_stairs 0 if block ~1~-1~ purpur_stairs 1 if block ~~-1~-1 purpur_stairs 2 if block ~~-1~1 purpur_stairs 3 if block ~1~-1~1 stone_block_slab3 0 if block ~1~-1~-1 stone_block_slab3 0 if block ~-1~-1~1 stone_block_slab3 0 if block ~-1~-1~-1 stone_block_slab3 0 if block ~~-2~ reinforced_deepslate 0 run tag @s add success"
+          ]
+        }
+      },
+      "minecraft:success_judge": {
+        "run_command": {
+          "command": [
+            "execute if entity @s[tag=!success] run loot spawn ~~~ loot \"entities/shadow_crystal_fail\" mainhand",
+            "execute if entity @s[tag=!success] run tellraw @a[r=7] { \"rawtext\" : [ { \"translate\" : \"text.dec:shadow_crystal_fail.name\" } ] }",
+            "kill @s[tag=!success]"
+          ]
+        }
+      },
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      }
+    }
+  }
+}

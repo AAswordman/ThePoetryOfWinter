@@ -1,107 +1,30 @@
 {
-  "format_version": "1.16.0",
-  "minecraft:entity": {
-    "description": {
-      "identifier": "dec:everlasting_winter_ghast_1",
-      "runtime_identifier": "minecraft:ghast",
-      "is_spawnable": false,
-      "is_summonable": true,
-      "is_experimental": false
-    },
-    "component_groups": {
-      "minecraft:angry": {
-        "minecraft:boss": {
-          "should_darken_sky": false,
-          "name": "boss.dec:everlasting_winter_ghast_angry.name",
-          "hud_range": 64
-        },
-        "minecraft:health": {
-          "value": 900,
-          "max": 900
-        }
+	"format_version": "1.13.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "dec:everlasting_winter_ghast_1",
+			"runtime_identifier": "minecraft:ghast",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+      "scripts": {
+        "animate": [
+          "teleport"
+        ]
       },
-      "minecraft:summon": {
-        "minecraft:timer": {
-          "looping": false,
-          "time": 6,
-          "time_down_event": {
-            "event": "minecraft:single"
-          }
-        },
-        "minecraft:behavior.summon_entity": {
-          "priority": 2,
-          "summon_choices": [
-            {
-              "weight": 2,
-              "cooldown_time": 0.0,
-              "cast_duration": 5.0,
-              "particle_color": "#FFB3B3CC",
-              "sequence": [
-                {
-                  "shape": "circle",
-                  "target": "self",
-                  "base_delay": 0.0,
-                  "num_entities_spawned": 1,
-                  "entity_type": "dec:frozen_ghast",
-                  "summon_cap": 8,
-                  "summon_cap_radius": 64.0,
-                  "size": 3.0,
-                  "sound_event": "prepare.summon",
-                  "entity_lifespan": 40
-                }
-              ]
-            }
-          ]
-        }
-      },
-      "minecraft:repeat": {
-        "minecraft:timer": {
-          "looping": false,
-          "time": 5,
-          "time_down_event": {
-            "event": "minecraft:summon"
-          }
-        },
-        "minecraft:shooter": {
-          "def": "dec:frozen_ball_inaccurated"
-        },
-        "minecraft:behavior.ranged_attack": {
-          "priority": 4,
-          "burst_shots": 20,
-          "burst_interval": 0.01,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 1.0,
-          "attack_interval_min": 1.0,
-          "attack_interval_max": 1.0,
-          "attack_radius": 64.0
-        }
-      },
-      "minecraft:single": {
-        "minecraft:timer": {
-          "looping": false,
-          "time": 15,
-          "time_down_event": {
-            "event": "minecraft:repeat"
-          }
-        },
-        "minecraft:shooter": {
-          "def": "dec:frozen_ball"
-        },
-        "minecraft:behavior.ranged_attack": {
-          "priority": 4,
-          "burst_shots": 20,
-          "burst_interval": 0.2,
-          "charge_charged_trigger": 0.0,
-          "charge_shoot_trigger": 4.0,
-          "attack_interval_min": 2.0,
-          "attack_interval_max": 2.0,
-          "attack_radius": 64.0
-        }
+      "animations": {
+        "teleport": "animation.everlasting_winter_ghast_1.teleport"
       }
-    },
-    "components": {
-      "minecraft:loot": {
-        "table": "loot_tables/entities/everlasting_winter_ghast.json"
+		},
+		"component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      }
+		},
+		"components": {
+      "minecraft:on_death": {
+        "event": "minecraft:die",
+        "target": "self"
       },
       "minecraft:scale_by_age": {
         "start_scale": 0.2,
@@ -113,6 +36,13 @@
       "minecraft:knockback_resistance": {
         "value": 1
       },
+			"minecraft:physics": {
+				"has_gravity": false
+			},
+      "minecraft:collision_box": {
+        "width": 5,
+        "height": 5
+      },
       "minecraft:boss": {
         "should_darken_sky": true,
         "name": "boss.dec:everlasting_winter_ghast.name",
@@ -121,31 +51,7 @@
       "minecraft:experience_reward": {
         "on_death": "query.last_hit_by_player ? 500 : 0"
       },
-      "minecraft:breathable": {
-        "total_supply": 15,
-        "suffocate_time": 0
-      },
       "minecraft:fire_immune": {},
-      "minecraft:nameable": {},
-      "minecraft:health": {
-        "value": 150,
-        "max": 150
-      },
-      "minecraft:collision_box": {
-        "width": 5,
-        "height": 5
-      },
-      "minecraft:movement": {
-        "value": 0.02
-      },
-      "minecraft:navigation.float": {
-        "can_path_over_water": true
-      },
-      "minecraft:behavior.float_wander": {
-        "priority": 2,
-        "must_reach": true
-      },
-      "minecraft:can_fly": {},
       "minecraft:type_family": {
         "family": [
           "monster",
@@ -155,6 +61,21 @@
           "mob",
           "frozen"
         ]
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {
+          "min_distance": 64,
+          "max_distance": 64
+        }
+      },
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": 0,
+				"breathes_water": true
+			},
+      "minecraft:health": {
+        "value": 350,
+        "max": 350
       },
       "minecraft:damage_sensor": {
         "triggers": [
@@ -174,20 +95,80 @@
           }
         ]
       },
-      "minecraft:jump.static": {},
-      "minecraft:despawn": {
-        "despawn_from_distance": {
-          "min_distance": 256,
-          "max_distance": 256
-        }
+			"minecraft:navigation.walk": {
+				"is_amphibious": true,
+				"avoid_sun": true,
+				"avoid_water": true
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:jump.static": {},
+			"minecraft:can_climb": {},
+			"minecraft:nameable": {},
+			"minecraft:shooter": {
+				"def": "dec:frozen_ball"
+			},
+      "minecraft:behavior.ranged_attack": {
+        "priority": 4,
+        "burst_shots": 10,
+        "burst_interval": 0.4,
+        "charge_charged_trigger": 0.0,
+        "charge_shoot_trigger": 4.0,
+        "attack_interval_min": 2.0,
+        "attack_interval_max": 2.0,
+        "attack_radius": 64.0
       },
-      "minecraft:behavior.float": {
-        "priority": 0
-      },
-      "minecraft:follow_range": {
-        "value": 256,
-        "max": 256
-      },
+			"minecraft:follow_range": {
+				"value": 64,
+				"max": 64
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 0,
+				"within_radius": 64,
+				"reselect_targets": true,
+				"entity_types": [
+					{
+						"filters": {
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "player"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "snowgolem"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "irongolem"
+								}
+							]
+						},
+						"max_dist": 64
+					},
+					{
+						"filters": {
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "villager"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "wandering_trader"
+								}
+							]
+						},
+						"max_dist": 64,
+						"must_see": false
+					}
+				],
+				"must_see": true
+			},
       "minecraft:behavior.hurt_by_target": {
         "priority": 1,
         "entity_types": {
@@ -200,141 +181,196 @@
           "max_dist": 64
         }
       },
-      "minecraft:behavior.nearest_attackable_target": {
-        "priority": 2,
-        "entity_types": [
+			"minecraft:behavior.look_at_player": {
+				"priority": 6,
+				"look_distance": 8
+			},
+			"minecraft:behavior.random_look_around": {
+				"priority": 6
+			}
+		},
+    "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
+      "minecraft:die": {
+        "run_command": {
+          "command": [
+            "event entity @e[type=dec:everlasting_winter_ghast_anchor,c=1] minecraft:die"
+          ]
+        }
+      },
+      "minecraft:entity_spawned": {
+        "run_command": {
+          "command": [
+            "particle dec:frozen_shield_particle ~~~"
+          ]
+        },
+        "randomize": [
           {
-            "filters": {
-              "any_of": [
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "player"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "snowgolem"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "irongolem"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "wandering_trader"
-                }
+            "weight": 1,
+            "add": {
+              "component_groups": [
+                "minecraft:teleport_zone_1"
               ]
             },
-            "max_dist": 256
-          }
-        ],
-        "must_see": true
-      },
-      "minecraft:physics": {},
-      "minecraft:pushable": {
-        "is_pushable": true,
-        "is_pushable_by_piston": true
-      }
-    },
-    "events": {
-      "minecraft:entity_spawned": {
-        "sequence": [
-          {
-            "randomize": [
-              {
-                "weight": 1,
-                "sequence": [
-                  {
-                    "randomize": [
-                      {
-                        "weight": 1,
-                        "add": {
-                          "component_groups": [
-                            "minecraft:summon"
-                          ]
-                        }
-                      },
-                      {
-                        "weight": 1,
-                        "add": {
-                          "component_groups": [
-                            "minecraft:single"
-                          ]
-                        }
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
+            "trigger": "minecraft:teleport_to_1"
           },
           {
-            "filters": {
-              "test": "has_biome_tag",
-              "operator": "!=",
-              "value": "frozen"
+            "weight": 1,
+            "add": {
+              "component_groups": [
+                "minecraft:teleport_zone_2"
+              ]
             },
-            "randomize": [
-              {
-                "add": {
-                  "component_groups": [
-                    "minecraft:angry"
-                  ]
-                }
-              }
-            ]
-          },
+            "trigger": "minecraft:teleport_to_2"
+          }
+        ]
+      },
+      "minecraft:teleport_to_2": {
+        "randomize": [
           {
+            "weight": 1,
             "run_command": {
               "command": [
-                "particle dec:frozen_shield_particle ~~~"
+                "execute at @e[type=dec:everlasting_winter_ghast_anchor,c=1] run tp ~20~13~20"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "execute at @e[type=dec:everlasting_winter_ghast_anchor,c=1] run tp ~-20~13~20"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "execute at @e[type=dec:everlasting_winter_ghast_anchor,c=1] run tp ~18~16~"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "execute at @e[type=dec:everlasting_winter_ghast_anchor,c=1] run tp ~~16~18"
               ]
             }
           }
         ]
       },
-      "minecraft:single": {
-        "remove": {
-          "component_groups": [
-            "minecraft:repeat",
-            "minecraft:summon"
-          ]
-        },
-        "add": {
-          "component_groups": [
-            "minecraft:single"
-          ]
-        }
-      },
-      "minecraft:repeat": {
-        "remove": {
-          "component_groups": [
-            "minecraft:single",
-            "minecraft:summon"
-          ]
-        },
-        "add": {
-          "component_groups": [
-            "minecraft:repeat"
-          ]
-        }
+      "minecraft:teleport_to_1": {
+        "randomize": [
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "execute at @e[type=dec:everlasting_winter_ghast_anchor,c=1] run tp ~-20~13~-20"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "execute at @e[type=dec:everlasting_winter_ghast_anchor,c=1] run tp ~20~13~-20"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "execute at @e[type=dec:everlasting_winter_ghast_anchor,c=1] run tp ~-18~16~"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "execute at @e[type=dec:everlasting_winter_ghast_anchor,c=1] run tp ~~16~-18"
+              ]
+            }
+          }
+        ]
       },
       "minecraft:summon": {
-        "remove": {
-          "component_groups": [
-            "minecraft:single",
-            "minecraft:repeat"
-          ]
-        },
-        "add": {
-          "component_groups": [
-            "minecraft:summon"
-          ]
-        }
+        "randomize": [
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "summon dec:frozen_shadow ^6^^"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "summon dec:frozen_shadow ^-6^^"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "summon dec:frozen_shadow ^^6^"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "summon dec:frozen_shadow ^^-6^"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "summon dec:frozen_ghast ^6^^ minecraft:from_boss"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "summon dec:frozen_ghast ^-6^^ minecraft:from_boss"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "summon dec:frozen_ghast ^^6^ minecraft:from_boss"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "summon dec:frozen_ghast ^^-6^ minecraft:from_boss"
+              ]
+            }
+          }
+        ]
       }
     }
-  }
+	}
 }

@@ -5,8 +5,8 @@
       "identifier": "dec:flowing_block_2"
     },
     "components": {
-      "minecraft:block_light_absorption": 1,
-      "minecraft:block_light_emission": 0.4,
+      "minecraft:light_dampening": 15,
+      "minecraft:light_emission": 4,
       "minecraft:destroy_time": 3,
       "minecraft:explosion_resistance": 100,
       "minecraft:loot": "loot_tables/blocks/flowing_block.json",

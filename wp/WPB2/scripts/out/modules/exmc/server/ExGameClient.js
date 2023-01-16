@@ -111,7 +111,7 @@ export default class ExGameClient {
     onLoaded() {
     }
     onLeave() {
-        this._events.unsubscribeAll();
+        this._events.cancelAll();
     }
     getEvents() {
         return this._events;

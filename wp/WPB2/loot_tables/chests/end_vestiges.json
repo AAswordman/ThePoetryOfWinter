@@ -39,6 +39,21 @@
       "entries": [
         {
           "type": "item",
+          "name": "dec:amethyst_ray_staff",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "dec:iron_staff",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "dec:wind_of_shadow",
+          "weight": 1
+        },
+        {
+          "type": "item",
           "name": "minecraft:saddle",
           "weight": 3
         },
@@ -55,6 +70,20 @@
         {
           "type": "item",
           "name": "minecraft:horsearmordiamond",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 3,
+                "max": 7
+              }
+            }
+          ],
+          "name": "dec:dragon_fireball_by_player",
           "weight": 1
         },
         {
@@ -275,6 +304,53 @@
         "max": 8
       },
       "entries": [
+        {
+          "type": "item",
+          "name": "dec:shadow_crystal",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 31,
+                "max": 69
+              }
+            }
+          ],
+          "name": "dec:magic_powder",
+          "weight": 9
+        },
+        {
+          "type": "item",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 2,
+                "max": 9
+              }
+            }
+          ],
+          "name": "dec:ender_bone",
+          "weight": 2
+        },
+        {
+          "type": "item",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 7,
+                "max": 15
+              }
+            }
+          ],
+          "name": "minecraft:amethyst_shard",
+          "weight": 2
+        },
         {
           "type": "item",
           "functions": [

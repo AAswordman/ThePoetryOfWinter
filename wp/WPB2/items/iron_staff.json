@@ -1,7 +1,7 @@
 {
   "format_version": "1.16.100",
   "minecraft:item": {
-	"description": {
+    "description": {
       "category": "equipment",
       "identifier": "dec:iron_staff"
     },
@@ -12,9 +12,9 @@
       "minecraft:display_name": {
         "value": "item.dec:iron_staff.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "iron_staff"
-     },
+      },
       "minecraft:use_animation": "bow",
       "minecraft:render_offsets": "bow",
       "minecraft:stacked_by_data": false,
@@ -28,7 +28,7 @@
         }
       },
       "minecraft:cooldown": {
-        "category": "weapon",
+        "category": "staff",
         "duration": 1.25
       },
       "minecraft:durability": {
@@ -61,7 +61,7 @@
       "shoot": {
         "sequence": [
           {
-            "condition": "query.scoreboard('wbfl') > 5",
+            "condition": "query.scoreboard('wbfl') > 4",
             "sequence": [
               {
                 "run_command": {
@@ -89,5 +89,5 @@
         ]
       }
     }
-	}
+  }
 }

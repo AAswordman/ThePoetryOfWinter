@@ -1,4 +1,13 @@
-import { MinecraftDimensionTypes, MinecraftEntityTypes, MinecraftBlockTypes } from '@minecraft/server';
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+import { MinecraftDimensionTypes, MinecraftEntityTypes, MinecraftBlockTypes, EntityHurtEvent, EntityDamageCause } from '@minecraft/server';
 import { Objective } from "../../modules/exmc/server/entity/ExScoresManager.js";
 import ExDimension from "../../modules/exmc/server/ExDimension.js";
 import ExGameConfig from "../../modules/exmc/server/ExGameConfig.js";
@@ -17,12 +26,17 @@ import ExGameVector3 from '../../modules/exmc/server/math/ExGameVector3.js';
 import ExEntity from '../../modules/exmc/server/entity/ExEntity.js';
 import { GameMode } from '@minecraft/server';
 import PomMagicStoneBoss from './entities/PomMagicStoneBoss.js';
+import { registerEvent } from '../../modules/exmc/server/events/EventDecoratorFactory.js';
+import damageShow from './helper/damageShow.js';
 export default class PomServer extends ExGameServer {
     constructor(config) {
         super(config);
         this.tps = 20;
         this._mtps = 20;
+        //虚拟玩家
+        this.fakeplayers = [];
         this.setting = new GlobalSettings(new Objective("wpsetting"));
+        //实体清理
         (this.clearEntityNumUpdate = new TimeLoopTask(this.getEvents(), () => {
             this.updateClearEntityNum();
         }).delay(10000)).start();
@@ -73,6 +87,7 @@ export default class PomServer extends ExGameServer {
             ticks++;
         });
         this.tpsListener.start();
+        //沙漠遗迹
         this.portal_desertBoss = new ExBlockStructureNormal();
         this.portal_desertBoss.setDirection(ExBlockStructureNormal.DIRECTION_LAY)
             .setStructure([
@@ -189,7 +204,14 @@ export default class PomServer extends ExGameServer {
             }
         }).delay(20 * 12);
         this.ruinFuncLooper.start();
+        //实体监听
         this.addEntityController("wb:magic_stoneman", PomMagicStoneBoss);
+        // gt.register("Pom", "fakeplayer", (test) => {
+        //     this.fakeplayers.push(new PomFakePlayer(
+        //         test.spawnSimulatedPlayer(this.fakePlayerSpawnLoc, "Steve1025", GameMode.survival), this)
+        //     );
+        // })
+        //     .structureName("pom:camp_fire");
     }
     sayTo(str) {
         this.getExDimension(MinecraftDimensionTypes.theEnd).command.run(`tellraw @a {"rawtext": [{"text": "${str}"}]}`);
@@ -207,8 +229,23 @@ export default class PomServer extends ExGameServer {
             this.entityCleaner.stop();
         }
     }
+    // fakePlayerSpawnLoc = new BlockLocation(0, 0, 0);
+    // @registerEvent<PomServer>("chat", (server, e: ChatEvent) => e.message === "create")
+    // createFakePlayer(e: ChatEvent) {
+    //     this.fakePlayerSpawnLoc = new BlockLocation(e.sender.location.x, e.sender.location.y, e.sender.location.z);
+    //     ExPlayer.getInstance(e.sender).command.run("gametest run Pom:fakeplayer")
+    // }
+    damageShow(e) {
+        damageShow(ExDimension.getInstance(e.hurtEntity.dimension), e.damage, e.hurtEntity.location);
+    }
     newClient(id, player) {
         return new PomClient(this, id, player);
     }
 }
+__decorate([
+    registerEvent("entityHurt", (server, e) => server.setting.damageShow && e.cause !== EntityDamageCause.suicide),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [EntityHurtEvent]),
+    __metadata("design:returntype", void 0)
+], PomServer.prototype, "damageShow", null);
 //# sourceMappingURL=PomServer.js.map

@@ -8,11 +8,11 @@
         "enchanted": "armor_enchanted"
       },
       "textures": {
-        "default": "textures/models/armor/vindicator_2",
+        "default": "textures/models/armor/striped_pants",
         "enchanted": "textures/misc/enchanted_item_glint"
       },
       "geometry": {
-        "default": "geometry.humanoid.armor.leggings"
+        "default": "geometry.clothes"
       },
       "scripts": {
         "parent_setup": "variable.leg_layer_visible = 0.0;"

@@ -82,6 +82,9 @@
       "minecraft:type_family": {
         "family": [ "elf_of_chaos", "monster", "undead", "ash" ]
       },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
       "minecraft:nameable": {
       },
       "minecraft:health": {

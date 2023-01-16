@@ -1,0 +1,33 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:crying_leggings"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "BXB",
+      "A A",
+      "C C"
+    ],
+    "key": {
+      "X": {
+        "item": "minecraft:amethyst_shard"
+      },
+      "A": {
+        "item": "minecraft:crying_obsidian"
+      },
+      "B": {
+        "item": "dec:steel_ingot"
+      },
+      "C": {
+        "item": "dec:ender_bone"
+      }
+    },
+    "result": {
+      "item": "dec:crying_leggings"
+    }
+  }
+}

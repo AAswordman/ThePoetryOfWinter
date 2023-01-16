@@ -58,6 +58,9 @@
     },
 
     "components": {
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
       "minecraft:experience_reward": {
         "on_death": "query.last_hit_by_player ? 5 + (query.equipment_count * Math.Random(2,4)) : 0"
       },
@@ -227,6 +230,8 @@
         "priority": 6
       },
       "minecraft:physics": {
+      },
+      "minecraft:burns_in_daylight": {
       },
       "minecraft:pushable": {
         "is_pushable": true,

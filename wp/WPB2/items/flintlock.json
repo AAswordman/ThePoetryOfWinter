@@ -1,14 +1,14 @@
 {
   "format_version": "1.16.100",
   "minecraft:item": {
-	    "description": {
+    "description": {
       "category": "equipment",
       "identifier": "dec:flintlock"
     },
     "components": {
-      "minecraft:fuel" : {
-        "duration" : 10.0
-     },
+      "minecraft:fuel": {
+        "duration": 10.0
+      },
       "minecraft:creative_category": {
         "parent": "itemGroup.name.sword"
       },
@@ -25,8 +25,8 @@
       "minecraft:foil": false,
       "minecraft:hand_equipped": true,
       "minecraft:cooldown": {
-        "category": "weapon",
-        "duration": 3
+        "category": "gun",
+        "duration": 6
       },
       "minecraft:durability": {
         "max_durability": 230
@@ -83,5 +83,5 @@
         ]
       }
     }
-	}
+  }
 }

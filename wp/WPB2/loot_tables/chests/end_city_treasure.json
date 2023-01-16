@@ -8,88 +8,93 @@
       "entries": [
         {
           "type": "item",
-          "functions": [
-              {
-                  "function": "set_count",
-                  "count": {
-                      "min": 1,
-                      "max": 2
-                  }
-              }
-          ],
-          "name": "dec:iron_apple_enchanted",
-          "weight": 5
-      },
-      {
-        "type": "item",
-        "functions": [
-            {
-                "function": "set_count",
-                "count": {
-                    "min": 1,
-                    "max": 2
-                }
-            }
-        ],
-        "name": "dec:diamond_apple_enchanted",
-        "weight": 5
-    },
-    {
-      "type": "item",
-      "functions": [
-          {
-              "function": "set_count",
-              "count": {
-                  "min": 1,
-                  "max": 2
-              }
-          }
-      ],
-      "name": "dec:emerald_apple_enchanted",
-      "weight": 5
-  },
+          "name": "dec:shadow_crystal",
+          "weight": 1
+        },
         {
           "type": "item",
           "functions": [
-              {
-                  "function": "set_count",
-                  "count": {
-                      "min": 4,
-                      "max": 9
-                  }
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 2
               }
+            }
+          ],
+          "name": "dec:iron_apple_enchanted",
+          "weight": 5
+        },
+        {
+          "type": "item",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 2
+              }
+            }
+          ],
+          "name": "dec:diamond_apple_enchanted",
+          "weight": 5
+        },
+        {
+          "type": "item",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 2
+              }
+            }
+          ],
+          "name": "dec:emerald_apple_enchanted",
+          "weight": 5
+        },
+        {
+          "type": "item",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 4,
+                "max": 9
+              }
+            }
           ],
           "name": "dec:red_gem_debris",
           "weight": 5
-      },
-      {
+        },
+        {
           "type": "item",
           "functions": [
-              {
-                  "function": "set_count",
-                  "count": {
-                      "min": 5,
-                      "max": 11
-                  }
+            {
+              "function": "set_count",
+              "count": {
+                "min": 5,
+                "max": 11
               }
+            }
           ],
           "name": "dec:blue_gem_debris",
           "weight": 5
-      },
-      {
-        "type": "item",
-        "functions": [
+        },
+        {
+          "type": "item",
+          "functions": [
             {
-                "function": "set_count",
-                "count": {
-                    "min": 1,
-                    "max": 1
-                }
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
             }
-        ],
-        "name": "dec:magic_crystal",
-        "weight": 10
-    },
+          ],
+          "name": "dec:magic_crystal",
+          "weight": 10
+        },
         {
           "type": "item",
           "name": "dec:unknow_book",

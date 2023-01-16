@@ -12,10 +12,10 @@
       "minecraft:display_name": {
         "value": "item.dec:iron_stick.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "iron_stick"
-     },
-	  "minecraft:use_animation": "eat",
+      },
+      "minecraft:use_animation": "eat",
       "minecraft:render_offsets": "cookie"
     }
   }

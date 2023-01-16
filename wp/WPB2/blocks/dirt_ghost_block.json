@@ -1,0 +1,42 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:block": {
+    "description": {
+      "identifier": "dec:dirt_ghost_block"
+    },
+    "components": {
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "dirt_ghost_block",
+          "render_method": "blend"
+        }
+      },
+      "minecraft:loot": "loot_tables/empty.json",
+      "minecraft:light_dampening": 0,
+      "minecraft:light_emission": 0,
+      "minecraft:destroy_time": 0.01,
+      "minecraft:explosion_resistance": 0,
+      "minecraft:map_color": "#704527",
+      "minecraft:ticking": {
+        "looping": true,
+        "range": [
+          4,
+          7
+        ],
+        "on_tick": {
+          "event": "minecraft:disappear"
+        }
+      }
+    },
+    "events": {
+      "minecraft:disappear": {
+        "run_command": {
+          "command": [
+            "playsound dig.gravel @a ~~~",
+            "setblock ~~~ air 0 destroy"
+          ]
+        }
+      }
+    }
+  }
+}

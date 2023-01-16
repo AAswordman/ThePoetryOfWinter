@@ -16,21 +16,21 @@
         "texture": "emerald_sword"
       },
       "minecraft:repairable": {
-				"repair_items": [
-					{
-						"items": [
-							"minecraft:emerald"
-						],
-						"repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.3"
-					},
-					{
-						"items": [
-							"dec:emerald_nugget"
-						],
-						"repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.03"
-					}
-				]
-			},
+        "repair_items": [
+          {
+            "items": [
+              "minecraft:emerald"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.3"
+          },
+          {
+            "items": [
+              "dec:emerald_nugget"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.03"
+          }
+        ]
+      },
       "minecraft:weapon": {
         "on_hurt_entity": {
           "event": "attack",

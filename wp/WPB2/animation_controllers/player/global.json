@@ -1,32 +1,6 @@
 {
   "format_version": "1.8.0",
   "animation_controllers": {
-    "controller.animation.player.wb.global.die": {
-      "states": {
-        "default": {
-          "transitions": [
-            {
-              "die": "query.health<=0"
-            }
-          ]
-        },
-        "die": {
-          "on_entry":[
-              "/execute as @s[tag=!wbdie] at @s run summon dec:gravestone 墓碑 ~~~",
-              "/execute as @s[tag=!wbdie,tag=!diemode] at @s run summon dec:player_ghost 鬼魂 ~~~",
-              "/execute as @s[tag=!wbdie,tag=diemode] at @s run summon dec:vengeful_ghost 怨魂 ~~~",
-              "/tag @s add alreadydie",
-              "/tag @s add wbdie",
-              "/scoreboard players set @s wbwjswjs 18"
-          ],
-          "transitions": [
-            {
-              "default": "query.health>0"
-            }
-          ]
-        }
-      }
-    },
     "controller.animation.player.wb.global.cooling": {
       "states": {
         "default": {

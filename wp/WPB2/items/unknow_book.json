@@ -30,7 +30,7 @@
         }
       },
       "minecraft:cooldown": {
-        "category": "read",
+        "category": "unknow_book",
         "duration": 1
       }
     },

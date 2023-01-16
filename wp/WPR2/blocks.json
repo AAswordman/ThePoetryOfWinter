@@ -460,8 +460,8 @@
     },
     "sound": "dirt"
   },
-  "dec:christmas_gift": {
-    "textures": "christmas_gift",
+  "dec:christmas_gift_block": {
+    "textures": "christmas_gift_block",
     "sound": "wool"
   },
   "dec:soybean_crop": {
@@ -584,8 +584,8 @@
     "textures": "nether_redstone_ore",
     "sound": "stone"
   },
-  "dec:exprience_flower_crop": {
-    "textures": "exprience_flower_stage_0",
+  "dec:experience_flower_crop": {
+    "textures": "experience_flower_stage_0",
     "sound": "grass"
   },
   "dec:snow_lotus": {
@@ -651,5 +651,109 @@
       "side": "plain_tower_summoner_side"
     },
     "sound": "wood"
+  },
+  "dec:deep_summoner": {
+    "textures": "deep_summoner",
+    "sound": "nether_wart"
+  },
+  "dec:deep_summoner_activated": {
+    "textures": "deep_summoner_activated",
+    "sound": "nether_wart"
+  },
+  "dec:bracken_crop": {
+    "textures": "bracken_crop",
+    "sound": "grass"
+  },
+  "dec:blue_ice_brick_block": {
+    "textures": "blue_ice_brick_block",
+    "sound": "glass"
+  },
+  "dec:ice_bookshelf": {
+    "textures": {
+      "up": "ice_brick_block",
+      "down": "ice_brick_block",
+      "side": "ice_bookshelf_side"
+    },
+    "sound": "glass"
+  },
+  "dec:purpur_summoner": {
+    "textures": {
+      "up": "purpur_summoner_up",
+      "down": "purpur_summoner_up",
+      "side": "purpur_summoner_side"
+    },
+    "sound": "stone"
+  },
+  "dec:dirt_ghost_block": {
+    "textures": "dirt_ghost_block",
+    "sound": "dirt"
+  },
+  "dec:houttuynia_crop": {
+    "textures": "houttuynia_crop_stage_0",
+    "sound": "grass"
+  },
+  "dec:fritillary_crop": {
+    "textures": "fritillary_crop_stage_0",
+    "sound": "grass"
+  },
+  "dec:bizarre_chilli_crop": {
+    "textures": "bizarre_chilli_crop_stage_0",
+    "sound": "grass"
+  },
+  "dec:soul_summoner": {
+    "textures": "soul_summoner",
+    "sound": "stone"
+  },
+  "dec:soul_summoner_activated": {
+    "textures": "soul_summoner_activated",
+    "sound": "stone"
+  },
+  "dec:rotten_flesh_block": {
+    "textures": "rotten_flesh_block",
+    "sound": "dirt"
+  },
+  "dec:bat_summoner": {
+    "textures": "bat_summoner",
+    "sound": "dirt"
+  },
+  "dec:bat_summoner_activated": {
+    "textures": "bat_summoner_activated",
+    "sound": "dirt"
+  },
+  "dec:ghost_ice": {
+    "textures": "ghost_ice",
+    "sound": "glass"
+  },
+  "dec:abyssal_summoner": {
+    "textures": "abyssal_summoner",
+    "sound": "stone"
+  },
+  "dec:abyssal_summoner_locked": {
+    "textures": "abyssal_summoner_locked",
+    "sound": "stone"
+  },
+  "dec:abyssal_summoner_activated": {
+    "textures": "abyssal_summoner_activated",
+    "sound": "stone"
+  },
+  "dec:ice_mixed_brick": {
+    "textures": "ice_mixed_brick",
+    "sound": "glass"
+  },
+  "dec:chiseled_ice_brick": {
+    "textures": "chiseled_ice_brick",
+    "sound": "glass"
+  },
+  "dec:frozen_cage": {
+    "textures": "frozen_cage",
+    "sound": "glass"
+  },
+  "dec:ice_lantern": {
+    "textures": "ice_lantern",
+    "sound": "glass"
+  },
+  "dec:everlasting_winter_summoner_locked": {
+    "textures": "everlasting_winter_summoner_locked",
+    "sound": "stone"
   }
 }

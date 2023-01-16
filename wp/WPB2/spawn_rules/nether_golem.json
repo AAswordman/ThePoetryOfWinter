@@ -7,25 +7,26 @@
     },
     "conditions": [
       {
-        "minecraft:spawns_underground": {
-        },
-
+        "minecraft:spawns_underground": {},
         "minecraft:difficulty_filter": {
           "min": "easy",
           "max": "hard"
         },
-
         "minecraft:weight": {
           "default": 2
         },
-        
         "minecraft:herd": {
           "min_size": 1,
           "max_size": 1
         },
-
-        "minecraft:biome_filter": { 
-          "test": "has_biome_tag", "operator":"==", "value": "nether_wastes"
+        "minecraft:density_limit": {
+          "surface": 3,
+          "underground": 3
+        },
+        "minecraft:biome_filter": {
+          "test": "has_biome_tag",
+          "operator": "==",
+          "value": "nether_wastes"
         }
       }
     ]

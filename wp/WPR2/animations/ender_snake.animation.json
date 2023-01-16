@@ -1,0 +1,50 @@
+{
+	"format_version" : "1.8.0",
+	"animations" : {
+		"animation.ender_snake.base_pose" : {
+			"loop" : true,
+			"bones" : {
+				"head_bone" : {
+					"position" : [ 0.0, 0.0, 0.0 ],
+					"rotation" : [ "query.target_x_rotation", 0.0, 0.0 ]
+				}
+			}
+		},
+		"animation.ender_snake.move": {
+			"loop": true,
+			"bones": {
+				"head_bone": {
+					"rotation": ["math.cos(query.life_time*60)*2", 0, 0],
+					"position": [0, 0, 0]
+				},
+				"jaw": {
+					"rotation": ["5+math.cos(query.life_time*60)*5", 0, 0],
+					"position": [0, 0, 0]
+				},
+				"horn": {
+					"rotation": ["math.cos(query.life_time*180)*6", 0, 0],
+					"position": [0, 0, 0]
+				},
+				"horn2": {
+					"rotation": [0, "math.cos(query.life_time*180)*10", 0],
+					"position": [0, 0, 0]
+				},
+				"horn3": {
+					"rotation": [0, "math.cos(query.life_time*180)*10", 0],
+					"position": [0, 0, 0]
+				}
+			}
+		},
+		"animation.ender_snake.angry": {
+			"loop": true,
+			"bones": {
+				"head_bone": {
+					"rotation": [-27.5, 0, 0]
+				},
+				"jaw": {
+					"rotation": [62.5, 0, 0]
+				}
+			}
+		}
+	}
+}

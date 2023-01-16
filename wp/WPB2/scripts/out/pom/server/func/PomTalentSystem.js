@@ -9,6 +9,7 @@ import TalentData, { Occupation, Talent } from "../cache/TalentData.js";
 import isEquipment from "../items/isEquipment.js";
 import GameController from "./GameController.js";
 import ExGameVector3 from '../../../modules/exmc/server/math/ExGameVector3.js';
+import damageShow from "../helper/damageShow.js";
 export default class PomTalentSystem extends GameController {
     constructor() {
         super(...arguments);
@@ -93,6 +94,9 @@ export default class PomTalentSystem extends GameController {
                 }
             }
             let damage = e.damage * damageFac + extraDamage;
+            if (this.globalSettings.damageShow) {
+                damageShow(this.getExDimension(), damage, target.entity.location);
+            }
             this.hasCauseDamage.forEach(i => i(e.damage + damage));
             target.removeHealth(this, damage);
         });
@@ -112,7 +116,7 @@ export default class PomTalentSystem extends GameController {
                 const lore = new ExColorLoreUtil(e.afterItem);
                 TalentData.calculateTalentToLore(this.data.talent.talents, this.data.talent.occupation, ExItem.getInstance(e.afterItem), this.getLang());
                 if (e.afterItem.typeId.startsWith("dec:"))
-                    lore.set(ExColorLoreUtil.LoreFlag.TAG, "在主手时: +40％攻击伤害");
+                    lore.setTag("在主手时: +40％攻击伤害");
                 bag.setItem(this.exPlayer.selectedSlot, e.afterItem);
                 let maxSingleDamage = parseFloat((_a = lore.getValueUseMap("total", this.getLang().maxSingleDamage)) !== null && _a !== void 0 ? _a : "0");
                 let maxSecondaryDamage = parseFloat((_b = lore.getValueUseMap("total", this.getLang().maxSecondaryDamage)) !== null && _b !== void 0 ? _b : "0");
@@ -120,14 +124,14 @@ export default class PomTalentSystem extends GameController {
                 this.hasCauseDamage.splice(this.hasCauseDamage.indexOf(lastListener), 1);
                 lastListener = (d) => {
                     damage += d;
-                    maxSingleDamage = Math.max(d, maxSingleDamage);
+                    maxSingleDamage = Math.ceil(Math.max(d, maxSingleDamage));
                 };
                 this.hasCauseDamage.push(lastListener);
                 (_c = this.equiTotalTask) === null || _c === void 0 ? void 0 : _c.stop();
                 (this.equiTotalTask = new TimeLoopTask(this.getEvents(), () => {
                     var _a, _b, _c, _d;
                     let shouldUpstate = false;
-                    maxSecondaryDamage = Math.max(maxSecondaryDamage, damage / 5);
+                    maxSecondaryDamage = Math.ceil(Math.max(maxSecondaryDamage, damage / 5));
                     damage = 0;
                     if (((_a = lore.getValueUseMap("total", this.getLang().maxSingleDamage)) !== null && _a !== void 0 ? _a : "0") !== maxSingleDamage + "") {
                         lore.setValueUseMap("total", this.getLang().maxSingleDamage, maxSingleDamage + "");

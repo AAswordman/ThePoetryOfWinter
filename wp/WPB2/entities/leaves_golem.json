@@ -10,7 +10,25 @@
     },
 
     "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      },
       "minecraft:spawn": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "empty_family"
+                }
+              },
+              "deals_damage": false
+            }
+          ]
+        },
         "minecraft:timer": {
           "looping": false,
           "time": 5,
@@ -32,6 +50,21 @@
 		    }
       },
       "minecraft:normal_attack": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "empty_family"
+                }
+              },
+              "deals_damage": true
+            }
+          ]
+        },
           "minecraft:timer": {
             "looping": false,
             "time": 10,
@@ -46,6 +79,21 @@
         }
       },
       "minecraft:roaring": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "empty_family"
+                }
+              },
+              "deals_damage": true
+            }
+          ]
+        },
         "minecraft:spawn_entity": {
           "min_wait_time": 0.9,
           "max_wait_time": 0.9,
@@ -97,9 +145,9 @@
 
     "components": {
       "minecraft:despawn": {
-        "despawn_from_distance": { 
-          "min_distance": 256,
-          "max_distance": 256
+        "despawn_from_distance": {
+          "min_distance": 64,
+          "max_distance": 64
         }
       },
       "minecraft:fire_immune": true,
@@ -244,6 +292,13 @@
     },
 
     "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
       "minecraft:entity_spawned": {
         "sequence": [
           {

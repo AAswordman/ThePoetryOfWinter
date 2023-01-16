@@ -26,16 +26,15 @@
         }
       },
       "minecraft:cooldown": {
-        "category": "magic",
+        "category": "red_gem",
         "duration": 1
       }
-	  },
+    },
     "events": {
       "use": {
         "run_command": {
           "command": [
             "tag @s[scores={maxmagic=10..19}] add clear_red_gem",
-            
             "tellraw @s[scores={maxmagic=0..9}] { \"rawtext\" : [ { \"translate\" : \"text.dec:red_gem_not_enough.name\" } ] }",
             "tellraw @s[scores={maxmagic=10}] { \"rawtext\" : [ { \"translate\" : \"text.dec:uptomm11.name\" } ] }",
             "tellraw @s[scores={maxmagic=11}] { \"rawtext\" : [ { \"translate\" : \"text.dec:uptomm12.name\" } ] }",
@@ -48,7 +47,6 @@
             "tellraw @s[scores={maxmagic=18}] { \"rawtext\" : [ { \"translate\" : \"text.dec:uptomm19.name\" } ] }",
             "tellraw @s[scores={maxmagic=19}] { \"rawtext\" : [ { \"translate\" : \"text.dec:uptomm20.name\" } ] }",
             "tellraw @s[scores={maxmagic=20}] { \"rawtext\" : [ { \"translate\" : \"text.dec:red_gem_max.name\" } ] }",
-
             "scoreboard players add @s[scores={maxmagic=10..19}] maxmagic 1",
             "clear @s[tag=clear_red_gem,scores={maxmagic=..20}] dec:red_gem 0 1",
             "tag @s[scores={maxmagic=..20}] remove clear_red_gem"

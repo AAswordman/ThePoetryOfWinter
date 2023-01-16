@@ -12,7 +12,7 @@ give @s[scores={unknow_book=3}] leaves 4
 tellraw @s[scores={unknow_book=4}] { "rawtext" : [ { "translate" : "他们学着村民，制造了绿叶精华。虽然是植物做的，但是仍然拥有着不比钢差的强度。" } ] }
 
 tellraw @s[scores={unknow_book=5}] { "rawtext" : [ { "translate" : "这难道不是大自然的奇迹吗？" } ] }
-give @s[scores={unknow_book=5}] dec:natura_essence 1
+give @s[scores={unknow_book=5}] dec:nature_essence 1
 
 
 

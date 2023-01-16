@@ -1,5 +1,5 @@
 {
-  "format_version": "1.8.0",
+"format_version": "1.8.0",
   "minecraft:client_entity": {
     "description": {
       "identifier": "dec:shadow_of_deep",
@@ -7,40 +7,28 @@
         "default": "vindicator"
       },
       "textures": {
-        "default": "textures/entity/illager/host_of_deep"      
+        "default": "textures/entity/illager/host_of_deep"
       },
       "geometry": {
-        "default": "geometry.illusioner"
+        "default": "geometry.host_of_deep"
       },
       "scripts": {
-        "pre_animation": [
-          "variable.attack = Math.sin(1.0 - (1.0 - variable.attack_time) * (1.0 - variable.attack_time)) * 180.0;",
-          "variable.attack2 = Math.sin(variable.attack_time * 180.0);"
-        ],
         "scale": "0.9375"
       },
       "animations": {
-        "look_at_target_default": "animation.humanoid.look_at_target.default",
-        "look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
-        "look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
-        "riding.arms": "animation.vindicator.riding.arms",
-        "riding.legs": "animation.vindicator.riding.legs",
-        "vindicator_base": "animation.vindicator.base",
-        "vindicator_attack": "animation.illusioner.crossbow.hold",
-        "crossbow_hold": "animation.pillager.crossbow.hold",
-        "casting": "animation.illusioner.casting",
-        "vindicator_walk": "animation.vindicator.walk"
+        "general": "animation.evoker.general.v1.0",
+        "casting": "animation.evoker.casting.v1.0",
+        "look_at_target": "animation.humanoid.look_at_target.default.v1.0",
+        "move": "animation.villager.move"
       },
       "animation_controllers": [
-        { "look_at_target": "controller.animation.humanoid.look_at_target" },
-        { "vindicator_base": "controller.animation.illusioner.base" },
-        { "riding": "controller.animation.humanoid.riding" },
-        { "casting": "controller.animation.evoker.casting" },
-        { "pillager_attack": "controller.animation.pillager.attack" }
+        { "general": "controller.animation.evoker.general.v1.0" },
+        { "move": "controller.animation.villager.move" }
       ],
-      "render_controllers": [
-        "controller.render.vindicator"
-      ],
+      "particle_effects": {
+        "spell": "minecraft:evoker_spell"
+      },
+      "render_controllers": [ "controller.render.evoker" ],
       "enable_attachables": true,
       "spawn_egg": {
         "base_color": "#44413D",

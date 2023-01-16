@@ -5,18 +5,17 @@
       "category": "nature",
       "identifier": "dec:uranium_apple"
     },
-    
     "components": {
-    "minecraft:creative_category": {
+      "minecraft:creative_category": {
         "parent": "itemGroup.name.crop"
       },
-     "minecraft:display_name": {
+      "minecraft:display_name": {
         "value": "item.dec:uranium_apple.name"
       },
-     "minecraft:icon": {
+      "minecraft:icon": {
         "texture": "uranium_apple"
-     },
-	  "minecraft:use_animation": "eat",
+      },
+      "minecraft:use_animation": "eat",
       "minecraft:render_offsets": "apple",
       "minecraft:hand_equipped": false,
       "minecraft:stacked_by_data": true,

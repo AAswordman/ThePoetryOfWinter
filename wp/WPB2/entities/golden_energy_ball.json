@@ -30,9 +30,9 @@
       "remove_on_hit": { }
     },
     "hit_sound": "bullet.hit",
-    "power": 0.8,
+    "power": 0.9,
     "gravity": 0.00,
-    "inertia": 1,
+    "inertia": 1.01,
     "liquid_inertia": 1,
     "anchor": 1,
     "offset": [ 0, 0.5, 0 ],

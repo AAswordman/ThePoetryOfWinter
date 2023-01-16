@@ -8,7 +8,10 @@
       "is_summonable": true,
       "is_experimental": false
     },
-    "component_groups": {},
+
+    "component_groups": {
+    },
+
     "components": {
       "minecraft:behavior.ranged_attack": {
         "priority": 4,
@@ -23,10 +26,10 @@
       "minecraft:behavior.stroll_towards_village": {
         "priority": 11,
         "speed_multiplier": 1.3,
-        "goal_radius": 128,
+        "goal_radius": 128.0,
         "cooldown_time": 0,
         "search_range": 1028,
-        "start_chance": 1
+        "start_chance": 1.0
       },
       "minecraft:behavior.defend_village_target": {
         "priority": 1
@@ -39,11 +42,7 @@
         "height": 1.9
       },
       "minecraft:type_family": {
-        "family": [
-          "archer",
-          "villager",
-          "mob"
-        ]
+        "family": [ "archer", "villager", "mob" ]
       },
       "minecraft:variant": {
         "value": 0
@@ -59,12 +58,7 @@
       "minecraft:hurt_on_condition": {
         "damage_conditions": [
           {
-            "filters": {
-              "test": "in_lava",
-              "subject": "self",
-              "operator": "==",
-              "value": true
-            },
+            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
             "cause": "lava",
             "damage_per_tick": 4
           }
@@ -79,9 +73,12 @@
         "can_open_doors": true,
         "avoid_water": false
       },
-      "minecraft:movement.basic": {},
-      "minecraft:jump.static": {},
-      "minecraft:nameable": {},
+      "minecraft:movement.basic": {
+      },
+      "minecraft:jump.static": {
+      },
+      "minecraft:nameable": {
+      },
       "minecraft:equipment": {
         "table": "loot_tables/entities/archer_gear.json"
       },
@@ -102,24 +99,15 @@
       },
       "minecraft:behavior.nearest_attackable_target": {
         "priority": 2,
-        "within_radius": 16,
+        "within_radius": 16.0,
         "reselect_targets": true,
         "entity_types": [
           {
-            "filters": {
-              "all_of": [
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "monster"
-                },
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "operator": "!=",
-                  "value": "creeper"
-                }
-              ]
+            "filters": { 
+                "all_of": [
+                  { "test" :  "is_family", "subject" : "other", "value" :  "monster"},
+                  { "test" :  "is_family", "subject" : "other", "operator": "!=", "value" :  "creeper"}
+                ] 
             },
             "within_default": 10
           }
@@ -143,7 +131,8 @@
           "minecraft:arrow"
         ]
       },
-      "minecraft:physics": {},
+      "minecraft:physics": {
+      },
       "minecraft:pushable": {
         "is_pushable": true,
         "is_pushable_by_piston": true
@@ -152,6 +141,9 @@
         "value": 64
       }
     },
-    "events": {}
+
+    "events": {
+
+    }
   }
 }

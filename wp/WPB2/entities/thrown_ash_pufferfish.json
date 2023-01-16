@@ -15,19 +15,12 @@
 					"fuseLit": true,
 					"power": 3,
 					"causesFire": true,
-					"destroyAffectedByGriefing": true
+					"destroy_affected_by_griefing": true,
+					"fire_affected_by_griefing": true
 				}
 			}
 		},
 		"components": {
-		 "minecraft:explode": {
-     "fuseLength": 2,
-     "fuseLit": true,
-     "power": 0,
-     "causesFire": true,
-     "fireAffectedByGriefing": true,
-     "destroyAffectedByGriefing": true
-    },
 			"minecraft:collision_box": {
 				"width": 0.1,
 				"height": 0.1

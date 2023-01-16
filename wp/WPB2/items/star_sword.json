@@ -27,7 +27,7 @@
         }
       },
       "minecraft:cooldown": {
-        "category": "chorusfruit",
+        "category": "sword",
         "duration": 5
       },
       "minecraft:stacked_by_data": false,

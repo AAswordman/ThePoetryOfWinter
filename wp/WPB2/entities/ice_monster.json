@@ -1,0 +1,203 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:ice_monster",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "shoot": {
+        "minecraft:behavior.ranged_attack": {
+          "charge_shoot_trigger": 0.5,
+          "charge_charged_trigger": 0,
+          "attack_radius": 24
+        },
+        "minecraft:shooter": {
+          "def": "dec:ice_block"
+        }
+      }
+    },
+    "components": {
+      "minecraft:collision_box": {
+        "width": 1.2,
+        "height": 2.9
+      },
+      "minecraft:nameable": {},
+      "minecraft:movement": {
+        "value": 0.25
+      },
+      "minecraft:type_family": {
+        "family": [
+          "ice_monster",
+          "frozen",
+          "monster",
+          "mob"
+        ]
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/ice_monster.json"
+      },
+      "minecraft:health": {
+        "value": 100,
+        "max": 100
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "cause": "lava",
+            "damage_per_tick": 8
+          }
+        ]
+      },
+      "minecraft:attack": {
+        "damage": 15
+      },
+      "minecraft:navigation.walk": {
+        "is_amphibious": true,
+        "can_pass_doors": true,
+        "can_break_doors": true,
+        "avoid_portals": false
+      },
+      "minecraft:annotation.break_door": {},
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
+      "minecraft:behavior.melee_attack": {
+        "priority": 3,
+        "speed_multiplier": 1.2,
+        "track_target": true
+      },
+      "minecraft:behavior.move_towards_restriction": {
+        "priority": 5,
+        "speed_multiplier": 1
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 6,
+        "speed_multiplier": 1
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 7,
+        "look_distance": 6,
+        "probability": 0.02
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 7
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "within_radius": 24,
+        "reselect_targets": true,
+        "entity_types": [
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "wandering_trader"
+                }
+              ]
+            },
+            "max_dist": 24
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "villager"
+                },
+                {
+                  "test": "has_component",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "minecraft:is_baby"
+                }
+              ]
+            },
+            "max_dist": 24
+          }
+        ],
+        "must_see": true
+      },
+      "minecraft:target_nearby_sensor": {
+        "inside_range": 4.0,
+        "outside_range": 6.0,
+        "on_inside_range": {
+          "event": "melee",
+          "target": "self"
+        },
+        "on_outside_range": {
+          "event": "shoot",
+          "target": "self"
+        }
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1,
+        "entity_types": {
+          "filters": {
+            "test": "is_family",
+            "subject": "other",
+            "operator": "!=",
+            "value": "frozen"
+          },
+          "max_dist": 64
+        }
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "on_damage": {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "frozen"
+              }
+            },
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      }
+    },
+    "events": {
+      "shoot": {
+        "add": {
+          "component_groups": [
+            "shoot"
+          ]
+        }
+      },
+      "melee": {
+        "remove": {
+          "component_groups": [
+            "shoot"
+          ]
+        }
+      }
+    }
+  }
+}

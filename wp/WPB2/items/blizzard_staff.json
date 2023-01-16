@@ -1,7 +1,7 @@
 {
   "format_version": "1.16.100",
   "minecraft:item": {
-	    "description": {
+    "description": {
       "category": "equipment",
       "identifier": "dec:blizzard_staff"
     },
@@ -28,8 +28,8 @@
         }
       },
       "minecraft:cooldown": {
-        "category": "weapon",
-        "duration": 1
+        "category": "staff",
+        "duration": 0.7
       },
       "minecraft:durability": {
         "max_durability": 855
@@ -67,7 +67,7 @@
       "shoot": {
         "sequence": [
           {
-            "condition": "query.scoreboard('wbfl') > 7",
+            "condition": "query.scoreboard('wbfl') > 6",
             "sequence": [
               {
                 "run_command": {
@@ -131,5 +131,5 @@
         ]
       }
     }
-	}
+  }
 }

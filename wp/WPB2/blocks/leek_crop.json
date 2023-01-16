@@ -16,14 +16,9 @@
                 "size": [16,16,16]
             },
             "minecraft:destroy_time": 0.001,
-            "minecraft:friction": 0.2,
             "minecraft:map_color": "#8FE08B",
-            "minecraft:block_light_absorption": 0.0,
+            "minecraft:light_dampening": 0.0,
             "minecraft:loot": "loot_tables/blocks/leek_crop.json",
-            "minecraft:on_interact": {
-                "event": "meal",
-                "condition": "query.get_equipped_item_name('main_hand') == 'bone_meal'"
-            },
             "minecraft:random_ticking": {
                 "on_tick": {
                     "event": "grow_stage"
@@ -36,7 +31,8 @@
                         "block_filter": ["farmland"]
                     }
                 ]
-            }
+            },
+			"minecraft:breathability": "air"
         },
         "events": {
             "grow_stage": {
@@ -84,6 +80,10 @@
             {
                 "condition": "query.block_property('dec:growth_stage') == 0",
                 "components": {
+                    "minecraft:on_interact": {
+                        "event": "meal",
+                        "condition": "query.get_equipped_item_name('main_hand') == 'bone_meal'"
+                    },
                     "minecraft:material_instances": {
                         "*": {
                             "texture": "leek_crop_0",
@@ -100,6 +100,10 @@
             {
                 "condition": "query.block_property('dec:growth_stage') == 1",
                 "components": {
+                    "minecraft:on_interact": {
+                        "event": "meal",
+                        "condition": "query.get_equipped_item_name('main_hand') == 'bone_meal'"
+                    },
                     "minecraft:material_instances": {
                         "*": {
                             "texture": "leek_crop_1",
@@ -126,6 +130,7 @@
                         "origin": [-8,0,-8],
                         "size": [16,12,16]
                     },
+                    "minecraft:loot": "loot_tables/blocks/leek_crop.json",
                     "minecraft:on_interact": {
                         "event": "final_drop",
                         "target": "self"

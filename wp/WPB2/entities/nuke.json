@@ -30,9 +30,10 @@
       "minecraft:explode": {
         "fuse_length": 15,
         "fuse_lit": true,
-        "power": 1000,
-        "max_resistance":10,
-        "causes_fire": true
+        "power": 134,
+        "causes_fire": true,
+        "destroy_affected_by_griefing": true,
+        "fire_affected_by_griefing": true
       },
 	    "minecraft:physics": {
       },

@@ -9,6 +9,9 @@
       "minecraft:creative_category": {
         "parent": "itemGroup.name.helmet"
       },
+      "minecraft:fuel": {
+        "duration": 10.0
+      },
       "minecraft:display_name": {
         "value": "item.dec:wood_helmet.name"
       },
@@ -22,7 +25,7 @@
         "slot": "armor_head"
       },
       "minecraft:durability": {
-        "max_durability": 46,
+        "max_durability": 137,
         "damage_chance": {
           "min": 70,
           "max": 100

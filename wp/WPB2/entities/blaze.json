@@ -12,8 +12,8 @@
       "minecraft:blaze_baby": {
         "minecraft:health": {
           "value": {
-            "range_min": 50,
-            "range_max": 70
+            "range_min": 10,
+            "range_max": 18
           }
         },
         "minecraft:experience_reward": {
@@ -39,8 +39,8 @@
       "minecraft:blaze_adult": {
         "minecraft:health": {
           "value": {
-            "range_min": 80,
-            "range_max": 100
+            "range_min": 18,
+            "range_max": 30
           }
         },
         "minecraft:loot": {
@@ -81,8 +81,8 @@
       },
       "minecraft:health": {
         "value": {
-          "range_min": 58,
-          "range_max": 70
+          "range_min": 18,
+          "range_max": 30
         }
       },
       "minecraft:hurt_on_condition": {
@@ -136,8 +136,8 @@
       },
       "minecraft:behavior.ranged_attack": {
         "priority": 4,
-        "burst_shots": 8,
-        "burst_interval": 0.15,
+        "burst_shots": 3,
+        "burst_interval": 0.3,
         "charge_charged_trigger": 0.0,
         "charge_shoot_trigger": 4.0,
         "attack_interval_min": 3.0,
