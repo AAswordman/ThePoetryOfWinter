@@ -10,7 +10,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 import { MinecraftDimensionTypes, MinecraftEntityTypes, MinecraftBlockTypes, EntityHurtEvent, EntityDamageCause } from '@minecraft/server';
 import { Objective } from "../../modules/exmc/server/entity/ExScoresManager.js";
 import ExDimension from "../../modules/exmc/server/ExDimension.js";
-import ExGameConfig from "../../modules/exmc/server/ExGameConfig.js";
 import ExGameServer from "../../modules/exmc/server/ExGameServer.js";
 import ExTickQueue from "../../modules/exmc/server/ExTickQueue.js";
 import Random from "../../modules/exmc/utils/Random.js";
@@ -61,8 +60,8 @@ export default class PomServer extends ExGameServer {
                 }
             });
             if (entities.length > this.entityCleanerLeastNum) {
-                ExGameConfig.console.log("最多实体数：" + max[0]);
-                ExGameConfig.console.log("最多实体数：" + max[1]);
+                this.say("Clear Entity Type：" + max[1]);
+                this.say("Clear Entity Num：" + max[0]);
                 entities.forEach(e => {
                     if (!e || !e.typeId || e.typeId !== max[1])
                         return;

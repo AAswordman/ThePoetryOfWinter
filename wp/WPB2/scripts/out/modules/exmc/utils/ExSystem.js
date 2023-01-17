@@ -23,7 +23,21 @@ export default class ExSystem {
         }
         return keys;
     }
+    static parseObj(obj) {
+        let k = ExSystem.keys(obj);
+        let res = '{\n';
+        for (const key of k) {
+            const val = obj[key];
+            if (val === null)
+                (res += `${String(key)}: null\n`);
+            if (typeof val != 'object')
+                (res += `${String(key)}: ${typeof val === 'number' ? val : val}\n`);
+            else
+                (res += `${String(key)}: {...}\n`);
+        }
+        return res + '}';
+    }
 }
 ExSystem.idMap = new Map();
-ExSystem.chineseCharMatcher = /^([\u4E00-\u9FA5])*$/;
+ExSystem.chineseCharMatcher = /^([\u4E00-\u9FA5])+$/;
 //# sourceMappingURL=ExSystem.js.map

@@ -40,6 +40,7 @@ export default class PomTalentSystem extends GameController {
         this.hasCauseDamage = [];
     }
     updateTalentRes() {
+        this.talentRes.clear();
         for (let t of this.data.talent.talents) {
             this.talentRes.set(t.id, TalentData.calculateTalent(this.data.talent.occupation, t.id, t.level));
         }

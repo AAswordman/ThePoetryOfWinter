@@ -351,7 +351,10 @@ You understand and agree that:
                             ];
                             for (let i of client.data.talent.talents) {
                                 arr.push({
-                                    "type": point > 0 && i.level < 40 ? "textAndAddButton" : "textAndNoButton",
+                                    "type": "text",
+                                    "msg": TalentData.getDescription(client.getLang(), client.data.talent.occupation, i.id, i.level)
+                                }, {
+                                    "type": "textWithBg",
                                     "msg": Talent.getCharacter(client.getLang(), i.id) + ": " + i.level + "\n" + (function () {
                                         let useChr = "";
                                         let a = Math.floor(i.level / 4);
@@ -368,23 +371,61 @@ You understand and agree that:
                                             c--;
                                         }
                                         return s;
-                                    })(),
-                                    "function": () => {
-                                        var _a;
-                                        if (point > 0 && i.level < 40) {
-                                            i.level++;
-                                            client.data.talent.pointUsed = 1 + ((_a = client.data.talent.pointUsed) !== null && _a !== void 0 ? _a : 0);
-                                            client.data.talent.talents.splice(client.data.talent.talents.findIndex(t => t.id === i.id), 1);
-                                            client.data.talent.talents.unshift(i);
-                                            client.talentSystem.updateTalentRes();
+                                    }())
+                                });
+                                arr.push({
+                                    "type": "buttonList3",
+                                    "msgs": ["+1", "+2", "+5"],
+                                    "buttons": [() => {
+                                            var _a;
+                                            if (point > 0 && i.level < 40) {
+                                                i.level += 1;
+                                                client.data.talent.pointUsed = 1 + ((_a = client.data.talent.pointUsed) !== null && _a !== void 0 ? _a : 0);
+                                                client.data.talent.talents.splice(client.data.talent.talents.findIndex(t => t.id === i.id), 1);
+                                                client.data.talent.talents.unshift(i);
+                                                client.talentSystem.updateTalentRes();
+                                            }
+                                            return true;
+                                        },
+                                        () => {
+                                            var _a;
+                                            if (point > 0 && i.level < 40) {
+                                                i.level += 2;
+                                                client.data.talent.pointUsed = 2 + ((_a = client.data.talent.pointUsed) !== null && _a !== void 0 ? _a : 0);
+                                                client.data.talent.talents.splice(client.data.talent.talents.findIndex(t => t.id === i.id), 1);
+                                                client.data.talent.talents.unshift(i);
+                                                client.talentSystem.updateTalentRes();
+                                            }
+                                            return true;
+                                        },
+                                        () => {
+                                            var _a;
+                                            if (point > 0 && i.level < 40) {
+                                                i.level += 5;
+                                                client.data.talent.pointUsed = 5 + ((_a = client.data.talent.pointUsed) !== null && _a !== void 0 ? _a : 0);
+                                                client.data.talent.talents.splice(client.data.talent.talents.findIndex(t => t.id === i.id), 1);
+                                                client.data.talent.talents.unshift(i);
+                                                client.talentSystem.updateTalentRes();
+                                            }
+                                            return true;
                                         }
-                                        return true;
-                                    }
-                                }, {
-                                    "type": "text",
-                                    "msg": TalentData.getDescription(client.getLang(), client.data.talent.occupation, i.id, i.level)
+                                    ],
                                 }, {
                                     "type": "padding"
+                                });
+                            }
+                            if (!client.data.occupationChooseDate || new Date().getTime() - client.data.occupationChooseDate >= 1000 * 60 * 60 * 24 * 14) {
+                                arr.push({
+                                    "type": "button",
+                                    "msg": "清空职业",
+                                    "function": (client, ui) => {
+                                        client.data.occupationChooseDate = new Date().getTime();
+                                        client.data.talent.occupation = Occupation.EMPTY;
+                                        client.data.talent.talents = [];
+                                        client.data.talent.pointUsed = 0;
+                                        client.talentSystem.updateTalentRes();
+                                        return true;
+                                    }
                                 });
                             }
                         }
@@ -404,6 +445,7 @@ You understand and agree that:
                                     "msg": i.getCharacter(client.getLang()),
                                     "function": (client, ui) => {
                                         TalentData.chooseOccupation(client.data.talent, i);
+                                        client.talentSystem.updateTalentRes();
                                         return true;
                                     }
                                 });
@@ -475,7 +517,8 @@ You understand and agree that:
                                     "type": "button",
                                     "msg": lang.menuUIMsgBailan40 + (i[1] == "" ? (i[0] + v.toString()) : i[1]),
                                     "function": (client, ui) => {
-                                        client.data.pointRecord.point.splice(j, 1);
+                                        var _a;
+                                        (_a = client.data.pointRecord) === null || _a === void 0 ? void 0 : _a.point.splice(j, 1);
                                         return true;
                                     }
                                 }, {
@@ -486,7 +529,8 @@ You understand and agree that:
                                 "msg": lang.menuUIMsgBailan41 + client.exPlayer.getPosition().floor().toString(),
                                 "type": "button",
                                 "function": (client, ui) => {
-                                    client.data.pointRecord.point.push([client.exPlayer.getDimension().id, "", client.exPlayer.getPosition().floor()]);
+                                    var _a;
+                                    (_a = client.data.pointRecord) === null || _a === void 0 ? void 0 : _a.point.push([client.exPlayer.getDimension().id, "", client.exPlayer.getPosition().floor()]);
                                     return true;
                                 }
                             });
@@ -751,8 +795,8 @@ You understand and agree that:
                                 // {
                                 // 	"type": "toggle",
                                 // 	"msg": lang.menuUIMsgBailan81,
-                                // 	"state": (client: PomClient, ui: MenuUIAlert) => client.globalSettings.deathRecord,
-                                // 	"function": (client: PomClient, ui: MenuUIAlert) => {
+                                // 	"state": (client, ui) => client.globalSettings.deathRecord,
+                                // 	"function": (client, ui) => {
                                 // 		client.globalSettings.deathRecord = !client.globalSettings.deathRecord;
                                 // 		return true;
                                 // 	}

@@ -20,10 +20,10 @@ export default class MenuUIAlert {
     static getLabelViews(msg) {
         let arr = [];
         for (let i = 0; i < msg.length; i++) {
-            arr[i] = {
+            arr.push({
                 "type": "text",
                 "msg": msg[i]
-            };
+            });
         }
         ;
         return arr;
@@ -96,6 +96,32 @@ export default class MenuUIAlert {
                                 to(this.upDatePage());
                             }
                         }, v.msg);
+                        break;
+                    case "buttonList3":
+                        alert.button(v.type + "_1", () => {
+                            let res = v.buttons[0](this._client, this);
+                            if (res) {
+                                to(this.upDatePage());
+                            }
+                        }, v.msgs[0]);
+                        alert.button(v.type + "_2", () => {
+                            let res = v.buttons[1](this._client, this);
+                            if (res) {
+                                to(this.upDatePage());
+                            }
+                        }, v.msgs[1]);
+                        alert.button(v.type + "_3", () => {
+                            let res = v.buttons[2](this._client, this);
+                            if (res) {
+                                to(this.upDatePage());
+                            }
+                        }, v.msgs[2]);
+                        alert.button(v.type + "_4", () => {
+                            let res = v.function(this._client, this);
+                            if (res) {
+                                to(this.upDatePage());
+                            }
+                        }, " ");
                         break;
                     default:
                         alert.button(v.type, () => {

@@ -23,7 +23,9 @@ export default class ExSound {
         // world.playSound(this.soundId, {
         //     location: ExGameVector3.getLocation(vec)
         // });
-        to(dim.command.run(`playsound ${this.soundId} @a[r=64,x=${vec.x},y=${vec.y},z=${vec.z}] ${vec.x} ${vec.y} ${vec.z} 0.6 1 0.6`));
+        to(dim.command.run(`playsound ${this.soundId} @a[r=64,x=${vec.x},y=${vec.y},z=${vec.z}] ${vec.x} ${vec.y} ${vec.z} 0.8 1 0.8`).then(e => {
+            console.log(e);
+        }));
     }
 }
 //# sourceMappingURL=ExSound.js.map
