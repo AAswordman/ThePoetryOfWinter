@@ -9,7 +9,7 @@ export default class ExActionAlert {
         this._alert.body(bodyText);
         return this;
     }
-    button(text, fun, iconPath = undefined) {
+    button(text, fun, iconPath) {
         this._alert.button(text, iconPath);
         this.buttonEvent.push(fun);
         return this;
