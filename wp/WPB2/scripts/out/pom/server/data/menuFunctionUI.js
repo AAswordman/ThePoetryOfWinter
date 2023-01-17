@@ -373,43 +373,24 @@ You understand and agree that:
                                         return s;
                                     }())
                                 });
+                                let addPoint = (point) => {
+                                    return () => {
+                                        var _a;
+                                        if (point > 0 && i.level < 40) {
+                                            point = Math.min(point, 40 - i.level);
+                                            i.level += point;
+                                            client.data.talent.pointUsed = point + ((_a = client.data.talent.pointUsed) !== null && _a !== void 0 ? _a : 0);
+                                            client.data.talent.talents.splice(client.data.talent.talents.findIndex(t => t.id === i.id), 1);
+                                            client.data.talent.talents.unshift(i);
+                                            client.talentSystem.updateTalentRes();
+                                        }
+                                        return true;
+                                    };
+                                };
                                 arr.push({
                                     "type": "buttonList3",
                                     "msgs": ["+1", "+2", "+5"],
-                                    "buttons": [() => {
-                                            var _a;
-                                            if (point > 0 && i.level < 40) {
-                                                i.level += 1;
-                                                client.data.talent.pointUsed = 1 + ((_a = client.data.talent.pointUsed) !== null && _a !== void 0 ? _a : 0);
-                                                client.data.talent.talents.splice(client.data.talent.talents.findIndex(t => t.id === i.id), 1);
-                                                client.data.talent.talents.unshift(i);
-                                                client.talentSystem.updateTalentRes();
-                                            }
-                                            return true;
-                                        },
-                                        () => {
-                                            var _a;
-                                            if (point > 0 && i.level < 40) {
-                                                i.level += 2;
-                                                client.data.talent.pointUsed = 2 + ((_a = client.data.talent.pointUsed) !== null && _a !== void 0 ? _a : 0);
-                                                client.data.talent.talents.splice(client.data.talent.talents.findIndex(t => t.id === i.id), 1);
-                                                client.data.talent.talents.unshift(i);
-                                                client.talentSystem.updateTalentRes();
-                                            }
-                                            return true;
-                                        },
-                                        () => {
-                                            var _a;
-                                            if (point > 0 && i.level < 40) {
-                                                i.level += 5;
-                                                client.data.talent.pointUsed = 5 + ((_a = client.data.talent.pointUsed) !== null && _a !== void 0 ? _a : 0);
-                                                client.data.talent.talents.splice(client.data.talent.talents.findIndex(t => t.id === i.id), 1);
-                                                client.data.talent.talents.unshift(i);
-                                                client.talentSystem.updateTalentRes();
-                                            }
-                                            return true;
-                                        }
-                                    ],
+                                    "buttons": [addPoint(1), addPoint(2), addPoint(5)]
                                 }, {
                                     "type": "padding"
                                 });
@@ -476,51 +457,50 @@ You understand and agree that:
                                 const i = client.data.pointRecord.point[j];
                                 const v = new Vector3(i[2]);
                                 arr.push({
-                                    "type": "text",
-                                    "msg": lang.menuUIMsgBailan34 + (i[0] + v.toString())
+                                    "type": "textWithBg",
+                                    "msg": lang.menuUIMsgBailan34 + (i[0] + v.toString()) + "\n" + i[1]
                                 }, {
-                                    "type": "button",
-                                    "msg": lang.menuUIMsgBailan35 + (i[1] == "" ? (i[0] + v.toString()) : i[1]),
-                                    "function": (client, ui) => {
-                                        let bag = client.exPlayer.getBag();
-                                        if (!bag.hasItem("wb:conveyor_issue") && client.globalSettings.tpNeedItem) {
-                                            client.sayTo(lang.menuUIMsgBailan36);
+                                    "type": "buttonList3",
+                                    "msgs": [
+                                        lang.menuUIMsgBailan35,
+                                        lang.menuUIMsgBailan38,
+                                        lang.menuUIMsgBailan40
+                                    ],
+                                    "buttons": [(client, ui) => {
+                                            let bag = client.exPlayer.getBag();
+                                            if (!bag.hasItem("wb:conveyor_issue") && client.globalSettings.tpNeedItem) {
+                                                client.sayTo(lang.menuUIMsgBailan36);
+                                                return false;
+                                            }
+                                            if (client.globalSettings.tpNeedItem) {
+                                                let pos = (bag.searchItem("wb:conveyor_issue"));
+                                                let item = bag.getItem(pos);
+                                                item.amount--;
+                                                bag.setItem(pos, item);
+                                            }
+                                            client.exPlayer.setPosition(v, client.getDimension(i[0]));
+                                            client.sayTo(lang.menuUIMsgBailan37);
                                             return false;
-                                        }
-                                        if (client.globalSettings.tpNeedItem) {
-                                            let pos = (bag.searchItem("wb:conveyor_issue"));
-                                            let item = bag.getItem(pos);
-                                            item.amount--;
-                                            bag.setItem(pos, item);
-                                        }
-                                        client.exPlayer.setPosition(v, client.getDimension(i[0]));
-                                        client.sayTo(lang.menuUIMsgBailan37);
-                                        return false;
-                                    }
-                                }, {
-                                    "type": "button",
-                                    "msg": lang.menuUIMsgBailan38 + (i[1] == "" ? (i[0] + v.toString()) : i[1]),
-                                    "function": (client, ui) => {
-                                        new ModalFormData().textField(lang.menuUIMsgBailan39, (i[0] + v.toString()))
-                                            .show(client.player)
-                                            .then(e => {
+                                        },
+                                        (client, ui) => {
+                                            new ModalFormData().textField(lang.menuUIMsgBailan39, (i[0] + v.toString()))
+                                                .show(client.player)
+                                                .then(e => {
+                                                var _a;
+                                                if (e.canceled)
+                                                    return;
+                                                i[1] = ((_a = e === null || e === void 0 ? void 0 : e.formValues) === null || _a === void 0 ? void 0 : _a[0]) || "";
+                                            }).catch(e => {
+                                                ExErrorQueue.throwError(e);
+                                            });
+                                            return false;
+                                        },
+                                        (client, ui) => {
                                             var _a;
-                                            if (e.canceled)
-                                                return;
-                                            i[1] = ((_a = e === null || e === void 0 ? void 0 : e.formValues) === null || _a === void 0 ? void 0 : _a[0]) || "";
-                                        }).catch(e => {
-                                            ExErrorQueue.throwError(e);
-                                        });
-                                        return false;
-                                    }
-                                }, {
-                                    "type": "button",
-                                    "msg": lang.menuUIMsgBailan40 + (i[1] == "" ? (i[0] + v.toString()) : i[1]),
-                                    "function": (client, ui) => {
-                                        var _a;
-                                        (_a = client.data.pointRecord) === null || _a === void 0 ? void 0 : _a.point.splice(j, 1);
-                                        return true;
-                                    }
+                                            (_a = client.data.pointRecord) === null || _a === void 0 ? void 0 : _a.point.splice(j, 1);
+                                            return true;
+                                        }
+                                    ]
                                 }, {
                                     "type": "padding"
                                 });

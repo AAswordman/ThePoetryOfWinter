@@ -830,7 +830,7 @@
                     "damage_per_tick": 4
                 }]
             },
-            "minecraft:is_stackable": {},
+            //"minecraft:is_stackable": {},
             "minecraft:type_family": {
                 "family": [
                     "player",
@@ -1723,14 +1723,6 @@
                         "component_groups": [
                             "hostile_mode"
                         ]
-                    },
-                    "filters": {
-                        "all_of": [{
-                            "test": "has_tag",
-                            "operator": "==",
-                            "subject": "self",
-                            "value": "wbmsyh"
-                        }]
                     }
                 }]
             },
