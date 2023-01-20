@@ -1,7 +1,6 @@
 import { MinecraftDimensionTypes, MinecraftEffectTypes } from '@minecraft/server';
 import DecClient from "./DecClient.js";
 import ExPlayer from '../../modules/exmc/server/entity/ExPlayer.js';
-import { taskUi } from './helper/Task.js';
 import { Objective } from '../../modules/exmc/server/entity/ExScoresManager.js';
 import ExEntity from '../../modules/exmc/server/entity/ExEntity.js';
 import commandAnalysis from '../../modules/exmc/utils/commandAnalysis.js';
@@ -148,12 +147,6 @@ export default class DecServer extends ExGameServer {
                         }));
                     }
                 }));
-            }
-        });
-        this.getEvents().events.itemUse.subscribe(e => {
-            //魔法纸张
-            if (e.item.typeId == "dec:magic_scroll_blue") {
-                taskUi(e.source, e.item);
             }
         });
         this.addEntityController("dec:everlasting_winter_ghast", DecEverlastingWinterGhastBoss1);

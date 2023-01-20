@@ -1,4 +1,7 @@
 export default class MathUtil {
+    static clamp(num, low, high) {
+        return Math.max(low, Math.min(high, num));
+    }
     static IEEEremainder(dividend, divisor) {
         return dividend - (divisor * Math.round(dividend / divisor));
     }

@@ -15,6 +15,7 @@ import Vector3 from '../../../modules/exmc/math/Vector3.js';
 import ExPlayer from "../../../modules/exmc/server/entity/ExPlayer.js";
 import ExErrorQueue from "../../../modules/exmc/server/ExErrorQueue.js";
 import ExGameConfig from "../../../modules/exmc/server/ExGameConfig.js";
+import getgetCharByNum, { PROGRESS_CHAR, TALENT_CHAR } from "./getCharByNum.js";
 export default function menuFunctionUI(lang) {
     return {
         "main": {
@@ -244,14 +245,25 @@ You understand and agree that:
                     "page": (client, ui) => {
                         let source = client.player;
                         let scores = ExPlayer.getInstance(source).getScoresManager();
-                        let msg = [`${lang.menuUIMsgBailan94}: ${client.gameId}`,
-                            `${lang.menuUIMsgBailan95}: ${scores.getScore("wbdj")}`,
-                            `${lang.menuUIMsgBailan96}: ${scores.getScore("wbfl")}`,
-                            `${lang.menuUIMsgBailan97}: ${scores.getScore("wbwqlq")}`,
-                            `${lang.menuUIMsgBailan98}: ${scores.getScore("wbkjlqcg")}`,
-                            `${lang.menuUIMsgBailan99}: ${source.hasTag("wbmsyh") ? lang.menuUIMsgBailan15 : lang.menuUIMsgBailan16}`,
-                            `${lang.menuUIMsgBailan100}: ${source.hasTag("wbdjeff") ? lang.menuUIMsgBailan15 : lang.menuUIMsgBailan16}`];
-                        return MenuUIAlert.getLabelViews(msg);
+                        let msg = [`   ${lang.menuUIMsgBailan94}: ${client.gameId}`,
+                            `   ${lang.menuUIMsgBailan96}: ${scores.getScore("wbfl")}`,
+                            `   ${lang.menuUIMsgBailan97}: ${scores.getScore("wbwqlq")}`,
+                            `   ${lang.menuUIMsgBailan98}: ${scores.getScore("wbkjlqcg")}`,
+                            `   ${lang.menuUIMsgBailan99}: ${source.hasTag("wbmsyh") ? lang.menuUIMsgBailan15 : lang.menuUIMsgBailan16}`,
+                            `   ${lang.menuUIMsgBailan100}: ${source.hasTag("wbdjeff") ? lang.menuUIMsgBailan15 : lang.menuUIMsgBailan16}`];
+                        let arr = MenuUIAlert.getLabelViews(msg);
+                        arr.unshift({
+                            "type": "text_title",
+                            "msg": "个人信息"
+                        });
+                        let g = scores.getScore("wbdjcg");
+                        let gj = scores.getScore("wbdjjf");
+                        arr.push({
+                            "type": "textWithBg",
+                            "msg": `${lang.menuUIMsgBailan95}: ${g} 当前等级积分: ${gj}/${150 * Math.pow(g, 2) + 1050 * g + 900}
+${getgetCharByNum((gj - (150 * Math.pow((g - 1), 2) + 1050 * (g - 1) + 900)) / (300 * g + 900), 10, PROGRESS_CHAR)}`
+                        });
+                        return arr;
                     }
                 },
                 "add": {
@@ -356,21 +368,7 @@ You understand and agree that:
                                 }, {
                                     "type": "textWithBg",
                                     "msg": Talent.getCharacter(client.getLang(), i.id) + ": " + i.level + "\n" + (function () {
-                                        let useChr = "";
-                                        let a = Math.floor(i.level / 4);
-                                        let b = i.level % 4;
-                                        let c = 10 - a - 1;
-                                        let s = "";
-                                        while (a > 0) {
-                                            s += useChr[0];
-                                            a--;
-                                        }
-                                        s += useChr[4 - b];
-                                        while (c > 0) {
-                                            s += useChr[4];
-                                            c--;
-                                        }
-                                        return s;
+                                        return getgetCharByNum(i.level / 40, 10, TALENT_CHAR);
                                     }())
                                 });
                                 let addPoint = (point) => {
@@ -549,6 +547,19 @@ You understand and agree that:
                         // }
                         return arr;
                     }
+                },
+                "tasks": {
+                    "text": "任务",
+                    "page": [
+                        {
+                            "type": "button",
+                            "msg": "任务界面",
+                            "function": (client, ui) => {
+                                client.taskUI();
+                                return false;
+                            }
+                        }
+                    ]
                 }
             }
         },

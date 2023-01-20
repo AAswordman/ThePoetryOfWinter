@@ -5,7 +5,8 @@
     "dependencies": {
         "@minecraft/server": "^1.1.0-beta.preview.1.19.50.25",
         "@minecraft/server-gametest": "^1.0.0-beta.preview.1.19.50.25",
-        "@minecraft/server-ui": "^1.0.0-beta.11940b24"
+        "@minecraft/server-ui": "^1.0.0-beta.11940b24",
+        "brain.js": "^2.0.0-beta.18"
     },
     "devDependencies": {
         "ts-loader": "^9.4.1",

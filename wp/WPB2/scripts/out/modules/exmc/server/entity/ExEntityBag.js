@@ -33,6 +33,34 @@ export default class ExEntityBag {
         ;
         return items;
     }
+    countAllItems() {
+        let items = new Map();
+        for (let i = 0; i < this.size(); i++) {
+            let item = this.getItem(i);
+            if (item)
+                items.set(item.typeId, item.amount);
+        }
+        ;
+        return items;
+    }
+    clearItem(id, amount) {
+        for (let i = 0; i < this.size(); i++) {
+            let item = this.getItem(i);
+            if ((item === null || item === void 0 ? void 0 : item.typeId) === id) {
+                let rem = amount - item.amount;
+                if (rem > 0) {
+                    this.setItem(i, undefined);
+                    amount = rem;
+                }
+                else {
+                    item.amount -= amount;
+                    this.setItem(i, item);
+                    break;
+                }
+            }
+        }
+        ;
+    }
     size() {
         return this.bagComponent.inventorySize;
     }

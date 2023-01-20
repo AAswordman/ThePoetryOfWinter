@@ -1,3 +1,12 @@
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -23,7 +32,10 @@ import PomDimRuinsSystem from "./func/PomDimRuinsSystem.js";
 import Random from "../../modules/exmc/utils/Random.js";
 import ExSystem from "../../modules/exmc/utils/ExSystem.js";
 import { eventDecoratorFactory } from "../../modules/exmc/server/events/EventDecoratorFactory.js";
+import PomTaskSystem from "./func/PomTaskSystem.js";
+import { receiveMessage } from "../../modules/exmc/server/ExGame.js";
 export default class PomClient extends ExGameClient {
+    // net;
     constructor(server, id, player) {
         super(server, id, player);
         this.gameControllers = [];
@@ -32,6 +44,7 @@ export default class PomClient extends ExGameClient {
         this.magicSystem = new PomMagicSystem(this);
         this.itemUseFunc = new SimpleItemUseFunc(this);
         this.ruinsSystem = new PomDimRuinsSystem(this);
+        this.taskSystem = new PomTaskSystem(this);
         this.globalSettings = new GlobalSettings(new Objective("wpsetting"));
         this.cache = new TagCache(this.exPlayer);
         this.looper = new TimeLoopTask(this.getEvents(), () => {
@@ -49,10 +62,12 @@ export default class PomClient extends ExGameClient {
         this.addCtrller(this.talentSystem);
         this.addCtrller(this.itemUseFunc);
         this.addCtrller(this.ruinsSystem);
+        this.addCtrller(this.taskSystem);
         this.gameControllers.forEach(controller => {
             eventDecoratorFactory(this.getEvents(), controller);
             controller.onJoin();
         });
+        // this.net = new NeuralNetwork<{a:number,b:number},{c:number}>();
     }
     onJoin() {
         this.setInterworkingPool({
@@ -112,5 +127,14 @@ export default class PomClient extends ExGameClient {
     getServer() {
         return super.getServer();
     }
+    taskUI(page, subpage) {
+        this.taskSystem.show(page, subpage);
+    }
 }
+__decorate([
+    receiveMessage("taskUi"),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, String]),
+    __metadata("design:returntype", void 0)
+], PomClient.prototype, "taskUI", null);
 //# sourceMappingURL=PomClient.js.map

@@ -15,7 +15,7 @@ export default class MenuUIAlert {
     constructor(client, uiJson) {
         this.choose = [];
         this.pageNum = 0;
-        this.maxPageNum = 6;
+        this.maxPageNum = 4;
         this._uiJson = uiJson;
         this._client = client;
     }
@@ -30,8 +30,19 @@ export default class MenuUIAlert {
         ;
         return arr;
     }
-    showPage(chs) {
-        this.choose = chs;
+    getJSON() {
+        return this._uiJson;
+    }
+    showPage(page, subpage) {
+        this.choose = [page, subpage];
+        let p = this._uiJson[page].page;
+        if (p instanceof Function) {
+            p = p(this._client, this);
+        }
+        let index = Object.keys(p).indexOf(subpage);
+        if (index === -1)
+            throw new Error("Can't find page " + subpage);
+        this.pageNum = Math.floor(index / this.maxPageNum);
         to(this.upDatePage());
     }
     upDatePage() {
