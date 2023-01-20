@@ -14,7 +14,9 @@ import MathUtil from "../../modules/exmc/math/MathUtil.js";
 import Vector3 from "../../modules/exmc/math/Vector3.js";
 import ExGameVector3 from "../../modules/exmc/server/math/ExGameVector3.js";
 import DecGlobal from "./DecGlobal.js";
-import { numTranToTask } from "./helper/Task.js";
+import { numTranToTask, taskUi } from "./data/Task.js";
+import ExGame from "../../modules/exmc/server/ExGame.js";
+import PomServer from "../../pom/server/PomServer.js";
 export default class DecClient extends ExGameClient {
     constructor(server, id, player) {
         super(server, id, player);
@@ -225,6 +227,15 @@ export default class DecClient extends ExGameClient {
             /*if (p.getItemCooldown("village_portal") > 10) {
                 p.startItemCooldown("village_portal",p.getItemCooldown("village_portal")-10)
             }*/
+        });
+        this.getEvents().exEvents.itemUse.subscribe(e => {
+            //魔法纸张
+            if (e.item.typeId == "dec:magic_scroll_blue") {
+                if (DecGlobal.isDec())
+                    taskUi(this, e.item);
+                else
+                    ExGame.postMessageBetweenClient(this, PomServer, "taskUi", ["paperTask", "1"]);
+            }
         });
     }
     checkArmor() {

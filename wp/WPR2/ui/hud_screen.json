@@ -95,10 +95,7 @@
         "from": 1,
         "to": 0
     },
-    "empty_progress_barx": {
-        "type": "image",
-        "texture": "textures/ui/empty_progress_bar"
-    },
+
     "player_position": {
         "type": "image",
         "size": [
@@ -170,7 +167,7 @@
                 "type": "label",
                 "anchor_from": "top_right",
                 "anchor_to": "top_right",
-                "offset":[0,92],
+                "offset": [0, 92],
                 "color": "$tool_tip_text",
                 "text": "$actionbar_text",
                 "shadow": false,
@@ -179,278 +176,189 @@
             }
         }]
     },
-    "filled_progress_bar": {
-        "type": "image",
-        "texture": "textures/ui/filled_progress_bar",
-        "clip_direction": "left",
-        "color": "$boss_health_bar_color",
-        "bindings": [{
-            "binding_name": "#progress_percentage",
-            "binding_name_override": "#clip_ratio"
-        }]
-    },
-    "filled_progress_bar_for_collections@filled_progress_bar": {
-        "clip_pixelperfect": false,
-        "bindings": [{
-            "binding_name": "#progress_percentage",
-            "binding_name_override": "#clip_ratio",
-            "binding_type": "collection",
-            "binding_collection_name": "$progress_bar_collection"
-        }]
-    },
     "progress_bar_for_collections": {
         "type": "panel",
+        "$texture_data|default": "textures/ui/filled_progress_bar",
+        "$texture_empty|default": "textures/ui/empty_progress_bar",
         "anchor_from": "top_middle",
         "anchor_to": "top_middle",
         "offset": [0, 0],
         "size": [188, 30],
         "controls": [{
-                "empty_progress_barx@empty_progress_barx": {
-                    "layer": 1
+                "empty_progress_barx": {
+                    "layer": 1,
+                    "type": "image",
+                    "texture": "$texture_empty"
                 }
             },
             {
-                "filled_progress_bar_for_collections@filled_progress_bar_for_collections": {
-                    "layer": 2
+                "filled_progress_bar_for_collections": {
+                    "layer": 2,
+                    "type": "image",
+                    "texture": "$texture_data",
+                    "clip_direction": "left",
+                    "color": "$boss_health_bar_color",
+                    "clip_pixelperfect": false,
+                    "bindings": [{
+                        "binding_name": "#progress_percentage",
+                        "binding_name_override": "#clip_ratio",
+                        "binding_type": "collection",
+                        "binding_collection_name": "$progress_bar_collection"
+                    }]
                 }
             }
         ]
     },
-    "filled_progress_bar_a": {
-        "type": "image",
-        "texture": "textures/ui/filled_progress_bar_a",
-        "clip_direction": "left",
-        "color": "$boss_health_bar_color",
-        "bindings": [{
-            "binding_name": "#progress_percentage",
-            "binding_name_override": "#clip_ratio"
-        }]
-    },
-    "filled_progress_bar_for_collections_a@filled_progress_bar_a": {
-        "clip_pixelperfect": false,
-        "bindings": [{
-            "binding_name": "#progress_percentage",
-            "binding_name_override": "#clip_ratio",
-            "binding_type": "collection",
-            "binding_collection_name": "$progress_bar_collection"
-        }]
-    },
-    "progress_bar_for_collections_a": {
+    "boss_health_panel": {
         "type": "panel",
+        "size": [188, 30],
         "anchor_from": "top_middle",
         "anchor_to": "top_middle",
-        "offset": [0, 0],
-        "size": [188, 30],
+        "$progress_bar_collection": "boss_bars",
         "controls": [{
-                "empty_progress_barx_a@empty_progress_barx_a": {
+                "boss_name@boss_name_panel": {
+                    "layer": 3,
+                    "offset": [0, 25]
+                }
+            },
+            {
+                "progress_bar_for_collections@progress_bar_for_collections": {
+                    "offset": [0, 0],
                     "layer": 1
                 }
             },
             {
-                "filled_progress_bar_for_collections_a@filled_progress_bar_for_collections_a": {
+                "progress_bar_for_collections_a@progress_bar_for_collections": {
+                    "layer": 2,
+                    "$texture_data": "textures/ui/filled_progress_bar_a",
+                    "$texture_empty": "textures/ui/empty_progress_bar_a",
+                    "bindings": [{
+                        "binding_name": "(#bossName = 'Magic Stoneman')",
+                        "binding_type": "collection",
+                        "binding_collection_name": "boss_bars",
+                        "binding_name_override": "#visible"
+                    }]
+                }
+            },
+            {
+                "progress_bar_for_collections_b@progress_bar_for_collections": {
+                    "layer": 2,
+                    "$texture_data": "textures/ui/filled_progress_bar_b",
+                    "$texture_empty": "textures/ui/empty_progress_bar_b",
+                    "bindings": [{
+                        "binding_name": "(#bossName = '未知')",
+                        "binding_type": "collection",
+                        "binding_collection_name": "boss_bars",
+                        "binding_name_override": "#visible"
+                    }]
+                }
+            },
+            {
+                "progress_bar_for_collections_c@progress_bar_for_collections": {
+                    "layer": 2,
+                    "$texture_data": "textures/ui/filled_progress_bar_c",
+                    "$texture_empty": "textures/ui/empty_progress_bar_c",
+                    "bindings": [{
+                        "binding_name": "(#bossName = 'Headless Guard')",
+                        "binding_type": "collection",
+                        "binding_collection_name": "boss_bars",
+                        "binding_name_override": "#visible"
+                    }]
+                }
+            },
+            {
+                "progress_bar_for_collections_d@progress_bar_for_collections": {
+                    "layer": 2,
+                    "$texture_data": "textures/ui/filled_progress_bar_d",
+                    "$texture_empty": "textures/ui/empty_progress_bar_d",
+                    "bindings": [{
+                        "binding_name": "(#bossName = 'Border Fugitive')",
+                        "binding_type": "collection",
+                        "binding_collection_name": "boss_bars",
+                        "binding_name_override": "#visible"
+                    }]
+                }
+            },
+            {
+                "progress_bar_for_collections_e@progress_bar_for_collections": {
+                    "layer": 2,
+                    "$texture_data": "textures/ui/filled_progress_bar_e",
+                    "$texture_empty": "textures/ui/empty_progress_bar_e",
+                    "bindings": [{
+                        "binding_name": "(#bossName = 'Intentions')",
+                        "binding_type": "collection",
+                        "binding_collection_name": "boss_bars",
+                        "binding_name_override": "#visible"
+                    }]
+                }
+            },
+            {
+                "progress_bar_for_collections_h@progress_bar_for_collections": {
+                    "layer": 2,
+                    "$texture_data": "textures/ui/filled_progress_bar_e",
+                    "$texture_empty": "textures/ui/empty_progress_bar_e",
+                    "bindings": [{
+                        "binding_name": "(#bossName = 'God Of Guard')",
+                        "binding_type": "collection",
+                        "binding_collection_name": "boss_bars",
+                        "binding_name_override": "#visible"
+                    }]
+                }
+            },
+            {
+                "xprogress_bar_for_collections_f@xprogress_bar_for_collections_f": {
+                    "offset": [0, 0],
                     "layer": 2
+                }
+            },
+            {
+                "progress_bar_for_collections_f@progress_bar_for_collections": {
+                    "layer": 2,
+                    "$texture_data": "textures/ui/filled_progress_bar_c",
+                    "$texture_empty": "textures/ui/empty_progress_bar_c",
+                    "bindings": [{
+                        "binding_name": "(#bossName = 'Ancient StoneStatues')",
+                        "binding_type": "collection",
+                        "binding_collection_name": "boss_bars",
+                        "binding_name_override": "#visible"
+                    }]
+                }
+            },
+            {
+                "progress_bar_for_collections_g@progress_bar_for_collections": {
+                    "layer": 2,
+                    "$texture_data": "textures/ui/filled_progress_bar_g",
+                    "$texture_empty": "textures/ui/empty_progress_bar_g",
+                    "bindings": [{
+                        "binding_name": "(#bossName = '§4Intentions')",
+                        "binding_type": "collection",
+                        "binding_collection_name": "boss_bars",
+                        "binding_name_override": "#visible"
+                    }]
                 }
             }
         ],
         "bindings": [{
-            "binding_name": "(#bossName = 'Magic Stoneman')",
+            "binding_name": "#bar_visible",
             "binding_type": "collection",
             "binding_collection_name": "boss_bars",
             "binding_name_override": "#visible"
         }]
     },
-    "empty_progress_barx_a": {
-        "type": "image",
-        "texture": "textures/ui/empty_progress_bar_a"
-    },
-    "filled_progress_bar_b": {
-        "type": "image",
-        "texture": "textures/ui/filled_progress_bar_b",
-        "clip_direction": "left",
-        "color": "$boss_health_bar_color",
-        "bindings": [{
-            "binding_name": "#progress_percentage",
-            "binding_name_override": "#clip_ratio"
-        }]
-    },
-    "filled_progress_bar_for_collections_b@filled_progress_bar_b": {
-        "clip_pixelperfect": false,
-        "bindings": [{
-            "binding_name": "#progress_percentage",
-            "binding_name_override": "#clip_ratio",
-            "binding_type": "collection",
-            "binding_collection_name": "$progress_bar_collection"
-        }]
-    },
-    "progress_bar_for_collections_b": {
-        "type": "panel",
-        "anchor_from": "top_middle",
+    "boss_health_grid": {
+        "type": "grid",
+        "grid_dimension_binding": "#boss_grid_dimension",
+        "grid_item_template": "hud.boss_health_panel",
+        "grid_fill_direction": "vertical",
+        "collection_name": "boss_bars",
         "anchor_to": "top_middle",
-        "offset": [0, 0],
-        "size": [188, 30],
-        "controls": [{
-                "empty_progress_barx_b@empty_progress_barx_b": {
-                    "layer": 1
-                }
-            },
-            {
-                "filled_progress_bar_for_collections_b@filled_progress_bar_for_collections_b": {
-                    "layer": 2
-                }
-            }
-        ],
-        "bindings": [{
-            "binding_name": "(#bossName = '未知')",
-            "binding_type": "collection",
-            "binding_collection_name": "boss_bars",
-            "binding_name_override": "#visible"
-        }]
-    },
-    "empty_progress_barx_b": {
-        "type": "image",
-        "texture": "textures/ui/empty_progress_bar_b"
-    },
-    "filled_progress_bar_c": {
-        "type": "image",
-        "texture": "textures/ui/filled_progress_bar_c",
-        "clip_direction": "left",
-        "color": "$boss_health_bar_color",
-        "bindings": [{
-            "binding_name": "#progress_percentage",
-            "binding_name_override": "#clip_ratio"
-        }]
-    },
-    "filled_progress_bar_for_collections_c@filled_progress_bar_c": {
-        "clip_pixelperfect": false,
-        "bindings": [{
-            "binding_name": "#progress_percentage",
-            "binding_name_override": "#clip_ratio",
-            "binding_type": "collection",
-            "binding_collection_name": "$progress_bar_collection"
-        }]
-    },
-    "progress_bar_for_collections_c": {
-        "type": "panel",
         "anchor_from": "top_middle",
-        "anchor_to": "top_middle",
-        "offset": [0, 0],
-        "size": [188, 30],
-        "controls": [{
-                "empty_progress_barx_c@empty_progress_barx_c": {
-                    "layer": 1
-                }
-            },
-            {
-                "filled_progress_bar_for_collections_c@filled_progress_bar_for_collections_c": {
-                    "layer": 2
-                }
-            }
-        ],
-        "bindings": [{
-            "binding_name": "(#bossName = 'Headless Guard')",
-            "binding_type": "collection",
-            "binding_collection_name": "boss_bars",
-            "binding_name_override": "#visible"
-        }]
+        "size": [
+            188,
+            "40%"
+        ]
     },
-    "empty_progress_barx_c": {
-        "type": "image",
-        "texture": "textures/ui/empty_progress_bar_c"
-    },
-    "filled_progress_bar_d": {
-        "type": "image",
-        "texture": "textures/ui/filled_progress_bar_d",
-        "clip_direction": "left",
-        "color": "$boss_health_bar_color",
-        "bindings": [{
-            "binding_name": "#progress_percentage",
-            "binding_name_override": "#clip_ratio"
-        }]
-    },
-    "filled_progress_bar_for_collections_d@filled_progress_bar_d": {
-        "clip_pixelperfect": false,
-        "bindings": [{
-            "binding_name": "#progress_percentage",
-            "binding_name_override": "#clip_ratio",
-            "binding_type": "collection",
-            "binding_collection_name": "$progress_bar_collection"
-        }]
-    },
-    "progress_bar_for_collections_d": {
-        "type": "panel",
-        "anchor_from": "top_middle",
-        "anchor_to": "top_middle",
-        "offset": [0, 0],
-        "size": [188, 30],
-        "controls": [{
-                "empty_progress_barx_d@empty_progress_barx_d": {
-                    "layer": 1
-                }
-            },
-            {
-                "filled_progress_bar_for_collections_d@filled_progress_bar_for_collections_d": {
-                    "layer": 2
-                }
-            }
-        ],
-        "bindings": [{
-            "binding_name": "(#bossName = 'Border Fugitive')",
-            "binding_type": "collection",
-            "binding_collection_name": "boss_bars",
-            "binding_name_override": "#visible"
-        }]
-    },
-    "empty_progress_barx_d": {
-        "type": "image",
-        "texture": "textures/ui/empty_progress_bar_d"
-    },
-    "filled_progress_bar_e": {
-        "type": "image",
-        "texture": "textures/ui/filled_progress_bar_e",
-        "clip_direction": "left",
-        "color": "$boss_health_bar_color",
-        "bindings": [{
-            "binding_name": "#progress_percentage",
-            "binding_name_override": "#clip_ratio"
-        }]
-    },
-    "filled_progress_bar_for_collections_e@filled_progress_bar_e": {
-        "clip_pixelperfect": false,
-        "bindings": [{
-            "binding_name": "#progress_percentage",
-            "binding_name_override": "#clip_ratio",
-            "binding_type": "collection",
-            "binding_collection_name": "$progress_bar_collection"
-        }]
-    },
-    "progress_bar_for_collections_e": {
-        "type": "panel",
-        "anchor_from": "top_middle",
-        "anchor_to": "top_middle",
-        "offset": [0, 0],
-        "size": [188, 30],
-        "controls": [{
-                "empty_progress_barx_e@empty_progress_barx_e": {
-                    "layer": 1
-                }
-            },
-            {
-                "filled_progress_bar_for_collections_e@filled_progress_bar_for_collections_e": {
-                    "layer": 2
-                }
-            }
-        ],
-        "bindings": [{
-            "binding_name": "(#bossName = 'Intentions')",
-            "binding_type": "collection",
-            "binding_collection_name": "boss_bars",
-            "binding_name_override": "#visible"
-        }]
-    },
-    "empty_progress_barx_e": {
-        "type": "image",
-        "texture": "textures/ui/empty_progress_bar_e"
-    },
+
     "xfilled_progress_bar_f": {
         "type": "image",
         "texture": "textures/ui/filled_progress_bar_f",
@@ -529,100 +437,7 @@
         "type": "image",
         "texture": "textures/ui/empty_progress_bar_f"
     },
-    "filled_progress_bar_f": {
-        "type": "image",
-        "texture": "textures/ui/filled_progress_bar_c",
-        "clip_direction": "left",
-        "color": "$boss_health_bar_color",
-        "bindings": [{
-            "binding_name": "#progress_percentage",
-            "binding_name_override": "#clip_ratio"
-        }]
-    },
-    "filled_progress_bar_for_collections_f@filled_progress_bar_f": {
-        "clip_pixelperfect": false,
-        "bindings": [{
-            "binding_name": "#progress_percentage",
-            "binding_name_override": "#clip_ratio",
-            "binding_type": "collection",
-            "binding_collection_name": "$progress_bar_collection"
-        }]
-    },
-    "progress_bar_for_collections_f": {
-        "type": "panel",
-        "anchor_from": "top_middle",
-        "anchor_to": "top_middle",
-        "offset": [0, 0],
-        "size": [188, 30],
-        "controls": [{
-                "empty_progress_barx_f@empty_progress_barx_f": {
-                    "layer": 1
-                }
-            },
-            {
-                "filled_progress_bar_for_collections_f@filled_progress_bar_for_collections_f": {
-                    "layer": 2
-                }
-            }
-        ],
-        "bindings": [{
-            "binding_name": "(#bossName = 'Ancient StoneStatues')",
-            "binding_type": "collection",
-            "binding_collection_name": "boss_bars",
-            "binding_name_override": "#visible"
-        }]
-    },
-    "empty_progress_barx_f": {
-        "type": "image",
-        "texture": "textures/ui/empty_progress_bar_c"
-    },
-    "filled_progress_bar_g": {
-        "type": "image",
-        "texture": "textures/ui/filled_progress_bar_g",
-        "clip_direction": "left",
-        "color": "$boss_health_bar_color",
-        "bindings": [{
-            "binding_name": "#progress_percentage",
-            "binding_name_override": "#clip_ratio"
-        }]
-    },
-    "filled_progress_bar_for_collections_g@filled_progress_bar_g": {
-        "clip_pixelperfect": false,
-        "bindings": [{
-            "binding_name": "#progress_percentage",
-            "binding_name_override": "#clip_ratio",
-            "binding_type": "collection",
-            "binding_collection_name": "$progress_bar_collection"
-        }]
-    },
-    "progress_bar_for_collections_g": {
-        "type": "panel",
-        "anchor_from": "top_middle",
-        "anchor_to": "top_middle",
-        "offset": [0, 0],
-        "size": [188, 30],
-        "controls": [{
-                "empty_progress_barx_g@empty_progress_barx_g": {
-                    "layer": 1
-                }
-            },
-            {
-                "filled_progress_bar_for_collections_g@filled_progress_bar_for_collections_g": {
-                    "layer": 2
-                }
-            }
-        ],
-        "bindings": [{
-            "binding_name": "(#bossName = '§4Intentions')",
-            "binding_type": "collection",
-            "binding_collection_name": "boss_bars",
-            "binding_name_override": "#visible"
-        }]
-    },
-    "empty_progress_barx_g": {
-        "type": "image",
-        "texture": "textures/ui/empty_progress_bar_g"
-    },
+
     "heart_renderer": {
         "type": "custom",
         "size": [1, 1],
@@ -2238,93 +2053,7 @@
             }
         }]
     },
-    "boss_health_panel": {
-        "type": "panel",
-        "size": [188, 30],
-        "anchor_from": "top_middle",
-        "anchor_to": "top_middle",
-        "$progress_bar_collection": "boss_bars",
-        "controls": [{
-                "boss_name@boss_name_panel": {
-                    "layer": 3,
-                    "offset": [0, 25]
-                }
-            },
-            {
-                "progress_bar_for_collections@progress_bar_for_collections": {
-                    "offset": [0, 0],
-                    "layer": 1
-                }
-            },
-            {
-                "progress_bar_for_collections_a@progress_bar_for_collections_a": {
-                    "offset": [0, 0],
-                    "layer": 2
-                }
-            },
-            {
-                "progress_bar_for_collections_b@progress_bar_for_collections_b": {
-                    "offset": [0, 0],
-                    "layer": 2
-                }
-            },
-            {
-                "progress_bar_for_collections_c@progress_bar_for_collections_c": {
-                    "offset": [0, 0],
-                    "layer": 2
-                }
-            },
-            {
-                "progress_bar_for_collections_d@progress_bar_for_collections_d": {
-                    "offset": [0, 0],
-                    "layer": 2
-                }
-            },
-            {
-                "progress_bar_for_collections_e@progress_bar_for_collections_e": {
-                    "offset": [0, 0],
-                    "layer": 2
-                }
-            },
-            {
-                "xprogress_bar_for_collections_f@xprogress_bar_for_collections_f": {
-                    "offset": [0, 0],
-                    "layer": 2
-                }
-            },
-            {
-                "progress_bar_for_collections_f@progress_bar_for_collections_f": {
-                    "offset": [0, 0],
-                    "layer": 2
-                }
-            },
-            {
-                "progress_bar_for_collections_g@progress_bar_for_collections_g": {
-                    "offset": [0, 0],
-                    "layer": 2
-                }
-            }
-        ],
-        "bindings": [{
-            "binding_name": "#bar_visible",
-            "binding_type": "collection",
-            "binding_collection_name": "boss_bars",
-            "binding_name_override": "#visible"
-        }]
-    },
-    "boss_health_grid": {
-        "type": "grid",
-        "grid_dimension_binding": "#boss_grid_dimension",
-        "grid_item_template": "hud.boss_health_panel",
-        "grid_fill_direction": "vertical",
-        "collection_name": "boss_bars",
-        "anchor_to": "top_middle",
-        "anchor_from": "top_middle",
-        "size": [
-            188,
-            "40%"
-        ]
-    },
+
     "skill_bar_button": {
         "type": "stack_panel",
         "orientation": "vertical",
@@ -2742,7 +2471,7 @@
                     ],
                     "anchor_from": "top_left",
                     "anchor_to": "top_left",
-                    
+
                     "offset": [2, 0],
                     "controls": [{
                             "hud_actionbar_text_area": {
