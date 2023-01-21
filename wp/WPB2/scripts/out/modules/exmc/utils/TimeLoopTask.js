@@ -21,8 +21,8 @@ export default class TimeLoopTask {
         this.func = (e) => {
             times += e.deltaTime * 1000;
             if (times >= this.time) {
-                this.looper();
                 this.stop();
+                this.looper();
             }
         };
         this.timeOut.register("tick", this.func);

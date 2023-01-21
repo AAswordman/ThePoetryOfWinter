@@ -1160,7 +1160,7 @@
                     "layer": 2,
                     "bindings": [{
                         "binding_type": "global",
-                        "binding_name": "(not (#title_text = '__pomAlertMenu'))",
+                        "binding_name": "(not (#title_text = '__pomAlertMenu') and not (#title_text = '__pomAlertWarning'))",
                         "binding_name_override": "#visible"
                     }]
                 }
@@ -1173,7 +1173,23 @@
                     ],
                     "bindings": [{
                         "binding_type": "global",
-                        "binding_name": "(#title_text = '__pomAlertMenu')",
+                        "binding_name": "((#title_text = '__pomAlertMenu') or (#title_text = '__pomAlertWarning'))",
+                        "binding_name_override": "#visible"
+                    }]
+                }
+            },
+            {
+                "warn_form@common_dialogs.main_panel_no_buttons": {
+                    "$title_panel": "common_dialogs.standard_title_label",
+                    "$title_size": ["100% - 14px", 10],
+                    "size": ["90%", "90%"],
+                    "$text_name": "warning",
+                    "$title_text_binding_type": "none",
+                    "$child_control": "server_form.long_form_panel",
+                    "layer": 2,
+                    "bindings": [{
+                        "binding_type": "global",
+                        "binding_name": "(#title_text = '__pomAlertWarning')",
                         "binding_name_override": "#visible"
                     }]
                 }

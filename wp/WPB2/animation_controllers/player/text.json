@@ -19,8 +19,6 @@
             "/scoreboard objectives add wbldpd dummy 领地判断",
             "/scoreboard objectives add wbldzr dummy 领地主人",
             "/scoreboard objectives add wbldcg dummy 领地草稿",
-            "/scoreboard objectives add wbnjqzj dummy 剧情周目",
-            "/scoreboard objectives add wbnjqbf dummy 剧情部分",
             "/scoreboard objectives add wbwqlqjs dummy 武器冷却加速",
             "/scoreboard objectives add wbwqlq dummy 武器冷却",
             "/scoreboard objectives add wbkjlq dummy 盔甲冷却",
@@ -28,8 +26,6 @@
             "/scoreboard objectives add wbkjlqzh dummy 盔甲冷却总和",
             "/scoreboard objectives add wbfinal dummy 常量",
             "/scoreboard objectives add wbkjlqcg dummy 盔甲冷却草稿",
-            "/scoreboard objectives add wbxxht dummy 信息互通",
-            "/scoreboard objectives add wbgc dummy 游戏GC",
             "/scoreboard objectives add wbwjswjs dummy 玩家死亡计时"
           ]
         }

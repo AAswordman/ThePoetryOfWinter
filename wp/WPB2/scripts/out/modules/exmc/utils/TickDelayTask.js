@@ -21,8 +21,8 @@ export default class TickDelayTask {
         this.func = (e) => {
             times += 1;
             if (times >= this.time) {
-                this.looper();
                 this.stop();
+                this.looper();
             }
         };
         this.timeOut.register("tick", this.func);
