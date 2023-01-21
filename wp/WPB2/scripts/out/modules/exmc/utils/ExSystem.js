@@ -39,5 +39,5 @@ export default class ExSystem {
     }
 }
 ExSystem.idMap = new Map();
-ExSystem.chineseCharMatcher = /^([\u4E00-\u9FA5])+$/;
+ExSystem.chineseCharMatcher = /([\u4E00-\u9FA5])+/;
 //# sourceMappingURL=ExSystem.js.map

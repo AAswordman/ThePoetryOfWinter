@@ -1,4 +1,4 @@
-{
+export default {
   "format_version": "1.14",
   "minecraft:npc_dialogue": {
     "scenes": [{
@@ -453,8 +453,7 @@
           },
           "commands": [
 
-            "/scoreboard players set @initiator wbnjqbf 0",
-            "/kill @s"
+            "/scoreboard players set @initiator wbnjqbf 0"
           ]
         }],
         "on_close_commands": []

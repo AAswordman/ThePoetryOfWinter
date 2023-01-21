@@ -135,7 +135,7 @@ export default class PomServer extends ExGameServer {
                 maxDistance: 400
             }));
             for (let e of entities) {
-                if (e.id === "minecraft:item" && e.viewVector.y === 0) {
+                if (e.typeId === "minecraft:item" && e.viewVector.y === 0) {
                     e.kill();
                 }
             }

@@ -34,6 +34,8 @@ import ExSystem from "../../modules/exmc/utils/ExSystem.js";
 import { eventDecoratorFactory } from "../../modules/exmc/server/events/EventDecoratorFactory.js";
 import PomTaskSystem from "./func/PomTaskSystem.js";
 import { receiveMessage } from "../../modules/exmc/server/ExGame.js";
+import WarningAlertUI from "./ui/WarningAlertUI.js";
+import POMLICENSE from "./data/POMLICENSE.js";
 export default class PomClient extends ExGameClient {
     // net;
     constructor(server, id, player) {
@@ -93,7 +95,6 @@ export default class PomClient extends ExGameClient {
         this.gameControllers.forEach(controller => controller.onLoaded());
         if (!this.data.lang) {
             this.exPlayer.runCommandAsync("mojang nmsl").catch((e) => {
-                //console.warn(JSON.stringify(e)+" catch");
                 if (ExSystem.hasChineseCharacter(JSON.stringify(e))) {
                     this.data.lang = "zh";
                 }
@@ -101,6 +102,17 @@ export default class PomClient extends ExGameClient {
                     this.data.lang = "en";
                 }
             });
+        }
+        if (!this.data.licenseRead) {
+            const looper = new TimeLoopTask(this.getEvents(), () => {
+                new WarningAlertUI(this, POMLICENSE, [["同意并继续", (c, ui) => {
+                            this.data.licenseRead = true;
+                            looper.stop();
+                        }]]).showPage();
+                if (!this.data.licenseRead)
+                    looper.startOnce();
+            }).delay(1000);
+            looper.startOnce();
         }
         if (this.player.hasTag("wbmsyh")) {
             this.player.nameTag = "§a" + this.player.nameTag;
