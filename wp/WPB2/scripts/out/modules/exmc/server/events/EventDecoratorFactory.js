@@ -23,4 +23,4 @@ export function registerEvent(eventName, condition) {
         Reflect.defineMetadata("eventCondition", condition, target, propertyName);
     };
 }
-//# sourceMappingURL=EventDecoratorFactory.js.map
+//# sourceMappingURL=eventDecoratorFactory.js.map

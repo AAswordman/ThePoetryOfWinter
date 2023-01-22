@@ -31,7 +31,7 @@ import SimpleItemUseFunc from "./func/SimpleItemUseFunc.js";
 import PomDimRuinsSystem from "./func/PomDimRuinsSystem.js";
 import Random from "../../modules/exmc/utils/Random.js";
 import ExSystem from "../../modules/exmc/utils/ExSystem.js";
-import { eventDecoratorFactory } from "../../modules/exmc/server/events/EventDecoratorFactory.js";
+import { eventDecoratorFactory } from "../../modules/exmc/server/events/eventDecoratorFactory.js";
 import PomTaskSystem from "./func/PomTaskSystem.js";
 import { receiveMessage } from "../../modules/exmc/server/ExGame.js";
 import WarningAlertUI from "./ui/WarningAlertUI.js";

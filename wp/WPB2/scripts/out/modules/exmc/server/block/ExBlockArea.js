@@ -25,6 +25,14 @@ export class ExBlockArea {
         }
         this.resetRotation();
     }
+    center() {
+        return this.end.clone().sub(this.start).scl(1 / 2).add(this.start);
+    }
+    contains(tmpV) {
+        return this.start.x <= tmpV.x && this.start.z <= tmpV.z &&
+            tmpV.x <= this.end.x && tmpV.z <= this.end.z &&
+            this.start.y <= tmpV.y && tmpV.y <= this.end.y;
+    }
     resetRotation() {
         this.setMatrix4(new Matrix4([
             [1, 0, 0, 0],

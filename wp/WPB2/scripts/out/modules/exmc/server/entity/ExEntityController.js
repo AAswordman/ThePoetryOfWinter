@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 import ExEntity from "./ExEntity.js";
 import { EntityHurtEvent } from '@minecraft/server';
 import ExEntityEvents from "./ExEntityEvents.js";
-import { eventDecoratorFactory, registerEvent } from "../events/EventDecoratorFactory.js";
+import { eventDecoratorFactory, registerEvent } from "../events/eventDecoratorFactory.js";
 export default class ExEntityController {
     constructor(e, server) {
         this._entity = e;
@@ -19,7 +19,7 @@ export default class ExEntityController {
         this.init(server);
         this.onSpawn();
         eventDecoratorFactory(this.getEvents(), this);
-        console.warn("track " + e.typeId);
+        // console.warn("track "+e.typeId);
     }
     get entity() {
         return this._entity;

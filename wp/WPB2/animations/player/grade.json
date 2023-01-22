@@ -60,7 +60,6 @@
           "/execute as @s[m=survival,tag=wbldkzb,scores={wbldpd=!0}] at @s run gamemode adventure @s",
           //盔甲冷却写gt了
           "/function armor/skill_update",
-          "/function player/die",
           "/tag @s remove wbnearboss"
         ]
       },

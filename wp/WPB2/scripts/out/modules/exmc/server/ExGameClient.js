@@ -6,7 +6,7 @@ import ExDimension from "./ExDimension.js";
 import ExErrorQueue from "./ExErrorQueue.js";
 import ExActionAlert from "./ui/ExActionAlert.js";
 import "../../reflect-metadata/Reflect.js";
-import { eventDecoratorFactory } from "./events/EventDecoratorFactory.js";
+import { eventDecoratorFactory } from "./events/eventDecoratorFactory.js";
 export default class ExGameClient {
     constructor(server, id, player) {
         this.debuggerChatTest = (e) => {

@@ -20,7 +20,7 @@ import ExCommand from './env/ExCommand.js';
 import ExClientEvents from "./events/ExClientEvents.js";
 import ExEntityEvents from "./entity/ExEntityEvents.js";
 import "../../reflect-metadata/Reflect.js";
-import { eventDecoratorFactory, registerEvent } from "./events/EventDecoratorFactory.js";
+import { eventDecoratorFactory, registerEvent } from "./events/eventDecoratorFactory.js";
 export default class ExGameServer {
     constructor(config) {
         this.entityControllers = new Map();
@@ -75,6 +75,9 @@ export default class ExGameServer {
         }
         return players;
     }
+    // getPlayers(){
+    //     return 
+    // }
     findClientByName(playerName) {
         return this.clients_nameMap.get(playerName);
     }

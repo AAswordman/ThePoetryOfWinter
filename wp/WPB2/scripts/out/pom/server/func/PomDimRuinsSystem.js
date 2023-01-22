@@ -1,27 +1,63 @@
 import { MinecraftBlockTypes, MinecraftDimensionTypes, GameMode } from '@minecraft/server';
-import ExBlockStructureNormal from "../../../modules/exmc/server/block/structure/ExBlockStructureNormal.js";
 import GameController from "./GameController.js";
 import RuinsLoaction from "./ruins/RuinsLoaction.js";
 import { ExBlockArea } from '../../../modules/exmc/server/block/ExBlockArea.js';
 import Vector3 from '../../../modules/exmc/math/Vector3.js';
 import ExGameVector3 from '../../../modules/exmc/server/math/ExGameVector3.js';
 import PomDesertRuinBasicRule from './ruins/desert/PomDesertRuinBasicRule.js';
+import VarOnChangeListener from '../../../modules/exmc/utils/VarOnChangeListener.js';
+import ExMessageAlert from '../../../modules/exmc/server/ui/ExMessageAlert.js';
+import ExActionAlert from '../../../modules/exmc/server/ui/ExActionAlert.js';
+import PomBossBarrier from './barrier/PomBossBarrier.js';
 export default class PomDimRuinsSystem extends GameController {
     constructor() {
         super(...arguments);
-        this.portalMatching = new ExBlockStructureNormal().setStructure([["XXX"]]);
         this.desertRuinRules = new PomDesertRuinBasicRule(this);
         this.isInRuinJudge = false;
+        this.desertRuinBackJudge = new VarOnChangeListener((v) => {
+            if (v) {
+                new ExMessageAlert().title("返回").body("是否返回主世界?")
+                    .button1("否", () => {
+                })
+                    .button2("是", () => {
+                    let v = this.data.dimBackPoint;
+                    if (!v) {
+                        v = new Vector3(0, 255, 0);
+                    }
+                    this.exPlayer.setPosition(v, this.getDimension(MinecraftDimensionTypes.overworld));
+                })
+                    .show(this.player);
+            }
+        }, false);
+        this.stoneRuinBackJudge = new VarOnChangeListener((v) => {
+            if (v) {
+                new ExActionAlert().title("操作").body("选择你的操作")
+                    .button("召唤boss", () => {
+                    this.getExDimension().spawnEntity("wb:magic_stoneman", this.client.getServer().ruin_stoneBoss.getBossSpawnArea().center());
+                })
+                    .button("返回主世界", () => {
+                    let v = this.data.dimBackPoint;
+                    if (!v) {
+                        v = new Vector3(0, 255, 0);
+                    }
+                    this.exPlayer.setPosition(v, this.getDimension(MinecraftDimensionTypes.overworld));
+                })
+                    .button("取消", () => {
+                })
+                    .show(this.player);
+            }
+        }, false);
     }
     onJoin() {
         const tmpV = new Vector3();
         const tmpA = new Vector3();
         const tmpB = new Vector3();
         this.getEvents().exEvents.onLongTick.subscribe(event => {
+            var _a, _b, _c, _d;
             if (event.currentTick % 4 !== 0)
                 return;
             //1s 1 tick
-            let isInRuin = false;
+            //脚下方块探测
             tmpV.set(this.player.location);
             let loc = ExGameVector3.getBlockLocation(tmpV);
             loc.y -= 1;
@@ -31,25 +67,41 @@ export default class PomDimRuinsSystem extends GameController {
             }
             catch (e) { }
             if ((block === null || block === void 0 ? void 0 : block.typeId) === "wb:portal_desertboss") {
-                //TODO: tp to end
+                //守卫遗迹判断
                 this.data.dimBackPoint = new Vector3(this.player.location).add(3, 2, 3);
-                // let mode = ExPlayer.getInstance(this.player).getGameMode();
-                // this.data.dimBackMode = mode === GameMode.adventure ? 2 : (mode === GameMode.survival ? 0 : 1);
                 this.client.cache.save();
                 this.exPlayer.setPosition(ExBlockArea.randomPoint(this.client.getServer().ruin_desertBoss.getPlayerSpawnArea(), 4), this.getDimension(MinecraftDimensionTypes.theEnd));
+                //未生成遗迹判断
                 if (((this.globalSettings.ruinsExsitsData >> RuinsLoaction.DESERT_RUIN_NUM) & 1) == 0) {
                     //generate
                     this.client.getServer().ruin_desertBoss.generate();
                     this.globalSettings.ruinsExsitsData = this.globalSettings.ruinsExsitsData | (1 << (RuinsLoaction.DESERT_RUIN_NUM));
                 }
             }
-            tmpA.set(RuinsLoaction.DESERT_RUIN_LOCATION_CENTER).sub(32, 4, 32);
-            tmpB.set(RuinsLoaction.DESERT_RUIN_LOCATION_CENTER).add(32, 32, 32);
-            this.desertRuinRules.desertRuinBackJudge.upDate(tmpA.x <= tmpV.x && tmpA.z <= tmpV.z &&
-                tmpV.x <= tmpB.x && tmpV.z <= tmpB.z &&
-                tmpA.y <= tmpV.y && tmpV.y <= tmpB.y
-                && this.player.dimension.id === MinecraftDimensionTypes.theEnd);
-            if (this.getDimension(MinecraftDimensionTypes.theEnd) === this.player.dimension && tmpV.x >= RuinsLoaction.DESERT_RUIN_LOCATION_START.x && tmpV.x <= RuinsLoaction.DESERT_RUIN_LOCATION_END.x
+            else if ((block === null || block === void 0 ? void 0 : block.typeId) === "wb:portal_stoneboss") {
+                //石头遗迹判断
+                this.data.dimBackPoint = new Vector3(this.player.location).add(3, 2, 3);
+                this.client.cache.save();
+                this.exPlayer.setPosition(ExBlockArea.randomPoint(this.client.getServer().ruin_stoneBoss.getPlayerSpawnArea(), 1), this.getDimension(MinecraftDimensionTypes.theEnd));
+                //未生成遗迹判断
+                if (((this.globalSettings.ruinsExsitsData >> RuinsLoaction.STONE_RUIN_NUM) & 1) == 0) {
+                    //generate
+                    this.client.getServer().ruin_stoneBoss.generate();
+                    this.globalSettings.ruinsExsitsData = this.globalSettings.ruinsExsitsData | (1 << (RuinsLoaction.STONE_RUIN_NUM));
+                }
+            }
+            //所有遗迹返回判断
+            if (!PomBossBarrier.isInBarrier(this.player)) {
+                this.desertRuinBackJudge.upDate(((_b = (_a = this.client.getServer().ruin_desertBoss.getBossSpawnArea()) === null || _a === void 0 ? void 0 : _a.contains(tmpV)) !== null && _b !== void 0 ? _b : false)
+                    && this.player.dimension.id === MinecraftDimensionTypes.theEnd);
+                this.stoneRuinBackJudge.upDate(((_d = (_c = this.client.getServer().ruin_stoneBoss.getBossSpawnArea()) === null || _c === void 0 ? void 0 : _c.contains(tmpV)) !== null && _d !== void 0 ? _d : false)
+                    && this.player.dimension.id === MinecraftDimensionTypes.theEnd);
+            }
+            let isInGuardRuin = false;
+            let isInStoneRuin = false;
+            //处于守卫遗迹
+            if (this.getDimension(MinecraftDimensionTypes.theEnd) === this.player.dimension
+                && tmpV.x >= RuinsLoaction.DESERT_RUIN_LOCATION_START.x && tmpV.x <= RuinsLoaction.DESERT_RUIN_LOCATION_END.x
                 && tmpV.z >= RuinsLoaction.DESERT_RUIN_LOCATION_START.z && tmpV.z <= RuinsLoaction.DESERT_RUIN_LOCATION_END.z) {
                 if (tmpV.y < RuinsLoaction.DESERT_RUIN_LOCATION_START.y - 2) {
                     tmpV.y = RuinsLoaction.DESERT_RUIN_LOCATION_START.y + 4;
@@ -57,14 +109,25 @@ export default class PomDimRuinsSystem extends GameController {
                 }
                 if (3 <= tmpV.x % 16 && tmpV.x % 16 <= 13 && 3 <= tmpV.z % 16 && tmpV.z % 16 <= 13)
                     this.desertRuinRules.desertRuinScoreJudge.upDate(`${Math.floor((tmpV.x - RuinsLoaction.DESERT_RUIN_LOCATION_START.x) / 16)},${Math.floor((tmpV.y - RuinsLoaction.DESERT_RUIN_LOCATION_START.y) / 16)},${Math.floor((tmpV.z - RuinsLoaction.DESERT_RUIN_LOCATION_START.z) / 16)}`);
-                isInRuin = true;
+                isInGuardRuin = true;
                 let show = [];
                 show = this.desertRuinRules.getShowMap();
                 this.client.magicSystem.anotherShow = show;
             }
-            this.client.magicSystem.additionHealthShow = isInRuin;
-            this.desertRuinRules.inRuinsListener.upDate(isInRuin);
-            this.isInRuinJudge = isInRuin;
+            this.client.magicSystem.additionHealthShow = isInGuardRuin;
+            this.desertRuinRules.inRuinsListener.upDate(isInGuardRuin);
+            //处于石头遗迹
+            if (this.getDimension(MinecraftDimensionTypes.theEnd) === this.player.dimension
+                && tmpV.x >= RuinsLoaction.STONE_RUIN_LOCATION_START.x && tmpV.x <= RuinsLoaction.STONE_RUIN_LOCATION_END.x
+                && tmpV.z >= RuinsLoaction.STONE_RUIN_LOCATION_START.z && tmpV.z <= RuinsLoaction.STONE_RUIN_LOCATION_END.z) {
+                if (tmpV.y < RuinsLoaction.STONE_RUIN_LOCATION_START.y - 2) {
+                    tmpV.y = RuinsLoaction.STONE_RUIN_LOCATION_START.y + 6;
+                    this.exPlayer.setPosition(tmpV);
+                }
+                isInStoneRuin = true;
+            }
+            //设置游戏模式
+            this.isInRuinJudge = isInGuardRuin || isInStoneRuin;
             let mode = this.exPlayer.getGameMode();
             if (this.isInRuinJudge && mode === GameMode.survival) {
                 this.exPlayer.setGameMode(GameMode.adventure);
@@ -88,8 +151,9 @@ export default class PomDimRuinsSystem extends GameController {
                 block = this.getDimension().getBlock(e.blockLocation);
             }
             catch (e) { }
-            if (e.item.typeId === "wb:mineral_magic_equipment") {
-                const p = this.client.getServer().portal_desertBoss;
+            if (e.item.typeId === "wb:start_key") {
+                //遗迹传送门激活
+                let p = this.client.getServer().portal_desertBoss;
                 if ((block === null || block === void 0 ? void 0 : block.typeId) === "wb:block_magic_equipment") {
                     const v2 = new Vector3(e.blockLocation).add(2, 2, 2);
                     const v1 = new Vector3(e.blockLocation).sub(2, 0, 2);
@@ -109,6 +173,22 @@ export default class PomDimRuinsSystem extends GameController {
                         const parLoc = new Vector3(e.blockLocation).add(0.5, 0.5, 0.5);
                         this.getExDimension().spawnParticle("wb:portal_desertboss_par1", parLoc);
                         this.getExDimension().spawnParticle("wb:portal_desertboss_par2", parLoc);
+                    }
+                    v2.sub(0, 1, 0);
+                    p = this.client.getServer().portal_stoneBoss;
+                    m = p.setArea(new ExBlockArea(v1, v2, true))
+                        .setDimension(this.getDimension(MinecraftDimensionTypes.overworld))
+                        .find();
+                    if (m) {
+                        p.analysis({
+                            X: MinecraftBlockTypes.sandstone.id,
+                            W: "wb:portal_stoneboss",
+                            Y: "wb:portal_stoneboss",
+                            S: MinecraftBlockTypes.cobblestoneWall.id,
+                            A: MinecraftBlockTypes.air.id,
+                            B: MinecraftBlockTypes.stonebrick.id
+                        })
+                            .putStructure(m);
                     }
                 }
             }

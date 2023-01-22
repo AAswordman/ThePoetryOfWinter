@@ -25,8 +25,7 @@
             "/scoreboard objectives add wbkjlqjs dummy 盔甲冷却加速",
             "/scoreboard objectives add wbkjlqzh dummy 盔甲冷却总和",
             "/scoreboard objectives add wbfinal dummy 常量",
-            "/scoreboard objectives add wbkjlqcg dummy 盔甲冷却草稿",
-            "/scoreboard objectives add wbwjswjs dummy 玩家死亡计时"
+            "/scoreboard objectives add wbkjlqcg dummy 盔甲冷却草稿"
           ]
         }
       }
