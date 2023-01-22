@@ -20,13 +20,12 @@ export default class PomTalentSystem extends GameController {
             if (this.data.talent.occupation.id === Occupation.ASSASSIN.id)
                 this.strikeSkill = true;
             if (this.data.talent.occupation.id === Occupation.PRIEST.id) {
-                let query = {
-                    maxDistance: 20,
-                    location: ExGameVector3.getLocation(this.player.location)
-                };
                 let health = 999;
                 let player = this.exPlayer;
-                for (let p of this.player.dimension.getPlayers(query)) {
+                for (let p of this.player.dimension.getPlayers({
+                    maxDistance: 20,
+                    location: ExGameVector3.getLocation(this.player.location)
+                })) {
                     let exp = ExPlayer.getInstance(p);
                     if (exp.getHealth() < health) {
                         health = exp.getHealth();

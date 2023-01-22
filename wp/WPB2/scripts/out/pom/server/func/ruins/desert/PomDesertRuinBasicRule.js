@@ -1,4 +1,4 @@
-import { MinecraftDimensionTypes, MinecraftEntityTypes } from "@minecraft/server";
+import { MinecraftEntityTypes } from "@minecraft/server";
 import GameControllerRuinRule from "../GameControllerRuinRule.js";
 import RuinsLoaction from "../RuinsLoaction.js";
 import PomDesertRuinRules from "./PomDesertRuinRules.js";
@@ -6,7 +6,6 @@ import PomMazeMapBuilder from "../PomMazeMapBuilder.js";
 import Vector3 from "../../../../../modules/exmc/math/Vector3.js";
 import ExErrorQueue from "../../../../../modules/exmc/server/ExErrorQueue.js";
 import ExGameVector3 from "../../../../../modules/exmc/server/math/ExGameVector3.js";
-import ExMessageAlert from "../../../../../modules/exmc/server/ui/ExMessageAlert.js";
 import VarOnChangeListener from "../../../../../modules/exmc/utils/VarOnChangeListener.js";
 export default class PomDesertRuinBasicRule extends GameControllerRuinRule {
     constructor(game) {
@@ -35,21 +34,6 @@ export default class PomDesertRuinBasicRule extends GameControllerRuinRule {
                     this.client.talentSystem.hasBeenDamaged.push(addHealthListener);
                 }
                 this.client.magicSystem.anotherShow = [];
-            }
-        }, false);
-        this.desertRuinBackJudge = new VarOnChangeListener((v) => {
-            if (v) {
-                new ExMessageAlert().title("返回").body("是否返回主世界?")
-                    .button1("否", () => {
-                })
-                    .button2("是", () => {
-                    let v = game.data.dimBackPoint;
-                    if (!v) {
-                        v = new Vector3(0, 255, 0);
-                    }
-                    game.exPlayer.setPosition(v, game.getDimension(MinecraftDimensionTypes.overworld));
-                })
-                    .show(game.player);
             }
         }, false);
         this.desertRoomCounter = new Map();

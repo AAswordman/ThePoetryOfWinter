@@ -15,8 +15,11 @@ export default class ExDimension {
         //console.warn(location, radius, explosionOptions);
         this._dimension.createExplosion(ExGameVector3.getLocation(location), radius, explosionOptions);
     }
+    get dimension() {
+        return this._dimension;
+    }
     getPlayers(entityQueryOptions) {
-        return this._dimension.getPlayers(entityQueryOptions);
+        return Array.from(this._dimension.getPlayers(entityQueryOptions));
     }
     getEntities(entityQueryOptions) {
         let entities = this._dimension.getEntities(entityQueryOptions);

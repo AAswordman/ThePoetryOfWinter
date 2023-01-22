@@ -29,7 +29,6 @@ export default class PomDesertBossRuin {
         this._monsterArea = [];
         this._airMonsterArea = [];
         this._playerArea = [];
-        this._bossArea = [];
         this.seed = seed;
     }
     isCompleted() {
@@ -72,6 +71,7 @@ export default class PomDesertBossRuin {
         this.y = y;
         this.z = z;
         this.dim = dim;
+        this._bossArea = new ExBlockArea(new Vector3(254, 2, 254).add(x, y, z), new Vector3(4, 4, 4));
         const maze = Array.from(new Array(32), () => new Array(32).fill(0));
         let block = 64;
         let seed = this.seed;
@@ -328,7 +328,6 @@ export default class PomDesertBossRuin {
         this.jigsaw.setStructurePlane(16, 16, 0, -1, 0, this.structure_boss, 180, false, 2, 2);
         this._airMonsterArea = [];
         this._airPathArea = [];
-        this._bossArea = [];
         this._monsterArea = [];
         this._pathArea = [];
         this._playerArea = [];
@@ -350,7 +349,6 @@ export default class PomDesertBossRuin {
                 this.rooms.add(`${ix},${iy},${iz}`);
             }
             else if (data.structureName === this.structure_boss) {
-                this._bossArea.push(new ExBlockArea(new Vector3(ix, iy, iz).scl(this.jigsaw.size).add(this.x, this.y, this.z), new Vector3(1, 1, 1).scl(this.jigsaw.size)));
             }
             else if (data.structureName === this.structure_upplain) {
                 this._airPathArea.push(new ExBlockArea(new Vector3(ix, iy, iz).scl(this.jigsaw.size).add(this.x, this.y, this.z), new Vector3(1, 1, 1).scl(this.jigsaw.size)));

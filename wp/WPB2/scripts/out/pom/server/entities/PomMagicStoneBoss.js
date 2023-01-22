@@ -1,5 +1,5 @@
-import ExEntityController from '../../../modules/exmc/server/entity/ExEntityController.js';
-export default class PomMagicStoneBoss extends ExEntityController {
+import PomBossController from './PomBossController.js';
+export default class PomMagicStoneBoss extends PomBossController {
     constructor(e, server) {
         super(e, server);
     }

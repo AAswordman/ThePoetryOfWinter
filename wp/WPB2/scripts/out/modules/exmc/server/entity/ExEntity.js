@@ -119,6 +119,9 @@ export default class ExEntity {
     getPosition() {
         return new Vector3(this.entity.location);
     }
+    getRotation() {
+        return this.entity.rotation;
+    }
     setPosition(position, dimension = this.entity.dimension) {
         this.entity.teleport(position, dimension, this.entity.rotation.x, this.entity.rotation.y);
     }

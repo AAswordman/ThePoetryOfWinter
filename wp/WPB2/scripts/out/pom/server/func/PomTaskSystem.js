@@ -91,6 +91,7 @@ export default class PomTaskSystem extends GameController {
         }
         this.getEvents().exEvents.blockBreak.subscribe(e => {
             var _a, _b;
+            // ExGameConfig.console.log(e.brokenBlockPermutation.type.id);
             if (!this.data.tasks)
                 return;
             if (this.recordDailyArray.has(e.brokenBlockPermutation.type.id)) {
