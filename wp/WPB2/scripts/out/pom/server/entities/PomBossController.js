@@ -7,7 +7,10 @@ export default class PomBossController extends ExEntityController {
         this.startPos = this.exEntity.getPosition();
         let barrier = PomBossBarrier.find(this.startPos);
         if (!barrier) {
-            barrier = new PomBossBarrier(server, this.exEntity.getExDimension(), new ExBlockArea(this.startPos.clone().sub(32, 32, 32), this.startPos.clone().add(32, 32, 32), true));
+            barrier = new PomBossBarrier(server, this.exEntity.getExDimension(), new ExBlockArea(this.startPos.clone().sub(32, 32, 32), this.startPos.clone().add(32, 32, 32), true), this);
+        }
+        else {
+            barrier.setBoss(this);
         }
         this.barrier = barrier;
         if (barrier.players.size === 0) {
@@ -18,10 +21,14 @@ export default class PomBossController extends ExEntityController {
     despawn() {
         this.entity.triggerEvent("minecraft:despawn");
     }
+    onFail() {
+        this.server.say({ rawtext: [{ translate: "text.dec:killed_by_boss.name" }] });
+        this.despawn();
+    }
     onSpawn() {
         super.onSpawn();
     }
-    isDefeated() {
+    stopBarrier() {
         this.barrier.stop();
     }
 }

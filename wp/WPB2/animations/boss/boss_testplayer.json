@@ -7,8 +7,7 @@
       "timeline": {
         "0.4": [
           "/function base/boss",
-          "/effect @e[r=8,rm=2] weakness 3 10 true",
-          "/summon wb:boss_translate_use"
+          "/effect @e[r=8,rm=2] weakness 3 10 true"
         ]
       }
     }

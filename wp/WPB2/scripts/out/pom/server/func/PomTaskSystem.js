@@ -12,6 +12,9 @@ export default class PomTaskSystem extends GameController {
         this.recordDailyArray = new Set();
         this.recordProgressArray = new Set();
     }
+    progressTaskFinish(name, damage) {
+        this.data.tasks.progress.data[name] = damage;
+    }
     show(page, subpage) {
         let ui = new MenuUIAlert(this.client, menuTaskUI(this));
         if (!page || !subpage) {
@@ -90,19 +93,17 @@ export default class PomTaskSystem extends GameController {
             }
         }
         this.getEvents().exEvents.blockBreak.subscribe(e => {
-            var _a, _b;
+            var _a;
             // ExGameConfig.console.log(e.brokenBlockPermutation.type.id);
             if (!this.data.tasks)
                 return;
             if (this.recordDailyArray.has(e.brokenBlockPermutation.type.id)) {
                 this.data.tasks.daily.cache[e.brokenBlockPermutation.type.id] = 1 + ((_a = this.data.tasks.daily.cache[e.brokenBlockPermutation.type.id]) !== null && _a !== void 0 ? _a : 0);
             }
-            if (this.recordProgressArray.has(e.brokenBlockPermutation.type.id)) {
-                this.data.tasks.progress.data[e.brokenBlockPermutation.type.id] = 1 + ((_b = this.data.tasks.progress.data[e.brokenBlockPermutation.type.id]) !== null && _b !== void 0 ? _b : 0);
-            }
+            // s
         });
         this.getEvents().exEvents.playerHitEntity.subscribe(e => {
-            var _a, _b;
+            var _a;
             if (!this.data.tasks)
                 return;
             if (this.recordDailyArray.has(e.hurtEntity.typeId)) {
@@ -110,11 +111,11 @@ export default class PomTaskSystem extends GameController {
                     this.data.tasks.daily.cache[e.hurtEntity.typeId] = 1 + ((_a = this.data.tasks.daily.cache[e.hurtEntity.typeId]) !== null && _a !== void 0 ? _a : 0);
                 }
             }
-            if (this.recordProgressArray.has(e.hurtEntity.typeId)) {
-                if (ExEntity.getInstance(e.hurtEntity).getHealth() < 0) {
-                    this.data.tasks.progress.data[e.hurtEntity.typeId] = 1 + ((_b = this.data.tasks.progress.data[e.hurtEntity.typeId]) !== null && _b !== void 0 ? _b : 0);
-                }
-            }
+            // if (this.recordProgressArray.has(e.hurtEntity.typeId)) {
+            //     if (ExEntity.getInstance(e.hurtEntity).getHealth() < 0) {
+            //         this.data.tasks.progress.data[e.hurtEntity.typeId] = 1 + (this.data.tasks.progress.data[e.hurtEntity.typeId] ?? 0);
+            //     }
+            // }
         });
     }
     onLoaded() {

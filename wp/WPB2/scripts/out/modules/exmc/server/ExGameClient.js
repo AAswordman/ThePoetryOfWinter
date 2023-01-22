@@ -1,12 +1,21 @@
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 import ExGameConfig from "./ExGameConfig.js";
 import ExClientEvents from "./events/ExClientEvents.js";
 import { world } from '@minecraft/server';
 import ExPlayer from "./entity/ExPlayer.js";
 import ExDimension from "./ExDimension.js";
-import ExErrorQueue from "./ExErrorQueue.js";
 import ExActionAlert from "./ui/ExActionAlert.js";
 import "../../reflect-metadata/Reflect.js";
 import { eventDecoratorFactory } from "./events/eventDecoratorFactory.js";
+import notUtillTask from "../utils/NotUtillTask.js";
 export default class ExGameClient {
     constructor(server, id, player) {
         this.debuggerChatTest = (e) => {
@@ -25,20 +34,15 @@ export default class ExGameClient {
         else {
             this.notDebugger();
         }
-        let func = () => {
-            this.exPlayer.command.run(`testfor @s`)
-                .then(e => {
-                try {
-                    this.onLoaded();
-                }
-                catch (e) {
-                    ExErrorQueue.throwError(e);
-                }
-            }).catch(e => {
-                this.setTimeout(func, 2000);
-            });
-        };
-        this.setTimeout(func, 100);
+        notUtillTask(this, () => __awaiter(this, void 0, void 0, function* () {
+            try {
+                let res = yield this.exPlayer.command.run(`testfor @s`);
+                return true;
+            }
+            catch (e) {
+                return false;
+            }
+        }), () => this.onLoaded());
         this.onJoin();
         eventDecoratorFactory(this.getEvents(), this);
     }

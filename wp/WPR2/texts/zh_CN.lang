@@ -886,11 +886,19 @@ item.skill.wb.sword_bluemarkb=§d痕.耀
 item.skill.wb.sword_bloodsucking_cd=§d嗜血风暴
 item.skill.wb.sword_intentionsx=§e极念狂想
 item.skill.wb.sword_intentionsx_a=§b[系统]能量不足
-item.skill.wb.start_key=§e长按钥匙开启流程
 
+text.wb:summon_magic_stoneman.name=§e魔化石块已被召唤
+text.wb:summon_headless_guard.name=§e无头守卫已被召唤
+text.wb:summon_ancient_stone.name=§e远古石像已被召唤
+text.wb:summon_intentions.name=§e念已被召唤
+text.wb:summon_god_of_guard.name=§e守卫战神已被召唤
 
-enter.text.wb.text1=请进行新手教程
-enter.text.wb.text2=手持物品栏中钥匙图标的物品并长按,请开启实验玩法和后面的一系列开关
+text.wb:defeat_magic_stoneman.name=§e魔化石块已被击败
+text.wb:defeat_headless_guard.name=§e无头守卫已被击败
+text.wb:defeat_ancient_stone.name=§e远古石像已被击败
+text.wb:defeat_intentions.name=§e念已被击败
+text.wb:defeat_god_of_guard.name=§e守卫战神已被击败
+
 
 
 text.help.wb.new.how_to_play.1=BOSS推荐流程和召唤方法

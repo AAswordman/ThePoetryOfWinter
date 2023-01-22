@@ -10,6 +10,7 @@ import isEquipment from "../items/isEquipment.js";
 import GameController from "./GameController.js";
 import ExGameVector3 from '../../../modules/exmc/server/math/ExGameVector3.js';
 import damageShow from "../helper/damageShow.js";
+import MonitorManager from "../../../modules/exmc/utils/MonitorManager.js";
 export default class PomTalentSystem extends GameController {
     constructor() {
         super(...arguments);
@@ -35,8 +36,8 @@ export default class PomTalentSystem extends GameController {
                 player.addHealth(this, ((_a = this.talentRes.get(Talent.REGENERATE)) !== null && _a !== void 0 ? _a : 0));
             }
         }).delay(10000);
-        this.hasBeenDamaged = [];
-        this.hasCauseDamage = [];
+        this.hasBeenDamaged = new MonitorManager();
+        this.hasCauseDamage = new MonitorManager();
     }
     updateTalentRes() {
         this.talentRes.clear();
@@ -97,7 +98,7 @@ export default class PomTalentSystem extends GameController {
             if (this.globalSettings.damageShow) {
                 damageShow(this.getExDimension(), damage, target.entity.location);
             }
-            this.hasCauseDamage.forEach(i => i(e.damage + damage));
+            this.hasCauseDamage.trigger(e.damage + damage, e.hurtEntity);
             target.removeHealth(this, damage);
         });
         this.getEvents().exEvents.playerHurt.subscribe((e) => {
@@ -106,7 +107,7 @@ export default class PomTalentSystem extends GameController {
             let add = 0;
             add += damage * ((_b = this.talentRes.get(Talent.DEFENSE)) !== null && _b !== void 0 ? _b : 0) / 100;
             this.exPlayer.addHealth(this, add);
-            this.hasBeenDamaged.forEach(i => i(e.damage - add));
+            this.hasBeenDamaged.trigger(e.damage - add, e.damagingEntity);
         });
         let lastListener = (d) => { };
         this.getEvents().exEvents.itemOnHandChange.subscribe((e) => {
@@ -121,12 +122,12 @@ export default class PomTalentSystem extends GameController {
                 let maxSingleDamage = parseFloat((_a = lore.getValueUseMap("total", this.getLang().maxSingleDamage)) !== null && _a !== void 0 ? _a : "0");
                 let maxSecondaryDamage = parseFloat((_b = lore.getValueUseMap("total", this.getLang().maxSecondaryDamage)) !== null && _b !== void 0 ? _b : "0");
                 let damage = 0;
-                this.hasCauseDamage.splice(this.hasCauseDamage.indexOf(lastListener), 1);
+                this.hasCauseDamage.removeMonitor(lastListener);
                 lastListener = (d) => {
                     damage += d;
                     maxSingleDamage = Math.ceil(Math.max(d, maxSingleDamage));
                 };
-                this.hasCauseDamage.push(lastListener);
+                this.hasCauseDamage.addMonitor(lastListener);
                 (_c = this.equiTotalTask) === null || _c === void 0 ? void 0 : _c.stop();
                 (this.equiTotalTask = new TimeLoopTask(this.getEvents(), () => {
                     var _a, _b, _c, _d;

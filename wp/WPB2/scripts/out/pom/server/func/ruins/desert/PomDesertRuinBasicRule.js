@@ -21,17 +21,15 @@ export default class PomDesertRuinBasicRule extends GameControllerRuinRule {
         this.inRuinsListener = new VarOnChangeListener((v) => {
             if (!v) {
                 this.client.magicSystem.additionHealth = 40;
-                if (this.client.talentSystem.hasBeenDamaged.indexOf(addHealthListener) !== -1) {
-                    this.client.talentSystem.hasBeenDamaged.splice(this.client.talentSystem.hasBeenDamaged.indexOf(addHealthListener), 1);
-                }
+                this.client.talentSystem.hasBeenDamaged.removeMonitor(addHealthListener);
                 this.desertRoomCounter.clear();
                 this.desertRuinRules.clear();
                 this.client.magicSystem.anotherShow = [];
             }
             else {
                 this.desertRuinRules.init();
-                if (this.client.talentSystem.hasBeenDamaged.indexOf(addHealthListener) === -1) {
-                    this.client.talentSystem.hasBeenDamaged.push(addHealthListener);
+                if (!this.client.talentSystem.hasBeenDamaged.hasMonitor(addHealthListener)) {
+                    this.client.talentSystem.hasBeenDamaged.addMonitor(addHealthListener);
                 }
                 this.client.magicSystem.anotherShow = [];
             }

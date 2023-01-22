@@ -146,9 +146,6 @@
               "territory_summon": "(!query.is_sneaking && query.get_equipped_item_name == 'territory_summon')"
             },
             {
-              "start_key": "(!query.is_sneaking && query.get_equipped_item_name == 'start_key')"
-            },
-            {
               "pickaxex_equipment_a": "(!query.is_sneaking && query.get_equipped_item_name == 'pickaxex_equipment_a')"
             },
             {
@@ -283,16 +280,6 @@
           ],
           "on_entry": [
             "/tag @s remove xxx"
-          ]
-        },
-        "start_key": {
-          "on_entry": [
-            "/tellraw @s {\"rawtext\":[{\"translate\":\"item.skill.wb.start_key\"}]}"
-          ],
-          "transitions": [
-            {
-              "default": "(query.is_sneaking || query.get_equipped_item_name != 'start_key')"
-            }
           ]
         },
         "territory_summon": {

@@ -142,6 +142,9 @@ export default class PomClient extends ExGameClient {
     taskUI(page, subpage) {
         this.taskSystem.show(page, subpage);
     }
+    progressTaskFinish(name, damage) {
+        this.taskSystem.progressTaskFinish(name, damage);
+    }
 }
 __decorate([
     receiveMessage("taskUi"),
@@ -149,4 +152,10 @@ __decorate([
     __metadata("design:paramtypes", [String, String]),
     __metadata("design:returntype", void 0)
 ], PomClient.prototype, "taskUI", null);
+__decorate([
+    receiveMessage("progressTaskFinish"),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String, Number]),
+    __metadata("design:returntype", void 0)
+], PomClient.prototype, "progressTaskFinish", null);
 //# sourceMappingURL=PomClient.js.map
