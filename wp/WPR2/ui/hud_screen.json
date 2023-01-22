@@ -298,7 +298,7 @@
                     "$texture_data": "textures/ui/filled_progress_bar_e",
                     "$texture_empty": "textures/ui/empty_progress_bar_e",
                     "bindings": [{
-                        "binding_name": "(#bossName = 'God Of Guard')",
+                        "binding_name": "(#bossName = 'The God Of Guard')",
                         "binding_type": "collection",
                         "binding_collection_name": "boss_bars",
                         "binding_name_override": "#visible"

@@ -251,7 +251,7 @@ export default class PomServer extends ExGameServer {
         }).delay(20 * 12);
         this.ruinFuncLooper.start();
         //实体监听
-        this.addEntityController("wb:magic_stoneman", PomMagicStoneBoss);
+        this.addEntityController(PomMagicStoneBoss.typeId, PomMagicStoneBoss);
         // gt.register("Pom", "fakeplayer", (test) => {
         //     this.fakeplayers.push(new PomFakePlayer(
         //         test.spawnSimulatedPlayer(this.fakePlayerSpawnLoc, "Steve1025", GameMode.survival), this)

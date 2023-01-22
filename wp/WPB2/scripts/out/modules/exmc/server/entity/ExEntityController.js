@@ -13,6 +13,7 @@ import ExEntityEvents from "./ExEntityEvents.js";
 import { eventDecoratorFactory, registerEvent } from "../events/eventDecoratorFactory.js";
 export default class ExEntityController {
     constructor(e, server) {
+        this._isKilled = false;
         this._entity = e;
         this.server = server;
         this._events = new ExEntityEvents(this);
@@ -62,6 +63,7 @@ export default class ExEntityController {
         this.onDestroy();
     }
     onKilled(e) {
+        this._isKilled = true;
         this.onDestroy();
     }
 }
@@ -83,7 +85,7 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], ExEntityController.prototype, "onDestroy", null);
 __decorate([
-    registerEvent("onHurt", (ctrl, e) => ctrl.exEntity.getHealth() <= 0),
+    registerEvent("onHurt", (ctrl, e) => ctrl.exEntity.getHealth() <= 0 && !ctrl._isKilled),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [EntityHurtEvent]),
     __metadata("design:returntype", void 0)

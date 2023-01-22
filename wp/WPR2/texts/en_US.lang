@@ -2044,3 +2044,17 @@ text.help.wb.new.how_to_play.71=The items pick up the machine to pick up the sur
 text.help.wb.new.how_to_play.72=The excavator can destroy the soil, stone and other non -mineral blocks at the feet (no things);
 text.help.wb.new.how_to_play.73=Thunde attracter needs to throw a pulse stone to activate it to attract thunder and electricity within a certain range
 text.help.wb.new.how_to_play.74=Players of the last shadow altar stepped on random transmission, consuming magic value, provided that there must be a certain magic value.
+
+
+
+text.wb:summon_magic_stoneman.name=§e魔化石块已被召唤
+text.wb:summon_headless_guard.name=§e无头守卫已被召唤
+text.wb:summon_ancient_stone.name=§e远古石像已被召唤
+text.wb:summon_intentions.name=§e念已被召唤
+text.wb:summon_god_of_guard.name=§e守卫战神已被召唤
+
+text.wb:defeat_magic_stoneman.name=§e魔化石块已被击败
+text.wb:defeat_headless_guard.name=§e无头守卫已被击败
+text.wb:defeat_ancient_stone.name=§e远古石像已被击败
+text.wb:defeat_intentions.name=§e念已被击败
+text.wb:defeat_god_of_guard.name=§e守卫战神已被击败

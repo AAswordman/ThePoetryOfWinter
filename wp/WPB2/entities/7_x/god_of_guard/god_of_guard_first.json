@@ -30,7 +30,7 @@
       "components": {
         "minecraft:boss": {
           "should_darken_sky": true,
-          "name": "God Of Guard",
+          "name": "The God Of Guard",
           "hud_range": 128
         },
         "minecraft:fire_immune": true,

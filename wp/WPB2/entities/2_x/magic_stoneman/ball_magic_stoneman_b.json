@@ -60,13 +60,13 @@
     },
     "events": {
       "minecraft:explode": {
-        "run_command": {
-          "command": [
-            "setblock ~ ~ ~ cobblestone",
-            "setblock ~ ~+1 ~ cobblestone"
-          ],
-          "target": "self"
-        },
+        // "run_command": {
+        //   "command": [
+        //     "setblock ~ ~ ~ cobblestone",
+        //     "setblock ~ ~+1 ~ cobblestone"
+        //   ],
+        //   "target": "self"
+        // },
         "add": {
           "component_groups": [
             "minecraft:exploding"

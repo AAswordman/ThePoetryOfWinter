@@ -14,6 +14,38 @@ export default class PomDimRuinsSystem extends GameController {
         super(...arguments);
         this.desertRuinRules = new PomDesertRuinBasicRule(this);
         this.isInRuinJudge = false;
+        this.causeDamage = 0;
+        this.deathTimes = 0;
+        this._causeDamageShow = false;
+        this.causeDamageType = new Set();
+        this.causeDamageListenner = new VarOnChangeListener((n, last) => {
+            if (n) {
+                this.causeDamageMonitor = this.client.talentSystem.hasCauseDamage.addMonitor((d, e) => {
+                    if (this.causeDamageType.has(e.typeId)) {
+                        this.causeDamage += d;
+                    }
+                });
+                this.deathTimesListener = (e) => {
+                    var _a;
+                    if (this.exPlayer.getHealth() <= 0) {
+                        (_a = this.barrier) === null || _a === void 0 ? void 0 : _a.notifyDeathAdd();
+                    }
+                };
+                this.getEvents().exEvents.playerHurt.subscribe(this.deathTimesListener);
+            }
+            else {
+                if (this.causeDamageMonitor) {
+                    this.client.talentSystem.hasCauseDamage.removeMonitor(this.causeDamageMonitor);
+                    this.causeDamageMonitor = undefined;
+                    this.client.magicSystem.anotherShow = [];
+                }
+                if (this.deathTimesListener) {
+                    this.getEvents().exEvents.playerHurt.unsubscribe(this.deathTimesListener);
+                }
+                this.deathTimes = 0;
+                this.causeDamageType.clear();
+            }
+        }, false);
         this.desertRuinBackJudge = new VarOnChangeListener((v) => {
             if (v) {
                 new ExMessageAlert().title("返回").body("是否返回主世界?")
@@ -47,6 +79,13 @@ export default class PomDimRuinsSystem extends GameController {
                     .show(this.player);
             }
         }, false);
+    }
+    get causeDamageShow() {
+        return this._causeDamageShow;
+    }
+    set causeDamageShow(value) {
+        this._causeDamageShow = value;
+        this.causeDamageListenner.upDate(value);
     }
     onJoin() {
         const tmpV = new Vector3();
@@ -114,7 +153,6 @@ export default class PomDimRuinsSystem extends GameController {
                 show = this.desertRuinRules.getShowMap();
                 this.client.magicSystem.anotherShow = show;
             }
-            this.client.magicSystem.additionHealthShow = isInGuardRuin;
             this.desertRuinRules.inRuinsListener.upDate(isInGuardRuin);
             //处于石头遗迹
             if (this.getDimension(MinecraftDimensionTypes.theEnd) === this.player.dimension
@@ -126,6 +164,12 @@ export default class PomDimRuinsSystem extends GameController {
                 }
                 isInStoneRuin = true;
             }
+            if (this.causeDamageShow) {
+                let show = [];
+                show.push(`造成伤害: ${this.causeDamage} 点`);
+                this.client.magicSystem.anotherShow = show;
+            }
+            this.client.magicSystem.additionHealthShow = isInGuardRuin;
             //设置游戏模式
             this.isInRuinJudge = isInGuardRuin || isInStoneRuin;
             let mode = this.exPlayer.getGameMode();
