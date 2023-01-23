@@ -1835,12 +1835,12 @@
             "minecraft:day_random": {
                 "run_command": {
                     "command": [
-                        "tag @a remove zombie_wave",
+                        "tag @s remove zombie_wave",
                         "scoreboard players set IsDay global 1",
                         "scoreboard players set IsNight global 0",
                         "scoreboard players set NightRandom global 0",
-                        "scoreboard players set @a night_event 0",
-                        "fog @a remove \"night_event\""
+                        "scoreboard players set @s night_event 0",
+                        "fog @s remove \"night_event\""
                     ]
                 }
             },

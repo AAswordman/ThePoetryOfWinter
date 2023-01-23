@@ -14,4 +14,13 @@ ExErrorQueue.errorStack = [];
 export function to(p) {
     return p.then(res => [res, undefined]).catch(err => { ExErrorQueue.throwError(err); return [undefined, err]; });
 }
+export function ignorn(fun) {
+    try {
+        let res = fun();
+        return res;
+    }
+    catch (err) {
+        return undefined;
+    }
+}
 //# sourceMappingURL=ExErrorQueue.js.map

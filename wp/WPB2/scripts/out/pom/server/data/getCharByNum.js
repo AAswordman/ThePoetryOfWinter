@@ -1,5 +1,5 @@
 import MathUtil from "../../../modules/exmc/math/MathUtil.js";
-export default function getgetCharByNum(num, long, useChr) {
+export default function getCharByNum(num, long, useChr) {
     num = MathUtil.clamp(num, 0, 1);
     num = Math.floor(num * 4 * long);
     let a = Math.floor(num / 4);

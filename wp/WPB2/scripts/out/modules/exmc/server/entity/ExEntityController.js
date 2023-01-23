@@ -72,6 +72,7 @@ __decorate([
         if (e.currentTick % 4 === 0) {
             try {
                 let dim = ctrl.entity.dimension;
+                // console.warn(dim === undefined)
                 return dim === undefined;
             }
             catch (o) {

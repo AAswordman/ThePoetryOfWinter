@@ -3,7 +3,7 @@ import taskDaily_b from "./tasks/daily_b.js";
 import taskDaily_c from "./tasks/daily_c.js";
 import taskDaily_x from "./tasks/daily_x.js";
 import { PomTasks, taskTranToNum } from "../../../dec/server/data/Task.js";
-import getgetCharByNum, { PROGRESS_CHAR } from "./getCharByNum.js";
+import getCharByNum, { PROGRESS_CHAR } from "./getCharByNum.js";
 import taskProgress from "./tasks/taskProgress.js";
 export default function menuTaskUI(ctrl) {
     const lang = ctrl.getLang();
@@ -67,7 +67,7 @@ export default function menuTaskUI(ctrl) {
                             let mprog = completed ? 1 : Math.min(1, haveNum / v.count);
                             prog += mprog / taskJson.tasks[i].conditions.length;
                             textShow = (haveNum >= v.count || completed ? "§a" : "§c") + ("需求: " + conn + " " + v.name + " " + (completed ? v.count : haveNum) + "/" + v.count + "个\n");
-                            textShow += getgetCharByNum(mprog, 10, PROGRESS_CHAR);
+                            textShow += getCharByNum(mprog, 10, PROGRESS_CHAR);
                             page.push({
                                 "type": "textWithBg",
                                 "msg": textShow
@@ -212,7 +212,7 @@ export default function menuTaskUI(ctrl) {
                             let mprog = completed ? 1 : Math.min(1, haveNum / v.damage);
                             prog += mprog / task.conditions.length;
                             textShow = (haveNum >= v.damage || completed ? "§a" : "§c") + ("需求: " + conn + " " + v.name + " " + (completed ? v.damage : haveNum) + "/" + v.damage + "点\n");
-                            textShow += getgetCharByNum(mprog, 10, PROGRESS_CHAR);
+                            textShow += getCharByNum(mprog, 10, PROGRESS_CHAR);
                             page.push({
                                 "type": "textWithBg",
                                 "msg": textShow
