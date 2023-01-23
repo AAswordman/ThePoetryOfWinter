@@ -1,4 +1,4 @@
-import { MinecraftBlockTypes, MinecraftDimensionTypes, GameMode } from '@minecraft/server';
+import { MinecraftBlockTypes, MinecraftDimensionTypes } from '@minecraft/server';
 import GameController from "./GameController.js";
 import RuinsLoaction from "./ruins/RuinsLoaction.js";
 import { ExBlockArea } from '../../../modules/exmc/server/block/ExBlockArea.js';
@@ -9,9 +9,13 @@ import VarOnChangeListener from '../../../modules/exmc/utils/VarOnChangeListener
 import ExMessageAlert from '../../../modules/exmc/server/ui/ExMessageAlert.js';
 import ExActionAlert from '../../../modules/exmc/server/ui/ExActionAlert.js';
 import PomBossBarrier from './barrier/PomBossBarrier.js';
+import { Objective } from '../../../modules/exmc/server/entity/ExScoresManager.js';
 export default class PomDimRuinsSystem extends GameController {
     constructor() {
         super(...arguments);
+        this.i_inviolable = new Objective("i_inviolable");
+        this.i_damp = new Objective("i_damp");
+        this.i_soft = new Objective("i_soft");
         this.desertRuinRules = new PomDesertRuinBasicRule(this);
         this.isInRuinJudge = false;
         this.causeDamage = 0;
@@ -27,6 +31,8 @@ export default class PomDimRuinsSystem extends GameController {
                 });
                 this.deathTimesListener = (e) => {
                     var _a;
+                    // console.warn("add");
+                    // console.warn(this.exPlayer.getHealth());
                     if (this.exPlayer.getHealth() <= 0) {
                         (_a = this.barrier) === null || _a === void 0 ? void 0 : _a.notifyDeathAdd();
                     }
@@ -41,8 +47,10 @@ export default class PomDimRuinsSystem extends GameController {
                 }
                 if (this.deathTimesListener) {
                     this.getEvents().exEvents.playerHurt.unsubscribe(this.deathTimesListener);
+                    this.deathTimesListener = undefined;
                 }
                 this.deathTimes = 0;
+                this.causeDamage = 0;
                 this.causeDamageType.clear();
             }
         }, false);
@@ -163,28 +171,38 @@ export default class PomDimRuinsSystem extends GameController {
                     this.exPlayer.setPosition(tmpV);
                 }
                 isInStoneRuin = true;
+                this.exPlayer.command.run(`fog @s push wb:ruin_stone_boss "ruin_fog"`);
             }
             if (this.causeDamageShow) {
                 let show = [];
+                show.push(`玩家死亡: ${this.deathTimes} 次`);
                 show.push(`造成伤害: ${this.causeDamage} 点`);
                 this.client.magicSystem.anotherShow = show;
             }
             this.client.magicSystem.additionHealthShow = isInGuardRuin;
             //设置游戏模式
             this.isInRuinJudge = isInGuardRuin || isInStoneRuin;
+            if (!this.isInRuinJudge) {
+                this.exPlayer.command.run(`fog @s remove "ruin_fog"`);
+            }
             let mode = this.exPlayer.getGameMode();
-            if (this.isInRuinJudge && mode === GameMode.survival) {
-                this.exPlayer.setGameMode(GameMode.adventure);
-            }
-            else if (!this.isInRuinJudge && mode === GameMode.adventure && this.data.dimBackMode === 0) {
-                this.exPlayer.setGameMode(GameMode.survival);
-            }
-            else if (!this.isInRuinJudge && (mode !== GameMode.adventure)) {
-                this.data.dimBackMode = 0;
-            }
-            else if (!this.isInRuinJudge && (mode === GameMode.adventure)) {
-                this.data.dimBackMode = 2;
-            }
+            // if (this.isInRuinJudge && mode === GameMode.survival) {
+            //     this.exPlayer.setGameMode(GameMode.adventure);
+            // } else if (!this.isInRuinJudge && mode === GameMode.adventure && this.data.dimBackMode === 0) {
+            //     this.exPlayer.setGameMode(GameMode.survival);
+            // } else if (!this.isInRuinJudge && (mode !== GameMode.adventure)) {
+            //     this.data.dimBackMode = 0;
+            // } else if (!this.isInRuinJudge && (mode === GameMode.adventure)) {
+            //     this.data.dimBackMode = 2;
+            // }
+            // if(this.isInRuinJudge){
+            //     if(event.currentTick % 40 === 0){
+            //         let scores = this.exPlayer.getScoresManager();
+            //         scores.setScoreAsync(this.i_damp,13);
+            //         scores.setScoreAsync(this.i_inviolable,13);
+            //         scores.setScoreAsync(this.i_soft,13);
+            //     }
+            // }
         });
         // this.getEvents().exEvents.itemOnHandChange.subscribe((e) => {
         //     this.sayTo(e.afterItem?.typeId + "");

@@ -24,11 +24,14 @@ export default class PomMagicStoneBoss extends PomBossController {
             }
         }
         this.server.say({ rawtext: [{ translate: "text.wb:defeat_magic_stoneman.name" }] });
+        console.warn("onWin");
+        super.stopBarrier();
         super.onKilled(e);
     }
-    onDestroy() {
+    onFail() {
+        console.warn("onFail");
         super.stopBarrier();
-        super.onDestroy();
+        super.onFail();
     }
 }
 PomMagicStoneBoss.typeId = "wb:magic_stoneman";

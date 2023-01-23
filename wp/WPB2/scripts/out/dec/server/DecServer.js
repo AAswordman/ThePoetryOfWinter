@@ -90,11 +90,13 @@ export default class DecServer extends ExGameServer {
             }
         });
         this.getEvents().events.beforeExplosion.subscribe(e => {
-            const entity = ExEntity.getInstance(e.source);
-            //防爆 i_inviolable计分板控制
-            if (entity.getScoresManager().getScore(this.i_damp) > 0) {
-                entity.getExDimension().spawnParticle("dec:damp_explosion_particle", e.source.location);
-                e.cancel = true;
+            if (e.source) {
+                const entity = ExEntity.getInstance(e.source);
+                //防爆 i_inviolable计分板控制
+                if (entity.getScoresManager().getScore(this.i_damp) > 0) {
+                    entity.getExDimension().spawnParticle("dec:damp_explosion_particle", e.source.location);
+                    e.cancel = true;
+                }
             }
         });
         this.getEvents().events.beforeItemUseOn.subscribe(e => {

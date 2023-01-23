@@ -1,5 +1,7 @@
 import UUID from "../../../../modules/exmc/utils/UUID.js";
 import ExPlayer from "../../../../modules/exmc/server/entity/ExPlayer.js";
+import { MinecraftEffectTypes } from '@minecraft/server';
+import { ignorn } from "../../../../modules/exmc/server/ExErrorQueue.js";
 export default class PomBossBarrier {
     constructor(server, dim, area, boss) {
         this.deathTimes = 0;
@@ -11,6 +13,10 @@ export default class PomBossBarrier {
         for (let e of dim.getPlayers()) {
             if (area.contains(e.location)) {
                 this.players.set(e, true);
+                let c = server.findClientByPlayer(e);
+                if (c) {
+                    c.ruinsSystem.barrier = this;
+                }
             }
         }
         this.tickEvent = this.update.bind(this);
@@ -35,6 +41,12 @@ export default class PomBossBarrier {
     dispose() {
         PomBossBarrier.map.delete(this.id);
         this.manager.cancel("onLongTick", this.tickEvent);
+        for (let [p, v] of this.players) {
+            let c = this.server.findClientByPlayer(p);
+            if (c) {
+                c.ruinsSystem.barrier = undefined;
+            }
+        }
     }
     notifyDeathAdd() {
         this.deathTimes += 1;
@@ -58,6 +70,8 @@ export default class PomBossBarrier {
                 if (!this.area.contains(e.location)) {
                     if (this.players.get(e)) {
                         // notUtillTask(this.server,() => ExPlayer.getInstance(e).getHealth()>0,()=>{
+                        if (this.dim.dimension !== e.dimension)
+                            e.addEffect(MinecraftEffectTypes.resistance, 14 * 20, 10, true);
                         this.server.setTimeout(() => ExPlayer.getInstance(e).setPosition(this.area.center(), this.dim.dimension), 2000);
                         // });
                         this.players.set(e, false);
@@ -73,7 +87,7 @@ export default class PomBossBarrier {
                 }
             }
         }
-        if (this.boss.entity.location && !this.area.contains(this.boss.entity.location)) {
+        if (ignorn(() => this.boss.entity.location) && !this.area.contains(this.boss.entity.location)) {
             this.boss.exEntity.setPosition(this.area.center());
         }
     }
