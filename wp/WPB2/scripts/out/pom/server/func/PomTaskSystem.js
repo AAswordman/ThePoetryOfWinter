@@ -64,29 +64,29 @@ export default class PomTaskSystem extends GameController {
             this.data.tasks.daily.cache = {};
             this.data.tasks.daily.date = nDate;
         }
-        for (let k in ta) {
-            for (let v of ta[k].conditions) {
+        for (let t of ta) {
+            for (let v of t.conditions) {
                 if (v.type === "break" || v.type === "kill") {
                     this.recordDailyArray.add(v.typeId);
                 }
             }
         }
-        for (let k in tb) {
-            for (let v of tb[k].conditions) {
+        for (let t of tb) {
+            for (let v of t.conditions) {
                 if (v.type === "break" || v.type === "kill") {
                     this.recordDailyArray.add(v.typeId);
                 }
             }
         }
-        for (let k in tc) {
-            for (let v of tc[k].conditions) {
+        for (let t of tc) {
+            for (let v of t.conditions) {
                 if (v.type === "break" || v.type === "kill") {
                     this.recordDailyArray.add(v.typeId);
                 }
             }
         }
-        for (let k in tx) {
-            for (let v of tx[k].conditions) {
+        for (let t of tx) {
+            for (let v of t.conditions) {
                 if (v.type === "break" || v.type === "kill") {
                     this.recordDailyArray.add(v.typeId);
                 }

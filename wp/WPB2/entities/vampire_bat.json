@@ -36,6 +36,21 @@
       "minecraft:attack": {
         "damage": 1
       },
+      "minecraft:burns_in_daylight":{},
+      "minecraft:hurt_on_condition":{
+        "damage_conditions": [
+            {
+                "filters": {
+                    "test": "in_water_or_rain",
+                    "subject": "self",
+                    "operator": "==",
+                    "value": true
+                },
+                "cause": "lava",
+                "damage_per_tick": 4
+            }
+        ]
+      },
       "minecraft:breathable": {
         "totalSupply": 15,
         "suffocateTime": 0,

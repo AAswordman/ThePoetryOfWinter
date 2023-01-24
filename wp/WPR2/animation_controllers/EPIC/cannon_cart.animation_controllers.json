@@ -1,0 +1,65 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.cannon_cart.move": {
+      "initial_state": "default",
+      "states": {
+        "default": {  
+          "transitions": [
+          {
+            "move": "query.is_moving"
+          }
+        ]
+      },
+      "move": {
+        "animations": [
+          "move"
+        ],
+        "transitions": [{
+          "default": "!query.is_moving"
+        }]
+      }
+        }       
+        },
+
+        "controller.animation.cannon_cart.attack": {
+          "initial_state": "default",
+          "states": {
+            "default": {  
+              "transitions": [
+              {
+                "attack": "query.has_target"
+              }
+            ]
+          },
+          "attack": {
+            "animations": [
+              "attack"
+            ],
+            "transitions": [{
+              "default": "!query.has_target"
+            }]
+          }
+            }       
+            },
+          
+            "controller.animation.cannon_cart.death1": {
+              "initial_state": "default",
+              "states": {
+                "default": {  
+                  "transitions": [
+                  {
+                    "attack": "query.mark_variant == 4"
+                  }
+                ]
+              },
+              "attack": {
+                "animations": [
+                  "death1"
+                ]            
+              }
+                }       
+                }
+
+      }
+    }

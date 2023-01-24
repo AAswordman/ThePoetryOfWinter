@@ -1,42 +1,42 @@
 {
-  "materials": {
-    "version": "1.0.0",
-    /*
-    "item_in_hand:entity": {
-     "+defines": [ "COLOR_BASED", "NO_TEXTURE", "ITEM_IN_HAND", "ALPHA_TEST" ],
-     "+states" : ["Blending"],
-     "vertexFields": [
-       { "field": "Position" },
-       { "field": "Normal" },
-       { "field": "Color" },
-       { "field": "UV0" }
-     ],
-      "variants": [
-        {
-          "skinning": {
-            "+defines": [ "USE_SKINNING" ],
-            "vertexFields": [
-              { "field": "Position" },
-              { "field": "BoneId0" },
-              { "field": "Normal" },
-              { "field": "Color" },
-              { "field": "UV0" }
+    "materials": {
+        "version": "1.0.0",
+        
+        "item_in_hand:entity": {
+         "+defines": [ "COLOR_BASED", "NO_TEXTURE", "ITEM_IN_HAND", "ALPHA_TEST" ],
+         "+states" : ["Blending"],
+         "vertexFields": [
+           { "field": "Position" },
+           { "field": "Normal" },
+           { "field": "Color" },
+           { "field": "UV0" }
+         ],
+          "variants": [
+            {
+              "skinning": {
+                "+defines": [ "USE_SKINNING" ],
+                "vertexFields": [
+                  { "field": "Position" },
+                  { "field": "BoneId0" },
+                  { "field": "Normal" },
+                  { "field": "Color" },
+                  { "field": "UV0" }
+                ]
+              }
+            }
+          ],
+          "msaaSupport": "Both"
+        },
+        
+        "ui_tech:entity": {
+            "+states": [
+                "Blending"
             ]
-          }
+        },
+        "skeleton:entity_alphatest": {},
+        "wbarmor:charged_creeper": {},
+        "ball_staff:charged_creeper": {
+            "+defines": ["USE_ONLY_EMISSIVE"]
         }
-      ],
-      "msaaSupport": "Both"
-    },
-    */
-    "ui_tech:entity": {
-			"+states": [
-				"Blending"
-			]
-	},
-    "skeleton:entity_alphatest": {},
-    "wbarmor:charged_creeper": {},
-    "ball_staff:charged_creeper":{
-      "+defines": [ "USE_ONLY_EMISSIVE" ]
     }
-  }
 }

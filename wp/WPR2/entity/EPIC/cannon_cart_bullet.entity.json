@@ -1,0 +1,35 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "epic:cannon_cart_bullet",
+      "materials": {
+        "default": "slime"
+      },
+      "textures": {
+        "default": "textures/EPIC/entity/cannon_cart_bullet"
+      },
+      "geometry": {
+        "default": "geometry.cannon_cart_bullet"
+      },
+      "scripts": {
+				"animate": [
+          "particle"
+				]
+			  },
+        "particle_effects": {
+        "epic_base_effect": "minecraft:cauldron_explosion_emitter"
+        },
+        "animations": {
+         "particle": "controller.animation.epic_base.particle"
+        },
+      "spawn_egg": {
+        "texture": "epic_cannon_cart_bullet",
+        "texture_index": 0
+      },
+      "render_controllers": [
+        "controller.render.slime"
+      ]
+    }
+  }
+}

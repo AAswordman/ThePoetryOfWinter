@@ -1,23 +1,27 @@
 {
-  "format_version": "1.10",
-  "minecraft:item": {
-    "description": {
-      "identifier": "wb:conveyor_issue",
-      "register_to_creative_menu": true
-    },
-    "components": {
-      "minecraft:food": {
-        "nutrition": 5,
-        "can_always_eat": true,
-        "cooldown_type": "issue",
-        "cooldown_time": 2
-      },
-      "minecraft:hand_equipped": true,
-      "minecraft:use_duration": 99999999,
-      "minecraft:foil": true,
-      "minecraft:max_stack_size": 1,
-      "minecraft:max_damage": 50000,
-      "minecraft:stacked_by_data": false
+    "format_version": "1.16.100",
+    "minecraft:item": {
+        "description": {
+            "identifier": "wb:conveyor_issue",
+            "category": "items"
+        },
+        "components": {
+            "minecraft:render_offsets": "tools",
+            "minecraft:icon": {
+                "texture": "conveyor_issue"
+            },
+            "minecraft:display_name": {
+                "value": "item.wb:conveyor_issue.name"
+            },
+            "minecraft:creative_category": {
+                "parent": "itemGroup.name.decorations"
+            },
+            "minecraft:hand_equipped": true,
+            "minecraft:use_duration": 99999999,
+            "minecraft:foil": true,
+            "minecraft:max_stack_size": 1,
+            "minecraft:max_damage": 3,
+            "minecraft:stacked_by_data": false
+        }
     }
-  }
 }

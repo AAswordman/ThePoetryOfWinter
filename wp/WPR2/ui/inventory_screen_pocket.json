@@ -1224,9 +1224,9 @@
   "recipe_inventory_screen_content_pocket": {
     "type": "input_panel",
     "controls": [
-      {
-        "notes@hud.boss_notes": {}
-      },
+    //   {
+    //     "notes@hud.boss_notes": {}
+    //   },
       {
         "container_gamepad_helpers@common.container_gamepad_helpers": {
           "size": [ "100%", 40 ],

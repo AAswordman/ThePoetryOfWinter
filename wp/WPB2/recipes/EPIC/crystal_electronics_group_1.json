@@ -1,0 +1,40 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+      "description": {
+      "identifier": "epic:crystal_electronics_group_1"
+      },  
+      "tags": [ "crafting_table" ],
+      "pattern": [
+        "ABA",
+        "CED",
+        "FGF"
+      ],
+      "key": {
+        "A": {
+          "item": "minecraft:diamond"
+        },
+        "D": {
+          "item": "minecraft:copper_block"
+        },
+        "C":{
+            "item":"minecraft:gold_block"
+        },
+        "G":{
+          "item":"dec:steel_block"
+        },
+        "B":{
+          "item":"minecraft:sea_lantern"
+        },
+        "F":{
+          "item":"wb:integrated_circuit_board"
+        },
+        "E":{
+          "item":"minecraft:end_crystal"
+        }
+      },
+      "result": {
+        "item": "epic:crystal_electronics_group"
+      }
+    }
+  }

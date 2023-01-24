@@ -32,6 +32,10 @@
     "textures": "portal_stoneboss",
     "sound": "stone"
   },
+  "wb:portal_caveboss": {
+    "textures": "portal_caveboss",
+    "sound": "stone"
+  },
   "wb:quartz_blue": {
     "textures": "quartz_blue",
     "sound": "stone"

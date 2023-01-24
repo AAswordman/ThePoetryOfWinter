@@ -1,0 +1,46 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+      "description": {
+      "identifier": "epic:cannon_cart_spawn_egg"
+      },  
+      "tags": [ "crafting_table" ],
+      "pattern": [
+        "ABC",
+        "DEF",
+        "GHI"
+      ],
+      "key": {
+        "A": {
+          "item": "minecraft:log"
+        },
+        "B": {
+          "item": "minecraft:tnt"
+        },
+        "C":{
+            "item":"minecraft:dispenser"
+        },
+        "D":{
+          "item":"minecraft:chest"
+        },
+        "E":{
+          "item":"epic:crystal_electronics_group"
+        },
+        "F":{
+          "item":"epic:reinforced_metal_group"
+        },
+        "G":{
+          "item":"minecraft:blast_furnace"
+        },
+        "H":{
+          "item":"minecraft:minecart"
+        },
+        "I":{
+          "item":"minecraft:observer"
+        }
+      },
+      "result": {
+        "item": "epic:cannon_cart_spawn_egg"
+      }
+    }
+  }

@@ -168,7 +168,7 @@ export default function menuTaskUI(ctrl) {
             "default": "main_pom_1",
             "img": "textures/items/experience_book.png",
             "page": (client, ui) => {
-                var _a, _b;
+                var _a, _b, _c;
                 let arr = {};
                 const taskList = client.data.tasks.progress;
                 for (const i in pro) {
@@ -213,11 +213,23 @@ export default function menuTaskUI(ctrl) {
                             prog += mprog / task.conditions.length;
                             textShow = (haveNum >= v.damage || completed ? "§a" : "§c") + ("需求: " + conn + " " + v.name + " " + (completed ? v.damage : haveNum) + "/" + v.damage + "点\n");
                             textShow += getCharByNum(mprog, 10, PROGRESS_CHAR);
-                            page.push({
-                                "type": "textWithBg",
-                                "msg": textShow
-                            });
                         }
+                        else if (v.type === "boss_tag") {
+                            v.tagName = (_c = v.tagName) !== null && _c !== void 0 ? _c : "undefined";
+                            haveNum = client.player.hasTag(v.tagName) ? 1 : 0;
+                            conn = "击杀";
+                            if (haveNum < 1) {
+                                isOk = false;
+                            }
+                            let mprog = completed ? 1 : Math.min(1, haveNum / 1);
+                            prog += mprog / task.conditions.length;
+                            textShow = (haveNum >= 1 || completed ? "§a" : "§c") + ("需求: " + conn + " " + v.name + " " + (completed ? 1 : haveNum) + "/" + 1 + "个\n");
+                            textShow += getCharByNum(mprog, 10, PROGRESS_CHAR);
+                        }
+                        page.push({
+                            "type": "textWithBg",
+                            "msg": textShow
+                        });
                     }
                     if (isOk && !completed) {
                         page.push({

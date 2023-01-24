@@ -22,6 +22,11 @@ export default class PomBossController extends ExEntityController {
         this.entity.triggerEvent("minecraft:despawn");
     }
     onFail() {
+        console.warn("onFail");
+        for (let c of this.barrier.clientsByPlayer()) {
+            c.ruinsSystem.causeDamageShow = false;
+        }
+        this.stopBarrier();
         this.server.say({ rawtext: [{ translate: "text.dec:killed_by_boss.name" }] });
         this.despawn();
     }
