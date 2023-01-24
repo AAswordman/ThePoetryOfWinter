@@ -1,6 +1,7 @@
-import ExEntityController from "../../../modules/exmc/server/entity/ExEntityController.js";
 import ExSound from "../../../modules/exmc/server/env/ExSound.js";
-export class DecEverlastingWinterGhastBoss1 extends ExEntityController {
+import DecBossController from "./DecBossController.js";
+import { DecCommonBossLastStage } from "./DecCommonBossLastStage.js";
+export class DecEverlastingWinterGhastBoss1 extends DecBossController {
     constructor(e, server) {
         super(e, server);
         this.music = new ExSound("music.wb.ghost_tears", "2:16");
@@ -16,7 +17,7 @@ export class DecEverlastingWinterGhastBoss1 extends ExEntityController {
         super.onSpawn();
     }
 }
-export class DecEverlastingWinterGhastBoss2 extends ExEntityController {
+export class DecEverlastingWinterGhastBoss2 extends DecCommonBossLastStage {
     constructor(e, server) {
         super(e, server);
         this.music = new ExSound("music.wb.the_peotry_of_ghost", "3:12");

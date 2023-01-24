@@ -10,6 +10,11 @@
     "ticks_per_frame": 1
   },
   {
+    "flipbook_texture": "textures/wb_blocks/base/portal_caveboss",
+    "atlas_tile": "portal_caveboss",
+    "ticks_per_frame": 1
+  },
+  {
     "flipbook_texture": "textures/wb_blocks/base/portal_bossx",
     "atlas_tile": "portal_bossx",
     "ticks_per_frame": 1

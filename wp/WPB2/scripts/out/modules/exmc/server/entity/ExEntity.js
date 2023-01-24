@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { EntityHealthComponent, EntityInventoryComponent, EntityVariantComponent } from '@minecraft/server';
+import { EntityHealthComponent, EntityInventoryComponent, EntityVariantComponent, EntityMarkVariantComponent } from '@minecraft/server';
 import ExScoresManager from './ExScoresManager.js';
 import Vector3 from '../../math/Vector3.js';
 import ExEntityBag from './ExEntityBag.js';
@@ -165,7 +165,18 @@ export default class ExEntity {
         return this.getComponent(EntityVariantComponent.componentId);
     }
     getVariant() {
-        return this.getVariantComponent().value;
+        var _a, _b;
+        return (_b = (_a = this.getVariantComponent()) === null || _a === void 0 ? void 0 : _a.value) !== null && _b !== void 0 ? _b : 0;
+    }
+    hasMarkVariantComponent() {
+        return this.hasComponent(EntityMarkVariantComponent.componentId);
+    }
+    getMarkVariantComponent() {
+        return this.getComponent(EntityMarkVariantComponent.componentId);
+    }
+    getMarkVariant() {
+        var _a, _b;
+        return (_b = (_a = this.getMarkVariantComponent()) === null || _a === void 0 ? void 0 : _a.value) !== null && _b !== void 0 ? _b : 0;
     }
 }
 ExEntity.propertyNameCache = "exCache";

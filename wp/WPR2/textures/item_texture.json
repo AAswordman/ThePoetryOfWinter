@@ -1918,6 +1918,27 @@
         },
         "armor_senior_equipment_boots": {
             "textures": "textures/wb_item/armor/armor_senior_equipment_boots"
+        },
+        "cannon_cart_spawn_egg": {
+            "textures": ["textures/EPIC/items/cannon_cart_spawn_egg"]
+        },
+        "epic:machanical_operator": {
+            "textures": ["textures/EPIC/items/machanical_operator"]
+        },
+        "epic:alliance_token": {
+            "textures": ["textures/EPIC/items/alliance_token"]
+        },
+        "epic:reinforced_metal_group": {
+            "textures": ["textures/EPIC/items/reinforced_metal_group"]
+        },
+        "epic:crystal_electronics_group": {
+            "textures": ["textures/EPIC/items/crystal_electronics_group"]
+        },
+        "epic:crystal_electronics_group_broken": {
+            "textures": ["textures/EPIC/items/crystal_electronics_group_broken"]
+        },
+        "epic_cannon_cart_bullet": {
+            "textures": "textures/EPIC/items/pamobile/epic_cannon_cart_bullet"
         }
     }
 }

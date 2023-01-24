@@ -2568,12 +2568,12 @@
   "recipe_inventory_screen_content": {
     "type": "panel",
     "controls": [
-      {
-        "notes@hud.boss_notes": {
-          "$offset_control":[0,0],
-          "$position_control":"bottom_right"
-        }
-      },
+    //   {
+    //     "notes@hud.boss_notes": {
+    //       "$offset_control":[0,0],
+    //       "$position_control":"bottom_right"
+    //     }
+    //   },
       {
         "content_stack_panel": {
           "type": "stack_panel",

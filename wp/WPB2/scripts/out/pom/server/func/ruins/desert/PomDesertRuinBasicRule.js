@@ -24,14 +24,14 @@ export default class PomDesertRuinBasicRule extends GameControllerRuinRule {
                 this.client.talentSystem.hasBeenDamaged.removeMonitor(addHealthListener);
                 this.desertRoomCounter.clear();
                 this.desertRuinRules.clear();
-                this.client.magicSystem.anotherShow = [];
+                this.client.magicSystem.deleteActionbarPass("desertRuinMap");
             }
             else {
                 this.desertRuinRules.init();
                 if (!this.client.talentSystem.hasBeenDamaged.hasMonitor(addHealthListener)) {
                     this.client.talentSystem.hasBeenDamaged.addMonitor(addHealthListener);
                 }
-                this.client.magicSystem.anotherShow = [];
+                this.client.magicSystem.deleteActionbarPass("desertRuinMap");
             }
         }, false);
         this.desertRoomCounter = new Map();

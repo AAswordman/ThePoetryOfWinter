@@ -41,20 +41,22 @@ export default class PomBossBarrier {
     dispose() {
         PomBossBarrier.map.delete(this.id);
         this.manager.cancel("onLongTick", this.tickEvent);
-        for (let [p, v] of this.players) {
-            let c = this.server.findClientByPlayer(p);
+        for (let c of this.clientsByPlayer()) {
+            c.ruinsSystem.barrier = undefined;
+        }
+    }
+    *clientsByPlayer() {
+        for (let e of this.players) {
+            let c = this.server.findClientByPlayer(e[0]);
             if (c) {
-                c.ruinsSystem.barrier = undefined;
+                yield c;
             }
         }
     }
     notifyDeathAdd() {
         this.deathTimes += 1;
-        for (let [p, v] of this.players) {
-            let c = this.server.findClientByPlayer(p);
-            if (c) {
-                c.ruinsSystem.deathTimes = this.deathTimes;
-            }
+        for (let c of this.clientsByPlayer()) {
+            c.ruinsSystem.deathTimes = this.deathTimes;
         }
         if (this.deathTimes >= 3) {
             this.boss.onFail();

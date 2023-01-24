@@ -1,0 +1,1909 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "epic:cannon_cart",
+            "is_spawnable": true,
+            "is_summonable": true,
+            "is_experimental": false,
+            "runtime_identifier": "epic:cannon_cart"
+        },
+
+        "component_groups": {
+
+            "defence:do_not_start_following": {
+                "minecraft:tameable": {
+                    "probability": 1,
+                    "tameItems": "iron_ingot",
+                    "tame_event": {
+                        "event": "start_following",
+                        "target": "self"
+                    }
+                },
+                "minecraft:on_death": {
+                    "event": "change",
+                    "target": "self"
+                }
+
+            },
+
+            "defence:have_been_start_following": {
+                "minecraft:is_tamed": {},
+                "minecraft:health": {
+                    "value": 100,
+                    "min": 0,
+                    "max": 100
+                },
+                "minecraft:boss": {
+                    "name": ">加农炮战车<",
+                    "should_darken_sky": false,
+                    "hud_range": 2
+                },
+                "minecraft:is_stackable": {},
+                "minecraft:healable": {
+                    "items": [{
+                        "item": "iron_ingot",
+                        "heal_amount": 10
+                    }]
+                },
+                "minecraft:on_death": {
+                    "event": "change",
+                    "target": "self"
+                }
+
+            },
+            "owner_call_on": {
+                "minecraft:entity_sensor": {
+                    "event_filters": {
+                        "all_of": [{
+                                "test": "has_equipment",
+                                "domain": "hand",
+                                "subject": "other",
+                                "operator": "!=",
+                                "value": "epic:machanical_operator"
+                            },
+                            {
+                                "test": "is_owner",
+                                "subject": "other",
+                                "value": true
+                            }
+                        ]
+                    },
+                    "event": "owner_call_off",
+                    "sensor_range": 128,
+                    "relative_range": false,
+                    "minimum_count": 1
+                },
+                "minecraft:behavior.tempt": {
+                    "priority": 0,
+                    "speed_multiplier": 1.65,
+                    "items": [
+                        "epic:machanical_operator"
+                    ],
+                    "within_radius": 20.0,
+                    "can_tempt_vertically": true
+                }
+            },
+
+            "owner_call_off": {
+                "minecraft:entity_sensor": {
+                    "event_filters": {
+                        "all_of": [{
+                                "test": "is_owner",
+                                "subject": "other",
+                                "value": true
+                            },
+                            {
+                                "test": "has_equipment",
+                                "domain": "hand",
+                                "subject": "other",
+                                "value": "epic:machanical_operator"
+                            },
+                            {
+                                "test": "is_sneaking",
+                                "subject": "other",
+                                "value": true
+                            }
+                        ]
+                    },
+                    "event": "owner_call_on",
+                    "sensor_range": 24,
+                    "relative_range": false,
+                    "minimum_count": 1
+                }
+            },
+
+            "hostile_mode": {
+                "minecraft:damage_sensor": [{
+                        "on_damage": {
+                            "filters": {
+                                "all_of": [{
+                                        "test": "has_tag",
+                                        "operator": "==",
+                                        "subject": "other",
+                                        "value": "wbmsyh"
+                                    },
+                                    {
+                                        "test": "has_tag",
+                                        "operator": "==",
+                                        "subject": "self",
+                                        "value": "wbmsyh"
+                                    }
+                                ]
+                            }
+                        },
+                        "deals_damage": false
+                    },
+                    {
+                        "on_damage": {
+                            "filters": {
+                                "all_of": [{
+                                    "test": "has_tag",
+                                    "operator": "!=",
+                                    "subject": "other",
+                                    "value": "wbmsyh"
+                                }]
+                            }
+                        },
+                        "deals_damage": true
+                    }
+                ]
+            },
+
+            "cannon_form": {
+                "minecraft:is_tamed": {},
+                "minecraft:mark_variant": {
+                    "value": 4
+                },
+                "minecraft:loot": {
+                    "table": "loot_tables/EPIC/entities/cannon_cart.json"
+                },
+                "minecraft:health": {
+                    "value": 75,
+                    "min": 0,
+                    "max": 75
+                },
+                "minecraft:interact": [{
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [{
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "value": true
+                                    },
+                                    {
+                                        "test": "has_equipment",
+                                        "domain": "hand",
+                                        "subject": "other",
+                                        "value": "epic:alliance_token"
+                                    },
+                                    {
+                                        "test": "is_sneaking",
+                                        "subject": "other",
+                                        "value": false
+                                    }
+                                ]
+                            },
+                            "event": "alliance_on",
+                            "target": "self"
+                        },
+                        "hurt_item": 0,
+                        "play_sounds": "beacon.activate",
+                        "interact_text": "开启友好模式"
+                    },
+                    {
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [{
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "value": true
+                                    },
+                                    {
+                                        "test": "has_equipment",
+                                        "domain": "hand",
+                                        "subject": "other",
+                                        "value": "epic:alliance_token"
+                                    },
+                                    {
+                                        "test": "is_sneaking",
+                                        "subject": "other",
+                                        "value": true
+                                    }
+                                ]
+                            },
+                            "event": "alliance_off",
+                            "target": "self"
+                        },
+                        "hurt_item": 0,
+                        "play_sounds": "beacon.activate",
+                        "interact_text": "关闭友好模式"
+                    },
+                    {
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [{
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "value": true
+                                    },
+                                    {
+                                        "test": "has_equipment",
+                                        "domain": "hand",
+                                        "subject": "other",
+                                        "value": "iron_block"
+                                    }
+
+                                ]
+                            },
+                            "event": "fix",
+                            "target": "self"
+                        },
+                        "hurt_item": 1,
+                        "play_sounds": "random.anvil_use",
+                        "interact_text": "修复"
+                    }
+                ]
+            },
+
+
+            "can_attack": {
+                "minecraft:shooter": {
+                    "def": "epic:cannon_cart_bullet"
+                },
+                "minecraft:behavior.ranged_attack": {
+                    "priority": 1,
+                    "attack_interval_min": 1,
+                    "attack_interval_max": 1,
+                    "attack_radius": 48,
+                    "burst_shots": 1,
+                    "burst_interval": 0
+                }
+            },
+
+            "can_move": {
+                "minecraft:movement": {
+                    "value": 0.25
+                },
+                "minecraft:navigation.walk": {
+                    "is_amphibious": true,
+                    "avoid_water": true
+                }
+            },
+
+            "cannot_move": {
+                "minecraft:movement": {
+                    "value": 0.0
+                },
+                "minecraft:push_through": {
+                    "value": 1
+                },
+                "minecraft:navigation.walk": {
+                    "is_amphibious": true,
+                    "avoid_water": true
+                }
+            },
+
+            "protect_owner": {
+                "minecraft:behavior.owner_hurt_by_target": {
+                    "priority": 1
+                },
+                "minecraft:behavior.owner_hurt_target": {
+                    "priority": 0
+                }
+            },
+            "chest_up": {
+                "minecraft:inventory": {
+                    "inventory_size": 9,
+                    "container_type": "container",
+                    "restrict_to_owner": true
+                }
+            },
+
+            "attack_monster": {
+                "minecraft:behavior.nearest_attackable_target": {
+                    "priority": 2,
+                    "reselect_targets": true,
+                    "entity_types": [{
+                            "filters": {
+                                "test": "is_family",
+                                "subject": "other",
+                                "value": "monster"
+                            },
+                            "max_dist": 32
+                        },
+                        {
+                            "filters": {
+                                "all_of": [{
+                                    "test": "is_family",
+                                    "subject": "other",
+                                    "value": "undead"
+                                }]
+                            },
+                            "max_dist": 32
+                        }
+                    ],
+                    "must_see": true
+                }
+            },
+
+            "attack_all": {
+                "minecraft:behavior.nearest_attackable_target": {
+                    "priority": 2,
+                    "within_radius": 64,
+                    "reselect_targets": true,
+                    "entity_types": [{
+                            "filters": {
+                                "all_of": [{
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "operator": "==",
+                                        "value": false
+                                    },
+                                    {
+                                        "test": "has_tag",
+                                        "subject": "other",
+                                        "operator": "!=",
+                                        "value": "wbmsyh"
+                                    },
+                                    {
+                                        "test": "has_tag",
+                                        "subject": "self",
+                                        "operator": "==",
+                                        "value": "wbmsyh"
+                                    }
+                                ]
+                            },
+                            "max_dist": 32
+                        },
+                        {
+                            "filters": {
+                                "all_of": [{
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "operator": "==",
+                                        "value": false
+                                    },
+                                    {
+                                        "test": "has_tag",
+                                        "subject": "self",
+                                        "operator": "!=",
+                                        "value": "wbmsyh"
+                                    }
+                                ]
+                            },
+                            "max_dist": 32
+                        }
+                    ],
+                    "must_see": true
+                }
+            },
+            "following": {
+                "minecraft:behavior.follow_owner": {
+                    "priority": 0,
+                    "speed_multiplier": 1.8,
+                    "start_distance": 6,
+                    "stop_distance": 2
+                },
+                "minecraft:walk_animation_speed": {
+                    "value": 1.8
+                }
+            },
+            "free": {
+                "minecraft:behavior.avoid_mob_type": {
+                    "priority": 0,
+                    "entity_types": [{
+                        "filters": {
+                            "test": "is_target",
+                            "subject": "other",
+                            "value": true
+                        },
+                        "max_dist": 2,
+                        "min_dist": 1.25,
+                        "walk_speed_multiplier": 1.85,
+                        "sprint_speed_multiplier": 1.85
+                    }]
+                },
+                "minecraft:walk_animation_speed": {
+                    "value": 1.5
+                },
+                "minecraft:behavior.follow_owner": {
+                    "priority": 1,
+                    "speed_multiplier": 1.5,
+                    "start_distance": 28,
+                    "stop_distance": 8
+                },
+                "minecraft:behavior.random_stroll": {
+                    "priority": 5,
+                    "speed_multiplier": 1
+                },
+                "minecraft:behavior.look_at_player": {
+                    "priority": 6,
+                    "look_distance": 8
+                }
+            },
+
+            "attack_mode1_action_mode1": {
+                "minecraft:variant": {
+                    "value": 1
+                },
+                "minecraft:mark_variant": {
+                    "value": 1
+                },
+                "minecraft:interact": [{
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [{
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "value": true
+                                    },
+                                    {
+                                        "test": "has_equipment",
+                                        "domain": "hand",
+                                        "subject": "other",
+                                        "value": "epic:alliance_token"
+                                    },
+                                    {
+                                        "test": "is_sneaking",
+                                        "subject": "other",
+                                        "value": false
+                                    }
+                                ]
+                            },
+                            "event": "alliance_on",
+                            "target": "self"
+                        },
+                        "hurt_item": 0,
+                        "play_sounds": "beacon.activate",
+                        "interact_text": "开启友好模式"
+                    },
+                    {
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [{
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "value": true
+                                    },
+                                    {
+                                        "test": "has_equipment",
+                                        "domain": "hand",
+                                        "subject": "other",
+                                        "value": "epic:alliance_token"
+                                    },
+                                    {
+                                        "test": "is_sneaking",
+                                        "subject": "other",
+                                        "value": true
+                                    }
+                                ]
+                            },
+                            "event": "alliance_off",
+                            "target": "self"
+                        },
+                        "hurt_item": 0,
+                        "play_sounds": "beacon.activate",
+                        "interact_text": "关闭友好模式"
+                    },
+
+                    {
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [{
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "value": true
+                                    },
+                                    {
+                                        "test": "has_equipment",
+                                        "domain": "hand",
+                                        "subject": "other",
+                                        "value": "epic:machanical_operator"
+                                    },
+                                    {
+                                        "test": "is_sneaking",
+                                        "subject": "other",
+                                        "value": true
+                                    }
+                                ]
+                            },
+                            "event": "attack_mode2_action_mode1",
+                            "target": "self"
+                        },
+                        "hurt_item": 0,
+                        "play_sounds": "random.anvil_use",
+                        "interact_text": "攻击模式:护卫"
+                    },
+                    {
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [{
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "value": true
+                                    },
+                                    {
+                                        "test": "has_equipment",
+                                        "domain": "hand",
+                                        "subject": "other",
+                                        "value": "epic:machanical_operator"
+                                    },
+                                    {
+                                        "test": "is_sneaking",
+                                        "subject": "other",
+                                        "value": false
+                                    }
+                                ]
+                            },
+                            "event": "attack_mode1_action_mode2",
+                            "target": "self"
+                        },
+                        "hurt_item": 0,
+                        "play_sounds": "explode",
+                        "interact_text": "行动模式:跟随"
+                    }
+                ]
+            },
+
+            "attack_mode1_action_mode2": {
+                "minecraft:variant": {
+                    "value": 1
+                },
+                "minecraft:mark_variant": {
+                    "value": 2
+                },
+                "minecraft:interact": [{
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [{
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "value": true
+                                    },
+                                    {
+                                        "test": "has_equipment",
+                                        "domain": "hand",
+                                        "subject": "other",
+                                        "value": "epic:alliance_token"
+                                    },
+                                    {
+                                        "test": "is_sneaking",
+                                        "subject": "other",
+                                        "value": false
+                                    }
+                                ]
+                            },
+                            "event": "alliance_on",
+                            "target": "self"
+                        },
+                        "hurt_item": 0,
+                        "play_sounds": "beacon.activate",
+                        "interact_text": "开启友好模式"
+                    },
+                    {
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [{
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "value": true
+                                    },
+                                    {
+                                        "test": "has_equipment",
+                                        "domain": "hand",
+                                        "subject": "other",
+                                        "value": "epic:alliance_token"
+                                    },
+                                    {
+                                        "test": "is_sneaking",
+                                        "subject": "other",
+                                        "value": true
+                                    }
+                                ]
+                            },
+                            "event": "alliance_off",
+                            "target": "self"
+                        },
+                        "hurt_item": 0,
+                        "play_sounds": "beacon.activate",
+                        "interact_text": "关闭友好模式"
+                    },
+                    {
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [{
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "value": true
+                                    },
+                                    {
+                                        "test": "has_equipment",
+                                        "domain": "hand",
+                                        "subject": "other",
+                                        "value": "epic:machanical_operator"
+                                    },
+                                    {
+                                        "test": "is_sneaking",
+                                        "subject": "other",
+                                        "value": true
+                                    }
+                                ]
+                            },
+                            "event": "attack_mode2_action_mode2",
+                            "target": "self"
+                        },
+                        "hurt_item": 0,
+                        "play_sounds": "random.anvil_use",
+                        "interact_text": "攻击模式:护卫"
+                    },
+                    {
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [{
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "value": true
+                                    },
+                                    {
+                                        "test": "has_equipment",
+                                        "domain": "hand",
+                                        "subject": "other",
+                                        "value": "epic:machanical_operator"
+                                    },
+                                    {
+                                        "test": "is_sneaking",
+                                        "subject": "other",
+                                        "value": false
+                                    }
+                                ]
+                            },
+                            "event": "attack_mode1_action_mode3",
+                            "target": "self"
+                        },
+                        "hurt_item": 0,
+                        "play_sounds": "explode",
+                        "interact_text": "行动模式:自由"
+                    }
+                ]
+            },
+
+            "attack_mode1_action_mode3": {
+                "minecraft:variant": {
+                    "value": 1
+                },
+                "minecraft:mark_variant": {
+                    "value": 3
+                },
+                "minecraft:interact": [{
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [{
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "value": true
+                                    },
+                                    {
+                                        "test": "has_equipment",
+                                        "domain": "hand",
+                                        "subject": "other",
+                                        "value": "epic:alliance_token"
+                                    },
+                                    {
+                                        "test": "is_sneaking",
+                                        "subject": "other",
+                                        "value": false
+                                    }
+                                ]
+                            },
+                            "event": "alliance_on",
+                            "target": "self"
+                        },
+                        "hurt_item": 0,
+                        "play_sounds": "beacon.activate",
+                        "interact_text": "开启友好模式"
+                    },
+                    {
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [{
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "value": true
+                                    },
+                                    {
+                                        "test": "has_equipment",
+                                        "domain": "hand",
+                                        "subject": "other",
+                                        "value": "epic:alliance_token"
+                                    },
+                                    {
+                                        "test": "is_sneaking",
+                                        "subject": "other",
+                                        "value": true
+                                    }
+                                ]
+                            },
+                            "event": "alliance_off",
+                            "target": "self"
+                        },
+                        "hurt_item": 0,
+                        "play_sounds": "beacon.activate",
+                        "interact_text": "关闭友好模式"
+                    },
+                    {
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [{
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "value": true
+                                    },
+                                    {
+                                        "test": "has_equipment",
+                                        "domain": "hand",
+                                        "subject": "other",
+                                        "value": "epic:machanical_operator"
+                                    },
+                                    {
+                                        "test": "is_sneaking",
+                                        "subject": "other",
+                                        "value": true
+                                    }
+                                ]
+                            },
+                            "event": "attack_mode2_action_mode3",
+                            "target": "self"
+                        },
+                        "hurt_item": 0,
+                        "play_sounds": "random.anvil_use",
+                        "interact_text": "攻击模式:护卫"
+                    },
+                    {
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [{
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "value": true
+                                    },
+                                    {
+                                        "test": "has_equipment",
+                                        "domain": "hand",
+                                        "subject": "other",
+                                        "value": "epic:machanical_operator"
+                                    },
+                                    {
+                                        "test": "is_sneaking",
+                                        "subject": "other",
+                                        "value": false
+                                    }
+                                ]
+                            },
+                            "event": "attack_mode1_action_mode1",
+                            "target": "self"
+                        },
+                        "hurt_item": 0,
+                        "play_sounds": "explode",
+                        "interact_text": "行动模式:待命"
+                    }
+                ]
+            },
+
+            "attack_mode2_action_mode1": {
+                "minecraft:variant": {
+                    "value": 2
+                },
+                "minecraft:mark_variant": {
+                    "value": 1
+                },
+                "minecraft:interact": [{
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [{
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "value": true
+                                    },
+                                    {
+                                        "test": "has_equipment",
+                                        "domain": "hand",
+                                        "subject": "other",
+                                        "value": "epic:alliance_token"
+                                    },
+                                    {
+                                        "test": "is_sneaking",
+                                        "subject": "other",
+                                        "value": false
+                                    }
+                                ]
+                            },
+                            "event": "alliance_on",
+                            "target": "self"
+                        },
+                        "hurt_item": 0,
+                        "play_sounds": "beacon.activate",
+                        "interact_text": "开启友好模式"
+                    },
+                    {
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [{
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "value": true
+                                    },
+                                    {
+                                        "test": "has_equipment",
+                                        "domain": "hand",
+                                        "subject": "other",
+                                        "value": "epic:alliance_token"
+                                    },
+                                    {
+                                        "test": "is_sneaking",
+                                        "subject": "other",
+                                        "value": true
+                                    }
+                                ]
+                            },
+                            "event": "alliance_off",
+                            "target": "self"
+                        },
+                        "hurt_item": 0,
+                        "play_sounds": "beacon.activate",
+                        "interact_text": "关闭友好模式"
+                    },
+                    {
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [{
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "value": true
+                                    },
+                                    {
+                                        "test": "has_equipment",
+                                        "domain": "hand",
+                                        "subject": "other",
+                                        "value": "epic:machanical_operator"
+                                    },
+                                    {
+                                        "test": "is_sneaking",
+                                        "subject": "other",
+                                        "value": true
+                                    }
+                                ]
+                            },
+                            "event": "attack_mode3_action_mode1",
+                            "target": "self"
+                        },
+                        "hurt_item": 0,
+                        "play_sounds": "random.anvil_use",
+                        "interact_text": "攻击模式:破坏"
+                    },
+                    {
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [{
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "value": true
+                                    },
+                                    {
+                                        "test": "has_equipment",
+                                        "domain": "hand",
+                                        "subject": "other",
+                                        "value": "epic:machanical_operator"
+                                    },
+                                    {
+                                        "test": "is_sneaking",
+                                        "subject": "other",
+                                        "value": false
+                                    }
+                                ]
+                            },
+                            "event": "attack_mode2_action_mode2",
+                            "target": "self"
+                        },
+                        "hurt_item": 0,
+                        "play_sounds": "explode",
+                        "interact_text": "行动模式:跟随"
+                    }
+                ]
+            },
+
+            "attack_mode2_action_mode2": {
+                "minecraft:variant": {
+                    "value": 2
+                },
+                "minecraft:mark_variant": {
+                    "value": 2
+                },
+                "minecraft:interact": [{
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [{
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "value": true
+                                    },
+                                    {
+                                        "test": "has_equipment",
+                                        "domain": "hand",
+                                        "subject": "other",
+                                        "value": "epic:alliance_token"
+                                    },
+                                    {
+                                        "test": "is_sneaking",
+                                        "subject": "other",
+                                        "value": false
+                                    }
+                                ]
+                            },
+                            "event": "alliance_on",
+                            "target": "self"
+                        },
+                        "hurt_item": 0,
+                        "play_sounds": "beacon.activate",
+                        "interact_text": "开启友好模式"
+                    },
+                    {
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [{
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "value": true
+                                    },
+                                    {
+                                        "test": "has_equipment",
+                                        "domain": "hand",
+                                        "subject": "other",
+                                        "value": "epic:alliance_token"
+                                    },
+                                    {
+                                        "test": "is_sneaking",
+                                        "subject": "other",
+                                        "value": true
+                                    }
+                                ]
+                            },
+                            "event": "alliance_off",
+                            "target": "self"
+                        },
+                        "hurt_item": 0,
+                        "play_sounds": "beacon.activate",
+                        "interact_text": "关闭友好模式"
+                    },
+                    {
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [{
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "value": true
+                                    },
+                                    {
+                                        "test": "has_equipment",
+                                        "domain": "hand",
+                                        "subject": "other",
+                                        "value": "epic:machanical_operator"
+                                    },
+                                    {
+                                        "test": "is_sneaking",
+                                        "subject": "other",
+                                        "value": true
+                                    }
+                                ]
+                            },
+                            "event": "attack_mode3_action_mode2",
+                            "target": "self"
+                        },
+                        "hurt_item": 0,
+                        "play_sounds": "random.anvil_use",
+                        "interact_text": "攻击模式:破坏"
+                    },
+                    {
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [{
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "value": true
+                                    },
+                                    {
+                                        "test": "has_equipment",
+                                        "domain": "hand",
+                                        "subject": "other",
+                                        "value": "epic:machanical_operator"
+                                    },
+                                    {
+                                        "test": "is_sneaking",
+                                        "subject": "other",
+                                        "value": false
+                                    }
+                                ]
+                            },
+                            "event": "attack_mode2_action_mode3",
+                            "target": "self"
+                        },
+                        "hurt_item": 0,
+                        "play_sounds": "explode",
+                        "interact_text": "行动模式:自由"
+                    }
+                ]
+            },
+
+            "attack_mode2_action_mode3": {
+                "minecraft:variant": {
+                    "value": 2
+                },
+                "minecraft:mark_variant": {
+                    "value": 3
+                },
+                "minecraft:interact": [{
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [{
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "value": true
+                                    },
+                                    {
+                                        "test": "has_equipment",
+                                        "domain": "hand",
+                                        "subject": "other",
+                                        "value": "epic:alliance_token"
+                                    },
+                                    {
+                                        "test": "is_sneaking",
+                                        "subject": "other",
+                                        "value": false
+                                    }
+                                ]
+                            },
+                            "event": "alliance_on",
+                            "target": "self"
+                        },
+                        "hurt_item": 0,
+                        "play_sounds": "beacon.activate",
+                        "interact_text": "开启友好模式"
+                    },
+                    {
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [{
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "value": true
+                                    },
+                                    {
+                                        "test": "has_equipment",
+                                        "domain": "hand",
+                                        "subject": "other",
+                                        "value": "epic:alliance_token"
+                                    },
+                                    {
+                                        "test": "is_sneaking",
+                                        "subject": "other",
+                                        "value": true
+                                    }
+                                ]
+                            },
+                            "event": "alliance_off",
+                            "target": "self"
+                        },
+                        "hurt_item": 0,
+                        "play_sounds": "beacon.activate",
+                        "interact_text": "关闭友好模式"
+                    },
+                    {
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [{
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "value": true
+                                    },
+                                    {
+                                        "test": "has_equipment",
+                                        "domain": "hand",
+                                        "subject": "other",
+                                        "value": "epic:machanical_operator"
+                                    },
+                                    {
+                                        "test": "is_sneaking",
+                                        "subject": "other",
+                                        "value": true
+                                    }
+                                ]
+                            },
+                            "event": "attack_mode3_action_mode3",
+                            "target": "self"
+                        },
+                        "hurt_item": 0,
+                        "play_sounds": "random.anvil_use",
+                        "interact_text": "攻击模式:破坏"
+                    },
+                    {
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [{
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "value": true
+                                    },
+                                    {
+                                        "test": "has_equipment",
+                                        "domain": "hand",
+                                        "subject": "other",
+                                        "value": "epic:machanical_operator"
+                                    },
+                                    {
+                                        "test": "is_sneaking",
+                                        "subject": "other",
+                                        "value": false
+                                    }
+                                ]
+                            },
+                            "event": "attack_mode2_action_mode1",
+                            "target": "self"
+                        },
+                        "hurt_item": 0,
+                        "play_sounds": "explode",
+                        "interact_text": "行动模式:待命"
+                    }
+                ]
+            },
+
+            "attack_mode3_action_mode1": {
+                "minecraft:variant": {
+                    "value": 3
+                },
+                "minecraft:mark_variant": {
+                    "value": 1
+                },
+                "minecraft:interact": [{
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [{
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "value": true
+                                    },
+                                    {
+                                        "test": "has_equipment",
+                                        "domain": "hand",
+                                        "subject": "other",
+                                        "value": "epic:alliance_token"
+                                    },
+                                    {
+                                        "test": "is_sneaking",
+                                        "subject": "other",
+                                        "value": false
+                                    }
+                                ]
+                            },
+                            "event": "alliance_on",
+                            "target": "self"
+                        },
+                        "hurt_item": 0,
+                        "play_sounds": "beacon.activate",
+                        "interact_text": "开启友好模式"
+                    },
+                    {
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [{
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "value": true
+                                    },
+                                    {
+                                        "test": "has_equipment",
+                                        "domain": "hand",
+                                        "subject": "other",
+                                        "value": "epic:alliance_token"
+                                    },
+                                    {
+                                        "test": "is_sneaking",
+                                        "subject": "other",
+                                        "value": true
+                                    }
+                                ]
+                            },
+                            "event": "alliance_off",
+                            "target": "self"
+                        },
+                        "hurt_item": 0,
+                        "play_sounds": "beacon.activate",
+                        "interact_text": "关闭友好模式"
+                    },
+                    {
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [{
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "value": true
+                                    },
+                                    {
+                                        "test": "has_equipment",
+                                        "domain": "hand",
+                                        "subject": "other",
+                                        "value": "epic:machanical_operator"
+                                    },
+                                    {
+                                        "test": "is_sneaking",
+                                        "subject": "other",
+                                        "value": true
+                                    }
+                                ]
+                            },
+                            "event": "attack_mode1_action_mode1",
+                            "target": "self"
+                        },
+                        "hurt_item": 0,
+                        "play_sounds": "random.anvil_use",
+                        "interact_text": "攻击模式:待命"
+                    },
+                    {
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [{
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "value": true
+                                    },
+                                    {
+                                        "test": "has_equipment",
+                                        "domain": "hand",
+                                        "subject": "other",
+                                        "value": "epic:machanical_operator"
+                                    },
+                                    {
+                                        "test": "is_sneaking",
+                                        "subject": "other",
+                                        "value": false
+                                    }
+                                ]
+                            },
+                            "event": "attack_mode3_action_mode2",
+                            "target": "self"
+                        },
+                        "hurt_item": 0,
+                        "play_sounds": "explode",
+                        "interact_text": "行动模式:跟随"
+                    }
+                ]
+            },
+
+
+            "attack_mode3_action_mode2": {
+                "minecraft:variant": {
+                    "value": 3
+                },
+                "minecraft:mark_variant": {
+                    "value": 2
+                },
+                "minecraft:interact": [{
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [{
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "value": true
+                                    },
+                                    {
+                                        "test": "has_equipment",
+                                        "domain": "hand",
+                                        "subject": "other",
+                                        "value": "epic:alliance_token"
+                                    },
+                                    {
+                                        "test": "is_sneaking",
+                                        "subject": "other",
+                                        "value": false
+                                    }
+                                ]
+                            },
+                            "event": "alliance_on",
+                            "target": "self"
+                        },
+                        "hurt_item": 0,
+                        "play_sounds": "beacon.activate",
+                        "interact_text": "开启友好模式"
+                    },
+                    {
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [{
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "value": true
+                                    },
+                                    {
+                                        "test": "has_equipment",
+                                        "domain": "hand",
+                                        "subject": "other",
+                                        "value": "epic:alliance_token"
+                                    },
+                                    {
+                                        "test": "is_sneaking",
+                                        "subject": "other",
+                                        "value": true
+                                    }
+                                ]
+                            },
+                            "event": "alliance_off",
+                            "target": "self"
+                        },
+                        "hurt_item": 0,
+                        "play_sounds": "beacon.activate",
+                        "interact_text": "关闭友好模式"
+                    },
+                    {
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [{
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "value": true
+                                    },
+                                    {
+                                        "test": "has_equipment",
+                                        "domain": "hand",
+                                        "subject": "other",
+                                        "value": "epic:machanical_operator"
+                                    },
+                                    {
+                                        "test": "is_sneaking",
+                                        "subject": "other",
+                                        "value": true
+                                    }
+                                ]
+                            },
+                            "event": "attack_mode1_action_mode2",
+                            "target": "self"
+                        },
+                        "hurt_item": 0,
+                        "play_sounds": "random.anvil_use",
+                        "interact_text": "攻击模式:待命"
+                    },
+                    {
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [{
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "value": true
+                                    },
+                                    {
+                                        "test": "has_equipment",
+                                        "domain": "hand",
+                                        "subject": "other",
+                                        "value": "epic:machanical_operator"
+                                    },
+                                    {
+                                        "test": "is_sneaking",
+                                        "subject": "other",
+                                        "value": false
+                                    }
+                                ]
+                            },
+                            "event": "attack_mode3_action_mode3",
+                            "target": "self"
+                        },
+                        "hurt_item": 0,
+                        "play_sounds": "explode",
+                        "interact_text": "行动模式:自由"
+                    }
+                ]
+            },
+
+
+            "attack_mode3_action_mode3": {
+                "minecraft:variant": {
+                    "value": 3
+                },
+                "minecraft:mark_variant": {
+                    "value": 3
+                },
+                "minecraft:interact": [{
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [{
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "value": true
+                                    },
+                                    {
+                                        "test": "has_equipment",
+                                        "domain": "hand",
+                                        "subject": "other",
+                                        "value": "epic:alliance_token"
+                                    },
+                                    {
+                                        "test": "is_sneaking",
+                                        "subject": "other",
+                                        "value": false
+                                    }
+                                ]
+                            },
+                            "event": "alliance_on",
+                            "target": "self"
+                        },
+                        "hurt_item": 0,
+                        "play_sounds": "beacon.activate",
+                        "interact_text": "开启友好模式"
+                    },
+                    {
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [{
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "value": true
+                                    },
+                                    {
+                                        "test": "has_equipment",
+                                        "domain": "hand",
+                                        "subject": "other",
+                                        "value": "epic:alliance_token"
+                                    },
+                                    {
+                                        "test": "is_sneaking",
+                                        "subject": "other",
+                                        "value": true
+                                    }
+                                ]
+                            },
+                            "event": "alliance_off",
+                            "target": "self"
+                        },
+                        "hurt_item": 0,
+                        "play_sounds": "beacon.activate",
+                        "interact_text": "关闭友好模式"
+                    },
+                    {
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [{
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "value": true
+                                    },
+                                    {
+                                        "test": "has_equipment",
+                                        "domain": "hand",
+                                        "subject": "other",
+                                        "value": "epic:machanical_operator"
+                                    },
+                                    {
+                                        "test": "is_sneaking",
+                                        "subject": "other",
+                                        "value": true
+                                    }
+                                ]
+                            },
+                            "event": "attack_mode1_action_mode3",
+                            "target": "self"
+                        },
+                        "hurt_item": 0,
+                        "play_sounds": "random.anvil_use",
+                        "interact_text": "攻击模式:待命"
+                    },
+                    {
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [{
+                                        "test": "is_owner",
+                                        "subject": "other",
+                                        "value": true
+                                    },
+                                    {
+                                        "test": "has_equipment",
+                                        "domain": "hand",
+                                        "subject": "other",
+                                        "value": "epic:machanical_operator"
+                                    },
+                                    {
+                                        "test": "is_sneaking",
+                                        "subject": "other",
+                                        "value": false
+                                    }
+                                ]
+                            },
+                            "event": "attack_mode3_action_mode1",
+                            "target": "self"
+                        },
+                        "hurt_item": 0,
+                        "play_sounds": "explode",
+                        "interact_text": "行动模式:待命"
+                    }
+                ]
+            },
+
+            "cannon": {
+
+                "minecraft:type_family": {
+                    "family": ["defence", "cannon_cart"]
+                },
+                "minecraft:transformation": {
+                    "into": "epic:cannon_cart<turn_to_cannon>",
+                    "value": 1,
+                    "delay": 0,
+                    "begin_transform_sound": "explode",
+                    "transformation_sound": "random.anvil_use",
+                    "keep_owner": true
+                }
+            },
+            "fix": {
+
+                "minecraft:type_family": {
+                    "family": ["defence", "cannon_cart"]
+                },
+                "minecraft:transformation": {
+                    "into": "epic:cannon_cart<start_following>",
+                    "value": 1,
+                    "delay": 0,
+                    "begin_transform_sound": "explode",
+                    "transformation_sound": "random.anvil_use",
+                    "keep_owner": true
+                }
+            }
+
+        },
+
+        "components": {
+            "minecraft:collision_box": {
+                "width": 1.1,
+                "height": 0.65
+            },
+            "minecraft:type_family": {
+                "family": ["defence", "cannon_cart"]
+            },
+            "minecraft:breathable": {
+                "totalSupply": 99999,
+                "suffocateTime": 99999,
+                "breathesWater": true
+            },
+            "minecraft:health": {
+                "value": 80,
+                "min": 0,
+                "max": 80
+            },
+            "minecraft:knockback_resistance": {
+                "value": 10
+            },
+            "minecraft:movement": {
+                "value": 0.0
+            },
+            "minecraft:movement.basic": {},
+            "minecraft:jump.static": {},
+            "minecraft:nameable": {},
+            "minecraft:behavior.hurt_by_target": {
+                "priority": 1,
+                "entity_types": [{
+                        "filters": {
+                            "all_of": [{
+                                "test": "is_owner",
+                                "subject": "other",
+                                "operator": "==",
+                                "value": false
+                            }]
+                        },
+                        "max_dist": 32
+                    },
+                    {
+                        "filters": {
+                            "all_of": [{
+                                    "test": "has_tag",
+                                    "subject": "other",
+                                    "operator": "!=",
+                                    "value": "wbmsyh"
+                                },
+                                {
+                                    "test": "has_tag",
+                                    "subject": "self",
+                                    "operator": "==",
+                                    "value": "wbmsyh"
+                                }
+                            ]
+                        },
+                        "max_dist": 32
+                    },
+                    {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_tag",
+                                "subject": "self",
+                                "operator": "!=",
+                                "value": "wbmsyh"
+                            }]
+                        },
+                        "max_dist": 32
+                    }
+                ],
+                "must_see": true
+            },
+            "minecraft:physics": {}
+        },
+
+        "events": {
+            "minecraft:entity_spawned": {
+                "randomize": [{
+                    "weight": 100,
+                    "remove": {},
+                    "add": {
+                        "component_groups": [
+                            "defence:do_not_start_following"
+                        ]
+                    }
+                }]
+            },
+
+            "start_following": {
+                "remove": {
+                    "component_groups": [
+                        "defence:do_not_start_following"
+                    ]
+                },
+                "run_command": {
+                    "command": [
+                        "tag @s add wbmsyh"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "defence:have_been_start_following", "hostile_mode", "attack_mode2_action_mode2", "can_attack", "protect_owner", "attack_monster", "can_move", "following", "chest_up", "owner_call_off"
+                    ]
+                }
+            },
+            "turn_to_cannon": {
+                "remove": {
+                    "component_groups": [
+                        "can_attack", "protect_owner", "attack_monster", "attack_all", "can_move", "cannot_move", "following", "free",
+                        "attack_mode1_action_mode1", "attack_mode1_action_mode2", "attack_mode1_action_mode3",
+                        "attack_mode2_action_mode1", "attack_mode2_action_mode2", "attack_mode2_action_mode3",
+                        "attack_mode3_action_mode1", "attack_mode3_action_mode2", "attack_mode3_action_mode3"
+                    ]
+                },
+                "run_command": {
+                    "command": [
+                        "tag @s add wbmsyh"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "cannon_form", "can_attack", "protect_owner", "attack_monster", "cannot_move", "hostile_mode"
+                    ]
+                }
+            },
+            "fix": {
+                "remove": {
+                    "component_groups": [
+                        "can_attack", "protect_owner", "attack_monster", "attack_all", "can_move", "cannot_move", "following", "free",
+                        "attack_mode1_action_mode1", "attack_mode1_action_mode2", "attack_mode1_action_mode3",
+                        "attack_mode2_action_mode1", "attack_mode2_action_mode2", "attack_mode2_action_mode3",
+                        "attack_mode3_action_mode1", "attack_mode3_action_mode2", "attack_mode3_action_mode3",
+                        "cannon_form"
+                    ]
+                },
+                "run_command": {
+                    "command": [
+                        "tag @s add wbmsyh"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "fix"
+                    ]
+                }
+            },
+            "alliance_on": {
+                "run_command": {
+                    "command": [
+                        "tag @s add wbmsyh"
+                    ]
+                }
+            },
+            "alliance_off": {
+                "run_command": {
+                    "command": [
+                        "tag @s remove wbmsyh"
+                    ]
+                }
+            },
+            "chest_up": {
+                "remove": {
+                    "component_groups": []
+                },
+                "add": {
+                    "component_groups": [
+                        "chest_up"
+                    ]
+                }
+            },
+            "owner_call_on": {
+                "remove": {
+                    "component_groups": [
+                        "owner_call_off"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "owner_call_on"
+                    ]
+                }
+            },
+            "owner_call_off": {
+                "remove": {
+                    "component_groups": [
+                        "owner_call_on"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "owner_call_off"
+                    ]
+                }
+            },
+            "change": {
+                "remove": {
+                    "component_groups": [
+                        "can_attack", "protect_owner", "attack_monster", "attack_all", "can_move", "cannot_move", "following", "free",
+                        "attack_mode1_action_mode1", "attack_mode1_action_mode2", "attack_mode1_action_mode3",
+                        "attack_mode2_action_mode1", "attack_mode2_action_mode2", "attack_mode2_action_mode3",
+                        "attack_mode3_action_mode1", "attack_mode3_action_mode2", "attack_mode3_action_mode3",
+                        "cannon_form"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "cannon"
+                    ]
+                }
+            },
+            "attack_mode1_action_mode1": {
+                "remove": {
+                    "component_groups": [
+                        "can_attack", "protect_owner", "attack_monster", "attack_all", "can_move", "cannot_move", "following", "free",
+                        "attack_mode1_action_mode1", "attack_mode1_action_mode2", "attack_mode1_action_mode3",
+                        "attack_mode2_action_mode1", "attack_mode2_action_mode2", "attack_mode2_action_mode3",
+                        "attack_mode3_action_mode1", "attack_mode3_action_mode2", "attack_mode3_action_mode3"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "attack_mode1_action_mode1", "cannot_move"
+                    ]
+                }
+            },
+            "attack_mode1_action_mode2": {
+                "remove": {
+                    "component_groups": [
+                        "can_attack", "protect_owner", "attack_monster", "attack_all", "can_move", "cannot_move", "following", "free",
+                        "attack_mode1_action_mode1", "attack_mode1_action_mode2", "attack_mode1_action_mode3",
+                        "attack_mode2_action_mode1", "attack_mode2_action_mode2", "attack_mode2_action_mode3",
+                        "attack_mode3_action_mode1", "attack_mode3_action_mode2", "attack_mode3_action_mode3"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "attack_mode1_action_mode2", "can_move", "following"
+                    ]
+                }
+            },
+            "attack_mode1_action_mode3": {
+                "remove": {
+                    "component_groups": [
+                        "can_attack", "protect_owner", "attack_monster", "attack_all", "can_move", "cannot_move", "following", "free",
+                        "attack_mode1_action_mode1", "attack_mode1_action_mode2", "attack_mode1_action_mode3",
+                        "attack_mode2_action_mode1", "attack_mode2_action_mode2", "attack_mode2_action_mode3",
+                        "attack_mode3_action_mode1", "attack_mode3_action_mode2", "attack_mode3_action_mode3"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "attack_mode1_action_mode3", "can_move", "free"
+                    ]
+                }
+            },
+            "attack_mode2_action_mode1": {
+                "remove": {
+                    "component_groups": [
+                        "can_attack", "protect_owner", "attack_monster", "attack_all", "can_move", "cannot_move", "following", "free",
+                        "attack_mode1_action_mode1", "attack_mode1_action_mode2", "attack_mode1_action_mode3",
+                        "attack_mode2_action_mode1", "attack_mode2_action_mode2", "attack_mode2_action_mode3",
+                        "attack_mode3_action_mode1", "attack_mode3_action_mode2", "attack_mode3_action_mode3"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "attack_mode2_action_mode1", "can_attack", "protect_owner", "attack_monster", "cannot_move"
+                    ]
+                }
+            },
+            "attack_mode2_action_mode2": {
+                "remove": {
+                    "component_groups": [
+                        "can_attack", "protect_owner", "attack_monster", "attack_all", "can_move", "cannot_move", "following", "free",
+                        "attack_mode1_action_mode1", "attack_mode1_action_mode2", "attack_mode1_action_mode3",
+                        "attack_mode2_action_mode1", "attack_mode2_action_mode2", "attack_mode2_action_mode3",
+                        "attack_mode3_action_mode1", "attack_mode3_action_mode2", "attack_mode3_action_mode3"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "attack_mode2_action_mode2", "can_attack", "protect_owner", "attack_monster", "can_move", "following"
+                    ]
+                }
+            },
+            "attack_mode2_action_mode3": {
+                "remove": {
+                    "component_groups": [
+                        "can_attack", "protect_owner", "attack_monster", "attack_all", "can_move", "cannot_move", "following", "free",
+                        "attack_mode1_action_mode1", "attack_mode1_action_mode2", "attack_mode1_action_mode3",
+                        "attack_mode2_action_mode1", "attack_mode2_action_mode2", "attack_mode2_action_mode3",
+                        "attack_mode3_action_mode1", "attack_mode3_action_mode2", "attack_mode3_action_mode3"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "attack_mode2_action_mode3", "can_attack", "protect_owner", "attack_monster", "can_move", "free"
+                    ]
+                }
+            },
+
+            "attack_mode3_action_mode1": {
+                "remove": {
+                    "component_groups": [
+                        "can_attack", "protect_owner", "attack_monster", "attack_all", "can_move", "cannot_move", "following", "free",
+                        "attack_mode1_action_mode1", "attack_mode1_action_mode2", "attack_mode1_action_mode3",
+                        "attack_mode2_action_mode1", "attack_mode2_action_mode2", "attack_mode2_action_mode3",
+                        "attack_mode3_action_mode1", "attack_mode3_action_mode2", "attack_mode3_action_mode3"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "attack_mode3_action_mode1", "can_attack", "protect_owner", "attack_all", "cannot_move"
+                    ]
+                }
+            },
+
+            "attack_mode3_action_mode2": {
+                "remove": {
+                    "component_groups": [
+                        "can_attack", "protect_owner", "attack_monster", "attack_all", "can_move", "cannot_move", "following", "free",
+                        "attack_mode1_action_mode1", "attack_mode1_action_mode2", "attack_mode1_action_mode3",
+                        "attack_mode2_action_mode1", "attack_mode2_action_mode2", "attack_mode2_action_mode3",
+                        "attack_mode3_action_mode1", "attack_mode3_action_mode2", "attack_mode3_action_mode3"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "attack_mode3_action_mode2", "can_attack", "protect_owner", "attack_all", "can_move", "following"
+                    ]
+                }
+            },
+
+            "attack_mode3_action_mode3": {
+                "remove": {
+                    "component_groups": [
+                        "can_attack", "protect_owner", "attack_monster", "attack_all", "can_move", "cannot_move", "following", "free",
+                        "attack_mode1_action_mode1", "attack_mode1_action_mode2", "attack_mode1_action_mode3",
+                        "attack_mode2_action_mode1", "attack_mode2_action_mode2", "attack_mode2_action_mode3",
+                        "attack_mode3_action_mode1", "attack_mode3_action_mode2", "attack_mode3_action_mode3"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "attack_mode3_action_mode3", "can_attack", "protect_owner", "attack_all", "can_move", "free"
+                    ]
+                }
+            }
+
+        }
+    }
+}

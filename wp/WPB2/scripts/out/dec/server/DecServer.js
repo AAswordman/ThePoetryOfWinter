@@ -10,6 +10,7 @@ import { ArmorPlayerDec, ArmorPlayerPom } from './items/ArmorData.js';
 import Vector3 from '../../modules/exmc/math/Vector3.js';
 import { to } from '../../modules/exmc/server/ExErrorQueue.js';
 import { DecEverlastingWinterGhastBoss1, DecEverlastingWinterGhastBoss2 } from './entities/DecEverlastingWinterGhastBoss.js';
+import { DecCommonBossLastStage } from './entities/DecCommonBossLastStage.js';
 export default class DecServer extends ExGameServer {
     constructor(config) {
         super(config);
@@ -151,6 +152,15 @@ export default class DecServer extends ExGameServer {
                 }));
             }
         });
+        //实体监听器，用于播放bgm、完成任务判断
+        this.addEntityController("dec:leaves_golem", DecCommonBossLastStage);
+        this.addEntityController("dec:king_of_pillager", DecCommonBossLastStage);
+        this.addEntityController("dec:abyssal_controller", DecCommonBossLastStage);
+        this.addEntityController("dec:predators", DecCommonBossLastStage);
+        this.addEntityController("dec:enchant_illager_2", DecCommonBossLastStage);
+        this.addEntityController("dec:escaped_soul_entity", DecCommonBossLastStage);
+        this.addEntityController("dec:host_of_deep_2", DecCommonBossLastStage);
+        this.addEntityController("dec:ash_knight", DecCommonBossLastStage);
         this.addEntityController("dec:everlasting_winter_ghast", DecEverlastingWinterGhastBoss1);
         this.addEntityController("dec:everlasting_winter_ghast_1", DecEverlastingWinterGhastBoss2);
     }

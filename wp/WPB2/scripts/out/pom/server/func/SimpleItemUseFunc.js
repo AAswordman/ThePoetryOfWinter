@@ -15,6 +15,11 @@ export default class SimpleItemUseFunc extends GameController {
                 this.chainDiggingLogs(new Vector3(e.block), true);
             }
         });
+        this.getEvents().exEvents.onceItemUseOn.subscribe(e => {
+            if (e.item.typeId === "wb:technology_world_explorer") {
+                this.sayTo(this.getExDimension().getBlock(e.blockLocation).typeId);
+            }
+        });
         this.getEvents().exEvents.itemUse.subscribe((e) => {
             const { item } = e;
             if (item.typeId == "wb:power") {
@@ -44,15 +49,15 @@ export default class SimpleItemUseFunc extends GameController {
             else if (item.typeId === "wb:start_key") {
             }
             else if (item.typeId === "wb:technology_world_explorer") {
-                this.exPlayer.command.run("locate biome ice_plains").then((e) => {
-                    // console.warn(JSON.stringify(e));
-                    // console.warn((e.toLocaleString()));
-                    // console.warn((e.toString()));
-                    // console.warn(ExSystem.parseObj(e));
-                })
-                    .catch((err) => {
-                    console.warn(err);
-                });
+                // this.exPlayer.command.run("locate biome ice_plains").then((e) => {
+                //     // console.warn(JSON.stringify(e));
+                //     // console.warn((e.toLocaleString()));
+                //     // console.warn((e.toString()));
+                //     // console.warn(ExSystem.parseObj(e));
+                // })
+                //     .catch((err) => {
+                //         console.warn(err);
+                //     })
             }
         });
     }

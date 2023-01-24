@@ -175,7 +175,7 @@
         "max": 400
       },
       "minecraft:loot": {
-        "table": "loot_tables/entity_soul.json"
+        "table": "loot_tables/entities/entity_soul.json"
       },
       "minecraft:behavior.hurt_by_target": {
         "priority": 1,

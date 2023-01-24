@@ -15,7 +15,8 @@ export default class PomMagicSystem extends GameController {
             if (this.scoresManager.getScore("wbkjlq") > 0)
                 this.scoresManager.removeScoreAsync("wbkjlq", 1);
         }).delay(1000);
-        this.anotherShow = [];
+        this._anotherShow = [];
+        this._mapShow = new Map();
         this.actionbarShow = new TimeLoopTask(this.getEvents(), () => {
             let fromData = [
                 [PomMagicSystem.AdditionHPChar, this.additionHealth / 100, true, this.additionHealthShow, "HP"],
@@ -48,9 +49,25 @@ export default class PomMagicSystem extends GameController {
             for (let i = 0; i < 100; i++) {
                 arr.push("");
             }
-            arr = arr.concat(this.anotherShow);
+            arr = arr.concat(Array.from(this._mapShow.values()).map(e => e.join('\n')));
             this.exPlayer.titleActionBar(arr.join("\n"));
         }).delay(500);
+    }
+    registActionbarPass(name) {
+        this._mapShow.set(name, []);
+        return this.getActionbarByPass(name);
+    }
+    getActionbarSize() {
+        return this._mapShow.size;
+    }
+    getActionbarByPass(name) {
+        return this._mapShow.get(name);
+    }
+    setActionbarByPass(name, msg) {
+        this._mapShow.set(name, msg);
+    }
+    deleteActionbarPass(name) {
+        this._mapShow.delete(name);
     }
     onJoin() {
     }

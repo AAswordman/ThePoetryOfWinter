@@ -837,6 +837,9 @@
         "portal_stoneboss": {
             "textures": "textures/wb_blocks/base/portal_stoneboss"
         },
+        "portal_caveboss": {
+            "textures": "textures/wb_blocks/base/portal_caveboss"
+        },
         "portal_bossx": {
             "textures": "textures/wb_blocks/base/portal_bossx"
         },

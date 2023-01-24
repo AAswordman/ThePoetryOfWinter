@@ -1,0 +1,134 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.cannon_cart_status_display": {
+            "states": {
+                "default": {
+                    "transitions": [{
+                            "attack_mode1_action_mode1": "query.variant == 1 && query.mark_variant == 1"
+                        },
+                        {
+                            "attack_mode1_action_mode2": "query.variant == 1 && query.mark_variant == 2"
+                        },
+                        {
+                            "attack_mode1_action_mode3": "query.variant == 1 && query.mark_variant == 3"
+                        },
+                        {
+                            "attack_mode2_action_mode1": "query.variant == 2 && query.mark_variant == 1"
+                        },
+                        {
+                            "attack_mode2_action_mode2": "query.variant == 2 && query.mark_variant == 2"
+                        },
+                        {
+                            "attack_mode2_action_mode3": "query.variant == 2 && query.mark_variant == 3"
+                        },
+                        {
+                            "attack_mode3_action_mode1": "query.variant == 3 && query.mark_variant == 1"
+                        },
+                        {
+                            "attack_mode3_action_mode2": "query.variant == 3 && query.mark_variant == 2"
+                        },
+                        {
+                            "attack_mode3_action_mode3": "query.variant == 3 && query.mark_variant == 3"
+                        }
+
+                    ]
+                },
+                "attack_mode1_action_mode1": {
+                    "on_entry": [
+                        "/execute @s[tag=wbmsyh] ~~~ title @a[r=1,hasitem={item=epic:machanical_operator,location=slot.weapon.mainhand}] title 加农炮战车§a=友好模式=",
+                        "/execute @s[tag=!wbmsyh] ~~~ title @a[r=1,hasitem={item=epic:machanical_operator,location=slot.weapon.mainhand}] title 加农炮战车§4=敌对模式=",
+                        "/title @a[r=1,hasitem={item=epic:machanical_operator,location=slot.weapon.mainhand}] subtitle 当前活动状态：行动模式§6[待命] §f| 攻击模式§6[待命]"
+                    ],
+                    "transitions": [{
+                        "default": "(1.0)"
+                    }]
+                },
+                "attack_mode1_action_mode2": {
+                    "on_entry": [
+                        "/execute @s[tag=wbmsyh] ~~~ title @a[r=1,hasitem={item=epic:machanical_operator,location=slot.weapon.mainhand}] title 加农炮战车§a=友好模式=",
+                        "/execute @s[tag=!wbmsyh] ~~~ title @a[r=1,hasitem={item=epic:machanical_operator,location=slot.weapon.mainhand}] title 加农炮战车§4=敌对模式=",
+                        "/title @a[r=1,hasitem={item=epic:machanical_operator,location=slot.weapon.mainhand}] subtitle 当前活动状态：行动模式§3[跟随] §f| 攻击模式§6[待命]"
+                    ],
+                    "transitions": [{
+                        "default": "(1.0)"
+                    }]
+                },
+                "attack_mode1_action_mode3": {
+                    "on_entry": [
+                        "/execute @s[tag=wbmsyh] ~~~ title @a[r=1,hasitem={item=epic:machanical_operator,location=slot.weapon.mainhand}] title 加农炮战车§a=友好模式=",
+                        "/execute @s[tag=!wbmsyh] ~~~ title @a[r=1,hasitem={item=epic:machanical_operator,location=slot.weapon.mainhand}] title 加农炮战车§4=敌对模式=",
+                        "/title @a[r=1,hasitem={item=epic:machanical_operator,location=slot.weapon.mainhand}] subtitle 当前活动状态：行动模式§c[自由] §f| 攻击模式§6[待命]"
+                    ],
+                    "transitions": [{
+                        "default": "(1.0)"
+                    }]
+                },
+                "attack_mode2_action_mode1": {
+                    "on_entry": [
+                        "/execute @s[tag=wbmsyh] ~~~ title @a[r=1,hasitem={item=epic:machanical_operator,location=slot.weapon.mainhand}] title 加农炮战车§a=友好模式=",
+                        "/execute @s[tag=!wbmsyh] ~~~ title @a[r=1,hasitem={item=epic:machanical_operator,location=slot.weapon.mainhand}] title 加农炮战车§4=敌对模式=",
+                        "/title @a[r=1,hasitem={item=epic:machanical_operator,location=slot.weapon.mainhand}] subtitle 当前活动状态：行动模式§6[待命] §f| 攻击模式§3[护卫]"
+                    ],
+                    "transitions": [{
+                        "default": "(1.0)"
+                    }]
+                },
+                "attack_mode2_action_mode2": {
+                    "on_entry": [
+                        "/execute @s[tag=wbmsyh] ~~~ title @a[r=1,hasitem={item=epic:machanical_operator,location=slot.weapon.mainhand}] title 加农炮战车§a=友好模式=",
+                        "/execute @s[tag=!wbmsyh] ~~~ title @a[r=1,hasitem={item=epic:machanical_operator,location=slot.weapon.mainhand}] title 加农炮战车§4=敌对模式=",
+                        "/title @a[r=1,hasitem={item=epic:machanical_operator,location=slot.weapon.mainhand}] subtitle 当前活动状态：行动模式§3[跟随] §f| 攻击模式§3[护卫]"
+                    ],
+                    "transitions": [{
+                        "default": "(1.0)"
+                    }]
+                },
+                "attack_mode2_action_mode3": {
+                    "on_entry": [
+                        "/execute @s[tag=wbmsyh] ~~~ title @a[r=1,hasitem={item=epic:machanical_operator,location=slot.weapon.mainhand}] title 加农炮战车§a=友好模式=",
+                        "/execute @s[tag=!wbmsyh] ~~~ title @a[r=1,hasitem={item=epic:machanical_operator,location=slot.weapon.mainhand}] title 加农炮战车§4=敌对模式=",
+                        "/title @a[r=1,hasitem={item=epic:machanical_operator,location=slot.weapon.mainhand}] subtitle 当前活动状态：行动模式§c[自由] §f| 攻击模式§3[护卫]"
+                    ],
+                    "transitions": [{
+                        "default": "(1.0)"
+                    }]
+                },
+                "attack_mode3_action_mode1": {
+                    "on_entry": [
+                        "/execute @s[tag=wbmsyh] ~~~ title @a[r=1,hasitem={item=epic:machanical_operator,location=slot.weapon.mainhand}] title 加农炮战车§a=友好模式=",
+                        "/execute @s[tag=!wbmsyh] ~~~ title @a[r=1,hasitem={item=epic:machanical_operator,location=slot.weapon.mainhand}] title 加农炮战车§4=敌对模式=",
+                        "/title @a[r=1,hasitem={item=epic:machanical_operator,location=slot.weapon.mainhand}] subtitle 当前活动状态：行动模式§6[待命] §f| 攻击模式§c[破坏]"
+                    ],
+                    "transitions": [{
+                        "default": "(1.0)"
+                    }]
+                },
+                "attack_mode3_action_mode2": {
+                    "on_entry": [
+                        "/execute @s[tag=wbmsyh] ~~~ title @a[r=1,hasitem={item=epic:machanical_operator,location=slot.weapon.mainhand}] title 加农炮战车§a=友好模式=",
+                        "/execute @s[tag=!wbmsyh] ~~~ title @a[r=1,hasitem={item=epic:machanical_operator,location=slot.weapon.mainhand}] title 加农炮战车§4=敌对模式=",
+                        "/title @a[r=1,hasitem={item=epic:machanical_operator,location=slot.weapon.mainhand}] subtitle 当前活动状态：行动模式§3[跟随] §f| 攻击模式§c[破坏]"
+                    ],
+                    "transitions": [{
+                        "default": "(1.0)"
+                    }]
+                },
+                "attack_mode3_action_mode3": {
+                    "on_entry": [
+                        "/execute @s[tag=wbmsyh] ~~~ title @a[r=1,hasitem={item=epic:machanical_operator,location=slot.weapon.mainhand}] title 加农炮战车§a=友好模式=",
+                        "/execute @s[tag=!wbmsyh] ~~~ title @a[r=1,hasitem={item=epic:machanical_operator,location=slot.weapon.mainhand}] title 加农炮战车§4=敌对模式=",
+                        "/title @a[r=1,hasitem={item=epic:machanical_operator,location=slot.weapon.mainhand}] subtitle 当前活动状态：行动模式§c[自由] §f| 攻击模式§c[破坏]"
+                    ],
+                    "transitions": [{
+                        "default": "(1.0)"
+                    }]
+                }
+            }
+        }
+
+
+
+
+    }
+}

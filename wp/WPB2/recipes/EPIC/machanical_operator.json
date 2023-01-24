@@ -1,0 +1,28 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+      "description": {
+      "identifier": "epic:machanical_operator"
+      },  
+      "tags": [ "crafting_table" ],
+      "pattern": [
+        " A ",
+        " B ",
+        " C "
+      ],
+      "key": {
+        "C": {
+          "item": "minecraft:stick"
+        },
+        "B": {
+          "item": "minecraft:iron_ingot"
+        },
+        "A":{
+          "item": "minecraft:redstone_block"
+        }
+      },
+      "result": {
+        "item": "epic:machanical_operator"
+      }
+    }
+  }

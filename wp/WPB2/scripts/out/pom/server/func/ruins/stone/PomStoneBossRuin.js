@@ -38,7 +38,7 @@ export default class PomStoneBossRuin {
         this.jigsaw.setStructurePlane(3, 2, 0, 0, 0, this.structure_area3, 180);
         this.jigsaw.setStructurePlane(2, 2, 0, 0, 0, this.structure_area4, 180);
         this._bossArea = (new ExBlockArea(new Vector3(62, 2, 62).add(x, y, z), new Vector3(4, 6, 4)));
-        this._playerArea.push(new ExBlockArea(new Vector3(6, 5, 6).add(x, y, z), new Vector3(10, 6, 10)), new ExBlockArea(new Vector3(128 - 6 - 10, 5, 6).add(x, y, z), new Vector3(10, 6, 10)), new ExBlockArea(new Vector3(6, 5, 128 - 6 - 10).add(x, y, z), new Vector3(10, 6, 10)), new ExBlockArea(new Vector3(128 - 6 - 10, 5, 128 - 6 - 10).add(x, y, z), new Vector3(10, 6, 10)));
+        this._playerArea.push(new ExBlockArea(new Vector3(6, 5, 6).add(x, y, z), new Vector3(2, 4, 2)), new ExBlockArea(new Vector3(128 - 6 - 2, 5, 6).add(x, y, z), new Vector3(2, 4, 2)), new ExBlockArea(new Vector3(6, 5, 128 - 6 - 2).add(x, y, z), new Vector3(2, 4, 2)), new ExBlockArea(new Vector3(128 - 6 - 2, 5, 128 - 6 - 2).add(x, y, z), new Vector3(2, 4, 2)));
     }
     generate() {
         this.init(this.x, this.y, this.z, this.dim);

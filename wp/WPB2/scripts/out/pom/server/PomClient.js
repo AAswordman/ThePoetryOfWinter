@@ -16,26 +16,27 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+import { receiveMessage } from "../../modules/exmc/server/ExGame.js";
+import ExGameClient from "../../modules/exmc/server/ExGameClient.js";
 import ExPlayer from "../../modules/exmc/server/entity/ExPlayer.js";
 import { Objective } from "../../modules/exmc/server/entity/ExScoresManager.js";
-import ExGameClient from "../../modules/exmc/server/ExGameClient.js";
+import { eventDecoratorFactory } from "../../modules/exmc/server/events/eventDecoratorFactory.js";
 import TagCache from "../../modules/exmc/server/storage/cache/TagCache.js";
+import ExSystem from "../../modules/exmc/utils/ExSystem.js";
+import Random from "../../modules/exmc/utils/Random.js";
 import TimeLoopTask from "../../modules/exmc/utils/TimeLoopTask.js";
 import GlobalSettings from "./cache/GlobalSettings.js";
 import PomData from "./cache/PomData.js";
+import POMLICENSE from "./data/POMLICENSE.js";
 import lang from "./data/lang.js";
+import PomDimRuinsSystem from "./func/PomDimRuinsSystem.js";
 import PomEnchantSystem from "./func/PomEnchantSystem.js";
+import PomInteractSystem from "./func/PomInteractSystem.js";
 import PomMagicSystem from "./func/PomMagicSystem.js";
 import PomTalentSystem from "./func/PomTalentSystem.js";
-import SimpleItemUseFunc from "./func/SimpleItemUseFunc.js";
-import PomDimRuinsSystem from "./func/PomDimRuinsSystem.js";
-import Random from "../../modules/exmc/utils/Random.js";
-import ExSystem from "../../modules/exmc/utils/ExSystem.js";
-import { eventDecoratorFactory } from "../../modules/exmc/server/events/eventDecoratorFactory.js";
 import PomTaskSystem from "./func/PomTaskSystem.js";
-import { receiveMessage } from "../../modules/exmc/server/ExGame.js";
+import SimpleItemUseFunc from "./func/SimpleItemUseFunc.js";
 import WarningAlertUI from "./ui/WarningAlertUI.js";
-import POMLICENSE from "./data/POMLICENSE.js";
 export default class PomClient extends ExGameClient {
     // net;
     constructor(server, id, player) {
@@ -47,6 +48,7 @@ export default class PomClient extends ExGameClient {
         this.itemUseFunc = new SimpleItemUseFunc(this);
         this.ruinsSystem = new PomDimRuinsSystem(this);
         this.taskSystem = new PomTaskSystem(this);
+        this.interactSystem = new PomInteractSystem(this);
         this.globalSettings = new GlobalSettings(new Objective("wpsetting"));
         this.cache = new TagCache(this.exPlayer);
         this.looper = new TimeLoopTask(this.getEvents(), () => {
@@ -65,6 +67,7 @@ export default class PomClient extends ExGameClient {
         this.addCtrller(this.itemUseFunc);
         this.addCtrller(this.ruinsSystem);
         this.addCtrller(this.taskSystem);
+        this.addCtrller(this.interactSystem);
         this.gameControllers.forEach(controller => {
             eventDecoratorFactory(this.getEvents(), controller);
             controller.onJoin();

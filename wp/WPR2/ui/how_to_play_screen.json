@@ -1,1957 +1,612 @@
 {
-  "namespace": "how_to_play",
-  "how_to_play_screen@how_to_play_common.screen_base": {
-    "$selector_stack_panel": "how_to_play.selector_stack_panel",
-    "$section_content_panels": "how_to_play.section_content_panels"
-  },
-  "selector_stack_panel": {
-    "type": "stack_panel",
-    "anchor_from": "top_left",
-    "anchor_to": "top_left",
-    "orientation": "vertical",
-    "$default_selector_toggle_index": 1,
-    "controls": [
-      {
-        "how_to_play_selector_pane": {
-          "type": "stack_panel",
-          "controls": [
-            {
-              "padding_0": {
-                "type": "panel",
-                "size": [0,6]
-              }
-            },
-            {
-              "wb0_button@how_to_play.wb0_button": {
-                "$toggle_group_forced_index": 0
-              }
-            },
-            {
-              "wb0x_button@how_to_play.wb0x_button": {
-                "$toggle_group_forced_index": 1
-              }
-            },
-            {
-              "all@how_to_play_common.topic_category": {
-                "$category": "all"
-              }
-            },
-            {
-              "wb1_button@how_to_play.wb1_button": {
-                "$toggle_group_forced_index": 2
-              }
-            },
-            {
-              "core@how_to_play_common.topic_category": {
-                "$category": "core"
-              }
-            },
-            {
-              "wb2_button@how_to_play.wb2_button": {
-                "$toggle_group_forced_index": 3
-              }
-            },
-            
-            {
-              "item@how_to_play_common.topic_category": {
-                "$category": "item"
-              }
-            },
-            {
-              "wb3_button@how_to_play.wb3_button": {
-                "$toggle_group_forced_index": 5
-              }
-            },
-            {
-              "wb4_button@how_to_play.wb4_button": {
-                "$toggle_group_forced_index": 6
-              }
-            },
-            {
-              "wb5_button@how_to_play.wb5_button": {
-                "$toggle_group_forced_index": 7
-              }
-            },
-            {
-              "wb6_button@how_to_play.wb6_button": {
-                "$toggle_group_forced_index": 8
-              }
-            },
-            {
-              "tech@how_to_play_common.topic_category": {
-                "$category": "tech"
-              }
-            },
-            {
-              "wb7_button@how_to_play.wb7_button": {
-                "$toggle_group_forced_index": 9
-              }
-            },
-            {
-              "plot@how_to_play_common.topic_category": {
-                "$category": "plot"
-              }
-            },
-            {
-              "wb8_button@how_to_play.wb8_button": {
-                "$toggle_group_forced_index": 10
-              }
+    "namespace": "how_to_play",
+    "how_to_play_screen@how_to_play_common.screen_base": {
+        "$selector_stack_panel": "how_to_play.selector_stack_panel",
+        "$section_content_panels": "how_to_play.section_content_panels"
+    },
+    "selector_stack_panel": {
+        "type": "stack_panel",
+        "anchor_from": "top_left",
+        "anchor_to": "top_left",
+        "orientation": "vertical",
+        "$default_selector_toggle_index": 1,
+        "controls": [{
+            "how_to_play_selector_pane": {
+                "type": "stack_panel",
+                "controls": [{
+                        "padding_0": {
+                            "type": "panel",
+                            "size": [0, 6]
+                        }
+                    },
+                    {
+                        "wb0_button@how_to_play.wb0_button": {
+                            "$toggle_group_forced_index": 0
+                        }
+                    },
+                    {
+                        "wb0x_button@how_to_play.wb0x_button": {
+                            "$toggle_group_forced_index": 1
+                        }
+                    },
+
+                    {
+                        "tech@how_to_play_common.topic_category": {
+                            "$category": "tech"
+                        }
+                    },
+                    {
+                        "wb7_button@how_to_play.wb7_button": {
+                            "$toggle_group_forced_index": 9
+                        }
+                    }
+                ]
             }
-          ]
-        }
-      }
-    ]
-  },
-  "section_content_panels": {
-    "type": "stack_panel",
-    "anchor_from": "top_left",
-    "anchor_to": "top_left",
-    "size": [
-      "100% - 5px",
-      "100%c + 5px"
-    ],
-    "offset": [2,0],
-    "controls": [
-      {
-        "general_tips_sections": {
-          "type": "stack_panel",
-          "controls": [
-            {
-              "wb0_section@how_to_play.wb0_section": {}
-            },
-            {
-              "wb0x_section@how_to_play.wb0x_section": {}
-            },
-            {
-              "wb1_section@how_to_play.wb1_section": {}
-            },
-            {
-              "wb2_section@how_to_play.wb2_section": {}
-            },
-            
-            {
-              "wb3_section@how_to_play.wb3_section": {}
-            },
-            {
-              "wb4_section@how_to_play.wb4_section": {}
-            },
-            {
-              "wb5_section@how_to_play.wb5_section": {}
-            },
-            {
-              "wb6_section@how_to_play.wb6_section": {}
-            },
-            {
-              "wb7_section@how_to_play.wb7_section": {}
-            },
-            {
-              "wb8_section@how_to_play.wb8_section": {}
+        }]
+    },
+    "section_content_panels": {
+        "type": "stack_panel",
+        "anchor_from": "top_left",
+        "anchor_to": "top_left",
+        "size": [
+            "100% - 5px",
+            "100%c + 5px"
+        ],
+        "offset": [2, 0],
+        "controls": [{
+            "general_tips_sections": {
+                "type": "stack_panel",
+                "controls": [{
+                        "wb0_section@how_to_play.wb0_section": {}
+                    },
+                    {
+                        "wb0x_section@how_to_play.wb0x_section": {}
+                    },
+
+                    {
+                        "wb7_section@how_to_play.wb7_section": {}
+                    }
+                ]
             }
-          ]
-        }
-      }
-    ]
-  },
-  "wb0_button@how_to_play_common.section_toggle_button": {
-    "$section_topic": "wb0"
-  },
-  "wb0x_button@how_to_play_common.section_toggle_button": {
-    "$section_topic": "wb0x"
-  },
-  "wb1_button@how_to_play_common.section_toggle_button": {
-    "$section_topic": "wb1"
-  },
-  "wb2_button@how_to_play_common.section_toggle_button": {
-    "$section_topic": "wb2"
-  },
-  
-  "wb3_button@how_to_play_common.section_toggle_button": {
-    "$section_topic": "wb3"
-  },
-  "wb4_button@how_to_play_common.section_toggle_button": {
-    "$section_topic": "wb4"
-  },
-  "wb5_button@how_to_play_common.section_toggle_button": {
-    "$section_topic": "wb5"
-  },
-  "wb6_button@how_to_play_common.section_toggle_button": {
-    "$section_topic": "wb6"
-  },
-  "wb7_button@how_to_play_common.section_toggle_button": {
-    "$section_topic": "wb7"
-  },
-  "wb8_button@how_to_play_common.section_toggle_button": {
-    "$section_topic": "wb8"
-  },
-  "wb0_section@how_to_play_common.main_sections": {
-    "bindings": [
-      {
-        "binding_type": "view",
-        "source_control_name": "wb0_button_toggle",
-        "source_property_name": "#toggle_state",
-        "target_property_name": "#visible"
-      }
-    ],
-    "controls": [
-      {
-        "header_1@how_to_play_common.header": {
-          "$text": "text.help.wb.new.how_to_play.1"
-        }
-      },
-      {
-        "paragraph_1@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.2"
-        }
-      },
-      {
-        "paragraph_2@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.3"
-        }
-      },
-      {
-        "paragraph_3@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.4"
-        }
-      },
-      {
-        "header_3@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.5"
-        }
-      },
-      {
-        "paragraph_8@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.6"
-        }
-      },
-      {
-        "paragraph_9@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.7"
-        }
-      },
-      {
-        "paragraph_10@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.8"
-        }
-      },
-      {
-        "paragraph_11@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.9"
-        }
-      },
-      
-      {
-        "paragraph_13@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.10"
-        }
-      },
-      {
-        "paragraph_14@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.11"
-        }
-      },
-      {
-        "paragraph_15@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.12"
-        }
-      },
-      {
-        "paragraph_16@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.13"
-        }
-      },
-      {
-        "paragraph_17@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.14"
-        }
-      },
-      {
-        "paragraph_12@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.15"
-        }
-      },
-      {
-        "paragraph_18@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.16"
-        }
-      },
-      {
-        "paragraph_19@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.17"
-        }
-      },
-      {
-        "paragraph_20@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.18"
-        }
-      },
-      {
-        "paragraph_21@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.19"
-        }
-      },
-      {
-        "paragraph_22@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.20"
-        }
-      },
-      {
-        "paragraph_23@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.21"
-        }
-      },
-      {
-        "header_24@how_to_play_common.header": {
-          "$text": "text.help.wb.new.how_to_play.22"
-        }
-      },
-      {
-        "paragraph_25@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.23"
-        }
-      },
-      {
-        "paragraph_26@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.24"
-        }
-      }
-    ]
-  },
-  "wb0x_section@how_to_play_common.main_sections": {
-    "bindings": [
-      {
-        "binding_type": "view",
-        "source_control_name": "wb0x_button_toggle",
-        "source_property_name": "#toggle_state",
-        "target_property_name": "#visible"
-      }
-    ],
-    "controls": [
-      {
-        "header_1@how_to_play_common.header": {
-          "$text": "text.help.wb.new.how_to_play.25"
-        }
-      },
-      {
-        "paragraph_0@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.26"
-        }
-      },
-      {
-        "paragraph_1@how_to_play_common.paragraph": {
-          "$text": "§r"
-        }
-      },
-      {
-        "paragraph_2@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.27"
-        }
-      },
-      {
-        "paragraph_3@how_to_play_common.paragraph": {
-          "$text": "§r"
-        }
-      },
-      {
-        "paragraph_4@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.28"
-        }
-      },
-      {
-        "paragraph_5@how_to_play_common.paragraph": {
-          "$text": "§r"
-        }
-      },
-      {
-        "paragraph_6@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.29"
-        }
-      },
-      {
-        "paragraph_7@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.30"
-        }
-      },
-      {
-        "paragraph_8@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.31"
-        }
-      },
-      {
-        "paragraph_9@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.32"
-        }
-      },
-      {
-        "paragraph_10@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.33"
-        }
-      },
-      {
-        "paragraph_11@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.34"
-        }
-      },
-      {
-        "paragraph_12@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.35"
-        }
-      },
-      {
-        "paragraph_13@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.36"
-        }
-      },
-      {
-        "paragraph_14@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.37"
-        }
-      },
-      {
-        "paragraph_15@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.38"
-        }
-      },
-      {
-        "paragraph_16@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.39"
-        }
-      },
-      {
-        "paragraph_17@how_to_play_common.paragraph": {
-          "$text": "§r"
-        }
-      },
-      {
-        "paragraph_18@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.40"
-        }
-      },
-      {
-        "paragraph_19@how_to_play_common.paragraph": {
-          "$text": "§r"
-        }
-      },
-      {
-        "paragraph_20@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.41"
-        }
-      },
-      {
-        "paragraph_21@how_to_play_common.paragraph": {
-          "$text": "§r"
-        }
-      },
-      {
-        "paragraph_22@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.42"
-        }
-      },
-      {
-        "paragraph_23@how_to_play_common.paragraph": {
-          "$text": "§r"
-        }
-      },
-      {
-        "paragraph_24@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.43"
-        }
-      },
-      {
-        "paragraph_25@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.44"
-        }
-      },
-      {
-        "paragraph_26@how_to_play_common.paragraph": {
-          "$text": "§r"
-        }
-      },
-      {
-        "paragraph_27@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.45"
-        }
-      },
-      {
-        "paragraph_28@how_to_play_common.paragraph": {
-          "$text": "§r"
-        }
-      },
-      {
-        "paragraph_29@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.46"
-        }
-      },
-      {
-        "paragraph_30@how_to_play_common.paragraph": {
-          "$text": "§r"
-        }
-      },
-      {
-        "paragraph_31@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.47"
-        }
-      },
-      {
-        "paragraph_32@how_to_play_common.paragraph": {
-          "$text": "§r"
-        }
-      },
-      {
-        "paragraph_33@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.48"
-        }
-      },
-      {
-        "paragraph_34@how_to_play_common.paragraph": {
-          "$text": "§r"
-        }
-      },
-      {
-        "paragraph_35@how_to_play_common.paragraph": {
-          "$text": "§r"
-        }
-      },
-      {
-        "paragraph_36@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.49"
-        }
-      },
-      {
-        "paragraph_37@how_to_play_common.paragraph": {
-          "$text": "§r"
-        }
-      },
-      {
-        "paragraph_38@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.50"
-        }
-      },
-      {
-        "paragraph_39@how_to_play_common.paragraph": {
-          "$text": "§r"
-        }
-      },
-      {
-        "paragraph_40@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.51"
-        }
-      },
-      {
-        "paragraph_41@how_to_play_common.paragraph": {
-          "$text": "§r"
-        }
-      },
-      {
-        "paragraph_42@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.52"
-        }
-      },
-      {
-        "paragraph_43@how_to_play_common.paragraph": {
-          "$text": "§r"
-        }
-      },
-      {
-        "paragraph_44@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.53"
-        }
-      },
-      {
-        "paragraph_45@how_to_play_common.paragraph": {
-          "$text": "§r"
-        }
-      },
-      {
-        "paragraph_46@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.54"
-        }
-      },
-      {
-        "paragraph_47@how_to_play_common.paragraph": {
-          "$text": "§r"
-        }
-      },
-      {
-        "paragraph_48@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.55"
-        }
-      },
-      {
-        "paragraph_49@how_to_play_common.paragraph": {
-          "$text": "§r"
-        }
-      },
-      {
-        "paragraph_50@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.56"
-        }
-      },
-      {
-        "paragraph_51@how_to_play_common.paragraph": {
-          "$text": "§r"
-        }
-      },
-      {
-        "paragraph_52@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.57"
-        }
-      },
-      {
-        "paragraph_53@how_to_play_common.paragraph": {
-          "$text": "§r"
-        }
-      },
-      {
-        "paragraph_54@how_to_play_common.paragraph": {
-          "$text": "§r"
-        }
-      },
-      {
-        "paragraph_55@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.58"
-        }
-      },
-      {
-        "paragraph_56@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.59"
-        }
-      },
-      {
-        "paragraph_57@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.60"
-        }
-      },
-      {
-        "paragraph_58@how_to_play_common.paragraph": {
-          "$text": "§r"
-        }
-      },
-      {
-        "paragraph_59@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.61"
-        }
-      },
-      {
-        "paragraph_60@how_to_play_common.paragraph": {
-          "$text": "§r"
-        }
-      },
-      {
-        "paragraph_61@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.62"
-        }
-      },
-      {
-        "paragraph_62@how_to_play_common.paragraph": {
-          "$text": "§r"
-        }
-      },
-      {
-        "paragraph_63@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.63"
-        }
-      },
-      {
-        "paragraph_64@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.64"
-        }
-      }
-    ]
-  },
-  "wb1_section@how_to_play_common.main_sections": {
-    "bindings": [
-      {
-        "binding_type": "view",
-        "source_control_name": "wb1_button_toggle",
-        "source_property_name": "#toggle_state",
-        "target_property_name": "#visible"
-      }
-    ],
-    "controls": [
-      {
-        "header_1@how_to_play_common.header": {
-          "$text": "howtoplay.wb.ui.0.name"
-        }
-      },
-      {
-        "paragraph_1@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.1.name"
-        }
-      },
-      {
-        "paragraph_2@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.2.name"
-        }
-      },
-      {
-        "paragraph_3@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.3.name"
-        }
-      },
-      {
-        "header_3@how_to_play_common.header": {
-          "$text": "howtoplay.wb.ui.4.name"
-        }
-      },
-      {
-        "paragraph_8@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.5.name"
-        }
-      },
-      {
-        "paragraph_9@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.6.name"
-        }
-      }
-    ]
-  },
-  "wb2_section@how_to_play_common.main_sections": {
-    "bindings": [
-      {
-        "binding_type": "view",
-        "source_control_name": "wb2_button_toggle",
-        "source_property_name": "#toggle_state",
-        "target_property_name": "#visible"
-      }
-    ],
-    "controls": [
-      {
-        "header_1@how_to_play_common.header": {
-          "$text": "howtoplay.wb.ui.7.name"
-        }
-      },
-      {
-        "paragraph_1@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.8.name"
-        }
-      },
-      {
-        "header_2@how_to_play_common.header": {
-          "$text": "howtoplay.wb.ui.9.name"
-        }
-      },
-      {
-        "paragraph_3@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.10.name"
-        }
-      },
-      {
-        "paragraph_8@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.11.name"
-        }
-      },
-      {
-        "paragraph_9@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.12.name"
-        }
-      },
-      {
-        "header_3@how_to_play_common.header": {
-          "$text": "howtoplay.wb.ui.13.name"
-        }
-      },
-      {
-        "paragraph_10@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.14.name"
-        }
-      },
-      {
-        "paragraph_11@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.15.name"
-        }
-      },
-      {
-        "header_4@how_to_play_common.header": {
-          "$text": "howtoplay.wb.ui.16.name"
-        }
-      },
-      {
-        "paragraph_12@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.17.name"
-        }
-      },
-      {
-        "paragraph_13@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.18.name"
-        }
-      },
-      {
-        "header_56@how_to_play_common.header": {
-          "$text": "howtoplay.wb.ui.19.name"
-        }
-      },
-      {
-        "paragraph_135@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.20.name"
-        }
-      }
-    ]
-  },
-  "wb3_section@how_to_play_common.main_sections": {
-    "bindings": [
-      {
-        "binding_type": "view",
-        "source_control_name": "wb3_button_toggle",
-        "source_property_name": "#toggle_state",
-        "target_property_name": "#visible"
-      }
-    ],
-    "controls": [
-      {
-        "header_1@how_to_play_common.header": {
-          "$text": "howtoplay.wb.ui.36.name"
-        }
-      },
-      {
-        "paragraph_1@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.37.name"
-        }
-      },
-      {
-        "paragraph_140@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.38.name"
-        }
-      },
-      {
-        "header_2@how_to_play_common.header": {
-          "$text": "howtoplay.wb.ui.39.name"
-        }
-      },
-      {
-        "paragraph_4@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.40.name"
-        }
-      }
-    ]
-  },
-  "wb4_section@how_to_play_common.main_sections": {
-    "bindings": [
-      {
-        "binding_type": "view",
-        "source_control_name": "wb4_button_toggle",
-        "source_property_name": "#toggle_state",
-        "target_property_name": "#visible"
-      }
-    ],
-    "controls": [
-      {
-        "header_1@how_to_play_common.header": {
-          "$text": "howtoplay.wb.ui.41.name"
-        }
-      },
-      {
-        "image_2@how_to_play_common.image": {
-          "texture": "textures/wb_item/2_x/staff_light",
-          "size": [
-            "50px",
-            "50px"
-          ]
-        }
-      },
-      {
-        "paragraph_1@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.42.name"
-        }
-      },
-      {
-        "paragraph_6@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.43.name"
-        }
-      },
-      {
-        "image_8@how_to_play_common.image": {
-          "texture": "textures/wb_item/2_x/staff_frost",
-          "size": [
-            "50px",
-            "50px"
-          ]
-        }
-      },
-      {
-        "paragraph_7@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.44.name"
-        }
-      },
-      {
-        "paragraph_9@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.45.name"
-        }
-      },
-      {
-        "header_11@how_to_play_common.header": {
-          "$text": "howtoplay.wb.ui.46.name"
-        }
-      },
-      {
-        "image_12@how_to_play_common.image": {
-          "texture": "textures/wb_item/3_x/staff_fire",
-          "size": [
-            "50px",
-            "50px"
-          ]
-        }
-      },
-      {
-        "paragraph_13@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.47.name"
-        }
-      },
-      {
-        "paragraph_14@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.48.name"
-        }
-      },
-      {
-        "image_15@how_to_play_common.image": {
-          "texture": "textures/wb_item/3_x/staff_wind",
-          "size": [
-            "50px",
-            "50px"
-          ]
-        }
-      },
-      {
-        "paragraph_16@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.49.name"
-        }
-      },
-      {
-        "paragraph_17@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.50.name"
-        }
-      },
-      {
-        "image_18@how_to_play_common.image": {
-          "texture": "textures/wb_item/3_x/staff_summon",
-          "size": [
-            "50px",
-            "50px"
-          ]
-        }
-      },
-      {
-        "paragraph_19@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.51.name"
-        }
-      },
-      {
-        "paragraph_20@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.52.name"
-        }
-      },
-      {
-        "image_21@how_to_play_common.image": {
-          "texture": "textures/wb_item/5_x/staff_burn",
-          "size": [
-            "50px",
-            "50px"
-          ]
-        }
-      },
-      {
-        "paragraph_22@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.53.name"
-        }
-      },
-      {
-        "paragraph_23@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.54.name"
-        }
-      }
-    ]
-  },
-  "wb5_section@how_to_play_common.main_sections": {
-    "bindings": [
-      {
-        "binding_type": "view",
-        "source_control_name": "wb5_button_toggle",
-        "source_property_name": "#toggle_state",
-        "target_property_name": "#visible"
-      }
-    ],
-    "controls": [
-      {
-        "header_2@how_to_play_common.header": {
-          "$text": "howtoplay.wb.ui.55.name"
-        }
-      },
-      {
-        "paragraph_3@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.56.name"
-        }
-      },
-      {
-        "image_4@how_to_play_common.image": {
-          "texture": "textures/wb_item/3_x/sword_guard",
-          "size": [
-            "50px",
-            "50px"
-          ]
-        }
-      },
-      {
-        "paragraph_5@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.57.name"
-        }
-      },
-      {
-        "58paragraph_5@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.58.name"
-        }
-      },
-      {
-        "59paragraph_5@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.59.name"
-        }
-      },
-      {
-        "60paragraph_5@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.60.name"
-        }
-      },
-      {
-        "paragraph_6@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.61.name"
-        }
-      },
-      {
-        "62paragraph_6@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.62.name"
-        }
-      },
-      {
-        "63paragraph_6@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.63.name"
-        }
-      },
-      {
-        "64paragraph_6@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.64.name"
-        }
-      },
-      {
-        "paragraph_7@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.65.name"
-        }
-      },
-      {
-        "66paragraph_7@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.66.name"
-        }
-      },
-      {
-        "67paragraph_7@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.67.name"
-        }
-      },
-      {
-        "68paragraph_7@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.68.name"
-        }
-      },
-      {
-        "paragraph_8@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.69.name"
-        }
-      },
-      {
-        "paragraph_9@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.70.name"
-        }
-      },
-      {
-        "image_10@how_to_play_common.image": {
-          "texture": "textures/wb_item/3_x/sword_bluemark",
-          "size": [
-            "50px",
-            "50px"
-          ]
-        }
-      },
-      {
-        "paragraph_11@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.71.name"
-        }
-      },
-      {
-        "72paragraph_11@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.72.name"
-        }
-      },
-      {
-        "73paragraph_11@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.73.name"
-        }
-      },
-      {
-        "74paragraph_11@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.74.name"
-        }
-      },
-      {
-        "paragraph_12@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.75.name"
-        }
-      },
-      {
-        "76paragraph_12@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.76.name"
-        }
-      },
-      {
-        "77paragraph_12@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.77.name"
-        }
-      },
-      {
-        "78paragraph_12@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.78.name"
-        }
-      },
-      {
-        "paragraph_13@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.79.name"
-        }
-      },
-      {
-        "80paragraph_13@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.80.name"
-        }
-      },
-      {
-        "81paragraph_13@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.81.name"
-        }
-      },
-      {
-        "82paragraph_13@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.82.name"
-        }
-      },
-      {
-        "paragraph_14@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.83.name"
-        }
-      },
-      {
-        "paragraph_15@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.84.name"
-        }
-      },
-      {
-        "paragraph_16@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.85.name"
-        }
-      },
-      {
-        "paragraph_17@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.86.name"
-        }
-      },
-      {
-        "image_18@how_to_play_common.image": {
-          "texture": "textures/wb_item/base/sword_bloodsucking_f",
-          "size": [
-            "50px",
-            "50px"
-          ]
-        }
-      },
-      {
-        "paragraph_19@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.87.name"
-        }
-      },
-      {
-        "88paragraph_19@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.88.name"
-        }
-      },
-      {
-        "89paragraph_19@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.89.name"
-        }
-      },
-      {
-        "90paragraph_19@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.90.name"
-        }
-      },
-      {
-        "paragraph_20@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.91.name"
-        }
-      },
-      {
-        "92paragraph_20@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.92.name"
-        }
-      },
-      {
-        "93paragraph_20@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.93.name"
-        }
-      },
-      {
-        "94paragraph_20@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.94.name"
-        }
-      },
-      {
-        "paragraph_21@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.95.name"
-        }
-      },
-      {
-        "96paragraph_21@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.96.name"
-        }
-      },
-      {
-        "97paragraph_21@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.97.name"
-        }
-      },
-      {
-        "98paragraph_21@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.98.name"
-        }
-      },
-      {
-        "paragraph_22@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.99.name"
-        }
-      },
-      {
-        "paragraph_23@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.100.name"
-        }
-      },
-      {
-        "image_24@how_to_play_common.image": {
-          "texture": "textures/wb_item/base/sword_water_f",
-          "size": [
-            "50px",
-            "50px"
-          ]
-        }
-      },
-      {
-        "paragraph_25@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.101.name"
-        }
-      },
-      {
-        "102paragraph_25@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.102.name"
-        }
-      },
-      {
-        "103paragraph_25@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.103.name"
-        }
-      },
-      {
-        "104paragraph_25@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.104.name"
-        }
-      },
-      {
-        "paragraph_26@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.105.name"
-        }
-      },
-      {
-        "106paragraph_26@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.106.name"
-        }
-      },
-      {
-        "107paragraph_26@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.107.name"
-        }
-      },
-      {
-        "108paragraph_26@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.108.name"
-        }
-      },
-      {
-        "paragraph_27@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.109.name"
-        }
-      },
-      {
-        "110paragraph_27@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.110.name"
-        }
-      },
-      {
-        "111paragraph_27@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.111.name"
-        }
-      },
-      {
-        "112paragraph_27@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.112.name"
-        }
-      },
-      {
-        "paragraph_28@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.113.name"
-        }
-      },
-      {
-        "paragraph_29@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.114.name"
-        }
-      },
-      {
-        "image_30@how_to_play_common.image": {
-          "texture": "textures/wb_item/base/sword_ink_f",
-          "size": [
-            "50px",
-            "50px"
-          ]
-        }
-      },
-      {
-        "paragraph_31@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.115.name"
-        }
-      },
-      {
-        "116paragraph_31@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.116.name"
-        }
-      },
-      {
-        "117paragraph_31@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.117.name"
-        }
-      },
-      {
-        "118paragraph_31@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.118.name"
-        }
-      },
-      {
-        "paragraph_32@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.119.name"
-        }
-      },
-      {
-        "120paragraph_32@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.120.name"
-        }
-      },
-      {
-        "121paragraph_32@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.121.name"
-        }
-      },
-      {
-        "122paragraph_32@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.122.name"
-        }
-      },
-      {
-        "paragraph_33@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.123.name"
-        }
-      },
-      {
-        "124paragraph_33@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.124.name"
-        }
-      },
-      {
-        "125paragraph_33@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.125.name"
-        }
-      },
-      {
-        "126paragraph_33@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.126.name"
-        }
-      },
-      {
-        "paragraph_34@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.127.name"
-        }
-      },
-      {
-        "paragraph_35@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.128.name"
-        }
-      },
-      {
-        "image_36@how_to_play_common.image": {
-          "texture": "textures/wb_item/base/sword_seal_f",
-          "size": [
-            "50px",
-            "50px"
-          ]
-        }
-      },
-      {
-        "paragraph_37@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.129.name"
-        }
-      },
-      {
-        "130paragraph_37@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.130.name"
-        }
-      },
-      {
-        "131paragraph_37@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.131.name"
-        }
-      },
-      {
-        "132paragraph_37@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.132.name"
-        }
-      },
-      {
-        "paragraph_38@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.133.name"
-        }
-      },
-      {
-        "134paragraph_38@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.134.name"
-        }
-      },
-      {
-        "135paragraph_38@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.135.name"
-        }
-      },
-      {
-        "136paragraph_38@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.136.name"
-        }
-      },
-      {
-        "paragraph_39@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.137.name"
-        }
-      },
-      {
-        "138paragraph_39@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.138.name"
-        }
-      },
-      {
-        "139paragraph_39@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.139.name"
-        }
-      },
-      {
-        "140paragraph_39@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.140.name"
-        }
-      },
-      {
-        "paragraph_40@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.141.name"
-        }
-      },
-      {
-        "paragraph_41@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.142.name"
-        }
-      },
-      {
-        "image_42@how_to_play_common.image": {
-          "texture": "textures/wb_item/base/sword_forget_f",
-          "size": [
-            "50px",
-            "50px"
-          ]
-        }
-      },
-      {
-        "paragraph_43@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.143.name"
-        }
-      },
-      {
-        "144paragraph_43@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.144.name"
-        }
-      },
-      {
-        "145paragraph_43@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.145.name"
-        }
-      },
-      {
-        "146paragraph_43@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.146.name"
-        }
-      },
-      {
-        "paragraph_44@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.147.name"
-        }
-      },
-      {
-        "148paragraph_44@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.148.name"
-        }
-      },
-      {
-        "149paragraph_44@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.149.name"
-        }
-      },
-      {
-        "150paragraph_44@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.150.name"
-        }
-      },
-      {
-        "paragraph_45@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.151.name"
-        }
-      },
-      {
-        "152paragraph_45@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.152.name"
-        }
-      },
-      {
-        "153paragraph_45@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.153.name"
-        }
-      },
-      {
-        "154paragraph_45@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.154.name"
-        }
-      },
-      {
-        "header_46@how_to_play_common.header": {
-          "$text": "howtoplay.wb.ui.155.name"
-        }
-      },
-      {
-        "paragraph_47@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.156.name"
-        }
-      },
-      {
-        "image_48@how_to_play_common.image": {
-          "texture": "textures/wb_item/5_x/sword_fly",
-          "size": [
-            "50px",
-            "50px"
-          ]
-        }
-      },
-      {
-        "paragraph_49@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.157.name"
-        }
-      },
-      {
-        "158paragraph_49@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.158.name"
-        }
-      },
-      {
-        "159paragraph_49@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.159.name"
-        }
-      },
-      {
-        "160paragraph_49@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.160.name"
-        }
-      },
-      {
-        "paragraph_50@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.161.name"
-        }
-      },
-      {
-        "162paragraph_50@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.162.name"
-        }
-      },
-      {
-        "163paragraph_50@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.163.name"
-        }
-      },
-      {
-        "164paragraph_50@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.164.name"
-        }
-      },
-      {
-        "paragraph_51@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.165.name"
-        }
-      },
-      {
-        "166paragraph_51@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.166.name"
-        }
-      },
-      {
-        "167paragraph_51@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.167.name"
-        }
-      },
-      {
-        "168paragraph_51@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.168.name"
-        }
-      },
-      {
-        "paragraph_52@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.169.name"
-        }
-      },
-      {
-        "170paragraph_52@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.170.name"
-        }
-      },
-      {
-        "171paragraph_52@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.171.name"
-        }
-      },
-      {
-        "172paragraph_52@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.172.name"
-        }
-      },
-      {
-        "paragraph_53@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.173.name"
-        }
-      },
-      {
-        "paragraph_54@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.174.name"
-        }
-      },
-      {
-        "image_55@how_to_play_common.image": {
-          "texture": "textures/wb_item/5_x/sword_intentions",
-          "size": [
-            "50px",
-            "50px"
-          ]
-        }
-      },
-      {
-        "paragraph_56@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.175.name"
-        }
-      },
-      {
-        "176paragraph_56@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.176.name"
-        }
-      },
-      {
-        "177paragraph_56@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.177.name"
-        }
-      },
-      {
-        "178paragraph_56@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.178.name"
-        }
-      },
-      {
-        "paragraph_57@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.179.name"
-        }
-      },
-      {
-        "180paragraph_57@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.180.name"
-        }
-      },
-      {
-        "181paragraph_57@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.181.name"
-        }
-      },
-      {
-        "182paragraph_57@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.182.name"
-        }
-      },
-      {
-        "paragraph_58@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.183.name"
-        }
-      },
-      {
-        "184paragraph_58@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.184.name"
-        }
-      },
-      {
-        "185paragraph_58@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.185.name"
-        }
-      },
-      {
-        "186paragraph_58@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.186.name"
-        }
-      },
-      {
-        "paragraph_59@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.187.name"
-        }
-      },
-      {
-        "188paragraph_59@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.188.name"
-        }
-      },
-      {
-        "189paragraph_59@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.189.name"
-        }
-      },
-      {
-        "190paragraph_59@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.190.name"
-        }
-      }
-    ]
-  },
-  "wb6_section@how_to_play_common.main_sections": {
-    "bindings": [
-      {
-        "binding_type": "view",
-        "source_control_name": "wb6_button_toggle",
-        "source_property_name": "#toggle_state",
-        "target_property_name": "#visible"
-      }
-    ],
-    "controls": [
-      {
-        "header_1@how_to_play_common.header": {
-          "$text": "howtoplay.wb.ui.191.name"
-        }
-      },
-      {
-        "image_2@how_to_play_common.image": {
-          "texture": "textures/wb_item/1_x/conveyor_issue",
-          "size": [
-            "50px",
-            "50px"
-          ]
-        }
-      },
-      {
-        "image_3@how_to_play_common.image": {
-          "texture": "textures/wb_item/1_x/conveyor_accept",
-          "size": [
-            "50px",
-            "50px"
-          ]
-        }
-      },
-      {
-        "paragraph_1@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.192.name"
-        }
-      },
-      {
-        "paragraph_6@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.193.name"
-        }
-      },
-      {
-        "header_11@how_to_play_common.header": {
-          "$text": "howtoplay.wb.ui.194.name"
-        }
-      },
-      {
-        "image_12@how_to_play_common.image": {
-          "texture": "textures/wb_item/2_x/particle_store",
-          "size": [
-            "50px",
-            "50px"
-          ]
-        }
-      },
-      {
-        "paragraph_13@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.195.name"
-        }
-      },
-      {
-        "paragraph_14@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.196.name"
-        }
-      },
-      {
-        "image_15@how_to_play_common.image": {
-          "texture": "textures/wb_item/2_x/particle_base",
-          "size": [
-            "50px",
-            "50px"
-          ]
-        }
-      },
-      {
-        "paragraph_16@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.197.name"
-        }
-      },
-      {
-        "paragraph_17@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.198.name"
-        }
-      },
-      {
-        "header_18@how_to_play_common.header": {
-          "$text": "howtoplay.wb.ui.199.name"
-        }
-      },
-      {
-        "image_19@how_to_play_common.image": {
-          "texture": "textures/wb_item/3_x/power",
-          "size": [
-            "50px",
-            "50px"
-          ]
-        }
-      },
-      {
-        "paragraph_20@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.200.name"
-        }
-      },
-      {
-        "paragraph_21@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.201.name"
-        }
-      }
-    ]
-  },
-  "wb7_section@how_to_play_common.main_sections": {
-    "bindings": [
-      {
-        "binding_type": "view",
-        "source_control_name": "wb7_button_toggle",
-        "source_property_name": "#toggle_state",
-        "target_property_name": "#visible"
-      }
-    ],
-    "controls": [
-      {
-        "header_1@how_to_play_common.header": {
-          "$text": "text.help.wb.new.how_to_play.65"
-        }
-      },
-      {
-        "paragraph_1@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.66"
-        }
-      },
-      {
-        "header_2@how_to_play_common.header": {
-          "$text": "text.help.wb.new.how_to_play.67"
-        }
-      },
-      {
-        "paragraph_4@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.68"
-        }
-      },
-      {
-        "paragraph_5@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.69"
-        }
-      },
-      {
-        "paragraph_6@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.70"
-        }
-      },
-      {
-        "paragraph_7@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.71"
-        }
-      },
-      {
-        "paragraph_8@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.72"
-        }
-      },
-      {
-        "paragraph_9@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.73"
-        }
-      },
-      {
-        "paragraph_10@how_to_play_common.paragraph": {
-          "$text": "text.help.wb.new.how_to_play.74"
-        }
-      }
-    ]
-  },
-  "wb8_section@how_to_play_common.main_sections": {
-    "bindings": [
-      {
-        "binding_type": "view",
-        "source_control_name": "wb8_button_toggle",
-        "source_property_name": "#toggle_state",
-        "target_property_name": "#visible"
-      }
-    ],
-    "controls": [
-      {
-        "header_1@how_to_play_common.header": {
-          "$text": "howtoplay.wb.ui.276.name"
-        }
-      },
-      {
-        "paragraph_1@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.277.name"
-        }
-      },
-      {
-        "278paragraph_1@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.278.name"
-        }
-      },
-      {
-        "279paragraph_1@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.279.name"
-        }
-      },
-      {
-        "280paragraph_1@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.280.name"
-        }
-      },
-      {
-        "281paragraph_1@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.281.name"
-        }
-      },
-      {
-        "282paragraph_1@how_to_play_common.paragraph": {
-          "$text": "howtoplay.wb.ui.282.name"
-        }
-      }
-    ]
-  }
+        }]
+    },
+    "wb0_button@how_to_play_common.section_toggle_button": {
+        "$section_topic": "wb0"
+    },
+    "wb0x_button@how_to_play_common.section_toggle_button": {
+        "$section_topic": "wb0x"
+    },
+
+    "wb7_button@how_to_play_common.section_toggle_button": {
+        "$section_topic": "wb7"
+    },
+    "wb0_section@how_to_play_common.main_sections": {
+        "bindings": [{
+            "binding_type": "view",
+            "source_control_name": "wb0_button_toggle",
+            "source_property_name": "#toggle_state",
+            "target_property_name": "#visible"
+        }],
+        "controls": [{
+                "header_1@how_to_play_common.header": {
+                    "$text": "text.help.wb.new.how_to_play.1"
+                }
+            },
+            {
+                "paragraph_1@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.2"
+                }
+            },
+            {
+                "paragraph_2@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.3"
+                }
+            },
+            {
+                "paragraph_3@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.4"
+                }
+            },
+            {
+                "header_3@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.5"
+                }
+            },
+            {
+                "paragraph_8@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.6"
+                }
+            },
+            {
+                "paragraph_9@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.7"
+                }
+            },
+            {
+                "paragraph_10@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.8"
+                }
+            },
+            {
+                "paragraph_11@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.9"
+                }
+            },
+
+            {
+                "paragraph_13@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.10"
+                }
+            },
+            {
+                "paragraph_14@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.11"
+                }
+            },
+            {
+                "paragraph_15@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.12"
+                }
+            },
+            {
+                "paragraph_16@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.13"
+                }
+            },
+            {
+                "paragraph_17@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.14"
+                }
+            },
+            {
+                "paragraph_12@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.15"
+                }
+            },
+            {
+                "paragraph_18@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.16"
+                }
+            },
+            {
+                "paragraph_19@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.17"
+                }
+            },
+            {
+                "paragraph_20@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.18"
+                }
+            },
+            {
+                "paragraph_21@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.19"
+                }
+            },
+            {
+                "paragraph_22@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.20"
+                }
+            },
+            {
+                "paragraph_23@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.21"
+                }
+            },
+            {
+                "header_24@how_to_play_common.header": {
+                    "$text": "text.help.wb.new.how_to_play.22"
+                }
+            },
+            {
+                "paragraph_25@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.23"
+                }
+            },
+            {
+                "paragraph_26@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.24"
+                }
+            }
+        ]
+    },
+    "wb0x_section@how_to_play_common.main_sections": {
+        "bindings": [{
+            "binding_type": "view",
+            "source_control_name": "wb0x_button_toggle",
+            "source_property_name": "#toggle_state",
+            "target_property_name": "#visible"
+        }],
+        "controls": [{
+                "header_1@how_to_play_common.header": {
+                    "$text": "text.help.wb.new.how_to_play.25"
+                }
+            },
+            {
+                "paragraph_0@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.26"
+                }
+            },
+            {
+                "paragraph_1@how_to_play_common.paragraph": {
+                    "$text": "§r"
+                }
+            },
+            {
+                "paragraph_2@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.27"
+                }
+            },
+            {
+                "paragraph_3@how_to_play_common.paragraph": {
+                    "$text": "§r"
+                }
+            },
+            {
+                "paragraph_4@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.28"
+                }
+            },
+            {
+                "paragraph_5@how_to_play_common.paragraph": {
+                    "$text": "§r"
+                }
+            },
+            {
+                "paragraph_6@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.29"
+                }
+            },
+            {
+                "paragraph_7@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.30"
+                }
+            },
+            {
+                "paragraph_8@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.31"
+                }
+            },
+            {
+                "paragraph_9@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.32"
+                }
+            },
+            {
+                "paragraph_10@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.33"
+                }
+            },
+            {
+                "paragraph_11@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.34"
+                }
+            },
+            {
+                "paragraph_12@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.35"
+                }
+            },
+            {
+                "paragraph_13@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.36"
+                }
+            },
+            {
+                "paragraph_14@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.37"
+                }
+            },
+            {
+                "paragraph_15@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.38"
+                }
+            },
+            {
+                "paragraph_16@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.39"
+                }
+            },
+            {
+                "paragraph_17@how_to_play_common.paragraph": {
+                    "$text": "§r"
+                }
+            },
+            {
+                "paragraph_18@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.40"
+                }
+            },
+            {
+                "paragraph_19@how_to_play_common.paragraph": {
+                    "$text": "§r"
+                }
+            },
+            {
+                "paragraph_20@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.41"
+                }
+            },
+            {
+                "paragraph_21@how_to_play_common.paragraph": {
+                    "$text": "§r"
+                }
+            },
+            {
+                "paragraph_22@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.42"
+                }
+            },
+            {
+                "paragraph_23@how_to_play_common.paragraph": {
+                    "$text": "§r"
+                }
+            },
+            {
+                "paragraph_24@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.43"
+                }
+            },
+            {
+                "paragraph_25@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.44"
+                }
+            },
+            {
+                "paragraph_26@how_to_play_common.paragraph": {
+                    "$text": "§r"
+                }
+            },
+            {
+                "paragraph_27@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.45"
+                }
+            },
+            {
+                "paragraph_28@how_to_play_common.paragraph": {
+                    "$text": "§r"
+                }
+            },
+            {
+                "paragraph_29@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.46"
+                }
+            },
+            {
+                "paragraph_30@how_to_play_common.paragraph": {
+                    "$text": "§r"
+                }
+            },
+            {
+                "paragraph_31@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.47"
+                }
+            },
+            {
+                "paragraph_32@how_to_play_common.paragraph": {
+                    "$text": "§r"
+                }
+            },
+            {
+                "paragraph_33@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.48"
+                }
+            },
+            {
+                "paragraph_34@how_to_play_common.paragraph": {
+                    "$text": "§r"
+                }
+            },
+            {
+                "paragraph_35@how_to_play_common.paragraph": {
+                    "$text": "§r"
+                }
+            },
+            {
+                "paragraph_36@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.49"
+                }
+            },
+            {
+                "paragraph_37@how_to_play_common.paragraph": {
+                    "$text": "§r"
+                }
+            },
+            {
+                "paragraph_38@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.50"
+                }
+            },
+            {
+                "paragraph_39@how_to_play_common.paragraph": {
+                    "$text": "§r"
+                }
+            },
+            {
+                "paragraph_40@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.51"
+                }
+            },
+            {
+                "paragraph_41@how_to_play_common.paragraph": {
+                    "$text": "§r"
+                }
+            },
+            {
+                "paragraph_42@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.52"
+                }
+            },
+            {
+                "paragraph_43@how_to_play_common.paragraph": {
+                    "$text": "§r"
+                }
+            },
+            {
+                "paragraph_44@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.53"
+                }
+            },
+            {
+                "paragraph_45@how_to_play_common.paragraph": {
+                    "$text": "§r"
+                }
+            },
+            {
+                "paragraph_46@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.54"
+                }
+            },
+            {
+                "paragraph_47@how_to_play_common.paragraph": {
+                    "$text": "§r"
+                }
+            },
+            {
+                "paragraph_48@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.55"
+                }
+            },
+            {
+                "paragraph_49@how_to_play_common.paragraph": {
+                    "$text": "§r"
+                }
+            },
+            {
+                "paragraph_50@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.56"
+                }
+            },
+            {
+                "paragraph_51@how_to_play_common.paragraph": {
+                    "$text": "§r"
+                }
+            },
+            {
+                "paragraph_52@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.57"
+                }
+            },
+            {
+                "paragraph_53@how_to_play_common.paragraph": {
+                    "$text": "§r"
+                }
+            },
+            {
+                "paragraph_54@how_to_play_common.paragraph": {
+                    "$text": "§r"
+                }
+            },
+            {
+                "paragraph_55@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.58"
+                }
+            },
+            {
+                "paragraph_56@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.59"
+                }
+            },
+            {
+                "paragraph_57@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.60"
+                }
+            },
+            {
+                "paragraph_58@how_to_play_common.paragraph": {
+                    "$text": "§r"
+                }
+            },
+            {
+                "paragraph_59@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.61"
+                }
+            },
+            {
+                "paragraph_60@how_to_play_common.paragraph": {
+                    "$text": "§r"
+                }
+            },
+            {
+                "paragraph_61@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.62"
+                }
+            },
+            {
+                "paragraph_62@how_to_play_common.paragraph": {
+                    "$text": "§r"
+                }
+            },
+            {
+                "paragraph_63@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.63"
+                }
+            },
+            {
+                "paragraph_64@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.64"
+                }
+            }
+        ]
+    },
+
+    "wb7_section@how_to_play_common.main_sections": {
+        "bindings": [{
+            "binding_type": "view",
+            "source_control_name": "wb7_button_toggle",
+            "source_property_name": "#toggle_state",
+            "target_property_name": "#visible"
+        }],
+        "controls": [{
+                "header_1@how_to_play_common.header": {
+                    "$text": "text.help.wb.new.how_to_play.65"
+                }
+            },
+            {
+                "paragraph_1@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.66"
+                }
+            },
+            {
+                "header_2@how_to_play_common.header": {
+                    "$text": "text.help.wb.new.how_to_play.67"
+                }
+            },
+            {
+                "paragraph_4@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.68"
+                }
+            },
+            {
+                "paragraph_5@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.69"
+                }
+            },
+            {
+                "paragraph_6@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.70"
+                }
+            },
+            {
+                "paragraph_7@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.71"
+                }
+            },
+            {
+                "paragraph_8@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.72"
+                }
+            },
+            {
+                "paragraph_9@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.73"
+                }
+            },
+            {
+                "paragraph_10@how_to_play_common.paragraph": {
+                    "$text": "text.help.wb.new.how_to_play.74"
+                }
+            }
+        ]
+    }
 }
