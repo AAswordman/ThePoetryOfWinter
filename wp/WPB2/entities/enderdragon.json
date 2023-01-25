@@ -36,7 +36,7 @@
                     "priority": 0
                 },
                 "minecraft:behavior.dragonchargeplayer": {
-                    "priority": 1
+                    "priority": 2
                 },
                 "minecraft:behavior.dragonstrafeplayer": {
                     "priority": 2

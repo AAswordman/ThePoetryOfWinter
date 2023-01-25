@@ -10,10 +10,10 @@ export default class ExStructureJigsaw {
     isEmpty(a, b, c = 0) {
         return this.jigsawData[c][b][a] === undefined;
     }
-    setStructurePlane(x, z, offsetX, offsetY, offsetZ, structureName, structureRot = 0, mirror = false, coverGridLength = 1, coverGridWidth = 1) {
+    setStructurePlane(x, z, offsetX, offsetY, offsetZ, structureName, structureRot = 0, mirror = "none", coverGridLength = 1, coverGridWidth = 1) {
         this.setStructure(x, z, 0, offsetX, offsetY, offsetZ, structureName, structureRot, mirror, coverGridLength, coverGridWidth, 1);
     }
-    setStructure(x, z, y, offsetX, offsetY, offsetZ, structureName, structureRot = 0, mirror = false, coverGridLength = 1, coverGridWidth = 1, coverGridHeight = 1) {
+    setStructure(x, z, y, offsetX, offsetY, offsetZ, structureName, structureRot = 0, mirror = "none", coverGridLength = 1, coverGridWidth = 1, coverGridHeight = 1) {
         this.clearStructure(x, z, y);
         for (let ix = x; ix < coverGridLength + x; ix++) {
             for (let iz = z; iz < coverGridWidth + z; iz++) {
@@ -34,7 +34,7 @@ export default class ExStructureJigsaw {
         this.jigsawData[y][z][x] = [offsetX, offsetY, offsetZ, structureName, structureRot,
             mirror, coverGridLength, coverGridWidth, coverGridHeight];
     }
-    fillStructure(offsetX, offsetY, offsetZ, structureName, structureRot = 0, mirror = false, coverGridLength = 1, coverGridWidth = 1, coverGridHeight = 1) {
+    fillStructure(offsetX, offsetY, offsetZ, structureName, structureRot = 0, mirror = "none", coverGridLength = 1, coverGridWidth = 1, coverGridHeight = 1) {
         const i = [offsetX, offsetY, offsetZ, structureName, structureRot,
             mirror, coverGridLength, coverGridWidth, coverGridHeight];
         for (let ix = 0; ix < this.width; ix++) {
@@ -137,7 +137,7 @@ export default class ExStructureJigsaw {
         return "symbol";
     }
     foreach(fun) {
-        const data = new ExStructureExportData(0, 0, 0, "", 0, false, 1, 1, 1);
+        const data = new ExStructureExportData(0, 0, 0, "", 0, "none", 1, 1, 1);
         for (let y = 0; y < this.height; y++) {
             for (let z = 0; z < this.width; z++) {
                 for (let x = 0; x < this.width; x++) {

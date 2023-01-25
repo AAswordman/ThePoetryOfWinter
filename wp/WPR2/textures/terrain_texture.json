@@ -840,6 +840,12 @@
         "portal_caveboss": {
             "textures": "textures/wb_blocks/base/portal_caveboss"
         },
+        "portal_ancientboss": {
+            "textures": "textures/wb_blocks/base/portal_ancientboss"
+        },
+        "portal_mindboss": {
+            "textures": "textures/wb_blocks/base/portal_mindboss"
+        },
         "portal_bossx": {
             "textures": "textures/wb_blocks/base/portal_bossx"
         },
