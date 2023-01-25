@@ -6,7 +6,8 @@ export default class PomMagicStoneBoss extends PomBossController {
             c.ruinsSystem.causeDamageShow = true;
             c.ruinsSystem.causeDamageType.add(this.entity.typeId);
         }
-        this.server.say({ rawtext: [{ translate: "text.wb:summon_magic_stoneman.name" }] });
+        if (this.barrier.players.size !== 0)
+            this.server.say({ rawtext: [{ translate: "text.wb:summon_magic_stoneman.name" }] });
     }
     onSpawn() {
         super.onSpawn();
