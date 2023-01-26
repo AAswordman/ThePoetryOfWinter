@@ -1,3 +1,7 @@
+import PomAncientStoneBoss from "../../entities/PomAncientStoneBoss.js";
+import PomHeadlessGuardBoss from "../../entities/PomHeadlessGuardBoss.js";
+import { PomIntentionsBoss3 } from "../../entities/PomIntentionsBoss.js";
+import PomMagicStoneBoss from "../../entities/PomMagicStoneBoss.js";
 export default function taskProgress(lang) {
     return {
         "main_dec_leavesgolem": {
@@ -191,12 +195,69 @@ export default function taskProgress(lang) {
             ]
         },
         "main_pom_1": {
-            "name": "新的开始",
+            "name": "沙漠暴风",
             "conditions": [
                 {
                     "name": "魔化石块BOSS",
-                    "typeId": "wb:magic_stoneman",
+                    "typeId": PomMagicStoneBoss.typeId,
                     "damage": 100,
+                    "type": "boss"
+                }
+            ],
+            "rewards": [
+                {
+                    "name": "模组经验",
+                    "count": 1000,
+                    "unit": "点",
+                    "type": "integral"
+                }
+            ]
+        },
+        "main_pom_2": {
+            "name": "巨型洞穴",
+            "conditions": [
+                {
+                    "name": "无头守卫BOSS",
+                    "typeId": PomHeadlessGuardBoss.typeId,
+                    "damage": 300,
+                    "type": "boss"
+                }
+            ],
+            "rewards": [
+                {
+                    "name": "模组经验",
+                    "count": 1000,
+                    "unit": "点",
+                    "type": "integral"
+                }
+            ]
+        },
+        "main_pom_3": {
+            "name": "远古探索者",
+            "conditions": [
+                {
+                    "name": "远古石像BOSS",
+                    "typeId": PomAncientStoneBoss.typeId,
+                    "damage": 400,
+                    "type": "boss"
+                }
+            ],
+            "rewards": [
+                {
+                    "name": "模组经验",
+                    "count": 1000,
+                    "unit": "点",
+                    "type": "integral"
+                }
+            ]
+        },
+        "main_pom_4": {
+            "name": "心灵之境",
+            "conditions": [
+                {
+                    "name": "念BOSS",
+                    "typeId": PomIntentionsBoss3.typeId,
+                    "damage": 500,
                     "type": "boss"
                 }
             ],

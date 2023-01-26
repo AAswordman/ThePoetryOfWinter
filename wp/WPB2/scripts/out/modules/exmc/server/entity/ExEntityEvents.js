@@ -15,6 +15,7 @@ export default class ExEntityEvents {
             blockBreak: new Listener(this, "blockBreak")
         };
         this._ctrl = ctrl;
+        console.warn("regist events");
     }
     _subscribe(arg0, callback) {
         ExEntityEvents.eventHandlers.subscribe(this._ctrl.entity, arg0, callback);
@@ -23,6 +24,7 @@ export default class ExEntityEvents {
         ExEntityEvents.eventHandlers.unsubscribe(this._ctrl.entity, arg0, callback);
     }
     cancelAll() {
+        console.warn("destroy all events");
         ExEntityEvents.eventHandlers.unsubscribeAll(this._ctrl.entity);
     }
     static init(s) {

@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { EntityDamageCause, EntityHurtEvent, GameMode, MinecraftBlockTypes, MinecraftDimensionTypes, MinecraftEffectTypes, MinecraftEntityTypes, Player } from '@minecraft/server';
+import { EntityDamageCause, EntityHurtEvent, GameMode, MinecraftBlockTypes, MinecraftDimensionTypes, MinecraftEffectTypes, MinecraftEntityTypes } from '@minecraft/server';
 import Vector3 from '../../modules/exmc/math/Vector3.js';
 import ExDimension from "../../modules/exmc/server/ExDimension.js";
 import ExGameServer from "../../modules/exmc/server/ExGameServer.js";
@@ -35,6 +35,7 @@ import PomAncientStoneBoss from './entities/PomAncientStoneBoss.js';
 import PomMindBossRuin from './func/ruins/mind/PommINDBossRuin.js';
 import { PomIntentionsBoss1, PomIntentionsBoss2, PomIntentionsBoss3 } from './entities/PomIntentionsBoss.js';
 import itemCanChangeBlock from './items/itemCanChangeBlock.js';
+import PomBossBarrier from './func/barrier/PomBossBarrier.js';
 export default class PomServer extends ExGameServer {
     constructor(config) {
         super(config);
@@ -287,8 +288,7 @@ export default class PomServer extends ExGameServer {
         this.getEvents().events.blockBreak.subscribe(e => {
             if (e.dimension === this.getDimension(MinecraftDimensionTypes.theEnd) && (isInProtectArea(e.block))) {
                 let ex = ExPlayer.getInstance(e.player);
-                if (ex.getGameMode() === GameMode.creative)
-                    return;
+                // if (ex.getGameMode() === GameMode.creative) return;
                 e.dimension.getBlock(e.block.location).setType(e.brokenBlockPermutation.type);
                 ex.getExDimension().command.run("kill @e[type=item,r=2,x=" + e.block.x + ",y=" + e.block.y + ",z=" + e.block.z + "]");
                 e.player.addEffect(MinecraftEffectTypes.nausea, 200, 0, true);
@@ -302,11 +302,10 @@ export default class PomServer extends ExGameServer {
         });
         this.getEvents().events.beforeItemUseOn.subscribe(e => {
             if (e.source.dimension === this.getDimension(MinecraftDimensionTypes.theEnd) && (isInProtectArea(e.blockLocation))) {
-                if (e.source instanceof Player) {
-                    let ex = ExPlayer.getInstance(e.source);
-                    if (ex.getGameMode() === GameMode.creative)
-                        return;
-                }
+                // if (e.source instanceof Player) {
+                //     let ex = ExPlayer.getInstance(e.source);
+                //     if (ex.getGameMode() === GameMode.creative) return;
+                // }
                 e.cancel = true;
             }
         });
@@ -369,7 +368,9 @@ export default class PomServer extends ExGameServer {
         }).delay(1);
         //遗迹功能总监听
         this.ruinFuncLooper = new TickDelayTask(this.getEvents(), () => {
+            var _a;
             let desertFlag = false;
+            let mindFlag = false;
             for (let client of this.getClients()) {
                 tmpV.set(client.player.location);
                 if (this.ruin_desertBoss.isCompleted()) {
@@ -377,6 +378,10 @@ export default class PomServer extends ExGameServer {
                         && tmpV.z >= RuinsLoaction.DESERT_RUIN_LOCATION_START.z && tmpV.z <= RuinsLoaction.DESERT_RUIN_LOCATION_END.z) {
                         desertFlag = true;
                     }
+                }
+                if (tmpV.x >= RuinsLoaction.MIND_RUIN_LOCATION_START.x && tmpV.x <= RuinsLoaction.MIND_RUIN_LOCATION_END.x
+                    && tmpV.z >= RuinsLoaction.MIND_RUIN_LOCATION_START.z && tmpV.z <= RuinsLoaction.MIND_RUIN_LOCATION_END.z) {
+                    mindFlag = true;
                 }
             }
             if (!desertFlag) {
@@ -386,6 +391,11 @@ export default class PomServer extends ExGameServer {
             else {
                 this.ruinDesertGuardRule.start();
                 this.ruinCleaner.start();
+            }
+            if (mindFlag) {
+                let area = (_a = this.ruin_mindBoss.getBossSpawnArea()) === null || _a === void 0 ? void 0 : _a.center();
+                if (area && !PomBossBarrier.find(area))
+                    this.getExDimension(MinecraftDimensionTypes.theEnd).spawnParticle("wb:ruin_mind_boss_center_par", area);
             }
         }).delay(20 * 12);
         this.ruinFuncLooper.start();

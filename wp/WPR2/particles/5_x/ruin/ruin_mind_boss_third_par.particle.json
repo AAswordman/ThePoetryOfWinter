@@ -1,0 +1,65 @@
+{
+	"format_version": "1.10.0",
+	"particle_effect": {
+		"description": {
+			"identifier": "wb:ruin_mind_boss_third_par",
+			"basic_render_parameters": {
+				"material": "particles_alpha",
+				"texture": "textures/particle/particles"
+			}
+		},
+		"components": {
+			"minecraft:emitter_rate_instant": {
+				"num_particles": 40
+			},
+			"minecraft:emitter_lifetime_once": {
+				"active_time": 1
+			},
+			"minecraft:emitter_shape_disc": {
+				"offset": [0, -3, 0],
+				"radius": 64,
+				"plane_normal": "y",
+				"surface_only": true,
+				"direction": "inwards"
+			},
+			"minecraft:particle_lifetime_expression": {
+				"max_lifetime": 5
+			},
+			"minecraft:particle_initial_spin": {
+				"rotation": "Math.random(0,360)",
+				"rotation_rate": 15
+			},
+			"minecraft:particle_initial_speed": 20,
+			"minecraft:particle_motion_dynamic": {
+				"linear_acceleration": [0, 1, 0]
+			},
+			"minecraft:particle_appearance_billboard": {
+				"size": [0.3, 0.3],
+				"facing_camera_mode": "rotate_xyz",
+				"uv": {
+					"texture_width": 16,
+					"texture_height": 16,
+					"flipbook": {
+						"base_UV": [0, 12],
+						"size_UV": [1, 1],
+						"step_UV": [1, 0],
+						"frames_per_second": 8,
+						"max_frame": 8,
+						"stretch_to_lifetime": true
+					}
+				}
+			},
+			"minecraft:particle_appearance_tinting": {
+				"color": {
+					"interpolant": "v.particle_age / v.particle_lifetime",
+					"gradient": {
+						"0.0": "#FFB9AFF4",
+						"0.16": "#FF000001",
+						"0.33": "#FF000000",
+						"0.51": "#FFAF6FDF"
+					}
+				}
+			}
+		}
+	}
+}

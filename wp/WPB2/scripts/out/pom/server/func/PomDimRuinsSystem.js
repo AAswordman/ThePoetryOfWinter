@@ -298,7 +298,7 @@ export default class PomDimRuinsSystem extends GameController {
                 && tmpV.x >= RuinsLoaction.MIND_RUIN_LOCATION_START.x && tmpV.x <= RuinsLoaction.MIND_RUIN_LOCATION_END.x
                 && tmpV.z >= RuinsLoaction.MIND_RUIN_LOCATION_START.z && tmpV.z <= RuinsLoaction.MIND_RUIN_LOCATION_END.z) {
                 isInMindRuin = true;
-                this.exPlayer.command.run(`fog @s push wb:ruin_mind_1_boss "ruin_fog"`);
+                //this.exPlayer.command.run(`fog @s push wb:ruin_mind_1_boss "ruin_fog"`);
             }
             if (this.causeDamageShow) {
                 let show = this.client.magicSystem.registActionbarPass("hasCauseDamage");

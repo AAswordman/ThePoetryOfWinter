@@ -395,6 +395,7 @@
                                 "summon wb:shadow_intentions_secondx",
                                 "summon wb:shadow_intentions_secondx",
                                 "summon wb:shadow_intentions_secondx",
+                                "particle wb:ruin_mind_boss_second_par ~~~",
                                 "tp @s @e[type=wb:shadow_intentions_secondx,r=64,c=-1]",
                                 "kill @e[type=wb:shadow_intentions_secondx,r=64,c=1]"
                             ],
@@ -423,6 +424,7 @@
                                 "summon wb:shadow_intentions_secondx",
                                 "summon wb:shadow_intentions_secondx",
                                 "summon wb:shadow_intentions_secondx",
+                                "particle wb:ruin_mind_boss_second_par ~~~",
                                 "tp @s @e[type=wb:shadow_intentions_secondx,r=64,c=-1]",
                                 "kill @e[type=wb:shadow_intentions_secondx,r=64,c=1]"
                             ],
@@ -451,6 +453,7 @@
                                 "summon wb:shadow_intentions_secondx",
                                 "summon wb:shadow_intentions_secondx",
                                 "summon wb:shadow_intentions_secondx",
+                                "particle wb:ruin_mind_boss_second_par ~~~",
                                 "tp @s @e[type=wb:shadow_intentions_secondx,r=64,c=-1]",
                                 "kill @e[type=wb:shadow_intentions_secondx,r=64,c=1]"
                             ],
@@ -479,6 +482,7 @@
                                 "summon wb:shadow_intentions_secondx",
                                 "summon wb:shadow_intentions_secondx",
                                 "summon wb:shadow_intentions_secondx",
+                                "particle wb:ruin_mind_boss_second_par ~~~",
                                 "tp @s @e[type=wb:shadow_intentions_secondx,r=64,c=-1]",
                                 "kill @e[type=wb:shadow_intentions_secondx,r=64,c=1]"
                             ],
@@ -507,6 +511,7 @@
                                 "summon wb:shadow_intentions_secondx",
                                 "summon wb:shadow_intentions_secondx",
                                 "tp @s @e[type=wb:shadow_intentions_secondx,r=64,c=-1]",
+                                "particle wb:ruin_mind_boss_second_par ~~~",
                                 "kill @e[type=wb:shadow_intentions_secondx,r=64,c=1]"
                             ],
                             "target": "self"
@@ -553,6 +558,13 @@
                 "add": {
                     "component_groups": [
                         "into"
+                    ]
+                }
+            },
+            "minecraft:despawn": {
+                "add": {
+                    "component_groups": [
+                        "minecraft:despawn"
                     ]
                 }
             }
