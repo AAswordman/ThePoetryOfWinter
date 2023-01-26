@@ -4,13 +4,13 @@
       "animation.frozen_staff": {
         "timeline": {
             "0.1": [
-                "/function frozen_staff"
+                "/function item/frozen_staff"
             ],
             "0.2": [
-                "/function frozen_staff"
+                "/function item/frozen_staff"
             ],
             "0.3": [
-                "/function frozen_staff"
+                "/function item/frozen_staff"
             ]
         }, 
         "animation_length": 1, 

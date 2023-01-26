@@ -61,4 +61,4 @@ export default class PomMindBossRuin {
         this.jigsaw = new ExStructureJigsaw(1, 1, 1);
     }
 }
-//# sourceMappingURL=PommINDBossRuin.js.map
+//# sourceMappingURL=PomMindBossRuin.js.map
