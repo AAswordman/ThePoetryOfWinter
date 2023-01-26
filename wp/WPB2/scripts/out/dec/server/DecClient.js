@@ -17,15 +17,32 @@ import DecGlobal from "./DecGlobal.js";
 import { numTranToTask, taskUi } from "./data/Task.js";
 import ExGame from "../../modules/exmc/server/ExGame.js";
 import PomServer from "../../pom/server/PomServer.js";
+import GlobalScoreBoardCache from "../../modules/exmc/server/storage/cache/GlobalScoreBoardCache.js";
+import { Objective } from "../../modules/exmc/server/entity/ExScoresManager.js";
 export default class DecClient extends ExGameClient {
     constructor(server, id, player) {
         super(server, id, player);
         this.useArmor = undefined;
         this.tmpV = new Vector3(0, 0, 0);
+        this.globalscores = new GlobalScoreBoardCache(new Objective("global"));
     }
     onJoin() {
         super.onJoin();
         this.getEvents().exEvents.playerHurt.subscribe(e => {
+            //这里写死亡事件
+            if (this.exPlayer.getHealth() <= 0) {
+                this.exPlayer.command.run('function die/normal');
+                if (this.globalscores.getNumber('DieMode') === 1) {
+                    //死亡模式
+                    this.exPlayer.command.run('function die/die_mode');
+                }
+                else {
+                    //非死亡模式
+                    if (MathUtil.randomInteger(1, 3) == 1) {
+                        this.exPlayer.command.run('function die/ghost');
+                    }
+                }
+            }
             let ra = MathUtil.randomInteger(1, 100);
             //鲁伯特套装受伤效果
             if (1 <= ra && ra <= 20) {

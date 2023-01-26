@@ -20,6 +20,7 @@ export default class ExSound {
         world.getDimension(MinecraftDimensionTypes.overworld).runCommandAsync("stopsound @a " + this.soundId);
     }
     play(dim, vec) {
+        console.warn(`play ${this.soundId} at ${vec.x} ${vec.y} ${vec.z}`);
         to(dim.command.run(`playsound ${this.soundId} @a[r=64,x=${vec.x},y=${vec.y},z=${vec.z}] ${vec.x} ${vec.y} ${vec.z} 0.5 1 0.5`));
     }
 }

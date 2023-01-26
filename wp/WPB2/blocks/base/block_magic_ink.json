@@ -10,7 +10,8 @@
 			"minecraft:explosion_resistance": 9,
 			"minecraft:creative_category": {
 				"category": "construction"
-			}
+			},
+            "tag:stone": {}
 		}
 	}
 }

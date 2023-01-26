@@ -9,3 +9,4 @@ world.events.entityHurt.subscribe(e => {
         e.damagingEntity.runCommandAsync("function damagingentity");
     }
 });
+//# sourceMappingURL=main.js.map

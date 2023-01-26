@@ -29,7 +29,8 @@
 			"minecraft:map_color": "#00847D",
 			"minecraft:creative_category": {
 				"category": "construction"
-			}
+			},
+            "tag:stone": {}
 		}
 	}
 }

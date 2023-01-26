@@ -1,88 +1,88 @@
 {
-  "format_version": "1.8.0",
-  "animation_controllers": {
-    "controller.animation.spell.discipline": {
-      "states": {
-        "default": {
-          "on_entry":[
-          	"/particle wb:discipline_par ~ ~ ~"
-           ]
-        }
-      }
-    },
-    "controller.animation.spell.burn": {
-      "states": {
-        "default": {
-          "on_entry":[
-              "/particle wb:burn_par ~ ~ ~"
-           ]
-        }
-      }
-    },
+    "format_version": "1.8.0",
+    "animation_controllers": {
+        "controller.animation.spell.discipline": {
+            "states": {
+                "default": {
+                    "on_entry": [
+                        "/particle wb:discipline_par ~ ~ ~"
+                    ]
+                }
+            }
+        },
+        "controller.animation.spell.burn": {
+            "states": {
+                "default": {
+                    "on_entry": [
+                        "/particle wb:burn_par ~ ~ ~"
+                    ]
+                }
+            }
+        },
         "controller.animation.spell.lightning": {
-      "states": {
-        "default": {
-          "on_entry":[
-              "/summon minecraft:lightning_bolt ~ ~ ~",
-              "/execute as @e[r=8] at @s run summon minecraft:lightning_bolt ~ ~ ~",
-              "/effect @e[r=8] blindness 8 255"
-           ]
+            "states": {
+                "default": {
+                    "on_entry": [
+                        "/summon minecraft:lightning_bolt ~ ~ ~",
+                        "/execute as @e[r=8] at @s run summon minecraft:lightning_bolt ~ ~ ~",
+                        "/effect @e[r=8] blindness 8 255"
+                    ]
+                }
+            }
+        },
+        "controller.animation.spell.control": {
+            "states": {
+                "default": {
+                    "on_entry": [
+                        "/particle wb:control_par ~ ~ ~"
+                    ],
+                    "transitions": [{
+                        "oo": "(1.0)"
+                    }]
+                },
+                "oo": {
+                    "on_entry": [
+                        "/effect @e[r=4] slowness 1 255 true",
+                        "/effect @e[r=4] weakness 1 255 true",
+                        "/tp @e[r=4] ~ ~ ~"
+                    ],
+                    "transitions": [{
+                        "o": "(1.0)"
+                    }]
+                },
+                "o": {
+                    "transitions": [{
+                        "oo": "(1.0)"
+                    }]
+                }
+            }
+        },
+        "controller.animation.spell.vine": {
+            "states": {
+                "default": {
+                    "on_entry": [
+                        "/particle wb:vine_par ~ ~ ~"
+                    ],
+                    "transitions": [{
+                        "oo": "(1.0)"
+                    }]
+                },
+                "oo": {
+                    "on_entry": [
+                        "/effect @e[r=8] slowness 1 2 true",
+                        "/effect @e[r=8] fatal_poison 1 8",
+                        "/effect @e[r=8] nausea 1 2"
+                    ],
+                    "transitions": [{
+                        "o": "(1.0)"
+                    }]
+                },
+                "o": {
+                    "transitions": [{
+                        "oo": "(1.0)"
+                    }]
+                }
+            }
         }
-      }
-    },
-    "controller.animation.spell.control": {
-      "states": {
-        "default": {
-          "on_entry":[
-          	"/particle wb:control_par ~ ~ ~"
-           ],
-           "transitions":[
-               { "oo":"(1.0)" }
-              ]
-        },
-        "oo": {
-          "on_entry":[
-          	"/effect @e[r=4] slowness 1 255 true",
-          	"/effect @e[r=4] weakness 1 255 true",
-          	"/tp @e[r=4] ~ ~ ~"
-           ],
-           "transitions":[
-               { "o":"(1.0)" }
-              ]
-        },
-       "o": {
-           "transitions":[
-               { "oo":"(1.0)" }
-              ]
-        }
-      }
-    },
-    "controller.animation.spell.vine": {
-      "states": {
-        "default": {
-          "on_entry":[
-          	"/particle wb:vine_par ~ ~ ~"
-           ],
-           "transitions":[
-               { "oo":"(1.0)" }
-              ]
-        },
-        "oo": {
-          "on_entry":[
-          	"/effect @e[r=8] slowness 1 2 true",
-           "/effect @e[r=8] fatal_poison 1 8",
-           "/effect @e[r=8] nausea 1 2"
-           ],
-           "transitions":[
-               { "o":"(1.0)" }
-              ]
-        },
-       "o": {
-           "transitions":[
-               { "oo":"(1.0)" }
-              ]
-        }
-      }
     }
-  }
 }

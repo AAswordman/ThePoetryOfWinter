@@ -344,6 +344,7 @@
                     "target": "self"
                 }
             },
+            
             "minecraft:variant": {
                 "value": 0
             },
