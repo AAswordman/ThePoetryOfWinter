@@ -55,7 +55,9 @@ export default class EventHandle {
         let e = this.monitorMap[name];
         let arr = e.get(entity);
         if (arr) {
-            arr.splice(arr.findIndex((v) => v === callback), 1);
+            let index = arr.indexOf(callback);
+            if (index !== -1)
+                arr.splice(index, 1);
         }
     }
     unsubscribeAll(e) {

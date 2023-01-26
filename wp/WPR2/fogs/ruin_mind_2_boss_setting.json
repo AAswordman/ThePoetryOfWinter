@@ -2,13 +2,13 @@
   "format_version": "1.16.100",
   "minecraft:fog_settings": {
     "description": {
-      "identifier": "wb:ruin_mind_1_boss"
+      "identifier": "wb:ruin_mind_2_boss"
     },
     "distance": {
       "air": {
-        "fog_start": 32,
-        "fog_end": 64,
-        "fog_color": "#17002f",
+        "fog_start": 15,
+        "fog_end": 48,
+        "fog_color": "#7246a2",
         "render_distance_type": "fixed"
       },
       "water": {

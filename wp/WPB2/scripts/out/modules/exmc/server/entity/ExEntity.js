@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { EntityHealthComponent, EntityInventoryComponent, EntityVariantComponent, EntityMarkVariantComponent, EntityIsBabyComponent } from '@minecraft/server';
+import { EntityHealthComponent, EntityInventoryComponent, EntityVariantComponent, EntityMarkVariantComponent, EntityIsBabyComponent, EntityIsChargedComponent } from '@minecraft/server';
 import ExScoresManager from './ExScoresManager.js';
 import Vector3 from '../../math/Vector3.js';
 import ExEntityBag from './ExEntityBag.js';
@@ -180,6 +180,9 @@ export default class ExEntity {
     }
     hasIsBabyComponent() {
         return this.hasComponent(EntityIsBabyComponent.componentId);
+    }
+    hasIsChargedComponent() {
+        return this.hasComponent(EntityIsChargedComponent.componentId);
     }
 }
 ExEntity.propertyNameCache = "exCache";

@@ -4,7 +4,7 @@
     "description": {
       "identifier": "wb:ball_intentions_first_gas",
       "materials": { 
-          "default": "skeleton"
+          "default": "wbarmor"
       },
       "textures": { 
           "default": "textures/wb/5_x/ball_intentions_first_gas"
@@ -13,7 +13,7 @@
           "default": "geometry.ball_intentions_first_gas"
       },
       "render_controllers": [
-          "controller.render.base"
+          "controller.render.light"
     ]
     }
   }

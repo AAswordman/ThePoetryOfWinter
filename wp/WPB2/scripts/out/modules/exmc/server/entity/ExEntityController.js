@@ -20,7 +20,7 @@ export default class ExEntityController {
         this.init(server);
         this.onSpawn();
         eventDecoratorFactory(this.getEvents(), this);
-        // console.warn("track "+e.typeId);
+        console.warn("track " + e.typeId);
     }
     get entity() {
         return this._entity;
@@ -54,6 +54,7 @@ export default class ExEntityController {
         this.dispose();
     }
     dispose() {
+        console.warn("dispose");
         this.getEvents().cancelAll();
     }
     getEvents() {
@@ -68,8 +69,8 @@ export default class ExEntityController {
     }
 }
 __decorate([
-    registerEvent("onLongTick", (ctrl, e) => {
-        if (e.currentTick % 4 === 0) {
+    registerEvent("tick", (ctrl, e) => {
+        if (e.currentTick % 1 === 0) {
             try {
                 let dim = ctrl.entity.dimension;
                 // console.warn(dim === undefined)

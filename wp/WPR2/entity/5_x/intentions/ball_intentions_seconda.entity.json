@@ -3,7 +3,7 @@
   "minecraft:client_entity": {
     "description": {
       "identifier": "wb:ball_intentions_seconda",
-      "materials": { "default": "skeleton" },
+      "materials": { "default": "wbarmor" },
       "textures": {
         "default": "textures/wb/5_x/ball_intentions_firstb"
       },
@@ -19,7 +19,7 @@
       "geometry": {
         "default": "geometry.ball_staff_light"
       },
-      "render_controllers": [ "controller.render.base" ]
+      "render_controllers": [ "controller.render.light" ]
     }
   }
 }
