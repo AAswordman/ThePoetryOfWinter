@@ -19,7 +19,7 @@ export default class PomInteractSystem extends GameController {
                             type: "epic:cannon_cart"
                         })) {
                             let entity = ExEntity.getInstance(e);
-                            arr === null || arr === void 0 ? void 0 : arr.push("加农炮战车:");
+                            arr === null || arr === void 0 ? void 0 : arr.push("加农炮战车: " + entity.nameTag);
                             if (e.hasTag("wbmsyh")) {
                                 arr === null || arr === void 0 ? void 0 : arr.push("    = §a友好模式§f =");
                             }
@@ -28,24 +28,24 @@ export default class PomInteractSystem extends GameController {
                             }
                             switch (entity.getVariant()) {
                                 case 2:
-                                    arr === null || arr === void 0 ? void 0 : arr.push("    攻击模式: [护卫]");
+                                    arr === null || arr === void 0 ? void 0 : arr.push("    攻击模式: §3[护卫]");
                                     break;
                                 case 1:
-                                    arr === null || arr === void 0 ? void 0 : arr.push("    攻击模式: [待命]");
+                                    arr === null || arr === void 0 ? void 0 : arr.push("    攻击模式: §6[待命]");
                                     break;
                                 case 3:
-                                    arr === null || arr === void 0 ? void 0 : arr.push("    攻击模式: [破坏]");
+                                    arr === null || arr === void 0 ? void 0 : arr.push("    攻击模式: §c[破坏]");
                                     break;
                             }
                             switch (entity.getMarkVariant()) {
                                 case 1:
-                                    arr === null || arr === void 0 ? void 0 : arr.push("    行动模式: [待命]");
+                                    arr === null || arr === void 0 ? void 0 : arr.push("    行动模式: §6[待命]");
                                     break;
                                 case 2:
-                                    arr === null || arr === void 0 ? void 0 : arr.push("    行动模式: [跟随]");
+                                    arr === null || arr === void 0 ? void 0 : arr.push("    行动模式: §3[跟随]");
                                     break;
                                 case 3:
-                                    arr === null || arr === void 0 ? void 0 : arr.push("    行动模式: [自由]");
+                                    arr === null || arr === void 0 ? void 0 : arr.push("    行动模式: §c[自由]");
                                     break;
                             }
                         }

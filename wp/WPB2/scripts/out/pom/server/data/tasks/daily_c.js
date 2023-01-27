@@ -27,7 +27,7 @@ export default function taskDaily_c(lang) {
                 "rewards": [
                     {
                         "name": "模组经验",
-                        "count": 700,
+                        "count": 350,
                         "unit": "点",
                         "type": "integral"
                     }
@@ -76,7 +76,7 @@ export default function taskDaily_c(lang) {
                 "rewards": [
                     {
                         "name": "模组经验",
-                        "count": 900,
+                        "count": 450,
                         "unit": "点",
                         "type": "integral"
                     }
@@ -119,7 +119,7 @@ export default function taskDaily_c(lang) {
                 "rewards": [
                     {
                         "name": "模组经验",
-                        "count": 850,
+                        "count": 450,
                         "unit": "点",
                         "type": "integral"
                     }
@@ -162,7 +162,7 @@ export default function taskDaily_c(lang) {
                 "rewards": [
                     {
                         "name": "模组经验",
-                        "count": 900,
+                        "count": 450,
                         "unit": "点",
                         "type": "integral"
                     }
@@ -181,7 +181,7 @@ export default function taskDaily_c(lang) {
                 "rewards": [
                     {
                         "name": "模组经验",
-                        "count": 850,
+                        "count": 450,
                         "unit": "点",
                         "type": "integral"
                     }
@@ -200,7 +200,7 @@ export default function taskDaily_c(lang) {
                 "rewards": [
                     {
                         "name": "模组经验",
-                        "count": 1250,
+                        "count": 600,
                         "unit": "点",
                         "type": "integral"
                     }
@@ -231,7 +231,7 @@ export default function taskDaily_c(lang) {
                 "rewards": [
                     {
                         "name": "模组经验",
-                        "count": 800,
+                        "count": 400,
                         "unit": "点",
                         "type": "integral"
                     }
@@ -262,7 +262,7 @@ export default function taskDaily_c(lang) {
                 "rewards": [
                     {
                         "name": "模组经验",
-                        "count": 1000,
+                        "count": 500,
                         "unit": "点",
                         "type": "integral"
                     }
@@ -299,7 +299,7 @@ export default function taskDaily_c(lang) {
                 "rewards": [
                     {
                         "name": "模组经验",
-                        "count": 850,
+                        "count": 450,
                         "unit": "点",
                         "type": "integral"
                     }
@@ -318,7 +318,7 @@ export default function taskDaily_c(lang) {
                 "rewards": [
                     {
                         "name": "模组经验",
-                        "count": 1400,
+                        "count": 700,
                         "unit": "点",
                         "type": "integral"
                     }
@@ -337,7 +337,7 @@ export default function taskDaily_c(lang) {
                 "rewards": [
                     {
                         "name": "模组经验",
-                        "count": 1050,
+                        "count": 600,
                         "unit": "点",
                         "type": "integral"
                     }
@@ -386,7 +386,7 @@ export default function taskDaily_c(lang) {
                 "rewards": [
                     {
                         "name": "模组经验",
-                        "count": 1150,
+                        "count": 600,
                         "unit": "点",
                         "type": "integral"
                     }

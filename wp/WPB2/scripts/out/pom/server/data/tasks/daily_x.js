@@ -27,7 +27,7 @@ export default function taskDaily_x(lang) {
                 "rewards": [
                     {
                         "name": "模组经验",
-                        "count": 2500,
+                        "count": 1250,
                         "unit": "点",
                         "type": "integral"
                     }
@@ -64,7 +64,7 @@ export default function taskDaily_x(lang) {
                 "rewards": [
                     {
                         "name": "模组经验",
-                        "count": 2500,
+                        "count": 1250,
                         "unit": "点",
                         "type": "integral"
                     }
@@ -107,7 +107,7 @@ export default function taskDaily_x(lang) {
                 "rewards": [
                     {
                         "name": "模组经验",
-                        "count": 3000,
+                        "count": 1250,
                         "unit": "点",
                         "type": "integral"
                     }
@@ -126,7 +126,7 @@ export default function taskDaily_x(lang) {
                 "rewards": [
                     {
                         "name": "模组经验",
-                        "count": 3500,
+                        "count": 800,
                         "unit": "点",
                         "type": "integral"
                     }
@@ -163,26 +163,7 @@ export default function taskDaily_x(lang) {
                 "rewards": [
                     {
                         "name": "模组经验",
-                        "count": 2500,
-                        "unit": "点",
-                        "type": "integral"
-                    }
-                ]
-            },
-            {
-                "name": "不朽之力",
-                "conditions": [
-                    {
-                        "name": "不朽魔能锭",
-                        "typeId": "wb:mineral_max_equipment",
-                        "count": 1,
-                        "type": "item"
-                    }
-                ],
-                "rewards": [
-                    {
-                        "name": "模组经验",
-                        "count": 2500,
+                        "count": 1500,
                         "unit": "点",
                         "type": "integral"
                     }
@@ -231,7 +212,7 @@ export default function taskDaily_x(lang) {
                 "rewards": [
                     {
                         "name": "模组经验",
-                        "count": 3250,
+                        "count": 1050,
                         "unit": "点",
                         "type": "integral"
                     }

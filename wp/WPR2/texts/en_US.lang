@@ -1165,29 +1165,12 @@ howtoplay.wb0=Boss Flow Path
 howtoplay.wb0x.title=Survival Guidance
 howtoplay.wb0x=Survival Guidance
 
-howtoplay.wb1.title=Introduction
-howtoplay.wb1=Introduction
-howtoplay.category.all=Features Introduction
-howtoplay.wb2.title=Main System Introduction
-howtoplay.wb2=Main System Introduction
-howtoplay.category.core=Main parts of this addon
-howtoplay.wb2y.title=Team System
-howtoplay.wb2y=Team System
-howtoplay.category.item=Items
-howtoplay.wb3.title=Items Introduction
-howtoplay.wb3=Items Introduction
-howtoplay.wb4.title=Items: Wands
-howtoplay.wb4=Items: Wands
-howtoplay.wb5.title=Items: Swords
-howtoplay.wb5=Items: Swords
-howtoplay.wb6.title=Items:Other items
-howtoplay.wb6=Items:Other items
+howtoplay.wb1.title=BOSS遗迹传送门
+howtoplay.wb1=BOSS遗迹传送门
+
 howtoplay.category.tech=Machine
 howtoplay.wb7.title=Crafting Material
 howtoplay.wb7=Crafting Material
-howtoplay.category.plot=World Border's Story
-howtoplay.wb8.title=World Border's Story
-howtoplay.wb8=World Border's Story
 
 item.wb:armor_bloodsucking_helmet=bloodsucking helmet
 item.wb:armor_bloodsucking_boots=bloodsucking boots

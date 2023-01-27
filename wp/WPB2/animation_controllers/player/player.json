@@ -182,6 +182,10 @@
                     "on_entry": [
                         "/execute as @s[scores={wbfl=..39}] at @s run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.20.name\"}]}",
                         "/execute as @s[tag=!wbplot,scores={wbfl=40..},m=!adventure] at @s run fill ~+4 ~+4 ~+4 ~-4 ~ ~-4 air 0 replace stone -1",
+                        "/execute as @s[tag=!wbplot,scores={wbfl=40..},m=!adventure] at @s run fill ~+4 ~+4 ~+4 ~-4 ~ ~-4 air 0 replace end_stone -1",
+                        "/execute as @s[tag=!wbplot,scores={wbfl=40..},m=!adventure] at @s run fill ~+4 ~+4 ~+4 ~-4 ~ ~-4 air 0 replace cobblestone -1",
+                        "/execute as @s[tag=!wbplot,scores={wbfl=40..},m=!adventure] at @s run fill ~+4 ~+4 ~+4 ~-4 ~ ~-4 air 0 replace netherrack -1",
+                        "/execute as @s[tag=!wbplot,scores={wbfl=40..},m=!adventure] at @s run fill ~+4 ~+4 ~+4 ~-4 ~ ~-4 air 0 replace red_sandstone -1",
                         "/execute as @s[scores={wbfl=40..}] at @s run scoreboard players remove @s wbfl 40"
                     ]
                 },
