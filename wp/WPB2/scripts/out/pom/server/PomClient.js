@@ -124,22 +124,22 @@ export default class PomClient extends ExGameClient {
             this.player.nameTag = "§c" + this.player.nameTag;
         }
         this.exPlayer.command.run([
-            "/execute as @s[tag=!wbyzc] at @s run scoreboard players add @s wbef 0",
-            "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbdj 0",
-            "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbdjcg 0",
-            "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbdjjf 0",
-            "/execute as @s[tag=!wbyzc] at @s run give @s wb:power 1 0 {\"minecraft:keep_on_death\":{}}",
-            "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbcsjs -1",
-            "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbnldx 0",
+            "execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbef 0",
+            "execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbdj 0",
+            "execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbdjcg 0",
+            "execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbdjjf 0",
+            "execute as @s[tag=!wbyzc] at @s run give @s wb:power 1 0 {\"minecraft:keep_on_death\":{}}",
+            "execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbcsjs -1",
+            "execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbnldx 0",
             //wbldid
-            "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbldpd 0",
-            "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbldcg 0",
-            "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbfl 200",
-            "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbwqlq 0",
-            "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbkjlqcg 0",
-            "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbkjlqjs 0",
-            "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbwqlqjs 0",
-            "/tag @s[scores={wbdj=-100..}] add wbyzc",
+            "execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbldpd 0",
+            "execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbldcg 0",
+            "execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbfl 200",
+            "execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbwqlq 0",
+            "execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbkjlqcg 0",
+            "execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbkjlqjs 0",
+            "execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbwqlqjs 0",
+            "tag @s[scores={wbdj=-100..}] add wbyzc",
         ]);
     }
     onLeave() {

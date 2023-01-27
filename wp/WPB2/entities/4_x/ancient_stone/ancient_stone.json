@@ -85,7 +85,7 @@
                     "attack_time": 3,
                     "knockback_damage": 140,
                     "knockback_strength": 5,
-                    "knockback_range": 12,
+                    "knockback_range": 16,
                     "on_roar_end": {
                         "event": "sssx"
                     },
@@ -337,7 +337,8 @@
             "minecraft:spawn_entity": [{
                 "min_wait_time": 5,
                 "max_wait_time": 5,
-                "spawn_entity": "wb:cannon_ancient_stone<free>"
+                "spawn_entity": "wb:cannon_ancient_stone",
+                "spawn_event":"free"
             }],
             "minecraft:timer": {
                 "time": 1,

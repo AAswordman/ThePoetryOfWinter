@@ -132,22 +132,23 @@ export default function menuTaskUI(ctrl) {
                     };
                 }
                 let lor = item.getLore();
-                for (let i in lor) {
+                let num = 0;
+                for (let i of lor) {
+                    num++;
                     let m = [];
-                    arr[i] = {
+                    arr[num] = {
                         "page": m,
-                        "text": lor[i]
+                        "text": i
                     };
-                    let x = taskTranToNum(lor[i]);
-                    console.warn(x);
+                    let x = taskTranToNum(i);
                     const index = PomTasks.findIndex(e => e.id === x);
                     if (index === -1) {
-                        throw new Error("Can't find task " + taskTranToNum(lor[i]));
+                        throw new Error("Can't find task " + taskTranToNum(i));
                     }
                     let task = PomTasks[index];
                     m.push({
                         "type": "text_title",
-                        "msg": lor[i] + " : " + task.title()
+                        "msg": task.title()
                     }, {
                         "type": "padding"
                     }, {
