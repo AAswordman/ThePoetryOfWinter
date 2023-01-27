@@ -138,7 +138,9 @@ export default function menuTaskUI(ctrl) {
                         "page": m,
                         "text": lor[i]
                     };
-                    const index = PomTasks.findIndex(t => t.id === taskTranToNum(lor[i]));
+                    let x = taskTranToNum(lor[i]);
+                    console.warn(x);
+                    const index = PomTasks.findIndex(e => e.id === x);
                     if (index === -1) {
                         throw new Error("Can't find task " + taskTranToNum(lor[i]));
                     }

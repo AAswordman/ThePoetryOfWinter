@@ -62,7 +62,7 @@ export default class GlobalSettings extends GlobalScoreBoardCache {
         this.setNumber("entityCleanerDelay", value);
     }
     get worldSeed() {
-        return this.getNumber("worldSeed") || (this.worldSeed = Math.floor(Math.random() * Random.MAX_VALUE));
+        return Math.abs(this.getNumber("worldSeed") || (this.worldSeed = Math.floor(Math.random() * Random.MAX_VALUE)));
     }
     set worldSeed(value) {
         this.setNumber("worldSeed", value);

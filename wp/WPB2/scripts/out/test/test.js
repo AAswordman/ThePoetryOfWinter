@@ -1,3 +1,3 @@
 "use strict";
-console.log(~0);
+console.log("123".split(''));
 //# sourceMappingURL=test.js.map

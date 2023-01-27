@@ -1,4 +1,4 @@
-import DecBossController from "./DecBossController";
+import DecBossController from "./DecBossController.js";
 export class DecCommonBossLastStage extends DecBossController {
     constructor(e, server) {
         super(e, server);
