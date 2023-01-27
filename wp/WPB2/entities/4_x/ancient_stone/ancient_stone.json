@@ -111,6 +111,9 @@
                     "speed_multiplier": 1,
                     "track_target": false
                 },
+                "minecraft:loot":{
+                    "table": "loot_tables/wb/4_x/ancient_stone.json"
+                },
                 "minecraft:is_baby": {},
                 "minecraft:health": {
                     "value": 1500,

@@ -32,7 +32,7 @@
         "destroy_on_hit":false
       }
     },
-    "power": 0.8,
+    "power": 0.68,
     "gravity": 0.00,
     "inertia": 1,
     "anchor": 2,
