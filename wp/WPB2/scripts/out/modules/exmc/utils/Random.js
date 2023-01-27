@@ -35,5 +35,6 @@ export default class Random {
         }
     }
 }
-Random.MAX_VALUE = 1 << 32 - 1;
+Random.MAX_VALUE = ~(1 << 31);
+Random.MIN_VALUE = (1 << 31);
 //# sourceMappingURL=Random.js.map

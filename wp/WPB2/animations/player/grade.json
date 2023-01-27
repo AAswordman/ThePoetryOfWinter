@@ -16,24 +16,7 @@
           "/execute as @s[tag=wbldkzc,tag=!wbldkzb,tag=wbldbq,m=adventure] at @s run tag @s remove wbldbq",
           "/execute as @s[tag=wbldkzc,tag=!wbldkzb] at @s run tag @s remove wbldkzc",
           "/scoreboard players add @s wbdjjf 1",
-          "/execute as @s[tag=wbdjeff] at @s run function grade/effect",
-          "/execute as @s[tag=!wbyzc] at @s run scoreboard players add @s wbef 0",
-          "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbdj 0",
-          "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbdjcg 0",
-          "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbdjjf 0",
-          "/execute as @s[tag=!wbyzc] at @s run give @s wb:power 1 0 {\"minecraft:keep_on_death\":{}}",
-          "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbcsjs -1",
-          "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbnldx 0",
-          //wbldid
-          "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbldpd 0",
-          "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbldcg 0",
-          "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbfl 200",
-          "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbwqlq 0",
-          "/execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbkjlqcg 0",
-          "/tag @s[scores={wbdj=-100..}] add wbyzc",
-          "/execute as @s[tag=!wbgxa] at @s run scoreboard players set @s wbkjlqjs 0",
-          "/execute as @s[tag=!wbgxa] at @s run scoreboard players set @s wbwqlqjs 0",
-          "/tag @s[scores={wbwqlqjs=-1..}] add wbgxa"
+          "/execute as @s[tag=wbdjeff] at @s run function grade/effect"
           // 回蓝写gt了
         ]
       },

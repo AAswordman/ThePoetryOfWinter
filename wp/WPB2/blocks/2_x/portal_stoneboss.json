@@ -8,10 +8,10 @@
 		"components": {
 			"minecraft:destroy_time": 32767,
 			"minecraft:explosion_resistance": 5,
-			"minecraft:block_light_emission": 1,
-			"minecraft:creative_category": {
-				"category": "construction"
-			}
+			"minecraft:block_light_emission": 1
+			// "minecraft:creative_category": {
+			// 	"category": "construction"
+			// }
 		}
 	}
 }

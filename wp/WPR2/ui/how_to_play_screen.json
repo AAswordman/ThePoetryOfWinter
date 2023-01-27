@@ -29,6 +29,11 @@
                             "$toggle_group_forced_index": 1
                         }
                     },
+                    {
+                        "wb1_button@how_to_play.wb1_button": {
+                            "$toggle_group_forced_index":2
+                        }
+                    },
 
                     {
                         "tech@how_to_play_common.topic_category": {
@@ -62,6 +67,9 @@
                     {
                         "wb0x_section@how_to_play.wb0x_section": {}
                     },
+                    {
+                        "wb1_section@how_to_play.wb1_section": {}
+                    },
 
                     {
                         "wb7_section@how_to_play.wb7_section": {}
@@ -75,6 +83,9 @@
     },
     "wb0x_button@how_to_play_common.section_toggle_button": {
         "$section_topic": "wb0x"
+    },
+    "wb1_button@how_to_play_common.section_toggle_button": {
+        "$section_topic": "wb1"
     },
 
     "wb7_button@how_to_play_common.section_toggle_button": {
@@ -549,7 +560,56 @@
             }
         ]
     },
-
+    "wb1_section@how_to_play_common.main_sections": {
+        "bindings": [{
+            "binding_type": "view",
+            "source_control_name": "wb1_button_toggle",
+            "source_property_name": "#toggle_state",
+            "target_property_name": "#visible"
+        }],
+        "controls": [
+            {
+                "img1@how_to_play_common.image":{
+                    "texture":"textures/wb_ui/stone"
+                }
+            },
+            {
+                "img2@how_to_play_common.image":{
+                    "texture":"textures/wb_ui/stone_boss"
+                }
+            },
+            {
+                "img3@how_to_play_common.image":{
+                    "texture":"textures/wb_ui/cave"
+                }
+            },
+            {
+                "img4@how_to_play_common.image":{
+                    "texture":"textures/wb_ui/cave_boss"
+                }
+            },
+            {
+                "img5@how_to_play_common.image":{
+                    "texture":"textures/wb_ui/ancient"
+                }
+            },
+            {
+                "img6@how_to_play_common.image":{
+                    "texture":"textures/wb_ui/ancient_boss"
+                }
+            },
+            {
+                "img7@how_to_play_common.image":{
+                    "texture":"textures/wb_ui/mind"
+                }
+            },
+            {
+                "img8@how_to_play_common.image":{
+                    "texture":"textures/wb_ui/mind_boss"
+                }
+            }
+        ]
+    },
     "wb7_section@how_to_play_common.main_sections": {
         "bindings": [{
             "binding_type": "view",
