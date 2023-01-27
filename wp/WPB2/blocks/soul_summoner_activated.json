@@ -13,7 +13,7 @@
       "minecraft:loot": "loot_tables/empty.json",
       "minecraft:on_interact": {
         "event": "summon",
-        "condition": "query.get_equipped_item_name('main_hand') == 'iron_key'"
+        "condition": "query.get_equipped_item_name('main_hand') == 'soul_key'"
       }
     },
     "events": {
