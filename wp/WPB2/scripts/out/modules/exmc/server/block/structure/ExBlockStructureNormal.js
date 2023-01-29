@@ -6,6 +6,15 @@ export default class ExBlockStructureNormal {
     constructor() {
         this.direction = ExBlockStructureNormal.DIRECTION_AROUND | ExBlockStructureNormal.DIRECTION_LAY;
     }
+    clone() {
+        let n = new ExBlockStructureNormal();
+        n.dimension = this.dimension;
+        n.structure = this.structure;
+        n.analysisMap = this.analysisMap;
+        n.direction = this.direction;
+        n.area = this.area;
+        return n;
+    }
     setDimension(dim) {
         this.dimension = ExDimension.getInstance(dim);
         return this;

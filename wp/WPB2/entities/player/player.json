@@ -919,31 +919,6 @@
                     "on_environment": {
                         "filters": {
                             "all_of": [{
-                                "test": "is_daytime",
-                                "subject": "self",
-                                "value": true
-                            }]
-                        },
-                        "event": "minecraft:day_random"
-                    }
-                },
-
-                {
-                    "on_environment": {
-                        "filters": {
-                            "all_of": [{
-                                "test": "is_daytime",
-                                "subject": "self",
-                                "value": false
-                            }]
-                        },
-                        "event": "minecraft:night_random"
-                    }
-                },
-                {
-                    "on_environment": {
-                        "filters": {
-                            "all_of": [{
                                 "test": "is_family",
                                 "subject": "self",
                                 "value": "none"
@@ -1829,27 +1804,6 @@
                 "remove": {
                     "component_groups": [
                         "wb:sword_intentions_attack"
-                    ]
-                }
-            },
-            "minecraft:day_random": {
-                "run_command": {
-                    "command": [
-                        "tag @s remove zombie_wave",
-                        "scoreboard players set IsDay global 1",
-                        "scoreboard players set IsNight global 0",
-                        "scoreboard players set NightRandom global 0",
-                        "scoreboard players set @s night_event 0",
-                        "fog @s remove \"night_event\""
-                    ]
-                }
-            },
-            "minecraft:night_random": {
-                "run_command": {
-                    "command": [
-                        "execute if score IsNight global = zero global run scoreboard players random NightRandom global 1 100",
-                        "scoreboard players set IsDay global 0",
-                        "scoreboard players set IsNight global 1"
                     ]
                 }
             },

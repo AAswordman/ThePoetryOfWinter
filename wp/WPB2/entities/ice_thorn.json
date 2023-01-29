@@ -38,11 +38,15 @@
         ]
       },
       "minecraft:collision_box": {
-        "width": 0.0,
-        "height": 0.0
+        "width": 1.0,
+        "height": 2.0
       },
       "minecraft:damage_sensor": {
         "triggers": [
+          {
+            "cause": "fall",
+            "deals_damage": false
+          },
           {
             "on_damage": {
               "filters": {
@@ -56,8 +60,8 @@
         ]
       },
       "minecraft:health": {
-        "value": 10,
-        "max": 10
+        "value": 6,
+        "max": 6
       },
       "minecraft:movement": {
         "value": 0.0

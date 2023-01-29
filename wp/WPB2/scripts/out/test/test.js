@@ -1,7 +1,7 @@
 "use strict";
-const task_arr = ["Ao", "Jf", "Sk", "Ch", "Om", "Bs", "Hd", "Oa", "Gx", "Xe"];
-function taskTranToNum(t) {
-    return t.split(" ").map(e => task_arr.indexOf(e)).join('');
+function IEEEremainder(dividend, divisor) {
+    return dividend - (divisor * Math.round(dividend / divisor));
 }
-console.log(taskTranToNum("003"));
+console.log(IEEEremainder(-5, 2));
+console.log((-5 % 2));
 //# sourceMappingURL=test.js.map

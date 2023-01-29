@@ -6,10 +6,6 @@ import ExItem from "../../../modules/exmc/server/item/ExItem.js";
 import ExGameVector3 from "../../../modules/exmc/server/math/ExGameVector3.js";
 import GameController from "./GameController.js";
 export default class PomEnChantSystem extends GameController {
-    constructor() {
-        super(...arguments);
-        this.blockTranslateData = new Map();
-    }
     onJoin() {
         this.getEvents().exEvents.itemOnHandChange.subscribe((e) => {
             const bag = this.exPlayer.getBag();
@@ -48,7 +44,7 @@ export default class PomEnChantSystem extends GameController {
                 let item2 = bag.getItemOnHand();
                 if (item && item2) {
                     if (item.typeId === "wb:book_cache") {
-                        this.blockTranslateData.set(new Vector3(block).toString(), item);
+                        PomEnChantSystem.blockTranslateData.set(new Vector3(block).toString(), item);
                         ExBlock.getInstance(block).transTo("wb:block_translate_book");
                         item2.amount--;
                         bag.setItem(this.exPlayer.selectedSlot, item2);
@@ -59,7 +55,7 @@ export default class PomEnChantSystem extends GameController {
                 e.cancel = true;
                 let bag = this.exPlayer.getBag();
                 let item = bag.getItemOnHand();
-                let saveItem = this.blockTranslateData.get(new Vector3(block).toString());
+                let saveItem = PomEnChantSystem.blockTranslateData.get(new Vector3(block).toString());
                 if (!saveItem)
                     return ExBlock.getInstance(block).transTo("wb:block_translate");
                 if (item && item.amount === 1) {
@@ -86,7 +82,7 @@ export default class PomEnChantSystem extends GameController {
                         }
                         exSaveItem.getEnchantsComponent().removeAllEnchantments();
                     }
-                    this.blockTranslateData.delete(new Vector3(block).toString());
+                    PomEnChantSystem.blockTranslateData.delete(new Vector3(block).toString());
                     ExBlock.getInstance(block).transTo("wb:block_translate");
                     bag.setItem(this.exPlayer.selectedSlot, item);
                     this.getDimension().spawnItem(exNewItem.getItem(), ExGameVector3.getBlockLocation(pos).above());
@@ -99,4 +95,5 @@ export default class PomEnChantSystem extends GameController {
     onLeave() {
     }
 }
+PomEnChantSystem.blockTranslateData = new Map();
 //# sourceMappingURL=PomEnchantSystem.js.map
