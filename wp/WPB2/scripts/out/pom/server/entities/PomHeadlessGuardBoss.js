@@ -13,7 +13,7 @@ export default class PomHeadlessGuardBoss extends PomBossController {
         if (this.isFisrtCall)
             this.server.say({ rawtext: [{ translate: "text.wb:summon_headless_guard.name" }] });
         this.setTimeout(() => {
-            this.music.loop(this.getEvents(), this.exEntity.getExDimension(), this.entity.location);
+            this.music.loop(this.server.getEvents(), this.exEntity.getExDimension(), this.entity.location);
         }, 500);
     }
     onSpawn() {

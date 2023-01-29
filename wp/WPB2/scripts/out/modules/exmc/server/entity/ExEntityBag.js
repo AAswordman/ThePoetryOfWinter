@@ -34,11 +34,12 @@ export default class ExEntityBag {
         return items;
     }
     countAllItems() {
+        var _a;
         let items = new Map();
         for (let i = 0; i < this.size(); i++) {
             let item = this.getItem(i);
             if (item)
-                items.set(item.typeId, item.amount);
+                items.set(item.typeId, item.amount + ((_a = items.get(item.typeId)) !== null && _a !== void 0 ? _a : 0));
         }
         ;
         return items;

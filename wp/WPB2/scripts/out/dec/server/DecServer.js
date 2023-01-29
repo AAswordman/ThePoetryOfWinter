@@ -11,6 +11,8 @@ import Vector3 from '../../modules/exmc/math/Vector3.js';
 import { to } from '../../modules/exmc/server/ExErrorQueue.js';
 import { DecEverlastingWinterGhastBoss1, DecEverlastingWinterGhastBoss2 } from './entities/DecEverlastingWinterGhastBoss.js';
 import { DecCommonBossLastStage } from './entities/DecCommonBossLastStage.js';
+import VarOnChangeListener from '../../modules/exmc/utils/VarOnChangeListener.js';
+import ExEnvirenment from '../../modules/exmc/server/env/ExEnvirenment.js';
 export default class DecServer extends ExGameServer {
     constructor(config) {
         super(config);
@@ -19,6 +21,26 @@ export default class DecServer extends ExGameServer {
         this.i_damp = new Objective("i_damp").create("i_damp");
         this.i_soft = new Objective("i_soft").create("i_soft");
         //new Objective("harmless").create("harmless");
+        this.nightEventListener = new VarOnChangeListener(e => {
+            if (e) {
+                // is night
+                this.getExDimension(MinecraftDimensionTypes.overworld).command.run([
+                    "execute if score IsNight global = zero global run scoreboard players random NightRandom global 1 100",
+                    "scoreboard players set IsDay global 0",
+                    "scoreboard players set IsNight global 1"
+                ]);
+            }
+            else {
+                this.getExDimension(MinecraftDimensionTypes.overworld).command.run([
+                    "tag @a remove zombie_wave",
+                    "scoreboard players set IsDay global 1",
+                    "scoreboard players set IsNight global 0",
+                    "scoreboard players set NightRandom global 0",
+                    "scoreboard players set @a night_event 0",
+                    "fog @a remove \"night_event\""
+                ]);
+            }
+        }, false);
         this.getEvents().events.beforeChat.subscribe(e => {
             let cmdRunner = this.getExDimension(MinecraftDimensionTypes.overworld);
             let sender = ExPlayer.getInstance(e.sender);
@@ -116,6 +138,9 @@ export default class DecServer extends ExGameServer {
                 "scoreboard players remove @e[scores={harmless=1..}] harmless 1"
             ]);
             if (e.currentTick % 100 === 0) {
+                //夜晚事件
+                this.nightEventListener.upDate(new ExEnvirenment().isNight());
+                //盔甲探测
                 let prom = [];
                 for (const client of this.getClients()) {
                     prom.push(client.checkArmor());

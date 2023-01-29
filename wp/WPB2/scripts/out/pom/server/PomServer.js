@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { EntityDamageCause, EntityHurtEvent, GameMode, MinecraftBlockTypes, MinecraftDimensionTypes, MinecraftEffectTypes, MinecraftEntityTypes } from '@minecraft/server';
+import { ChatEvent, EntityDamageCause, EntityHurtEvent, GameMode, MinecraftBlockTypes, MinecraftDimensionTypes, MinecraftEffectTypes, MinecraftEntityTypes } from '@minecraft/server';
 import Vector3 from '../../modules/exmc/math/Vector3.js';
 import ExDimension from "../../modules/exmc/server/ExDimension.js";
 import ExGameServer from "../../modules/exmc/server/ExGameServer.js";
@@ -36,6 +36,7 @@ import PomMindBossRuin from './func/ruins/mind/PomMindBossRuin.js';
 import { PomIntentionsBoss1, PomIntentionsBoss2, PomIntentionsBoss3 } from './entities/PomIntentionsBoss.js';
 import itemCanChangeBlock from './items/itemCanChangeBlock.js';
 import PomBossBarrier from './func/barrier/PomBossBarrier.js';
+import ExEnvirenment from '../../modules/exmc/server/env/ExEnvirenment.js';
 export default class PomServer extends ExGameServer {
     constructor(config) {
         super(config);
@@ -444,6 +445,9 @@ export default class PomServer extends ExGameServer {
     //     this.fakePlayerSpawnLoc = new BlockLocation(e.sender.location.x, e.sender.location.y, e.sender.location.z);
     //     ExPlayer.getInstance(e.sender).command.run("gametest run Pom:fakeplayer")
     // }
+    time(e) {
+        new ExEnvirenment().print();
+    }
     damageShow(e) {
         damageShow(ExDimension.getInstance(e.hurtEntity.dimension), e.damage, e.hurtEntity.location);
     }
@@ -451,6 +455,12 @@ export default class PomServer extends ExGameServer {
         return new PomClient(this, id, player);
     }
 }
+__decorate([
+    registerEvent("chat", (server, e) => e.message === "time"),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [ChatEvent]),
+    __metadata("design:returntype", void 0)
+], PomServer.prototype, "time", null);
 __decorate([
     registerEvent("entityHurt", (server, e) => server.setting.damageShow && e.cause !== EntityDamageCause.suicide),
     __metadata("design:type", Function),
