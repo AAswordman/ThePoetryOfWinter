@@ -1,3 +1,4 @@
+import { MinecraftEntityTypes, MinecraftItemTypes } from "@minecraft/server";
 export default function taskDaily_x(lang) {
     return {
         "name": "每日任务-传说级",
@@ -7,19 +8,19 @@ export default function taskDaily_x(lang) {
                 "conditions": [
                     {
                         "name": "小麦",
-                        "typeId": "minecraft:wheat",
+                        "typeId": MinecraftItemTypes.wheat.id,
                         "count": 512,
                         "type": "item"
                     },
                     {
                         "name": "马铃薯",
-                        "typeId": "minecraft:potato",
+                        "typeId": MinecraftItemTypes.potato.id,
                         "count": 512,
                         "type": "item"
                     },
                     {
                         "name": "胡萝卜",
-                        "typeId": "minecraft:carrot",
+                        "typeId": MinecraftItemTypes.carrot.id,
                         "count": 512,
                         "type": "item"
                     }
@@ -38,25 +39,25 @@ export default function taskDaily_x(lang) {
                 "conditions": [
                     {
                         "name": "熟鸡肉",
-                        "typeId": "minecraft:cooked_chicken",
+                        "typeId": MinecraftItemTypes.cookedChicken.id,
                         "count": 256,
                         "type": "item"
                     },
                     {
                         "name": "熟羊肉",
-                        "typeId": "minecraft:cooked_mutton",
+                        "typeId": MinecraftItemTypes.cookedMutton.id,
                         "count": 256,
                         "type": "item"
                     },
                     {
                         "name": "熟牛肉",
-                        "typeId": "minecraft:cookebeef",
+                        "typeId": MinecraftItemTypes.cookedBeef.id,
                         "count": 256,
                         "type": "item"
                     },
                     {
                         "name": "熟兔肉",
-                        "typeId": "minecraft:cooked_rabbit",
+                        "typeId": MinecraftItemTypes.cookedRabbit.id,
                         "count": 64,
                         "type": "item"
                     }
@@ -137,25 +138,25 @@ export default function taskDaily_x(lang) {
                 "conditions": [
                     {
                         "name": "钻石矿石",
-                        "typeId": "minecraft:diamond_ore",
+                        "typeId": MinecraftItemTypes.diamondOre.id,
                         "count": 16,
                         "type": "break"
                     },
                     {
                         "name": "煤矿矿石",
-                        "typeId": "minecraft:coal_ore",
+                        "typeId": MinecraftItemTypes.coalOre.id,
                         "count": 64,
                         "type": "break"
                     },
                     {
                         "name": "金矿矿石",
-                        "typeId": "minecraft:gold_ore",
+                        "typeId": MinecraftItemTypes.goldOre.id,
                         "count": 64,
                         "type": "break"
                     },
                     {
                         "name": "铁矿矿石",
-                        "typeId": "minecraft:iron_ore",
+                        "typeId": MinecraftItemTypes.ironOre.id,
                         "count": 64,
                         "type": "break"
                     }
@@ -223,7 +224,7 @@ export default function taskDaily_x(lang) {
                 "conditions": [
                     {
                         "name": "觉醒末影龙",
-                        "typeId": "minecraft:ender_dragon",
+                        "typeId": MinecraftEntityTypes.enderDragon.id,
                         "count": 1,
                         "type": "kill"
                     }

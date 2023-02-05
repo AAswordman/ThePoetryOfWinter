@@ -36,7 +36,7 @@ import PomMindBossRuin from './func/ruins/mind/PomMindBossRuin.js';
 import { PomIntentionsBoss1, PomIntentionsBoss2, PomIntentionsBoss3 } from './entities/PomIntentionsBoss.js';
 import itemCanChangeBlock from './items/itemCanChangeBlock.js';
 import PomBossBarrier from './func/barrier/PomBossBarrier.js';
-import ExEnvirenment from '../../modules/exmc/server/env/ExEnvirenment.js';
+import ExEnvironment from '../../modules/exmc/server/env/ExEnvironment.js';
 export default class PomServer extends ExGameServer {
     constructor(config) {
         super(config);
@@ -446,7 +446,7 @@ export default class PomServer extends ExGameServer {
     //     ExPlayer.getInstance(e.sender).command.run("gametest run Pom:fakeplayer")
     // }
     time(e) {
-        new ExEnvirenment().print();
+        new ExEnvironment().print();
     }
     damageShow(e) {
         damageShow(ExDimension.getInstance(e.hurtEntity.dimension), e.damage, e.hurtEntity.location);

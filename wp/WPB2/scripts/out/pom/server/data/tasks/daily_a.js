@@ -1,3 +1,4 @@
+import { MinecraftItemTypes, MinecraftEntityTypes } from '@minecraft/server';
 export default function taskDaily_a(lang) {
     return {
         "name": "每日任务-普通级",
@@ -7,13 +8,13 @@ export default function taskDaily_a(lang) {
                 "conditions": [
                     {
                         "name": "小麦",
-                        "typeId": "minecraft:wheat",
+                        "typeId": MinecraftItemTypes.wheat.id,
                         "count": 64,
                         "type": "item"
                     },
                     {
                         "name": "胡萝卜",
-                        "typeId": "minecraft:carrot",
+                        "typeId": MinecraftItemTypes.carrot.id,
                         "count": 64,
                         "type": "item"
                     }
@@ -32,13 +33,13 @@ export default function taskDaily_a(lang) {
                 "conditions": [
                     {
                         "name": "马铃薯",
-                        "typeId": "minecraft:potato",
+                        "typeId": MinecraftItemTypes.potato.id,
                         "count": 64,
                         "type": "item"
                     },
                     {
                         "name": "胡萝卜",
-                        "typeId": "minecraft:carrot",
+                        "typeId": MinecraftItemTypes.carrot.id,
                         "count": 64,
                         "type": "item"
                     }
@@ -57,7 +58,7 @@ export default function taskDaily_a(lang) {
                 "conditions": [
                     {
                         "name": "西瓜",
-                        "typeId": "minecraft:melon_block",
+                        "typeId": MinecraftItemTypes.melonBlock.id,
                         "count": 64,
                         "type": "item"
                     }
@@ -76,7 +77,7 @@ export default function taskDaily_a(lang) {
                 "conditions": [
                     {
                         "name": "熟鸡肉",
-                        "typeId": "minecraft:pumpkin",
+                        "typeId": MinecraftItemTypes.pumpkin.id,
                         "count": 64,
                         "type": "item"
                     }
@@ -95,19 +96,19 @@ export default function taskDaily_a(lang) {
                 "conditions": [
                     {
                         "name": "僵尸",
-                        "typeId": "minecraft:zombie",
+                        "typeId": MinecraftEntityTypes.zombie.id,
                         "count": 8,
                         "type": "kill"
                     },
                     {
                         "name": "苦力怕",
-                        "typeId": "minecraft:creeper",
+                        "typeId": MinecraftEntityTypes.creeper.id,
                         "count": 2,
                         "type": "kill"
                     },
                     {
                         "name": "烈焰人",
-                        "typeId": "minecraft:blaze",
+                        "typeId": MinecraftEntityTypes.blaze.id,
                         "count": 2,
                         "type": "kill"
                     }
@@ -145,19 +146,19 @@ export default function taskDaily_a(lang) {
                 "conditions": [
                     {
                         "name": "猪",
-                        "typeId": "minecraft:pig",
+                        "typeId": MinecraftEntityTypes.pig.id,
                         "count": 3,
                         "type": "kill"
                     },
                     {
                         "name": "牛",
-                        "typeId": "minecraft:cow",
+                        "typeId": MinecraftEntityTypes.cow.id,
                         "count": 3,
                         "type": "kill"
                     },
                     {
                         "name": "羊",
-                        "typeId": "minecraft:sheep",
+                        "typeId": MinecraftEntityTypes.sheep.id,
                         "count": 3,
                         "type": "kill"
                     }
@@ -176,7 +177,7 @@ export default function taskDaily_a(lang) {
                 "conditions": [
                     {
                         "name": "木头",
-                        "typeId": "minecraft:log",
+                        "typeId": MinecraftItemTypes.log.id,
                         "count": 64,
                         "type": "break"
                     }
@@ -195,7 +196,7 @@ export default function taskDaily_a(lang) {
                 "conditions": [
                     {
                         "name": "石头",
-                        "typeId": "minecraft:stone",
+                        "typeId": MinecraftItemTypes.stone.id,
                         "count": 64,
                         "type": "break"
                     }
@@ -214,7 +215,7 @@ export default function taskDaily_a(lang) {
                 "conditions": [
                     {
                         "name": "苹果",
-                        "typeId": "minecraft:apple",
+                        "typeId": MinecraftItemTypes.apple.id,
                         "count": 3,
                         "aux": 0,
                         "type": "item"
@@ -234,7 +235,7 @@ export default function taskDaily_a(lang) {
                 "conditions": [
                     {
                         "name": "毒马铃薯",
-                        "typeId": "minecraft:poisonous_potato",
+                        "typeId": MinecraftItemTypes.poisonousPotato.id,
                         "count": 3,
                         "aux": 0,
                         "type": "item"
@@ -254,7 +255,7 @@ export default function taskDaily_a(lang) {
                 "conditions": [
                     {
                         "name": "兔肉煲",
-                        "typeId": "minecraft:rabbit_stew",
+                        "typeId": MinecraftItemTypes.rabbitStew.id,
                         "count": 3,
                         "type": "item"
                     }
@@ -273,7 +274,7 @@ export default function taskDaily_a(lang) {
                 "conditions": [
                     {
                         "name": "腐肉",
-                        "typeId": "minecraft:rotten_flesh",
+                        "typeId": MinecraftItemTypes.rottenFlesh.id,
                         "count": 128,
                         "type": "item"
                     }
@@ -292,7 +293,7 @@ export default function taskDaily_a(lang) {
                 "conditions": [
                     {
                         "name": "南瓜派",
-                        "typeId": "minecraft:pumpkin_pie",
+                        "typeId": MinecraftItemTypes.pumpkinPie.id,
                         "count": 16,
                         "type": "item"
                     }

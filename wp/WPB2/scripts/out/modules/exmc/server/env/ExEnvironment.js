@@ -1,5 +1,5 @@
 import { world } from "@minecraft/server";
-export default class ExEnvirenment {
+export default class ExEnvironment {
     constructor(time) {
         this.time = time !== null && time !== void 0 ? time : world.getAbsoluteTime();
     }
@@ -16,4 +16,4 @@ export default class ExEnvirenment {
         return this.time - (24000 * Math.floor(this.time / 24000));
     }
 }
-//# sourceMappingURL=ExEnvirenment.js.map
+//# sourceMappingURL=ExEnvironment.js.map

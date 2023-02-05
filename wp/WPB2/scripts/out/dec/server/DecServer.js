@@ -12,7 +12,7 @@ import { to } from '../../modules/exmc/server/ExErrorQueue.js';
 import { DecEverlastingWinterGhastBoss1, DecEverlastingWinterGhastBoss2 } from './entities/DecEverlastingWinterGhastBoss.js';
 import { DecCommonBossLastStage } from './entities/DecCommonBossLastStage.js';
 import VarOnChangeListener from '../../modules/exmc/utils/VarOnChangeListener.js';
-import ExEnvirenment from '../../modules/exmc/server/env/ExEnvirenment.js';
+import ExEnvironment from '../../modules/exmc/server/env/ExEnvironment.js';
 export default class DecServer extends ExGameServer {
     constructor(config) {
         super(config);
@@ -32,7 +32,6 @@ export default class DecServer extends ExGameServer {
             }
             else {
                 this.getExDimension(MinecraftDimensionTypes.overworld).command.run([
-                    "tag @a remove zombie_wave",
                     "scoreboard players set IsDay global 1",
                     "scoreboard players set IsNight global 0",
                     "scoreboard players set NightRandom global 0",
@@ -139,7 +138,7 @@ export default class DecServer extends ExGameServer {
             ]);
             if (e.currentTick % 100 === 0) {
                 //夜晚事件
-                this.nightEventListener.upDate(new ExEnvirenment().isNight());
+                this.nightEventListener.upDate(new ExEnvironment().isNight());
                 //盔甲探测
                 let prom = [];
                 for (const client of this.getClients()) {

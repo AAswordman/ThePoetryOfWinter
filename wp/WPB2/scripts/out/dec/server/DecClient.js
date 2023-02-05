@@ -249,7 +249,7 @@ export default class DecClient extends ExGameClient {
             }*/
         });
         this.getEvents().exEvents.itemUse.subscribe(e => {
-            //魔法纸张
+            //魔法卷轴
             if (e.item.typeId == "dec:magic_scroll_blue") {
                 if (DecGlobal.isDec())
                     taskUi(this, e.item);
