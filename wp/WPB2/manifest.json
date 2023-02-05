@@ -2,14 +2,14 @@
     "format_version": 2,
     "capabilities": ["script_eval"],
     "header": {
-        "description": "Explore the new World!!!Made by AA swordsman,LiLeyi and many their friends.Ver. 1.7.2B3",
+        "description": "Explore the new World!!!Made by AA swordsman,LiLeyi and many their friends.Ver. 1.7.2B4",
         "name": "The Poetry Of Winter",
         "uuid": "c2021c25-08e8-9ade-0916-6cd21931fac5",
         "version": [1, 6, 0],
         "min_engine_version": [1, 19, 50]
     },
     "modules": [{
-            "description": "Explore the new World!!!Made by AA swordsman,LiLeyi and many their friends.Ver. 1.7.2B3",
+            "description": "Explore the new World!!!Made by AA swordsman,LiLeyi and many their friends.Ver. 1.7.2B4",
             "type": "script",
             "uuid": "c2021c83-08e8-9ade-0916-6cd21931fac5",
             "version": [1, 6, 0],

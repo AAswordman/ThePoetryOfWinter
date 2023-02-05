@@ -1,0 +1,289 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "dec:ice_brick",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 20
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:ice",
+          "weight": 150,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:gold_ore",
+          "weight": 20,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "dec:frozen_boots",
+          "weight": 7,
+          "functions": [
+            {
+              "function": "set_damage",
+              "damage": {
+                "min": 0,
+                "max": 0.1
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "dec:frozen_leggings",
+          "weight": 7,
+          "functions": [
+            {
+              "function": "set_damage",
+              "damage": {
+                "min": 0,
+                "max": 0.1
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "dec:frozen_chestplate",
+          "weight": 7,
+          "functions": [
+            {
+              "function": "set_damage",
+              "damage": {
+                "min": 0,
+                "max": 0.1
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "dec:frozen_helmet",
+          "weight": 7,
+          "functions": [
+            {
+              "function": "set_damage",
+              "damage": {
+                "min": 0,
+                "max": 0.1
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:dirt",
+          "weight": 200,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 14,
+                "max": 20
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:diamond_ore",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "dec:compressed_ice",
+          "weight": 100,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 3,
+                "max": 8
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:coal_ore",
+          "weight": 200,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 4,
+                "max": 10
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:stone",
+          "weight": 150,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 13,
+                "max": 16
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:snowball",
+          "weight": 180,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 12,
+                "max": 32
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "dec:snow_brick_block",
+          "weight": 70,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 5,
+                "max": 12
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:snow",
+          "weight": 300,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 5
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "minecraft:iron_ore",
+          "weight": 150,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "dec:ice_rod",
+          "weight": 50,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "dec:ice_nugget",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "dec:ice_heart",
+          "weight": 20,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "dec:ice_brick_block",
+          "weight": 40,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 8
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

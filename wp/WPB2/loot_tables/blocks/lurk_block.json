@@ -1,0 +1,17 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "weight": 9
+                },
+                {
+                    "type": "item",
+                    "name": "dec:lurk_spring",
+                    "weight": 1
+                }
+            ]
+        }
+    ]
+}

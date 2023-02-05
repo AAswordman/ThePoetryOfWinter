@@ -8,6 +8,7 @@ export default class ExSound {
         this.long = (parseInt(s[0]) * 60 + parseInt(s[1])) * 1000;
     }
     loop(manager, dim, trackVector) {
+        this.stop();
         this.play(dim, trackVector);
         this.looper = new TimeLoopTask(manager, () => {
             this.play(dim, trackVector);
