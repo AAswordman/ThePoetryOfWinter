@@ -25,7 +25,7 @@ export default class DecServer extends ExGameServer {
             if (e) {
                 // is night
                 this.getExDimension(MinecraftDimensionTypes.overworld).command.run([
-                    "execute if score IsNight global = zero global run scoreboard players random NightRandom global 1 100",
+                    "scoreboard players random NightRandom global 1 100",
                     "scoreboard players set IsDay global 0",
                     "scoreboard players set IsNight global 1"
                 ]);
