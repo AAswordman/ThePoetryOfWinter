@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import ExGameClient from "./ExGameClient.js";
 import ExDimension from "./ExDimension.js";
-import { world, PlayerJoinEvent, PlayerLeaveEvent, system, EntityCreateEvent } from "@minecraft/server";
+import { world, PlayerJoinEvent, PlayerLeaveEvent, system, EntitySpawnEvent } from "@minecraft/server";
 import ExGameConfig from "./ExGameConfig.js";
 import initConsole from "../utils/Console.js";
 import ExServerEvents from "./events/ExServerEvents.js";
@@ -21,6 +21,7 @@ import ExClientEvents from "./events/ExClientEvents.js";
 import ExEntityEvents from "./entity/ExEntityEvents.js";
 import "../../reflect-metadata/Reflect.js";
 import { eventDecoratorFactory, registerEvent } from "./events/eventDecoratorFactory.js";
+import notUtillTask from "../utils/notUtillTask.js";
 export default class ExGameServer {
     constructor(config) {
         this.entityControllers = new Map();
@@ -90,11 +91,18 @@ export default class ExGameServer {
         return undefined;
     }
     onClientJoin(event) {
-        let player = event.player;
-        let id = UUID.randomUUID();
-        let client = this.newClient(id, player);
-        this.clients.set(id, client);
-        this.clients_nameMap.set(player.name, client);
+        const playerName = event.playerName;
+        notUtillTask(this, () => {
+            return world.getAllPlayers().findIndex(p => p.name === playerName) !== -1;
+        }, () => {
+            let player = world.getAllPlayers().find(e => e.name === playerName);
+            if (!player)
+                throw new Error(`Player ${playerName} not found`);
+            let id = UUID.randomUUID();
+            let client = this.newClient(id, player);
+            this.clients.set(id, client);
+            this.clients_nameMap.set(player.name, client);
+        });
     }
     onClientLeave(event) {
         let client = this.findClientByName(event.playerName);
@@ -122,9 +130,9 @@ export default class ExGameServer {
     }
 }
 __decorate([
-    registerEvent("entityCreate"),
+    registerEvent("entitySpawn"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [EntityCreateEvent]),
+    __metadata("design:paramtypes", [EntitySpawnEvent]),
     __metadata("design:returntype", void 0)
 ], ExGameServer.prototype, "onEntitySpawn", null);
 __decorate([

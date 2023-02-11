@@ -70,10 +70,10 @@ export default class TalentData {
                 return level * (TalentData.isOccupationTalent(occupation, talentId) ? 45 : 25) / 40;
                 break;
             case Talent.CHARGING:
-                return level * (TalentData.isOccupationTalent(occupation, talentId) ? 30 : 15) / 40;
+                return level * (TalentData.isOccupationTalent(occupation, talentId) ? 35 : 15) / 40;
                 break;
             case Talent.RELOAD:
-                return level * (TalentData.isOccupationTalent(occupation, talentId) ? 25 : 15) / 40;
+                return level * (TalentData.isOccupationTalent(occupation, talentId) ? 35 : 15) / 40;
                 break;
             case Talent.SOURCE:
                 return level * (TalentData.isOccupationTalent(occupation, talentId) ? 100 : 40) / 40;

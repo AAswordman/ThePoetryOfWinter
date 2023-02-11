@@ -127,43 +127,43 @@ export default class PomDesertRuinRules {
                     i += 1;
                     switch (type) {
                         case desertCommand.TARGET.FACING_ADD_2: {
-                            addPos.add(this.game.exPlayer.getViewVector().scl(2));
+                            addPos.add(this.game.exPlayer.getViewDirection().scl(2));
                             break;
                         }
                         case desertCommand.TARGET.FACING_ADD_4: {
-                            addPos.add(this.game.exPlayer.getViewVector().scl(4));
+                            addPos.add(this.game.exPlayer.getViewDirection().scl(4));
                             break;
                         }
                         case desertCommand.TARGET.FACING_ADD_6: {
-                            addPos.add(this.game.exPlayer.getViewVector().scl(6));
+                            addPos.add(this.game.exPlayer.getViewDirection().scl(6));
                             break;
                         }
                         case desertCommand.TARGET.FACING_ADD_8: {
-                            addPos.add(this.game.exPlayer.getViewVector().scl(8));
+                            addPos.add(this.game.exPlayer.getViewDirection().scl(8));
                             break;
                         }
                         case desertCommand.TARGET.FACING_ADD_10: {
-                            addPos.add(this.game.exPlayer.getViewVector().scl(10));
+                            addPos.add(this.game.exPlayer.getViewDirection().scl(10));
                             break;
                         }
                         case desertCommand.TARGET.FACING_ADD_12: {
-                            addPos.add(this.game.exPlayer.getViewVector().scl(12));
+                            addPos.add(this.game.exPlayer.getViewDirection().scl(12));
                             break;
                         }
                         case desertCommand.TARGET.FACING_ADD_16: {
-                            addPos.add(this.game.exPlayer.getViewVector().scl(16));
+                            addPos.add(this.game.exPlayer.getViewDirection().scl(16));
                             break;
                         }
                         case desertCommand.TARGET.FACING_ADD_32: {
-                            addPos.add(this.game.exPlayer.getViewVector().scl(32));
+                            addPos.add(this.game.exPlayer.getViewDirection().scl(32));
                             break;
                         }
                         case desertCommand.TARGET.FACING_ADD_20: {
-                            addPos.add(this.game.exPlayer.getViewVector().scl(20));
+                            addPos.add(this.game.exPlayer.getViewDirection().scl(20));
                             break;
                         }
                         case desertCommand.TARGET.FACING_ADD_28: {
-                            addPos.add(this.game.exPlayer.getViewVector().scl(28));
+                            addPos.add(this.game.exPlayer.getViewDirection().scl(28));
                             break;
                         }
                         case desertCommand.TARGET.Y_ADD_8: {
