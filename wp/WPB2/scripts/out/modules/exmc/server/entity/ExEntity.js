@@ -128,8 +128,8 @@ export default class ExEntity {
     setDimension(dimension) {
         this.setPosition(this.getPosition(), dimension);
     }
-    getViewVector() {
-        return new Vector3(this.entity.viewVector);
+    getViewDirection() {
+        return new Vector3(this.entity.viewDirection);
     }
     hasComponent(name) {
         return this._entity.hasComponent(name);
