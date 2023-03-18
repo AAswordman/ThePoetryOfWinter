@@ -1,6 +1,5 @@
 import { GameMode } from '@minecraft/server';
 import ExEntity from "./ExEntity.js";
-import ExGameVector3 from '../math/ExGameVector3.js';
 import ExPlayerBag from './ExPlayerBag.js';
 export default class ExPlayer extends ExEntity {
     constructor(player) {
@@ -34,25 +33,25 @@ export default class ExPlayer extends ExEntity {
         var _a, _b, _c, _d;
         let c = GameMode.creative;
         c = (((_a = Array.from(this.getDimension().getPlayers({
-            location: ExGameVector3.getLocation(this.entity.location),
+            location: this.entity.location,
             closest: 1,
             maxDistance: 1,
             gameMode: GameMode.adventure
         }))) === null || _a === void 0 ? void 0 : _a[0]) === this.entity ? GameMode.adventure : c);
         c = (((_b = Array.from(this.getDimension().getPlayers({
-            location: ExGameVector3.getLocation(this.entity.location),
+            location: this.entity.location,
             closest: 1,
             maxDistance: 1,
             gameMode: GameMode.creative
         }))) === null || _b === void 0 ? void 0 : _b[0]) === this.entity ? GameMode.creative : c);
         c = (((_c = Array.from(this.getDimension().getPlayers({
-            location: ExGameVector3.getLocation(this.entity.location),
+            location: this.entity.location,
             closest: 1,
             maxDistance: 1,
             gameMode: GameMode.spectator
         }))) === null || _c === void 0 ? void 0 : _c[0]) === this.entity ? GameMode.spectator : c);
         c = (((_d = Array.from(this.getDimension().getPlayers({
-            location: ExGameVector3.getLocation(this.entity.location),
+            location: this.entity.location,
             closest: 1,
             maxDistance: 1,
             gameMode: GameMode.survival

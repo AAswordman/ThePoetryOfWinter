@@ -786,6 +786,25 @@ ${getCharByNum((gj - (150 * Math.pow((g - 1), 2) + 1050 * (g - 1) + 900)) / (300
                                         client.globalSettings.damageShow = !client.globalSettings.damageShow;
                                         return true;
                                     }
+                                },
+                                {
+                                    "type": "toggle",
+                                    "msg": "魔能镐连锁挖矿",
+                                    "state": (client, ui) => client.globalSettings.chainMining,
+                                    "function": (client, ui) => {
+                                        client.globalSettings.chainMining = !client.globalSettings.chainMining;
+                                        return true;
+                                    }
+                                },
+                                {
+                                    "type": "toggle",
+                                    "msg": "初始魔能镐",
+                                    "state": (client, ui) => client.globalSettings.initialMagicPickaxe,
+                                    "function": (client, ui) => {
+                                        client.globalSettings.initialMagicPickaxe = !client.globalSettings.initialMagicPickaxe;
+                                        client.runMethodOnEveryClient(c => c.itemUseFunc.initialMagicPickaxe());
+                                        return true;
+                                    }
                                 }
                             ];
                         }

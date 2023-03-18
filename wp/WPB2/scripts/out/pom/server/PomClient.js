@@ -138,7 +138,7 @@ export default class PomClient extends ExGameClient {
             "execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbwqlq 0",
             "execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbkjlqcg 0",
             "execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbkjlqjs 0",
-            "execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbwqlqjs 0",
+            "execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbwqlqjs 100",
             "tag @s[scores={wbdj=-100..}] add wbyzc",
         ]);
     }

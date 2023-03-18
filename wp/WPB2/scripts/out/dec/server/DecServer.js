@@ -128,7 +128,7 @@ export default class DecServer extends ExGameServer {
                 e.cancel = true;
             }
         });
-        this.getEvents().events.tick.subscribe(e => {
+        this.getEvents().exEvents.tick.subscribe(e => {
             //诅咒时间减少
             this.getExDimension(MinecraftDimensionTypes.overworld).command.run([
                 "scoreboard players remove @e[scores={i_inviolable=1..}] i_inviolable 1",

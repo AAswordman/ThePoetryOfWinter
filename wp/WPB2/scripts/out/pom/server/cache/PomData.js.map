@@ -1,1 +1,1 @@
-{"version":3,"file":"PomData.js","sourceRoot":"","sources":["../../../../ExcellentMInecraftscripts/src/pom/server/cache/PomData.ts"],"names":[],"mappings":"AAEA,OAAO,UAAU,MAAM,iBAAiB,CAAC;AAEzC,MAAM,CAAC,OAAO,OAAO,OAAO;IAA5B;QAGI,WAAM,GAAe,IAAI,UAAU,EAAE,CAAC;IA8B1C,CAAC;CAAA"}
+{"version":3,"file":"PomData.js","sourceRoot":"","sources":["../../../../ExcellentMInecraftscripts/src/pom/server/cache/PomData.ts"],"names":[],"mappings":"AAEA,OAAO,UAAU,MAAM,iBAAiB,CAAC;AAEzC,MAAM,CAAC,OAAO,OAAO,OAAO;IAA5B;QAGI,WAAM,GAAe,IAAI,UAAU,EAAE,CAAC;IAgC1C,CAAC;CAAA"}

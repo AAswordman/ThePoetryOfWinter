@@ -5,8 +5,8 @@ world.events.itemUse.subscribe(e => {
     }
 });
 world.events.entityHurt.subscribe(e => {
-    if (e.damagingEntity instanceof Player) {
-        e.damagingEntity.runCommandAsync("function damagingentity");
+    if (e.damageSource.damagingEntity instanceof Player) {
+        e.damageSource.damagingEntity.runCommandAsync("function damagingentity");
     }
 });
 //# sourceMappingURL=main.js.map

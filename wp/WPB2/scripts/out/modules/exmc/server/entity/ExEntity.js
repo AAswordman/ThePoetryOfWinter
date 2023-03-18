@@ -120,16 +120,17 @@ export default class ExEntity {
         return new Vector3(this.entity.location);
     }
     getRotation() {
-        return this.entity.rotation;
+        return this.entity.getRotation();
     }
     setPosition(position, dimension = this.entity.dimension) {
-        this.entity.teleport(position, dimension, this.entity.rotation.x, this.entity.rotation.y);
+        let rot = this.getRotation();
+        this.entity.teleport(position, dimension, rot.x, rot.y);
     }
     setDimension(dimension) {
         this.setPosition(this.getPosition(), dimension);
     }
     getViewDirection() {
-        return new Vector3(this.entity.viewDirection);
+        return new Vector3(this.entity.getViewDirection());
     }
     hasComponent(name) {
         return this._entity.hasComponent(name);

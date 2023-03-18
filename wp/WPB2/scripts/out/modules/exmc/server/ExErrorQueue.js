@@ -3,7 +3,7 @@ export default class ExErrorQueue {
         this.errorStack.push(error);
     }
     static init(server) {
-        server.getEvents().events.tick.subscribe(tick => {
+        server.getEvents().exEvents.tick.subscribe(tick => {
             if (this.errorStack.length > 0) {
                 throw this.errorStack.shift();
             }

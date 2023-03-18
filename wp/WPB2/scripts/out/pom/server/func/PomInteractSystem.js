@@ -1,4 +1,3 @@
-import ExGameVector3 from "../../../modules/exmc/server/math/ExGameVector3.js";
 import GameController from "./GameController.js";
 import "../../../modules/exmc/utils/native/Array.js";
 import ExEntity from "../../../modules/exmc/server/entity/ExEntity.js";
@@ -13,7 +12,7 @@ export default class PomInteractSystem extends GameController {
                         let arr = this.client.magicSystem.getActionbarByPass("cannon_state");
                         arr === null || arr === void 0 ? void 0 : arr.clear();
                         for (let e of this.getDimension().getEntities({
-                            location: ExGameVector3.getLocation(this.player.location),
+                            location: this.player.location,
                             closest: 1,
                             maxDistance: 3,
                             type: "epic:cannon_cart"

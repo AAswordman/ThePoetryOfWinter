@@ -1,5 +1,4 @@
 import ExEntityController from "../../../modules/exmc/server/entity/ExEntityController.js";
-import ExGameVector3 from "../../../modules/exmc/server/math/ExGameVector3.js";
 import ExGame from "../../../modules/exmc/server/ExGame.js";
 import PomServer from "../../../pom/server/PomServer.js";
 import DecGlobal from '../DecGlobal.js';
@@ -18,7 +17,7 @@ export default class DecBossController extends ExEntityController {
     onWin() {
         if (!DecGlobal.isDec()) {
             for (let p of this.entity.dimension.getPlayers({
-                location: ExGameVector3.getLocation(this.entity.location),
+                location: this.entity.location,
                 maxDistance: 32
             })) {
                 let c = this.server.findClientByPlayer(p);

@@ -3,7 +3,6 @@ import GameController from "./GameController.js";
 import RuinsLoaction from "./ruins/RuinsLoaction.js";
 import { ExBlockArea } from '../../../modules/exmc/server/block/ExBlockArea.js';
 import Vector3 from '../../../modules/exmc/math/Vector3.js';
-import ExGameVector3 from '../../../modules/exmc/server/math/ExGameVector3.js';
 import PomDesertRuinBasicRule from './ruins/desert/PomDesertRuinBasicRule.js';
 import VarOnChangeListener from '../../../modules/exmc/utils/VarOnChangeListener.js';
 import ExMessageAlert from '../../../modules/exmc/server/ui/ExMessageAlert.js';
@@ -163,7 +162,7 @@ export default class PomDimRuinsSystem extends GameController {
             //1s 1 tick
             //脚下方块探测
             tmpV.set(this.player.location);
-            let loc = ExGameVector3.getBlockLocation(tmpV);
+            let loc = tmpV.clone();
             loc.y -= 1;
             let block;
             try {
@@ -334,15 +333,15 @@ export default class PomDimRuinsSystem extends GameController {
         this.getEvents().exEvents.onceItemUseOn.subscribe(e => {
             let block;
             try {
-                block = this.getDimension().getBlock(e.blockLocation);
+                block = this.getDimension().getBlock(e.getBlockLocation());
             }
             catch (e) { }
             if (e.item.typeId === "wb:start_key") {
                 //遗迹传送门激活
                 if ((block === null || block === void 0 ? void 0 : block.typeId) === "wb:block_magic_equipment") {
                     let p = this.client.getServer().portal_desertBoss;
-                    const v2 = new Vector3(e.blockLocation).add(2, 2, 2);
-                    const v1 = new Vector3(e.blockLocation).sub(2, 0, 2);
+                    const v2 = new Vector3(e.getBlockLocation()).add(2, 2, 2);
+                    const v1 = new Vector3(e.getBlockLocation()).sub(2, 0, 2);
                     let m = p.setArea(new ExBlockArea(v1, v2, true))
                         .setDimension(this.getDimension(MinecraftDimensionTypes.overworld))
                         .find();
@@ -356,14 +355,14 @@ export default class PomDimRuinsSystem extends GameController {
                             C: MinecraftBlockTypes.cobblestoneWall.id
                         })
                             .putStructure(m);
-                        const parLoc = new Vector3(e.blockLocation).add(0.5, 0.5, 0.5);
+                        const parLoc = new Vector3(e.getBlockLocation()).add(0.5, 0.5, 0.5);
                         this.getExDimension().spawnParticle("wb:portal_desertboss_par1", parLoc);
                         this.getExDimension().spawnParticle("wb:portal_desertboss_par2", parLoc);
                     }
                 }
                 else if ((block === null || block === void 0 ? void 0 : block.typeId) === "wb:block_energy_seal") {
-                    const v2 = new Vector3(e.blockLocation).add(2, 1, 2);
-                    const v1 = new Vector3(e.blockLocation).sub(2, 0, 2);
+                    const v2 = new Vector3(e.getBlockLocation()).add(2, 1, 2);
+                    const v1 = new Vector3(e.getBlockLocation()).sub(2, 0, 2);
                     let p = this.client.getServer().portal_stoneBoss;
                     let m = p.setArea(new ExBlockArea(v1, v2, true))
                         .setDimension(this.getDimension(MinecraftDimensionTypes.overworld))
@@ -381,8 +380,8 @@ export default class PomDimRuinsSystem extends GameController {
                     }
                 }
                 else if ((block === null || block === void 0 ? void 0 : block.typeId) === "wb:block_energy_boundary") {
-                    const v2 = new Vector3(e.blockLocation).add(2, 1, 2);
-                    const v1 = new Vector3(e.blockLocation).sub(2, 0, 2);
+                    const v2 = new Vector3(e.getBlockLocation()).add(2, 1, 2);
+                    const v1 = new Vector3(e.getBlockLocation()).sub(2, 0, 2);
                     let p = this.client.getServer().portal_caveBoss;
                     let m = p.setArea(new ExBlockArea(v1, v2, true))
                         .setDimension(this.getDimension(MinecraftDimensionTypes.overworld))
@@ -399,8 +398,8 @@ export default class PomDimRuinsSystem extends GameController {
                     }
                 }
                 else if ((block === null || block === void 0 ? void 0 : block.typeId) === "wb:block_magic_ink") {
-                    const v2 = new Vector3(e.blockLocation).add(2, 1, 2);
-                    const v1 = new Vector3(e.blockLocation).sub(2, 0, 2);
+                    const v2 = new Vector3(e.getBlockLocation()).add(2, 1, 2);
+                    const v1 = new Vector3(e.getBlockLocation()).sub(2, 0, 2);
                     let p = this.client.getServer().portal_ancientBoss;
                     let m = p.setArea(new ExBlockArea(v1, v2, true))
                         .setDimension(this.getDimension(MinecraftDimensionTypes.overworld))
@@ -418,8 +417,8 @@ export default class PomDimRuinsSystem extends GameController {
                     }
                 }
                 else if ((block === null || block === void 0 ? void 0 : block.typeId) === "wb:block_senior_equipment") {
-                    const v2 = new Vector3(e.blockLocation).add(2, 1, 2);
-                    const v1 = new Vector3(e.blockLocation).sub(2, 0, 2);
+                    const v2 = new Vector3(e.getBlockLocation()).add(2, 1, 2);
+                    const v1 = new Vector3(e.getBlockLocation()).sub(2, 0, 2);
                     let p = this.client.getServer().portal_mindBoss;
                     let m = p.setArea(new ExBlockArea(v1, v2, true))
                         .setDimension(this.getDimension(MinecraftDimensionTypes.overworld))

@@ -12,7 +12,6 @@ import { getEnumFlag, getEnumKeys } from "../../../../../modules/exmc/utils/enum
 import Random from "../../../../../modules/exmc/utils/Random.js";
 import * as desertCommand from "../../ruins/desert/PomDesertRuinCommmand.js";
 import { MinecraftEffectTypes } from '@minecraft/server';
-import ExGameVector3 from '../../../../../modules/exmc/server/math/ExGameVector3.js';
 import ExEntity from "../../../../../modules/exmc/server/entity/ExEntity.js";
 import TickDelayTask from '../../../../../modules/exmc/utils/TickDelayTask.js';
 import Vector3 from '../../../../../modules/exmc/math/Vector3.js';
@@ -229,14 +228,14 @@ export default class PomDesertRuinRules {
                             this.game.getExDimension().getEntities({
                                 maxDistance: 15,
                                 excludeTags: (this.game.player.hasTag("wbmsyh") ? ["wbmsyh"] : []),
-                                location: ExGameVector3.getLocation(tmpV)
+                                location: tmpV
                             }).forEach(e => this.game.exPlayer.causeDamageTo(e, num));
                             break;
                         }
                         case desertCommand.MAIN.HEALTH_ADD: {
                             this.game.getExDimension().getEntities({
                                 maxDistance: 15,
-                                location: ExGameVector3.getLocation(tmpV)
+                                location: tmpV
                             }).forEach(e => {
                                 let c = ExEntity.getInstance(e).getHealthComponent();
                                 c.setCurrent(c.current + num);
@@ -247,7 +246,7 @@ export default class PomDesertRuinRules {
                             this.game.getExDimension().getEntities({
                                 maxDistance: 15,
                                 excludeTags: (this.game.player.hasTag("wbmsyh") ? ["wbmsyh"] : []),
-                                location: ExGameVector3.getLocation(tmpV)
+                                location: tmpV
                             }).forEach(e => {
                                 let c = ExEntity.getInstance(e).getHealthComponent();
                                 c.setCurrent(Math.max(0, c.current - num));
@@ -257,7 +256,7 @@ export default class PomDesertRuinRules {
                         case desertCommand.MAIN.TP: {
                             this.game.getExDimension().getEntities({
                                 maxDistance: 15,
-                                location: ExGameVector3.getLocation(tmpV)
+                                location: tmpV
                             }).forEach(e => (ExEntity.getInstance(e).setPosition(tmpV.clone().sub(this.game.exPlayer.getPosition()).scl(num / 2).add(tmpV))));
                             break;
                         }
@@ -285,7 +284,7 @@ export default class PomDesertRuinRules {
                             }
                             this.game.getExDimension().getEntities({
                                 maxDistance: 15,
-                                location: ExGameVector3.getLocation(tmpV)
+                                location: tmpV
                             }).forEach(e => (e.addEffect(eff, 600, 1, false)));
                             break;
                         }

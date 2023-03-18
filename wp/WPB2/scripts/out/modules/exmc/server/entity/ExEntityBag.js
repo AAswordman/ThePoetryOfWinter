@@ -80,5 +80,8 @@ export default class ExEntityBag {
     hasItem(itemId) {
         return this.searchItem(itemId) !== -1;
     }
+    addItem(item) {
+        this.bagComponent.container.addItem(item);
+    }
 }
 //# sourceMappingURL=ExEntityBag.js.map

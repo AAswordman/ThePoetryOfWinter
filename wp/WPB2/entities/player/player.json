@@ -917,13 +917,6 @@
             "minecraft:environment_sensor": [
                 {
                     "on_environment": {
-                        "filters": {
-                            "all_of": [{
-                                "test": "is_family",
-                                "subject": "self",
-                                "value": "none"
-                            }]
-                        },
                         "event": "minecraft:become_normal"
                     }
                 },
@@ -1809,14 +1802,6 @@
             },
 
             "minecraft:become_normal": {
-                "run_command": {
-                    "command": []
-                },
-                "add": {
-                    "component_groups": [
-                        "minecraft:normal_player"
-                    ]
-                },
                 "remove": {
                     "component_groups": [
                         "minecraft:ice_sword_player",
@@ -1872,7 +1857,13 @@
                         "minecraft:star_sword_ranged_player",
                         "minecraft:storm_battleaxe_player"
                     ]
+                },
+                "add": {
+                    "component_groups": [
+                        "minecraft:normal_player"
+                    ]
                 }
+                
             },
             "minecraft:gain_bad_omen": {
                 "add": {

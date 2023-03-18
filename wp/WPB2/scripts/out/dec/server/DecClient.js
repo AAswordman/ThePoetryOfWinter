@@ -12,7 +12,6 @@ import ExGameClient from "../../modules/exmc/server/ExGameClient.js";
 import { ArmorPlayerDec, ArmorPlayerPom } from "./items/ArmorData.js";
 import MathUtil from "../../modules/exmc/math/MathUtil.js";
 import Vector3 from "../../modules/exmc/math/Vector3.js";
-import ExGameVector3 from "../../modules/exmc/server/math/ExGameVector3.js";
 import DecGlobal from "./DecGlobal.js";
 import { DecTasks, PomTasks, numTranToTask, taskUi } from "./data/Task.js";
 import ExGame from "../../modules/exmc/server/ExGame.js";
@@ -86,7 +85,7 @@ export default class DecClient extends ExGameClient {
                 if (this.useArmor === ArmorPlayerDec.everlasting_winter) {
                     for (let e of this.getDimension().getEntities({
                         "maxDistance": 5,
-                        "location": ExGameVector3.getLocation(this.player.location)
+                        "location": this.player.location
                     })) {
                         if (e != this.player) {
                             e.addEffect(MinecraftEffectTypes.slowness, 3 * 20, 1);

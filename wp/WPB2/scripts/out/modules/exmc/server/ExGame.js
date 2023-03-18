@@ -21,6 +21,8 @@ export default class ExGame {
             }
         }
     }
+    static thread() {
+    }
 }
 ExGame.serverMap = new Map;
 export function receiveMessage(exportName) {
