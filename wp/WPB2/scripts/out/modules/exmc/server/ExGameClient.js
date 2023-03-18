@@ -127,6 +127,11 @@ export default class ExGameClient {
     notDebugger() {
         this.player.removeTag("debugger");
     }
+    runMethodOnEveryClient(fun) {
+        for (let c of this.getServer().getClients()) {
+            fun(c);
+        }
+    }
     setTimeout(fun, timeout) {
         let time = 0;
         let method = (e) => {

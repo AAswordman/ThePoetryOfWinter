@@ -6,7 +6,10 @@ export default class EventHandle {
                 var _a;
                 const name = (_a = this.listeners[k].filter) === null || _a === void 0 ? void 0 : _a.name;
                 if (name) {
-                    let player = e[name];
+                    let player;
+                    for (let k of name.split(".")) {
+                        player = player ? player[k] : e[k];
+                    }
                     let fArr = this.monitorMap[k].get(player);
                     if (fArr) {
                         fArr.forEach((f) => {

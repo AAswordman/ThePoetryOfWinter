@@ -46,7 +46,7 @@ export default class ExGameServer {
         eventDecoratorFactory(this.getEvents(), this);
     }
     say(msg) {
-        world.say(msg);
+        world.sendMessage(msg);
     }
     addEntityController(id, ec) {
         this.entityControllers.set(id, ec);
@@ -122,11 +122,11 @@ export default class ExGameServer {
         let method = (e) => {
             time += e.deltaTime * 1000;
             if (time > timeout) {
-                this.getEvents().events.tick.unsubscribe(method);
+                this.getEvents().exEvents.tick.unsubscribe(method);
                 fun();
             }
         };
-        this.getEvents().events.tick.subscribe(method);
+        this.getEvents().exEvents.tick.subscribe(method);
     }
 }
 __decorate([

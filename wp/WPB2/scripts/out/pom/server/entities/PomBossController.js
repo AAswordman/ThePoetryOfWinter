@@ -40,7 +40,7 @@ export default class PomBossController extends ExEntityController {
     }
     onKilled(e) {
         this.destroyBossEntity();
-        if (e.cause === EntityDamageCause.suicide) {
+        if (e.damageSource.cause === EntityDamageCause.suicide) {
             this.stopBarrier();
         }
         super.onKilled(e);

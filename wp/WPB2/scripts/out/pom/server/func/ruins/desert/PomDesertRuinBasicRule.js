@@ -5,7 +5,6 @@ import PomDesertRuinRules from "./PomDesertRuinRules.js";
 import PomMazeMapBuilder from "../PomMazeMapBuilder.js";
 import Vector3 from "../../../../../modules/exmc/math/Vector3.js";
 import ExErrorQueue from "../../../../../modules/exmc/server/ExErrorQueue.js";
-import ExGameVector3 from "../../../../../modules/exmc/server/math/ExGameVector3.js";
 import VarOnChangeListener from "../../../../../modules/exmc/utils/VarOnChangeListener.js";
 export default class PomDesertRuinBasicRule extends GameControllerRuinRule {
     constructor(game) {
@@ -46,7 +45,7 @@ export default class PomDesertRuinBasicRule extends GameControllerRuinRule {
                 for (let e of game.getDimension().getEntities({
                     excludeTypes: ["minecraft:item", MinecraftEntityTypes.player.id],
                     maxDistance: 16,
-                    location: ExGameVector3.getLocation(lastVec)
+                    location: lastVec
                 })) {
                     if (lastVec.clone().sub(tmpV.set(e.location)).abs().toArray().every(i => i <= 8)) {
                         unclearList.push(e.id);
@@ -154,7 +153,7 @@ export default class PomDesertRuinBasicRule extends GameControllerRuinRule {
                     line.push(PomMazeMapBuilder.CHAR_MAZE_PATH_GUARD);
                 }
                 else if (spos.x === playerPos.x && spos.z === playerPos.z) {
-                    const view = this.game.player.viewDirection;
+                    const view = this.game.player.getViewDirection();
                     if (ruin.isInRoom(posStr)) {
                         if (view.x > view.z) {
                             if (Math.abs(view.x) > Math.abs(view.z))

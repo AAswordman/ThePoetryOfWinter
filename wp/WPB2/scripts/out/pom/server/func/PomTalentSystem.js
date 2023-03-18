@@ -8,7 +8,6 @@ import { decodeUnicode } from "../../../modules/exmc/utils/Unicode.js";
 import TalentData, { Occupation, Talent } from "../cache/TalentData.js";
 import isEquipment from "../items/isEquipment.js";
 import GameController from "./GameController.js";
-import ExGameVector3 from '../../../modules/exmc/server/math/ExGameVector3.js';
 import damageShow from "../helper/damageShow.js";
 import MonitorManager from "../../../modules/exmc/utils/MonitorManager.js";
 export default class PomTalentSystem extends GameController {
@@ -25,7 +24,7 @@ export default class PomTalentSystem extends GameController {
                 let player = this.exPlayer;
                 for (let p of this.player.dimension.getPlayers({
                     maxDistance: 20,
-                    location: ExGameVector3.getLocation(this.player.location)
+                    location: this.player.location
                 })) {
                     let exp = ExPlayer.getInstance(p);
                     if (exp.getHealth() < health) {
@@ -107,7 +106,7 @@ export default class PomTalentSystem extends GameController {
             let add = 0;
             add += damage * ((_b = this.talentRes.get(Talent.DEFENSE)) !== null && _b !== void 0 ? _b : 0) / 100;
             this.exPlayer.addHealth(this, add);
-            this.hasBeenDamaged.trigger(e.damage - add, e.damagingEntity);
+            this.hasBeenDamaged.trigger(e.damage - add, e.damageSource.damagingEntity);
         });
         let lastListener = (d) => { };
         this.getEvents().exEvents.itemOnHandChange.subscribe((e) => {

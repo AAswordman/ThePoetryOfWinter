@@ -65,7 +65,7 @@ ExEntityEvents.exEventSetting = {
     onHitEntity: {
         pattern: ExEntityEvents.eventHandlers.registerToServerByEntity,
         filter: {
-            "name": "damagingEntity"
+            "name": "damageSource.damagingEntity"
         },
         name: "entityHurt"
     },

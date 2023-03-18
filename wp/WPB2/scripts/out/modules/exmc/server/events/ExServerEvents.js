@@ -1,7 +1,30 @@
-import { world } from '@minecraft/server';
+import { world, system } from '@minecraft/server';
 export default class ExServerEvents {
     constructor(server) {
         this.exEvents = {
+            "tick": {
+                subscribe: (callback) => {
+                    this._subscribe("tick", callback);
+                },
+                unsubscribe: (callback) => {
+                    this._unsubscribe("tick", callback);
+                },
+                pattern: () => {
+                    let tickNum = 0, tickTime = 0;
+                    system.runInterval(() => {
+                        var _a;
+                        const n = new Date().getTime();
+                        let event = {
+                            currentTick: tickNum,
+                            deltaTime: n - tickTime
+                        };
+                        tickTime = n;
+                        (_a = ExServerEvents.monitorMap.get("tick")) === null || _a === void 0 ? void 0 : _a.forEach((fun) => {
+                            fun(event);
+                        });
+                    }, 1);
+                }
+            },
             "onLongTick": {
                 subscribe: (callback) => {
                     this._subscribe("onLongTick", callback);
@@ -10,26 +33,22 @@ export default class ExServerEvents {
                     this._unsubscribe("onLongTick", callback);
                 },
                 pattern: () => {
-                    this.events.tick.subscribe((e) => {
+                    let tickNum = 0, tickTime = 0;
+                    system.runInterval(() => {
                         var _a;
-                        this.tickTime += e.deltaTime;
-                        if (e.currentTick % 5 === 0) {
-                            this.tickNum++;
-                            let event = {
-                                currentTick: this.tickNum,
-                                deltaTime: this.tickTime
-                            };
-                            (_a = ExServerEvents.monitorMap.get("onLongTick")) === null || _a === void 0 ? void 0 : _a.forEach((fun) => {
-                                fun(event);
-                            });
-                            this.tickTime = 0;
-                        }
-                    });
+                        const n = new Date().getTime();
+                        let event = {
+                            currentTick: tickNum,
+                            deltaTime: n - tickTime
+                        };
+                        tickTime = n;
+                        (_a = ExServerEvents.monitorMap.get("onLongTick")) === null || _a === void 0 ? void 0 : _a.forEach((fun) => {
+                            fun(event);
+                        });
+                    }, 5);
                 }
             }
         };
-        this.tickNum = 0;
-        this.tickTime = 0;
         this.init = false;
         this._server = server;
         this.events = world.events;

@@ -1,9 +1,8 @@
-import { Items, ItemStack, MinecraftBlockTypes, MinecraftItemTypes } from "@minecraft/server";
+import { ItemDurabilityComponent, Items, ItemStack, MinecraftBlockTypes, MinecraftItemTypes } from "@minecraft/server";
 import Vector3 from "../../../modules/exmc/math/Vector3.js";
 import ExBlock from "../../../modules/exmc/server/block/ExBlock.js";
 import ExColorLoreUtil from "../../../modules/exmc/server/item/ExColorLoreUtil.js";
 import ExItem from "../../../modules/exmc/server/item/ExItem.js";
-import ExGameVector3 from "../../../modules/exmc/server/math/ExGameVector3.js";
 import GameController from "./GameController.js";
 export default class PomEnChantSystem extends GameController {
     onJoin() {
@@ -32,7 +31,7 @@ export default class PomEnChantSystem extends GameController {
         });
         //附魔
         this.getEvents().exEvents.onceItemUseOn.subscribe((e) => {
-            let pos = new Vector3(e.blockLocation);
+            let pos = new Vector3(e.getBlockLocation());
             let block = this.getExDimension().getBlock(pos);
             if (!block || block.typeId === MinecraftBlockTypes.air.id)
                 return;
@@ -61,9 +60,11 @@ export default class PomEnChantSystem extends GameController {
                 if (item && item.amount === 1) {
                     let exHandItem = ExItem.getInstance(item);
                     let exSaveItem = ExItem.getInstance(saveItem);
-                    saveItem.data++;
-                    let exNewItem = new ExItem(new ItemStack(saveItem.data >= 4 ? MinecraftItemTypes.enchantedBook : Items.get("wb:book_cache")));
-                    exNewItem.getItem().data = saveItem.data;
+                    let d = saveItem.getComponent(ItemDurabilityComponent.componentId).data;
+                    let exNewItem = new ExItem(new ItemStack(d >= 4 ? MinecraftItemTypes.enchantedBook : Items.get("wb:book_cache")));
+                    if (exNewItem.hasComponent(ItemDurabilityComponent.componentId)) {
+                        exNewItem.getComponent(ItemDurabilityComponent.componentId).setValue(d - 1);
+                    }
                     // hand -> new
                     // save -> hand
                     let lore = new ExColorLoreUtil(exNewItem);
@@ -85,7 +86,7 @@ export default class PomEnChantSystem extends GameController {
                     PomEnChantSystem.blockTranslateData.delete(new Vector3(block).toString());
                     ExBlock.getInstance(block).transTo("wb:block_translate");
                     bag.setItem(this.exPlayer.selectedSlot, item);
-                    this.getDimension().spawnItem(exNewItem.getItem(), ExGameVector3.getBlockLocation(pos).above());
+                    this.getDimension().spawnItem(exNewItem.getItem(), pos.add(0, 1, 0));
                 }
             }
         });

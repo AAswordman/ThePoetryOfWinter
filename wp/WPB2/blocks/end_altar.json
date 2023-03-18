@@ -1,21 +1,21 @@
 {
-  "format_version": "1.16.0",
-  "minecraft:block": {
-    "description": {
-      "identifier": "dec:end_altar"
-    },
-    "components": {
-		  "minecraft:creative_category": {
-        "group": "itemGroup.name.outside",
-				"category": "items"
-			},
-      "minecraft:light_dampening": 15,
-      "minecraft:light_emission": 0,
-      "minecraft:destroy_time": 3.0,
-      "minecraft:explosion_resistance": 100,
-      "minecraft:map_color": "#F6FABD",
-      "minecraft:loot": "loot_tables/blocks/end_altar.json",
-      "tag:stone": {}
+    "format_version": "1.16.0",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dec:end_altar"
+        },
+        "components": {
+            "minecraft:creative_category": {
+                "group": "itemGroup.name.outside",
+                "category": "items"
+            },
+            "minecraft:light_dampening": 15,
+            "minecraft:light_emission": 0,
+            "minecraft:destroy_time": 3.0,
+            "minecraft:explosion_resistance": 100,
+            "minecraft:map_color": "#F6FABD",
+            "minecraft:loot": "loot_tables/blocks/end_altar.json",
+            "tag:stone": {}
+        }
     }
-  }
 }

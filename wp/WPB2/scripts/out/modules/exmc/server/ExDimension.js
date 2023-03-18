@@ -1,7 +1,5 @@
 import { MolangVariableMap } from '@minecraft/server';
-import Vector3 from "../math/Vector3.js";
 import ExGameConfig from './ExGameConfig.js';
-import ExGameVector3 from './math/ExGameVector3.js';
 import ExCommand from './env/ExCommand.js';
 export default class ExDimension {
     constructor(dimension) {
@@ -9,11 +7,11 @@ export default class ExDimension {
         this._dimension = dimension;
     }
     spawnParticle(p, v) {
-        this._dimension.spawnParticle(p, ExGameVector3.getLocation(v), new MolangVariableMap());
+        this._dimension.spawnParticle(p, v, new MolangVariableMap());
     }
     createExplosion(location, radius, explosionOptions) {
         //console.warn(location, radius, explosionOptions);
-        this._dimension.createExplosion(ExGameVector3.getLocation(location), radius, explosionOptions);
+        this._dimension.createExplosion(location, radius, explosionOptions);
     }
     get dimension() {
         return this._dimension;
@@ -31,7 +29,7 @@ export default class ExDimension {
         return res;
     }
     getBlock(vec) {
-        return this._dimension.getBlock(vec instanceof Vector3 ? ExGameVector3.getBlockLocation(vec) : vec);
+        return this._dimension.getBlock(vec);
     }
     setBlock(vec, blockId, data = 0) {
         if (typeof blockId === "string")
@@ -59,7 +57,7 @@ export default class ExDimension {
     }
     spawnItem(item, v) {
         try {
-            return this._dimension.spawnItem(item, ExGameVector3.getBlockLocation(v));
+            return this._dimension.spawnItem(item, v);
         }
         catch (error) {
             ExGameConfig.console.warn(error);
@@ -69,7 +67,7 @@ export default class ExDimension {
     }
     spawnEntity(id, v) {
         try {
-            return this._dimension.spawnEntity(id, ExGameVector3.getBlockLocation(v));
+            return this._dimension.spawnEntity(id, v);
         }
         catch (error) {
             ExGameConfig.console.warn(error);

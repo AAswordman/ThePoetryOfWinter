@@ -133,9 +133,6 @@
                             "territory_summon": "(!query.is_sneaking && query.get_equipped_item_name == 'territory_summon')"
                         },
                         {
-                            "pickaxex_equipment_a": "(!query.is_sneaking && query.get_equipped_item_name == 'pickaxex_equipment_a')"
-                        },
-                        {
                             "axex_equipment_a": "(!query.is_sneaking && query.get_equipped_item_name == 'axex_equipment_a')"
                         },
 
@@ -160,34 +157,6 @@
                     "transitions": [{
                         "default": "query.get_equipped_item_name != 'technology_world_explorer'"
                     }]
-                },
-
-                "pickaxex_equipment_a": {
-                    "transitions": [{
-                            "pickaxex_equipment_aa": "(!query.is_sneaking && query.get_equipped_item_name == 'pickaxex_equipment_a') && query.is_using_item"
-                        },
-                        {
-                            "default": "(query.is_sneaking || query.get_equipped_item_name != 'pickaxex_equipment_a')"
-                        }
-                    ]
-                },
-                "pickaxex_equipment_aa": {
-                    "transitions": [{
-                            "pickaxex_equipment_a": "(!query.is_sneaking && query.get_equipped_item_name == 'pickaxex_equipment_a') && !query.is_using_item"
-                        },
-                        {
-                            "default": "(query.is_sneaking || query.get_equipped_item_name != 'pickaxex_equipment_a')"
-                        }
-                    ],
-                    "on_entry": [
-                        "/execute as @s[scores={wbfl=..39}] at @s run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.20.name\"}]}",
-                        "/execute as @s[tag=!wbplot,scores={wbfl=40..},m=!adventure] at @s run fill ~+4 ~+4 ~+4 ~-4 ~ ~-4 air 0 replace stone -1",
-                        "/execute as @s[tag=!wbplot,scores={wbfl=40..},m=!adventure] at @s run fill ~+4 ~+4 ~+4 ~-4 ~ ~-4 air 0 replace end_stone -1",
-                        "/execute as @s[tag=!wbplot,scores={wbfl=40..},m=!adventure] at @s run fill ~+4 ~+4 ~+4 ~-4 ~ ~-4 air 0 replace cobblestone -1",
-                        "/execute as @s[tag=!wbplot,scores={wbfl=40..},m=!adventure] at @s run fill ~+4 ~+4 ~+4 ~-4 ~ ~-4 air 0 replace netherrack -1",
-                        "/execute as @s[tag=!wbplot,scores={wbfl=40..},m=!adventure] at @s run fill ~+4 ~+4 ~+4 ~-4 ~ ~-4 air 0 replace red_sandstone -1",
-                        "/execute as @s[scores={wbfl=40..}] at @s run scoreboard players remove @s wbfl 40"
-                    ]
                 },
                 "axex_equipment_a": {
                     "transitions": [{
