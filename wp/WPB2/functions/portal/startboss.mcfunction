@@ -5,4 +5,4 @@ structure load mystructure:boss_summon1 ~ 190 ~ 0_degrees
 
 setblock ~ 200 ~ wb:boss_keeper_block
 tp @a[r=16] ~ 202 ~
-summon wb:magic_crystal ~ 200 ~
+summon wb:magic_crystal ~ 0 0 200 ~

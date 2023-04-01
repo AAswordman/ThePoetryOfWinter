@@ -115,7 +115,7 @@
                 "weight": 1,
                 "run_command": {
                   "command": [
-                    "summon dec:soul_skeleton ~~~ minecraft:from_night_event"
+                    "summon dec:soul_skeleton ~~~ 0 0 minecraft:from_night_event"
                   ],
                   "target": "self"
                 }
@@ -124,7 +124,7 @@
                 "weight": 1,
                 "run_command": {
                   "command": [
-                    "summon dec:mummy_skeleton ~~~ minecraft:from_night_event"
+                    "summon dec:mummy_skeleton ~~~ 0 0 minecraft:from_night_event"
                   ],
                   "target": "self"
                 }
@@ -133,7 +133,7 @@
                 "weight": 1,
                 "run_command": {
                   "command": [
-                    "summon wither_skeleton ~~~ minecraft:from_night_event"
+                    "summon wither_skeleton ~~~ 0 0 minecraft:from_night_event"
                   ],
                   "target": "self"
                 }
@@ -142,7 +142,7 @@
                 "weight": 1,
                 "run_command": {
                   "command": [
-                    "summon dec:skeleton_assassin ~~~ minecraft:from_night_event"
+                    "summon dec:skeleton_assassin ~~~ 0 0 minecraft:from_night_event"
                   ],
                   "target": "self"
                 }
@@ -151,7 +151,7 @@
                 "weight": 1,
                 "run_command": {
                   "command": [
-                    "summon dec:nether_skeleton_wizard ~~~ minecraft:from_night_event"
+                    "summon dec:nether_skeleton_wizard ~~~ 0 0 minecraft:from_night_event"
                   ],
                   "target": "self"
                 }
@@ -160,7 +160,7 @@
                 "weight": 1,
                 "run_command": {
                   "command": [
-                    "summon dec:nether_skeleton ~~~ minecraft:from_night_event"
+                    "summon dec:nether_skeleton ~~~ 0 0 minecraft:from_night_event"
                   ],
                   "target": "self"
                 }
@@ -169,7 +169,7 @@
                 "weight": 1,
                 "run_command": {
                   "command": [
-                    "summon dec:warped_skeleton ~~~ minecraft:from_night_event"
+                    "summon dec:warped_skeleton ~~~ 0 0 minecraft:from_night_event"
                   ],
                   "target": "self"
                 }
@@ -178,7 +178,7 @@
                 "weight": 1,
                 "run_command": {
                   "command": [
-                    "summon dec:radiate_skeleton ~~~ minecraft:from_night_event"
+                    "summon dec:radiate_skeleton ~~~ 0 0 minecraft:from_night_event"
                   ],
                   "target": "self"
                 }
@@ -188,7 +188,7 @@
                 "run_command": {
                   "command": [
                     "execute unless entity @e[r=32,type=dec:skeleton_knight_commander] run tag @s add skeleton_knight_commander_success",
-                    "execute if entity @s[tag=skeleton_knight_commander_success] run summon dec:skeleton_knight_commander ~~~ minecraft:from_night_event",
+                    "execute if entity @s[tag=skeleton_knight_commander_success] run summon dec:skeleton_knight_commander ~~~ 0 0 minecraft:from_night_event",
                     "execute if entity @s[tag=!skeleton_knight_commander_success] run summon dec:skeleton_knight ~~~",
                     "summon skeleton_horse ~~~",
                     "tag @s remove skeleton_knight_commander_success"

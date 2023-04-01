@@ -23,7 +23,7 @@
       "broke": {
         "run_command": {
           "command": [
-            "setblock ~~~ air 0 destroy"
+            "setblock ~~~ air [] destroy"
           ]
         }
       }

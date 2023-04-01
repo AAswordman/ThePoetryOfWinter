@@ -58,9 +58,9 @@
             "weight": 1,
             "run_command": {
               "command": [
-                "summon dec:group ~~~ minecraft:line_1_ice_thorn",
-                "summon dec:group ~~~ minecraft:line_1_ice_thorn",
-                "summon dec:group ~~~ minecraft:line_1_ice_thorn",
+                "summon dec:group ~~~ 0 0 minecraft:line_1_ice_thorn",
+                "summon dec:group ~~~ 0 0 minecraft:line_1_ice_thorn",
+                "summon dec:group ~~~ 0 0 minecraft:line_1_ice_thorn",
                 "event entity @s minecraft:despawn"
 
               ],
@@ -71,9 +71,9 @@
             "weight": 1,
             "run_command": {
               "command": [
-                "summon dec:group ~~~ minecraft:line_2_ice_thorn",
-                "summon dec:group ~~~ minecraft:line_2_ice_thorn",
-                "summon dec:group ~~~ minecraft:line_2_ice_thorn",
+                "summon dec:group ~~~ 0 0 minecraft:line_2_ice_thorn",
+                "summon dec:group ~~~ 0 0 minecraft:line_2_ice_thorn",
+                "summon dec:group ~~~ 0 0 minecraft:line_2_ice_thorn",
                 "event entity @s minecraft:despawn"
               ],
               "target": "self"
@@ -83,8 +83,8 @@
             "weight": 1,
             "run_command": {
               "command": [
-                "summon dec:group ~~~ minecraft:solid_circle_ice_thorn",
-                "summon dec:group ~~~ minecraft:solid_circle_ice_thorn",
+                "summon dec:group ~~~ 0 0 minecraft:solid_circle_ice_thorn",
+                "summon dec:group ~~~ 0 0 minecraft:solid_circle_ice_thorn",
                 "event entity @s minecraft:despawn"
               ],
               "target": "self"
@@ -94,9 +94,9 @@
             "weight": 1,
             "run_command": {
               "command": [
-                "summon dec:group ~~~ minecraft:circle_ice_thorn",
-                "summon dec:group ~~~ minecraft:circle_ice_thorn",
-                "summon dec:group ~~~ minecraft:circle_ice_thorn",
+                "summon dec:group ~~~ 0 0 minecraft:circle_ice_thorn",
+                "summon dec:group ~~~ 0 0 minecraft:circle_ice_thorn",
+                "summon dec:group ~~~ 0 0 minecraft:circle_ice_thorn",
                 "event entity @s minecraft:despawn"
               ],
               "target": "self"
@@ -106,9 +106,9 @@
             "weight": 1,
             "run_command": {
               "command": [
-                "summon dec:group ~~~ minecraft:square_ice_thorn",
-                "summon dec:group ~~~ minecraft:square_ice_thorn",
-                "summon dec:group ~~~ minecraft:square_ice_thorn",
+                "summon dec:group ~~~ 0 0 minecraft:square_ice_thorn",
+                "summon dec:group ~~~ 0 0 minecraft:square_ice_thorn",
+                "summon dec:group ~~~ 0 0 minecraft:square_ice_thorn",
                 "event entity @s minecraft:despawn"
               ],
               "target": "self"
@@ -215,9 +215,9 @@
             "weight": 1,
             "run_command": {
               "command": [
-                "summon dec:group ~~~ minecraft:line_1_laser",
-                "summon dec:group ~~~ minecraft:line_1_laser",
-                "summon dec:group ~~~ minecraft:line_1_laser",
+                "summon dec:group ~~~ 0 0 minecraft:line_1_laser",
+                "summon dec:group ~~~ 0 0 minecraft:line_1_laser",
+                "summon dec:group ~~~ 0 0 minecraft:line_1_laser",
                 "event entity @s minecraft:despawn"
 
               ],
@@ -228,9 +228,9 @@
             "weight": 1,
             "run_command": {
               "command": [
-                "summon dec:group ~~~ minecraft:line_2_laser",
-                "summon dec:group ~~~ minecraft:line_2_laser",
-                "summon dec:group ~~~ minecraft:line_2_laser",
+                "summon dec:group ~~~ 0 0 minecraft:line_2_laser",
+                "summon dec:group ~~~ 0 0 minecraft:line_2_laser",
+                "summon dec:group ~~~ 0 0 minecraft:line_2_laser",
                 "event entity @s minecraft:despawn"
               ],
               "target": "self"
@@ -240,8 +240,8 @@
             "weight": 1,
             "run_command": {
               "command": [
-                "summon dec:group ~~~ minecraft:solid_circle_laser",
-                "summon dec:group ~~~ minecraft:solid_circle_laser",
+                "summon dec:group ~~~ 0 0 minecraft:solid_circle_laser",
+                "summon dec:group ~~~ 0 0 minecraft:solid_circle_laser",
                 "event entity @s minecraft:despawn"
               ],
               "target": "self"
@@ -251,9 +251,9 @@
             "weight": 1,
             "run_command": {
               "command": [
-                "summon dec:group ~~~ minecraft:circle_laser",
-                "summon dec:group ~~~ minecraft:circle_laser",
-                "summon dec:group ~~~ minecraft:circle_laser",
+                "summon dec:group ~~~ 0 0 minecraft:circle_laser",
+                "summon dec:group ~~~ 0 0 minecraft:circle_laser",
+                "summon dec:group ~~~ 0 0 minecraft:circle_laser",
                 "event entity @s minecraft:despawn"
               ],
               "target": "self"
@@ -263,9 +263,9 @@
             "weight": 1,
             "run_command": {
               "command": [
-                "summon dec:group ~~~ minecraft:square_laser",
-                "summon dec:group ~~~ minecraft:square_laser",
-                "summon dec:group ~~~ minecraft:square_laser",
+                "summon dec:group ~~~ 0 0 minecraft:square_laser",
+                "summon dec:group ~~~ 0 0 minecraft:square_laser",
+                "summon dec:group ~~~ 0 0 minecraft:square_laser",
                 "event entity @s minecraft:despawn"
               ],
               "target": "self"

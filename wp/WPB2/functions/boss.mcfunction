@@ -10,17 +10,17 @@ tag @a[tag=ash_knight_spawn] remove ash_knight_spawn
 tag @a[tag=radiate_crystal_spawn] remove radiate_crystal_spawn
 
 ##储存者召唤（不是BOSS！！！！！）
-execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§r魔法箱子碎片§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner 0 run summon dec:chester
-execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§r魔法箱子碎片§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner 0 run kill @s
+execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§r魔法箱子碎片§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner [] run summon dec:chester
+execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§r魔法箱子碎片§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner [] run kill @s
 
 ##Boss召唤
-execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§c灰烬挑战书§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner 0 run tag @p add ash_knight_spawn
-execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§c灰烬挑战书§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner 0 run summon dec:ash_knight
-execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§c灰烬挑战书§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner 0 run kill @s
+execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§c灰烬挑战书§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner [] run tag @p add ash_knight_spawn
+execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§c灰烬挑战书§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner [] run summon dec:ash_knight
+execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§c灰烬挑战书§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner [] run kill @s
 
-execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§c辐射水晶§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner 0 run tag @p add radiate_crystal_spawn
-execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§c辐射水晶§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner 0 run summon dec:radiate_crystal
-execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§c辐射水晶§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner 0 run kill @s
+execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§c辐射水晶§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner [] run tag @p add radiate_crystal_spawn
+execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§c辐射水晶§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner [] run summon dec:radiate_crystal
+execute as @e[type=item,name=§r§r§r§r§r§r§r§r§r§c辐射水晶§r§r§r§r§r§r§r§r§r§r] at @s if block ~~-0.1~ dec:summoner [] run kill @s
 
 ##Boss战设置
 execute as @e[family=boss] run kill @e[type=boat,r=3]

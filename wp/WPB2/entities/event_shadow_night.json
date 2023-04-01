@@ -60,7 +60,7 @@
                 "weight": 1,
                 "run_command": {
                   "command": [
-                    "summon dec:shadow_archer ~~~ minecraft:from_night_event"
+                    "summon dec:shadow_archer ~~~ 0 0 minecraft:from_night_event"
                   ],
                   "target": "self"
                 }
@@ -69,7 +69,7 @@
                 "weight": 1,
                 "run_command": {
                   "command": [
-                    "summon dec:shadow_creeper ~~~ minecraft:from_night_event"
+                    "summon dec:shadow_creeper ~~~ 0 0 minecraft:from_night_event"
                   ],
                   "target": "self"
                 }
@@ -78,7 +78,7 @@
                 "weight": 1,
                 "run_command": {
                   "command": [
-                    "summon dec:shadow_skeleton ~~~ minecraft:from_night_event"
+                    "summon dec:shadow_skeleton ~~~ 0 0 minecraft:from_night_event"
                   ],
                   "target": "self"
                 }
@@ -87,7 +87,7 @@
                 "weight": 1,
                 "run_command": {
                   "command": [
-                    "summon dec:shadow_zombie ~~~ minecraft:from_night_event"
+                    "summon dec:shadow_zombie ~~~ 0 0 minecraft:from_night_event"
                   ],
                   "target": "self"
                 }

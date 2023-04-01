@@ -55,14 +55,14 @@
       "minecraft:summon_laser": {
         "run_command": {
           "command": [
-            "execute at @a[r=64,c=1,m=!1] run summon dec:group ~~~ minecraft:select_laser"
+            "execute at @a[r=64,c=1,m=!1] run summon dec:group ~~~ 0 0 minecraft:select_laser"
           ]
         }
       },
       "minecraft:summon_ice_thorn": {
         "run_command": {
           "command": [
-            "execute at @a[r=64,c=1,m=!1] run summon dec:group ~~~ minecraft:select_ice_thorn"
+            "execute at @a[r=64,c=1,m=!1] run summon dec:group ~~~ 0 0 minecraft:select_ice_thorn"
           ]
         }
       }

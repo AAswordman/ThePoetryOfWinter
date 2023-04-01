@@ -11,18 +11,22 @@ export default class ExServerEvents {
                 },
                 pattern: () => {
                     let tickNum = 0, tickTime = 0;
-                    system.runInterval(() => {
+                    const fun = () => {
                         var _a;
                         const n = new Date().getTime();
                         let event = {
                             currentTick: tickNum,
-                            deltaTime: n - tickTime
+                            deltaTime: (n - tickTime) / 1000
                         };
                         tickTime = n;
+                        tickNum += 1;
+                        // console.warn("tick time: " + tickTime+"tick num: " + tickNum)
                         (_a = ExServerEvents.monitorMap.get("tick")) === null || _a === void 0 ? void 0 : _a.forEach((fun) => {
                             fun(event);
                         });
-                    }, 1);
+                        // system.runInterval(fun, 1);
+                    };
+                    system.runInterval(fun, 1);
                 }
             },
             "onLongTick": {
@@ -34,18 +38,21 @@ export default class ExServerEvents {
                 },
                 pattern: () => {
                     let tickNum = 0, tickTime = 0;
-                    system.runInterval(() => {
+                    const fun = () => {
                         var _a;
                         const n = new Date().getTime();
                         let event = {
                             currentTick: tickNum,
-                            deltaTime: n - tickTime
+                            deltaTime: (n - tickTime) / 1000
                         };
                         tickTime = n;
+                        tickNum += 1;
                         (_a = ExServerEvents.monitorMap.get("onLongTick")) === null || _a === void 0 ? void 0 : _a.forEach((fun) => {
                             fun(event);
                         });
-                    }, 5);
+                        // system.runInterval(fun, 5);
+                    };
+                    system.runInterval(fun, 5);
                 }
             }
         };

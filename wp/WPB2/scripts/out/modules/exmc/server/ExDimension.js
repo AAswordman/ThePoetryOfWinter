@@ -1,4 +1,4 @@
-import { MolangVariableMap } from '@minecraft/server';
+import { MolangVariableMap, MinecraftBlockTypes } from '@minecraft/server';
 import ExGameConfig from './ExGameConfig.js';
 import ExCommand from './env/ExCommand.js';
 export default class ExDimension {
@@ -31,24 +31,19 @@ export default class ExDimension {
     getBlock(vec) {
         return this._dimension.getBlock(vec);
     }
-    setBlock(vec, blockId, data = 0) {
+    setBlock(vec, blockId) {
         if (typeof blockId === "string")
-            this.command.run(`setBlock ${vec.x} ${vec.y} ${vec.z} ${blockId} ${data}`);
-        //.then((e) => ExGameConfig.console.log(e))
-        //.catch((e) => ExGameConfig.console.log(e));
-        else {
-            let b = this.getBlock(vec);
-            b === null || b === void 0 ? void 0 : b.setType(blockId);
-            //b?.permutation;
-        }
-        ;
+            blockId = MinecraftBlockTypes.get(blockId);
+        let b = this.getBlock(vec);
+        b === null || b === void 0 ? void 0 : b.setType(blockId);
+        //b?.permutation;
     }
     setBlockAsync(vec, blockId) {
         this.runCommandAsync(`setBlock ${vec.x} ${vec.y} ${vec.z} ${blockId}`);
     }
     digBlock(vec) {
         try {
-            this.command.run(`setBlock ${vec.x} ${vec.y} ${vec.z} air 0 destroy`);
+            this.command.run(`setBlock ${vec.x} ${vec.y} ${vec.z} air [] destroy`);
             return true;
         }
         catch (e) {

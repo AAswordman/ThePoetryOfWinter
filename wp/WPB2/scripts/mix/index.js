@@ -21002,7 +21002,7 @@ var __webpack_exports__ = {};
                 menuUISubtitleBanben: "Version",
                 menuUIMsgBanben1: "Version Information",
                 menuUIMsgBanben2: "Basic information",
-                menuUIMsgBanben3: "Addon's version: 1.7.3B2, more info about the addon: ",
+                menuUIMsgBanben3: "Addon's version: 1.7.4B1, more info about the addon: ",
                 menuUIMsgBanben4: "Edition notice",
                 menuUIMsgBanben6: "Thanks list",
                 menuUIMsgBanben5: "Winter poetry may have a stuttering phenomenon, so we recommend that you first enter/tag @s add owner, then go to the menu settings to open the entity cleanup option.If you are worried that the important entity will be cleared, please don't open it.",
@@ -25574,10 +25574,10 @@ var __webpack_exports__ = {};
     }
     let Ae = new class {
         constructor() {
-            this.addonName = "", this.gameVersion = "1.9.20", this.addonVersion = "1.7.3B2", this.debug = !1, this.watchDog = !1
+            this.addonName = "", this.gameVersion = "1.9.20", this.addonVersion = "1.7.4B1", this.debug = !1, this.watchDog = !1
         }
     };
-    Ae.addonName = "POM", Ae.addonVersion = "1.7.3B2", Ae.gameVersion = "1.9.50", Ae.watchDog = !1, Ae.debug = !0, M.createServer(me, Ae), M.createServer(class extends T {
+    Ae.addonName = "POM", Ae.addonVersion = "1.7.4B1", Ae.gameVersion = "1.9.50", Ae.watchDog = !1, Ae.debug = !0, M.createServer(me, Ae), M.createServer(class extends T {
         constructor(n) {
             super(n), this.tmpV = new e.Z, this.i_inviolable = new S.C("i_inviolable").create("i_inviolable"), this.i_damp = new S.C("i_damp").create("i_damp"), this.i_soft = new S.C("i_soft").create("i_soft"), this.nightEventListener = new ut((e => {
                 e ? this.getExDimension(t.MinecraftDimensionTypes.overworld).command.run(["scoreboard players random NightRandom global 1 100", "scoreboard players set IsDay global 0", "scoreboard players set IsNight global 1"]) : this.getExDimension(t.MinecraftDimensionTypes.overworld).command.run(["scoreboard players set IsDay global 1", "scoreboard players set IsNight global 0", "scoreboard players set NightRandom global 0", "scoreboard players set @a night_event 0", 'fog @a remove "night_event"'])

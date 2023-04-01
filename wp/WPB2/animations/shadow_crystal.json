@@ -55,7 +55,7 @@
             ],
             "90": [
                 "/particle dec:ender_fuse_particle ~~~",
-                "/summon dec:shadow_fuse ~~~ minecraft:spawn_dragon"
+                "/summon dec:shadow_fuse ~~~ 0 0 minecraft:spawn_dragon"
             ],
 
             "120": [
@@ -80,7 +80,7 @@
                 "/summon dec:shadow_fuse ~~~",
                 "/summon dec:shadow_fuse ~~~",
                 "/summon dec:shadow_fuse ~~~",
-                "/summon dec:shadow_fuse ~~~ minecraft:spawn_dragon"
+                "/summon dec:shadow_fuse ~~~ 0 0 minecraft:spawn_dragon"
             ],
             "160": [
                 "/particle dec:ender_fuse_particle ~~~",
@@ -104,7 +104,7 @@
                 "/summon dec:shadow_fuse ~~~",
                 "/summon dec:shadow_fuse ~~~",
                 "/summon dec:shadow_fuse ~~~",
-                "/summon dec:shadow_fuse ~~~ minecraft:spawn_dragon",
+                "/summon dec:shadow_fuse ~~~ 0 0 minecraft:spawn_dragon",
                 "/tellraw @a { \"rawtext\" : [ { \"translate\" : \"text.dec:shadow_crystal_defeated.name\" } ] }"
             ],
             "193": [

@@ -62,7 +62,7 @@
       "minecraft:explode": {
         "run_command": {
           "command": [
-            "fill ~-0.5~-0.5~-0.5~0.5~0.5~0.5 dec:ghost_ice 0 replace air 0",
+            "fill ~-0.5~-0.5~-0.5~0.5~0.5~0.5 dec:ghost_ice [] replace air []",
             "kill @s"
           ]
         }

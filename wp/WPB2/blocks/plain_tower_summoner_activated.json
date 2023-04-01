@@ -30,11 +30,11 @@
             "tellraw @a { \"rawtext\" : [ { \"translate\" : \"text.dec:summon_king_of_pillager.name\" } ] }",
             "summon dec:king_of_pillager ~~1~",
 
-            "fill ~-4~~-4 ~-1~9~4 air 0 destroy",
-            "fill ~~~1 ~4~9~4 air 0 destroy",
-            "fill ~1~~ ~4~9~-4 air 0 destroy",
-            "fill ~~~-1 ~~9~-4 air 0 destroy",
-            "fill ~~1~ ~~9~ air 0 destroy"
+            "fill ~-4~~-4 ~-1~9~4 air [] destroy",
+            "fill ~~~1 ~4~9~4 air [] destroy",
+            "fill ~1~~ ~4~9~-4 air [] destroy",
+            "fill ~~~-1 ~~9~-4 air [] destroy",
+            "fill ~~1~ ~~9~ air [] destroy"
           ]
         },
         "decrement_stack": {}

@@ -195,7 +195,7 @@ execute positioned as @e[type=wb:position_execute] run scoreboard players add @e
 execute positioned as @e[type=wb:position_execute] run tag @e[type=minecraft:player,r=1] add wbxyzok
 
 kill @e[type=wb:position_execute]
-summon wb:position_execute ~ ~ 0
+summon wb:position_execute ~ ~ 0 0 0
 //z轴
 scoreboard players set @s wbz 0
 
@@ -380,7 +380,7 @@ execute positioned as @e[type=wb:position_execute] run scoreboard players add @e
 execute positioned as @e[type=wb:position_execute] run tag @e[type=minecraft:player,r=1] add wbxyzok
 
 kill @e[type=wb:position_execute]
-summon wb:position_execute ~ 0 ~
+summon wb:position_execute ~ 0 0 0 ~
 //z轴
 scoreboard players set @s wby 0
 
