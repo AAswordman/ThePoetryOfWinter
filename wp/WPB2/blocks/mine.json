@@ -25,7 +25,7 @@
         "run_command": {
           "command": [
             "summon dec:mine ~~0.1~",
-            "setblock ~~~ air 0 destroy"
+            "setblock ~~~ air [] destroy"
           ]
         }
       }

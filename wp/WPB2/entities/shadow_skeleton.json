@@ -233,7 +233,7 @@
 			"minecraft:summon_start": {
 				"run_command": {
 					"command": [
-						"summon dec:shadow_skeleton_puppet ~~~ minecraft:timer"
+						"summon dec:shadow_skeleton_puppet ~~~ 0 0 minecraft:timer"
 					]
 				}
 			},

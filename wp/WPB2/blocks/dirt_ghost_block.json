@@ -33,7 +33,7 @@
         "run_command": {
           "command": [
             "playsound dig.gravel @a ~~~",
-            "setblock ~~~ air 0 destroy"
+            "setblock ~~~ air [] destroy"
           ]
         }
       }

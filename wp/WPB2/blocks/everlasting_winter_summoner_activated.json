@@ -29,7 +29,7 @@
           "command": [
             "tellraw @a { \"rawtext\" : [ { \"translate\" : \"text.dec:summon_everlasting_winter_ghast.name\" } ] }",
             "summon dec:everlasting_winter_ghast ~~1~",
-            "fill ~4~-1~4~-4~-1~-4 snow 0 replace air 0"
+            "fill ~4~-1~4~-4~-1~-4 snow [] replace air []"
           ]
         },
         "decrement_stack": {}

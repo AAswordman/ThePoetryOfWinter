@@ -31,15 +31,15 @@
             "summon dec:escaped_soul ~~1~",
             "particle dec:ghost_spurt_big_particle ~~1~",
             
-            "execute positioned ~24~3~ run fill ~-1~~-1 ~1~6~1 air 0 destroy",
-            "execute positioned ~-24~3~ run fill ~-1~~-1 ~1~6~1 air 0 destroy",
-            "execute positioned ~~3~24 run fill ~-1~~-1 ~1~6~1 air 0 destroy",
-            "execute positioned ~~3~-24 run fill ~-1~~-1 ~1~6~1 air 0 destroy",
+            "execute positioned ~24~3~ run fill ~-1~~-1 ~1~6~1 air [] destroy",
+            "execute positioned ~-24~3~ run fill ~-1~~-1 ~1~6~1 air [] destroy",
+            "execute positioned ~~3~24 run fill ~-1~~-1 ~1~6~1 air [] destroy",
+            "execute positioned ~~3~-24 run fill ~-1~~-1 ~1~6~1 air [] destroy",
             
-            "execute positioned ~17~3~17 run fill ~-1~~-1 ~1~6~1 air 0 destroy",
-            "execute positioned ~-17~3~-17 run fill ~-1~~-1 ~1~6~1 air 0 destroy",
-            "execute positioned ~17~3~-17 run fill ~-1~~-1 ~1~6~1 air 0 destroy",
-            "execute positioned ~-17~3~17 run fill ~-1~~-1 ~1~6~1 air 0 destroy"
+            "execute positioned ~17~3~17 run fill ~-1~~-1 ~1~6~1 air [] destroy",
+            "execute positioned ~-17~3~-17 run fill ~-1~~-1 ~1~6~1 air [] destroy",
+            "execute positioned ~17~3~-17 run fill ~-1~~-1 ~1~6~1 air [] destroy",
+            "execute positioned ~-17~3~17 run fill ~-1~~-1 ~1~6~1 air [] destroy"
           ]
         },
         "decrement_stack": {}

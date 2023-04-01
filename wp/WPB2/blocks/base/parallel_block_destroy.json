@@ -9,7 +9,7 @@
 			"destroy": {
 				"run_command": {
 					"command": [
-						"fill ~+1 ~+1 ~+1 ~-1 ~-1 ~-1 wb:parallel_block_destroy 0 replace wb:parallel_block -1",
+						"fill ~+1 ~+1 ~+1 ~-1 ~-1 ~-1 wb:parallel_block_destroy [] replace wb:parallel_block []",
 						"setblock ~ ~ ~ air"
 					]
 				}

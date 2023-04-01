@@ -121,7 +121,7 @@
       "minecraft:die": {
         "run_command": {
           "command": [
-            "fill ~-1.5~-1.5~-1.5~1.5~1.5~1.5 dec:ghost_ice 0 replace air 0"
+            "fill ~-1.5~-1.5~-1.5~1.5~1.5~1.5 dec:ghost_ice [] replace air []"
           ]
         }
       }

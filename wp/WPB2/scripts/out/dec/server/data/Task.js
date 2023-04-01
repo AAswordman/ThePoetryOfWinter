@@ -108,8 +108,8 @@ export let DecTasks = [
         "execute if entity @s[tag=task_complete] run clear @s dec:rice_wine 0 16"
     ]),
     new DecTask("020", 1213, [
-        "execute if entity @s[hasitem={item=netherite_scrap,quantity=4..}] run tag @s add task_complete",
-        "execute if entity @s[tag=task_complete] run clear @s netherite_scrap 0 4"
+        "execute if entity @s[hasitem={item=netherite_ingot,quantity=4..}] run tag @s add task_complete",
+        "execute if entity @s[tag=task_complete] run clear @s netherite_ingot 0 4"
     ]),
     new DecTask("021", 742, [
         "execute if entity @s[hasitem={item=dec:ice_ingot}] if entity @s[hasitem={item=iron_ingot,quantity=35..}] if entity @s[hasitem={item=gold_ingot,quantity=62..}] run tag @s add task_complete",

@@ -192,7 +192,7 @@ export default class ExBlockStructureNormal {
         return this;
     }
     analysis(map) {
-        if (map instanceof (Map)) {
+        if (map instanceof Map) {
             this.analysisMap = map;
         }
         else {
@@ -222,12 +222,7 @@ export default class ExBlockStructureNormal {
                         continue;
                     area.calculateRelPos(vec, tmpV).add(area.start);
                     let id = this.analysisMap.get(c);
-                    let data = 0;
-                    let pos = id === null || id === void 0 ? void 0 : id.indexOf("|");
-                    if (id && pos && pos !== -1) {
-                        data = parseInt(id === null || id === void 0 ? void 0 : id.slice(pos + 1));
-                    }
-                    this.dimension.setBlock(tmpV, id !== null && id !== void 0 ? id : MinecraftBlockTypes.air.id, data);
+                    this.dimension.setBlock(tmpV, id !== null && id !== void 0 ? id : MinecraftBlockTypes.air.id);
                 }
             }
         }

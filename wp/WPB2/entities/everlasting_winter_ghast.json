@@ -752,7 +752,7 @@
             "weight": 1,
             "run_command": {
               "command": [
-                "summon dec:frozen_ghast ~20~6~ minecraft:from_boss"
+                "summon dec:frozen_ghast ~20~6~ 0 0 minecraft:from_boss"
               ]
             }
           },
@@ -760,7 +760,7 @@
             "weight": 1,
             "run_command": {
               "command": [
-                "summon dec:frozen_ghast ~-20~6~ minecraft:from_boss"
+                "summon dec:frozen_ghast ~-20~6~ 0 0 minecraft:from_boss"
               ]
             }
           },
@@ -768,7 +768,7 @@
             "weight": 1,
             "run_command": {
               "command": [
-                "summon dec:frozen_ghast ~~6~20 minecraft:from_boss"
+                "summon dec:frozen_ghast ~~6~20 0 0 minecraft:from_boss"
               ]
             }
           },
@@ -776,7 +776,7 @@
             "weight": 1,
             "run_command": {
               "command": [
-                "summon dec:frozen_ghast ~~6~-20 minecraft:from_boss"
+                "summon dec:frozen_ghast ~~6~-20 0 0 minecraft:from_boss"
               ]
             }
           },
@@ -784,7 +784,7 @@
             "weight": 1,
             "run_command": {
               "command": [
-                "summon dec:frozen_ghast ~13~6~13 minecraft:from_boss"
+                "summon dec:frozen_ghast ~13~6~13 0 0 minecraft:from_boss"
               ]
             }
           },
@@ -792,7 +792,7 @@
             "weight": 1,
             "run_command": {
               "command": [
-                "summon dec:frozen_ghast ~-13~6~13 minecraft:from_boss"
+                "summon dec:frozen_ghast ~-13~6~13 0 0 minecraft:from_boss"
               ]
             }
           },
@@ -800,7 +800,7 @@
             "weight": 1,
             "run_command": {
               "command": [
-                "summon dec:frozen_ghast ~-13~6~-13 minecraft:from_boss"
+                "summon dec:frozen_ghast ~-13~6~-13 0 0 minecraft:from_boss"
               ]
             }
           },
@@ -808,7 +808,7 @@
             "weight": 1,
             "run_command": {
               "command": [
-                "summon dec:frozen_ghast ~13~6~-13 minecraft:from_boss"
+                "summon dec:frozen_ghast ~13~6~-13 0 0 minecraft:from_boss"
               ]
             }
           }

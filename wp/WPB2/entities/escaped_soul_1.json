@@ -160,7 +160,7 @@
       "minecraft:entity_spawned": {
         "run_command": {
           "command": [
-            "summon dec:entity_soul ~~~ minecraft:summon_by_boss"
+            "summon dec:entity_soul ~~~ 0 0 minecraft:summon_by_boss"
           ],
           "target": "self"
         },
@@ -209,7 +209,7 @@
         },
         "run_command": {
           "command": [
-            "summon dec:entity_soul ~~~ minecraft:summon_by_boss",
+            "summon dec:entity_soul ~~~ 0 0 minecraft:summon_by_boss",
             "execute if entity @s[scores={random=1}] run tp ~-24~-3~",
             "execute if entity @s[scores={random=2}] run tp ~24~-3~",
             "execute if entity @s[scores={random=3}] run tp ~~-3~-24",

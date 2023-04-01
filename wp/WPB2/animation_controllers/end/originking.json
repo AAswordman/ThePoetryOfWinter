@@ -59,7 +59,7 @@
         "boom": {
           "on_entry":[
           	"/particle wb:originflame_blast ~ ~ ~",
-          	"/fill ~+5 ~-2 ~+5 ~-5 ~+3 ~-5 air 0 replace",
+          	"/fill ~+5 ~-2 ~+5 ~-5 ~+3 ~-5 air [] replace",
           	"/particle wb:blast_par_big ~ ~ ~"
            ]
         }
@@ -210,13 +210,13 @@
             ]
         },
         "lyattackc":{
-            "on_entry":["/particle wb:end_snow_par ~ ~ ~","/execute as @e[r=64,type=!minecraft:item,type=!wb:damage_n] at @s run fill ~+1 ~-1 ~+1 ~-1 ~-1 ~-1 ice","/execute as @e[type=!minecraft:item,type=!wb:damage_n,r=20,type=!wb:originking] at @s run fill ~+1 ~-1 ~+1 ~-1 ~+3 ~-1 ice 0 hollow"],
+            "on_entry":["/particle wb:end_snow_par ~ ~ ~","/execute as @e[r=64,type=!minecraft:item,type=!wb:damage_n] at @s run fill ~+1 ~-1 ~+1 ~-1 ~-1 ~-1 ice","/execute as @e[type=!minecraft:item,type=!wb:damage_n,r=20,type=!wb:originking] at @s run fill ~+1 ~-1 ~+1 ~-1 ~+3 ~-1 ice [] hollow"],
             "transitions":[
                 { "lyattack":"!query.is_delayed_attacking || query.variant != 9 || variable.origin_random_element != 2" }
             ]
         },
         "lyattackd":{
-            "on_entry":["/particle wb:end_fire_par ~ ~ ~","/weather clear","/execute as @e[r=64] at @s run summon wb:endblock_magma ~ ~ ~","/fill ~+50 ~ +50 ~-50 ~+1 ~-50 fire 0 keep"],
+            "on_entry":["/particle wb:end_fire_par ~ ~ ~","/weather clear","/execute as @e[r=64] at @s run summon wb:endblock_magma ~ ~ ~","/fill ~+50 ~ +50 ~-50 ~+1 ~-50 fire [] keep"],
             "transitions":[
                 { "lyattack":"!query.is_delayed_attacking || query.variant != 9 || variable.origin_random_element != 3" }
             ]

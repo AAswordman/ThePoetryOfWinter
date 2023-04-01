@@ -70,7 +70,7 @@
       "minecraft:explode": {
         "run_command": {
           "command": [
-            "fill ~-0.5~-0.5~-0.5~0.5~0.5~0.5 dec:flower_ghost_block 0 replace air 0",
+            "fill ~-0.5~-0.5~-0.5~0.5~0.5~0.5 dec:flower_ghost_block [] replace air []",
             "particle dec:flower_ghost_block_particle ~~~",
             "kill @s"
           ]

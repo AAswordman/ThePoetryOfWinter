@@ -527,10 +527,10 @@
       "minecraft:died": {
         "run_command": {
           "command": [
-            "summon dec:mushroom_monster ~~~ minecraft:entity_spawned",
-            "summon dec:mushroom_monster ~~~ minecraft:entity_spawned",
-            "summon dec:mushroom_monster ~~~ minecraft:entity_spawned",
-            "summon dec:mushroom_monster ~~~ minecraft:entity_spawned"
+            "summon dec:mushroom_monster ~~~ 0 0 minecraft:entity_spawned",
+            "summon dec:mushroom_monster ~~~ 0 0 minecraft:entity_spawned",
+            "summon dec:mushroom_monster ~~~ 0 0 minecraft:entity_spawned",
+            "summon dec:mushroom_monster ~~~ 0 0 minecraft:entity_spawned"
           ]
         }
       },

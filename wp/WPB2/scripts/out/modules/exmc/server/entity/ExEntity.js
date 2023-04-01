@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { EntityHealthComponent, EntityInventoryComponent, EntityVariantComponent, EntityMarkVariantComponent, EntityIsBabyComponent, EntityIsChargedComponent } from '@minecraft/server';
+import { EntityHealthComponent, EntityInventoryComponent, EntityVariantComponent, EntityMarkVariantComponent, EntityIsBabyComponent, EntityIsChargedComponent, EntityDamageCause } from '@minecraft/server';
 import ExScoresManager from './ExScoresManager.js';
 import Vector3 from '../../math/Vector3.js';
 import ExEntityBag from './ExEntityBag.js';
@@ -24,13 +24,16 @@ export default class ExEntity {
             Reflect.set(entity, ExEntity.propertyNameCache, this);
         }
     }
-    damage(d) {
-        this.runCommandAsync(`damage @s ${d}`);
+    damage(d, source) {
+        this.entity.applyDamage(d, source);
     }
     causeDamageTo(e, d) {
         if (e instanceof ExEntity)
             e = e.entity;
-        ExCommand.run(this, `damage {0} ${d} entity_attack entity @s`, e);
+        e.applyDamage(d, {
+            "cause": EntityDamageCause.entityAttack,
+            "damagingEntity": this.entity
+        });
     }
     getPreRemoveHealth() {
         return this._damage;

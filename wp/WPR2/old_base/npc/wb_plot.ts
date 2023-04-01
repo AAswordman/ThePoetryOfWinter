@@ -1113,7 +1113,7 @@ export default {
 
 
             "/function portal/startboss",
-            "/summon wb:magic_stoneman ~ 195 ~ isboss"
+            "/summon wb:magic_stoneman ~ 195 ~ 0 0 isboss"
           ]
         }],
         "on_close_commands": []
@@ -1863,7 +1863,7 @@ export default {
 
 
             "/function portal/startboss",
-            "/summon wb:headless_guard ~ 195 ~ isboss"
+            "/summon wb:headless_guard ~ 195 ~ 0 0 isboss"
           ]
         }],
         "on_close_commands": []
@@ -2780,7 +2780,7 @@ export default {
 
 
             "/function portal/startboss",
-            "/summon wb:ancient_stone ~ 195 ~ isboss"
+            "/summon wb:ancient_stone ~ 195 ~ 0 0 isboss"
           ]
         }],
         "on_close_commands": []
@@ -4336,7 +4336,7 @@ export default {
 
 
             "/function portal/startboss",
-            "/summon wb:intentions_first ~ 195 ~"
+            "/summon wb:intentions_first ~ 0 0 195 ~"
           ]
         }],
         "on_close_commands": []

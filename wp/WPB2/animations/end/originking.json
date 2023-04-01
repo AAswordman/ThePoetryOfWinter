@@ -5,7 +5,7 @@
        "animation_length": 0.5,
        "loop":true,
        "timeline": {
-      	"0.3":["/fill ~+5 ~-2 ~+5 ~-5 ~+3 ~-5 air 0 replace"]
+      	"0.3":["/fill ~+5 ~-2 ~+5 ~-5 ~+3 ~-5 air [] replace"]
       }
      },
      "animation.originking.block": {
@@ -37,7 +37,7 @@
        "timeline": {
        	"0.1":["/tag @s remove wbqysv"],
       	"0.3":["/execute as @e[type=wb:originking] at @s run tag @e[type=wb:originsave] add wbqysv"],
-      	"0.4":["/execute as @s[tag=!wbqysv] at @s run summon wb:originking ~ ~ ~ save"],
+      	"0.4":["/execute as @s[tag=!wbqysv] at @s run summon wb:originking ~ ~ ~ 0 0 save"],
       	"0.5":["@s start"]
       }
      },
@@ -45,7 +45,7 @@
        "animation_length": 0.12,
        "loop":true,
        "timeline": {
-      	"0.1":["/execute as @e[type=wb:originking,rm=4] at @s run kill @s","/execute as @s[x=~,z=~,y=0,dy=-10000] at @s run spreadplayers ~ ~ 2 64 @s","/fill ~+3 ~ ~+3 ~-3 ~+3 ~-3 air 0 replace","/gamerule commandblocksenabled false","/gamerule mobgriefing true","/execute as @p[rm=256] at @s run tp @e[type=wb:originking] @s","/tp @e[tag=wbdie] ~99999 ~-9999 ~99999"]
+      	"0.1":["/execute as @e[type=wb:originking,rm=4] at @s run kill @s","/execute as @s[x=~,z=~,y=0,dy=-10000] at @s run spreadplayers ~ ~ 2 64 @s","/fill ~+3 ~ ~+3 ~-3 ~+3 ~-3 air [] replace","/gamerule commandblocksenabled false","/gamerule mobgriefing true","/execute as @p[rm=256] at @s run tp @e[type=wb:originking] @s","/tp @e[tag=wbdie] ~99999 ~-9999 ~99999"]
       }
      },
     "animation.originking.summon": {
