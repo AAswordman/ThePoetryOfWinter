@@ -1,4 +1,5 @@
-import { world, system } from '@minecraft/server';
+import { world } from '@minecraft/server';
+import ExGame from '../ExGame.js';
 export default class ExServerEvents {
     constructor(server) {
         this.exEvents = {
@@ -10,23 +11,12 @@ export default class ExServerEvents {
                     this._unsubscribe("tick", callback);
                 },
                 pattern: () => {
-                    let tickNum = 0, tickTime = 0;
-                    const fun = () => {
+                    ExGame.tickMonitor.addMonitor((e) => {
                         var _a;
-                        const n = new Date().getTime();
-                        let event = {
-                            currentTick: tickNum,
-                            deltaTime: (n - tickTime) / 1000
-                        };
-                        tickTime = n;
-                        tickNum += 1;
-                        // console.warn("tick time: " + tickTime+"tick num: " + tickNum)
                         (_a = ExServerEvents.monitorMap.get("tick")) === null || _a === void 0 ? void 0 : _a.forEach((fun) => {
-                            fun(event);
+                            fun(e);
                         });
-                        // system.runInterval(fun, 1);
-                    };
-                    system.runInterval(fun, 1);
+                    });
                 }
             },
             "onLongTick": {
@@ -37,30 +27,19 @@ export default class ExServerEvents {
                     this._unsubscribe("onLongTick", callback);
                 },
                 pattern: () => {
-                    let tickNum = 0, tickTime = 0;
-                    const fun = () => {
+                    ExGame.longTickMonitor.addMonitor((e) => {
                         var _a;
-                        const n = new Date().getTime();
-                        let event = {
-                            currentTick: tickNum,
-                            deltaTime: (n - tickTime) / 1000
-                        };
-                        tickTime = n;
-                        tickNum += 1;
-                        (_a = ExServerEvents.monitorMap.get("onLongTick")) === null || _a === void 0 ? void 0 : _a.forEach((fun) => {
-                            fun(event);
+                        (_a = ExServerEvents.monitorMap.get("longTickMonitor")) === null || _a === void 0 ? void 0 : _a.forEach((fun) => {
+                            fun(e);
                         });
-                        // system.runInterval(fun, 5);
-                    };
-                    system.runInterval(fun, 5);
+                    });
                 }
             }
         };
-        this.init = false;
         this._server = server;
         this.events = world.events;
-        if (!this.init) {
-            this.init = true;
+        if (!ExServerEvents.init) {
+            ExServerEvents.init = true;
             for (let i in this.exEvents) {
                 this.exEvents[i].pattern();
             }
@@ -105,4 +84,5 @@ export default class ExServerEvents {
     }
 }
 ExServerEvents.monitorMap = new Map;
+ExServerEvents.init = false;
 //# sourceMappingURL=ExServerEvents.js.map

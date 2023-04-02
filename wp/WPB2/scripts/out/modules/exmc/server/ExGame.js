@@ -1,5 +1,8 @@
+var _a;
 import "../../reflect-metadata/Reflect.js";
 import ExSystem from "../utils/ExSystem.js";
+import { system } from "@minecraft/server";
+import MonitorManager from "../utils/MonitorManager.js";
 export default class ExGame {
     static createServer(serverCons, config) {
         let server = new serverCons(config);
@@ -24,6 +27,37 @@ export default class ExGame {
     static thread() {
     }
 }
+_a = ExGame;
+ExGame.tickMonitor = new MonitorManager();
+ExGame.longTickMonitor = new MonitorManager();
+(() => {
+    let tickNum = 0, tickTime = 0;
+    const fun = () => {
+        const n = new Date().getTime();
+        let event = {
+            currentTick: tickNum,
+            deltaTime: (n - tickTime) / 1000
+        };
+        tickTime = n;
+        tickNum += 1;
+        _a.tickMonitor.trigger(event);
+    };
+    system.runInterval(fun, 1);
+})();
+(() => {
+    let tickNum = 0, tickTime = 0;
+    const fun = () => {
+        const n = new Date().getTime();
+        let event = {
+            currentTick: tickNum,
+            deltaTime: (n - tickTime) / 1000
+        };
+        tickTime = n;
+        tickNum += 1;
+        _a.longTickMonitor.trigger(event);
+    };
+    system.runInterval(fun, 5);
+})();
 ExGame.serverMap = new Map;
 export function receiveMessage(exportName) {
     return function (target, propertyName, descriptor) {

@@ -34,7 +34,7 @@
         "sounds": [{
             "name": "sounds/wb/anger_of_ancient",
             "stream": true,
-            "volume": 0.5,
+            "volume": 0.65,
             "load_on_low_memory": true
         }]
     },
@@ -43,7 +43,7 @@
         "sounds": [{
             "name": "sounds/wb/unknown_world",
             "stream": true,
-            "volume": 0.5,
+            "volume": 0.65,
             "load_on_low_memory": true
         }]
     },
@@ -61,7 +61,7 @@
         "sounds": [{
             "name": "sounds/wb/ghost_tears",
             "stream": true,
-            "volume": 0.5,
+            "volume": 0.65,
             "load_on_low_memory": true
         }]
     },
@@ -70,7 +70,7 @@
         "sounds": [{
             "name": "sounds/wb/the_peotry_of_ghost",
             "stream": true,
-            "volume": 0.5,
+            "volume": 0.65,
             "load_on_low_memory": true
         }]
     },
@@ -79,7 +79,7 @@
         "sounds": [{
             "name": "sounds/wb/from_the_burning_deep",
             "stream": true,
-            "volume": 0.5,
+            "volume": 0.65,
             "load_on_low_memory": true
         }]
     },
