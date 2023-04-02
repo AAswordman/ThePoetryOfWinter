@@ -65,7 +65,6 @@ export default class ExEntityController {
     }
     onKilled(e) {
         this._isKilled = true;
-        this.onDestroy();
     }
 }
 __decorate([

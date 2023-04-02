@@ -1,3 +1,4 @@
+import { EntityDamageCause } from '@minecraft/server';
 import PomBossController from './PomBossController.js';
 export default class PomAncientStoneBoss extends PomBossController {
     constructor(e, server) {
@@ -29,8 +30,11 @@ export default class PomAncientStoneBoss extends PomBossController {
             this.server.say({ rawtext: [{ translate: "text.wb:defeat_ancient_stone.name" }] });
             console.warn("onWin");
             this.stopBarrier();
+            this.music.stop();
         }
-        this.music.stop();
+        if (e.damageSource.cause === EntityDamageCause.suicide) {
+            this.music.stop();
+        }
         super.onKilled(e);
     }
     onFail() {

@@ -2707,7 +2707,8 @@
             "requires": "($is_holographic and not $is_living_room_mode)",
             "$hud_player_rend_desktop_offset": [100, 82]
         }],
-        "controls": [{
+        "controls": [
+            {
                 "root_panel@hud.root_panel": {}
             },
             {
