@@ -13,6 +13,7 @@ import { DecEverlastingWinterGhastBoss1, DecEverlastingWinterGhastBoss2 } from '
 import { DecCommonBossLastStage } from './entities/DecCommonBossLastStage.js';
 import VarOnChangeListener from '../../modules/exmc/utils/VarOnChangeListener.js';
 import ExEnvironment from '../../modules/exmc/server/env/ExEnvironment.js';
+import { DecHostOfDeepBoss1, DecHostOfDeepBoss2, DecHostOfDeepBoss3 } from './entities/DecHostOfDeepBoss.js';
 export default class DecServer extends ExGameServer {
     constructor(config) {
         super(config);
@@ -183,7 +184,9 @@ export default class DecServer extends ExGameServer {
         this.addEntityController("dec:predators", DecCommonBossLastStage);
         this.addEntityController("dec:enchant_illager_2", DecCommonBossLastStage);
         this.addEntityController("dec:escaped_soul_entity", DecCommonBossLastStage);
-        this.addEntityController("dec:host_of_deep_2", DecCommonBossLastStage);
+        this.addEntityController("dec:host_of_deep", DecHostOfDeepBoss1);
+        this.addEntityController("dec:host_of_deep_1", DecHostOfDeepBoss2);
+        this.addEntityController("dec:host_of_deep_2", DecHostOfDeepBoss3);
         this.addEntityController("dec:ash_knight", DecCommonBossLastStage);
         this.addEntityController("dec:everlasting_winter_ghast", DecEverlastingWinterGhastBoss1);
         this.addEntityController("dec:everlasting_winter_ghast_1", DecEverlastingWinterGhastBoss2);
