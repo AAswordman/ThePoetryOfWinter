@@ -173,6 +173,7 @@ export default class ExBlockStructureNormal {
                         if (c == ' ')
                             continue;
                         res.calculateRelPos(vec, tmpV).add(res.start);
+                        // console.warn("get block at " +tmpV+" :P "+dimension?.getBlock(tmpV)?.typeId);
                         if (((_a = dimension === null || dimension === void 0 ? void 0 : dimension.getBlock(tmpV)) === null || _a === void 0 ? void 0 : _a.typeId) !== ((_c = (_b = this.analysisMap) === null || _b === void 0 ? void 0 : _b.get(c)) !== null && _c !== void 0 ? _c : MinecraftBlockTypes.air.id)) {
                             return;
                         }

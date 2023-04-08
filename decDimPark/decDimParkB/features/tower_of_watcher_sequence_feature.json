@@ -1,0 +1,11 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:sequence_feature": {
+        "description": {
+            "identifier": "dec:tower_of_watcher_sequence_feature"
+        },
+        "features": [
+            "dec:tower_of_watcher_mcstructure"
+        ]
+    }
+}

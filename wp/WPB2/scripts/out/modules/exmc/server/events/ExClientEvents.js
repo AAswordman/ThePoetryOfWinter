@@ -122,7 +122,7 @@ ExClientEvents.exEventSetting = {
         filter: {
             "name": "source"
         },
-        name: "beforeItemUseOn"
+        name: "itemUseOn"
     },
     playerHitEntity: {
         pattern: ExClientEvents.eventHandlers.registerToServerByEntity,

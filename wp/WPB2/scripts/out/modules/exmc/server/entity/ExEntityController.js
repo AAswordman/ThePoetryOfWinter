@@ -14,13 +14,14 @@ import { eventDecoratorFactory, registerEvent } from "../events/eventDecoratorFa
 export default class ExEntityController {
     constructor(e, server) {
         this._isKilled = false;
+        this.isDestroyed = false;
         this._entity = e;
         this.server = server;
         this._events = new ExEntityEvents(this);
         this.init(server);
         this.onSpawn();
         eventDecoratorFactory(this.getEvents(), this);
-        console.warn("track " + e.typeId);
+        // console.warn("track " + e.typeId);
     }
     get entity() {
         return this._entity;
@@ -50,11 +51,16 @@ export default class ExEntityController {
     }
     onSpawn() {
     }
+    destroyTrigger() {
+        if (!this.isDestroyed) {
+            this.isDestroyed = true;
+            this.onDestroy();
+        }
+    }
     onDestroy() {
         this.dispose();
     }
     dispose() {
-        console.warn("dispose");
         this.getEvents().cancelAll();
     }
     getEvents() {
@@ -84,7 +90,7 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
-], ExEntityController.prototype, "onDestroy", null);
+], ExEntityController.prototype, "destroyTrigger", null);
 __decorate([
     registerEvent("onHurt", (ctrl, e) => ctrl.exEntity.getHealth() <= 0 && !ctrl._isKilled),
     __metadata("design:type", Function),
