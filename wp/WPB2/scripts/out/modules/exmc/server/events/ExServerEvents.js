@@ -29,7 +29,7 @@ export default class ExServerEvents {
                 pattern: () => {
                     ExGame.longTickMonitor.addMonitor((e) => {
                         var _a;
-                        (_a = ExServerEvents.monitorMap.get("longTickMonitor")) === null || _a === void 0 ? void 0 : _a.forEach((fun) => {
+                        (_a = ExServerEvents.monitorMap.get("onLongTick")) === null || _a === void 0 ? void 0 : _a.forEach((fun) => {
                             fun(e);
                         });
                     });

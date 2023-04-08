@@ -33,7 +33,7 @@ ExGame.longTickMonitor = new MonitorManager();
 (() => {
     let tickNum = 0, tickTime = 0;
     const fun = () => {
-        const n = new Date().getTime();
+        const n = Date.now();
         let event = {
             currentTick: tickNum,
             deltaTime: (n - tickTime) / 1000
@@ -47,7 +47,7 @@ ExGame.longTickMonitor = new MonitorManager();
 (() => {
     let tickNum = 0, tickTime = 0;
     const fun = () => {
-        const n = new Date().getTime();
+        const n = Date.now();
         let event = {
             currentTick: tickNum,
             deltaTime: (n - tickTime) / 1000

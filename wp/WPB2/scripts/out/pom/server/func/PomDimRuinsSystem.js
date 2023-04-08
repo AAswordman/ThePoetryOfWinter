@@ -162,13 +162,13 @@ export default class PomDimRuinsSystem extends GameController {
             //1s 1 tick
             //脚下方块探测
             tmpV.set(this.player.location);
-            let loc = tmpV.clone();
-            loc.y -= 1;
+            tmpV.y -= 1;
             let block;
             try {
-                block = this.getDimension().getBlock(loc);
+                block = this.getDimension().getBlock(tmpV.floor());
             }
-            catch (e) { }
+            catch (err) { }
+            // console.warn(tmpV + "/"+block?.typeId);
             if ((block === null || block === void 0 ? void 0 : block.typeId) === "wb:portal_desertboss") {
                 //守卫遗迹判断
                 this.data.dimBackPoint = new Vector3(this.player.location).add(3, 2, 3);
@@ -335,7 +335,11 @@ export default class PomDimRuinsSystem extends GameController {
             try {
                 block = this.getDimension().getBlock(e.getBlockLocation());
             }
-            catch (e) { }
+            catch (err) {
+                console.warn(err);
+                console.warn(e.item.typeId);
+            }
+            console.warn("Block " + (block === null || block === void 0 ? void 0 : block.typeId));
             if (e.item.typeId === "wb:start_key") {
                 //遗迹传送门激活
                 if ((block === null || block === void 0 ? void 0 : block.typeId) === "wb:block_magic_equipment") {

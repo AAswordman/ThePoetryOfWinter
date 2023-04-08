@@ -1,0 +1,17 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:ore_feature": {
+		"description": {
+			"identifier": "dec:end_diamond_ore_feature"
+		},
+		"count": 5,
+		"replace_rules": [
+			{
+				"places_block": "dec:end_diamond_ore",
+				"may_replace": [
+					"minecraft:end_stone"
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,14 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:single_block_feature": {
+		"description": {
+			"identifier": "wb:desolation_forest_grass_block_feature"
+		},
+		"places_block": "minecraft:grass",
+		"enforce_survivability_rules": false,
+		"enforce_placement_rules": false,
+		"may_replace": [
+			"minecraft:mossy_cobblestone"
+		]
+	}
+}

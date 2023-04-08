@@ -72,7 +72,7 @@ export default class ExGameServer {
             return ExGameServer.musicMap.get(id);
         }
         else {
-            let m = new ExSound(this.getEvents(), id, t);
+            let m = new ExSound(this, id, t);
             ExGameServer.musicMap.set(id, m);
             return m;
         }
