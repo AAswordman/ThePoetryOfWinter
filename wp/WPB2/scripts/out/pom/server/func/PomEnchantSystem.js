@@ -1,4 +1,4 @@
-import { ItemDurabilityComponent, Items, ItemStack, MinecraftBlockTypes, MinecraftItemTypes } from "@minecraft/server";
+import { Items, ItemStack, MinecraftBlockTypes, MinecraftItemTypes } from "@minecraft/server";
 import Vector3 from "../../../modules/exmc/math/Vector3.js";
 import ExBlock from "../../../modules/exmc/server/block/ExBlock.js";
 import ExColorLoreUtil from "../../../modules/exmc/server/item/ExColorLoreUtil.js";
@@ -45,8 +45,7 @@ export default class PomEnChantSystem extends GameController {
                     if (item.typeId === "wb:book_cache") {
                         PomEnChantSystem.blockTranslateData.set(new Vector3(block).toString(), item);
                         ExBlock.getInstance(block).transTo("wb:block_translate_book");
-                        item2.amount--;
-                        bag.setItem(this.exPlayer.selectedSlot, item2);
+                        bag.clearItem(bag.getSelectedSlot(), 1);
                     }
                 }
             }
@@ -60,10 +59,10 @@ export default class PomEnChantSystem extends GameController {
                 if (item && item.amount === 1) {
                     let exHandItem = ExItem.getInstance(item);
                     let exSaveItem = ExItem.getInstance(saveItem);
-                    let d = saveItem.getComponent(ItemDurabilityComponent.componentId).data;
+                    let d = exSaveItem.getItemDurabilityComponent().damage;
                     let exNewItem = new ExItem(new ItemStack(d >= 4 ? MinecraftItemTypes.enchantedBook : Items.get("wb:book_cache")));
-                    if (exNewItem.hasComponent(ItemDurabilityComponent.componentId)) {
-                        exNewItem.getComponent(ItemDurabilityComponent.componentId).setValue(d - 1);
+                    if (exNewItem.hasItemDurabilityComponent()) {
+                        (exNewItem.getItemDurabilityComponent()).damage = d + 1;
                     }
                     // hand -> new
                     // save -> hand

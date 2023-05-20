@@ -1,4 +1,4 @@
-import { ItemEnchantsComponent } from "@minecraft/server";
+import { ItemDurabilityComponent, ItemEnchantsComponent } from "@minecraft/server";
 export default class ExItem {
     constructor(item) {
         this._item = item;
@@ -33,6 +33,12 @@ export default class ExItem {
     }
     hasEnchantsComponent() {
         return this.hasComponent(ItemEnchantsComponent.componentId);
+    }
+    getItemDurabilityComponent() {
+        return this.getComponent(ItemDurabilityComponent.componentId);
+    }
+    hasItemDurabilityComponent() {
+        return this.hasComponent(ItemDurabilityComponent.componentId);
     }
 }
 ExItem.propertyNameCache = "exCache";

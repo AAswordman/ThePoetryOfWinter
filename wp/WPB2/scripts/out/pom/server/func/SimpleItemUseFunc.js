@@ -1,4 +1,4 @@
-import { MinecraftEffectTypes, MinecraftBlockTypes, ItemStack, Items } from '@minecraft/server';
+import { MinecraftEffectTypes, ItemStack, Items } from '@minecraft/server';
 import { ModalFormData } from "@minecraft/server-ui";
 import Vector3 from '../../../modules/exmc/math/Vector3.js';
 import ExDimension from '../../../modules/exmc/server/ExDimension.js';
@@ -12,7 +12,7 @@ export default class SimpleItemUseFunc extends GameController {
             var _a;
             const itemId = (_a = this.exPlayer.getBag().getItemOnHand()) === null || _a === void 0 ? void 0 : _a.typeId;
             if (itemId === "wb:axex_equipment_a") {
-                if (e.brokenBlockPermutation.type.id === MinecraftBlockTypes.log.id || e.brokenBlockPermutation.type.id === MinecraftBlockTypes.log2.id) {
+                if (e.brokenBlockPermutation.hasTag("log")) {
                     this.chainDigging(new Vector3(e.block), e.brokenBlockPermutation.type.id, 16);
                 }
             }
