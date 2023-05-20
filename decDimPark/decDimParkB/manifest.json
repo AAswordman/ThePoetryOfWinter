@@ -1,0 +1,16 @@
+{
+    "format_version": 2,
+    "capabilities": ["script_eval"],
+    "header": {
+        "name": "DecIsland BiomesPark",
+        "description": "test for boss structure",
+        "uuid": "2d4ede5c-5ac6-49ba-ab2b-44be7fbaa757",
+        "min_engine_version": [1, 19, 50],
+        "version": [1, 8, 0]
+    },
+    "modules": [{
+        "type": "data",
+        "uuid": "22c57925-7ddc-4ac9-a9ec-e4d2133c05ef",
+        "version": [1, 8, 0]
+    }]
+}

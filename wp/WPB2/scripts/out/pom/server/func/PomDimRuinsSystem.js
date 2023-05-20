@@ -336,10 +336,9 @@ export default class PomDimRuinsSystem extends GameController {
                 block = this.getDimension().getBlock(e.getBlockLocation());
             }
             catch (err) {
-                console.warn(err);
-                console.warn(e.item.typeId);
+                // console.warn(err);
+                // console.warn(e.item.typeId);
             }
-            console.warn("Block " + (block === null || block === void 0 ? void 0 : block.typeId));
             if (e.item.typeId === "wb:start_key") {
                 //遗迹传送门激活
                 if ((block === null || block === void 0 ? void 0 : block.typeId) === "wb:block_magic_equipment") {

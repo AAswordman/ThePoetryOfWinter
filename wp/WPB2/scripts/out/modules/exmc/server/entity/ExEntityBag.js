@@ -1,7 +1,9 @@
+import { EntityEquipmentInventoryComponent, EntityInventoryComponent } from "@minecraft/server";
 export default class ExEntityBag {
     constructor(entity) {
         this._entity = entity;
-        this.bagComponent = entity.getInventoryComponent();
+        this.bagComponent = entity.getComponent(EntityInventoryComponent.componentId);
+        this.equipmentComponent = entity.getComponent(EntityEquipmentInventoryComponent.componentId);
     }
     getItem(arg) {
         if (typeof (arg) === "number") {
@@ -44,23 +46,38 @@ export default class ExEntityBag {
         ;
         return items;
     }
-    clearItem(id, amount) {
-        for (let i = 0; i < this.size(); i++) {
-            let item = this.getItem(i);
-            if ((item === null || item === void 0 ? void 0 : item.typeId) === id) {
-                let rem = amount - item.amount;
-                if (rem > 0) {
-                    this.setItem(i, undefined);
-                    amount = rem;
+    clearItem(msg, amount) {
+        if (typeof msg === 'string') {
+            let id = msg;
+            let res = 0;
+            for (let i = 0; i < this.size(); i++) {
+                let item = this.getItem(i);
+                if ((item === null || item === void 0 ? void 0 : item.typeId) === id) {
+                    let suc = this.clearItem(i, amount);
+                    res += suc;
+                    amount -= suc;
+                    if (amount <= 0) {
+                        break;
+                    }
+                }
+            }
+            return res;
+        }
+        else {
+            let item = this.getItem(msg);
+            if (item) {
+                if (amount >= item.amount) {
+                    this.setItem(msg, undefined);
+                    return item.amount;
                 }
                 else {
                     item.amount -= amount;
-                    this.setItem(i, item);
-                    break;
+                    this.setItem(msg, item);
+                    return amount;
                 }
             }
+            return 0;
         }
-        ;
     }
     size() {
         return this.bagComponent.inventorySize;
@@ -82,6 +99,18 @@ export default class ExEntityBag {
     }
     addItem(item) {
         this.bagComponent.container.addItem(item);
+    }
+    getSlot(pos) {
+        return this.bagComponent.container.getSlot(pos);
+    }
+    getEquipment(slot) {
+        return this.equipmentComponent.getEquipment(slot);
+    }
+    setEquipment(slot, equip) {
+        return this.equipmentComponent.setEquipment(slot, equip);
+    }
+    getEquipmentSlot(slot) {
+        return this.equipmentComponent.getEquipmentSlot(slot);
     }
 }
 //# sourceMappingURL=ExEntityBag.js.map

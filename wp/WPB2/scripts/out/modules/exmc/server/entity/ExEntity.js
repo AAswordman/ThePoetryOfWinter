@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { EntityHealthComponent, EntityInventoryComponent, EntityVariantComponent, EntityMarkVariantComponent, EntityIsBabyComponent, EntityIsChargedComponent, EntityDamageCause } from '@minecraft/server';
+import { EntityHealthComponent, EntityVariantComponent, EntityMarkVariantComponent, EntityIsBabyComponent, EntityIsChargedComponent, EntityDamageCause, EquipmentSlot } from '@minecraft/server';
 import ExScoresManager from './ExScoresManager.js';
 import Vector3 from '../../math/Vector3.js';
 import ExEntityBag from './ExEntityBag.js';
@@ -99,18 +99,13 @@ export default class ExEntity {
         return this._entity.runCommandAsync(str);
     }
     detectArmor(head, chest, legs, boots) {
+        var _a, _b, _c, _d;
         return __awaiter(this, void 0, void 0, function* () {
-            try {
-                let res = yield this.command.run("execute if entity @s[hasitem={location=slot.armor.head,item=" + head +
-                    "}] if entity @s[hasitem={location=slot.armor.chest,item=" + chest +
-                    "}] if entity @s[hasitem={location=slot.armor.legs,item=" + legs +
-                    "}] if entity @s[hasitem={location=slot.armor.feet,item=" + boots +
-                    "}] run testfor @s");
-                return true;
-            }
-            catch (e) {
-                return false;
-            }
+            const bag = this.getBag();
+            return ((_a = bag.getEquipment(EquipmentSlot.head)) === null || _a === void 0 ? void 0 : _a.typeId) == head &&
+                ((_b = bag.getEquipment(EquipmentSlot.chest)) === null || _b === void 0 ? void 0 : _b.typeId) == chest &&
+                ((_c = bag.getEquipment(EquipmentSlot.legs)) === null || _c === void 0 ? void 0 : _c.typeId) == legs &&
+                ((_d = bag.getEquipment(EquipmentSlot.feet)) === null || _d === void 0 ? void 0 : _d.typeId) == boots;
         });
     }
     getScoresManager() {
@@ -152,12 +147,6 @@ export default class ExEntity {
     }
     getMaxHealth() {
         return this.getHealthComponent().value;
-    }
-    hasInventoryComponent() {
-        return this.hasComponent(EntityInventoryComponent.componentId);
-    }
-    getInventoryComponent() {
-        return this.getComponent(EntityInventoryComponent.componentId);
     }
     getBag() {
         return new ExEntityBag(this);
