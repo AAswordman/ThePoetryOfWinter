@@ -10,8 +10,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import ExEntity from '../entity/ExEntity.js';
 import format from '../../utils/format.js';
 import UUID from '../../utils/UUID.js';
-import TickDelayTask from '../../utils/TickDelayTask.js';
 import Queue from '../../utils/Queue.js';
+import ExSystem from '../../utils/ExSystem.js';
 export default class ExCommand {
     constructor(runner) {
         this.runner = runner;
@@ -33,7 +33,7 @@ export default class ExCommand {
     }
     static init(server) {
         this.queue = new Queue();
-        this.delay = new TickDelayTask(server.getEvents(), () => {
+        this.delay = ExSystem.tickTask(() => {
             let i = 0;
             while (ExCommand.queue.length > 0 && i < 100) {
                 const a = ExCommand.queue.shift();

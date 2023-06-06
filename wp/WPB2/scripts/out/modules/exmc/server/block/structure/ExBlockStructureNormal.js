@@ -19,6 +19,41 @@ export default class ExBlockStructureNormal {
         this.dimension = ExDimension.getInstance(dim);
         return this;
     }
+    // find(): ExBlockArea | undefined {
+    //     if (!this.dimension) throw new Error("dimension is undefined");
+    //     if (!this.structure) throw new Error("structure is undefined");
+    //     if (!this.analysisMap) throw new Error("analysisMap is undefined");
+    //     if (!this.area) throw new Error("area is undefined");
+    //     const childArea = new ExBlockArea(
+    //         new Vector3(),
+    //         new Vector3(
+    //             this.structure[0][0].length,
+    //             this.structure[0].length,
+    //             this.structure.length
+    //         )
+    //     );
+    //     let res: ExBlockArea | undefined;
+    //     for (let i = 0; i < 6; i++) {
+    //         const tmpArea = i > 0 ? childArea.clone() : childArea;
+    //         for (let j = 0; j < 4; j++) {
+    //             if ((this.direction & (1 << i)) && (this.direction & (1 << 6))) {
+    //                 tmpArea.turnFrontClockwise();
+    //             }
+    //             res = this.searchOnce(tmpArea);
+    //             if (res) return res;
+    //         }
+    //         if (i >= 4 && (this.direction & (1 << i)) && (this.direction & (1 << 6))) {
+    //             const tmpArea = childArea.clone();
+    //             tmpArea.turnUp();
+    //             for (let j = 0; j < 4; j++) {
+    //                 tmpArea.turnFrontClockwise();
+    //                 res = this.searchOnce(tmpArea);
+    //                 if (res) return res;
+    //             }
+    //         }
+    //     }
+    //     return undefined;
+    // }
     find() {
         if (this.dimension === undefined)
             throw new Error("dimension is undefined");

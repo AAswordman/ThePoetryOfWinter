@@ -1,0 +1,18 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:single_block_feature": {
+        "description": {
+            "identifier": "ys:herobrine_cave_rt_feature"
+        },
+        "places_block": "minecraft:redstone_torch",
+        "enforce_survivability_rules": true,
+        "enforce_placement_rules": true,
+        "may_attach_to": {
+            "auto_rotate": true,
+            "bottom": ["minecraft:stone"]
+        },
+        "may_replace": [
+            "minecraft:air"
+        ]
+    }
+}

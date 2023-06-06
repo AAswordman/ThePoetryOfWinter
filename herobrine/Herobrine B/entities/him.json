@@ -1,0 +1,57 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "ys:him",
+			"is_spawnable": true,
+			"is_summonable": false,
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:knockback_resistance": {
+				"value": 1
+			},
+			"minecraft:health": {
+				"value": 1,
+				"max": 1,
+				"min": 1
+			},
+			"minecraft:collision_box": {
+				"width": 0,
+				"height": 0
+			},
+			"minecraft:transformation": {
+				"into": "ys:herobrine",
+				"delay": 19.95
+			},
+			"minecraft:timer": {
+				"looping": false,
+				"time": [19,0],
+				"time_down_event": {
+					"event": "spawn",
+					"target": "self"
+				}
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"cause": "all",
+					"deals_damage": false
+				}
+			},
+			"minecraft:tick_world": {},
+			"minecraft:fire_immune": {},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			}
+		},
+		"events": {
+			"spawn": {
+				"run_command": {
+					"command": "tellraw @a {\"rawtext\":[{\"text\":\"§eHerobrine joined the game§f\"}]}"
+				}
+			}
+		}
+	}
+}

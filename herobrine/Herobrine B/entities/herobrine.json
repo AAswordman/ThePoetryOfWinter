@@ -1,0 +1,106 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "ys:herobrine",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false,
+            "scripts": {
+                "animate": [
+                    "tp"
+                ]
+            },
+            "animations": {
+                "tp": "animation.tp"
+            }
+		},
+		"component_groups": {
+			"miss": {
+				"minecraft:is_chested": {},
+				"minecraft:timer": {
+					"time": 0.5,
+					"looping": false,
+					"time_down_event": {
+						"event": "rm",
+						"target": "self"
+					}
+				}
+			}
+		},
+		"components": {
+			"minecraft:knockback_resistance": {
+				"value": 1
+			},
+			"minecraft:health": {
+				"value": 1,
+				"max": 1,
+				"min": 1
+			},
+			"minecraft:collision_box": {
+				"width": 0,
+				"height": 1.8
+			},
+			"minecraft:type_family": {
+				"family": [
+					"ys:herobrine",
+					"inanimate"
+				]
+			},
+			"minecraft:entity_sensor": {
+				"sensor_range": 9,
+				"minimum_count": 1,
+				"event_filters": {
+					"all_of": [
+						{
+							"test": "is_family",
+							"subject": "other",
+							"value": "player"
+						},
+						{
+							"operator": "not",
+							"test": "has_ability",
+							"subject": "other",
+							"value": "invulnerable"
+						}
+					]
+				},
+				"event": "miss"
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 0,
+				"look_distance": 512,
+				"probability": 1
+			},
+			"minecraft:tick_world": {},
+			"minecraft:fire_immune": {},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			}
+		},
+		"events": {
+			"miss": {
+				"add": {
+					"component_groups": [
+						"miss"
+					]
+				},
+				"run_command": {
+					"command": [
+						"spreadplayers ~ ~ 16 48 @s",
+						"playsound ambient.cave @a ~~~ 10"
+					]
+				}
+			},
+			"rm": {
+				"remove": {
+					"component_groups": [
+						"miss"
+					]
+				}
+			}
+		}
+	}
+}

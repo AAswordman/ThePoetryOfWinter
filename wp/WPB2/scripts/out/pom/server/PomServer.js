@@ -18,7 +18,6 @@ import ExPlayer from '../../modules/exmc/server/entity/ExPlayer.js';
 import { Objective } from "../../modules/exmc/server/entity/ExScoresManager.js";
 import { registerEvent } from '../../modules/exmc/server/events/eventDecoratorFactory.js';
 import Random from "../../modules/exmc/utils/Random.js";
-import TickDelayTask from '../../modules/exmc/utils/TickDelayTask.js';
 import TimeLoopTask from "../../modules/exmc/utils/TimeLoopTask.js";
 import PomClient from "./PomClient.js";
 import GlobalSettings from "./cache/GlobalSettings.js";
@@ -36,6 +35,7 @@ import { PomIntentionsBoss1, PomIntentionsBoss2, PomIntentionsBoss3 } from './en
 import itemCanChangeBlock from './items/itemCanChangeBlock.js';
 import PomBossBarrier from './func/barrier/PomBossBarrier.js';
 import ExEnvironment from '../../modules/exmc/server/env/ExEnvironment.js';
+import ExSystem from '../../modules/exmc/utils/ExSystem.js';
 // import * as b from "brain.js";
 export default class PomServer extends ExGameServer {
     constructor(config) {
@@ -273,9 +273,9 @@ export default class PomServer extends ExGameServer {
                 }
             }
         };
-        this.ruinCleaner = new TimeLoopTask(this.getEvents(), () => {
+        this.ruinCleaner = ExSystem.tickTask(() => {
             upDateMonster();
-        }).delay(60000);
+        }).delay(60 * 20);
         upDateMonster();
         this.ruinCleaner.start();
         const isInProtectArea = (v) => {
@@ -333,7 +333,7 @@ export default class PomServer extends ExGameServer {
         const tmpV = new Vector3();
         const tmpP = new Vector3();
         this.ruinDesertGuardPos = new Vector3(RuinsLoaction.DESERT_RUIN_LOCATION_CENTER);
-        this.ruinDesertGuardRule = new TickDelayTask(this.getEvents(), () => {
+        this.ruinDesertGuardRule = ExSystem.tickTask(() => {
             enddim.spawnParticle("wb:ruin_desert_guardpar", this.ruinDesertGuardPos);
             if (ruin_desert_count > 400) {
                 ruin_desert_count = 0;
@@ -368,7 +368,7 @@ export default class PomServer extends ExGameServer {
             ruin_desert_count += 1;
         }).delay(1);
         //遗迹功能总监听
-        this.ruinFuncLooper = new TickDelayTask(this.getEvents(), () => {
+        this.ruinFuncLooper = ExSystem.tickTask(() => {
             var _a;
             let desertFlag = false;
             let mindFlag = false;

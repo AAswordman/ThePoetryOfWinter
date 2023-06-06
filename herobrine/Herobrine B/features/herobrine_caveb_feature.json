@@ -1,0 +1,10 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "ys:herobrine_caveb_feature"
+		},
+		"structure_name": "ys:herobrine_caveb",
+		"constraints": {}
+	}
+}

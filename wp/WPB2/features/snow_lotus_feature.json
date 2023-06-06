@@ -1,24 +1,24 @@
 {
-  "format_version": "1.13.0",
-  "minecraft:single_block_feature": {
-    "description": {
-      "identifier": "dec:snow_lotus_feature"
-    },
-    "places_block": "dec:snow_lotus",
-    "enforce_survivability_rules": true,
-    "enforce_placement_rules": true,
-    "may_replace": [
-      "minecraft:air",
-      "minecraft:snow_layer"
-    ],
-    "may_attach_to": {
-			"bottom": [
-				"minecraft:grass",
-        "minecraft:dirt",
-        "minecraft:stone",
-        "minecraft:snow",
-        "minecraft:gravel"
-			]
-		}
-  }
+    "format_version": "1.13.0",
+    "minecraft:single_block_feature": {
+        "description": {
+            "identifier": "dec:snow_lotus_feature"
+        },
+        "places_block": "dec:snow_lotus",
+        "enforce_survivability_rules": true,
+        "enforce_placement_rules": true,
+        "may_replace": [
+            "minecraft:air",
+            "minecraft:snow_layer"
+        ],
+        "may_attach_to": {
+            "bottom": [
+                "minecraft:grass",
+                "minecraft:dirt",
+                "minecraft:stone",
+                "minecraft:snow",
+                "minecraft:gravel"
+            ]
+        }
+    }
 }

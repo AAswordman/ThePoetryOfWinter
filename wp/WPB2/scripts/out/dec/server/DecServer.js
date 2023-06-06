@@ -14,10 +14,15 @@ import { DecCommonBossLastStage } from './entities/DecCommonBossLastStage.js';
 import VarOnChangeListener from '../../modules/exmc/utils/VarOnChangeListener.js';
 import ExEnvironment from '../../modules/exmc/server/env/ExEnvironment.js';
 import { DecHostOfDeepBoss1, DecHostOfDeepBoss2, DecHostOfDeepBoss3 } from './entities/DecHostOfDeepBoss.js';
+import GZIPUtil from '../../modules/exmc/utils/GZIPUtil.js';
+import IStructureSettle from './data/structure/IStructureSettle.js';
+import IStructureDriver from './data/structure/IStructureDriver.js';
 export default class DecServer extends ExGameServer {
     constructor(config) {
         super(config);
         this.tmpV = new Vector3();
+        //test
+        this.compress = [""];
         this.i_inviolable = new Objective("i_inviolable").create("i_inviolable");
         this.i_damp = new Objective("i_damp").create("i_damp");
         this.i_soft = new Objective("i_soft").create("i_soft");
@@ -42,21 +47,24 @@ export default class DecServer extends ExGameServer {
             }
         }, false);
         this.getEvents().events.beforeChat.subscribe(e => {
+            var _a, _b;
             let cmdRunner = this.getExDimension(MinecraftDimensionTypes.overworld);
             let sender = ExPlayer.getInstance(e.sender);
             if (e.message.startsWith(">/")) {
                 let cmds = commandAnalysis(e.message.substring(2));
                 let errMsg = "";
                 switch (cmds[0]) {
-                    case "help":
+                    case "help": {
                         sender.command.run("function help");
                         break;
-                    case "creators":
+                    }
+                    case "creators": {
                         if (DecGlobal.isDec()) {
                             sender.command.run("function test/creator_list");
                         }
                         break;
-                    case "diemode":
+                    }
+                    case "diemode": {
                         if (cmds[1] === "open") {
                             sender.command.run("function diemode/open");
                         }
@@ -67,7 +75,8 @@ export default class DecServer extends ExGameServer {
                             errMsg = "Invalid command " + cmds[1];
                         }
                         break;
-                    case "magic":
+                    }
+                    case "magic": {
                         if (DecGlobal.isDec()) {
                             if (cmds[1] === "display") {
                                 if (e.sender.isOp()) {
@@ -90,6 +99,42 @@ export default class DecServer extends ExGameServer {
                             }
                         }
                         break;
+                    }
+                    case "_save": {
+                        if (cmds.length < 7)
+                            return;
+                        let start = new Vector3(Math.floor(parseFloat(cmds[1])), Math.floor(parseFloat(cmds[2])), Math.floor(parseFloat(cmds[3])));
+                        let end = new Vector3(Math.floor(parseFloat(cmds[4])), Math.floor(parseFloat(cmds[5])), Math.floor(parseFloat(cmds[6]))).add(1);
+                        let data = [];
+                        for (let i of new IStructureDriver().save(this.getExDimension(MinecraftDimensionTypes.overworld), start, end)) {
+                            let res = i.toData();
+                            i.dispose();
+                            // console.warn(JSON.stringify(res));
+                            let com = (_a = GZIPUtil.zipString(JSON.stringify(res))) !== null && _a !== void 0 ? _a : "";
+                            data.push(com);
+                            console.warn(com);
+                        }
+                        this.compress = data;
+                        // console.warn(GZIPUtil.unzipString(com));
+                        break;
+                    }
+                    case "_load": {
+                        let start = new Vector3(Math.floor(parseFloat(cmds[1])), Math.floor(parseFloat(cmds[2])), Math.floor(parseFloat(cmds[3])));
+                        let data = new IStructureSettle();
+                        let task = [];
+                        for (let comp of this.compress) {
+                            task.push(() => {
+                                data.load(JSON.parse(GZIPUtil.unzipString(comp)));
+                                data.run(this.getExDimension(MinecraftDimensionTypes.overworld), start)
+                                    .then(() => {
+                                    var _a;
+                                    (_a = task.shift()) === null || _a === void 0 ? void 0 : _a();
+                                });
+                            });
+                        }
+                        (_b = task.shift()) === null || _b === void 0 ? void 0 : _b();
+                        break;
+                    }
                 }
                 if (errMsg.length !== 0) {
                     sender.command.run(`tellraw @s { "rawtext" : [ { "text" : "Command Error: ${errMsg}" } ] }`);

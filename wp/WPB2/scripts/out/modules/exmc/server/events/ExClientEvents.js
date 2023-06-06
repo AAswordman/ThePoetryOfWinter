@@ -2,8 +2,8 @@ var _a;
 import { Player } from '@minecraft/server';
 import ExPlayer from '../entity/ExPlayer.js';
 import { ItemOnHandChangeEvent } from "./events.js";
-import TickDelayTask from "../../utils/TickDelayTask.js";
 import EventHandle from './EventHandle.js';
+import ExSystem from "../../utils/ExSystem.js";
 export default class ExClientEvents {
     constructor(client) {
         this.exEvents = {
@@ -101,7 +101,7 @@ ExClientEvents.exEventSetting = {
                 let part = ExClientEvents.eventHandlers.monitorMap[k];
                 if (!_a.onceItemUseOnMap.has(e.source)) {
                     const player = e.source;
-                    _a.onceItemUseOnMap.set(e.source, [new TickDelayTask(ExClientEvents.eventHandlers.server.getEvents(), () => {
+                    _a.onceItemUseOnMap.set(e.source, [ExSystem.tickTask(() => {
                             let res = _a.onceItemUseOnMap.get(player);
                             if (res === undefined)
                                 return;

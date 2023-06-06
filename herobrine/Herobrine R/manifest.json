@@ -1,0 +1,30 @@
+{
+	"format_version": 2,
+	"header": {
+		"description": "Creepypasta Herobrine by宇帅＆H2VNull",
+		"name": "Creepypasta Herobrine",
+		"uuid": "ce5fc592-40a0-d9c2-76e1-a6d2ed261d08",
+		"version": "1.0.0",
+		"min_engine_version": [1, 19, 0],
+		"pack_scope": "world"
+	},
+	"modules": [
+		{
+			"type": "resources",
+			"uuid": "10f2f1ef-0c18-5860-b4bc-30f8e1679d73",
+			"version": "1.0.0"
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "668e6430-5151-9d21-6fa1-ce732ff1bb39",
+			"version": "1.0.0"
+		}
+	],
+	"metadata": {
+		"authors": [
+			"宇帅",
+			"Null"
+		]
+	}
+}
