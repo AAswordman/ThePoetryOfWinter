@@ -1,0 +1,18 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.enter_game": {
+            "timeline": {
+                "20": [
+                    "/tellraw @s {\"rawtext\":[{\"text\":\"§eHerobrine joined the game§f\"}]}",
+                    "/execute @e[type=ys:herobrine] ~~~ tag @a add him",
+                    "/execute @s[tag=!him] ~~~ summon ys:herobrine ~~~",
+                    "/execute @e[type=ys:herobrine] ~~~ spreadplayers ~ ~ 16 64 @s",
+                    "/tag @s remove him"
+                ]
+            },
+            "animation_length": 21,
+            "loop": false
+        }
+    }
+}

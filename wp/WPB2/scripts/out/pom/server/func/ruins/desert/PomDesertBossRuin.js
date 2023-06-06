@@ -67,6 +67,18 @@ export default class PomDesertBossRuin {
         this.dispose();
     }
     init(x, y, z, dim) {
+        /*
+        The code generates a maze with towers in a 32x32 grid. The maze is created using a random block placement algorithm and a recursive backtracking pathfinding algorithm. The towers are placed randomly on the grid and connected to neighboring towers.
+        Step by step explanation:
+- Th    e code sets up the initial variables for the maze and tower placement.
+- Th    en, a 32x32 2D array called "maze" is created using the "Array.from()" function and filled with zeros.
+- Ra    ndom blocks are placed on the maze until there are 64 blocks.
+- A     starting point is set at the top left corner of the maze for the pathfinding algorithm.
+- Th    e pathfinding algorithm uses a recursive backtracking method to carve a path through the maze from the starting point.
+- Du    ring the pathfinding, towers are randomly placed on the grid until there are 24 towers.
+- Th    e towers are connected to nearby towers.
+- Th    e final result is an array of towers with connections between them and a maze
+        */
         this.x = x;
         this.y = y;
         this.z = z;
@@ -78,10 +90,10 @@ export default class PomDesertBossRuin {
         const r = new Random(seed);
         const EMPTY = 0, BLOCK = 1, PATH = 2, UNDEF = 3, CENTER = 4, TOWER = 5;
         const getMsg = (x, y) => {
-            try {
+            if (y >= 0 && y < maze.length && x >= 0 && x < maze[y].length) {
                 return maze[y][x];
             }
-            catch (e) {
+            else {
                 return UNDEF;
             }
         };
@@ -135,7 +147,7 @@ export default class PomDesertBossRuin {
         class Tower {
             constructor(x, y, height) {
                 this.height = height;
-                this.connections = [];
+                this.connections = new Set();
                 this.x = x;
                 this.y = y;
             }
@@ -145,8 +157,7 @@ export default class PomDesertBossRuin {
                 }
             }
             connect(t) {
-                this.connections.push(t);
-                //console.log("Connect",this.toString(),t.toString());
+                this.connections.add(t);
             }
             [Symbol.toStringTag]() {
                 return this.toString();
@@ -157,10 +168,10 @@ export default class PomDesertBossRuin {
         }
         const vertex = Array.from(new Array(16), () => new Array(16).fill(EMPTY));
         const getVertex = (x, y) => {
-            try {
+            if (y >= 0 && y < vertex.length && x >= 0 && x < vertex[y].length) {
                 return vertex[y][x];
             }
-            catch (e) {
+            else {
                 return UNDEF;
             }
         };

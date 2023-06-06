@@ -5,38 +5,49 @@ export default class ExScoresManager {
     constructor(e) {
         this.entity = e;
     }
-    getScore(objective) {
-        var _a, _b, _c, _d, _e, _f;
-        let name = typeof objective === "string" ? objective : objective.name;
+    getIdentity(objective) {
         if (this.entity instanceof ExNullEntity) {
             const e = this.entity;
-            return (_b = ((_a = world.scoreboard.getObjective(name).getScores().find((i) => (i.participant.displayName === e.nameTag))) === null || _a === void 0 ? void 0 : _a.score)) !== null && _b !== void 0 ? _b : 0;
+            return world.scoreboard.getObjective(objective).getParticipants().find((i) => (i.displayName === e.nameTag));
         }
         else {
-            try {
-                return (_d = ((_c = world.scoreboard.getObjective(name)) === null || _c === void 0 ? void 0 : _c.getScore(this.entity.scoreboard))) !== null && _d !== void 0 ? _d : 0;
-            }
-            catch (err) {
-                const e = this.entity;
-                return (_f = ((_e = world.scoreboard.getObjective(name).getScores().find((i) => (i.participant === e.scoreboard))) === null || _e === void 0 ? void 0 : _e.score)) !== null && _f !== void 0 ? _f : 0;
-            }
+            return this.entity.scoreboard;
         }
     }
-    setScoreAsync(objective, num) {
+    getScore(objective) {
         let name = typeof objective === "string" ? objective : objective.name;
-        this.entity.runCommandAsync(`scoreboard players set ${this.entity instanceof ExNullEntity ? '"' + this.entity.nameTag + '"' : "@s"} ${name} ${num}`);
+        let id = this.getIdentity(name);
+        if (!id)
+            return 0;
+        try {
+            return world.scoreboard.getObjective(name).getScore(id);
+        }
+        catch (e) {
+            return 0;
+        }
+        ;
     }
-    addScoreAsync(objective, num) {
+    setScore(objective, num) {
         let name = typeof objective === "string" ? objective : objective.name;
-        this.entity.runCommandAsync(`scoreboard players add ${this.entity instanceof ExNullEntity ? '"' + this.entity.nameTag + '"' : "@s"} ${name} ${num}`);
+        let id = this.getIdentity(name);
+        if (!id)
+            return false;
+        world.scoreboard.getObjective(name).setScore(id, num);
+        return true;
     }
-    removeScoreAsync(objective, num) {
-        let name = typeof objective === "string" ? objective : objective.name;
-        this.entity.runCommandAsync(`scoreboard players remove ${this.entity instanceof ExNullEntity ? '"' + this.entity.nameTag + '"' : "@s"} ${name} ${num}`);
+    addScore(objective, num) {
+        return this.setScore(objective, this.getScore(objective) + num);
     }
-    deleteScoreAsync(objective) {
-        let name = typeof objective === "string" ? objective : objective.name;
-        this.entity.runCommandAsync(`scoreboard players reset ${this.entity instanceof ExNullEntity ? '"' + this.entity.nameTag + '"' : "@s"} ${name}`);
+    removeScore(objective, num) {
+        return this.setScore(objective, this.getScore(objective) - num);
+    }
+    deleteScore(objective) {
+        const name = typeof objective === "string" ? objective : objective.name;
+        const identity = this.getIdentity(name);
+        if (!identity)
+            return false;
+        world.scoreboard.getObjective(name).removeParticipant(identity);
+        return true;
     }
 }
 export class Objective {
@@ -48,11 +59,10 @@ export class Objective {
             world.scoreboard.addObjective(this.name, showName);
         }
         catch (e) { }
-        // ExGameConfig.runCommandAsync(`scoreboard objectives add ${this.name} dummy "${showName}"`);
         return this;
     }
     delete() {
-        ExGameConfig.runCommandAsync(`scoreboard objectives remove ${this.name}`);
+        world.scoreboard.removeObjective(this.name);
     }
     setDisplay(mode = "sidebar", ascending = true) {
         if (mode == "sidebar") {
@@ -64,5 +74,4 @@ export class Objective {
         return this;
     }
 }
-;
 //# sourceMappingURL=ExScoresManager.js.map

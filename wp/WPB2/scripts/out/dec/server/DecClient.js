@@ -196,14 +196,14 @@ export default class DecClient extends ExGameClient {
                         let mg = scores.getScore("magicpoint");
                         if (11 <= mg && mg <= 29) {
                             this.getExDimension().spawnParticle("dec:amethyst_armor_magic_increase_particle", p.location);
-                            scores.addScoreAsync("magicpoint", 1);
+                            scores.addScore("magicpoint", 1);
                         }
                     }
                     else {
                         let mg = scores.getScore("wbfl");
                         if (20 <= mg && mg <= 100) {
                             this.getExDimension().spawnParticle("dec:amethyst_armor_magic_increase_particle", p.location);
-                            scores.addScoreAsync("wbfl", 1);
+                            scores.addScore("wbfl", 1);
                         }
                     }
                 }
@@ -231,14 +231,14 @@ export default class DecClient extends ExGameClient {
                         let mg = scores.getScore("magicpoint");
                         if (mg <= 15) {
                             this.getExDimension().spawnParticle("dec:wood_armor_magic_increase_particle", p.location);
-                            scores.addScoreAsync("magicpoint", 1);
+                            scores.addScore("magicpoint", 1);
                         }
                     }
                     else {
                         let mg = scores.getScore("wbfl");
                         if (mg <= 70) {
                             this.getExDimension().spawnParticle("dec:wood_armor_magic_increase_particle", p.location);
-                            scores.addScoreAsync("wbfl", 1);
+                            scores.addScore("wbfl", 1);
                         }
                     }
                 }

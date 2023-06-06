@@ -13,8 +13,8 @@ import Random from "../../../../../modules/exmc/utils/Random.js";
 import * as desertCommand from "../../ruins/desert/PomDesertRuinCommmand.js";
 import { MinecraftEffectTypes } from '@minecraft/server';
 import ExEntity from "../../../../../modules/exmc/server/entity/ExEntity.js";
-import TickDelayTask from '../../../../../modules/exmc/utils/TickDelayTask.js';
 import Vector3 from '../../../../../modules/exmc/math/Vector3.js';
+import ExSystem from "../../../../../modules/exmc/utils/ExSystem.js";
 export default class PomDesertRuinRules {
     constructor(game) {
         this.collections = [];
@@ -208,7 +208,7 @@ export default class PomDesertRuinRules {
                     break outerLoop;
                 const delay = r.formValues[0] * 1000;
                 const tmpV = new Vector3();
-                const skillLoop = new TickDelayTask(this.game.getEvents(), () => {
+                const skillLoop = ExSystem.tickTask(() => {
                     tmpV.set(this.game.player.location).add(addPos);
                     this.game.getExDimension().spawnParticle("wb:ruin_desert_rulepre", tmpV);
                 }).delay(1);

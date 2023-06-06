@@ -1,0 +1,21 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:scatter_feature": {
+        "description": {
+            "identifier": "ys:herobrine_treecs_feature"
+        },
+        "places_feature": "ys:herobrine_treec_feature",
+        "iterations": 3,
+        "scatter_chance": 100.0,
+        "x": {
+            "distribution": "uniform",
+            "extent": [0, 15]
+        },
+        "y": "query.heightmap(variable.worldx, variable.worldz)",
+        "z": {
+            "distribution": "uniform",
+            "extent": [0, 15]
+        }
+
+    }
+}

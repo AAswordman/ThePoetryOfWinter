@@ -1,0 +1,17 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.tp": {
+            "timeline": {
+                "1": [
+                    "/execute @a ~~~ tag @e[r=128,type=ys:herobrine] add him",
+                    "/tp @s[tag=!him] @p",
+                    "/execute @s[tag=!him] ~~~ spreadplayers ~ ~ 16 64 @s",
+                    "/tag @s remove him"
+                ]
+            },
+            "animation_length": 2,
+            "loop": true
+        }
+    }
+}

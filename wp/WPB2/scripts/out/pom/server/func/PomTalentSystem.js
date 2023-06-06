@@ -3,19 +3,19 @@ import ExEntity from "../../../modules/exmc/server/entity/ExEntity.js";
 import ExPlayer from "../../../modules/exmc/server/entity/ExPlayer.js";
 import ExColorLoreUtil from "../../../modules/exmc/server/item/ExColorLoreUtil.js";
 import ExItem from "../../../modules/exmc/server/item/ExItem.js";
-import TimeLoopTask from "../../../modules/exmc/utils/TimeLoopTask.js";
 import { decodeUnicode } from "../../../modules/exmc/utils/Unicode.js";
 import TalentData, { Occupation, Talent } from "../cache/TalentData.js";
 import isEquipment from "../items/isEquipment.js";
 import GameController from "./GameController.js";
 import damageShow from "../helper/damageShow.js";
 import MonitorManager from "../../../modules/exmc/utils/MonitorManager.js";
+import ExSystem from '../../../modules/exmc/utils/ExSystem.js';
 export default class PomTalentSystem extends GameController {
     constructor() {
         super(...arguments);
         this.strikeSkill = true;
         this.talentRes = new Map();
-        this.skillLoop = new TimeLoopTask(this.getEvents(), () => {
+        this.skillLoop = ExSystem.tickTask(() => {
             var _a;
             if (this.data.talent.occupation.id === Occupation.ASSASSIN.id)
                 this.strikeSkill = true;
@@ -34,7 +34,7 @@ export default class PomTalentSystem extends GameController {
                 }
                 player.addHealth(this, ((_a = this.talentRes.get(Talent.REGENERATE)) !== null && _a !== void 0 ? _a : 0));
             }
-        }).delay(10000);
+        }).delay(10 * 20);
         this.hasBeenDamaged = new MonitorManager();
         this.hasCauseDamage = new MonitorManager();
     }
@@ -128,7 +128,7 @@ export default class PomTalentSystem extends GameController {
                 };
                 this.hasCauseDamage.addMonitor(lastListener);
                 (_c = this.equiTotalTask) === null || _c === void 0 ? void 0 : _c.stop();
-                (this.equiTotalTask = new TimeLoopTask(this.getEvents(), () => {
+                (this.equiTotalTask = ExSystem.tickTask(() => {
                     var _a, _b, _c, _d;
                     let shouldUpstate = false;
                     maxSecondaryDamage = Math.ceil(Math.max(maxSecondaryDamage, damage / 5));
@@ -144,7 +144,7 @@ export default class PomTalentSystem extends GameController {
                     if (shouldUpstate && ((_c = bag.getItemOnHand()) === null || _c === void 0 ? void 0 : _c.typeId) === ((_d = e === null || e === void 0 ? void 0 : e.afterItem) === null || _d === void 0 ? void 0 : _d.typeId)) {
                         bag.setItem(this.exPlayer.selectedSlot, e.afterItem);
                     }
-                }).delay(5000)).start(); //
+                }).delay(5 * 20)).start(); //
             }
             else {
                 (_d = this.equiTotalTask) === null || _d === void 0 ? void 0 : _d.stop();

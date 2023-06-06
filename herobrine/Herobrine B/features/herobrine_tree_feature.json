@@ -1,0 +1,12 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:aggregate_feature": {
+		"description": {
+			"identifier": "ys:herobrine_tree_feature"
+		},
+		"features": [
+			"ys:herobrine_treecs_feature",
+			"ys:herobrine_treebs_feature"
+		]
+	}
+}

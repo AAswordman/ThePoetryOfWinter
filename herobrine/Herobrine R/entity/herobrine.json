@@ -1,0 +1,40 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "ys:herobrine",
+			"materials": {
+				"default": "entity_emissive_alpha"
+			},
+			"textures": {
+				"default": "textures/ys/entity/herobrine"
+			},
+			"geometry": {
+				"default": "geometry.ys.herobrine"
+			},
+			"scripts": {
+				"scale": "0.9375",
+				"pre_animation": [
+					"variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed) * 57.3;"
+				],
+				"animate": [
+					"arms",
+					"look",
+					"legs",
+					"bob"
+				]
+			},
+			"animations": {
+				"look": "animation.humanoid.look_at_target.default",
+				"arms": "animation.player.move.arms",
+				"legs": "animation.player.move.legs",
+				"bob": "animation.player.bob"
+			},
+			"render_controllers": [
+				{
+					"controller.render.default": "!query.is_chested"
+				}
+			]
+		}
+	}
+}

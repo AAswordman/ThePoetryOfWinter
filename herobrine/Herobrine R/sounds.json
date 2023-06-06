@@ -1,0 +1,22 @@
+{
+	"entity_sounds": {
+		"entities": {
+			"null:herobrine": {
+				"volume": 1.0,
+				"pitch": 1.0,
+				"events": {
+					"hurt": "",
+					"death": ""
+				}
+			},
+			"null:him": {
+				"volume": 1.0,
+				"pitch": 1.0,
+				"events": {
+					"hurt": "",
+					"death": ""
+				}
+			}
+		}
+	}
+}

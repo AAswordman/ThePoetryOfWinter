@@ -83,7 +83,7 @@ export default function menuTaskUI(ctrl) {
                                     var _a;
                                     for (let v of taskJson.tasks[i].rewards) {
                                         if (v.type === "integral") {
-                                            client.exPlayer.getScoresManager().addScoreAsync("wbdjjf", v.count);
+                                            client.exPlayer.getScoresManager().addScore("wbdjjf", v.count);
                                         }
                                     }
                                     for (let v of taskJson.tasks[i].conditions) {
@@ -243,7 +243,7 @@ export default function menuTaskUI(ctrl) {
                             "function": (client, ui) => {
                                 for (let v of task.rewards) {
                                     if (v.type === "integral") {
-                                        client.exPlayer.getScoresManager().addScoreAsync("wbdjjf", v.count);
+                                        client.exPlayer.getScoresManager().addScore("wbdjjf", v.count);
                                     }
                                 }
                                 // for (let v of task.conditions) {

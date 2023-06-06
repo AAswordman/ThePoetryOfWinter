@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.night": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "sleep": "0.25 > query.time_of_day || query.time_of_day > 0.75"
+            }
+          ]
+        },
+        "sleep": {
+          "on_entry": [
+            "/tp @e[type=minecraft:sheep] ~ -200 ~"
+          ],
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "blend_transition": 0.2
+        }
+      }
+    }
+  }
+}

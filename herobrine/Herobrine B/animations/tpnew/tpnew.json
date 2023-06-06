@@ -1,0 +1,17 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.newtp": {
+            "timeline": {
+                "1": [
+                    "/execute as @a at ~~~ run tag @e[r=128,type=ys:herobrine] add him",
+                    "/tp @s[tag=!him] @p",
+                    "/execute as @s[tag=!him] ar ~~~ run say tp",
+                    "/tag @s remove him"
+                ]
+            },
+            "animation_length": 2,
+            "loop": true
+        }
+    }
+}
