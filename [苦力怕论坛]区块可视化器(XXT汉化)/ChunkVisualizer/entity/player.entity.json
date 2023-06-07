@@ -1,0 +1,529 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "minecraft:player",
+            "materials": {
+                "default": "entity_alphatest",
+                "cape": "entity_alphatest",
+                "blend": "wither_boss_armor",
+                "blend2": "entity_alphablend",
+                "animated": "player_animated"
+            },
+            "textures": {
+                "default": "textures/entity/steve",
+                "c1": "textures/sketch/c1",
+                "c2": "textures/sketch/c2",
+                "c3": "textures/sketch/c3",
+                "c4": "textures/sketch/c4",
+                "c5": "textures/sketch/c5",
+                "c6": "textures/sketch/c6",
+                "c7": "textures/sketch/c7",
+                "c8": "textures/sketch/c8",
+                "c9": "textures/sketch/c9",
+                "c10": "textures/sketch/c10",
+                "c11": "textures/sketch/c11",
+                "c12": "textures/sketch/c12",
+                "c13": "textures/sketch/c13",
+                "c14": "textures/sketch/c14",
+                "c15": "textures/sketch/c15",
+                "c16": "textures/sketch/c16",
+                "cc1": "textures/sketch/cc1",
+                "cc2": "textures/sketch/cc2",
+                "cc3": "textures/sketch/cc3",
+                "cc4": "textures/sketch/cc4",
+                "cc5": "textures/sketch/cc5",
+                "cc6": "textures/sketch/cc6",
+                "cc7": "textures/sketch/cc7",
+                "cc8": "textures/sketch/cc8",
+                "cc9": "textures/sketch/cc9",
+                "cc10": "textures/sketch/cc10",
+                "cc11": "textures/sketch/cc11",
+                "cc12": "textures/sketch/cc12",
+                "cc13": "textures/sketch/cc13",
+                "cc14": "textures/sketch/cc14",
+                "cc15": "textures/sketch/cc15",
+                "cc16": "textures/sketch/cc16",
+                "g1": "textures/sketch/g1",
+                "g2": "textures/sketch/g2",
+                "g3": "textures/sketch/g3",
+                "g4": "textures/sketch/g4",
+                "g5": "textures/sketch/g5",
+                "g6": "textures/sketch/g6",
+                "g7": "textures/sketch/g7",
+                "g8": "textures/sketch/g8",
+                "g9": "textures/sketch/g9",
+                "g10": "textures/sketch/g10",
+                "g11": "textures/sketch/g11",
+                "g12": "textures/sketch/g12",
+                "g13": "textures/sketch/g13",
+                "g14": "textures/sketch/g14",
+                "g15": "textures/sketch/g15",
+                "g16": "textures/sketch/g16",
+                "cbg": "textures/sketch/chunkbg",
+                "cbg2": "textures/sketch/chunkbg2",
+                "border1": "textures/sketch/border1",
+                "border2": "textures/sketch/border2",
+                "border3": "textures/sketch/border3",
+                "border4": "textures/sketch/border4",
+                "marker": "textures/sketch/marker",
+                "ccoords": "textures/sketch/ccoords",
+                "ccorner": "textures/sketch/ccorner",
+                "cedge": "textures/sketch/cedge",
+                "cdbg": "textures/sketch/cdbg",
+                "cxyz": "textures/sketch/cxyz",
+                "z0": "textures/sketch/z0",
+                "z1": "textures/sketch/z1",
+                "z2": "textures/sketch/z2",
+                "z3": "textures/sketch/z3",
+                "z4": "textures/sketch/z4",
+                "z5": "textures/sketch/z5",
+                "z6": "textures/sketch/z6",
+                "z7": "textures/sketch/z7",
+                "z8": "textures/sketch/z8",
+                "z9": "textures/sketch/z9",
+                "nz": "textures/sketch/nz",
+                "xyz": "textures/sketch/xyz",
+                "z10": "textures/sketch/z10",
+                "z20": "textures/sketch/z20",
+                "z30": "textures/sketch/z30",
+                "z40": "textures/sketch/z40",
+                "z50": "textures/sketch/z50",
+                "z60": "textures/sketch/z60",
+                "z70": "textures/sketch/z70",
+                "z80": "textures/sketch/z80",
+                "z90": "textures/sketch/z90",
+                "z100": "textures/sketch/z100",
+                "z110": "textures/sketch/z110",
+                "z120": "textures/sketch/z120",
+                "p120": "textures/sketch/100p",
+                "z15": "textures/sketch/z15",
+                "z25": "textures/sketch/z25",
+                "z35": "textures/sketch/z35",
+                "z45": "textures/sketch/z45",
+                "z55": "textures/sketch/z55",
+                "z552": "textures/sketch/z55",
+                "fpsx1": "textures/sketch/fps",
+                "fpsbg": "textures/sketch/fpsbg",
+                "dircomp": "textures/sketch/dircomp",
+                "coordbg": "textures/sketch/coordbg",
+                "chunk": "textures/entity/chunk",
+                "cape": "textures/entity/cape_invisible"
+            },
+            "geometry": {
+                "default": "geometry.humanoid.custom",
+                "chunkx": "geometry.chunkx",
+                "chunkz": "geometry.chunkz",
+                "cbg": "geometry.cbg",
+                "marker": "geometry.marker",
+                "border1": "geometry.border1",
+                "border2": "geometry.border2",
+                "border3": "geometry.border3",
+                "border4": "geometry.border4",
+                "border5": "geometry.border5",
+                "border6": "geometry.border6",
+                "border7": "geometry.border7",
+                "border8": "geometry.border8",
+                "border9": "geometry.border9",
+                "border10": "geometry.border10",
+                "border11": "geometry.border11",
+                "border12": "geometry.border12",
+                "border13": "geometry.border13",
+                "border14": "geometry.border14",
+                "border15": "geometry.border15",
+                "border16": "geometry.border16",
+                "cind": "geometry.cind",
+                "cind2": "geometry.cind2",
+                "cx": "geometry.cx",
+                "cx2": "geometry.cx2",
+                "cx3": "geometry.cx3",
+                "cx4": "geometry.cx4",
+                "cy": "geometry.cy",
+                "cy2": "geometry.cy2",
+                "cz": "geometry.cz",
+                "cz2": "geometry.cz2",
+                "cz3": "geometry.cz3",
+                "cz4": "geometry.cz4",
+                "cnx": "geometry.cnx",
+                "cny": "geometry.cny",
+                "cnz": "geometry.cnz",
+                "cdbg": "geometry.cdbg",
+                "cxyz": "geometry.cxyz",
+                "ccoords": "geometry.ccoords",
+                "x": "geometry.x",
+                "x2": "geometry.x2",
+                "x3": "geometry.x3",
+                "x4": "geometry.x4",
+                "x5": "geometry.x5",
+                "y": "geometry.y",
+                "y2": "geometry.y2",
+                "y3": "geometry.y3",
+                "y4": "geometry.y4",
+                "y5": "geometry.y5",
+                "z": "geometry.z",
+                "z2": "geometry.z2",
+                "z3": "geometry.z3",
+                "z4": "geometry.z4",
+                "z5": "geometry.z5",
+                "nx": "geometry.nx",
+                "ny": "geometry.ny",
+                "nz": "geometry.nz",
+                "xyz": "geometry.xyz",
+                "fps": "geometry.fps",
+                "fpsx1": "geometry.fpsx1",
+                "fpsbg": "geometry.fpsbg",
+                "coordbg": "geometry.coordbg",
+                "dircomp": "geometry.dircomp",
+                "chunk": "geometry.chunk",
+                "cape": "geometry.cape"
+            },
+            "scripts": {
+                "scale": "0.9375",
+                "initialize": [
+                    "variable.life_time = 0.0;",
+                    "variable.fps0 = 0.0;",
+                    "variable.fps1 = 0.0;",
+                    "variable.fps2 = 0.0;",
+                    "variable.fps3 = 0.0;",
+                    "variable.fps4 = 0.0;",
+                    "variable.fps5 = 0.0;",
+                    "variable.fps6 = 0.0;",
+                    "variable.fps7 = 0.0;",
+                    "variable.fps8 = 0.0;",
+                    "variable.fps9 = 0.0;",
+                    "variable.fps10 = 0.0;",
+                    "variable.fps10p = 0.0;",
+                    "variable.fps15 = 0.0;",
+                    "variable.fps25 = 0.0;",
+                    "variable.fps35 = 0.0;",
+                    "variable.fps45 = 0.0;",
+                    "variable.fps55 = 0.0;",
+                    "variable.fps11 = 0.0;",
+                    "variable.fps12p = 0.0;",
+                    "variable.is_there = 0.0;",
+                    "variable.is_there2 = 0.0;",
+                    "variable.is_there3 = 0.0;",
+                    "variable.life_time = 0.0;",
+                    "variable.chunk_x = 0.0;",
+                    "variable.chunk_y = 0.0;",
+                    "variable.chunk_z = 0.0;",
+                    "variable.is_holding_right = 0.0;",
+                    "variable.is_blinking = 0.0;",
+                    "variable.last_blink_time = 0.0;",
+                    "variable.hand_bob = 0.0;"
+                ],
+                "pre_animation": [
+                    "variable.dircomp = query.cardinal_player_facing;",
+                    "variable.helmet_layer_visible = 1.0;",
+                    "variable.leg_layer_visible = 1.0;",
+                    "variable.boot_layer_visible = 1.0;",
+                    "variable.chest_layer_visible = 1.0;",
+                    "variable.fps0 = variable.fps0;",
+                    "variable.fps1 = variable.fps1;",
+                    "variable.fps2 = variable.fps2;",
+                    "variable.fps3 = variable.fps3;",
+                    "variable.fps4 = variable.fps4;",
+                    "variable.fps5 = variable.fps5;",
+                    "variable.fps6 = variable.fps6;",
+                    "variable.fps7 = variable.fps7;",
+                    "variable.fps8 = variable.fps8;",
+                    "variable.fps9 = variable.fps9;",
+                    "variable.fps10 = variable.fps10;",
+                    "variable.fps10p = variable.fps10p;",
+                    "variable.fps15 = variable.fps15;",
+                    "variable.fps25 = variable.fps25;",
+                    "variable.fps35 = variable.fps35;",
+                    "variable.fps45 = variable.fps45;",
+                    "variable.fps55 = variable.fps55;",
+                    "variable.fps11 = variable.fps11;",
+                    "variable.fps12p = variable.fps12p;",
+                    "variable.is_there = variable.is_there;",
+                    "variable.is_there2 = variable.is_there2;",
+                    "variable.is_there3 = variable.is_there3;",
+                    "variable.chunk_x = (8-math.mod(query.position(0),16) + (query.position(0) <= 0 ? -16))*16;",
+                    "variable.chunk_y = (1.6-math.mod(query.position(1),16) + (query.position(1) <= 0 ? -16))*16;",
+                    "variable.chunk_z = (-8+math.mod(query.position(2),16) + (query.position(2) <= 0 ? 16))*16;",
+                    "variable.attack_body_rot_y = Math.sin(360*Math.sqrt(variable.attack_time)) * 5.0;",
+                    "variable.tcos0 = (math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
+                    "variable.first_person_rotation_factor = math.sin((1 - variable.attack_time) * 180.0);",
+                    "variable.hand_bob = query.life_time < 0.01 ? 0.0 : variable.hand_bob + ((query.is_on_ground && query.is_alive ? math.clamp(math.sqrt(math.pow(query.position_delta(0), 2.0) + math.pow(query.position_delta(2), 2.0)), 0.0, 0.1) : 0.0) - variable.hand_bob) * 0.02;",
+
+                    "variable.map_angle = math.clamp(1 - variable.player_x_rotation / 45.1, 0.0, 1.0);",
+                    "variable.item_use_normalized = query.main_hand_item_use_duration / query.main_hand_item_max_duration;",
+                    "variable.health = math.round(query.health / query.max_health * 100);"
+                ],
+                "animate": [
+                    "chunk",
+                    "x",
+                    "fps0",
+                    "fps1",
+                    "fps2",
+                    "fps3",
+                    "fps4",
+                    "fps5",
+                    "fps6",
+                    "fps7",
+                    "fps8",
+                    "fps9",
+                    "fps10",
+                    "fps10p",
+                    "fps15",
+                    "fps25",
+                    "fps35",
+                    "fps45",
+                    "fps55",
+                    "fps11",
+                    "fps12p",
+                    {
+                        "free4": "query.get_equipped_item_name('main_hand') == 'stick' && query.is_moving == 0 && query.ground_speed <= 0.05 && query.is_sneaking == 0"
+                    },
+                    {
+                        "is_there": "query.is_sneaking == 0 && query.is_in_ui == 0"
+                    },
+                    {
+                        "is_there2": "query.is_sneaking == 0 && query.is_in_ui == 0"
+                    },
+                    {
+                        "is_there3": "query.is_sneaking == 0 && query.is_in_ui == 0"
+                    },
+                    "chunkl",
+                    "root"
+                ]
+            },
+            "animations": {
+                "chunk": "animation.player.chunk",
+                "x": "animation.player.x",
+                "fps0": "controller.animation.fps0",
+                "fps1": "controller.animation.fps1",
+                "fps2": "controller.animation.fps2",
+                "fps3": "controller.animation.fps3",
+                "fps4": "controller.animation.fps4",
+                "fps5": "controller.animation.fps5",
+                "fps6": "controller.animation.fps6",
+                "fps7": "controller.animation.fps7",
+                "fps8": "controller.animation.fps8",
+                "fps9": "controller.animation.fps9",
+                "fps10": "controller.animation.fps10",
+                "fps10p": "controller.animation.fps10p",
+                "fps15": "controller.animation.fps15",
+                "fps25": "controller.animation.fps25",
+                "fps35": "controller.animation.fps35",
+                "fps45": "controller.animation.fps45",
+                "fps55": "controller.animation.fps55",
+                "fps11": "controller.animation.fps11",
+                "fps12p": "controller.animation.fps12p",
+                "is_there": "controller.animation.is_there",
+                "is_there2": "controller.animation.is_there2",
+                "is_there3": "controller.animation.is_there3",
+                "free4": "animation.player.free4",
+                "free360": "animation.player.free360",
+                "chunkl": "animation.chunk.locate",
+                "root": "controller.animation.player.root",
+                "base_controller": "controller.animation.player.base",
+                "humanoid_base_pose": "animation.humanoid.base_pose",
+                "look_at_target": "controller.animation.humanoid.look_at_target",
+                "look_at_target_ui": "animation.player.look_at_target.ui",
+                "look_at_target_default": "animation.humanoid.look_at_target.default",
+                "look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
+                "look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
+                "look_at_target_inverted": "animation.player.look_at_target.inverted",
+                "cape": "animation.player.cape",
+                "move.arms": "animation.player.move.arms",
+                "move.legs": "animation.player.move.legs",
+                "swimming": "animation.player.swim",
+                "swimming.legs": "animation.player.swim.legs",
+                "riding.arms": "animation.player.riding.arms",
+                "riding.legs": "animation.player.riding.legs",
+                "holding": "animation.player.holding",
+                "brandish_spear": "animation.humanoid.brandish_spear",
+                "charging": "animation.humanoid.charging",
+                "attack.positions": "animation.player.attack.positions",
+                "attack.rotations": "animation.player.attack.rotations",
+                "sneaking": "animation.player.sneaking",
+                "bob": "animation.player.bob",
+                "damage_nearby_mobs": "animation.humanoid.damage_nearby_mobs",
+                "bow_and_arrow": "animation.humanoid.bow_and_arrow",
+                "use_item_progress": "animation.humanoid.use_item_progress",
+                "skeleton_attack": "animation.skeleton.attack",
+                "sleeping": "animation.player.sleeping",
+                "first_person_base_pose": "animation.player.first_person.base_pose",
+                "first_person_swap_item": "animation.player.first_person.swap_item",
+                "first_person_attack_controller": "controller.animation.player.first_person_attack",
+                "first_person_attack_rotation": "animation.player.first_person.attack_rotation",
+                "first_person_vr_attack_rotation": "animation.player.first_person.vr_attack_rotation",
+                "first_person_walk": "animation.player.first_person.walk",
+                "first_person_map_controller": "controller.animation.player.first_person_map",
+                "first_person_map_hold": "animation.player.first_person.map_hold",
+                "first_person_map_hold_attack": "animation.player.first_person.map_hold_attack",
+                "first_person_map_hold_off_hand": "animation.player.first_person.map_hold_off_hand",
+                "first_person_map_hold_main_hand": "animation.player.first_person.map_hold_main_hand",
+                "first_person_crossbow_equipped": "animation.player.first_person.crossbow_equipped",
+                "third_person_crossbow_equipped": "animation.player.crossbow_equipped",
+                "third_person_bow_equipped": "animation.player.bow_equipped",
+                "crossbow_hold": "animation.player.crossbow_hold",
+                "crossbow_controller": "controller.animation.player.crossbow",
+                "shield_block_main_hand": "animation.player.shield_block_main_hand",
+                "shield_block_off_hand": "animation.player.shield_block_off_hand",
+                "blink": "controller.animation.persona.blink"
+            },
+            "render_controllers": [{
+                    "controller.render.player.first_person": "variable.is_first_person"
+                },
+                {
+                    "controller.render.player.third_person": "!variable.is_first_person && !variable.map_face_icon"
+                },
+                {
+                    "controller.render.player.map": "variable.map_face_icon"
+                },
+                {
+                    "controller.render.chunkx": "query.is_alive && query.is_in_ui && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.chunkz": "query.is_alive && query.is_in_ui && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.cbg": "query.is_alive && query.is_in_ui && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.border1": "query.is_alive && query.is_in_ui && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.marker": "query.is_alive && query.is_in_ui && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.ccoords": "query.is_alive && query.is_in_ui && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.cxyz": "query.is_alive && query.is_in_ui && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.cx": "query.is_alive && query.is_in_ui && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.cx2": "query.is_alive && query.is_in_ui && (math.ceil(query.position(0)) >= 145) || (math.ceil(query.position(0)) <= -160) && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.cx3": "query.is_alive && query.is_in_ui && (math.ceil(query.position(0)) >= 1585) || (math.ceil(query.position(0)) <= -1600) && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.cx4": "query.is_alive && query.is_in_ui && (math.ceil(query.position(0)) >= 15085) || (math.ceil(query.position(0)) <= -16000) && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.cy": "query.is_alive && query.is_in_ui && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.cy2": "query.is_alive && query.is_in_ui && (query.position(1) >= 161.5) || (query.position(1) <= -141.5) && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.cz": "query.is_alive && query.is_in_ui && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.cz2": "query.is_alive && query.is_in_ui && (math.ceil(query.position(2)) >= 145) || (math.ceil(query.position(2)) <= -160) && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.cz3": "query.is_alive && query.is_in_ui && (math.ceil(query.position(2)) >= 1585) || (math.ceil(query.position(2)) <= -1600) && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.cz4": "query.is_alive && query.is_in_ui && (math.ceil(query.position(2)) >= 15085) || (math.ceil(query.position(2)) <= -16000) && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.cnx": "query.is_alive && query.is_in_ui && query.position(0) <= -16 && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.cny": "query.is_alive && query.is_in_ui && (query.position(1)) <= 2.5 && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.cnz": "query.is_alive && query.position(2) <= 0 && query.is_in_ui && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.cdbg": "query.is_alive && query.is_in_ui && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.cindx": "query.is_alive && query.is_in_ui && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.cindz": "query.is_alive && query.is_in_ui && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.x": "query.is_alive && query.is_in_ui && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.x2": "query.is_alive && query.is_in_ui && (math.ceil(query.position(0)) >= 11) || (math.ceil(query.position(0)) <= -9) && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.x3": "query.is_alive && query.is_in_ui && (math.ceil(query.position(0)) >= 101) || (math.ceil(query.position(0)) <= -99) && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.x4": "query.is_alive && query.is_in_ui && (math.ceil(query.position(0)) >= 1001) || (math.ceil(query.position(0)) <= -999) && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.x5": "query.is_alive && query.is_in_ui && (math.ceil(query.position(0)) >= 10001) || (math.ceil(query.position(0)) <= -9999) && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.y": "query.is_alive && query.is_in_ui && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.y2": "query.is_alive && query.is_in_ui && (math.ceil(query.position(1)) >= 12) || (math.ceil(query.position(1)) <= -7) && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.y3": "query.is_alive && query.is_in_ui && (math.ceil(query.position(1)) >= 102) || (math.ceil(query.position(1)) <= -97) && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.y4": "query.is_alive && query.is_in_ui && (math.ceil(query.position(1)) >= 1002) || (math.ceil(query.position(1)) <= -997) && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.y5": "query.is_alive && query.is_in_ui && (math.ceil(query.position(1)) >= 10002) || (math.ceil(query.position(1)) <= -9997) && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.z": "query.is_alive && query.is_in_ui && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.z2": "query.is_alive && query.is_in_ui && (math.ceil(query.position(2)) >= 11) || (math.ceil(query.position(2)) <= -9) && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.z3": "query.is_alive && query.is_in_ui && (math.ceil(query.position(2)) >= 101) || (math.ceil(query.position(2)) <= -99) && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.z4": "query.is_alive && query.is_in_ui && (math.ceil(query.position(2)) >= 1001) || (math.ceil(query.position(2)) <= -999) && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.z5": "query.is_alive && query.is_in_ui && (math.ceil(query.position(2)) >= 10001) || (math.ceil(query.position(2)) <= -9999) && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.coordbg": "query.is_alive && query.is_in_ui && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.coordbg2": "query.is_alive && query.is_in_ui && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.xyz": "query.is_alive && query.is_in_ui && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.player.third_person_11": "variable.is_first_person != 1 && variable.is_paperdoll && query.is_in_ui == 0 && query.target_y_rotation == 0 && query.is_gliding == 0"
+                },
+                {
+                    "controller.render.player.third_person_12": "variable.is_first_person != 1 && variable.is_paperdoll && query.is_in_ui == 0 && query.target_y_rotation == 0 && query.is_gliding == 0"
+                },
+                {
+                    "controller.render.player.third_person_13": "variable.is_first_person != 1 && variable.is_paperdoll && query.is_in_ui == 0 && query.target_y_rotation == 0 && query.is_gliding == 0"
+                },
+                {
+                    "controller.render.player.third_person_14": "variable.is_first_person != 1 && variable.is_paperdoll && query.is_in_ui == 0 && query.target_y_rotation == 0 && query.is_gliding == 0"
+                },
+                {
+                    "controller.render.nx": "query.is_alive && query.is_in_ui && query.position(0) <= 0 && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.ny": "query.is_alive && query.is_in_ui && math.ceil(query.position(1)) <= 1 && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.nz": "query.is_alive && query.is_in_ui && query.position(2) <= 0 && query.is_gliding == 0 && query.is_riding == 0"
+                },
+                {
+                    "controller.render.chunk": "!variable.is_first_person && !variable.map_face_icon && !query.is_in_ui && (query.get_equipped_item_name(1) == 'firework_rocket' || query.get_equipped_item_name(1) == 'nautilus_shell') && query.is_gliding == 0"
+                }
+            ],
+            "enable_attachables": true
+        }
+    }
+}

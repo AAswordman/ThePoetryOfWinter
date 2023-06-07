@@ -1,26 +1,61 @@
 {
-  "format_version": "1.8.0",
-  "render_controllers": {
-  
-    "controller.render.player.staff_governor": {
-      "geometry": "Geometry.staff_governor",
-      "materials": [ { "*": "Material.staff_governor" } ],
-      "textures": [ "Texture.staff_governor" ],
-      "light_color_multiplier": 0.5,
-      "ignore_lighting" : true,
-      "part_visibility": [{ "*": "query.variant == 59 || query.variant == 60" }],
-    "overlay_color": {
-          "r": 1.0,
-          "g": 1.0,
-          "b": 1.0,
-          "a": 0.0
-      }
-    },
-    "controller.render.player.jet_pack": {
-      "geometry": "Geometry.jet_pack",
-      "materials": [ { "*": "Material.jet_pack" } ],
-      "textures": [ "Texture.jet_pack" ],
-      "part_visibility": [{ "*": "query.get_equipped_item_name=='jet_pack'" }]
+    "format_version": "1.8.0",
+    "render_controllers": {
+        "controller.render.cbg": {
+            "geometry": "Geometry.cbg",
+            "textures": ["Texture.cbg2"],
+            "materials": [{
+                "*": "Material.default"
+            }],
+            "is_hurt_color": {},
+            "on_fire_color": {}
+        },
+        "controller.render.cbg_wg": {
+            "geometry": "Geometry.cbg_wg",
+            "textures": ["Texture.cbg_wg"],
+            "materials": [{
+                "*": "Material.animated"
+            }],
+            "uv_anim":{
+                "offset": [
+                    "(query.position(0)-Math.floor(query.position(0)/32)*32)/64+1/32",
+                    "(query.position(2)-Math.floor(query.position(2)/32)*32)/64+1/32"
+                ],
+                "scale": [
+                    1,
+                    1
+                ]
+            },
+            "is_hurt_color": {},
+            "on_fire_color": {}
+        },
+        "controller.render.player.staff_governor": {
+            "geometry": "Geometry.staff_governor",
+            "materials": [{
+                "*": "Material.staff_governor"
+            }],
+            "textures": ["Texture.staff_governor"],
+            "light_color_multiplier": 0.5,
+            "ignore_lighting": true,
+            "part_visibility": [{
+                "*": "query.variant == 59 || query.variant == 60"
+            }],
+            "overlay_color": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 0.0
+            }
+        },
+        "controller.render.player.jet_pack": {
+            "geometry": "Geometry.jet_pack",
+            "materials": [{
+                "*": "Material.jet_pack"
+            }],
+            "textures": ["Texture.jet_pack"],
+            "part_visibility": [{
+                "*": "query.get_equipped_item_name=='jet_pack'"
+            }]
+        }
     }
-  }
 }

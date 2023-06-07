@@ -6,7 +6,7 @@
         "controls": [{
             "hud_player": {
                 "type": "custom",
-                "renderer": "live_player_renderer",
+                "renderer": "hud_player_renderer",
                 "layer": 1,
                 "animation_reset_name": "screen_animation_reset",
                 "anims": [
@@ -208,6 +208,13 @@
                 }
             }
         ]
+    },
+    "chunkmap2": {
+        "renderer": "hud_player_renderer",
+        "size": [0, 0],
+        "anchor_from": "bottom_right",
+        "anchor_to": "bottom_right",
+        "type": "custom"
     },
     "boss_health_panel": {
         "type": "panel",
@@ -1885,10 +1892,7 @@
     },
     "mixed_tooltip_helper": {
         "type": "panel",
-        "size": [
-            "100%c",
-            "100%cm"
-        ],
+        "size": ["100%cm", "100%cm"],
         "controls": [{
                 "gamepad_tooltip@hud.tooltip_helper": {
                     "$icon_image_ref": "hud.base_icon_image",
@@ -1900,24 +1904,40 @@
             },
             {
                 "keyboard_tooltip@hud.keyboard_tooltip_helper": {
+                    "$icon_image_ref": "hud.base_keyboard_icon",
                     "bindings": [{
-                        "binding_name": "#keyboard_key_visible",
-                        "binding_name_override": "#visible",
-                        "binding_type": "collection",
-                        "binding_collection_name": "$tooltip_collection_name"
+                        "binding_name": "(not #is_gamepad_tip)",
+                        "binding_name_override": "#visible"
                     }]
                 }
             }
         ],
         "$tooltip_collection_name|default": "",
         "$tooltip_collection_prefix|default": "",
-        "bindings": [{
-            "binding_name": "#tooltip_visible",
-            "binding_name_override": "#visible",
-            "binding_type": "collection",
-            "binding_condition": "always",
-            "binding_collection_name": "$tooltip_collection_name"
-        }]
+        "bindings": [
+            // Duplicate binding necessary when toggling visibility
+            // otherwise there is a delay when updating binds
+            //
+            // No condition has it update immediately when it
+            // becomes visible but won't update if the tooltip
+            // changes later.
+            //
+            // Always condition lets it change but has a delay in
+            // binding timing when it first becomes visible.
+            {
+                "binding_name": "#tooltip_visible",
+                "binding_name_override": "#visible",
+                "binding_type": "collection",
+                "binding_collection_name": "$tooltip_collection_name",
+                "binding_condition": "always"
+            },
+            {
+                "binding_name": "#tooltip_visible",
+                "binding_name_override": "#visible",
+                "binding_type": "collection",
+                "binding_collection_name": "$tooltip_collection_name"
+            }
+        ]
     },
     "base_icon_image": {
         "type": "image",
@@ -2358,6 +2378,20 @@
             //     "notes@boss_notes": {}
             //   },
             {
+                "chunkmap2@hud.chunkmap2": {
+                    "controls": [{
+                        "chunkmap": {
+                            "anchor_from": "bottom_right",
+                            "anchor_to": "bottom_right",
+                            "renderer": "live_player_renderer",
+                            "size": [14, 14],
+                            "offset": [665, 105],
+                            "type": "custom"
+                        }
+                    }]
+                }
+            },
+            {
                 "gamertag_label_for_splitscreen": {
                     "type": "label",
                     "size": [
@@ -2707,8 +2741,7 @@
             "requires": "($is_holographic and not $is_living_room_mode)",
             "$hud_player_rend_desktop_offset": [100, 82]
         }],
-        "controls": [
-            {
+        "controls": [{
                 "root_panel@hud.root_panel": {}
             },
             {

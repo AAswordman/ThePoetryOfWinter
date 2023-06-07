@@ -7,14 +7,19 @@
         "default": "entity_alphatest",
         "cape": "entity_alphatest",
         "animated": "player_animated"
+        
       },
       "textures": {
         "default": "textures/entity/steve",
-        "cape": "textures/entity/cape_invisible"
+        "cape": "textures/entity/cape_invisible",
+        "cbg2": "textures/sketch/chunkbg2",
+        "cbg_wg": "textures/sketch/cbg_wg"
       },
       "geometry": {
         "default": "geometry.humanoid.custom",
-        "cape": "geometry.cape"
+        "cape": "geometry.cape",
+        "cbg": "geometry.cbg",
+        "cbg_wg": "geometry.cbg_wg"
       },
       "scripts": {
         "scale": "0.9375",
@@ -80,7 +85,9 @@
           "the_imperial_sword",
           "thunder_staff",
           "wave_magic_book",
-          "wooden_enchant_book"
+          "wooden_enchant_book",
+
+          "chunk"
         ]
       },
       "animations": {
@@ -176,7 +183,9 @@
         "crossbow_controller": "controller.animation.player.crossbow",
         "shield_block_main_hand": "animation.player.shield_block_main_hand",
         "shield_block_off_hand": "animation.player.shield_block_off_hand",
-        "blink": "controller.animation.persona.blink"
+        "blink": "controller.animation.persona.blink",
+
+        "chunk": "animation.player.chunk"
       },
       "render_controllers": [
         {
@@ -187,6 +196,12 @@
         },
         {
           "controller.render.player.map": "variable.map_face_icon"
+        },
+        {
+            "controller.render.cbg": "query.is_alive && query.is_in_ui && query.is_gliding == 0 && query.is_riding == 0"
+        },
+        {
+            "controller.render.cbg_wg": "query.is_alive && query.is_in_ui && query.is_gliding == 0 && query.is_riding == 0"
         }
       ],
       "enable_attachables": true

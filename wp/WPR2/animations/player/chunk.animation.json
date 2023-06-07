@@ -1,0 +1,20 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.player.chunk": {
+            "loop": true,
+            "bones": {
+                "cbg": {
+                    "rotation": ["0", "0", "0"],
+                    "position": ["-350 + -500", "174 + (query.is_swimming * -24.25)", "10.004"],
+                    "scale": "5.2"
+                },
+                "cbg_wg": {
+                    "rotation": ["0", "0", "0"],
+                    "position": ["-345 + -500", "179 + (query.is_swimming * -24.25)", "10.003"],
+                    "scale": "5.2"
+                }
+            }
+        }
+    }
+}

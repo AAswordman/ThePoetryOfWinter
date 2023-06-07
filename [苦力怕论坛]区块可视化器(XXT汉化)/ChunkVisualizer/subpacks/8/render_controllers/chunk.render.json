@@ -1,0 +1,286 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.cx": {
+      "geometry": "Geometry.cx",
+      "materials": [ { "*": "Material.default" } ],
+      "is_hurt_color": {},
+      "on_fire_color": {},
+      "arrays": {
+      "textures": {     
+          "array.x": [
+            "Texture.z0",
+            "Texture.z1",
+            "Texture.z2",
+            "Texture.z3",
+            "Texture.z4",
+            "Texture.z5",
+            "Texture.z6",
+            "Texture.z7",
+            "Texture.z8",
+            "Texture.z9"
+                         ]
+                       }
+                    },
+      "textures": [ "(query.position(0) <= 0) ? array.x[math.ceil(math.abs(((query.position(0) + 1) - (query.position(0) <= 0)) / 16)) - 1] : array.x[math.ceil(math.abs((query.position(0) - (query.position(0) <= 0)) / 16))]"
+]
+    },
+    "controller.render.cx2": {
+      "geometry": "Geometry.cx2",
+      "materials": [ { "*": "Material.default" } ],
+      "is_hurt_color": {},
+      "on_fire_color": {},
+      "arrays": {
+      "textures": {     
+          "array.x": [
+            "Texture.z0",
+            "Texture.z1",
+            "Texture.z2",
+            "Texture.z3",
+            "Texture.z4",
+            "Texture.z5",
+            "Texture.z6",
+            "Texture.z7",
+            "Texture.z8",
+            "Texture.z9"
+                         ]
+                       }
+                    },
+      "textures": [ "(query.position(0) <= 0) ? array.x[math.ceil(math.abs(((query.position(0) + 1) - (query.position(0) <= 0)) / 160)) - 1] : array.x[9 + math.ceil(math.abs(((query.position(0) + 16) - (query.position(0) <= 0)) / 160))]"
+]
+    },
+    "controller.render.cx3": {
+      "geometry": "Geometry.cx3",
+      "materials": [ { "*": "Material.default" } ],
+      "is_hurt_color": {},
+      "on_fire_color": {},
+      "arrays": {
+      "textures": {     
+          "array.x": [
+            "Texture.z0",
+            "Texture.z1",
+            "Texture.z2",
+            "Texture.z3",
+            "Texture.z4",
+            "Texture.z5",
+            "Texture.z6",
+            "Texture.z7",
+            "Texture.z8",
+            "Texture.z9"
+                         ]
+                       }
+                    },
+      "textures": [ "(query.position(0) <= 0) ? array.x[math.ceil(math.abs(((query.position(0) + 1) - (query.position(0) <= 0)) / 1600)) - 1] : array.x[9 + math.ceil(math.abs(((query.position(0) + 16) - (query.position(0) <= 0)) / 1600))]"
+]
+    },
+    "controller.render.cx4": {
+      "geometry": "Geometry.cx4",
+      "materials": [ { "*": "Material.default" } ],
+      "is_hurt_color": {},
+      "on_fire_color": {},
+      "arrays": {
+      "textures": {     
+          "array.x": [
+            "Texture.z0",
+            "Texture.z1",
+            "Texture.z2",
+            "Texture.z3",
+            "Texture.z4",
+            "Texture.z5",
+            "Texture.z6",
+            "Texture.z7",
+            "Texture.z8",
+            "Texture.z9"
+                         ]
+                       }
+                    },
+      "textures": [ "(query.position(0) <= 0) ? array.x[math.ceil(math.abs(((query.position(0) + 1) - (query.position(0) <= 0)) / 16000)) - 1] : array.x[9 + math.ceil(math.abs(((query.position(0) + 16) - (query.position(0) <= 0)) / 16000))]"
+]
+    },
+    "controller.render.cy": {
+      "geometry": "Geometry.cy",
+      "materials": [ { "*": "Material.default" } ],
+      "is_hurt_color": {},
+      "on_fire_color": {},
+      "arrays": {
+      "textures": {     
+          "array.y": [
+            "Texture.z9",
+            "Texture.z0",
+            "Texture.z1",
+            "Texture.z2",
+            "Texture.z3",
+            "Texture.z4",
+            "Texture.z5",
+            "Texture.z6",
+            "Texture.z7",
+            "Texture.z8"
+                         ]
+                       }
+                    },
+      "textures": [ "(query.position(1) <= 2.5) ? array.y[1 + math.ceil(math.abs((query.position(1) - (query.position(1) <= 0) - 1.5) / 16))] : array.y[math.ceil(math.abs(((query.position(1) - 1.5) - (query.position(1) <= 0)) / 16))]"
+]
+    },
+    "controller.render.cy2": {
+      "geometry": "Geometry.cy2",
+      "materials": [ { "*": "Material.default" } ],
+      "is_hurt_color": {},
+      "on_fire_color": {},
+      "arrays": {
+      "textures": {     
+          "array.y": [
+            "Texture.z9",
+            "Texture.z0",
+            "Texture.z1",
+            "Texture.z2",
+            "Texture.z3",
+            "Texture.z4",
+            "Texture.z5",
+            "Texture.z6",
+            "Texture.z7",
+            "Texture.z8"
+                         ]
+                       }
+                    },
+      "textures": [ "(query.position(1) <= 2.5) ? array.y[1 + math.ceil(math.abs(((query.position(1)) - (query.position(1) <= 0) - 1.5) / 160)) + ((query.position(1) <= -157.5) * -1)] : array.y[math.ceil(math.abs(((query.position(1) - 1.5) - (query.position(1) <= 0)) / 160))]"
+]
+    },
+    "controller.render.cz": {
+      "geometry": "Geometry.cz",
+      "materials": [ { "*": "Material.default" } ],
+      "is_hurt_color": {},
+      "on_fire_color": {},
+      "arrays": {
+      "textures": {     
+          "array.z": [
+            "Texture.z0",
+            "Texture.z1",
+            "Texture.z2",
+            "Texture.z3",
+            "Texture.z4",
+            "Texture.z5",
+            "Texture.z6",
+            "Texture.z7",
+            "Texture.z8",
+            "Texture.z9"
+                         ]
+                       }
+                    },
+      "textures": [ "(query.position(2) <= 0) ? array.z[math.ceil(math.abs(((query.position(2) + 1) - (query.position(2) <= 0)) / 16)) - 1] : array.z[math.ceil(math.abs((query.position(2) - (query.position(2) <= 0)) / 16))]"
+]
+    },
+    "controller.render.cz2": {
+      "geometry": "Geometry.cz2",
+      "materials": [ { "*": "Material.default" } ],
+      "is_hurt_color": {},
+      "on_fire_color": {},
+      "arrays": {
+      "textures": {     
+          "array.z": [
+            "Texture.z0",
+            "Texture.z1",
+            "Texture.z2",
+            "Texture.z3",
+            "Texture.z4",
+            "Texture.z5",
+            "Texture.z6",
+            "Texture.z7",
+            "Texture.z8",
+            "Texture.z9"
+                         ]
+                       }
+                    },
+      "textures": [ "(query.position(2) <= 0) ? array.z[math.ceil(math.abs(((query.position(2) + 1) - (query.position(2) <= 0)) / 160)) - 1] : array.z[9 + math.ceil(math.abs(((query.position(2) + 16) - (query.position(2) <= 0)) / 160))]"
+]
+    },
+    "controller.render.cz3": {
+      "geometry": "Geometry.cz3",
+      "materials": [ { "*": "Material.default" } ],
+      "is_hurt_color": {},
+      "on_fire_color": {},
+      "arrays": {
+      "textures": {     
+          "array.z": [
+            "Texture.z0",
+            "Texture.z1",
+            "Texture.z2",
+            "Texture.z3",
+            "Texture.z4",
+            "Texture.z5",
+            "Texture.z6",
+            "Texture.z7",
+            "Texture.z8",
+            "Texture.z9"
+                         ]
+                       }
+                    },
+      "textures": [ "(query.position(2) <= 0) ? array.z[math.ceil(math.abs(((query.position(2) + 1) - (query.position(2) <= 0)) / 160)) - 1] : array.z[9 + math.ceil(math.abs(((query.position(2) + 16) - (query.position(2) <= 0)) / 1600))]"
+]
+    },
+    "controller.render.cz4": {
+      "geometry": "Geometry.cz4",
+      "materials": [ { "*": "Material.default" } ],
+      "is_hurt_color": {},
+      "on_fire_color": {},
+      "arrays": {
+      "textures": {     
+          "array.z": [
+            "Texture.z0",
+            "Texture.z1",
+            "Texture.z2",
+            "Texture.z3",
+            "Texture.z4",
+            "Texture.z5",
+            "Texture.z6",
+            "Texture.z7",
+            "Texture.z8",
+            "Texture.z9"
+                         ]
+                       }
+                    },
+      "textures": [ "(query.position(2) <= 0) ? array.z[math.ceil(math.abs(((query.position(2) + 1) - (query.position(2) <= 0)) / 160)) - 1] : array.z[9 + math.ceil(math.abs(((query.position(2) + 16) - (query.position(2) <= 0)) / 16000))]"
+]
+    },
+    "controller.render.cnx": {
+      "geometry": "Geometry.cnx",
+      "textures": [ "Texture.nz" ],
+      "materials": [ { "*": "Material.default" } ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.cny": {
+      "geometry": "Geometry.cny",
+      "textures": [ "Texture.nz" ],
+      "materials": [ { "*": "Material.default" } ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.cnz": {
+      "geometry": "Geometry.cnz",
+      "textures": [ "Texture.nz" ],
+      "materials": [ { "*": "Material.default" } ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.cdbg": {
+      "geometry": "Geometry.cdbg",
+      "textures": [ "Texture.cdbg" ],
+      "materials": [ { "*": "Material.default" } ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.cxyz": {
+      "geometry": "Geometry.cxyz",
+      "textures": [ "Texture.cxyz" ],
+      "materials": [ { "*": "Material.default" } ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    },
+    "controller.render.ccoords": {
+      "geometry": "Geometry.ccoords",
+      "textures": [ "Texture.ccoords" ],
+      "materials": [ { "*": "Material.default" } ],
+      "is_hurt_color": {},
+      "on_fire_color": {}
+    }
+}}
