@@ -1,0 +1,29 @@
+{
+    "root_panel": {
+        "modifications": [{
+            "array_name": "controls",
+            "operation": "insert_front",
+            "value": {
+                "chunkmap2@hud.chunkmap2": {
+                    "controls": [{
+                        "chunkmap": {
+                            "anchor_from": "bottom_right",
+                            "anchor_to": "bottom_right",
+                            "renderer": "live_player_renderer",
+                            "size": [14, 14],
+                            "offset": [665, 105],
+                            "type": "custom"
+                        }
+                    }]
+                }
+            }
+        }]
+    },
+    "chunkmap2": {
+        "renderer": "hud_player_renderer",
+        "size": [0, 0],
+        "anchor_from": "bottom_right",
+        "anchor_to": "bottom_right",
+        "type": "custom"
+    }
+}

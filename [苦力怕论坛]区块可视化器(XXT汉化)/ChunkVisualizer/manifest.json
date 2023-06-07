@@ -1,0 +1,87 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "区块可视化器 By §aChainsketch(XT汉化)§b\n\nCredits go to-\n\nMadhatter & Ambient - 本材质包可以与他们的一起加载",
+    "name": "§a区块可视化器",
+    "uuid": "b23d28b3-efce-4f50-aa8c-34db6ab2fd12",
+    "version": [
+      1,
+      0,
+      0
+    ],
+    "min_engine_version": [
+      1,
+      16,
+      4
+    ]
+  },
+  "modules": [
+    {
+      "description": "CS",
+      "type": "resources",
+      "uuid": "89e6445d-42d6-4a7e-be65-899cb6717e55",
+      "version": [
+        1,
+        0,
+        0
+      ]
+    }
+  ],
+  "subpacks": [
+    {
+      "folder_name": "9",
+      "name": "§a区块指示符 + 区块坐标",
+      "memory_tier": 1
+    },
+    {
+      "folder_name": "8",
+      "name": "§a区块坐标",
+      "memory_tier": 1
+    },
+    {
+      "folder_name": "7",
+      "name": "§a区块指示符",
+      "memory_tier": 1
+    },
+    {
+      "folder_name": "11",
+      "name": "§a区块显示样式 2 + 区块指示符 + 区块坐标\n§c§l[警告：可能导致掉帧]",
+      "memory_tier": 1
+    },
+    {
+      "folder_name": "10",
+      "name": "§a区块显示样式 1 + 区块指示符 + 区块坐标\n§c§l[警告：可能导致掉帧]",
+      "memory_tier": 1
+    },
+    {
+      "folder_name": "6",
+      "name": "§a区块显示样式 2 + 区块坐标",
+      "memory_tier": 1
+    },
+    {
+      "folder_name": "5",
+      "name": "§a区块显示样式 1 + 区块坐标",
+      "memory_tier": 1
+    },
+    {
+      "folder_name": "4",
+      "name": "§a区块显示样式 2 + 区块指示符",
+      "memory_tier": 1
+    },
+    {
+      "folder_name": "3",
+      "name": "§a区块显示样式 1 + 区块指示符",
+      "memory_tier": 1
+    },
+    {
+      "folder_name": "2",
+      "name": "§a区块显示样式 2",
+      "memory_tier": 1
+    },
+    {
+      "folder_name": "1",
+      "name": "§a区块显示样式 1",
+      "memory_tier": 1
+    }
+  ]
+}

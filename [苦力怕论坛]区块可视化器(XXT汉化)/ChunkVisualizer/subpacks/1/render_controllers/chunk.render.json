@@ -1,0 +1,209 @@
+{
+    "format_version": "1.8.0",
+    "render_controllers": {
+        "controller.render.chunkx": {
+            "geometry": "Geometry.chunkx",
+            "materials": [{
+                "*": "Material.default"
+            }],
+            "is_hurt_color": {},
+            "on_fire_color": {},
+            "arrays": {
+                "textures": {
+                    "array.chunk": [
+                        "Texture.c16",
+                        "Texture.c1",
+                        "Texture.c2",
+                        "Texture.c3",
+                        "Texture.c4",
+                        "Texture.c5",
+                        "Texture.c6",
+                        "Texture.c7",
+                        "Texture.c8",
+                        "Texture.c9",
+                        "Texture.c10",
+                        "Texture.c11",
+                        "Texture.c12",
+                        "Texture.c13",
+                        "Texture.c14",
+                        "Texture.c15"
+                    ],
+                    "array.chunk2": [
+                        "Texture.c3",
+                        "Texture.c2",
+                        "Texture.c1",
+                        "Texture.c16",
+                        "Texture.c15",
+                        "Texture.c14",
+                        "Texture.c13",
+                        "Texture.c12",
+                        "Texture.c11",
+                        "Texture.c10",
+                        "Texture.c9",
+                        "Texture.c8",
+                        "Texture.c7",
+                        "Texture.c6",
+                        "Texture.c5",
+                        "Texture.c4"
+                    ]
+                }
+            },
+            "textures": ["(query.position(0) <= 0) ? array.chunk[16 + math.ceil(math.abs(query.position(0))) - (query.position(0) >= 0) + (query.position(0) >= 0)*1] : array.chunk2[18 + math.ceil(math.abs(query.position(0))) - (query.position(0) >= 0) + (query.position(0) >= 0)*1]" //((query.position(0) <= 0) * math.ceil(math.abs(query.position(0))) - (query.position(0) >= 0)) + ((query.position(0) >= 1) * math.ceil(math.abs(query.position(0))) - (query.position(0) >= 0))
+            ]
+        },
+        "controller.render.chunkz": {
+            "geometry": "Geometry.chunkz",
+            "materials": [{
+                "*": "Material.default"
+            }],
+            "is_hurt_color": {},
+            "on_fire_color": {},
+            "arrays": {
+                "textures": {
+                    "array.chunk": [
+                        "Texture.c1",
+                        "Texture.c2",
+                        "Texture.c3",
+                        "Texture.c4",
+                        "Texture.c5",
+                        "Texture.c6",
+                        "Texture.c7",
+                        "Texture.c8",
+                        "Texture.c9",
+                        "Texture.c10",
+                        "Texture.c11",
+                        "Texture.c12",
+                        "Texture.c13",
+                        "Texture.c14",
+                        "Texture.c15",
+                        "Texture.c16"
+                    ],
+                    "array.chunk2": [
+                        "Texture.c4",
+                        "Texture.c3",
+                        "Texture.c2",
+                        "Texture.c1",
+                        "Texture.c16",
+                        "Texture.c15",
+                        "Texture.c14",
+                        "Texture.c13",
+                        "Texture.c12",
+                        "Texture.c11",
+                        "Texture.c10",
+                        "Texture.c9",
+                        "Texture.c8",
+                        "Texture.c7",
+                        "Texture.c6",
+                        "Texture.c5"
+                    ]
+                }
+            },
+            "textures": ["(query.position(2) <= 0) ? array.chunk[14 + math.ceil(math.abs(query.position(2))) - (query.position(2) >= 0) + (query.position(2) >= 0)*1] : array.chunk2[20 + math.ceil(math.abs(query.position(2))) - (query.position(2) >= 0) + (query.position(2) >= 0)*1]"]
+        },
+        "controller.render.border1": {
+            "materials": [{
+                "*": "Material.default"
+            }],
+            "is_hurt_color": {},
+            "on_fire_color": {},
+            "arrays": {
+                "geometries": {
+                    "array.off": [
+                        "Geometry.border15",
+                        "Geometry.border14",
+                        "Geometry.border13",
+                        "Geometry.border12",
+                        "Geometry.border11",
+                        "Geometry.border10",
+                        "Geometry.border9",
+                        "Geometry.border8",
+                        "Geometry.border7",
+                        "Geometry.border6",
+                        "Geometry.border5",
+                        "Geometry.border4",
+                        "Geometry.border3",
+                        "Geometry.border2",
+                        "Geometry.border1",
+                        "Geometry.border16"
+                    ],
+                    "array.off2": [
+                        "Geometry.border1",
+                        "Geometry.border2",
+                        "Geometry.border3",
+                        "Geometry.border4",
+                        "Geometry.border5",
+                        "Geometry.border6",
+                        "Geometry.border7",
+                        "Geometry.border8",
+                        "Geometry.border9",
+                        "Geometry.border10",
+                        "Geometry.border11",
+                        "Geometry.border12",
+                        "Geometry.border13",
+                        "Geometry.border14",
+                        "Geometry.border15",
+                        "Geometry.border16"
+                    ]
+                },
+                "textures": {
+                    "array.chunk": [
+                        "Texture.g2",
+                        "Texture.g3",
+                        "Texture.g4",
+                        "Texture.g5",
+                        "Texture.g6",
+                        "Texture.g7",
+                        "Texture.g8",
+                        "Texture.g9",
+                        "Texture.g10",
+                        "Texture.g11",
+                        "Texture.g12",
+                        "Texture.g13",
+                        "Texture.g14",
+                        "Texture.g15",
+                        "Texture.g16",
+                        "Texture.g1"
+                    ],
+                    "array.chunk2": [
+                        "Texture.g16",
+                        "Texture.g15",
+                        "Texture.g14",
+                        "Texture.g13",
+                        "Texture.g12",
+                        "Texture.g11",
+                        "Texture.g10",
+                        "Texture.g9",
+                        "Texture.g8",
+                        "Texture.g7",
+                        "Texture.g6",
+                        "Texture.g5",
+                        "Texture.g4",
+                        "Texture.g3",
+                        "Texture.g2",
+                        "Texture.g1"
+                    ]
+                }
+            },
+            "geometry": "(query.position(2) <= 0) ? array.off[16 + (math.ceil(math.abs(query.position(2) / 16)) * 16) - (math.ceil(math.abs(query.position(2)))) + (query.position(2) >= 0) + -1] : array.off2[16 + (math.ceil(math.abs(query.position(2) / 16)) * 16) - (math.ceil(math.abs(query.position(2)))) + (query.position(2) >= 0) + -1]",
+            "textures": ["(query.position(0) <= 0) ? array.chunk[16 + (math.ceil(math.abs(query.position(0) / 16)) * 16) - (math.ceil(math.abs(query.position(0)))) + (query.position(0) <= 0)*-1] : array.chunk2[16 + (math.ceil(math.abs(query.position(0) / 16)) * 16) - (math.ceil(math.abs(query.position(0)))) + (query.position(0) <= 0)*-1]"]
+        },
+        "controller.render.cbg": {
+            "geometry": "Geometry.cbg",
+            "textures": ["Texture.cbg"],
+            "materials": [{
+                "*": "Material.default"
+            }],
+            "is_hurt_color": {},
+            "on_fire_color": {}
+        },
+        "controller.render.marker": {
+            "geometry": "Geometry.marker",
+            "textures": ["Texture.marker"],
+            "materials": [{
+                "*": "Material.default"
+            }],
+            "is_hurt_color": {},
+            "on_fire_color": {}
+        }
+    }
+}
