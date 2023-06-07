@@ -69,7 +69,7 @@ export default class IStructureSettle {
                 }
                 return false;
             }));
-            yield runner.start(1, 5);
+            yield runner.start(1, 30);
             return true;
         });
     }

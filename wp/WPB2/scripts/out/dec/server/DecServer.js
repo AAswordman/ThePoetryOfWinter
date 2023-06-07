@@ -17,6 +17,7 @@ import { DecHostOfDeepBoss1, DecHostOfDeepBoss2, DecHostOfDeepBoss3 } from './en
 import GZIPUtil from '../../modules/exmc/utils/GZIPUtil.js';
 import IStructureSettle from './data/structure/IStructureSettle.js';
 import IStructureDriver from './data/structure/IStructureDriver.js';
+import ExTaskRunner from '../../modules/exmc/server/ExTaskRunner.js';
 export default class DecServer extends ExGameServer {
     constructor(config) {
         super(config);
@@ -47,7 +48,7 @@ export default class DecServer extends ExGameServer {
             }
         }, false);
         this.getEvents().events.beforeChat.subscribe(e => {
-            var _a, _b;
+            var _a;
             let cmdRunner = this.getExDimension(MinecraftDimensionTypes.overworld);
             let sender = ExPlayer.getInstance(e.sender);
             if (e.message.startsWith(">/")) {
@@ -106,15 +107,25 @@ export default class DecServer extends ExGameServer {
                         let start = new Vector3(Math.floor(parseFloat(cmds[1])), Math.floor(parseFloat(cmds[2])), Math.floor(parseFloat(cmds[3])));
                         let end = new Vector3(Math.floor(parseFloat(cmds[4])), Math.floor(parseFloat(cmds[5])), Math.floor(parseFloat(cmds[6]))).add(1);
                         let data = [];
-                        for (let i of new IStructureDriver().save(this.getExDimension(MinecraftDimensionTypes.overworld), start, end)) {
-                            let res = i.toData();
-                            i.dispose();
-                            // console.warn(JSON.stringify(res));
-                            let com = (_a = GZIPUtil.zipString(JSON.stringify(res))) !== null && _a !== void 0 ? _a : "";
-                            data.push(com);
-                            console.warn(com);
-                        }
-                        this.compress = data;
+                        let task = new ExTaskRunner();
+                        const mthis = this;
+                        task.run((function* () {
+                            var _a;
+                            for (let i of new IStructureDriver().save(mthis.getExDimension(MinecraftDimensionTypes.overworld), start, end)) {
+                                let res = i.toData();
+                                i.dispose();
+                                //console.warn(JSON.stringify(res));
+                                let com = (_a = GZIPUtil.zipString(JSON.stringify(res))) !== null && _a !== void 0 ? _a : "";
+                                data.push(com);
+                                //console.warn(com);
+                                yield true;
+                            }
+                        }).bind(this));
+                        task.start(2, 1).then(() => {
+                            this.compress = data;
+                            console.warn("over");
+                            console.warn(JSON.stringify(data));
+                        });
                         // console.warn(GZIPUtil.unzipString(com));
                         break;
                     }
@@ -132,7 +143,7 @@ export default class DecServer extends ExGameServer {
                                 });
                             });
                         }
-                        (_b = task.shift()) === null || _b === void 0 ? void 0 : _b();
+                        (_a = task.shift()) === null || _a === void 0 ? void 0 : _a();
                         break;
                     }
                 }

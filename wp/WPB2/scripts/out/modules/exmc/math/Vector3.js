@@ -39,8 +39,8 @@ export default class Vector3 {
         if (typeof x === 'number') {
             if (typeof y === 'number' && typeof z === 'number') {
                 this.x = Math.min(this.x, x);
-                this.y = Math.min(this.y, x);
-                this.z = Math.min(this.z, x);
+                this.y = Math.min(this.y, y);
+                this.z = Math.min(this.z, z);
             }
             else {
                 this.x = Math.min(this.x, x);
