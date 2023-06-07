@@ -13,7 +13,7 @@ export default class IStructureDriver {
         let box = end.clone().sub(start);
         const tmpV = new Vector3();
         this.save(dim, start.clone(), start.clone().add(Math.floor(box.x / 2), Math.floor(box.y / 2), Math.floor(box.z / 2)));
-        let size = 16;
+        let size = 32;
         for (let x = 0; x < box.x; x += size) {
             for (let y = 0; y < box.y; y += size) {
                 for (let z = 0; z < box.z; z += size) {

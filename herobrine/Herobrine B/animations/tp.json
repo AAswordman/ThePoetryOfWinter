@@ -8,9 +8,42 @@
                     "/tp @s[tag=!him] @p",
                     "/execute @s[tag=!him] ~~~ spreadplayers ~ ~ 16 64 @s",
                     "/tag @s remove him"
+                ],
+                "2": [
+                    "/execute @a ~~~ tag @e[r=128,type=ys:herobrine] add him",
+                    "/tp @s[tag=!him] @p",
+                    "/execute @s[tag=!him] ~~~ spreadplayers ~ ~ 16 64 @s",
+                    "/tag @s remove him"
+                ],
+                "3": [
+                    "/execute @a ~~~ tag @e[r=128,type=ys:herobrine] add him",
+                    "/tp @s[tag=!him] @p",
+                    "/execute @s[tag=!him] ~~~ spreadplayers ~ ~ 16 64 @s",
+                    "/tag @s remove him"
+                ],
+                "4": [
+                    "/execute @a ~~~ tag @e[r=128,type=ys:herobrine] add him",
+                    "/tp @s[tag=!him] @p",
+                    "/execute @s[tag=!him] ~~~ spreadplayers ~ ~ 16 64 @s",
+                    "/tag @s remove him"
+                ],
+                "5": [
+                    "/execute @a ~~~ tag @e[r=128,type=ys:herobrine] add him",
+                    "/tp @s[tag=!him] @p",
+                    "/execute @s[tag=!him] ~~~ spreadplayers ~ ~ 16 64 @s",
+                    "/tag @s remove him"
+                ],
+                "6": [
+                    "/execute @a ~~~ tag @e[r=128,type=ys:herobrine] add him",
+                    "/tp @s[tag=!him] @p",
+                    "/execute @s[tag=!him] ~~~ spreadplayers ~ ~ 16 64 @s",
+                    "/tag @s remove him"
+                ],
+                "7": [
+                    "@s miss2"
                 ]
             },
-            "animation_length": 2,
+            "animation_length": 10,
             "loop": true
         }
     }

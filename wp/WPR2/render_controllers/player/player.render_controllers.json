@@ -18,8 +18,84 @@
             }],
             "uv_anim":{
                 "offset": [
-                    "(query.position(0)-Math.floor(query.position(0)/32)*32)/64+1/32",
-                    "(query.position(2)-Math.floor(query.position(2)/32)*32)/64+1/32"
+                    "(query.position(0)-Math.floor(query.position(0)/32)*32)/256+1/32",
+                    "(query.position(2)-Math.floor(query.position(2)/32)*32)/256+1/32"
+                ],
+                "scale": [
+                    1,
+                    1
+                ]
+            },
+            "is_hurt_color": {},
+            "on_fire_color": {}
+        },
+        "controller.render.cbg_ruin1": {
+            "geometry": "Geometry.cbg_ruin1",
+            "textures": ["Texture.cbg_ruin1"],
+            "materials": [{
+                "*": "Material.animated"
+            }],
+            "uv_anim":{
+                "offset": [
+                    "(query.position(0)-v.ruin_overworld_x1)/256+18/64",
+                    "(query.position(2)-v.ruin_overworld_z1)/256+18/64"
+                ],
+                "scale": [
+                    1,
+                    1
+                ]
+            },
+            "is_hurt_color": {},
+            "on_fire_color": {}
+        },
+        "controller.render.cbg_ruin2": {
+            "geometry": "Geometry.cbg_ruin1",
+            "textures": ["Texture.cbg_ruin1"],
+            "materials": [{
+                "*": "Material.animated"
+            }],
+            "uv_anim":{
+                "offset": [
+                    "(query.position(0)-v.ruin_overworld_x2)/256+18/64",
+                    "(query.position(2)-v.ruin_overworld_z2)/256+18/64"
+                ],
+                "scale": [
+                    1,
+                    1
+                ]
+            },
+            "is_hurt_color": {},
+            "on_fire_color": {}
+        },
+        "controller.render.cbg_ruin3": {
+            "geometry": "Geometry.cbg_ruin1",
+            "textures": ["Texture.cbg_ruin1"],
+            "materials": [{
+                "*": "Material.animated"
+            }],
+            "uv_anim":{
+                "offset": [
+                    "(query.position(0)-v.ruin_overworld_x3)/256+18/64",
+                    "(query.position(2)-v.ruin_overworld_z3)/256+18/64"
+                ],
+                "scale": [
+                    1,
+                    1
+                ]
+            },
+            "is_hurt_color": {},
+            "on_fire_color": {}
+        },
+        "controller.render.cbg_ruin4": {
+            "geometry": "Geometry.cbg_ruin1",
+            "textures": ["Texture.cbg_ruin1"],
+            "materials": [{
+                "*": "Material.animated"
+            }],
+            "uv_anim":{
+                "offset": [
+                    "(query.position(0)-v.ruin_overworld_x4)/256+18/64",
+                    "(query.position(2)-v.ruin_overworld_z4)/256+18/64"
                 ],
                 "scale": [
                     1,

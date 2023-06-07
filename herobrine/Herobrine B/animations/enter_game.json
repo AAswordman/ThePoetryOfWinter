@@ -6,9 +6,9 @@
                 "20": [
                     "/tellraw @s {\"rawtext\":[{\"text\":\"§eHerobrine joined the game§f\"}]}",
                     "/execute @e[type=ys:herobrine] ~~~ tag @a add him",
+                    "/execute @a[tag=him] ~~~ tag @a add him",
                     "/execute @s[tag=!him] ~~~ summon ys:herobrine ~~~",
-                    "/execute @e[type=ys:herobrine] ~~~ spreadplayers ~ ~ 16 64 @s",
-                    "/tag @s remove him"
+                    "/execute @e[type=ys:herobrine] ~~~ spreadplayers ~ ~ 16 64 @s"
                 ]
             },
             "animation_length": 21,

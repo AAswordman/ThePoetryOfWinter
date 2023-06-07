@@ -2,8 +2,8 @@
     "format_version": "1.13.0",
     "minecraft:feature_rules": {
         "description": {
-            "identifier": "dec:giant_tree_surrounding1_feature_rule",
-            "places_feature": "dec:giant_tree_srd1_mcstructure"
+            "identifier": "dec:giant_tree_surrounding2_feature_rule",
+            "places_feature": "dec:giant_tree_srd2_mcstructure"
         },
         "conditions": {
             "placement_pass": "surface_pass",

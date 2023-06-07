@@ -13,6 +13,11 @@
                     "rotation": ["0", "0", "0"],
                     "position": ["-345 + -500", "179 + (query.is_swimming * -24.25)", "10.003"],
                     "scale": "5.2"
+                },
+                "cbg_ruin1": {
+                    "rotation": ["0", "0", "0"],
+                    "position": ["-345 + -500", "179 + (query.is_swimming * -24.25)", "10.002"],
+                    "scale": "5.2"
                 }
             }
         }
