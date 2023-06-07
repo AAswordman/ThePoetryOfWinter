@@ -13,10 +13,11 @@ export default class IStructureDriver {
         let box = end.clone().sub(start);
         const tmpV = new Vector3();
         this.save(dim, start.clone(), start.clone().add(Math.floor(box.x / 2), Math.floor(box.y / 2), Math.floor(box.z / 2)));
-        for (let x = 0; x < box.x; x += 16) {
-            for (let y = 0; y < box.y; y += 16) {
-                for (let z = 0; z < box.z; z += 16) {
-                    yield this._save(dim, start.clone().add(x, y, z), start.clone().add(x, y, z).add(16).min(box.clone().sub(1)), new Vector3(x, y, z));
+        let size = 16;
+        for (let x = 0; x < box.x; x += size) {
+            for (let y = 0; y < box.y; y += size) {
+                for (let z = 0; z < box.z; z += size) {
+                    yield this._save(dim, start.clone().add(x, y, z), start.clone().add(x, y, z).add(size).min(box.clone().sub(1)), new Vector3(x, y, z));
                 }
             }
         }

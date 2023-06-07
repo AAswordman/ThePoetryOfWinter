@@ -48,7 +48,7 @@
 				]
 			},
 			"minecraft:entity_sensor": {
-				"sensor_range": 9,
+				"sensor_range": 15,
 				"minimum_count": 1,
 				"event_filters": {
 					"all_of": [
@@ -56,12 +56,6 @@
 							"test": "is_family",
 							"subject": "other",
 							"value": "player"
-						},
-						{
-							"operator": "not",
-							"test": "has_ability",
-							"subject": "other",
-							"value": "invulnerable"
 						}
 					]
 				},
@@ -89,7 +83,7 @@
 				},
 				"run_command": {
 					"command": [
-						"spreadplayers ~ ~ 16 48 @s",
+						"spreadplayers ~ ~ 16 64 @s",
 						"playsound ambient.cave @a ~~~ 10"
 					]
 				}

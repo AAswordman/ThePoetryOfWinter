@@ -32,7 +32,7 @@ export default class ExDimension {
         return this._dimension.getBlock(vec);
     }
     fillBlocks(start, end, blockId, option) {
-        console.warn("fillBlocks", start, end, blockId);
+        // console.warn("fillBlocks", start, end, blockId);
         if (typeof blockId === "string")
             blockId = MinecraftBlockTypes.get(blockId);
         this.dimension.fillBlocks(start, end, blockId, option);
