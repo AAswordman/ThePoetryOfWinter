@@ -15,7 +15,7 @@
 				"head" : {
 					"position" : [ 
 					 0.0,
-					 "query.is_using_item ? (query.is_sneaking ? -16 : (temp.vx = query.life_time;temp.dx = temp.vx - temp.tx;return temp.dx > 0.51 ? 0.0 : 16)): temp.tx = query.life_time_x;return 0.0;",
+					 "query.is_using_item ? (query.is_sneaking ? -16 : (vvx = query.life_time;vdx = vvx - vtx;return vdx > 0.51 ? 0.0 : 16)): vtx = query.life_time_x;return 0.0;",
 					"query.is_using_item ? 0.0:0.0" ]
 				}
 			}

@@ -68,7 +68,8 @@
 			},
 			"minecraft:tick_world": {},
 			"minecraft:fire_immune": {},
-			"minecraft:physics": {},
+			"minecraft:physics": {
+            },
 			"minecraft:pushable": {
 				"is_pushable": false,
 				"is_pushable_by_piston": false
@@ -85,6 +86,18 @@
 					"command": [
 						"spreadplayers ~ ~ 16 64 @s",
 						"playsound ambient.cave @a ~~~ 10"
+					]
+				}
+			},
+			"miss2": {
+				"add": {
+					"component_groups": [
+						"miss"
+					]
+				},
+				"run_command": {
+					"command": [
+						"spreadplayers ~ ~ 16 64 @s"
 					]
 				}
 			},
