@@ -457,7 +457,7 @@ ${getCharByNum((gj - (150 * Math.pow((g - 1), 2) + 1050 * (g - 1) + 900)) / (300
                                                 var _a;
                                                 if (e.canceled)
                                                     return;
-                                                i[1] = ((_a = e === null || e === void 0 ? void 0 : e.formValues) === null || _a === void 0 ? void 0 : _a[0]) || "";
+                                                i[1] = String(((_a = e === null || e === void 0 ? void 0 : e.formValues) === null || _a === void 0 ? void 0 : _a[0]) || "");
                                             }).catch(e => {
                                                 ExErrorQueue.throwError(e);
                                             });
@@ -478,7 +478,7 @@ ${getCharByNum((gj - (150 * Math.pow((g - 1), 2) + 1050 * (g - 1) + 900)) / (300
                                 "type": "button",
                                 "function": (client, ui) => {
                                     var _a;
-                                    (_a = client.data.pointRecord) === null || _a === void 0 ? void 0 : _a.point.push([client.exPlayer.getDimension().id, "", client.exPlayer.getPosition().floor()]);
+                                    (_a = client.data.pointRecord) === null || _a === void 0 ? void 0 : _a.point.push([client.exPlayer.dimension.id, "", client.exPlayer.getPosition().floor()]);
                                     return true;
                                 }
                             });
@@ -635,7 +635,7 @@ ${getCharByNum((gj - (150 * Math.pow((g - 1), 2) + 1050 * (g - 1) + 900)) / (300
                                         .button1(lang.menuUIMsgBailan15, () => {
                                         client.sayTo(lang.menuUIMsgBailan37);
                                         client.sayTo(lang.menuUIMsgBailan37, i[0]);
-                                        client.exPlayer.setPosition(p.getPosition(), p.getDimension());
+                                        client.exPlayer.setPosition(p.getPosition(), p.dimension);
                                     })
                                         .button2(lang.menuUIMsgBailan16, () => {
                                         client.sayTo(lang.menuUIMsgBailan63);
@@ -679,7 +679,7 @@ ${getCharByNum((gj - (150 * Math.pow((g - 1), 2) + 1050 * (g - 1) + 900)) / (300
                                         .button1(lang.menuUIMsgBailan15, () => {
                                         client.sayTo(lang.menuUIMsgBailan37);
                                         client.sayTo(lang.menuUIMsgBailan37, i[0]);
-                                        p.setPosition(client.exPlayer.getPosition(), client.exPlayer.getDimension());
+                                        p.setPosition(client.exPlayer.getPosition(), client.exPlayer.dimension);
                                     })
                                         .button2(lang.menuUIMsgBailan16, () => {
                                         client.sayTo(lang.menuUIMsgBailan73);
@@ -834,10 +834,10 @@ ${getCharByNum((gj - (150 * Math.pow((g - 1), 2) + 1050 * (g - 1) + 900)) / (300
                                             var _a, _b, _c, _d, _e, _f, _g, _h;
                                             if (e.canceled)
                                                 return;
-                                            client.globalSettings.entityCleaner = (_b = (_a = e.formValues) === null || _a === void 0 ? void 0 : _a[0]) !== null && _b !== void 0 ? _b : false;
-                                            client.globalSettings.entityCleanerLeastNum = (_d = (_c = e.formValues) === null || _c === void 0 ? void 0 : _c[1]) !== null && _d !== void 0 ? _d : 200;
-                                            client.globalSettings.entityCleanerStrength = (_f = (_e = e.formValues) === null || _e === void 0 ? void 0 : _e[2]) !== null && _f !== void 0 ? _f : 5;
-                                            client.globalSettings.entityCleanerDelay = (_h = (_g = e.formValues) === null || _g === void 0 ? void 0 : _g[3]) !== null && _h !== void 0 ? _h : 30;
+                                            client.globalSettings.entityCleaner = Boolean((_b = (_a = e.formValues) === null || _a === void 0 ? void 0 : _a[0]) !== null && _b !== void 0 ? _b : false);
+                                            client.globalSettings.entityCleanerLeastNum = Number((_d = (_c = e.formValues) === null || _c === void 0 ? void 0 : _c[1]) !== null && _d !== void 0 ? _d : 200);
+                                            client.globalSettings.entityCleanerStrength = Number((_f = (_e = e.formValues) === null || _e === void 0 ? void 0 : _e[2]) !== null && _f !== void 0 ? _f : 5);
+                                            client.globalSettings.entityCleanerDelay = Number((_h = (_g = e.formValues) === null || _g === void 0 ? void 0 : _g[3]) !== null && _h !== void 0 ? _h : 30);
                                         })
                                             .catch((e) => {
                                             ExErrorQueue.throwError(e);

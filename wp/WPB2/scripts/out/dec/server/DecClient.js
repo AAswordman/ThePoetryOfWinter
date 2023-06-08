@@ -28,9 +28,9 @@ export default class DecClient extends ExGameClient {
     }
     onJoin() {
         super.onJoin();
-        this.getEvents().exEvents.playerHurt.subscribe(e => {
+        this.getEvents().exEvents.afterPlayerHurt.subscribe(e => {
             //这里写死亡事件
-            if (this.exPlayer.getHealth() <= 0) {
+            if (this.exPlayer.health <= 0) {
                 this.exPlayer.command.run('function die/normal');
                 if (this.globalscores.getNumber('DieMode') === 1) {
                     //死亡模式
@@ -88,10 +88,10 @@ export default class DecClient extends ExGameClient {
                         "location": this.player.location
                     })) {
                         if (e != this.player) {
-                            e.addEffect(MinecraftEffectTypes.slowness, 3 * 20, 1);
+                            this.exPlayer.addEffect(MinecraftEffectTypes.slowness, 3 * 20, 1);
                         }
                     }
-                    this.player.addEffect(MinecraftEffectTypes.healthBoost, 30 * 20, 0);
+                    this.exPlayer.addEffect(MinecraftEffectTypes.healthBoost, 30 * 20, 0);
                     this.tmpV.set(this.player.location);
                     this.getExDimension().spawnParticle("dec:everlasting_winter_spurt_particle", this.tmpV);
                 }
@@ -137,7 +137,7 @@ export default class DecClient extends ExGameClient {
                 }
             }
         });
-        this.getEvents().exEvents.itemOnHandChange.subscribe((e) => {
+        this.getEvents().exEvents.afterItemOnHandChange.subscribe((e) => {
             //蓝魔法卷轴
             let bag = this.exPlayer.getBag();
             const itemOnHand = e.afterItem;
@@ -217,9 +217,9 @@ export default class DecClient extends ExGameClient {
                 if (p.isSneaking) {
                     if (this.useArmor === ArmorPlayerDec.turtle) {
                         if (((_a = ep.getBag().getItemOnHand()) === null || _a === void 0 ? void 0 : _a.typeId) === "dec:turtle_sword") {
-                            p.addEffect(MinecraftEffectTypes.slowness, 5 * 20, 5);
-                            p.addEffect(MinecraftEffectTypes.slowness, 2 * 20, 3);
-                            p.addEffect(MinecraftEffectTypes.slowness, 2 * 20, 50);
+                            ep.addEffect(MinecraftEffectTypes.slowness, 5 * 20, 5);
+                            ep.addEffect(MinecraftEffectTypes.slowness, 2 * 20, 3);
+                            ep.addEffect(MinecraftEffectTypes.slowness, 2 * 20, 50);
                         }
                     }
                 }
@@ -247,11 +247,11 @@ export default class DecClient extends ExGameClient {
                 p.startItemCooldown("village_portal",p.getItemCooldown("village_portal")-10)
             }*/
         });
-        this.getEvents().exEvents.itemUse.subscribe(e => {
+        this.getEvents().exEvents.afterItemUse.subscribe(e => {
             //魔法卷轴
-            if (e.item.typeId == "dec:magic_scroll_blue") {
+            if (e.itemStack.typeId == "dec:magic_scroll_blue") {
                 if (DecGlobal.isDec())
-                    taskUi(this, e.item);
+                    taskUi(this, e.itemStack);
                 else
                     ExGame.postMessageBetweenClient(this, PomServer, "taskUi", ["paperTask", "1"]);
             }

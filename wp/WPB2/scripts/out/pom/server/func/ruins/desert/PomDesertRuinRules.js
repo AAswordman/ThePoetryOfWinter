@@ -126,43 +126,43 @@ export default class PomDesertRuinRules {
                     i += 1;
                     switch (type) {
                         case desertCommand.TARGET.FACING_ADD_2: {
-                            addPos.add(this.game.exPlayer.getViewDirection().scl(2));
+                            addPos.add(this.game.exPlayer.viewDirection.scl(2));
                             break;
                         }
                         case desertCommand.TARGET.FACING_ADD_4: {
-                            addPos.add(this.game.exPlayer.getViewDirection().scl(4));
+                            addPos.add(this.game.exPlayer.viewDirection.scl(4));
                             break;
                         }
                         case desertCommand.TARGET.FACING_ADD_6: {
-                            addPos.add(this.game.exPlayer.getViewDirection().scl(6));
+                            addPos.add(this.game.exPlayer.viewDirection.scl(6));
                             break;
                         }
                         case desertCommand.TARGET.FACING_ADD_8: {
-                            addPos.add(this.game.exPlayer.getViewDirection().scl(8));
+                            addPos.add(this.game.exPlayer.viewDirection.scl(8));
                             break;
                         }
                         case desertCommand.TARGET.FACING_ADD_10: {
-                            addPos.add(this.game.exPlayer.getViewDirection().scl(10));
+                            addPos.add(this.game.exPlayer.viewDirection.scl(10));
                             break;
                         }
                         case desertCommand.TARGET.FACING_ADD_12: {
-                            addPos.add(this.game.exPlayer.getViewDirection().scl(12));
+                            addPos.add(this.game.exPlayer.viewDirection.scl(12));
                             break;
                         }
                         case desertCommand.TARGET.FACING_ADD_16: {
-                            addPos.add(this.game.exPlayer.getViewDirection().scl(16));
+                            addPos.add(this.game.exPlayer.viewDirection.scl(16));
                             break;
                         }
                         case desertCommand.TARGET.FACING_ADD_32: {
-                            addPos.add(this.game.exPlayer.getViewDirection().scl(32));
+                            addPos.add(this.game.exPlayer.viewDirection.scl(32));
                             break;
                         }
                         case desertCommand.TARGET.FACING_ADD_20: {
-                            addPos.add(this.game.exPlayer.getViewDirection().scl(20));
+                            addPos.add(this.game.exPlayer.viewDirection.scl(20));
                             break;
                         }
                         case desertCommand.TARGET.FACING_ADD_28: {
-                            addPos.add(this.game.exPlayer.getViewDirection().scl(28));
+                            addPos.add(this.game.exPlayer.viewDirection.scl(28));
                             break;
                         }
                         case desertCommand.TARGET.Y_ADD_8: {
@@ -206,7 +206,7 @@ export default class PomDesertRuinRules {
                     .show(this.game.player);
                 if (r.canceled || r.formValues === undefined)
                     break outerLoop;
-                const delay = r.formValues[0] * 1000;
+                const delay = Number(r.formValues[0]) * 1000;
                 const tmpV = new Vector3();
                 const skillLoop = ExSystem.tickTask(() => {
                     tmpV.set(this.game.player.location).add(addPos);
@@ -238,7 +238,7 @@ export default class PomDesertRuinRules {
                                 location: tmpV
                             }).forEach(e => {
                                 let c = ExEntity.getInstance(e).getHealthComponent();
-                                c.setCurrent(c.current + num);
+                                c.setCurrentValue(c.currentValue + num);
                             });
                             break;
                         }
@@ -249,7 +249,7 @@ export default class PomDesertRuinRules {
                                 location: tmpV
                             }).forEach(e => {
                                 let c = ExEntity.getInstance(e).getHealthComponent();
-                                c.setCurrent(Math.max(0, c.current - num));
+                                c.setCurrentValue(Math.max(0, c.currentValue - num));
                             });
                             break;
                         }
@@ -285,7 +285,7 @@ export default class PomDesertRuinRules {
                             this.game.getExDimension().getEntities({
                                 maxDistance: 15,
                                 location: tmpV
-                            }).forEach(e => (e.addEffect(eff, 600, 1, false)));
+                            }).forEach(e => (e.addEffect(eff, 600, { "amplifier": 1, "showParticles": false })));
                             break;
                         }
                     }

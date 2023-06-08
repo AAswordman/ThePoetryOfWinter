@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { ChatEvent, EntityDamageCause, EntityHurtEvent, GameMode, MinecraftBlockTypes, MinecraftDimensionTypes, MinecraftEffectTypes, MinecraftEntityTypes } from '@minecraft/server';
+import { ChatSendBeforeEvent, EntityDamageCause, EntityHurtAfterEvent, GameMode, MinecraftBlockTypes, MinecraftDimensionTypes, MinecraftEffectTypes, MinecraftEntityTypes } from '@minecraft/server';
 import Vector3 from '../../modules/exmc/math/Vector3.js';
 import ExDimension from "../../modules/exmc/server/ExDimension.js";
 import ExGameServer from "../../modules/exmc/server/ExGameServer.js";
@@ -36,6 +36,7 @@ import itemCanChangeBlock from './items/itemCanChangeBlock.js';
 import PomBossBarrier from './func/barrier/PomBossBarrier.js';
 import ExEnvironment from '../../modules/exmc/server/env/ExEnvironment.js';
 import ExSystem from '../../modules/exmc/utils/ExSystem.js';
+import { ExEventNames } from '../../modules/exmc/server/events/events.js';
 // import * as b from "brain.js";
 export default class PomServer extends ExGameServer {
     constructor(config) {
@@ -286,23 +287,26 @@ export default class PomServer extends ExGameServer {
                 || RuinsLoaction.MIND_RUIN_PROTECT_AREA.contains(v);
         };
         //遗迹保护
-        this.getEvents().events.blockBreak.subscribe(e => {
+        this.getEvents().events.afterBlockBreak.subscribe(e => {
             if (e.dimension === this.getDimension(MinecraftDimensionTypes.theEnd) && (isInProtectArea(e.block))) {
                 let ex = ExPlayer.getInstance(e.player);
                 // if (ex.getGameMode() === GameMode.creative) return;
-                e.dimension.getBlock(e.block.location).setType(e.brokenBlockPermutation.type);
-                ex.getExDimension().command.run("kill @e[type=item,r=2,x=" + e.block.x + ",y=" + e.block.y + ",z=" + e.block.z + "]");
-                e.player.addEffect(MinecraftEffectTypes.nausea, 200, 0, true);
-                e.player.addEffect(MinecraftEffectTypes.blindness, 200, 0, true);
-                e.player.addEffect(MinecraftEffectTypes.darkness, 400, 0, true);
-                e.player.addEffect(MinecraftEffectTypes.wither, 100, 0, true);
-                e.player.addEffect(MinecraftEffectTypes.miningFatigue, 600, 2, true);
-                e.player.addEffect(MinecraftEffectTypes.hunger, 600, 1, true);
+                let b = e.dimension.getBlock(e.block.location);
+                if (!b)
+                    return;
+                b.setType(e.brokenBlockPermutation.type);
+                ex.exDimension.command.run("kill @e[type=item,r=2,x=" + e.block.x + ",y=" + e.block.y + ",z=" + e.block.z + "]");
+                ex.addEffect(MinecraftEffectTypes.nausea, 200, 0, true);
+                ex.addEffect(MinecraftEffectTypes.darkness, 400, 0, true);
+                ex.addEffect(MinecraftEffectTypes.wither, 100, 0, true);
+                ex.addEffect(MinecraftEffectTypes.miningFatigue, 600, 2, true);
+                ex.addEffect(MinecraftEffectTypes.hunger, 600, 1, true);
+                ex.addEffect(MinecraftEffectTypes.blindness, 200, 0, true);
                 ex.command.run("tellraw @s { \"rawtext\" : [ { \"translate\" : \"text.dec:i_inviolable.name\" } ] }");
             }
         });
         this.getEvents().events.beforeItemUseOn.subscribe(e => {
-            if (e.source.dimension === this.getDimension(MinecraftDimensionTypes.theEnd) && (isInProtectArea(e.getBlockLocation()))) {
+            if (e.source.dimension === this.getDimension(MinecraftDimensionTypes.theEnd) && (isInProtectArea(e.block))) {
                 // if (e.source instanceof Player) {
                 //     let ex = ExPlayer.getInstance(e.source);
                 //     if (ex.getGameMode() === GameMode.creative) return;
@@ -321,7 +325,7 @@ export default class PomServer extends ExGameServer {
         });
         this.getEvents().events.beforeItemUse.subscribe(e => {
             if (e.source.dimension === this.getDimension(MinecraftDimensionTypes.theEnd) && (isInProtectArea(e.source.location))) {
-                if (itemCanChangeBlock(e.item.typeId)) {
+                if (itemCanChangeBlock(e.itemStack.typeId)) {
                     e.cancel = true;
                 }
                 ;
@@ -401,7 +405,7 @@ export default class PomServer extends ExGameServer {
         }).delay(20 * 12);
         this.ruinFuncLooper.start();
         //末影人清理
-        this.getEvents().events.entitySpawn.subscribe(e => {
+        this.getEvents().events.afterEntitySpawn.subscribe(e => {
             if (e.entity.typeId === MinecraftEntityTypes.enderman.id) {
                 if (e.entity.dimension === this.getDimension(MinecraftDimensionTypes.theEnd) &&
                     (isInProtectArea(e.entity.location))) {
@@ -457,15 +461,15 @@ export default class PomServer extends ExGameServer {
     }
 }
 __decorate([
-    registerEvent("chat", (server, e) => e.message === "time"),
+    registerEvent(ExEventNames.beforeChatSend, (server, e) => e.message === "time"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [ChatEvent]),
+    __metadata("design:paramtypes", [ChatSendBeforeEvent]),
     __metadata("design:returntype", void 0)
 ], PomServer.prototype, "time", null);
 __decorate([
-    registerEvent("entityHurt", (server, e) => server.setting.damageShow && e.damageSource.cause !== EntityDamageCause.suicide),
+    registerEvent(ExEventNames.afterEntityHurt, (server, e) => server.setting.damageShow && e.damageSource.cause !== EntityDamageCause.suicide),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [EntityHurtEvent]),
+    __metadata("design:paramtypes", [EntityHurtAfterEvent]),
     __metadata("design:returntype", void 0)
 ], PomServer.prototype, "damageShow", null);
 //# sourceMappingURL=PomServer.js.map

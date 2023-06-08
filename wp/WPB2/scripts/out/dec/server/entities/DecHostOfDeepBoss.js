@@ -5,7 +5,7 @@ export class DecHostOfDeepBoss1 extends DecBossController {
         super(e, server);
         this.music = server.getSound("music.wb.from_the_burning_deep", "4:18");
         this.setTimeout(() => {
-            this.music.loop(this.exEntity.getExDimension(), this.entity.location);
+            this.music.loop(this.exEntity.exDimension, this.entity.location);
         }, 500);
     }
     onDestroy() {
@@ -24,7 +24,7 @@ export class DecHostOfDeepBoss2 extends DecBossController {
         super(e, server);
         this.music = server.getSound("music.wb.from_the_burning_deep", "4:18");
         this.setTimeout(() => {
-            this.music.loop(this.exEntity.getExDimension(), this.entity.location);
+            this.music.loop(this.exEntity.exDimension, this.entity.location);
         }, 500);
     }
     onDestroy() {
@@ -43,7 +43,7 @@ export class DecHostOfDeepBoss3 extends DecCommonBossLastStage {
         super(e, server);
         this.music = server.getSound("music.wb.from_the_burning_deep", "4:18");
         this.setTimeout(() => {
-            this.music.loop(this.exEntity.getExDimension(), this.entity.location);
+            this.music.loop(this.exEntity.exDimension, this.entity.location);
         }, 500);
     }
     onDestroy() {

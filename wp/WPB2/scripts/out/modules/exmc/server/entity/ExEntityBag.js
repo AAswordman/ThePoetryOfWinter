@@ -18,10 +18,11 @@ export default class ExEntityBag {
     searchItem(id) {
         let items = this.getAllItems();
         for (let i = 0; i < items.length; i++) {
-            if (items[i] === undefined) {
+            let item = items[i];
+            if (item === undefined) {
                 continue;
             }
-            if (items[i].typeId === id) {
+            if (item.typeId === id) {
                 return i;
             }
         }

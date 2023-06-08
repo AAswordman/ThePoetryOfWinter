@@ -27,8 +27,8 @@ export default class PomTalentSystem extends GameController {
                     location: this.player.location
                 })) {
                     let exp = ExPlayer.getInstance(p);
-                    if (exp.getHealth() < health) {
-                        health = exp.getHealth();
+                    if (exp.health < health) {
+                        health = exp.health;
                         player = exp;
                     }
                 }
@@ -53,7 +53,7 @@ export default class PomTalentSystem extends GameController {
         //this.exPlayer.triggerEvent("hp:" + Math.round((20 + (this.talentRes.get(Talent.VIENTIANE) ?? 0))));
     }
     onJoin() {
-        this.getEvents().exEvents.playerHitEntity.subscribe((e) => {
+        this.getEvents().exEvents.afterPlayerHitEntity.subscribe((e) => {
             var _a, _b, _c, _d, _e, _f, _g, _h;
             let item = this.exPlayer.getBag().getItemOnHand();
             let damageFac = 0;
@@ -100,7 +100,7 @@ export default class PomTalentSystem extends GameController {
             this.hasCauseDamage.trigger(e.damage + damage, e.hurtEntity);
             target.removeHealth(this, damage);
         });
-        this.getEvents().exEvents.playerHurt.subscribe((e) => {
+        this.getEvents().exEvents.afterPlayerHurt.subscribe((e) => {
             var _a, _b;
             let damage = ((_a = this.exPlayer.getPreRemoveHealth()) !== null && _a !== void 0 ? _a : 0) + e.damage;
             let add = 0;
@@ -109,7 +109,7 @@ export default class PomTalentSystem extends GameController {
             this.hasBeenDamaged.trigger(e.damage - add, e.damageSource.damagingEntity);
         });
         let lastListener = (d) => { };
-        this.getEvents().exEvents.itemOnHandChange.subscribe((e) => {
+        this.getEvents().exEvents.afterItemOnHandChange.subscribe((e) => {
             var _a, _b, _c, _d, _e;
             let bag = this.exPlayer.getBag();
             if (e.afterItem && isEquipment(e.afterItem.typeId)) {

@@ -1,35 +1,36 @@
 import { world } from '@minecraft/server';
 import ExGame from '../ExGame.js';
+import { ExOtherEventNames } from './events.js';
 export default class ExServerEvents {
     constructor(server) {
         this.exEvents = {
-            "tick": {
+            [ExOtherEventNames.tick]: {
                 subscribe: (callback) => {
-                    this._subscribe("tick", callback);
+                    this._subscribe(ExOtherEventNames.tick, callback);
                 },
                 unsubscribe: (callback) => {
-                    this._unsubscribe("tick", callback);
+                    this._unsubscribe(ExOtherEventNames.tick, callback);
                 },
                 pattern: () => {
                     ExGame.tickMonitor.addMonitor((e) => {
                         var _a;
-                        (_a = ExServerEvents.monitorMap.get("tick")) === null || _a === void 0 ? void 0 : _a.forEach((fun) => {
+                        (_a = ExServerEvents.monitorMap.get(ExOtherEventNames.tick)) === null || _a === void 0 ? void 0 : _a.forEach((fun) => {
                             fun(e);
                         });
                     });
                 }
             },
-            "onLongTick": {
+            [ExOtherEventNames.onLongTick]: {
                 subscribe: (callback) => {
-                    this._subscribe("onLongTick", callback);
+                    this._subscribe(ExOtherEventNames.onLongTick, callback);
                 },
                 unsubscribe: (callback) => {
-                    this._unsubscribe("onLongTick", callback);
+                    this._unsubscribe(ExOtherEventNames.onLongTick, callback);
                 },
                 pattern: () => {
                     ExGame.longTickMonitor.addMonitor((e) => {
                         var _a;
-                        (_a = ExServerEvents.monitorMap.get("onLongTick")) === null || _a === void 0 ? void 0 : _a.forEach((fun) => {
+                        (_a = ExServerEvents.monitorMap.get(ExOtherEventNames.onLongTick)) === null || _a === void 0 ? void 0 : _a.forEach((fun) => {
                             fun(e);
                         });
                     });
@@ -37,7 +38,13 @@ export default class ExServerEvents {
             }
         };
         this._server = server;
-        this.events = world.events;
+        this.events = {};
+        for (let k in world.afterEvents) {
+            this.events[`after${k[0].toUpperCase()}${k.slice(1)}`] = world.afterEvents[k];
+        }
+        for (let k in world.beforeEvents) {
+            this.events[`before${k[0].toUpperCase()}${k.slice(1)}`] = world.beforeEvents[k];
+        }
         if (!ExServerEvents.init) {
             ExServerEvents.init = true;
             for (let i in this.exEvents) {

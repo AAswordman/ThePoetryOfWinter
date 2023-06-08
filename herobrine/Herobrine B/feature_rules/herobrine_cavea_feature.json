@@ -23,7 +23,7 @@
 			}
 		},
 		"distribution": {
-			"iterations": 1,
+			"iterations": 2,
 			"scatter_chance": {
 				"numerator": 1,
 				"denominator": 15
@@ -34,7 +34,7 @@
 			},
 			"y": {
 				"distribution": "uniform",
-				"extent": [0, 48]
+				"extent": [0, 60]
 			},
 			"z": {
 				"distribution": "uniform",

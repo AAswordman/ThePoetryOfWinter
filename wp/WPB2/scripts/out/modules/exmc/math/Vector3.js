@@ -186,6 +186,23 @@ export default class Vector3 {
     toArray() {
         return [this.x, this.y, this.z];
     }
+    // Calculate the vertical rotation angle of the vector relative to the x-z plane
+    // The angle ranges from -90 to 90 degrees, with the y-axis pointing vertically upwards, in the left-hand coordinate system
+    rotateAngleY() {
+        let [x, y, z] = [this.x, this.y, this.z];
+        let angle = Math.atan2(y, Math.sqrt(x * x + z * z));
+        return angle * 180 / Math.PI;
+    }
+    // Calculate the horizontal rotation angle of the vector relative to the x-y vertical plane
+    // The angle ranges from 0 to 360 degrees, with the y-axis pointing vertically upwards, in the left-hand coordinate system
+    rotateAngleX() {
+        let [x, y, z] = [this.x, this.y, this.z];
+        let angle = Math.atan2(x, z);
+        if (angle < 0) {
+            angle += 2 * Math.PI;
+        }
+        return angle * 180 / Math.PI;
+    }
 }
 Vector3.down = new Vector3(0, -1, 0);
 Vector3.forward = new Vector3(0, 0, 1);

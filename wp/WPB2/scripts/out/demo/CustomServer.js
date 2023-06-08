@@ -3,8 +3,6 @@ import CustomClient from "./CustomClient.js";
 export default class CustomServer extends ExGameServer {
     constructor(config) {
         super(config);
-        this.getEvents().events.entitySpawn.subscribe(e => {
-        });
     }
     newClient(id, player) {
         return new CustomClient(this, id, player);
