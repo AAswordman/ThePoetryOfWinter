@@ -1,18 +1,19 @@
 var _a;
 import ExPlayer from '../entity/ExPlayer.js';
 import EventHandle from "../events/EventHandle.js";
-import { ItemOnHandChangeEvent } from "../events/events.js";
+import { ExEventNames, ExOtherEventNames, ItemOnHandChangeEvent } from "../events/events.js";
 export default class ExEntityEvents {
     constructor(ctrl) {
         this.exEvents = {
-            itemUse: new Listener(this, "itemUse"),
-            tick: new Listener(this, "tick"),
-            entityHit: new Listener(this, "entityHit"),
-            onHitEntity: new Listener(this, "onHitEntity"),
-            onHurt: new Listener(this, "onHurt"),
-            itemOnHandChange: new Listener(this, "itemOnHandChange"),
-            onLongTick: new Listener(this, "onLongTick"),
-            blockBreak: new Listener(this, "blockBreak")
+            [ExEventNames.beforeItemUse]: new Listener(this, ExEventNames.beforeItemUse),
+            [ExEventNames.afterItemUse]: new Listener(this, ExEventNames.afterItemUse),
+            [ExOtherEventNames.tick]: new Listener(this, ExOtherEventNames.tick),
+            [ExOtherEventNames.afterEntityHit]: new Listener(this, ExOtherEventNames.afterEntityHit),
+            [ExOtherEventNames.afterOnHitEntity]: new Listener(this, ExOtherEventNames.afterOnHitEntity),
+            [ExOtherEventNames.afterOnHurt]: new Listener(this, ExOtherEventNames.afterOnHurt),
+            [ExOtherEventNames.afterItemOnHandChange]: new Listener(this, ExOtherEventNames.afterItemOnHandChange),
+            [ExOtherEventNames.onLongTick]: new Listener(this, ExOtherEventNames.onLongTick),
+            [ExEventNames.afterBlockBreak]: new Listener(this, ExEventNames.afterBlockBreak)
         };
         this._ctrl = ctrl;
         console.warn("regist events");
@@ -47,36 +48,42 @@ export default class ExEntityEvents {
 _a = ExEntityEvents;
 ExEntityEvents.eventHandlers = new EventHandle();
 ExEntityEvents.exEventSetting = {
-    itemUse: {
+    [ExEventNames.beforeItemUse]: {
         pattern: ExEntityEvents.eventHandlers.registerToServerByEntity,
         filter: {
             "name": "source"
         }
     },
-    tick: {
+    [ExEventNames.afterItemUse]: {
+        pattern: ExEntityEvents.eventHandlers.registerToServerByEntity,
+        filter: {
+            "name": "source"
+        }
+    },
+    [ExOtherEventNames.tick]: {
         pattern: ExEntityEvents.eventHandlers.registerToServerByServerEvent
     },
-    entityHit: {
+    [ExOtherEventNames.afterEntityHit]: {
         pattern: ExEntityEvents.eventHandlers.registerToServerByEntity,
         filter: {
             "name": "entity"
         }
     },
-    onHitEntity: {
+    [ExOtherEventNames.afterOnHitEntity]: {
         pattern: ExEntityEvents.eventHandlers.registerToServerByEntity,
         filter: {
             "name": "damageSource.damagingEntity"
         },
-        name: "entityHurt"
+        name: ExEventNames.afterEntityHurt
     },
-    onHurt: {
+    [ExOtherEventNames.afterOnHurt]: {
         pattern: ExEntityEvents.eventHandlers.registerToServerByEntity,
         filter: {
             "name": "hurtEntity"
         },
-        name: "entityHurt"
+        name: ExEventNames.afterEntityHurt
     },
-    itemOnHandChange: {
+    [ExOtherEventNames.afterItemOnHandChange]: {
         pattern: (registerName, k) => {
             _a.onHandItemMap = new Map();
             ExEntityEvents.eventHandlers.server.getEvents().register(registerName, (e) => {
@@ -93,12 +100,12 @@ ExEntityEvents.exEventSetting = {
                 }
             });
         },
-        name: "onLongTick"
+        name: ExOtherEventNames.onLongTick
     },
-    onLongTick: {
+    [ExOtherEventNames.onLongTick]: {
         pattern: ExEntityEvents.eventHandlers.registerToServerByServerEvent
     },
-    blockBreak: {
+    [ExEventNames.afterBlockBreak]: {
         pattern: ExEntityEvents.eventHandlers.registerToServerByEntity,
         filter: {
             "name": "player"

@@ -83,8 +83,14 @@ export default class PomBossBarrier {
                         // notUtillTask(this.server,() => ExPlayer.getInstance(e).getHealth()>0,()=>{
                         this.server.setTimeout(() => {
                             if (this.dim.dimension !== e.dimension) {
-                                e.addEffect(MinecraftEffectTypes.resistance, 14 * 20, 10, true);
-                                e.addEffect(MinecraftEffectTypes.weakness, 14 * 20, 10, true);
+                                e.addEffect(MinecraftEffectTypes.resistance, 14 * 20, {
+                                    "amplifier": 10,
+                                    "showParticles": false
+                                });
+                                e.addEffect(MinecraftEffectTypes.weakness, 14 * 20, {
+                                    "amplifier": 10,
+                                    "showParticles": false
+                                });
                             }
                             ExPlayer.getInstance(e).setPosition(this.area.center(), this.dim.dimension);
                         }, 2000);

@@ -32,25 +32,25 @@ export default class ExPlayer extends ExEntity {
     getGameMode() {
         var _a, _b, _c, _d;
         let c = GameMode.creative;
-        c = (((_a = Array.from(this.getDimension().getPlayers({
+        c = (((_a = Array.from(this.dimension.getPlayers({
             location: this.entity.location,
             closest: 1,
             maxDistance: 1,
             gameMode: GameMode.adventure
         }))) === null || _a === void 0 ? void 0 : _a[0]) === this.entity ? GameMode.adventure : c);
-        c = (((_b = Array.from(this.getDimension().getPlayers({
+        c = (((_b = Array.from(this.dimension.getPlayers({
             location: this.entity.location,
             closest: 1,
             maxDistance: 1,
             gameMode: GameMode.creative
         }))) === null || _b === void 0 ? void 0 : _b[0]) === this.entity ? GameMode.creative : c);
-        c = (((_c = Array.from(this.getDimension().getPlayers({
+        c = (((_c = Array.from(this.dimension.getPlayers({
             location: this.entity.location,
             closest: 1,
             maxDistance: 1,
             gameMode: GameMode.spectator
         }))) === null || _c === void 0 ? void 0 : _c[0]) === this.entity ? GameMode.spectator : c);
-        c = (((_d = Array.from(this.getDimension().getPlayers({
+        c = (((_d = Array.from(this.dimension.getPlayers({
             location: this.entity.location,
             closest: 1,
             maxDistance: 1,

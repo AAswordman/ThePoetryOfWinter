@@ -13,7 +13,7 @@ export default class PomAncientStoneBoss extends PomBossController {
         if (!this.exEntity.hasIsBabyComponent() && this.isFisrtCall) {
             this.server.say({ rawtext: [{ translate: "text.wb:summon_ancient_stone.name" }] });
             this.setTimeout(() => {
-                this.music.loop(this.exEntity.getExDimension(), this.entity.location);
+                this.music.loop(this.exEntity.exDimension, this.entity.location);
             }, 500);
         }
     }

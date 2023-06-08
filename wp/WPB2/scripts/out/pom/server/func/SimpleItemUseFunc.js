@@ -1,4 +1,4 @@
-import { MinecraftEffectTypes, ItemStack, Items } from '@minecraft/server';
+import { MinecraftEffectTypes, ItemStack, ItemTypes } from '@minecraft/server';
 import { ModalFormData } from "@minecraft/server-ui";
 import Vector3 from '../../../modules/exmc/math/Vector3.js';
 import ExDimension from '../../../modules/exmc/server/ExDimension.js';
@@ -8,7 +8,7 @@ import MenuUIAlert from "../ui/MenuUIAlert.js";
 import GameController from "./GameController.js";
 export default class SimpleItemUseFunc extends GameController {
     onJoin() {
-        this.getEvents().exEvents.blockBreak.subscribe(e => {
+        this.getEvents().exEvents.afterBlockBreak.subscribe(e => {
             var _a;
             const itemId = (_a = this.exPlayer.getBag().getItemOnHand()) === null || _a === void 0 ? void 0 : _a.typeId;
             if (itemId === "wb:axex_equipment_a") {
@@ -22,13 +22,14 @@ export default class SimpleItemUseFunc extends GameController {
                 }
             }
         });
-        this.getEvents().exEvents.onceItemUseOn.subscribe(e => {
-            if (e.item.typeId === "wb:technology_world_explorer") {
-                this.sayTo(this.getExDimension().getBlock(e.getBlockLocation()).typeId);
+        this.getEvents().exEvents.beforeItemUseOn.subscribe(e => {
+            var _a, _b;
+            if (e.itemStack.typeId === "wb:technology_world_explorer") {
+                this.sayTo((_b = (_a = e.block) === null || _a === void 0 ? void 0 : _a.typeId) !== null && _b !== void 0 ? _b : "");
             }
         });
-        this.getEvents().exEvents.itemUse.subscribe((e) => {
-            const { item } = e;
+        this.getEvents().exEvents.beforeItemUse.subscribe((e) => {
+            const item = e.itemStack;
             if (item.typeId == "wb:power") {
                 if (!this.data.lang) {
                     new ModalFormData()
@@ -49,9 +50,9 @@ export default class SimpleItemUseFunc extends GameController {
             }
             else if (item.typeId === "wb:jet_pack") {
                 // jet pack
-                this.player.addEffect(MinecraftEffectTypes.levitation, 7, 15, false);
-                this.player.addEffect(MinecraftEffectTypes.slowFalling, 150, 3, false);
-                this.exPlayer.getDimension().spawnEntity("wb:ball_jet_pack", this.exPlayer.getPosition().sub(this.exPlayer.getViewDirection().scl(2)));
+                this.exPlayer.addEffect(MinecraftEffectTypes.levitation, 7, 15, false);
+                this.exPlayer.addEffect(MinecraftEffectTypes.slowFalling, 150, 3, false);
+                this.exPlayer.dimension.spawnEntity("wb:ball_jet_pack", this.exPlayer.getPosition().sub(this.exPlayer.viewDirection.scl(2)));
             }
             else if (item.typeId === "wb:start_key") {
             }
@@ -84,6 +85,7 @@ export default class SimpleItemUseFunc extends GameController {
         });
     }
     chainDigging(v, idType, times, posData) {
+        var _a;
         let o = posData === undefined;
         if (!posData) {
             posData = new Set();
@@ -99,7 +101,7 @@ export default class SimpleItemUseFunc extends GameController {
             return;
         posData.add(pos);
         const dim = ExDimension.getInstance(this.getDimension());
-        const id = dim.getBlock(v).typeId;
+        const id = (_a = dim.getBlock(v)) === null || _a === void 0 ? void 0 : _a.typeId;
         if (id === idType || o) {
             dim.digBlock(v);
             this.chainDigging(v.add(0, 1, 0), idType, times, posData);
@@ -128,7 +130,7 @@ export default class SimpleItemUseFunc extends GameController {
     initialMagicPickaxe() {
         if (this.globalSettings.initialMagicPickaxe) {
             if (!this.data.initialMagicPickaxe) {
-                this.exPlayer.getBag().addItem(new ItemStack(Items.get("wb:pickaxex_equipment_a")));
+                this.exPlayer.getBag().addItem(new ItemStack(ItemTypes.get("wb:pickaxex_equipment_a")));
                 this.data.initialMagicPickaxe = true;
             }
         }

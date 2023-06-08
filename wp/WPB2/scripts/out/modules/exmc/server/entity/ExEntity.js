@@ -44,8 +44,8 @@ export default class ExEntity {
             timeout.setTimeout(() => {
                 var _a;
                 let health = this.getHealthComponent();
-                if (health.current > 0.5)
-                    health.setCurrent(Math.max(0.5, health.current - ((_a = this._damage) !== null && _a !== void 0 ? _a : 0)));
+                if (health.currentValue > 0.5)
+                    health.setCurrentValue(Math.max(0.5, health.currentValue - ((_a = this._damage) !== null && _a !== void 0 ? _a : 0)));
                 this._damage = undefined;
             }, 0);
         }
@@ -75,18 +75,21 @@ export default class ExEntity {
         }
         return (new ExEntity(entity));
     }
-    getDimension() {
-        return this._entity.dimension;
+    get exDimension() {
+        return ExDimension.getInstance(this.dimension);
     }
-    getExDimension() {
-        return ExDimension.getInstance(this.getDimension());
+    set exDimension(ex) {
+        this.dimension = ex.dimension;
     }
     addTag(str) {
         this._entity.addTag(str);
         return str;
     }
-    getTags() {
+    get tags() {
         return this._entity.getTags();
+    }
+    getTags() {
+        return this.tags;
     }
     hasTag(str) {
         return this._entity.hasTag(str);
@@ -117,18 +120,50 @@ export default class ExEntity {
     getPosition() {
         return new Vector3(this.entity.location);
     }
-    getRotation() {
+    setPosition(position, dimension) {
+        this.entity.teleport(position, {
+            "dimension": dimension,
+            "keepVelocity": true
+        });
+    }
+    get rotation() {
         return this.entity.getRotation();
     }
-    setPosition(position, dimension = this.entity.dimension) {
-        let rot = this.getRotation();
-        this.entity.teleport(position, dimension, rot.x, rot.y);
+    set rotation(ivec) {
+        this.teleport(this.getPosition(), {
+            "keepVelocity": true,
+            "rotation": ivec
+        });
     }
-    setDimension(dimension) {
+    teleport(location, teleportOptions) {
+        this.entity.teleport(location, teleportOptions);
+    }
+    tryTeleport(location, teleportOptions) {
+        this.entity.tryTeleport(location, teleportOptions);
+    }
+    set dimension(dimension) {
         this.setPosition(this.getPosition(), dimension);
     }
-    getViewDirection() {
+    get dimension() {
+        return this._entity.dimension;
+    }
+    get viewDirection() {
         return new Vector3(this.entity.getViewDirection());
+    }
+    set viewDirection(ivec) {
+        this.teleport(this.getPosition(), {
+            "keepVelocity": true,
+            "rotation": {
+                x: ivec.rotateAngleX(),
+                y: ivec.rotateAngleY()
+            }
+        });
+    }
+    addEffect(eff, during, aml, par = true) {
+        this.entity.addEffect(eff, during, {
+            "showParticles": par,
+            "amplifier": aml
+        });
     }
     hasComponent(name) {
         return this._entity.hasComponent(name);
@@ -142,11 +177,14 @@ export default class ExEntity {
     getHealthComponent() {
         return this.getComponent(EntityHealthComponent.componentId);
     }
-    getHealth() {
-        return this.getHealthComponent().current;
+    get health() {
+        return this.getHealthComponent().currentValue;
+    }
+    set health(h) {
+        this.getHealthComponent().setCurrentValue(h);
     }
     getMaxHealth() {
-        return this.getHealthComponent().value;
+        return this.getHealthComponent().defaultValue;
     }
     getBag() {
         return new ExEntityBag(this);

@@ -61,7 +61,7 @@ export default class ExGameClient {
             return world.getDimension(type);
         }
         else {
-            return this.exPlayer.getDimension();
+            return this.exPlayer.dimension;
         }
     }
     getExDimension(type = undefined) {
@@ -122,7 +122,7 @@ export default class ExGameClient {
     }
     asDebugger() {
         this.player.addTag("debugger");
-        this._events.exEvents.chat.subscribe(this.debuggerChatTest);
+        this._events.exEvents.beforeChatSend.subscribe(this.debuggerChatTest);
     }
     notDebugger() {
         this.player.removeTag("debugger");

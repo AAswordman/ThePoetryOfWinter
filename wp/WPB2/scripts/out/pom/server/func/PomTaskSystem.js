@@ -92,7 +92,7 @@ export default class PomTaskSystem extends GameController {
                 }
             }
         }
-        this.getEvents().exEvents.blockBreak.subscribe(e => {
+        this.getEvents().exEvents.afterBlockBreak.subscribe(e => {
             var _a;
             // ExGameConfig.console.log(e.brokenBlockPermutation.type.id);
             if (!this.data.tasks)
@@ -102,12 +102,12 @@ export default class PomTaskSystem extends GameController {
             }
             // s
         });
-        this.getEvents().exEvents.playerHitEntity.subscribe(e => {
+        this.getEvents().exEvents.afterPlayerHitEntity.subscribe(e => {
             var _a;
             if (!this.data.tasks)
                 return;
             if (this.recordDailyArray.has(e.hurtEntity.typeId)) {
-                if (ExEntity.getInstance(e.hurtEntity).getHealth() < 0) {
+                if (ExEntity.getInstance(e.hurtEntity).getMaxHealth() < 0) {
                     this.data.tasks.daily.cache[e.hurtEntity.typeId] = 1 + ((_a = this.data.tasks.daily.cache[e.hurtEntity.typeId]) !== null && _a !== void 0 ? _a : 0);
                 }
             }

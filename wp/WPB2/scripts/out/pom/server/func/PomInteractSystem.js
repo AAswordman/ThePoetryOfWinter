@@ -3,7 +3,7 @@ import "../../../modules/exmc/utils/native/Array.js";
 import ExEntity from "../../../modules/exmc/server/entity/ExEntity.js";
 export default class PomInteractSystem extends GameController {
     onJoin() {
-        this.getEvents().exEvents.itemOnHandChange.subscribe(e => {
+        this.getEvents().exEvents.afterItemOnHandChange.subscribe(e => {
             var _a, _b;
             if (((_a = e.afterItem) === null || _a === void 0 ? void 0 : _a.typeId) === "epic:machanical_operator" ||
                 ((_b = e.afterItem) === null || _b === void 0 ? void 0 : _b.typeId) === "epic:alliance_token") {

@@ -7,7 +7,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { TickEvent } from '@minecraft/server';
 import PomBossController from './PomBossController.js';
 import { registerEvent } from '../../../modules/exmc/server/events/eventDecoratorFactory.js';
 import ExErrorQueue from '../../../modules/exmc/server/ExErrorQueue.js';
@@ -49,7 +48,7 @@ PomIntentionsBoss1.typeId = "wb:intentions_first";
 __decorate([
     registerEvent("onLongTick"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [TickEvent]),
+    __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
 ], PomIntentionsBoss1.prototype, "onLongTick", null);
 export class PomIntentionsBoss2 extends PomBossController {
@@ -91,7 +90,7 @@ PomIntentionsBoss2.typeId = "wb:intentions_second";
 __decorate([
     registerEvent("onLongTick"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [TickEvent]),
+    __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
 ], PomIntentionsBoss2.prototype, "onLongTick", null);
 export class PomIntentionsBoss3 extends PomBossController {
@@ -102,12 +101,12 @@ export class PomIntentionsBoss3 extends PomBossController {
         this.state = new VarOnChangeListener((n) => {
             switch (n) {
                 case 9:
-                    this.exEntity.getExDimension().spawnParticle("wb:ruin_mind_boss_third_par", this.exEntity.getPosition());
+                    this.exEntity.exDimension.spawnParticle("wb:ruin_mind_boss_third_par", this.exEntity.getPosition());
                     break;
                 case 1:
                 case 2:
                 case 3:
-                    this.exEntity.getExDimension().spawnParticle("wb:ruin_mind_boss_second_par", this.exEntity.getPosition());
+                    this.exEntity.exDimension.spawnParticle("wb:ruin_mind_boss_second_par", this.exEntity.getPosition());
                     break;
             }
         }, 1);
@@ -165,7 +164,7 @@ PomIntentionsBoss3.typeId = "wb:intentions_third";
 __decorate([
     registerEvent("onLongTick"),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [TickEvent]),
+    __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
 ], PomIntentionsBoss3.prototype, "onLongTick", null);
 //# sourceMappingURL=PomIntentionsBoss.js.map

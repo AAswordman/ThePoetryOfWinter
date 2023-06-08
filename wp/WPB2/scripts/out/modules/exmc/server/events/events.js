@@ -1,3 +1,4 @@
+import { world } from '@minecraft/server';
 export class ItemOnHandChangeEvent {
     constructor(beforeItem, afterItem, source) {
         this.beforeItem = beforeItem;
@@ -5,4 +6,23 @@ export class ItemOnHandChangeEvent {
         this.source = source;
     }
 }
+let exEventNames = {};
+for (let k in world.afterEvents) {
+    exEventNames[`after${k[0].toUpperCase()}${k.slice(1)}`] = `after${k[0].toUpperCase()}${k.slice(1)}`;
+}
+for (let k in world.beforeEvents) {
+    exEventNames[`before${k[0].toUpperCase()}${k.slice(1)}`] = `before${k[0].toUpperCase()}${k.slice(1)}`;
+}
+let exOtherEventNameMap = {
+    "tick": "tick",
+    "onLongTick": "onLongTick",
+    "afterPlayerHurt": "afterPlayerHurt",
+    "afterPlayerHitEntity": "afterPlayerHitEntity",
+    "afterItemOnHandChange": "itemOnHandChange",
+    "afterEntityHit": "afterEntityHit",
+    "afterOnHitEntity": "afterOnHitEntity",
+    "afterOnHurt": "afterOnHurt"
+};
+export let ExEventNames = exEventNames;
+export let ExOtherEventNames = exOtherEventNameMap;
 //# sourceMappingURL=events.js.map
