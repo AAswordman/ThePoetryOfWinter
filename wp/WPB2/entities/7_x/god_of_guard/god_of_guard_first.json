@@ -6,7 +6,6 @@
         "is_spawnable": true,
         "is_summonable": true,
         "is_experimental": false,
-        "runtime_identifier": "wb:god_of_guard_first",
         "animations": {
           "boss": "animation.boss.testplayer"
         },

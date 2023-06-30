@@ -6,8 +6,7 @@
       "is_spawnable":true,
       "is_summonable":true,
       "is_experimental":false,
-      "runtime_identifier":"wb:originking",
-      "animations":{
+            "animations":{
         "text":"controller.animation.originking.att",
         "tex":"controller.animation.originking.at",
         "summon":"animation.originking.summon",

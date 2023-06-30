@@ -6,7 +6,6 @@
       "is_spawnable": false,
       "is_summonable": true,
       "is_experimental": false,
-      "runtime_identifier": "wb:end_blackhole",
       "animations": {
         "summon": "animation.originking.end_blackhole"
       },

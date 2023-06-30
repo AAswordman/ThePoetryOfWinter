@@ -44,8 +44,8 @@ export default class ExEntity {
             timeout.setTimeout(() => {
                 var _a;
                 let health = this.getHealthComponent();
-                if (health.currentValue > 0.5)
-                    health.setCurrentValue(Math.max(0.5, health.currentValue - ((_a = this._damage) !== null && _a !== void 0 ? _a : 0)));
+                if (health.current > 0.5)
+                    health.setCurrent(Math.max(0.5, health.current - ((_a = this._damage) !== null && _a !== void 0 ? _a : 0)));
                 this._damage = undefined;
             }, 0);
         }
@@ -160,10 +160,11 @@ export default class ExEntity {
         });
     }
     addEffect(eff, during, aml, par = true) {
-        this.entity.addEffect(eff, during, {
-            "showParticles": par,
-            "amplifier": aml
-        });
+        this.entity.addEffect(eff, during, aml, par);
+        // this.entity.addEffect(eff, during, {
+        //     "showParticles": par,
+        //     "amplifier": aml
+        // });
     }
     hasComponent(name) {
         return this._entity.hasComponent(name);
@@ -178,13 +179,13 @@ export default class ExEntity {
         return this.getComponent(EntityHealthComponent.componentId);
     }
     get health() {
-        return this.getHealthComponent().currentValue;
+        return this.getHealthComponent().current;
     }
     set health(h) {
-        this.getHealthComponent().setCurrentValue(h);
+        this.getHealthComponent().setCurrent(Math.max(0, h));
     }
     getMaxHealth() {
-        return this.getHealthComponent().defaultValue;
+        return this.getHealthComponent().value;
     }
     getBag() {
         return new ExEntityBag(this);

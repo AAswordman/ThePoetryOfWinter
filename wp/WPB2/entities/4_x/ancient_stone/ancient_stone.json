@@ -6,7 +6,6 @@
             "is_spawnable": true,
             "is_summonable": true,
             "is_experimental": false,
-            "runtime_identifier": "wb:ancient_stone",
             "animations": {
                 "base": "controller.animation.ancient_stone",
                 "new": "animation.ancient_stone.wb",

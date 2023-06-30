@@ -5,8 +5,7 @@
       "identifier": "wb:shadow_intentions_first",
       "is_spawnable": false,
       "is_summonable": true,
-      "is_experimental": false,
-      "runtime_identifier": "wb:shadow_intentions_first"
+      "is_experimental": false
     },
     "component_groups": {
       "into": {

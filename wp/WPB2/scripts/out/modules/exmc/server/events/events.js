@@ -18,7 +18,7 @@ let exOtherEventNameMap = {
     "onLongTick": "onLongTick",
     "afterPlayerHurt": "afterPlayerHurt",
     "afterPlayerHitEntity": "afterPlayerHitEntity",
-    "afterItemOnHandChange": "itemOnHandChange",
+    "afterItemOnHandChange": "afterItemOnHandChange",
     "afterEntityHit": "afterEntityHit",
     "afterOnHitEntity": "afterOnHitEntity",
     "afterOnHurt": "afterOnHurt"

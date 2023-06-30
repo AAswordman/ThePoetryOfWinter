@@ -250,10 +250,12 @@ export default class DecClient extends ExGameClient {
         this.getEvents().exEvents.afterItemUse.subscribe(e => {
             //魔法卷轴
             if (e.itemStack.typeId == "dec:magic_scroll_blue") {
-                if (DecGlobal.isDec())
-                    taskUi(this, e.itemStack);
-                else
-                    ExGame.postMessageBetweenClient(this, PomServer, "taskUi", ["paperTask", "1"]);
+                this.setTimeout(() => {
+                    if (DecGlobal.isDec())
+                        taskUi(this, e.itemStack);
+                    else
+                        ExGame.postMessageBetweenClient(this, PomServer, "taskUi", ["paperTask", "1"]);
+                }, 0);
             }
         });
     }

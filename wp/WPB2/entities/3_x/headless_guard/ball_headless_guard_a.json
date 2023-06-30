@@ -5,8 +5,7 @@
       "identifier": "wb:ball_headless_guard_a",
       "is_spawnable": false,
       "is_summonable": true,
-      "is_experimental": false,
-      "runtime_identifier": "wb:ball_headless_guard_a"
+      "is_experimental": false
     },
     "component_groups": {
       "boom": {

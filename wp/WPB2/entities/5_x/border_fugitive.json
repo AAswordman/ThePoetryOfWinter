@@ -6,8 +6,7 @@
       "is_spawnable": true,
       "is_summonable": true,
       "is_experimental": false,
-      "runtime_identifier":"wb:border_fugitive",
-      "animations":{
+            "animations":{
       	"base":"controller.animation.border_fugitive"
       },
       "scripts":{

@@ -5,9 +5,8 @@
       "identifier": "wb:ball_intentions_firsta",
       "is_spawnable": false,
       "is_summonable": false,
-      "is_experimental": false,
-      "runtime_identifier":"wb:ball_intentions_firsta"
-    },
+      "is_experimental": false
+          },
 
     "components": {
     	   "minecraft:knockback_resistance": {

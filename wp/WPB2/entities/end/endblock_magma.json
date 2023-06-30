@@ -5,9 +5,8 @@
       "identifier": "wb:endblock_magma",
       "is_spawnable": false,
       "is_summonable": true,
-      "is_experimental": false,
-      "runtime_identifier":"wb:endblock_magma"
-    },
+      "is_experimental": false
+          },
     "component_groups": {
     	"start":{
     "minecraft:explode": {

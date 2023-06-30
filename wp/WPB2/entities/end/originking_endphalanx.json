@@ -6,8 +6,7 @@
       "is_spawnable": false,
       "is_summonable": true,
       "is_experimental": false,
-      "runtime_identifier":"wb:originking_endphalanx",
-      "animations": {
+            "animations": {
         "broke":"animation.originking.endphalanx"
       },
        "scripts": {

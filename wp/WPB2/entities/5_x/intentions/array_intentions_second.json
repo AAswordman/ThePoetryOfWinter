@@ -5,8 +5,7 @@
       "identifier": "wb:array_intentions_second",
       "is_spawnable": false,
       "is_summonable": true,
-      "is_experimental": false,
-      "runtime_identifier": "wb:array_intentions_second"
+      "is_experimental": false
     },
     "components": {
       "minecraft:teleport": {

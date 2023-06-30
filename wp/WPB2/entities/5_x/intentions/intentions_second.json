@@ -6,7 +6,6 @@
             "is_spawnable": false,
             "is_summonable": true,
             "is_experimental": false,
-            "runtime_identifier": "wb:intentions_second",
             "animations": {
                 "base": "controller.animation.intentions_second",
                 "new": "animation.intentions_second.wb",

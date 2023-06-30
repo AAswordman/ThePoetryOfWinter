@@ -631,17 +631,19 @@ ${getCharByNum((gj - (150 * Math.pow((g - 1), 2) + 1050 * (g - 1) + 900)) / (300
                                         bag.setItem(pos, item);
                                     }
                                     client.sayTo(lang.menuUIMsgBailan57);
-                                    new ExMessageAlert().title(lang.menuUIMsgBailan58).body(`玩家 ${client.player.nameTag} §r想要传送到你的位置，是否接受？`)
-                                        .button1(lang.menuUIMsgBailan15, () => {
-                                        client.sayTo(lang.menuUIMsgBailan37);
-                                        client.sayTo(lang.menuUIMsgBailan37, i[0]);
-                                        client.exPlayer.setPosition(p.getPosition(), p.dimension);
-                                    })
-                                        .button2(lang.menuUIMsgBailan16, () => {
-                                        client.sayTo(lang.menuUIMsgBailan63);
-                                        client.sayTo(lang.menuUIMsgBailan64, i[0]);
-                                    })
-                                        .show(i[0]);
+                                    client.setTimeout(() => {
+                                        new ExMessageAlert().title(lang.menuUIMsgBailan58).body(`玩家 ${client.player.nameTag} §r想要传送到你的位置，是否接受？`)
+                                            .button1(lang.menuUIMsgBailan15, () => {
+                                            client.sayTo(lang.menuUIMsgBailan37);
+                                            client.sayTo(lang.menuUIMsgBailan37, i[0]);
+                                            client.exPlayer.setPosition(p.getPosition(), p.dimension);
+                                        })
+                                            .button2(lang.menuUIMsgBailan16, () => {
+                                            client.sayTo(lang.menuUIMsgBailan63);
+                                            client.sayTo(lang.menuUIMsgBailan64, i[0]);
+                                        })
+                                            .show(i[0]);
+                                    }, 0);
                                     return false;
                                 }
                             });
@@ -675,17 +677,19 @@ ${getCharByNum((gj - (150 * Math.pow((g - 1), 2) + 1050 * (g - 1) + 900)) / (300
                                         bag.setItem(pos, item);
                                     }
                                     client.sayTo(lang.menuUIMsgBailan67);
-                                    new ExMessageAlert().title(lang.menuUIMsgBailan58).body(`玩家 ${client.player.nameTag} §r邀请你传送到 pos:${client.exPlayer.getPosition().floor()} ，是否接受？`)
-                                        .button1(lang.menuUIMsgBailan15, () => {
-                                        client.sayTo(lang.menuUIMsgBailan37);
-                                        client.sayTo(lang.menuUIMsgBailan37, i[0]);
-                                        p.setPosition(client.exPlayer.getPosition(), client.exPlayer.dimension);
-                                    })
-                                        .button2(lang.menuUIMsgBailan16, () => {
-                                        client.sayTo(lang.menuUIMsgBailan73);
-                                        client.sayTo(lang.menuUIMsgBailan74, i[0]);
-                                    })
-                                        .show(i[0]);
+                                    client.setTimeout(() => {
+                                        new ExMessageAlert().title(lang.menuUIMsgBailan58).body(`玩家 ${client.player.nameTag} §r邀请你传送到 pos:${client.exPlayer.getPosition().floor()} ，是否接受？`)
+                                            .button1(lang.menuUIMsgBailan15, () => {
+                                            client.sayTo(lang.menuUIMsgBailan37);
+                                            client.sayTo(lang.menuUIMsgBailan37, i[0]);
+                                            p.setPosition(client.exPlayer.getPosition(), client.exPlayer.dimension);
+                                        })
+                                            .button2(lang.menuUIMsgBailan16, () => {
+                                            client.sayTo(lang.menuUIMsgBailan73);
+                                            client.sayTo(lang.menuUIMsgBailan74, i[0]);
+                                        })
+                                            .show(i[0]);
+                                    }, 0);
                                     return false;
                                 }
                             });

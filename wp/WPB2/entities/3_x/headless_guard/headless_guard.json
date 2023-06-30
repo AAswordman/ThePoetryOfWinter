@@ -6,7 +6,6 @@
             "is_spawnable": true,
             "is_summonable": true,
             "is_experimental": false,
-            "runtime_identifier": "wb:headless_guard",
             "animations": {
                 "base": "controller.animation.headless_guard.base",
                 "boss": "animation.boss.testplayer"

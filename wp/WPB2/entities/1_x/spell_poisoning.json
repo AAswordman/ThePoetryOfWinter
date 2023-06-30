@@ -6,7 +6,6 @@
       "is_spawnable": true,
       "is_summonable": true,
       "is_experimental": false,
-      "runtime_identifier":"wb:spell_poisoning",
       "animations":{
       	"base":"controller.animation.spell.poisoning"
       },

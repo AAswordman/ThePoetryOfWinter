@@ -5,8 +5,7 @@
       "identifier": "wb:array_intentions_first",
       "is_spawnable": false,
       "is_summonable": true,
-      "is_experimental": false,
-      "runtime_identifier": "wb:array_intentions_first"
+      "is_experimental": false
     },
     "components": {
       "minecraft:damage_sensor": [

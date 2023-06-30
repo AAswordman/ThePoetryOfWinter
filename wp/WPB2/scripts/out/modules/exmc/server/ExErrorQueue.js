@@ -14,6 +14,11 @@ ExErrorQueue.errorStack = [];
 export function to(p) {
     return p.then(res => [res, undefined]).catch(err => { ExErrorQueue.throwError(err); return [undefined, err]; });
 }
+export function tofunc(p) {
+    return (...args) => {
+        return to(p(...args));
+    };
+}
 export function ignorn(fun) {
     try {
         let res = fun();

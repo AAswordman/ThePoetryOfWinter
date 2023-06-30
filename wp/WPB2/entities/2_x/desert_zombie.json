@@ -5,9 +5,8 @@
       "identifier": "wb:desert_zombie",
       "is_spawnable": true,
       "is_summonable": true,
-      "is_experimental": false,
-      "runtime_identifier":"wb:desert_zombie"
-    },
+      "is_experimental": false
+          },
     "component_groups": {
       "minecraft:look_to_start_drowned_transformation": {
         "minecraft:environment_sensor": {

@@ -5,9 +5,8 @@
       "identifier": "wb:ball_border_fugitivec",
       "is_spawnable": false,
       "is_summonable": true,
-      "is_experimental": false,
-      "runtime_identifier":"wb:ball_border_fugitivec"
-    },
+      "is_experimental": false
+          },
 
     "component_groups": {
     "boom":{

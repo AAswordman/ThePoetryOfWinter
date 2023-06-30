@@ -5,8 +5,7 @@
       "identifier": "wb:magic_book",
       "is_spawnable": true,
       "is_summonable": true,
-      "is_experimental": false,
-      "runtime_identifier": "wb:magic_book"
+      "is_experimental": false
     },
     "components": {
         "minecraft:despawn": {

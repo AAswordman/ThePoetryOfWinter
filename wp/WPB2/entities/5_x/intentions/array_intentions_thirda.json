@@ -5,9 +5,8 @@
       "identifier": "wb:array_intentions_thirda",
       "is_spawnable": false,
       "is_summonable": true,
-      "is_experimental": false,
-      "runtime_identifier":"wb:array_intentions_thirda"
-    },
+      "is_experimental": false
+          },
     "components": {
          
         "minecraft:damage_sensor": [
