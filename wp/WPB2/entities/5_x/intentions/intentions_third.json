@@ -6,7 +6,6 @@
             "is_spawnable": false,
             "is_summonable": true,
             "is_experimental": false,
-            "runtime_identifier": "wb:intentions_third",
             "animations": {
                 "base": "controller.animation.intentions_third",
                 "boom": "controller.animation.intentions_third.boom",

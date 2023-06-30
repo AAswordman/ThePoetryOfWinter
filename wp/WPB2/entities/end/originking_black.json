@@ -5,9 +5,8 @@
       "identifier": "wb:originking_black",
       "is_spawnable": false,
       "is_summonable": true,
-      "is_experimental": false,
-      "runtime_identifier":"wb:originking_black"
-    },
+      "is_experimental": false
+          },
     "component_groups":{
     	"boom":{
      "minecraft:explode": {

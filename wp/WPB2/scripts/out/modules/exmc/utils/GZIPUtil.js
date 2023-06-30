@@ -4,8 +4,6 @@ export default class GZIPUtil {
     //zip string
     static zipString(str) {
         const compressed = pako.deflate(str, { to: 'string' });
-        if (!compressed)
-            return undefined;
         return Base64Util.arrayBufferToBase64(compressed);
     }
     //unzip string

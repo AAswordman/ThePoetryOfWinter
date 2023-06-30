@@ -34,7 +34,7 @@ export default class ExGameServer {
             ExGameServer.isInitialized = true;
             ExGameConfig.config = config;
             if (!config.watchDog) {
-                system.beforeEvents.watchdogTerminate.subscribe((e) => {
+                system.events.beforeWatchdogTerminate.subscribe((e) => {
                     e.cancel = true;
                 });
             }
@@ -54,6 +54,13 @@ export default class ExGameServer {
         this.entityControllers.set(id, ec);
     }
     onEntitySpawn(e) {
+        let id;
+        try {
+            id = e.entity.typeId;
+        }
+        catch (e) {
+            return;
+        }
         const entityConstructor = this.entityControllers.get(e.entity.typeId);
         if (entityConstructor) {
             new (entityConstructor)(e.entity, this);

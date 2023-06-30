@@ -5,8 +5,7 @@
       "identifier": "wb:boss_translate_use",
       "is_spawnable": false,
       "is_summonable": true,
-      "is_experimental": false,
-      "runtime_identifier": "wb:boss_translate_use"
+      "is_experimental": false
     },
     "component_groups": {},
     "components": {

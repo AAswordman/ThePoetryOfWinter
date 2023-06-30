@@ -5,8 +5,7 @@
             "identifier": "wb:desert_chester_normal",
             "is_spawnable": true,
             "is_summonable": true,
-            "is_experimental": false,
-            "runtime_identifier": "wb:desert_chester_normal"
+            "is_experimental": false
         },
 
         "component_groups": {

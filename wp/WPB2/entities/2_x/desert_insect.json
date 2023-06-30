@@ -5,9 +5,8 @@
       "identifier": "wb:desert_insect",
       "is_spawnable": true,
       "is_summonable": true,
-      "is_experimental": false,
-      "runtime_identifier":"wb:desert_insect"
-    },
+      "is_experimental": false
+          },
 
     "components": {
         "minecraft:despawn": {

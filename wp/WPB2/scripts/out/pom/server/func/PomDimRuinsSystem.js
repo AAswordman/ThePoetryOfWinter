@@ -70,74 +70,82 @@ export default class PomDimRuinsSystem extends GameController {
         }, false);
         this.stoneRuinBackJudge = new VarOnChangeListener((v) => {
             if (v) {
-                new ExActionAlert().title("操作").body("选择你的操作")
-                    .button("召唤boss", () => {
-                    this.getExDimension().spawnEntity("wb:magic_stoneman", this.client.getServer().ruin_stoneBoss.getBossSpawnArea().center());
-                })
-                    .button("返回主世界", () => {
-                    let v = this.data.dimBackPoint;
-                    if (!v) {
-                        v = new Vector3(0, 255, 0);
-                    }
-                    this.exPlayer.setPosition(v, this.getDimension(MinecraftDimensionTypes.overworld));
-                })
-                    .button("取消", () => {
-                })
-                    .show(this.player);
+                this.setTimeout(() => {
+                    new ExActionAlert().title("操作").body("选择你的操作")
+                        .button("召唤boss", () => {
+                        this.getExDimension().spawnEntity("wb:magic_stoneman", this.client.getServer().ruin_stoneBoss.getBossSpawnArea().center());
+                    })
+                        .button("返回主世界", () => {
+                        let v = this.data.dimBackPoint;
+                        if (!v) {
+                            v = new Vector3(0, 255, 0);
+                        }
+                        this.exPlayer.setPosition(v, this.getDimension(MinecraftDimensionTypes.overworld));
+                    })
+                        .button("取消", () => {
+                    })
+                        .show(this.player);
+                }, 0);
             }
         }, false);
         this.caveRuinBackJudge = new VarOnChangeListener((v) => {
             if (v) {
-                new ExActionAlert().title("操作").body("选择你的操作")
-                    .button("召唤boss", () => {
-                    this.getExDimension().spawnEntity("wb:headless_guard", this.client.getServer().ruin_caveBoss.getBossSpawnArea().center());
-                })
-                    .button("返回主世界", () => {
-                    let v = this.data.dimBackPoint;
-                    if (!v) {
-                        v = new Vector3(0, 255, 0);
-                    }
-                    this.exPlayer.setPosition(v, this.getDimension(MinecraftDimensionTypes.overworld));
-                })
-                    .button("取消", () => {
-                })
-                    .show(this.player);
+                this.setTimeout(() => {
+                    new ExActionAlert().title("操作").body("选择你的操作")
+                        .button("召唤boss", () => {
+                        this.getExDimension().spawnEntity("wb:headless_guard", this.client.getServer().ruin_caveBoss.getBossSpawnArea().center());
+                    })
+                        .button("返回主世界", () => {
+                        let v = this.data.dimBackPoint;
+                        if (!v) {
+                            v = new Vector3(0, 255, 0);
+                        }
+                        this.exPlayer.setPosition(v, this.getDimension(MinecraftDimensionTypes.overworld));
+                    })
+                        .button("取消", () => {
+                    })
+                        .show(this.player);
+                }, 0);
             }
         }, false);
         this.ancientRuinBackJudge = new VarOnChangeListener((v) => {
             if (v) {
-                new ExActionAlert().title("操作").body("选择你的操作")
-                    .button("召唤boss", () => {
-                    this.getExDimension().spawnEntity("wb:ancient_stone", this.client.getServer().ruin_ancientBoss.getBossSpawnArea().center());
-                })
-                    .button("返回主世界", () => {
-                    let v = this.data.dimBackPoint;
-                    if (!v) {
-                        v = new Vector3(0, 255, 0);
-                    }
-                    this.exPlayer.setPosition(v, this.getDimension(MinecraftDimensionTypes.overworld));
-                })
-                    .button("取消", () => {
-                })
-                    .show(this.player);
+                this.setTimeout(() => {
+                    new ExActionAlert().title("操作").body("选择你的操作")
+                        .button("召唤boss", () => {
+                        this.getExDimension().spawnEntity("wb:ancient_stone", this.client.getServer().ruin_ancientBoss.getBossSpawnArea().center());
+                    })
+                        .button("返回主世界", () => {
+                        let v = this.data.dimBackPoint;
+                        if (!v) {
+                            v = new Vector3(0, 255, 0);
+                        }
+                        this.exPlayer.setPosition(v, this.getDimension(MinecraftDimensionTypes.overworld));
+                    })
+                        .button("取消", () => {
+                    })
+                        .show(this.player);
+                }, 0);
             }
         }, false);
         this.mindRuinBackJudge = new VarOnChangeListener((v) => {
             if (v) {
-                new ExActionAlert().title("操作").body("选择你的操作")
-                    .button("召唤boss", () => {
-                    this.getExDimension().spawnEntity("wb:intentions_first", this.client.getServer().ruin_mindBoss.getBossSpawnArea().center());
-                })
-                    .button("返回主世界", () => {
-                    let v = this.data.dimBackPoint;
-                    if (!v) {
-                        v = new Vector3(0, 255, 0);
-                    }
-                    this.exPlayer.setPosition(v, this.getDimension(MinecraftDimensionTypes.overworld));
-                })
-                    .button("取消", () => {
-                })
-                    .show(this.player);
+                this.setTimeout(() => {
+                    new ExActionAlert().title("操作").body("选择你的操作")
+                        .button("召唤boss", () => {
+                        this.getExDimension().spawnEntity("wb:intentions_first", this.client.getServer().ruin_mindBoss.getBossSpawnArea().center());
+                    })
+                        .button("返回主世界", () => {
+                        let v = this.data.dimBackPoint;
+                        if (!v) {
+                            v = new Vector3(0, 255, 0);
+                        }
+                        this.exPlayer.setPosition(v, this.getDimension(MinecraftDimensionTypes.overworld));
+                    })
+                        .button("取消", () => {
+                    })
+                        .show(this.player);
+                }, 0);
             }
         }, false);
         this.fogChange = new VarOnChangeListener((v, l) => {

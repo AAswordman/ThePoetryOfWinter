@@ -6,8 +6,7 @@
       "is_spawnable": false,
       "is_summonable": true,
       "is_experimental": false,
-      "runtime_identifier":"wb:ball_jet_pack"
-    },
+          },
     "component_groups":{
         "s":{
     "minecraft:explode": {

@@ -5,8 +5,7 @@
       "identifier": "wb:write_position",
       "is_spawnable": false,
       "is_summonable": true,
-      "is_experimental": false,
-      "runtime_identifier": "wb:write_position"
+      "is_experimental": false
     },
     "component_groups": {},
     "components": {

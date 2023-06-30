@@ -6,7 +6,6 @@
       "is_spawnable": false,
       "is_summonable": true,
       "is_experimental": false,
-      "runtime_identifier": "wb:ball_magic_stoneman_c",
       "animations": {
         "base": "controller.animation.cannon_ancient_stone"
       },

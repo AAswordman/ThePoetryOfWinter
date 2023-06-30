@@ -6,8 +6,7 @@
       "is_spawnable": true,
       "is_summonable": true,
       "is_experimental": false,
-      "runtime_identifier":"wb:spell_control",
-      "animations":{
+            "animations":{
       	"base":"controller.animation.spell.control"
       },
       "scripts":{

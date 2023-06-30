@@ -5,9 +5,8 @@
       "identifier": "wb:damage_blast10",
       "is_spawnable": false,
       "is_summonable": true,
-      "is_experimental": false,
-      "runtime_identifier":"wb:damage_blast10"
-    },
+      "is_experimental": false
+          },
 
     "components": {
     	   "minecraft:knockback_resistance": {

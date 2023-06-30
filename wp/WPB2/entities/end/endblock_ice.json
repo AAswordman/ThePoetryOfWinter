@@ -6,8 +6,7 @@
       "is_spawnable": false,
       "is_summonable": true,
       "is_experimental": false,
-      "runtime_identifier":"wb:endblock_ice",
-      "animations": {
+            "animations": {
         "summon":"animation.originking.endblock_ice"
       },
       "scripts": {

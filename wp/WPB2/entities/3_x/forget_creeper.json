@@ -5,9 +5,8 @@
       "identifier": "wb:forget_creeper",
       "is_spawnable": true,
       "is_summonable": true,
-      "is_experimental": false,
-      "runtime_identifier":"wb:forget_creeper"
-    },
+      "is_experimental": false
+          },
     "component_groups": {
         "minecraft:exploding": {
           "minecraft:explode": {

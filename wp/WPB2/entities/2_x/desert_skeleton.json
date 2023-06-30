@@ -5,9 +5,8 @@
       "identifier": "wb:desert_skeleton",
       "is_spawnable": true,
       "is_summonable": true,
-      "is_experimental": false,
-      "runtime_identifier":"wb:desert_skeleton"
-    },
+      "is_experimental": false
+          },
     "component_groups": {
       "minecraft:lightning_immune": {
         "minecraft:damage_sensor": {
