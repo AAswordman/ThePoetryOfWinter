@@ -3,10 +3,7 @@ import { Serialize } from '../../../utils/Serialize.js';
 import GZIPUtil from '../../../utils/GZIPUtil.js';
 const cutLength = 980;
 world.afterEvents.worldInitialize.subscribe((e) => {
-    let def = new DynamicPropertiesDefinition().defineString("__cache0:", 980)
-        .defineString("__cache1:", cutLength)
-        .defineString("__cache2:", cutLength)
-        .defineString("__cache3:", cutLength);
+    let def = new DynamicPropertiesDefinition().defineString("__cache0:", cutLength);
     e.propertyRegistry.registerEntityTypeDynamicProperties(def, MinecraftEntityTypes.player);
 });
 export default class EntityPropCache {
@@ -20,6 +17,7 @@ export default class EntityPropCache {
                 tag = GZIPUtil.unzipString(tag);
             }
             catch (e) {
+                console.warn("Unable to unzip cache as " + this.entity.typeId);
                 return undefined;
             }
             this.tagFrom = tag;
@@ -35,8 +33,7 @@ export default class EntityPropCache {
             let res = this.load();
             if (!res) {
                 this.cache = def;
-                this.tagFrom = JSON.stringify(this.cache);
-                this._setStringCache(this.tagFrom);
+                this.save();
                 return def;
             }
             else {
@@ -56,16 +53,18 @@ export default class EntityPropCache {
         }
     }
     _getStringCache() {
-        var _a, _b, _c, _d;
-        return ((_a = this.entity.getDynamicProperty("__cache0:")) !== null && _a !== void 0 ? _a : "") + ((_b = this.entity.getDynamicProperty("__cache1:")) !== null && _b !== void 0 ? _b : "")
-            + ((_c = this.entity.getDynamicProperty("__cache2:")) !== null && _c !== void 0 ? _c : "") + ((_d = this.entity.getDynamicProperty("__cache3:")) !== null && _d !== void 0 ? _d : "");
+        var _a;
+        return ((_a = this.entity.getDynamicProperty("__cache0:")) !== null && _a !== void 0 ? _a : "");
+        //  + (this.entity.getDynamicProperty("__cache1:") as string ?? "")
+        //     + (this.entity.getDynamicProperty("__cache2:") as string ?? "") + (this.entity.getDynamicProperty("__cache3:") as string ?? "");
     }
     _setStringCache(str) {
-        for (let i = 0; i < 4; i++) {
-            let start = i * cutLength, end = (i + 1) * cutLength;
-            let is = str.substring(Math.min(start, str.length), Math.min(end, str.length));
-            this.entity.setDynamicProperty("__cache" + i + ":", is);
-        }
+        // for (let i = 0; i < 1; i++) {
+        //     let start = i * cutLength, end = (i + 1) * cutLength;
+        //     let is = str.substring(Math.min(start, str.length), Math.min(end, str.length));
+        //     this.entity.setDynamicProperty("__cache" + i + ":", is);
+        // }
+        this.entity.setDynamicProperty("__cache0:", str);
     }
 }
 //# sourceMappingURL=EntityPropCache.js.map

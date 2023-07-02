@@ -165,6 +165,9 @@ export default class PomTalentSystem extends GameController {
         })(this);
     }
     onLeave() {
+        var _a;
+        this.skillLoop.stop();
+        (_a = this.equiTotalTask) === null || _a === void 0 ? void 0 : _a.stop();
     }
 }
 //# sourceMappingURL=PomTalentSystem.js.map

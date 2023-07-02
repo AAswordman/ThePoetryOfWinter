@@ -31,8 +31,8 @@ export default class PomEnChantSystem extends GameController {
         });
         //附魔
         this.getEvents().exEvents.beforeItemUseOn.subscribe((e) => {
-            let pos = new Vector3(e.block);
-            let block = this.getExDimension().getBlock(pos);
+            const pos = new Vector3(e.block);
+            const block = this.getExDimension().getBlock(pos);
             if (!block || block.typeId === MinecraftBlockTypes.air.id)
                 return;
             //ExGameConfig.console.log(block.typeId,e.item.typeId);
@@ -44,48 +44,54 @@ export default class PomEnChantSystem extends GameController {
                 if (item && item2) {
                     if (item.typeId === "wb:book_cache") {
                         PomEnChantSystem.blockTranslateData.set(new Vector3(block).toString(), item);
-                        ExBlock.getInstance(block).transTo("wb:block_translate_book");
-                        bag.clearItem(bag.getSelectedSlot(), 1);
+                        this.setTimeout(() => {
+                            ExBlock.getInstance(block).transTo("wb:block_translate_book");
+                            bag.clearItem(bag.getSelectedSlot(), 1);
+                        }, 0);
                     }
                 }
             }
             else if (block.typeId === "wb:block_translate_book") {
                 e.cancel = true;
                 let bag = this.exPlayer.getBag();
-                let item = bag.getItemOnHand();
-                let saveItem = PomEnChantSystem.blockTranslateData.get(new Vector3(block).toString());
+                const item = bag.getItemOnHand();
+                const saveItem = PomEnChantSystem.blockTranslateData.get(new Vector3(block).toString());
                 if (!saveItem)
                     return ExBlock.getInstance(block).transTo("wb:block_translate");
-                if (item && item.amount === 1) {
-                    let exHandItem = ExItem.getInstance(item);
-                    let exSaveItem = ExItem.getInstance(saveItem);
-                    let d = exSaveItem.getItemDurabilityComponent().damage;
-                    let exNewItem = new ExItem(new ItemStack(d >= 4 ? MinecraftItemTypes.enchantedBook : ItemTypes.get("wb:book_cache")));
-                    if (exNewItem.hasItemDurabilityComponent()) {
-                        (exNewItem.getItemDurabilityComponent()).damage = d + 1;
+                if (saveItem) {
+                    if (item && item.amount === 1) {
+                        PomEnChantSystem.blockTranslateData.delete(new Vector3(block).toString());
+                        this.setTimeout(() => {
+                            let exHandItem = ExItem.getInstance(item);
+                            let exSaveItem = ExItem.getInstance(saveItem);
+                            let d = exSaveItem.getItemDurabilityComponent().damage;
+                            let exNewItem = new ExItem(new ItemStack(d >= 4 ? MinecraftItemTypes.enchantedBook : ItemTypes.get("wb:book_cache")));
+                            if (exNewItem.hasItemDurabilityComponent()) {
+                                (exNewItem.getItemDurabilityComponent()).damage = d + 1;
+                            }
+                            // hand -> new
+                            // save -> hand
+                            let lore = new ExColorLoreUtil(exNewItem);
+                            exNewItem.setLore([...exHandItem.getLore()]);
+                            if (exHandItem.hasEnchantsComponent()) {
+                                for (let i of exHandItem.getEnchantsComponent().enchantments) {
+                                    lore.setValueUseMap("enchants", i.type.id, i.level + "");
+                                }
+                                exHandItem.getEnchantsComponent().removeAllEnchantments();
+                            }
+                            lore = new ExColorLoreUtil(exHandItem);
+                            lore.setLore([...exSaveItem.getLore()]);
+                            if (exSaveItem.hasEnchantsComponent()) {
+                                for (let i of exSaveItem.getEnchantsComponent().enchantments) {
+                                    lore.setValueUseMap("enchants", i.type.id, i.level + "");
+                                }
+                                exSaveItem.getEnchantsComponent().removeAllEnchantments();
+                            }
+                            ExBlock.getInstance(block).transTo("wb:block_translate");
+                            bag.setItem(this.exPlayer.selectedSlot, item);
+                            this.getDimension().spawnItem(exNewItem.getItem(), pos.add(0, 1, 0));
+                        }, 0);
                     }
-                    // hand -> new
-                    // save -> hand
-                    let lore = new ExColorLoreUtil(exNewItem);
-                    exNewItem.setLore([...exHandItem.getLore()]);
-                    if (exHandItem.hasEnchantsComponent()) {
-                        for (let i of exHandItem.getEnchantsComponent().enchantments) {
-                            lore.setValueUseMap("enchants", i.type.id, i.level + "");
-                        }
-                        exHandItem.getEnchantsComponent().removeAllEnchantments();
-                    }
-                    lore = new ExColorLoreUtil(exHandItem);
-                    lore.setLore([...exSaveItem.getLore()]);
-                    if (exSaveItem.hasEnchantsComponent()) {
-                        for (let i of exSaveItem.getEnchantsComponent().enchantments) {
-                            lore.setValueUseMap("enchants", i.type.id, i.level + "");
-                        }
-                        exSaveItem.getEnchantsComponent().removeAllEnchantments();
-                    }
-                    PomEnChantSystem.blockTranslateData.delete(new Vector3(block).toString());
-                    ExBlock.getInstance(block).transTo("wb:block_translate");
-                    bag.setItem(this.exPlayer.selectedSlot, item);
-                    this.getDimension().spawnItem(exNewItem.getItem(), pos.add(0, 1, 0));
                 }
             }
         });
