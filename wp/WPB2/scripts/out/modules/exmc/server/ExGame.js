@@ -3,6 +3,7 @@ import "../../reflect-metadata/Reflect.js";
 import ExSystem from "../utils/ExSystem.js";
 import { system } from "@minecraft/server";
 import MonitorManager from "../utils/MonitorManager.js";
+import ExErrorQueue from "./ExErrorQueue.js";
 export default class ExGame {
     static createServer(serverCons, config) {
         let server = new serverCons(config);
@@ -11,20 +12,58 @@ export default class ExGame {
     static postMessageBetweenServer() {
     }
     static postMessageBetweenClient(client, s, exportName, args) {
-        let server = this.serverMap.get(s);
-        if (!server)
-            return;
-        let finder = server.findClientByPlayer(client.player);
-        if (!finder)
-            return;
-        for (let k of ExSystem.keys(finder)) {
-            let data = Reflect.getMetadata("exportName", finder, k);
-            if (data === exportName) {
-                Reflect.get(finder, k).apply(finder, args);
+        ExGame.run(() => {
+            let server = this.serverMap.get(s);
+            if (!server)
+                return;
+            let finder = server.findClientByPlayer(client.player);
+            if (!finder)
+                return;
+            for (let k of ExSystem.keys(finder)) {
+                let data = Reflect.getMetadata("exportName", finder, k);
+                if (data === exportName) {
+                    Reflect.get(finder, k).apply(finder, args);
+                }
             }
-        }
+        });
     }
     static thread() {
+    }
+    static clearRun(runId) {
+        system.clearRun(runId);
+    }
+    static run(callback) {
+        return system.run(() => {
+            try {
+                callback();
+            }
+            catch (err) {
+                ExErrorQueue.reportError(err);
+                throw err;
+            }
+        });
+    }
+    static runInterval(callback, tickInterval) {
+        return system.runInterval(() => {
+            try {
+                callback();
+            }
+            catch (err) {
+                ExErrorQueue.reportError(err);
+                throw err;
+            }
+        }, tickInterval);
+    }
+    static runTimeout(callback, tickDelay) {
+        return system.runTimeout(() => {
+            try {
+                callback();
+            }
+            catch (err) {
+                ExErrorQueue.reportError(err);
+                throw err;
+            }
+        }, tickDelay);
     }
 }
 _a = ExGame;
@@ -42,7 +81,7 @@ ExGame.longTickMonitor = new MonitorManager();
         tickNum += 1;
         _a.tickMonitor.trigger(event);
     };
-    system.runInterval(fun, 1);
+    ExGame.runInterval(fun, 1);
 })();
 (() => {
     let tickNum = 0, tickTime = 0;
@@ -56,7 +95,7 @@ ExGame.longTickMonitor = new MonitorManager();
         tickNum += 1;
         _a.longTickMonitor.trigger(event);
     };
-    system.runInterval(fun, 5);
+    ExGame.runInterval(fun, 5);
 })();
 ExGame.serverMap = new Map;
 export function receiveMessage(exportName) {

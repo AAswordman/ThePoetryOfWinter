@@ -17,6 +17,7 @@ import ExErrorQueue from "../../../modules/exmc/server/ExErrorQueue.js";
 import ExGameConfig from "../../../modules/exmc/server/ExGameConfig.js";
 import getCharByNum, { PROGRESS_CHAR, TALENT_CHAR } from "./getCharByNum.js";
 import POMLICENSE from "./POMLICENSE.js";
+import WarningAlertUI from "../ui/WarningAlertUI.js";
 export default function menuFunctionUI(lang) {
     return {
         "main": {
@@ -809,6 +810,15 @@ ${getCharByNum((gj - (150 * Math.pow((g - 1), 2) + 1050 * (g - 1) + 900)) / (300
                                         client.globalSettings.initialMagicPickaxe = !client.globalSettings.initialMagicPickaxe;
                                         client.runMethodOnEveryClient(c => c.itemUseFunc.initialMagicPickaxe());
                                         return true;
+                                    }
+                                },
+                                {
+                                    "type": "button",
+                                    "msg": "报错日志",
+                                    "function": (client, ui) => {
+                                        new WarningAlertUI(client, ExErrorQueue.getError(), [["我知道了", (client, ui) => {
+                                                }]]).showPage();
+                                        return false;
                                     }
                                 }
                             ];

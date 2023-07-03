@@ -1,12 +1,3 @@
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import { MinecraftDimensionTypes, MinecraftEffectTypes } from "@minecraft/server";
 import ExGameClient from "../../modules/exmc/server/ExGameClient.js";
 import { ArmorPlayerDec, ArmorPlayerPom } from "./items/ArmorData.js";
@@ -250,30 +241,52 @@ export default class DecClient extends ExGameClient {
         this.getEvents().exEvents.afterItemUse.subscribe(e => {
             //魔法卷轴
             if (e.itemStack.typeId == "dec:magic_scroll_blue") {
+                const i = e.itemStack;
                 this.setTimeout(() => {
                     if (DecGlobal.isDec())
-                        taskUi(this, e.itemStack);
+                        taskUi(this, i);
                     else
                         ExGame.postMessageBetweenClient(this, PomServer, "taskUi", ["paperTask", "1"]);
                 }, 0);
             }
         });
-    }
-    checkArmor() {
-        return __awaiter(this, void 0, void 0, function* () {
-            if (!DecGlobal.isDec()) {
-                if (this.useArmor === ArmorPlayerPom.ink) {
-                    this.player.triggerEvent("armor_ink");
-                }
-                else if (this.useArmor === ArmorPlayerPom.senior_ink) {
-                    this.player.triggerEvent("armor_senior_ink");
-                }
-                else {
-                    this.player.triggerEvent("hostile_mode");
+        this.getEvents().exEvents.onLongTick.subscribe(e => {
+            if (e.currentTick % 20 === 0) {
+                if (this.checkArmor()) {
+                    //非空
+                    if (!this.exPlayer.detectAnyArmor()) {
+                        let armors;
+                        if (DecGlobal.isDec()) {
+                            armors = ArmorPlayerDec;
+                        }
+                        else {
+                            armors = ArmorPlayerPom;
+                        }
+                        for (let a in armors) {
+                            const armor = armors[a];
+                            if (armor.detect(this.exPlayer)) {
+                                this.chooseArmor(armor);
+                                break;
+                            }
+                        }
+                    }
                 }
             }
-            return this.useArmor ? (yield this.useArmor.detect(this.exPlayer)) : false;
         });
+    }
+    checkArmor() {
+        if (!DecGlobal.isDec()) {
+            if (this.useArmor === ArmorPlayerPom.ink) {
+                this.player.triggerEvent("armor_ink");
+            }
+            else if (this.useArmor === ArmorPlayerPom.senior_ink) {
+                this.player.triggerEvent("armor_senior_ink");
+            }
+            else {
+                this.player.triggerEvent("hostile_mode");
+            }
+        }
+        return this.useArmor ? (this.useArmor.detect(this.exPlayer)) : false;
     }
     chooseArmor(a) {
         this.useArmor = a;

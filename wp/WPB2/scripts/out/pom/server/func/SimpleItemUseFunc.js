@@ -8,6 +8,7 @@ import MenuUIAlert from "../ui/MenuUIAlert.js";
 import GameController from "./GameController.js";
 export default class SimpleItemUseFunc extends GameController {
     onJoin() {
+        //连锁挖矿
         this.getEvents().exEvents.afterBlockBreak.subscribe(e => {
             var _a;
             const itemId = (_a = this.exPlayer.getBag().getItemOnHand()) === null || _a === void 0 ? void 0 : _a.typeId;
@@ -32,17 +33,19 @@ export default class SimpleItemUseFunc extends GameController {
             const item = e.itemStack;
             if (item.typeId == "wb:power") {
                 if (!this.data.lang) {
-                    new ModalFormData()
-                        .title("Choose a language")
-                        .dropdown("Language List", ["English", "简体中文"], 0)
-                        .show(this.player).then((e) => {
-                        if (!e.canceled) {
-                            this.data.lang = (e.formValues && e.formValues[0] == 0) ? "en" : "zh";
-                        }
-                    })
-                        .catch((e) => {
-                        ExErrorQueue.throwError(e);
-                    });
+                    this.setTimeout(() => {
+                        new ModalFormData()
+                            .title("Choose a language")
+                            .dropdown("Language List", ["English", "简体中文"], 0)
+                            .show(this.player).then((e) => {
+                            if (!e.canceled) {
+                                this.data.lang = (e.formValues && e.formValues[0] == 0) ? "en" : "zh";
+                            }
+                        })
+                            .catch((e) => {
+                            ExErrorQueue.throwError(e);
+                        });
+                    }, 0);
                 }
                 else {
                     new MenuUIAlert(this.client, menuFunctionUI(this.getLang())).showPage("main", "notice");
@@ -50,9 +53,11 @@ export default class SimpleItemUseFunc extends GameController {
             }
             else if (item.typeId === "wb:jet_pack") {
                 // jet pack
-                this.exPlayer.addEffect(MinecraftEffectTypes.levitation, 7, 15, false);
-                this.exPlayer.addEffect(MinecraftEffectTypes.slowFalling, 150, 3, false);
-                this.exPlayer.dimension.spawnEntity("wb:ball_jet_pack", this.exPlayer.getPosition().sub(this.exPlayer.viewDirection.scl(2)));
+                this.setTimeout(() => {
+                    this.exPlayer.addEffect(MinecraftEffectTypes.levitation, 7, 15, false);
+                    this.exPlayer.addEffect(MinecraftEffectTypes.slowFalling, 150, 3, false);
+                    this.exPlayer.dimension.spawnEntity("wb:ball_jet_pack", this.exPlayer.getPosition().sub(this.exPlayer.viewDirection.scl(2)));
+                }, 0);
             }
             else if (item.typeId === "wb:start_key") {
             }
@@ -82,6 +87,8 @@ export default class SimpleItemUseFunc extends GameController {
                     ]);
                 }
             }
+        });
+        this.getEvents().exEvents.afterItemOnHandChange.subscribe((e) => {
         });
     }
     chainDigging(v, idType, times, posData) {
