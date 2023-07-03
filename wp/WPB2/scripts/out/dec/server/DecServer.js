@@ -6,9 +6,7 @@ import ExEntity from '../../modules/exmc/server/entity/ExEntity.js';
 import commandAnalysis from '../../modules/exmc/utils/commandAnalysis.js';
 import ExGameServer from '../../modules/exmc/server/ExGameServer.js';
 import DecGlobal from './DecGlobal.js';
-import { ArmorPlayerDec, ArmorPlayerPom } from './items/ArmorData.js';
 import Vector3 from '../../modules/exmc/math/Vector3.js';
-import { to } from '../../modules/exmc/server/ExErrorQueue.js';
 import { DecEverlastingWinterGhastBoss1, DecEverlastingWinterGhastBoss2 } from './entities/DecEverlastingWinterGhastBoss.js';
 import { DecCommonBossLastStage } from './entities/DecCommonBossLastStage.js';
 import VarOnChangeListener from '../../modules/exmc/utils/VarOnChangeListener.js';
@@ -219,41 +217,6 @@ export default class DecServer extends ExGameServer {
             if (e.currentTick % 100 === 0) {
                 //夜晚事件
                 this.nightEventListener.upDate(new ExEnvironment().isNight());
-                //盔甲探测
-                let prom = [];
-                for (const client of this.getClients()) {
-                    prom.push(client.checkArmor());
-                }
-                to(Promise.all(prom).then((e) => {
-                    if (!e.every(i => i)) {
-                        let prom2 = [];
-                        if (DecGlobal.isDec()) {
-                            for (let k in ArmorPlayerDec) {
-                                prom2.push(ArmorPlayerDec[k].find(this.getExDimension(MinecraftDimensionTypes.overworld).command));
-                            }
-                        }
-                        else {
-                            for (let k in ArmorPlayerPom) {
-                                prom2.push(ArmorPlayerPom[k].find(this.getExDimension(MinecraftDimensionTypes.overworld).command));
-                            }
-                        }
-                        to(Promise.all(prom2).then((x) => {
-                            for (const client of this.getClients()) {
-                                let flag = false;
-                                for (let tag of client.player.getTags()) {
-                                    if (tag.startsWith("armorTest:")) {
-                                        client.player.removeTag(tag);
-                                        client.chooseArmor(ArmorPlayerPom[tag.split(":")[1]]);
-                                        flag = true;
-                                    }
-                                }
-                                if (!flag) {
-                                    client.chooseArmor(undefined);
-                                }
-                            }
-                        }));
-                    }
-                }));
             }
         });
         //实体监听器，用于播放bgm、完成任务判断

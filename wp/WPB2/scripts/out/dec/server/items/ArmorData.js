@@ -1,12 +1,3 @@
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import jsonMerge from "../../../modules/exmc/utils/jsonMerge.js";
 export class ArmorData {
     constructor(head, chest, legs, boots) {
@@ -16,22 +7,7 @@ export class ArmorData {
         this.boots = boots;
     }
     detect(p) {
-        return p.detectArmor(this.head, this.chest, this.legs, this.boots);
-    }
-    find(c) {
-        return __awaiter(this, void 0, void 0, function* () {
-            try {
-                let res = yield c.run("execute as @a if entity @s[hasitem={location=slot.armor.head,item=" + this.head +
-                    "}] if entity @s[hasitem={location=slot.armor.chest,item=" + this.chest +
-                    "}] if entity @s[hasitem={location=slot.armor.legs,item=" + this.legs +
-                    "}] if entity @s[hasitem={location=slot.armor.feet,item=" + this.boots +
-                    "}] run tag @s add armorTest:" + this.name);
-                return res;
-            }
-            catch (e) {
-                return e;
-            }
-        });
+        return p.detectAllArmor(this.head, this.chest, this.legs, this.boots);
     }
 }
 export let ArmorPlayerDec = {

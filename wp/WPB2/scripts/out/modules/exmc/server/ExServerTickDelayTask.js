@@ -1,4 +1,4 @@
-import { system } from '@minecraft/server';
+import ExGame from "./ExGame.js";
 export default class ExServerTickDelayTask {
     constructor(looper) {
         this.time = 20;
@@ -22,7 +22,7 @@ export default class ExServerTickDelayTask {
         this.func = () => {
             this.looper();
         };
-        this.id = system.runTimeout(this.func, this.time);
+        this.id = ExGame.runTimeout(this.func, this.time);
     }
     start() {
         if (this.isStarted())
@@ -30,14 +30,14 @@ export default class ExServerTickDelayTask {
         this.func = () => {
             this.looper();
         };
-        this.id = system.runInterval(this.func, this.time);
+        this.id = ExGame.runInterval(this.func, this.time);
     }
     stop() {
         if (!this.func)
             return;
         if (!this.id)
             throw new Error("error id is required");
-        system.clearRun(this.id);
+        ExGame.clearRun(this.id);
         this.func = undefined;
     }
 }

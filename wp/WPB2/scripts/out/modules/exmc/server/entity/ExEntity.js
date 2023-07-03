@@ -1,12 +1,3 @@
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 import { EntityHealthComponent, EntityVariantComponent, EntityMarkVariantComponent, EntityIsBabyComponent, EntityIsChargedComponent, EntityDamageCause, EquipmentSlot } from '@minecraft/server';
 import ExScoresManager from './ExScoresManager.js';
 import Vector3 from '../../math/Vector3.js';
@@ -101,15 +92,21 @@ export default class ExEntity {
     runCommandAsync(str) {
         return this._entity.runCommandAsync(str);
     }
-    detectArmor(head, chest, legs, boots) {
+    detectAllArmor(head, chest, legs, boots) {
         var _a, _b, _c, _d;
-        return __awaiter(this, void 0, void 0, function* () {
-            const bag = this.getBag();
-            return ((_a = bag.getEquipment(EquipmentSlot.head)) === null || _a === void 0 ? void 0 : _a.typeId) == head &&
-                ((_b = bag.getEquipment(EquipmentSlot.chest)) === null || _b === void 0 ? void 0 : _b.typeId) == chest &&
-                ((_c = bag.getEquipment(EquipmentSlot.legs)) === null || _c === void 0 ? void 0 : _c.typeId) == legs &&
-                ((_d = bag.getEquipment(EquipmentSlot.feet)) === null || _d === void 0 ? void 0 : _d.typeId) == boots;
-        });
+        const bag = this.getBag();
+        return ((_a = bag.getEquipment(EquipmentSlot.head)) === null || _a === void 0 ? void 0 : _a.typeId) == head &&
+            ((_b = bag.getEquipment(EquipmentSlot.chest)) === null || _b === void 0 ? void 0 : _b.typeId) == chest &&
+            ((_c = bag.getEquipment(EquipmentSlot.legs)) === null || _c === void 0 ? void 0 : _c.typeId) == legs &&
+            ((_d = bag.getEquipment(EquipmentSlot.feet)) === null || _d === void 0 ? void 0 : _d.typeId) == boots;
+    }
+    detectAnyArmor(head, chest, legs, boots) {
+        var _a, _b, _c, _d;
+        const bag = this.getBag();
+        return ((_a = bag.getEquipment(EquipmentSlot.head)) === null || _a === void 0 ? void 0 : _a.typeId) == head ||
+            ((_b = bag.getEquipment(EquipmentSlot.chest)) === null || _b === void 0 ? void 0 : _b.typeId) == chest ||
+            ((_c = bag.getEquipment(EquipmentSlot.legs)) === null || _c === void 0 ? void 0 : _c.typeId) == legs ||
+            ((_d = bag.getEquipment(EquipmentSlot.feet)) === null || _d === void 0 ? void 0 : _d.typeId) == boots;
     }
     getScoresManager() {
         return new ExScoresManager(this._entity);
