@@ -618,7 +618,7 @@ ${getCharByNum((gj - (150 * Math.pow((g - 1), 2) + 1050 * (g - 1) + 900)) / (300
                             const p = ExPlayer.getInstance(i[0]);
                             arr.push({
                                 "type": "button",
-                                "msg": `${p.nameTag} pos:${p.getPosition().floor()}`,
+                                "msg": `${p.nameTag}${client.globalSettings.playerTpListShowPos ? " (pos:" + p.getPosition().floor() + ")" : ""}`,
                                 "function": (client, ui) => {
                                     let bag = client.exPlayer.getBag();
                                     if (!bag.hasItem("wb:conveyor_issue") && client.globalSettings.tpNeedItem) {
@@ -660,7 +660,7 @@ ${getCharByNum((gj - (150 * Math.pow((g - 1), 2) + 1050 * (g - 1) + 900)) / (300
                             const p = ExPlayer.getInstance(i[0]);
                             arr.push({
                                 "type": "button",
-                                "msg": `${p.nameTag} (pos:${p.getPosition().floor()})`,
+                                "msg": `${p.nameTag}${client.globalSettings.playerTpListShowPos ? " (pos:" + p.getPosition().floor() + ")" : ""}`,
                                 "function": (client, ui) => {
                                     let bag = client.exPlayer.getBag();
                                     if (!bag.hasItem("wb:conveyor_issue") && client.globalSettings.tpNeedItem) {
@@ -743,6 +743,15 @@ ${getCharByNum((gj - (150 * Math.pow((g - 1), 2) + 1050 * (g - 1) + 900)) / (300
                                     "state": (client, ui) => client.globalSettings.playerCanTp,
                                     "function": (client, ui) => {
                                         client.globalSettings.playerCanTp = !client.globalSettings.playerCanTp;
+                                        return true;
+                                    }
+                                },
+                                {
+                                    "type": "toggle",
+                                    "msg": "玩家传送列表显示坐标",
+                                    "state": (client, ui) => client.globalSettings.playerTpListShowPos,
+                                    "function": (client, ui) => {
+                                        client.globalSettings.playerTpListShowPos = !client.globalSettings.playerTpListShowPos;
                                         return true;
                                     }
                                 },
