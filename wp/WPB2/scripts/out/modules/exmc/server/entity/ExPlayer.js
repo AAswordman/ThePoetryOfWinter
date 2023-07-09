@@ -75,6 +75,24 @@ export default class ExPlayer extends ExEntity {
     set selectedSlot(value) {
         this.entity.selectedSlot = value;
     }
+    set viewDirection(ivec) {
+        this.teleport(this.getPosition(), {
+            "rotation": {
+                x: ivec.rotateAngleX(),
+                y: ivec.rotateAngleY()
+            }
+        });
+    }
+    setPosition(position, dimension) {
+        this.entity.teleport(position, {
+            "dimension": dimension
+        });
+    }
+    set rotation(ivec) {
+        this.teleport(this.getPosition(), {
+            "rotation": ivec
+        });
+    }
     getBag() {
         return this.bag;
     }

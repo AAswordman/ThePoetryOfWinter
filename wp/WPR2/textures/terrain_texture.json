@@ -4,6 +4,7 @@
     "padding": 8,
     "num_mip_levels": 4,
     "texture_data": {
+        //dec part
         "ancient_ice": {
             "textures": [
                 "textures/blocks/ancient_ice"
@@ -819,6 +820,8 @@
                 "textures/blocks/everlasting_winter_summoner_locked"
             ]
         },
+
+        //wb part
         "waste_recovery": {
             "textures": "textures/wb_blocks/technology/waste_recovery"
         },

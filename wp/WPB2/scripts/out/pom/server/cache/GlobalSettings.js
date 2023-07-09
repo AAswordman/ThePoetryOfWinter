@@ -1,6 +1,12 @@
 import GlobalScoreBoardCache from "../../../modules/exmc/server/storage/cache/GlobalScoreBoardCache.js";
 import Random from "../../../modules/exmc/utils/Random.js";
 export default class GlobalSettings extends GlobalScoreBoardCache {
+    get playerTpListShowPos() {
+        return this.getBoolean("playerTpListShowPos");
+    }
+    set playerTpListShowPos(value) {
+        this.setBoolean("playerTpListShowPos", value);
+    }
     get playerCanTp() {
         return this.getBoolean("playerCanTp");
     }
