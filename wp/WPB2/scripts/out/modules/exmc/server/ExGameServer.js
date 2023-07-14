@@ -34,7 +34,7 @@ export default class ExGameServer {
             ExGameServer.isInitialized = true;
             ExGameConfig.config = config;
             if (!config.watchDog) {
-                system.events.beforeWatchdogTerminate.subscribe((e) => {
+                system.beforeEvents.watchdogTerminate.subscribe((e) => {
                     e.cancel = true;
                 });
             }
@@ -126,7 +126,7 @@ export default class ExGameServer {
     onClientLeave(event) {
         let client = this.findClientByName(event.playerName);
         if (client === undefined) {
-            ExGameConfig.console.error(event.playerName + "client is not exists");
+            ExGameConfig.console.error(event.playerName + " client is not exists");
             return;
         }
         client.onLeave();

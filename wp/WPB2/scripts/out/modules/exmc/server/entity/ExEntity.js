@@ -1,4 +1,4 @@
-import { EntityHealthComponent, EntityVariantComponent, EntityMarkVariantComponent, EntityIsBabyComponent, EntityIsChargedComponent, EntityDamageCause, EquipmentSlot } from '@minecraft/server';
+import { EntityHealthComponent, EntityVariantComponent, EntityMarkVariantComponent, EntityIsBabyComponent, EntityIsChargedComponent, EntityDamageCause } from '@minecraft/server';
 import ExScoresManager from './ExScoresManager.js';
 import Vector3 from '../../math/Vector3.js';
 import ExEntityBag from './ExEntityBag.js';
@@ -35,8 +35,8 @@ export default class ExEntity {
             timeout.setTimeout(() => {
                 var _a;
                 let health = this.getHealthComponent();
-                if (health.current > 0.5)
-                    health.setCurrent(Math.max(0.5, health.current - ((_a = this._damage) !== null && _a !== void 0 ? _a : 0)));
+                if (health.currentValue > 0.5)
+                    health.setCurrentValue(Math.max(0.5, health.currentValue - ((_a = this._damage) !== null && _a !== void 0 ? _a : 0)));
                 this._damage = undefined;
             }, 0);
         }
@@ -95,18 +95,18 @@ export default class ExEntity {
     detectAllArmor(head, chest, legs, boots) {
         var _a, _b, _c, _d;
         const bag = this.getBag();
-        return ((_a = bag.getEquipment(EquipmentSlot.head)) === null || _a === void 0 ? void 0 : _a.typeId) == head &&
-            ((_b = bag.getEquipment(EquipmentSlot.chest)) === null || _b === void 0 ? void 0 : _b.typeId) == chest &&
-            ((_c = bag.getEquipment(EquipmentSlot.legs)) === null || _c === void 0 ? void 0 : _c.typeId) == legs &&
-            ((_d = bag.getEquipment(EquipmentSlot.feet)) === null || _d === void 0 ? void 0 : _d.typeId) == boots;
+        return ((_a = bag.equipmentOnHead) === null || _a === void 0 ? void 0 : _a.typeId) == head &&
+            ((_b = bag.equipmentOnChest) === null || _b === void 0 ? void 0 : _b.typeId) == chest &&
+            ((_c = bag.equipmentOnLegs) === null || _c === void 0 ? void 0 : _c.typeId) == legs &&
+            ((_d = bag.equipmentOnFeet) === null || _d === void 0 ? void 0 : _d.typeId) == boots;
     }
     detectAnyArmor(head, chest, legs, boots) {
         var _a, _b, _c, _d;
         const bag = this.getBag();
-        return ((_a = bag.getEquipment(EquipmentSlot.head)) === null || _a === void 0 ? void 0 : _a.typeId) == head ||
-            ((_b = bag.getEquipment(EquipmentSlot.chest)) === null || _b === void 0 ? void 0 : _b.typeId) == chest ||
-            ((_c = bag.getEquipment(EquipmentSlot.legs)) === null || _c === void 0 ? void 0 : _c.typeId) == legs ||
-            ((_d = bag.getEquipment(EquipmentSlot.feet)) === null || _d === void 0 ? void 0 : _d.typeId) == boots;
+        return ((_a = bag.equipmentOnHead) === null || _a === void 0 ? void 0 : _a.typeId) == head ||
+            ((_b = bag.equipmentOnChest) === null || _b === void 0 ? void 0 : _b.typeId) == chest ||
+            ((_c = bag.equipmentOnLegs) === null || _c === void 0 ? void 0 : _c.typeId) == legs ||
+            ((_d = bag.equipmentOnFeet) === null || _d === void 0 ? void 0 : _d.typeId) == boots;
     }
     getScoresManager() {
         return new ExScoresManager(this._entity);
@@ -157,11 +157,10 @@ export default class ExEntity {
         });
     }
     addEffect(eff, during, aml, par = true) {
-        this.entity.addEffect(eff, during, aml, par);
-        // this.entity.addEffect(eff, during, {
-        //     "showParticles": par,
-        //     "amplifier": aml
-        // });
+        this.entity.addEffect(eff, during, {
+            "showParticles": par,
+            "amplifier": aml
+        });
     }
     hasComponent(name) {
         return this._entity.hasComponent(name);
@@ -176,13 +175,13 @@ export default class ExEntity {
         return this.getComponent(EntityHealthComponent.componentId);
     }
     get health() {
-        return this.getHealthComponent().current;
+        return this.getHealthComponent().currentValue;
     }
     set health(h) {
-        this.getHealthComponent().setCurrent(Math.max(0, h));
+        this.getHealthComponent().setCurrentValue(Math.max(0, h));
     }
     getMaxHealth() {
-        return this.getHealthComponent().value;
+        return this.getHealthComponent().defaultValue;
     }
     getBag() {
         return new ExEntityBag(this);

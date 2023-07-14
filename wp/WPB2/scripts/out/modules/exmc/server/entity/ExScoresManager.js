@@ -16,12 +16,13 @@ export default class ExScoresManager {
         }
     }
     getScore(objective) {
+        var _a;
         let name = typeof objective === "string" ? objective : objective.name;
         let id = this.getIdentity(name);
         if (!id)
             return 0;
         try {
-            return world.scoreboard.getObjective(name).getScore(id);
+            return (_a = world.scoreboard.getObjective(name).getScore(id)) !== null && _a !== void 0 ? _a : 0;
         }
         catch (e) {
             return 0;

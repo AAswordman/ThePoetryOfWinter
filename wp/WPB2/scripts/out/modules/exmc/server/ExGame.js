@@ -78,7 +78,7 @@ ExGame.longTickMonitor = new MonitorManager();
             deltaTime: (n - tickTime) / 1000
         };
         tickTime = n;
-        tickNum += 1;
+        tickNum = (tickNum + 1) % 72000;
         _a.tickMonitor.trigger(event);
     };
     ExGame.runInterval(fun, 1);
@@ -92,7 +92,7 @@ ExGame.longTickMonitor = new MonitorManager();
             deltaTime: (n - tickTime) / 1000
         };
         tickTime = n;
-        tickNum += 1;
+        tickNum = (tickNum + 1) % 72000;
         _a.longTickMonitor.trigger(event);
     };
     ExGame.runInterval(fun, 5);

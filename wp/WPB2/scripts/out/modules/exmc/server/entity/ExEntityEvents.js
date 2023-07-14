@@ -8,8 +8,8 @@ export default class ExEntityEvents {
             [ExEventNames.beforeItemUse]: new Listener(this, ExEventNames.beforeItemUse),
             [ExEventNames.afterItemUse]: new Listener(this, ExEventNames.afterItemUse),
             [ExOtherEventNames.tick]: new Listener(this, ExOtherEventNames.tick),
-            [ExOtherEventNames.afterEntityHit]: new Listener(this, ExOtherEventNames.afterEntityHit),
-            [ExOtherEventNames.afterOnHitEntity]: new Listener(this, ExOtherEventNames.afterOnHitEntity),
+            [ExEventNames.afterEntityHitBlock]: new Listener(this, ExEventNames.afterEntityHitBlock),
+            [ExEventNames.afterEntityHitEntity]: new Listener(this, ExEventNames.afterEntityHitEntity),
             [ExOtherEventNames.afterOnHurt]: new Listener(this, ExOtherEventNames.afterOnHurt),
             [ExOtherEventNames.afterItemOnHandChange]: new Listener(this, ExOtherEventNames.afterItemOnHandChange),
             [ExOtherEventNames.onLongTick]: new Listener(this, ExOtherEventNames.onLongTick),
@@ -63,13 +63,13 @@ ExEntityEvents.exEventSetting = {
     [ExOtherEventNames.tick]: {
         pattern: ExEntityEvents.eventHandlers.registerToServerByServerEvent
     },
-    [ExOtherEventNames.afterEntityHit]: {
+    [ExEventNames.afterEntityHitBlock]: {
         pattern: ExEntityEvents.eventHandlers.registerToServerByEntity,
         filter: {
             "name": "entity"
         }
     },
-    [ExOtherEventNames.afterOnHitEntity]: {
+    [ExEventNames.afterEntityHitEntity]: {
         pattern: ExEntityEvents.eventHandlers.registerToServerByEntity,
         filter: {
             "name": "damageSource.damagingEntity"
@@ -90,10 +90,10 @@ ExEntityEvents.exEventSetting = {
                 for (let i of ExEntityEvents.eventHandlers.monitorMap[k]) {
                     let lastItemCache = _a.onHandItemMap.get(i[0]);
                     let lastItem = lastItemCache === null || lastItemCache === void 0 ? void 0 : lastItemCache[0];
-                    let nowItem = ExPlayer.getInstance(i[0]).getBag().getItemOnHand();
+                    let nowItem = ExPlayer.getInstance(i[0]).getBag().itemOnMainHand;
                     if ((lastItem === null || lastItem === void 0 ? void 0 : lastItem.typeId) !== (nowItem === null || nowItem === void 0 ? void 0 : nowItem.typeId) || i[0].selectedSlot !== (lastItemCache === null || lastItemCache === void 0 ? void 0 : lastItemCache[1])) {
                         i[1].forEach((f) => {
-                            f(new ItemOnHandChangeEvent(lastItem, ExPlayer.getInstance(i[0]).getBag().getItemOnHand(), i[0]));
+                            f(new ItemOnHandChangeEvent(lastItem, ExPlayer.getInstance(i[0]).getBag().itemOnMainHand, i[0]));
                         });
                         _a.onHandItemMap.set(i[0], [nowItem, i[0].selectedSlot]);
                     }

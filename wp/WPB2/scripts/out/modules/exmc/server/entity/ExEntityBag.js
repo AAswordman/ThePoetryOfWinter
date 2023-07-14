@@ -1,4 +1,4 @@
-import { EntityEquipmentInventoryComponent, EntityInventoryComponent } from "@minecraft/server";
+import { EntityEquipmentInventoryComponent, EntityInventoryComponent, EquipmentSlot } from "@minecraft/server";
 export default class ExEntityBag {
     constructor(entity) {
         this._entity = entity;
@@ -8,6 +8,9 @@ export default class ExEntityBag {
     getItem(arg) {
         if (typeof (arg) === "number") {
             return this.bagComponent.container.getItem(arg);
+        }
+        if (arg in EquipmentSlot) {
+            return this.getEquipment(arg);
         }
         let search = this.searchItem(arg);
         if (search === -1) {
@@ -93,15 +96,24 @@ export default class ExEntityBag {
         return this.bagComponent.restrictToOwner;
     }
     setItem(slot, item) {
+        if (typeof slot === 'string') {
+            return this.setEquipment(slot, item);
+        }
         return this.bagComponent.container.setItem(slot, item);
     }
-    hasItem(itemId) {
+    hasItem(itemId, containsEq = false) {
+        if (containsEq) {
+            //TTOD 懒得写了
+        }
         return this.searchItem(itemId) !== -1;
     }
     addItem(item) {
         this.bagComponent.container.addItem(item);
     }
     getSlot(pos) {
+        if (typeof pos === 'string') {
+            return this.getEquipmentSlot(pos);
+        }
         return this.bagComponent.container.getSlot(pos);
     }
     getEquipment(slot) {
@@ -112,6 +124,42 @@ export default class ExEntityBag {
     }
     getEquipmentSlot(slot) {
         return this.equipmentComponent.getEquipmentSlot(slot);
+    }
+    get itemOnMainHand() {
+        return this.getItem(EquipmentSlot.mainhand);
+    }
+    set itemOnMainHand(item) {
+        this.setItem(EquipmentSlot.mainhand, item);
+    }
+    get itemOnOffHand() {
+        return this.getItem(EquipmentSlot.offhand);
+    }
+    set itemOnOffHand(item) {
+        this.setItem(EquipmentSlot.offhand, item);
+    }
+    get equipmentOnHead() {
+        return this.getItem(EquipmentSlot.head);
+    }
+    set equipmentOnHead(item) {
+        this.setItem(EquipmentSlot.head, item);
+    }
+    get equipmentOnChest() {
+        return this.getItem(EquipmentSlot.chest);
+    }
+    set equipmentOnChest(item) {
+        this.setItem(EquipmentSlot.chest, item);
+    }
+    get equipmentOnFeet() {
+        return this.getItem(EquipmentSlot.feet);
+    }
+    set equipmentOnFeet(item) {
+        this.setItem(EquipmentSlot.feet, item);
+    }
+    get equipmentOnLegs() {
+        return this.getItem(EquipmentSlot.legs);
+    }
+    set equipmentOnLegs(item) {
+        this.setItem(EquipmentSlot.legs, item);
     }
 }
 //# sourceMappingURL=ExEntityBag.js.map

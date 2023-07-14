@@ -4,12 +4,6 @@ export default class ExPlayerBag extends ExEntityBag {
         super(player);
         this._player = player;
     }
-    getItemOnHand() {
-        return this.getItem(this.getSelectedSlot());
-    }
-    setItemOnHand(item) {
-        return this.setItem(this.getSelectedSlot(), item);
-    }
     getSelectedSlot() {
         return this._player.selectedSlot;
     }

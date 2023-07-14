@@ -20,7 +20,7 @@ export default class PomEnChantSystem extends GameController {
                         catch (e) {
                         }
                     }
-                    let item = bag.getItemOnHand();
+                    let item = bag.itemOnMainHand;
                     if (item != null) {
                         lore = new ExColorLoreUtil(new ExItem(item));
                         lore.delete("enchants");
@@ -39,8 +39,8 @@ export default class PomEnChantSystem extends GameController {
             if (block.typeId === "wb:block_translate") {
                 e.cancel = true;
                 let bag = this.exPlayer.getBag();
-                let item = bag.getItemOnHand();
-                let item2 = bag.getItemOnHand();
+                let item = bag.itemOnMainHand;
+                let item2 = bag.itemOnMainHand;
                 if (item && item2) {
                     if (item.typeId === "wb:book_cache") {
                         PomEnChantSystem.blockTranslateData.set(new Vector3(block).toString(), item);
@@ -54,7 +54,7 @@ export default class PomEnChantSystem extends GameController {
             else if (block.typeId === "wb:block_translate_book") {
                 e.cancel = true;
                 let bag = this.exPlayer.getBag();
-                const item = bag.getItemOnHand();
+                const item = bag.itemOnMainHand;
                 const saveItem = PomEnChantSystem.blockTranslateData.get(new Vector3(block).toString());
                 if (!saveItem)
                     return ExBlock.getInstance(block).transTo("wb:block_translate");

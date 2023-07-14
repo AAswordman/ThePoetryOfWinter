@@ -55,7 +55,7 @@ export default class PomTalentSystem extends GameController {
     onJoin() {
         this.getEvents().exEvents.afterPlayerHitEntity.subscribe((e) => {
             var _a, _b, _c, _d, _e, _f, _g, _h;
-            let item = this.exPlayer.getBag().getItemOnHand();
+            let item = this.exPlayer.getBag().itemOnMainHand;
             let damageFac = 0;
             let extraDamage = 0;
             let target = ExEntity.getInstance(e.hurtEntity);
@@ -141,7 +141,7 @@ export default class PomTalentSystem extends GameController {
                         lore.setValueUseMap("total", this.getLang().maxSecondaryDamage, maxSecondaryDamage + "");
                         shouldUpstate = true;
                     }
-                    if (shouldUpstate && ((_c = bag.getItemOnHand()) === null || _c === void 0 ? void 0 : _c.typeId) === ((_d = e === null || e === void 0 ? void 0 : e.afterItem) === null || _d === void 0 ? void 0 : _d.typeId)) {
+                    if (shouldUpstate && ((_c = bag.itemOnMainHand) === null || _c === void 0 ? void 0 : _c.typeId) === ((_d = e === null || e === void 0 ? void 0 : e.afterItem) === null || _d === void 0 ? void 0 : _d.typeId)) {
                         bag.setItem(this.exPlayer.selectedSlot, e.afterItem);
                     }
                 }).delay(5 * 20)).start(); //

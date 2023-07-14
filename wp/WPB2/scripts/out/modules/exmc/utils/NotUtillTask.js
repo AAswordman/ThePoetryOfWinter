@@ -8,7 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import ExErrorQueue from "../server/ExErrorQueue.js";
-export default function notUtillTask(m, f, run, tryTime = 1000, maxTimes = 60) {
+export default function notUtillTask(m, f, run, tryDelay = 1000, maxTimes = 60) {
     let func = () => __awaiter(this, void 0, void 0, function* () {
         try {
             let res = f();
@@ -20,7 +20,7 @@ export default function notUtillTask(m, f, run, tryTime = 1000, maxTimes = 60) {
             else {
                 if (maxTimes > 0) {
                     maxTimes--;
-                    m.setTimeout((func), tryTime);
+                    m.setTimeout((func), tryDelay);
                 }
             }
         }
@@ -28,6 +28,6 @@ export default function notUtillTask(m, f, run, tryTime = 1000, maxTimes = 60) {
             ExErrorQueue.throwError(e);
         }
     });
-    m.setTimeout(func, 100);
+    m.setTimeout(func, 0);
 }
 //# sourceMappingURL=notUtillTask.js.map

@@ -109,6 +109,7 @@ function initConsole(manager) {
         }
         error(...args) {
             callStack.length > 0 && log(span(FORMATTINGS.Red, callStack.join(' > ') + '\n'));
+            console.warn(span(FORMATTINGS.Red));
             return log(...span(FORMATTINGS.Red, args));
         }
         warn(...args) {
