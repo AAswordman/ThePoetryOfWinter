@@ -1,4 +1,4 @@
-import { MinecraftDimensionTypes, MinecraftEffectTypes } from "@minecraft/server";
+import { MinecraftDimensionTypes } from "@minecraft/server";
 import ExGameClient from "../../modules/exmc/server/ExGameClient.js";
 import { ArmorPlayerDec, ArmorPlayerPom } from "./items/ArmorData.js";
 import MathUtil from "../../modules/exmc/math/MathUtil.js";
@@ -10,6 +10,7 @@ import PomServer from "../../pom/server/PomServer.js";
 import GlobalScoreBoardCache from "../../modules/exmc/server/storage/cache/GlobalScoreBoardCache.js";
 import { Objective } from "../../modules/exmc/server/entity/ExScoresManager.js";
 import Random from "../../modules/exmc/utils/Random.js";
+import { MinecraftEffectTypes } from "../../modules/vanilla-data/lib/index.js";
 export default class DecClient extends ExGameClient {
     constructor(server, id, player) {
         super(server, id, player);
@@ -17,8 +18,28 @@ export default class DecClient extends ExGameClient {
         this.tmpV = new Vector3(0, 0, 0);
         this.globalscores = new GlobalScoreBoardCache(new Objective("global"));
     }
+    decreaseCooldownEqu(itemCategory, tickDecrease, equipmentTest) {
+        const item = this.exPlayer.getBag().itemOnOffHand;
+        if (this.player.getItemCooldown(itemCategory) > 0 && (item === null || item === void 0 ? void 0 : item.typeId) == equipmentTest) {
+            this.player.startItemCooldown(itemCategory, Math.max(this.player.getItemCooldown(itemCategory) - tickDecrease, 0));
+        }
+    }
     onJoin() {
         super.onJoin();
+        //副手效果
+        this.getEvents().exEvents.onLongTick.subscribe((e) => {
+            if (e.currentTick % 4 === 0) {
+                this.decreaseCooldownEqu('gun', 9, 'dec:archer_bullet_bag');
+                this.decreaseCooldownEqu('gun', 7, 'dec:lava_bullet_bag');
+                this.decreaseCooldownEqu('gun', 4, 'dec:blood_bullet_bag');
+                this.decreaseCooldownEqu('gun', 3, 'dec:hunter_bullet_bag');
+                this.decreaseCooldownEqu('gun', 3, 'dec:pirate_bullet_bag');
+                this.decreaseCooldownEqu('gun', 2, 'dec:bullet_bag');
+                this.decreaseCooldownEqu('catapult', 5, 'dec:stones_bag');
+                this.decreaseCooldownEqu('catapult', 13, 'dec:archer_stones_bag');
+                this.decreaseCooldownEqu('staff', 4, 'dec:magic_surge_core');
+            }
+        });
         this.getEvents().exEvents.afterPlayerHurt.subscribe(e => {
             //这里写死亡事件
             if (this.exPlayer.health <= 0) {
@@ -38,8 +59,8 @@ export default class DecClient extends ExGameClient {
             //鲁伯特套装受伤效果
             if (1 <= ra && ra <= 20) {
                 if (this.useArmor === ArmorPlayerDec.rupert) {
-                    this.player.addEffect(MinecraftEffectTypes.regeneration, 10 * 20);
-                    this.player.addEffect(MinecraftEffectTypes.speed, 5 * 20);
+                    this.player.addEffect(MinecraftEffectTypes.Regeneration, 10 * 20);
+                    this.player.addEffect(MinecraftEffectTypes.Speed, 5 * 20);
                     this.tmpV.set(this.player.location).add(0, 1, 0);
                     this.getExDimension().spawnParticle("dec:tear_from_rupert", this.tmpV);
                     this.getExDimension().spawnParticle("dec:tear_from_rupert", this.tmpV);
@@ -52,23 +73,23 @@ export default class DecClient extends ExGameClient {
             if (this.useArmor === ArmorPlayerDec.lava) {
                 this.tmpV.set(this.player.location).add(0, 1, 0);
                 this.getExDimension().spawnParticle("dec:fire_spurt_particle", this.tmpV);
-                this.player.addEffect(MinecraftEffectTypes.fireResistance, 4 * 20);
+                this.player.addEffect(MinecraftEffectTypes.FireResistance, 4 * 20);
             }
             //哭泣套受伤效果
             if (this.useArmor === ArmorPlayerDec.crying) {
                 if (ra < 1) {
                 }
                 else if (1 <= ra && ra <= 10) {
-                    this.player.addEffect(MinecraftEffectTypes.weakness, 5 * 20);
+                    this.player.addEffect(MinecraftEffectTypes.Weakness, 5 * 20);
                 }
                 else if (ra <= 20) {
-                    this.player.addEffect(MinecraftEffectTypes.slowness, 4 * 20);
+                    this.player.addEffect(MinecraftEffectTypes.Slowness, 4 * 20);
                 }
                 else if (ra <= 30) {
-                    this.player.addEffect(MinecraftEffectTypes.blindness, 5 * 20);
+                    this.player.addEffect(MinecraftEffectTypes.Blindness, 5 * 20);
                 }
                 else if (ra <= 40) {
-                    this.player.addEffect(MinecraftEffectTypes.nausea, 7 * 20);
+                    this.player.addEffect(MinecraftEffectTypes.Nausea, 7 * 20);
                 }
             }
             //永冬套受伤效果
@@ -79,10 +100,10 @@ export default class DecClient extends ExGameClient {
                         "location": this.player.location
                     })) {
                         if (e != this.player) {
-                            this.exPlayer.addEffect(MinecraftEffectTypes.slowness, 3 * 20, 1);
+                            this.exPlayer.addEffect(MinecraftEffectTypes.Slowness, 3 * 20, 1);
                         }
                     }
-                    this.exPlayer.addEffect(MinecraftEffectTypes.healthBoost, 30 * 20, 0);
+                    this.exPlayer.addEffect(MinecraftEffectTypes.HealthBoost, 30 * 20, 0);
                     this.tmpV.set(this.player.location);
                     this.getExDimension().spawnParticle("dec:everlasting_winter_spurt_particle", this.tmpV);
                 }
@@ -144,7 +165,7 @@ export default class DecClient extends ExGameClient {
                         lor.push(numTranToTask(Random.choice(t).id));
                     }
                     c_n.setLore(lor);
-                    bag.setItemOnHand(c_n);
+                    bag.itemOnMainHand = (c_n);
                 }
             }
         });
@@ -207,10 +228,10 @@ export default class DecClient extends ExGameClient {
                 //海龟套效果
                 if (p.isSneaking) {
                     if (this.useArmor === ArmorPlayerDec.turtle) {
-                        if (((_a = ep.getBag().getItemOnHand()) === null || _a === void 0 ? void 0 : _a.typeId) === "dec:turtle_sword") {
-                            ep.addEffect(MinecraftEffectTypes.slowness, 5 * 20, 5);
-                            ep.addEffect(MinecraftEffectTypes.slowness, 2 * 20, 3);
-                            ep.addEffect(MinecraftEffectTypes.slowness, 2 * 20, 50);
+                        if (((_a = ep.getBag().itemOnMainHand) === null || _a === void 0 ? void 0 : _a.typeId) === "dec:turtle_sword") {
+                            ep.addEffect(MinecraftEffectTypes.Slowness, 5 * 20, 5);
+                            ep.addEffect(MinecraftEffectTypes.Slowness, 2 * 20, 3);
+                            ep.addEffect(MinecraftEffectTypes.Slowness, 2 * 20, 50);
                         }
                     }
                 }

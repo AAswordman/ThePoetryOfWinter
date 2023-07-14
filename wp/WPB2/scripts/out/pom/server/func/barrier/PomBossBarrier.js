@@ -1,13 +1,13 @@
 import UUID from "../../../../modules/exmc/utils/UUID.js";
 import ExPlayer from "../../../../modules/exmc/server/entity/ExPlayer.js";
-import { MinecraftEffectTypes } from '@minecraft/server';
 import { ignorn } from "../../../../modules/exmc/server/ExErrorQueue.js";
 import VarOnChangeListener from '../../../../modules/exmc/utils/VarOnChangeListener.js';
+import { MinecraftEffectTypes } from "../../../../modules/vanilla-data/lib/index.js";
 export default class PomBossBarrier {
     constructor(server, dim, area, boss) {
         this.deathTimes = 0;
         this.fogListener = new VarOnChangeListener((n, l) => {
-            this.dim.command.run(`fog @a[x=${this.center.x},y=${this.center.y},z=${this.center.z},r=128] remove "ruin_fog"`);
+            this.clearFog();
             this.fog = n;
         }, "");
         this.players = new Map();
@@ -84,8 +84,8 @@ export default class PomBossBarrier {
                         this.server.setTimeout(() => {
                             if (this.dim.dimension !== e.dimension) {
                                 let ep = ExPlayer.getInstance(e);
-                                ep.addEffect(MinecraftEffectTypes.resistance, 14 * 20, 10, false);
-                                ep.addEffect(MinecraftEffectTypes.weakness, 14 * 20, 10, false);
+                                ep.addEffect(MinecraftEffectTypes.Resistance, 14 * 20, 10, false);
+                                ep.addEffect(MinecraftEffectTypes.Weakness, 14 * 20, 10, false);
                             }
                             ExPlayer.getInstance(e).setPosition(this.area.center(), this.dim.dimension);
                         }, 2000);
@@ -110,7 +110,11 @@ export default class PomBossBarrier {
             this.dim.command.run(`fog @a[x=${this.center.x},y=${this.center.y},z=${this.center.z},r=128] push ${this.fog} "ruin_fog"`);
     }
     stop() {
+        this.clearFog();
         this.dispose();
+    }
+    clearFog() {
+        this.dim.command.run(`fog @a[x=${this.center.x},y=${this.center.y},z=${this.center.z},r=128] remove "ruin_fog"`);
     }
     changeFog(name) {
         this.fogListener.upDate(name);

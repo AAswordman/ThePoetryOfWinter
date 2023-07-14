@@ -17,10 +17,9 @@ let exOtherEventNameMap = {
     "tick": "tick",
     "onLongTick": "onLongTick",
     "afterPlayerHurt": "afterPlayerHurt",
+    "afterPlayerHitBlock": "afterPlayerHitBlock",
     "afterPlayerHitEntity": "afterPlayerHitEntity",
     "afterItemOnHandChange": "afterItemOnHandChange",
-    "afterEntityHit": "afterEntityHit",
-    "afterOnHitEntity": "afterOnHitEntity",
     "afterOnHurt": "afterOnHurt"
 };
 export let ExEventNames = exEventNames;

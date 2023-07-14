@@ -117,7 +117,7 @@ export default function menuTaskUI(ctrl) {
             "img": "textures/items/magic_scroll_blue.png",
             "page": (client, ui) => {
                 let arr = {};
-                let item = ctrl.exPlayer.getBag().getItemOnHand();
+                let item = ctrl.exPlayer.getBag().itemOnMainHand;
                 if (!item || item.getLore().length === 0) {
                     return {
                         "1": {

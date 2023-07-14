@@ -1,37 +1,40 @@
 {
-	"compilerOptions": {
-		"module": "ES2020",
-		"target": "es6",
-		"outDir": "out",
-		"lib": [
-			"ES6","DOM"
-		],
-		"sourceMap": true,
-		//"rootDir": "ExcellentMInecraftscripts/src",
+    "compilerOptions": {
+        "module": "ES2020",
+        "target": "es6",
+        "outDir": "out",
+        "lib": [
+            "ES6", "DOM"
+        ],
+        "sourceMap": true,
+        //"rootDir": "ExcellentMInecraftscripts/src",
         "moduleResolution": "node",
-		"strict": true,
+        "strict": true,
         "downlevelIteration": true,
-		"alwaysStrict": true,
+        "alwaysStrict": true,
         "resolveJsonModule": true,
-		"emitDecoratorMetadata": true,
-		"experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
         "allowJs": true,
         "skipLibCheck": true,
-		"noImplicitOverride": true,
-		"strictNullChecks": true
-		/*
-		"module":"system",
-		"outFile": "./out.js",
-		"rootDir": "src"
-		*/
-		/* Additional Checks */
-		// "noImplicitReturns": true, /* Report error when not all code paths in function return a value. */
-		// "noFallthroughCasesInSwitch": true, /* Report errors for fallthrough cases in switch statement. */
-		// "noUnusedParameters": true,  /* Report errors on unused parameters. */
-	},
-	"exclude": [
-		"node_modules"
-	],
+        "noImplicitOverride": true,
+        "strictNullChecks": true,
+        "forceConsistentCasingInFileNames": true
+        // "allowUnreachableCode": true,
+        // "allowUnusedLabels": true
+        /*
+        "module":"system",
+        "outFile": "./out.js",
+        "rootDir": "src"
+        */
+        /* Additional Checks */
+        // "noImplicitReturns": true, /* Report error when not all code paths in function return a value. */
+        // "noFallthroughCasesInSwitch": true, /* Report errors for fallthrough cases in switch statement. */
+        // "noUnusedParameters": true,  /* Report errors on unused parameters. */
+    },
+    "exclude": [
+        "node_modules"
+    ],
     "include": [
         "ExcellentMInecraftscripts/src"
     ]

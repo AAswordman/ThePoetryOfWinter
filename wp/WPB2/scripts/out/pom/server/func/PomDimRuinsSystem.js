@@ -1,4 +1,4 @@
-import { MinecraftBlockTypes, MinecraftDimensionTypes, MinecraftEffectTypes } from '@minecraft/server';
+import { MinecraftBlockTypes, MinecraftDimensionTypes } from '@minecraft/server';
 import GameController from "./GameController.js";
 import RuinsLoaction from "./ruins/RuinsLoaction.js";
 import { ExBlockArea } from '../../../modules/exmc/server/block/ExBlockArea.js';
@@ -9,6 +9,7 @@ import ExMessageAlert from '../../../modules/exmc/server/ui/ExMessageAlert.js';
 import ExActionAlert from '../../../modules/exmc/server/ui/ExActionAlert.js';
 import PomBossBarrier from './barrier/PomBossBarrier.js';
 import { Objective } from '../../../modules/exmc/server/entity/ExScoresManager.js';
+import { MinecraftEffectTypes } from '../../../modules/vanilla-data/lib/index.js';
 export default class PomDimRuinsSystem extends GameController {
     constructor() {
         super(...arguments);
@@ -193,7 +194,7 @@ export default class PomDimRuinsSystem extends GameController {
                 //石头遗迹判断
                 this.data.dimBackPoint = new Vector3(this.player.location).add(3, 2, 3);
                 this.client.cache.save();
-                this.exPlayer.addEffect(MinecraftEffectTypes.resistance, 20 * 10, 10, true);
+                this.exPlayer.addEffect(MinecraftEffectTypes.Resistance, 20 * 10, 10, true);
                 this.exPlayer.setPosition(ExBlockArea.randomPoint(this.client.getServer().ruin_stoneBoss.getPlayerSpawnArea(), 0), this.getDimension(MinecraftDimensionTypes.theEnd));
                 //未生成遗迹判断
                 if (((this.globalSettings.ruinsExsitsData >> RuinsLoaction.STONE_RUIN_NUM) & 1) == 0) {
@@ -206,7 +207,7 @@ export default class PomDimRuinsSystem extends GameController {
                 //洞穴遗迹判断
                 this.data.dimBackPoint = new Vector3(this.player.location).add(3, 2, 3);
                 this.client.cache.save();
-                this.exPlayer.addEffect(MinecraftEffectTypes.resistance, 20 * 10, 10, true);
+                this.exPlayer.addEffect(MinecraftEffectTypes.Resistance, 20 * 10, 10, true);
                 this.exPlayer.setPosition(ExBlockArea.randomPoint(this.client.getServer().ruin_caveBoss.getPlayerSpawnArea(), 0), this.getDimension(MinecraftDimensionTypes.theEnd));
                 //未生成遗迹判断
                 if (((this.globalSettings.ruinsExsitsData >> RuinsLoaction.CAVE_RUIN_NUM) & 1) == 0) {
@@ -219,7 +220,7 @@ export default class PomDimRuinsSystem extends GameController {
                 //远古遗迹判断
                 this.data.dimBackPoint = new Vector3(this.player.location).add(3, 2, 3);
                 this.client.cache.save();
-                this.exPlayer.addEffect(MinecraftEffectTypes.resistance, 20 * 10, 10, true);
+                this.exPlayer.addEffect(MinecraftEffectTypes.Resistance, 20 * 10, 10, true);
                 this.exPlayer.setPosition(ExBlockArea.randomPoint(this.client.getServer().ruin_ancientBoss.getPlayerSpawnArea(), 0), this.getDimension(MinecraftDimensionTypes.theEnd));
                 //未生成遗迹判断
                 if (((this.globalSettings.ruinsExsitsData >> RuinsLoaction.ANCIENT_RUIN_NUM) & 1) == 0) {
@@ -232,7 +233,7 @@ export default class PomDimRuinsSystem extends GameController {
                 //内心遗迹判断
                 this.data.dimBackPoint = new Vector3(this.player.location).add(3, 2, 3);
                 this.client.cache.save();
-                this.exPlayer.addEffect(MinecraftEffectTypes.resistance, 20 * 10, 10, true);
+                this.exPlayer.addEffect(MinecraftEffectTypes.Resistance, 20 * 10, 10, true);
                 this.exPlayer.setPosition(ExBlockArea.randomPoint(this.client.getServer().ruin_mindBoss.getPlayerSpawnArea(), 0), this.getDimension(MinecraftDimensionTypes.theEnd));
                 //未生成遗迹判断
                 if (((this.globalSettings.ruinsExsitsData >> RuinsLoaction.MIND_RUIN_NUM) & 1) == 0) {

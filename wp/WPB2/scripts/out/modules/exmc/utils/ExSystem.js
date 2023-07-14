@@ -50,6 +50,6 @@ export default class ExSystem {
         }
     }
 }
-ExSystem.idMap = new Map();
+ExSystem.idMap = new WeakMap();
 ExSystem.chineseCharMatcher = /([\u4E00-\u9FA5])+/;
 //# sourceMappingURL=ExSystem.js.map
