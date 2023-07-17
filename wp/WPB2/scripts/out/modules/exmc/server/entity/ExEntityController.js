@@ -75,11 +75,10 @@ export default class ExEntityController {
     }
 }
 __decorate([
-    registerEvent(ExOtherEventNames.tick, (ctrl, e) => {
+    registerEvent(ExOtherEventNames.beforeTick, (ctrl, e) => {
         if (e.currentTick % 1 === 0) {
             try {
                 let dim = ctrl.entity.dimension;
-                // console.warn(dim === undefined)
                 return dim === undefined;
             }
             catch (o) {

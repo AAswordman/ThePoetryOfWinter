@@ -38,6 +38,19 @@ export default class DecClient extends ExGameClient {
                 this.decreaseCooldownEqu('catapult', 5, 'dec:stones_bag');
                 this.decreaseCooldownEqu('catapult', 13, 'dec:archer_stones_bag');
                 this.decreaseCooldownEqu('staff', 4, 'dec:magic_surge_core');
+                this.decreaseCooldownEqu('staff', 3, 'dec:alchemic_stone');
+                this.decreaseCooldownEqu('katana', 6, 'dec:fire_heart');
+                this.decreaseCooldownEqu('magic_book', 4, 'dec:herb_bag');
+                this.decreaseCooldownEqu('magic_book', 7, 'dec:shadow_feather');
+                this.decreaseCooldownEqu('staff', 8, 'dec:tear_from_dream');
+                this.decreaseCooldownEqu('staff', 6, 'dec:time_compass');
+                this.decreaseCooldownEqu('missile', 3, 'dec:diamond_ring');
+                this.decreaseCooldownEqu('missile', 4, 'dec:emerald_ring');
+                this.decreaseCooldownEqu('missile', 7, 'dec:ender_ring');
+                this.decreaseCooldownEqu('missile', 6, 'dec:fire_ring');
+                this.decreaseCooldownEqu('missile', 4, 'dec:gold_ring');
+                this.decreaseCooldownEqu('missile', 5, 'dec:heart_ring');
+                this.decreaseCooldownEqu('missile', 3, 'dec:natural_ring');
             }
         });
         this.getEvents().exEvents.afterPlayerHurt.subscribe(e => {
@@ -273,6 +286,7 @@ export default class DecClient extends ExGameClient {
         });
         this.getEvents().exEvents.onLongTick.subscribe(e => {
             if (e.currentTick % 20 === 0) {
+                //盔甲选择
                 if (this.checkArmor()) {
                     //非空
                     if (!this.exPlayer.detectAnyArmor()) {
@@ -292,6 +306,7 @@ export default class DecClient extends ExGameClient {
                         }
                     }
                 }
+                //设置防御
             }
         });
     }

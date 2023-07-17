@@ -1,9 +1,17 @@
 import { world } from '@minecraft/server';
 export class ItemOnHandChangeEvent {
-    constructor(beforeItem, afterItem, source) {
+    constructor(beforeItem, beforeSlot, afterItem, afterSlot, source) {
         this.beforeItem = beforeItem;
         this.afterItem = afterItem;
         this.source = source;
+        this.beforeSlot = beforeSlot;
+        this.afterSlot = afterSlot;
+    }
+}
+export class PlayerShootProjectileEvent {
+    constructor(source, projectile) {
+        this.source = source;
+        this.projectile = projectile;
     }
 }
 let exEventNames = {};
@@ -15,12 +23,14 @@ for (let k in world.beforeEvents) {
 }
 let exOtherEventNameMap = {
     "tick": "tick",
+    "beforeTick": "beforeTick",
     "onLongTick": "onLongTick",
     "afterPlayerHurt": "afterPlayerHurt",
     "afterPlayerHitBlock": "afterPlayerHitBlock",
     "afterPlayerHitEntity": "afterPlayerHitEntity",
     "afterItemOnHandChange": "afterItemOnHandChange",
-    "afterOnHurt": "afterOnHurt"
+    "afterOnHurt": "afterOnHurt",
+    "afterPlayerShootProj": "afterPlayerShootProj"
 };
 export let ExEventNames = exEventNames;
 export let ExOtherEventNames = exOtherEventNameMap;

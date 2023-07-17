@@ -6,8 +6,14 @@ export default class ExDimension {
         this.command = new ExCommand(this);
         this._dimension = dimension;
     }
-    spawnParticle(p, v) {
-        this._dimension.spawnParticle(p, v, new MolangVariableMap());
+    spawnParticle(p, v, varMap = new MolangVariableMap()) {
+        try {
+            this._dimension.spawnParticle(p, v, varMap);
+            return true;
+        }
+        catch (e) {
+            return false;
+        }
     }
     createExplosion(location, radius, explosionOptions) {
         //console.warn(location, radius, explosionOptions);

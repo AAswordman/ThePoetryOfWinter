@@ -59,6 +59,9 @@ export default class ExEntity {
     set entity(value) {
         this._entity = value;
     }
+    getVelocity() {
+        return new Vector3(this._entity.getVelocity());
+    }
     static getInstance(source) {
         let entity = source;
         if (this.propertyNameCache in entity) {
@@ -114,8 +117,11 @@ export default class ExEntity {
     triggerEvent(name) {
         this._entity.triggerEvent(name);
     }
-    getPosition() {
+    get position() {
         return new Vector3(this.entity.location);
+    }
+    set position(position) {
+        this.setPosition(position);
     }
     setPosition(position, dimension) {
         this.entity.teleport(position, {
@@ -127,7 +133,7 @@ export default class ExEntity {
         return this.entity.getRotation();
     }
     set rotation(ivec) {
-        this.teleport(this.getPosition(), {
+        this.teleport(this.position, {
             "keepVelocity": true,
             "rotation": ivec
         });
@@ -139,7 +145,7 @@ export default class ExEntity {
         this.entity.tryTeleport(location, teleportOptions);
     }
     set dimension(dimension) {
-        this.setPosition(this.getPosition(), dimension);
+        this.setPosition(this.position, dimension);
     }
     get dimension() {
         return this._entity.dimension;
@@ -148,7 +154,7 @@ export default class ExEntity {
         return new Vector3(this.entity.getViewDirection());
     }
     set viewDirection(ivec) {
-        this.teleport(this.getPosition(), {
+        this.teleport(this.position, {
             "keepVelocity": true,
             "rotation": {
                 x: ivec.rotateAngleX(),

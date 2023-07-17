@@ -1,3 +1,4 @@
+import ExErrorQueue from "../server/ExErrorQueue.js";
 export default class MonitorManager {
     constructor() {
         this.mixer = [];
@@ -18,7 +19,12 @@ export default class MonitorManager {
     }
     trigger(...args) {
         for (let e of this.mixer) {
-            e(...args);
+            try {
+                e(...args);
+            }
+            catch (err) {
+                ExErrorQueue.throwError(err);
+            }
         }
     }
 }

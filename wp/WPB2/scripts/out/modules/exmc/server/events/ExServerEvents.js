@@ -22,6 +22,22 @@ export default class ExServerEvents {
                     });
                 }
             },
+            [ExOtherEventNames.beforeTick]: {
+                subscribe: (callback) => {
+                    this._subscribe(ExOtherEventNames.beforeTick, callback);
+                },
+                unsubscribe: (callback) => {
+                    this._unsubscribe(ExOtherEventNames.beforeTick, callback);
+                },
+                pattern: () => {
+                    ExGame.beforeTickMonitor.addMonitor((e) => {
+                        var _a;
+                        (_a = ExServerEvents.monitorMap.get(ExOtherEventNames.beforeTick)) === null || _a === void 0 ? void 0 : _a.forEach((fun) => {
+                            fun(e);
+                        });
+                    });
+                }
+            },
             [ExOtherEventNames.onLongTick]: {
                 subscribe: (callback) => {
                     this._subscribe(ExOtherEventNames.onLongTick, callback);

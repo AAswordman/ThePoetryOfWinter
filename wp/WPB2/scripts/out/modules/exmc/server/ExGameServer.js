@@ -39,7 +39,7 @@ export default class ExGameServer {
                 });
             }
             ExGameConfig.console = initConsole(ExGameConfig);
-            ExErrorQueue.init(this);
+            ExErrorQueue.init();
             ExTickQueue.init(this);
             ExCommand.init(this);
             ExClientEvents.init(this);
@@ -65,6 +65,9 @@ export default class ExGameServer {
         if (entityConstructor) {
             new (entityConstructor)(e.entity, this);
         }
+    }
+    createEntityController(e, ec) {
+        return new ec(e, this);
     }
     getDimension(dimensionId) {
         return world.getDimension(dimensionId);
@@ -92,6 +95,13 @@ export default class ExGameServer {
         let players = [];
         for (let k of this.clients) {
             players.push(k[1].player);
+        }
+        return players;
+    }
+    getExPlayers() {
+        let players = [];
+        for (let k of this.clients) {
+            players.push(k[1].exPlayer);
         }
         return players;
     }

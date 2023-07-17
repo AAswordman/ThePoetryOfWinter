@@ -57,7 +57,7 @@ export default class SimpleItemUseFunc extends GameController {
                 this.setTimeout(() => {
                     this.exPlayer.addEffect(MinecraftEffectTypes.Levitation, 7, 15, false);
                     this.exPlayer.addEffect(MinecraftEffectTypes.SlowFalling, 150, 3, false);
-                    this.exPlayer.dimension.spawnEntity("wb:ball_jet_pack", this.exPlayer.getPosition().sub(this.exPlayer.viewDirection.scl(2)));
+                    this.exPlayer.dimension.spawnEntity("wb:ball_jet_pack", this.exPlayer.position.sub(this.exPlayer.viewDirection.scl(2)));
                 }, 0);
             }
             else if (item.typeId === "wb:start_key") {
@@ -89,8 +89,19 @@ export default class SimpleItemUseFunc extends GameController {
                 }
             }
         });
-        this.getEvents().exEvents.afterItemOnHandChange.subscribe((e) => {
-        });
+        // let target: undefined | Entity;
+        // this.getEvents().exEvents.afterPlayerShootProj.subscribe((e) => {
+        //     if (target) {
+        //         const ec = this.client.getServer().createEntityController(e.projectile, PomOccupationSkillTrack);
+        //         ec.setTarget(target);
+        //     }
+        //     // if(e.afterItem?.typeId === MinecraftItemTypes.Stick){
+        //     //     this.exPlayer.selectedSlot = e.beforeSlot;
+        //     // }
+        // });
+        // this.getEvents().exEvents.afterPlayerHitEntity.subscribe(e => {
+        //     target = e.hurtEntity;
+        // });
     }
     chainDigging(v, idType, times, posData) {
         var _a;

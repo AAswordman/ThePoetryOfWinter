@@ -2,9 +2,11 @@ import { MinecraftBlockTypes } from "@minecraft/server";
 import Vector3 from "../../../math/Vector3.js";
 import ExDimension from "../../ExDimension.js";
 import { ExBlockArea } from "../ExBlockArea.js";
+import ExGame from "../../ExGame.js";
 export default class ExBlockStructureNormal {
     constructor() {
         this.direction = ExBlockStructureNormal.DIRECTION_AROUND | ExBlockStructureNormal.DIRECTION_LAY;
+        this.canPut = false;
     }
     clone() {
         let n = new ExBlockStructureNormal();
@@ -238,6 +240,7 @@ export default class ExBlockStructureNormal {
             }
             this.analysisMap = nmap;
         }
+        this.canPut = true;
         return this;
     }
     putStructure(area) {
@@ -249,18 +252,26 @@ export default class ExBlockStructureNormal {
             throw new Error("structure is undefined");
         const tmpV = new Vector3();
         const vec = new Vector3();
-        for (vec.z = 0; vec.z < this.structure.length; vec.z++) {
-            for (vec.y = 0; vec.y < this.structure[vec.z].length; vec.y++) {
-                const str = this.structure[vec.z][vec.y];
-                for (vec.x = 0; vec.x < str.length; vec.x++) {
-                    const c = str.charAt(vec.x);
-                    if (c == ' ')
-                        continue;
-                    area.calculateRelPos(vec, tmpV).add(area.start);
-                    let id = this.analysisMap.get(c);
-                    this.dimension.setBlock(tmpV, id !== null && id !== void 0 ? id : MinecraftBlockTypes.air.id);
+        if (this.canPut) {
+            this.canPut = false;
+            ExGame.run(() => {
+                for (vec.z = 0; vec.z < this.structure.length; vec.z++) {
+                    for (vec.y = 0; vec.y < this.structure[vec.z].length; vec.y++) {
+                        const str = this.structure[vec.z][vec.y];
+                        for (vec.x = 0; vec.x < str.length; vec.x++) {
+                            const c = str.charAt(vec.x);
+                            if (c == ' ')
+                                continue;
+                            area.calculateRelPos(vec, tmpV).add(area.start);
+                            let id = this.analysisMap.get(c);
+                            this.dimension.setBlock(tmpV, id !== null && id !== void 0 ? id : MinecraftBlockTypes.air.id);
+                        }
+                    }
                 }
-            }
+            });
+        }
+        else {
+            throw new Error("Please reanalyze the structure before putting");
         }
         return this;
     }
