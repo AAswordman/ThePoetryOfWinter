@@ -101,12 +101,12 @@ export class PomIntentionsBoss3 extends PomBossController {
         this.state = new VarOnChangeListener((n) => {
             switch (n) {
                 case 9:
-                    this.exEntity.exDimension.spawnParticle("wb:ruin_mind_boss_third_par", this.exEntity.getPosition());
+                    this.exEntity.exDimension.spawnParticle("wb:ruin_mind_boss_third_par", this.exEntity.position);
                     break;
                 case 1:
                 case 2:
                 case 3:
-                    this.exEntity.exDimension.spawnParticle("wb:ruin_mind_boss_second_par", this.exEntity.getPosition());
+                    this.exEntity.exDimension.spawnParticle("wb:ruin_mind_boss_second_par", this.exEntity.position);
                     break;
             }
         }, 1);

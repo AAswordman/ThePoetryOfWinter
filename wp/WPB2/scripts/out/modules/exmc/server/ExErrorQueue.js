@@ -1,3 +1,4 @@
+import { system } from '@minecraft/server';
 export default class ExErrorQueue {
     static throwError(error) {
         this.reportError(error);
@@ -16,12 +17,12 @@ export default class ExErrorQueue {
     static getError() {
         return this.errorFlow;
     }
-    static init(server) {
-        server.getEvents().exEvents.tick.subscribe(tick => {
+    static init() {
+        system.runInterval(() => {
             if (this.errorStack.length > 0) {
                 throw this.errorStack.shift();
             }
-        });
+        }, 1);
     }
 }
 ExErrorQueue.errorStack = [];

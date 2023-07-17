@@ -1,4 +1,3 @@
-import MathUtil from "../../../modules/exmc/math/MathUtil.js";
 import ExEntity from "../../../modules/exmc/server/entity/ExEntity.js";
 import ExPlayer from "../../../modules/exmc/server/entity/ExPlayer.js";
 import ExColorLoreUtil from "../../../modules/exmc/server/item/ExColorLoreUtil.js";
@@ -54,44 +53,29 @@ export default class PomTalentSystem extends GameController {
     }
     onJoin() {
         this.getEvents().exEvents.afterPlayerHitEntity.subscribe((e) => {
-            var _a, _b, _c, _d, _e, _f, _g, _h;
+            var _a, _b, _c, _d;
             let item = this.exPlayer.getBag().itemOnMainHand;
             let damageFac = 0;
             let extraDamage = 0;
             let target = ExEntity.getInstance(e.hurtEntity);
-            let dis = target.getPosition().distance(this.exPlayer.getPosition());
-            if (!item) {
-                let CLOAD_PIERCING = (_a = this.talentRes.get(Talent.CLOAD_PIERCING)) !== null && _a !== void 0 ? _a : 0;
-                damageFac += Math.min(64, dis) / 64 * CLOAD_PIERCING / 100;
-                let ARMOR_BREAKING = (_b = this.talentRes.get(Talent.ARMOR_BREAKING)) !== null && _b !== void 0 ? _b : 0;
-                extraDamage += this.exPlayer.getMaxHealth() * ARMOR_BREAKING / 100;
-                let SANCTION = (_c = this.talentRes.get(Talent.SANCTION)) !== null && _c !== void 0 ? _c : 0;
-                damageFac += (16 - Math.min(16, dis)) / 16 * SANCTION / 100;
-                let SUDDEN_STRIKE = (_d = this.talentRes.get(Talent.SUDDEN_STRIKE)) !== null && _d !== void 0 ? _d : 0;
-                if (this.strikeSkill) {
-                    if (this.data.talent.occupation.id === Occupation.ASSASSIN.id)
-                        this.skillLoop.startOnce();
-                    this.strikeSkill = false;
-                    damageFac += SUDDEN_STRIKE / 100;
-                }
-            }
-            else {
-                let lore = new ExColorLoreUtil(ExItem.getInstance(item));
-                let CLOAD_PIERCING = MathUtil.zeroIfNaN(parseFloat(((_e = lore.getValueUseMap("addition", Talent.getCharacter(this.getLang(), Talent.CLOAD_PIERCING))) !== null && _e !== void 0 ? _e : "->0").split("->")[1]));
-                damageFac += Math.min(64, dis) / 64 * CLOAD_PIERCING / 100;
-                let ARMOR_BREAKING = MathUtil.zeroIfNaN(parseFloat(((_f = lore.getValueUseMap("addition", Talent.getCharacter(this.getLang(), Talent.ARMOR_BREAKING))) !== null && _f !== void 0 ? _f : "->0").split("->")[1]));
-                extraDamage += this.exPlayer.getMaxHealth() * ARMOR_BREAKING / 100;
-                let SANCTION = MathUtil.zeroIfNaN(parseFloat(((_g = lore.getValueUseMap("addition", Talent.getCharacter(this.getLang(), Talent.SANCTION))) !== null && _g !== void 0 ? _g : "->0").split("->")[1]));
-                damageFac += (16 - Math.min(16, dis)) / 16 * SANCTION / 100;
-                let SUDDEN_STRIKE = MathUtil.zeroIfNaN(parseFloat(((_h = lore.getValueUseMap("addition", Talent.getCharacter(this.getLang(), Talent.SUDDEN_STRIKE))) !== null && _h !== void 0 ? _h : "->0").split("->")[1]));
+            let dis = target.position.distance(this.exPlayer.position);
+            let CLOAD_PIERCING = (_a = this.talentRes.get(Talent.CLOAD_PIERCING)) !== null && _a !== void 0 ? _a : 0;
+            damageFac += Math.min(64, dis) / 64 * CLOAD_PIERCING / 100;
+            let ARMOR_BREAKING = (_b = this.talentRes.get(Talent.ARMOR_BREAKING)) !== null && _b !== void 0 ? _b : 0;
+            extraDamage += this.exPlayer.getMaxHealth() * ARMOR_BREAKING / 100;
+            let SANCTION = (_c = this.talentRes.get(Talent.SANCTION)) !== null && _c !== void 0 ? _c : 0;
+            damageFac += (16 - Math.min(16, dis)) / 16 * SANCTION / 100;
+            let SUDDEN_STRIKE = (_d = this.talentRes.get(Talent.SUDDEN_STRIKE)) !== null && _d !== void 0 ? _d : 0;
+            if (item) {
                 if (item.typeId.startsWith("dec:"))
                     damageFac += 0.4;
-                if (this.strikeSkill) {
-                    if (this.data.talent.occupation.id === Occupation.ASSASSIN.id)
-                        this.skillLoop.startOnce();
-                    this.strikeSkill = false;
-                    damageFac += SUDDEN_STRIKE / 100;
-                }
+                let lore = new ExColorLoreUtil(ExItem.getInstance(item));
+            }
+            if (this.strikeSkill) {
+                if (this.data.talent.occupation.id === Occupation.ASSASSIN.id)
+                    this.skillLoop.startOnce();
+                this.strikeSkill = false;
+                damageFac += SUDDEN_STRIKE / 100;
             }
             let damage = e.damage * damageFac + extraDamage;
             if (this.globalSettings.damageShow) {
@@ -114,10 +98,12 @@ export default class PomTalentSystem extends GameController {
             let bag = this.exPlayer.getBag();
             if (e.afterItem && isEquipment(e.afterItem.typeId)) {
                 const lore = new ExColorLoreUtil(e.afterItem);
-                TalentData.calculateTalentToLore(this.data.talent.talents, this.data.talent.occupation, ExItem.getInstance(e.afterItem), this.getLang());
-                if (e.afterItem.typeId.startsWith("dec:"))
+                //TalentData.calculateTalentToLore(this.data.talent.talents, this.data.talent.occupation, ExItem.getInstance(e.afterItem), this.getLang());
+                if (e.afterItem.typeId.startsWith("dec:")) {
                     lore.setTag("在主手时: +40％攻击伤害");
-                bag.setItem(this.exPlayer.selectedSlot, e.afterItem);
+                    lore.sort();
+                }
+                bag.itemOnMainHand = e.afterItem;
                 let maxSingleDamage = parseFloat((_a = lore.getValueUseMap("total", this.getLang().maxSingleDamage)) !== null && _a !== void 0 ? _a : "0");
                 let maxSecondaryDamage = parseFloat((_b = lore.getValueUseMap("total", this.getLang().maxSecondaryDamage)) !== null && _b !== void 0 ? _b : "0");
                 let damage = 0;
@@ -142,7 +128,8 @@ export default class PomTalentSystem extends GameController {
                         shouldUpstate = true;
                     }
                     if (shouldUpstate && ((_c = bag.itemOnMainHand) === null || _c === void 0 ? void 0 : _c.typeId) === ((_d = e === null || e === void 0 ? void 0 : e.afterItem) === null || _d === void 0 ? void 0 : _d.typeId)) {
-                        bag.setItem(this.exPlayer.selectedSlot, e.afterItem);
+                        lore.sort();
+                        bag.itemOnMainHand = e.afterItem;
                     }
                 }).delay(5 * 20)).start(); //
             }
@@ -151,6 +138,7 @@ export default class PomTalentSystem extends GameController {
             }
             this.exPlayer.triggerEvent("hp:" + Math.round((20 + ((_e = this.talentRes.get(Talent.VIENTIANE)) !== null && _e !== void 0 ? _e : 0))));
         });
+        //追逐箭
     }
     onLoaded() {
         this.updateTalentRes();

@@ -6,6 +6,18 @@ export default class ExItem {
     getItem() {
         return this._item;
     }
+    getTags() {
+        return this._item.getTags();
+    }
+    addTag(tag) {
+        throw new Error("cant add tag");
+    }
+    hasTag(tag) {
+        return this._item.hasTag(tag);
+    }
+    removeTag(tag) {
+        throw new Error("cant remove tag");
+    }
     static getInstance(source) {
         let item = source;
         if (this.propertyNameCache in item) {

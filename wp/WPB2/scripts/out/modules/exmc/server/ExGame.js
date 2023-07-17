@@ -67,6 +67,7 @@ export default class ExGame {
     }
 }
 _a = ExGame;
+ExGame.beforeTickMonitor = new MonitorManager();
 ExGame.tickMonitor = new MonitorManager();
 ExGame.longTickMonitor = new MonitorManager();
 (() => {
@@ -79,6 +80,7 @@ ExGame.longTickMonitor = new MonitorManager();
         };
         tickTime = n;
         tickNum = (tickNum + 1) % 72000;
+        _a.beforeTickMonitor.trigger(event);
         _a.tickMonitor.trigger(event);
     };
     ExGame.runInterval(fun, 1);

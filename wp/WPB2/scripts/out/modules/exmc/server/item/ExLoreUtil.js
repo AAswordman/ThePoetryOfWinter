@@ -157,6 +157,48 @@ export default class LoreUtil {
         res.splice(i, l);
         this.setLore(res);
     }
+    sort() {
+        var _a;
+        const sortFunc = (a, b) => this.removeColorCode(a) > this.removeColorCode(b) ? 1 : -1;
+        let res = [];
+        let keylist = [];
+        let keyMap = new Map();
+        let tab = "  ";
+        let key = "";
+        let piece = new Piece(this, -1);
+        while (piece.hasNext()) {
+            piece.next();
+            if (!piece.get().startsWith(tab)) {
+                if (piece.hasNext()) {
+                    if (piece.next().get().startsWith(tab)) {
+                        const k = piece.pre().get().split(" : ");
+                        key = k[0];
+                        keylist.push(key);
+                        keyMap.set(key, []);
+                        continue;
+                    }
+                    piece.pre();
+                }
+                res.push(piece.get());
+            }
+            else {
+                (_a = keyMap.get(key)) === null || _a === void 0 ? void 0 : _a.push(piece.get().trim());
+            }
+        }
+        res = res.sort(sortFunc);
+        keylist = keylist.sort(sortFunc);
+        for (let k of keylist) {
+            let arr = Array.from(keyMap.get(k).sort(sortFunc));
+            res.push(k + " : ");
+            res = res.concat(arr.map((e) => tab + e));
+        }
+        this.setLore(res);
+    }
+    removeColorCode(s) {
+        while (s.startsWith("§"))
+            s = s.substring(2);
+        return s;
+    }
 }
 export class Piece {
     constructor(item, index) {
@@ -171,6 +213,10 @@ export class Piece {
         this.lore[this.index] = str;
         return this;
     }
+    pre() {
+        this.index--;
+        return this;
+    }
     get() {
         return this.lore[this.index];
     }
@@ -179,6 +225,7 @@ export class Piece {
     }
     next() {
         this.index++;
+        return this;
     }
 }
 //# sourceMappingURL=ExLoreUtil.js.map

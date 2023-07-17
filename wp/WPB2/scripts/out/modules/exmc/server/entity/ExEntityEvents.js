@@ -13,10 +13,10 @@ export default class ExEntityEvents {
             [ExOtherEventNames.afterOnHurt]: new Listener(this, ExOtherEventNames.afterOnHurt),
             [ExOtherEventNames.afterItemOnHandChange]: new Listener(this, ExOtherEventNames.afterItemOnHandChange),
             [ExOtherEventNames.onLongTick]: new Listener(this, ExOtherEventNames.onLongTick),
+            [ExOtherEventNames.beforeTick]: new Listener(this, ExOtherEventNames.beforeTick),
             [ExEventNames.afterBlockBreak]: new Listener(this, ExEventNames.afterBlockBreak)
         };
         this._ctrl = ctrl;
-        console.warn("regist events");
     }
     _subscribe(arg0, callback) {
         ExEntityEvents.eventHandlers.subscribe(this._ctrl.entity, arg0, callback);
@@ -25,7 +25,6 @@ export default class ExEntityEvents {
         ExEntityEvents.eventHandlers.unsubscribe(this._ctrl.entity, arg0, callback);
     }
     cancelAll() {
-        console.warn("destroy all events");
         ExEntityEvents.eventHandlers.unsubscribeAll(this._ctrl.entity);
     }
     static init(s) {
@@ -63,6 +62,9 @@ ExEntityEvents.exEventSetting = {
     [ExOtherEventNames.tick]: {
         pattern: ExEntityEvents.eventHandlers.registerToServerByServerEvent
     },
+    [ExOtherEventNames.beforeTick]: {
+        pattern: ExEntityEvents.eventHandlers.registerToServerByServerEvent
+    },
     [ExEventNames.afterEntityHitBlock]: {
         pattern: ExEntityEvents.eventHandlers.registerToServerByEntity,
         filter: {
@@ -93,7 +95,8 @@ ExEntityEvents.exEventSetting = {
                     let nowItem = ExPlayer.getInstance(i[0]).getBag().itemOnMainHand;
                     if ((lastItem === null || lastItem === void 0 ? void 0 : lastItem.typeId) !== (nowItem === null || nowItem === void 0 ? void 0 : nowItem.typeId) || i[0].selectedSlot !== (lastItemCache === null || lastItemCache === void 0 ? void 0 : lastItemCache[1])) {
                         i[1].forEach((f) => {
-                            f(new ItemOnHandChangeEvent(lastItem, ExPlayer.getInstance(i[0]).getBag().itemOnMainHand, i[0]));
+                            var _b;
+                            f(new ItemOnHandChangeEvent(lastItem, (_b = lastItemCache === null || lastItemCache === void 0 ? void 0 : lastItemCache[1]) !== null && _b !== void 0 ? _b : 0, nowItem, i[0].selectedSlot, i[0]));
                         });
                         _a.onHandItemMap.set(i[0], [nowItem, i[0].selectedSlot]);
                     }

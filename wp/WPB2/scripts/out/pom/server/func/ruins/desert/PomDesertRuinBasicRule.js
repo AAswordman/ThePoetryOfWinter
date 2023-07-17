@@ -70,7 +70,7 @@ export default class PomDesertRuinBasicRule extends GameControllerRuinRule {
                 if (Math.random() < 0.7) {
                     this.desertRuinRules.show().then(e => {
                         let r = Math.floor(10 * Math.random());
-                        let pos = game.exPlayer.getPosition().div(16).floor().scl(16).add(8, 4, 8);
+                        let pos = game.exPlayer.position.div(16).floor().scl(16).add(8, 4, 8);
                         switch (r) {
                             case 0:
                                 break;
@@ -135,9 +135,9 @@ export default class PomDesertRuinBasicRule extends GameControllerRuinRule {
     getShowMap() {
         const show = [];
         const mapSize = 8;
-        const spos = this.client.exPlayer.getPosition().sub(RuinsLoaction.DESERT_RUIN_LOCATION_START).div(16).floor();
+        const spos = this.client.exPlayer.position.sub(RuinsLoaction.DESERT_RUIN_LOCATION_START).div(16).floor();
         spos.div(mapSize, 1, mapSize).floor().scl(mapSize, 1, mapSize);
-        const playerPos = this.client.exPlayer.getPosition().sub(RuinsLoaction.DESERT_RUIN_LOCATION_START).div(16).floor();
+        const playerPos = this.client.exPlayer.position.sub(RuinsLoaction.DESERT_RUIN_LOCATION_START).div(16).floor();
         const spos2 = spos.clone();
         const epos = spos.clone().add(mapSize, 0, mapSize);
         const ruin = this.client.getServer().ruin_desertBoss;

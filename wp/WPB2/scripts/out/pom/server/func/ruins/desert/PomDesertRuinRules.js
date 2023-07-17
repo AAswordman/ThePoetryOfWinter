@@ -258,7 +258,7 @@ export default class PomDesertRuinRules {
                                 this.game.getExDimension().getEntities({
                                     maxDistance: 15,
                                     location: tmpV
-                                }).forEach(e => (ExEntity.getInstance(e).setPosition(tmpV.clone().sub(this.game.exPlayer.getPosition()).scl(num / 2).add(tmpV))));
+                                }).forEach(e => (ExEntity.getInstance(e).setPosition(tmpV.clone().sub(this.game.exPlayer.position).scl(num / 2).add(tmpV))));
                                 break;
                             }
                             case desertCommand.MAIN.EFFECT: {
