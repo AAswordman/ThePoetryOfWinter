@@ -14,7 +14,8 @@ export default class LoreUtil {
         this.setLore(i);
     }
     getLore() {
-        return this.item.getLore();
+        var _a;
+        return (_a = this.item.getLore()) !== null && _a !== void 0 ? _a : [];
     }
     setLore(lore) {
         this.item.setLore(lore);
@@ -34,14 +35,6 @@ export default class LoreUtil {
             return undefined;
         // key : value
         return piece.get().substring(key.length + 3);
-    }
-    hasTag(key) {
-        let lore = this.getLore();
-        for (let i of lore) {
-            if (i.startsWith(key))
-                return true;
-        }
-        return false;
     }
     getValueUseRepeat(key) {
         let value = this.getValueUseDefault(key);
@@ -76,11 +69,6 @@ export default class LoreUtil {
         // key : value
         piece.revise(key + " : " + value).set();
     }
-    setTag(key) {
-        if (this.hasTag(key))
-            return;
-        this.append(key);
-    }
     setValueUseRepeat(key, value, num) {
         this.setValueUseDefault(key, new Array(num).fill(value).join(""));
     }
@@ -103,11 +91,49 @@ export default class LoreUtil {
             return;
         }
         else {
-            for (let i of this.getLore()) {
-                yield [...i.trim().split(" : ")];
+            const first = new Piece(this, -1);
+            while (first.hasNext()) {
+                first.next();
+                if (!first.get().includes(" : "))
+                    break;
+            }
+            first.pre();
+            while (first.hasNext()) {
+                first.next();
+                yield [...first.get().trim().split(" : ")];
             }
             return;
         }
+    }
+    setTags(str) {
+        this.deleteTags();
+        this.setLore(str.concat(this.getLore()));
+    }
+    deleteTags() {
+        const first = new Piece(this, -1);
+        while (first.hasNext()) {
+            first.next();
+            if (first.get().includes(" : ")) {
+                first.pre();
+                break;
+            }
+            ;
+        }
+        first.next();
+        this.setLore(this.getLore().slice(first.index));
+    }
+    getTags() {
+        const first = new Piece(this, -1);
+        while (first.hasNext()) {
+            first.next();
+            if (first.get().includes(" : ")) {
+                first.pre();
+                break;
+            }
+            ;
+        }
+        first.next();
+        return this.getLore().slice(0, first.index);
     }
     setValueUseMap(key, use, value) {
         let tab = "  ";
@@ -165,7 +191,15 @@ export default class LoreUtil {
         let keyMap = new Map();
         let tab = "  ";
         let key = "";
-        let piece = new Piece(this, -1);
+        const piece = new Piece(this, -1);
+        while (piece.hasNext()) {
+            piece.next();
+            if (piece.get().includes(" : ")) {
+                piece.pre();
+                break;
+            }
+            ;
+        }
         while (piece.hasNext()) {
             piece.next();
             if (!piece.get().startsWith(tab)) {
@@ -192,7 +226,7 @@ export default class LoreUtil {
             res.push(k + " : ");
             res = res.concat(arr.map((e) => tab + e));
         }
-        this.setLore(res);
+        this.setLore(this.getTags().concat(res));
     }
     removeColorCode(s) {
         while (s.startsWith("§"))

@@ -4,11 +4,11 @@ import ExColorLoreUtil from "../../../modules/exmc/server/item/ExColorLoreUtil.j
 import ExItem from "../../../modules/exmc/server/item/ExItem.js";
 import { decodeUnicode } from "../../../modules/exmc/utils/Unicode.js";
 import TalentData, { Occupation, Talent } from "../cache/TalentData.js";
-import isEquipment from "../items/isEquipment.js";
 import GameController from "./GameController.js";
 import damageShow from "../helper/damageShow.js";
 import MonitorManager from "../../../modules/exmc/utils/MonitorManager.js";
 import ExSystem from '../../../modules/exmc/utils/ExSystem.js';
+import ItemTagComponent from '../data/ItemTagComponent.js';
 export default class PomTalentSystem extends GameController {
     constructor() {
         super(...arguments);
@@ -94,51 +94,86 @@ export default class PomTalentSystem extends GameController {
         });
         let lastListener = (d) => { };
         this.getEvents().exEvents.afterItemOnHandChange.subscribe((e) => {
-            var _a, _b, _c, _d, _e;
+            var _a, _b, _c, _d, _e, _f, _g;
             let bag = this.exPlayer.getBag();
-            if (e.afterItem && isEquipment(e.afterItem.typeId)) {
+            if (e.afterItem) {
+                //设置lore
                 const lore = new ExColorLoreUtil(e.afterItem);
                 //TalentData.calculateTalentToLore(this.data.talent.talents, this.data.talent.occupation, ExItem.getInstance(e.afterItem), this.getLang());
-                if (e.afterItem.typeId.startsWith("dec:")) {
-                    lore.setTag("在主手时: +40％攻击伤害");
-                    lore.sort();
+                let comp = new ItemTagComponent(ExItem.getInstance(e.afterItem));
+                comp.setGroup(comp.dataGroupJudge(this.client));
+                let base = [];
+                if (comp.hasComponent("actual_level"))
+                    base.push(`§r§e基础属性` + "  §r§6LV." + comp.getComponentWithGroup("actual_level"));
+                if (comp.hasComponent("armor_protection"))
+                    base.push("§r§7•护甲值§6+" + comp.getComponentWithGroup("movement_addition"));
+                if (comp.hasComponent("armor_type")) {
+                    //let typeMsg = comp.getComponentWithGroup("armor_type");
+                    //lore.setValueUseDefault("盔甲类型", typeMsg.tagName + ": " + typeMsg.data);
+                    if (comp.hasComponent("armor_physical_protection"))
+                        base.push((_a = "§r§7•物理抗性§6+" + comp.getComponentWithGroup("armor_physical_protection") + "％§r§7 | 受到的物理伤害§6-" + comp.getComponentWithGroup("armor_physical_reduction")) !== null && _a !== void 0 ? _a : 0);
+                    if (comp.hasComponent("armor_magic_protection"))
+                        base.push("§r§7•魔法抗性§6+" + comp.getComponentWithGroup("armor_magic_protection") + "％");
                 }
+                let smove = (_b = comp.getComponentWithGroup("sneak_movement_addition")) !== null && _b !== void 0 ? _b : 0;
+                if (comp.hasComponent("movement_addition")) {
+                    base.push("§r§7•移动速度§6+" + comp.getComponentWithGroup("movement_addition"));
+                    if (comp.hasComponent("sneak_movement_addition"))
+                        base[base.length - 1] += ("§r§7 | 潜行移速" + (smove < 0 ? "§4" + smove : "§6+" + smove));
+                }
+                else if (comp.hasComponent("sneak_movement_addition"))
+                    base.push("§r§7•潜行移速" + (smove < 0 ? "§4" + smove : "§6+" + smove));
+                if (comp.hasComponent("equipment_type")) {
+                    if (e.afterItem.typeId.startsWith("dec:")) {
+                        base.push("§r§7•在主手时: +40％§7攻击伤害");
+                    }
+                    // let typeMsg = comp.getComponentWithGroup("equipment_type");
+                    // lore.setValueUseDefault("武器类型", typeMsg.tagName + ": " + typeMsg.data);
+                }
+                if (base.length > 0) {
+                    base[base.length - 1] = base[base.length - 1] + "§r";
+                    lore.setTags(base);
+                }
+                lore.sort();
+                this.itemOnHandComp = comp;
                 bag.itemOnMainHand = e.afterItem;
-                let maxSingleDamage = parseFloat((_a = lore.getValueUseMap("total", this.getLang().maxSingleDamage)) !== null && _a !== void 0 ? _a : "0");
-                let maxSecondaryDamage = parseFloat((_b = lore.getValueUseMap("total", this.getLang().maxSecondaryDamage)) !== null && _b !== void 0 ? _b : "0");
-                let damage = 0;
-                this.hasCauseDamage.removeMonitor(lastListener);
-                lastListener = (d) => {
-                    damage += d;
-                    maxSingleDamage = Math.ceil(Math.max(d, maxSingleDamage));
-                };
-                this.hasCauseDamage.addMonitor(lastListener);
-                (_c = this.equiTotalTask) === null || _c === void 0 ? void 0 : _c.stop();
-                (this.equiTotalTask = ExSystem.tickTask(() => {
-                    var _a, _b, _c, _d;
-                    let shouldUpstate = false;
-                    maxSecondaryDamage = Math.ceil(Math.max(maxSecondaryDamage, damage / 5));
-                    damage = 0;
-                    if (((_a = lore.getValueUseMap("total", this.getLang().maxSingleDamage)) !== null && _a !== void 0 ? _a : "0") !== maxSingleDamage + "") {
-                        lore.setValueUseMap("total", this.getLang().maxSingleDamage, maxSingleDamage + "");
-                        shouldUpstate = true;
-                    }
-                    if (((_b = lore.getValueUseMap("total", this.getLang().maxSecondaryDamage)) !== null && _b !== void 0 ? _b : "0") !== maxSecondaryDamage + "") {
-                        lore.setValueUseMap("total", this.getLang().maxSecondaryDamage, maxSecondaryDamage + "");
-                        shouldUpstate = true;
-                    }
-                    if (shouldUpstate && ((_c = bag.itemOnMainHand) === null || _c === void 0 ? void 0 : _c.typeId) === ((_d = e === null || e === void 0 ? void 0 : e.afterItem) === null || _d === void 0 ? void 0 : _d.typeId)) {
-                        lore.sort();
-                        bag.itemOnMainHand = e.afterItem;
-                    }
-                }).delay(5 * 20)).start(); //
+                //武器特殊项
+                if (comp.hasComponent("equipment_type")) {
+                    let maxSingleDamage = parseFloat((_c = lore.getValueUseMap("total", this.getLang().maxSingleDamage)) !== null && _c !== void 0 ? _c : "0");
+                    let maxSecondaryDamage = parseFloat((_d = lore.getValueUseMap("total", this.getLang().maxSecondaryDamage)) !== null && _d !== void 0 ? _d : "0");
+                    let damage = 0;
+                    this.hasCauseDamage.removeMonitor(lastListener);
+                    lastListener = (d) => {
+                        damage += d;
+                        maxSingleDamage = Math.ceil(Math.max(d, maxSingleDamage));
+                    };
+                    this.hasCauseDamage.addMonitor(lastListener);
+                    (_e = this.equiTotalTask) === null || _e === void 0 ? void 0 : _e.stop();
+                    (this.equiTotalTask = ExSystem.tickTask(() => {
+                        var _a, _b, _c, _d;
+                        let shouldUpstate = false;
+                        maxSecondaryDamage = Math.ceil(Math.max(maxSecondaryDamage, damage / 5));
+                        damage = 0;
+                        if (((_a = lore.getValueUseMap("total", this.getLang().maxSingleDamage)) !== null && _a !== void 0 ? _a : "0") !== maxSingleDamage + "") {
+                            lore.setValueUseMap("total", this.getLang().maxSingleDamage, maxSingleDamage + "");
+                            shouldUpstate = true;
+                        }
+                        if (((_b = lore.getValueUseMap("total", this.getLang().maxSecondaryDamage)) !== null && _b !== void 0 ? _b : "0") !== maxSecondaryDamage + "") {
+                            lore.setValueUseMap("total", this.getLang().maxSecondaryDamage, maxSecondaryDamage + "");
+                            shouldUpstate = true;
+                        }
+                        if (shouldUpstate && ((_c = bag.itemOnMainHand) === null || _c === void 0 ? void 0 : _c.typeId) === ((_d = e === null || e === void 0 ? void 0 : e.afterItem) === null || _d === void 0 ? void 0 : _d.typeId)) {
+                            lore.sort();
+                            bag.itemOnMainHand = e.afterItem;
+                        }
+                    }).delay(5 * 20)).start(); //
+                }
             }
             else {
-                (_d = this.equiTotalTask) === null || _d === void 0 ? void 0 : _d.stop();
+                (_f = this.equiTotalTask) === null || _f === void 0 ? void 0 : _f.stop();
             }
-            this.exPlayer.triggerEvent("hp:" + Math.round((20 + ((_e = this.talentRes.get(Talent.VIENTIANE)) !== null && _e !== void 0 ? _e : 0))));
+            this.exPlayer.triggerEvent("hp:" + Math.round((20 + ((_g = this.talentRes.get(Talent.VIENTIANE)) !== null && _g !== void 0 ? _g : 0))));
         });
-        //追逐箭
     }
     onLoaded() {
         this.updateTalentRes();

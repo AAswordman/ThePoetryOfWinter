@@ -3,25 +3,18 @@ export default class ExColorLoreUtil {
     constructor(item) {
         this.lore = new LoreUtil(item);
     }
-    setTag(key) {
-        this.lore.setTag("§r§n§6" + key);
-    }
-    hasTag(key) {
-        let res = this.lore.hasTag(key.startsWith("§") ? key : "§r§n§6" + key);
-        return res;
-    }
     getValueUseMap(key, use) {
-        let res = this.lore.getValueUseMap("§r§l§f" + key, "§r§o§b" + use);
+        let res = this.lore.getValueUseMap("§r§l" + key, "§r§o§b" + use);
         return (res === null || res === void 0 ? void 0 : res.startsWith("§")) ? res.substring(6) : res;
     }
     setValueUseMap(key, use, value) {
-        this.lore.setValueUseMap("§r§l§f" + key, "§r§o§b" + use, "§r§o§e" + value);
+        this.lore.setValueUseMap("§r§l" + key, "§r§o§b" + use, "§r§o§e" + value);
     }
     setValueUseDefault(key, value) {
-        this.lore.setValueUseDefault("§r§l§f" + key, "§r§o§e" + value);
+        this.lore.setValueUseDefault("§r§b" + key, (typeof value === "number" ? "§r§e" : "§r§a") + value);
     }
     getValueUseDefault(key) {
-        return this.lore.getValueUseDefault("§r§l§f" + key);
+        return this.lore.getValueUseDefault("§r§l" + key);
     }
     *entries(key) {
         for (let i of this.lore.entries(key)) {
@@ -35,11 +28,17 @@ export default class ExColorLoreUtil {
         this.lore.setLore(l);
     }
     delete(name) {
-        this.lore.delete("§r§l§f" + name);
-        this.lore.delete("§r§n§6" + name);
+        this.lore.delete("§r§l" + name);
+        this.lore.delete("§r§6§6" + name);
     }
     search(name) {
-        return this.lore.search("§r§l§f" + name) || this.lore.search("§r§n§6" + name);
+        return this.lore.search("§r§l" + name) || this.lore.search("§r§6§6" + name);
+    }
+    setTags(str) {
+        this.lore.setTags(str);
+    }
+    getTags() {
+        return this.lore.getTags();
     }
 }
 //# sourceMappingURL=ExColorLoreUtil.js.map

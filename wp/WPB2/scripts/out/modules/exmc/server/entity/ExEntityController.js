@@ -12,6 +12,7 @@ import { EntityHurtAfterEvent } from '@minecraft/server';
 import ExEntityEvents from "./ExEntityEvents.js";
 import { eventDecoratorFactory, registerEvent } from "../events/eventDecoratorFactory.js";
 import { ExOtherEventNames } from "../events/events.js";
+import { falseIfError } from "../../utils/tool.js";
 export default class ExEntityController {
     constructor(e, server) {
         this._isKilled = false;
@@ -76,16 +77,7 @@ export default class ExEntityController {
 }
 __decorate([
     registerEvent(ExOtherEventNames.beforeTick, (ctrl, e) => {
-        if (e.currentTick % 1 === 0) {
-            try {
-                let dim = ctrl.entity.dimension;
-                return dim === undefined;
-            }
-            catch (o) {
-                return true;
-            }
-        }
-        return false;
+        return !falseIfError(() => ctrl.entity.dimension);
     }),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
