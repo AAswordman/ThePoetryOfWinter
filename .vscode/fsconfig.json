@@ -1,0 +1,17 @@
+{
+    "configs": [{
+        "name": "sample_sync_config",
+        "enabled": true,
+        "sync": [{
+                "src": "D:/eclipse/file/root/mygitbackup/wp/WPB2",
+                "dest": "D:/eclipse/file/root/release/installations/1.20.10.1/packageData/development_behavior_packs/WPB2",
+                "bidir": true
+            },
+            {
+                "src": "D:/eclipse/file/root/mygitbackup/wp/WPR2",
+                "dest": "D:/eclipse/file/root/release/installations/1.20.10.1/packageData/development_resource_packs/WPR2",
+                "bidir": true
+            }
+        ]
+    }]
+}

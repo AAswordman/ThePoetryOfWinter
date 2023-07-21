@@ -1,6 +1,6 @@
 {
     "format_version": 2,
-    "capabilities": ["script_eval"],
+    "capabilities": ["script_eval"       ],
     "header": {
         "description": "Explore the new World!!!Made by AA swordsman,LiLeyi and many their friends.Ver. 1.7.7B1",
         "name": "The Poetry Of Winter",
