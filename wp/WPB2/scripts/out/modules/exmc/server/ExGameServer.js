@@ -27,6 +27,7 @@ import { ExEventNames } from "./events/events.js";
 export default class ExGameServer {
     constructor(config) {
         this.entityControllers = new Map();
+        this.playerIsInSet = new Set();
         this.clients = new Map();
         this.clients_nameMap = new Map();
         this._events = new ExServerEvents(this);
@@ -44,6 +45,14 @@ export default class ExGameServer {
             ExCommand.init(this);
             ExClientEvents.init(this);
             ExEntityEvents.init(this);
+        }
+        for (const p of world.getAllPlayers()) {
+            if (!this.playerIsInSet.has(p.name)) {
+                this.onClientJoin({
+                    "playerId": p.id,
+                    "playerName": p.name
+                });
+            }
         }
         eventDecoratorFactory(this.getEvents(), this);
     }
@@ -121,6 +130,7 @@ export default class ExGameServer {
     }
     onClientJoin(event) {
         const playerName = event.playerName;
+        this.playerIsInSet.add(playerName);
         notUtillTask(this, () => {
             return world.getAllPlayers().findIndex(p => p.name === playerName) !== -1;
         }, () => {
@@ -134,6 +144,7 @@ export default class ExGameServer {
         });
     }
     onClientLeave(event) {
+        this.playerIsInSet.delete(event.playerName);
         let client = this.findClientByName(event.playerName);
         if (client === undefined) {
             ExGameConfig.console.error(event.playerName + " client is not exists");

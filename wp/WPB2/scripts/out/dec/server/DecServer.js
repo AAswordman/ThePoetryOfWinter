@@ -27,6 +27,7 @@ export default class DecServer extends ExGameServer {
         this.i_inviolable = new Objective("i_inviolable").create("i_inviolable");
         this.i_damp = new Objective("i_damp").create("i_damp");
         this.i_soft = new Objective("i_soft").create("i_soft");
+        this.i_heavy = new Objective("i_heavy").create("i_heavy");
         this.bullet_type = new Objective("bullet_type").create("bullet_type");
         //new Objective("harmless").create("harmless");
         this.nightEventListener = new VarOnChangeListener(e => {
@@ -214,6 +215,7 @@ export default class DecServer extends ExGameServer {
                 "scoreboard players remove @e[scores={i_inviolable=1..}] i_inviolable 1",
                 "scoreboard players remove @e[scores={i_damp=1..}] i_damp 1",
                 "scoreboard players remove @e[scores={i_soft=1..}] i_soft 1",
+                "scoreboard players remove @e[scores={i_heavy=1..}] i_heavy 1",
                 "scoreboard players remove @e[scores={harmless=1..}] harmless 1"
             ]);
             if (e.currentTick % 100 === 0) {

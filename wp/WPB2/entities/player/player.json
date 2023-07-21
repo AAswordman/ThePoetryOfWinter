@@ -768,16 +768,13 @@
                         "deals_damage": false
                     },
                     {
-                        "on_damage": {
-                            "filters": {
-                                "test": "has_tag",
-                                "operator": "!=",
-                                "subject": "self",
-                                "value": "wbkjlq"
-                            },
-                            "event": "armor_senior_ink_skill"
-                        },
-                        "deals_damage": false
+                        "on_damage":{
+                            "filters":{
+                                "all_of":[
+                                    { "test": "has_damage", "subject": "self", "operator": "equals", "value": "fatal" }
+                                ]
+                            }
+                        }
                     }
                 ]
             },

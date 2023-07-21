@@ -39,9 +39,8 @@ export default class PomEnChantSystem extends GameController {
             if (block.typeId === "wb:block_translate") {
                 e.cancel = true;
                 let bag = this.exPlayer.getBag();
-                let item = bag.itemOnMainHand;
-                let item2 = bag.itemOnMainHand;
-                if (item && item2) {
+                let item = e.itemStack;
+                if (item) {
                     if (item.typeId === "wb:book_cache") {
                         PomEnChantSystem.blockTranslateData.set(new Vector3(block).toString(), item);
                         this.setTimeout(() => {
@@ -54,7 +53,7 @@ export default class PomEnChantSystem extends GameController {
             else if (block.typeId === "wb:block_translate_book") {
                 e.cancel = true;
                 let bag = this.exPlayer.getBag();
-                const item = bag.itemOnMainHand;
+                const item = e.itemStack;
                 const saveItem = PomEnChantSystem.blockTranslateData.get(new Vector3(block).toString());
                 if (!saveItem)
                     return ExBlock.getInstance(block).transTo("wb:block_translate");

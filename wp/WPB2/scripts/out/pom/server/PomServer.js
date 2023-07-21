@@ -38,6 +38,7 @@ import ExEnvironment from '../../modules/exmc/server/env/ExEnvironment.js';
 import ExSystem from '../../modules/exmc/utils/ExSystem.js';
 import { ExEventNames } from '../../modules/exmc/server/events/events.js';
 import { MinecraftEffectTypes } from '../../modules/vanilla-data/lib/index.js';
+import { falseIfError } from '../../modules/exmc/utils/tool.js';
 // import * as b from "brain.js";
 export default class PomServer extends ExGameServer {
     constructor(config) {
@@ -407,6 +408,8 @@ export default class PomServer extends ExGameServer {
         this.ruinFuncLooper.start();
         //末影人清理
         this.getEvents().events.afterEntitySpawn.subscribe(e => {
+            if (!falseIfError(() => (e.entity.typeId)))
+                return;
             if (e.entity.typeId === MinecraftEntityTypes.enderman.id) {
                 if (e.entity.dimension === this.getDimension(MinecraftDimensionTypes.theEnd) &&
                     (isInProtectArea(e.entity.location))) {
