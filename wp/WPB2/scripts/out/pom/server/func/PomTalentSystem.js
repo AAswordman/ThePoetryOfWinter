@@ -297,6 +297,7 @@ export default class PomTalentSystem extends GameController {
                     testBeDamaged = 0;
                     testCauseDamage = 0;
                     testRoundDamage = 0;
+                    delay = 0;
                 }
             }
         });
