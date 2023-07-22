@@ -51,6 +51,7 @@ export default class DecClient extends ExGameClient {
                 this.decreaseCooldownEqu('missile', 4, 'dec:gold_ring');
                 this.decreaseCooldownEqu('missile', 5, 'dec:heart_ring');
                 this.decreaseCooldownEqu('missile', 3, 'dec:natural_ring');
+                this.decreaseCooldownEqu('missile', 7, 'dec:dust_ring');
             }
         });
         this.getEvents().exEvents.afterItemUse.subscribe((e) => {
