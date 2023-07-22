@@ -51,7 +51,7 @@ export default class PomMagicSystem extends GameController {
             }
             arr = arr.concat(Array.from(this._mapShow.values()).map(e => e.join('\n§r')));
             this.exPlayer.titleActionBar(arr.join("\n§r"));
-        }).delay(10);
+        }).delay(5);
     }
     registActionbarPass(name) {
         this._mapShow.set(name, []);

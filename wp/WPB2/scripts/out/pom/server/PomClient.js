@@ -36,6 +36,7 @@ import PomTaskSystem from "./func/PomTaskSystem.js";
 import SimpleItemUseFunc from "./func/SimpleItemUseFunc.js";
 import WarningAlertUI from "./ui/WarningAlertUI.js";
 import EntityPropCache from "../../modules/exmc/server/storage/cache/EntityPropCache.js";
+import { ArmorData } from "../../dec/server/items/ArmorData.js";
 export default class PomClient extends ExGameClient {
     // net;
     constructor(server, id, player) {
@@ -165,6 +166,9 @@ export default class PomClient extends ExGameClient {
     progressTaskFinish(name, damage) {
         this.taskSystem.progressTaskFinish(name, damage);
     }
+    chooseArmor(a) {
+        this.talentSystem.chooseArmor(a);
+    }
 }
 __decorate([
     receiveMessage("taskUi"),
@@ -178,4 +182,10 @@ __decorate([
     __metadata("design:paramtypes", [String, Number]),
     __metadata("design:returntype", void 0)
 ], PomClient.prototype, "progressTaskFinish", null);
+__decorate([
+    receiveMessage("chooseArmor"),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [ArmorData]),
+    __metadata("design:returntype", void 0)
+], PomClient.prototype, "chooseArmor", null);
 //# sourceMappingURL=PomClient.js.map

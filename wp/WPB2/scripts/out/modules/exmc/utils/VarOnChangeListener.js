@@ -10,5 +10,8 @@ export default class VarOnChangeListener {
             this.trigger(v, last);
         }
     }
+    force() {
+        this.trigger(this.value, this.value);
+    }
 }
 //# sourceMappingURL=VarOnChangeListener.js.map

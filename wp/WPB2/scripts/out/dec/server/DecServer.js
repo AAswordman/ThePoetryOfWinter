@@ -18,6 +18,7 @@ import IStructureDriver from './data/structure/IStructureDriver.js';
 import ExTaskRunner from '../../modules/exmc/server/ExTaskRunner.js';
 import { decTreeStructure } from './data/structure/decTreeStructure.js';
 import { MinecraftEffectTypes } from '../../modules/vanilla-data/lib/index.js';
+import DecNukeController from './entities/DecNukeController.js';
 export default class DecServer extends ExGameServer {
     constructor(config) {
         super(config);
@@ -236,6 +237,7 @@ export default class DecServer extends ExGameServer {
         this.addEntityController("dec:ash_knight", DecCommonBossLastStage);
         this.addEntityController("dec:everlasting_winter_ghast", DecEverlastingWinterGhastBoss1);
         this.addEntityController("dec:everlasting_winter_ghast_1", DecEverlastingWinterGhastBoss2);
+        this.addEntityController("dec:nuke", DecNukeController);
     }
     newClient(id, player) {
         return new DecClient(this, id, player);
