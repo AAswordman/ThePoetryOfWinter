@@ -21,5 +21,8 @@ export default class MathUtil {
         let length = Math.floor(Math.random() * (max - min + 1));
         return min + length;
     }
+    static round(x, n) {
+        return Math.round(x * (Math.pow(10, n))) / (Math.pow(10, n));
+    }
 }
 //# sourceMappingURL=MathUtil.js.map

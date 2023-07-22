@@ -55,8 +55,12 @@ export default class PomEnChantSystem extends GameController {
                 let bag = this.exPlayer.getBag();
                 const item = e.itemStack;
                 const saveItem = PomEnChantSystem.blockTranslateData.get(new Vector3(block).toString());
-                if (!saveItem)
-                    return ExBlock.getInstance(block).transTo("wb:block_translate");
+                if (!saveItem) {
+                    this.setTimeout(() => {
+                        ExBlock.getInstance(block).transTo("wb:block_translate");
+                    }, 0);
+                    return;
+                }
                 if (saveItem) {
                     if (item && item.amount === 1) {
                         PomEnChantSystem.blockTranslateData.delete(new Vector3(block).toString());
@@ -80,9 +84,11 @@ export default class PomEnChantSystem extends GameController {
                             }
                             lore = new ExColorLoreUtil(exHandItem);
                             lore.setLore([...exSaveItem.getLore()]);
-                            if (exSaveItem.hasEnchantsComponent()) {
+                            if (exSaveItem.hasEnchantsComponent() && exNewItem.hasEnchantsComponent()) {
                                 for (let i of exSaveItem.getEnchantsComponent().enchantments) {
-                                    lore.setValueUseMap("enchants", i.type.id, i.level + "");
+                                    if (exNewItem.getEnchantsComponent().enchantments.canAddEnchantment(i)) {
+                                        exNewItem.getEnchantsComponent().enchantments.addEnchantment(i);
+                                    }
                                 }
                                 exSaveItem.getEnchantsComponent().removeAllEnchantments();
                             }

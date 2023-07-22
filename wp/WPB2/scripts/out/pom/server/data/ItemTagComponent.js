@@ -14,6 +14,7 @@ const itemTagComponentType = {
     armor_type: [new ItemTagComponentGroup("", "")],
     equipment_type: [new ItemTagComponentGroup("", "")],
     movement_addition: [0],
+    underwater_movement_addition: [0],
     attack_addition: [0],
     sneak_movement_addition: [0],
     actual_level: [0],

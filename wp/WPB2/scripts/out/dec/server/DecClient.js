@@ -334,6 +334,7 @@ export default class DecClient extends ExGameClient {
     }
     chooseArmor(a) {
         this.useArmor = a;
+        ExGame.postMessageBetweenClient(this, PomServer, "chooseArmor", [a]);
     }
     onLoaded() {
         super.onLoaded();
