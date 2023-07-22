@@ -206,7 +206,7 @@ export default class DecServer extends ExGameServer {
         this.getEvents().events.beforeItemUseOn.subscribe(e => {
             const entity = ExEntity.getInstance(e.source);
             //防放方块
-            if (entity.getScoresManager().getScore(this.i_soft) > 0 && e.itemStack.typeId != "dec:iron_key" && e.itemStack.typeId != "dec:frozen_power") {
+            if (entity.getScoresManager().getScore(this.i_soft) > 0 && e.itemStack.typeId != "dec:iron_key" && e.itemStack.typeId != "dec:frozen_power" && e.itemStack.typeId != "dec:ash_key" && e.itemStack.typeId != "dec:challenge_of_ash") {
                 e.cancel = true;
             }
         });
