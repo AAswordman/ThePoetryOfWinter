@@ -115,7 +115,7 @@ export default class ExEntity {
         return new ExScoresManager(this._entity);
     }
     triggerEvent(name) {
-        // console.warn(name+' trigger event');
+        console.warn(name + ' trigger event');
         this._entity.triggerEvent(name);
     }
     get position() {
