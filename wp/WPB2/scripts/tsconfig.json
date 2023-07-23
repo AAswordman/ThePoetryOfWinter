@@ -19,7 +19,8 @@
         "skipLibCheck": true,
         "noImplicitOverride": true,
         "strictNullChecks": true,
-        "forceConsistentCasingInFileNames": true
+        "forceConsistentCasingInFileNames": true,
+        "noEmitOnError": true
         // "allowUnreachableCode": true,
         // "allowUnusedLabels": true
         /*

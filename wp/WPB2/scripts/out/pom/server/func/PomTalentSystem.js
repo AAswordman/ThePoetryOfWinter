@@ -2,7 +2,7 @@ import MathUtil from "../../../modules/exmc/math/MathUtil.js";
 import ExEntity from "../../../modules/exmc/server/entity/ExEntity.js";
 import ExPlayer from "../../../modules/exmc/server/entity/ExPlayer.js";
 import ExColorLoreUtil from "../../../modules/exmc/server/item/ExColorLoreUtil.js";
-import ExItem from "../../../modules/exmc/server/item/ExItem.js";
+import "../../../modules/exmc/server/item/ExItem.js";
 import { decodeUnicode } from "../../../modules/exmc/utils/Unicode.js";
 import TalentData, { Occupation, Talent } from "../cache/TalentData.js";
 import GameController from "./GameController.js";
@@ -54,14 +54,15 @@ export default class PomTalentSystem extends GameController {
         this.armorUpdater = new VarOnChangeListener((n, l) => {
             const bag = this.exPlayer.getBag();
             const head = bag.equipmentOnHead, chest = bag.equipmentOnChest, legs = bag.equipmentOnLegs, feet = bag.equipmentOnFeet;
+            this.headComp = undefined, this.chestComp = undefined, this.legComp = undefined, this.feetComp = undefined;
             if (head)
-                this.headComp = new ItemTagComponent(ExItem.getInstance(head));
+                this.headComp = new ItemTagComponent(head);
             if (chest)
-                this.chestComp = new ItemTagComponent(ExItem.getInstance(chest));
+                this.chestComp = new ItemTagComponent(chest);
             if (legs)
-                this.legComp = new ItemTagComponent(ExItem.getInstance(legs));
+                this.legComp = new ItemTagComponent(legs);
             if (feet)
-                this.feetComp = new ItemTagComponent(ExItem.getInstance(feet));
+                this.feetComp = new ItemTagComponent(feet);
             this.updateArmorData();
             this.updatePlayerAttribute();
         }, "");
@@ -70,6 +71,9 @@ export default class PomTalentSystem extends GameController {
         this.hasCauseDamage = new MonitorManager();
     }
     chooseArmor(a) {
+    }
+    calculateExemptionByData(protection, resilience) {
+        return -(4 * protection * resilience) / (resilience + 8) / (protection - 125);
     }
     updateTalentRes() {
         this.talentRes.clear();
@@ -112,13 +116,22 @@ export default class PomTalentSystem extends GameController {
                 + ((_f = (_e = this.legComp) === null || _e === void 0 ? void 0 : _e.getComponentWithGroup(e)) !== null && _f !== void 0 ? _f : 0)
                 + ((_h = (_g = this.feetComp) === null || _g === void 0 ? void 0 : _g.getComponentWithGroup(e)) !== null && _h !== void 0 ? _h : 0);
         });
+        const dataList = ["armor_protection", "armor_resilience"]
+            .map(e => {
+            var _a, _b, _c, _d, _e, _f, _g, _h;
+            return ((_b = (_a = this.headComp) === null || _a === void 0 ? void 0 : _a.getComponentWithGroup(e)) !== null && _b !== void 0 ? _b : 0)
+                + ((_d = (_c = this.chestComp) === null || _c === void 0 ? void 0 : _c.getComponentWithGroup(e)) !== null && _d !== void 0 ? _d : 0)
+                + ((_f = (_e = this.legComp) === null || _e === void 0 ? void 0 : _e.getComponentWithGroup(e)) !== null && _f !== void 0 ? _f : 0)
+                + ((_h = (_g = this.feetComp) === null || _g === void 0 ? void 0 : _g.getComponentWithGroup(e)) !== null && _h !== void 0 ? _h : 0);
+        });
+        this.armor_protection[1] = 100 * (1 - (1 - this.armor_protection[1] / 100) * (1 - this.calculateExemptionByData(...dataList)));
     }
     //更新玩家属性（不改变手持）
     updatePlayerAttribute() {
-        //攻击还没写
         var _a, _b, _c, _d, _e, _f;
+        //攻击还没写
         //保护
-        this.exPlayer.triggerEvent(`damage_senser:mg_${MathUtil.clamp(Math.round(this.armor_protection[0] / 2) * 2, 0, 60)}_ph_${MathUtil.clamp(Math.round(this.armor_protection[1] / 2) * 2, 0, 60)}_ph2_${MathUtil.clamp(Math.round(this.armor_protection[2]), 0, 4)}`);
+        this.exPlayer.triggerEvent(`damage_senser:mg_${MathUtil.clamp(Math.round(this.armor_protection[0] / 4) * 4, 0, 80)}_ph_${MathUtil.clamp(Math.round(this.armor_protection[1] / 2) * 2, 0, 100)}_ph2_${MathUtil.clamp(Math.round(this.armor_protection[2]), 0, 3)}`);
         //速度
         this.movement_addition[0] = this.armor_movement_addition[0] + ((_b = (_a = this.itemOnHandComp) === null || _a === void 0 ? void 0 : _a.getComponentWithGroup("movement_addition")) !== null && _b !== void 0 ? _b : 0);
         this.movement_addition[1] = this.armor_movement_addition[1] + ((_d = (_c = this.itemOnHandComp) === null || _c === void 0 ? void 0 : _c.getComponentWithGroup("sneak_movement_addition")) !== null && _d !== void 0 ? _d : 0);
@@ -153,7 +166,7 @@ export default class PomTalentSystem extends GameController {
             if (item) {
                 if (item.typeId.startsWith("dec:"))
                     damageFac += 0.4;
-                let lore = new ExColorLoreUtil(ExItem.getInstance(item));
+                let lore = new ExColorLoreUtil(item);
             }
             if (this.strikeSkill) {
                 if (this.data.talent.occupation.id === Occupation.ASSASSIN.id)
@@ -178,28 +191,28 @@ export default class PomTalentSystem extends GameController {
         });
         let lastListener = (d) => { };
         this.getEvents().exEvents.afterItemOnHandChange.subscribe((e) => {
-            var _a, _b, _c, _d, _e, _f, _g;
+            var _a, _b, _c, _d, _e, _f, _g, _h;
             let bag = this.exPlayer.getBag();
             if (e.afterItem) {
                 //设置lore
                 const lore = new ExColorLoreUtil(e.afterItem);
                 //TalentData.calculateTalentToLore(this.data.talent.talents, this.data.talent.occupation, ExItem.getInstance(e.afterItem), this.getLang());
-                let comp = new ItemTagComponent(ExItem.getInstance(e.afterItem));
+                let comp = new ItemTagComponent(e.afterItem);
                 comp.setGroup(comp.dataGroupJudge(this.client));
                 let base = [];
                 if (comp.hasComponent("actual_level"))
                     base.push(`§r§e基础属性` + "  §r§6LV." + comp.getComponentWithGroup("actual_level"));
                 if (comp.hasComponent("armor_protection"))
-                    base.push("§r§7•护甲值§6+" + comp.getComponentWithGroup("movement_addition"));
+                    base.push((_a = "§r§7•护甲值§6+" + comp.getComponentWithGroup("movement_addition") + "§r§7 | 护甲韧性§6+" + comp.getComponentWithGroup("armor_resilience")) !== null && _a !== void 0 ? _a : 0);
                 if (comp.hasComponent("armor_type")) {
                     //let typeMsg = comp.getComponentWithGroup("armor_type");
                     //lore.setValueUseDefault("盔甲类型", typeMsg.tagName + ": " + typeMsg.data);
                     if (comp.hasComponent("armor_physical_protection"))
-                        base.push((_a = "§r§7•物理抗性§6+" + comp.getComponentWithGroup("armor_physical_protection") + "％§r§7 | 受到的物理伤害§6-" + comp.getComponentWithGroup("armor_physical_reduction")) !== null && _a !== void 0 ? _a : 0);
+                        base.push((_b = "§r§7•物理抗性§6+" + comp.getComponentWithGroup("armor_physical_protection") + "％§r§7 | 受到的物理伤害§6-" + comp.getComponentWithGroup("armor_physical_reduction")) !== null && _b !== void 0 ? _b : 0);
                     if (comp.hasComponent("armor_magic_protection"))
                         base.push("§r§7•魔法抗性§6+" + comp.getComponentWithGroup("armor_magic_protection") + "％");
                 }
-                let smove = (_b = comp.getComponentWithGroup("sneak_movement_addition")) !== null && _b !== void 0 ? _b : 0;
+                let smove = (_c = comp.getComponentWithGroup("sneak_movement_addition")) !== null && _c !== void 0 ? _c : 0;
                 if (comp.hasComponent("movement_addition")) {
                     base.push("§r§7•移动速度§6+" + comp.getComponentWithGroup("movement_addition"));
                     if (comp.hasComponent("sneak_movement_addition"))
@@ -223,8 +236,8 @@ export default class PomTalentSystem extends GameController {
                 bag.itemOnMainHand = e.afterItem;
                 //武器特殊项
                 if (comp.hasComponent("equipment_type")) {
-                    let maxSingleDamage = parseFloat((_c = lore.getValueUseMap("total", this.getLang().maxSingleDamage)) !== null && _c !== void 0 ? _c : "0");
-                    let maxSecondaryDamage = parseFloat((_d = lore.getValueUseMap("total", this.getLang().maxSecondaryDamage)) !== null && _d !== void 0 ? _d : "0");
+                    let maxSingleDamage = parseFloat((_d = lore.getValueUseMap("total", this.getLang().maxSingleDamage)) !== null && _d !== void 0 ? _d : "0");
+                    let maxSecondaryDamage = parseFloat((_e = lore.getValueUseMap("total", this.getLang().maxSecondaryDamage)) !== null && _e !== void 0 ? _e : "0");
                     let damage = 0;
                     this.hasCauseDamage.removeMonitor(lastListener);
                     lastListener = (d) => {
@@ -232,7 +245,7 @@ export default class PomTalentSystem extends GameController {
                         maxSingleDamage = Math.ceil(Math.max(d, maxSingleDamage));
                     };
                     this.hasCauseDamage.addMonitor(lastListener);
-                    (_e = this.equiTotalTask) === null || _e === void 0 ? void 0 : _e.stop();
+                    (_f = this.equiTotalTask) === null || _f === void 0 ? void 0 : _f.stop();
                     (this.equiTotalTask = ExSystem.tickTask(() => {
                         var _a, _b, _c, _d;
                         let shouldUpstate = false;
@@ -254,11 +267,11 @@ export default class PomTalentSystem extends GameController {
                 }
             }
             else {
-                (_f = this.equiTotalTask) === null || _f === void 0 ? void 0 : _f.stop();
+                (_g = this.equiTotalTask) === null || _g === void 0 ? void 0 : _g.stop();
                 this.itemOnHandComp = undefined;
             }
             this.updatePlayerAttribute();
-            this.exPlayer.triggerEvent("hp:" + Math.round((20 + ((_g = this.talentRes.get(Talent.VIENTIANE)) !== null && _g !== void 0 ? _g : 0))));
+            this.exPlayer.triggerEvent("hp:" + Math.round((20 + ((_h = this.talentRes.get(Talent.VIENTIANE)) !== null && _h !== void 0 ? _h : 0))));
         });
         let testCauseDamage = 0;
         let testRoundDamage = 0;

@@ -5,30 +5,33 @@
       "states": {
         "default": {
           "on_entry": [
-            "variable.rskills=Math.floor(Math.random(0,4.9));"
+            "variable.rskills=Math.floor(Math.random(0,4.9));",
+            "variable.use_time=query.life_time;",
+            "/tag @s add cannon"
           ],
           "transitions": [
             {
-              "01": "variable.rskills == 0"
+              "01": "variable.rskills == 0&&query.life_time-variable.use_time>=1"
             },
             {
-              "02": "variable.rskills == 1"
+              "02": "variable.rskills == 1&&query.life_time-variable.use_time>=1"
             },
             {
-              "03": "variable.rskills == 2"
+              "03": "variable.rskills == 2&&query.life_time-variable.use_time>=1"
             },
             {
-              "04": "variable.rskills == 3"
+              "04": "variable.rskills == 3&&query.life_time-variable.use_time>=1"
             },
             {
-              "05": "variable.rskills == 4"
+              "05": "variable.rskills == 4&&query.life_time-variable.use_time>=1"
             }
           ]
         },
         "01": {
           "on_entry": [
             "/execute as @p at @s run function 4_x/cannon_ancient_stone_a",
-            "variable.use_time=query.life_time;"
+            "variable.use_time=query.life_time;",
+            "/tag @s remove cannon"
           ],
           "transitions": [
             {
@@ -39,7 +42,9 @@
         "02": {
           "on_entry": [
             "/execute as @p at @s run function 4_x/cannon_ancient_stone_b",
-            "variable.use_time=query.life_time;"
+            "variable.use_time=query.life_time;",
+            "/tag @s remove cannon"
+
           ],
           "transitions": [
             {
@@ -50,7 +55,9 @@
         "03": {
           "on_entry": [
             "/execute as @p at @s run function 4_x/cannon_ancient_stone_c",
-            "variable.use_time=query.life_time;"
+            "variable.use_time=query.life_time;",
+            "/tag @s remove cannon"
+
           ],
           "transitions": [
             {
@@ -61,7 +68,9 @@
         "04": {
           "on_entry": [
             "/execute as @p at @s run function 4_x/cannon_ancient_stone_d",
-            "variable.use_time=query.life_time;"
+            "variable.use_time=query.life_time;",
+            "/tag @s remove cannon"
+
           ],
           "transitions": [
             {
@@ -72,7 +81,9 @@
         "05": {
           "on_entry": [
             "/execute as @p at @s run function 4_x/cannon_ancient_stone_e",
-            "variable.use_time=query.life_time;"
+            "variable.use_time=query.life_time;",
+            "/tag @s remove cannon"
+
           ],
           "transitions": [
             {
