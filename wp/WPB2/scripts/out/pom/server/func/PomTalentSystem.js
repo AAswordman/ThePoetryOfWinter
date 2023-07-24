@@ -11,6 +11,7 @@ import MonitorManager from "../../../modules/exmc/utils/MonitorManager.js";
 import ExSystem from '../../../modules/exmc/utils/ExSystem.js';
 import ItemTagComponent from '../data/ItemTagComponent.js';
 import VarOnChangeListener from '../../../modules/exmc/utils/VarOnChangeListener.js';
+import ExGame from '../../../modules/exmc/server/ExGame.js';
 export default class PomTalentSystem extends GameController {
     constructor() {
         super(...arguments);
@@ -281,29 +282,41 @@ export default class PomTalentSystem extends GameController {
             if (data.message.startsWith(">/_debugger")) {
                 if (!this.debugger) {
                     this.debugger = true;
-                    this.client.magicSystem.registActionbarPass("debugger");
-                    this.hasBeenDamaged.addMonitor(e => {
-                        testBeDamaged += e;
-                    });
-                    this.hasCauseDamage.addMonitor(e => {
-                        testCauseDamage += e;
-                    });
-                    this.getEvents().exEvents.onLongTick.subscribe(e => {
-                        delay += e.deltaTime;
-                        const nArr = [
-                            `造成伤害: ` + testCauseDamage,
-                            `造成秒伤: ` + testCauseDamage / delay,
-                            `被伤害: ` + testBeDamaged,
-                            `被秒伤害: ` + testBeDamaged / delay,
-                            `周围伤害采集: ` + testRoundDamage
-                        ];
-                        this.client.magicSystem.setActionbarByPass("debugger", nArr);
-                    });
-                    this.client.getServer().getEvents().events.afterEntityHurt.subscribe(e => {
-                        console.warn(this.exPlayer.position.sub(e.hurtEntity.location).len());
-                        if (this.exPlayer.position.sub(e.hurtEntity.location).len() < 16) {
-                            testRoundDamage += e.damage;
-                        }
+                    ExGame.run(() => {
+                        let resetTime = 5;
+                        this.client.magicSystem.registActionbarPass("debugger");
+                        this.hasBeenDamaged.addMonitor(e => {
+                            testBeDamaged += e;
+                            resetTime = 5;
+                        });
+                        this.hasCauseDamage.addMonitor(e => {
+                            testCauseDamage += e;
+                            resetTime = 5;
+                        });
+                        this.getEvents().exEvents.onLongTick.subscribe(e => {
+                            delay += e.deltaTime;
+                            const nArr = [
+                                `造成伤害: ` + testCauseDamage,
+                                `造成秒伤: ` + testCauseDamage / delay,
+                                `被伤害: ` + testBeDamaged,
+                                `被秒伤害: ` + testBeDamaged / delay,
+                                `周围伤害采集: ` + testRoundDamage
+                            ];
+                            if (resetTime <= 0) {
+                                testBeDamaged = 0;
+                                testCauseDamage = 0;
+                                testRoundDamage = 0;
+                                delay = 0;
+                            }
+                            else
+                                resetTime -= e.deltaTime;
+                            this.client.magicSystem.setActionbarByPass("debugger", nArr);
+                        });
+                        this.client.getServer().getEvents().events.afterEntityHurt.subscribe(e => {
+                            if (this.exPlayer.position.sub(e.hurtEntity.location).len() < 16) {
+                                testRoundDamage += e.damage;
+                            }
+                        });
                     });
                 }
                 else {

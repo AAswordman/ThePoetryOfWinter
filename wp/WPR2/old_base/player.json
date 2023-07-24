@@ -1,0 +1,1738 @@
+{
+    "format_version": "1.11.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "minecraft:player",
+            "is_spawnable": false,
+            "is_summonable": false,
+            "is_experimental": false,
+            "animations": {
+                "wbtext": "controller.animation.player.wb.starttext",
+                "wbgradeline": "animation.player.wb.gradeline",
+                "wbpress": "controller.animation.player.wb.press",
+                "delivery": "animation.player.wb.delivery",
+                "eff": "controller.animation.player.wb.eff",
+                "order": "animation.player.wb.order",
+                "sweep": "controller.animation.player.wb.sweep",
+                "map": "controller.animation.player.wb.map",
+                "longorder": "animation.player.wb.longorder",
+                "cooling": "controller.animation.player.wb.global.cooling",
+                "coolinguse": "animation.player.wb.global.cooling",
+                "normalod": "animation.player.wb.order.normal",
+                "enter_game": "animation.enter_game",
+                "frozen_staff": "animation.frozen_staff",
+                "diamond_staff": "animation.diamond_staff",
+                "storm_giant_sword": "animation.storm_giant_sword",
+                "gingerbread_totem_mainhand": "animation.gingerbread_totem",
+                "gingerbread_totem_offhand": "animation.gingerbread_totem",
+                "the_imperial_sword": "animation.the_imperial_sword",
+                "energy_totem_mainhand": "animation.energy_totem",
+                "energy_totem_offhand": "animation.energy_totem",
+                "star_sword_ranged": "animation.star_sword_ranged",
+                "warden_sword": "animation.warden_sword",
+                "event_skeleton_wave": "animation.event_skeleton_wave",
+                "event_zombie_wave": "animation.event_zombie_wave",
+                "event_shadow_night": "animation.event_shadow_night",
+                "event_cold_wave": "animation.event_cold_wave",
+                "event_halloween": "animation.event_halloween",
+                "event_silent_night": "animation.event_silent_night"
+            },
+            "scripts": {
+                "animate": [
+                    "longorder",
+                    "wbtext",
+                    "wbgradeline",
+                    "wbpress",
+                    "delivery",
+                    "order",
+                    "eff",
+                    "sweep",
+                    "map",
+                    "cooling",
+                    "coolinguse",
+                    "normalod",
+                    "enter_game",
+                    {
+                        "event_zombie_wave": "query.scoreboard('night_event') == 1"
+                    },
+                    {
+                        "event_skeleton_wave": "query.scoreboard('night_event') == 2"
+                    },
+                    {
+                        "event_shadow_night": "query.scoreboard('night_event') == 3"
+                    },
+                    {
+                        "event_cold_wave": "query.scoreboard('night_event') == 4"
+                    },
+                    {
+                        "event_halloween": "query.scoreboard('night_event') == 5"
+                    },
+                    {
+                        "event_silent_night": "query.scoreboard('night_event') == 6"
+                    },
+                    {
+                        "frozen_staff": "query.get_equipped_item_name == 'frozen_staff' && query.is_using_item"
+                    },
+                    {
+                        "diamond_staff": "query.get_equipped_item_name == 'diamond_staff' && query.is_using_item"
+                    },
+                    {
+                        "storm_giant_sword": "query.get_equipped_item_name == 'storm_giant_sword' && query.is_using_item"
+                    },
+                    {
+                        "gingerbread_totem_mainhand": "query.get_equipped_item_name('main_hand')== 'gingerbread_totem'"
+                    },
+                    {
+                        "gingerbread_totem_offhand": "query.get_equipped_item_name('off_hand')== 'gingerbread_totem'"
+                    },
+                    {
+                        "the_imperial_sword": "query.get_equipped_item_name == 'the_imperial_sword' && query.is_using_item"
+                    },
+                    {
+                        "energy_totem_mainhand": "query.get_equipped_item_name('main_hand')== 'energy_totem'"
+                    },
+                    {
+                        "energy_totem_offhand": "query.get_equipped_item_name('off_hand')== 'energy_totem'"
+                    },
+                    {
+                        "star_sword_ranged": "query.get_equipped_item_name == 'star_sword' && query.is_using_item"
+                    },
+                    {
+                        "warden_sword": "query.get_equipped_item_name == 'warden_sword' && query.is_using_item"
+                    }
+                ]
+            }
+        },
+        "component_groups": {
+            "movement_0":{"minecraft:movement":{"value":0}},
+            "movement_0.005":{"minecraft:movement":{"value":0.005}},
+            "movement_0.01":{"minecraft:movement":{"value":0.01}},
+            "movement_0.015":{"minecraft:movement":{"value":0.015}},
+            "movement_0.02":{"minecraft:movement":{"value":0.02}},
+            "movement_0.025":{"minecraft:movement":{"value":0.025}},
+            "movement_0.03":{"minecraft:movement":{"value":0.03}},
+            "movement_0.035":{"minecraft:movement":{"value":0.035}},
+            "movement_0.04":{"minecraft:movement":{"value":0.04}},
+            "movement_0.045":{"minecraft:movement":{"value":0.045}},
+            "movement_0.05":{"minecraft:movement":{"value":0.05}},
+            "movement_0.055":{"minecraft:movement":{"value":0.055}},
+            "movement_0.06":{"minecraft:movement":{"value":0.06}},
+            "movement_0.065":{"minecraft:movement":{"value":0.065}},
+            "movement_0.07":{"minecraft:movement":{"value":0.07}},
+            "movement_0.075":{"minecraft:movement":{"value":0.075}},
+            "movement_0.08":{"minecraft:movement":{"value":0.08}},
+            "movement_0.085":{"minecraft:movement":{"value":0.085}},
+            "movement_0.09":{"minecraft:movement":{"value":0.09}},
+            "movement_0.095":{"minecraft:movement":{"value":0.095}},
+            "movement_0.1":{"minecraft:movement":{"value":0.1}},
+            "movement_0.105":{"minecraft:movement":{"value":0.105}},
+            "movement_0.11":{"minecraft:movement":{"value":0.11}},
+            "movement_0.115":{"minecraft:movement":{"value":0.115}},
+            "movement_0.12":{"minecraft:movement":{"value":0.12}},
+            "movement_0.125":{"minecraft:movement":{"value":0.125}},
+            "movement_0.13":{"minecraft:movement":{"value":0.13}},
+            "movement_0.135":{"minecraft:movement":{"value":0.135}},
+            "movement_0.14":{"minecraft:movement":{"value":0.14}},
+            "movement_0.145":{"minecraft:movement":{"value":0.145}},
+            "movement_0.15":{"minecraft:movement":{"value":0.15}},
+            "movement_0.155":{"minecraft:movement":{"value":0.155}},
+            "movement_0.16":{"minecraft:movement":{"value":0.16}},
+            "movement_0.165":{"minecraft:movement":{"value":0.165}},
+            "movement_0.17":{"minecraft:movement":{"value":0.17}},
+            "movement_0.175":{"minecraft:movement":{"value":0.175}},
+            "movement_0.18":{"minecraft:movement":{"value":0.18}},
+            "movement_0.185":{"minecraft:movement":{"value":0.185}},
+            "movement_0.19":{"minecraft:movement":{"value":0.19}},
+            "movement_0.195":{"minecraft:movement":{"value":0.195}},
+            "movement_0.2":{"minecraft:movement":{"value":0.2}},
+
+            "underwater_movement_0":{"minecraft:underwater_movement":{"value":0}},
+            "underwater_movement_0.005":{"minecraft:underwater_movement":{"value":0.005}},
+            "underwater_movement_0.01":{"minecraft:underwater_movement":{"value":0.01}},
+            "underwater_movement_0.015":{"minecraft:underwater_movement":{"value":0.015}},
+            "underwater_movement_0.02":{"minecraft:underwater_movement":{"value":0.02}},
+            "underwater_movement_0.025":{"minecraft:underwater_movement":{"value":0.025}},
+            "underwater_movement_0.03":{"minecraft:underwater_movement":{"value":0.03}},
+            "underwater_movement_0.035":{"minecraft:underwater_movement":{"value":0.035}},
+            "underwater_movement_0.04":{"minecraft:underwater_movement":{"value":0.04}},
+            "underwater_movement_0.045":{"minecraft:underwater_movement":{"value":0.045}},
+            "underwater_movement_0.05":{"minecraft:underwater_movement":{"value":0.05}},
+            "underwater_movement_0.055":{"minecraft:underwater_movement":{"value":0.055}},
+            "underwater_movement_0.06":{"minecraft:underwater_movement":{"value":0.06}},
+            "underwater_movement_0.065":{"minecraft:underwater_movement":{"value":0.065}},
+            "underwater_movement_0.07":{"minecraft:underwater_movement":{"value":0.07}},
+            "underwater_movement_0.075":{"minecraft:underwater_movement":{"value":0.075}},
+            "underwater_movement_0.08":{"minecraft:underwater_movement":{"value":0.08}},
+            "underwater_movement_0.085":{"minecraft:underwater_movement":{"value":0.085}},
+            "underwater_movement_0.09":{"minecraft:underwater_movement":{"value":0.09}},
+            "underwater_movement_0.095":{"minecraft:underwater_movement":{"value":0.095}},
+            "underwater_movement_0.1":{"minecraft:underwater_movement":{"value":0.1}},
+            "underwater_movement_0.105":{"minecraft:underwater_movement":{"value":0.105}},
+            "underwater_movement_0.11":{"minecraft:underwater_movement":{"value":0.11}},
+            "underwater_movement_0.115":{"minecraft:underwater_movement":{"value":0.115}},
+            "underwater_movement_0.12":{"minecraft:underwater_movement":{"value":0.12}},
+            "underwater_movement_0.125":{"minecraft:underwater_movement":{"value":0.125}},
+            "underwater_movement_0.13":{"minecraft:underwater_movement":{"value":0.13}},
+            "underwater_movement_0.135":{"minecraft:underwater_movement":{"value":0.135}},
+            "underwater_movement_0.14":{"minecraft:underwater_movement":{"value":0.14}},
+            "underwater_movement_0.145":{"minecraft:underwater_movement":{"value":0.145}},
+            "underwater_movement_0.15":{"minecraft:underwater_movement":{"value":0.15}},
+            "underwater_movement_0.155":{"minecraft:underwater_movement":{"value":0.155}},
+            "underwater_movement_0.16":{"minecraft:underwater_movement":{"value":0.16}},
+            "underwater_movement_0.165":{"minecraft:underwater_movement":{"value":0.165}},
+            "underwater_movement_0.17":{"minecraft:underwater_movement":{"value":0.17}},
+            "underwater_movement_0.175":{"minecraft:underwater_movement":{"value":0.175}},
+            "underwater_movement_0.18":{"minecraft:underwater_movement":{"value":0.18}},
+            "underwater_movement_0.185":{"minecraft:underwater_movement":{"value":0.185}},
+            "underwater_movement_0.19":{"minecraft:underwater_movement":{"value":0.19}},
+            "underwater_movement_0.195":{"minecraft:underwater_movement":{"value":0.195}},
+            "underwater_movement_0.2":{"minecraft:underwater_movement":{"value":0.2}},
+
+            "hp:0":{"minecraft:health":{"value":0,"max":0}},
+            "hp:1":{"minecraft:health":{"value":1,"max":1}},
+            "hp:2":{"minecraft:health":{"value":2,"max":2}},
+            "hp:3":{"minecraft:health":{"value":3,"max":3}},
+            "hp:4":{"minecraft:health":{"value":4,"max":4}},
+            "hp:5":{"minecraft:health":{"value":5,"max":5}},
+            "hp:6":{"minecraft:health":{"value":6,"max":6}},
+            "hp:7":{"minecraft:health":{"value":7,"max":7}},
+            "hp:8":{"minecraft:health":{"value":8,"max":8}},
+            "hp:9":{"minecraft:health":{"value":9,"max":9}},
+            "hp:10":{"minecraft:health":{"value":10,"max":10}},
+            "hp:11":{"minecraft:health":{"value":11,"max":11}},
+            "hp:12":{"minecraft:health":{"value":12,"max":12}},
+            "hp:13":{"minecraft:health":{"value":13,"max":13}},
+            "hp:14":{"minecraft:health":{"value":14,"max":14}},
+            "hp:15":{"minecraft:health":{"value":15,"max":15}},
+            "hp:16":{"minecraft:health":{"value":16,"max":16}},
+            "hp:17":{"minecraft:health":{"value":17,"max":17}},
+            "hp:18":{"minecraft:health":{"value":18,"max":18}},
+            "hp:19":{"minecraft:health":{"value":19,"max":19}},
+            "hp:20":{"minecraft:health":{"value":20,"max":20}},
+            "hp:21":{"minecraft:health":{"value":21,"max":21}},
+            "hp:22":{"minecraft:health":{"value":22,"max":22}},
+            "hp:23":{"minecraft:health":{"value":23,"max":23}},
+            "hp:24":{"minecraft:health":{"value":24,"max":24}},
+            "hp:25":{"minecraft:health":{"value":25,"max":25}},
+            "hp:26":{"minecraft:health":{"value":26,"max":26}},
+            "hp:27":{"minecraft:health":{"value":27,"max":27}},
+            "hp:28":{"minecraft:health":{"value":28,"max":28}},
+            "hp:29":{"minecraft:health":{"value":29,"max":29}},
+            "hp:30":{"minecraft:health":{"value":30,"max":30}},
+            "hp:31":{"minecraft:health":{"value":31,"max":31}},
+            "hp:32":{"minecraft:health":{"value":32,"max":32}},
+            "hp:33":{"minecraft:health":{"value":33,"max":33}},
+            "hp:34":{"minecraft:health":{"value":34,"max":34}},
+            "hp:35":{"minecraft:health":{"value":35,"max":35}},
+            "hp:36":{"minecraft:health":{"value":36,"max":36}},
+            "hp:37":{"minecraft:health":{"value":37,"max":37}},
+            "hp:38":{"minecraft:health":{"value":38,"max":38}},
+            "hp:39":{"minecraft:health":{"value":39,"max":39}},
+            "hp:40":{"minecraft:health":{"value":40,"max":40}},
+            "hp:41":{"minecraft:health":{"value":41,"max":41}},
+            "hp:42":{"minecraft:health":{"value":42,"max":42}},
+            "hp:43":{"minecraft:health":{"value":43,"max":43}},
+            "hp:44":{"minecraft:health":{"value":44,"max":44}},
+            "hp:45":{"minecraft:health":{"value":45,"max":45}},
+            "hp:46":{"minecraft:health":{"value":46,"max":46}},
+            "hp:47":{"minecraft:health":{"value":47,"max":47}},
+            "hp:48":{"minecraft:health":{"value":48,"max":48}},
+            "hp:49":{"minecraft:health":{"value":49,"max":49}},
+            "hp:50":{"minecraft:health":{"value":50,"max":50}},
+            "hp:51":{"minecraft:health":{"value":51,"max":51}},
+            "hp:52":{"minecraft:health":{"value":52,"max":52}},
+            "hp:53":{"minecraft:health":{"value":53,"max":53}},
+            "hp:54":{"minecraft:health":{"value":54,"max":54}},
+            "hp:55":{"minecraft:health":{"value":55,"max":55}},
+            "hp:56":{"minecraft:health":{"value":56,"max":56}},
+            "hp:57":{"minecraft:health":{"value":57,"max":57}},
+            "hp:58":{"minecraft:health":{"value":58,"max":58}},
+            "hp:59":{"minecraft:health":{"value":59,"max":59}},
+            "hp:60":{"minecraft:health":{"value":60,"max":60}},
+
+            "minecraft:normal_player": {
+                "minecraft:variant": {
+                    "value": 0
+                },
+                "minecraft:attack": {
+                    "damage": 1
+                }
+            },
+            
+            "minecraft:diamond_staff_player": {
+                "minecraft:spawn_entity": [{
+                    "min_wait_time": 0,
+                    "max_wait_time": 0,
+                    "spawn_entity": "dec:stream_energy_ball",
+                    "num_to_spawn": 1,
+                    "single_use": true
+                }]
+            },
+            "minecraft:frozen_staff_player": {
+                "minecraft:spawn_entity": [{
+                    "min_wait_time": 0,
+                    "max_wait_time": 0,
+                    "spawn_entity": "minecraft:snowball",
+                    "num_to_spawn": 1,
+                    "single_use": true
+                }]
+            },
+            "minecraft:star_sword_ranged_player": {
+                "minecraft:spawn_entity": [{
+                    "min_wait_time": 0,
+                    "max_wait_time": 0,
+                    "spawn_entity": "dec:spots_by_sword",
+                    "num_to_spawn": 5,
+                    "single_use": true
+                }]
+            },
+           
+            "minecraft:fire_totem_player": {
+                "minecraft:spell_effects": {
+                    "add_effects": [{
+                        "effect": "fire_resistance",
+                        "amplifier": 0,
+                        "visible": 0,
+                        "ambient": 0,
+                        "duration": 5,
+                        "display_on_screen_animation": true
+                    }]
+                },
+                "minecraft:hurt_on_condition": {
+                    "damage_conditions": [{
+                        "filters": {
+                            "test": "in_water_or_rain",
+                            "operator": "==",
+                            "value": true
+                        },
+                        "cause": "drowning",
+                        "damage_per_tick": 2
+                    }]
+                }
+            },
+            "minecraft:ocean_totem_player": {
+                "minecraft:spell_effects": {
+                    "add_effects": [{
+                        "effect": "water_breathing",
+                        "amplifier": 0,
+                        "visible": 0,
+                        "ambient": 0,
+                        "duration": 5,
+                        "display_on_screen_animation": true
+                    }]
+                },
+                "minecraft:hurt_on_condition": {
+                    "damage_conditions": [{
+                            "filters": {
+                                "test": "in_lava",
+                                "subject": "self",
+                                "operator": "==",
+                                "value": true
+                            },
+                            "cause": "lava",
+                            "damage_per_tick": 4
+                        },
+                        {
+                            "filters": {
+                                "test": "is_temperature_value",
+                                "operator": ">",
+                                "value": 1.0
+                            },
+                            "cause": "temperature",
+                            "damage_per_tick": 1
+                        }
+                    ]
+                }
+            },
+            "minecraft:growth_player": {
+                "minecraft:spell_effects": {
+                    "add_effects": [{
+                        "effect": "regeneration",
+                        "amplifier": 0,
+                        "visible": 0,
+                        "ambient": 0,
+                        "duration": 10,
+                        "display_on_screen_animation": true
+                    }]
+                }
+            },
+            "minecraft:angel_purification_player": {
+                "minecraft:spell_effects": {
+                    "add_effects": [{
+                        "effect": "regeneration",
+                        "amplifier": 1,
+                        "visible": 0,
+                        "ambient": 0,
+                        "duration": 10,
+                        "display_on_screen_animation": true
+                    }]
+                }
+            },
+            
+            "minecraft:wind_of_shadow_player": {
+                "minecraft:spawn_entity": [{
+                    "min_wait_time": 0,
+                    "max_wait_time": 0,
+                    "spawn_entity": "dec:particle_ender_wake",
+                    "num_to_spawn": 1,
+                    "single_use": true
+                }],
+                "minecraft:spell_effects": {
+                    "add_effects": [{
+                        "effect": "invisibility",
+                        "amplifier": 0,
+                        "visible": 0,
+                        "ambient": 0,
+                        "duration": 2,
+                        "display_on_screen_animation": true
+                    }]
+                }
+            },
+            
+            "minecraft:storm_giant_sword_ranged_player": {
+                "minecraft:spawn_entity": {
+                    "entities": [{
+                            "min_wait_time": 0,
+                            "max_wait_time": 0,
+                            "spawn_entity": "dec:storm_energy",
+                            "spawn_event": "minecraft:entity_spawned",
+                            "single_use": true,
+                            "num_to_spawn": 1
+                        },
+                        {
+                            "min_wait_time": 0,
+                            "max_wait_time": 0,
+                            "spawn_entity": "dec:storm_energy",
+                            "spawn_event": "minecraft:a",
+                            "single_use": true,
+                            "num_to_spawn": 1
+                        },
+                        {
+                            "min_wait_time": 0,
+                            "max_wait_time": 0,
+                            "spawn_entity": "dec:storm_energy",
+                            "spawn_event": "minecraft:b",
+                            "single_use": true,
+                            "num_to_spawn": 1
+                        },
+                        {
+                            "min_wait_time": 0,
+                            "max_wait_time": 0,
+                            "spawn_entity": "dec:storm_energy",
+                            "spawn_event": "minecraft:d",
+                            "single_use": true,
+                            "num_to_spawn": 1
+                        },
+                        {
+                            "min_wait_time": 0,
+                            "max_wait_time": 0,
+                            "spawn_entity": "dec:storm_energy",
+                            "spawn_event": "minecraft:e",
+                            "single_use": true,
+                            "num_to_spawn": 1
+                        }
+                    ]
+                }
+            },
+            "minecraft:gingerbread_totem_player": {
+                "minecraft:spawn_entity": [{
+                    "min_wait_time": 0,
+                    "max_wait_time": 0,
+                    "spawn_entity": "dec:gingerbread_man_by_totem",
+                    "num_to_spawn": 1,
+                    "single_use": true
+                }]
+            },
+            "minecraft:add_bad_omen": {
+                "minecraft:spell_effects": {
+                    "add_effects": [{
+                        "effect": "bad_omen",
+                        "duration": 6000,
+                        "display_on_screen_animation": true
+                    }]
+                },
+                "minecraft:timer": {
+                    "time": [
+                        0,
+                        0
+                    ],
+                    "looping": false,
+                    "time_down_event": {
+                        "event": "minecraft:clear_add_bad_omen",
+                        "target": "self"
+                    }
+                }
+            },
+            "minecraft:clear_bad_omen_spell_effect": {
+                "minecraft:spell_effects": {}
+            },
+            "minecraft:raid_trigger": {
+                "minecraft:raid_trigger": {
+                    "triggered_event": {
+                        "event": "minecraft:remove_raid_trigger",
+                        "target": "self"
+                    }
+                },
+                "minecraft:spell_effects": {
+                    "remove_effects": "bad_omen"
+                }
+            }
+        },
+        "components": {
+            "minecraft:hurt_on_condition": {
+                "damage_conditions": [{
+                    "filters": {
+                        "test": "in_lava",
+                        "subject": "self",
+                        "operator": "==",
+                        "value": true
+                    },
+                    "cause": "lava",
+                    "damage_per_tick": 4
+                }]
+            },
+            //"minecraft:is_stackable": {},
+            "minecraft:type_family": {
+                "family": [
+                    "player",
+                    "real_player"
+                ]
+            },
+            "minecraft:is_hidden_when_invisible": {},
+            "minecraft:loot": {
+                "table": "loot_tables/empty.json"
+            },
+            "minecraft:health": {
+                "value": 20,
+                "max": 20
+            },
+            "minecraft:collision_box": {
+                "width": 0.5,
+                "height": 1.8
+            },
+            "minecraft:can_climb": {},
+            "minecraft:movement": {
+                "value": 0.1
+            },
+            "minecraft:attack": {
+                "damage": 1
+            },
+            "minecraft:player.saturation": {
+                "value": 20
+            },
+            "minecraft:player.exhaustion": {
+                "value": 0,
+                "max": 4
+            },
+            "minecraft:player.level": {
+                "value": 0,
+                "max": 24791
+            },
+            "minecraft:player.experience": {
+                "value": 0,
+                "max": 1
+            },
+            "minecraft:breathable": {
+                "totalSupply": 15,
+                "suffocateTime": -1,
+                "inhaleTime": 5,
+                "generatesBubbles": true
+            },
+            "minecraft:nameable": {
+                "alwaysShow": true,
+                "allowNameTagRenaming": false
+            },
+            "minecraft:physics": {},
+            "minecraft:insomnia": {
+                "days_until_insomnia": 3
+            },
+            "minecraft:rideable": {
+                "seat_count": 2,
+                "family_types": [
+                    "parrot_tame"
+                ],
+                "pull_in_entities": true,
+                "seats": [{
+                        "position": [
+                            0.4,
+                            -0.15,
+                            0.04
+                        ],
+                        "min_rider_count": 0,
+                        "max_rider_count": 0,
+                        "lock_rider_rotation": 0
+                    },
+                    {
+                        "position": [
+                            -0.4,
+                            -0.15,
+                            0.04
+                        ],
+                        "min_rider_count": 1,
+                        "max_rider_count": 2,
+                        "lock_rider_rotation": 0
+                    }
+                ]
+            },
+            "minecraft:scaffolding_climber": {},
+            "minecraft:environment_sensor": [
+                {
+                    "on_environment": {
+                        "event": "minecraft:become_normal"
+                    }
+                },
+                {
+                    "filters": {
+                        "all_of": [{
+                                "test": "has_mob_effect",
+                                "subject": "self",
+                                "value": "bad_omen"
+                            },
+                            {
+                                "test": "is_in_village",
+                                "subject": "self",
+                                "value": true
+                            }
+                        ]
+                    },
+                    "event": "minecraft:trigger_raid"
+                },
+                
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                    "test": "has_equipment",
+                                    "subject": "self",
+                                    "domain": "hand",
+                                    "value": "dec:gingerbread_totem"
+                                },
+                                {
+                                    "test": "has_tag",
+                                    "subject": "self",
+                                    "value": "shot_offhand"
+                                }
+                            ]
+                        },
+                        "event": "minecraft:become_gingerbread_totem"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "hand",
+                                "value": "dec:steel_battleaxe"
+                            }]
+                        },
+                        "event": "minecraft:become_steel_battleaxe"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "hand",
+                                "value": "dec:storm_battleaxe"
+                            }]
+                        },
+                        "event": "minecraft:become_storm_battleaxe"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                    "test": "has_equipment",
+                                    "subject": "self",
+                                    "domain": "hand",
+                                    "value": "dec:storm_giant_sword"
+                                },
+                                {
+                                    "test": "has_tag",
+                                    "subject": "self",
+                                    "value": "shot"
+                                }
+                            ]
+                        },
+                        "event": "minecraft:become_storm_giant_sword_ranged"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "hand",
+                                "value": "dec:leaves_dagger"
+                            }]
+                        },
+                        "event": "minecraft:become_leaves_dagger"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "hand",
+                                "value": "dec:wooden_dagger"
+                            }]
+                        },
+                        "event": "minecraft:become_wooden_dagger"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "hand",
+                                "value": "dec:stone_dagger"
+                            }]
+                        },
+                        "event": "minecraft:become_stone_dagger"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "hand",
+                                "value": "dec:iron_dagger"
+                            }]
+                        },
+                        "event": "minecraft:become_iron_dagger"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "hand",
+                                "value": "dec:golden_dagger"
+                            }]
+                        },
+                        "event": "minecraft:become_golden_dagger"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "hand",
+                                "value": "dec:diamond_dagger"
+                            }]
+                        },
+                        "event": "minecraft:become_diamond_dagger"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "hand",
+                                "value": "dec:everlasting_winter_dagger"
+                            }]
+                        },
+                        "event": "minecraft:become_everlasting_winter_dagger"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "hand",
+                                "value": "dec:netherite_dagger"
+                            }]
+                        },
+                        "event": "minecraft:become_netherite_dagger"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "hand",
+                                "value": "dec:ice_sword"
+                            }]
+                        },
+                        "event": "minecraft:become_ice_sword"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "hand",
+                                "value": "dec:absolute_zero"
+                            }]
+                        },
+                        "event": "minecraft:become_absolute_zero"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "hand",
+                                "value": "dec:steel_dagger"
+                            }]
+                        },
+                        "event": "minecraft:become_steel_dagger"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "hand",
+                                "value": "dec:steel_sickle"
+                            }]
+                        },
+                        "event": "minecraft:become_steel_sickle"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "hand",
+                                "value": "dec:netherite_sickle"
+                            }]
+                        },
+                        "event": "minecraft:become_netherite_sickle"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "hand",
+                                "value": "dec:ghost_dagger"
+                            }]
+                        },
+                        "event": "minecraft:become_ghost_dagger"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "hand",
+                                "value": "dec:wind_dagger"
+                            }]
+                        },
+                        "event": "minecraft:become_wind_dagger"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "hand",
+                                "value": "dec:amethyst_dagger"
+                            }]
+                        },
+                        "event": "minecraft:become_amethyst_dagger"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "hand",
+                                "value": "dec:wind_of_shadow"
+                            }]
+                        },
+                        "event": "minecraft:become_wind_of_shadow"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "hand",
+                                "value": "dec:ghost_sickle"
+                            }]
+                        },
+                        "event": "minecraft:become_ghost_sickle"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "hand",
+                                "value": "dec:iron_sickle"
+                            }]
+                        },
+                        "event": "minecraft:become_iron_sickle"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "hand",
+                                "value": "dec:gold_sickle"
+                            }]
+                        },
+                        "event": "minecraft:become_gold_sickle"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "hand",
+                                "value": "dec:diamond_sickle"
+                            }]
+                        },
+                        "event": "minecraft:become_diamond_sickle"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "hand",
+                                "value": "dec:everlasting_winter_sickle"
+                            }]
+                        },
+                        "event": "minecraft:become_everlasting_winter_sickle"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "hand",
+                                "value": "dec:sharp_coral"
+                            }]
+                        },
+                        "event": "minecraft:become_sharp_coral"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "hand",
+                                "value": "dec:coral_sword"
+                            }]
+                        },
+                        "event": "minecraft:become_coral_sword"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "hand",
+                                "value": "dec:blizzard_sword"
+                            }]
+                        },
+                        "event": "minecraft:become_blizzard_sword"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "hand",
+                                "value": "dec:night_sword"
+                            }]
+                        },
+                        "event": "minecraft:become_night_sword"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "hand",
+                                "value": "dec:copper_dagger"
+                            }]
+                        },
+                        "event": "minecraft:become_copper_dagger"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "hand",
+                                "value": "dec:copper_sickle"
+                            }]
+                        },
+                        "event": "minecraft:become_copper_sickle"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "hand",
+                                "value": "dec:copper_battleaxe"
+                            }]
+                        },
+                        "event": "minecraft:become_copper_battleaxe"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "hand",
+                                "value": "dec:fire_totem"
+                            }]
+                        },
+                        "event": "minecraft:become_fire_totem"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "hand",
+                                "value": "dec:ocean_totem"
+                            }]
+                        },
+                        "event": "minecraft:become_ocean_totem"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "hand",
+                                "value": "dec:growth"
+                            }]
+                        },
+                        "event": "minecraft:become_growth"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "hand",
+                                "value": "dec:angel_purification"
+                            }]
+                        },
+                        "event": "minecraft:become_angel_purification"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "hand",
+                                "value": "dec:village_guardian"
+                            }]
+                        },
+                        "event": "minecraft:become_village_guardian"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "hand",
+                                "value": "dec:illager_sword"
+                            }]
+                        },
+                        "event": "minecraft:become_illager_sword"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "hand",
+                                "value": "dec:vortex"
+                            }]
+                        },
+                        "event": "minecraft:become_vortex"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "hand",
+                                "value": "dec:scale_sword"
+                            }]
+                        },
+                        "event": "minecraft:become_scale_sword"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                    "any_of": [{
+                                            "test": "has_equipment",
+                                            "subject": "self",
+                                            "domain": "hand",
+                                            "value": "dec:flintlock_pro"
+                                        },
+                                        {
+                                            "test": "has_equipment",
+                                            "subject": "self",
+                                            "domain": "hand",
+                                            "value": "dec:everlasting_winter_flintlock"
+                                        },
+                                        {
+                                            "test": "has_equipment",
+                                            "subject": "self",
+                                            "domain": "hand",
+                                            "value": "dec:ghost_flintlock"
+                                        },
+                                        {
+                                            "test": "has_equipment",
+                                            "subject": "self",
+                                            "domain": "hand",
+                                            "value": "dec:lava_flintlock"
+                                        },
+                                        {
+                                            "test": "has_equipment",
+                                            "subject": "self",
+                                            "domain": "hand",
+                                            "value": "dec:star_flintlock"
+                                        },
+                                        {
+                                            "test": "has_equipment",
+                                            "subject": "self",
+                                            "domain": "hand",
+                                            "value": "dec:storm_flintlock"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "test": "is_sneaking",
+                                    "subject": "self",
+                                    "operator": "equals",
+                                    "value": true
+                                }
+                            ]
+                        },
+                        "event": "minecraft:become_flintlock_pro_spyglass"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "hand",
+                                "value": "dec:short_flintlock"
+                            }]
+                        },
+                        "event": "minecraft:become_short_flintlock_speedup"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "hand",
+                                "value": "dec:blood_sickle"
+                            }]
+                        },
+                        "event": "minecraft:become_blood_sickle"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                    "test": "has_equipment",
+                                    "subject": "self",
+                                    "domain": "hand",
+                                    "value": "dec:diamond_staff"
+                                },
+                                {
+                                    "test": "has_tag",
+                                    "subject": "self",
+                                    "value": "shot"
+                                }
+                            ]
+                        },
+                        "event": "minecraft:become_diamond_staff"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                    "test": "has_equipment",
+                                    "subject": "self",
+                                    "domain": "hand",
+                                    "value": "dec:frozen_staff"
+                                },
+                                {
+                                    "test": "has_tag",
+                                    "subject": "self",
+                                    "value": "shot"
+                                }
+                            ]
+                        },
+                        "event": "minecraft:become_frozen_staff"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                    "test": "has_equipment",
+                                    "subject": "self",
+                                    "domain": "hand",
+                                    "value": "dec:star_sword"
+                                },
+                                {
+                                    "test": "has_tag",
+                                    "subject": "self",
+                                    "value": "shot"
+                                }
+                            ]
+                        },
+                        "event": "minecraft:become_star_sword_ranged"
+                    }
+                },
+                {
+                    "on_environment": {
+                        "filters": {
+                            "all_of": [{
+                                "test": "has_equipment",
+                                "subject": "self",
+                                "domain": "torso",
+                                "value": "dec:wings_from_deep"
+                            }]
+                        },
+                        "event": "minecraft:become_wings_from_deep"
+                    }
+                }
+            ]
+        },
+        "events": {
+            "armor_ink": {
+                "add": {
+                    "component_groups": [
+                        "wb:armor_ink"
+                    ]
+                }
+            },
+            "armor_senior_ink": {
+                "add": {
+                    "component_groups": [
+                        "wb:armor_senior_ink"
+                    ]
+                }
+            },
+            "armor_ink_skill": {
+                "run_command": {
+                    "command": [
+                        "function armor/ink"
+                    ],
+                    "target": "self"
+                }
+            },
+            "armor_senior_ink_skill": {
+                "run_command": {
+                    "command": [
+                        "function armor/ink2"
+                    ],
+                    "target": "self"
+                }
+            },
+            "add_fly": {
+                "add": {
+                    "component_groups": [
+                        "wb:sword_fly_fly"
+                    ]
+                }
+            },
+            "attribute_attack1": {
+                "add": {
+                    "component_groups": [
+                        "attribute_attack1"
+                    ]
+                }
+            },
+            "attribute_attack5": {
+                "add": {
+                    "component_groups": [
+                        "attribute_attack5"
+                    ]
+                }
+            },
+            "attribute_attack20": {
+                "add": {
+                    "component_groups": [
+                        "attribute_attack20"
+                    ]
+                }
+            },
+            "attribute_attack40": {
+                "add": {
+                    "component_groups": [
+                        "attribute_attack40"
+                    ]
+                }
+            },
+            "attribute_attack60": {
+                "add": {
+                    "component_groups": [
+                        "attribute_attack60"
+                    ]
+                }
+            },
+            "attribute_attack80": {
+                "add": {
+                    "component_groups": [
+                        "attribute_attack80"
+                    ]
+                }
+            },
+            "attribute_attack100": {
+                "add": {
+                    "component_groups": [
+                        "attribute_attack100"
+                    ]
+                }
+            },
+            "remove_fly": {
+                "run_command": {
+                    "command": [
+                        "tag @s remove is_fly"
+                    ],
+                    "target": "self"
+                },
+                "remove": {
+                    "component_groups": [
+                        "wb:sword_fly_fly"
+                    ]
+                }
+            },
+            "remove_all": {
+                "remove": {
+                    "component_groups": [
+                        "wb:sword_intentions_attack"
+                    ]
+                }
+            },
+            "minecraft:become_normal": {
+                "remove": {
+                    "component_groups": [
+                        "minecraft:fire_totem_player",
+                        "minecraft:ocean_totem_player",
+                        "minecraft:growth_player",
+                        "minecraft:angel_purification_player",
+                        "minecraft:wind_of_shadow_player",
+                        "minecraft:frozen_staff_player",
+                        "minecraft:diamond_staff_player",
+                        "minecraft:storm_giant_sword_ranged_player",
+                        "minecraft:gingerbread_totem_player",
+                        "minecraft:star_sword_ranged_player"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "minecraft:normal_player"
+                    ]
+                }
+                
+            },
+            "minecraft:gain_bad_omen": {
+                "add": {
+                    "component_groups": [
+                        "minecraft:add_bad_omen"
+                    ]
+                }
+            },
+            "minecraft:clear_add_bad_omen": {
+                "remove": {
+                    "component_groups": [
+                        "minecraft:add_bad_omen"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "minecraft:clear_bad_omen_spell_effect"
+                    ]
+                }
+            },
+            "minecraft:trigger_raid": {
+                "add": {
+                    "component_groups": [
+                        "minecraft:raid_trigger"
+                    ]
+                }
+            },
+            "minecraft:remove_raid_trigger": {
+                "remove": {
+                    "component_groups": [
+                        "minecraft:raid_trigger"
+                    ]
+                }
+            },
+            
+            "minecraft:become_diamond_staff": {
+                "remove": {
+                    "component_groups": [
+                        "minecraft:normal_player"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "minecraft:diamond_staff_player"
+                    ]
+                }
+            },
+            "minecraft:become_frozen_staff": {
+                "remove": {
+                    "component_groups": [
+                        "minecraft:normal_player"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "minecraft:frozen_staff_player"
+                    ]
+                }
+            },
+            
+            "minecraft:become_fire_totem": {
+                "remove": {
+                    "component_groups": [
+                        "minecraft:normal_player"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "minecraft:fire_totem_player"
+                    ]
+                }
+            },
+            "minecraft:become_ocean_totem": {
+                "remove": {
+                    "component_groups": [
+                        "minecraft:normal_player"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "minecraft:ocean_totem_player"
+                    ]
+                }
+            },
+            "minecraft:become_growth": {
+                "remove": {
+                    "component_groups": [
+                        "minecraft:normal_player"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "minecraft:growth_player"
+                    ]
+                }
+            },
+            "minecraft:become_angel_purification": {
+                "remove": {
+                    "component_groups": [
+                        "minecraft:normal_player"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "minecraft:angel_purification_player"
+                    ]
+                }
+            },
+            
+            "minecraft:become_storm_giant_sword_ranged": {
+                "remove": {
+                    "component_groups": [
+                        "minecraft:normal_player"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "minecraft:storm_giant_sword_ranged_player"
+                    ]
+                }
+            },
+            "minecraft:become_gingerbread_totem": {
+                "remove": {
+                    "component_groups": [
+                        "minecraft:normal_player"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "minecraft:gingerbread_totem_player"
+                    ]
+                }
+            },
+            
+            "minecraft:become_wind_of_shadow": {
+                "remove": {
+                    "component_groups": [
+                        "minecraft:normal_player"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "minecraft:wind_of_shadow_player"
+                    ]
+                }
+            },
+            "minecraft:become_star_sword_ranged": {
+                "remove": {
+                    "component_groups": [
+                        "minecraft:normal_player"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "minecraft:star_sword_ranged_player"
+                    ]
+                }
+            },
+            "hp:0":{"add":{"component_groups":["hp:0"]}},
+            "hp:1":{"add":{"component_groups":["hp:1"]}},
+            "hp:2":{"add":{"component_groups":["hp:2"]}},
+            "hp:3":{"add":{"component_groups":["hp:3"]}},
+            "hp:4":{"add":{"component_groups":["hp:4"]}},
+            "hp:5":{"add":{"component_groups":["hp:5"]}},
+            "hp:6":{"add":{"component_groups":["hp:6"]}},
+            "hp:7":{"add":{"component_groups":["hp:7"]}},
+            "hp:8":{"add":{"component_groups":["hp:8"]}},
+            "hp:9":{"add":{"component_groups":["hp:9"]}},
+            "hp:10":{"add":{"component_groups":["hp:10"]}},
+            "hp:11":{"add":{"component_groups":["hp:11"]}},
+            "hp:12":{"add":{"component_groups":["hp:12"]}},
+            "hp:13":{"add":{"component_groups":["hp:13"]}},
+            "hp:14":{"add":{"component_groups":["hp:14"]}},
+            "hp:15":{"add":{"component_groups":["hp:15"]}},
+            "hp:16":{"add":{"component_groups":["hp:16"]}},
+            "hp:17":{"add":{"component_groups":["hp:17"]}},
+            "hp:18":{"add":{"component_groups":["hp:18"]}},
+            "hp:19":{"add":{"component_groups":["hp:19"]}},
+            "hp:20":{"add":{"component_groups":["hp:20"]}},
+            "hp:21":{"add":{"component_groups":["hp:21"]}},
+            "hp:22":{"add":{"component_groups":["hp:22"]}},
+            "hp:23":{"add":{"component_groups":["hp:23"]}},
+            "hp:24":{"add":{"component_groups":["hp:24"]}},
+            "hp:25":{"add":{"component_groups":["hp:25"]}},
+            "hp:26":{"add":{"component_groups":["hp:26"]}},
+            "hp:27":{"add":{"component_groups":["hp:27"]}},
+            "hp:28":{"add":{"component_groups":["hp:28"]}},
+            "hp:29":{"add":{"component_groups":["hp:29"]}},
+            "hp:30":{"add":{"component_groups":["hp:30"]}},
+            "hp:31":{"add":{"component_groups":["hp:31"]}},
+            "hp:32":{"add":{"component_groups":["hp:32"]}},
+            "hp:33":{"add":{"component_groups":["hp:33"]}},
+            "hp:34":{"add":{"component_groups":["hp:34"]}},
+            "hp:35":{"add":{"component_groups":["hp:35"]}},
+            "hp:36":{"add":{"component_groups":["hp:36"]}},
+            "hp:37":{"add":{"component_groups":["hp:37"]}},
+            "hp:38":{"add":{"component_groups":["hp:38"]}},
+            "hp:39":{"add":{"component_groups":["hp:39"]}},
+            "hp:40":{"add":{"component_groups":["hp:40"]}},
+            "hp:41":{"add":{"component_groups":["hp:41"]}},
+            "hp:42":{"add":{"component_groups":["hp:42"]}},
+            "hp:43":{"add":{"component_groups":["hp:43"]}},
+            "hp:44":{"add":{"component_groups":["hp:44"]}},
+            "hp:45":{"add":{"component_groups":["hp:45"]}},
+            "hp:46":{"add":{"component_groups":["hp:46"]}},
+            "hp:47":{"add":{"component_groups":["hp:47"]}},
+            "hp:48":{"add":{"component_groups":["hp:48"]}},
+            "hp:49":{"add":{"component_groups":["hp:49"]}},
+            "hp:50":{"add":{"component_groups":["hp:50"]}},
+            "hp:51":{"add":{"component_groups":["hp:51"]}},
+            "hp:52":{"add":{"component_groups":["hp:52"]}},
+            "hp:53":{"add":{"component_groups":["hp:53"]}},
+            "hp:54":{"add":{"component_groups":["hp:54"]}},
+            "hp:55":{"add":{"component_groups":["hp:55"]}},
+            "hp:56":{"add":{"component_groups":["hp:56"]}},
+            "hp:57":{"add":{"component_groups":["hp:57"]}},
+            "hp:58":{"add":{"component_groups":["hp:58"]}},
+            "hp:59":{"add":{"component_groups":["hp:59"]}},
+            "hp:60":{"add":{"component_groups":["hp:60"]}},
+
+            "minecraft:become_wings_from_deep": {
+                "run_command": {
+                    "command": [
+                        "effect @s slow_falling 3 0 true",
+                        "effect @s jump_boost 3 1 true"
+                    ]
+                }
+            },
+            "movement_0":{"add":{"component_groups":["movement_0"]}},
+            "movement_0.005":{"add":{"component_groups":["movement_0.005"]}},
+            "movement_0.01":{"add":{"component_groups":["movement_0.01"]}},
+            "movement_0.015":{"add":{"component_groups":["movement_0.015"]}},
+            "movement_0.02":{"add":{"component_groups":["movement_0.02"]}},
+            "movement_0.025":{"add":{"component_groups":["movement_0.025"]}},
+            "movement_0.03":{"add":{"component_groups":["movement_0.03"]}},
+            "movement_0.035":{"add":{"component_groups":["movement_0.035"]}},
+            "movement_0.04":{"add":{"component_groups":["movement_0.04"]}},
+            "movement_0.045":{"add":{"component_groups":["movement_0.045"]}},
+            "movement_0.05":{"add":{"component_groups":["movement_0.05"]}},
+            "movement_0.055":{"add":{"component_groups":["movement_0.055"]}},
+            "movement_0.06":{"add":{"component_groups":["movement_0.06"]}},
+            "movement_0.065":{"add":{"component_groups":["movement_0.065"]}},
+            "movement_0.07":{"add":{"component_groups":["movement_0.07"]}},
+            "movement_0.075":{"add":{"component_groups":["movement_0.075"]}},
+            "movement_0.08":{"add":{"component_groups":["movement_0.08"]}},
+            "movement_0.085":{"add":{"component_groups":["movement_0.085"]}},
+            "movement_0.09":{"add":{"component_groups":["movement_0.09"]}},
+            "movement_0.095":{"add":{"component_groups":["movement_0.095"]}},
+            "movement_0.1":{"add":{"component_groups":["movement_0.1"]}},
+            "movement_0.105":{"add":{"component_groups":["movement_0.105"]}},
+            "movement_0.11":{"add":{"component_groups":["movement_0.11"]}},
+            "movement_0.115":{"add":{"component_groups":["movement_0.115"]}},
+            "movement_0.12":{"add":{"component_groups":["movement_0.12"]}},
+            "movement_0.125":{"add":{"component_groups":["movement_0.125"]}},
+            "movement_0.13":{"add":{"component_groups":["movement_0.13"]}},
+            "movement_0.135":{"add":{"component_groups":["movement_0.135"]}},
+            "movement_0.14":{"add":{"component_groups":["movement_0.14"]}},
+            "movement_0.145":{"add":{"component_groups":["movement_0.145"]}},
+            "movement_0.15":{"add":{"component_groups":["movement_0.15"]}},
+            "movement_0.155":{"add":{"component_groups":["movement_0.155"]}},
+            "movement_0.16":{"add":{"component_groups":["movement_0.16"]}},
+            "movement_0.165":{"add":{"component_groups":["movement_0.165"]}},
+            "movement_0.17":{"add":{"component_groups":["movement_0.17"]}},
+            "movement_0.175":{"add":{"component_groups":["movement_0.175"]}},
+            "movement_0.18":{"add":{"component_groups":["movement_0.18"]}},
+            "movement_0.185":{"add":{"component_groups":["movement_0.185"]}},
+            "movement_0.19":{"add":{"component_groups":["movement_0.19"]}},
+            "movement_0.195":{"add":{"component_groups":["movement_0.195"]}},
+            "movement_0.2":{"add":{"component_groups":["movement_0.2"]}},
+
+            "underwater_movement_0":{"add":{"component_groups":["underwater_movement_0"]}},
+            "underwater_movement_0.005":{"add":{"component_groups":["underwater_movement_0.005"]}},
+            "underwater_movement_0.01":{"add":{"component_groups":["underwater_movement_0.01"]}},
+            "underwater_movement_0.015":{"add":{"component_groups":["underwater_movement_0.015"]}},
+            "underwater_movement_0.02":{"add":{"component_groups":["underwater_movement_0.02"]}},
+            "underwater_movement_0.025":{"add":{"component_groups":["underwater_movement_0.025"]}},
+            "underwater_movement_0.03":{"add":{"component_groups":["underwater_movement_0.03"]}},
+            "underwater_movement_0.035":{"add":{"component_groups":["underwater_movement_0.035"]}},
+            "underwater_movement_0.04":{"add":{"component_groups":["underwater_movement_0.04"]}},
+            "underwater_movement_0.045":{"add":{"component_groups":["underwater_movement_0.045"]}},
+            "underwater_movement_0.05":{"add":{"component_groups":["underwater_movement_0.05"]}},
+            "underwater_movement_0.055":{"add":{"component_groups":["underwater_movement_0.055"]}},
+            "underwater_movement_0.06":{"add":{"component_groups":["underwater_movement_0.06"]}},
+            "underwater_movement_0.065":{"add":{"component_groups":["underwater_movement_0.065"]}},
+            "underwater_movement_0.07":{"add":{"component_groups":["underwater_movement_0.07"]}},
+            "underwater_movement_0.075":{"add":{"component_groups":["underwater_movement_0.075"]}},
+            "underwater_movement_0.08":{"add":{"component_groups":["underwater_movement_0.08"]}},
+            "underwater_movement_0.085":{"add":{"component_groups":["underwater_movement_0.085"]}},
+            "underwater_movement_0.09":{"add":{"component_groups":["underwater_movement_0.09"]}},
+            "underwater_movement_0.095":{"add":{"component_groups":["underwater_movement_0.095"]}},
+            "underwater_movement_0.1":{"add":{"component_groups":["underwater_movement_0.1"]}},
+            "underwater_movement_0.105":{"add":{"component_groups":["underwater_movement_0.105"]}},
+            "underwater_movement_0.11":{"add":{"component_groups":["underwater_movement_0.11"]}},
+            "underwater_movement_0.115":{"add":{"component_groups":["underwater_movement_0.115"]}},
+            "underwater_movement_0.12":{"add":{"component_groups":["underwater_movement_0.12"]}},
+            "underwater_movement_0.125":{"add":{"component_groups":["underwater_movement_0.125"]}},
+            "underwater_movement_0.13":{"add":{"component_groups":["underwater_movement_0.13"]}},
+            "underwater_movement_0.135":{"add":{"component_groups":["underwater_movement_0.135"]}},
+            "underwater_movement_0.14":{"add":{"component_groups":["underwater_movement_0.14"]}},
+            "underwater_movement_0.145":{"add":{"component_groups":["underwater_movement_0.145"]}},
+            "underwater_movement_0.15":{"add":{"component_groups":["underwater_movement_0.15"]}},
+            "underwater_movement_0.155":{"add":{"component_groups":["underwater_movement_0.155"]}},
+            "underwater_movement_0.16":{"add":{"component_groups":["underwater_movement_0.16"]}},
+            "underwater_movement_0.165":{"add":{"component_groups":["underwater_movement_0.165"]}},
+            "underwater_movement_0.17":{"add":{"component_groups":["underwater_movement_0.17"]}},
+            "underwater_movement_0.175":{"add":{"component_groups":["underwater_movement_0.175"]}},
+            "underwater_movement_0.18":{"add":{"component_groups":["underwater_movement_0.18"]}},
+            "underwater_movement_0.185":{"add":{"component_groups":["underwater_movement_0.185"]}},
+            "underwater_movement_0.19":{"add":{"component_groups":["underwater_movement_0.19"]}},
+            "underwater_movement_0.195":{"add":{"component_groups":["underwater_movement_0.195"]}},
+            "underwater_movement_0.2":{"add":{"component_groups":["underwater_movement_0.2"]}}
+        }
+    }
+}
