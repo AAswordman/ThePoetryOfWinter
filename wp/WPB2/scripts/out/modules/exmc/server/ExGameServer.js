@@ -24,6 +24,7 @@ import { eventDecoratorFactory, registerEvent } from "./events/eventDecoratorFac
 import notUtillTask from "../utils/notUtillTask.js";
 import ExSound from "./env/ExSound.js";
 import { ExEventNames } from "./events/events.js";
+import { falseIfError } from "../utils/tool.js";
 export default class ExGameServer {
     constructor(config) {
         this.entityControllers = new Map();
@@ -63,6 +64,8 @@ export default class ExGameServer {
         this.entityControllers.set(id, ec);
     }
     onEntitySpawn(e) {
+        if (!falseIfError(() => (e.entity.typeId)))
+            return;
         let id;
         try {
             id = e.entity.typeId;
