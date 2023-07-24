@@ -458,6 +458,8 @@ export default class PomServer extends ExGameServer {
         new ExEnvironment().print();
     }
     damageShow(e) {
+        if (!falseIfError(() => (e.hurtEntity.typeId)))
+            return;
         damageShow(ExDimension.getInstance(e.hurtEntity.dimension), e.damage, e.hurtEntity.location);
     }
     newClient(id, player) {
