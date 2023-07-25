@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import ExGameClient from "./ExGameClient.js";
 import ExDimension from "./ExDimension.js";
-import { world, PlayerJoinAfterEvent, PlayerLeaveAfterEvent, system, EntitySpawnAfterEvent } from "@minecraft/server";
+import { world, MinecraftDimensionTypes, PlayerJoinAfterEvent, PlayerLeaveAfterEvent, system, EntitySpawnAfterEvent } from "@minecraft/server";
 import ExGameConfig from "./ExGameConfig.js";
 import initConsole from "../utils/Console.js";
 import ExServerEvents from "./events/ExServerEvents.js";
@@ -35,6 +35,9 @@ export default class ExGameServer {
         if (!ExGameServer.isInitialized) {
             ExGameServer.isInitialized = true;
             ExGameConfig.config = config;
+            ExGameServer.dimensionMap.set(MinecraftDimensionTypes.nether, world.getDimension(MinecraftDimensionTypes.nether));
+            ExGameServer.dimensionMap.set(MinecraftDimensionTypes.overworld, world.getDimension(MinecraftDimensionTypes.overworld));
+            ExGameServer.dimensionMap.set(MinecraftDimensionTypes.theEnd, world.getDimension(MinecraftDimensionTypes.theEnd));
             if (!config.watchDog) {
                 system.beforeEvents.watchdogTerminate.subscribe((e) => {
                     e.cancel = true;
@@ -82,7 +85,7 @@ export default class ExGameServer {
         return new ec(e, this);
     }
     getDimension(dimensionId) {
-        return world.getDimension(dimensionId);
+        return ExGameServer.dimensionMap.get(dimensionId);
     }
     getExDimension(dimensionId) {
         return ExDimension.getInstance(this.getDimension(dimensionId));
@@ -172,6 +175,7 @@ export default class ExGameServer {
         this.getEvents().exEvents.tick.subscribe(method);
     }
 }
+ExGameServer.dimensionMap = new Map();
 ExGameServer.musicMap = new Map();
 __decorate([
     registerEvent(ExEventNames.afterEntitySpawn),

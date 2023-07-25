@@ -48,7 +48,7 @@ export default class PomAncientStoneBoss extends PomBossController {
             c.ruinsSystem.causeDamageShow = true;
             c.ruinsSystem.causeDamageType.add(this.entity.typeId);
         }
-        if (!this.exEntity.hasIsBabyComponent() && this.isFisrtCall) {
+        if (!this.exEntity.hasComponent("minecraft:is_baby") && this.isFisrtCall) {
             this.server.say({ rawtext: [{ translate: "text.wb:summon_ancient_stone.name" }] });
             this.setTimeout(() => {
                 this.music.loop(this.exEntity.exDimension, this.entity.location);
@@ -63,7 +63,7 @@ export default class PomAncientStoneBoss extends PomBossController {
     }
     onKilled(e) {
         //设置奖励
-        if (this.exEntity.hasIsBabyComponent()) {
+        if (this.exEntity.hasComponent("minecraft:is_baby")) {
             for (let c of this.barrier.clientsByPlayer()) {
                 c.progressTaskFinish(this.entity.typeId, c.ruinsSystem.causeDamage);
                 c.ruinsSystem.causeDamageShow = false;

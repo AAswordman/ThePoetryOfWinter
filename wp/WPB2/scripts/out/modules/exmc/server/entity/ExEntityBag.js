@@ -1,9 +1,9 @@
-import { EntityEquipmentInventoryComponent, EntityInventoryComponent, EquipmentSlot } from "@minecraft/server";
+import { EquipmentSlot } from "@minecraft/server";
 export default class ExEntityBag {
     constructor(entity) {
         this._entity = entity;
-        this.bagComponent = entity.getComponent(EntityInventoryComponent.componentId);
-        this.equipmentComponent = entity.getComponent(EntityEquipmentInventoryComponent.componentId);
+        this.bagComponent = entity.getComponent("minecraft:inventory");
+        this.equipmentComponent = entity.getComponent("minecraft:equipment_inventory");
     }
     getItem(arg) {
         if (typeof (arg) === "number") {

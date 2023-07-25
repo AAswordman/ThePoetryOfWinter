@@ -1,4 +1,5 @@
 import ExSystem from "../../../modules/exmc/utils/ExSystem.js";
+import VarOnChangeListener from "../../../modules/exmc/utils/VarOnChangeListener.js";
 import { Talent } from "../cache/TalentData.js";
 import GameController from "./GameController.js";
 export default class PomMagicSystem extends GameController {
@@ -6,6 +7,7 @@ export default class PomMagicSystem extends GameController {
         super(...arguments);
         this.additionHealthShow = false;
         this.additionHealth = 40;
+        this.gameHealth = 40;
         this.scoresManager = this.exPlayer.getScoresManager();
         this.wbflLooper = ExSystem.tickTask(() => {
             if (this.scoresManager.getScore("wbfl") < 200)
@@ -51,7 +53,7 @@ export default class PomMagicSystem extends GameController {
             }
             arr = arr.concat(Array.from(this._mapShow.values()).map(e => e.join('\n§r')));
             this.exPlayer.titleActionBar(arr.join("\n§r"));
-        }).delay(5);
+        }).delay(2);
     }
     registActionbarPass(name) {
         this._mapShow.set(name, []);
@@ -70,6 +72,20 @@ export default class PomMagicSystem extends GameController {
         this._mapShow.delete(name);
     }
     onJoin() {
+        const health = this.exPlayer.getComponent("minecraft:health");
+        let healthListener = new VarOnChangeListener((n, l) => {
+            let change = n - (l !== null && l !== void 0 ? l : 0);
+            this.gameHealth += change;
+            this.exPlayer.health = 50000;
+            healthListener.value = 50000;
+            console.warn(this.gameHealth);
+        }, health.currentValue);
+        this.getEvents().exEvents.tick.subscribe(e => {
+            healthListener.upDate(health.currentValue);
+        });
+        this.getEvents().exEvents.afterPlayerSpawn.subscribe(e => {
+            this.gameHealth = 40;
+        });
     }
     onLoaded() {
         this.wbflLooper.start();
