@@ -16,11 +16,14 @@ import ExActionAlert from "./ui/ExActionAlert.js";
 import "../../reflect-metadata/Reflect.js";
 import { eventDecoratorFactory } from "./events/eventDecoratorFactory.js";
 import notUtillTask from "../utils/notUtillTask.js";
+import ExGame from "./ExGame.js";
 export default class ExGameClient {
     constructor(server, id, player) {
         this.debuggerChatTest = (e) => {
-            if (e.message.startsWith("*/"))
-                ExGameConfig.console.info(eval(e.message.substring(2, e.message.length)));
+            ExGame.run(() => {
+                if (e.message.startsWith("*/"))
+                    ExGameConfig.console.info(eval(e.message.substring(2, e.message.length)));
+            });
         };
         this._server = server;
         this.clientId = id;

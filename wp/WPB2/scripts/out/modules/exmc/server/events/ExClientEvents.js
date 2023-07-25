@@ -25,7 +25,8 @@ export default class ExClientEvents {
             [ExOtherEventNames.afterPlayerHurt]: new Listener(this, ExOtherEventNames.afterPlayerHurt),
             [ExOtherEventNames.afterItemOnHandChange]: new Listener(this, ExOtherEventNames.afterItemOnHandChange),
             [ExOtherEventNames.afterPlayerShootProj]: new Listener(this, ExOtherEventNames.afterPlayerShootProj),
-            [ExEventNames.afterBlockBreak]: new Listener(this, ExEventNames.afterBlockBreak)
+            [ExEventNames.afterBlockBreak]: new Listener(this, ExEventNames.afterBlockBreak),
+            [ExEventNames.afterPlayerSpawn]: new Listener(this, ExEventNames.afterPlayerSpawn)
         };
         this._client = client;
     }
@@ -194,7 +195,7 @@ ExClientEvents.exEventSetting = {
     },
     [ExOtherEventNames.afterPlayerShootProj]: {
         pattern: (registerName, k) => {
-            const func = (p, item) => {
+            const func = (p, e) => {
                 let liss = ExClientEvents.eventHandlers.monitorMap[k].get(p);
                 if (!liss || liss.length === 0)
                     return;
@@ -225,14 +226,20 @@ ExClientEvents.exEventSetting = {
                 }
             };
             ExClientEvents.eventHandlers.server.getEvents().events.afterItemDefinitionEvent.subscribe((e) => {
-                func(e.source, e.itemStack);
+                func(e.source, e);
             });
             ExClientEvents.eventHandlers.server.getEvents().events.afterItemReleaseUse.subscribe((e) => {
-                func(e.source, e.itemStack);
+                func(e.source, e);
             });
         }
     },
     [ExEventNames.afterBlockBreak]: {
+        pattern: ExClientEvents.eventHandlers.registerToServerByEntity,
+        filter: {
+            "name": "player"
+        }
+    },
+    [ExEventNames.afterPlayerSpawn]: {
         pattern: ExClientEvents.eventHandlers.registerToServerByEntity,
         filter: {
             "name": "player"

@@ -1,9 +1,20 @@
-import { EntityHealthComponent, EntityVariantComponent, EntityMarkVariantComponent, EntityIsBabyComponent, EntityIsChargedComponent, EntityDamageCause } from '@minecraft/server';
+import { EntityHealthComponent, EntityInventoryComponent, EntityVariantComponent, EntityMarkVariantComponent, EntityIsBabyComponent, EntityIsChargedComponent, EntityDamageCause, EntityEquipmentInventoryComponent } from '@minecraft/server';
 import ExScoresManager from './ExScoresManager.js';
 import Vector3 from '../../math/Vector3.js';
 import ExEntityBag from './ExEntityBag.js';
 import ExCommand from '../env/ExCommand.js';
 import ExDimension from '../ExDimension.js';
+import { EntityMovementComponent } from '@minecraft/server';
+const compId = {
+    [EntityIsBabyComponent.componentId]: EntityIsBabyComponent,
+    [EntityMarkVariantComponent.componentId]: EntityMarkVariantComponent,
+    [EntityVariantComponent.componentId]: EntityVariantComponent,
+    [EntityInventoryComponent.componentId]: EntityInventoryComponent,
+    [EntityEquipmentInventoryComponent.componentId]: EntityEquipmentInventoryComponent,
+    [EntityIsChargedComponent.componentId]: EntityIsChargedComponent,
+    [EntityMovementComponent.componentId]: EntityMovementComponent,
+    [EntityHealthComponent.componentId]: EntityHealthComponent
+};
 export default class ExEntity {
     constructor(entity) {
         this.command = new ExCommand(this);
@@ -34,8 +45,8 @@ export default class ExEntity {
             this._damage = damage;
             timeout.setTimeout(() => {
                 var _a;
-                let health = this.getHealthComponent();
-                if (health.currentValue > 0.5)
+                let health = this.getComponent("minecraft:health");
+                if (health.currentValue > 0.01)
                     health.setCurrentValue(Math.max(0.5, health.currentValue - ((_a = this._damage) !== null && _a !== void 0 ? _a : 0)));
                 this._damage = undefined;
             }, 0);
@@ -169,55 +180,38 @@ export default class ExEntity {
             "amplifier": aml
         });
     }
-    hasComponent(name) {
-        return this._entity.hasComponent(name);
+    hasComponent(key) {
+        return this._entity.hasComponent(key);
     }
-    getComponent(name) {
-        return this._entity.getComponent(name);
-    }
-    hasHealthComponent() {
-        return this.hasComponent(EntityHealthComponent.componentId);
-    }
-    getHealthComponent() {
-        return this.getComponent(EntityHealthComponent.componentId);
+    getComponent(key) {
+        return this._entity.getComponent(key);
     }
     get health() {
-        return this.getHealthComponent().currentValue;
+        return this.getComponent("minecraft:health").currentValue;
     }
     set health(h) {
-        this.getHealthComponent().setCurrentValue(Math.max(0, h));
+        this.getComponent("minecraft:health").setCurrentValue(Math.max(0, h));
     }
     getMaxHealth() {
-        return this.getHealthComponent().defaultValue;
+        return this.getComponent("minecraft:health").defaultValue;
+    }
+    get movement() {
+        return this.getComponent("minecraft:movement").currentValue;
+    }
+    set movement(num) {
+        var _a;
+        (_a = this.getComponent("minecraft:movement")) === null || _a === void 0 ? void 0 : _a.setCurrentValue(num);
     }
     getBag() {
         return new ExEntityBag(this);
     }
-    hasVariantComponent() {
-        return this.hasComponent(EntityVariantComponent.componentId);
-    }
-    getVariantComponent() {
-        return this.getComponent(EntityVariantComponent.componentId);
-    }
     getVariant() {
         var _a, _b;
-        return (_b = (_a = this.getVariantComponent()) === null || _a === void 0 ? void 0 : _a.value) !== null && _b !== void 0 ? _b : 0;
-    }
-    hasMarkVariantComponent() {
-        return this.hasComponent(EntityMarkVariantComponent.componentId);
-    }
-    getMarkVariantComponent() {
-        return this.getComponent(EntityMarkVariantComponent.componentId);
+        return (_b = (_a = this.getComponent("minecraft:variant")) === null || _a === void 0 ? void 0 : _a.value) !== null && _b !== void 0 ? _b : 0;
     }
     getMarkVariant() {
         var _a, _b;
-        return (_b = (_a = this.getMarkVariantComponent()) === null || _a === void 0 ? void 0 : _a.value) !== null && _b !== void 0 ? _b : 0;
-    }
-    hasIsBabyComponent() {
-        return this.hasComponent(EntityIsBabyComponent.componentId);
-    }
-    hasIsChargedComponent() {
-        return this.hasComponent(EntityIsChargedComponent.componentId);
+        return (_b = (_a = this.getComponent("minecraft:variant")) === null || _a === void 0 ? void 0 : _a.value) !== null && _b !== void 0 ? _b : 0;
     }
 }
 ExEntity.propertyNameCache = "exCache";

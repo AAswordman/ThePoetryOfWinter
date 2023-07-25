@@ -248,7 +248,7 @@
             "hp:57":{"minecraft:health":{"value":57,"max":57}},
             "hp:58":{"minecraft:health":{"value":58,"max":58}},
             "hp:59":{"minecraft:health":{"value":59,"max":59}},
-            "hp:60":{"minecraft:health":{"value":60,"max":60}},
+            "hp:100000":{"minecraft:health":{"value":60,"max":60}},
 
             "minecraft:normal_player": {
                 "minecraft:variant": {
@@ -1640,7 +1640,7 @@
             "hp:57":{"add":{"component_groups":["hp:57"]}},
             "hp:58":{"add":{"component_groups":["hp:58"]}},
             "hp:59":{"add":{"component_groups":["hp:59"]}},
-            "hp:60":{"add":{"component_groups":["hp:60"]}},
+            "hp:100000":{"add":{"component_groups":["hp:100000"]}},
 
             "minecraft:become_wings_from_deep": {
                 "run_command": {

@@ -35,7 +35,7 @@ export class PomIntentionsBoss1 extends PomBossController {
     }
     onLongTick(e) {
         try {
-            if (this.exEntity.hasIsChargedComponent()) {
+            if (this.exEntity.hasComponent("minecraft:is_charged")) {
                 this.barrier.particle("wb:ruin_mind_boss_resist_par");
             }
         }
@@ -73,7 +73,7 @@ export class PomIntentionsBoss2 extends PomBossController {
     }
     onLongTick(e) {
         try {
-            if (this.exEntity.hasIsBabyComponent()) {
+            if (this.exEntity.hasComponent("minecraft:is_baby")) {
                 this.barrier.particle("wb:ruin_mind_boss_floor_par");
                 this.barrier.changeFog("wb:ruin_mind_3_boss");
             }
@@ -129,7 +129,7 @@ export class PomIntentionsBoss3 extends PomBossController {
     }
     onLongTick(e) {
         try {
-            if (this.exEntity.hasIsBabyComponent()) {
+            if (this.exEntity.hasComponent("minecraft:is_baby")) {
                 this.barrier.particle("wb:ruin_mind_boss_floor_par");
                 this.changeFog.upDate("wb:ruin_mind_3_boss");
             }

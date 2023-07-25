@@ -1,3 +1,4 @@
+import { EntityDamageCause } from '@minecraft/server';
 import MathUtil from "../../../modules/exmc/math/MathUtil.js";
 import ExEntity from "../../../modules/exmc/server/entity/ExEntity.js";
 import ExPlayer from "../../../modules/exmc/server/entity/ExPlayer.js";
@@ -51,6 +52,12 @@ export default class PomTalentSystem extends GameController {
                 this.exPlayer.triggerEvent("movement_" + MathUtil.round(MathUtil.clamp(this.movement[0] + this.movement_addition[0], 0, 0.2), 3));
             }
             this.exPlayer.triggerEvent("underwater_" + MathUtil.round(MathUtil.clamp(this.movement[2] + this.movement_addition[2], 0, 0.2), 3));
+            // if (n) {
+            //     this.exPlayer.movement = (MathUtil.round(MathUtil.clamp(this.movement[1] + this.movement_addition[1], 0, 0.2), 3));
+            // } else {
+            //     this.exPlayer.movement = (MathUtil.round(MathUtil.clamp(this.movement[0] + this.movement_addition[0], 0, 0.2), 3));
+            // }
+            // this.exPlayer.triggerEvent("underwater_" + MathUtil.round(MathUtil.clamp(this.movement[2] + this.movement_addition[2], 0, 0.2), 3));
         }, false);
         this.armorUpdater = new VarOnChangeListener((n, l) => {
             const bag = this.exPlayer.getBag();
@@ -184,15 +191,24 @@ export default class PomTalentSystem extends GameController {
         });
         this.getEvents().exEvents.afterPlayerHurt.subscribe((e) => {
             var _a, _b;
+            console.warn(e.damage);
+            console.warn(e.damageSource);
             let damage = ((_a = this.exPlayer.getPreRemoveHealth()) !== null && _a !== void 0 ? _a : 0) + e.damage;
             let add = 0;
             add += damage * ((_b = this.talentRes.get(Talent.DEFENSE)) !== null && _b !== void 0 ? _b : 0) / 100;
+            if (this.client.magicSystem.gameHealth + add <= 0) {
+                this.player.applyDamage(99999999, e.damageSource);
+            }
             this.exPlayer.addHealth(this, add);
             this.hasBeenDamaged.trigger(e.damage - add, e.damageSource.damagingEntity);
         });
         let lastListener = (d) => { };
+        this.getEvents().exEvents.afterPlayerSpawn.subscribe(e => {
+            this.exPlayer.triggerEvent("hp:100000");
+            this.exPlayer.health = 50000;
+        });
         this.getEvents().exEvents.afterItemOnHandChange.subscribe((e) => {
-            var _a, _b, _c, _d, _e, _f, _g, _h;
+            var _a, _b, _c, _d, _e, _f, _g;
             let bag = this.exPlayer.getBag();
             if (e.afterItem) {
                 //设置lore
@@ -272,7 +288,7 @@ export default class PomTalentSystem extends GameController {
                 this.itemOnHandComp = undefined;
             }
             this.updatePlayerAttribute();
-            this.exPlayer.triggerEvent("hp:" + Math.round((20 + ((_h = this.talentRes.get(Talent.VIENTIANE)) !== null && _h !== void 0 ? _h : 0))));
+            this.exPlayer.triggerEvent("hp:100000");
         });
         let testCauseDamage = 0;
         let testRoundDamage = 0;
@@ -346,4 +362,35 @@ export default class PomTalentSystem extends GameController {
         (_a = this.equiTotalTask) === null || _a === void 0 ? void 0 : _a.stop();
     }
 }
+PomTalentSystem.magicDamageType = new Set([
+    EntityDamageCause.fire,
+    EntityDamageCause.fireTick,
+    EntityDamageCause.lava,
+    EntityDamageCause.magic,
+    EntityDamageCause.freezing,
+    EntityDamageCause.drowning,
+    EntityDamageCause.temperature,
+    EntityDamageCause.thorns,
+    EntityDamageCause.wither
+]);
+PomTalentSystem.physicalDamageType = new Set([
+    EntityDamageCause.anvil,
+    EntityDamageCause.contact,
+    EntityDamageCause.magma,
+    EntityDamageCause.lightning,
+    EntityDamageCause.fireworks,
+    EntityDamageCause.entityAttack,
+    EntityDamageCause.contact,
+    EntityDamageCause.blockExplosion,
+    EntityDamageCause.entityExplosion,
+    EntityDamageCause.fall,
+    EntityDamageCause.fallingBlock,
+    EntityDamageCause.flyIntoWall,
+    EntityDamageCause.override,
+    EntityDamageCause.projectile,
+    EntityDamageCause.piston,
+    EntityDamageCause.stalactite,
+    EntityDamageCause.stalagmite,
+    EntityDamageCause.suffocation
+]);
 //# sourceMappingURL=PomTalentSystem.js.map
