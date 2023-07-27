@@ -1,12 +1,14 @@
 import ExNullEntity from '../../entity/ExNullEntity.js';
 export default class GlobalScoreBoardCache {
-    constructor(objective) {
+    constructor(objective, useCache = true) {
+        this.useCache = useCache;
         this.entity = new ExNullEntity("");
         this.objective = objective;
         objective.create("cache:" + objective.name);
         if (!GlobalScoreBoardCache.varMap.has(objective.name)) {
             GlobalScoreBoardCache.varMap.set(objective.name, new Map());
         }
+        this.scores = this.entity.getScoresManager();
         this.useMap = GlobalScoreBoardCache.varMap.get(objective.name);
     }
     debug() {
@@ -20,20 +22,22 @@ export default class GlobalScoreBoardCache {
     }
     setNumber(name, value) {
         this.entity.nameTag = name;
-        this.entity.getScoresManager().setScore(this.objective, value);
+        this.scores.setScore(this.objective, value);
         this.useMap.set(name, value);
     }
     getNumber(name) {
         this.entity.nameTag = name;
+        if (!this.useCache)
+            return this.scores.getScore(this.objective);
         if (!this.useMap.has(name)) {
-            this.useMap.set(name, this.entity.getScoresManager().getScore(this.objective));
+            this.useMap.set(name, this.scores.getScore(this.objective));
         }
         return this.useMap.get(name);
     }
     deleteNumber(name) {
         this.entity.nameTag = name;
         this.useMap.delete(name);
-        return this.entity.getScoresManager().deleteScore(this.objective);
+        return this.scores.deleteScore(this.objective);
     }
 }
 GlobalScoreBoardCache.varMap = new Map();
