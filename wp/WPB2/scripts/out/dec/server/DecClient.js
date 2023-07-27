@@ -1,4 +1,4 @@
-import { MinecraftDimensionTypes } from "@minecraft/server";
+import { EquipmentSlot, MinecraftDimensionTypes } from "@minecraft/server";
 import ExGameClient from "../../modules/exmc/server/ExGameClient.js";
 import { ArmorPlayerDec, ArmorPlayerPom } from "./items/ArmorData.js";
 import MathUtil from "../../modules/exmc/math/MathUtil.js";
@@ -16,7 +16,7 @@ export default class DecClient extends ExGameClient {
         super(server, id, player);
         this.useArmor = undefined;
         this.tmpV = new Vector3(0, 0, 0);
-        this.globalscores = new GlobalScoreBoardCache(new Objective("global"));
+        this.globalscores = new GlobalScoreBoardCache(new Objective("global"), false);
     }
     decreaseCooldownEqu(itemCategory, tickDecrease, equipmentTest) {
         const item = this.exPlayer.getBag().itemOnOffHand;
@@ -24,11 +24,30 @@ export default class DecClient extends ExGameClient {
             this.player.startItemCooldown(itemCategory, Math.max(this.player.getItemCooldown(itemCategory) - tickDecrease, 0));
         }
     }
+    totemEffect(equipmentTest, commands) {
+        const item_main = this.exPlayer.getBag().itemOnMainHand;
+        const item_off = this.exPlayer.getBag().itemOnOffHand;
+        if ((item_main === null || item_main === void 0 ? void 0 : item_main.typeId) == equipmentTest || (item_off === null || item_off === void 0 ? void 0 : item_off.typeId) == equipmentTest) {
+            for (let c of commands) {
+                this.player.runCommandAsync(c);
+            }
+        }
+    }
     onJoin() {
         super.onJoin();
-        //副手效果
+        this.player.runCommandAsync('fog @a remove \"night_event\"');
         this.getEvents().exEvents.onLongTick.subscribe((e) => {
+            if (e.currentTick % 40 === 0) {
+                this.totemEffect('dec:gingerbread_totem', ['function item/gingerbread_totem']);
+            }
+            ;
+            if (e.currentTick % 120 === 0) {
+                this.totemEffect('dec:ocean_totem', ['function item/ocean_totem']);
+                this.totemEffect('dec:fire_totem', ['function item/fire_totem']);
+            }
+            ;
             if (e.currentTick % 4 === 0) {
+                this.totemEffect('dec:energy_totem', ['function item/energy_totem']);
                 this.decreaseCooldownEqu('gun', 9, 'dec:archer_bullet_bag');
                 this.decreaseCooldownEqu('gun', 7, 'dec:lava_bullet_bag');
                 this.decreaseCooldownEqu('gun', 4, 'dec:blood_bullet_bag');
@@ -221,6 +240,11 @@ export default class DecClient extends ExGameClient {
                     ep.command.run("fog @s remove \"night_event\"");
             }
             if (e.currentTick % 20 === 0) {
+                //深渊之翼
+                if (this.exPlayer.getBag().getSlot(EquipmentSlot.chest).typeId == 'dec:wings_from_deep') {
+                    ep.addEffect(MinecraftEffectTypes.JumpBoost, 6 * 20, 1, true);
+                    ep.addEffect(MinecraftEffectTypes.SlowFalling, 6 * 20, 0, true);
+                }
                 //紫水晶套装效果
                 if (this.useArmor === ArmorPlayerDec.amethyst) {
                     if (DecGlobal.isDec()) {

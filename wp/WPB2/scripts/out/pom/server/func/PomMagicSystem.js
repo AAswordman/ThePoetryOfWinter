@@ -6,6 +6,7 @@ export default class PomMagicSystem extends GameController {
     constructor() {
         super(...arguments);
         this.additionHealthShow = false;
+        this.healthShow = true;
         this.additionHealth = 40;
         this.gameHealth = 40;
         this.scoresManager = this.exPlayer.getScoresManager();
@@ -20,40 +21,78 @@ export default class PomMagicSystem extends GameController {
         this._anotherShow = [];
         this._mapShow = new Map();
         this.actionbarShow = ExSystem.tickTask(() => {
+            // let fromData: [string, number, boolean, boolean, string][] = [
+            //     [PomMagicSystem.AdditionHPChar, this.additionHealth / 100, true, this.additionHealthShow, "HP"],
+            //     [PomMagicSystem.AdditionHPChar, this.gameHealth / 100, true, this.healthShow, "HP"],
+            //     [PomMagicSystem.wbflChar, this.scoresManager.getScore("wbfl") / 200, true, true, "MP"],
+            //     [PomMagicSystem.weaponCoolingChar, this.scoresManager.getScore("wbwqlq") / 20, false, true, "CD"],
+            //     [PomMagicSystem.armorCoolingChar, this.scoresManager.getScore("wbkjlqcg") / 20, false, true, "CD"]];
+            // let arr: string[] = [];
+            // for (let e of fromData) {
+            //     if ((e[1] === 0 && !e[2]) || !e[3]) {
+            //         continue;
+            //     }
+            //     let s = "";
+            //     while (e[1] >= 0.2) {
+            //         e[1] -= 0.2;
+            //         s += e[0][0];
+            //     }
+            //     if (e[1] < 0) {
+            //         e[1] = 0;
+            //     }
+            //     if (s.length < 5) {
+            //         s += e[0][e[0].length - 1 - Math.floor(e[1] / (0.2 / e[0].length))];
+            //     }
+            //     while (s.length < 5) {
+            //         s += e[0][e[0].length - 1];
+            //     }
+            //     s = e[4] + ": " + s;
+            //     arr.push(s);
+            // }
+            const oldData = this.lastFromData;
             let fromData = [
-                [PomMagicSystem.AdditionHPChar, this.additionHealth / 100, true, this.additionHealthShow, "HP"],
-                [PomMagicSystem.wbflChar, this.scoresManager.getScore("wbfl") / 200, true, true, "MP"],
-                [PomMagicSystem.weaponCoolingChar, this.scoresManager.getScore("wbwqlq") / 20, false, true, "CD"],
-                [PomMagicSystem.armorCoolingChar, this.scoresManager.getScore("wbkjlqcg") / 20, false, true, "CD"]
+                this.gameHealth,
+                100 * this.gameHealth / 40 + "%",
+                100 * this.scoresManager.getScore("wbfl") / 200 + "%",
+                this.scoresManager.getScore("wbfl"),
+                100 * this.scoresManager.getScore("wbwqlq") / 20 + "%",
+                100 * this.scoresManager.getScore("wbkjlqcg") / 20 + "%"
             ];
-            let arr = [];
-            for (let e of fromData) {
-                if ((e[1] === 0 && !e[2]) || !e[3]) {
-                    continue;
+            this.lastFromData = fromData;
+            let arr1 = fromData.map((e, index) => {
+                let v;
+                if (typeof e === "number") {
+                    let fix = Math.round(e) + "";
+                    v = ("_" + Math.min(8, fix.length) + fix.substring(Math.max(fix.length - 8, 0)));
                 }
-                let s = "";
-                while (e[1] >= 0.2) {
-                    e[1] -= 0.2;
-                    s += e[0][0];
+                else {
+                    if (e.endsWith("%")) {
+                        e = Math.round(parseFloat(e.substring(0, e.length - 1)));
+                        let old;
+                        if (oldData) {
+                            let n = oldData[index];
+                            old = Math.round(parseFloat(n.substring(0, n.length - 1)));
+                        }
+                        else {
+                            old = 0;
+                        }
+                        v = "_6" + "0".repeat(Math.max(0, (3 - e.toString().length))) + e +
+                            "0".repeat(Math.max(0, (3 - old.toString().length))) + old;
+                    }
+                    else {
+                        v = ("_" + e.length + e);
+                    }
                 }
-                if (e[1] < 0) {
-                    e[1] = 0;
-                }
-                if (s.length < 5) {
-                    s += e[0][e[0].length - 1 - Math.floor(e[1] / (0.2 / e[0].length))];
-                }
-                while (s.length < 5) {
-                    s += e[0][e[0].length - 1];
-                }
-                s = e[4] + ": " + s;
-                arr.push(s);
-            }
+                return v + "x".repeat(Math.max(0, 10 - v.length));
+            });
+            // console.warn(arr);
+            let arr2 = [];
             for (let i = 0; i < 100; i++) {
-                arr.push("");
+                arr2.push("");
             }
-            arr = arr.concat(Array.from(this._mapShow.values()).map(e => e.join('\n§r')));
-            this.exPlayer.titleActionBar(arr.join("\n§r"));
-        }).delay(2);
+            arr2 = arr2.concat(Array.from(this._mapShow.values()).map(e => e.join('\n§r')));
+            this.exPlayer.titleActionBar(arr1.join("") + arr2.join("\n§r"));
+        }).delay(4);
     }
     registActionbarPass(name) {
         this._mapShow.set(name, []);
@@ -78,10 +117,12 @@ export default class PomMagicSystem extends GameController {
             this.gameHealth += change;
             this.exPlayer.health = 50000;
             healthListener.value = 50000;
-            console.warn(this.gameHealth);
         }, health.currentValue);
-        this.getEvents().exEvents.tick.subscribe(e => {
-            healthListener.upDate(health.currentValue);
+        // this.getEvents().exEvents.tick.subscribe(e => {
+        //     healthListener.upDate(health!.currentValue);
+        // });
+        this.getEvents().exEvents.afterEntityHealthChanged.subscribe(e => {
+            healthListener.upDate(e.newValue);
         });
         this.getEvents().exEvents.afterPlayerSpawn.subscribe(e => {
             this.gameHealth = 40;

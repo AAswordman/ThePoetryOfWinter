@@ -190,14 +190,31 @@ export default class PomTalentSystem extends GameController {
             target.removeHealth(this, damage);
         });
         this.getEvents().exEvents.afterPlayerHurt.subscribe((e) => {
-            var _a, _b;
-            console.warn(e.damage);
-            console.warn(e.damageSource);
+            var _a, _b, _c;
+            // console.warn(e.damage);
             let damage = ((_a = this.exPlayer.getPreRemoveHealth()) !== null && _a !== void 0 ? _a : 0) + e.damage;
             let add = 0;
             add += damage * ((_b = this.talentRes.get(Talent.DEFENSE)) !== null && _b !== void 0 ? _b : 0) / 100;
-            if (this.client.magicSystem.gameHealth + add <= 0) {
-                this.player.applyDamage(99999999, e.damageSource);
+            if (this.client.magicSystem.gameHealth - e.damage + add <= 0) {
+                if (e.damageSource.cause === EntityDamageCause.projectile) {
+                    if (e.damageSource.damagingEntity) {
+                        this.player.applyDamage(99999999, {
+                            "damagingEntity": e.damageSource.damagingEntity,
+                            "damagingProjectile": ((_c = e.damageSource.damagingProjectile) === null || _c === void 0 ? void 0 : _c.isValid()) ?
+                                e.damageSource.damagingProjectile : (e.damageSource.damagingEntity)
+                        });
+                    }
+                    else {
+                        this.player.applyDamage(99999999);
+                    }
+                }
+                else {
+                    this.player.applyDamage(99999999, {
+                        "damagingEntity": e.damageSource.damagingEntity,
+                        "cause": e.damageSource.cause
+                    });
+                }
+                return;
             }
             this.exPlayer.addHealth(this, add);
             this.hasBeenDamaged.trigger(e.damage - add, e.damageSource.damagingEntity);
