@@ -221,6 +221,8 @@ export default class DecServer extends ExGameServer {
                 "scoreboard players remove @e[scores={i_heavy=1..}] i_heavy 1",
                 "scoreboard players remove @e[scores={harmless=1..}] harmless 1"
             ]);
+        });
+        this.getEvents().exEvents.onLongTick.subscribe(e => {
             let night_event = this.globalscores.getNumber("NightRandom");
             const nightEvent = (fog, eventEntity, maxSpawn) => {
                 this.getExDimension(MinecraftDimensionTypes.overworld).command.run(['fog @a[tag=dOverworld] push ' + fog + ' "night_event"']);
@@ -232,7 +234,7 @@ export default class DecServer extends ExGameServer {
                     i += 1;
                 }
             };
-            if (e.currentTick % 400 === 0) {
+            if (e.currentTick % 80 === 0) {
                 switch (night_event) {
                     case 1:
                         //尸潮
@@ -256,7 +258,7 @@ export default class DecServer extends ExGameServer {
                         break;
                 }
             }
-            if (e.currentTick % 200 === 0) {
+            if (e.currentTick % 40 === 0) {
                 switch (night_event) {
                     case 4:
                         //寒潮
@@ -264,7 +266,7 @@ export default class DecServer extends ExGameServer {
                         break;
                 }
             }
-            if (e.currentTick % 100 === 0) {
+            if (e.currentTick % 20 === 0) {
                 //夜晚事件
                 this.nightEventListener.upDate(new ExEnvironment().isNight());
             }

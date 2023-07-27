@@ -11,8 +11,9 @@ export default class ExClientEvents {
             [ExEventNames.beforeItemDefinitionEvent]: new Listener(this, ExEventNames.beforeItemDefinitionEvent),
             [ExEventNames.afterItemDefinitionEvent]: new Listener(this, ExEventNames.afterItemDefinitionEvent),
             [ExEventNames.beforeItemUse]: new Listener(this, ExEventNames.beforeItemUse),
-            [ExEventNames.afterItemUse]: new Listener(this, ExEventNames.beforeItemUse),
-            [ExEventNames.afterItemStopUse]: new Listener(this, ExEventNames.beforeItemUse),
+            [ExEventNames.afterItemUse]: new Listener(this, ExEventNames.afterItemUse),
+            [ExEventNames.afterItemStopUse]: new Listener(this, ExEventNames.afterItemStopUse),
+            [ExEventNames.afterItemReleaseUse]: new Listener(this, ExEventNames.afterItemReleaseUse),
             [ExEventNames.afterChatSend]: new Listener(this, ExEventNames.afterChatSend),
             [ExEventNames.beforeChatSend]: new Listener(this, ExEventNames.beforeChatSend),
             [ExOtherEventNames.tick]: new Listener(this, ExOtherEventNames.tick),
@@ -85,6 +86,12 @@ ExClientEvents.exEventSetting = {
         }
     },
     [ExEventNames.afterItemStopUse]: {
+        pattern: ExClientEvents.eventHandlers.registerToServerByEntity,
+        filter: {
+            "name": "source"
+        }
+    },
+    [ExEventNames.afterItemReleaseUse]: {
         pattern: ExClientEvents.eventHandlers.registerToServerByEntity,
         filter: {
             "name": "source"
@@ -206,17 +213,32 @@ ExClientEvents.exEventSetting = {
                 const tmpV = new Vector3();
                 for (let e of p.dimension.getEntities({
                     "location": p.location,
-                    "maxDistance": 6,
-                    "excludeFamilies": [MinecraftEntityTypes.Player]
+                    "maxDistance": 16,
+                    "families": ["arrow"]
                 })) {
                     tmpV.set(e.getVelocity());
                     const len = tmpV.len();
                     if (len === 0)
                         continue;
-                    console.warn(Math.acos(tmpV.mul(viewDic) / viewLen / tmpV.len()));
-                    if (tmpV.len() > 0.3
+                    if (tmpV.len() > 0.15
                         && Math.acos(tmpV.mul(viewDic) / viewLen / tmpV.len()) < 0.25) {
                         arr.push(e);
+                    }
+                }
+                if (arr.length === 0) {
+                    for (let e of p.dimension.getEntities({
+                        "location": p.location,
+                        "maxDistance": 6,
+                        "excludeFamilies": [MinecraftEntityTypes.Player]
+                    })) {
+                        tmpV.set(e.getVelocity());
+                        const len = tmpV.len();
+                        if (len === 0)
+                            continue;
+                        if (tmpV.len() > 0.15
+                            && Math.acos(tmpV.mul(viewDic) / viewLen / tmpV.len()) < 0.25) {
+                            arr.push(e);
+                        }
                     }
                 }
                 if (arr.length > 0) {
@@ -230,6 +252,9 @@ ExClientEvents.exEventSetting = {
                 func(e.source, e);
             });
             ExClientEvents.eventHandlers.server.getEvents().events.afterItemReleaseUse.subscribe((e) => {
+                func(e.source, e);
+            });
+            ExClientEvents.eventHandlers.server.getEvents().events.afterItemUse.subscribe((e) => {
                 func(e.source, e);
             });
         }
