@@ -1,7 +1,13 @@
+import { world, DynamicPropertiesDefinition, MinecraftEntityTypes } from "@minecraft/server";
+import MathUtil from "../../../modules/exmc/math/MathUtil.js";
 import ExSystem from "../../../modules/exmc/utils/ExSystem.js";
 import VarOnChangeListener from "../../../modules/exmc/utils/VarOnChangeListener.js";
 import { Talent } from "../cache/TalentData.js";
 import GameController from "./GameController.js";
+world.afterEvents.worldInitialize.subscribe((e) => {
+    let def = new DynamicPropertiesDefinition().defineNumber("health", 40);
+    e.propertyRegistry.registerEntityTypeDynamicProperties(def, MinecraftEntityTypes.player);
+});
 export default class PomMagicSystem extends GameController {
     constructor() {
         super(...arguments);
@@ -9,6 +15,8 @@ export default class PomMagicSystem extends GameController {
         this.healthShow = true;
         this.additionHealth = 40;
         this.gameHealth = 40;
+        this.gameMaxHealth = 40;
+        this.gameShield = 0;
         this.scoresManager = this.exPlayer.getScoresManager();
         this.wbflLooper = ExSystem.tickTask(() => {
             if (this.scoresManager.getScore("wbfl") < 200)
@@ -20,6 +28,9 @@ export default class PomMagicSystem extends GameController {
         }).delay(1 * 20);
         this._anotherShow = [];
         this._mapShow = new Map();
+        this.healthSaver = ExSystem.tickTask(() => {
+            this.player.setDynamicProperty('health', this.gameHealth);
+        }).delay(20 * 5);
         this.actionbarShow = ExSystem.tickTask(() => {
             // let fromData: [string, number, boolean, boolean, string][] = [
             //     [PomMagicSystem.AdditionHPChar, this.additionHealth / 100, true, this.additionHealthShow, "HP"],
@@ -52,11 +63,12 @@ export default class PomMagicSystem extends GameController {
             const oldData = this.lastFromData;
             let fromData = [
                 this.gameHealth,
-                100 * this.gameHealth / 40 + "%",
-                100 * this.scoresManager.getScore("wbfl") / 200 + "%",
+                MathUtil.clamp(100 * this.gameHealth / this.gameMaxHealth, 0, 100) + "%",
+                MathUtil.clamp(100 * this.scoresManager.getScore("wbfl") / 200, 0, 100) + "%",
                 this.scoresManager.getScore("wbfl"),
-                100 * this.scoresManager.getScore("wbwqlq") / 20 + "%",
-                100 * this.scoresManager.getScore("wbkjlqcg") / 20 + "%"
+                MathUtil.clamp(100 * this.scoresManager.getScore("wbwqlq") / 20, 0, 100) + "%",
+                MathUtil.clamp(100 * this.scoresManager.getScore("wbkjlqcg") / 20, 0, 100) + "%",
+                MathUtil.clamp(100 * this.gameShield / this.gameMaxHealth, 0, 100) + "%",
             ];
             this.lastFromData = fromData;
             let arr1 = fromData.map((e, index) => {
@@ -111,10 +123,11 @@ export default class PomMagicSystem extends GameController {
         this._mapShow.delete(name);
     }
     onJoin() {
+        var _a;
         const health = this.exPlayer.getComponent("minecraft:health");
         let healthListener = new VarOnChangeListener((n, l) => {
             let change = n - (l !== null && l !== void 0 ? l : 0);
-            this.gameHealth += change;
+            this.gameHealth = Math.min(this.gameHealth + change, this.gameMaxHealth);
             this.exPlayer.health = 50000;
             healthListener.value = 50000;
         }, health.currentValue);
@@ -127,6 +140,8 @@ export default class PomMagicSystem extends GameController {
         this.getEvents().exEvents.afterPlayerSpawn.subscribe(e => {
             this.gameHealth = 40;
         });
+        this.healthSaver.start();
+        this.gameHealth = (_a = this.player.getDynamicProperty("health")) !== null && _a !== void 0 ? _a : 0;
     }
     onLoaded() {
         this.wbflLooper.start();
@@ -137,6 +152,7 @@ export default class PomMagicSystem extends GameController {
         this.wbflLooper.stop();
         this.armorCoolingLooper.stop();
         this.actionbarShow.stop();
+        this.healthSaver.stop();
     }
     upDateByTalent(talentRes) {
         var _a, _b, _c;

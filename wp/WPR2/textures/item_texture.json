@@ -1394,9 +1394,6 @@
         "businessman": {
             "textures": "textures/wb_egg/base/businessman"
         },
-        "territory_summon": {
-            "textures": "textures/wb_item/base/territory_summon"
-        },
         "base_core_a": {
             "textures": "textures/wb_item/base/base_core_a"
         },
@@ -1420,6 +1417,9 @@
         },
         "staff_base": {
             "textures": "textures/wb_item/base/staff_base"
+        },
+        "skill_tracking_arrow": {
+            "textures": "textures/wb_item/base/skill_tracking_arrow"
         },
         "crystal_fuse": {
             "textures": "textures/wb_item/base/crystal_fuse"

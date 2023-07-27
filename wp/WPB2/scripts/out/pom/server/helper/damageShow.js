@@ -1,4 +1,6 @@
 export default function damageShow(dim, damage, vec) {
+    if (damage > 20000)
+        return;
     damage = Math.round(Math.min(9999, damage));
     if (damage > 1000) {
         let s = damage - damage % 1000;

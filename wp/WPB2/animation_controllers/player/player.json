@@ -130,9 +130,6 @@
                             "sword_water_ca": "(query.get_equipped_item_name == 'sword_water_e' || query.get_equipped_item_name == 'sword_water_f')"
                         },
                         {
-                            "territory_summon": "(!query.is_sneaking && query.get_equipped_item_name == 'territory_summon')"
-                        },
-                        {
                             "axex_equipment_a": "(!query.is_sneaking && query.get_equipped_item_name == 'axex_equipment_a')"
                         },
 
@@ -177,31 +174,6 @@
                     ],
                     "on_entry": [
                         "/tag @s remove xxx"
-                    ]
-                },
-                "territory_summon": {
-                    "transitions": [{
-                            "territory_summona": "(!query.is_sneaking && query.get_equipped_item_name == 'territory_summon') && query.is_using_item"
-                        },
-                        {
-                            "default": "(query.is_sneaking || query.get_equipped_item_name != 'territory_summon')"
-                        }
-                    ]
-                },
-                "territory_summona": {
-                    "transitions": [{
-                            "territory_summon": "(!query.is_sneaking && query.get_equipped_item_name == 'territory_summon') && !query.is_using_item"
-                        },
-                        {
-                            "default": "(query.is_sneaking || query.get_equipped_item_name != 'territory_summon')"
-                        }
-                    ],
-                    "on_entry": [
-                        "/execute as @s[tag=wbldczb] at @s run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.27.name\"}]}",
-                        "/execute as @s[tag=!wbldczb] at @s run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.28.name\"}]}",
-                        "/execute as @s[tag=!wbldczb] at @s run replaceitem entity @s slot.weapon.mainhand 0 air",
-                        "/execute as @s[tag=!wbldczb] at @s run summon wb:territory ~ ~ ~",
-                        "/execute as @s[tag=!wbldczb] at @s run scoreboard players operation @e[r=4,type=wb:territory] wbldzr = @s wbldid"
                     ]
                 },
                 "sword_water_aa": {

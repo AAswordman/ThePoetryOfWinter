@@ -22,7 +22,7 @@
         }
       },
       "minecraft:cooldown": {
-        "category": "weapon",
+        "category": "staff",
         "duration": 2.1
       },
       "minecraft:render_offsets": {

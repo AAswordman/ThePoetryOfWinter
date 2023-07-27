@@ -176,24 +176,6 @@
             {
               "wants": [
                 {
-                  "item": "wb:currency_1",
-                  "quantity": 8,
-                  "price_multiplier": 0.125
-                }
-              ],
-              "gives": [
-                {
-                  "item": "wb:territory_summon",
-                  "quantity": 1
-                }
-              ],
-              "trader_exp": 2,
-              "max_uses": 2,
-              "reward_exp": true
-            },
-            {
-              "wants": [
-                {
                   "item": "minecraft:iron_ingot",
                   "quantity": 10,
                   "price_multiplier": 0.1
