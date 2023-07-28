@@ -55,7 +55,12 @@
       },
       "minecraft:wearable": {
         "slot": "slot.armor.chest"
-      }
+      },
+      "tag:comp:armor_protection:8": {},
+      "tag:comp:armor_type:suit_:everlasting_winter:_": {},
+      "tag:comp:armor_magic_protection:12": {},
+      "tag:comp:armor_physical_protection:8": {},
+      "tag:comp:armor_resilience:5": {}
     }
   }
 }

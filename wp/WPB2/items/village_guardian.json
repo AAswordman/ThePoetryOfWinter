@@ -83,7 +83,8 @@
       "minecraft:cooldown": {
         "category": "village_portal",
         "duration": 60
-      }
+      },
+      "tag:comp:equipment_type:melee_weapon":{}
     },
     "events": {
       "attack": {

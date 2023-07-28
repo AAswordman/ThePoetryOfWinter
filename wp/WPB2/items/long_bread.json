@@ -53,7 +53,8 @@
       "minecraft:food": {
         "nutrition": 17,
         "saturation_modifier": "good"
-      }
+      },
+      "tag:comp:equipment_type:melee_weapon":{}
     },
     "events": {
       "attack": {

@@ -41,7 +41,8 @@
             ],
             "scale_power_by_draw_duration": true,
             "max_draw_duration": 1.0
-         }
+         },
+         "tag:comp:equipment_type:range_weapon":{}
       }
    }
 }

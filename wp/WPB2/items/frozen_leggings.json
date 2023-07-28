@@ -61,7 +61,11 @@
       },
       "minecraft:wearable": {
         "slot": "slot.armor.legs"
-      }
+      },
+      "tag:comp:armor_protection:4": {},
+      "tag:comp:armor_type:suit_:frozen:_": {},
+      "tag:comp:armor_magic_protection:7": {},
+      "tag:comp:armor_physical_protection:3": {}
     }
   }
 }

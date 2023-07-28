@@ -29,7 +29,8 @@
       },
       "minecraft:projectile": {
         "projectile_entity": "dec:wood_dart"
-      }
+      },
+      "tag:comp:equipment_type:thrown_weapon":{}
     }
   }
 }

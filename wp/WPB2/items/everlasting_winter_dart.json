@@ -26,7 +26,8 @@
       },
       "minecraft:projectile": {
         "projectile_entity": "dec:everlasting_winter_dart"
-      }
+      },
+      "tag:comp:equipment_type:thrown_weapon":{}
     }
   }
 }

@@ -47,7 +47,8 @@
       },
       "minecraft:durability": {
         "max_durability": 268
-      }
+      },
+      "tag:comp:equipment_type:summon_weapon":{}
     },
     "events": {
       "attack": {

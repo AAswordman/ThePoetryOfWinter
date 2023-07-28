@@ -26,7 +26,8 @@
       },
       "minecraft:projectile": {
         "projectile_entity": "dec:dragon_fireball_by_player"
-      }
+      },
+      "tag:comp:equipment_type:thrown_weapon":{}
     }
   }
 }

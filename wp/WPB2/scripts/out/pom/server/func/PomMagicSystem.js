@@ -161,7 +161,7 @@ export default class PomMagicSystem extends GameController {
         scores.setScore("wbwqlqjs", Math.round((this.client.getDifficulty().coolingFactor) * (100 + ((_a = talentRes.get(Talent.CHARGING)) !== null && _a !== void 0 ? _a : 0))));
         this.wbflLooper.stop();
         this.armorCoolingLooper.stop();
-        this.wbflLooper.delay((1 / this.client.getDifficulty().magicpointAddFactor) *
+        this.wbflLooper.delay((1 / this.client.getDifficulty().wbflAddFactor) *
             (5 * 20 / ((1 + ((_b = talentRes.get(Talent.SOURCE)) !== null && _b !== void 0 ? _b : 0) / 100) * (1 + scores.getScore("wbdjcg") * 3 / 100))));
         this.armorCoolingLooper.delay((1 / this.client.getDifficulty().coolingFactor) *
             (1 / (1 / (1 * 20) * (1 + ((_c = talentRes.get(Talent.RELOAD)) !== null && _c !== void 0 ? _c : 0) / 100))));

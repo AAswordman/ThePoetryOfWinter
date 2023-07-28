@@ -1095,7 +1095,8 @@
                     "target": "self"
                 }
             },
-            "tag:minecraft:is_axe": {}
+            "tag:minecraft:is_axe": {},
+            "tag:comp:movement_addition:-0.01": {}
         },
         "events": {
             "attack": {

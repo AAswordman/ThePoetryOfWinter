@@ -49,7 +49,11 @@
       },
       "minecraft:wearable": {
         "slot": "slot.armor.chest"
-      }
+      },
+      "tag:comp:armor_protection:9": {},
+      "tag:comp:armor_type:suit_:crying:_": {},
+      "tag:comp:armor_physical_protection:8": {},
+      "tag:comp:armor_magic_protection:14": {}
     }
   }
 }

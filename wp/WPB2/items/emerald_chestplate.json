@@ -49,7 +49,10 @@
       },
       "minecraft:wearable": {
         "slot": "slot.armor.chest"
-      }
+      },
+      "tag:comp:armor_protection:5": {},
+      "tag:comp:armor_magic_reduction:2": {},
+      "tag:comp:armor_type:suit_:emerald:_": {}
     }
   }
 }

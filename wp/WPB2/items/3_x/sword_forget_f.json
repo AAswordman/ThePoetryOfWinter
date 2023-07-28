@@ -85,7 +85,8 @@
             "scale": [0,0,0]
           }
         }
-      }
+      },
+      "tag:comp:equipment_type:melee_weapon":{}
     },
     "events": {
         "attack": {

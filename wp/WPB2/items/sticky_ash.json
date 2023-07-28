@@ -29,7 +29,8 @@
       },
       "minecraft:projectile": {
         "projectile_entity": "dec:sticky_ash"
-      }
+      },
+      "tag:comp:equipment_type:thrown_weapon":{}
     }
   }
 }

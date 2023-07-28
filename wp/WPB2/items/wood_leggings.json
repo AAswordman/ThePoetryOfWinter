@@ -58,7 +58,10 @@
       },
       "minecraft:wearable": {
         "slot": "slot.armor.legs"
-      }
+      },
+      "tag:comp:armor_protection:2": {},
+      "tag:comp:armor_magic_protection:3": {},
+      "tag:comp:armor_type:suit_:wood:_": {}
     }
   }
 }

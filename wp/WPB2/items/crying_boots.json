@@ -49,7 +49,11 @@
       },
       "minecraft:wearable": {
         "slot": "slot.armor.feet"
-      }
+      },
+      "tag:comp:armor_protection:4": {},
+      "tag:comp:armor_type:suit_:crying:_": {},
+      "tag:comp:armor_physical_protection:2": {},
+      "tag:comp:armor_magic_protection:4": {}
     }
   }
 }

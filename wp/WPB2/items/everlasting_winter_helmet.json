@@ -55,7 +55,12 @@
       },
       "minecraft:wearable": {
         "slot": "slot.armor.head"
-      }
+      },
+      "tag:comp:armor_protection:4": {},
+      "tag:comp:armor_type:suit_:everlasting_winter:_": {},
+      "tag:comp:armor_magic_protection:6": {},
+      "tag:comp:armor_physical_protection:2": {},
+      "tag:comp:armor_resilience:4": {}
     }
   }
 }

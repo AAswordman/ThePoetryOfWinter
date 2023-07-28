@@ -50,7 +50,8 @@
             "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.3"
           }
         ]
-      }
+      },
+      "tag:comp:equipment_type:magic_weapon":{}
     },
     "events": {
       "attack": {

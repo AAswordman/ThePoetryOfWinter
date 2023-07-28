@@ -73,7 +73,9 @@
         ]
       },
       "minecraft:foil": false,
-      "minecraft:hand_equipped": true
+      "minecraft:hand_equipped": true,
+      "tag:comp:movement_addition:0.02": {},
+      "tag:comp:equipment_type:melee_weapon":{}
     },
     "events": {
       "attack": {

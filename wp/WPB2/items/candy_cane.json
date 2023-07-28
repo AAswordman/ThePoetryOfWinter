@@ -59,7 +59,8 @@
         "nutrition": 5,
         "saturation_modifier": "good",
         "can_always_eat": true
-      }
+      },
+      "tag:comp:equipment_type:melee_weapon":{}
     },
     "events": {
       "attack": {

@@ -39,7 +39,18 @@
             },
             "minecraft:icon": {
                 "texture": "armor_ink_boots"
-            }
+            },
+            "tag:comp:use_data_group:tag_:default:_": {},
+            "tag:comp:armor_protection:5": {},
+            "tag:comp:armor_resilience:3": {},
+            "tag:comp:armor_physical_protection:2": {},
+            "tag:comp:armor_magic_protection:1": {},
+            "tag:comp:armor_physical_reduction:0": {},
+            "tag:comp:armor_magic_reduction:0": {},
+            "tag:comp:movement_addition:0.01": {},
+            "tag:comp:attack_addition:1": {},
+            "tag:comp:armor_type:suit_:ink:_": {},
+            "tag:comp:actual_level:5": {}
         }
     }
 }

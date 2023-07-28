@@ -25,7 +25,8 @@
       "minecraft:cooldown": {
         "category": "missile",
         "duration": 2.5
-      }
+      },
+      "tag:comp:equipment_type:thrown_weapon":{}
     },
     "events": {
       "shoot": {

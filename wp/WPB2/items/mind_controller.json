@@ -22,7 +22,8 @@
       },
       "minecraft:projectile": {
         "projectile_entity": "dec:mind_controller"
-      }
+      },
+      "tag:comp:equipment_type:thrown_weapon":{}
     }
   }
 }
