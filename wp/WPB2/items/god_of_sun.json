@@ -34,6 +34,10 @@
       "minecraft:durability": {
         "max_durability": 356
       },
+      "minecraft:enchantable": {
+        "value": 24,
+        "slot": "flintsteel"
+      },
       "minecraft:repairable": {
         "repair_items": [
           {
@@ -61,7 +65,8 @@
                 "run_command": {
                   "command": [
                     "playsound fire.fire @a ~~~",
-                    "scoreboard players remove @s wbfl 7"
+                    "scoreboard players remove @s wbfl 7",
+                    "playanimation @s animation.humanoid.staff_use"
                   ],
                   "target": "holder"
                 }

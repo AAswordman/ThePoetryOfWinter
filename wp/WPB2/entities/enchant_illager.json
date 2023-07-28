@@ -17,20 +17,6 @@
           "into": "dec:enchant_illager_1<minecraft:entity_spawned>"
         }
       },
-      "minecraft:angry": {
-        "minecraft:boss": {
-          "should_darken_sky": false,
-          "name": "boss.dec:enchant_illager_angry.name",
-          "hud_range": 64
-        },
-        "minecraft:health": {
-          "value": 1000,
-          "max": 1000
-        },
-        "minecraft:movement": {
-          "value": 0.6
-        }
-      },
       "minecraft:spawn": {
         "minecraft:damage_sensor": {
           "triggers": [
@@ -76,15 +62,18 @@
                   "test": "is_family",
                   "subject": "other",
                   "value": "ghost"
-                  }
-                },
-              "deals_damage": false
+                }
               },
+              "deals_damage": false
+            },
             {
               "on_damage": {
                 "filters": {
                   "all_of": [
-                    {"test": "has_damage", "value": "fatal"}
+                    {
+                      "test": "has_damage",
+                      "value": "fatal"
+                    }
                   ]
                 },
                 "event": "minecraft:next"
@@ -444,74 +433,41 @@
         }
       },
       "minecraft:entity_spawned": {
-        "sequence": [
+        "add": {
+          "component_groups": [
+            "minecraft:spawn"
+          ]
+        }
+      },
+      "minecraft:change_attack": {
+        "randomize": [
           {
+            "weight": 1,
+            "remove": {
+              "component_groups": [
+                "minecraft:summon",
+                "minecraft:roar"
+              ]
+            },
             "add": {
               "component_groups": [
-                "minecraft:spawn"
+                "minecraft:summon"
               ]
             }
           },
           {
-            "filters": {
-              "test": "has_biome_tag",
-              "operator": "!=",
-              "value": "jungle"
+            "weight": 2,
+            "remove": {
+              "component_groups": [
+                "minecraft:summon",
+                "minecraft:roar"
+              ]
             },
-            "randomize": [
-              {
-                "add": {
-                  "component_groups": [
-                    "minecraft:angry"
-                  ]
-                }
-              }
-            ]
-          }
-        ]
-      },
-      "minecraft:change_attack": {
-        "sequence": [
-          {
-            "randomize": [
-              {
-                "weight": 1,
-                "sequence": [
-                  {
-                    "randomize": [
-                      {
-                        "weight": 1,
-                        "remove": {
-                          "component_groups": [
-                            "minecraft:summon",
-                            "minecraft:roar"
-                          ]
-                        },
-                        "add": {
-                          "component_groups": [
-                            "minecraft:summon"
-                          ]
-                        }
-                      },
-                      {
-                        "weight": 2,
-                        "remove": {
-                          "component_groups": [
-                            "minecraft:summon",
-                            "minecraft:roar"
-                          ]
-                        },
-                        "add": {
-                          "component_groups": [
-                            "minecraft:roar"
-                          ]
-                        }
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
+            "add": {
+              "component_groups": [
+                "minecraft:roar"
+              ]
+            }
           }
         ]
       },

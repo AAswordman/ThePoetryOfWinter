@@ -2,38 +2,99 @@
   "format_version": "1.16.0",
   "minecraft:block": {
     "description": {
-      "identifier": "dec:bat_summoner"
+      "identifier": "dec:bat_summoner",
+      "properties": {
+        "dec:state": [
+          "empty",
+          "activated"
+        ]
+      }
     },
+    "permutations": [
+      {
+        "condition": "query.block_property('dec:state') == 'empty'",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "bat_summoner",
+              "render_method": "opaque"
+            }
+          },
+          "minecraft:on_interact": {
+            "event": "activate",
+            "condition": "query.get_equipped_item_name('main_hand') == 'bat_bait'"
+          },
+          "minecraft:ticking": {
+            "looping": true,
+            "range": [
+              600,
+              1200
+            ],
+            "on_tick": {
+              "event": "minecraft:activate_naturally"
+            }
+          },
+          "minecraft:light_dampening": 15,
+          "minecraft:light_emission": 0,
+          "minecraft:destroy_time": 3.0,
+          "minecraft:explosion_resistance": 100
+        }
+      },
+      {
+        "condition": "query.block_property('dec:state') == 'activated'",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "bat_summoner_activated",
+              "render_method": "opaque"
+            }
+          },
+          "minecraft:on_interact": {
+            "event": "summon",
+            "condition": "query.get_equipped_item_name('main_hand') == 'iron_key'"
+          },
+          "minecraft:light_dampening": 15,
+          "minecraft:light_emission": 7,
+          "minecraft:destroy_time": 3.0,
+          "minecraft:explosion_resistance": 100
+        }
+      }
+    ],
     "components": {
-		  "minecraft:creative_category": {
+      "minecraft:creative_category": {
         "group": "itemGroup.name.outside",
-				"category": "items"
-			},
+        "category": "items"
+      },
+      "minecraft:unit_cube": {},
       "minecraft:light_dampening": 15,
       "minecraft:light_emission": 0,
       "minecraft:destroy_time": 3.0,
       "minecraft:explosion_resistance": 100,
       "minecraft:map_color": "#63513C",
-      "minecraft:loot": "loot_tables/empty.json",
-      "minecraft:on_interact": {
-        "event": "activate",
-        "condition": "query.get_equipped_item_name('main_hand') == 'bat_bait'"
-      },
-      "minecraft:ticking": {
-        "looping": true,
-        "range": [
-          600,
-          1200
-        ],
-        "on_tick": {
-          "event": "minecraft:activate_naturally"
-        }
-      }
+      "minecraft:loot": "loot_tables/empty.json"
     },
     "events": {
+      "summon": {
+        "play_sound": {
+          "target": "other",
+          "sound": "conduit.activate"
+        },
+        "set_block_property": {
+          "dec:state": "'empty'"
+        },
+        "run_command": {
+          "command": [
+            "tellraw @a { \"rawtext\" : [ { \"translate\" : \"text.dec:summon_predators.name\" } ] }",
+            "particle dec:bat_dust_rising_particle ~~~",
+            "particle dec:bat_dust_spurt_big_particle ~~15~",
+            "summon dec:predators ~~15~"
+          ]
+        },
+        "decrement_stack": {}
+      },
       "activate": {
-        "set_block": {
-          "block_type": "dec:bat_summoner_activated"
+        "set_block_property": {
+          "dec:state": "'activated'"
         },
         "run_command": {
           "command": [
@@ -43,8 +104,8 @@
         "decrement_stack": {}
       },
       "activate_naturally": {
-        "set_block": {
-          "block_type": "dec:bat_summoner_activated"
+        "set_block_property": {
+          "dec:state": "'activated'"
         },
         "run_command": {
           "command": [

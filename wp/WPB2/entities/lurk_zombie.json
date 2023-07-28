@@ -7,7 +7,24 @@
       "is_summonable": true,
       "is_experimental": false
     },
-    "component_groups": {},
+    "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "minecraft:from_night_event": {
+        "minecraft:environment_sensor": {
+          "triggers": {
+            "filters": {
+              "test": "is_daytime",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "event": "minecraft:despawn"
+          }
+        }
+      }
+    },
     "components": {
       "minecraft:pushable": {
         "is_pushable": true,
@@ -31,8 +48,8 @@
         "remove_targets_below_angry_threshold": true,
         "angry_boost": 40,
         "anger_decrement_interval": 1.0,
-        "default_annoyingness": 20,
-        "default_projectile_annoyingness": 15,
+        "default_annoyingness": 40,
+        "default_projectile_annoyingness": 40,
         "on_increase_sounds": [
           {
             "sound": "listening_angry",
@@ -168,6 +185,22 @@
         "table": "loot_tables/entities/lurk_zombie.json"
       }
     },
-    "events": {}
+    "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
+      "minecraft:from_night_event": {
+        "trigger": "minecraft:entity_spawned",
+        "add": {
+          "component_groups": [
+            "minecraft:from_night_event"
+          ]
+        }
+      }
+    }
   }
 }

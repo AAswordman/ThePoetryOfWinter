@@ -41,6 +41,10 @@
           }
         ]
       },
+      "minecraft:enchantable": {
+        "value": 20,
+        "slot": "flintsteel"
+      },
       "minecraft:cooldown": {
         "category": "magic_book",
         "duration": 1
@@ -65,7 +69,8 @@
                 "run_command": {
                   "command": [
                     "playsound fire.fire @a ~~~",
-                    "scoreboard players remove @s wbfl 6"
+                    "scoreboard players remove @s wbfl 6",
+                    "playanimation @s animation.humanoid.staff_use"
                   ],
                   "target": "holder"
                 }

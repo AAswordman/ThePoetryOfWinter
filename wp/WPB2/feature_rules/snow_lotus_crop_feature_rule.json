@@ -1,0 +1,43 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:feature_rules": {
+    "description": {
+      "identifier": "dec:snow_lotus_crop_feature_rule",
+      "places_feature": "dec:snow_lotus_crop_feature"
+    },
+    "conditions": {
+      "placement_pass": "surface_pass",
+      "minecraft:biome_filter": [
+        {
+          "test": "has_biome_tag",
+          "operator": "==",
+          "value": "mountain"
+        },
+        {
+          "any_of": [
+            {
+              "test": "has_biome_tag",
+              "operator": "!=",
+              "value": "river"
+            },
+            {
+              "test": "has_biome_tag",
+              "operator": "!=",
+              "value": "lakes"
+            }
+          ]
+        }
+      ]
+    },
+    "distribution": {
+      "iterations": 1,
+      "scatter_chance": 3,
+      "x": 0,
+      "y": {
+        "distribution": "uniform",
+        "extent": [ "query.heightmap(variable.worldx, variable.worldz)", "query.heightmap(variable.worldx, variable.worldz) + 1" ]
+      },
+      "z": 0
+    }
+  }
+}

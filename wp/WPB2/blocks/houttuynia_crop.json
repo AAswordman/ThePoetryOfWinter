@@ -14,7 +14,7 @@
         },
         "components": {
 			"minecraft:breathability": "air",
-            "minecraft:geometry": "geometry.crop.sparse",
+            "minecraft:geometry": "geometry.crop.sparse.on_dirt",
             "minecraft:entity_collision": false,
             "minecraft:pick_collision": {
                 "origin": [

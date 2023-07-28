@@ -12,7 +12,7 @@ export default function isEquipment(id) {
             return true;
         let arr = ["bamboo_yataghan", "absolute_zero", "growth", "angel_purification", "blood_mare", "blue_of_the_sea", "candy_cane",
             "cudgel", "lollipop", "hard_lollipop", "mace", "long_bread", "scimitar", "sharp_coral", "village_guardian",
-            "flare_magic_book", "snowball_magic_book", "wave_magic_book", "giant_ivy", "god_of_sun", "night_mare", "natura_spear", "radiate_spreader",
+            "flare_magic_book", "snowball_magic_book", "wave_magic_book", "giant_ivy", "god_of_sun", "night_mare", "natural_spear", "radiate_spreader",
             "thunder_rapier", "ghost_summoner"];
         for (let i of arr) {
             if ("dec:" + i === id)

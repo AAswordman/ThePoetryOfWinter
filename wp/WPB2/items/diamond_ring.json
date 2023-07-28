@@ -1,0 +1,22 @@
+{
+    "format_version": "1.16.100",
+    "minecraft:item": {
+        "description": {
+            "category": "equipment",
+            "identifier": "dec:diamond_ring"
+        },
+        "components": {
+            "minecraft:creative_category": {
+                "parent": "itemGroup.name.navigation"
+            },
+            "minecraft:display_name": {
+                "value": "item.dec:diamond_ring.name"
+            },
+            "minecraft:icon": {
+                "texture": "diamond_ring"
+            },
+            "minecraft:max_stack_size": 1,
+            "minecraft:allow_off_hand": true
+        }
+    }
+}

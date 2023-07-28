@@ -1,0 +1,31 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:ender_ring"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "AXA",
+      "#C#",
+      "A#A"
+    ],
+    "key": {
+      "#": {
+        "item": "dec:ender_bone"
+      },
+      "X": {
+        "item": "dec:ender_core"
+      },
+      "A": {
+        "item": "dec:ender_powder"
+      },
+      "C": {
+        "item": "dec:ender_breath"
+      }
+    },
+    "result": {
+      "item": "dec:ender_ring"
+    }
+  }
+}

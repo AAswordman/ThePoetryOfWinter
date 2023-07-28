@@ -1,0 +1,28 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:spawn_rules": {
+    "description": {
+      "identifier": "dec:soul_skeleton",
+      "population_control": "monster"
+    },
+    "conditions": [
+      {
+        "minecraft:spawns_underground": {},
+        "minecraft:weight": {
+          "default": 5
+        },
+        "minecraft:herd": {
+          "min_size": 1,
+          "max_size": 2
+        },
+        "minecraft:density_limit": {
+          "surface": 7,
+          "underground": 0
+        },
+        "minecraft:biome_filter": [
+          { "test": "has_biome_tag", "operator": "==", "value": "soulsand_valley" }
+        ]
+      }
+    ]
+  }
+}

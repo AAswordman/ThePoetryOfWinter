@@ -27,6 +27,10 @@
           "target": "self"
         }
       },
+      "minecraft:enchantable": {
+        "value": 14,
+        "slot": "flintsteel"
+      },
       "minecraft:cooldown": {
         "category": "staff",
         "duration": 0.9
@@ -51,7 +55,8 @@
                 "run_command": {
                   "command": [
                     "playsound item.book.put @a ~~~",
-                    "scoreboard players remove @s wbfl 3"
+                    "scoreboard players remove @s wbfl 3",
+                    "playanimation @s animation.humanoid.staff_use"
                   ],
                   "target": "holder"
                 }

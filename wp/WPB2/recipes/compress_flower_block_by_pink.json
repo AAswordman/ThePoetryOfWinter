@@ -6,12 +6,15 @@
     },  
     "tags": [ "crafting_table" ],
     "pattern": [
-      "XX",
-      "XX"
+      "YX",
+      "XY"
     ],
       "key": {
       "X": {
         "item": "dec:pink_flower_block"
+      },
+      "Y": {
+        "item": "dec:steel_nugget"
       }
     },
     "result": {

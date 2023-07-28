@@ -132,11 +132,21 @@
                       ],
                       "target": "holder"
                     }
+                  },
+                  {
+                    "damage": {
+                      "type": "magic",
+                      "amount": 1
+                    }
                   }
                 ]
               },
               {
-                "weight": 5
+                "weight": 5,
+                "damage": {
+                  "type": "magic",
+                  "amount": 1
+                }
               }
             ]
           },
@@ -182,6 +192,10 @@
                     "function item/everlasting_winter_sickle"
                   ],
                   "target": "holder"
+                },
+                "damage": {
+                  "type": "magic",
+                  "amount": 1
                 }
               }
             ]

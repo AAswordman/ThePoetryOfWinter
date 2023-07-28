@@ -8,9 +8,9 @@ tag @a[tag=tp] remove tp
 execute at @e[type=lightning_bolt] run fill ~-1 ~-1 ~-1 ~1 ~1 ~1 dec:stream_ore [] replace iron_ore []
 
 ##流动块一级
-execute as @a[scores={wbfl=..40}] at @s if block ~ ~-0.1 ~ dec:flowing_block_1 [] run tag @s add flowing_block_1
-execute as @a[scores={wbfl=..40}] at @s if block ~ ~-0.1 ~ dec:flowing_block_1 [] run setblock ~~-0.1 ~ dec:flowing_block_0
-scoreboard players add @a[tag=flowing_block_1] wbfl 20
+execute as @a[scores={wbfl=..20}] at @s if block ~ ~-0.1 ~ dec:flowing_block ["dec:energy"=1] run tag @s add flowing_block_1
+execute as @a[scores={wbfl=..20}] at @s if block ~ ~-0.1 ~ dec:flowing_block ["dec:energy"=1] run setblock ~~-0.1 ~ dec:flowing_block ["dec:energy"=0]
+scoreboard players add @a[tag=flowing_block_1] wbfl 10
 execute at @a[tag=flowing_block_1] run particle dec:white_star_particle ~~~
 execute at @a[tag=flowing_block_1] run particle dec:white_star_particle ~~~
 execute at @a[tag=flowing_block_1] run particle dec:white_star_particle ~~~
@@ -19,8 +19,8 @@ execute at @a[tag=flowing_block_1] run particle dec:white_star_particle ~~~
 tag @a remove flowing_block_1
 
 ##流动块二级
-execute as @a[scores={wbfl=..35}] at @s if block ~ ~-0.1 ~ dec:flowing_block_2 [] run tag @s add flowing_block_2
-execute as @a[scores={wbfl=..35}] at @s if block ~ ~-0.1 ~ dec:flowing_block_2 [] run setblock ~~-0.1 ~ dec:flowing_block_0
+execute as @a[scores={wbfl=..30}] at @s if block ~ ~-0.1 ~ dec:flowing_block ["dec:energy"=2] run tag @s add flowing_block_2
+execute as @a[scores={wbfl=..30}] at @s if block ~ ~-0.1 ~ dec:flowing_block ["dec:energy"=2] run setblock ~~-0.1 ~ dec:flowing_block ["dec:energy"=0]
 scoreboard players add @a[tag=flowing_block_2] wbfl 25
 execute at @a[tag=flowing_block_2] run particle dec:white_star_particle ~~~
 execute at @a[tag=flowing_block_2] run particle dec:white_star_particle ~~~
@@ -30,9 +30,9 @@ execute at @a[tag=flowing_block_2] run particle dec:white_star_particle ~~~
 tag @a remove flowing_block_2
 
 ##流动块三级
-execute as @a[scores={wbfl=..25}] at @s if block ~ ~-0.1 ~ dec:flowing_block_3 [] run tag @s add flowing_block_3
-execute as @a[scores={wbfl=..25}] at @s if block ~ ~-0.1 ~ dec:flowing_block_3 [] run setblock ~~-0.1 ~ dec:flowing_block_0
-scoreboard players add @a[tag=flowing_block_3] wbfl 35
+execute as @a[scores={wbfl=..35}] at @s if block ~ ~-0.1 ~ dec:flowing_block ["dec:energy"=3] run tag @s add flowing_block_3
+execute as @a[scores={wbfl=..35}] at @s if block ~ ~-0.1 ~ dec:flowing_block ["dec:energy"=3] run setblock ~~-0.1 ~ dec:flowing_block ["dec:energy"=0]
+scoreboard players add @a[tag=flowing_block_3] wbfl 40
 execute at @a[tag=flowing_block_3] run particle dec:white_star_particle ~~~
 execute at @a[tag=flowing_block_3] run particle dec:white_star_particle ~~~
 execute at @a[tag=flowing_block_3] run particle dec:white_star_particle ~~~
@@ -41,9 +41,9 @@ execute at @a[tag=flowing_block_3] run particle dec:white_star_particle ~~~
 tag @a remove flowing_block_3
 
 ##流动块四级
-execute as @a[scores={wbfl=..10}] at @s if block ~ ~-0.1 ~ dec:flowing_block_4 [] run tag @s add flowing_block_4
-execute as @a[scores={wbfl=..10}] at @s if block ~ ~-0.1 ~ dec:flowing_block_4 [] run setblock ~~-0.1 ~ dec:flowing_block_0
-scoreboard players add @a[tag=flowing_block_4] wbfl 50
+execute as @a[scores={wbfl=..35}] at @s if block ~ ~-0.1 ~ dec:flowing_block ["dec:energy"=4] run tag @s add flowing_block_4
+execute as @a[scores={wbfl=..35}] at @s if block ~ ~-0.1 ~ dec:flowing_block ["dec:energy"=4] run setblock ~~-0.1 ~ dec:flowing_block ["dec:energy"=0]
+scoreboard players add @a[tag=flowing_block_4] wbfl 60
 execute at @a[tag=flowing_block_4] run particle dec:white_star_particle ~~~
 execute at @a[tag=flowing_block_4] run particle dec:white_star_particle ~~~
 execute at @a[tag=flowing_block_4] run particle dec:white_star_particle ~~~

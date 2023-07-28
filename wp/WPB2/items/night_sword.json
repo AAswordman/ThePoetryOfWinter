@@ -61,7 +61,17 @@
         ]
       },
       "minecraft:foil": false,
-      "minecraft:hand_equipped": true
+      "minecraft:hand_equipped": true,
+      "minecraft:on_use": {
+        "on_use": {
+          "event": "night_sword_use_attack",
+          "target": "self"
+        }
+      },
+      "minecraft:cooldown": {
+        "category": "sword",
+        "duration": 2
+      }
     },
     "events": {
       "attack": {
@@ -69,6 +79,233 @@
           "type": "magic",
           "amount": 1
         }
+      },
+      "night_sword_use_attack": {
+        "sequence": [
+          {
+            "condition": "query.scoreboard('wbfl') > 25 && (query.time_of_day > 0.25 || query.time_of_day < 0.75)",
+            "sequence": [
+              {
+                "run_command": {
+                  "command": [
+                    "playsound item.book.put @a ~~~",
+                    "function item/night_sword",
+                    "scoreboard players remove @s wbfl 25"
+                  ],
+                  "target": "holder"
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:nightmare_spore",
+                  "launch_power": 0.8
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:nightmare_spore",
+                  "launch_power": 0.8
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:nightmare_spore",
+                  "launch_power": 0.8
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:nightmare_spore",
+                  "launch_power": 1
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:nightmare_spore",
+                  "launch_power": 1
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:nightmare_spore",
+                  "launch_power": 1
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:nightmare_spore",
+                  "launch_power": 1
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:nightmare_spore",
+                  "launch_power": 1
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:nightmare_spore",
+                  "launch_power": 1
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:nightmare_spore",
+                  "launch_power": 1
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:nightmare_spore",
+                  "launch_power": 1.2
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:nightmare_spore",
+                  "launch_power": 1.2
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:nightmare_spore",
+                  "launch_power": 1.2
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:nightmare_spore",
+                  "launch_power": 1.2
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:nightmare_spore",
+                  "launch_power": 1.2
+                }
+              },
+              {
+                "damage": {
+                  "type": "magic",
+                  "amount": 2
+                }
+              }
+            ]
+          },
+          {
+            "condition": "query.scoreboard('wbfl') > 14 && (query.time_of_day <= 0.25 || query.time_of_day >= 0.75)",
+            "sequence": [
+              {
+                "run_command": {
+                  "command": [
+                    "playsound item.book.put @a ~~~",
+                    "function item/night_sword",
+                    "scoreboard players remove @s wbfl 14",
+                    "effect @s invisibility 3"
+                  ],
+                  "target": "holder"
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:nightmare_spore",
+                  "launch_power": 0.1
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:nightmare_spore",
+                  "launch_power": 0.1
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:nightmare_spore",
+                  "launch_power": 0.1
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:nightmare_spore",
+                  "launch_power": 0.2
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:nightmare_spore",
+                  "launch_power": 0.2
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:nightmare_spore",
+                  "launch_power": 0.2
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:nightmare_spore",
+                  "launch_power": 0.2
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:nightmare_spore",
+                  "launch_power": 0.2
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:nightmare_spore",
+                  "launch_power": 0.2
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:nightmare_spore",
+                  "launch_power": 0.2
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:nightmare_spore",
+                  "launch_power": 0.3
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:nightmare_spore",
+                  "launch_power": 0.3
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:nightmare_spore",
+                  "launch_power": 0.3
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:nightmare_spore",
+                  "launch_power": 0.3
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:nightmare_spore",
+                  "launch_power": 0.3
+                }
+              },
+              {
+                "damage": {
+                  "type": "magic",
+                  "amount": 1
+                }
+              }
+            ]
+          }
+        ]
       }
     }
   }

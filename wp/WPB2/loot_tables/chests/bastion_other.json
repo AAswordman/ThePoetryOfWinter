@@ -506,6 +506,45 @@
                         }
                     ],
                     "name": "minecraft:arrow"
+                },
+                {
+                    "type": "item",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": 1
+                        }
+                    ],
+                    "name": "minecraft:cooked_porkchop"
+                }
+            ]
+        },
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "empty",
+                    "weight": 11
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:snout_armor_trim_smithing_template",
+                    "weight": 1
+                }
+            ]
+        },
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "empty",
+                    "weight": 9
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:netherite_upgrade_smithing_template",
+                    "weight": 1
                 }
             ]
         }

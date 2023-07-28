@@ -232,14 +232,6 @@
     },
     "sound": "stone"
   },
-  "dec:crate_locked": {
-    "textures": "crate_locked",
-    "sound": "wood"
-  },
-  "dec:crate": {
-    "textures": "crate",
-    "sound": "wood"
-  },
   "dec:yellow_flower_block": {
     "textures": "yellow_flower_block",
     "sound": "grass"
@@ -299,30 +291,6 @@
       "side": "nuke_side"
     },
     "sound": "grass"
-  },
-  "dec:frozen_crate_locked": {
-    "textures": {
-      "up": "frozen_crate_up",
-      "down": "crate_locked",
-      "side": "frozen_crate_locked"
-    },
-    "sound": "wood"
-  },
-  "dec:frozen_crate": {
-    "textures": {
-      "up": "frozen_crate_up",
-      "down": "crate",
-      "side": "frozen_crate"
-    },
-    "sound": "wood"
-  },
-  "dec:cave_crate_locked": {
-    "textures": "cave_crate_locked",
-    "sound": "stone"
-  },
-  "dec:cave_crate": {
-    "textures": "cave_crate",
-    "sound": "stone"
   },
   "dec:end_ore": {
     "textures": "end_ore",
@@ -399,54 +367,6 @@
   "dec:sweet_berries_block": {
     "textures": "sweet_berries_block",
     "sound": "grass"
-  },
-  "dec:flowing_block_0": {
-    "textures": {
-      "up": "flowing_block_up",
-      "down": "flowing_block_down",
-      "side": "flowing_block_side_0"
-    },
-    "sound": "stone"
-  },
-  "dec:flowing_block_1": {
-    "textures": {
-      "up": "flowing_block_up",
-      "down": "flowing_block_down",
-      "side": "flowing_block_side_1"
-    },
-    "sound": "stone"
-  },
-  "dec:flowing_block_2": {
-    "textures": {
-      "up": "flowing_block_up",
-      "down": "flowing_block_down",
-      "side": "flowing_block_side_2"
-    },
-    "sound": "stone"
-  },
-  "dec:flowing_block_3": {
-    "textures": {
-      "up": "flowing_block_up",
-      "down": "flowing_block_down",
-      "side": "flowing_block_side_3"
-    },
-    "sound": "stone"
-  },
-  "dec:flowing_block_4": {
-    "textures": {
-      "up": "flowing_block_up",
-      "down": "flowing_block_down",
-      "side": "flowing_block_side_4"
-    },
-    "sound": "stone"
-  },
-  "dec:everlasting_winter_summoner": {
-    "textures": "everlasting_winter_summoner",
-    "sound": "stone"
-  },
-  "dec:everlasting_winter_summoner_activated": {
-    "textures": "everlasting_winter_summoner_activated",
-    "sound": "stone"
   },
   "dec:steel_block": {
     "textures": "steel_block",
@@ -604,8 +524,8 @@
     "textures": "experience_flower_stage_0",
     "sound": "grass"
   },
-  "dec:snow_lotus": {
-    "textures": "snow_lotus",
+  "dec:snow_lotus_crop": {
+    "textures": "snow_lotus_crop",
     "sound": "grass"
   },
   "dec:blue_gem_ore": {
@@ -627,54 +547,6 @@
   "dec:eye_of_nature_log": {
     "textures": "eye_of_nature_log",
     "sound": "wood"
-  },
-  "dec:forest_summoner": {
-    "textures": "forest_summoner",
-    "sound": "dirt"
-  },
-  "dec:forest_summoner_activated": {
-    "textures": "forest_summoner_activated",
-    "sound": "dirt"
-  },
-  "dec:enchanted_summoner": {
-    "textures": {
-      "up": "enchanted_summoner_up",
-      "down": "enchanted_summoner_up",
-      "side": "enchanted_summoner_side"
-    },
-    "sound": "wood"
-  },
-  "dec:enchanted_summoner_activated": {
-    "textures": {
-      "up": "enchanted_summoner_up",
-      "down": "enchanted_summoner_up",
-      "side": "enchanted_summoner_activated_side"
-    },
-    "sound": "wood"
-  },
-  "dec:plain_tower_summoner": {
-    "textures": {
-      "up": "plain_tower_summoner_up",
-      "down": "plain_tower_summoner_up",
-      "side": "plain_tower_summoner_side"
-    },
-    "sound": "wood"
-  },
-  "dec:plain_tower_summoner_activated": {
-    "textures": {
-      "up": "plain_tower_summoner_activated_up",
-      "down": "plain_tower_summoner_activated_up",
-      "side": "plain_tower_summoner_side"
-    },
-    "sound": "wood"
-  },
-  "dec:deep_summoner": {
-    "textures": "deep_summoner",
-    "sound": "nether_wart"
-  },
-  "dec:deep_summoner_activated": {
-    "textures": "deep_summoner_activated",
-    "sound": "nether_wart"
   },
   "dec:bracken_crop": {
     "textures": "bracken_crop",
@@ -716,41 +588,13 @@
     "textures": "bizarre_chilli_crop_stage_0",
     "sound": "grass"
   },
-  "dec:soul_summoner": {
-    "textures": "soul_summoner",
-    "sound": "stone"
-  },
-  "dec:soul_summoner_activated": {
-    "textures": "soul_summoner_activated",
-    "sound": "stone"
-  },
   "dec:rotten_flesh_block": {
     "textures": "rotten_flesh_block",
-    "sound": "dirt"
-  },
-  "dec:bat_summoner": {
-    "textures": "bat_summoner",
-    "sound": "dirt"
-  },
-  "dec:bat_summoner_activated": {
-    "textures": "bat_summoner_activated",
     "sound": "dirt"
   },
   "dec:ghost_ice": {
     "textures": "ghost_ice",
     "sound": "glass"
-  },
-  "dec:abyssal_summoner": {
-    "textures": "abyssal_summoner",
-    "sound": "stone"
-  },
-  "dec:abyssal_summoner_locked": {
-    "textures": "abyssal_summoner_locked",
-    "sound": "stone"
-  },
-  "dec:abyssal_summoner_activated": {
-    "textures": "abyssal_summoner_activated",
-    "sound": "stone"
   },
   "dec:ice_mixed_brick": {
     "textures": "ice_mixed_brick",
@@ -768,8 +612,8 @@
     "textures": "ice_lantern",
     "sound": "glass"
   },
-  "dec:everlasting_winter_summoner_locked": {
-    "textures": "everlasting_winter_summoner_locked",
+  "dec:ash_cage": {
+    "textures": "ash_cage",
     "sound": "stone"
   }
 }

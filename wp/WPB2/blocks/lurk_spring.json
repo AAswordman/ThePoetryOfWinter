@@ -16,7 +16,7 @@
                     "render_method": "alpha_test"
                 }
             },
-            "minecraft:geometry": "geometry.crop.sparse",
+            "minecraft:geometry": "geometry.crop.sparse.on_dirt",
             "minecraft:entity_collision": false,
             "minecraft:pick_collision": {
                 "origin": [-6,0,-6],

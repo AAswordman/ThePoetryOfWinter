@@ -1,0 +1,14 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:weighted_random_feature": {
+        "description": {
+            "identifier": "dec:select_ruined_oak_feature"
+        },
+        "features": [
+            [
+                "dec:ruined_oak_1_mcstructure",
+                1
+            ]
+        ]
+    }
+}

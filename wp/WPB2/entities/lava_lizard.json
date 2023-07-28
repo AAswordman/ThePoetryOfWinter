@@ -141,7 +141,7 @@
       "minecraft:can_climb": {
       },
       "minecraft:type_family": {
-        "family": [ "lava_lizard", "mob" ]
+        "family": [ "lava_lizard", "mob", "monster" ]
       },
       "minecraft:collision_box": {
         "width": 1.2,

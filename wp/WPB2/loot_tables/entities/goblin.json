@@ -31,6 +31,11 @@
             "entries": [
                 {
                     "type": "item",
+                    "name": "dec:gold_ring",
+                    "weight": 1
+                },
+                {
+                    "type": "item",
                     "name": "dec:coal_nugget",
                     "weight": 12,
                     "functions": [

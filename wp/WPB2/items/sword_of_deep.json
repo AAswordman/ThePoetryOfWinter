@@ -96,14 +96,10 @@
               {
                 "run_command": {
                   "command": [
-                    "summon dec:wither_cloud ~4 ~1 ~",
-                    "summon dec:wither_cloud ~-4 ~1 ~",
-                    "summon dec:wither_cloud ~ ~1 ~4",
-                    "summon dec:wither_cloud ~ ~1 ~-4",
-                    "summon dec:wither_cloud ~2.83 ~1 ~2.83",
-                    "summon dec:wither_cloud ~-2.83 ~1 ~2.83",
-                    "summon dec:wither_cloud ~2.83 ~1 ~-2.83",
-                    "summon dec:wither_cloud ~-2.83 ~1 ~-2.83",
+                    "particle dec:deep_range_particle ~~~",
+                    "tag @s add sword_of_deep_skill",
+                    "effect @e[r=4,tag=!sword_of_deep_skill] wither 10 1",
+                    "tag @s remove sword_of_deep_skill",
                     "scoreboard players remove @s wbfl 4"
                   ],
                   "target": "holder"

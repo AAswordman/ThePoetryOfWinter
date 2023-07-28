@@ -37,6 +37,7 @@ import SimpleItemUseFunc from "./func/SimpleItemUseFunc.js";
 import WarningAlertUI from "./ui/WarningAlertUI.js";
 import EntityPropCache from "../../modules/exmc/server/storage/cache/EntityPropCache.js";
 import { ArmorData } from "../../dec/server/items/ArmorData.js";
+import { pomDifficultyMap } from "./data/GameDifficulty.js";
 export default class PomClient extends ExGameClient {
     // net;
     constructor(server, id, player) {
@@ -159,6 +160,9 @@ export default class PomClient extends ExGameClient {
     }
     getServer() {
         return super.getServer();
+    }
+    getDifficulty() {
+        return (pomDifficultyMap).get(this.globalSettings.gameDifficulty + "");
     }
     taskUI(page, subpage) {
         this.taskSystem.show(page, subpage);

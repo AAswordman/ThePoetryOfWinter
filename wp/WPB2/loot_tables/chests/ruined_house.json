@@ -1,0 +1,130 @@
+{
+  "pools": [
+    {
+      "rolls": {
+        "min": 1,
+        "max": 2
+      },
+      "entries": [
+        {
+          "type": "item",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 0,
+                "max": 1
+              }
+            }
+          ],
+          "name": "dec:red_gem_debris",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 3
+              }
+            }
+          ],
+          "name": "dec:blue_gem_debris",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "rolls": 2,
+      "entries": [
+        {
+          "type": "item",
+          "name": "dec:iron_apple",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 5,
+                "max": 10
+              }
+            }
+          ],
+          "name": "minecraft:mangrove_log",
+          "weight": 2
+        },
+        {
+          "type": "item",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 2,
+                "max": 7
+              }
+            }
+          ],
+          "name": "minecraft:mangrove_propagule",
+          "weight": 2
+        },
+        {
+          "type": "item",
+          "name": "dec:empty_totem",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "dec:herb_bag",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 3,
+                "max": 7
+              }
+            }
+          ],
+          "name": "minecraft:torch",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 5,
+                "max": 9
+              }
+            }
+          ],
+          "name": "minecraft:mud",
+          "weight": 2
+        },
+        {
+          "type": "item",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 5,
+                "max": 9
+              }
+            }
+          ],
+          "name": "minecraft:packed_mud",
+          "weight": 2
+        }
+      ]
+    }
+  ]
+}

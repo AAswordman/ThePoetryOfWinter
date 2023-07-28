@@ -28,7 +28,7 @@
       },
       "minecraft:cooldown": {
         "category": "ender_egg",
-        "duration": 1
+        "duration": 0.3
       }
     },
     "events": {

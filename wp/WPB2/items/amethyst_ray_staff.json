@@ -15,6 +15,10 @@
       "minecraft:icon": {
         "texture": "amethyst_ray_staff"
       },
+      "minecraft:enchantable": {
+        "value": 20,
+        "slot": "flintsteel"
+      },
       "minecraft:use_animation": "bow",
       "minecraft:render_offsets": "bow",
       "minecraft:stacked_by_data": false,

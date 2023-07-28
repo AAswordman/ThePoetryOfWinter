@@ -55,31 +55,7 @@
       },
       "minecraft:wearable": {
         "slot": "slot.armor.chest"
-      },
-      //定义数据组使用依据，tag代表判断类型， default表示默认组别，"::" 代表组的划分
-      "tag:comp:use_data_group:tag_:default::GU::AR:_":{},
-      //护甲值再写一遍
-      "tag:comp:armor_protection:8":{},
-      //盔甲物理伤害减免百分比
-      "tag:comp:armor_physical_protection:20::30":{},
-      //盔甲法术伤害减免百分比
-      "tag:comp:armor_magic_protection:50::40":{},
-      //盔甲物理伤害减免数值
-      "tag:comp:armor_physical_reduction:0::2":{},
-      //定义盔甲类型。可填：singleton（单件防具）、decorate（装饰物）、suit（套装）。如果填suit则需要补充套装名称
-      "tag:comp:armor_type:suit_:everlasting_winter:_":{},
-      //定义武器类型。可填：thrown_weapon、summon_weapon、range_weapon、melee_weapon、magic_weapon
-      //"tag:equipment_type:magic_weapon":{}
-      //速度增加量
-      "tag:comp:movement_addition:0.01::0.02":{},
-      //攻击增加量（在武器原基础上继续增加）
-      "tag:comp:attack_addition:0::3":{},
-      //潜行时速度增加量
-      "tag:comp:sneak_movement_addition:-1":{},
-      //定义武器等级
-      "tag:comp:actual_level:5":{},
-      //备注
-      "tag:comp:remarks:this_is_a_remark":{}
+      }
     }
   }
 }

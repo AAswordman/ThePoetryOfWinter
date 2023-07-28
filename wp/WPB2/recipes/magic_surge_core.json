@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:magic_surge_core"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "X#X",
+      "#A#",
+      "X#X"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:conduit"
+      },
+      "#": {
+        "item": "dec:stream_stone"
+      },
+      "X": {
+        "item": "dec:magic_powder"
+      }
+    },
+    "result": {
+      "item": "dec:magic_surge_core"
+    }
+  }
+}

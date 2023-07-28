@@ -2,38 +2,129 @@
   "format_version": "1.16.0",
   "minecraft:block": {
     "description": {
-      "identifier": "dec:everlasting_winter_summoner"
+      "identifier": "dec:everlasting_winter_summoner",
+      "properties": {
+        "dec:state": [
+          "locked",
+          "empty",
+          "activated"
+        ]
+      }
     },
+    "permutations": [
+      {
+        "condition": "query.block_property('dec:state') == 'locked'",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "everlasting_winter_summoner_locked",
+              "render_method": "opaque"
+            }
+          },
+          "minecraft:on_interact": {
+            "event": "unlocked",
+            "condition": "query.get_equipped_item_name('main_hand') == 'frozen_power'"
+          },
+          "minecraft:light_dampening": 15,
+          "minecraft:light_emission": 0,
+          "minecraft:destroy_time": 3.0,
+          "minecraft:explosion_resistance": 100
+        }
+      },
+      {
+        "condition": "query.block_property('dec:state') == 'empty'",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "everlasting_winter_summoner",
+              "render_method": "opaque"
+            }
+          },
+          "minecraft:on_interact": {
+            "event": "activate",
+            "condition": "query.get_equipped_item_name('main_hand') == 'ice_ingot'"
+          },
+          "minecraft:ticking": {
+            "looping": true,
+            "range": [
+              600,
+              1200
+            ],
+            "on_tick": {
+              "event": "minecraft:activate_naturally"
+            }
+          },
+          "minecraft:light_dampening": 15,
+          "minecraft:light_emission": 0,
+          "minecraft:destroy_time": 3.0,
+          "minecraft:explosion_resistance": 100
+        }
+      },
+      {
+        "condition": "query.block_property('dec:state') == 'activated'",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "everlasting_winter_summoner_activated",
+              "render_method": "opaque"
+            }
+          },
+          "minecraft:on_interact": {
+            "event": "summon",
+            "condition": "query.get_equipped_item_name('main_hand') == 'iron_key'"
+          },
+          "minecraft:light_dampening": 15,
+          "minecraft:light_emission": 7,
+          "minecraft:destroy_time": 3.0,
+          "minecraft:explosion_resistance": 100
+        }
+      }
+    ],
     "components": {
-		  "minecraft:creative_category": {
+      "minecraft:creative_category": {
         "group": "itemGroup.name.outside",
-				"category": "items"
-			},
+        "category": "items"
+      },
+      "minecraft:unit_cube": {},
       "minecraft:light_dampening": 15,
       "minecraft:light_emission": 0,
       "minecraft:destroy_time": 3.0,
       "minecraft:explosion_resistance": 100,
-      "minecraft:map_color": "#BBDBFF",
-      "minecraft:loot": "loot_tables/empty.json",
-      "minecraft:on_interact": {
-        "event": "activate",
-        "condition": "query.get_equipped_item_name('main_hand') == 'ice_ingot'"
-      },
-      "minecraft:ticking": {
-        "looping": true,
-        "range": [
-          600,
-          1200
-        ],
-        "on_tick": {
-          "event": "minecraft:activate_naturally"
-        }
-      }
+      "minecraft:map_color": "#BBDBFF"
     },
     "events": {
+      "summon": {
+        "play_sound": {
+          "target": "other",
+          "sound": "conduit.activate"
+        },
+        "set_block_property": {
+          "dec:state": "'empty'"
+        },
+        "run_command": {
+          "command": [
+            "tellraw @a { \"rawtext\" : [ { \"translate\" : \"text.dec:summon_everlasting_winter_ghast.name\" } ] }",
+            "summon dec:everlasting_winter_ghast ~~1~",
+            "fill ~4~-1~4~-4~-1~-4 snow [] replace air []"
+          ]
+        },
+        "decrement_stack": {}
+      },
+      "unlocked": {
+        "run_command": {
+          "command": [
+            "playsound conduit.activate @a ~~~",
+            "particle minecraft:critical_hit_emitter ~~~",
+            "playsound random.anvil_break @a ~~~"
+          ]
+        },
+        "set_block_property": {
+          "dec:state": "'empty'"
+        }
+      },
       "activate": {
-        "set_block": {
-          "block_type": "dec:everlasting_winter_summoner_activated"
+        "set_block_property": {
+          "dec:state": "'activated'"
         },
         "run_command": {
           "command": [
@@ -43,8 +134,8 @@
         "decrement_stack": {}
       },
       "activate_naturally": {
-        "set_block": {
-          "block_type": "dec:everlasting_winter_summoner_activated"
+        "set_block_property": {
+          "dec:state": "'activated'"
         },
         "run_command": {
           "command": [

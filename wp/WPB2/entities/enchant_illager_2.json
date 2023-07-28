@@ -12,23 +12,6 @@
       "minecraft:despawn": {
         "minecraft:instant_despawn": {}
       },
-      "minecraft:angry": {
-        "minecraft:boss": {
-          "should_darken_sky": false,
-          "name":"boss.dec:enchant_illager_angry.name",
-          "hud_range": 64
-        },
-        "minecraft:health": {
-          "value": 600,
-          "max": 600
-        },
-        "minecraft:movement": {
-          "value": 0.4
-        },
-        "minecraft:attack": {
-          "damage": 7
-        }
-      },
       "minecraft:roar": {
         "minecraft:behavior.knockback_roar": {
           "priority": 1,
@@ -228,14 +211,6 @@
                 "minecraft:roar"
               ]
             }
-          },
-          {
-            "filters": { "test" :  "has_biome_tag", "operator": "!=", "value" :  "jungle"},
-            "randomize": [
-              {
-                "add": { "component_groups": [ "minecraft:angry" ] }
-              }
-            ]
           }
         ]
       },

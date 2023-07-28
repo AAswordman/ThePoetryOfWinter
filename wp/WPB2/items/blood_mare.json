@@ -97,7 +97,36 @@
       "blood_mare_attack": {
         "sequence": [
           {
-            "condition": "query.scoreboard('skill_count') > 3",
+            "condition": "query.health <= 2",
+            "sequence": [
+              {
+                "randomize": [
+                  {
+                    "sequence": [
+                      {
+                        "run_command": {
+                          "command": [
+                            "function item/blood_mare_low_health"
+                          ],
+                          "target": "holder"
+                        },
+                        "damage": {
+                          "type": "magic",
+                          "amount": 2
+                        }
+                      }
+                    ],
+                    "weight": 3
+                  },
+                  {
+                    "weight": 1
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "condition": "query.scoreboard('skill_count') > 3 && query.health > 2",
             "sequence": [
               {
                 "run_command": {
@@ -116,7 +145,7 @@
             ]
           },
           {
-            "condition": "query.scoreboard('skill_count') < 4",
+            "condition": "query.scoreboard('skill_count') < 4 && query.health > 2",
             "sequence": [
               {
                 "run_command": {

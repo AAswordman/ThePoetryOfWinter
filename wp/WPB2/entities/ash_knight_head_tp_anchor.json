@@ -1,0 +1,77 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:ash_knight_head_tp_anchor",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "particle"
+        ]
+      },
+      "animations": {
+        "particle": "animation.ash_knight_head_tp_anchor.particle"
+      }
+    },
+    "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "boss",
+          "ash"
+        ]
+      },
+      "minecraft:timer": {
+        "looping": false,
+        "randomInterval": true,
+        "time": [
+          2.0,
+          2.0
+        ],
+        "time_down_event": {
+          "event": "minecraft:tp"
+        }
+      },
+      "minecraft:health": {
+        "value": 100000,
+        "max": 100000
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": false
+      },
+      "minecraft:collision_box": {
+        "width": 0,
+        "height": 0
+      }
+    },
+    "events": {
+      "minecraft:tp": {
+        "run_command": {
+          "command": [
+            "tp @e[type=dec:ash_knight_head,r=64,c=1] @s",
+            "event entity @e[type=dec:ash_knight_head,r=64,c=1] minecraft:start_roar",
+            "event entity @s minecraft:despawn"
+          ],
+          "target": "self"
+        }
+      },
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      }
+    }
+  }
+}

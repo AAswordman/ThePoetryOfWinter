@@ -5,6 +5,21 @@
       "entries": [
         {
           "type": "item",
+          "name": "dec:alchemic_stone",
+          "weight": 3
+        },
+        {
+          "type": "item",
+          "name": "dec:herb_bag",
+          "weight": 3
+        },
+        {
+          "type": "item",
+          "name": "dec:stones_bag",
+          "weight": 3
+        },
+        {
+          "type": "item",
           "name": "minecraft:coal_ore",
           "weight": 200,
           "functions": [

@@ -16,7 +16,6 @@ import GZIPUtil from '../../modules/exmc/utils/GZIPUtil.js';
 import IStructureSettle from './data/structure/IStructureSettle.js';
 import IStructureDriver from './data/structure/IStructureDriver.js';
 import ExTaskRunner from '../../modules/exmc/server/ExTaskRunner.js';
-import { decTreeStructure } from './data/structure/decTreeStructure.js';
 import { MinecraftEffectTypes } from '../../modules/vanilla-data/lib/index.js';
 import DecNukeController from './entities/DecNukeController.js';
 import GlobalScoreBoardCache from '../../modules/exmc/server/storage/cache/GlobalScoreBoardCache.js';
@@ -53,7 +52,7 @@ export default class DecServer extends ExGameServer {
             }
         }, false);
         this.getEvents().events.beforeChatSend.subscribe(e => {
-            var _a, _b;
+            var _a;
             let cmdRunner = this.getExDimension(MinecraftDimensionTypes.overworld);
             let sender = ExPlayer.getInstance(e.sender);
             if (e.message.startsWith(">/")) {
@@ -155,20 +154,19 @@ export default class DecServer extends ExGameServer {
                         break;
                     }
                     case "_test": {
-                        let start = new Vector3(Math.floor(parseFloat(cmds[1])), Math.floor(parseFloat(cmds[2])), Math.floor(parseFloat(cmds[3])));
-                        let data = new IStructureSettle();
-                        let task = [];
-                        for (let comp of decTreeStructure) {
-                            task.push(() => {
-                                data.load(JSON.parse(GZIPUtil.unzipString(comp)));
-                                data.run(this.getExDimension(MinecraftDimensionTypes.overworld), start)
-                                    .then(() => {
-                                    var _a;
-                                    (_a = task.shift()) === null || _a === void 0 ? void 0 : _a();
-                                });
-                            });
-                        }
-                        (_b = task.shift()) === null || _b === void 0 ? void 0 : _b();
+                        // let start = new Vector3(Math.floor(parseFloat(cmds[1])), Math.floor(parseFloat(cmds[2])), Math.floor(parseFloat(cmds[3])));
+                        // let data = new IStructureSettle();
+                        // let task: (() => void)[] = [];
+                        // for (let comp of decTreeStructure) {
+                        //     task.push(() => {
+                        //         data.load(JSON.parse(GZIPUtil.unzipString(comp)));
+                        //         data.run(this.getExDimension(MinecraftDimensionTypes.overworld), start)
+                        //             .then(() => {
+                        //                 task.shift()?.();
+                        //             });
+                        //     });
+                        // }
+                        // task.shift()?.();
                         break;
                     }
                 }

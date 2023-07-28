@@ -65,10 +65,15 @@
           }
         ]
       },
-      "minecraft:food": {
-        "nutrition": 0,
-        "saturation_modifier": "supernatural",
-        "can_always_eat": true
+      "minecraft:on_use": {
+        "on_use": {
+          "event": "storm_giant_sword_use_attack",
+          "target": "self"
+        }
+      },
+      "minecraft:cooldown": {
+        "category": "sword",
+        "duration": 2
       }
     },
     "events": {
@@ -77,6 +82,55 @@
           "type": "magic",
           "amount": 1
         }
+      },
+      "storm_giant_sword_use_attack": {
+        "sequence": [
+          {
+            "condition": "query.scoreboard('wbfl') > 3",
+            "sequence": [
+              {
+                "run_command": {
+                  "command": [
+                    "playsound item.book.put @a ~~~",
+                    "scoreboard players remove @s wbfl 3",
+                    "playanimation @s animation.humanoid.staff_use"
+                  ],
+                  "target": "holder"
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:storm_energy<minecraft:a>",
+                  "launch_power": 1
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:storm_energy<minecraft:b>",
+                  "launch_power": 1
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:storm_energy<minecraft:c>",
+                  "launch_power": 1
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:storm_energy<minecraft:d>",
+                  "launch_power": 1
+                }
+              },
+              {
+                "damage": {
+                  "type": "magic",
+                  "amount": 1
+                }
+              }
+            ]
+          }
+        ]
       }
     }
   }

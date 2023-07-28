@@ -61,7 +61,7 @@
             "minecraft:hand_equipped": true,
             "minecraft:weapon": {
                 "on_hurt_entity": {
-                    "event": "iron_dagger_attack",
+                    "event": "attack",
                     "target": "self"
                 },
                 "on_hit_block": {
@@ -106,6 +106,10 @@
                         "function item/iron_dagger"
                     ],
                     "target": "holder"
+                },
+                "damage": {
+                    "amount": 1,
+                    "type": "magic"
                 }
             }
         }

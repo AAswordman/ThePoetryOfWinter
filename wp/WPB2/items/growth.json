@@ -17,11 +17,17 @@
       },
       "minecraft:weapon": {
         "on_hurt_entity": {
-          "event": "attack",
+          "event": "growth_attack",
           "target": "self"
         },
         "on_hit_block": {
           "event": "attack",
+          "target": "self"
+        }
+      },
+      "minecraft:on_use": {
+        "on_use": {
+          "event": "growth_use",
           "target": "self"
         }
       },
@@ -64,6 +70,10 @@
         "value": 15,
         "slot": "sword"
       },
+      "minecraft:cooldown": {
+        "category": "sword",
+        "duration": 1
+      },
       "minecraft:can_destroy_in_creative": false,
       "minecraft:digger": {
         "use_efficiency": true,
@@ -82,6 +92,66 @@
       "minecraft:hand_equipped": true
     },
     "events": {
+      "growth_attack": {
+        "sequence": [
+          {
+            "condition": "query.scoreboard('wbfl') > 4",
+            "sequence": [
+              {
+                "run_command": {
+                  "command": [
+                    "playsound item.book.put @a ~~~",
+                    "scoreboard players remove @s wbfl 4"
+                  ],
+                  "target": "holder"
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:growing_energy_ray",
+                  "launch_power": 0.2
+                }
+              },
+              {
+                "damage": {
+                  "type": "magic",
+                  "amount": 1
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "growth_use": {
+        "sequence": [
+          {
+            "condition": "query.scoreboard('wbfl') > 5",
+            "sequence": [
+              {
+                "run_command": {
+                  "command": [
+                    "playsound item.book.put @a ~~~",
+                    "scoreboard players remove @s wbfl 5"
+                  ],
+                  "target": "holder"
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:growing_energy_ray",
+                  "launch_power": 0.7
+                }
+              },
+              {
+                "damage": {
+                  "type": "magic",
+                  "amount": 1
+                }
+              }
+            ]
+          }
+        ]
+      },
       "attack": {
         "damage": {
           "type": "magic",

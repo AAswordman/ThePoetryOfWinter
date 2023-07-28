@@ -83,7 +83,7 @@
         "height": 1.8
       },
       "minecraft:attack": {
-        "damage": 7,
+        "damage": 5,
         "effect_name": "blindness",
         "effect_duration": 2
       },

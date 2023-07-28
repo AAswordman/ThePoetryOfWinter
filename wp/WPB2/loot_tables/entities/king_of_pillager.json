@@ -109,8 +109,13 @@
             ]
         },
         {
-            "rolls": 1,
+            "rolls": 2,
             "entries": [
+                {
+                    "type": "item",
+                    "name": "dec:alchemic_stone",
+                    "weight": 1
+                },
                 {
                     "type": "item",
                     "name": "dec:illager_sword",

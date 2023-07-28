@@ -43,16 +43,12 @@
         {
           "type": "item",
           "name": "dec:warden_sword",
-          "weight": 1,
-          "functions": [
-            {
-              "function": "set_count",
-              "count": {
-                "min": 1,
-                "max": 2
-              }
-            }
-          ]
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "dec:time_compass",
+          "weight": 1
         },
         {
           "type": "item",

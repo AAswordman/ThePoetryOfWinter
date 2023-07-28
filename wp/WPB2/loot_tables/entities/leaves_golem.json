@@ -76,8 +76,18 @@
             ]
         },
         {
-            "rolls": 1,
+            "rolls": 2,
             "entries": [
+                {
+                    "type": "item",
+                    "name": "dec:natural_ring",
+                    "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "dec:herb_bag",
+                    "weight": 1
+                },
                 {
                     "type": "item",
                     "name": "dec:wood_helmet",
@@ -100,7 +110,7 @@
                 },
                 {
                     "type": "item",
-                    "name": "dec:natura_spear",
+                    "name": "dec:natural_spear",
                     "weight": 1
                 },
                 {

@@ -57,7 +57,7 @@
     "inertia": 0.8,
     "liquid_inertia": 0.5,
     "anchor": 1,
-    "offset": [ 0, 0.5, 0 ],
+    "offset": [ 0, 0, 1 ],
     "semirandomdiffdamage": true,
     "uncertaintyBase": 6.0,
     "uncertaintyMultiplier": 6,

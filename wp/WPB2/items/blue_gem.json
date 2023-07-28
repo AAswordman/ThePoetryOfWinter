@@ -27,7 +27,7 @@
       },
       "minecraft:cooldown": {
         "category": "blue_gem",
-        "duration": 1
+        "duration": 0.3
       }
     },
     "events": {

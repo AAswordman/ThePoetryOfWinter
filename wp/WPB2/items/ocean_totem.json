@@ -17,7 +17,8 @@
       },
       "minecraft:stacked_by_data": false,
       "minecraft:max_stack_size": 1,
-      "minecraft:foil": false
+      "minecraft:foil": false,
+      "minecraft:allow_off_hand": true
     }
   }
 }

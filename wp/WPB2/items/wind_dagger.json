@@ -61,7 +61,7 @@
             "minecraft:hand_equipped": true,
             "minecraft:weapon": {
                 "on_hurt_entity": {
-                    "event": "wind_dagger_attack",
+                    "event": "attack",
                     "target": "self"
                 },
                 "on_hit_block": {
@@ -94,6 +94,10 @@
                         "function item/wind_dagger"
                     ],
                     "target": "holder"
+                },
+                "damage": {
+                    "amount": 1,
+                    "type": "magic"
                 }
             },
             "attack": {

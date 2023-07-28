@@ -39,14 +39,14 @@
         }
       },
       "minecraft:health": {
-        "value": 3,
-        "max": 3
+        "value": 5,
+        "max": 5
       },
       "minecraft:physics": {
         "has_gravity": false
       },
       "minecraft:attack": {
-        "damage": 4
+        "damage": 6
       },
       "minecraft:breathable": {
         "totalSupply": 15,
@@ -59,7 +59,7 @@
         "height": 0.72
       },
       "minecraft:movement": {
-        "value": 5.0
+        "value": 6.0
       },
       "minecraft:movement.glide": {
         "start_speed": 0.1,

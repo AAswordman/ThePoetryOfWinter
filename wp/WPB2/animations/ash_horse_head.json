@@ -1,0 +1,24 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.ash_horse_head.drop_thorn": {
+      "timeline": {
+        "2": [
+          "/summon dec:blackstone_thorn ~~-1~"
+        ]
+      },
+      "animation_length": 2,
+      "loop": true
+    },
+    "animation.ash_horse_head.teleport": {
+      "timeline": {
+        "13": [
+          "/execute as @r[r=70,m=!1] at @s positioned ~~1~ run summon dec:ash_horse_head_tp_anchor ~~~",
+          "/particle dec:ash_horse_head_teleport_particle ~~~"
+        ]
+      },
+      "animation_length": 16,
+      "loop": true
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.ash_sword.swing": {
+			"loop": true,
+			"animation_length": 2,
+			"bones": {
+				"main": {
+					"rotation": {
+						"0.0": [-30, 30, 0],
+						"0.5": [30, 30, 0],
+						"1.0": [30, -30, 0],
+						"1.5": [-30, -30, 0],
+						"2.0": [-30, 30, 0]
+					}
+				}
+			}
+		}
+	}
+}

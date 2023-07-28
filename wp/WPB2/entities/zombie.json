@@ -40,7 +40,7 @@
         "minecraft:transformation": {
           "into": "minecraft:drowned<minecraft:as_adult>",
           "transformation_sound": "convert_to_drowned",
-          "drop_equipment": true,
+          "drop_equipment": false,
           "delay": {
             "value": 15
           }
@@ -53,7 +53,7 @@
         "minecraft:transformation": {
           "into": "minecraft:drowned<minecraft:as_baby>",
           "transformation_sound": "convert_to_drowned",
-          "drop_equipment": true,
+          "drop_equipment": false,
           "delay": {
             "value": 15
           }
@@ -126,7 +126,7 @@
           "slot_drop_chance": [
             {
               "slot": "slot.weapon.mainhand",
-              "drop_chance": 0.005
+              "drop_chance": 0.0005
             },
             {
               "slot": "slot.armor.head",
@@ -162,23 +162,23 @@
           "slot_drop_chance": [
             {
               "slot": "slot.weapon.mainhand",
-              "drop_chance": 0.005
+              "drop_chance": 0.0005
             },
             {
               "slot": "slot.armor.head",
-              "drop_chance": 0.005
+              "drop_chance": 0.0005
             },
             {
               "slot": "slot.armor.chestplate",
-              "drop_chance": 0.005
+              "drop_chance": 0.0005
             },
             {
               "slot": "slot.armor.leggings",
-              "drop_chance": 0.005
+              "drop_chance": 0.0005
             },
             {
               "slot": "slot.armor.boots",
-              "drop_chance": 0.005
+              "drop_chance": 0.0005
             }
           ]
         }

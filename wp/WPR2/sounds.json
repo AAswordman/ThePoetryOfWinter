@@ -1,6 +1,138 @@
 {
 	"entity_sounds": {
 		"entities": {
+			"dec:ash_bomb": {
+				"volume": 1.0,
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"events": {
+					"ambient": "dig.stone",
+					"hurt": "dig.stone",
+					"death": "dig.stone",
+					"step": {
+						"sound": "step.stone",
+						"volume": 1.0,
+						"pitch": 1.0
+					}
+				}
+			},
+			"dec:blackstone_thorn": {
+				"volume": 1.0,
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"events": {
+					"ambient": "dig.stone",
+					"hurt": "dig.stone",
+					"death": "dig.stone",
+					"step": {
+						"sound": "step.stone",
+						"volume": 1.0,
+						"pitch": 1.0
+					}
+				}
+			},
+			"dec:ash_sword_phantom": {
+				"volume": 0.7,
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"events": {
+					"hurt": "random.anvil_break",
+					"death": "random.anvil_break"
+				}
+			},
+			"dec:ash_sword": {
+				"events": {
+					"ambient": "mob.wither.ambient",
+					"death": "mob.wither.death",
+					"hurt": "mob.wither.hurt",
+					"step": {
+						"pitch": 1.0,
+						"sound": "mob.irongolem.walk",
+						"volume": 1.0
+					},
+					"shoot": {
+						"pitch": 1.0,
+						"sound": "mob.wither.shoot",
+						"volume": 1.0
+					}
+				},
+				"pitch": [
+					0.80,
+					1.20
+				],
+				"volume": 1.0
+			},
+			"dec:ash_horse": {
+				"events": {
+					"death": "mob.wither.death",
+					"hurt": "mob.wither.hurt",
+					"step": {
+						"pitch": 1.0,
+						"sound": "mob.irongolem.walk",
+						"volume": 1.0
+					},
+					"shoot": {
+						"pitch": 1.0,
+						"sound": "mob.wither.shoot",
+						"volume": 1.0
+					}
+				},
+				"pitch": [
+					0.80,
+					1.20
+				],
+				"volume": 1.0
+			},
+			"dec:ash_horse_head": {
+				"events": {
+					"ambient": "mob.wither.ambient",
+					"death": "mob.wither.death",
+					"hurt": "mob.wither.hurt",
+					"step": {
+						"pitch": 1.0,
+						"sound": "mob.irongolem.walk",
+						"volume": 1.0
+					},
+					"shoot": {
+						"pitch": 1.0,
+						"sound": "mob.wither.shoot",
+						"volume": 1.0
+					}
+				},
+				"pitch": [
+					0.80,
+					1.20
+				],
+				"volume": 1.0
+			},
+			"dec:ash_knight_head": {
+				"events": {
+					"ambient": "mob.wither.ambient",
+					"death": "mob.wither.death",
+					"hurt": "mob.wither.hurt",
+					"step": {
+						"pitch": 1.0,
+						"sound": "mob.irongolem.walk",
+						"volume": 1.0
+					},
+					"shoot": {
+						"pitch": 1.0,
+						"sound": "mob.wither.shoot",
+						"volume": 1.0
+					}
+				},
+				"pitch": [
+					0.80,
+					1.20
+				],
+				"volume": 1.0
+			},
 			"dec:ice_monster": {
 				"volume": 1.0,
 				"pitch": [
@@ -2814,83 +2946,6 @@
 						"volume": 1.0,
 						"pitch": 0.5
 					}
-				}
-			},
-			"wb:magic_cow": {
-				"volume": 1,
-				"pitch": [0.8, 1.2],
-				"events": {
-					"ambient": "mob.mcow.say"
-				}
-			},
-			"wb:magic_pig": {
-				"volume": 1,
-				"pitch": [0.8, 1.2],
-				"events": {
-					"ambient": "mob.pig.say",
-					"hurt": "mob.pig.say",
-					"death": "mob.pig.death",
-					"step": {
-						"sound": "mob.pig.step",
-						"volume": 0.15,
-						"pitch": 1
-					},
-					"boost": {
-						"sound": "mob.pig.boost",
-						"volume": 1,
-						"pitch": 1
-					}
-				}
-			},
-			"wb:magic_book": {
-				"volume": 1,
-				"pitch": [0.8, 1.2],
-				"events": {
-					"ambient": "mob.mbook.say"
-				}
-			},
-			"wb:magic_insect": {
-				"volume": 1,
-				"pitch": [0.8, 1.2],
-				"events": {
-					"ambient": "mob.magic_insect.say"
-				}
-			},
-			"wb:magic_stoneman": {
-				"volume": 1,
-				"pitch": [0.8, 1.2],
-				"events": {
-					"ambient": "mob.mstone.say",
-					"hurt": "mob.mstone.hurt"
-				}
-			},
-			"wb:magic_puppet": {
-				"volume": 1,
-				"pitch": [0.8, 1.2],
-				"events": {
-					"ambient": "mob.irongolem.say",
-					"hurt": "mob.irongolem.hit",
-					"death": "mob.irongolem.death",
-					"step": {
-						"sound": "mob.irongolem.walk",
-						"volume": 1,
-						"pitch": 1
-					},
-					"throw": {
-						"sound": "mob.irongolem.throw",
-						"volume": 1,
-						"pitch": 1
-					}
-				}
-			},
-			"base": {
-				"volume": 1,
-				"pitch": [0.8, 1.2],
-				"events": {
-					"ambient": "mob.base.say",
-					"hurt": "mob.base.hurt",
-					"death": "mob.base.death",
-					"shoot": "mob.base.shoot"
 				}
 			}
 		}

@@ -3,7 +3,7 @@
   "animations": {
       "animation.playsound_random_explode": {
         "timeline": {
-            "0.01": [
+            "0": [
               "/playsound random.explode @a ~~~"
             ]
         }, 

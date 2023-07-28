@@ -64,10 +64,10 @@
           ]
         },
         "run_command": {
-            "command": [
-              "execute if block ~~-1~ dec:purpur_summoner if block ~-1~-1~ purpur_stairs [\"weirdo_direction\":0] if block ~1~-1~ purpur_stairs [\"weirdo_direction\":1] if block ~~-1~-1 purpur_stairs [\"weirdo_direction\":2] if block ~~-1~1 purpur_stairs [\"weirdo_direction\":3] if block ~1~-1~1 stone_block_slab3 if block ~1~-1~-1 stone_block_slab3 [] if block ~-1~-1~1 stone_block_slab3 if block ~-1~-1~-1 stone_block_slab3 [] if block ~~-2~ reinforced_deepslate run tag @s add success"
-            ]
-          }  
+          "command": [
+            "execute if block ~~-1~ dec:purpur_summoner if block ~-1~-1~ purpur_stairs [\"weirdo_direction\":0] if block ~1~-1~ purpur_stairs [\"weirdo_direction\":1] if block ~~-1~-1 purpur_stairs [\"weirdo_direction\":2] if block ~~-1~1 purpur_stairs [\"weirdo_direction\":3] if block ~1~-1~1 stone_block_slab3 if block ~1~-1~-1 stone_block_slab3 0 if block ~-1~-1~1 stone_block_slab3 if block ~-1~-1~-1 stone_block_slab3 0 if block ~~-2~ reinforced_deepslate run tag @s add success"
+          ]
+        }
       },
       "minecraft:success_judge": {
         "run_command": {

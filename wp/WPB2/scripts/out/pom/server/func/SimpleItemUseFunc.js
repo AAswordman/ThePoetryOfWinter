@@ -19,8 +19,9 @@ export default class SimpleItemUseFunc extends GameController {
                 }
             }
             else if (itemId === "wb:pickaxex_equipment_a") {
-                if (this.globalSettings.chainMining) {
+                if (this.globalSettings.chainMining && this.exPlayer.getScoresManager().getScore("wbfl") >= 30) {
                     this.chainDigging(new Vector3(e.block), e.brokenBlockPermutation.type.id, 5);
+                    this.exPlayer.getScoresManager().deleteScore("wbfl");
                 }
             }
         });

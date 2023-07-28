@@ -120,26 +120,6 @@
           },
           "cooldown_time": 0.1
         }
-      },
-      "minecraft:angry": {
-        "minecraft:boss": {
-          "should_darken_sky": false,
-          "name":"boss.dec:leaves_golem_angry.name",
-          "hud_range": 64
-        },
-        "minecraft:health": {
-          "value": 800,
-          "max": 800
-        },
-        "minecraft:movement": {
-          "value": 0.35
-        },
-        "minecraft:attack": {
-          "damage": {
-            "range_min": 7,
-            "range_max": 18
-          }
-        }
       }
     },
 
@@ -300,14 +280,7 @@
         }
       },
       "minecraft:entity_spawned": {
-        "sequence": [
-          {
-            "filters": { "test" :  "has_biome_tag", "operator": "!=", "value" :  "forest"},
-            "randomize": [
-              {
-                "add": { "component_groups": [ "minecraft:angry" ] }
-              }
-            ]
+        "sequence": [{
           },
           {
             "add": {

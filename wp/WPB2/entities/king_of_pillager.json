@@ -56,23 +56,6 @@
           ]
         }
       },
-      "minecraft:angry": {
-        "minecraft:attack": {
-          "damage": 6
-        },
-        "minecraft:boss": {
-          "should_darken_sky": false,
-          "name": "boss.dec:king_of_pillager_angry.name",
-          "hud_range": 64
-        },
-        "minecraft:health": {
-          "value": 800,
-          "max": 800
-        },
-        "minecraft:movement": {
-          "value": 0.45
-        }
-      },
       "minecraft:summon_mode": {
         "minecraft:damage_sensor": {
           "triggers": [
@@ -431,74 +414,41 @@
         }
       },
       "minecraft:entity_spawned": {
-        "sequence": [
+        "add": {
+          "component_groups": [
+            "minecraft:spawn"
+          ]
+        }
+      },
+      "minecraft:change_attack": {
+        "randomize": [
           {
+            "weight": 5,
+            "remove": {
+              "component_groups": [
+                "minecraft:summon_mode",
+                "minecraft:attack_mode"
+              ]
+            },
             "add": {
               "component_groups": [
-                "minecraft:spawn"
+                "minecraft:summon_mode"
               ]
             }
           },
           {
-            "filters": {
-              "test": "has_biome_tag",
-              "operator": "!=",
-              "value": "plains"
+            "weight": 3,
+            "remove": {
+              "component_groups": [
+                "minecraft:summon_mode",
+                "minecraft:attack_mode"
+              ]
             },
-            "randomize": [
-              {
-                "add": {
-                  "component_groups": [
-                    "minecraft:angry"
-                  ]
-                }
-              }
-            ]
-          }
-        ]
-      },
-      "minecraft:change_attack": {
-        "sequence": [
-          {
-            "randomize": [
-              {
-                "weight": 1,
-                "sequence": [
-                  {
-                    "randomize": [
-                      {
-                        "weight": 5,
-                        "remove": {
-                          "component_groups": [
-                            "minecraft:summon_mode",
-                            "minecraft:attack_mode"
-                          ]
-                        },
-                        "add": {
-                          "component_groups": [
-                            "minecraft:summon_mode"
-                          ]
-                        }
-                      },
-                      {
-                        "weight": 3,
-                        "remove": {
-                          "component_groups": [
-                            "minecraft:summon_mode",
-                            "minecraft:attack_mode"
-                          ]
-                        },
-                        "add": {
-                          "component_groups": [
-                            "minecraft:attack_mode"
-                          ]
-                        }
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
+            "add": {
+              "component_groups": [
+                "minecraft:attack_mode"
+              ]
+            }
           }
         ]
       }

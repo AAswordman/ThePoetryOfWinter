@@ -8,7 +8,7 @@
         "default": "textures/entity/ash_bomb"
       },
       "scripts": {
-        "scale": "0.25"
+        "scale": "0.5"
       },
       "geometry": {
         "default": "geometry.half_block"

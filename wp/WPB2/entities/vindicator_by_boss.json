@@ -196,7 +196,7 @@
         ]
       },
       "minecraft:attack": {
-        "damage": 8
+        "damage": 4
       },
       "minecraft:movement": {
         "value": 0.35

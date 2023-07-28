@@ -22,7 +22,7 @@
    "minecraft:projectile": {
     "onHit": {
       "impact_damage": {
-        "damage": 5,
+        "damage": 9,
         "knockback": true,
         "catchFire": false,
         "semirandomdiffdamage": false
@@ -34,7 +34,7 @@
     "inertia": 1,
     "liquid_inertia": 1,
     "anchor": 1,
-    "offset": [ 0, 0.5, 0 ],
+    "offset": [ 0, 0, 1 ],
     "semirandomdiffdamage": true,
     "uncertaintyBase": 30.0,
     "uncertaintyMultiplier": 6,

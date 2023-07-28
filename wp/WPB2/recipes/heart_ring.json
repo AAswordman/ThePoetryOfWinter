@@ -1,0 +1,29 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:heart_ring"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " A ",
+      "#X#",
+      " # "
+    ],
+    "key": {
+      "#": {
+        "item": "dec:health_nugget"
+      },
+      "A": {
+        "item": "dec:health_stone"
+      },
+      "X": {
+        "item": "dec:gold_ring"
+      }
+    },
+    "result": {
+      "item": "dec:heart_ring",
+      "count": 1
+    }
+  }
+}

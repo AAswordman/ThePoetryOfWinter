@@ -2,38 +2,110 @@
   "format_version": "1.16.0",
   "minecraft:block": {
     "description": {
-      "identifier": "dec:soul_summoner"
+      "identifier": "dec:soul_summoner",
+      "properties": {
+        "dec:state": [
+          "empty",
+          "activated"
+        ]
+      }
     },
+    "permutations": [
+      {
+        "condition": "query.block_property('dec:state') == 'empty'",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "soul_summoner",
+              "render_method": "opaque"
+            }
+          },
+          "minecraft:map_color": "#27221C",
+          "minecraft:on_interact": {
+            "event": "activate",
+            "condition": "query.get_equipped_item_name('main_hand') == 'entity_soul'"//记得改
+          },
+          "minecraft:ticking": {
+            "looping": true,
+            "range": [
+              600,
+              1200
+            ],
+            "on_tick": {
+              "event": "minecraft:activate_naturally"
+            }
+          },
+          "minecraft:light_dampening": 15,
+          "minecraft:light_emission": 0,
+          "minecraft:destroy_time": 3.0,
+          "minecraft:explosion_resistance": 100
+        }
+      },
+      {
+        "condition": "query.block_property('dec:state') == 'activated'",
+        "components": {
+          "minecraft:map_color": "#27221C",
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "soul_summoner_activated",
+              "render_method": "opaque"
+            }
+          },
+          "minecraft:on_interact": {
+            "event": "summon",
+            "condition": "query.get_equipped_item_name('main_hand') == 'soul_key'"
+          },
+          "minecraft:light_dampening": 15,
+          "minecraft:light_emission": 7,
+          "minecraft:destroy_time": 3.0,
+          "minecraft:explosion_resistance": 100
+        }
+      }
+    ],
     "components": {
-		  "minecraft:creative_category": {
+      "minecraft:creative_category": {
         "group": "itemGroup.name.outside",
-				"category": "items"
-			},
+        "category": "items"
+      },
+      "minecraft:unit_cube": {},
       "minecraft:light_dampening": 15,
       "minecraft:light_emission": 0,
       "minecraft:destroy_time": 3.0,
       "minecraft:explosion_resistance": 100,
       "minecraft:map_color": "#27221C",
-      "minecraft:loot": "loot_tables/empty.json",
-      "minecraft:on_interact": {
-        "event": "activate",
-        "condition": "query.get_equipped_item_name('main_hand') == 'entity_soul'"//记得改
-      },
-      "minecraft:ticking": {
-        "looping": true,
-        "range": [
-          600,
-          1200
-        ],
-        "on_tick": {
-          "event": "minecraft:activate_naturally"
-        }
-      }
+      "minecraft:loot": "loot_tables/empty.json"
     },
     "events": {
+      "summon": {
+        "play_sound": {
+          "target": "other",
+          "sound": "conduit.activate"
+        },
+        "set_block_property": {
+          "dec:state": "'empty'"
+        },
+        "run_command": {
+          "command": [
+            "tellraw @a { \"rawtext\" : [ { \"translate\" : \"text.dec:summon_escaped_soul.name\" } ] }",
+            "summon dec:escaped_soul ~~1~",
+            "particle dec:ghost_spurt_big_particle ~~1~",
+            
+            "execute positioned ~24~3~ run fill ~-1~~-1 ~1~6~1 air [] destroy",
+            "execute positioned ~-24~3~ run fill ~-1~~-1 ~1~6~1 air [] destroy",
+            "execute positioned ~~3~24 run fill ~-1~~-1 ~1~6~1 air [] destroy",
+            "execute positioned ~~3~-24 run fill ~-1~~-1 ~1~6~1 air [] destroy",
+            
+            "execute positioned ~17~3~17 run fill ~-1~~-1 ~1~6~1 air [] destroy",
+            "execute positioned ~-17~3~-17 run fill ~-1~~-1 ~1~6~1 air [] destroy",
+            "execute positioned ~17~3~-17 run fill ~-1~~-1 ~1~6~1 air [] destroy",
+            "execute positioned ~-17~3~17 run fill ~-1~~-1 ~1~6~1 air [] destroy"
+          ]
+        },
+        "decrement_stack": {}
+      },
       "activate": {
-        "set_block": {
-          "block_type": "dec:soul_summoner_activated"
+        "set_block_property": {
+          "dec:state": "'activated'"
         },
         "run_command": {
           "command": [
@@ -43,8 +115,8 @@
         "decrement_stack": {}
       },
       "activate_naturally": {
-        "set_block": {
-          "block_type": "dec:soul_summoner_activated"
+        "set_block_property": {
+          "dec:state": "'activated'"
         },
         "run_command": {
           "command": [

@@ -105,11 +105,21 @@
                       ],
                       "target": "holder"
                     }
+                  },
+                  {
+                    "damage": {
+                      "type": "magic",
+                      "amount": 1
+                    }
                   }
                 ]
               },
               {
-                "weight": 8
+                "weight": 8,
+                "damage": {
+                  "type": "magic",
+                  "amount": 1
+                }
               }
             ]
           },

@@ -1,0 +1,14 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.ash_knight_head_tp_anchor.particle": {
+      "timeline": {
+        "0.1": [
+          "/particle dec:ash_knight_head_teleport_particle ~~~"
+        ]
+      },
+      "animation_length": 0.2,
+      "loop": true
+    }
+  }
+}

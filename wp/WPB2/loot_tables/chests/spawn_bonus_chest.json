@@ -5,6 +5,122 @@
       "entries": [
         {
           "type": "item",
+          "name": "dec:guide_book",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "dec:magic_letter_box",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "rolls": 4,
+      "entries": [
+        {
+          "type": "item",
+          "name": "dec:magic_scroll_blue",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "set_lore",
+              "lore": [
+                "Ao Ao Ch"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "dec:magic_scroll_blue",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "set_lore",
+              "lore": [
+                "Ao Ao Om"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "dec:magic_scroll_blue",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "set_lore",
+              "lore": [
+                "Ao Jf Hd"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "dec:magic_scroll_blue",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "set_lore",
+              "lore": [
+                "Ao Jf Gx"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "dec:magic_scroll_blue",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "set_lore",
+              "lore": [
+                "Ao Om Jf"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "dec:magic_scroll_blue",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "set_lore",
+              "lore": [
+                "Ao Om Ch"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "dec:magic_scroll_blue",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "set_lore",
+              "lore": [
+                "Ao Om Gx"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
           "name": "minecraft:stone_axe",
           "weight": 2
         },

@@ -4,7 +4,7 @@
     "description": {
       "identifier": "dec:frozen_crate_feature"
     },
-    "places_block": "dec:frozen_crate_locked",
+    "places_block": "dec:frozen_crate",
     "enforce_survivability_rules": true,
     "enforce_placement_rules": true,
     "may_replace": [

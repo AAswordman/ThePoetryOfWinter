@@ -1,0 +1,15 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.ash_knight_head.teleport": {
+      "timeline": {
+        "7": [
+          "/execute as @r[r=70,m=!1] at @s positioned ~~1~ run summon dec:ash_knight_head_tp_anchor ~~~",
+          "/particle dec:ash_knight_head_teleport_particle ~~~"
+        ]
+      },
+      "animation_length": 9,
+      "loop": true
+    }
+  }
+}
