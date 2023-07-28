@@ -1,3 +1,3 @@
-tag @s[scores={wbfl=1..}] add shot_offhand
-execute at @s[scores={wbfl=1..}] run playsound random.eat @a ~~~
-scoreboard players remove @s[scores={wbfl=1..}] wbfl 1
+execute at @s[scores={wbfl=5..}] run summon dec:gingerbread_man_by_totem
+execute at @s[scores={wbfl=5..}] run playsound random.eat @a ~~~
+scoreboard players remove @s[scores={wbfl=1..}] wbfl 5

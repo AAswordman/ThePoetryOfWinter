@@ -7,10 +7,10 @@
         "default": "textures/entity/pure_energy_ball"
       },
       "geometry": {
-        "default": "geometry.energy_ball_v1"
+        "default": "geometry.energy_ball_v2"
       },
       "scripts": {
-        "scale": "0.1",
+        "scale": "0.3",
         "animate": [
           "fly"
         ]

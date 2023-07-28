@@ -22,76 +22,100 @@
       "minecraft:durability": {
         "max_durability": 75
       },
+      "minecraft:enchantable": {
+        "value": 10,
+        "slot": "flintsteel"
+      },
       "minecraft:max_stack_size": 1,
       "minecraft:on_use": {
         "on_use": {
-          "event": "catapult_use",
+          "event": "shoot_test",
           "target": "self"
+        }
+      },
+      "minecraft:use_duration": 0.06,
+      "minecraft:chargeable": {
+        "movement_modifier":0.7,
+        "on_complete": {
+         "event": "shoot",
+         "target": "self"
         }
       }
     },
     "events": {
-      "catapult_use": {
+      "shoot_test": {
+        "run_command": {
+          "command": [
+            "scoreboard players set @s bullet_type 0",
+            "scoreboard players set @s[hasitem={item=dec:small_stone}] bullet_type 1",
+            "scoreboard players set @s[hasitem={item=dec:exploding_pellets}] bullet_type 2"
+          ],
+          "target": "holder"
+        }
+      },
+      "shoot": {
         "sequence": [
           {
+            "condition": "query.scoreboard('bullet_type') != 0",
             "sequence": [
               {
-                "condition": "query.get_equipped_item_name('off_hand')== 'small_stone'",
-                "sequence": [
-                  {
-                    "run_command": {
-                      "command": [
-                        "playsound mob.snowgolem.shoot @a ~~~",
-                        "playanimation @s animation.humanoid.catapult",
-                        "clear @s dec:small_stone 0 1"
-                      ],
-                      "target": "holder"
-                    }
-                  },
-                  {
-                    "shoot": {
-                      "projectile": "dec:bullet_by_catapult_normal",
-                      "launch_power": 1
-                    }
-                  },
-                  {
-                    "damage": {
-                      "type": "magic",
-                      "amount": 1
-                    }
-                  }
-                ]
+                "run_command": {
+                  "command": [
+                    "playsound mob.snowgolem.shoot @a ~~~",
+                    "playanimation @s animation.humanoid.catapult"
+                  ],
+                  "target": "holder"
+                }
               }
             ]
           },
           {
+            "condition": "query.scoreboard('bullet_type') == 2",
             "sequence": [
               {
-                "condition": "query.get_equipped_item_name('off_hand')== 'exploding_pellets'",
-                "sequence": [
-                  {
-                    "run_command": {
-                      "command": [
-                        "playsound mob.snowgolem.shoot @a ~~~",
-                        "playanimation @s animation.humanoid.catapult",
-                        "clear @s dec:exploding_pellets 0 1"
-                      ],
-                      "target": "holder"
-                    }
-                  },
-                  {
-                    "shoot": {
-                      "projectile": "dec:bullet_by_catapult_explode",
-                      "launch_power": 1
-                    }
-                  },
-                  {
-                    "damage": {
-                      "type": "magic",
-                      "amount": 1
-                    }
-                  }
-                ]
+                "run_command": {
+                  "command": [
+                    "clear @s dec:exploding_pellets 0 1"
+                  ],
+                  "target": "holder"
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:bullet_by_catapult_explode",
+                  "launch_power": 1
+                }
+              },
+              {
+                "damage": {
+                  "type": "magic",
+                  "amount": 1
+                }
+              }
+            ]
+          },
+          {
+            "condition": "query.scoreboard('bullet_type') == 1",
+            "sequence": [
+              {
+                "run_command": {
+                  "command": [
+                    "clear @s dec:small_stone 0 1"
+                  ],
+                  "target": "holder"
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:bullet_by_catapult_normal",
+                  "launch_power": 1
+                }
+              },
+              {
+                "damage": {
+                  "type": "magic",
+                  "amount": 1
+                }
               }
             ]
           }

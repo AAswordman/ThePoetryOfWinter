@@ -61,7 +61,7 @@
             "minecraft:hand_equipped": true,
             "minecraft:weapon": {
                 "on_hurt_entity": {
-                    "event": "amethyst_dagger_attack",
+                    "event": "attack",
                     "target": "self"
                 },
                 "on_hit_block": {
@@ -112,6 +112,10 @@
                         "function item/amethyst_dagger"
                     ],
                     "target": "holder"
+                },
+                "damage": {
+                    "amount": 1,
+                    "type": "magic"
                 }
             },
             "attack": {

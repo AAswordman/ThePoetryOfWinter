@@ -31,6 +31,10 @@
         "category": "staff",
         "duration": 0.5
       },
+      "minecraft:enchantable": {
+        "value": 27,
+        "slot": "flintsteel"
+      },
       "minecraft:durability": {
         "max_durability": 3442
       }

@@ -1,0 +1,53 @@
+{
+	"format_version": "1.10.0",
+	"geometry.ash_knight_head": {
+		"texturewidth": 128,
+		"textureheight": 128,
+		"visible_bounds_width": 3,
+		"visible_bounds_height": 3,
+		"visible_bounds_offset": [0, 1.5, 0],
+		"bones": [
+			{
+				"name": "main",
+				"pivot": [0, 1, 0]
+			},
+			{
+				"name": "head",
+				"parent": "main",
+				"pivot": [0, 1, 0],
+				"cubes": [
+					{"origin": [-4, 1, -4], "size": [8, 8, 8], "uv": [0, 0]}
+				],
+				"locators": {
+					"head": [0, 5, 0]
+				}
+			},
+			{
+				"name": "hat",
+				"parent": "head",
+				"pivot": [0, 1, 0],
+				"cubes": [
+					{"origin": [-4, 1, -4], "size": [8, 8, 8], "uv": [32, 0], "inflate": 0.5}
+				]
+			},
+			{
+				"name": "corner0",
+				"parent": "hat",
+				"pivot": [-4, 9, -4],
+				"rotation": [30, 0, -30],
+				"cubes": [
+					{"origin": [-4.5, 8.25, -5.43301], "size": [2, 4, 2], "uv": [28, 54]}
+				]
+			},
+			{
+				"name": "corner1",
+				"parent": "hat",
+				"pivot": [4, 9, -4],
+				"rotation": [30, 0, 30],
+				"cubes": [
+					{"origin": [3, 9, -5], "size": [2, 4, 2], "uv": [28, 54]}
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,35 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:lava_bullet_bag"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "CXC",
+      "#B#",
+      "DXD"
+    ],
+    "key": {
+      "C": {
+        "item": "minecraft:magma"
+      },
+      "D": {
+        "item": "minecraft:blaze_rod"
+      },
+      "#": {
+        "item": "dec:lava_ingot"
+      },
+      "X": {
+        "item": "minecraft:lava_bucket"
+      },
+      "B": {
+        "item": "dec:hunter_bullet_bag"
+      }
+    },
+    "result": {
+      "item": "dec:lava_bullet_bag",
+      "count": 1
+    }
+  }
+}

@@ -45,6 +45,8 @@ export default class ExEntity {
             this._damage = damage;
             timeout.setTimeout(() => {
                 var _a;
+                if (!this.entity.isValid())
+                    return;
                 let health = this.getComponent("minecraft:health");
                 if (health.currentValue > 0.01)
                     health.setCurrentValue(Math.max(0.5, health.currentValue - ((_a = this._damage) !== null && _a !== void 0 ? _a : 0)));

@@ -19,6 +19,7 @@ import getCharByNum, { PROGRESS_CHAR, TALENT_CHAR } from "./getCharByNum.js";
 import POMLICENSE from "./POMLICENSE.js";
 import MathUtil from "../../../modules/exmc/math/MathUtil.js";
 import WarningAlertUI from "../ui/WarningAlertUI.js";
+import { pomDifficultyMap } from "./GameDifficulty.js";
 export default function menuFunctionUI(lang) {
     return {
         "main": {
@@ -219,12 +220,14 @@ BunBun不是笨笨    在矿里的小金呀
                         let scores = ExPlayer.getInstance(source).getScoresManager();
                         let msg = [`   ${lang.menuUIMsgBailan94}: ${client.gameId}`,
                             `   ${lang.menuUIMsgBailan96}: ${scores.getScore("wbfl")}`,
-                            `   ${`物理防御`}: ${MathUtil.clamp(Math.round(client.talentSystem.armor_protection[0] / 2) * 2, 0, 60)} + ${MathUtil.clamp(Math.round(client.talentSystem.armor_protection[2]), 0, 4)}`,
-                            `   ${`魔法防御`}: ${MathUtil.clamp(Math.round(client.talentSystem.armor_protection[1] / 2) * 2, 0, 60)}`,
+                            `   ${`物理防御`}: ${MathUtil.round(1 - (1 - client.getDifficulty().physicalDefenseAddFactor) * (1 - client.talentSystem.armor_protection[1] / 100), 3) * 100}％ + ${Math.round(client.talentSystem.armor_protection[3])}`,
+                            `   ${`魔法防御`}: ${MathUtil.round(1 - (1 - client.getDifficulty().magicDefenseAddFactor) * (1 - client.talentSystem.armor_protection[0] / 100), 3) * 100}％ + ${Math.round(client.talentSystem.armor_protection[2])}`,
                             `   ${lang.menuUIMsgBailan97}: ${scores.getScore("wbwqlq")}`,
                             `   ${lang.menuUIMsgBailan98}: ${scores.getScore("wbkjlqcg")}`,
                             `   ${lang.menuUIMsgBailan99}: ${source.hasTag("wbmsyh") ? lang.menuUIMsgBailan15 : lang.menuUIMsgBailan16}`,
-                            `   ${lang.menuUIMsgBailan100}: ${source.hasTag("wbdjeff") ? lang.menuUIMsgBailan15 : lang.menuUIMsgBailan16}`];
+                            `   ${lang.menuUIMsgBailan100}: ${source.hasTag("wbdjeff") ? lang.menuUIMsgBailan15 : lang.menuUIMsgBailan16}`,
+                            `   ${`游戏难度`}: ${client.getDifficulty().name}`
+                        ];
                         let arr = MenuUIAlert.getLabelViews(msg);
                         arr.unshift({
                             "type": "text_title",
@@ -826,6 +829,36 @@ ${getCharByNum((gj - (150 * Math.pow((g - 1), 2) + 1050 * (g - 1) + 900)) / (300
                                 },
                                 {
                                     "type": "button",
+                                    "msg": "冬诗难度选择",
+                                    "function": (client, ui) => {
+                                        let map = pomDifficultyMap;
+                                        new ModalFormData()
+                                            .title("Choose a mode")
+                                            .dropdown("Difficulty List", [
+                                            map.get("0").name,
+                                            map.get("1").name,
+                                            map.get("2").name,
+                                            map.get("3").name
+                                        ], 2)
+                                            .show(client.player).then((e) => {
+                                            var _a;
+                                            if (!e.canceled) {
+                                                let v = ((_a = e.formValues) === null || _a === void 0 ? void 0 : _a[0]);
+                                                client.globalSettings.gameDifficulty = parseFloat(v + "");
+                                                client.getServer().sayTo("Difficulty Choose " + client.getDifficulty().name);
+                                                for (let c of client.getServer().getClients()) {
+                                                    c.talentSystem.updateTalentRes();
+                                                }
+                                            }
+                                        })
+                                            .catch((e) => {
+                                            ExErrorQueue.throwError(e);
+                                        });
+                                        return false;
+                                    }
+                                },
+                                {
+                                    "type": "button",
                                     "msg": "报错日志",
                                     "function": (client, ui) => {
                                         new WarningAlertUI(client, ExErrorQueue.getError(), [["我知道了", (client, ui) => {
@@ -870,7 +903,32 @@ ${getCharByNum((gj - (150 * Math.pow((g - 1), 2) + 1050 * (g - 1) + 900)) / (300
                                         });
                                         return false;
                                     }
-                                }];
+                                },
+                                {
+                                    "type": "button",
+                                    "msg": "ui刷新间隔(tick)",
+                                    "function": (client, ui) => {
+                                        let map = pomDifficultyMap;
+                                        new ModalFormData()
+                                            .title("Choose a tick")
+                                            .slider("tick", 4, 20, 1, 8)
+                                            .show(client.player).then((e) => {
+                                            var _a;
+                                            if (!e.canceled) {
+                                                let v = ((_a = e.formValues) === null || _a === void 0 ? void 0 : _a[0]);
+                                                client.globalSettings.uiUpdateDelay = Number(v !== null && v !== void 0 ? v : 30);
+                                                client.magicSystem.actionbarShow.stop();
+                                                client.magicSystem.actionbarShow.delay(client.globalSettings.uiUpdateDelay);
+                                                client.magicSystem.actionbarShow.start();
+                                            }
+                                        })
+                                            .catch((e) => {
+                                            ExErrorQueue.throwError(e);
+                                        });
+                                        return false;
+                                    }
+                                }
+                            ];
                         }
                         else {
                             return [{

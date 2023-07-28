@@ -1,0 +1,27 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:ash_horse_head",
+      "materials": {
+        "default": "zombie"
+      },
+      "textures": {
+        "default": "textures/entity/ash_horse"
+      },
+      "geometry": {
+        "default": "geometry.ash_horse_head"
+      },
+      "scripts": {
+        "animate": [
+          "swing"
+        ]
+      },
+      "animations": {
+        "swing": "animation.ash_horse_head.swing"
+      },
+      "render_controllers": [ "controller.render.sword" ],
+      "enable_attachables": true
+    }
+  }
+}

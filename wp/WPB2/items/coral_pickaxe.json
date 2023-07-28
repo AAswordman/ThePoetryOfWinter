@@ -1514,6 +1514,13 @@
                         }
                     },
                     {
+                        "block": "minecraft:copper_ore",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
                         "block": "dec:amethyst_lantern",
                         "speed": 5,
                         "on_dig": {
@@ -1550,13 +1557,6 @@
                     },
                     {
                         "block": "dec:cave_crate",
-                        "speed": 5,
-                        "on_dig": {
-                            "event": "attack"
-                        }
-                    },
-                    {
-                        "block": "dec:cave_crate_locked",
                         "speed": 5,
                         "on_dig": {
                             "event": "attack"
@@ -1633,35 +1633,7 @@
                         }
                     },
                     {
-                        "block": "dec:flowing_block_0",
-                        "speed": 5,
-                        "on_dig": {
-                            "event": "attack"
-                        }
-                    },
-                    {
-                        "block": "dec:flowing_block_1",
-                        "speed": 5,
-                        "on_dig": {
-                            "event": "attack"
-                        }
-                    },
-                    {
-                        "block": "dec:flowing_block_2",
-                        "speed": 5,
-                        "on_dig": {
-                            "event": "attack"
-                        }
-                    },
-                    {
-                        "block": "dec:flowing_block_3",
-                        "speed": 5,
-                        "on_dig": {
-                            "event": "attack"
-                        }
-                    },
-                    {
-                        "block": "dec:flowing_block_4",
+                        "block": "dec:flowing_block",
                         "speed": 5,
                         "on_dig": {
                             "event": "attack"
@@ -1900,7 +1872,7 @@
                     }
                 ],
                 "on_dig": {
-                    "event": "attack",
+                    "event": "attack_more",
                     "target": "self"
                 }
             },
@@ -1936,6 +1908,12 @@
             "attack": {
                 "damage": {
                     "amount": 1,
+                    "type": "magic"
+                }
+            },
+            "attack_more": {
+                "damage": {
+                    "amount": 2,
                     "type": "magic"
                 }
             }

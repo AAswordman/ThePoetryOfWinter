@@ -2,38 +2,131 @@
   "format_version": "1.16.0",
   "minecraft:block": {
     "description": {
-      "identifier": "dec:abyssal_summoner"
+      "identifier": "dec:abyssal_summoner",
+      "properties": {
+        "dec:state": [
+          "locked",
+          "empty",
+          "activated"
+        ]
+      }
     },
+    "permutations": [
+      {
+        "condition": "query.block_property('dec:state') == 'locked'",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "abyssal_summoner_locked",
+              "render_method": "opaque"
+            }
+          },
+          "minecraft:on_interact": {
+            "event": "unlocked",
+            "condition": "query.get_equipped_item_name('main_hand') == 'iron_key'"
+          },
+          "minecraft:light_dampening": 15,
+          "minecraft:light_emission": 0,
+          "minecraft:destroy_time": 3.0,
+          "minecraft:explosion_resistance": 100
+        }
+      },
+      {
+        "condition": "query.block_property('dec:state') == 'empty'",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "abyssal_summoner",
+              "render_method": "opaque"
+            }
+          },
+          "minecraft:on_interact": {
+            "event": "activate",
+            "condition": "query.get_equipped_item_name('main_hand') == 'dark_stone'"
+          },
+          "minecraft:ticking": {
+            "looping": true,
+            "range": [
+              600,
+              1200
+            ],
+            "on_tick": {
+              "event": "minecraft:activate_naturally"
+            }
+          },
+          "minecraft:light_dampening": 15,
+          "minecraft:light_emission": 0,
+          "minecraft:destroy_time": 3.0,
+          "minecraft:explosion_resistance": 100
+        }
+      },
+      {
+        "condition": "query.block_property('dec:state') == 'activated'",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "abyssal_summoner_activated",
+              "render_method": "opaque"
+            }
+          },
+          "minecraft:on_interact": {
+            "event": "summon",
+            "condition": "query.get_equipped_item_name('main_hand') == 'iron_key'"
+          },
+          "minecraft:light_dampening": 15,
+          "minecraft:light_emission": 7,
+          "minecraft:destroy_time": 3.0,
+          "minecraft:explosion_resistance": 100
+        }
+      }
+    ],
     "components": {
-		  "minecraft:creative_category": {
+      "minecraft:creative_category": {
         "group": "itemGroup.name.outside",
-				"category": "items"
-			},
+        "category": "items"
+      },
+      "minecraft:unit_cube":{},
       "minecraft:light_dampening": 15,
       "minecraft:light_emission": 0,
       "minecraft:destroy_time": 3.0,
       "minecraft:explosion_resistance": 100,
       "minecraft:map_color": "#A2FFFF",
-      "minecraft:loot": "loot_tables/empty.json",
-      "minecraft:on_interact": {
-        "event": "activate",
-        "condition": "query.get_equipped_item_name('main_hand') == 'dark_stone'"
-      },
-      "minecraft:ticking": {
-        "looping": true,
-        "range": [
-          600,
-          1200
-        ],
-        "on_tick": {
-          "event": "minecraft:activate_naturally"
-        }
-      }
+      "minecraft:loot": "loot_tables/empty.json"
     },
     "events": {
+      "summon": {
+        "play_sound": {
+          "target": "other",
+          "sound": "conduit.activate"
+        },
+        "set_block_property": {
+          "dec:state": "'empty'"
+        },
+        "run_command": {
+          "command": [
+            "tellraw @a { \"rawtext\" : [ { \"translate\" : \"text.dec:summon_abyssal_controller.name\" } ] }",
+            //加一个粒子效果记得
+            //记得再加一个破坏方块
+            "summon dec:abyssal_controller ~~1~"
+          ]
+        },
+        "decrement_stack": {}
+      },
+      "unlocked": {
+        "run_command": {
+          "command": [
+            "execute unless block ~3 53 ~3 dec:scale_block unless block ~-3 53 ~3 dec:scale_block unless block ~3 53 ~-3 dec:scale_block unless block ~-3 53 ~-3 dec:scale_block unless block ~2 47 ~2 dec:scale_block unless block ~-2 47 ~2 dec:scale_block unless block ~2 47 ~-2 dec:scale_block unless block ~-2 47 ~-2 dec:scale_block unless block ~3 41 ~3 dec:scale_block unless block ~-3 41 ~3 dec:scale_block unless block ~3 41 ~-3 dec:scale_block unless block ~-3 41 ~-3 dec:scale_block run tag @p add abyssal_summoner_unlock",
+            "execute if entity @p[tag=abyssal_summoner_unlock] run playsound conduit.activate @a ~~~",
+            "execute if entity @p[tag=abyssal_summoner_unlock] run particle minecraft:critical_hit_emitter ~~~",
+            "execute if entity @p[tag=abyssal_summoner_unlock] run setblock ~~~ abyssal_summoner [\"dec:state\": \"empty\"]",
+            "execute unless entity @p[tag=abyssal_summoner_unlock] run tellraw @a { \"rawtext\" : [ { \"translate\" : \"text.dec:abyssal_summoner_unlock_fail.name\" } ] }",
+            "execute unless entity @p[tag=abyssal_summoner_unlock] run playsound random.anvil_break @a ~~~"
+          ]
+        }
+      },
       "activate": {
-        "set_block": {
-          "block_type": "dec:abyssal_summoner_activated"
+        "set_block_property": {
+          "dec:state": "'activated'"
         },
         "run_command": {
           "command": [
@@ -43,8 +136,8 @@
         "decrement_stack": {}
       },
       "activate_naturally": {
-        "set_block": {
-          "block_type": "dec:abyssal_summoner_activated"
+        "set_block_property": {
+          "dec:state": "'activated'"
         },
         "run_command": {
           "command": [

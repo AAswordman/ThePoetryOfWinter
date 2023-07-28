@@ -11,6 +11,21 @@
                 {
                     "all_of": [
                         {
+                            "test": "has_biome_tag",
+                            "operator": "!=",
+                            "value": "lakes"
+                        },
+                        {
+                            "test": "has_biome_tag",
+                            "operator": "!=",
+                            "value": "ocean"
+                        },
+                        {
+                            "test": "has_biome_tag",
+                            "operator": "!=",
+                            "value": "river"
+                        },
+                        {
                             "any_of": [
                                 {
                                     "test": "has_biome_tag",
@@ -25,7 +40,7 @@
         },
         "distribution": {
             "iterations": 1,
-            "scatter_chance": 0.32,
+            "scatter_chance": 0.1,
             "x": 0,
             "y": "query.heightmap(variable.worldx, variable.worldz) - 11",
             "z": 0

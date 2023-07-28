@@ -39,7 +39,7 @@ export default function menuTaskUI(ctrl) {
                         for (let v of taskJson.tasks[i].rewards) {
                             page.push({
                                 "type": "text",
-                                "msg": "    " + v.name + " " + v.count + " " + v.unit
+                                "msg": "    " + v.name + " " + (v.count * client.getDifficulty().LevelFactor) + " " + v.unit
                             });
                         }
                         page.push({
@@ -83,7 +83,7 @@ export default function menuTaskUI(ctrl) {
                                     var _a;
                                     for (let v of taskJson.tasks[i].rewards) {
                                         if (v.type === "integral") {
-                                            client.exPlayer.getScoresManager().addScore("wbdjjf", v.count);
+                                            client.exPlayer.getScoresManager().addScore("wbdjjf", v.count * client.getDifficulty().LevelFactor);
                                         }
                                     }
                                     for (let v of taskJson.tasks[i].conditions) {
@@ -94,6 +94,7 @@ export default function menuTaskUI(ctrl) {
                                     }
                                     bagItems = client.exPlayer.getBag().countAllItems();
                                     (_a = client.data.tasks) === null || _a === void 0 ? void 0 : _a.daily.complete[index].push(i);
+                                    client.cache.save();
                                     return true;
                                 }
                             });
@@ -195,7 +196,7 @@ export default function menuTaskUI(ctrl) {
                     for (let v of task.rewards) {
                         page.push({
                             "type": "text",
-                            "msg": "    " + v.name + " " + v.count + " " + v.unit
+                            "msg": "    " + v.name + " " + (v.count * client.getDifficulty().LevelFactor) + " " + (v.unit)
                         });
                     }
                     page.push({
@@ -243,7 +244,7 @@ export default function menuTaskUI(ctrl) {
                             "function": (client, ui) => {
                                 for (let v of task.rewards) {
                                     if (v.type === "integral") {
-                                        client.exPlayer.getScoresManager().addScore("wbdjjf", v.count);
+                                        client.exPlayer.getScoresManager().addScore("wbdjjf", v.count * client.getDifficulty().LevelFactor);
                                     }
                                 }
                                 // for (let v of task.conditions) {
@@ -254,6 +255,7 @@ export default function menuTaskUI(ctrl) {
                                 // }
                                 bagItems = client.exPlayer.getBag().countAllItems();
                                 taskList.complete.push(i);
+                                client.cache.save();
                                 return true;
                             }
                         });

@@ -1,0 +1,37 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:fire_ring"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "CBC",
+      "#X#",
+      "ADA"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:gold_ingot"
+      },
+      "B": {
+        "item": "minecraft:netherite_ingot"
+      },
+      "C": {
+        "item": "dec:lava_ingot"
+      },
+      "X": {
+        "item": "dec:heart_ring"
+      },
+      "A": {
+        "item": "minecraft:magma_cream"
+      },
+      "D": {
+        "item": "minecraft:magma"
+      }
+    },
+    "result": {
+      "item": "dec:fire_ring"
+    }
+  }
+}

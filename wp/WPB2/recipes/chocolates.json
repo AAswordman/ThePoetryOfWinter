@@ -7,7 +7,7 @@
     "tags": [ "crafting_table" ],
     "pattern": [
       "###",
-      "###",
+      "#A#",
       " X "
     ],
     "key": {
@@ -17,6 +17,9 @@
       },
       "X": {
         "item": "minecraft:paper"
+      },
+      "A": {
+        "item": "minecraft:sugar"
       }
     },
     "result": {

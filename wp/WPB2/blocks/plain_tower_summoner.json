@@ -2,38 +2,123 @@
   "format_version": "1.16.0",
   "minecraft:block": {
     "description": {
-      "identifier": "dec:plain_tower_summoner"
+      "identifier": "dec:plain_tower_summoner",
+      "properties": {
+        "dec:state": [
+          "empty",
+          "activated"
+        ]
+      }
     },
+    "permutations": [
+      {
+        "condition": "query.block_property('dec:state') == 'empty'",
+        "components": {
+          "minecraft:material_instances": {
+            "north": "sides",
+            "south": "sides",
+            "east": "sides",
+            "west": "sides",
+            "sides": {
+              "texture": "plain_tower_summoner_side"
+            },
+            "up": {
+              "texture": "plain_tower_summoner_up"
+            },
+            "down": {
+              "texture": "plain_tower_summoner_up"
+            }
+          },
+          "minecraft:map_color": "#2E539C",
+          "minecraft:on_interact": {
+            "event": "activate",
+            "condition": "query.get_equipped_item_name('main_hand') == 'lapis_lazuli'"
+          },
+          "minecraft:ticking": {
+            "looping": true,
+            "range": [
+              600,
+              1200
+            ],
+            "on_tick": {
+              "event": "minecraft:activate_naturally"
+            }
+          },
+          "minecraft:light_dampening": 15,
+          "minecraft:light_emission": 0,
+          "minecraft:destroy_time": 3.0,
+          "minecraft:explosion_resistance": 100
+        }
+      },
+      {
+        "condition": "query.block_property('dec:state') == 'activated'",
+        "components": {
+          "minecraft:material_instances": {
+            "north": "sides",
+            "south": "sides",
+            "east": "sides",
+            "west": "sides",
+            "sides": {
+              "texture": "plain_tower_summoner_side"
+            },
+            "up": {
+              "texture": "plain_tower_summoner_activated_up"
+            },
+            "down": {
+              "texture": "plain_tower_summoner_activated_up"
+            }
+          },
+          "minecraft:on_interact": {
+            "event": "summon",
+            "condition": "query.get_equipped_item_name('main_hand') == 'mysterious_key'"
+          },
+          "minecraft:light_dampening": 15,
+          "minecraft:light_emission": 7,
+          "minecraft:destroy_time": 3.0,
+          "minecraft:map_color": "#719EF2",
+          "minecraft:explosion_resistance": 100
+        }
+      }
+    ],
     "components": {
-		  "minecraft:creative_category": {
+      "minecraft:creative_category": {
         "group": "itemGroup.name.outside",
-				"category": "items"
-			},
+        "category": "items"
+      },
+      "minecraft:unit_cube": {},
       "minecraft:light_dampening": 15,
       "minecraft:light_emission": 0,
       "minecraft:destroy_time": 3.0,
       "minecraft:explosion_resistance": 100,
-      "minecraft:map_color": "#2E539C",
-      "minecraft:loot": "loot_tables/empty.json",
-      "minecraft:on_interact": {
-        "event": "activate",
-        "condition": "query.get_equipped_item_name('main_hand') == 'lapis_lazuli'"
-      },
-      "minecraft:ticking": {
-        "looping": true,
-        "range": [
-          600,
-          1200
-        ],
-        "on_tick": {
-          "event": "minecraft:activate_naturally"
-        }
-      }
+      "minecraft:map_color": "#719EF2",
+      "minecraft:loot": "loot_tables/empty.json"
     },
     "events": {
+      "summon": {
+        "play_sound": {
+          "target": "other",
+          "sound": "conduit.activate"
+        },
+        "set_block_property": {
+          "dec:state": "'empty'"
+        },
+        "run_command": {
+          "command": [
+            "tellraw @a { \"rawtext\" : [ { \"translate\" : \"text.dec:summon_king_of_pillager.name\" } ] }",
+            "summon dec:king_of_pillager ~~1~",
+
+            "fill ~-4~~-4 ~-1~9~4 air [] destroy",
+            "fill ~~~1 ~4~9~4 air [] destroy",
+            "fill ~1~~ ~4~9~-4 air [] destroy",
+            "fill ~~~-1 ~~9~-4 air [] destroy",
+            "fill ~~1~ ~~9~ air [] destroy"
+          ]
+        },
+        "decrement_stack": {}
+      },
       "activate": {
-        "set_block": {
-          "block_type": "dec:plain_tower_summoner_activated"
+        "set_block_property": {
+          "dec:state": "'activated'"
         },
         "run_command": {
           "command": [
@@ -43,8 +128,8 @@
         "decrement_stack": {}
       },
       "activate_naturally": {
-        "set_block": {
-          "block_type": "dec:plain_tower_summoner_activated"
+        "set_block_property": {
+          "dec:state": "'activated'"
         },
         "run_command": {
           "command": [

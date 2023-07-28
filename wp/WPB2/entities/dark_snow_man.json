@@ -107,7 +107,7 @@
         ]
       },
       "minecraft:attack": {
-        "damage": 8
+        "damage": 4
       },
       "minecraft:trail": {
         "block_type": "minecraft:snow_layer",

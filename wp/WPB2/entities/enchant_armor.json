@@ -78,19 +78,19 @@
         "slot_drop_chance": [
           {
             "slot": "slot.armor.head",
-            "drop_chance": 0.1
+            "drop_chance": 0
           },
           {
             "slot": "slot.armor.chestplate",
-            "drop_chance": 0.1
+            "drop_chance": 0
           },
           {
             "slot": "slot.armor.leggings",
-            "drop_chance": 0.1
+            "drop_chance": 0
           },
           {
             "slot": "slot.armor.boots",
-            "drop_chance": 0.1
+            "drop_chance": 0
           }
         ]
       },

@@ -26,6 +26,9 @@ tellraw @s { "rawtext" : [ { "translate" : "text.dec:creator_list_25.name" } ] }
 tellraw @s { "rawtext" : [ { "translate" : "text.dec:creator_list_26.name" } ] }
 tellraw @s { "rawtext" : [ { "translate" : "text.dec:creator_list_27.name" } ] }
 tellraw @s { "rawtext" : [ { "translate" : "text.dec:creator_list_28.name" } ] }
+tellraw @s { "rawtext" : [ { "translate" : "text.dec:creator_list_29.name" } ] }
+tellraw @s { "rawtext" : [ { "translate" : "text.dec:creator_list_30.name" } ] }
+tellraw @s { "rawtext" : [ { "translate" : "text.dec:creator_list_31.name" } ] }
 tellraw @s { "rawtext" : [ { "translate" : "text.dec:omit.name"} ] }
 tellraw @s { "rawtext" : [ { "translate" : "text.dec:qq_group.name" } ] }
 tellraw @s { "rawtext" : [ { "translate" : "text.dec:thanks.name" } ] }

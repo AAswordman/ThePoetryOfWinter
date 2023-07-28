@@ -94,7 +94,7 @@
 				"track_target": true
 			},
 			"minecraft:attack": {
-				"damage": 11,
+				"damage": 5,
 				"effect_name": "blindness",
 				"effect_duration": 5
 			},

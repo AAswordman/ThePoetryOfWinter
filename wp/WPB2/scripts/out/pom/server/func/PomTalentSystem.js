@@ -100,7 +100,7 @@ export default class PomTalentSystem extends GameController {
             this.skillLoop.stop();
         }
         //this.exPlayer.triggerEvent("hp:" + Math.round((20 + (this.talentRes.get(Talent.VIENTIANE) ?? 0))));
-        this.client.magicSystem.gameMaxHealth = Math.round((40 + ((_a = this.talentRes.get(Talent.VIENTIANE)) !== null && _a !== void 0 ? _a : 0)));
+        this.client.magicSystem.gameMaxHealth = Math.round(this.client.getDifficulty().healthAddionion + (40 + ((_a = this.talentRes.get(Talent.VIENTIANE)) !== null && _a !== void 0 ? _a : 0)));
     }
     //更新盔甲属性（在不换甲的情况下）
     updateArmorData() {
@@ -188,7 +188,9 @@ export default class PomTalentSystem extends GameController {
                 this.strikeSkill = false;
                 damageFac += SUDDEN_STRIKE / 100;
             }
+            damageFac += (this.client.getDifficulty().damageAddFactor - 1);
             let damage = e.damage * damageFac + extraDamage;
+            console.warn(damage);
             if (this.globalSettings.damageShow) {
                 damageShow(this.getExDimension(), damage, target.entity.location);
             }
@@ -204,23 +206,23 @@ export default class PomTalentSystem extends GameController {
         });
         //玩家减伤
         this.getEvents().exEvents.afterPlayerHurt.subscribe((e) => {
-            var _a, _b, _c;
+            var _a, _b, _c, _d;
             let damage = ((_a = this.exPlayer.getPreRemoveHealth()) !== null && _a !== void 0 ? _a : 0) + e.damage;
             let add = 0;
             let actualDamageFactor = (1 - (((_b = this.talentRes.get(Talent.DEFENSE)) !== null && _b !== void 0 ? _b : 0) / 100));
             if (PomTalentSystem.magicDamageType.has(e.damageSource.cause)) {
-                actualDamageFactor *= (1 - this.armor_protection[0] / 100);
+                actualDamageFactor *= (1 - this.armor_protection[0] / 100) * (1 - this.client.getDifficulty().magicDefenseAddFactor);
                 add += this.armor_protection[2];
             }
             else if (PomTalentSystem.physicalDamageType.has(e.damageSource.cause)) {
-                actualDamageFactor *= (1 - this.armor_protection[1] / 100);
+                actualDamageFactor *= (1 - this.armor_protection[1] / 100) * (1 - this.client.getDifficulty().physicalDefenseAddFactor);
                 add += this.armor_protection[3];
             }
             add += damage * (1 - actualDamageFactor);
             add = Math.min(add, damage);
             // console.warn(actualDamageFactor);
             // console.warn(add);
-            if (this.client.magicSystem.gameHealth - e.damage + add <= 0) {
+            if (this.client.magicSystem.gameHealth - damage + add <= 0) {
                 if (e.damageSource.cause === EntityDamageCause.projectile) {
                     if (e.damageSource.damagingEntity) {
                         this.player.applyDamage(99999999, {
@@ -235,13 +237,14 @@ export default class PomTalentSystem extends GameController {
                 }
                 else {
                     this.player.applyDamage(99999999, {
-                        "damagingEntity": e.damageSource.damagingEntity,
+                        "damagingEntity": ((_d = e.damageSource.damagingEntity) === null || _d === void 0 ? void 0 : _d.isValid()) ? e.damageSource.damagingEntity : undefined,
                         "cause": e.damageSource.cause
                     });
                 }
                 return;
             }
-            this.exPlayer.addHealth(this, add);
+            this.client.magicSystem.gameHealth += add;
+            // this.exPlayer.addHealth(this, add);
             this.hasBeenDamaged.trigger(e.damage - add, e.damageSource.damagingEntity);
         });
         let lastListener = (d) => { };
@@ -333,7 +336,6 @@ export default class PomTalentSystem extends GameController {
             this.exPlayer.triggerEvent("hp:100000");
         });
         //设置职业技能
-        this.getEvents().exEvents.afterItemUse.subscribe(event => event.itemStack.triggerEvent("shoot"));
         this.skill_stateNum = [0, 0];
         let usetarget;
         const trackingArrow = (e) => {

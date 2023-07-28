@@ -48,6 +48,11 @@
                 },
                 {
                     "type": "item",
+                    "name": "dec:gold_ring",
+                    "weight": 1
+                },
+                {
+                    "type": "item",
                     "name": "minecraft:book",
                     "weight": 3,
                     "functions": [

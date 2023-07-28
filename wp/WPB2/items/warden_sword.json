@@ -49,14 +49,16 @@
           }
         ]
       },
-      "minecraft:use_duration": 30000,
       "minecraft:durability": {
         "max_durability": 563
       },
-      "minecraft:food": {
-        "nutrition": 0,
-        "saturation_modifier": "supernatural",
-        "can_always_eat": true
+      "minecraft:use_duration": 1.5,
+      "minecraft:chargeable": {
+        "movement_modifier":1.1,
+        "on_complete": {
+         "event": "angry",
+         "target": "self"
+        }
       },
       "minecraft:mining_speed": 1.5,
       "minecraft:damage": 6,
@@ -87,6 +89,31 @@
           "type": "magic",
           "amount": 1
         }
+      },
+      "angry": {
+        "sequence": [
+          {
+            "condition": "query.scoreboard('wbfl') > 19",
+            "sequence": [
+              {
+                "run_command": {
+                  "command": [
+                    "playsound mob.warden.roar @a ~~~",
+                    "function item/warden_sword",
+                    "scoreboard players remove @s wbfl 20"
+                  ],
+                  "target": "holder"
+                }
+              },
+              {
+                "damage": {
+                  "type": "magic",
+                  "amount": 1
+                }
+              }
+            ]
+          }
+        ]
       }
     }
   }

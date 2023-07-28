@@ -1,0 +1,111 @@
+{
+  "pools": [
+    {
+      "rolls": {
+        "min": 1,
+        "max": 2
+      },
+      "entries": [
+        {
+          "type": "item",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 2
+              }
+            }
+          ],
+          "name": "dec:red_gem_debris",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 2,
+                "max": 5
+              }
+            }
+          ],
+          "name": "dec:blue_gem_debris",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "rolls": 2,
+      "entries": [
+        {
+          "type": "item",
+          "name": "dec:iron_apple",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 5,
+                "max": 10
+              }
+            }
+          ],
+          "name": "minecraft:oak_log",
+          "weight": 2
+        },
+        {
+          "type": "item",
+          "name": "dec:empty_totem",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 3,
+                "max": 7
+              }
+            }
+          ],
+          "name": "minecraft:torch",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 5,
+                "max": 9
+              }
+            }
+          ],
+          "name": "minecraft:mud",
+          "weight": 2
+        },
+        {
+          "type": "item",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 5,
+                "max": 9
+              }
+            }
+          ],
+          "name": "minecraft:packed_mud",
+          "weight": 2
+        }
+      ]
+    }
+  ]
+}

@@ -7,10 +7,10 @@
         "default": "textures/entity/thunder_ball"
       },
       "geometry": {
-        "default": "geometry.energy_ball_v1"
+        "default": "geometry.energy_ball_v2"
       },
       "scripts": {
-        "scale": "0.15",
+        "scale": "0.45",
         "animate": [
           "fly"
         ]

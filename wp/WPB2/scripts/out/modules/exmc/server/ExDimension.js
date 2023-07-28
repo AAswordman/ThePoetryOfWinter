@@ -29,7 +29,7 @@ export default class ExDimension {
         let entities = this._dimension.getEntities(entityQueryOptions);
         let res = [];
         for (let entity of entities) {
-            if (entity.dimension === this._dimension)
+            if (entity && entity.dimension === this._dimension)
                 res.push(entity);
         }
         return res;

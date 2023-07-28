@@ -4,7 +4,7 @@
     "description": {
       "identifier": "dec:crate_feature"
     },
-    "places_block": "dec:crate_locked",
+    "places_block": "dec:crate",
     "enforce_survivability_rules": true,
     "enforce_placement_rules": true,
     "may_replace": [

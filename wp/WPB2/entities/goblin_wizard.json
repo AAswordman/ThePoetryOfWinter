@@ -155,7 +155,7 @@
         "damage": 3
       },
       "minecraft:loot": {
-        "table": "loot_tables/entities/goblin.json"
+        "table": "loot_tables/entities/goblin_wizard.json"
       },
     "minecraft:despawn": {
       "despawn_from_distance": {}

@@ -38,7 +38,7 @@
       },
       "minecraft:cooldown": {
         "category": "dust_destroyer",
-        "duration": 0.1
+        "duration": 0.5
       },
       "minecraft:durability": {
         "max_durability": 2045
@@ -89,15 +89,10 @@
               {
                 "run_command": {
                   "command": [
-                    "function item/dust_destroyer"
+                    "function item/dust_destroyer",
+                    "playanimation @s animation.humanoid.staff_use"
                   ],
                   "target": "holder"
-                }
-              },
-              {
-                "damage": {
-                  "type": "magic",
-                  "amount": 1
                 }
               }
             ]

@@ -7,10 +7,10 @@
         "default": "textures/entity/sun_energy"
       },
       "geometry": {
-        "default": "geometry.energy_ball_v1"
+        "default": "geometry.energy_ball_v2"
       },
       "scripts": {
-        "scale": "0.25",
+        "scale": "0.75",
         "animate": [
           "fly"
         ]

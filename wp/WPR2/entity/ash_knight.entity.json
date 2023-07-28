@@ -1,26 +1,31 @@
- {
+{
   "format_version": "1.10.0",
   "minecraft:client_entity": {
     "description": {
       "identifier": "dec:ash_knight",
-      "materials": { "default": "zombie" },
+      "materials": { "default": "skeleton" },
       "textures": { "default": "textures/entity/ash_knight" },
       "geometry": { "default": "geometry.ash_knight" },
-      "animations": {
-        "spawn": "animation.ash_knight.spawn",
-        "look_at_target": "animation.common.look_at_target",
-        "walk": "animation.ash_knight.move",
-        "attacking": "animation.ash_knight.attack"
-      },
       "scripts": {
         "animate": [
-          "spawn",
-          {"walk" : "query.modified_move_speed"},
-          {"attacking":"variable.attack_time"},
+          {"walk" : "query.modified_move_speed * 2"},
+          {"attack" : "variable.attack_animation_tick"},
+          {"summon" : "query.is_casting"},
+          {"riding.arms" : "query.is_riding"},
+          {"riding.legs" : "query.is_riding"},
           "look_at_target"
         ]
       },
-      "render_controllers": [ "controller.render.zombie" ],
+      "animations": {
+        "riding.arms": "animation.humanoid.riding.arms.v1.0",
+        "riding.legs": "animation.humanoid.riding.legs.v1.0",
+        "summon": "animation.ash_knight.summon",
+
+        "look_at_target": "animation.common.look_at_target",
+        "walk": "animation.ash_knight.walk",
+        "attack": "animation.ash_knight.attack"
+      },
+      "render_controllers": [ "controller.render.skeleton" ],
       "enable_attachables": true,
       "spawn_egg": {
         "base_color": "#560100",

@@ -6,11 +6,14 @@
     },  
     "tags": [ "crafting_table" ],
     "pattern": [
-      " X ",
+      " A ",
       "X#X",
-      " X "
+      " A "
     ],
     "key": {
+      "A": {
+        "item": "minecraft:leather"
+      },
       "#": {
         "item": "dec:rotten_flesh_block"
       },

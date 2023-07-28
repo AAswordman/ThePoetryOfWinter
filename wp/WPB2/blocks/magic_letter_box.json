@@ -1,0 +1,190 @@
+{
+    "format_version": "1.16.100",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dec:magic_letter_box",
+            "properties": {
+                "dec:state": [
+                    "empty",
+                    "magic_scroll_blue"
+                ],
+                "dec:facing": [
+                    "south",
+                    "north",
+                    "east",
+                    "west"
+                ]
+            }
+        },
+        "permutations": [
+            {
+                "condition": "q.block_property('dec:facing') == 'north'",
+                "components": {
+                    "minecraft:rotation": [
+                        0,
+                        0,
+                        0
+                    ]
+                }
+            },
+            {
+                "condition": "q.block_property('dec:facing') == 'south'",
+                "components": {
+                    "minecraft:rotation": [
+                        0,
+                        180,
+                        0
+                    ]
+                }
+            },
+            {
+                "condition": "q.block_property('dec:facing') == 'west'",
+                "components": {
+                    "minecraft:rotation": [
+                        0,
+                        90,
+                        0
+                    ]
+                }
+            },
+            {
+                "condition": "q.block_property('dec:facing') == 'east'",
+                "components": {
+                    "minecraft:rotation": [
+                        0,
+                        -90,
+                        0
+                    ]
+                }
+            },
+            {
+                "condition": "query.block_property('dec:state') == 'empty'",
+                "components": {
+                    "minecraft:material_instances": {
+                        "north": "front",
+                        "south": "sides",
+                        "east": "sides",
+                        "west": "sides",
+                        "sides": {
+                            "texture": "magic_letter_box_side"
+                        },
+                        "front": {
+                            "texture": "magic_letter_box_front"
+                        },
+                        "up": {
+                            "texture": "magic_letter_box_top"
+                        },
+                        "down": {
+                            "texture": "magic_letter_box_top"
+                        }
+                    },
+                    "minecraft:random_ticking": {
+                        "on_tick": {
+                            "event": "get_letter"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "query.block_property('dec:state') == 'magic_scroll_blue'",
+                "components": {
+                    "minecraft:material_instances": {
+                        "north": "front",
+                        "south": "sides",
+                        "east": "sides",
+                        "west": "sides",
+                        "sides": {
+                            "texture": "magic_letter_box_side"
+                        },
+                        "front": {
+                            "texture": "magic_letter_box_front_with_magic_scroll_blue"
+                        },
+                        "up": {
+                            "texture": "magic_letter_box_top"
+                        },
+                        "down": {
+                            "texture": "magic_letter_box_top"
+                        }
+                    },
+                    "minecraft:on_interact": {
+                        "event": "get_magic_scroll_blue",
+                        "target": "self"
+                    }
+                }
+            }
+        ],
+        "events": {
+            "on_player_placing": {
+                "sequence": [
+                    {
+                        "condition": "q.cardinal_facing_2d == 2",
+                        "set_block_property": {
+                            "dec:facing": "'south'"
+                        }
+                    },
+                    {
+                        "condition": "q.cardinal_facing_2d == 3",
+                        "set_block_property": {
+                            "dec:facing": "'north'"
+                        }
+                    },
+                    {
+                        "condition": "q.cardinal_facing_2d == 4",
+                        "set_block_property": {
+                            "dec:facing": "'east'"
+                        }
+                    },
+                    {
+                        "condition": "q.cardinal_facing_2d == 5",
+                        "set_block_property": {
+                            "dec:facing": "'west'"
+                        }
+                    }
+                ]
+            },
+            "get_letter": {
+                "randomize": [
+                    {
+                        "weight": 5
+                    },
+                    {
+                        "weight": 1,
+                        "set_block_property": {
+                            "dec:state": "'magic_scroll_blue'"
+                        }
+                    }
+                ]
+            },
+            "get_magic_scroll_blue": {
+                "spawn_loot": {
+                    "table": "loot_tables/blocks/magic_letter_box/magic_scroll_blue.json"
+                },
+                "set_block_property": {
+                    "dec:state": "'empty'"
+                }
+            }
+        },
+        "components": {
+            "minecraft:creative_category": {
+                "group": "itemGroup.name.outside",
+                "category": "items"
+            },
+            "minecraft:on_player_placing": {
+                "event": "on_player_placing"
+            },
+            "minecraft:light_emission": 0,
+            "minecraft:map_color": "#AF8F55",
+            "minecraft:light_dampening": 15,
+            "minecraft:destroy_time": 1,
+            "minecraft:explosion_resistance": 30,
+            "minecraft:flammable": {
+                "flame_odds": 5,
+                "burn_odds": 5
+            },
+            "minecraft:unit_cube":{},
+            "minecraft:loot": "loot_tables/blocks/magic_letter_box/magic_letter_box.json",
+            "tag:planks": {},
+            "tag:axe_diggable": {}
+        }
+    }
+}

@@ -2,16 +2,70 @@
   "format_version": "1.16.0",
   "minecraft:block": {
     "description": {
-      "identifier": "dec:crate"
+      "identifier": "dec:crate",
+      "properties": {
+        "dec:is_unlocked": [
+          0,
+          1
+        ]
+      }
     },
     "components": {
+		  "minecraft:creative_category": {
+        "group": "itemGroup.name.outside",
+				"category": "items"
+			},
       "minecraft:light_dampening": 15,
       "minecraft:light_emission": 0,
       "minecraft:destroy_time": 2.0,
       "minecraft:explosion_resistance": 10,
       "minecraft:map_color": "#C29D62",
-      "minecraft:loot": "loot_tables/blocks/crate.json",
+      "minecraft:unit_cube": {},
       "tag:wood": {}
+    },
+    "permutations": [
+      {
+        "condition": "query.block_property('dec:is_unlocked') == 0",
+        "components": {
+          "minecraft:on_interact": {
+            "event": "unlock",
+            "condition": "query.get_equipped_item_name('main_hand') == 'iron_key'"
+          },
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "crate_locked",
+              "render_method": "opaque"
+            }
+          },
+          "minecraft:loot": "loot_tables/blocks/crate_locked.json"
+        }
+      },
+      {
+        "condition": "query.block_property('dec:is_unlocked') == 1",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "crate",
+              "render_method": "opaque"
+            }
+          },
+          "minecraft:loot": "loot_tables/blocks/crate.json"
+        }
+      }
+    ],
+    "events": {
+      "unlock": {
+        "set_block_property": {
+          "dec:is_unlocked": 1
+        },
+        "run_command": {
+          "command": [
+            "playsound random.anvil_land @a ~~~",
+            "particle minecraft:critical_hit_emitter ~~~"
+          ]
+        },
+        "decrement_stack": {}
+      }
     }
   }
 }

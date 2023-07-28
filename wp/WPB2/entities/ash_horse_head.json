@@ -1,0 +1,203 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:ash_horse_head",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "drop_thorn",
+          "teleport"
+        ]
+      },
+      "animations": {
+        "drop_thorn": "animation.ash_horse_head.drop_thorn",
+        "teleport": "animation.ash_horse_head.teleport"
+      }
+    },
+    "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+      "minecraft:scale_by_age": {
+        "start_scale": 1,
+        "end_scale": 2
+      },
+      "minecraft:ageable": {
+        "duration": 10
+      },
+      "minecraft:shooter": {
+        "def": "dec:ash_energy"
+      },
+      "minecraft:behavior.ranged_attack": {
+        "priority": 4,
+        "burst_shots": 7,
+        "burst_interval": 0.5,
+        "charge_charged_trigger": 0.0,
+        "charge_shoot_trigger": 1.0,
+        "attack_interval_min": 1.0,
+        "attack_interval_max": 2.0,
+        "attack_radius": 64.0
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/ash_horse_head.json"
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:boss": {
+        "should_darken_sky": false,
+        "name": "boss.dec:ash_horse_head.name",
+        "hud_range": 32
+      },
+      "minecraft:experience_reward": {
+        "on_death": "query.last_hit_by_player ? 300 : 0"
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0
+      },
+      "minecraft:fire_immune": {},
+      "minecraft:nameable": {},
+      "minecraft:health": {
+        "value": 150,
+        "max": 150
+      },
+      "minecraft:collision_box": {
+        "width": 1,
+        "height": 1
+      },
+      "minecraft:movement": {
+        "value": 0.01
+      },
+      "minecraft:navigation.float": {
+        "can_path_over_water": true
+      },
+      "minecraft:behavior.float_wander": {
+        "priority": 2,
+        "must_reach": true
+      },
+      "minecraft:can_fly": {},
+      "minecraft:type_family": {
+        "family": [
+          "monster",
+          "ash_horse_head",
+          "boss",
+          "undead",
+          "mob",
+          "ash"
+        ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "fall",
+            "deals_damage": false
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "frozen"
+              }
+            },
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:jump.static": {},
+      "minecraft:despawn": {
+        "despawn_from_distance": {
+          "min_distance": 64,
+          "max_distance": 64
+        }
+      },
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:follow_range": {
+        "value": 64,
+        "max": 64
+      },
+      "minecraft:on_death": {
+        "event": "minecraft:next",
+        "target": "self"
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1,
+        "entity_types": {
+          "filters": {
+            "test": "is_family",
+            "subject": "other",
+            "operator": "!=",
+            "value": "frozen"
+          },
+          "max_dist": 64
+        }
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "entity_types": [
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "snowgolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "wandering_trader"
+                }
+              ]
+            },
+            "max_dist": 64
+          }
+        ],
+        "must_see": true
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      }
+    },
+    "events": {
+      "minecraft:next": {
+        "run_command": {
+          "command": [//这里也记得改
+            "summon dec:ash_monster ~~~",
+            "summon dec:ash_monster ~~~"
+          ],
+          "target": "self"
+        }
+      },
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
+      "minecraft:entity_spawned": {
+      }
+    }
+  }
+}

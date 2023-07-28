@@ -31,6 +31,10 @@
         "category": "staff",
         "duration": 0.5
       },
+      "minecraft:enchantable": {
+        "value": 40,
+        "slot": "flintsteel"
+      },
       "minecraft:durability": {
         "max_durability": 121
       }
@@ -51,7 +55,8 @@
                 "run_command": {
                   "command": [
                     "playsound item.book.put @a ~~~",
-                    "scoreboard players remove @s wbfl 3"
+                    "scoreboard players remove @s wbfl 3",
+                    "playanimation @s animation.humanoid.staff_use"
                   ],
                   "target": "holder"
                 }

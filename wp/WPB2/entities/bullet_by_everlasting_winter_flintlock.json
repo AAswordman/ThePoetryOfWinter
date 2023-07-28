@@ -42,7 +42,7 @@
             "semirandomdiffdamage": false
           }
         },
-        "power": 1.75,
+        "power": 2.78,
         "gravity": 0.03,
         "inertia": 1,
         "liquid_inertia": 1,
@@ -53,8 +53,8 @@
           0
         ],
         "semirandomdiffdamage": true,
-        "uncertaintyBase": 10.0,
-        "uncertaintyMultiplier": 2,
+        "uncertaintyBase": 4.0,
+        "uncertaintyMultiplier": 1,
         "reflectOnHurt": true
       },
       "minecraft:pushable": {

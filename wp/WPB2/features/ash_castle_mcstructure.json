@@ -1,0 +1,14 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "dec:ash_castle_mcstructure"
+		},
+		"structure_name": "mystructure:ash_castle_su",
+		"adjustment_radius": 8,
+		"facing_direction": "random",
+		"constraints": {
+			"grounded": {}
+		}
+	}
+}

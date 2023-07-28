@@ -28,7 +28,7 @@
       },
       "minecraft:cooldown": {
         "category": "spurt_egg",
-        "duration": 1
+        "duration": 0.3
       }
     },
     "events": {

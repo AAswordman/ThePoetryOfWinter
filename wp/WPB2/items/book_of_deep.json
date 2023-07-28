@@ -15,9 +15,7 @@
       "minecraft:icon": {
         "texture": "book_of_deep"
       },
-      "minecraft:foil": true,
-      "minecraft:stacked_by_data": false,
-      "minecraft:max_stack_size": 1
+      "minecraft:foil": true
     }
   }
 }

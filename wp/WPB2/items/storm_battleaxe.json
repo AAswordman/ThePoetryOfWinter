@@ -1003,21 +1003,7 @@
                         }
                     },
                     {
-                        "block": "dec:crate_locked",
-                        "speed": 6,
-                        "on_dig": {
-                            "event": "attack"
-                        }
-                    },
-                    {
                         "block": "dec:enchanted_summoner",
-                        "speed": 6,
-                        "on_dig": {
-                            "event": "attack"
-                        }
-                    },
-                    {
-                        "block": "dec:enchanted_summoner_activated",
                         "speed": 6,
                         "on_dig": {
                             "event": "attack"
@@ -1032,13 +1018,6 @@
                     },
                     {
                         "block": "dec:frozen_crate",
-                        "speed": 6,
-                        "on_dig": {
-                            "event": "attack"
-                        }
-                    },
-                    {
-                        "block": "dec:frozen_crate_locked",
                         "speed": 6,
                         "on_dig": {
                             "event": "attack"
@@ -1073,13 +1052,6 @@
                         }
                     },
                     {
-                        "block": "dec:plain_tower_summoner_activated",
-                        "speed": 6,
-                        "on_dig": {
-                            "event": "attack"
-                        }
-                    },
-                    {
                         "block": "dec:purpur_summoner",
                         "speed": 6,
                         "on_dig": {
@@ -1088,7 +1060,7 @@
                     }
                 ],
                 "on_dig": {
-                    "event": "attack",
+                    "event": "attack_more",
                     "target": "self"
                 }
             },
@@ -1129,6 +1101,12 @@
             "attack": {
                 "damage": {
                     "amount": 1,
+                    "type": "magic"
+                }
+            },
+            "attack_more": {
+                "damage": {
+                    "amount": 2,
                     "type": "magic"
                 }
             },

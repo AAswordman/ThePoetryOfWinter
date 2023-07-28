@@ -1,0 +1,102 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:ash_sword_phantom",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "ash_sword_phantom"
+        ]
+      },
+      "animations": {
+        "ash_sword_phantom": "controller.animation.ash_sword_phantom"
+      }
+    },
+    "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+      "minecraft:explode": {
+        "fuseLength": 30,
+        "fuseLit": true,
+        "power": 0,
+        "causesFire": false
+      },
+      "minecraft:type_family": {
+        "family": [
+          "ash",
+          "monster",
+          "ash_sword_phantom",
+          "undead"
+        ]
+      },
+      "minecraft:nameable": {},
+      "minecraft:health": {
+        "value": 8,
+        "max": 8
+      },
+      "minecraft:physics": {
+        "has_gravity": false
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1.0
+      },
+      "minecraft:attack": {
+        "damage": 10
+      },
+      "minecraft:breathable": {
+        "totalSupply": 15,
+        "suffocateTime": 0,
+        "breathesAir": true,
+        "breathesWater": false
+      },
+      "minecraft:collision_box": {
+        "width": 1,
+        "height": 1
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
+      "minecraft:movement": {
+        "value": 4.0
+      },
+      "minecraft:follow_range": {
+        "value": 64,
+        "max": 64
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 1,
+        "within_radius": 64,
+        "reselect_targets": true,
+        "entity_types": [
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "player"
+            },
+            "max_dist": 64
+          }
+        ],
+        "must_see": false,
+        "must_see_forget_duration": 0.5,
+        "scan_interval": 20,
+        "target_search_height": 80.0
+      }
+    },
+    "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      }
+    }
+  }
+}

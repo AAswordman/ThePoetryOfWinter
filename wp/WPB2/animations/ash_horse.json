@@ -1,0 +1,48 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.ash_horse.sprint": {
+      "timeline": {
+        "0.5": [
+          "/effect @s speed 2 3 true",
+          "/summon dec:blackstone_thorn ~~~"
+        ],
+        "0.75": [
+          "/summon dec:blackstone_thorn ~~~"
+        ],
+        "1": [
+          "/summon dec:blackstone_thorn ~~~"
+        ],
+        "1.25": [
+          "/summon dec:blackstone_thorn ~~~"
+        ],
+        "1.5": [
+          "/summon dec:blackstone_thorn ~~~"
+        ],
+        "1.75": [
+          "/summon dec:blackstone_thorn ~~~"
+        ],
+        "2": [
+          "/summon dec:blackstone_thorn ~~~"
+        ],
+        "2.25": [
+          "/summon dec:blackstone_thorn ~~~"
+        ],
+        "2.5": [
+          "/summon dec:blackstone_thorn ~~~"
+        ]
+      },
+      "animation_length": 10,
+      "loop": true
+    },
+    "animation.ash_horse.protect_knight": {
+      "timeline": {
+        "0": [
+          "/effect @e[type=dec:ash_knight] resistance 2 7"
+        ]
+      },
+      "animation_length": 5,
+      "loop": true
+    }
+  }
+}

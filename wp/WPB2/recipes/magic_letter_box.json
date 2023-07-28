@@ -1,0 +1,33 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:magic_letter_box"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "BBB",
+      "XCX",
+      "BDB"
+    ],
+    "key": {
+      "X": {
+        "item": "minecraft:log"
+      },
+      "B": {
+        "item": "minecraft:planks"
+      },
+      "C": {
+        "item": "dec:magic_powder"
+      },
+      "D": {
+        "item": "minecraft:lapis_block"
+      }
+    },
+    "result": {
+      "item": "dec:magic_letter_box"
+    }
+  }
+}

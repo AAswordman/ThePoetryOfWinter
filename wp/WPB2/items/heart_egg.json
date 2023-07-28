@@ -28,7 +28,7 @@
       },
       "minecraft:cooldown": {
         "category": "heart_egg",
-        "duration": 1
+        "duration": 0.3
       }
     },
     "events": {

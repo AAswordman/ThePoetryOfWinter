@@ -1,0 +1,1 @@
+playanimation @s animation.humanoid.brandish

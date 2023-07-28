@@ -34,6 +34,10 @@
         "category": "magic_book",
         "duration": 0.5
       },
+      "minecraft:enchantable": {
+        "value": 5,
+        "slot": "flintsteel"
+      },
       "minecraft:durability": {
         "max_durability": 436
       },
@@ -76,7 +80,8 @@
                 "run_command": {
                   "command": [
                     "playsound dig.snow @a ~~~",
-                    "scoreboard players remove @s wbfl 2"
+                    "scoreboard players remove @s wbfl 2",
+                    "playanimation @s animation.humanoid.staff_use"
                   ],
                   "target": "holder"
                 }

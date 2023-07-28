@@ -208,6 +208,25 @@
           "type": "item",
           "name": "dec:lapis_apple",
           "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "dec:stones_bag",
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "empty",
+          "weight": 9
+        },
+        {
+          "type": "item",
+          "name": "minecraft:eye_armor_trim_smithing_template",
+          "weight": 1
         }
       ]
     }
