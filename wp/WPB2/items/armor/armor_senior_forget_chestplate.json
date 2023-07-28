@@ -39,7 +39,19 @@
             },
             "minecraft:icon": {
                 "texture": "armor_senior_forget_chestplate"
-            }
+            },
+            "tag:comp:use_data_group:tag_:default:_": {},
+            "tag:comp:armor_protection:5": {},
+            "tag:comp:armor_resilience:3": {},
+            "tag:comp:armor_physical_protection:4": {},
+            "tag:comp:armor_magic_protection:2": {},
+            "tag:comp:armor_physical_reduction:1": {},
+            "tag:comp:armor_magic_reduction:1": {},
+            "tag:comp:armor_type:suit_:senior_forget:_": {},
+            "tag:comp:movement_addition:0.005":{},
+            "tag:comp:sneak_movement_addition:0.005":{},
+            "tag:comp:attack_addition:2":{},
+            "tag:comp:actual_level:5": {}
         }
     }
 }

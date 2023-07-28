@@ -43,7 +43,10 @@
       },
       "minecraft:wearable": {
         "slot": "slot.armor.chest"
-      }
+      },
+      "tag:comp:armor_protection:4": {},
+      "tag:comp:armor_type:suit_:rupert:_": {},
+      "tag:comp:armor_magic_protection:7": {}
     }
   }
 }

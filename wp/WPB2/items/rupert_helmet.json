@@ -43,7 +43,10 @@
       },
       "minecraft:wearable": {
         "slot": "slot.armor.head"
-      }
+      },
+      "tag:comp:armor_protection:2": {},
+      "tag:comp:armor_type:suit_:rupert:_": {},
+      "tag:comp:armor_magic_protection:3": {}
     }
   }
 }

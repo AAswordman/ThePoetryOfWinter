@@ -52,7 +52,10 @@
       },
       "minecraft:wearable": {
         "slot": "slot.armor.legs"
-      }
+      },
+      "tag:comp:armor_protection:5": {},
+      "tag:comp:armor_type:suit_:steel:_": {},
+      "tag:comp:armor_resilience:2": {}
     }
   }
 }

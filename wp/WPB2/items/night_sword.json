@@ -71,7 +71,9 @@
       "minecraft:cooldown": {
         "category": "sword",
         "duration": 2
-      }
+      },
+      "tag:comp:movement_addition:0.01": {},
+      "tag:comp:equipment_type:melee_weapon":{}
     },
     "events": {
       "attack": {

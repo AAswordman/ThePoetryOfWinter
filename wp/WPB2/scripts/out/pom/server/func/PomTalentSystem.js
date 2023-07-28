@@ -165,6 +165,8 @@ export default class PomTalentSystem extends GameController {
         //玩家攻击生物增伤
         this.getEvents().exEvents.afterPlayerHitEntity.subscribe((e) => {
             var _a, _b, _c, _d;
+            if (e.damage > 10000000)
+                return;
             let item = this.exPlayer.getBag().itemOnMainHand;
             let damageFac = 0;
             let extraDamage = 0;
@@ -190,7 +192,7 @@ export default class PomTalentSystem extends GameController {
             }
             damageFac += (this.client.getDifficulty().damageAddFactor - 1);
             let damage = e.damage * damageFac + extraDamage;
-            console.warn(damage);
+            // console.warn(damage);
             if (this.globalSettings.damageShow) {
                 damageShow(this.getExDimension(), damage, target.entity.location);
             }
@@ -207,6 +209,8 @@ export default class PomTalentSystem extends GameController {
         //玩家减伤
         this.getEvents().exEvents.afterPlayerHurt.subscribe((e) => {
             var _a, _b, _c, _d;
+            if (e.damage > 10000000)
+                return;
             let damage = ((_a = this.exPlayer.getPreRemoveHealth()) !== null && _a !== void 0 ? _a : 0) + e.damage;
             let add = 0;
             let actualDamageFactor = (1 - (((_b = this.talentRes.get(Talent.DEFENSE)) !== null && _b !== void 0 ? _b : 0) / 100));
@@ -265,7 +269,7 @@ export default class PomTalentSystem extends GameController {
                 if (comp.hasComponent("actual_level"))
                     base.push(`§r§e基础属性` + "  §r§6LV." + comp.getComponentWithGroup("actual_level"));
                 if (comp.hasComponent("armor_protection"))
-                    base.push((_a = "§r§7•护甲值§6+" + comp.getComponentWithGroup("movement_addition") + "§r§7 | 护甲韧性§6+" + comp.getComponentWithGroup("armor_resilience")) !== null && _a !== void 0 ? _a : 0);
+                    base.push((_a = "§r§7•护甲值§6+" + comp.getComponentWithGroup("armor_protection") + "§r§7 | 护甲韧性§6+" + comp.getComponentWithGroup("armor_resilience")) !== null && _a !== void 0 ? _a : 0);
                 if (comp.hasComponent("armor_type")) {
                     //let typeMsg = comp.getComponentWithGroup("armor_type");
                     //lore.setValueUseDefault("盔甲类型", typeMsg.tagName + ": " + typeMsg.data);

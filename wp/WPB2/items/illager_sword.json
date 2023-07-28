@@ -77,7 +77,9 @@
           "event": "illager_sword_use_attack",
           "target": "self"
         }
-      }
+      },
+      "tag:comp:movement_addition:0.015": {},
+      "tag:comp:equipment_type:melee_weapon":{}
     },
     "events": {
       "attack": {

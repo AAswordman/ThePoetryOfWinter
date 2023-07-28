@@ -29,26 +29,31 @@ export default class ItemTagComponent {
         this.currentGroup = 0;
         for (let tag of this.manager.getTags()) {
             let sp = tag.split(":");
-            if (!tag.startsWith("comp") || sp.length <= 2)
+            if (!tag.startsWith("comp") || sp.length < 2)
                 continue;
             const msg = [sp[0], sp[1], tag.substring(sp[0].length + sp[1].length + 2)];
-            if (msg[1] === "use_data_group") {
-                this.groupBasedOn = msg[2].split("_:")[0];
-                this.groupCondition = msg[2].substring(msg[2].indexOf("_:") + 1, msg[2].indexOf(":_")).split("::");
-            }
-            else {
-                if (msg[1] in itemTagComponentType) {
-                    let use = itemTagComponentType[msg[1]][0];
-                    if (use instanceof ItemTagComponentGroup) {
-                        this.components.set(msg[1], msg[2].split("::").map(e => new ItemTagComponentGroup(e.substring(0, e.indexOf("_:")), e.substring(e.indexOf("_:") + 2, e.indexOf(":_")))));
-                    }
-                    else if (typeof use === "string") {
-                        this.components.set(msg[1], msg[2].split("::"));
-                    }
-                    else if (typeof use === "number") {
-                        this.components.set(msg[1], msg[2].split("::").map(e => parseFloat(e.endsWith("%") ? e.substring(0, e.length - 1) : e)));
+            try {
+                if (msg[1] === "use_data_group") {
+                    this.groupBasedOn = msg[2].split("_:")[0];
+                    this.groupCondition = msg[2].substring(msg[2].indexOf("_:") + 1, msg[2].indexOf(":_")).split("::");
+                }
+                else {
+                    if (msg[1] in itemTagComponentType) {
+                        let use = itemTagComponentType[msg[1]][0];
+                        if (use instanceof ItemTagComponentGroup) {
+                            this.components.set(msg[1], msg[2].split("::").map(e => new ItemTagComponentGroup(e.substring(0, e.indexOf("_:")), e.substring(e.indexOf("_:") + 2, e.indexOf(":_")))));
+                        }
+                        else if (typeof use === "string") {
+                            this.components.set(msg[1], msg[2].split("::"));
+                        }
+                        else if (typeof use === "number") {
+                            this.components.set(msg[1], msg[2].split("::").map(e => parseFloat(e.endsWith("%") ? e.substring(0, e.length - 1) : e)));
+                        }
                     }
                 }
+            }
+            catch (e) {
+                console.warn("Error while loading component :" + manager.typeId + " / " + msg[1]);
             }
         }
     }

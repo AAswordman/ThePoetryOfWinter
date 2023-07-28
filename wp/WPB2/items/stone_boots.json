@@ -67,7 +67,10 @@
       },
       "minecraft:wearable": {
         "slot": "slot.armor.feet"
-      }
+      },
+      "tag:comp:armor_protection:1": {},
+      "tag:comp:armor_type:suit_:stone:_": {},
+      "tag:comp:armor_resilience:1": {}
     }
   }
 }

@@ -52,7 +52,8 @@
           "target": "self"
         }
       },
-      "tag:use_skill_count": {}
+      "tag:use_skill_count": {},
+      "tag:comp:equipment_type:magic_weapon":{}
     },
     "events": {
       "shoot": {

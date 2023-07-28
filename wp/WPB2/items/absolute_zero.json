@@ -85,7 +85,9 @@
       "minecraft:cooldown": {
         "category": "katana",
         "duration": 3
-      }
+      },
+      "tag:comp:movement_addition:0.03": {},
+      "tag:comp:equipment_type:melee_weapon":{}
     },
     "events": {
       "attack": {

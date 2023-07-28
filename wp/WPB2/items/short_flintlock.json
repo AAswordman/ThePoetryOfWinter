@@ -46,7 +46,9 @@
          "event": "shoot",
          "target": "self"
         }
-      }
+      },
+      "tag:comp:movement_addition:0.01": {},
+      "tag:comp:equipment_type:range_weapon":{}
     },
     "events": {
       "shoot_test": {

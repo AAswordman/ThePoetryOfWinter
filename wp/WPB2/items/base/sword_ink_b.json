@@ -117,7 +117,13 @@
             ]
           }
         }
-      }
+      },
+            "tag:comp:equipment_type:melee_weapon": {},
+            "tag:comp:equipment_type:melee_weapon": {},
+            "tag:comp:equipment_type:melee_weapon": {},
+            "tag:comp:equipment_type:melee_weapon": {},
+            "tag:comp:equipment_type:melee_weapon": {},
+            "tag:comp:equipment_type:melee_weapon": {}
     },
     "events": {
         "attack": {

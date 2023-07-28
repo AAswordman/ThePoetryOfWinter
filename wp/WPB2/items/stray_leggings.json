@@ -39,7 +39,9 @@
       },
       "minecraft:wearable": {
         "slot": "slot.armor.legs"
-      }
+      },
+      "tag:comp:armor_protection:2": {},
+      "tag:comp:armor_type:decorate_": {}
     }
   }
 }

@@ -22,7 +22,8 @@
       },
       "minecraft:projectile": {
         "projectile_entity": "dec:frozen_ball"
-      }
+      },
+      "tag:comp:equipment_type:thrown_weapon":{}
     }
   }
 }

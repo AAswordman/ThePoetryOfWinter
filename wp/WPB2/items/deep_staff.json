@@ -37,7 +37,8 @@
       },
       "minecraft:durability": {
         "max_durability": 1045
-      }
+      },
+      "tag:comp:equipment_type:magic_weapon":{}
     },
     "events": {
       "attack": {

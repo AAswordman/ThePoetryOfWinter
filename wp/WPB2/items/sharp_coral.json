@@ -61,7 +61,9 @@
         ]
       },
       "minecraft:foil": false,
-      "minecraft:hand_equipped": true
+      "minecraft:hand_equipped": true,
+      "tag:comp:underwater_movement_addition:0.01": {},
+      "tag:comp:equipment_type:melee_weapon":{}
     },
     "events": {
       "attack": {

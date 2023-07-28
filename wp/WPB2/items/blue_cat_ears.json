@@ -61,7 +61,9 @@
       },
       "minecraft:wearable": {
         "slot": "slot.armor.head"
-      }
+      },
+      "tag:comp:armor_protection:1": {},
+      "tag:comp:armor_type:decorate_": {}
     }
   }
 }

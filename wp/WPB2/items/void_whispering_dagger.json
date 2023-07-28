@@ -91,7 +91,8 @@
                     "target": "self"
                 }
             },
-            "minecraft:can_destroy_in_creative": false
+            "minecraft:can_destroy_in_creative": false,
+            "tag:comp:equipment_type:melee_weapon":{}
         },
         "events": {
             "void_whispering_dagger_attack": {

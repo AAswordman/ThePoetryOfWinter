@@ -72,7 +72,8 @@
             "speed": 10
           }
         ]
-      }
+      },
+      "tag:comp:equipment_type:magic_weapon":{}
     },
     "events": {
       "attack": {

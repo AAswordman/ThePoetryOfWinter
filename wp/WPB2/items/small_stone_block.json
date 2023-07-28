@@ -25,7 +25,8 @@
       },
       "minecraft:projectile": {
         "projectile_entity": "dec:throwing_stone"
-      }
+      },
+      "tag:comp:equipment_type:thrown_weapon":{}
     }
   }
 }

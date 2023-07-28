@@ -51,7 +51,8 @@
         "saturation_modifier": "good",
         "can_always_eat": false,
         "using_converts_to": "stick"
-      }
+      },
+      "tag:comp:equipment_type:melee_weapon":{}
     },
     "events": {
       "attack": {

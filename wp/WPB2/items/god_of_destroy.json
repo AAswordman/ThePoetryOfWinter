@@ -54,7 +54,8 @@
           "event": "god_of_destroy_use",
           "target": "self"
         }
-      }
+      },
+      "tag:comp:equipment_type:magic_weapon":{}
     },
     "events": {
       "attack": {

@@ -49,7 +49,9 @@
       },
       "minecraft:wearable": {
         "slot": "slot.armor.chest"
-      }
+      },
+      "tag:comp:armor_protection:7": {},
+      "tag:comp:armor_type:singleton_": {}
     }
   }
 }

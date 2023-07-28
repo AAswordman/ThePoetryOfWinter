@@ -47,8 +47,8 @@
         "anchor": 1,
         "offset": [
           0,
-          0.5,
-          0
+          0,
+          1
         ],
         "semirandomdiffdamage": true,
         "uncertaintyBase": 10.0,

@@ -39,7 +39,16 @@
             },
             "minecraft:icon": {
                 "texture": "armor_senior_equipment_helmet"
-            }
+            },
+            "tag:comp:use_data_group:tag_:default:_": {},
+            "tag:comp:armor_protection:5": {},
+            "tag:comp:armor_resilience:3": {},
+            "tag:comp:armor_physical_protection:6": {},
+            "tag:comp:armor_magic_protection:6": {},
+            "tag:comp:armor_physical_reduction:0": {},
+            "tag:comp:armor_magic_reduction:0": {},
+            "tag:comp:armor_type:suit_:senior_equipment:_": {},
+            "tag:comp:actual_level:5": {}
         }
     }
 }

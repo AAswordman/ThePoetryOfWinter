@@ -88,7 +88,9 @@
                     "target": "self"
                 }
             },
-            "minecraft:can_destroy_in_creative": false
+            "minecraft:can_destroy_in_creative": false,
+            "tag:comp:movement_addition:0.01": {},
+            "tag:comp:equipment_type:melee_weapon":{}
         },
         "events": {
             "attack": {

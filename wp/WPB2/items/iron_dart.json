@@ -26,7 +26,8 @@
       },
       "minecraft:projectile": {
         "projectile_entity": "dec:iron_dart"
-      }
+      },
+      "tag:comp:equipment_type:thrown_weapon":{}
     }
   }
 }
