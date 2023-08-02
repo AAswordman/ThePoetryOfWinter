@@ -1,38 +1,10 @@
 {
     "format_version": "1.8.0",
     "animations": {
-        "animation.player.wb.gradeline": {
-            "timeline": {
-                "2.0": [
-                    "/function grade/up",
-                    "/function grade/textup"
-                ],
-                "4.0": [
-                    "/scoreboard players add @s wbdjjf 1",
-                    "/execute as @s[tag=wbdjeff] at @s run function grade/effect"
-                    // 回蓝写gt了
-                ]
-            },
-            "animation_length": 5,
-            "loop": true
-        },
-        "animation.player.wb.order.normal": {
-            "timeline": {
-                "0.25": [
-                    "/execute as @s[scores={wbdjcg=101..}] at @s run scoreboard players set @s wbdjcg 100",
-                    "/execute as @s[scores={wbfl=201..}] at @s run scoreboard players set @s wbfl 200"
-                ]
-            },
-            "animation_length": 0.5,
-            "loop": true
-        },
         "animation.player.wb.delivery": {
             "timeline": {
                 "0.5": [
-                    "/execute as @s[scores={wbef=1..}] at @s run scoreboard players remove @s wbef 1",
-                    //盔甲冷却写gt了
-                    "/function armor/skill_update",
-                    "/tag @s remove wbnearboss"
+                    "/function armor/skill_update"
                 ]
             },
             "animation_length": 1,
@@ -48,16 +20,6 @@
                 ]
             },
             "animation_length": 0.13,
-            "loop": true
-        },
-        "animation.player.wb.longorder": {
-            "timeline": {
-                "5": [
-                    "/execute as @e[type=minecraft:item,r=8] at @s if block ~ ~-1 ~ wb:waste_recovery -1 run summon wb:item_waste_recovery ~ ~+1 ~",
-                    "/execute as @e[type=minecraft:item,r=8] at @s if block ~ ~-1 ~ wb:waste_recovery -1 run kill @s"
-                ]
-            },
-            "animation_length": 10,
             "loop": true
         }
     }

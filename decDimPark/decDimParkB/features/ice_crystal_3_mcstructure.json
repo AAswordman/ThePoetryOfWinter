@@ -1,0 +1,13 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "dec:ice_crystal_3_mcstructure"
+		},
+		"structure_name": "mystructure:ice_crystal_3",
+		"adjustment_radius": 16,
+		"facing_direction": "random",
+		"constraints": {
+		}
+	}
+}

@@ -6,15 +6,7 @@
       "is_spawnable": true,
       "is_summonable": true,
       "is_experimental": false,
-      "runtime_identifier":"minecraft:shulker",
-    "animations":{
-      	"base":"animation.station_upgrade_c.wb"
-      },
-      "scripts":{
-      	"animate":[
-      	 "base"
-      	 ]
-      }
+      "runtime_identifier":"minecraft:shulker"
     },
     "component_groups": {
         "into":{

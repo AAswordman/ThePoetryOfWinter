@@ -28,7 +28,8 @@ export default class ExClientEvents {
             [ExOtherEventNames.afterPlayerShootProj]: new Listener(this, ExOtherEventNames.afterPlayerShootProj),
             [ExEventNames.afterBlockBreak]: new Listener(this, ExEventNames.afterBlockBreak),
             [ExEventNames.afterPlayerSpawn]: new Listener(this, ExEventNames.afterPlayerSpawn),
-            [ExEventNames.afterEntityHealthChanged]: new Listener(this, ExEventNames.afterEntityHealthChanged)
+            [ExEventNames.afterEntityHealthChanged]: new Listener(this, ExEventNames.afterEntityHealthChanged),
+            [ExEventNames.afterEffectAdd]: new Listener(this, ExEventNames.afterEffectAdd)
         };
         this._client = client;
     }
@@ -272,6 +273,12 @@ ExClientEvents.exEventSetting = {
         }
     },
     [ExEventNames.afterEntityHealthChanged]: {
+        pattern: ExClientEvents.eventHandlers.registerToServerByEntity,
+        filter: {
+            "name": "entity"
+        }
+    },
+    [ExEventNames.afterEffectAdd]: {
         pattern: ExClientEvents.eventHandlers.registerToServerByEntity,
         filter: {
             "name": "entity"

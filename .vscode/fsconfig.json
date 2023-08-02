@@ -8,6 +8,11 @@
                 "bidir": true
             },
             {
+                "src": "D:/eclipse/file/root/mygitbackup/decDimPark/decDimParkB",
+                "dest": "D:/eclipse/file/root/release/installations/2131213/1.20.12.1/packageData/development_behavior_packs/decDimParkB",
+                "bidir": true
+            },
+            {
                 "src": "D:/eclipse/file/root/mygitbackup/wp/WPR2",
                 "dest": "D:/eclipse/file/root/release/installations/2131213/1.20.12.1/packageData/development_resource_packs/WPR2",
                 "bidir": true

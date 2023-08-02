@@ -2,7 +2,7 @@
     "format_version": 2,
     "capabilities": ["script_eval"],
     "header": {
-        "name": "DecIsland BiomesPark",
+        "name": "DecIsland BiomesPark V0.1.1",
         "description": "test for boss structure",
         "uuid": "2d4ede5c-5ac6-49ba-ab2b-44be7fbaa757",
         "min_engine_version": [1, 19, 50],

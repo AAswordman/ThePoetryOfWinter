@@ -5,7 +5,7 @@ export default class CustomClient extends ExGameClient {
     }
     onJoin() {
     }
-    onLoaded() {
+    onLoad() {
     }
     onLeave() {
     }

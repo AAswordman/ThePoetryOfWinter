@@ -1,0 +1,13 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "dec:abyssal_tower_srd1_mcstructure"
+		},
+		"structure_name": "mystructure:abyssal_tower_srd1",
+		"adjustment_radius": 8,
+		"facing_direction": "random",
+		"constraints": {
+		}
+	}
+}

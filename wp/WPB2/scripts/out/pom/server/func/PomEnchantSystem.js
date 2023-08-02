@@ -103,7 +103,7 @@ export default class PomEnChantSystem extends GameController {
             }
         });
     }
-    onLoaded() {
+    onLoad() {
     }
     onLeave() {
     }

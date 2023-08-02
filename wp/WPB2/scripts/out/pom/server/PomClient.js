@@ -89,14 +89,14 @@ export default class PomClient extends ExGameClient {
         var _a;
         return lang[(_a = this.data.lang) !== null && _a !== void 0 ? _a : "en"];
     }
-    onLoaded() {
+    onLoad() {
         let scores = ExPlayer.getInstance(this.player).getScoresManager();
         this.gameId = scores.getScore("wbldid");
         if (this.gameId === 0) {
             this.gameId = Math.floor(Math.random() * Random.MAX_VALUE);
             scores.setScore("wbldid", this.gameId);
         }
-        this.gameControllers.forEach(controller => controller.onLoaded());
+        this.gameControllers.forEach(controller => controller.onLoad());
         if (!this.data.lang) {
             this.exPlayer.runCommandAsync("mojang nmsl").catch((e) => {
                 if (ExSystem.hasChineseCharacter(JSON.stringify(e))) {
@@ -108,15 +108,17 @@ export default class PomClient extends ExGameClient {
             });
         }
         if (!this.data.licenseRead) {
-            const looper = ExSystem.tickTask(() => {
+            this.licenseLooper = ExSystem.tickTask(() => {
+                var _a;
                 new WarningAlertUI(this, POMLICENSE, [["同意并继续", (c, ui) => {
+                            var _a;
                             this.data.licenseRead = true;
-                            looper.stop();
+                            (_a = this.licenseLooper) === null || _a === void 0 ? void 0 : _a.stop();
                         }]]).showPage();
-                if (!this.data.licenseRead)
-                    looper.startOnce();
-            }).delay(1 * 20);
-            looper.startOnce();
+                if (this.data.licenseRead)
+                    (_a = this.licenseLooper) === null || _a === void 0 ? void 0 : _a.stop();
+            }).delay(2 * 20);
+            this.licenseLooper.start();
         }
         if (this.player.hasTag("wbmsyh")) {
             this.player.nameTag = "§a" + this.player.nameTag;
@@ -127,8 +129,6 @@ export default class PomClient extends ExGameClient {
         this.exPlayer.command.run([
             "execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbef 0",
             "execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbdj 0",
-            "execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbdjcg 0",
-            "execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbdjjf 0",
             "execute as @s[tag=!wbyzc] at @s run give @s wb:power 1 0 {\"minecraft:keep_on_death\":{}}",
             "execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbcsjs -1",
             "execute as @s[tag=!wbyzc] at @s run scoreboard players set @s wbnldx 0",
@@ -144,8 +144,10 @@ export default class PomClient extends ExGameClient {
         ]);
     }
     onLeave() {
+        var _a;
         this.gameControllers.forEach(controller => controller.onLeave());
         this.looper.stop();
+        (_a = this.licenseLooper) === null || _a === void 0 ? void 0 : _a.stop();
         super.onLeave();
     }
     getPlayersAndIds() {

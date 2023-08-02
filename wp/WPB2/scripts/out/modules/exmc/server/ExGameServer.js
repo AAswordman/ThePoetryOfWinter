@@ -25,6 +25,7 @@ import notUtillTask from "../utils/notUtillTask.js";
 import ExSound from "./env/ExSound.js";
 import { ExEventNames } from "./events/events.js";
 import { falseIfError } from "../utils/tool.js";
+import ExSystem from "../utils/ExSystem.js";
 export default class ExGameServer {
     constructor(config) {
         this.entityControllers = new Map();
@@ -58,6 +59,12 @@ export default class ExGameServer {
                 });
             }
         }
+        // for (const c of this.getClients()) {
+        //     if (!c.isLoaded) {
+        //         c.onLoad();
+        //         c.isLoaded = true;
+        //     }
+        // }
         eventDecoratorFactory(this.getEvents(), this);
     }
     say(msg) {
@@ -128,7 +135,7 @@ export default class ExGameServer {
     }
     findClientByPlayer(player) {
         for (let k of this.clients) {
-            if (k[1].player == player) {
+            if (ExSystem.getId(k[1].player) === ExSystem.getId(player)) {
                 return k[1];
             }
         }
@@ -149,6 +156,16 @@ export default class ExGameServer {
             this.clients_nameMap.set(player.name, client);
         });
     }
+    // @registerEvent(ExEventNames.afterPlayerSpawn, (obj: ExGameServer, e: PlayerSpawnAfterEvent) => e.initialSpawn)
+    // onClientLoad(e: PlayerSpawnAfterEvent) {
+    //     let c = this.findClientByPlayer(e.player);
+    //     if (c && !c.isLoaded) {
+    //         c.onLoad();
+    //         c.isLoaded = true;
+    //     } else {
+    //         ExGameConfig.console.error("can't load client: " + e.player.nameTag);
+    //     }
+    // }
     onClientLeave(event) {
         this.playerIsInSet.delete(event.playerName);
         let client = this.findClientByName(event.playerName);

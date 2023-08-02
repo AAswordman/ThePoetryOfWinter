@@ -62,7 +62,7 @@ export default class PomInteractSystem extends GameController {
             }
         });
     }
-    onLoaded() {
+    onLoad() {
     }
     onLeave() {
     }
