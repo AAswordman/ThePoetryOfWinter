@@ -98,11 +98,11 @@ item.wb:compressor.name=压气机
 tile.wb:waste_recovery.name=回收站(把不要的东西扔上面)
 
 
-item.wb:captain.name=§6Lv.? §f队长控制端
-item.wb:teammember.name=§6Lv.? §f队员控制端
+item.wb:captain.name=队长控制端
+item.wb:teammember.name=队员控制端
 
 
-item.wb:map_builder.name=§6Lv.? §f地图生成器
+item.wb:map_builder.name=地图生成器
 
 
 item.spawn_egg.entity.base.name=生成 实体	
@@ -110,27 +110,27 @@ item.spawn_egg.entity.base.name=生成 实体
 entity.base.name=实体名	
 item.base.name=物品名称	
 
-item.hostile_mode=§6Lv.? §r暂时没用
+item.hostile_mode=暂时没用
 
-item.wb:wb_help.name=§d§l请打开聊天栏仔细看完全部内容。游戏指南里有本add详细介绍。	
-item.wb:element_base.name=§6Lv.? §r魔法能量基础	
-item.wb:staff_base.name=§6Lv.? §r法杖基础	
-item.wb:crystal_fuse.name=§6Lv.? §r融合宝石	
-item.wb:crystal_evolution.name=§6Lv.? §r合成宝石	
-item.wb:base_core_a.name=§6Lv.? §r简陋的魔法核心	
-item.wb:base_core_b.name=§6Lv.? §r破旧的魔法核心	
-item.wb:base_core_c.name=§6Lv.? §r普通的魔法核心	
-item.wb:base_core_d.name=§6Lv.? §r精致的魔法核心	
-item.wb:base_core_e.name=§6Lv.? §r多次加工的魔法核心	
-item.wb:base_core_f.name=§6Lv.? §r闪光的魔法核心	
-item.wb:base_core_g.name=§6Lv.? §r传神的魔法核心	
-item.wb:element_bright.name=§6Lv.? §r光之能量	
-item.wb:element_frost.name=§6Lv.? §r冰之能量	
-item.wb:element_soil.name=§6Lv.? §r土之能量	
-item.wb:element_flame.name=§6Lv.? §r火之能量	
-item.wb:element_summon.name=§6Lv.? §r圣灵能量	
-item.wb:element_wind.name=§6Lv.? §r风之能量	
-item.wb:element_bluemark.name=§6Lv.? §r蓝痕logo
+item.wb:wb_help.name=§d请打开聊天栏仔细看完全部内容。游戏指南里有本add详细介绍。	
+item.wb:element_base.name=魔法能量基础	
+item.wb:staff_base.name=法杖基础	
+item.wb:crystal_fuse.name=融合宝石	
+item.wb:crystal_evolution.name=合成宝石	
+item.wb:base_core_a.name=简陋的魔法核心	
+item.wb:base_core_b.name=破旧的魔法核心	
+item.wb:base_core_c.name=普通的魔法核心	
+item.wb:base_core_d.name=精致的魔法核心	
+item.wb:base_core_e.name=多次加工的魔法核心	
+item.wb:base_core_f.name=闪光的魔法核心	
+item.wb:base_core_g.name=传神的魔法核心	
+item.wb:element_bright.name=光之能量	
+item.wb:element_frost.name=冰之能量	
+item.wb:element_soil.name=土之能量	
+item.wb:element_flame.name=火之能量	
+item.wb:element_summon.name=圣灵能量	
+item.wb:element_wind.name=风之能量	
+item.wb:element_bluemark.name=蓝痕logo
 
 
 
@@ -176,45 +176,45 @@ item.wb:mineral_senior_seal.name=封尘精华§9§o[高级]
 item.wb:mineral_senior_water.name=水源精华§9§o[高级]
 
 
-item.wb:sword_bloodsucking_a=§l嗜血剑§r§9§o[普通]
-item.wb:sword_bloodsucking_b=§l嗜血剑§r§9§o[普通]§o§c[嗜血]
-item.wb:sword_bloodsucking_c=§l嗜血剑§r§9§o[普通]§o§c[嗜血]
-item.wb:sword_bloodsucking_d=§l嗜血剑§r§9§o[高级]§o§c[嗜血][狂暴]
-item.wb:sword_bloodsucking_e=§l嗜血剑§r§9§o[高级]§o§c[嗜血][狂暴]
-item.wb:sword_bloodsucking_f=§6Lv.50 §d嗜血剑§o§c[嗜血][狂暴][嗜血风暴]
+item.wb:sword_bloodsucking_a=嗜血剑§r§9§o[普通]
+item.wb:sword_bloodsucking_b=嗜血剑§r§9§o[普通]§o§c[嗜血]
+item.wb:sword_bloodsucking_c=嗜血剑§r§9§o[普通]§o§c[嗜血]
+item.wb:sword_bloodsucking_d=嗜血剑§r§9§o[高级]§o§c[嗜血][狂暴]
+item.wb:sword_bloodsucking_e=嗜血剑§r§9§o[高级]§o§c[嗜血][狂暴]
+item.wb:sword_bloodsucking_f=嗜血剑§o§c[嗜血][狂暴][嗜血风暴]
 
-item.wb:sword_ink_a=§l墨痕剑§r§9§o[普通]
-item.wb:sword_ink_b=§l墨痕剑§r§9§o[普通]§o§c[舞动]
-item.wb:sword_ink_c=§l墨痕剑§r§9§o[普通]§o§c[舞动]
-item.wb:sword_ink_d=§l墨痕剑§r§9§o[高级]§o§c[舞动][墨痕]
-item.wb:sword_ink_e=§l墨痕剑§r§9§o[高级]§o§c[舞动][墨痕]
-item.wb:sword_ink_f=§6Lv.50 §d墨痕剑§o§c[舞动][墨痕][笔走龙蛇]
+item.wb:sword_ink_a=墨痕剑§r§9§o[普通]
+item.wb:sword_ink_b=墨痕剑§r§9§o[普通]§o§c[舞动]
+item.wb:sword_ink_c=墨痕剑§r§9§o[普通]§o§c[舞动]
+item.wb:sword_ink_d=墨痕剑§r§9§o[高级]§o§c[舞动][墨痕]
+item.wb:sword_ink_e=墨痕剑§r§9§o[高级]§o§c[舞动][墨痕]
+item.wb:sword_ink_f=墨痕剑§o§c[舞动][墨痕][笔走龙蛇]
 
-item.wb:sword_forget_a=§l遗忘剑§r§9§o[普通]
-item.wb:sword_forget_b=§l遗忘剑§r§9§o[普通]§o§c[失忆]
-item.wb:sword_forget_c=§l遗忘剑§r§9§o[普通]§o§c[失忆]
-item.wb:sword_forget_d=§l遗忘剑§r§9§o[高级]§o§c[失忆][忘却]
-item.wb:sword_forget_e=§l遗忘剑§r§9§o[高级]§o§c[失忆][忘却]
-item.wb:sword_forget_f=§6Lv.50 §d遗忘剑§o§c[失忆][忘却][遗忘之光]
+item.wb:sword_forget_a=遗忘剑§r§9§o[普通]
+item.wb:sword_forget_b=遗忘剑§r§9§o[普通]§o§c[失忆]
+item.wb:sword_forget_c=遗忘剑§r§9§o[普通]§o§c[失忆]
+item.wb:sword_forget_d=遗忘剑§r§9§o[高级]§o§c[失忆][忘却]
+item.wb:sword_forget_e=遗忘剑§r§9§o[高级]§o§c[失忆][忘却]
+item.wb:sword_forget_f=遗忘剑§o§c[失忆][忘却][遗忘之光]
 
-item.wb:sword_water_a=§l水源剑§r§9§o[普通]
-item.wb:sword_water_b=§l水源剑§r§9§o[普通]§o§c[冲刷]
-item.wb:sword_water_c=§l水源剑§r§9§o[普通]§o§c[冲刷]
-item.wb:sword_water_d=§l水源剑§r§9§o[高级]§o§c[冲刷][浪花]
-item.wb:sword_water_e=§l水源剑§r§9§o[高级]§o§c[冲刷][浪花]
-item.wb:sword_water_f=§6Lv.50 §d水源剑§o§c[冲刷][浪花][水尽鹅飞]
+item.wb:sword_water_a=水源剑§r§9§o[普通]
+item.wb:sword_water_b=水源剑§r§9§o[普通]§o§c[冲刷]
+item.wb:sword_water_c=水源剑§r§9§o[普通]§o§c[冲刷]
+item.wb:sword_water_d=水源剑§r§9§o[高级]§o§c[冲刷][浪花]
+item.wb:sword_water_e=水源剑§r§9§o[高级]§o§c[冲刷][浪花]
+item.wb:sword_water_f=水源剑§o§c[冲刷][浪花][水尽鹅飞]
 
-item.wb:sword_seal_a=§l封尘剑§r§9§o[普通]
-item.wb:sword_seal_b=§l封尘剑§r§9§o[普通]§o§c[尘埃]
-item.wb:sword_seal_c=§l封尘剑§r§9§o[普通]§o§c[尘埃]
-item.wb:sword_seal_d=§l封尘剑§r§9§o[高级]§o§c[尘埃][破尘]
-item.wb:sword_seal_e=§l封尘剑§r§9§o[高级]§o§c[尘埃][破尘]
-item.wb:sword_seal_f=§6Lv.50 §d封尘剑§o§c[尘埃][破尘][土崩瓦解]
-item.wb:axex_equipment_a.name=§l魔能斧§r§9§o[普通]
-item.wb:pickaxex_equipment_a.name=§l魔能镐§r§9§o[普通][§e长按破坏周围方块,不要手残！小心使用！§r]
-item.wb:sword_equipment_a=§l魔能剑§r§9§o[普通]
-item.wb:sword_equipment_b=§l魔能剑§r§9§o[普通]
-item.wb:sword_equipment_c=§l魔能剑§r§9§o[普通]
+item.wb:sword_seal_a=封尘剑§r§9§o[普通]
+item.wb:sword_seal_b=封尘剑§r§9§o[普通]§o§c[尘埃]
+item.wb:sword_seal_c=封尘剑§r§9§o[普通]§o§c[尘埃]
+item.wb:sword_seal_d=封尘剑§r§9§o[高级]§o§c[尘埃][破尘]
+item.wb:sword_seal_e=封尘剑§r§9§o[高级]§o§c[尘埃][破尘]
+item.wb:sword_seal_f=封尘剑§o§c[尘埃][破尘][土崩瓦解]
+item.wb:axex_equipment_a.name=魔能斧§r§9§o[普通]
+item.wb:pickaxex_equipment_a.name=魔能镐§r§9§o[普通][§e长按破坏周围方块,不要手残！小心使用！§r]
+item.wb:sword_equipment_a=魔能剑§r§9§o[普通]
+item.wb:sword_equipment_b=魔能剑§r§9§o[普通]
+item.wb:sword_equipment_c=魔能剑§r§9§o[普通]
 item.wb:summon_territory.name=创建领地(长按使用)
 item.spawn_egg.entity.wb:territory.name=领地
 item.spawn_egg.entity.wb:ball_territoryc.name=魔法球
@@ -229,47 +229,47 @@ tile.wb:parallel_block_destroy.name=BOSS场地销毁者
 tile.wb:boss_keeper_block.name=BOSS空间核心块
 
 
-item.spawn_egg.entity.wb:magic_cow.name=§6Lv.2 §f变异牛 §b魔兽
-entity.wb:magic_cow.name=§6Lv.2 §f变异牛 §b魔兽
+item.spawn_egg.entity.wb:magic_cow.name=变异牛
+entity.wb:magic_cow.name=变异牛
 
-item.spawn_egg.entity.wb:magic_pig.name=§6Lv.4 §f变异猪 §b魔兽
-entity.wb:magic_pig.name=§6Lv.4 §f变异猪 §b魔兽
+item.spawn_egg.entity.wb:magic_pig.name=变异猪
+entity.wb:magic_pig.name=变异猪
 
-item.spawn_egg.entity.wb:magic_spider.name=§6Lv.10 §f变异蜘蛛 §b魔兽
-entity.wb:magic_spider.name=§6Lv.10 §f变异蜘蛛boss §b魔兽
+item.spawn_egg.entity.wb:magic_spider.name=变异蜘蛛
+entity.wb:magic_spider.name=变异蜘蛛boss
 
-item.spawn_egg.entity.wb:magic_crystal.name=§6Lv.15 §f魔能水晶 §b魔兽
-entity.wb:magic_crystal.name=§6Lv.15 §f魔能水晶boss §b魔兽
+item.spawn_egg.entity.wb:magic_crystal.name=魔能水晶
+entity.wb:magic_crystal.name=魔能水晶boss
 
-item.spawn_egg.entity.wb:station_summon.name=§6Lv.10 §f多功能召唤台
-entity.wb:station_summon.name=§6Lv.10 §f多功能召唤台
+item.spawn_egg.entity.wb:station_summon.name=多功能召唤台
+entity.wb:station_summon.name=多功能召唤台
 
-item.spawn_egg.entity.wb:spell_wind.name=§6Lv.13 §f飓风法术 §d法术
-entity.wb:spell_wind.name=§6Lv.13 §f飓风法术 §d法术
+item.spawn_egg.entity.wb:spell_wind.name=飓风法术 §d法术
+entity.wb:spell_wind.name=飓风法术 §d法术
 
-item.spawn_egg.entity.wb:spell_frozen.name=§6Lv.13 §f冰冻法术 §d法术
-entity.wb:spell_frozen.name=§6Lv.13 §f冰冻法术 §d法术
+item.spawn_egg.entity.wb:spell_frozen.name=冰冻法术 §d法术
+entity.wb:spell_frozen.name=冰冻法术 §d法术
 
-item.spawn_egg.entity.wb:spell_fire.name=§6Lv.15 §f烈焰法术 §d法术
-entity.wb:spell_fire.name=§6Lv.15 §f烈焰法术 §d法术
+item.spawn_egg.entity.wb:spell_fire.name=烈焰法术 §d法术
+entity.wb:spell_fire.name=烈焰法术 §d法术
 
-item.spawn_egg.entity.wb:spell_summon.name=§6Lv.19 §a爆炸法术 §d法术
-entity.wb:spell_summon.name=§6Lv.19 §a爆炸法术 §d法术
+item.spawn_egg.entity.wb:spell_summon.name=爆炸法术 §d法术
+entity.wb:spell_summon.name=爆炸法术 §d法术
 
-item.spawn_egg.entity.wb:spell_poisoning.name=§6Lv.19 §a剧毒法术 §d法术
-entity.wb:spell_poisoning.name=§6Lv.19 §a剧毒法术 §d法术
+item.spawn_egg.entity.wb:spell_poisoning.name=剧毒法术 §d法术
+entity.wb:spell_poisoning.name=剧毒法术 §d法术
 
-item.wb:staff_barrier.name=§6Lv.1 §f屏障法杖§o§c[屏障][撤销]§r
+item.wb:staff_barrier.name=屏障法杖§o§c[屏障][撤销]§r
 
-item.wb:conveyor_issue.name=§6Lv.6 §f传送石§o§c[传送]§r
+item.wb:conveyor_issue.name=传送石§o§c[传送]§r
 
-item.wb:conveyor_accept.name=§6Lv.6 §f传送石_接收端
+item.wb:conveyor_accept.name=传送石_接收端
 
-item.wb:currency_1.name=§6Lv.6 §f黄宝石
+item.wb:currency_1.name=黄宝石
 
-item.wb:start_key=§6Lv.1 §f启程钥匙
-item.wb:hostile_mode.name=§6Lv.1 §f模式菜单
-item.wb:back_key.name=§6Lv.1 §f反程钥匙(长按退出剧情线)
+item.wb:start_key=启程钥匙
+item.wb:hostile_mode.name=模式菜单
+item.wb:back_key.name=反程钥匙(长按退出剧情线)
 
 tile.wb:magic_forest_grass.name=魔化草方块
 tile.wb:quartz_blue.name=§m高分子石英§9[废弃]
@@ -287,66 +287,66 @@ tile.wb:electric_light.name=§m能源灯§9[废弃]
 tile.wb:button_block.name=§m按钮方块§9[废弃]
 
 
-item.spawn_egg.entity.wb:magic_book.name=§6Lv.12 §f被魔力支配的书 §b魔兽
-entity.wb:magic_book.name=§6Lv.12 §f被魔力支配的书 §b魔兽
+item.spawn_egg.entity.wb:magic_book.name=被魔力支配的书
+entity.wb:magic_book.name=被魔力支配的书
 
-item.spawn_egg.entity.wb:magic_insect.name=§6Lv.15 §f魔虫 §b魔兽
-entity.wb:magic_insect.name=§6Lv.15 §f魔虫 §b魔兽
+item.spawn_egg.entity.wb:magic_insect.name=魔虫
+entity.wb:magic_insect.name=魔虫
 
-item.spawn_egg.entity.wb:desert_insect.name=§6Lv.15 §f沙漠虫 §b魔兽
-entity.wb:desert_insect.name=§6Lv.15 §f沙漠虫 §b魔兽
+item.spawn_egg.entity.wb:desert_insect.name=沙漠虫
+entity.wb:desert_insect.name=沙漠虫
 
-item.spawn_egg.entity.wb:desert_skeleton.name=§6Lv.10 §f沙漠骷髅 §9亡灵
-entity.wb:desert_skeleton.name=§6Lv.10 §f沙漠骷髅 §9亡灵
+item.spawn_egg.entity.wb:desert_skeleton.name=沙漠骷髅 §9亡灵
+entity.wb:desert_skeleton.name=沙漠骷髅 §9亡灵
 
-item.spawn_egg.entity.wb:desert_zombie.name=§6Lv.10 §f沙漠僵尸 §9亡灵
-entity.wb:desert_zombie.name=§6Lv.10 §f沙漠僵尸 §9亡灵
+item.spawn_egg.entity.wb:desert_zombie.name=沙漠僵尸 §9亡灵
+entity.wb:desert_zombie.name=沙漠僵尸 §9亡灵
 
-item.spawn_egg.entity.wb:magic_stoneman.name=§6Lv.25 §a魔化石块boss §c魔族
-entity.wb:magic_stoneman.name=§6Lv.25 §a魔化石块 §c魔族
-item.spawn_egg.entity.wb:magic_stoneman_a.name=§6Lv.25 §a魔化石块boss §c魔族
-entity.wb:magic_stoneman_a.name=§6Lv.25 §a魔化石块 §c魔族
-item.spawn_egg.entity.wb:magic_stoneman_b.name=§6Lv.25 §a魔化石块boss §c魔族
-entity.wb:magic_stoneman_b.name=§6Lv.25 §a魔化石块 §c魔族
+item.spawn_egg.entity.wb:magic_stoneman.name=魔化石块boss
+entity.wb:magic_stoneman.name=魔化石块
+item.spawn_egg.entity.wb:magic_stoneman_a.name=魔化石块boss
+entity.wb:magic_stoneman_a.name=魔化石块
+item.spawn_egg.entity.wb:magic_stoneman_b.name=魔化石块boss
+entity.wb:magic_stoneman_b.name=魔化石块
 
-item.spawn_egg.entity.wb:spell_regeneration.name=§6Lv.28 §a治疗法术 §d法术
-entity.wb:spell_regeneration.name=§6Lv.28 §a治疗法术 §d法术
+item.spawn_egg.entity.wb:spell_regeneration.name=治疗法术 §d法术
+entity.wb:spell_regeneration.name=治疗法术 §d法术
 
-item.spawn_egg.entity.wb:spell_speed.name=§6Lv.25 §a极速法术 §d法术
-entity.wb:spell_speed.name=§6Lv.25 §a极速法术 §d法术
+item.spawn_egg.entity.wb:spell_speed.name=极速法术 §d法术
+entity.wb:spell_speed.name=极速法术 §d法术
 
 entity.wb:ball_staff_light.name=光明法杖的炮弹
 entity.wb:ball_staff_frost.name=冰霜法杖的炮弹
 
-item.spawn_egg.entity.wb:spell_frost.name=§6Lv.19 §a霜降法术 §d法术
-entity.wb:spell_frost.name=§6Lv.19 §a霜降法术 §d法术
+item.spawn_egg.entity.wb:spell_frost.name=霜降法术 §d法术
+entity.wb:spell_frost.name=霜降法术 §d法术
 
 item.wb:message.name=§f一张纸条，请用多功能召唤台解读
 
-item.wb:particle_flame.name=§6Lv.10 §f火焰粒子药水
-item.wb:particle_halo.name=§6Lv.10 §f光环粒子药水
-item.wb:particle_rune.name=§6Lv.10 §f符文粒子药水
-item.wb:particle_love.name=§6Lv.10 §f爱心粒子药水
+item.wb:particle_flame.name=火焰粒子药水
+item.wb:particle_halo.name=光环粒子药水
+item.wb:particle_rune.name=符文粒子药水
+item.wb:particle_love.name=爱心粒子药水
 
-item.wb:staff_light=§6Lv.28 §a光明法杖
-item.wb:staff_frost=§6Lv.32 §b冰霜法杖
+item.wb:staff_light=光明法杖
+item.wb:staff_frost=冰霜法杖
 
-item.wb:particle_store.name=§6Lv.10 §f粒子设置
+item.wb:particle_store.name=粒子设置
 
-item.wb:currency_2.name=§6Lv.10 §f蓝宝石
+item.wb:currency_2.name=蓝宝石
 
 tile.wb:sand_hard.name=强化沙石
 tile.wb:red_sand_hard.name=强化红沙石
 
 
-item.spawn_egg.entity.wb:magic_puppet.name=§6Lv.35 §a傀儡守卫者 §b魔兽
-entity.wb:magic_puppet.name=§6Lv.35 §a傀儡守卫者 §b魔兽
+item.spawn_egg.entity.wb:magic_puppet.name=傀儡守卫者
+entity.wb:magic_puppet.name=傀儡守卫者
 
-item.spawn_egg.entity.wb:forget_creeper.name=§6Lv.15 §f遗忘苦力怕
-entity.wb:forget_creeper.name=§6Lv.15 §f遗忘苦力怕
+item.spawn_egg.entity.wb:forget_creeper.name=遗忘苦力怕
+entity.wb:forget_creeper.name=遗忘苦力怕
 
-item.spawn_egg.entity.wb:headless_guard.name=§6Lv.55 §d无头守卫boss §c魔族
-entity.wb:headless_guard.name=§6Lv.55 §d无头守卫boss §c魔族
+item.spawn_egg.entity.wb:headless_guard.name=无头守卫boss
+entity.wb:headless_guard.name=无头守卫boss
 
 entity.wb:ball_staff_wind.name=飓风法杖的炮弹
 entity.wb:ball_staff_winda.name=飓风法杖的炮弹
@@ -360,51 +360,51 @@ entity.wb:ball_staff_firea.name=烈焰法杖的炮弹
 entity.wb:ball_sword_ink.name=墨痕剑
 entity.wb:ball_bluemark.name=痕.耀.
 
-item.wb:power.name=§6Lv.25 §a菜单
+item.wb:power.name=菜单
 
-item.wb:currency_3.name=§6Lv.25 §a紫宝石
+item.wb:currency_3.name=紫宝石
 
-item.wb:staff_fire=§6Lv.38 §b烈焰法杖
-item.wb:staff_wind=§6Lv.45 §b飓风法杖
-item.wb:staff_summon=§6Lv.55 §d圣灵法杖
+item.wb:staff_fire=烈焰法杖
+item.wb:staff_wind=飓风法杖
+item.wb:staff_summon=圣灵法杖
 
-item.wb:sword_guard=§6Lv.42 §b守卫之剑§o§c[守卫][防御][绝对防御]§r
-item.wb:sword_bluemark=§6Lv.55 §d痕之剑§o§c[蓝光][裁决][痕.耀]§r §e§l
-
-
-entity.wb:ancient_stone.name=§6Lv.78 §d远古石像boss §c魔族
-item.spawn_egg.entity.wb:ancient_stone.name=§6Lv.78 §d远古石像boss §c魔族
-entity.wb:cannon_ancient_stone.name=§6Lv.78 §d远古激光炮 §c魔族
+item.wb:sword_guard=守卫之剑§o§c[守卫][防御][绝对防御]§r
+item.wb:sword_bluemark=痕之剑§o§c[蓝光][裁决][痕.耀]§r §e
 
 
-item.spawn_egg.entity.wb:spell_vine.name=§6Lv.61 §d毒药法术 §d法术
-item.spawn_egg.entity.wb:spell_burn.name=§6Lv.75 §d焚烧法术 §d法术
-item.spawn_egg.entity.wb:spell_control.name=§6Lv.79 §d控制法术 §d法术
-item.spawn_egg.entity.wb:spell_lightning.name=§6Lv.61 §d闪电法术 §d法术
-item.spawn_egg.entity.wb:spell_discipline.name=§6Lv.70 §d惩戒法术 §d法术
-entity.wb:spell_vine.name=§6Lv.61 §d毒药法术 §d法术
-entity.wb:spell_burn.name=§6Lv.75 §d焚烧法术 §d法术
-entity.wb:spell_control.name=§6Lv.79 §d控制法术 §d法术
-entity.wb:spell_lightning.name=§6Lv.61 §d闪电法术 §d法术
-entity.wb:spell_discipline.name=§6Lv.70 §d惩戒法术 §d法术
+entity.wb:ancient_stone.name=远古石像boss
+item.spawn_egg.entity.wb:ancient_stone.name=远古石像boss
+entity.wb:cannon_ancient_stone.name=远古激光炮
+
+
+item.spawn_egg.entity.wb:spell_vine.name=毒药法术 §d法术
+item.spawn_egg.entity.wb:spell_burn.name=焚烧法术 §d法术
+item.spawn_egg.entity.wb:spell_control.name=控制法术 §d法术
+item.spawn_egg.entity.wb:spell_lightning.name=闪电法术 §d法术
+item.spawn_egg.entity.wb:spell_discipline.name=惩戒法术 §d法术
+entity.wb:spell_vine.name=毒药法术 §d法术
+entity.wb:spell_burn.name=焚烧法术 §d法术
+entity.wb:spell_control.name=控制法术 §d法术
+entity.wb:spell_lightning.name=闪电法术 §d法术
+entity.wb:spell_discipline.name=惩戒法术 §d法术
 
 action.hint.exit.wb:station_upgrade_a=你坐上了升级台，经验增加更快了！(按下潜行离开升级台)
 action.hint.exit.wb:station_upgrade_b=你坐上了升级台，经验增加更快了！(按下潜行离开升级台)
 action.hint.exit.wb:station_upgrade_c=你坐上了升级台，经验增加更快了！(按下潜行离开升级台)
 action.hint.exit.wb:station_upgrade_x=你坐上了升级台，经验增加更快了！(按下潜行离开升级台)
-entity.wb:station_upgrade_a.name=§6Lv.60 §d初级升级台
-item.spawn_egg.entity.wb:station_upgrade_a.name=§6Lv.60 §d初级升级台
+entity.wb:station_upgrade_a.name=初级升级台
+item.spawn_egg.entity.wb:station_upgrade_a.name=初级升级台
 
-entity.wb:station_upgrade_b.name=§6Lv.65 §d中级升级台
-item.spawn_egg.entity.wb:station_upgrade_b.name=§6Lv.65 §d中级升级台
+entity.wb:station_upgrade_b.name=中级升级台
+item.spawn_egg.entity.wb:station_upgrade_b.name=中级升级台
 
-entity.wb:station_upgrade_c.name=§6Lv.75 §d高级升级台
-item.spawn_egg.entity.wb:station_upgrade_c.name=§6Lv.75 §d高级升级台
+entity.wb:station_upgrade_c.name=高级升级台
+item.spawn_egg.entity.wb:station_upgrade_c.name=高级升级台
 
-entity.wb:station_upgrade_x.name=§6Lv.100 §e传说升级台
-item.spawn_egg.entity.wb:station_upgrade_x.name=§6Lv.100 §e传说升级台
+entity.wb:station_upgrade_x.name=传说升级台
+item.spawn_egg.entity.wb:station_upgrade_x.name=传说升级台
 
-item.wb:currency_4.name=§6Lv.45 §b红宝石
+item.wb:currency_4.name=红宝石
 
 entity.wb:ball_ancient_stonea.name=远古石像的炮弹
 entity.wb:ball_ancient_stoneb.name=远古石像的炮弹
@@ -412,17 +412,17 @@ entity.wb:ball_ancient_stonec.name=远古石像的炮弹
 entity.wb:cannon_ancient_stone.name=远古石像的炮
 
 
-entity.wb:border_fugitive.name=§6Lv.80 §4边境流浪者boss §c魔族
-item.spawn_egg.entity.wb:border_fugitive.name=§6Lv.80 §4边境流浪者boss §c魔族
+entity.wb:border_fugitive.name=边境流浪者boss
+item.spawn_egg.entity.wb:border_fugitive.name=边境流浪者boss
 
-entity.wb:intentions_first.name=§6Lv.100 §e念 §4未知
-entity.wb:intentions_second.name=§6Lv.100 §e念 §4未知
-entity.wb:intentions_third.name=§6Lv.100 §e念 §4未知
-item.spawn_egg.entity.wb:intentions_first.name=§6Lv.100 §e念 §4未知
+entity.wb:intentions_first.name=念
+entity.wb:intentions_second.name=念
+entity.wb:intentions_third.name=念
+item.spawn_egg.entity.wb:intentions_first.name=念
 
-entity.wb:shadow_intentions_first.name=§6Lv.60 §d念的影子 §4未知
-entity.wb:shadow_intentions_second.name=§6Lv.60 §d念的影子 §4未知
-entity.wb:shadow_intentions_secondx.name=§6Lv.60 §d念的影子 §4未知
+entity.wb:shadow_intentions_first.name=念的影子
+entity.wb:shadow_intentions_second.name=念的影子
+entity.wb:shadow_intentions_secondx.name=念的影子
 
 entity.wb:ball_fly.name=凌空斩
 entity.wb:ball_border_fugitivea.name=焚烧
@@ -431,13 +431,13 @@ entity.wb:ball_border_fugitivec.name=焚烧
 entity.wb:ball_staff_burna.name=焚烧
 
 
-item.wb:sword_fly=§6Lv.82 §4凌空神剑§o§c[腾空][翱翔][抵御][凌空斩]§r
-item.wb:staff_burn=§6Lv.82 §4焚烧法杖
-item.wb:staff_governor.name=§n§6Lv.100 [预告]执政者之杖
-item.wb:sword_intentions=§6Lv.100 §e极念狂想§o§c[横扫][箭雨][爆破][极念狂想]§r
+item.wb:sword_fly=凌空神剑§o§c[腾空][翱翔][抵御][凌空斩]§r
+item.wb:staff_burn=焚烧法杖
+item.wb:staff_governor.name=[预告]执政者之杖
+item.wb:sword_intentions=极念狂想§o§c[横扫][箭雨][爆破][极念狂想]§r
 
 
-item.wb:sword_ink_g=§6Lv.150 §n[预告]§e逝影墨痕
+item.wb:sword_ink_g=[预告]§e逝影墨痕
 
 
 item.spawn_egg.entity.wb:originking.name=生成 起源王
@@ -1631,7 +1631,7 @@ entity.dec:supply_package.name=补给包
 
 item.record_star.desc=fish - 拥抱星辰
 
-createWorldScreen.immediaterespawn=立即重生§4§l强制关闭§r
+createWorldScreen.immediaterespawn=立即重生§4强制关闭§r
 
 action.hint.exit.dec:simple_car=简单小车，蹲下或跳跃离开
 action.hint.exit.dec:simple_glider=简单滑翔机，蹲下或跳跃离开
@@ -1729,14 +1729,14 @@ text.dec:summon_escaped_soul.name=§e逃逸之魂已被召唤
 text.dec:radiate_crystal_defeated.name=§e世界已被净化
 text.dec:shadow_crystal_defeated.name=§e来自远古的暗影已经减退
 
-text.dec:diemode_open.name=§4§l欢迎加入。希望你的内心和灵魂一样干净，以防止它们恐吓到其他旅客。请注意，不要让你，以及同伴带上尸臭。若他发生了一些变化，它已不再是他。我们不欢迎那些私自改动路线的旅客，因他们的灵魂已经出离身体。噢，看看，一路上已有多少人了。再看看你的脚下，已有多少尸体？祝你好运。
-text.dec:diemode_gmcheat.name=§4§l擅自更改旅途路线可不是一个文明旅客该做的事。
-text.dec:diemode_already_die.name=§4§l本旅途欢迎每一位没有尸臭的旅客，因为这样会吓到其他旅客......请让我看看，您和尸体的区别是什么？
+text.dec:diemode_open.name=§4欢迎加入。希望你的内心和灵魂一样干净，以防止它们恐吓到其他旅客。请注意，不要让你，以及同伴带上尸臭。若他发生了一些变化，它已不再是他。我们不欢迎那些私自改动路线的旅客，因他们的灵魂已经出离身体。噢，看看，一路上已有多少人了。再看看你的脚下，已有多少尸体？祝你好运。
+text.dec:diemode_gmcheat.name=§4擅自更改旅途路线可不是一个文明旅客该做的事。
+text.dec:diemode_already_die.name=§4本旅途欢迎每一位没有尸臭的旅客，因为这样会吓到其他旅客......请让我看看，您和尸体的区别是什么？
 text.dec:diemode_not_owner.name=§e只有房主才能开启此模式。
-text.dec:diemode_cannot_close.name=§4§l垂死挣扎会影响您的旅途体验。
-text.dec:diemode_cannot_close_already_die.name=§4§l欢迎再次体验，如果您还能从满是前世鲜血的地上爬起来。
-text.dec:diemode_spectator.name=§4§l至少比篡改路径的旅客光荣
-text.dec:diemode_gmcheat.name=§4§l我们不欢迎这样的旅客
+text.dec:diemode_cannot_close.name=§4垂死挣扎会影响您的旅途体验。
+text.dec:diemode_cannot_close_already_die.name=§4欢迎再次体验，如果您还能从满是前世鲜血的地上爬起来。
+text.dec:diemode_spectator.name=§4至少比篡改路径的旅客光荣
+text.dec:diemode_gmcheat.name=§4我们不欢迎这样的旅客
 text.dec:diemode_test_open.name=§a死亡模式已开启
 text.dec:diemode_test_close.name=§a死亡模式未开启，可开启
 text.dec:diemode_test_close_cannot_open_gmc.name=§a死亡模式已关闭，无法开启，因为已经作弊

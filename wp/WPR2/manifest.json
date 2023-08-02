@@ -5,7 +5,7 @@
         "name": "The Poetry Of Winter",
         "uuid": "c2021c95-08e8-9ade-0916-6cd21931fac5",
         "version": [1, 6, 0],
-        "min_engine_version": [1, 9, 0]
+        "min_engine_version": [1, 9, 80]
     },
     "modules": [{
         "description": "Explore the new World!!!Made by AA swordsman,LiLeyi and many their friends.Ver. 1.7.7B1",

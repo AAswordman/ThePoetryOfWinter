@@ -1,0 +1,13 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "dec:snowflake_tower_2_mcstructure"
+		},
+		"structure_name": "mystructure:snowflake_tower_2",
+		"adjustment_radius": 16,
+		"facing_direction": "random",
+		"constraints": {
+		}
+	}
+}

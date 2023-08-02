@@ -1,0 +1,13 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:structure_template_feature": {
+		"description": {
+			"identifier": "dec:snow_altar_mcstructure"
+		},
+		"structure_name": "mystructure:snow_altar",
+		"adjustment_radius": 16,
+		"facing_direction": "random",
+		"constraints": {
+		}
+	}
+}

@@ -8,9 +8,7 @@
 			"is_experimental": false,
 			"scripts": {
 				"animate": [
-                    "longorder",
                     "wbtext",
-                    "wbgradeline",
                     "wbpress",
                     "delivery",
                     "order",
@@ -18,22 +16,18 @@
                     "sweep",
                     "cooling",
                     "coolinguse",
-                    "normalod",
 					"enter_game"
 				]
 			},
 			"animations": {
                 "wbtext": "controller.animation.player.wb.starttext",
-                "wbgradeline": "animation.player.wb.gradeline",
                 "wbpress": "controller.animation.player.wb.press",
                 "delivery": "animation.player.wb.delivery",
                 "eff": "controller.animation.player.wb.eff",
                 "order": "animation.player.wb.order",
                 "sweep": "controller.animation.player.wb.sweep",
-                "longorder": "animation.player.wb.longorder",
                 "cooling": "controller.animation.player.wb.global.cooling",
                 "coolinguse": "animation.player.wb.global.cooling",
-                "normalod": "animation.player.wb.order.normal",
 				"enter_game": "animation.enter_game"
 			}
 		},
