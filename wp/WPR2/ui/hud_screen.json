@@ -5039,6 +5039,7 @@
                                     "$clip_image": "hud.pom_health_render_item",
                                     "anchor_from": "top_left",
                                     "anchor_to": "top_left",
+                                    "$anim_time": 0.0,
                                     "offset": [0, 0]
                                 }
                             }]
@@ -5065,7 +5066,7 @@
                                     "type": "panel",
                                     "$clip_persentage": "('_' +(100 - $res1))",
                                     "$clip_last_persentage": "('_' +(100 - $res2))",
-                                    "$anim_time": 0.4,
+                                    "$anim_time": 0.3,
                                     "$clip_image": "hud.pom_health2_render_item",
                                     "anchor_from": "top_left",
                                     "anchor_to": "top_left",
