@@ -68,7 +68,9 @@ export default class PomMagicSystem extends GameController {
             // }
             const oldData = this.lastFromData;
             const wbfl = this.scoresManager.getScore("wbfl");
-            const grade = this.getNumberFont(MathUtil.clamp(this.data.gameGrade, 0, 99));
+            let grade = this.getNumberFont(MathUtil.clamp(this.data.gameGrade, 0, 99));
+            if (grade.length === 1)
+                grade = PomMagicSystem.numberFont[0] + grade;
             let fromData = [
                 this.gameHealth,
                 [this.gameHealth / this.gameMaxHealth],

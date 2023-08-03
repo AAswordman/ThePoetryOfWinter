@@ -4798,6 +4798,7 @@
         "$clip_last_persentage|default": "_60",
         "$last_use_clip_ratio": 0.6,
         "$use_clip_ratio": 0.6,
+        "$anim_time": 0.2,
         "$clip_image|default": "",
         "$use_clip_layout1": "('hud.fuck_mojang_image_clipper_layout1' + $clip_persentage)",
         "controls": [{
@@ -4809,7 +4810,7 @@
         "easing": "linear",
         "from": "$last_use_clip_ratio",
         "to": "$use_clip_ratio",
-        "duration": 0.2
+        "duration": "$anim_time"
     },
     "image_clipper_item": {
         "clip_ratio": "@hud.clipper_dur_anim"
@@ -4818,6 +4819,17 @@
         "type": "image",
         "offset": [50.5, 26],
         "texture": "textures/wb_ui/hl_bg_101_52",
+        "size": [78.5, 8.5],
+        "anchor_from": "top_left",
+        "anchor_to": "top_left",
+        "clip_direction": "left",
+        "clip_pixelperfect": false,
+        "alpha": 3
+    },
+    "pom_health2_render_item@image_clipper_item": {
+        "type": "image",
+        "offset": [50.5, 26],
+        "texture": "textures/wb_ui/hl_bg2_101_52",
         "size": [78.5, 8.5],
         "anchor_from": "top_left",
         "anchor_to": "top_left",
@@ -4913,7 +4925,7 @@
                             "font_scale_factor": 0.8,
                             "color": "$chat_text_color",
                             "text": "('§r' + $res)",
-                            "offset": [88, 26.5],
+                            "offset": [86, 26.5],
                             "shadow": true
                         }
                     }]
@@ -4936,7 +4948,7 @@
                             "font_scale_factor": 0.5,
                             "color": [1, 1, 1, 1],
                             "text": "('§r' + $res)",
-                            "shadow": true
+                            "shadow": false
                         }
                     }]
                 }
@@ -5025,6 +5037,36 @@
                                     "$clip_persentage": "('_' +(100 - $res1))",
                                     "$clip_last_persentage": "('_' +(100 - $res2))",
                                     "$clip_image": "hud.pom_health_render_item",
+                                    "anchor_from": "top_left",
+                                    "anchor_to": "top_left",
+                                    "offset": [0, 0]
+                                }
+                            }]
+                        }
+                    }]
+                }
+            },
+            {
+                "pom_health2_render_layout": {
+                    "$var_index": 1,
+                    "type": "panel",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "layer": 3,
+                    "offset": [0, 0],
+                    "controls": [{
+                        "pom_health2_render_layout2@persentage_paser": {
+                            "type": "panel",
+                            "anchor_from": "top_left",
+                            "anchor_to": "top_left",
+                            "offset": [0, 0],
+                            "controls": [{
+                                "pom_health2_render_layout3@fuck_mojang_image_clipper": {
+                                    "type": "panel",
+                                    "$clip_persentage": "('_' +(100 - $res1))",
+                                    "$clip_last_persentage": "('_' +(100 - $res2))",
+                                    "$anim_time": 0.4,
+                                    "$clip_image": "hud.pom_health2_render_item",
                                     "anchor_from": "top_left",
                                     "anchor_to": "top_left",
                                     "offset": [0, 0]

@@ -859,7 +859,7 @@ ${getCharByNum(client.data.gameExperience / (client.magicSystem.getGradeNeedExpe
                                             var _a;
                                             if (!e.canceled) {
                                                 let v = ((_a = e.formValues) === null || _a === void 0 ? void 0 : _a[0]);
-                                                client.globalSettings.gameDifficulty = parseFloat(v + "");
+                                                client.globalSettings.gameDifficulty = 1 + parseFloat(v + "");
                                                 client.getServer().sayTo("Difficulty Choose " + client.getDifficulty().name);
                                                 for (let c of client.getServer().getClients()) {
                                                     c.talentSystem.updateTalentRes();
