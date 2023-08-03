@@ -849,11 +849,11 @@ ${getCharByNum(client.data.gameExperience / (client.magicSystem.getGradeNeedExpe
                                         new ModalFormData()
                                             .title("Choose a mode")
                                             .dropdown("Difficulty List", [
-                                            map.get("0").name,
                                             map.get("1").name,
                                             map.get("2").name,
                                             map.get("3").name,
-                                            map.get("4").name
+                                            map.get("4").name,
+                                            map.get("5").name
                                         ], 2)
                                             .show(client.player).then((e) => {
                                             var _a;
