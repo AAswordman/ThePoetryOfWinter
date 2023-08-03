@@ -4818,12 +4818,12 @@
         "type": "image",
         "offset": [50.5, 26],
         "texture": "textures/wb_ui/hl_bg_101_52",
-        "size": [69, 8.5],
+        "size": [78.5, 8.5],
         "anchor_from": "top_left",
         "anchor_to": "top_left",
         "clip_direction": "left",
         "clip_pixelperfect": false,
-        "alpha": 1
+        "alpha": 3
     },
 
     "pom_armorCooling_render@image_clipper_item": {
@@ -4879,7 +4879,7 @@
         "type": "image",
         "offset": [48, 23.5],
         "texture": "textures/wb_ui/hd_bg_96_41",
-        "size": [74, 13.5],
+        "size": [83.5, 13.5],
         "anchor_from": "top_left",
         "anchor_to": "top_left",
         "clip_direction": "left",
@@ -4913,7 +4913,7 @@
                             "font_scale_factor": 0.8,
                             "color": "$chat_text_color",
                             "text": "('§r' + $res)",
-                            "offset": [92, 26.5],
+                            "offset": [88, 26.5],
                             "shadow": true
                         }
                     }]
@@ -5011,7 +5011,7 @@
                     "type": "panel",
                     "anchor_from": "top_left",
                     "anchor_to": "top_left",
-                    "layer": 0,
+                    "layer": 4,
                     "offset": [0, 0],
                     "controls": [{
                         "pom_health_render_layout2@persentage_paser": {
@@ -5182,7 +5182,7 @@
                     "type": "panel",
                     "anchor_from": "top_left",
                     "anchor_to": "top_left",
-                    "offset": [16, 4],
+                    "offset": [18, 4],
                     "controls": [{
                             "player_position@hud.player_position": {
                                 "offset": [48, 12],
@@ -5191,7 +5191,7 @@
                         },
                         {
                             "hunger_rend@hunger_renderer": {
-                                "offset": [144.5, 39],
+                                "offset": [128, 39],
                                 "anchor_from": "top_left",
                                 "anchor_to": "top_left"
                             }

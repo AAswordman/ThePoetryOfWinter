@@ -296,10 +296,10 @@ export default class DecClient extends ExGameClient {
                 //紫水晶套装效果
                 if (this.useArmor === ArmorPlayerDec.amethyst) {
                     if (DecGlobal.isDec()) {
-                        let mg = scores.getScore("wbfl");
+                        let mg = scores.getScore("magicpoint");
                         if (11 <= mg && mg <= 29) {
                             this.getExDimension().spawnParticle("dec:amethyst_armor_magic_increase_particle", p.location);
-                            scores.addScore("wbfl", 1);
+                            scores.addScore("magicpoint", 1);
                         }
                     }
                     else {
@@ -331,17 +331,17 @@ export default class DecClient extends ExGameClient {
                 //木叶套装效果
                 if (this.useArmor === ArmorPlayerDec.wood) {
                     if (DecGlobal.isDec()) {
-                        let mg = scores.getScore("wbfl");
+                        let mg = scores.getScore("magicpoint");
                         if (mg <= 15) {
                             this.getExDimension().spawnParticle("dec:wood_armor_magic_increase_particle", p.location);
-                            scores.addScore("wbfl", 1);
+                            scores.addScore("magicpoint", 5);
                         }
                     }
                     else {
                         let mg = scores.getScore("wbfl");
                         if (mg <= 70) {
                             this.getExDimension().spawnParticle("dec:wood_armor_magic_increase_particle", p.location);
-                            scores.addScore("wbfl", 1);
+                            scores.addScore("wbfl", 5);
                         }
                     }
                 }
@@ -354,6 +354,26 @@ export default class DecClient extends ExGameClient {
             }
         });
         this.getEvents().exEvents.afterItemUse.subscribe(e => {
+            let hunter_reset = () => {
+                let hunter_x_offset = (Math.random() - 0.5) * 2000;
+                let hunter_z_offset = (Math.random() - 0.5) * 2000;
+                let hunter_x = 0;
+                let hunter_z = 0;
+                if (Math.random() > 0) {
+                    hunter_x = 5000;
+                }
+                else {
+                    hunter_x = -5000;
+                }
+                if (Math.random() > 0) {
+                    hunter_z = 5000;
+                }
+                else {
+                    hunter_z = -5000;
+                }
+                this.globalscores.setNumber('hunter_x', Math.floor(e.source.location.x + hunter_x + hunter_x_offset));
+                this.globalscores.setNumber('hunter_z', Math.floor(e.source.location.z + hunter_z + hunter_z_offset));
+            };
             //魔法卷轴
             if (e.itemStack.typeId == "dec:magic_scroll_blue") {
                 const i = e.itemStack;
@@ -363,6 +383,28 @@ export default class DecClient extends ExGameClient {
                     else
                         ExGame.postMessageBetweenClient(this, PomServer, "taskUi", ["paperTask", "1"]);
                 }, 0);
+            }
+            else if (e.itemStack.typeId == "dec:hunter_book") {
+                //猎人之书
+                let cur_hunter_x = this.globalscores.getNumber('hunter_x');
+                let cur_hunter_z = this.globalscores.getNumber('hunter_z');
+                if (this.globalscores.getNumber('hunter_x') == undefined || this.globalscores.getNumber('hunter_z') == undefined || this.globalscores.getNumber('hunter_x') == 0 || this.globalscores.getNumber('hunter_z') == 0) {
+                    hunter_reset();
+                    e.source.runCommandAsync('tellraw @a { "rawtext" : [ { "translate" : "text.dec:hunter_book_new.name" } ] }');
+                    e.source.runCommandAsync('tellraw @s { "rawtext" : [ { "translate" : "text.dec:hunter_book_coordinate_1.name" },{ "score":{ "name": "hunter_x","objective": "global" } },{ "translate" : "text.dec:hunter_book_coordinate_2.name" },{ "score":{ "name": "hunter_z","objective": "global" } } ] }');
+                }
+                else if (cur_hunter_x - 3 <= e.source.location.x && cur_hunter_x + 3 >= e.source.location.x && cur_hunter_z - 3 <= e.source.location.z && cur_hunter_z + 3 >= e.source.location.z) {
+                    hunter_reset();
+                    e.source.runCommandAsync('tellraw @a { "rawtext" : [ { "translate" : "text.dec:hunter_book_success.name" } ] }');
+                    e.source.runCommandAsync('tellraw @a { "rawtext" : [ { "translate" : "text.dec:hunter_book_new.name" } ] }');
+                    e.source.runCommandAsync('tellraw @s { "rawtext" : [ { "translate" : "text.dec:hunter_book_coordinate_1.name" },{ "score":{ "name": "hunter_x","objective": "global" } },{ "translate" : "text.dec:hunter_book_coordinate_2.name" },{ "score":{ "name": "hunter_z","objective": "global" } } ] }');
+                    e.source.runCommandAsync('xp ' + (5000 + Math.random() * 4000) + ' @s');
+                    e.source.runCommandAsync('loot give @s loot "items/hunter_book"');
+                }
+                else {
+                    e.source.runCommandAsync('tellraw @s { "rawtext" : [ { "translate" : "text.dec:hunter_book_not_complete.name" } ] }');
+                    e.source.runCommandAsync('tellraw @s { "rawtext" : [ { "translate" : "text.dec:hunter_book_coordinate_1.name" },{ "score":{ "name": "hunter_x","objective": "global" } },{ "translate" : "text.dec:hunter_book_coordinate_2.name" },{ "score":{ "name": "hunter_z","objective": "global" } } ] }');
+                }
             }
         });
         this.getEvents().exEvents.onLongTick.subscribe(e => {
