@@ -1,4 +1,4 @@
-import { EntityDamageCause, EquipmentSlot, MinecraftDimensionTypes } from "@minecraft/server";
+import { EntityDamageCause, EquipmentSlot, GameMode, MinecraftDimensionTypes } from "@minecraft/server";
 import ExGameClient from "../../modules/exmc/server/ExGameClient.js";
 import { ArmorPlayerDec, ArmorPlayerPom } from "./items/ArmorData.js";
 import MathUtil from "../../modules/exmc/math/MathUtil.js";
@@ -89,6 +89,12 @@ export default class DecClient extends ExGameClient {
         this.getEvents().exEvents.afterItemUse.subscribe((e) => {
             if (e.itemStack.hasComponent('minecraft:cooldown')) {
                 //这里写有饰品时触发的东西
+            }
+        });
+        this.getEvents().exEvents.beforeItemUseOn.subscribe(e => {
+            const id = e.block.typeId;
+            if (id.startsWith("dec") && id.includes("summoner") && id !== "dec:summoner" && this.exPlayer.getGameMode() !== GameMode.creative) {
+                e.cancel;
             }
         });
         this.getEvents().exEvents.afterPlayerHurt.subscribe(e => {
