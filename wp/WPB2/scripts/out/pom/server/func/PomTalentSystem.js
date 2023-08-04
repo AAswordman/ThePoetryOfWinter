@@ -236,7 +236,7 @@ export default class PomTalentSystem extends GameController {
                 }
                 else {
                     anotherAdd += this.client.magicSystem.damageAbsorbed;
-                    this.client.magicSystem.damageAbsorbed;
+                    this.client.magicSystem.damageAbsorbed = 0;
                 }
             }
             add += anotherAdd;
