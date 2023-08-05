@@ -37,6 +37,12 @@ export default class PomMagicSystem extends GameController {
             this.player.setDynamicProperty('health', this.gameHealth);
             this.player.setDynamicProperty('damageAbsorbed', this.damageAbsorbed);
         }).delay(20 * 5);
+        this.dataCache = {
+            wbfl: 200,
+            wbwqlq: 0,
+            wbkjlqcg: 0
+        };
+        this.dataCacheRefreshDelay = 0;
         this.actionbarShow = ExSystem.tickTask(() => {
             // let fromData: [string, number, boolean, boolean, string][] = [
             //     [PomMagicSystem.AdditionHPChar, this.additionHealth / 100, true, this.additionHealthShow, "HP"],
@@ -67,17 +73,23 @@ export default class PomMagicSystem extends GameController {
             //     arr.push(s);
             // }
             const oldData = this.lastFromData;
-            const wbfl = this.scoresManager.getScore("wbfl");
+            this.dataCacheRefreshDelay += 1;
+            if (this.dataCacheRefreshDelay >= this.globalSettings.uiDataUpdateDelay) {
+                this.dataCacheRefreshDelay = 0;
+                this.dataCache.wbfl = this.scoresManager.getScore("wbfl");
+                this.dataCache.wbwqlq = this.scoresManager.getScore("wbwqlq");
+                this.dataCache.wbkjlqcg = this.scoresManager.getScore("wbkjlqcg");
+            }
             let grade = this.getNumberFont(MathUtil.clamp(this.data.gameGrade, 0, 99));
             if (grade.length === 1)
                 grade = PomMagicSystem.numberFont[0] + grade;
             let fromData = [
                 this.gameHealth,
                 [this.gameHealth / this.gameMaxHealth],
-                [wbfl / 200],
-                wbfl,
-                [this.scoresManager.getScore("wbwqlq") / 20],
-                [this.scoresManager.getScore("wbkjlqcg") / 20],
+                [this.dataCache.wbfl / 200],
+                this.dataCache.wbfl,
+                [this.dataCache.wbwqlq / 20],
+                [this.dataCache.wbkjlqcg / 20],
                 [this.damageAbsorbed / this.gameMaxHealth],
                 this.data.gameGrade,
                 [this.data.gameExperience / (this.getGradeNeedExperience(1 + this.data.gameGrade) - this.getGradeNeedExperience(this.data.gameGrade))],
