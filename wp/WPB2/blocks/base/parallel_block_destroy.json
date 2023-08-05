@@ -9,7 +9,6 @@
 			"destroy": {
 				"run_command": {
 					"command": [
-						"fill ~+1 ~+1 ~+1 ~-1 ~-1 ~-1 wb:parallel_block_destroy [] replace wb:parallel_block []",
 						"setblock ~ ~ ~ air"
 					]
 				}
@@ -29,8 +28,8 @@
 			"minecraft:map_color": "#2222dd",
 			"minecraft:ticking": {
 				"range": [
-					0.2,
-					0.2
+					10,
+					14
 				],
 				"on_tick": {
 					"event": "destroy"

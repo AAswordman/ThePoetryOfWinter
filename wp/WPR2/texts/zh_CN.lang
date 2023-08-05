@@ -259,7 +259,7 @@ entity.wb:spell_summon.name=爆炸法术 §d法术
 item.spawn_egg.entity.wb:spell_poisoning.name=剧毒法术 §d法术
 entity.wb:spell_poisoning.name=剧毒法术 §d法术
 
-item.wb:staff_barrier.name=屏障法杖§o§c[屏障][撤销]§r
+item.wb:staff_barrier=屏障法杖§o§c[屏障][撤销]§r
 
 item.wb:conveyor_issue.name=传送石§o§c[传送]§r
 
