@@ -191,12 +191,12 @@
     },
     "progress_bar_for_collections": {
         "type": "panel",
-        "$texture_data|default": "textures/ui/filled_progress_bar",
-        "$texture_empty|default": "textures/ui/empty_progress_bar",
-        "anchor_from": "top_middle",
-        "anchor_to": "top_middle",
+        "$texture_data|default": "textures/wb_ui/boss_bar",
+        "$texture_empty|default": "textures/wb_ui/boss_bar_bg",
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
         "offset": [0, 0],
-        "size": [188, 30],
+        "size": [105, 22.5],
         "controls": [{
                 "empty_progress_barx": {
                     "layer": 1,
@@ -238,34 +238,756 @@
         "anchor_to": "center",
         "shadow": true
     },
+    "boss_label_base": {
+        "type": "label",
+        "layer": 20,
+        "color": [1.0, 1.0, 1.0, 1.0],
+        "$test_progress_percentage": "#progress_percentage",
+        "shadow": true,
+        "anchor_from": "center",
+        "anchor_to":"center",
+        "font_scale_factor": 0.45,
+        "bindings": [{
+                "binding_name": "$test_progress_percentage",
+                "binding_condition": "$test_progress_percentage",
+                "binding_type": "collection",
+                "binding_collection_name": "boss_bars"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "((($v_a < $test_progress_percentage) or ($v_a = $test_progress_percentage)) and ($v_b > $test_progress_percentage))",
+                "target_property_name": "#visible"
+            }
+        ]
+    },
+    "boss_label_layout": {
+        "type": "panel",
+        "layer": 5,
+        "controls": [{
+                "boss_label_base_0@boss_label_base": {
+                    "$v_a": 0.0,
+                    "$v_b": 0.01,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_1@boss_label_base": {
+                    "$v_a": 0.01,
+                    "$v_b": 0.02,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_2@boss_label_base": {
+                    "$v_a": 0.02,
+                    "$v_b": 0.03,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_3@boss_label_base": {
+                    "$v_a": 0.03,
+                    "$v_b": 0.04,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_4@boss_label_base": {
+                    "$v_a": 0.04,
+                    "$v_b": 0.05,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_5@boss_label_base": {
+                    "$v_a": 0.05,
+                    "$v_b": 0.06,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_6@boss_label_base": {
+                    "$v_a": 0.06,
+                    "$v_b": 0.07,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_7@boss_label_base": {
+                    "$v_a": 0.07,
+                    "$v_b": 0.08,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_8@boss_label_base": {
+                    "$v_a": 0.08,
+                    "$v_b": 0.09,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_9@boss_label_base": {
+                    "$v_a": 0.09,
+                    "$v_b": 0.1,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_10@boss_label_base": {
+                    "$v_a": 0.1,
+                    "$v_b": 0.11,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_11@boss_label_base": {
+                    "$v_a": 0.11,
+                    "$v_b": 0.12,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_12@boss_label_base": {
+                    "$v_a": 0.12,
+                    "$v_b": 0.13,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_13@boss_label_base": {
+                    "$v_a": 0.13,
+                    "$v_b": 0.14,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_14@boss_label_base": {
+                    "$v_a": 0.14,
+                    "$v_b": 0.15,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_15@boss_label_base": {
+                    "$v_a": 0.15,
+                    "$v_b": 0.16,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_16@boss_label_base": {
+                    "$v_a": 0.16,
+                    "$v_b": 0.17,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_17@boss_label_base": {
+                    "$v_a": 0.17,
+                    "$v_b": 0.18,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_18@boss_label_base": {
+                    "$v_a": 0.18,
+                    "$v_b": 0.19,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_19@boss_label_base": {
+                    "$v_a": 0.19,
+                    "$v_b": 0.2,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_20@boss_label_base": {
+                    "$v_a": 0.2,
+                    "$v_b": 0.21,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_21@boss_label_base": {
+                    "$v_a": 0.21,
+                    "$v_b": 0.22,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_22@boss_label_base": {
+                    "$v_a": 0.22,
+                    "$v_b": 0.23,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_23@boss_label_base": {
+                    "$v_a": 0.23,
+                    "$v_b": 0.24,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_24@boss_label_base": {
+                    "$v_a": 0.24,
+                    "$v_b": 0.25,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_25@boss_label_base": {
+                    "$v_a": 0.25,
+                    "$v_b": 0.26,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_26@boss_label_base": {
+                    "$v_a": 0.26,
+                    "$v_b": 0.27,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_27@boss_label_base": {
+                    "$v_a": 0.27,
+                    "$v_b": 0.28,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_28@boss_label_base": {
+                    "$v_a": 0.28,
+                    "$v_b": 0.29,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_29@boss_label_base": {
+                    "$v_a": 0.29,
+                    "$v_b": 0.3,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_30@boss_label_base": {
+                    "$v_a": 0.3,
+                    "$v_b": 0.31,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_31@boss_label_base": {
+                    "$v_a": 0.31,
+                    "$v_b": 0.32,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_32@boss_label_base": {
+                    "$v_a": 0.32,
+                    "$v_b": 0.33,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_33@boss_label_base": {
+                    "$v_a": 0.33,
+                    "$v_b": 0.34,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_34@boss_label_base": {
+                    "$v_a": 0.34,
+                    "$v_b": 0.35,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_35@boss_label_base": {
+                    "$v_a": 0.35,
+                    "$v_b": 0.36,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_36@boss_label_base": {
+                    "$v_a": 0.36,
+                    "$v_b": 0.37,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_37@boss_label_base": {
+                    "$v_a": 0.37,
+                    "$v_b": 0.38,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_38@boss_label_base": {
+                    "$v_a": 0.38,
+                    "$v_b": 0.39,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_39@boss_label_base": {
+                    "$v_a": 0.39,
+                    "$v_b": 0.4,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_40@boss_label_base": {
+                    "$v_a": 0.4,
+                    "$v_b": 0.41,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_41@boss_label_base": {
+                    "$v_a": 0.41,
+                    "$v_b": 0.42,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_42@boss_label_base": {
+                    "$v_a": 0.42,
+                    "$v_b": 0.43,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_43@boss_label_base": {
+                    "$v_a": 0.43,
+                    "$v_b": 0.44,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_44@boss_label_base": {
+                    "$v_a": 0.44,
+                    "$v_b": 0.45,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_45@boss_label_base": {
+                    "$v_a": 0.45,
+                    "$v_b": 0.46,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_46@boss_label_base": {
+                    "$v_a": 0.46,
+                    "$v_b": 0.47,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_47@boss_label_base": {
+                    "$v_a": 0.47,
+                    "$v_b": 0.48,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_48@boss_label_base": {
+                    "$v_a": 0.48,
+                    "$v_b": 0.49,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_49@boss_label_base": {
+                    "$v_a": 0.49,
+                    "$v_b": 0.5,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_50@boss_label_base": {
+                    "$v_a": 0.5,
+                    "$v_b": 0.51,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_51@boss_label_base": {
+                    "$v_a": 0.51,
+                    "$v_b": 0.52,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_52@boss_label_base": {
+                    "$v_a": 0.52,
+                    "$v_b": 0.53,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_53@boss_label_base": {
+                    "$v_a": 0.53,
+                    "$v_b": 0.54,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_54@boss_label_base": {
+                    "$v_a": 0.54,
+                    "$v_b": 0.55,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_55@boss_label_base": {
+                    "$v_a": 0.55,
+                    "$v_b": 0.56,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_56@boss_label_base": {
+                    "$v_a": 0.56,
+                    "$v_b": 0.57,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_57@boss_label_base": {
+                    "$v_a": 0.57,
+                    "$v_b": 0.58,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_58@boss_label_base": {
+                    "$v_a": 0.58,
+                    "$v_b": 0.59,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_59@boss_label_base": {
+                    "$v_a": 0.59,
+                    "$v_b": 0.6,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_60@boss_label_base": {
+                    "$v_a": 0.6,
+                    "$v_b": 0.61,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_61@boss_label_base": {
+                    "$v_a": 0.61,
+                    "$v_b": 0.62,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_62@boss_label_base": {
+                    "$v_a": 0.62,
+                    "$v_b": 0.63,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_63@boss_label_base": {
+                    "$v_a": 0.63,
+                    "$v_b": 0.64,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_64@boss_label_base": {
+                    "$v_a": 0.64,
+                    "$v_b": 0.65,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_65@boss_label_base": {
+                    "$v_a": 0.65,
+                    "$v_b": 0.66,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_66@boss_label_base": {
+                    "$v_a": 0.66,
+                    "$v_b": 0.67,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_67@boss_label_base": {
+                    "$v_a": 0.67,
+                    "$v_b": 0.68,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_68@boss_label_base": {
+                    "$v_a": 0.68,
+                    "$v_b": 0.69,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_69@boss_label_base": {
+                    "$v_a": 0.69,
+                    "$v_b": 0.7,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_70@boss_label_base": {
+                    "$v_a": 0.7,
+                    "$v_b": 0.71,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_71@boss_label_base": {
+                    "$v_a": 0.71,
+                    "$v_b": 0.72,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_72@boss_label_base": {
+                    "$v_a": 0.72,
+                    "$v_b": 0.73,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_73@boss_label_base": {
+                    "$v_a": 0.73,
+                    "$v_b": 0.74,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_74@boss_label_base": {
+                    "$v_a": 0.74,
+                    "$v_b": 0.75,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_75@boss_label_base": {
+                    "$v_a": 0.75,
+                    "$v_b": 0.76,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_76@boss_label_base": {
+                    "$v_a": 0.76,
+                    "$v_b": 0.77,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_77@boss_label_base": {
+                    "$v_a": 0.77,
+                    "$v_b": 0.78,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_78@boss_label_base": {
+                    "$v_a": 0.78,
+                    "$v_b": 0.79,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_79@boss_label_base": {
+                    "$v_a": 0.79,
+                    "$v_b": 0.8,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_80@boss_label_base": {
+                    "$v_a": 0.8,
+                    "$v_b": 0.81,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_81@boss_label_base": {
+                    "$v_a": 0.81,
+                    "$v_b": 0.82,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_82@boss_label_base": {
+                    "$v_a": 0.82,
+                    "$v_b": 0.83,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_83@boss_label_base": {
+                    "$v_a": 0.83,
+                    "$v_b": 0.84,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_84@boss_label_base": {
+                    "$v_a": 0.84,
+                    "$v_b": 0.85,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_85@boss_label_base": {
+                    "$v_a": 0.85,
+                    "$v_b": 0.86,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_86@boss_label_base": {
+                    "$v_a": 0.86,
+                    "$v_b": 0.87,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_87@boss_label_base": {
+                    "$v_a": 0.87,
+                    "$v_b": 0.88,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_88@boss_label_base": {
+                    "$v_a": 0.88,
+                    "$v_b": 0.89,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_89@boss_label_base": {
+                    "$v_a": 0.89,
+                    "$v_b": 0.9,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_90@boss_label_base": {
+                    "$v_a": 0.9,
+                    "$v_b": 0.91,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_91@boss_label_base": {
+                    "$v_a": 0.91,
+                    "$v_b": 0.92,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_92@boss_label_base": {
+                    "$v_a": 0.92,
+                    "$v_b": 0.93,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_93@boss_label_base": {
+                    "$v_a": 0.93,
+                    "$v_b": 0.94,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_94@boss_label_base": {
+                    "$v_a": 0.94,
+                    "$v_b": 0.95,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_95@boss_label_base": {
+                    "$v_a": 0.95,
+                    "$v_b": 0.96,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_96@boss_label_base": {
+                    "$v_a": 0.96,
+                    "$v_b": 0.97,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_97@boss_label_base": {
+                    "$v_a": 0.97,
+                    "$v_b": 0.98,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_98@boss_label_base": {
+                    "$v_a": 0.98,
+                    "$v_b": 0.99,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_99@boss_label_base": {
+                    "$v_a": 0.99,
+                    "$v_b": 1.0,
+                    "text": "％"
+                }
+            },
+            {
+                "boss_label_base_100@boss_label_base": {
+                    "$v_a": 1.0,
+                    "$v_b": 1.01,
+                    "text": "％"
+                }
+            }
+        ]
+    },
     "boss_health_panel": {
         "type": "panel",
-        "size": [188, 30],
-        "anchor_from": "top_middle",
-        "anchor_to": "top_middle",
+        "size": [110, 22.5],
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
         "$progress_bar_collection": "boss_bars",
-        "controls": [
-            // {
-            //     "show_label@persent_to_lable": {
-            //         "$target_view": "hud.boss_health_label",
-            //         "offset": [0, 0],
-            //         "size": [30, 30],
-            //         "$use_bingding": [{
-            //                 "binding_name": "#progress_percentage",
-            //                 "binding_type": "collection",
-            //                 "binding_collection_name": "$progress_bar_collection"
-            //             },
-            //             {
-            //                 "binding_name": "#progress_percentage",
-            //                 "binding_name_override": "$input_value"
-            //             }
-            //         ]
-            //     }
-            // },
+        "controls": [{
+                "show_label@boss_label_layout": {
+                    "offset": [4, 5],
+                    "size": ["100%", "default"]
+                }
+            },
             {
                 "boss_name@boss_name_panel": {
                     "layer": 3,
-                    "offset": [0, 25]
+                    "offset": [3, -2]
                 }
             },
             {
@@ -273,117 +995,117 @@
                     "offset": [0, 0],
                     "layer": 1
                 }
-            },
-            {
-                "progress_bar_for_collections_a@progress_bar_for_collections": {
-                    "layer": 2,
-                    "$texture_data": "textures/ui/filled_progress_bar_a",
-                    "$texture_empty": "textures/ui/empty_progress_bar_a",
-                    "bindings": [{
-                        "binding_name": "(#bossName = 'Magic Stoneman')",
-                        "binding_type": "collection",
-                        "binding_collection_name": "boss_bars",
-                        "binding_name_override": "#visible"
-                    }]
-                }
-            },
-            {
-                "progress_bar_for_collections_b@progress_bar_for_collections": {
-                    "layer": 2,
-                    "$texture_data": "textures/ui/filled_progress_bar_b",
-                    "$texture_empty": "textures/ui/empty_progress_bar_b",
-                    "bindings": [{
-                        "binding_name": "(#bossName = '未知')",
-                        "binding_type": "collection",
-                        "binding_collection_name": "boss_bars",
-                        "binding_name_override": "#visible"
-                    }]
-                }
-            },
-            {
-                "progress_bar_for_collections_c@progress_bar_for_collections": {
-                    "layer": 2,
-                    "$texture_data": "textures/ui/filled_progress_bar_c",
-                    "$texture_empty": "textures/ui/empty_progress_bar_c",
-                    "bindings": [{
-                        "binding_name": "(#bossName = 'Headless Guard')",
-                        "binding_type": "collection",
-                        "binding_collection_name": "boss_bars",
-                        "binding_name_override": "#visible"
-                    }]
-                }
-            },
-            {
-                "progress_bar_for_collections_d@progress_bar_for_collections": {
-                    "layer": 2,
-                    "$texture_data": "textures/ui/filled_progress_bar_d",
-                    "$texture_empty": "textures/ui/empty_progress_bar_d",
-                    "bindings": [{
-                        "binding_name": "(#bossName = 'Border Fugitive')",
-                        "binding_type": "collection",
-                        "binding_collection_name": "boss_bars",
-                        "binding_name_override": "#visible"
-                    }]
-                }
-            },
-            {
-                "progress_bar_for_collections_e@progress_bar_for_collections": {
-                    "layer": 2,
-                    "$texture_data": "textures/ui/filled_progress_bar_e",
-                    "$texture_empty": "textures/ui/empty_progress_bar_e",
-                    "bindings": [{
-                        "binding_name": "(#bossName = 'Intentions')",
-                        "binding_type": "collection",
-                        "binding_collection_name": "boss_bars",
-                        "binding_name_override": "#visible"
-                    }]
-                }
-            },
-            {
-                "progress_bar_for_collections_h@progress_bar_for_collections": {
-                    "layer": 2,
-                    "$texture_data": "textures/ui/filled_progress_bar_e",
-                    "$texture_empty": "textures/ui/empty_progress_bar_e",
-                    "bindings": [{
-                        "binding_name": "(#bossName = 'The God Of Guard')",
-                        "binding_type": "collection",
-                        "binding_collection_name": "boss_bars",
-                        "binding_name_override": "#visible"
-                    }]
-                }
-            },
-            {
-                "xprogress_bar_for_collections_f@xprogress_bar_for_collections_f": {
-                    "offset": [0, 0],
-                    "layer": 2
-                }
-            },
-            {
-                "progress_bar_for_collections_f@progress_bar_for_collections": {
-                    "layer": 2,
-                    "$texture_data": "textures/ui/filled_progress_bar_c",
-                    "$texture_empty": "textures/ui/empty_progress_bar_c",
-                    "bindings": [{
-                        "binding_name": "(#bossName = 'Ancient StoneStatues')",
-                        "binding_type": "collection",
-                        "binding_collection_name": "boss_bars",
-                        "binding_name_override": "#visible"
-                    }]
-                }
-            },
-            {
-                "progress_bar_for_collections_g@progress_bar_for_collections": {
-                    "layer": 2,
-                    "$texture_data": "textures/ui/filled_progress_bar_g",
-                    "$texture_empty": "textures/ui/empty_progress_bar_g",
-                    "bindings": [{
-                        "binding_name": "(#bossName = '§4Intentions')",
-                        "binding_type": "collection",
-                        "binding_collection_name": "boss_bars",
-                        "binding_name_override": "#visible"
-                    }]
-                }
             }
+            // {
+            //     "progress_bar_for_collections_a@progress_bar_for_collections": {
+            //         "layer": 2,
+            //         "$texture_data": "textures/ui/filled_progress_bar_a",
+            //         "$texture_empty": "textures/ui/empty_progress_bar_a",
+            //         "bindings": [{
+            //             "binding_name": "(#bossName = 'Magic Stoneman')",
+            //             "binding_type": "collection",
+            //             "binding_collection_name": "boss_bars",
+            //             "binding_name_override": "#visible"
+            //         }]
+            //     }
+            // },
+            // {
+            //     "progress_bar_for_collections_b@progress_bar_for_collections": {
+            //         "layer": 2,
+            //         "$texture_data": "textures/ui/filled_progress_bar_b",
+            //         "$texture_empty": "textures/ui/empty_progress_bar_b",
+            //         "bindings": [{
+            //             "binding_name": "(#bossName = '未知')",
+            //             "binding_type": "collection",
+            //             "binding_collection_name": "boss_bars",
+            //             "binding_name_override": "#visible"
+            //         }]
+            //     }
+            // },
+            // {
+            //     "progress_bar_for_collections_c@progress_bar_for_collections": {
+            //         "layer": 2,
+            //         "$texture_data": "textures/ui/filled_progress_bar_c",
+            //         "$texture_empty": "textures/ui/empty_progress_bar_c",
+            //         "bindings": [{
+            //             "binding_name": "(#bossName = 'Headless Guard')",
+            //             "binding_type": "collection",
+            //             "binding_collection_name": "boss_bars",
+            //             "binding_name_override": "#visible"
+            //         }]
+            //     }
+            // },
+            // {
+            //     "progress_bar_for_collections_d@progress_bar_for_collections": {
+            //         "layer": 2,
+            //         "$texture_data": "textures/ui/filled_progress_bar_d",
+            //         "$texture_empty": "textures/ui/empty_progress_bar_d",
+            //         "bindings": [{
+            //             "binding_name": "(#bossName = 'Border Fugitive')",
+            //             "binding_type": "collection",
+            //             "binding_collection_name": "boss_bars",
+            //             "binding_name_override": "#visible"
+            //         }]
+            //     }
+            // },
+            // {
+            //     "progress_bar_for_collections_e@progress_bar_for_collections": {
+            //         "layer": 2,
+            //         "$texture_data": "textures/ui/filled_progress_bar_e",
+            //         "$texture_empty": "textures/ui/empty_progress_bar_e",
+            //         "bindings": [{
+            //             "binding_name": "(#bossName = 'Intentions')",
+            //             "binding_type": "collection",
+            //             "binding_collection_name": "boss_bars",
+            //             "binding_name_override": "#visible"
+            //         }]
+            //     }
+            // },
+            // {
+            //     "progress_bar_for_collections_h@progress_bar_for_collections": {
+            //         "layer": 2,
+            //         "$texture_data": "textures/ui/filled_progress_bar_e",
+            //         "$texture_empty": "textures/ui/empty_progress_bar_e",
+            //         "bindings": [{
+            //             "binding_name": "(#bossName = 'The God Of Guard')",
+            //             "binding_type": "collection",
+            //             "binding_collection_name": "boss_bars",
+            //             "binding_name_override": "#visible"
+            //         }]
+            //     }
+            // },
+            // {
+            //     "xprogress_bar_for_collections_f@xprogress_bar_for_collections_f": {
+            //         "offset": [0, 0],
+            //         "layer": 2
+            //     }
+            // },
+            // {
+            //     "progress_bar_for_collections_f@progress_bar_for_collections": {
+            //         "layer": 2,
+            //         "$texture_data": "textures/ui/filled_progress_bar_c",
+            //         "$texture_empty": "textures/ui/empty_progress_bar_c",
+            //         "bindings": [{
+            //             "binding_name": "(#bossName = 'Ancient StoneStatues')",
+            //             "binding_type": "collection",
+            //             "binding_collection_name": "boss_bars",
+            //             "binding_name_override": "#visible"
+            //         }]
+            //     }
+            // },
+            // {
+            //     "progress_bar_for_collections_g@progress_bar_for_collections": {
+            //         "layer": 2,
+            //         "$texture_data": "textures/ui/filled_progress_bar_g",
+            //         "$texture_empty": "textures/ui/empty_progress_bar_g",
+            //         "bindings": [{
+            //             "binding_name": "(#bossName = '§4Intentions')",
+            //             "binding_type": "collection",
+            //             "binding_collection_name": "boss_bars",
+            //             "binding_name_override": "#visible"
+            //         }]
+            //     }
+            // }
         ],
         "bindings": [{
             "binding_name": "#bar_visible",
@@ -398,10 +1120,10 @@
         "grid_item_template": "hud.boss_health_panel",
         "grid_fill_direction": "vertical",
         "collection_name": "boss_bars",
-        "anchor_to": "top_middle",
-        "anchor_from": "top_middle",
+        "anchor_to": "top_right",
+        "anchor_from": "top_right",
         "size": [
-            188,
+            110,
             "40%"
         ]
     },
@@ -2219,7 +2941,8 @@
         "controls": [{
                 "boss_name": {
                     "type": "label",
-                    "layer": 99,
+                    "layer": 40,
+                    "font_scale_factor":0.8,
                     "color": "$boss_name_text_color",
                     "text": "#bossName",
                     "anchor_from": "top_middle",
@@ -3735,8 +4458,6 @@
     "fuck_mojang_image_clipper_layout2_100@fuck_mojang_image_clipper_layout2_base": {
         "$last_use_clip_ratio": 1.0
     },
-
-
     "persent_to_lable_0to100@dichotomy_label_tree": {
         "$mid": 0.5,
         "$left_tree_view": "hud.persent_to_lable_0to49",
@@ -5475,7 +6196,7 @@
                                 "type": "panel",
                                 "controls": [{
                                     "boss_health_grid@boss_health_grid": {
-                                        "offset": [0, 2]
+                                        "offset": [-10, 4]
                                     }
                                 }]
                             }
