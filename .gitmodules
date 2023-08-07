@@ -1,3 +1,9 @@
-[submodule "wp/WPB2/scripts/ExcellentMInecraftscripts"]
-	path = wp/WPB2/scripts/ExcellentMInecraftscripts
+[submodule "ExcellentMInecraftscripts"]
+	path = ExcellentMInecraftscripts
+	url = git@github.com:AAswordman/ExcellentMInecraftscripts.git
+[submodule "wp/scripts/ExcellentMInecraftscripts"]
+	path = wp/scripts/ExcellentMInecraftscripts
+	url = git@github.com:AAswordman/ExcellentMInecraftscripts.git
+[submodule "wp/ExcellentMInecraftscripts"]
+	path = wp/ExcellentMInecraftscripts
 	url = git@github.com:AAswordman/ExcellentMInecraftscripts.git
