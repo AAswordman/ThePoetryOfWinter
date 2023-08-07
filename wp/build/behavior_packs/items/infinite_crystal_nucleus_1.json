@@ -1,0 +1,81 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "items",
+      "identifier": "dec:infinite_crystal_nucleus_1"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.navigation"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:infinite_crystal_nucleus_1.name"
+      },
+      "minecraft:icon": {
+        "texture": "infinite_crystal_nucleus_1"
+      },
+      "minecraft:use_animation": "bow",
+      "minecraft:render_offsets": "bow",
+      "minecraft:stacked_by_data": false,
+      "minecraft:max_stack_size": 1,
+      "minecraft:foil": true,
+      "minecraft:on_use": {
+        "on_use": {
+          "event": "use",
+          "target": "self"
+        }
+      },
+      "minecraft:cooldown": {
+        "category": "infinite_crystal_nucleus_1",
+        "duration": 0.05
+      },
+      "minecraft:durability": {
+        "max_durability": 942
+      },
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "miecraft:lapis_lazuli"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.3"
+          },
+          {
+            "items": [
+              "dec:lapis_nugget"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.03"
+          },
+          {
+            "items": [
+              "dec:magic_powder"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.4"
+          }
+        ]
+      }
+    },
+    "events": {
+      "use": {
+        "sequence": [
+          {
+            "condition": "query.scoreboard('wbfl') <= 39",
+            "run_command": {
+              "command": [
+                "particle dec:white_star_particle ~~1~",
+                "scoreboard players add @s wbfl 1"
+              ]
+            }
+          },
+          {
+            "damage": {
+              "type": "magic",
+              "amount": 1
+            }
+          }
+        ]
+      }
+    }
+  }
+}

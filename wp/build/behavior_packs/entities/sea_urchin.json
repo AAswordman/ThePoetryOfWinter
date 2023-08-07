@@ -1,0 +1,158 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:sea_urchin",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {},
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "sea_urchin",
+          "fish",
+          "animal",
+          "mob"
+        ]
+      },
+      "minecraft:experience_reward": {
+        "on_death": "query.last_hit_by_player ? 5 : 0"
+      },
+      "minecraft:navigation.walk": {
+        "is_amphibious": false,
+        "can_path_over_water": false,
+        "can_swim": false,
+        "can_walk": false,
+        "can_breach": false,
+        "can_sink": false
+      },
+      "minecraft:collision_box": {
+        "width": 0.8,
+        "height": 0.8
+      },
+      "minecraft:movement": {
+        "value": 0.01
+      },
+      "minecraft:underwater_movement": {
+        "value": 0.01
+      },
+      "minecraft:attack": {
+        "damage": 4,
+        "effect_name": "poison",
+        "effect_duration": 10
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/sea_urchin.json"
+      },
+      "minecraft:scale": {
+        "value": 1.2
+      },
+      "minecraft:health": {
+        "value": 6,
+        "max": 6
+      },
+      "minecraft:breathable": {
+        "totalSupply": 15,
+        "suffocateTime": 0,
+        "breathesAir": false,
+        "breathesWater": true
+      },
+      "minecraft:movement.sway": {
+        "sway_amplitude": 0.0
+      },
+      "minecraft:behavior.random_swim": {
+        "priority": 3,
+        "speed_multiplier": 1.0,
+        "xz_dist": 16,
+        "y_dist": 4,
+        "interval": 0
+      },
+      "minecraft:behavior.swim_wander": {
+        "priority": 5,
+        "speed_multiplier": 1.0,
+        "interval": 0.00001,
+        "look_ahead": 2.0
+      },
+      "minecraft:nameable": {},
+      "minecraft:behavior.melee_attack": {
+        "priority": 2,
+        "speed_multiplier": 1,
+        "track_target": false
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "within_radius": 25,
+        "reselect_targets": true,
+        "entity_types": [
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "snowgolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                }
+              ]
+            },
+            "max_dist": 35
+          },
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "villager"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "wandering_trader"
+                }
+              ]
+            },
+            "max_dist": 35,
+            "must_see": false
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "monster"
+                },
+                {
+                  "test": "in_water",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": true
+                }
+              ]
+            },
+            "max_dist": 35
+          }
+        ],
+        "must_see": true
+      },
+      "minecraft:physics": {
+        "has_gravity": true
+      }
+    }
+  }
+}

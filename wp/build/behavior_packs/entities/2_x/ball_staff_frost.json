@@ -1,0 +1,59 @@
+{
+  "format_version": "1.15.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "wb:ball_staff_frost",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball"
+    },
+    "components": {
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "all",
+          "deals_damage": false
+        }
+      },
+      "minecraft:explode": {
+        "fuseLength": 3,
+        "fuseLit": true,
+        "power": 0,
+        "causesFire": true,
+        "fireAffectedByGriefing": true,
+        "destroyAffectedByGriefing": true
+      },
+      "minecraft:collision_box": {
+        "width": 0.18,
+        "height": 0.18
+      },
+      "minecraft:projectile": {
+        "onHit": {
+          "impact_damage": {
+            "damage": 5,
+            "knockback": true,
+            "catchFire": false,
+            "semirandomdiffdamage": false
+          },
+          "mob_effect": {
+            "effect": "slowness",
+            "durationeasy": 20,
+            "durationnormal": 20,
+            "durationhard": 20,
+            "amplifier": 2
+          },
+          "remove_on_hit": {}
+        },
+        "power": 1.7,
+        "gravity": 0,
+        "inertia": 1,
+        "anchor": 2,
+        "offset": [0,0,0],
+        "semirandomdiffdamage": false,
+        "uncertaintyBase": 0,
+        "reflectOnHurt": true
+      },
+      "minecraft:physics": {}
+    }
+  }
+}

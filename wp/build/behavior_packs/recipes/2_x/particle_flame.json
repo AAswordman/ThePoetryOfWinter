@@ -1,0 +1,27 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "wb:particle_flame"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "###",
+      "#Y#",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:flint_and_steel"
+      },
+      "Y": {
+        "item":"minecraft:glass_bottle"
+      }
+    },
+    "result": {
+      "item": "wb:particle_flame"
+    }
+  }
+}

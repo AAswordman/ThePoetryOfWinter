@@ -1,0 +1,164 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:growth"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.sword"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:growth.name"
+      },
+      "minecraft:icon": {
+        "texture": "growth"
+      },
+      "minecraft:weapon": {
+        "on_hurt_entity": {
+          "event": "growth_attack",
+          "target": "self"
+        },
+        "on_hit_block": {
+          "event": "attack",
+          "target": "self"
+        }
+      },
+      "minecraft:on_use": {
+        "on_use": {
+          "event": "growth_use",
+          "target": "self"
+        }
+      },
+      "minecraft:stacked_by_data": false,
+      "minecraft:max_stack_size": 1,
+      "minecraft:durability": {
+        "max_durability": 502
+      },
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "minecraft:red_flower"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.1"
+          },
+          {
+            "items": [
+              "minecraft:yellow_flower"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.1"
+          },
+          {
+            "items": [
+              "dec:flower_essence"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.5"
+          },
+          {
+            "items": [
+              "dec:pure_ingot"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.7"
+          }
+        ]
+      },
+      "minecraft:mining_speed": 1.5,
+      "minecraft:damage": 7,
+      "minecraft:enchantable": {
+        "value": 15,
+        "slot": "sword"
+      },
+      "minecraft:cooldown": {
+        "category": "sword",
+        "duration": 1
+      },
+      "minecraft:can_destroy_in_creative": false,
+      "minecraft:digger": {
+        "use_efficiency": true,
+        "destroy_speeds": [
+          {
+            "block": "minecraft:web",
+            "speed": 15
+          },
+          {
+            "block": "minecraft:bamboo",
+            "speed": 10
+          }
+        ]
+      },
+      "minecraft:foil": false,
+      "minecraft:hand_equipped": true,
+      "tag:comp:equipment_type:melee_weapon":{}
+    },
+    "events": {
+      "growth_attack": {
+        "sequence": [
+          {
+            "condition": "query.scoreboard('wbfl') > 4",
+            "sequence": [
+              {
+                "run_command": {
+                  "command": [
+                    "playsound item.book.put @a ~~~",
+                    "scoreboard players remove @s wbfl 4"
+                  ],
+                  "target": "holder"
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:growing_energy_ray",
+                  "launch_power": 0.2
+                }
+              },
+              {
+                "damage": {
+                  "type": "magic",
+                  "amount": 1
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "growth_use": {
+        "sequence": [
+          {
+            "condition": "query.scoreboard('wbfl') > 5",
+            "sequence": [
+              {
+                "run_command": {
+                  "command": [
+                    "playsound item.book.put @a ~~~",
+                    "scoreboard players remove @s wbfl 5"
+                  ],
+                  "target": "holder"
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:growing_energy_ray",
+                  "launch_power": 0.7
+                }
+              },
+              {
+                "damage": {
+                  "type": "magic",
+                  "amount": 1
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "attack": {
+        "damage": {
+          "type": "magic",
+          "amount": 1
+        }
+      }
+    }
+  }
+}

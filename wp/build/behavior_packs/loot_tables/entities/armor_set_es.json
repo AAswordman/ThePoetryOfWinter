@@ -1,0 +1,38 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "dec:es_clothes",
+          "weight": 1,
+          "pools": [
+            {
+              "rolls": 1,
+              "entries": [
+                {
+                  "type": "item",
+                  "name": "dec:es_pants",
+                  "weight": 1,
+                  "pools": [
+                    {
+                      "rolls": 1,
+                      "entries": [
+                        {
+                          "type": "item",
+                          "name": "dec:es_shoes",
+                          "weight": 1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "items",
+      "identifier": "dec:ender_breath"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.decorations"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:ender_breath.name"
+      },
+      "minecraft:icon": {
+        "texture": "ender_breath"
+      }
+    }
+  }
+}

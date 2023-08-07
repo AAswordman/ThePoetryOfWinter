@@ -1,0 +1,373 @@
+{
+    "format_version": "1.8.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "wb:magic_stoneman",
+            "is_spawnable": true,
+            "is_summonable": true,
+            "is_experimental": false,
+            "animations": {
+                "boss": "animation.boss.testplayer"
+            },
+            "scripts": {
+                "animate": [{
+                    "boss": "query.health>1"
+                }]
+            }
+        },
+        "component_groups": {
+            "0": {
+                "minecraft:variant": {
+                    "value": 0
+                },
+                "minecraft:timer": {
+                    "time": 10,
+                    "looping": true,
+                    "time_down_event": {
+                        "event": "01",
+                        "target": "self"
+                    }
+                }
+            },
+            "1": {
+                "minecraft:variant": {
+                    "value": 1
+                },
+                "minecraft:timer": {
+                    "time": 5,
+                    "looping": true,
+                    "time_down_event": {
+                        "event": "12",
+                        "target": "self"
+                    }
+                }
+            },
+            "2": {
+                "minecraft:variant": {
+                    "value": 2
+                },
+                "minecraft:timer": {
+                    "time": 8,
+                    "looping": true,
+                    "time_down_event": {
+                        "event": "23",
+                        "target": "self"
+                    }
+                }
+            },
+            "3": {
+                "minecraft:variant": {
+                    "value": 3
+                },
+                "minecraft:timer": {
+                    "time": 10,
+                    "looping": true,
+                    "time_down_event": {
+                        "event": "34",
+                        "target": "self"
+                    }
+                }
+            },
+            "4": {
+                "minecraft:variant": {
+                    "value": 4
+                },
+                "minecraft:timer": {
+                    "time": 12,
+                    "looping": true,
+                    "time_down_event": {
+                        "event": "45",
+                        "target": "self"
+                    }
+                }
+            },
+            "5": {
+                "minecraft:variant": {
+                    "value": 5
+                },
+                "minecraft:timer": {
+                    "time": 8,
+                    "looping": true,
+                    "time_down_event": {
+                        "event": "0",
+                        "target": "self"
+                    }
+                }
+            },
+            "hh": {
+                "minecraft:transformation": {
+                    "into": "wb:magic_stoneman_b<minecraft:entity_spawned>"
+                }
+            },
+            "minecraft:despawn": {
+                "minecraft:instant_despawn":{
+                }
+            }
+        },
+        "components": {
+            "minecraft:knockback_resistance": {
+                "value": 1
+            },
+            "minecraft:timer": {
+                "time": 4,
+                "looping": true,
+                "time_down_event": {
+                    "event": "01",
+                    "target": "self"
+                }
+            },
+            "minecraft:loot": {
+                "table": "loot_tables/wb/2_x/magic_stoneman.json"
+            },
+            "minecraft:experience_reward": {
+                "on_death": "80 + Math.Random(1,20)"
+            },
+            "minecraft:damage_sensor": [{
+                "on_damage": {
+                    "filters": {
+                        "test": "has_damage",
+                        "value": "fatal"
+                    },
+                    "event": "no"
+                }
+            }],
+            "minecraft:type_family": {
+                "family": [
+                    "magic",
+                    "stone",
+                    "monster",
+                    "aboss"
+                ]
+            },
+            "minecraft:boss": {
+                "should_darken_sky": false,
+                "name": "Magic Stoneman",
+                "hud_range": 64
+            },
+            "minecraft:spell_effects": {
+                "add_effects": [{
+                    "effect": "resistance",
+                    "amplifier": 1,
+                    "visible": false,
+                    "ambient": false,
+                    "duration": 99999999
+                }]
+            },
+            "minecraft:behavior.summon_entity": {
+                "priority": 0,
+                "summon_choices": [{
+                    "min_activation_range": 0,
+                    "weight": 2,
+                    "cooldown_time": 8,
+                    "cast_duration": 2,
+                    "particle_color": "#FF664D59",
+                    "sequence": [{
+                            "shape": "circle",
+                            "target": "self",
+                            "base_delay": 0.15,
+                            "delay_per_summon": 0.1,
+                            "num_entities_spawned": 15,
+                            "entity_type": "minecraft:evocation_fang",
+                            "size": 2,
+                            "entity_lifespan": 1.1,
+                            "sound_event": "prepare.attack"
+                        },
+                        {
+                            "shape": "circle",
+                            "target": "self",
+                            "base_delay": 0.15,
+                            "delay_per_summon": 0,
+                            "num_entities_spawned": 20,
+                            "entity_type": "minecraft:evocation_fang",
+                            "size": 4,
+                            "entity_lifespan": 1.1,
+                            "sound_event": "prepare.attack"
+                        }
+                    ]
+                }]
+            },
+            "minecraft:behavior.nearest_attackable_target": {
+                "priority": 2,
+                "within_radius": 25,
+                "reselect_targets": true,
+                "entity_types": [{
+                    "filters": {
+                        "any_of": [{
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "player"
+                        }]
+                    },
+                    "max_dist": 35
+                }],
+                "must_see": false,
+                "must_see_forget_duration": 17
+            },
+            "minecraft:attack": {
+                "damage": 12
+            },
+            "minecraft:behavior.melee_attack": {
+                "priority": 3,
+                "speed_multiplier": 1,
+                "track_target": false
+            },
+            "minecraft:breathable": {
+                "totalSupply": 15,
+                "suffocateTime": 0
+            },
+            "minecraft:navigation.walk": {
+                "can_path_over_water": true,
+                "avoid_water": true,
+                "avoid_damage_blocks": true
+            },
+            "minecraft:movement.basic": {},
+            "minecraft:jump.static": {},
+            "minecraft:can_climb": {},
+            "minecraft:collision_box": {
+                "width": 1,
+                "height": 2
+            },
+            "minecraft:nameable": {},
+            "minecraft:health": {
+                "value": 312,
+                "max": 312
+            },
+            "minecraft:movement": {
+                "value": 0.19
+            },
+            "minecraft:behavior.float": {
+                "priority": 0
+            },
+            "minecraft:behavior.random_stroll": {
+                "priority": 6,
+                "speed_multiplier": 0.8
+            },
+            "minecraft:behavior.look_at_player": {
+                "priority": 7,
+                "look_distance": 6,
+                "probability": 0.02
+            },
+            "minecraft:behavior.random_look_around": {
+                "priority": 9
+            },
+            "minecraft:balloonable": {},
+            "minecraft:physics": {}
+        },
+        "events": {
+            "minecraft:despawn": {
+                "add": {
+                    "component_groups": [
+                        "minecraft:despawn"
+                    ]
+                }
+            },
+            "0": {
+                "run_command": {
+                    "command": [
+                        "effect @e[r=4] weakness 6 5 true",
+                        "summon wb:ball_magic_stoneman_a ~+2.0572483830236563 ~ ~-2.8315594803123156",
+                        "summon wb:ball_magic_stoneman_a ~+0 ~ ~+3.5",
+                        "summon wb:ball_magic_stoneman_a ~+3.3286978070330373 ~ ~+1.081559480312316",
+                        "summon wb:ball_magic_stoneman_a ~-3.3286978070330377 ~ ~+1.0815594803123152",
+                        "summon wb:ball_magic_stoneman_a ~-2.0572483830236554 ~ ~-2.831559480312316"
+                    ],
+                    "target": "self"
+                },
+                "add": {
+                    "component_groups": [
+                        "0"
+                    ]
+                }
+            },
+            "12": {
+                "run_command": {
+                    "command": [
+                        "summon wb:ball_magic_stoneman_c ~ ~ ~",
+                        "summon wb:ball_magic_stoneman_c ~ ~ ~",
+                        "effect @e[r=4] weakness 3 5 true"
+                    ],
+                    "target": "self"
+                },
+                "add": {
+                    "component_groups": [
+                        "2"
+                    ]
+                }
+            },
+            "23": {
+                "run_command": {
+                    "command": [
+                        "summon wb:ball_magic_stoneman_c ~ ~ ~",
+                        "summon wb:ball_magic_stoneman_c ~ ~ ~",
+                        "summon wb:ball_magic_stoneman_c ~ ~ ~",
+                        "summon wb:ball_magic_stoneman_c ~ ~ ~",
+                        "effect @e[r=4] weakness 3 5 true"
+                    ],
+                    "target": "self"
+                },
+                "add": {
+                    "component_groups": [
+                        "3"
+                    ]
+                }
+            },
+            "34": {
+                "run_command": {
+                    "command": [
+                        "summon wb:ball_magic_stoneman_c ~ ~ ~",
+                        "summon wb:ball_magic_stoneman_c ~ ~ ~",
+                        "summon wb:ball_magic_stoneman_c ~ ~ ~",
+                        "summon wb:ball_magic_stoneman_c ~ ~ ~",
+                        "effect @e[r=4] weakness 4 5 true"
+                    ],
+                    "target": "self"
+                },
+                "add": {
+                    "component_groups": [
+                        "4"
+                    ]
+                }
+            },
+            "45": {
+                "run_command": {
+                    "command": [
+                        "summon wb:ball_magic_stoneman_c ~ ~ ~",
+                        "summon wb:ball_magic_stoneman_c ~ ~ ~",
+                        "summon wb:ball_magic_stoneman_c ~ ~ ~",
+                        "summon wb:ball_magic_stoneman_c ~ ~ ~",
+                        "summon wb:ball_magic_stoneman_c ~ ~ ~",
+                        "effect @e[r=4] weakness 5 5 true"
+                    ],
+                    "target": "self"
+                },
+                "add": {
+                    "component_groups": [
+                        "5"
+                    ]
+                }
+            },
+            "hh": {
+                "add": {
+                    "component_groups": [
+                        "hh"
+                    ]
+                }
+            },
+            "01": {
+                "run_command": {
+                    "command": [
+                        "summon wb:ball_magic_stoneman_c ~ ~ ~",
+                        "summon wb:ball_magic_stoneman_c ~ ~ ~",
+                        "effect @e[r=4] weakness 3 5 true"
+                    ],
+                    "target": "self"
+                },
+                "add": {
+                    "component_groups": [
+                        "1"
+                    ]
+                }
+            }
+        }
+    }
+}

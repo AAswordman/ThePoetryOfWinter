@@ -1,0 +1,20 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "items",
+      "identifier": "dec:copper_nugget"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.decorations"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:copper_nugget.name"
+      },
+      "minecraft:icon": {
+        "texture": "copper_nugget"
+      }
+    }
+  }
+}

@@ -1,0 +1,422 @@
+ {
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:radiate_crystal",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "minecraft:wait": {
+        "minecraft:timer": {
+          "looping": false,
+          "time": 5,
+          "time_down_event": {
+            "event": "minecraft:first"
+          }
+        }
+      },
+      "minecraft:first_spawn": {
+        "minecraft:timer": {
+          "looping": false,
+          "time": 20,
+          "time_down_event": {
+            "event": "minecraft:second"
+          }
+        },
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "dec:radiate_spider",
+              "spawn_event": "minecraft:become_hostile",
+              "single_use": true,
+              "num_to_spawn": 3
+            },
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "dec:radiate_skeleton",
+              "spawn_event": "minecraft:entity_spawned",
+              "single_use": true,
+              "num_to_spawn": 3
+            },
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "minecraft:zombie",
+              "spawn_event": "minecraft:entity_spawned",
+              "single_use": true,
+              "num_to_spawn": 5
+            }
+          ]
+        }
+      },
+      "minecraft:second_spawn": {
+        "minecraft:timer": {
+          "looping": false,
+          "time": 20,
+          "time_down_event": {
+            "event": "minecraft:third"
+          }
+        },
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "dec:radiate_spider",
+              "spawn_event": "minecraft:become_hostile",
+              "single_use": true,
+              "num_to_spawn": 3
+            },
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "dec:radiate_skeleton",
+              "spawn_event": "minecraft:entity_spawned",
+              "single_use": true,
+              "num_to_spawn": 4
+            },
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "minecraft:zombie",
+              "spawn_event": "minecraft:entity_spawned",
+              "single_use": true,
+              "num_to_spawn": 4
+            },
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "dec:radiate_enderman",
+              "spawn_event": "minecraft:become_angry",
+              "single_use": true,
+              "num_to_spawn": 1
+            },
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "dec:radiate_creeper",
+              "single_use": true,
+              "num_to_spawn": 2
+            }
+          ]
+        }
+      },
+      "minecraft:third_spawn": {
+        "minecraft:timer": {
+          "looping": false,
+          "time": 20,
+          "time_down_event": {
+            "event": "minecraft:fourth"
+          }
+        },
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "dec:radiate_spider",
+              "spawn_event": "minecraft:become_hostile",
+              "single_use": true,
+              "num_to_spawn": 3
+            },
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "dec:radiate_skeleton",
+              "spawn_event": "minecraft:entity_spawned",
+              "single_use": true,
+              "num_to_spawn": 5
+            },
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "minecraft:zombie",
+              "spawn_event": "minecraft:entity_spawned",
+              "single_use": true,
+              "num_to_spawn": 4
+            },
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "dec:radiate_enderman",
+              "spawn_event": "minecraft:become_angry",
+              "single_use": true,
+              "num_to_spawn": 3
+            },
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "dec:radiate_creeper",
+              "single_use": true,
+              "num_to_spawn": 2
+            }
+          ]
+        }
+      },
+      "minecraft:fourth_spawn": {
+        "minecraft:timer": {
+          "looping": false,
+          "time": 20,
+          "time_down_event": {
+            "event": "minecraft:fifth"
+          }
+        },
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "dec:radiate_spider",
+              "spawn_event": "minecraft:become_hostile",
+              "single_use": true,
+              "num_to_spawn": 3
+            },
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "dec:radiate_skeleton",
+              "spawn_event": "minecraft:entity_spawned",
+              "single_use": true,
+              "num_to_spawn": 5
+            },
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "minecraft:zombie",
+              "spawn_event": "minecraft:entity_spawned",
+              "single_use": true,
+              "num_to_spawn": 2
+            },
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "dec:radiate_enderman",
+              "spawn_event": "minecraft:become_angry",
+              "single_use": true,
+              "num_to_spawn": 2
+            },
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "dec:radiate_creeper",
+              "single_use": true,
+              "num_to_spawn": 2
+            }
+          ]
+        }
+      },
+      "minecraft:fifth_spawn": {
+        "minecraft:timer": {
+          "looping": false,
+          "time": 20,
+          "time_down_event": {
+            "event": "minecraft:kill"
+          }
+        },
+        "minecraft:spawn_entity": {
+          "entities": [
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "dec:radiate_spider",
+              "spawn_event": "minecraft:become_hostile",
+              "single_use": true,
+              "num_to_spawn": 3
+            },
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "dec:radiate_skeleton",
+              "spawn_event": "minecraft:entity_spawned",
+              "single_use": true,
+              "num_to_spawn": 6
+            },
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "minecraft:zombie",
+              "spawn_event": "minecraft:entity_spawned",
+              "single_use": true,
+              "num_to_spawn": 3
+            },
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "dec:radiate_enderman",
+              "spawn_event": "minecraft:become_angry",
+              "single_use": true,
+              "num_to_spawn": 4
+            },
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "dec:radiate_creeper",
+              "single_use": true,
+              "num_to_spawn": 1
+            },
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "dec:werewolf",
+              "spawn_event": "minecraft:entity_spawned",
+              "single_use": true,
+              "num_to_spawn": 3
+            },
+            {
+              "min_wait_time": 0,
+              "max_wait_time": 0,
+              "spawn_entity": "dec:dark_werewolf",
+              "spawn_event": "minecraft:entity_spawned",
+              "single_use": true,
+              "num_to_spawn": 1
+            }
+          ]
+        }
+      }
+    },
+    "components": {
+      "minecraft:health": {
+        "value": 100000,
+        "max": 100000
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": false
+      },
+      "minecraft:collision_box": {
+        "width": 0,
+        "height": 0
+      },
+      "minecraft:type_family": {
+        "family": [
+          "boss"
+        ]
+      },
+      "minecraft:boss": {
+        "should_darken_sky": false,
+        "name": "event.dec:radiate_crystal.name",
+        "hud_range": 64
+      }
+    },
+    "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "minecraft:wait"
+          ]
+        }
+      },
+      "minecraft:first": {
+        "add": {
+          "component_groups": [
+            "minecraft:first_spawn"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "minecraft:wait"
+          ]
+        }
+      },
+      "minecraft:second": {
+        "add": {
+          "component_groups": [
+            "minecraft:second_spawn"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "minecraft:first_spawn"
+          ]
+        },
+        "run_command": {
+          "command": [
+            "damage @s 20000 magic"
+          ]
+        }
+      },
+      "minecraft:third": {
+        "add": {
+          "component_groups": [
+            "minecraft:third_spawn"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "minecraft:second_spawn"
+          ]
+        },
+        "run_command": {
+          "command": [
+            "damage @s 20000 magic"
+          ]
+        }
+      },
+      "minecraft:fourth": {
+        "add": {
+          "component_groups": [
+            "minecraft:fourth_spawn"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "minecraft:third_spawn"
+          ]
+        },
+        "run_command": {
+          "command": [
+            "damage @s 20000 magic"
+          ]
+        }
+      },
+      "minecraft:fifth": {
+        "add": {
+          "component_groups": [
+            "minecraft:fifth_spawn"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "minecraft:fourth_spawn"
+          ]
+        },
+        "run_command": {
+          "command": [
+            "damage @s 20000 magic"
+          ]
+        }
+      },
+      "minecraft:kill": {
+        "remove": {
+          "component_groups": [
+            "minecraft:fifth_spawn"
+          ]
+        },
+        "run_command": {
+          "command": [
+            "tellraw @a { \"rawtext\" : [ { \"translate\" : \"text.dec:radiate_crystal_defeated.name\" } ] }",
+            "kill @s"
+          ]
+        }
+      }
+    }
+  }
+}

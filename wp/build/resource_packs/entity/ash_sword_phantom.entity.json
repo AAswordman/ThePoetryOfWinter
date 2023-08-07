@@ -1,0 +1,27 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:ash_sword_phantom",
+      "materials": {
+        "default": "slime_outer"
+      },
+      "textures": {
+        "default": "textures/entity/ash_sword_phantom"
+      },
+      "geometry": {
+        "default": "geometry.ash_sword"
+      },
+      "scripts": {
+        "animate": [
+          "swing"
+        ]
+      },
+      "animations": {
+        "swing": "animation.ash_sword.swing"
+      },
+      "render_controllers": [ "controller.render.sword" ],
+      "enable_attachables": true
+    }
+  }
+}

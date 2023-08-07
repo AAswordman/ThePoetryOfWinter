@@ -1,0 +1,60 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:ender_mind"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.miscFood"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:ender_mind.name"
+      },
+      "minecraft:icon": {
+        "texture": "ender_mind"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "cookie",
+      "minecraft:use_duration": 0.1,
+      "minecraft:cooldown": {
+        "category": "ender_mind",
+        "duration": 15
+      },
+      "minecraft:food": {
+        "nutrition": 0,
+        "saturation_modifier": "supernatural",
+        "can_always_eat": true,
+        "on_consume": {
+          "event": "consumed",
+          "target": "self"
+        }
+      }
+    },
+    "events": {
+      "consumed": {
+        "sequence": [
+          {
+            "add_mob_effect": {
+              "effect": "resistance",
+              "duration": 5,
+              "amplifier": 1,
+              "target": "holder"
+            }
+          },
+          {
+            "teleport": {
+              "target": "holder",
+              "max_range": [
+                3,
+                1,
+                3
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

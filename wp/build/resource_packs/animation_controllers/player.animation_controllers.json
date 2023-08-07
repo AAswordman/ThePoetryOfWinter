@@ -1,0 +1,212 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.player.bomber": {
+			"states": {
+				"default": {
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"hold": "!query.is_sprinting&&query.get_equipped_item_name=='bomber'"
+						}
+					]
+				},
+				"hold": {
+					"animations": [
+						"hold"
+					],
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"default": "query.is_sprinting||query.get_equipped_item_name!='bomber'"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.player.catapult_explode": {
+			"states": {
+				"default": {
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"hold": "!query.is_sprinting&&query.get_equipped_item_name=='catapult_explode'"
+						}
+					]
+				},
+				"hold": {
+					"animations": [
+						"hold"
+					],
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"default": "query.is_sprinting||query.get_equipped_item_name!='catapult_explode'"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.player.catapult_normal": {
+			"states": {
+				"default": {
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"hold": "!query.is_sprinting&&query.get_equipped_item_name=='catapult_normal'"
+						}
+					]
+				},
+				"hold": {
+					"animations": [
+						"hold"
+					],
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"default": "query.is_sprinting||query.get_equipped_item_name!='catapult_normal'"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.player.diamond_staff": {
+			"states": {
+				"default": {
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"hold": "query.get_equipped_item_name=='diamond_staff'"
+						}
+					]
+				},
+				"hold": {
+					"animations": [
+						"hold"
+					],
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"default": "query.get_equipped_item_name!='diamond_staff'"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.player.flintlock": {
+			"states": {
+				"default": {
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"hold": "!query.is_sprinting&&query.get_equipped_item_name=='flintlock'"
+						}
+					]
+				},
+				"hold": {
+					"animations": [
+						"hold"
+					],
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"default": "query.is_sprinting||query.get_equipped_item_name!='flintlock'"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.player.flintlock_pro": {
+			"states": {
+				"default": {
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"hold": "!query.is_sprinting&&query.get_equipped_item_name=='flintlock_pro'"
+						}
+					]
+				},
+				"hold": {
+					"animations": [
+						"hold"
+					],
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"default": "query.is_sprinting||query.get_equipped_item_name!='flintlock_pro'"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.player.frozen_staff": {
+			"states": {
+				"default": {
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"hold": "query.get_equipped_item_name=='frozen_staff'"
+						}
+					]
+				},
+				"hold": {
+					"animations": [
+						"hold"
+					],
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"default": "query.get_equipped_item_name!='frozen_staff'"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.player.lapis_magic_book": {
+			"states": {
+				"default": {
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"hold": "query.get_equipped_item_name=='lapis_magic_book'"
+						}
+					]
+				},
+				"hold": {
+					"animations": [
+						"hold"
+					],
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"default": "query.get_equipped_item_name!='lapis_magic_book'"
+						}
+					]
+				}
+			}
+		},
+		"controller.animation.player.short_flintlock": {
+			"states": {
+				"default": {
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"hold": "!query.is_sprinting&&query.get_equipped_item_name=='short_flintlock'"
+						}
+					]
+				},
+				"hold": {
+					"animations": [
+						"hold"
+					],
+					"blend_transition": 0.2,
+					"transitions": [
+						{
+							"default": "query.is_sprinting||query.get_equipped_item_name!='short_flintlock'"
+						}
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,31 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:ash_horse",
+      "materials": { "default": "spider" },
+      "textures": {
+        "default": "textures/entity/ash_horse"
+      },
+      "geometry": {
+        "default": "geometry.ash_horse"
+      },
+      "scripts": {
+        "scale": "1.3",
+        "animate": [
+          {"walk" : "query.modified_move_speed * 2"},
+          {"summon" : "query.is_casting"},
+          "look_at_target",
+          "stay"
+        ]
+      },
+      "animations": {
+        "look_at_target": "animation.common.look_at_target",
+        "summon": "animation.ash_horse.summon",
+        "walk": "animation.ash_horse.walk",
+        "stay": "animation.ash_horse.stay"
+      },
+      "render_controllers": [ "controller.render.leaves_golem" ]
+    }
+  }
+}

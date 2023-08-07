@@ -1,0 +1,56 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "wb:ball_ancient_stonea",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball"
+    },
+    "components": {
+      "minecraft:explode": {
+        "fuseLength": 1.5,
+        "fuseLit": true,
+        "breaks_blocks": false,
+        "power": 0,
+        "destroyAffectedByGriefing": true
+      },
+      "minecraft:collision_box": {
+        "width": 0.8,
+        "height": 0.8
+      },
+      "minecraft:scale": {
+        "value": 0.05
+      },
+      "minecraft:projectile": {
+        "onHit": {
+          "mob_effect": {
+            "effect": "instant_damage",
+            "durationeasy": 5,
+            "durationnormal": 7,
+            "durationhard": 10,
+            "amplifier": 1
+          },
+          "impact_damage": {
+            "damage": 40,
+            "knockback": true,
+            "catchFire": false,
+            "semirandomdiffdamage": false,
+            "destroy_on_hit": false
+          }
+        },
+        "power": 3,
+        "gravity": 0,
+        "inertia": 1,
+        "anchor": 2,
+        "offset": [0,1,0],
+        "semirandomdiffdamage": false,
+        "uncertaintyBase": 0,
+        "reflectOnHurt": true,
+        "multiple_targets": true
+      },
+      "minecraft:physics": {}
+    }
+  }
+}

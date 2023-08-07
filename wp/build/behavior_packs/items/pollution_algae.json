@@ -1,0 +1,85 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "items",
+      "identifier": "dec:pollution_algae"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.decorations"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:pollution_algae.name"
+      },
+      "minecraft:icon": {
+        "texture": "pollution_algae"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "cookie",
+      "minecraft:use_duration": 1.6,
+      "minecraft:food": {
+        "on_consume": {
+          "event": "consumed",
+          "target": "self"
+        },
+        "nutrition": 2,
+        "saturation_modifier": "poor"
+      }
+    },
+    "events": {
+      "consumed": {
+        "sequence": [
+          {
+            "randomize": [
+              {
+                "weight": 1,
+                "add_mob_effect": {
+                  "effect": "poison",
+                  "duration": 10,
+                  "amplifier": 0,
+                  "target": "holder"
+                }
+              },
+              {
+                "weight": 1
+              }
+            ]
+          },
+          {
+            "randomize": [
+              {
+                "weight": 1,
+                "add_mob_effect": {
+                  "effect": "nausea",
+                  "duration": 30,
+                  "amplifier": 0,
+                  "target": "holder"
+                }
+              },
+              {
+                "weight": 1
+              }
+            ]
+          },
+          {
+            "randomize": [
+              {
+                "weight": 1,
+                "add_mob_effect": {
+                  "effect": "wither",
+                  "duration": 10,
+                  "amplifier": 0,
+                  "target": "holder"
+                }
+              },
+              {
+                "weight": 1
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

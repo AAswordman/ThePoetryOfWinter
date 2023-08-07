@@ -1,0 +1,50 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "dec:glamor_clothes",
+          "weight": 1,
+          "pools": [
+            {
+              "rolls": 1,
+              "entries": [
+                {
+                  "type": "item",
+                  "name": "dec:glamor_pants",
+                  "weight": 1,
+                  "pools": [
+                    {
+                      "rolls": 1,
+                      "entries": [
+                        {
+                          "type": "item",
+                          "name": "dec:glamor_shoes",
+                          "weight": 1,
+                          "pools": [
+                            {
+                              "rolls": 1,
+                              "entries": [
+                                {
+                                  "type": "item",
+                                  "name": "dec:blue_cat_ears",
+                                  "weight": 1
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

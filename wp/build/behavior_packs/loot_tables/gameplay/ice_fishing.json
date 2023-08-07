@@ -1,0 +1,27 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "loot_table",
+          "name": "loot_tables/gameplay/fishing/ice_junk.json",
+          "weight": 20,
+          "quality": -2
+        },
+        {
+          "type": "loot_table",
+          "name": "loot_tables/gameplay/fishing/ice_treasure.json",
+          "weight": 10,
+          "quality": 2
+        },
+        {
+          "type": "loot_table",
+          "name": "loot_tables/gameplay/fishing/ice_fish.json",
+          "weight": 70,
+          "quality": -1
+        }
+      ]
+    }
+  ]
+}

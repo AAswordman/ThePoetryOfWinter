@@ -1,0 +1,31 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:growth"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "AXA",
+      "AXA",
+      "B#B"
+    ],
+    "key": {
+      "#": {
+        "item": "dec:iron_stick"
+      },
+      "X": {
+        "item": "dec:pure_ingot"
+      },
+      "A": {
+        "item": "minecraft:glow_berries"
+      },
+      "B": {
+        "item": "minecraft:vine"
+      }
+    },
+    "result": {
+      "item": "dec:growth"
+    }
+  }
+}

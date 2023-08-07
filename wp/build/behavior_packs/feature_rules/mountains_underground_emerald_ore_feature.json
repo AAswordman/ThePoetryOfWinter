@@ -1,0 +1,33 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:feature_rules": {
+    "description": {
+      "identifier": "minecraft:mountains_underground_emerald_ore_feature",
+      "places_feature": "minecraft:emerald_ore_feature"
+    },
+    "conditions": {
+      "placement_pass": "underground_pass",
+      "minecraft:biome_filter": {
+        "test": "has_biome_tag",
+        "operator": "==",
+        "value": "mountains"
+      }
+    },
+    "distribution": {
+      "iterations": 20, // Double the iterations in order to "miss" half of the time by picking locations above the mountain peaks
+      "coordinate_eval_order": "zyx",
+      "x": {
+        "distribution": "uniform",
+        "extent": [ 0, 16 ]
+      },
+      "y": {
+        "distribution": "gaussian",
+        "extent": [ 128, 384 ] // 384 = 128 + 256 (mountain top) Gaussian distribution in order to get higher concentration at the top
+      },
+      "z": {
+        "distribution": "uniform",
+        "extent": [ 0, 16 ]
+      }
+    }
+  }
+}

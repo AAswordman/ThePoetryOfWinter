@@ -1,0 +1,124 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:the_blade"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.sword"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:the_blade.name"
+      },
+      "minecraft:icon": {
+        "texture": "the_blade"
+      },
+      "minecraft:stacked_by_data": false,
+      "minecraft:max_stack_size": 1,
+      "minecraft:durability": {
+        "max_durability": 312
+      },
+      "minecraft:can_destroy_in_creative": false,
+      "minecraft:on_use": {
+        "on_use": {
+          "event": "the_blade_use_attack",
+          "target": "self"
+        }
+      },
+      "minecraft:weapon": {
+        "on_hurt_entity": {
+          "event": "the_blade_attack",
+          "target": "self"
+        },
+        "on_hit_block": {
+          "event": "attack",
+          "target": "self"
+        }
+      },
+      "minecraft:damage": 6,
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "minecraft:iron_ingot"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.3"
+          },
+          {
+            "items": [
+              "minecraft:iron_nugget"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.03"
+          }
+        ]
+      },
+      "minecraft:foil": false,
+      "minecraft:hand_equipped": true,
+      "minecraft:cooldown": {
+        "category": "katana",
+        "duration": 2
+      },
+      "tag:comp:equipment_type:melee_weapon":{}
+    },
+    "events": {
+      "attack": {
+        "damage": {
+          "amount": 1,
+          "type": "magic"
+        }
+      },
+      "the_blade_use_attack": {
+        "run_command": {
+          "command": [
+            "function item/the_blade"
+          ],
+          "target": "holder"
+        }
+      },
+      "the_blade_attack": {
+        "sequence": [
+          {
+            "condition": "query.scoreboard('skill_count') > 3",
+            "sequence": [
+              {
+                "run_command": {
+                  "command": [
+                    "function item/the_blade"
+                  ],
+                  "target": "holder"
+                }
+              },
+              {
+                "damage": {
+                  "type": "magic",
+                  "amount": 1
+                }
+              }
+            ]
+          },
+          {
+            "condition": "query.scoreboard('skill_count') < 4",
+            "sequence": [
+              {
+                "run_command": {
+                  "command": [
+                    "scoreboard players add @s skill_count 1"
+                  ],
+                  "target": "holder"
+                }
+              },
+              {
+                "damage": {
+                  "type": "magic",
+                  "amount": 1
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

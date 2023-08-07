@@ -1,0 +1,78 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:lava_dart",
+      "runtime_identifier": "minecraft:snowball",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+      "minecraft:collision_box": {
+        "width": 0.25,
+        "height": 0.25
+      },
+      "minecraft:projectile": {
+        "onHit": {
+          "definition_event": {
+            "affect_projectile": true,
+            "event_trigger": {
+              "event": "minecraft:explode",
+              "target": "self"
+            }
+          },
+          "impact_damage": {
+            "damage": 8,
+            "knockback": true,
+            "catchFire": true
+          }
+        },
+        "power": 2.1,
+        "gravity": 0.03,
+        "inertia": 1.1,
+        "offset": [ 0, 0, 1 ],
+        "uncertaintyBase": 6.0,
+        "angleoffset": 0.0
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    },
+    "events": {
+      "minecraft:explode": {
+        "randomize": [
+          {
+            "weight": 3,
+            "add": {
+              "component_groups": [
+                "minecraft:despawn"
+              ]
+            }
+          },
+          {
+            "weight": 3,
+            "run_command": {
+              "command": [
+                "damage @e[r=3,type=!item] 12 entity_explosion",
+                "particle dec:lava_spurt_particle ~~~",
+                "playsound random.explode @a ~~~"
+              ]
+            },
+            "add": {
+              "component_groups": [
+                "minecraft:despawn"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

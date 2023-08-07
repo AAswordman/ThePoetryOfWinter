@@ -1,0 +1,55 @@
+{
+	"format_version": "1.10.0",
+	"particle_effect": {
+		"description": {
+			"identifier": "dec:nuke_blast",
+			"basic_render_parameters": {
+				"material": "particles_alpha",
+				"texture": "textures/particle/particles"
+			}
+		},
+		"components": {
+			"minecraft:emitter_initialization": {
+				"creation_expression": "variable.r = 60;"
+			},
+			"minecraft:emitter_local_space": {
+				"position": true,
+				"rotation": true
+			},
+			"minecraft:emitter_rate_instant": {
+				"num_particles": 20
+			},
+			"minecraft:emitter_lifetime_once": {
+				"active_time": 1
+			},
+			"minecraft:emitter_shape_point": {
+				"offset": ["Math.sin(variable.particle_random_1*360)*variable.r*(variable.particle_random_3*2-1)", "Math.Random(-1,1)*Math.sqrt(variable.r*variable.r-Math.pow(Math.sqrt(Math.pow(Math.sin(variable.particle_random_1*360)*variable.r*(variable.particle_random_3*2-1),2)+Math.pow(Math.cos(variable.particle_random_2*360)*variable.r*(variable.particle_random_4*2-1),2)),2))", "Math.cos(variable.particle_random_2*360)*variable.r*(variable.particle_random_4*2-1)"]
+			},
+			"minecraft:particle_lifetime_expression": {
+				"max_lifetime": 0.5
+			},
+			"minecraft:particle_initial_speed": "(Math.Random(0, 1) + Math.Random(0, 1) + 1) * 0.1",
+			"minecraft:particle_motion_dynamic": {
+				"linear_acceleration": [0, 0.02, 0]
+			},
+			"minecraft:particle_appearance_billboard": {
+				"size": [0.82, 0.82],
+				"facing_camera_mode": "lookat_xyz",
+				"uv": {
+					"texture_width": 16,
+					"texture_height": 16,
+					"flipbook": {
+						"base_UV": [0, 10],
+						"size_UV": [1, 1],
+						"step_UV": [1, 0],
+						"frames_per_second": 32,
+						"max_frame": 16
+					}
+				}
+			},
+			"minecraft:particle_motion_collision": {
+				"collision_radius": 0.001
+			}
+		}
+	}
+}

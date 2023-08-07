@@ -1,0 +1,29 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:ice_thorn",
+      "materials": {
+        "default": "slime_outer"
+      },
+      "textures": {
+        "default": "textures/blocks/ice"
+      },
+      "geometry": {
+        "default": "geometry.ice_thorn"
+      },
+      "render_controllers": [
+        "controller.render.ice_thorn"
+      ],
+      "scripts": {
+        "animate": [
+          "spawn"
+        ]
+      },
+      "animations": {
+        "spawn": "animation.ice_thorn.spawn",
+        "defualt": "animation.ice_thorn.defualt"
+      }
+    }
+  }
+}

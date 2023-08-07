@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:absolute_zero"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XAX",
+      "A#A",
+      "XAX"
+    ],
+    "key": {
+      "#": {
+        "item": "dec:blizzard_sword"
+      },
+      "A": {
+        "item": "dec:ancient_ice"
+      },
+      "X": {
+        "item": "dec:ice_heart"
+      }
+    },
+    "result": {
+      "item": "dec:absolute_zero"
+    }
+  }
+}

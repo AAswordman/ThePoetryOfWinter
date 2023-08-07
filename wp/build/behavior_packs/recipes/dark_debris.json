@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:dark_debris"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XXX",
+      "XAX",
+      "XXX"
+    ],
+    "key": {
+      "X": {
+        "item": "dec:pollution_algae"
+      },
+      "A": {
+        "item": "dec:star_debris"
+      }
+    },
+    "result": {
+      "item": "dec:dark_debris"
+    }
+  }
+}

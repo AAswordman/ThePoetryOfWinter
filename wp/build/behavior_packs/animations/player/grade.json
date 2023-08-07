@@ -1,0 +1,26 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.player.wb.delivery": {
+            "timeline": {
+                "0.5": [
+                    "/function armor/skill_update"
+                ]
+            },
+            "animation_length": 1,
+            "loop": true
+        },
+        "animation.player.wb.order": {
+            "timeline": {
+                "0.1": [
+                    "/execute as @s[tag=prune] at @s run particle wb:rune ~ ~ ~",
+                    "/execute as @s[tag=pflame] at @s run particle wb:wbflame ~ ~ ~",
+                    "/execute as @s[tag=plove] at @s run particle wb:love ~ ~ ~",
+                    "/execute as @s[tag=phalo] at @s run particle wb:halo ~ ~ ~"
+                ]
+            },
+            "animation_length": 0.13,
+            "loop": true
+        }
+    }
+}

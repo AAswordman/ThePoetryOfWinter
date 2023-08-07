@@ -1,0 +1,239 @@
+{
+    "format_version": "1.16.100",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dec:fritillary_crop",
+            "properties": {
+                "dec:growth_stage": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4
+                ]
+            }
+        },
+        "components": {
+            "minecraft:geometry": "geometry.crop.sparse",
+            "minecraft:entity_collision": false,
+            "minecraft:pick_collision": {
+                "origin": [
+                    -3.5,
+                    0,
+                    -3.5
+                ],
+                "size": [
+                    7,
+                    9,
+                    7
+                ]
+            },
+            "minecraft:destroy_time": 0.001,
+            "minecraft:map_color": "#8FE08B",
+            "minecraft:light_dampening": 0.0,
+            "minecraft:loot": "loot_tables/blocks/fritillary_crop.json",
+            "minecraft:random_ticking": {
+                "on_tick": {
+                    "event": "grow_stage"
+                }
+            },
+            "minecraft:placement_filter": {
+                "conditions": [
+                    {
+                        "allowed_faces": [
+                            "up"
+                        ],
+                        "block_filter": [
+                            "farmland"
+                        ]
+                    }
+                ]
+            },
+            "minecraft:breathability": "air"
+        },
+        "events": {
+            "grow_stage": {
+                "randomize": [
+                    {
+                        "weight": 1
+                    },
+                    {
+                        "weight": 1,
+                        "set_block_property": {
+                            "dec:growth_stage": "(query.block_property('dec:growth_stage')<4) ? query.block_property('dec:growth_stage') + 1 : 4"
+                        }
+                    }
+                ]
+            },
+            "final_drop": {
+                "spawn_loot": {
+                    "table": "loot_tables/blocks/fritillary_crop.json"
+                },
+                "set_block_property": {
+                    "dec:growth_stage": 2
+                }
+            },
+            "meal": {
+                "sequence": [
+                    {
+                        "decrement_stack": {}
+                    },
+                    {
+                        "run_command": {
+                            "command": [
+                                "particle minecraft:crop_growth_emitter ~~~"
+                            ]
+                        }
+                    },
+                    {
+                        "trigger": {
+                            "event": "grow_stage"
+                        }
+                    }
+                ]
+            }
+        },
+        "permutations": [
+            {
+                "condition": "query.block_property('dec:growth_stage') == 0",
+                "components": {
+                    "minecraft:on_interact": {
+                        "event": "meal",
+                        "condition": "query.get_equipped_item_name('main_hand') == 'bone_meal'"
+                    },
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "fritillary_crop_stage_0",
+                            "render_method": "alpha_test"
+                        }
+                    },
+                    "minecraft:pick_collision": {
+                        "origin": [
+                            -3.5,
+                            0,
+                            -3.5
+                        ],
+                        "size": [
+                            7,
+                            9,
+                            7
+                        ]
+                    },
+                    "minecraft:loot": "loot_tables/empty.json"
+                }
+            },
+            {
+                "condition": "query.block_property('dec:growth_stage') == 1",
+                "components": {
+                    "minecraft:on_interact": {
+                        "event": "meal",
+                        "condition": "query.get_equipped_item_name('main_hand') == 'bone_meal'"
+                    },
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "fritillary_crop_stage_1",
+                            "render_method": "alpha_test"
+                        }
+                    },
+                    "minecraft:pick_collision": {
+                        "origin": [
+                            -3.5,
+                            0,
+                            -3.5
+                        ],
+                        "size": [
+                            7,
+                            14,
+                            7
+                        ]
+                    },
+                    "minecraft:loot": "loot_tables/empty.json"
+                }
+            },
+            {
+                "condition": "query.block_property('dec:growth_stage') == 2",
+                "components": {
+                    "minecraft:on_interact": {
+                        "event": "meal",
+                        "condition": "query.get_equipped_item_name('main_hand') == 'bone_meal'"
+                    },
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "fritillary_crop_stage_2",
+                            "render_method": "alpha_test"
+                        }
+                    },
+                    "minecraft:pick_collision": {
+                        "origin": [
+                            -6,
+                            0,
+                            -6
+                        ],
+                        "size": [
+                            12,
+                            16,
+                            12
+                        ]
+                    },
+                    "minecraft:loot": "loot_tables/empty.json"
+                }
+            },
+            {
+                "condition": "query.block_property('dec:growth_stage') == 3",
+                "components": {
+                    "minecraft:on_interact": {
+                        "event": "meal",
+                        "condition": "query.get_equipped_item_name('main_hand') == 'bone_meal'"
+                    },
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "fritillary_crop_stage_3",
+                            "render_method": "alpha_test"
+                        }
+                    },
+                    "minecraft:pick_collision": {
+                        "origin": [
+                            -6,
+                            0,
+                            -6
+                        ],
+                        "size": [
+                            12,
+                            16,
+                            12
+                        ]
+                    },
+                    "minecraft:loot": "loot_tables/empty.json"
+                }
+            },
+            {
+                "condition": "query.block_property('dec:growth_stage') == 4",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "fritillary_crop_stage_4",
+                            "render_method": "alpha_test"
+                        }
+                    },
+                    "minecraft:pick_collision": {
+                        "origin": [
+                            -6,
+                            0,
+                            -6
+                        ],
+                        "size": [
+                            12,
+                            16,
+                            12
+                        ]
+                    },
+                    "minecraft:loot": "loot_tables/blocks/fritillary_crop.json",
+                    "minecraft:on_interact": {
+                        "event": "final_drop",
+                        "target": "self"
+                    }
+                }
+            }
+        ]
+    }
+}

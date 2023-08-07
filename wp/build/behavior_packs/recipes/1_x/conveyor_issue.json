@@ -1,0 +1,30 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "wb:conveyor_issue"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "#X#",
+      "XYX",
+      "#X#"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:stone"
+      },
+      "X": {
+        "item": "minecraft:iron_ingot"
+      },
+      "Y": {
+        "item":"minecraft:emerald"
+      }
+    },
+    "result": {
+      "item": "wb:conveyor_issue"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:mysterious_key"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.navigation"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:mysterious_key.name"
+      },
+      "minecraft:icon": {
+        "texture": "mysterious_key"
+      },
+      "minecraft:foil": true,
+      "minecraft:stacked_by_data": false
+    }
+  }
+}

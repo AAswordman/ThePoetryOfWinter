@@ -1,0 +1,83 @@
+{
+  "format_version": "1.12.0",
+ "minecraft:entity": {
+  "description": {
+    "identifier": "dec:winter_energy",
+    "runtime_identifier": "minecraft:egg",
+    "is_spawnable": false,
+    "is_summonable": true,
+    "is_experimental": false,
+    "scripts": {
+      "animate": [
+        "ticking"
+      ]
+    },
+    "animations": {
+      "ticking": "controller.animation.particle_everlasting_winter_wake"
+    }
+  },
+
+  "component_groups": {
+    "minecraft:exploding": {
+      "minecraft:transformation": {
+        "into": "dec:snow_energy_fuse"
+      }
+    }
+  },
+
+  "components": {
+   "minecraft:collision_box": {
+    "width": 0.31,
+    "height": 0.31
+   },
+   "minecraft:projectile": {
+    "onHit": {
+      "definition_event": {
+        "affect_projectile": true,
+        "event_trigger": {
+          "event": "minecraft:explode",
+          "target": "self"
+        }
+      },
+      "impact_damage": {
+        "damage": 12,
+        "knockback": false,
+        "catchFire": false,
+        "semirandomdiffdamage": false
+      },
+      "particle_on_hit": {
+        "particle_type": "snowballpoof",
+        "num_particles": 6,
+        "on_entity_hit": true,
+        "on_other_hit": true
+      }
+    },
+    "hit_sound": "bullet.hit",
+    "power": 1.2,
+    "gravity": 0.03,
+    "inertia": 1.01,
+    "liquid_inertia": 1.0,
+    "anchor": 1,
+    "offset": [ 0, 0, 1 ],
+    "semirandomdiffdamage": true,
+    "uncertaintyBase": 6.0,
+    "uncertaintyMultiplier": 6,
+    "reflectOnHurt": true,
+    "shoot_target": false
+   },
+   "minecraft:pushable": {
+    "is_pushable": false,
+    "is_pushable_by_piston": true
+   }
+  },
+  "events": {
+   "minecraft:explode": {
+    "add": {
+     "component_groups": [
+      "minecraft:exploding"
+     ]
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,193 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:elf_of_ash",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "minecraft:timer": {
+        "minecraft:explode": {
+          "fuseLength": 40,
+          "fuseLit": true,
+          "power": 0,
+          "causesFire": false
+        }
+      }
+    },
+    "components": {
+      
+      "minecraft:fire_immune": true,
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+          "cause": "fall",
+          "deals_damage": false
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "ash"
+              }
+            },
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:type_family": {
+        "family": [ "monster","elf_of_ash", "ash", "undead", "mob" ]
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
+      "minecraft:experience_reward": {
+        "on_death": "query.last_hit_by_player ? 5 : 0"
+      },
+      "minecraft:breathable": {
+        "totalSupply": 15,
+        "suffocateTime": 0
+      },
+      "minecraft:health": {
+        "value": 20,
+        "max": 20
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": true
+      },
+      "minecraft:can_fly": {
+      },
+      "minecraft:behavior.float_wander": {
+        "xz_dist": 10,
+        "y_dist": 7,
+        "y_offset": -2.0,
+        "random_reselect": true,
+        "float_duration": [0.1, 0.35]
+      },
+      "minecraft:shooter": {
+        "type": "ashEnergy",
+        "def": "dec:ash_energy"
+      },
+      "minecraft:behavior.flee_sun": {
+        "priority": 0,
+        "speed_multiplier": 1
+      },
+      "minecraft:behavior.ranged_attack": {
+        "priority": 4,
+        "burst_shots": 4,
+        "burst_interval": 1,
+        "charge_charged_trigger": 0.0,
+        "charge_shoot_trigger": 4.0,
+        "attack_interval_min": 2.0,
+        "attack_interval_max": 3.0,
+        "attack_radius": 64.0
+      },
+        "minecraft:movement": {
+          "value": 0.005
+      },
+      "minecraft:collision_box": {
+        "width": 0.4,
+        "height": 0.8
+      },
+      "minecraft:navigation.walk": {
+        "can_float": true
+      },
+      "minecraft:movement.basic": {
+      },
+      "minecraft:jump.static": {
+      },
+      "minecraft:can_climb": {
+      },
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1,
+        "entity_types": {
+          "filters": {
+            "test": "is_family",
+            "subject": "other",
+            "operator": "!=",
+            "value": "ash"
+          },
+          "max_dist": 64
+        }
+      },
+      "minecraft:follow_range": {
+        "value": 64,
+        "max": 64
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 1,
+        "entity_types": [
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "snowgolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "villager"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "wandering_trader"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                }
+              ]
+            },
+            "max_dist": 35
+          }
+        ],
+        "must_see": false
+      },
+      "minecraft:behavior.melee_attack": {
+        "priority": 3,
+        "speed_multiplier": 1,
+        "track_target": true
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 5,
+        "speed_multiplier": 1
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 6,
+        "look_distance": 8
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 6
+      }
+    },
+
+    "events": {
+      "minecraft:from_summoner": {
+        "add": {
+          "component_groups": [
+            "minecraft:timer"
+          ]
+        }
+      }
+    }
+  }
+}

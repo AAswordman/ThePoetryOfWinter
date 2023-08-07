@@ -1,0 +1,23 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "wb:particle_rune",
+      "register_to_creative_menu": true
+    },
+    "components": {
+      "minecraft:food": {
+        "nutrition": 5,
+        "can_always_eat": true,
+        "cooldown_type": "particle",
+        "cooldown_time": 200
+      },
+      "minecraft:hand_equipped": true,
+      "minecraft:use_duration": 99999999,
+      "minecraft:foil": true,
+      "minecraft:max_stack_size": 1,
+      "minecraft:max_damage": 50000,
+      "minecraft:stacked_by_data": false
+    }
+  }
+}

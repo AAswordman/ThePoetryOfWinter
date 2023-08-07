@@ -1,0 +1,244 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:obsidian_golem",
+      "runtime_identifier": "minecraft:iron_golem",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+
+    "component_groups": {
+    },
+
+    "components": {
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
+      "minecraft:boss": {
+        "should_darken_sky": false,
+        "name": "mini_boss.dec:obsidian_golem.name",
+        "hud_range": 16
+      },
+      "minecraft:type_family": {
+        "family": [ "mini_boss","obsidian_golem", "mob", "monster", "golem" ]
+      },
+      "minecraft:experience_reward": {
+        "on_death": "query.last_hit_by_player ? 60 : 0"
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:collision_box": {
+        "width": 1.4,
+        "height": 2.9
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/obsidian_golem.json"
+      },
+      "minecraft:health": {
+        "value": 250,
+        "max":250
+      },
+      "minecraft:fire_immune": true,
+      "minecraft:movement": {
+        "value": 0.20
+      },
+      "minecraft:navigation.walk": {
+        "can_path_over_water": false,
+        "avoid_water": false,
+        "avoid_damage_blocks": true
+      },
+      "minecraft:movement.basic": {
+        
+      },
+      "minecraft:jump.static": {
+      },
+      "minecraft:can_climb": {
+      },
+      "minecraft:attack": {
+        "damage": {
+          "range_min": 6,
+          "range_max": 15
+        },
+        "effect_name": "slowness",
+        "effect_duration": 2
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "fall",
+          "deals_damage": false
+        }
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1.0
+      },
+      "minecraft:balloonable": {
+      },
+      "minecraft:preferred_path" : {
+        "max_fall_blocks" : 1,
+        "jump_cost" : 5,
+        "default_block_cost" : 1.5,
+        "preferred_path_blocks" : [
+          { 
+            "cost" : 0,
+            "blocks" : [ 
+              "grass_path"
+            ]
+          },
+          { 
+            "cost" : 1,
+            "blocks" : [ 
+              "cobblestone", 
+              "stone",
+              "stonebrick",
+              "sandstone",
+              "mossy_cobblestone",
+              "stone_slab",
+              "stone_slab2",
+              "stone_slab3",
+              "stone_slab4",
+              "double_stone_slab",
+              "double_stone_slab2",
+              "double_stone_slab3",
+              "double_stone_slab4",
+              "wooden_slab",
+              "double_wooden_slab",
+              "planks",
+              "brick_block",
+              "nether_brick",
+              "red_nether_brick",
+              "end_bricks",
+              "red_sandstone",
+              "stained_glass",
+              "glass",
+              "glowstone",
+              "prismarine",
+              "emerald_block",
+              "diamond_block",
+              "lapis_block",
+              "gold_block",
+              "redstone_block",
+              "purple_glazed_terracotta",
+              "white_glazed_terracotta",
+              "orange_glazed_terracotta",
+              "magenta_glazed_terracotta",
+              "light_blue_glazed_terracotta",
+              "yellow_glazed_terracotta",
+              "lime_glazed_terracotta",
+              "pink_glazed_terracotta",
+              "gray_glazed_terracotta",
+              "silver_glazed_terracotta",
+              "cyan_glazed_terracotta",
+              "blue_glazed_terracotta",
+              "brown_glazed_terracotta",
+              "green_glazed_terracotta",
+              "red_glazed_terracotta",
+              "black_glazed_terracotta"
+             ]
+          },
+          { 
+            "cost" : 50,
+            "blocks" : [ 
+              "bed",
+              "lectern",
+              "composter",
+              "grindstone",
+              "blast_furnace",
+              "smoker",
+              "fletching_table",
+              "cartography_table",
+              "brewing_stand",
+              "smithing_table",
+              "cauldron",
+              "barrel",
+              "loom",
+              "stonecutter"
+            ]
+          }
+        ]
+      },
+      "minecraft:behavior.target_when_pushed": {
+        "priority": 1,
+        "percent_chance": 5.0,
+        "entity_types": [
+          {
+            "filters": { 
+              "all_of": [
+                { "test" :  "is_family", "subject" : "other", "value" :  "player" }
+              ] 
+            }
+          }
+        ]
+      },
+      "minecraft:behavior.melee_attack": {
+        "priority": 1,
+        "target_dist": 1.0,
+        "track_target": true
+      },
+      "minecraft:behavior.move_towards_target": {
+        "priority": 2,
+        "speed_multiplier": 0.9,
+        "within_radius": 64
+      },
+      "minecraft:behavior.move_towards_restriction": {
+        "priority": 4,
+        "speed_multiplier": 1
+      },
+      "minecraft:behavior.offer_flower": {
+        "priority": 5
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 6,
+        "speed_multiplier": 1,
+        "xz_dist": 16
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 7,
+        "look_distance": 6.0,
+        "probability": 0.02
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 8
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "within_radius": 16,
+        "reselect_targets": true,
+        "entity_types": [
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "any_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "is_family", "subject": "other", "value": "villager" },
+                    { "test": "is_family", "subject": "other", "value": "irongolem" }
+                  ]
+                }
+              ]
+            },
+            "max_dist": 20
+          }
+        ],
+        "must_see": true,
+        "must_see_forget_duration": 17.0,
+        "persist_time": 0.5
+      },
+      "minecraft:persistent": {
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:follow_range": {
+        "value": 64
+      }
+    },
+
+    "events": {
+    }
+  }
+}

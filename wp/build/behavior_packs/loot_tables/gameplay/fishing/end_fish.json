@@ -1,0 +1,14 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "dec:ender_fish",
+          "weight": 1
+        }
+      ]
+    }
+  ]
+}

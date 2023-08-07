@@ -1,0 +1,95 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:simple_glider",
+      "runtime_identifier": "minecraft:chicken",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+
+    "component_groups": {
+
+    },
+    "components": {
+      "minecraft:loot": {
+        "table": "loot_tables/entities/simple_glider.json"
+      },
+      "minecraft:navigation.walk": {
+        "can_path_over_water": true
+      },
+      "minecraft:behavior.controlled_by_player": {
+        "priority": 0
+      },
+      "minecraft:input_ground_controlled": {
+      },
+      "minecraft:boostable": {
+        "speed_multiplier": 1.2,
+        "duration": 10.0,
+        "boost_items": [
+          {
+            "item": "dec:paraffin_bucket",
+            "damage": 1,
+            "replace_item": "bucket"
+          }
+        ]
+      },
+      "minecraft:rideable": {
+        "seat_count": 1,
+        "interact_text": "action.interact.ride.minecart",
+        "pull_in_entities": false,
+        "seats": {
+          "position": [ 0.0, 0.1, -0.2 ]
+        }
+      },
+      "minecraft:healable": {
+        "items": [
+          {
+            "item": "dec:steel_ingot",
+            "heal_amount": 20
+          },
+          {
+            "item": "minecraft:iron_ingot",
+            "heal_amount": 4
+          },
+          {
+            "item": "minecraft:copper_ingot",
+            "heal_amount": 4
+          }
+        ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "fall",
+          "deals_damage": false
+        }
+      },
+      "minecraft:health": {
+        "value": 20,
+        "max": 20
+      },
+      "minecraft:is_stackable": {
+      },
+      "minecraft:type_family": {
+        "family": [ "simple_car", "inanimate" ]
+      },
+      "minecraft:movement": {
+        "value": 0.20
+      },
+      "minecraft:collision_box": {
+        "width": 0.98,
+        "height": 0.7
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      }
+    },
+    "events": {
+
+    }
+  }
+}

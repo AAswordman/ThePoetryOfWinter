@@ -1,0 +1,32 @@
+{
+	"format_version": "1.10.0",
+	"geometry.jet_pack": {
+		"texturewidth": 32,
+		"textureheight": 32,
+		"visible_bounds_width": 3,
+		"visible_bounds_height": 3,
+		"visible_bounds_offset": [0, 0, 0],
+		"bones": [
+			{
+				"name": "body",
+				"pivot": [0, 24, 0]
+			},
+			{
+				"name": "bag",
+				"parent": "body",
+				"pivot": [0, 16, 7],
+				"cubes": [
+					{"origin": [-4, 12, 3], "size": [8, 11, 4], "uv": [0, 0]}
+				]
+			},
+			{
+				"name": "bone2",
+				"pivot": [0, 15, 3],
+				"cubes": [
+					{"origin": [1, 11, 3.5], "size": [3, 1, 3], "uv": [0, 15]},
+					{"origin": [-4, 11, 3.5], "size": [3, 1, 3], "uv": [0, 15]}
+				]
+			}
+		]
+	}
+}

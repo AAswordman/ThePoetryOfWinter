@@ -1,0 +1,20 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "items",
+      "identifier": "dec:empty_totem"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.decorations"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:empty_totem.name"
+      },
+      "minecraft:icon": {
+        "texture": "empty_totem"
+      }
+    }
+  }
+}

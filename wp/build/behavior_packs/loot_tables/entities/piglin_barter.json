@@ -1,0 +1,354 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "minecraft:netherite_hoe",
+                    "weight": 5,
+                    "functions": [
+                        {
+                          "function": "set_damage",
+                          "damage": {
+                            "min": 0.1,
+                            "max": 1
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:netherite_axe",
+                    "weight": 1,
+                    "functions": [
+                        {
+                          "function": "set_damage",
+                          "damage": {
+                            "min": 0.1,
+                            "max": 1
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:netherite_sword",
+                    "weight": 1,
+                    "functions": [
+                        {
+                          "function": "set_damage",
+                          "damage": {
+                            "min": 0.1,
+                            "max": 1
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:netherite_pickaxe",
+                    "weight": 1,
+                    "functions": [
+                        {
+                          "function": "set_damage",
+                          "damage": {
+                            "min": 0.1,
+                            "max": 1
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:netherite_shovel",
+                    "weight": 1,
+                    "functions": [
+                        {
+                          "function": "set_damage",
+                          "damage": {
+                            "min": 0.1,
+                            "max": 1
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:book",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "enchant_with_levels",
+                            "levels": 50,
+                            "treasure": true
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:book",
+                    "weight": 2,
+                    "functions": [
+                        {
+                            "function": "enchant_with_levels",
+                            "levels": 30,
+                            "treasure": true
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:book",
+                    "weight": 3,
+                    "functions": [
+                        {
+                            "function": "enchant_with_levels",
+                            "levels": 20,
+                            "treasure": true
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:book",
+                    "weight": 4,
+                    "functions": [
+                        {
+                            "function": "enchant_with_levels",
+                            "levels": 10,
+                            "treasure": true
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:book",
+                    "weight": 5,
+                    "functions": [
+                        {
+                            "function": "specific_enchants",
+                            "enchants": [
+                                {
+                                    "id": "soul_speed",
+                                    "level": [1, 3]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                  "type": "item",
+                  "name": "minecraft:iron_boots",
+                  "weight": 40,
+                    "functions": [
+                        {
+                            "function": "specific_enchants",
+                            "enchants": [
+                                {
+                                    "id": "soul_speed",
+                                    "level": [1, 3]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:potion",
+                    "weight": 100,
+                    "functions": [
+                        {
+                            "function": "set_data",
+                            "data": 12
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:splash_potion",
+                    "weight": 100,
+                    "functions": [
+                        {
+                            "function": "set_data",
+                            "data": 12
+                        }
+                    ]
+                },                
+                {
+                    "type": "item",
+                    "name": "minecraft:iron_nugget",
+                    "weight": 100,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 9,
+                                "max": 36
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "minecraft:quartz",
+                    "weight": 200,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 8,
+                                "max": 16
+                            }
+                        }
+                    ]
+                },   
+                {
+                    "type": "item",
+                    "name": "minecraft:glowstone_dust",
+                    "weight": 200,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 5,
+                                "max": 12
+                            }
+                        }
+                    ]
+                },                                 
+                {
+                    "type": "item",
+                    "name": "minecraft:magma_cream",
+                    "weight": 200,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 2,
+                                "max": 6
+                            }
+                        }
+                    ]
+                },    
+                {
+                    "type": "item",
+                    "name": "minecraft:ender_pearl",
+                    "weight": 200,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 4,
+                                "max": 8
+                            }
+                        }
+                    ]
+                },    
+                {
+                    "type": "item",
+                    "name": "minecraft:string",
+                    "weight": 200,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 8,
+                                "max": 24
+                            }
+                        }
+                    ]
+                },    
+                {
+                    "type": "item",
+                    "name": "minecraft:fireball",
+                    "weight": 400,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 5
+                            }
+                        }
+                    ]
+                },    
+                {
+                    "type": "item",
+                    "name": "minecraft:gravel",
+                    "weight": 400,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 8,
+                                "max": 16
+                            }
+                        }
+                    ]
+                },  
+                {
+                    "type": "item",
+                    "name": "minecraft:leather",
+                    "weight": 400,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 4,
+                                "max": 10
+                            }
+                        }
+                    ]
+                },                   
+                {
+                    "type": "item",
+                    "name": "minecraft:nether_brick",
+                    "weight": 400,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 4,
+                                "max": 16
+                            }
+                        }
+                    ]
+                }, 
+                {
+                    "type": "item",
+                    "name": "minecraft:obsidian",
+                    "weight": 400
+                }, 
+                {
+                    "type": "item",
+                    "name": "minecraft:crying_obsidian",
+                    "weight": 400,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 3
+                            }
+                        }
+                    ]
+                }, 
+                {
+                    "type": "item",
+                    "name": "minecraft:soul_sand",
+                    "weight": 400,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 4,
+                                "max": 16
+                            }
+                        }
+                    ]
+                } 
+            ]
+        }
+    ]
+}

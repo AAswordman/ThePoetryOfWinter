@@ -1,0 +1,13 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.territory.base": {
+      "loop": true,
+      "bones": {
+        "head1": { "rotation": [ "query.life_time*45", "query.life_time*45", "query.life_time*45" ],"position":[0,"Math.sin(query.life_time*120)*3",0] },
+        "head2": { "rotation": [ "query.life_time*90", "query.life_time*90", "query.life_time*90" ],"position":[0,"Math.sin(query.life_time*120)*3",0] },
+        "head3": { "rotation": [ "query.life_time*-90", "query.life_time*-90", "query.life_time*-90" ],"position":[0,"Math.sin(query.life_time*120)*3",0] }
+      }
+    }
+  }
+}

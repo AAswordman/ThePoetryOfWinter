@@ -1,0 +1,88 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:ice_thorn",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+    },
+    "components": {
+      "minecraft:explode": {
+        "fuseLength": 5,
+        "fuseLit": true,
+        "power": 0,
+        "causesFire": false
+      },
+      "minecraft:scale": {
+        "value": 1.0
+      },
+      "minecraft:timer": {
+        "looping": true,
+        "randomInterval": true,
+        "time": [
+          2.0,
+          2.0
+        ],
+        "time_down_event": {
+          "event": "dec:attack"
+        }
+      },
+      "minecraft:type_family": {
+        "family": [
+          "ice_thorn",
+          "frozen",
+          "inanimate"
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 1.0,
+        "height": 2.0
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "fall",
+            "deals_damage": false
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "frozen"
+              }
+            },
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:health": {
+        "value": 6,
+        "max": 6
+      },
+      "minecraft:movement": {
+        "value": 0.0
+      },
+      "minecraft:knockback_resistance": {
+        "value": 100.0
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      },
+      "minecraft:physics": {}
+    },
+    "events": {
+      "dec:attack": {
+        "run_command": {
+          "command": [
+            "damage @e[type=!item,family=!frozen,x=~-0.5,y=~-0.5,z=~-0.5,dx=1,dy=3,dz=1] 15 magic"
+          ]
+        }
+      }
+    }
+  }
+}

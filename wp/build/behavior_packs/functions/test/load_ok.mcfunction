@@ -1,0 +1,1 @@
+tellraw @s { "rawtext" : [ { "translate" : "text.dec:load_ok.name" } ] }

@@ -1,0 +1,120 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+
+    "description": {
+      "identifier": "dec:little_bat",
+      "runtime_identifier": "minecraft:bat",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+
+    "component_groups": {
+      "minecraft:disappear": {
+        "minecraft:explode": {
+          "fuseLength": 0.01,
+          "fuseLit": true,
+          "power": 0,
+          "causesFire": false
+        }
+      }
+    },
+
+    "components": {
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
+      "minecraft:type_family": {
+        "family": [ "mob", "villager","little_bat", "player" ]
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:timer": {
+        "looping": false,
+        "time": 10,
+        "time_down_event": {
+          "event": "minecraft:disappear",
+          "target": "self"
+        }
+      },
+      "minecraft:health": {
+        "value": 5,
+        "max": 5
+      },
+      "minecraft:physics": {
+        "has_gravity": false
+      },
+      "minecraft:attack": {
+        "damage": 6
+      },
+      "minecraft:breathable": {
+        "totalSupply": 15,
+        "suffocateTime": 0,
+        "breathesAir": true,
+        "breathesWater": false
+      },
+      "minecraft:collision_box": {
+        "width": 0.4,
+        "height": 0.72
+      },
+      "minecraft:movement": {
+        "value": 6.0
+      },
+      "minecraft:movement.glide": {
+        "start_speed": 0.1,
+        "speed_when_turning": 0.2
+      },
+      "minecraft:follow_range": {
+        "value": 64,
+        "max": 64
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 1,
+        "within_radius": 64,
+        "reselect_targets": true,
+        "entity_types": [
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "monster"
+            },
+            "max_dist": 64
+          }
+        ],
+        "must_see": false,
+        "must_see_forget_duration": 0.5,
+        "scan_interval": 5,
+        "target_search_height": 80.0
+      },
+      "minecraft:behavior.swoop_attack": {
+        "priority": 2,
+        "delay_range": [ 3.0, 3.0 ]
+      },
+      "minecraft:behavior.circle_around_anchor": {
+        "priority": 3,
+        "radius_range": [ 30.0, 30.0 ],
+        "radius_change_chance": 100,
+        "height_above_target_range": [ 10.0, 20.0 ],
+        "height_offset_range": [ -4.0, 5.0 ],
+        "height_change_chance": 350,
+        "goal_radius": 1.0
+      }
+    },
+    "events": {
+      "minecraft:disappear": {
+        "run_command": {
+          "command": [
+            "particle dec:summon_staff_spawn_disappear ~~~"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:disappear"
+          ]
+        }
+      }
+    }
+  }
+}

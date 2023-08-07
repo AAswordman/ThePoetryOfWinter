@@ -1,0 +1,32 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.saucer",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 1,
+				"visible_bounds_height": 1,
+				"visible_bounds_offset": [0, 0, 0]
+			},
+			"bones": [
+				{
+					"name": "bottom",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-10, 0, -10], "size": [20, 1, 20], "uv": [0, 0]},
+						{"origin": [-7, 1, -7], "size": [14, 1, 14], "uv": [0, 21]}
+					]
+				},
+				{
+					"name": "body",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-6, 2, -6], "size": [12, 6, 12], "uv": [0, 36]}
+					]
+				}
+			]
+		}
+	]
+}

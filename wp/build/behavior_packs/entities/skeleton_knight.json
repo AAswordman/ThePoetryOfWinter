@@ -1,0 +1,229 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:skeleton_knight",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "minecraft:melee_attack": {
+        "minecraft:behavior.melee_attack": {
+          "priority": 4,
+          "target_dist": 1.2,
+          "speed_multiplier": 1.25,
+          "track_target": true
+        },
+        "minecraft:attack": {
+          "damage": 5
+        }
+      },
+      "minecraft:jockey": {
+        "minecraft:behavior.find_mount": {
+          "priority": 1,
+          "within_radius": 16,
+          "start_delay": 15,
+          "max_failed_attempts": 20
+        }
+      },
+        "minecraft:ranged_attack": {
+          "minecraft:behavior.ranged_attack": {
+            "attack_interval_min": 1,
+            "attack_interval_max": 3,
+            "attack_radius": 32
+          },
+          "minecraft:shooter": {
+            "type": "Arrow",
+            "def": "minecraft:arrow"
+          }
+        }
+      },
+
+      "components": {
+        "minecraft:burns_in_daylight": {
+        },
+        "minecraft:behavior.find_mount": {
+          "priority": 1,
+          "within_radius": 16
+        },
+        "minecraft:experience_reward": {
+          "on_death": "query.last_hit_by_player ? 10 : 0"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/entities/skeleton_gear.json",
+          "slot_drop_chance": [
+            {
+              "slot": "slot.weapon.mainhand",
+              "drop_chance": 0.0005
+            },
+            {
+              "slot": "slot.armor.head",
+              "drop_chance": 0.0005
+            },
+            {
+              "slot": "slot.armor.chestplate",
+              "drop_chance": 0.0005
+            },
+            {
+              "slot": "slot.armor.leggings",
+              "drop_chance": 0.0005
+            },
+            {
+              "slot": "slot.armor.boots",
+              "drop_chance": 0.0005
+            }
+          ]
+        },
+        "minecraft:type_family": {
+          "family": [  "skeleton_knight", "zombie", "skeleton", "monster", "mob","jockey" ]
+        },
+        "minecraft:breathable": {
+          "total_supply": 15,
+          "suffocate_time": 0
+        },
+        "minecraft:despawn": {
+          "despawn_from_distance": {}
+        },
+        "minecraft:nameable": {
+        },
+        "minecraft:collision_box": {
+          "width": 0.6,
+          "height": 1.9
+        },
+        "minecraft:movement": {
+          "value": 0.27
+        },
+        "minecraft:navigation.walk": {
+          "is_amphibious": true,
+          "avoid_sun": true,
+          "avoid_water": true
+        },
+        "minecraft:movement.basic": {
+
+        },
+        "minecraft:jump.static": {
+        },
+        "minecraft:can_climb": {
+        },
+        "minecraft:loot": {
+          "table": "loot_tables/entities/skeleton.json"
+        },
+        "minecraft:health": {
+          "value": {
+            "range_min": 22,
+            "range_max": 30
+          }
+        },
+        "minecraft:hurt_on_condition": {
+          "damage_conditions": [
+            {
+              "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+              "cause": "lava",
+              "damage_per_tick": 4
+            }
+          ]
+        },
+        "minecraft:target_nearby_sensor": {
+          "inside_range": 4,
+          "outside_range": 5,
+          "must_see": true,
+          "on_inside_range": {
+            "event": "minecraft:melee_attack",
+            "target": "self"
+          },
+          "on_outside_range": {
+            "event": "minecraft:ranged_attack",
+            "target": "self"
+          },
+          "on_vision_lost_inside_range": {
+            "event": "minecraft:ranged_attack",
+            "target": "self"
+          }
+        },
+        "minecraft:behavior.float": {
+          "priority": 0
+        },
+        "minecraft:behavior.random_stroll": {
+          "priority": 5,
+          "speed_multiplier": 1
+        },
+        "minecraft:behavior.look_at_player": {
+          "priority": 6,
+          "look_distance": 8
+        },
+        "minecraft:behavior.random_look_around": {
+          "priority": 6
+        },
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 2,
+          "reselect_targets": true,
+          "entity_types": [
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+              },
+              "max_dist": 16
+            },
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "villager"
+              },
+              "max_dist": 16
+            },
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "irongolem"
+              },
+              "max_dist": 16
+            },
+            {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "baby_turtle"
+                  },
+                  {
+                    "test": "in_water",
+                    "subject": "other",
+                    "operator": "!=",
+                    "value": true
+                  }
+                ]
+              },
+              "max_dist": 32
+            }
+          ],
+          "must_see": true
+        },
+        "minecraft:behavior.hurt_by_target": {
+          "priority": 2
+        },
+        "minecraft:physics": {
+        },
+        "minecraft:pushable": {
+          "is_pushable": true,
+          "is_pushable_by_piston": true
+        }
+      },
+
+      "events": {
+        "minecraft:melee_attack": {
+          "remove": { "component_groups": [ "minecraft:ranged_attack" ] },
+          "add": { "component_groups": [ "minecraft:melee_attack" ] }
+        },
+        "minecraft:ranged_attack": {
+          "add": { "component_groups": [ "minecraft:ranged_attack" ] },
+          "remove": { "component_groups": [ "minecraft:melee_attack" ] }
+        }
+      }
+    }
+  }

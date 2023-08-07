@@ -1,0 +1,15 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.ender_snake": {
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.default" ]
+    },
+    "controller.render.ender_snake_glow": {
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.glow" } ],
+      "textures": [ "Texture.glow" ]
+    }
+  }
+}

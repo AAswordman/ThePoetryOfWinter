@@ -1,0 +1,49 @@
+{
+  "format_version": "1.8.0",
+ "minecraft:entity": {
+  "description": {
+    "identifier": "wb:ball_intentions_first_gas",
+    "is_spawnable": false,
+    "is_summonable": true,
+    "is_experimental": false,
+    "runtime_identifier": "minecraft:snowball"
+  },
+  "components": {
+    "minecraft:collision_box": {
+    "width": 0.8,
+    "height": 0.1
+   },
+    "minecraft:explode": {
+     "fuseLength": 3,
+     "fuseLit": true,
+     "breaks_blocks":false,
+     "power": 2,
+     "causesFire": false,
+     "fireAffectedByGriefing": true,
+     "destroyAffectedByGriefing": true
+    },
+   "minecraft:projectile": {
+    "onHit": {
+      "impact_damage": {
+        "damage": 40,
+        "knockback": true,
+        "catchFire": false,
+        "semirandomdiffdamage": false,
+        "destroy_on_hit":false
+      }
+    },
+    "power": 0.68,
+    "gravity": 0.00,
+    "inertia": 1,
+    "anchor": 2,
+    "offset": [ 0, 0, 0 ],
+    "semirandomdiffdamage": false,
+    "uncertaintyBase": 0.0,
+    "reflectOnHurt": true,
+    "multiple_targets":true
+   },
+   "minecraft:physics": {
+   }
+  }
+ }
+}

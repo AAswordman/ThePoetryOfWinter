@@ -1,0 +1,131 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "nature",
+      "identifier": "dec:bizarre_chilli"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.crop"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:bizarre_chilli.name"
+      },
+      "minecraft:icon": {
+        "texture": "bizarre_chilli"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "cookie",
+      "minecraft:use_duration": 1.6,
+      "minecraft:food": {
+        "nutrition": 2,
+        "saturation_modifier": "low",
+        "on_consume": {
+          "event": "consumed",
+          "target": "self"
+        }
+      }
+    },
+    "events": {
+      "consumed": {
+        "sequence": [
+          {
+            "randomize": [
+              {
+                "weight": 1,
+                "add_mob_effect": {
+                  "effect": "speed",
+                  "duration": 50,
+                  "amplifier": 0,
+                  "target": "holder"
+                }
+              },
+              {
+                "weight": 2,
+                "add_mob_effect": {
+                  "effect": "jump_boost",
+                  "duration": 40,
+                  "amplifier": 2,
+                  "target": "holder"
+                }
+              },
+              {
+                "weight": 4,
+                "add_mob_effect": {
+                  "effect": "jump_boost",
+                  "duration": 40,
+                  "amplifier": 1,
+                  "target": "holder"
+                }
+              },
+              {
+                "weight": 6,
+                "add_mob_effect": {
+                  "effect": "jump_boost",
+                  "duration": 40,
+                  "amplifier": 0,
+                  "target": "holder"
+                }
+              },
+              {
+                "weight": 2,
+                "add_mob_effect": {
+                  "effect": "regeneration",
+                  "duration": 40,
+                  "amplifier": 0,
+                  "target": "holder"
+                }
+              },
+              {
+                "weight": 1,
+                "add_mob_effect": {
+                  "effect": "regeneration",
+                  "duration": 40,
+                  "amplifier": 1,
+                  "target": "holder"
+                }
+              },
+              {
+                "weight": 1,
+                "add_mob_effect": {
+                  "effect": "hunger",
+                  "duration": 60,
+                  "amplifier": 0,
+                  "target": "holder"
+                }
+              },
+              {
+                "weight": 1,
+                "add_mob_effect": {
+                  "effect": "blindness",
+                  "duration": 20,
+                  "amplifier": 0,
+                  "target": "holder"
+                }
+              },
+              {
+                "weight": 1,
+                "add_mob_effect": {
+                  "effect": "darkness",
+                  "duration": 40,
+                  "amplifier": 0,
+                  "target": "holder"
+                }
+              },
+              {
+                "weight": 1,
+                "add_mob_effect": {
+                  "effect": "wither",
+                  "duration": 12,
+                  "amplifier": 0,
+                  "target": "holder"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

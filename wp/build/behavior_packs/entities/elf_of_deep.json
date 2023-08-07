@@ -1,0 +1,211 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:elf_of_deep",
+      "runtime_identifier": "minecraft:vex",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "minecraft:ranged_mode": {
+        "minecraft:equipment": {
+          "table": "loot_tables/entities/elf_of_deep_ranged_gear.json"
+        },
+        "minecraft:shooter": {
+          "def": "dec:mind_controller"
+        },
+        "minecraft:behavior.ranged_attack": {
+          "priority": 4,
+          "attack_interval_min": 1.0,
+          "attack_interval_max": 3.0,
+          "attack_radius": 15.0
+        }
+      },
+      "minecraft:melee_mode": {
+        "minecraft:behavior.charge_attack": {
+          "priority": 4,
+          "speed_multiplier": 2.0
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/entities/elf_of_deep_melee_gear.json"
+        }
+      }
+    },
+    "components": {
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+          "cause": "fall",
+          "deals_damage": false
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "deep"
+              }
+            },
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:experience_reward": {
+        "on_death": "query.last_hit_by_player ? 5 + (query.equipment_count * Math.Random(1,3)) : 0"
+      },
+      "minecraft:nameable": {},
+      "minecraft:type_family": {
+        "family": [
+          "elf_of_deep",
+          "monster",
+          "deep",
+          "mob"
+        ]
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/elf_of_deep.json"
+      },
+      "minecraft:health": {
+        "value": 10,
+        "max": 10
+      },
+      "minecraft:attack": {
+        "damage": 1
+      },
+      "minecraft:collision_box": {
+        "width": 0.4,
+        "height": 0.8
+      },
+      "minecraft:movement": {
+        "value": 1.0
+      },
+      "minecraft:navigation.walk": {
+        "can_path_over_water": true
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
+      "minecraft:fire_immune": {},
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 3,
+        "entity_types": [
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "wandering_trader"
+                }
+              ]
+            },
+            "max_dist": 70
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "villager"
+                },
+                {
+                  "test": "has_component",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "minecraft:is_baby"
+                }
+              ]
+            },
+            "max_dist": 70
+          }
+        ],
+        "must_see": true
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 9,
+        "look_distance": 6.0,
+        "probability": 0.02
+      },
+      "minecraft:behavior.look_at_entity": {
+        "priority": 9,
+        "look_distance": 6.0,
+        "probability": 0.02,
+        "filters": {
+          "test": "is_family",
+          "subject": "other",
+          "value": "mob"
+        }
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1,
+        "entity_types": {
+          "filters": {
+            "test": "is_family",
+            "subject": "other",
+            "operator": "!=",
+            "value": "deep"
+          },
+          "max_dist": 64
+        }
+      },
+      "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": false
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "sequence": [
+          {
+            "randomize": [
+              {
+                "weight": 1,
+                "sequence": [
+                  {
+                    "randomize": [
+                      {
+                        "weight": 1,
+                        "add": {
+                          "component_groups": [
+                            "minecraft:ranged_mode"
+                          ]
+                        }
+                      },
+                      {
+                        "weight": 1,
+                        "add": {
+                          "component_groups": [
+                            "minecraft:melee_mode"
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

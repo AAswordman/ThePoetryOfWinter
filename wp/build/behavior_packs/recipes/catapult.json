@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:catapult"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XAX",
+      " X ",
+      " X "
+    ],
+    "key": {
+      "X": {
+        "item": "minecraft:log"
+      },
+      "A": {
+        "item": "dec:hemp_rope"
+      }
+    },
+    "result": {
+      "item": "dec:catapult"
+    }
+  }
+}

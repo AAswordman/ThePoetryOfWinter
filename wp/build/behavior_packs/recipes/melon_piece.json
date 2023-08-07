@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:melon_piece"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:melon",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "dec:melon_piece",
+      "data": 0,
+      "count": 6
+    }
+  }
+}

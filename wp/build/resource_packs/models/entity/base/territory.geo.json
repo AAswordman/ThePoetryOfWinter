@@ -1,0 +1,49 @@
+{
+	"format_version": "1.10.0",
+	"geometry.territory": {
+		"texturewidth": 2048,
+		"textureheight": 1024,
+		"visible_bounds_width": 15,
+		"visible_bounds_height": 14,
+		"visible_bounds_offset": [0, 7, 0],
+		"bones": [
+			{
+				"name": "body",
+				"pivot": [0, 0, 0],
+				"cubes": [
+					{"origin": [-256, -256, -256], "size": [512, 512, 512], "uv": [0, 0]}
+				]
+			}
+		]
+	},
+	"geometry.territory_crystal": {
+		"texturewidth": 1024,
+		"textureheight": 1024,
+		"visible_bounds_width": 15,
+		"visible_bounds_height": 14,
+		"visible_bounds_offset": [0, 7, 0],
+		"bones": [
+			{
+				"name": "head1",
+				"pivot": [0, 20, 0],
+				"cubes": [
+					{"origin": [-6, 14, -6], "size": [12, 12, 12], "uv": [0, 51]}
+				]
+			},
+			{
+				"name": "head2",
+				"pivot": [0, 20, 0],
+				"cubes": [
+					{"origin": [-8, 12, -8], "size": [16, 16, 16], "uv": [0, 1]}
+				]
+			},
+			{
+				"name": "head3",
+				"pivot": [0, 20, 0],
+				"cubes": [
+					{"origin": [-8, 12, -8], "size": [16, 16, 16], "uv": [0, 1]}
+				]
+			}
+		]
+	}
+}

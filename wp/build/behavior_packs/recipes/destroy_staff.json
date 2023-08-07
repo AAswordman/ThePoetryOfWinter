@@ -1,0 +1,34 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:destroy_staff"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " X ",
+      "ABA",
+      "C#C"
+    ],
+    "key": {
+      "#": {
+        "item": "dec:iron_stick"
+      },
+      "X": {
+        "item": "minecraft:diamond_shovel"
+      },
+      "A": {
+        "item": "minecraft:obsidian"
+      },
+      "B": {
+        "item": "minecraft:diamond_pickaxe"
+      },
+      "C": {
+        "item": "minecraft:copper_block"
+      }
+    },
+    "result": {
+      "item": "dec:destroy_staff"
+    }
+  }
+}

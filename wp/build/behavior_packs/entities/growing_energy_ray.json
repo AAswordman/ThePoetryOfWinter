@@ -1,0 +1,81 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:growing_energy_ray",
+      "runtime_identifier": "minecraft:egg",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "ticking"
+        ]
+      },
+      "animations": {
+        "ticking": "controller.animation.particle_flower_ghost_block"
+      }
+    },
+    "component_groups": {},
+    "components": {
+      "minecraft:explode": {
+        "fuseLength": 3,
+        "fuseLit": true,
+        "power": 0,
+        "causesFire": false
+      },
+      "minecraft:collision_box": {
+        "width": 0.31,
+        "height": 0.31
+      },
+      "minecraft:projectile": {
+        "onHit": {
+          "definition_event": {
+            "affect_projectile": true,
+            "event_trigger": {
+              "event": "minecraft:explode",
+              "target": "self"
+            }
+          },
+          "impact_damage": {
+            "damage": 6,
+            "knockback": true,
+            "catchFire": false,
+            "semirandomdiffdamage": false
+          }
+        },
+        "hit_sound": "bullet.hit",
+        "power": 0.6,
+        "gravity": 0.00,
+        "inertia": 1.0,
+        "liquid_inertia": 1.0,
+        "anchor": 1,
+        "offset": [
+          0,
+          0,
+          1
+        ],
+        "semirandomdiffdamage": true,
+        "uncertaintyBase": 13.0,
+        "uncertaintyMultiplier": 8,
+        "reflectOnHurt": true,
+        "shoot_target": false
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    },
+    "events": {
+      "minecraft:explode": {
+        "run_command": {
+          "command": [
+            "fill ~-0.5~-0.5~-0.5~0.5~0.5~0.5 dec:flower_ghost_block [] replace air []",
+            "particle dec:flower_ghost_block_particle ~~~",
+            "kill @s"
+          ]
+        }
+      }
+    }
+  }
+}

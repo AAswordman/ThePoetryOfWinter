@@ -1,0 +1,14 @@
+{
+    "format_version": "1.8.0", 
+    "animations": {
+        "animation.frozen_ball": {
+          "timeline": {
+              "0.1": [
+                "/particle dec:everlasting_winter_wake_particle ~~~"
+              ]
+          }, 
+          "animation_length": 0.2, 
+          "loop": true
+        }
+     }
+  }

@@ -1,0 +1,51 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:haste_potion"
+    },
+    "components": {
+      "minecraft:max_stack_size": 1,
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.potion"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:haste_potion.name"
+      },
+      "minecraft:icon": {
+        "texture": "haste_potion"
+      },
+      "minecraft:use_animation": "drink",
+      "minecraft:render_offsets": "cookie",
+      "minecraft:hand_equipped": false,
+      "minecraft:stacked_by_data": false,
+      "minecraft:use_duration": 1.6,
+      "minecraft:foil": true,
+      "minecraft:food": {
+        "using_converts_to": "glass_bottle",
+        "nutrition": 0,
+        "saturation_modifier": "supernatural",
+        "can_always_eat": true,
+        "on_consume": {
+          "event": "consumed",
+          "target": "self"
+        }
+      }
+    },
+    "events": {
+      "consumed": {
+        "sequence": [
+          {
+            "add_mob_effect": {
+              "effect": "haste",
+              "duration": 300,
+              "amplifier": 0,
+              "target": "holder"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

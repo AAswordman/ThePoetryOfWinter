@@ -1,0 +1,101 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:event_shadow_night",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+      "minecraft:timer": {
+        "looping": true,
+        "time": 2,
+        "time_down_event": {
+          "event": "minecraft:summon"
+        }
+      },
+      "minecraft:health": {
+        "value": 100000,
+        "max": 100000
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": false
+      },
+      "minecraft:collision_box": {
+        "width": 0,
+        "height": 0
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "run_command": {
+          "command": [
+            "spreadplayers ~~ 16 32 @s"
+          ],
+          "target": "self"
+        }
+      },
+      "minecraft:summon": {
+        "sequence": [
+          {
+            "add": {
+              "component_groups": [
+                "minecraft:despawn"
+              ]
+            }
+          },
+          {
+            "randomize": [
+              {
+                "weight": 1,
+                "run_command": {
+                  "command": [
+                    "summon dec:shadow_archer ~~~ 0 0 minecraft:from_night_event"
+                  ],
+                  "target": "self"
+                }
+              },
+              {
+                "weight": 1,
+                "run_command": {
+                  "command": [
+                    "summon dec:shadow_creeper ~~~ 0 0 minecraft:from_night_event"
+                  ],
+                  "target": "self"
+                }
+              },
+              {
+                "weight": 1,
+                "run_command": {
+                  "command": [
+                    "summon dec:shadow_skeleton ~~~ 0 0 minecraft:from_night_event"
+                  ],
+                  "target": "self"
+                }
+              },
+              {
+                "weight": 1,
+                "run_command": {
+                  "command": [
+                    "summon dec:shadow_zombie ~~~ 0 0 minecraft:from_night_event"
+                  ],
+                  "target": "self"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

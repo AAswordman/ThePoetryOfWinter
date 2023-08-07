@@ -1,0 +1,36 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:sticky_ash"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.sword"
+      },
+      "minecraft:fuel": {
+        "duration": 20.0
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:sticky_ash.name"
+      },
+      "minecraft:icon": {
+        "texture": "sticky_ash"
+      },
+      "minecraft:use_animation": "crossbow",
+      "minecraft:render_offsets": "bow",
+      "minecraft:cooldown": {
+        "category": "missile",
+        "duration": 1
+      },
+      "minecraft:throwable": {
+        "do_swing_animation": true
+      },
+      "minecraft:projectile": {
+        "projectile_entity": "dec:sticky_ash"
+      },
+      "tag:comp:equipment_type:thrown_weapon":{}
+    }
+  }
+}

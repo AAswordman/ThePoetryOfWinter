@@ -1,0 +1,14 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_furnace": {
+    "description": {
+    "identifier": "dec:furnace_stream_ore"
+    },
+
+    
+    "tags": ["blast_furnace"],
+    "input": "dec:stream_ore",
+    "output": "dec:stream_stone"
+  }
+  
+}

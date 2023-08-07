@@ -1,0 +1,27 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:tofu"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.miscFood"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:tofu.name"
+      },
+      "minecraft:icon": {
+        "texture": "tofu"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "cookie",
+      "minecraft:use_duration": 0.5,
+      "minecraft:food": {
+        "nutrition": 8,
+        "saturation_modifier": "normal"
+      }
+    }
+  }
+}

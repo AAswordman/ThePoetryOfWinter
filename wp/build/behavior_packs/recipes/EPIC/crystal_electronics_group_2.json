@@ -1,0 +1,37 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+      "description": {
+      "identifier": "epic:crystal_electronics_group_2"
+      },  
+      "tags": [ "crafting_table" ],
+      "pattern": [
+        "CBC",
+        "CAC",
+        "EFD"
+      ],
+      "key": {
+        "A": {
+          "item": "epic:crystal_electronics_group_broken"
+        },
+        "D": {
+          "item": "minecraft:copper_ingot"
+        },
+        "E":{
+          "item":"minecraft:gold_ingot"
+        },
+        "F":{
+          "item":"dec:steel_ingot"
+        },
+        "B":{
+          "item":"wb:integrated_circuit_board"
+        },
+        "C":{
+          "item":"minecraft:amethyst_shard"
+        }
+      },
+      "result": {
+        "item": "epic:crystal_electronics_group"
+      }
+    }
+  }

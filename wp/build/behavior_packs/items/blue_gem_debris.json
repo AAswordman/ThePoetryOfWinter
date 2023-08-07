@@ -1,0 +1,20 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "items",
+      "identifier": "dec:blue_gem_debris"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.decorations"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:blue_gem_debris.name"
+      },
+      "minecraft:icon": {
+        "texture": "blue_gem_debris"
+      }
+    }
+  }
+}

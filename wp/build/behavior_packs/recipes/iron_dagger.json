@@ -1,0 +1,24 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:iron_dagger"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "A",
+      "X"
+    ],
+    "key": {
+      "X": {
+        "item": "minecraft:stick"
+      },
+      "A": {
+        "item": "minecraft:iron_ingot"
+      }
+    },
+    "result": {
+      "item": "dec:iron_dagger"
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:gingerbread_sword"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.sword"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:gingerbread_sword.name"
+      },
+      "minecraft:icon": {
+        "texture": "gingerbread_sword"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "sword",
+      "minecraft:can_destroy_in_creative": false,
+      "minecraft:weapon": {
+        "on_hurt_entity": {
+          "event": "attack",
+          "target": "self"
+        },
+        "on_hit_block": {
+          "event": "attack",
+          "target": "self"
+        }
+      },
+      "minecraft:stacked_by_data": false,
+      "minecraft:max_stack_size": 1,
+      "minecraft:use_duration": 3.2,
+      "minecraft:durability": {
+        "max_durability": 123
+      },
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "dec:gingerbread_man"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.4"
+          }
+        ]
+      },
+      "minecraft:enchantable": {
+        "value": 30,
+        "slot": "sword"
+      },
+      "minecraft:damage": 5,
+      "minecraft:foil": false,
+      "minecraft:hand_equipped": true,
+      "minecraft:food": {
+        "on_consume": {
+          "event": "consumed",
+          "target": "self"
+        },
+        "nutrition": 5,
+        "saturation_modifier": "good",
+        "can_always_eat": true
+      },
+      "tag:comp:equipment_type:melee_weapon":{}
+    },
+    "events": {
+      "attack": {
+        "damage": {
+          "type": "magic",
+          "amount": 1
+        }
+      },
+      "consumed": {
+        "sequence": [
+          {
+            "add_mob_effect": {
+              "effect": "regeneration",
+              "duration": 10,
+              "amplifier": 1,
+              "target": "holder"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

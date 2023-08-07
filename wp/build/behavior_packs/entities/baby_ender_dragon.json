@@ -1,0 +1,272 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:baby_ender_dragon",
+      "runtime_identifier": "minecraft:skeleton",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "minecraft:fly": {
+        "minecraft:behavior.circle_around_anchor": {
+          "priority": 3,
+          "radius_range": [
+            10.0,
+            17.0
+          ],
+          "radius_change_chance": 150,
+          "height_above_target_range": [
+            1.0,
+            3.0
+          ],
+          "height_offset_range": [
+            -4.0,
+            5.0
+          ],
+          "height_change_chance": 250,
+          "goal_radius": 1.0
+        },
+        "minecraft:movement.glide": {
+          "start_speed": 0.8,
+          "speed_when_turning": 0.6
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 5,
+          "time_down_event": {
+            "event": "minecraft:ranged_attack"
+          }
+        }
+      },
+
+      "minecraft:ranged_attack": {
+        "minecraft:timer": {
+          "looping": false,
+          "time": 3,
+          "time_down_event": {
+            "event": "minecraft:melee_attack"
+          }
+        }
+      },
+
+      "minecraft:melee_attack": {
+        "minecraft:movement.glide": {
+          "start_speed": 0.8,
+          "speed_when_turning": 0.6
+        },
+        "minecraft:behavior.swoop_attack": {
+          "priority": 2,
+          "delay_range": [
+            0.0,
+            5.0
+          ]
+        },
+        "minecraft:behavior.circle_around_anchor": {
+          "priority": 3,
+          "radius_range": [
+            4.0,
+            7.0
+          ],
+          "radius_change_chance": 150,
+          "height_above_target_range": [
+            1.0,
+            3.0
+          ],
+          "height_offset_range": [
+            -4.0,
+            5.0
+          ],
+          "height_change_chance": 250,
+          "goal_radius": 1.0
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 15,
+          "time_down_event": {
+            "event": "minecraft:fly"
+          }
+        }
+      }
+
+    },
+    "components": {
+      "minecraft:despawn": {
+        "despawn_from_distance": {
+          "min_distance": 64,
+          "max_distance": 64
+        }
+      },
+      "minecraft:fire_immune": true,
+      "minecraft:experience_reward": {
+        "on_death": "query.last_hit_by_player ? 200 : 0"
+      },
+      "minecraft:type_family": {
+        "family": [
+          "baby_ender_dragon",
+          "monster",
+          "mini_boss",
+          "mob",
+          "shadow"
+        ]
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/baby_ender_dragon.json"
+      },
+      "minecraft:nameable": {},
+      "minecraft:health": {
+        "value": 300,
+        "max": 300
+      },
+      "minecraft:physics": {
+        "has_gravity": false
+      },
+      "minecraft:attack": {
+        "damage": 12
+      },
+      "minecraft:breathable": {
+        "totalSupply": 15,
+        "suffocateTime": 0,
+        "breathesAir": true,
+        "breathesWater": false
+      },
+      "minecraft:collision_box": {
+        "width": 3,
+        "height": 1.5
+      },
+      "minecraft:movement": {
+        "value": 0.8
+      },
+      "minecraft:follow_range": {
+        "value": 256,
+        "max": 256
+      },
+      "minecraft:boss": {
+        "should_darken_sky": false,
+        "name": "mini_boss.dec:baby_ender_dragon.name",
+        "hud_range": 64
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1.0
+      },
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 0,
+				"within_radius": 256,
+				"reselect_targets": true,
+				"entity_types": [
+					{
+						"filters": {
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "player"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "snowgolem"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "irongolem"
+								}
+							]
+						},
+						"max_dist": 256
+					},
+					{
+						"filters": {
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "villager"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "wandering_trader"
+								}
+							]
+						},
+						"max_dist": 256,
+						"must_see": false
+					}
+				],
+				"must_see": true
+			}
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "minecraft:fly"
+          ]
+        }
+      },
+      "minecraft:ranged_attack": {
+        "remove": {
+          "component_groups": [
+            "minecraft:fly"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:ranged_attack"
+          ]
+        }
+      },
+      "minecraft:melee_attack": {
+        "run_command": {
+          "command": [
+            "summon dec:dragon_head ^^2^",
+            "summon dec:dragon_head ^^-2^",
+            "summon dec:dragon_head ^2^^",
+            "summon dec:dragon_head ^-2^^"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "minecraft:ranged_attack"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:melee_attack"
+          ]
+        }
+      },
+      "minecraft:fly": {
+        "remove": {
+          "component_groups": [
+            "minecraft:melee_attack"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:fly"
+          ]
+        }
+      },
+      "minecraft:start_attack": {
+        "remove": {
+          "component_groups": [
+            "minecraft:spawn"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:fly"
+          ]
+        }
+      }
+    }
+  }
+}

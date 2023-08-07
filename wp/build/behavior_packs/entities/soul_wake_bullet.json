@@ -1,0 +1,63 @@
+{
+  "format_version": "1.12.0",
+ "minecraft:entity": {
+  "description": {
+    "identifier": "dec:soul_wake_bullet",
+    "runtime_identifier": "minecraft:egg",
+    "is_spawnable": false,
+    "is_summonable": true,
+    "is_experimental": false
+  },
+  "components": {
+    "minecraft:projectile": {
+      "onHit": {
+        "mob_effect": {
+          "effect": "blindness",
+          "durationeasy": 40,
+          "durationnormal": 40,
+          "durationhard": 40,
+          "amplifier": 0
+        },
+        "impact_damage": {
+          "damage": 0,
+          "knockback": false,
+          "catchFire": false,
+          "semirandomdiffdamage": false
+        },
+        "remove_on_hit": { }
+      },
+      "power": 0.0,
+      "gravity": 0.0,
+      "inertia": 1.1,
+      "liquid_inertia": 1,
+      "anchor": 1,
+      "offset": [ 0, 0, 1 ],
+      "semirandomdiffdamage": true,
+      "uncertaintyBase": 6.0,
+      "uncertaintyMultiplier": 6,
+      "reflectOnHurt": false
+     },
+    "minecraft:type_family": {
+      "family": ["soul_wake_bullet"]
+    },
+    "minecraft:pushable": {
+      "is_pushable": false,
+      "is_pushable_by_piston": false
+    },
+    
+   "minecraft:collision_box": {
+    "width": 0.2,
+    "height": 0.2
+   },
+   "minecraft:explode": {
+    "fuseLength": 5,
+    "fuseLit": true,
+    "power": 0,
+    "causesFire": false
+    },
+    "minecraft:physics": {
+      "has_gravity": false
+   }
+  }
+ }
+}

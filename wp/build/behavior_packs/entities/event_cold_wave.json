@@ -1,0 +1,140 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:event_cold_wave",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+      "minecraft:timer": {
+        "looping": true,
+        "time": 2,
+        "time_down_event": {
+          "event": "minecraft:summon"
+        }
+      },
+      "minecraft:health": {
+        "value": 100000,
+        "max": 100000
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": false
+      },
+      "minecraft:collision_box": {
+        "width": 0,
+        "height": 0
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "run_command": {
+          "command": [
+            "spreadplayers ~~ 16 32 @s"
+          ],
+          "target": "self"
+        }
+      },
+      "minecraft:summon": {
+        "sequence": [
+          {
+            "add": {
+              "component_groups": [
+                "minecraft:despawn"
+              ]
+            }
+          },
+          {
+            "randomize": [
+              {
+                "weight": 4,
+                "run_command": {
+                  "command": [
+                    "summon stray ~~~ 0 0 minecraft:entity_spawned"
+                  ],
+                  "target": "self"
+                }
+              },
+              {
+                "weight": 4,
+                "run_command": {
+                  "command": [
+                    "summon dec:ice_zombie ~~~ 0 0 minecraft:from_night_event"
+                  ],
+                  "target": "self"
+                }
+              },
+              {
+                "weight": 1,
+                "run_command": {
+                  "command": [
+                    "summon dec:ice_blaze ~~~ 0 0 minecraft:from_night_event"
+                  ],
+                  "target": "self"
+                }
+              },
+              {
+                "weight": 10,
+                "run_command": {
+                  "command": [
+                    "summon dec:frozen_spider ~~~ 0 0 minecraft:from_night_event"
+                  ],
+                  "target": "self"
+                }
+              },
+              {
+                "weight": 1,
+                "run_command": {
+                  "command": [
+                    "execute unless entity @e[type=dec:frozen_heart,r=64] unless entity @e[type=dec:frozen_heart_sleeping,r=64] run tag @s add frozen_heart_success",
+                    "execute if entity @s[tag=frozen_heart_success] run summon dec:frozen_heart_sleeping ~~~ 0 0 minecraft:from_night_event",
+                    "execute if entity @s[tag=!frozen_heart_success] run summon dec:frozen_ghast ~~~ 0 0 minecraft:from_night_event",
+                    "tag @s remove frozen_heart_success"
+                  ],
+                  "target": "self"
+                }
+              },
+              {
+                "weight": 60,
+                "run_command": {
+                  "command": [
+                    "summon dec:tnt_snow_man ~~~ 0 0 minecraft:from_night_event"
+                  ],
+                  "target": "self"
+                }
+              },
+              {
+                "weight": 60,
+                "run_command": {
+                  "command": [
+                    "summon dec:evil_snow_man ~~~ 0 0 minecraft:from_night_event"
+                  ],
+                  "target": "self"
+                }
+              },
+              {
+                "weight": 60,
+                "run_command": {
+                  "command": [
+                    "summon dec:dark_snow_man ~~~ 0 0 minecraft:from_night_event"
+                  ],
+                  "target": "self"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:everlasting_winter_ghast_anchor",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "boss",
+          "frozen"
+        ]
+      },
+      "minecraft:health": {
+        "value": 100000,
+        "max": 100000
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": false
+      },
+      "minecraft:collision_box": {
+        "width": 0,
+        "height": 0
+      }
+    },
+    "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
+      "minecraft:die": {
+        "run_command": {
+          "command": [
+            "loot spawn ~~1~ loot \"entities/everlasting_winter_ghast\"",
+            "particle dec:frozen_shield_particle ~~1~",
+            "event entity @s minecraft:despawn"
+          ]
+        }
+      },
+      "minecraft:summon_laser": {
+        "run_command": {
+          "command": [
+            "execute at @a[r=64,c=1,m=!1] run summon dec:group ~~~ 0 0 minecraft:select_laser"
+          ]
+        }
+      },
+      "minecraft:summon_ice_thorn": {
+        "run_command": {
+          "command": [
+            "execute at @a[r=64,c=1,m=!1] run summon dec:group ~~~ 0 0 minecraft:select_ice_thorn"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:chaos_staff"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.sword"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:chaos_staff.name"
+      },
+      "minecraft:icon": {
+        "texture": "chaos_staff"
+      },
+      "minecraft:use_animation": "bow",
+      "minecraft:render_offsets": "bow",
+      "minecraft:stacked_by_data": false,
+      "minecraft:max_stack_size": 1,
+      "minecraft:foil": false,
+      "minecraft:hand_equipped": true,
+      "minecraft:on_use": {
+        "on_use": {
+          "event": "shoot",
+          "target": "self"
+        }
+      },
+      "minecraft:enchantable": {
+        "value": 5,
+        "slot": "flintsteel"
+      },
+      "minecraft:cooldown": {
+        "category": "staff",
+        "duration": 2
+      },
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "dec:ash"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.05"
+          }
+        ]
+      },
+      "minecraft:durability": {
+        "max_durability": 268
+      },
+      "tag:comp:equipment_type:summon_weapon":{}
+    },
+    "events": {
+      "attack": {
+        "damage": {
+          "type": "magic",
+          "amount": 1
+        }
+      },
+      "shoot": {
+        "sequence": [
+          {
+            "condition": "query.scoreboard('wbfl') > 10",
+            "sequence": [
+              {
+                "run_command": {
+                  "command": [
+                    "playsound item.book.put @a ~~~",
+                    "particle dec:summon_staff_spawn ^^1.6^1.3",
+                    "scoreboard players remove @s wbfl 10",
+                    "playanimation @s animation.humanoid.staff_use"
+                  ],
+                  "target": "holder"
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:son_of_chaos",
+                  "launch_power": 1
+                }
+              },
+              {
+                "damage": {
+                  "type": "magic",
+                  "amount": 1
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

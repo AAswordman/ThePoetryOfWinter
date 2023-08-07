@@ -1,0 +1,22 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:flintlock_bullet"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.navigation"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:flintlock_bullet.name"
+      },
+      "minecraft:icon": {
+        "texture": "flintlock_bullet"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:allow_off_hand": true
+    }
+  }
+}

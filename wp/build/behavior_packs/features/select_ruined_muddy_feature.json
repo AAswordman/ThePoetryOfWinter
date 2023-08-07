@@ -1,0 +1,46 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:weighted_random_feature": {
+        "description": {
+            "identifier": "dec:select_ruined_muddy_feature"
+        },
+        "features": [
+            [
+                "dec:effigy_1_mcstructure",
+                2
+            ],
+            [
+                "dec:effigy_2_mcstructure",
+                2
+            ],
+            [
+                "dec:ruined_muddy_1_mcstructure",
+                3
+            ],
+            [
+                "dec:ruined_muddy_2_mcstructure",
+                3
+            ],
+            [
+                "dec:ruined_muddy_3_mcstructure",
+                3
+            ],
+            [
+                "dec:ruined_muddy_4_mcstructure",
+                3
+            ],
+            [
+                "dec:ruined_muddy_5_mcstructure",
+                3
+            ],
+            [
+                "dec:ruined_stonecutter_mcstructure",
+                1
+            ],
+            [
+                "dec:ruined_enchant_table_mcstructure",
+                1
+            ]
+        ]
+    }
+}

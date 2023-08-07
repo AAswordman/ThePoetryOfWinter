@@ -1,0 +1,134 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:village_guardian"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.sword"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:village_guardian.name"
+      },
+      "minecraft:icon": {
+        "texture": "village_guardian"
+      },
+      "minecraft:weapon": {
+        "on_hurt_entity": {
+          "event": "attack",
+          "target": "self"
+        },
+        "on_hit_block": {
+          "event": "attack",
+          "target": "self"
+        }
+      },
+      "minecraft:stacked_by_data": false,
+      "minecraft:max_stack_size": 1,
+      "minecraft:durability": {
+        "max_durability": 513
+      },
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "minecraft:emerald"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.09"
+          },
+          {
+            "items": [
+              "minecraft:iron_ingot"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.01"
+          },
+          {
+            "items": [
+              "minecraft:iron_nugget"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.001"
+          }
+        ]
+      },
+      "minecraft:mining_speed": 1.5,
+      "minecraft:damage": 6,
+      "minecraft:enchantable": {
+        "value": 15,
+        "slot": "sword"
+      },
+      "minecraft:can_destroy_in_creative": false,
+      "minecraft:digger": {
+        "use_efficiency": true,
+        "destroy_speeds": [
+          {
+            "block": "minecraft:web",
+            "speed": 15
+          },
+          {
+            "block": "minecraft:bamboo",
+            "speed": 10
+          }
+        ]
+      },
+      "minecraft:foil": false,
+      "minecraft:hand_equipped": true,
+      "minecraft:on_use": {
+        "on_use": {
+          "event": "village_guardian_use",
+          "target": "self"
+        }
+      },
+      "minecraft:cooldown": {
+        "category": "village_portal",
+        "duration": 60
+      },
+      "tag:comp:equipment_type:melee_weapon":{}
+    },
+    "events": {
+      "attack": {
+        "sequence": [
+          {
+            "damage": {
+              "type": "magic",
+              "amount": 1
+            }
+          },
+          {
+            "run_command": {
+              "command": [
+                "effect @e[family=villager,r=4] regeneration 10 0",
+                "particle dec:village_portal_seep_particle ~~~"
+              ],
+              "target": "other"
+            }
+          }
+        ]
+      },
+      "village_guardian_use": {
+        "sequence": [
+          {
+            "condition": "query.remaining_durability > 100 && query.scoreboard('wbfl') > 19",
+            "sequence": [
+              {
+                "damage": {
+                  "type": "magic",
+                  "amount": 70
+                }
+              },
+              {
+                "run_command": {
+                  "command": [
+                    "function item/village_guardian"
+                  ],
+                  "target": "holder"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

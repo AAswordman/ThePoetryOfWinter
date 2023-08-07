@@ -1,0 +1,46 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:spawn_rules": {
+    "description": {
+      "identifier": "wb:station_upgrade_a",
+      "population_control": "animal"
+    },
+    "conditions": [
+      {
+        "minecraft:spawns_on_surface": {},
+        "minecraft:brightness_filter": {
+          "min": 7,
+          "max": 15,
+          "adjust_for_weather": false
+        },
+        "minecraft:weight": {
+          "default": 1
+        },
+        "minecraft:herd": {
+          "min_size":1,
+          "max_size":1
+        },
+        "minecraft:permute_type": [
+          {
+            "weight": 50
+          },
+          {
+            "weight": 25,
+            "entity_type": "wb:station_upgrade_b"
+          },
+          {
+            "weight": 20,
+            "entity_type": "wb:station_upgrade_c"
+          },
+          {
+            "weight": 5,
+            "entity_type": "wb:station_upgrade_x"
+          }
+        ],
+        "minecraft:biome_filter": {
+          "test": "has_biome_tag", "operator":"==", "value": "animal"
+        }
+      }
+    ]
+  }
+}

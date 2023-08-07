@@ -1,0 +1,21 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:entity_soul"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.navigation"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:entity_soul.name"
+      },
+      "minecraft:icon": {
+        "texture": "entity_soul"
+      },
+      "minecraft:foil": true
+    }
+  }
+}

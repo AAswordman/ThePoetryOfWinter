@@ -1,0 +1,27 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.everlasting_winter_ghast_1.teleport": {
+      "timeline": {
+        "3": [
+          "/particle dec:everlasting_winter_box_particle ~~3~",
+          "/event entity @s minecraft:summon",
+          "/event entity @s minecraft:summon",
+          "/event entity @s minecraft:summon",
+          "/event entity @s minecraft:teleport_to_1",
+          "/event entity @e[type=dec:everlasting_winter_ghast_anchor,c=1] minecraft:summon_ice_thorn"
+        ],
+        "8": [
+          "/particle dec:everlasting_winter_box_particle ~~3~",
+          "/event entity @s minecraft:summon",
+          "/event entity @s minecraft:summon",
+          "/event entity @s minecraft:summon",
+          "/event entity @s minecraft:teleport_to_2",
+          "/event entity @e[type=dec:everlasting_winter_ghast_anchor,c=1] minecraft:summon_laser"
+        ]
+      },
+      "animation_length": 10,
+      "loop": true
+    }
+  }
+}

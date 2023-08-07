@@ -1,0 +1,19 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.headless_guard.wb.music": {
+            "animation_length": 165,
+            "timeline": {
+                "10": [
+                    "/function base/stopmusic",
+                    "/playsound music.wb.unknow_world @a[r=200] ~ ~ ~ 15 1 1"
+                ],
+                "164": [
+                    "/summon wb:damage_execute"
+
+                ]
+            },
+            "loop": true
+        }
+    }
+}

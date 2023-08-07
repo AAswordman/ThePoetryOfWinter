@@ -1,0 +1,19 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.star.span": {
+			"loop": true,
+			"animation_length": 1.57,
+			"bones": {
+				"light": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.5667": [0, -90, 0],
+						"1.0333": [0, -180, 0],
+						"1.5667": [0, -270, 0]
+					}
+				}
+			}
+		}
+	}
+}

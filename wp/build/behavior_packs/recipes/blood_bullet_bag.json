@@ -1,0 +1,31 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:blood_bullet_bag"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "CXC",
+      "#B#",
+      "CXC"
+    ],
+    "key": {
+      "C": {
+        "item": "dec:intestine"
+      },
+      "#": {
+        "item": "dec:health_nugget"
+      },
+      "X": {
+        "item": "dec:zombie_brain"
+      },
+      "B": {
+        "item": "dec:bullet_bag"
+      }
+    },
+    "result": {
+      "item": "dec:blood_bullet_bag"
+    }
+  }
+}

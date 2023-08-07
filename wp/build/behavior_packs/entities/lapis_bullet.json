@@ -1,0 +1,77 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:lapis_bullet",
+      "runtime_identifier": "minecraft:egg",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "lapis_bomb"
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.31,
+        "height": 0.31
+      },
+      "minecraft:explode": {
+        "fuseLength": 3,
+        "fuseLit": true,
+        "power": 0,
+        "causesFire": false
+      },
+      "minecraft:projectile": {
+        "onHit": {
+          "impact_damage": {
+            "damage": 5,
+            "knockback": true,
+            "catchFire": false,
+            "semirandomdiffdamage": false
+          },
+          "definition_event": {
+            "affect_projectile": true,
+            "event_trigger": {
+              "event": "minecraft:explode",
+              "target": "self"
+            }
+          }
+        },
+        "power": 0.15,
+        "gravity": 0.00,
+        "inertia": 1.1,
+        "liquid_inertia": 1,
+        "anchor": 1,
+        "offset": [
+          0,
+          0,
+          1
+        ],
+        "semirandomdiffdamage": true,
+        "uncertaintyBase": 4.0,
+        "uncertaintyMultiplier": 5,
+        "reflectOnHurt": true
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    },
+    "events": {
+      "minecraft:explode": {
+        "run_command": {
+          "command": [
+            "damage @e[type=!item,r=2] 4 magic",
+            "particle dec:lapis_bullet_boom_particle ~~~",
+            "kill @s"
+          ]
+        }
+      }
+    }
+  }
+}

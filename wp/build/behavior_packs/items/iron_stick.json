@@ -1,0 +1,22 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "items",
+      "identifier": "dec:iron_stick"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.decorations"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:iron_stick.name"
+      },
+      "minecraft:icon": {
+        "texture": "iron_stick"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "cookie"
+    }
+  }
+}

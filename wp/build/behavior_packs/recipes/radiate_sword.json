@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:radiate_sword"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "X",
+      "A",
+      "B"
+    ],
+    "key": {
+      "X": {
+        "item": "dec:high_concentration_uranium"
+      },
+      "A": {
+        "item": "minecraft:netherstar"
+      },
+      "B": {
+        "item": "minecraft:diamond_sword"
+      }
+    },
+    "result": {
+      "item": "dec:radiate_sword"
+    }
+  }
+}

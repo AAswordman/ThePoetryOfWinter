@@ -1,0 +1,30 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "wb:armor_senior_seal_chestplate"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "pattern": [
+      "###",
+      "#Y#",
+      "#X#"
+    ],
+    "key": {
+      "#": {
+        "item": "wb:mineral_senior_seal"
+      },
+      "Y": {
+        "item": "wb:armor_seal_chestplate"
+      },
+      "X": {
+        "item": "wb:crystal_fuse"
+      }
+    },
+    "result": {
+      "item": "wb:armor_senior_seal_chestplate"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:frozen_chestplate"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "X X",
+      "XAX",
+      "XBX"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:golden_chestplate"
+      },
+      "X": {
+        "item": "dec:ice_brick"
+      },
+      "B": {
+        "item": "dec:ice_ingot"
+      }
+    },
+    "result": {
+      "item": "dec:frozen_chestplate"
+    }
+  }
+}

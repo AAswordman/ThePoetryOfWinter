@@ -1,0 +1,80 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "nature",
+      "identifier": "dec:uranium_apple"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.crop"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:uranium_apple.name"
+      },
+      "minecraft:icon": {
+        "texture": "uranium_apple"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "apple",
+      "minecraft:hand_equipped": false,
+      "minecraft:stacked_by_data": true,
+      "minecraft:use_duration": 1.6,
+      "minecraft:food": {
+        "on_consume": {
+          "event": "consumed",
+          "target": "self"
+        },
+        "nutrition": 4,
+        "saturation_modifier": "supernatural",
+        "can_always_eat": true
+      }
+    },
+    "events": {
+      "consumed": {
+        "sequence": [
+          {
+            "add_mob_effect": {
+              "effect": "hunger",
+              "duration": 10,
+              "amplifier": 1,
+              "target": "holder"
+            }
+          },
+          {
+            "add_mob_effect": {
+              "effect": "poison",
+              "duration": 10,
+              "amplifier": 2,
+              "target": "holder"
+            }
+          },
+          {
+            "add_mob_effect": {
+              "effect": "strength",
+              "duration": 10,
+              "amplifier": 7,
+              "target": "holder"
+            }
+          },
+          {
+            "add_mob_effect": {
+              "effect": "nausea",
+              "duration": 10,
+              "amplifier": 0,
+              "target": "holder"
+            }
+          },
+          {
+            "add_mob_effect": {
+              "effect": "slowness",
+              "duration": 10,
+              "amplifier": 2,
+              "target": "holder"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

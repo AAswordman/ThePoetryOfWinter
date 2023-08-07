@@ -1,0 +1,120 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "wb:block_stone",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball"
+    },
+    "component_groups": {
+      "big": {
+        "minecraft:scale": {
+          "value": 2
+        },
+        "minecraft:projectile": {
+          "onHit": {
+            "definition_event": {
+              "affectProjectile": true,
+              "eventTrigger": {
+                "event": "minecraft:explode2",
+                "target": "self"
+              }
+            }
+          },
+          "power": 0.8,
+          "gravity": 0,
+          "inertia": 1,
+          "uncertaintyBase": 0,
+          "uncertaintyMultiplier": 0,
+          "anchor": 1,
+          "reflectOnHurt": true,
+          "catchFire": true
+        }
+      },
+      "minecraft:exploding": {
+        "minecraft:explode": {
+          "fuseLength": 0,
+          "fuseLit": true,
+          "breaks_blocks": false,
+          "power": 4,
+          "causesFire": true,
+          "fireAffectedByGriefing": true,
+          "destroyAffectedByGriefing": true
+        }
+      },
+      "minecraft:exploding2": {
+        "minecraft:explode": {
+          "fuseLength": 0,
+          "fuseLit": true,
+          "breaks_blocks": false,
+          "power": 7,
+          "causesFire": true,
+          "fireAffectedByGriefing": true,
+          "destroyAffectedByGriefing": true
+        }
+      }
+    },
+    "components": {
+      "minecraft:explode": {
+        "fuseLength": 6,
+        "fuseLit": true,
+        "power": 0,
+        "causesFire": true,
+        "fireAffectedByGriefing": true,
+        "destroyAffectedByGriefing": true
+      },
+      "minecraft:physics": {},
+      "minecraft:scale": {
+        "value": 1
+      },
+      "minecraft:collision_box": {
+        "width": 0.5,
+        "height": 0.5
+      },
+      "minecraft:projectile": {
+        "onHit": {
+          "definition_event": {
+            "affectProjectile": true,
+            "eventTrigger": {
+              "event": "minecraft:explode",
+              "target": "self"
+            }
+          }
+        },
+        "power": 0.8,
+        "gravity": 0,
+        "inertia": 1,
+        "uncertaintyBase": 0,
+        "uncertaintyMultiplier": 0,
+        "anchor": 1,
+        "reflectOnHurt": true,
+        "catchFire": true
+      }
+    },
+    "events": {
+      "big": {
+        "add": {
+          "component_groups": [
+            "big"
+          ]
+        }
+      },
+      "minecraft:explode": {
+        "add": {
+          "component_groups": [
+            "minecraft:exploding"
+          ]
+        }
+      },
+      "minecraft:explode2": {
+        "add": {
+          "component_groups": [
+            "minecraft:exploding2"
+          ]
+        }
+      }
+    }
+  }
+}

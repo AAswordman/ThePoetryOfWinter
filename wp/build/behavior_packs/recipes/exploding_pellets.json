@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:exploding_pellets"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "X",
+      "A"
+    ],
+    "key": {
+      "A": {
+        "item": "dec:small_stone"
+      },
+      "X": {
+        "item": "minecraft:gunpowder"
+      }
+    },
+    "result": {
+      "item": "dec:exploding_pellets",
+      "count": 3
+    }
+  }
+}

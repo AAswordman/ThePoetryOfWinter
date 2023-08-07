@@ -1,0 +1,31 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:item_picker"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XBX",
+      "A#A",
+      "XAX"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:smoker"
+      },
+      "A": {
+        "item": "dec:ender_core"
+      },
+      "B": {
+        "item": "minecraft:redstone_block"
+      },
+      "X": {
+        "item": "dec:ender_breath"
+      }
+    },
+    "result": {
+      "item": "dec:item_picker"
+    }
+  }
+}

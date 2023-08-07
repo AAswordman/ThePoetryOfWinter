@@ -1,0 +1,15 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.epic_base.particle": {
+            "initial_state" : "default",
+			"states": {
+				"default": {
+					"particle_effects": [
+						{ "effect": "epic_base_effect" }
+					]
+				}
+			}
+		}
+	}
+}

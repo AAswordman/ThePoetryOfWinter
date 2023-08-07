@@ -1,0 +1,321 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:leaves_golem",
+      "runtime_identifier": "minecraft:iron_golem",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+
+    "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "minecraft:spawn": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "empty_family"
+                }
+              },
+              "deals_damage": false
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 5,
+          "time_down_event": {
+            "event": "minecraft:normal_attack"
+          }
+        },
+        "minecraft:spell_effects": {
+					"add_effects": [
+            {
+						"effect": "slowness",
+						"amplifier": 50,
+						"visible": 0,
+						"ambient": 0,
+						"duration": 5,
+						"display_on_screen_animation": true
+					  }
+          ]
+		    }
+      },
+      "minecraft:normal_attack": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "empty_family"
+                }
+              },
+              "deals_damage": true
+            }
+          ]
+        },
+          "minecraft:timer": {
+            "looping": false,
+            "time": 10,
+            "time_down_event": {
+              "event": "minecraft:roaring_attack"
+            }
+          },
+        "minecraft:behavior.melee_attack": {
+          "priority": 1,
+          "target_dist": 1.0,
+          "track_target": true
+        }
+      },
+      "minecraft:roaring": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "empty_family"
+                }
+              },
+              "deals_damage": true
+            }
+          ]
+        },
+        "minecraft:spawn_entity": {
+          "min_wait_time": 0.9,
+          "max_wait_time": 0.9,
+          "num_to_spawn": 1,
+          "single_use": true,
+          "spawn_event": "minecraft:timer",
+          "spawn_entity": "dec:elf_of_leaves"
+        },
+        "minecraft:behavior.knockback_roar": {
+          "priority": 1,
+          "duration": 1.2,
+          "attack_time": 0.5,
+          "knockback_damage": 6,
+          "knockback_strength": 3,
+          "knockback_range": 4,
+          "damage_filters": {
+            "test": "is_family",
+            "subject": "other",
+            "operator": "!=",
+            "value": "monster"
+          },
+          "on_roar_end": {
+            "event": "minecraft:normal_attack"
+          },
+          "cooldown_time": 0.1
+        }
+      }
+    },
+
+    "components": {
+      "minecraft:despawn": {
+        "despawn_from_distance": {
+          "min_distance": 64,
+          "max_distance": 64
+        }
+      },
+      "minecraft:fire_immune": true,
+      "minecraft:type_family": {
+        "family": [ "leaves_golem", "mob", "monster", "golem", "boss" ]
+      },
+      "minecraft:experience_reward": {
+        "on_death": "query.last_hit_by_player ? 100 : 0"
+      },
+      "minecraft:boss": {
+        "should_darken_sky": false,
+        "name":"boss.dec:leaves_golem.name",
+        "hud_range": 64
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:collision_box": {
+        "width": 1.4,
+        "height": 2.9
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/leaves_golem.json"
+      },
+      "minecraft:health": {
+        "value": 200,
+        "max":200
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:movement": {
+        "value": 0.30
+      },
+      "minecraft:navigation.walk": {
+        "can_path_over_water": false,
+        "avoid_water": true,
+        "avoid_damage_blocks": true
+      },
+      "minecraft:movement.basic": {
+        
+      },
+      "minecraft:jump.static": {
+      },
+      "minecraft:can_climb": {
+      },
+      "minecraft:attack": {
+        "damage": {
+          "range_min": 5,
+          "range_max": 9
+        }
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "cause": "fall",
+          "deals_damage": false
+        }
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1.0
+      },
+      "minecraft:balloonable": {
+      },
+      "minecraft:behavior.target_when_pushed": {
+        "priority": 1,
+        "percent_chance": 5.0,
+        "entity_types": [
+          {
+            "filters": { 
+              "all_of": [
+                { "test" :  "is_family", "subject" : "other", "value" :  "player" }
+              ] 
+            }
+          }
+        ]
+      },
+      "minecraft:behavior.move_towards_target": {
+        "priority": 2,
+        "speed_multiplier": 0.9,
+        "within_radius": 256
+      },
+      "minecraft:behavior.move_towards_restriction": {
+        "priority": 4,
+        "speed_multiplier": 1
+      },
+      "minecraft:behavior.offer_flower": {
+        "priority": 5
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 6,
+        "speed_multiplier": 1,
+        "xz_dist": 16
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 7,
+        "look_distance": 6.0,
+        "probability": 0.02
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 8
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "within_radius": 16,
+        "reselect_targets": true,
+        "entity_types": [
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "any_of": [
+                    { "test": "is_family", "subject": "other", "value": "player" },
+                    { "test": "is_family", "subject": "other", "value": "villager" },
+                    { "test": "is_family", "subject": "other", "value": "irongolem" }
+                  ]
+                }
+              ]
+            },
+            "max_dist": 20
+          }
+        ],
+        "must_see": true,
+        "must_see_forget_duration": 17.0,
+        "persist_time": 0.5
+      },
+      "minecraft:persistent": {
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:follow_range": {
+        "value": 64
+      }
+    },
+
+    "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
+      "minecraft:entity_spawned": {
+        "sequence": [{
+          },
+          {
+            "add": {
+              "component_groups": [
+                "minecraft:spawn"
+              ]
+            }
+          }
+        ]
+      },
+      "minecraft:roaring_attack": {
+        "remove": {
+          "component_groups": [
+            "minecraft:normal_attack"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:roaring"
+          ]
+        }
+      },
+      "minecraft:normal_attack": {
+        "add": {
+          "component_groups": [
+            "minecraft:normal_attack"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "minecraft:roaring",
+            "minecraft:spawn"
+          ]
+        }
+      }
+    }
+  }
+}

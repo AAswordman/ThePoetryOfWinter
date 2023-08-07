@@ -1,0 +1,31 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:crab",
+      "materials": { "default": "pig" },
+      "textures": {
+        "default": "textures/entity/crab"
+      },
+      "geometry": {
+        "default": "geometry.crab"
+      },
+        "scripts": {
+          "scale": "0.1",
+          "animate": [
+            "default"
+          ]
+       },
+       "animations": {
+        "default": "controller.animation.crab.default",
+
+        "move": "animation.crab.move"
+      },
+      "render_controllers": [ "controller.render.spots" ],
+      "spawn_egg": {
+        "base_color": "#6B6B6B",
+        "overlay_color": "#515151"
+      }
+    }
+  }
+}

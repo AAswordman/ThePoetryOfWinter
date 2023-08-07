@@ -1,0 +1,14 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_furnace": {
+    "description": {
+    "identifier": "dec:furnace_soul_blaze_rod"
+    },
+
+    
+    "tags": ["blast_furnace"],
+    "input": "dec:soul_blaze_rod",
+    "output": "minecraft:blaze_rod"
+  }
+  
+}

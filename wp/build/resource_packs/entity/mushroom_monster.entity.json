@@ -1,0 +1,25 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:mushroom_monster",
+      "materials": { "default": "zombie" },
+      "textures": { "default": "textures/entity/mushroom_monster" },
+      "geometry": { "default": "geometry.mushroom_monster" },
+      "animations": {
+        "walk": "animation.mushroom_monster.move"
+      },
+      "scripts": {
+        "animate": [
+          {"walk" : "query.modified_move_speed"}
+        ]
+      },
+      "render_controllers": [ "controller.render.zombie" ],
+      "enable_attachables": false,
+      "spawn_egg": {
+        "base_color": "#EDE8CA",
+        "overlay_color": "#FE2A2A"
+      }
+    }
+  }
+}

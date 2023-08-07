@@ -1,0 +1,61 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:deep_energy",
+      "runtime_identifier": "minecraft:egg",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:collision_box": {
+        "width": 0.31,
+        "height": 0.31
+      },
+      "minecraft:explode": {
+        "fuseLength": 3,
+        "fuseLit": true,
+        "power": 0,
+        "causesFire": false,
+        "destroy_affected_by_griefing": false
+        },
+      "minecraft:projectile": {
+        "on_hit": {
+          "impact_damage": {
+            "damage": 10,
+            "knockback": false,
+            "catchFire": false,
+            "semirandomdiffdamage": false
+          },
+          "spawn_aoe_cloud": {
+            "radius": 4.0,
+            "radius_on_use": 0,
+            "potion": 18,
+            "particle": "dragonbreath",
+            "color": [ 68, 68, 68 ],
+            "duration": 2,
+            "affect_owner": false,
+            "reapplication_delay": 10
+          },
+          "remove_on_hit": { }
+        },
+        "power": 1.9,
+        "gravity": 0.00,
+        "inertia": 1.1,
+        "anchor": 2,
+        "offset": [ 0, 0, 1 ],
+        "semi_random_diff_damage": true,
+        "uncertainty_base": 10.0,
+        "reflect_on_hurt": true,
+        "hit_sound": "explode"
+      }
+    },
+	  "minecraft:physics": {
+    },
+    "minecraft:pushable": {
+      "is_pushable": true,
+      "is_pushable_by_piston": true
+    }
+  }
+}

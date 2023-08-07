@@ -1,0 +1,91 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:sun_energy",
+      "runtime_identifier": "minecraft:egg",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "ticking"
+        ]
+      },
+      "animations": {
+        "ticking": "controller.animation.particle_fire_wake"
+      }
+    },
+    "component_groups": {
+      "minecraft:exploding": {
+        "minecraft:explode": {
+          "fuse_length": 0,
+          "fuse_lit": true,
+          "power": 1,
+          "causes_fire": false,
+          "destroy_affected_by_griefing": true,
+          "fire_affected_by_griefing": true
+        }
+      }
+    },
+    "components": {
+      "minecraft:collision_box": {
+        "width": 0.5,
+        "height": 0.5
+      },
+      "minecraft:explode": {
+        "fuseLength": 5,
+        "fuseLit": true,
+        "power": 1,
+        "causesFire": false,
+        "destroy_affected_by_griefing": true,
+        "fire_affected_by_griefing": true
+      },
+      "minecraft:projectile": {
+        "onHit": {
+          "definition_event": {
+            "affect_projectile": true,
+            "event_trigger": {
+              "event": "minecraft:explode",
+              "target": "self"
+            }
+          },
+          "impact_damage": {
+            "damage": 8,
+            "knockback": false,
+            "catchFire": true,
+            "semirandomdiffdamage": false
+          }
+        },
+        "power": 1,
+        "gravity": 0.00,
+        "inertia": 0.95,
+        "liquid_inertia": 0.8,
+        "anchor": 1,
+        "offset": [
+          0,
+          0,
+          1
+        ],
+        "semirandomdiffdamage": true,
+        "uncertaintyBase": 6.0,
+        "uncertaintyMultiplier": 6,
+        "reflectOnHurt": true,
+        "shoot_target": false
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    },
+    "events": {
+      "minecraft:explode": {
+        "add": {
+          "component_groups": [
+            "minecraft:exploding"
+          ]
+        }
+      }
+    }
+  }
+}

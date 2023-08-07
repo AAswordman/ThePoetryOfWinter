@@ -1,0 +1,278 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "dec:shadow_zombie",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"minecraft:despawn": {
+				"minecraft:instant_despawn": {}
+			},
+			"minecraft:from_night_event": {
+				"minecraft:environment_sensor": {
+					"triggers": {
+						"filters": {
+							"test": "is_daytime",
+							"subject": "self",
+							"operator": "==",
+							"value": true
+						},
+						"event": "minecraft:despawn"
+					}
+				}
+			},
+			"minecraft:summon": {
+				"minecraft:timer": {
+					"looping": true,
+					"time": 7,
+					"time_down_event": {
+						"event": "minecraft:summon_start"
+					}
+				}
+			}
+		},
+		"components": {
+			"minecraft:knockback_resistance": {
+				"value": 1.0
+			},
+			"minecraft:behavior.hurt_by_target": {
+				"priority": 1,
+				"entity_types": {
+					"filters": {
+						"test": "is_family",
+						"subject": "other",
+						"operator": "!=",
+						"value": "shadow"
+					},
+					"max_dist": 64
+				}
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "fall",
+						"deals_damage": false
+					},
+					{
+						"on_damage": {
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"value": "shadow"
+							}
+						},
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:on_target_acquired": {
+				"event": "minecraft:has_target",
+				"target": "self"
+			},
+			"minecraft:on_target_escape": {
+				"event": "minecraft:lost_target",
+				"target": "self"
+			},
+			"minecraft:follow_range": {
+				"value": 64,
+				"max": 64
+			},
+			"minecraft:nameable": {},
+			"minecraft:type_family": {
+				"family": [
+					"shadow",
+					"zombie",
+					"undead",
+					"monster",
+					"mob"
+				]
+			},
+			"minecraft:despawn": {
+				"despawn_from_distance": {}
+			},
+			"minecraft:collision_box": {
+				"width": 0.6,
+				"height": 1.9
+			},
+			"minecraft:movement.basic": {},
+			"minecraft:navigation.walk": {
+				"is_amphibious": true,
+				"can_pass_doors": true,
+				"can_walk": true,
+				"can_break_doors": true
+			},
+			"minecraft:annotation.break_door": {},
+			"minecraft:jump.static": {},
+			"minecraft:can_climb": {},
+			"minecraft:health": {
+				"value": {
+					"range_min": 48,
+					"range_max": 55
+				}
+			},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": 0,
+				"breathes_air": true,
+				"breathes_water": true
+			},
+			"minecraft:loot": {
+				"table": "loot_tables/entities/shadow_zombie.json"
+			},
+			"minecraft:behavior.random_stroll": {
+				"priority": 6,
+				"speed_multiplier": 1
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 7,
+				"look_distance": 6,
+				"probability": 0.02
+			},
+			"minecraft:behavior.random_look_around": {
+				"priority": 7
+			},
+			"minecraft:movement": {
+				"value": 0.3
+			},
+			"minecraft:behavior.avoid_mob_type": {
+				"priority": 4,
+				"entity_types": [
+					{
+						"filters": {
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "player"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "snowgolem"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "irongolem"
+								}
+							]
+						},
+						"max_dist": 64
+					},
+					{
+						"filters": {
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "villager"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "wandering_trader"
+								}
+							]
+						},
+						"max_dist": 64,
+						"must_see": false
+					}
+				]
+			},
+			"minecraft:behavior.nearest_attackable_target": {
+				"priority": 0,
+				"within_radius": 64,
+				"reselect_targets": true,
+				"entity_types": [
+					{
+						"filters": {
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "player"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "snowgolem"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "irongolem"
+								}
+							]
+						},
+						"max_dist": 64
+					},
+					{
+						"filters": {
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "villager"
+								},
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "wandering_trader"
+								}
+							]
+						},
+						"max_dist": 64,
+						"must_see": false
+					}
+				],
+				"must_see": true
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			}
+		},
+		"events": {
+			"minecraft:despawn": {
+				"add": {
+					"component_groups": [
+						"minecraft:despawn"
+					]
+				}
+			},
+			"minecraft:from_night_event": {
+				"trigger": "minecraft:entity_spawned",
+				"add": {
+					"component_groups": [
+						"minecraft:from_night_event"
+					]
+				}
+			},
+			"minecraft:summon_start": {
+				"run_command": {
+					"command": [
+						"summon dec:shadow_zombie_puppet ~~~"
+					]
+				}
+			},
+			"minecraft:has_target": {
+				"add": {
+					"component_groups": [
+						"minecraft:summon"
+					]
+				}
+			},
+			"minecraft:lost_target": {
+				"remove": {
+					"component_groups": [
+						"minecraft:summon"
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,27 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "nature",
+      "identifier": "dec:crab_leg"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.rawFood"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:crab_leg.name"
+      },
+      "minecraft:icon": {
+        "texture": "crab_leg"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "cookie",
+      "minecraft:use_duration": 1.6,
+      "minecraft:food": {
+        "nutrition": 3,
+        "saturation_modifier": "low"
+      }
+    }
+  }
+}

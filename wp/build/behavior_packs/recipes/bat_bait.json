@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:bat_bait"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " A ",
+      "X#X",
+      " A "
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:leather"
+      },
+      "#": {
+        "item": "dec:rotten_flesh_block"
+      },
+      "X": {
+        "item": "dec:complete_bat_wing"
+      }
+    },
+    "result": {
+      "item": "dec:bat_bait"
+    }
+  }
+}

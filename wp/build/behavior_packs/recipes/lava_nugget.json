@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:lava_nugget"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "#"
+    ],
+    "key": {
+      "#": {
+        "item": "dec:lava_ingot",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "dec:lava_nugget",
+      "data": 0,
+      "count": 9
+    }
+  }
+}

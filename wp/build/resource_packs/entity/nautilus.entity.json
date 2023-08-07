@@ -1,0 +1,31 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:nautilus",
+      "materials": { "default": "pig" },
+      "textures": {
+        "default": "textures/entity/nautilus"
+      },
+      "geometry": {
+        "default": "geometry.nautilus"
+      },
+        "scripts": {
+          "scale": "1",
+          "animate": [
+            "default"
+          ]
+       },
+       "animations": {
+        "default": "controller.animation.nautilus.default",
+
+        "move": "animation.nautilus.move"
+      },
+      "render_controllers": [ "controller.render.spots" ],
+      "spawn_egg": {
+        "base_color": "#EE7171",
+        "overlay_color": "#EBB5B5"
+      }
+    }
+  }
+}

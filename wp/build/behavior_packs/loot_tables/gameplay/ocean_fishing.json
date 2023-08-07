@@ -1,0 +1,27 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "loot_table",
+          "name": "loot_tables/gameplay/fishing/ocean_junk.json",
+          "weight": 20,
+          "quality": -2
+        },
+        {
+          "type": "loot_table",
+          "name": "loot_tables/gameplay/fishing/ocean_treasure.json",
+          "weight": 15,
+          "quality": 2
+        },
+        {
+          "type": "loot_table",
+          "name": "loot_tables/gameplay/fishing/ocean_fish.json",
+          "weight": 85,
+          "quality": -1
+        }
+      ]
+    }
+  ]
+}

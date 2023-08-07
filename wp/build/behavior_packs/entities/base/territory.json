@@ -1,0 +1,509 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "wb:territory",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier":"minecraft:shulker",
+    "animations":{
+      	"base":"animation.territory.wb"
+      },
+      "scripts":{
+      	"animate":[
+      	 "base"
+      	 ]
+      }
+    },
+    "component_groups": {
+     "a":{
+      "minecraft:health": {
+        "value": 30,
+        "max": 30
+      },
+          "minecraft:shooter": {
+        "def": "wb:ball_territorya"
+      },
+        "minecraft:behavior.ranged_attack": {
+        "priority": 2,
+        "attack_interval_min": 1,
+        "attack_interval_max": 1.5,
+        "charge_charged_trigger": 0,
+        "charge_shoot_trigger": 0,
+        "attack_radius": 15,
+        "burst_shots": 2,
+        "burst_interval": 0.5
+      },
+      "minecraft:interact":[
+            {
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "has_equipment", "domain": "hand", "subject": "other", "value": "diamond"}
+                  ]
+                },
+              "event": "ab",
+              "target": "self"
+              },
+              "use_item": true,
+              "interact_text": "升级"
+            },
+            {
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "has_equipment", "domain": "hand", "subject": "other","operator":"!=","value": "diamond"}
+                  ]
+                }
+              },
+              "interact_text": "(手持钻石长按可升级)"
+            }
+        ]
+     },
+     "b":{
+     	
+      "minecraft:health": {
+        "value": 50,
+        "max": 50
+      },
+          "minecraft:shooter": {
+        "def": "wb:ball_territorya"
+      },
+        "minecraft:behavior.ranged_attack": {
+        "priority": 2,
+        "attack_interval_min": 1,
+        "attack_interval_max": 1.5,
+        "charge_charged_trigger": 0,
+        "charge_shoot_trigger": 0,
+        "attack_radius": 15,
+        "burst_shots": 4,
+        "burst_interval": 0.25
+      },
+      "minecraft:interact":[
+            {
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "has_equipment", "domain": "hand", "subject": "other", "value": "diamond"}
+                  ]
+                },
+              "event": "bc",
+              "target": "self"
+              },
+              "use_item": true,
+              "interact_text": "升级"
+            },
+            {
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "has_equipment", "domain": "hand", "subject": "other","operator":"!=","value": "diamond"}
+                  ]
+                }
+              },
+              "interact_text": "(手持钻石长按可升级)"
+            }
+        ]
+     },
+     "c":{
+     	
+      "minecraft:health": {
+        "value": 80,
+        "max": 80
+      },
+          "minecraft:shooter": {
+        "def": "wb:ball_territoryb"
+      },
+        "minecraft:behavior.ranged_attack": {
+        "priority": 2,
+        "attack_interval_min": 1,
+        "attack_interval_max": 1.5,
+        "charge_charged_trigger": 0,
+        "charge_shoot_trigger": 0,
+        "attack_radius": 15,
+        "burst_shots": 4,
+        "burst_interval": 0.25
+      },
+      "minecraft:interact":[
+            {
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "has_equipment", "domain": "hand", "subject": "other", "value": "diamond"}
+                  ]
+                },
+              "event": "cd",
+              "target": "self"
+              },
+              "use_item": true,
+              "interact_text": "升级"
+            },
+            {
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "has_equipment", "domain": "hand", "subject": "other","operator":"!=","value": "diamond"}
+                  ]
+                }
+              },
+              "interact_text": "(手持钻石长按可升级)"
+            }
+        ]
+     
+     },
+     "d":{
+     	
+      "minecraft:health": {
+        "value": 120,
+        "max": 120
+      },
+          "minecraft:shooter": {
+        "def": "wb:ball_territoryb"
+      },
+        "minecraft:behavior.ranged_attack": {
+        "priority": 2,
+        "attack_interval_min": 1,
+        "attack_interval_max": 1.5,
+        "charge_charged_trigger": 0,
+        "charge_shoot_trigger": 0,
+        "attack_radius": 15,
+        "burst_shots": 8,
+        "burst_interval": 0.12
+      },
+      "minecraft:interact":[
+            {
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "has_equipment", "domain": "hand", "subject": "other", "value": "diamond"}
+                  ]
+                },
+              "event": "de",
+              "target": "self"
+              },
+              "use_item": true,
+              "interact_text": "升级"
+            },
+            {
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "has_equipment", "domain": "hand", "subject": "other","operator":"!=","value": "diamond"}
+                  ]
+                }
+              },
+              "interact_text": "(手持钻石长按可升级)"
+            }
+        ]
+     
+     },
+     "e":{
+     	
+      "minecraft:health": {
+        "value": 160,
+        "max": 160
+      },
+          "minecraft:shooter": {
+        "def": "wb:ball_territoryc"
+      },
+        "minecraft:behavior.ranged_attack": {
+        "priority": 2,
+        "attack_interval_min": 1,
+        "attack_interval_max": 1.5,
+        "charge_charged_trigger": 0,
+        "charge_shoot_trigger": 0,
+        "attack_radius": 15,
+        "burst_shots": 14,
+        "burst_interval": 0.05
+      },
+      "minecraft:interact":[
+            {
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "has_equipment", "domain": "hand", "subject": "other", "value": "diamond"}
+                  ]
+                }
+              },
+              "use_item": false,
+              "interact_text": "已满级"
+            },
+            {
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "has_equipment", "domain": "hand", "subject": "other","operator":"!=","value": "diamond"}
+                  ]
+                }
+              },
+              "interact_text": "(已满级)"
+            }
+        ]
+     
+     },
+     "into":{
+       "minecraft:explode": {
+     "fuseLength": 0,
+     "fuseLit": true,
+     "breaks_blocks":false,
+     "power": 2,
+     "causesFire": true,
+     "fireAffectedByGriefing": true,
+     "destroyAffectedByGriefing": true
+    }
+      },
+      "intoa":{
+       "minecraft:explode": {
+     "fuseLength": 0,
+     "fuseLit": true,
+     "breaks_blocks":false,
+     "power": 3,
+     "causesFire": true,
+     "fireAffectedByGriefing": true,
+     "destroyAffectedByGriefing": true
+    }
+      },
+      "intob":{
+       "minecraft:explode": {
+     "fuseLength": 0,
+     "fuseLit": true,
+     "breaks_blocks":false,
+     "power": 4,
+     "causesFire": true,
+     "fireAffectedByGriefing": true,
+     "destroyAffectedByGriefing": true
+    }
+      },
+      "intoc":{
+       "minecraft:explode": {
+     "fuseLength": 0,
+     "fuseLit": true,
+     "breaks_blocks":false,
+     "power": 5,
+     "causesFire": true,
+     "fireAffectedByGriefing": true,
+     "destroyAffectedByGriefing": true
+    }
+      },
+      "intod":{
+       "minecraft:explode": {
+     "fuseLength": 0,
+     "fuseLit": true,
+     "breaks_blocks":false,
+     "power": 6,
+     "causesFire": true,
+     "fireAffectedByGriefing": true,
+     "destroyAffectedByGriefing": true
+    }
+      },
+      "intoe":{
+       "minecraft:explode": {
+     "fuseLength": 0,
+     "fuseLit": true,
+     "breaks_blocks":false,
+     "power": 8,
+     "causesFire": true,
+     "fireAffectedByGriefing": true,
+     "destroyAffectedByGriefing": true
+    }
+      }
+    },
+    "components": {
+        "minecraft:boss":{
+          "should_darken_sky":false,
+          "name":"领地水晶",
+          "hud_range":16
+        },
+     "minecraft:behavior.nearest_attackable_target": {
+        "priority": 3,
+        "entity_types": [
+          {
+            "filters": { 
+                "all_of": [
+                  { "test" :  "is_family","operator":"==","subject" : "other", "value" : "monster"}
+                ] 
+            },
+            "within_default": 15
+          }
+        ],
+        "must_see": true,
+        "must_reach": true
+      },
+     "minecraft:shooter": {
+        "def": "wb:ball_territory"
+      },
+        "minecraft:behavior.ranged_attack": {
+        "priority": 2,
+        "attack_interval_min": 1,
+        "attack_interval_max": 1.5,
+        "charge_charged_trigger": 0,
+        "charge_shoot_trigger": 0,
+        "attack_radius": 15,
+        "burst_shots": 2,
+        "burst_interval": 0.5
+      },
+      "minecraft:interact":[
+            {
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "has_equipment", "domain": "hand", "subject": "other", "value": "diamond"}
+                  ]
+                },
+              "event": "a",
+              "target": "self"
+              },
+              "use_item": true,
+              "interact_text": "升级"
+            },
+            {
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    { "test": "has_equipment", "domain": "hand", "subject": "other","operator":"!=","value": "diamond"}
+                  ]
+                }
+              },
+              "interact_text": "(手持钻石长按可升级)"
+            }
+        ],
+     "minecraft:spell_effects":{
+      "add_effects":[
+            {
+            "effect":"regeneration",
+            "amplifier":1,
+            "visible":false,
+            "ambient":false,
+            "duration": 9999999999
+            }
+          ]
+       },
+     "minecraft:behavior.hurt_by_target": {
+        "priority": 2,
+        "entity_types": {
+          "filters":{"any_of":[ 
+          	{ "test": "has_tag", "subject": "other", "operator": "==", "value": "wbldkzc" },
+          	{ "test": "is_family", "subject": "other", "operator": "==", "value": "monster" }
+          ]
+        }
+      }
+      },
+     "minecraft:damage_sensor": [
+        {
+          "on_damage": {
+            "filters": {
+			    "test": "has_damage", "value": "fatal"
+            },
+            "event": "into"
+          }
+        }
+      ],
+      "minecraft:type_family": {
+        "family": [ "territory","station" ]
+      },
+      "minecraft:collision_box": {
+        "width": 1,
+        "height": 1
+      },
+      "minecraft:breathable": {
+        "totalSupply": 15,
+        "suffocateTime": 0
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:health": {
+        "value": 20,
+        "max": 20
+      },
+      "minecraft:movement": {
+        "value": 0.0,
+        "max": 0.0
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 1,
+        "look_distance": 6.0,
+        "probability": 0.02
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 8
+      },
+      "minecraft:navigation.walk": {
+      },
+      "minecraft:movement.basic": {
+      },
+	  "minecraft:physics": {
+      }
+    },
+
+    "events": {
+        "ab":{
+            "add":{
+                "component_groups":["b"]
+            },
+            "remove":{
+                "component_groups":["a"]
+            }
+        },
+        "bc":{
+            "add":{
+                "component_groups":["c"]
+            },
+            "remove":{
+                "component_groups":["b"]
+            }
+        },
+        "cd":{
+            "add":{
+                "component_groups":["d"]
+            },
+            "remove":{
+                "component_groups":["c"]
+            }
+        },
+        "de":{
+            "add":{
+                "component_groups":["e"]
+            },
+            "remove":{
+                "component_groups":["d"]
+            }
+        },
+        "a":{
+            "add":{
+                "component_groups":["a"]
+            }
+        },
+        "into":{
+            "add":{
+                "component_groups":["into"]
+            }
+        },
+        "intoa":{
+            "add":{
+                "component_groups":["intoa"]
+            }
+        },
+        "intob":{
+            "add":{
+                "component_groups":["intob"]
+            }
+        },
+        "intoc":{
+            "add":{
+                "component_groups":["intoc"]
+            }
+        },
+        "intod":{
+            "add":{
+                "component_groups":["intod"]
+            }
+        },
+        "intoe":{
+            "add":{
+                "component_groups":["intoe"]
+            }
+        }
+    }
+  }
+}

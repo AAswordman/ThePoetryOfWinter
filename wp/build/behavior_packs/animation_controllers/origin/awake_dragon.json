@@ -1,0 +1,24 @@
+{
+  "format_version": "1.8.0",
+  "animation_controllers": {
+    "controller.animation.awake_dragon.base": {
+      "states": {
+        "default": {
+          "transitions":[
+          { "to":"query.health<50&&query.variant==0" },
+          { "ok":"query.health<1&&query.variant==1"}
+         ]
+        },
+        "to": {
+        "transitions":[
+          { "default":"query.variant==1"}
+         ],
+          "on_entry":["@s to_awake","/tellraw @a { \"rawtext\" : [ { \"translate\" : \"text.wb:summon_awake_dragon.name\" } ] }"]
+        },
+        "ok": {
+          "on_entry":["/tag @a add wbstartkeyok","/tellraw @a { \"rawtext\" : [ { \"translate\" : \"text.wb:awake_dragon_die.name\" } ] }"]
+        }
+      }
+    }
+  }
+}

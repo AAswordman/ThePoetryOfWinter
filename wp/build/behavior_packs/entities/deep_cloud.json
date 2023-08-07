@@ -1,0 +1,61 @@
+{
+  "format_version": "1.12.0",
+ "minecraft:entity": {
+  "description": {
+    "identifier": "dec:deep_cloud",
+    "runtime_identifier": "minecraft:egg",
+    "is_spawnable": false,
+    "is_summonable": true,
+    "is_experimental": false,
+    "scripts":{
+      "animate":["ticking"]
+    },
+      "animations":{
+        "ticking":"controller.animation.particle_deep_wake"
+    }
+  },
+  "components": {
+   "minecraft:collision_box": {
+    "width": 0.6,
+    "height": 0.6
+   },
+   "minecraft:explode": {
+    "fuseLength": 5,
+    "fuseLit": true,
+    "power": 0,
+    "causesFire": false
+    },
+   "minecraft:projectile": {
+    "onHit": {
+      "mob_effect": {
+        "effect": "blindness",
+        "durationeasy": 50,
+        "durationnormal": 50,
+        "durationhard": 50,
+        "amplifier": 1
+      },
+      "impact_damage": {
+        "damage": 46,
+        "knockback": true,
+        "catchFire": false,
+        "semirandomdiffdamage": false
+      }
+    },
+    "power": 0.22,
+    "gravity": 0.00,
+    "inertia": 1,
+    "liquid_inertia": 1,
+    "anchor": 1,
+    "offset": [ 0, 0, 1 ],
+    "semirandomdiffdamage": true,
+    "uncertaintyBase": 3.0,
+    "uncertaintyMultiplier": 6,
+    "reflectOnHurt": true
+   },
+   "minecraft:pushable": {
+    "is_pushable": false,
+    "is_pushable_by_piston": true
+   }
+  }
+ }
+}

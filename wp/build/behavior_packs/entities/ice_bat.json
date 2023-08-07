@@ -1,0 +1,130 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+
+    "description": {
+      "identifier": "dec:ice_bat",
+      "runtime_identifier": "minecraft:bat",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+
+    "component_groups": {
+
+    },
+
+    "components": {
+      "minecraft:on_death": {
+        "event": "minecraft:die",
+        "target": "self"
+      },
+      "minecraft:type_family": {
+        "family": [ "bat", "monster","ice_bat", "frozen" ]
+      },
+      "minecraft:experience_reward": {
+        "on_death": "query.last_hit_by_player ? 10 : 0"
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/ice_bat.json"
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:health": {
+        "value": 10,
+        "max": 10
+      },
+      "minecraft:physics": {
+        "has_gravity": false
+      },
+      "minecraft:attack": {
+        "damage": 2,
+        "effect_name": "slowness",
+        "effect_duration": 12
+      },
+      "minecraft:breathable": {
+        "totalSupply": 15,
+        "suffocateTime": 0,
+        "breathesAir": true,
+        "breathesWater": false
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
+      "minecraft:collision_box": {
+        "width": 0.5,
+        "height": 0.9
+      },
+      "minecraft:movement": {
+        "value": 2.7
+      },
+      "minecraft:movement.glide": {
+        "start_speed": 0.1,
+        "speed_when_turning": 0.2
+      },
+      "minecraft:follow_range": {
+        "value": 32,
+        "max": 32
+      },
+      "minecraft:behavior.avoid_mob_type": {
+        "priority": 0,
+        "max_dist": 16.0,
+        "ignore_visibility": true,
+        "entity_types": [
+          {
+            "filters": {
+                "any_of": [
+                  { "test" :  "is_family", "subject" : "other", "value" :  "ocelot"},
+                  { "test" :  "is_family", "subject" : "other", "value" :  "cat"}
+                ]
+            },
+            "max_dist": 16,
+            "walk_speed_multiplier": 1,
+            "sprint_speed_multiplier": 1
+          }
+        ]
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 1,
+        "within_radius": 32,
+        "reselect_targets": true,
+        "entity_types": [
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "player"
+            },
+            "max_dist": 32
+          }
+        ],
+        "must_see": false,
+        "must_see_forget_duration": 0.5,
+        "scan_interval": 5,
+        "target_search_height": 80.0
+      },
+      "minecraft:behavior.swoop_attack": {
+        "priority": 2,
+        "delay_range": [ 3.0, 3.0 ]
+      },
+      "minecraft:behavior.circle_around_anchor": {
+        "priority": 3,
+        "radius_range": [ 30.0, 30.0 ],
+        "radius_change_chance": 100,
+        "height_above_target_range": [ 10.0, 20.0 ],
+        "height_offset_range": [ -4.0, 5.0 ],
+        "height_change_chance": 350,
+        "goal_radius": 1.0
+      }
+    },
+    "events": {
+      "minecraft:die": {
+        "run_command": {
+          "command": [
+            "fill ~-1.5~-1.5~-1.5~1.5~1.5~1.5 dec:ghost_ice [] replace air []"
+          ]
+        }
+      }
+    }
+  }
+}

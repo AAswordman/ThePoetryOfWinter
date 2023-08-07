@@ -1,0 +1,11 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.territory_crystal": {
+      "rebuild_animation_matrices": true,
+      "geometry": "Geometry.territory_crystal",
+      "materials": [ { "*": "Material.territory_crystal" } ],
+      "textures": [ "Texture.territory_crystal" ]
+    }
+  }
+}

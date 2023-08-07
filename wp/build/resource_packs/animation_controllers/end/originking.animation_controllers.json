@@ -1,0 +1,73 @@
+{
+  "format_version": "1.8.0",
+  "animation_controllers": {
+    "controller.animation.originking.attack": {
+      "states": {
+        "default": {
+          "transitions": [ 
+              { "exattack": "(query.variant == 7||query.variant==9||query.variant==13)&&query.is_delayed_attacking" },
+              { "broke": "(query.variant == 8||query.variant==10)&&query.has_target" },
+              { "end":"query.variant==14" }
+              ]
+        },
+        "exattack": {
+          "animations": [ { "exattack": [] } ],
+          "transitions": [ { "default": "(query.variant != 7&&query.variant != 9&&query.variant!=13)||!query.is_delayed_attacking" } ]
+        },
+        "end": {
+          "animations": [ { "end": [] } ],
+          "transitions": [ { "default": "query.variant!=14" } ]
+        },
+        "broke": {
+          "animations": [ { "exbroke": [] } ],
+          "transitions": [ { "default": "(query.variant != 8&&query.variant != 10)||!query.has_target" } ]
+        }
+      }
+    },
+    "controller.animation.originking.lyx": {
+      "states": {
+        "default": {
+          "transitions": [ 
+              { "a": "query.mark_variant == 0" },
+              { "b": "query.mark_variant == 1" },
+              { "c": "query.mark_variant == 2" },
+              { "d": "query.mark_variant == 3" },
+              { "e": "query.mark_variant == 4" },
+              { "f": "query.mark_variant == 5" }
+              ]
+        },
+        "a": {
+          "animations": [ { "ly": [] } ],
+          "transitions": [ { "default": "query.mark_variant != 0" } ]
+        },
+        "b": {
+          "animations": [ { "ly": [] } ],
+          "transitions": [ { "default": "query.mark_variant != 1" } ]
+        },
+        "c": {
+          "animations": [ { "ly": [] } ],
+          "transitions": [ { "default": "query.mark_variant != 2" } ]
+        },
+        "d": {
+          "animations": [ { "ly": [] } ],
+          "transitions": [ { "default": "query.mark_variant != 3" } ]
+        },
+        "e": {
+          "animations": [ { "ly": [] } ],
+          "transitions": [ { "default": "query.mark_variant != 4" } ]
+        },
+        "f": {
+          "animations": [ { "ly": [] } ],
+          "transitions": [ { "default": "query.mark_variant != 5" } ]
+        }
+      }
+    },
+        "controller.animation.originking.summon": {
+      "states": {
+        "default": {
+          "animations":[ { "summon": [] } ]
+        }
+      }
+    }
+  }
+}

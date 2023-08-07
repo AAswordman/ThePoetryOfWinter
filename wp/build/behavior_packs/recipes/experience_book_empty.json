@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:experience_book_empty"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XXX",
+      "XAX",
+      "XXX"
+    ],
+    "key": {
+      "X": {
+        "item": "minecraft:glass_pane"
+      },
+      "A": {
+        "item": "minecraft:book"
+      }
+    },
+    "result": {
+      "item": "dec:experience_book_empty"
+    }
+  }
+}

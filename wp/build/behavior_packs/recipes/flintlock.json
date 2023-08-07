@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:flintlock"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "  X",
+      " X ",
+      "#A "
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:flint_and_steel"
+      },
+      "X": {
+        "item": "minecraft:log"
+      },
+      "A": {
+        "item": "minecraft:iron_ingot"
+      }
+    },
+    "result": {
+      "item": "dec:flintlock"
+    }
+  }
+}

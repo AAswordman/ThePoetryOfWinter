@@ -1,0 +1,21 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "dec:smooth_amethyst_block"
+    },
+    "tags": [
+      "stonecutter"
+    ],
+    "priority": 0,
+    "ingredients": [
+      {
+        "item": "minecraft:amethyst_block"
+      }
+    ],
+    "result": {
+      "item": "dec:smooth_amethyst_block",
+      "count": 1
+    }
+  }
+}

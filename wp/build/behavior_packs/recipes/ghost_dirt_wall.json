@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:ghost_dirt_wall"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "###",
+      "#X#",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:leaves"
+      },
+      "X": {
+        "item": "minecraft:dirt"
+      }
+    },
+    "result": {
+      "item": "dec:ghost_dirt_wall"
+    }
+  }
+}

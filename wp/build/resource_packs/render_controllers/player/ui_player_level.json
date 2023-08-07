@@ -1,0 +1,77 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.player.ui_player_level": {
+      "geometry": "Geometry.ui_player_level",
+      "materials": [ { "*": "Material.ui_plot_progress" } ],
+      "textures": [ "Texture.ui_player_level" ],
+      "part_visibility": [{ "*": true }]
+    },
+    "controller.render.player.ui_player_level_a": {
+      "geometry": "Geometry.ui_player_level_a",
+      "materials": [ { "*": "Material.ui_plot_progress" } ],
+      "arrays": {
+        "textures": {
+          "Array.nums": [
+            "Texture.ui_tech_num0",
+            "Texture.ui_tech_num1",
+            "Texture.ui_tech_num2",
+            "Texture.ui_tech_num3",
+            "Texture.ui_tech_num4",
+            "Texture.ui_tech_num5",
+            "Texture.ui_tech_num6",
+            "Texture.ui_tech_num7",
+            "Texture.ui_tech_num8",
+            "Texture.ui_tech_num9"
+          ]
+        }
+      },
+      "textures": [ "Array.nums[Math.floor(Math.mod(variable.wb_ui_player_level,1000)/100)]" ],
+      "part_visibility": [{ "*": true }]
+    },
+    "controller.render.player.ui_player_level_b": {
+      "geometry": "Geometry.ui_player_level_b",
+      "materials": [ { "*": "Material.ui_plot_progress" } ],
+      "arrays": {
+        "textures": {
+          "Array.nums": [
+            "Texture.ui_tech_num0",
+            "Texture.ui_tech_num1",
+            "Texture.ui_tech_num2",
+            "Texture.ui_tech_num3",
+            "Texture.ui_tech_num4",
+            "Texture.ui_tech_num5",
+            "Texture.ui_tech_num6",
+            "Texture.ui_tech_num7",
+            "Texture.ui_tech_num8",
+            "Texture.ui_tech_num9"
+          ]
+        }
+      },
+      "textures": [ "Array.nums[Math.floor(Math.mod(variable.wb_ui_player_level,100)/10)]" ],
+      "part_visibility": [{ "*": true }]
+    },
+    "controller.render.player.ui_player_level_c": {
+      "geometry": "Geometry.ui_player_level_c",
+      "materials": [ { "*": "Material.ui_plot_progress" } ],
+      "arrays": {
+        "textures": {
+          "Array.nums": [
+            "Texture.ui_tech_num0",
+            "Texture.ui_tech_num1",
+            "Texture.ui_tech_num2",
+            "Texture.ui_tech_num3",
+            "Texture.ui_tech_num4",
+            "Texture.ui_tech_num5",
+            "Texture.ui_tech_num6",
+            "Texture.ui_tech_num7",
+            "Texture.ui_tech_num8",
+            "Texture.ui_tech_num9"
+          ]
+        }
+      },
+      "textures": [ "Array.nums[Math.floor(Math.mod(variable.wb_ui_player_level,10)/1)]" ],
+      "part_visibility": [{ "*": true }]
+    }
+  }
+}

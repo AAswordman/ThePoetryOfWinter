@@ -1,0 +1,47 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "wb:originking_endphalanx",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+            "animations": {
+        "broke":"animation.originking.endphalanx"
+      },
+       "scripts": {
+         "animate": [
+           "broke"
+         ]
+      }
+    },
+    "components": {
+          "minecraft:type_family": {
+        "family": [ "origin"]
+      },
+     "minecraft:explode": {
+     "fuseLength": 10,
+     "fuseLit": true,
+     "breaks_blocks":true,
+     "power": 0,
+     "causesFire": true,
+     "fireAffectedByGriefing": true,
+     "destroyAffectedByGriefing": true
+    },
+    	 "minecraft:knockback_resistance": {
+        "value": 1.0
+      },
+      "minecraft:collision_box": {
+        "width": 0.001,
+        "height": 64
+      },
+      "minecraft:health": {
+        "value": 1000000,
+        "max": 1000000
+      },
+      "minecraft:movement": {
+        "value": 0.0
+      }
+    }
+  }
+}

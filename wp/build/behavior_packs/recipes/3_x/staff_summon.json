@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "wb:staff_summon"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "#",
+      "Y",
+      "X"
+    ],
+    "key": {
+      "#": {
+        "item": "wb:element_summon"
+      },
+      "Y": {
+        "item":"wb:base_core_d"
+      },
+      "X": {
+          "item":"wb:staff_base"
+      }
+    },
+    "result": {
+      "item": "wb:staff_summon"
+    }
+  }
+}

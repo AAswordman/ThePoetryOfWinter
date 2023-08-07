@@ -1,0 +1,106 @@
+{
+	"format_version": "1.10.0",
+	"geometry.ball_ancient_stone_sword": {
+		"texturewidth": 256,
+		"textureheight": 256,
+		"visible_bounds_width": 3,
+		"visible_bounds_height": 7,
+		"visible_bounds_offset": [0, 3.5, 0],
+		"bones": [
+			{
+				"name": "sword",
+				"pivot": [0, 68, 0.6],
+				"rotation": [90, 0, 0],
+				"cubes": [
+					{"origin": [-1.5, 67, 20.5], "size": [3, 3, 20], "uv": [0, 0]},
+					{"origin": [-1.5, 62, 19.5], "size": [3, 12, 2], "uv": [0, 0]}
+				]
+			},
+			{
+				"name": "bone",
+				"parent": "sword",
+				"pivot": [0, 81.25, 19.5],
+				"rotation": [40, 0, 0],
+				"cubes": [
+					{"origin": [-1.5, 74.25, 14.5], "size": [3, 10, 2], "uv": [24, 24]}
+				]
+			},
+			{
+				"name": "bone2",
+				"parent": "sword",
+				"pivot": [-0.5, 58.25, 6.5],
+				"rotation": [-40, 0, 0],
+				"cubes": [
+					{"origin": [-1.5, 60.25, 13.5], "size": [3, 10, 2], "uv": [10, 0]}
+				]
+			},
+			{
+				"name": "bone3",
+				"parent": "sword",
+				"pivot": [-0.5, 68.25, -16.5],
+				"cubes": [
+					{"origin": [-0.5, 65.25, -52.5], "size": [2, 6, 72], "uv": [0, 0]},
+					{"origin": [-0.5, 66.25, -62.5], "size": [2, 4, 10], "uv": [0, 23]},
+					{"origin": [-0.5, 67.25, -67.5], "size": [2, 2, 2], "uv": [0, 16]},
+					{"origin": [-0.5, 66.75, -65.5], "size": [2, 3, 3], "uv": [7, 12]}
+				]
+			}
+		]
+	},
+	"geometry.ball_ancient_stone_swordx": {
+		"texturewidth": 256,
+		"textureheight": 256,
+		"visible_bounds_width": 11,
+		"visible_bounds_height": 3,
+		"visible_bounds_offset": [0, 1.5, 0],
+		"bones": [
+			{
+				"name": "rightArm",
+				"pivot": [-23, 56, -2.25]
+			},
+			{
+				"name": "rightArm2",
+				"parent": "rightArm",
+				"pivot": [-23, 36, -0.5]
+			},
+			{
+				"name": "sword",
+				"parent": "rightArm2",
+				"pivot": [-25, 26, -34.4],
+				"cubes": [
+					{"origin": [-26.5, 25, -14.5], "size": [3, 3, 20], "uv": [0, 0]},
+					{"origin": [-26.5, 20, -15.5], "size": [3, 12, 2], "uv": [0, 0]}
+				]
+			},
+			{
+				"name": "bone",
+				"parent": "sword",
+				"pivot": [-25, 39.25, -15.5],
+				"rotation": [40, 0, 0],
+				"cubes": [
+					{"origin": [-26.5, 32.25, -20.5], "size": [3, 10, 2], "uv": [24, 24]}
+				]
+			},
+			{
+				"name": "bone2",
+				"parent": "sword",
+				"pivot": [-25.5, 16.25, -28.5],
+				"rotation": [-40, 0, 0],
+				"cubes": [
+					{"origin": [-26.5, 18.25, -21.5], "size": [3, 10, 2], "uv": [10, 0]}
+				]
+			},
+			{
+				"name": "bone3",
+				"parent": "sword",
+				"pivot": [-25.5, 26.25, -51.5],
+				"cubes": [
+					{"origin": [-25.5, 23.25, -87.5], "size": [2, 6, 72], "uv": [0, 0]},
+					{"origin": [-25.5, 24.25, -97.5], "size": [2, 4, 10], "uv": [0, 23]},
+					{"origin": [-25.5, 25.25, -102.5], "size": [2, 2, 2], "uv": [0, 16]},
+					{"origin": [-25.5, 24.75, -100.5], "size": [2, 3, 3], "uv": [7, 12]}
+				]
+			}
+		]
+	}
+}

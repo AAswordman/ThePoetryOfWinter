@@ -1,0 +1,17 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "wb:array_intentions_third",
+      "materials": { "default": "skeleton" },
+      "textures": {
+        "default": "textures/wb/1_x/spell_fire"
+      },
+      "geometry": {
+        "default": "geometry.spell_fire"
+      },
+      "render_controllers": [ "controller.render.base" ]
+      
+    }
+  }
+}

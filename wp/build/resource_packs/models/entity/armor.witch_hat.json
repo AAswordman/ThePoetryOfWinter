@@ -1,0 +1,46 @@
+{
+	"format_version": "1.10.0",
+	"geometry.humanoid.armor.witch_hat": {
+		"texturewidth": 64,
+		"textureheight": 64,
+		"visible_bounds_width": 5,
+		"visible_bounds_height": 5,
+		"visible_bounds_offset": [0, 2.5, 0],
+		"bones": [
+			{
+				"name": "hat",
+				"pivot": [0, -8, 0],
+				"cubes": [
+					{"origin": [-5, 0, -6], "size": [10, 2, 10], "uv": [0, 0]}
+				]
+			},
+			{
+				"name": "hat2",
+				"parent": "hat",
+				"pivot": [1.75, -0.0313, 1],
+				"rotation": [-3, 0, 1.5],
+				"cubes": [
+					{"origin": [-3.25, 1.45, -4], "size": [7, 4, 7], "uv": [0, 12]}
+				]
+			},
+			{
+				"name": "hat3",
+				"parent": "hat2",
+				"pivot": [1.75, 2.968, 1],
+				"rotation": [-6, 0, 3],
+				"cubes": [
+					{"origin": [-1.5, 4.45, -2], "size": [4, 4, 4], "uv": [0, 23]}
+				]
+			},
+			{
+				"name": "hat4",
+				"parent": "hat3",
+				"pivot": [1.75, 5.968, 1],
+				"rotation": [-12, 0, 6],
+				"cubes": [
+					{"origin": [0.25, 7.95, 0], "size": [1, 2, 1], "uv": [0, 0], "inflate": 0.25}
+				]
+			}
+		]
+	}
+}

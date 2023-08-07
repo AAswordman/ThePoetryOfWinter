@@ -1,0 +1,217 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.ball_magic_stoneman_c.base": {
+			"loop": true,
+			"bones": {
+				"head": {
+					"rotation": [
+						0,
+						0,
+						0
+					]
+				}
+			}
+		},
+		"animation.ball_magic_stoneman_a.rise": {
+			"loop": true,
+			"bones": {
+				"head": {
+					"rotation": [
+						"Math.max(-45*query.life_time,-90)",
+						0,
+						0
+					]
+				}
+			}
+		},
+		"animation.ball_magic_stoneman_a.look": {
+			"loop": true,
+			"bones": {
+				"head": {
+					"relative_to": {
+						"rotation": "entity"
+					},
+					"rotation": [
+						"query.target_x_rotation - this-90",
+						"query.target_y_rotation - this",
+						0
+					]
+				}
+			}
+		},
+		"animation.magic_stoneman.move": {
+			"bones": {
+				"leg1": {
+					"position": [
+						"Math.sin(query.life_time*180)*28",
+						0,
+						"Math.cos(query.life_time*180)*28"
+					]
+				},
+				"leg2": {
+					"position": [
+						"Math.sin(query.life_time*180+60)*28",
+						0,
+						"Math.cos(query.life_time*180+60)*28"
+					]
+				},
+				"leg3": {
+					"position": [
+						"Math.sin(query.life_time*180+120)*28",
+						0,
+						"Math.cos(query.life_time*180+120)*28"
+					]
+				},
+				"leg4": {
+					"position": [
+						"Math.sin(query.life_time*180+180)*28",
+						0,
+						"Math.cos(query.life_time*180+180)*28"
+					]
+				},
+				"leg5": {
+					"position": [
+						"Math.sin(query.life_time*180+240)*28",
+						0,
+						"Math.cos(query.life_time*180+240)*28"
+					]
+				},
+				"leg6": {
+					"position": [
+						"Math.sin(query.life_time*180+300)*28",
+						0,
+						"Math.cos(query.life_time*180+300)*28"
+					]
+				},
+				"arm1": {
+					"position": [
+						"Math.sin(query.life_time*100)*55",
+						0,
+						"Math.cos(query.life_time*100)*55"
+					],
+					"scale": "query.variant>0?1:0"
+				},
+				"arm2": {
+					"position": [
+						"Math.sin(72+query.life_time*100)*55",
+						0,
+						"Math.cos(72+query.life_time*100)*55"
+					],
+					"scale": "query.variant>1?1:0"
+				},
+				"arm3": {
+					"position": [
+						"Math.sin(144+query.life_time*100)*55",
+						0,
+						"Math.cos(144+query.life_time*100)*55"
+					],
+					"scale": "query.variant>2?1:0"
+				},
+				"arm4": {
+					"position": [
+						"Math.sin(216+query.life_time*100)*55",
+						0,
+						"Math.cos(216+query.life_time*100)*55"
+					],
+					"scale": "query.variant>3?1:0"
+				},
+				"arm5": {
+					"position": [
+						"Math.sin(288+query.life_time*100)*55",
+						0,
+						"Math.cos(288+query.life_time*100)*55"
+					],
+					"scale": "query.variant>4?1:0"
+				}
+			},
+			"loop": true
+		},
+		"animation.magic_stoneman.move.demonstration": {
+			"bones": {
+				"leg1": {
+					"position": [
+						"Math.sin(query.life_time*180)*28",
+						0,
+						"Math.cos(query.life_time*180)*28"
+					]
+				},
+				"leg2": {
+					"position": [
+						"Math.sin(query.life_time*180+60)*28",
+						0,
+						"Math.cos(query.life_time*180+60)*28"
+					]
+				},
+				"leg3": {
+					"position": [
+						"Math.sin(query.life_time*180+120)*28",
+						0,
+						"Math.cos(query.life_time*180+120)*28"
+					]
+				},
+				"leg4": {
+					"position": [
+						"Math.sin(query.life_time*180+180)*28",
+						0,
+						"Math.cos(query.life_time*180+180)*28"
+					]
+				},
+				"leg5": {
+					"position": [
+						"Math.sin(query.life_time*180+240)*28",
+						0,
+						"Math.cos(query.life_time*180+240)*28"
+					]
+				},
+				"leg6": {
+					"position": [
+						"Math.sin(query.life_time*180+300)*28",
+						0,
+						"Math.cos(query.life_time*180+300)*28"
+					]
+				},
+				"arm1": {
+					"position": [
+						"Math.sin(query.life_time*100)*55",
+						0,
+						"Math.cos(query.life_time*100)*55"
+					]
+				
+				},
+				"arm2": {
+					"position": [
+						"Math.sin(72+query.life_time*100)*55",
+						0,
+						"Math.cos(72+query.life_time*100)*55"
+					]
+				},
+				"arm3": {
+					"position": [
+						"Math.sin(144+query.life_time*100)*55",
+						0,
+						"Math.cos(144+query.life_time*100)*55"
+					]
+				
+				},
+				"arm4": {
+					"position": [
+						"Math.sin(216+query.life_time*100)*55",
+						0,
+						"Math.cos(216+query.life_time*100)*55"
+					]
+					
+				},
+				"arm5": {
+					"position": [
+						"Math.sin(288+query.life_time*100)*55",
+						0,
+						"Math.cos(288+query.life_time*100)*55"
+					]
+					
+				}
+			},
+			"loop": true
+		}
+	}
+}

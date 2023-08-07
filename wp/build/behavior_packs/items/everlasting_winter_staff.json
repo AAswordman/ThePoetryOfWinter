@@ -1,0 +1,105 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:everlasting_winter_staff"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.sword"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:everlasting_winter_staff.name"
+      },
+      "minecraft:icon": {
+        "texture": "everlasting_winter_staff"
+      },
+      "minecraft:render_offsets": "bow",
+      "minecraft:use_animation": "bow",
+      "minecraft:stacked_by_data": false,
+      "minecraft:max_stack_size": 1,
+      "minecraft:foil": false,
+      "minecraft:hand_equipped": true,
+      "minecraft:on_use": {
+        "on_use": {
+          "event": "shoot",
+          "target": "self"
+        }
+      },
+      "minecraft:cooldown": {
+        "category": "staff",
+        "duration": 1
+      },
+      "minecraft:enchantable": {
+        "value": 27,
+        "slot": "flintsteel"
+      },
+      "minecraft:durability": {
+        "max_durability": 1700
+      },
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "dec:ice_brick"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.05"
+          },
+          {
+            "items": [
+              "dec:ice_nugget"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.1"
+          },
+          {
+            "items": [
+              "dec:ice_ingot"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.6"
+          }
+        ]
+      },
+      "tag:comp:equipment_type:magic_weapon":{}
+    },
+    "events": {
+      "attack": {
+        "damage": {
+          "type": "magic",
+          "amount": 1
+        }
+      },
+      "shoot": {
+        "sequence": [
+          {
+            "condition": "query.scoreboard('wbfl') > 10",
+            "sequence": [
+              {
+                "run_command": {
+                  "command": [
+                    "playsound dig.snow @a ~~~",
+                    "scoreboard players remove @s wbfl 10",
+                    "playanimation @s animation.humanoid.staff_use"
+                  ],
+                  "target": "holder"
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:winter_energy",
+                  "launch_power": 1
+                }
+              },
+              {
+                "damage": {
+                  "type": "magic",
+                  "amount": 1
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

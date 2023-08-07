@@ -1,0 +1,24 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "wb:parallel_block",
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:block_light_absorption": 1,
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "parallel_block",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:destroy_time": 1000000000,
+			"minecraft:explosion_resistance": 1000000000,
+			"minecraft:block_light_emission": 0.6,
+			"minecraft:creative_category": {
+				"category": "construction"
+			}
+		}
+	}
+}

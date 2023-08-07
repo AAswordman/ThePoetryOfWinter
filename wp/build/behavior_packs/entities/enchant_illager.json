@@ -1,0 +1,483 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:enchant_illager",
+      "runtime_identifier": "minecraft:evocation_illager",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "minecraft:next": {
+        "minecraft:transformation": {
+          "into": "dec:enchant_illager_1<minecraft:entity_spawned>"
+        }
+      },
+      "minecraft:spawn": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "empty_family"
+                }
+              },
+              "deals_damage": false
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 5,
+          "time_down_event": {
+            "event": "minecraft:change_attack"
+          }
+        },
+        "minecraft:spell_effects": {
+          "add_effects": [
+            {
+              "effect": "slowness",
+              "amplifier": 50,
+              "visible": 0,
+              "ambient": 0,
+              "duration": 5,
+              "display_on_screen_animation": true
+            }
+          ]
+        }
+      },
+      "minecraft:roar": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "ghost"
+                }
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_damage",
+                      "value": "fatal"
+                    }
+                  ]
+                },
+                "event": "minecraft:next"
+              },
+              "deals_damage": false
+            }
+          ]
+        },
+        "minecraft:behavior.knockback_roar": {
+          "priority": 1,
+          "duration": 2,
+          "attack_time": 2,
+          "knockback_damage": 3,
+          "knockback_strength": 6,
+          "knockback_range": 4,
+          "damage_filters": {
+            "test": "is_family",
+            "subject": "other",
+            "operator": "!=",
+            "value": "monster"
+          },
+          "on_roar_end": {
+            "event": "minecraft:change_attack"
+          },
+          "cooldown_time": 0.1
+        }
+      },
+      "minecraft:summon": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "ghost"
+                }
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_damage",
+                      "value": "fatal"
+                    }
+                  ]
+                },
+                "event": "minecraft:next"
+              },
+              "deals_damage": false
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 20,
+          "time_down_event": {
+            "event": "minecraft:change_attack"
+          }
+        },
+        "minecraft:behavior.summon_entity": {
+          "priority": 2,
+          "summon_choices": [
+            {
+              "min_activation_range": 3.0,
+              "weight": 1,
+              "cooldown_time": 5.0,
+              "cast_duration": 2.0,
+              "particle_color": "#FF664D59",
+              "start_sound_event": "cast.spell",
+              "sequence": [
+                {
+                  "shape": "line",
+                  "target": "self",
+                  "base_delay": 1.0,
+                  "delay_per_summon": 1,
+                  "num_entities_spawned": 2,
+                  "entity_type": "dec:ghost_iron_sword",
+                  "size": 2,
+                  "entity_lifespan": 20
+                }
+              ]
+            },
+            {
+              "weight": 2,
+              "cooldown_time": 5.0,
+              "cast_duration": 5.0,
+              "particle_color": "#FFB3B3CC",
+              "sequence": [
+                {
+                  "shape": "circle",
+                  "target": "self",
+                  "base_delay": 0.0,
+                  "num_entities_spawned": 4,
+                  "entity_type": "dec:ghost_wooden_staff",
+                  "summon_cap": 8,
+                  "summon_cap_radius": 16.0,
+                  "size": 2.0,
+                  "sound_event": "prepare.summon",
+                  "entity_lifespan": 20
+                }
+              ]
+            },
+            {
+              "weight": 1,
+              "cooldown_time": 5.0,
+              "cast_duration": 5.0,
+              "particle_color": "#FFB3B3CC",
+              "sequence": [
+                {
+                  "shape": "circle",
+                  "target": "self",
+                  "base_delay": 0.0,
+                  "num_entities_spawned": 3,
+                  "entity_type": "dec:enchant_armor_by_boss",
+                  "summon_cap": 8,
+                  "summon_cap_radius": 16.0,
+                  "size": 2.0,
+                  "sound_event": "prepare.summon",
+                  "entity_lifespan": 40
+                }
+              ]
+            },
+            {
+              "weight": 1,
+              "cooldown_time": 5.0,
+              "cast_duration": 5.0,
+              "particle_color": "#FFB3B3CC",
+              "sequence": [
+                {
+                  "shape": "circle",
+                  "target": "self",
+                  "base_delay": 0.0,
+                  "num_entities_spawned": 20,
+                  "entity_type": "dec:ghost_iron_axe",
+                  "summon_cap": 30,
+                  "summon_cap_radius": 6.0,
+                  "size": 6.0,
+                  "sound_event": "prepare.summon",
+                  "entity_lifespan": 20
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "components": {
+      "minecraft:despawn": {
+        "despawn_from_distance": {
+          "min_distance": 64,
+          "max_distance": 64
+        }
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "on_damage": {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "ghost"
+              }
+            },
+            "deals_damage": false
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "fatal"
+                  }
+                ]
+              },
+              "event": "minecraft:next"
+            },
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:knockback_resistance": {
+        "value": 0.5
+      },
+      "minecraft:type_family": {
+        "family": [
+          "enchant_illager",
+          "monster",
+          "illager",
+          "mob",
+          "boss"
+        ]
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0
+      },
+      "minecraft:nameable": {},
+      "minecraft:health": {
+        "value": 700,
+        "max": 700
+      },
+      "minecraft:boss": {
+        "should_darken_sky": false,
+        "name": "boss.dec:enchant_illager.name",
+        "hud_range": 64
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.6,
+        "height": 1.9
+      },
+      "minecraft:movement": {
+        "value": 0.55
+      },
+      "minecraft:navigation.walk": {
+        "can_path_over_water": true,
+        "can_pass_doors": true,
+        "can_open_doors": true,
+        "avoid_water": true
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.avoid_mob_type": {
+        "priority": 5,
+        "entity_types": [
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "player"
+            },
+            "max_dist": 8,
+            "walk_speed_multiplier": 0.6,
+            "sprint_speed_multiplier": 1.0
+          }
+        ]
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 8,
+        "speed_multiplier": 0.6
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "entity_types": [
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "snowgolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "wandering_trader"
+                }
+              ]
+            },
+            "max_dist": 20
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "villager"
+                },
+                {
+                  "test": "has_component",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "minecraft:is_baby"
+                }
+              ]
+            },
+            "max_dist": 20
+          }
+        ],
+        "must_see": true
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 9,
+        "look_distance": 3.0,
+        "probability": 1.0
+      },
+      "minecraft:behavior.look_at_entity": {
+        "priority": 10,
+        "look_distance": 8.0,
+        "filters": {
+          "test": "is_family",
+          "subject": "other",
+          "value": "mob"
+        }
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1,
+        "entity_types": {
+          "filters": {
+            "test": "is_family",
+            "subject": "other",
+            "operator": "!=",
+            "value": "ghost"
+          },
+          "max_dist": 64
+        }
+      },
+      "minecraft:persistent": {},
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:follow_range": {
+        "value": 64
+      }
+    },
+    "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "minecraft:spawn"
+          ]
+        }
+      },
+      "minecraft:change_attack": {
+        "randomize": [
+          {
+            "weight": 1,
+            "remove": {
+              "component_groups": [
+                "minecraft:summon",
+                "minecraft:roar"
+              ]
+            },
+            "add": {
+              "component_groups": [
+                "minecraft:summon"
+              ]
+            }
+          },
+          {
+            "weight": 2,
+            "remove": {
+              "component_groups": [
+                "minecraft:summon",
+                "minecraft:roar"
+              ]
+            },
+            "add": {
+              "component_groups": [
+                "minecraft:roar"
+              ]
+            }
+          }
+        ]
+      },
+      "minecraft:next": {
+        "add": {
+          "component_groups": [
+            "minecraft:next"
+          ]
+        }
+      }
+    }
+  }
+}

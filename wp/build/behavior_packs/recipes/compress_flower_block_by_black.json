@@ -1,0 +1,24 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:compress_flower_block_by_black"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "YX",
+      "XY"
+    ],
+      "key": {
+      "X": {
+        "item": "dec:black_flower_block"
+      },
+      "Y": {
+        "item": "dec:steel_nugget"
+      }
+    },
+    "result": {
+      "item": "dec:compress_flower_block"
+    }
+  }
+}

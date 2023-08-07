@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:ghost_summoner"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " AB",
+      " XA",
+      "X  "
+    ],
+    "key": {
+      "X": {
+        "item": "dec:ice_rod"
+      },
+      "A": {
+        "item": "dec:ghost_ingot"
+      },
+      "B": {
+        "item": "dec:ice_heart"
+      }
+    },
+    "result": {
+      "item": "dec:ghost_summoner"
+    }
+  }
+}

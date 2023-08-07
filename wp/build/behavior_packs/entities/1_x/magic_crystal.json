@@ -1,0 +1,111 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "wb:magic_crystal",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "animations": {
+        "base": "controller.animation.wb.magic_crystal.base"
+      },
+      "scripts": {
+        "animate": [
+          {"base":"query.is_baby"}
+        ]
+      }
+    },
+    "component_groups": {
+      "start":{
+        "minecraft:is_baby":{}
+      },
+    
+      "into": {
+        "minecraft:transformation": {
+          "into": "wb:plot_target<plot72>"
+        }
+      },
+      "boss": {
+        "minecraft:damage_sensor": [
+          {
+            "on_damage": {
+              "filters": {
+                "test": "has_damage",
+                "value": "fatal"
+              },
+              "event": "into"
+            }
+          }
+        ]
+      }
+    },
+    "components": {
+      "minecraft:timer": {
+        "looping": false,
+        "time": 5,
+        "randomInterval": false,
+        "time_down_event": {
+          "event": "start",
+          "target": "self"
+        }
+      },
+      "minecraft:health": {
+        "value": 1000000,
+        "max": 1000000
+      },
+      "minecraft:type_family": {
+        "family": [
+          "magic",
+          "station"
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 1,
+        "height": 1
+      },
+      "minecraft:breathable": {
+        "totalSupply": 999999999,
+        "suffocateTime": 99999999
+      },
+      "minecraft:nameable": {},
+      "minecraft:movement": {
+        "value": 0,
+        "max": 0
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 1,
+        "look_distance": 6,
+        "probability": 0.02
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 8
+      },
+      "minecraft:navigation.walk": {},
+      "minecraft:movement.basic": {},
+      "minecraft:physics": {}
+    },
+    "events": {
+      "start": {
+        "add": {
+          "component_groups": [
+            "start"
+          ]
+        }
+      },
+      "boss": {
+        "add": {
+          "component_groups": [
+            "boss"
+          ]
+        }
+      },
+      "into": {
+        "add": {
+          "component_groups": [
+            "into"
+          ]
+        }
+      }
+    }
+  }
+}

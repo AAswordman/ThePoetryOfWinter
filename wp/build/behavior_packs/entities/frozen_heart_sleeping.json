@@ -1,0 +1,106 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:frozen_heart_sleeping",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "minecraft:awake": {
+        "minecraft:transformation": {
+          "into": "dec:frozen_heart<minecraft:from_night_event>",
+          "transformation_sound": "mob.ghast.scream"
+        }
+      },
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "minecraft:from_night_event": {
+        "minecraft:environment_sensor": {
+          "triggers": {
+            "filters": {
+              "test": "is_daytime",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "event": "minecraft:despawn"
+          }
+        }
+      }
+    },
+    "components": {
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0
+      },
+      "minecraft:nameable": {},
+      "minecraft:health": {
+        "value": 1000000,
+        "max": 1000000
+      },
+      "minecraft:collision_box": {
+        "width": 1,
+        "height": 1
+      },
+      "minecraft:movement": {
+        "value": 0
+      },
+      "minecraft:type_family": {
+        "family": [
+          "frozen_heart_sleeping",
+          "frozen_heart",
+          "monster",
+          "ghast",
+          "mob",
+          "frozen"
+        ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "on_damage": {
+              "event": "minecraft:awake"
+            }
+          }
+        ]
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {
+          "min_distance": 64,
+          "max_distance": 64
+        }
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      }
+    },
+    "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
+      "minecraft:from_night_event": {
+        "add": {
+          "component_groups": [
+            "minecraft:from_night_event"
+          ]
+        }
+      },
+      "minecraft:awake": {
+        "add": {
+          "component_groups": [
+            "minecraft:awake"
+          ]
+        }
+      }
+    }
+  }
+}

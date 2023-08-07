@@ -1,0 +1,1 @@
+structure load mystructure:plain_tower ~-22 ~ ~-17

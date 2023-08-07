@@ -1,0 +1,27 @@
+{
+    "format_version": "1.10",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "dec:energy_gem"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            " 1 ",
+            "121",
+            " 1 "
+        ],
+        "key": {
+            "1": {
+                "item": "minecraft:redstone"
+            },
+            "2": {
+                "item": "minecraft:emerald"
+            }
+        },
+        "result": {
+            "item": "dec:energy_gem"
+        }
+    }
+}

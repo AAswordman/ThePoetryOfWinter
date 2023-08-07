@@ -1,0 +1,29 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:thunder_rapier"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "  #",
+      "B# ",
+      "XB "
+    ],
+    "key": {
+      "#": {
+        "item": "dec:lightning_stone"
+      },
+      "B": {
+        "item": "minecraft:dye",
+        "data": 4
+      },
+      "X": {
+        "item": "dec:iron_stick"
+      }
+    },
+    "result": {
+      "item": "dec:thunder_rapier"
+    }
+  }
+}

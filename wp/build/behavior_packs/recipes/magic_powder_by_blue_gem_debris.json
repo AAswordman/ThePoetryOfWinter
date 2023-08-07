@@ -1,0 +1,27 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:magic_powder_by_blue_gem_debris"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "###",
+      "#X#",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:dye",
+        "data": 4
+      },
+      "X": {
+        "item": "dec:blue_gem_debris"
+      }
+    },
+    "result": {
+      "item": "dec:magic_powder",
+      "count": 32
+    }
+  }
+}

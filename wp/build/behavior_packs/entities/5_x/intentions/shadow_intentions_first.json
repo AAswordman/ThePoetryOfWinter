@@ -1,0 +1,246 @@
+{
+  "format_version": "1.11.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "wb:shadow_intentions_first",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "into": {
+        "minecraft:transformation": {
+          "into": "wb:array_intentions_first<minecraft:entity_spawned>"
+        }
+      },
+      "y": {
+        "minecraft:shooter": {
+          "def": "wb:ball_intentions_firstb"
+        },
+        "minecraft:behavior.ranged_attack": {
+          "priority": 4,
+          "attack_interval_min": 1,
+          "attack_interval_max": 1.5,
+          "charge_charged_trigger": 0,
+          "charge_shoot_trigger": 1,
+          "attack_radius": 64,
+          "burst_shots": 5,
+          "burst_interval": 0.01
+        },
+        "minecraft:explode": {
+          "fuseLength": 3.5,
+          "fuseLit": true,
+          "breaks_blocks": false,
+          "power": 2,
+          "causesFire": true,
+          "fireAffectedByGriefing": true,
+          "destroyAffectedByGriefing": true
+        },
+        "minecraft:knockback_resistance": {
+          "value": 1
+        },
+        "minecraft:damage_sensor": [
+          {
+            "on_damage": {
+              "filters": {
+                "test": "has_damage",
+                "value": "fatal"
+              },
+              "event": "into"
+            }
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "test": "is_family",
+                "value": "intentions",
+                "subject": "other"
+              }
+            },
+            "deals_damage": false
+          }
+        ]
+      },
+      "g": {
+        "minecraft:behavior.melee_attack": {
+          "priority": 3,
+          "speed_multiplier": 1,
+          "track_target": false
+        },
+        "minecraft:explode": {
+          "fuseLength": 5,
+          "fuseLit": true,
+          "breaks_blocks": false,
+          "power": 4,
+          "causesFire": true,
+          "fireAffectedByGriefing": true,
+          "destroyAffectedByGriefing": true
+        },
+        "minecraft:knockback_resistance": {
+          "value": 1
+        },
+        "minecraft:damage_sensor": [
+          {
+            "on_damage": {
+              "filters": {
+                "test": "has_damage",
+                "value": "fatal"
+              },
+              "event": "into"
+            }
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "test": "is_family",
+                "value": "intentions",
+                "subject": "other"
+              }
+            },
+            "deals_damage": false
+          }
+        ]
+      },
+      "w": {
+        "minecraft:behavior.melee_attack": {
+          "priority": 3,
+          "speed_multiplier": 1,
+          "track_target": false
+        },
+        "minecraft:explode": {
+          "fuseLength": 7,
+          "fuseLit": true,
+          "breaks_blocks": false,
+          "power": 2,
+          "causesFire": true,
+          "fireAffectedByGriefing": true,
+          "destroyAffectedByGriefing": true
+        },
+        "minecraft:movement": {
+          "value": 0
+        },
+        "minecraft:knockback_resistance": {
+          "value": 1
+        },
+        "minecraft:damage_sensor": [
+          {
+            "on_damage": {
+              "filters": {
+                "test": "has_damage",
+                "value": "fatal"
+              },
+              "event": "into"
+            }
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "test": "is_family",
+                "value": "intentions",
+                "subject": "other"
+              }
+            },
+            "deals_damage": false
+          }
+        ]
+      }
+    },
+    "components": {
+      "minecraft:fire_immune": true,
+      "minecraft:type_family": {
+        "family": [
+          "moster",
+          "intentions"
+        ]
+      },
+      "minecraft:scale": {
+        "value": 1
+      },
+      "minecraft:collision_box": {
+        "width": 0.9,
+        "height": 1.8
+      },
+      "minecraft:health": {
+        "value": 50,
+        "max": 50
+      },
+      "minecraft:movement": {
+        "value": 0.23
+      },
+      "minecraft:navigation.walk": {},
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
+      "minecraft:attack": {
+        "damage": 25
+      },
+      "minecraft:damage_sensor": {
+        "cause": "fall",
+        "deals_damage": false
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 6,
+        "speed_multiplier": 1,
+        "xz_dist": 16
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 7,
+        "look_distance": 6,
+        "probability": 0.02
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 8
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 3,
+        "entity_types": [
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "operator": "!=",
+                  "subject": "other",
+                  "value": "intentions"
+                }
+              ]
+            },
+            "within_default": 64
+          }
+        ],
+        "must_see": true,
+        "must_reach": true
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 2
+      },
+      "minecraft:physics": {},
+      "minecraft:follow_range": {
+        "value": 64
+      }
+    },
+    "events": {
+      "w": {
+        "add": {
+          "component_groups": [
+            "w"
+          ]
+        }
+      },
+      "g": {
+        "add": {
+          "component_groups": [
+            "g"
+          ]
+        }
+      },
+      "into": {
+        "add": {
+          "component_groups": [
+            "into"
+          ]
+        }
+      }
+    }
+  }
+}

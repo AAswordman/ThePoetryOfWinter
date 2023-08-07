@@ -1,0 +1,233 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:zombie_summoner",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "minecraft:melee_attack": {
+        "minecraft:behavior.melee_attack": {
+          "priority": 4,
+          "target_dist": 1.2,
+          "speed_multiplier": 1.25,
+          "track_target": true
+        },
+        "minecraft:attack": {
+          "damage": 4
+        }
+      },
+        "minecraft:summon_attack": {
+          "minecraft:behavior.summon_entity": {
+            "priority": 2,
+            "summon_choices": [
+              {
+                "min_activation_range": 3.0,
+                "weight": 1,
+                "cooldown_time": 3.0,
+                "cast_duration": 2.0,
+                "particle_color": "#FF664D59",
+                "start_sound_event": "cast.spell",
+                "sequence": [
+                  {
+                    "shape": "line",
+                    "target": "self",
+                    "base_delay": 1.0,
+                    "delay_per_summon": 0.05,
+                    "num_entities_spawned": 2,
+                    "entity_type": "dec:illusion_zombie",
+                    "size": 4,
+                    "entity_lifespan": 10
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      },
+
+      "components": {
+        "minecraft:burns_in_daylight": {
+        },
+        "minecraft:experience_reward": {
+          "on_death": "query.last_hit_by_player ? 10 : 0"
+        },
+        "minecraft:type_family": {
+          "family": [  "zombie_summoner", "zombie", "monster", "mob","jockey" ]
+        },
+        "minecraft:breathable": {
+          "total_supply": 15,
+          "suffocate_time": 0
+        },
+        "minecraft:nameable": {
+        },
+        "minecraft:collision_box": {
+          "width": 0.6,
+          "height": 1.9
+        },
+        "minecraft:despawn": {
+          "despawn_from_distance": {}
+        },
+        "minecraft:movement": {
+          "value": 0.20
+        },
+        "minecraft:navigation.walk": {
+          "is_amphibious": true,
+          "avoid_sun": true,
+          "avoid_water": true
+        },
+        "minecraft:movement.basic": {
+
+        },
+        "minecraft:jump.static": {
+        },
+        "minecraft:can_climb": {
+        },
+        "minecraft:loot": {
+          "table": "loot_tables/entities/zombie.json"
+        },
+        "minecraft:equipment": {
+          "table": "loot_tables/entities/zombie_equipment.json",
+          "slot_drop_chance": [
+            {
+              "slot": "slot.weapon.mainhand",
+              "drop_chance": 0.0005
+            },
+            {
+              "slot": "slot.armor.head",
+              "drop_chance": 0.0005
+            },
+            {
+              "slot": "slot.armor.chestplate",
+              "drop_chance": 0.0005
+            },
+            {
+              "slot": "slot.armor.leggings",
+              "drop_chance": 0.0005
+            },
+            {
+              "slot": "slot.armor.boots",
+              "drop_chance": 0.0005
+            }
+          ]
+        },
+        "minecraft:health": {
+          "value": {
+            "range_min": 18,
+            "range_max": 30
+          }
+        },
+        "minecraft:hurt_on_condition": {
+          "damage_conditions": [
+            {
+              "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+              "cause": "lava",
+              "damage_per_tick": 4
+            }
+          ]
+        },
+        "minecraft:target_nearby_sensor": {
+          "inside_range": 3,
+          "outside_range": 4,
+          "must_see": true,
+          "on_inside_range": {
+            "event": "minecraft:melee_attack",
+            "target": "self"
+          },
+          "on_outside_range": {
+            "event": "minecraft:summon_attack",
+            "target": "self"
+          },
+          "on_vision_lost_inside_range": {
+            "event": "minecraft:summon_attack",
+            "target": "self"
+          }
+        },
+        "minecraft:behavior.float": {
+          "priority": 0
+        },
+        "minecraft:behavior.random_stroll": {
+          "priority": 5,
+          "speed_multiplier": 1
+        },
+        "minecraft:behavior.look_at_player": {
+          "priority": 6,
+          "look_distance": 8
+        },
+        "minecraft:behavior.random_look_around": {
+          "priority": 6
+        },
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 2,
+          "reselect_targets": true,
+          "entity_types": [
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+              },
+              "max_dist": 16
+            },
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "villager"
+              },
+              "max_dist": 16
+            },
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "irongolem"
+              },
+              "max_dist": 16
+            },
+            {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "baby_turtle"
+                  },
+                  {
+                    "test": "in_water",
+                    "subject": "other",
+                    "operator": "!=",
+                    "value": true
+                  }
+                ]
+              },
+              "max_dist": 32
+            }
+          ],
+          "must_see": true
+        },
+        "minecraft:behavior.hurt_by_target": {
+          "priority": 2
+        },
+        "minecraft:physics": {
+        },
+        "minecraft:pushable": {
+          "is_pushable": true,
+          "is_pushable_by_piston": true
+        }
+      },
+
+      "events": {
+        "minecraft:melee_attack": {
+          "remove": { "component_groups": [ "minecraft:summon_attack" ] },
+          "add": { "component_groups": [ "minecraft:melee_attack" ] }
+        },
+        "minecraft:summon_attack": {
+          "add": { "component_groups": [ "minecraft:summon_attack" ] },
+          "remove": { "component_groups": [ "minecraft:melee_attack" ] }
+        }
+      }
+    }
+  }

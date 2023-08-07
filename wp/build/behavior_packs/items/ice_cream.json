@@ -1,0 +1,27 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:ice_cream"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.miscFood"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:ice_cream.name"
+      },
+      "minecraft:icon": {
+        "texture": "ice_cream"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "miscellaneous",
+      "minecraft:use_duration": 1.6,
+      "minecraft:food": {
+        "nutrition": 4,
+        "saturation_modifier": "normal"
+      }
+    }
+  }
+}

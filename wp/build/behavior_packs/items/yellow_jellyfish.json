@@ -1,0 +1,49 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "nature",
+      "identifier": "dec:yellow_jellyfish"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.rawFood"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:yellow_jellyfish.name"
+      },
+      "minecraft:icon": {
+        "texture": "yellow_jellyfish"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "cookie",
+      "minecraft:use_duration": 1.6,
+      "minecraft:food": {
+        "on_consume": {
+          "event": "consumed",
+          "target": "self"
+        },
+        "nutrition": 2,
+        "saturation_modifier": "normal"
+      }
+    },
+    "events": {
+      "consumed": {
+        "randomize": [
+          {
+            "weight": 7,
+            "add_mob_effect": {
+              "effect": "poison",
+              "duration": 5,
+              "amplifier": 2,
+              "target": "holder"
+            }
+          },
+          {
+            "weight": 3
+          }
+        ]
+      }
+    }
+  }
+}

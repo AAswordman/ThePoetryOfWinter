@@ -1,0 +1,40 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:leaves_knife",
+      "runtime_identifier": "minecraft:snowball",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:collision_box": {
+        "width": 0.25,
+        "height": 0.25
+      },
+      "minecraft:projectile": {
+        "onHit": {
+          "impact_damage": {
+            "damage": 6,
+            "knockback": true
+          },
+          "remove_on_hit": { }
+        },
+        "hit_sound": "dig.leaves",
+				"hit_ground_sound": "dig.leaves",
+        "power": 1.9,
+        "gravity": 0.03,
+        "inertia": 1.1,
+        "offset": [ 0, 0, 1 ],
+        "uncertaintyBase": 10.0,
+        "uncertaintyMultiplier": 6,
+        "angleoffset": 0.0
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    }
+  }
+}

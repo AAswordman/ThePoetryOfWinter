@@ -1,0 +1,14 @@
+{
+	"format_version" : "1.8.0",
+	"animations" : {
+		"animation.magic_book.move" : {
+			"bones" : {
+				"body":{"rotation":[0,"Math.sin(query.life_time*180)*15+21",0]},
+				"body1":{"rotation":[0,"Math.sin(query.life_time*180)*7.5+64.5",0]},
+				"body2":{"rotation":[0,"-Math.sin(query.life_time*180)*7.5+100.5",0]},
+				"body3":{"rotation":[0,"-Math.sin(query.life_time*180)*15+129",0]}
+			},
+			"loop" : true
+		}
+	}
+}

@@ -1,0 +1,42 @@
+{
+	"format_version": "1.10.0",
+	"particle_effect": {
+		"description": {
+			"identifier": "dec:abyssal_controller_spawn_particle",
+			"basic_render_parameters": {
+				"material": "particles_alpha",
+				"texture": "textures/particle/wave_wake"
+			}
+		},
+		"components": {
+			"minecraft:emitter_rate_instant": {
+				"num_particles": 50
+			},
+			"minecraft:emitter_lifetime_once": {
+				"active_time": 1
+			},
+			"minecraft:emitter_shape_box": {
+				"offset": [0, 2, 0],
+				"half_dimensions": [1.5, 2.5, 1.5],
+				"direction": ["math.Random(-180,180)", "math.Random(-5,175)", "math.Random(-180,180)"]
+			},
+			"minecraft:particle_lifetime_expression": {
+				"max_lifetime": 2
+			},
+			"minecraft:particle_initial_speed": "math.Random(3,12)",
+			"minecraft:particle_motion_dynamic": {
+				"linear_drag_coefficient": 1.5
+			},
+			"minecraft:particle_appearance_billboard": {
+				"size": ["(0.07 + variable.particle_random_1*0.05 - variable.particle_age*0.07)", "(0.07 + variable.particle_random_1*0.05 - variable.particle_age*0.07)"],
+				"facing_camera_mode": "lookat_xyz",
+				"uv": {
+					"texture_width": 8,
+					"texture_height": 8,
+					"uv": [0, 0],
+					"uv_size": [8, 8]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,76 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:snow_energy",
+      "runtime_identifier": "minecraft:egg",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:timer": {
+        "looping": true,
+        "time": 0.3,
+        "time_down_event": {
+          "event": "minecraft:particle"
+        }
+      },
+      "minecraft:collision_box": {
+        "width": 0.2,
+        "height": 0.2
+      },
+      "minecraft:projectile": {
+        "onHit": {
+          "particle_on_hit": {
+            "particle_type": "snowballpoof",
+            "num_particles": 3,
+            "on_entity_hit": true,
+            "on_other_hit": true
+          },
+          "mob_effect": {
+            "effect": "slowness",
+            "durationeasy": 200,
+            "durationnormal": 200,
+            "durationhard": 200,
+            "amplifier": 1
+          },
+          "impact_damage": {
+            "damage": 4,
+            "knockback": false,
+            "catchFire": false,
+            "semirandomdiffdamage": false
+          },
+        "remove_on_hit": {}
+        },
+        "power": 0.0,
+        "gravity": 0.03,
+        "inertia": 1.01,
+        "liquid_inertia": 1.01,
+        "anchor": 1,
+        "offset": [
+          0,
+          0,
+          1
+        ],
+        "semirandomdiffdamage": true,
+        "uncertaintyBase": 3.0,
+        "uncertaintyMultiplier": 6,
+        "reflectOnHurt": false
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    },
+    "events": {
+      "minecraft:particle": {
+        "run_command": {
+          "command": [
+            "particle dec:everlasting_winter_wake_particle ~~~"
+          ]
+        }
+      }
+    }
+  }
+}

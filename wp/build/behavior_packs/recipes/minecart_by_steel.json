@@ -1,0 +1,23 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:minecart_by_steel"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "# #",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "dec:steel_ingot"
+      }
+    },
+    "result": {
+      "item": "minecraft:minecart"
+    }
+  }
+}

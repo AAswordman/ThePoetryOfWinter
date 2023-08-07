@@ -1,0 +1,33 @@
+{
+  "format_version": "1.8.0",
+  "animation_controllers": {
+    "controller.animation.spell.speed": {
+      "states": {
+        "default": {
+          "on_entry":[
+          	"/effect @e[r=3] speed 15 3 true"
+           ]
+        }
+      }
+    },
+    "controller.animation.spell.frost": {
+      "states": {
+        "default": {
+          "on_entry":[
+          	"/effect @e[r=3] wither 5 1 true",
+          	"/effect @e[r=3] slowness 5 2 true"
+           ]
+        }
+      }
+    },
+    "controller.animation.spell.regeneration": {
+      "states": {
+        "default": {
+          "on_entry":[
+          	"/effect @e[r=3] regeneration 5 3 true"
+           ]
+        }
+      }
+    }
+  }
+}

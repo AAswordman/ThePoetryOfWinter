@@ -1,0 +1,106 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:frozen_shadow",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "frozen_shadow"
+        ]
+      },
+      "animations": {
+        "frozen_shadow": "controller.animation.frozen_shadow"
+      }
+    },
+    "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+      "minecraft:explode": {
+        "fuseLength": 30,
+        "fuseLit": true,
+        "power": 0,
+        "causesFire": false
+      },
+      "minecraft:type_family": {
+        "family": [
+          "monster",
+          "ghast",
+          "frozen_shadow",
+          "mob",
+          "frozen"
+        ]
+      },
+      "minecraft:nameable": {},
+      "minecraft:health": {
+        "value": 24,
+        "max": 24
+      },
+      "minecraft:physics": {
+        "has_gravity": false
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1.0
+      },
+      "minecraft:attack": {
+        "damage": 10,
+        "on_attack": "minecraft:attack"
+      },
+      "minecraft:collision_box": {
+        "width": 0.6,
+        "height": 1.8
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
+      "minecraft:movement": {
+        "value": 4.0
+      },
+      "minecraft:follow_range": {
+        "value": 64,
+        "max": 64
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 1,
+        "within_radius": 64,
+        "reselect_targets": true,
+        "entity_types": [
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "player"
+            },
+            "max_dist": 64
+          }
+        ],
+        "must_see": false,
+        "must_see_forget_duration": 0.5,
+        "scan_interval": 11,
+        "target_search_height": 80.0
+      }
+    },
+    "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
+      "minecraft:attack": {
+        "run_command": {
+          "command": [
+            "particle dec:frozen_shield_particle ~~~",
+            "event entity @s minecraft:despawn"
+          ]
+        }
+      }
+    }
+  }
+}

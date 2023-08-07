@@ -1,0 +1,67 @@
+{
+  "pools": [
+    {
+      "rolls": {
+        "min": 0,
+        "max": 4
+      },
+      "entries": [
+        {
+          "type": "loot_table",
+          "name": "loot_tables/template/armor/amethyst.json",
+          "weight": 1
+        },
+        {
+          "type": "loot_table",
+          "name": "loot_tables/template/armor/dirt.json",
+          "weight": 3
+        },
+        {
+          "type": "loot_table",
+          "name": "loot_tables/template/armor/copper.json",
+          "weight": 3
+        },
+        {
+          "type": "loot_table",
+          "name": "loot_tables/template/armor/emerald.json",
+          "weight": 2
+        },
+        {
+          "type": "loot_table",
+          "name": "loot_tables/template/armor/steel.json",
+          "weight": 2
+        },
+        {
+          "type": "loot_table",
+          "name": "loot_tables/template/armor/stone.json",
+          "weight": 3
+        },
+        {
+          "type": "loot_table",
+          "name": "loot_tables/template/armor/iron.json",
+          "weight": 3
+        },
+        {
+          "type": "loot_table",
+          "name": "loot_tables/template/armor/diamond.json",
+          "weight": 1
+        },
+        {
+          "type": "loot_table",
+          "name": "loot_tables/template/armor/golden.json",
+          "weight": 3
+        },
+        {
+          "type": "loot_table",
+          "name": "loot_tables/template/armor/chainmail.json",
+          "weight": 3
+        },
+        {
+          "type": "loot_table",
+          "name": "loot_tables/template/armor/leather.json",
+          "weight": 3
+        }
+      ]
+    }
+  ]
+}

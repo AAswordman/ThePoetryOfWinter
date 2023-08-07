@@ -1,0 +1,23 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:bat_bait"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.navigation"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:bat_bait.name"
+      },
+      "minecraft:icon": {
+        "texture": "bat_bait"
+      },
+      "minecraft:foil": true,
+      "minecraft:stacked_by_data": false,
+      "minecraft:max_stack_size": 1
+    }
+  }
+}

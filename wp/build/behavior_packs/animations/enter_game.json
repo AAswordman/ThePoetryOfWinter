@@ -1,0 +1,18 @@
+{
+  "format_version": "1.8.0", 
+  "animations": {
+      "animation.enter_game": {
+        "timeline": {
+            "10": [
+              "/function enter_game"
+            ],
+            "10.5": [
+              "/function test/load_ok",
+              "/tellraw @s { \"rawtext\" : [ { \"translate\" : \"text.dec:command_help.name\" } ] }"
+            ]
+        }, 
+        "animation_length": 10.6, 
+        "loop": false
+      }
+   }
+}

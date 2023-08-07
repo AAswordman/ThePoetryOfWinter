@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:emerald_apple"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "###",
+      "#X#",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:emerald"
+      },
+      "X": {
+        "item": "minecraft:apple"
+      }
+    },
+    "result": {
+      "item": "dec:emerald_apple"
+    }
+  }
+}

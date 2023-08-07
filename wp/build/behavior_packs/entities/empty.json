@@ -1,0 +1,19 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:empty",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:explode": {
+        "fuseLength": 0.01,
+        "fuseLit": true,
+        "power": 0,
+        "causesFire": false
+      }
+    }
+  }
+}

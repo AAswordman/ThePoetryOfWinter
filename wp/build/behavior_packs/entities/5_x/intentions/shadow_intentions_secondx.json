@@ -1,0 +1,120 @@
+{
+  "format_version": "1.11.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "wb:shadow_intentions_secondx",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {},
+    "components": {
+      "minecraft:explode": {
+        "fuseLength": 8,
+        "fuseLit": true,
+        "breaks_blocks": false,
+        "power": 0,
+        "causesFire": true,
+        "fireAffectedByGriefing": true,
+        "destroyAffectedByGriefing": true
+      },
+      "minecraft:damage_sensor": [
+        {
+          "cause": "all",
+          "deals_damage": false
+        }
+      ],
+      "minecraft:fire_immune": true,
+      "minecraft:type_family": {
+        "family": [
+          "moster",
+          "intentions"
+        ]
+      },
+      "minecraft:scale": {
+        "value": 1
+      },
+      "minecraft:collision_box": {
+        "width": 0.9,
+        "height": 1.8
+      },
+      "minecraft:health": {
+        "value": 50,
+        "max": 50
+      },
+      "minecraft:movement": {
+        "value": 0.007
+      },
+      "minecraft:attack": {
+        "damage": 25
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 6,
+        "speed_multiplier": 1,
+        "xz_dist": 16
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 7,
+        "look_distance": 6,
+        "probability": 0.02
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 8
+      },
+      "minecraft:navigation.float": {
+        "can_path_over_water": true
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.float_wander": {
+        "xz_dist": 8,
+        "y_dist": 4,
+        "y_offset": -1.5,
+        "random_reselect": true,
+        "float_duration": [3,5]
+      },
+      "minecraft:can_fly": {},
+      "minecraft:nameable": {},
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 3,
+        "reselect_targets": true,
+        "entity_types": [
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "operator": "!=",
+                  "subject": "other",
+                  "value": "intentions"
+                }
+              ]
+            },
+            "within_default": 64
+          }
+        ],
+        "must_see": true,
+        "must_reach": true
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 2
+      },
+      "minecraft:physics": {},
+      "minecraft:follow_range": {
+        "value": 64
+      }
+    },
+    "events": {
+      "tag": {
+        "run_command": {
+          "command": [
+            "tag @s add wbboss"
+          ]
+        }
+      }
+    }
+  }
+}

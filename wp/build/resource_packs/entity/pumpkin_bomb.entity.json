@@ -1,0 +1,29 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:pumpkin_bomb",
+      "materials": {
+        "default": "slime"
+      },
+      "textures": {
+        "default": "textures/entity/pumpkin_slime"
+      },
+      "geometry": {
+        "default": "geometry.block"
+      },
+      "scripts": {
+        "scale": "0.5",
+        "animate": [
+          "explode"
+        ]
+      },
+      "animations": {
+        "explode": "animation.pumpkin_bomb.explode"
+      },
+      "render_controllers": [
+        "controller.render.bat"
+      ]
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+    "format_version": "1.16.100",
+    "minecraft:item": {
+        "description": {
+            "identifier": "wb:armor_seal_chestplate",
+            "category": "equipment"
+        },
+        "components": {
+            "minecraft:creative_category": {
+                "parent": "itemGroup.name.chestplate"
+            },
+            "minecraft:max_stack_size": 1,
+            "minecraft:enchantable": {
+                "value": 10,
+                "slot": "armor_torso"
+            },
+            "minecraft:repairable": {
+                "repair_items": [{
+                    "items": [
+                        "wb:crystal_evolution"
+                    ],
+                    "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.5"
+                }]
+            },
+            "minecraft:durability": {
+                "max_durability": 800,
+                "damage_chance": {
+                    "min": 60,
+                    "max": 100
+                }
+            },
+            "minecraft:mining_speed": 1.5,
+            "minecraft:damage": 3,
+            "minecraft:armor": {
+                "protection": 3
+            },
+            "minecraft:wearable": {
+                "slot": "slot.armor.chest"
+            },
+            "minecraft:icon": {
+                "texture": "armor_seal_chestplate"
+            },
+            "tag:comp:use_data_group:tag_:default:_": {},
+            "tag:comp:armor_protection:3": {},
+            "tag:comp:armor_resilience:2": {},
+            "tag:comp:armor_physical_protection:3": {},
+            "tag:comp:armor_magic_protection:6": {},
+            "tag:comp:armor_physical_reduction:1": {},
+            "tag:comp:armor_magic_reduction:0": {},
+            "tag:comp:armor_type:suit_:seal:_": {},
+            "tag:comp:actual_level:5": {}
+        }
+    }
+}

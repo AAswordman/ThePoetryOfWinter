@@ -1,0 +1,29 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:potato_rice"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.miscFood"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:potato_rice.name"
+      },
+      "minecraft:icon": {
+        "texture": "potato_rice"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "cookie",
+      "minecraft:use_duration": 2,
+      "minecraft:food": {
+        "nutrition": 15,
+        "saturation_modifier": "good",
+        "can_always_eat": true,
+        "using_converts_to": "bowl"
+      }
+    }
+  }
+}

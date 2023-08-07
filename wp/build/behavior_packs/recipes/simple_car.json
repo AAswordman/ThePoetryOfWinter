@@ -1,0 +1,27 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:simple_car"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "#X#",
+      " A "
+    ],
+    "key": {
+      "#": {
+        "item": "dec:steel_ingot"
+      },
+      "X": {
+        "item": "minecraft:minecart"
+      },
+      "A": {
+        "item": "minecraft:flint_and_steel"
+      }
+    },
+    "result": {
+      "item": "dec:simple_car"
+    }
+  }
+}

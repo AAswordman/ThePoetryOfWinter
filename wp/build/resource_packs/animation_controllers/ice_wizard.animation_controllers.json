@@ -1,0 +1,147 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.ice_wizard.root" : {
+	  "initial_state" : "default",
+		"states" : {
+		  "default" : {
+		    "animations" : [
+		      "default",
+		      {
+		      "move": "query.ground_speed>0"
+		      },
+		      { 
+			  "attack" : "variable.attack_time > 0.0"
+			  }
+		    ],
+		    "particle_effects" : [
+			{
+	          "effect" : "flyiceblock",
+			  "locator" : "leftblock"
+			},
+			{
+		      "effect" : "flyiceblock",
+     		  "locator" : "rightblock"
+			}
+		  ]
+		}
+	  }
+	},
+	"controller.animation.ice_wizard.look" : {
+	  "initial_state" : "default",
+        "states" : {
+	      "default" : {
+		    "animations" : [
+			  {
+			    "move" : "query.modified_move_speed"
+			  },
+			  "look_at_target"
+			  ],
+			  "particle_effects" : [
+		  	    {
+	              "effect" : "flyiceblock",
+			      "locator" : "leftblock"
+			    },
+			    {
+		          "effect" : "flyiceblock",
+     		      "locator" : "rightblock"
+			    }
+		      ]
+			}
+		}
+	},
+	"controller.animation.ice_wizard.summon" : {
+	  "initial_state" : "default",
+	  "states" : {
+	    "default" : {
+		  "animations" : [ "default" ],
+		    "particle_effects" : [
+		  	  {
+	            "effect" : "flyiceblock",
+		  	    "locator" : "leftblock"
+			  },
+			  {
+		        "effect" : "flyiceblock",
+     		    "locator" : "rightblock"
+			  }
+	  	    ],
+		    "transitions" : [
+			  {
+			    "summon" : "query.is_casting"
+			  }
+			]
+		},
+		"summon" : {
+		  "animations" : [ "summon" ],
+		    "particle_effects" : [
+			  {
+			    "effect" : "spell",
+			    "locator" : "left_hand"
+			  },
+			  {
+				"effect" : "spell",
+				"locator" : "right_hand"
+			  },
+			  {
+	            "effect" : "flyiceblock",
+			    "locator" : "leftblock"
+			  },
+			  {
+		        "effect" : "flyiceblock",
+     		    "locator" : "rightblock"
+			  }
+		    ],
+		    "transitions" : [
+			{
+			  "default" : "!query.is_casting"
+			}
+		  ]
+		}
+	  }
+	},
+	"controller.animation.ice_wizard.shoot": {
+      "states": {
+        "default": {
+          "animations": [
+            "default"
+          ],
+          "particle_effects" : [
+		  	{
+	          "effect" : "flyiceblock",
+			  "locator" : "leftblock"
+			},
+			{
+		      "effect" : "flyiceblock",
+     		  "locator" : "rightblock"
+			}
+		  ],
+          "transitions": [
+            {
+              "shoot": "query.is_charged"
+            }
+          ]
+        },
+        "shoot": {
+          "transitions": [
+            {
+              "default": "!query.is_charged"
+            }
+          ],
+          "animations": [
+            "shoot"
+          ],
+          "particle_effects" : [
+		  	{
+	          "effect" : "flyiceblock",
+			  "locator" : "leftblock"
+			},
+			{
+		      "effect" : "flyiceblock",
+     		  "locator" : "rightblock"
+			}
+		  ]
+        }
+      }
+    }
+  }
+}

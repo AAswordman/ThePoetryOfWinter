@@ -1,0 +1,20 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:scatter_feature": {
+	  "description": {
+		"identifier": "dec:pirate_ship_scatter"
+	  },
+	  "places_feature": "dec:pirate_ship_small_1_mcstructure",
+	  "iterations": 5,
+	  "scatter_chance": 50.0,
+	  "x": {
+		"distribution": "uniform",
+		"extent": [ 0, 15 ]
+	  },
+	  "y": "query.heightmap(variable.worldx, variable.worldz) - 1",
+	  "z": {
+		"distribution": "uniform",
+		"extent": [ 0, 15 ]
+	  }
+	}
+  }

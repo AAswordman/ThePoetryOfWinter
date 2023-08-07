@@ -1,0 +1,76 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "identifier": "dec:stone_chestplate",
+      "category": "equipment"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.chestplate"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:stone_chestplate.name"
+      },
+      "minecraft:icon": {
+        "texture": "stone_chestplate"
+      },
+      "minecraft:render_offsets": "chestplates",
+      "minecraft:max_stack_size": 1,
+      "minecraft:enchantable": {
+        "value": 15,
+        "slot": "armor_torso"
+      },
+      "minecraft:durability": {
+        "max_durability": 65,
+        "damage_chance": {
+          "min": 95,
+          "max": 100
+        }
+      },
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "minecraft:cobblestone"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.2"
+          },
+          {
+            "items": [
+              "minecraft:stone"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.3"
+          },
+          {
+            "items": [
+              "minecraft:cobbled_deepslate"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.3"
+          },
+          {
+            "items": [
+              "minecraft:deepslate"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.4"
+          },
+          {
+            "items": [
+              "dec:small_stone"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.2"
+          }
+        ]
+      },
+      "minecraft:armor": {
+        "protection": 3
+      },
+      "minecraft:wearable": {
+        "slot": "slot.armor.chest"
+      },
+      "tag:comp:armor_protection:3": {},
+      "tag:comp:armor_type:suit_:stone:_": {},
+      "tag:comp:armor_resilience:1": {}
+    }
+  }
+}

@@ -1,0 +1,269 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:event_halloween",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+      "minecraft:timer": {
+        "looping": true,
+        "time": 2,
+        "time_down_event": {
+          "event": "minecraft:summon"
+        }
+      },
+      "minecraft:health": {
+        "value": 100000,
+        "max": 100000
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": false
+      },
+      "minecraft:collision_box": {
+        "width": 0,
+        "height": 0
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "run_command": {
+          "command": [
+            "spreadplayers ~~ 16 32 @s"
+          ],
+          "target": "self"
+        }
+      },
+      "minecraft:summon": {
+        "sequence": [
+          {
+            "add": {
+              "component_groups": [
+                "minecraft:despawn"
+              ]
+            }
+          },
+          {
+            "randomize": [
+              {
+                "weight": 3,
+                "sequence": [
+                  {
+                    "run_command": {
+                      "command": [
+                        "summon dec:zombie_summoner ~~~ 0 0 minecraft:entity_spawned",
+                        "replaceitem entity @e[r=2,c=1,type=dec:zombie_summoner] slot.armor.head 0 carved_pumpkin"
+                      ],
+                      "target": "self"
+                    }
+                  },
+                  {
+                    "randomize": [
+                      {
+                        "weight": 1,
+                        "run_command": {
+                          "command": [
+                            "replaceitem entity @e[r=2,c=1,type=dec:zombie_summoner] slot.weapon.mainhand 0 dec:sword_of_halloween"
+                          ],
+                          "target": "self"
+                        }
+                      },
+                      {
+                        "weight": 3
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "weight": 10,
+                "sequence": [
+                  {
+                    "run_command": {
+                      "command": [
+                        "summon dec:zombie_warrior ~~~ 0 0 minecraft:entity_spawned",
+                        "replaceitem entity @e[r=2,c=1,type=dec:zombie_warrior] slot.armor.head 0 carved_pumpkin"
+                      ],
+                      "target": "self"
+                    }
+                  },
+                  {
+                    "randomize": [
+                      {
+                        "weight": 1,
+                        "run_command": {
+                          "command": [
+                            "replaceitem entity @e[r=2,c=1,type=dec:zombie_warrior] slot.weapon.mainhand 0 dec:sword_of_halloween"
+                          ],
+                          "target": "self"
+                        }
+                      },
+                      {
+                        "weight": 3
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "weight": 10,
+                "sequence": [
+                  {
+                    "run_command": {
+                      "command": [
+                        "summon zombie ~~~ 0 0 minecraft:entity_spawned",
+                        "replaceitem entity @e[r=2,c=1,type=zombie] slot.armor.head 0 carved_pumpkin"
+                      ],
+                      "target": "self"
+                    }
+                  },
+                  {
+                    "randomize": [
+                      {
+                        "weight": 1,
+                        "run_command": {
+                          "command": [
+                            "replaceitem entity @e[r=2,c=1,type=zombie] slot.weapon.mainhand 0 dec:sword_of_halloween"
+                          ],
+                          "target": "self"
+                        }
+                      },
+                      {
+                        "weight": 3
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "weight": 10,
+                "run_command": {
+                  "command": [
+                    "summon dec:skeleton_knight ~~~ 0 0 minecraft:entity_spawned",
+                    "replaceitem entity @e[r=2,c=1,type=dec:skeleton_knight] slot.armor.head 0 carved_pumpkin"
+                  ],
+                  "target": "self"
+                }
+              },
+              {
+                "weight": 5,
+                "sequence": [
+                  {
+                    "run_command": {
+                      "command": [
+                        "summon dec:skeleton_warrior ~~~ 0 0 minecraft:entity_spawned",
+                        "replaceitem entity @e[r=2,c=1,type=dec:skeleton_warrior] slot.armor.head 0 carved_pumpkin"
+                      ],
+                      "target": "self"
+                    }
+                  },
+                  {
+                    "randomize": [
+                      {
+                        "weight": 1,
+                        "run_command": {
+                          "command": [
+                            "replaceitem entity @e[r=2,c=1,type=dec:skeleton_warrior] slot.weapon.mainhand 0 dec:sword_of_halloween"
+                          ],
+                          "target": "self"
+                        }
+                      },
+                      {
+                        "weight": 3
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "weight": 5,
+                "run_command": {
+                  "command": [
+                    "summon dec:skeleton_wizard ~~~ 0 0 minecraft:entity_spawned",
+                    "replaceitem entity @e[r=2,c=1,type=dec:skeleton_wizard] slot.armor.head 0 carved_pumpkin"
+                  ],
+                  "target": "self"
+                }
+              },
+              {
+                "weight": 10,
+                "run_command": {
+                  "command": [
+                    "summon skeleton ~~~ 0 0 minecraft:entity_spawned",
+                    "replaceitem entity @e[r=2,c=1,type=skeleton] slot.armor.head 0 carved_pumpkin"
+                  ],
+                  "target": "self"
+                }
+              },
+              {
+                "weight": 10,
+                "run_command": {
+                  "command": [
+                    "summon dec:pumpkin_slime ~~~ 0 0 minecraft:from_night_event"
+                  ],
+                  "target": "self"
+                }
+              },
+              {
+                "weight": 20,
+                "run_command": {
+                  "command": [
+                    "summon dec:player_ghost ~~~ 0 0 minecraft:from_night_event"
+                  ],
+                  "target": "self"
+                }
+              },
+              {
+                "weight": 2,
+                "run_command": {
+                  "command": [
+                    "summon dec:vengeful_ghost ~~~ 0 0 minecraft:from_night_event"
+                  ],
+                  "target": "self"
+                }
+              },
+              {
+                "weight": 20,
+                "run_command": {
+                  "command": [
+                    "summon dec:rumorer ~~~ 0 0 minecraft:from_night_event"
+                  ],
+                  "target": "self"
+                }
+              },
+              {
+                "weight": 3,
+                "run_command": {
+                  "command": [
+                    "summon dec:werewolf ~~~ 0 0 minecraft:from_night_event"
+                  ],
+                  "target": "self"
+                }
+              },
+              {
+                "weight": 1,
+                "run_command": {
+                  "command": [
+                    "summon dec:dark_werewolf ~~~ 0 0 minecraft:from_night_event"
+                  ],
+                  "target": "self"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

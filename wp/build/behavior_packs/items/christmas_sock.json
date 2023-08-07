@@ -1,0 +1,42 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "items",
+      "identifier": "dec:christmas_sock"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.decorations"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:christmas_sock.name"
+      },
+      "minecraft:icon": {
+        "texture": "christmas_sock"
+      },
+      "minecraft:render_offsets": "bow",
+      "minecraft:use_duration": 30000,
+      "minecraft:cooldown": {
+        "category": "christmas_sock",
+        "duration": 3
+      },
+      "minecraft:on_use": {
+        "on_use": {
+          "event": "christmas_sock"
+        }
+      },
+      "minecraft:stacked_by_data": true
+    },
+    "events": {
+      "christmas_sock": {
+        "run_command": {
+          "command": [
+            "loot give @s loot \"items/christmas_sock\"",
+            "clear @s dec:christmas_sock 0 1"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,448 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:shadow_of_sea",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "minecraft:shadow_of_sea_angry": {
+        "minecraft:angry": {
+          "duration": 7,
+          "broadcast_anger": true,
+          "broadcast_range": 16,
+          "calm_event": {
+            "event": "minecraft:on_calm",
+            "target": "self"
+          }
+        },
+        "minecraft:on_target_acquired": {}
+      },
+      "minecraft:shadow_of_sea_dried": {
+        "minecraft:damage_over_time": {
+          "damage_per_hurt": 1,
+          "time_between_hurt": 0
+        }
+      },
+      "minecraft:shadow_of_sea_swimming_navigation": {
+        "minecraft:behavior.look_at_player": {
+          "priority": 8,
+          "look_distance": 6
+        },
+        "minecraft:navigation.generic": {
+          "is_amphibious": false,
+          "can_path_over_water": false,
+          "can_swim": true,
+          "can_walk": false,
+          "can_breach": false,
+          "can_sink": false
+        },
+        "minecraft:environment_sensor": {
+          "triggers": [
+            {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "on_ground",
+                    "operator": "==",
+                    "value": true
+                  },
+                  {
+                    "test": "in_water",
+                    "operator": "!=",
+                    "value": true
+                  }
+                ]
+              },
+              "event": "minecraft:navigation_on_land"
+            }
+          ]
+        }
+      },
+      "minecraft:shadow_of_sea_on_land": {
+        "minecraft:navigation.generic": {
+          "is_amphibious": true,
+          "can_path_over_water": true,
+          "can_swim": true,
+          "can_walk": true,
+          "can_breach": false,
+          "can_jump": false
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 20,
+          "time_down_event": {
+            "event": "minecraft:dried_out"
+          }
+        },
+        "minecraft:environment_sensor": {
+          "triggers": [
+            {
+              "filters": {
+                "test": "in_water_or_rain",
+                "operator": "==",
+                "value": true
+              },
+              "event": "minecraft:stop_dryingout"
+            }
+          ]
+        }
+      },
+      "minecraft:shadow_of_sea_on_land_in_rain": {
+        "minecraft:navigation.generic": {
+          "is_amphibious": true,
+          "can_path_over_water": true,
+          "can_swim": true,
+          "can_walk": true,
+          "can_breach": false,
+          "can_jump": false
+        },
+        "minecraft:environment_sensor": {
+          "triggers": [
+            {
+              "filters": {
+                "test": "in_water",
+                "operator": "==",
+                "value": true
+              },
+              "event": "minecraft:navigation_off_land"
+            },
+            {
+              "filters": {
+                "test": "in_water_or_rain",
+                "operator": "!=",
+                "value": true
+              },
+              "event": "minecraft:start_dryingout"
+            }
+          ]
+        }
+      }
+    },
+    "components": {
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "reselect_targets": true,
+        "must_see": true,
+        "within_radius": 12.0,
+        "must_see_forget_duration": 17.0,
+        "persist_time": 0.5,
+        "entity_types": [
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "any_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "snowgolem"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "irongolem"
+                    }
+                  ]
+                },
+                {
+                  "any_of": [
+                    {
+                      "test": "in_water",
+                      "subject": "other",
+                      "value": true
+                    }
+                  ]
+                }
+              ]
+            },
+            "max_dist": 20
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "any_of": [
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "villager"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "wandering_trader"
+                    }
+                  ]
+                },
+                {
+                  "any_of": [
+                    {
+                      "test": "in_water",
+                      "subject": "other",
+                      "value": true
+                    }
+                  ]
+                }
+              ]
+            },
+            "max_dist": 20,
+            "must_see": false
+          }
+        ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "on_damage": {
+              "event": "minecraft:invisibility"
+            }
+          }
+        ]
+      },
+      "minecraft:experience_reward": {
+        "on_death": "query.last_hit_by_player ? Math.Random(5,10) : 0"
+      },
+      "minecraft:behavior.melee_attack": {
+        "priority": 2,
+        "track_target": true
+      },
+      "minecraft:nameable": {},
+      "minecraft:type_family": {
+        "family": [
+          "shadow_of_sea",
+          "monster",
+          "undead",
+          "mob"
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.9,
+        "height": 0.5
+      },
+      "minecraft:health": {
+        "value": {
+          "range_min": 8,
+          "range_max": 15
+        }
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:follow_range": {
+        "value": 64,
+        "max": 64
+      },
+      "minecraft:breathable": {
+        "total_supply": 240,
+        "suffocate_time": 0,
+        "breathes_air": false,
+        "breathes_water": true,
+        "generates_bubbles": false
+      },
+      "minecraft:attack": {
+        "damage": 5
+      },
+      "minecraft:movement": {
+        "value": 0.15
+      },
+      "minecraft:navigation.generic": {
+        "is_amphibious": false,
+        "can_path_over_water": false,
+        "can_swim": true,
+        "can_walk": false,
+        "can_breach": false,
+        "can_sink": false
+      },
+      "minecraft:underwater_movement": {
+        "value": 0.15
+      },
+      "minecraft:can_climb": {},
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
+      "minecraft:behavior.random_breach": {
+        "priority": 6,
+        "interval": 50,
+        "xz_dist": 6,
+        "cooldown_time": 2.0
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 7
+      },
+      "minecraft:behavior.swim_idle": {
+        "priority": 5,
+        "idle_time": 5.0,
+        "success_rate": 0.1
+      },
+      "minecraft:behavior.random_swim": {
+        "priority": 3,
+        "speed_multiplier": 1.0,
+        "xz_dist": 16,
+        "y_dist": 4,
+        "interval": 0
+      },
+      "minecraft:behavior.swim_wander": {
+        "priority": 4,
+        "interval": 0.1,
+        "look_ahead": 2.0,
+        "speed_multiplier": 1.0,
+        "wander_time": 5.0
+      },
+      "minecraft:behavior.move_to_water": {
+        "priority": 1,
+        "search_range": 15,
+        "search_height": 5
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1
+      },
+      "minecraft:flocking": {
+        "in_water": false,
+        "match_variants": false,
+        "use_center_of_mass": false,
+        "low_flock_limit": 4,
+        "high_flock_limit": 8,
+        "goal_weight": 2.0,
+        "loner_chance": 0.1,
+        "influence_radius": 6.0,
+        "breach_influence": 0.0,
+        "separation_weight": 1.75,
+        "separation_threshold": 3.0,
+        "cohesion_weight": 1.85,
+        "cohesion_threshold": 6.5,
+        "innner_cohesion_threshold": 3.5,
+        "min_height": 4.0,
+        "max_height": 4.0,
+        "block_distance": 1.0,
+        "block_weight": 0.0
+      },
+      "minecraft:on_target_acquired": {
+        "event": "minecraft:become_angry",
+        "target": "self"
+      },
+      "minecraft:on_target_escape": {
+        "event": "minecraft:on_calm",
+        "target": "self"
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:movement.basic": {
+      }
+    },
+    "events": {
+      "minecraft:invisibility": {
+        "run_command": {
+          "command": [
+            "effect @s invisibility 3 0"
+          ]
+        }
+      },
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "minecraft:shadow_of_sea_swimming_navigation"
+          ]
+        }
+      },
+      "minecraft:become_angry": {
+        "add": {
+          "component_groups": [
+            "minecraft:shadow_of_sea_angry"
+          ]
+        },
+        "run_command":  {
+          "command": [
+            "effect @s invisibility 3 0 true"
+          ]
+        }
+      },
+      "minecraft:on_calm": {
+        "remove": {
+          "component_groups": [
+            "minecraft:shadow_of_sea_angry"
+          ]
+        }
+      },
+      "minecraft:stop_dryingout": {
+        "remove": {
+          "component_groups": [
+            "minecraft:shadow_of_sea_on_land",
+            "minecraft:shadow_of_sea_dried"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:shadow_of_sea_on_land_in_rain"
+          ]
+        }
+      },
+      "minecraft:start_dryingout": {
+        "remove": {
+          "component_groups": [
+            "minecraft:shadow_of_sea_on_land_in_rain"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:shadow_of_sea_on_land"
+          ]
+        }
+      },
+      "minecraft:dried_out": {
+        "add": {
+          "component_groups": [
+            "minecraft:shadow_of_sea_dried"
+          ]
+        }
+      },
+      "minecraft:navigation_on_land": {
+        "add": {
+          "component_groups": [
+            "minecraft:shadow_of_sea_on_land"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "minecraft:shadow_of_sea_swimming_navigation"
+          ]
+        }
+      },
+      "minecraft:navigation_off_land": {
+        "add": {
+          "component_groups": [
+            "minecraft:shadow_of_sea_swimming_navigation"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "minecraft:shadow_of_sea_on_land_in_rain",
+            "minecraft:shadow_of_sea_on_land",
+            "minecraft:shadow_of_sea_dried"
+          ]
+        }
+      }
+    }
+  }
+}

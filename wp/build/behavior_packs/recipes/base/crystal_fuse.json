@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "wb:crystal_fuse"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "###",
+      "#Y#",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "wb:mineral_senior_equipment"
+      },
+      "Y": {
+        "item":"minecraft:end_crystal"
+      }
+    },
+    "result": {
+      "item": "wb:crystal_fuse"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "format_version": "1.12.0",
+ "minecraft:entity": {
+  "description": {
+    "identifier": "dec:angel_purification_blade",
+    "runtime_identifier": "minecraft:egg",
+    "is_spawnable": false,
+    "is_summonable": true,
+    "is_experimental": false
+  },
+  "components": {
+   "minecraft:collision_box": {
+    "width": 0.2,
+    "height": 0.2
+   },
+   "minecraft:explode": {
+    "fuseLength": 0.05,
+    "fuseLit": true,
+    "power": 0,
+    "causesFire": false
+    },
+   "minecraft:projectile": {
+    "onHit": {
+      "impact_damage": {
+        "damage": 7,
+        "knockback": true,
+        "catchFire": false,
+        "semirandomdiffdamage": false
+      },
+      "remove_on_hit": { }
+    },
+    "hit_sound": "bullet.hit",
+    "power": 10,
+    "gravity": 0.00,
+    "inertia": 1,
+    "liquid_inertia": 1,
+    "anchor": 1,
+    "offset": [ 0, 0, 1 ],
+    "semirandomdiffdamage": true,
+    "uncertaintyBase": 6.0,
+    "uncertaintyMultiplier": 6,
+    "reflectOnHurt": true
+   },
+   "minecraft:pushable": {
+    "is_pushable": false,
+    "is_pushable_by_piston": true
+   }
+  }
+ }
+}

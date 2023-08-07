@@ -1,0 +1,300 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:swamp_golem",
+      "runtime_identifier": "minecraft:iron_golem",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "minecraft:spurt_mode": {
+        "minecraft:timer": {
+          "looping": false,
+          "time": 1,
+          "time_down_event": {
+            "event": "minecraft:spurt_change_attack"
+          }
+        },
+				"minecraft:spawn_entity": {
+					"min_wait_time": 0,
+					"max_wait_time": 0,
+					"num_to_spawn": 20,
+					"single_use": true,
+					"spawn_entity": "dec:poison_powder"
+				}
+      },
+      "minecraft:ranged_mode": {
+        "minecraft:timer": {
+          "looping": false,
+          "time": 5,
+          "time_down_event": {
+            "event": "minecraft:change_attack"
+          }
+        },
+        "minecraft:shooter": {
+          "type": "PoisonSpit",
+          "def": "dec:poison_spit"
+        },
+        "minecraft:behavior.ranged_attack": {
+          "attack_interval_min": 1.0,
+          "attack_interval_max": 1.0,
+          "attack_radius": 8.0,
+          "burst_shots": 2
+        }
+      },
+      "minecraft:attack_mode": {
+        "minecraft:behavior.melee_attack": {
+          "priority": 4,
+          "target_dist": 1.2,
+          "speed_multiplier": 1,
+          "track_target": true
+        },
+        "minecraft:attack": {
+          "damage": {
+            "range_min": 5,
+            "range_max": 7
+          }
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 10,
+          "time_down_event": {
+            "event": "minecraft:change_attack"
+          }
+        }
+      }
+    },
+    "components": {
+
+      "minecraft:loot": {
+        "table": "loot_tables/entities/swamp_golem.json"
+      },
+      "minecraft:navigation.generic": {
+        "is_amphibious": true,
+        "can_path_over_water": false,
+        "can_break_doors": true,
+        "can_swim": false,
+        "can_walk": true,
+        "avoid_sun": true
+      },
+      "minecraft:boss": {
+        "should_darken_sky": false,
+        "name": "mini_boss.dec:swamp_golem.name",
+        "hud_range": 16
+      },
+      "minecraft:type_family": {
+        "family": [
+          "mini_boss",
+          "swamp_golem",
+          "mob",
+          "monster",
+          "golem",
+          "swamp"
+        ]
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:fire_immune": true,
+      "minecraft:experience_reward": {
+        "on_death": "query.last_hit_by_player ? 40 : 0"
+      },
+      "minecraft:nameable": {},
+      "minecraft:health": {
+        "value": 110,
+        "max": 110
+      },
+      "minecraft:physics": {},
+      "minecraft:breathable": {
+        "totalSupply": 15,
+        "suffocateTime": 0,
+        "breathesAir": true,
+        "breathesWater": true
+      },
+      "minecraft:collision_box": {
+        "width": 0.6,
+        "height": 2.0
+      },
+      "minecraft:movement": {
+        "value": 0.25
+      },
+      "minecraft:underwater_movement": {
+        "value": 0.12
+      },
+      "minecraft:follow_range": {
+        "value": 64,
+        "max": 64
+      },
+      "minecraft:navigation.walk": {
+        "can_path_over_water": true
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "within_radius": 16.0,
+        "reselect_targets": true,
+        "entity_types": [
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "wandering_trader"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "villager"
+                }
+              ]
+            },
+            "max_dist": 16
+          }
+        ],
+        "must_see": true
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 7,
+        "speed_multiplier": 1
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 8,
+        "look_distance": 8
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 8
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "randomize": [
+          {
+            "weight": 1,
+            "add": {
+              "component_groups": [
+                "minecraft:ranged_mode"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "add": {
+              "component_groups": [
+                "minecraft:attack_mode"
+              ]
+            }
+          }
+        ]
+      },
+      "minecraft:change_attack": {
+        "randomize": [
+          {
+            "weight": 1,
+            "remove": {
+              "component_groups": [
+                "minecraft:ranged_mode",
+                "minecraft:attack_mode"
+              ]
+            },
+            "add": {
+              "component_groups": [
+                "minecraft:ranged_mode"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "remove": {
+              "component_groups": [
+                "minecraft:ranged_mode",
+                "minecraft:attack_mode"
+              ]
+            },
+            "add": {
+              "component_groups": [
+                "minecraft:attack_mode"
+              ]
+            }
+          },
+          {
+            "weight": 2,
+            "remove": {
+              "component_groups": [
+                "minecraft:ranged_mode",
+                "minecraft:attack_mode"
+              ]
+            },
+            "add": {
+              "component_groups": [
+                "minecraft:spurt_mode"
+              ]
+            },
+            "run_command": {
+              "command": [
+                "tp ~~~ ~ -180",
+                "effect @s regeneration 5"
+              ]
+            }
+          }
+        ]
+      },
+      "minecraft:spurt_change_attack": {
+        "randomize": [
+          {
+            "weight": 1,
+            "remove": {
+              "component_groups": [
+                "minecraft:spurt_mode"
+              ]
+            },
+            "add": {
+              "component_groups": [
+                "minecraft:ranged_mode"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "remove": {
+              "component_groups": [
+                "minecraft:spurt_mode"
+              ]
+            },
+            "add": {
+              "component_groups": [
+                "minecraft:attack_mode"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

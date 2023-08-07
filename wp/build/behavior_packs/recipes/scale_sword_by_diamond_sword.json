@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:scale_sword_by_diamond_sword"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " X ",
+      "XAX",
+      " X "
+    ],
+    "key": {
+      "X": {
+        "item": "dec:scale_block"
+      },
+      "A": {
+        "item": "minecraft:diamond_sword"
+      }
+    },
+    "result": {
+      "item": "dec:scale_sword"
+    }
+  }
+}

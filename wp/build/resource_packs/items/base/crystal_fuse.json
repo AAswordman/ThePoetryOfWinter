@@ -1,0 +1,13 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "wb:crystal_fuse",
+      "category": "Nature"
+    },
+    "components": {
+      "minecraft:icon": "crystal_fuse",
+      "minecraft:hover_text_color": "light_purple"
+    }
+  }
+}

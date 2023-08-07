@@ -1,0 +1,24 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "wb:sweep_damage2",
+      "materials": { "default": "skeleton" },
+      "textures": {
+        "default": "textures/wb/damage/base"
+      },
+      "geometry": {
+        "default": "geometry.intentions_first"
+      },
+      "animations": {
+        "move": "animation.sweep.damagea"
+      },
+      "scripts": {
+        "animate": [
+            "move"
+        ]
+      },
+      "render_controllers": [ "controller.render.base" ]
+    }
+  }
+}

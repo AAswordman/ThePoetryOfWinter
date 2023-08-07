@@ -1,0 +1,119 @@
+{
+    "format_version": "1.16.100",
+    "minecraft:item": {
+        "description": {
+            "category": "equipment",
+            "identifier": "dec:copper_dagger"
+        },
+        "components": {
+            "minecraft:creative_category": {
+                "parent": "itemGroup.name.sword"
+            },
+            "minecraft:display_name": {
+                "value": "item.dec:copper_dagger.name"
+            },
+            "minecraft:icon": {
+                "texture": "copper_dagger"
+            },
+            "minecraft:max_stack_size": 1,
+            "minecraft:durability": {
+                "max_durability": 343
+            },
+            "minecraft:enchantable": {
+                "value": 15,
+                "slot": "sword"
+            },
+            "minecraft:damage": 5.7,
+            "minecraft:digger": {
+                "use_efficiency": true,
+                "destroy_speeds": [
+                    {
+                        "block": "minecraft:web",
+                        "speed": 15,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:bamboo",
+                        "speed": 15,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:christmas_gift",
+                        "speed": 15,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    }
+                ],
+                "on_dig": {
+                    "event": "attack",
+                    "target": "self"
+                }
+            },
+            "minecraft:cooldown": {
+                "category": "dagger",
+                "duration": 4
+            },
+            "minecraft:hand_equipped": true,
+            "minecraft:weapon": {
+                "on_hurt_entity": {
+                    "event": "attack",
+                    "target": "self"
+                },
+                "on_hit_block": {
+                    "event": "attack",
+                    "target": "self"
+                }
+            },
+            "minecraft:repairable": {
+                "repair_items": [
+                    {
+                        "items": [
+                            "minecraft:minecraft:copper_ingot"
+                        ],
+                        "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.3"
+                    },
+                    {
+                        "items": [
+                            "minecraft:minecraft:copper_nugget"
+                        ],
+                        "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.03"
+                    }
+                ]
+            },
+            "minecraft:on_use": {
+                "on_use": {
+                    "event": "copper_dagger_attack",
+                    "target": "self"
+                }
+            },
+            "minecraft:can_destroy_in_creative": false,
+            "tag:comp:movement_addition:0.01": {},
+            "tag:comp:equipment_type:melee_weapon":{}
+        },
+        "events": {
+            "copper_dagger_attack": {
+                "run_command": {
+                    "command": [
+                        "function item/copper_dagger"
+                    ],
+                    "target": "holder"
+                },
+                "damage": {
+                    "amount": 1,
+                    "type": "magic"
+                }
+            },
+            "attack": {
+                "damage": {
+                    "amount": 1,
+                    "type": "magic"
+                }
+            }
+        }
+    }
+}

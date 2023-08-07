@@ -1,0 +1,33 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:spider_staff"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "ABE",
+      "ACB",
+      "CAA"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:string"
+      },
+      "B": {
+        "item": "dec:poison_gland"
+      },
+      "C": {
+        "item": "minecraft:stick"
+      },
+      "E": {
+        "item": "minecraft:spider_eye"
+      }
+    },
+    "result": [
+      { "item": "dec:spider_staff" }
+    ]
+  }
+}

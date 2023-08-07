@@ -1,0 +1,67 @@
+{
+  "format_version": "1.8.0",
+ "minecraft:entity": {
+  "description": {
+    "identifier": "wb:originsave",
+    "is_spawnable": false,
+    "is_summonable": true,
+    "is_experimental": false,
+        "animations": {
+        "summon":"animation.originking.save"
+      },
+       "scripts": {
+         "animate": [
+           "summon"
+         ]
+      }
+  },
+
+  "component_groups": {
+  	"start":{
+  		  	"minecraft:health":{
+  		"value":100000,
+  		"max":  100000,
+  		"min":10000
+  	}
+  	}
+  },
+
+  "components": {
+    	"minecraft:physics":{
+},
+  	   	  "minecraft:damage_sensor":[
+        {
+          "cause": "all",
+          "deals_damage": false
+        }
+       ],
+             "minecraft:tick_world":{
+    	"distance_to_players": true,
+    	"radius":4
+      },
+       "minecraft:knockback_resistance": {
+        "value": 1,
+        "max": 1
+      },
+  	"minecraft:health":{
+  		"value":100000,
+  		"max":  100000,
+  		"min":10000
+  	},
+      "minecraft:collision_box": {
+        "width": 0.1,
+        "height": 0.1
+      },
+      "minecraft:scale":{
+          "value":0.1
+      }
+  },
+  "events": {
+  	"start":{
+  		"add":{
+  			"component_groups":["start"]
+  		}
+  	}
+  }
+ }
+}

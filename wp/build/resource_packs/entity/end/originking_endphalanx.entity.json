@@ -1,0 +1,28 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "wb:originking_endphalanx",
+      "materials": { 
+        "default": "spider",
+        "invisible": "spider_invisible"
+      },
+      "textures": { 
+          "default":"textures/wb/end/originking_summon"
+      },
+      "geometry": { 
+          "default":"geometry.originking.summonb"
+      },
+      "animations": {
+        "par":"animation.originking_endphalanx.base"
+      },
+      "animation_controllers": [
+        { "par":"controller.animation.base.par" }
+      ],
+     "particle_effects": {
+        "flame": "wb:originking_endphalanx_par"
+      },
+      "render_controllers": [ "controller.render.spider"]
+    }
+  }
+}

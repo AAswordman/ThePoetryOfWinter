@@ -1,0 +1,26 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:wither_substance"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XXX",
+      "X#X",
+      "XXX"
+    ],
+    "key": {
+      "#": {
+        "item": "dec:ender_substance"
+      },
+      "X": {
+        "item": "minecraft:soul_sand"
+      }
+    },
+    "result": {
+      "item": "dec:wither_substance",
+      "count": 1
+    }
+  }
+}

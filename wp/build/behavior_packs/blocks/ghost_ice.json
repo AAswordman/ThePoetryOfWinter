@@ -1,0 +1,39 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:block": {
+    "description": {
+      "identifier": "dec:ghost_ice"
+    },
+    "components": {
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "ghost_ice",
+          "render_method": "blend"
+        }
+      },
+      "minecraft:loot": "loot_tables/empty.json",
+      "minecraft:light_dampening": 0,
+      "minecraft:light_emission": 0,
+      "minecraft:destroy_time": 1,
+      "minecraft:explosion_resistance": 10,
+      "minecraft:map_color": "#99C1FF",
+      "minecraft:ticking": {
+        "looping": true,
+        "range": [
+          2,
+          4
+        ],
+        "on_tick": {
+          "event": "minecraft:disappear"
+        }
+      }
+    },
+    "events": {
+      "minecraft:disappear": {
+        "set_block": {
+          "block_type": "minecraft:air"
+        }
+      }
+    }
+  }
+}

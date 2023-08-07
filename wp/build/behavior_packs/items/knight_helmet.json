@@ -1,0 +1,60 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:knight_helmet"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.helmet"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:knight_helmet.name"
+      },
+      "minecraft:icon": {
+        "texture": "knight_helmet"
+      },
+      "minecraft:render_offsets": "helmets",
+      "minecraft:max_stack_size": 1,
+      "minecraft:enchantable": {
+        "value": 30,
+        "slot": "armor_head"
+      },
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "minecraft:minecraft:iron_ingot"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.2"
+          },
+          {
+            "items": [
+              "minecraft:minecraft:iron_nugget"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.02"
+          }
+        ]
+      },
+      "minecraft:durability": {
+        "max_durability": 231,
+        "damage_chance": {
+          "min": 60,
+          "max": 100
+        }
+      },
+      "minecraft:knockback_resistance": {
+        "protection": 0.1
+      },
+      "minecraft:armor": {
+        "protection": 3
+      },
+      "minecraft:wearable": {
+        "slot": "slot.armor.head"
+      },
+      "tag:comp:armor_protection:3": {},
+      "tag:comp:armor_type:decorate_": {}
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:mind_controller",
+      "runtime_identifier": "minecraft:snowball",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:collision_box": {
+        "width": 0.25,
+        "height": 0.25
+      },
+      "minecraft:projectile": {
+        "onHit": {
+          "mob_effect": {
+            "effect": "blindness",
+            "durationeasy": 24,
+            "durationnormal": 24,
+            "durationhard": 24,
+            "amplifier": 0
+          },
+          "impact_damage": {
+            "damage": 3,
+            "knockback": false
+          },
+          "remove_on_hit": { }
+        },
+        "power": 2,
+        "gravity": 0.03,
+        "inertia": 1.2,
+        "offset": [ 0, 0, 1 ],
+        "uncertaintyBase": 6.0,
+        "angleoffset": 0.0
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    }
+  }
+}

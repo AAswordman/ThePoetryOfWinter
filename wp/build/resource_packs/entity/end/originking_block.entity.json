@@ -1,0 +1,16 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "wb:originking_block",
+      "materials": { "default": "skeleton" },
+      "textures": {
+        "default": "textures/wb/end/originking_block"
+      },
+      "geometry": {
+        "default": "geometry.block_ball"
+      },
+      "render_controllers": [ "controller.render.base" ]
+    }
+  }
+}

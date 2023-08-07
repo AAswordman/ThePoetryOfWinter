@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "wb:sword_seal_f"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "###",
+      "#X#",
+      "#Y#"
+    ],
+    "key": {
+      "#": {
+        "item": "wb:mineral_senior_seal"
+      },
+      "X": {
+        "item": "wb:sword_seal_e"
+      },
+      "Y": {
+        "item": "wb:crystal_fuse"
+      }
+    },
+    "result": {
+      "item": "wb:sword_seal_f"
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:magic_ice_cream"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.miscFood"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:magic_ice_cream.name"
+      },
+      "minecraft:icon": {
+        "texture": "magic_ice_cream"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "miscellaneous",
+      "minecraft:cooldown": {
+        "category": "magic_ice_cream",
+        "duration": 60
+      },
+      "minecraft:use_duration": 1.6,
+      "minecraft:food": {
+        "nutrition": 3,
+        "saturation_modifier": "low",
+        "can_always_eat": true,
+        "on_consume": {
+          "event": "consumed",
+          "target": "self"
+        }
+      }
+    },
+    "events": {
+      "consumed": {
+        "sequence": [
+          {
+            "add_mob_effect": {
+              "effect": "resistance",
+              "duration": 4,
+              "amplifier": 4,
+              "target": "holder"
+            }
+          },
+          {
+            "add_mob_effect": {
+              "effect": "slowness",
+              "duration": 4,
+              "amplifier": 4,
+              "target": "holder"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

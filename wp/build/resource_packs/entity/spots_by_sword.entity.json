@@ -1,0 +1,24 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:spots_by_sword",
+      "textures": {
+        "default": "textures/entity/spots"
+      },
+      "geometry": {
+        "default": "geometry.spots"
+      },
+      "scripts": {
+        "animate": [
+          "spinning"
+        ]
+      },
+      "animations": {
+        "spinning": "animation.spots.spinning"
+      },
+      "render_controllers": [ "controller.render.spots" ],
+      "materials": { "default": "husk" }
+      }
+   }
+}

@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:infinite_crystal_nucleus_1"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "###",
+      "#X#",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "dec:crystal_nucleus"
+      },
+      "X": {
+        "item": "minecraft:diamond"
+      }
+    },
+    "result": {
+      "item": "dec:infinite_crystal_nucleus_1"
+    }
+  }
+}

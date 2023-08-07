@@ -1,0 +1,56 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "dec:bamboo_yataghan",
+			"runtime_identifier": "minecraft:snowball",
+			"is_spawnable": false,
+			"is_summonable": false,
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.25,
+				"height": 0.25
+			},
+			"minecraft:explode": {
+				"fuse_length": {
+					"range_min": 0.5,
+					"range_max": 2.0
+				},
+				"fuse_lit": true,
+				"power": 0,
+				"causes_fire": false
+			},
+			"minecraft:projectile": {
+				"on_hit": {
+					"impact_damage": {
+						"damage": 7,
+						"knockback": true,
+						"semi_random_diff_damage": false,
+						"destroy_on_hit": false
+					},
+					"stick_in_ground": {
+						"shake_time": 0.5
+					}
+				},
+				"hit_sound": "item.trident.hit",
+				"hit_ground_sound": "item.trident.hit_ground",
+				"power": 3,
+				"gravity": 0.1,
+				"uncertainty_base": 3,
+				"uncertainty_multiplier": 0,
+				"stop_on_hurt": true,
+				"anchor": 1,
+				"should_bounce": true,
+				"multiple_targets": false,
+				"offset": [0, -0.1, 0]
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": true,
+				"is_pushable_by_piston": true
+			}
+		}
+	}
+}

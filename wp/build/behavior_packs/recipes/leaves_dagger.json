@@ -1,0 +1,29 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:leaves_dagger"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "BXB",
+      "BAB",
+      "BAB"
+    ],
+    "key": {
+      "A": {
+        "item": "dec:eye_of_nature"
+      },
+      "X": {
+        "item": "minecraft:log"
+      },
+      "B": {
+        "item": "minecraft:vine"
+      }
+    },
+    "result": {
+      "item": "dec:leaves_dagger",
+      "count": 1
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "wb:originking_black",
+      "materials": { 
+          "default": "skeleton",
+          "roaring":"wbarmor"
+      },
+      "textures": { 
+          "default": "textures/wb/1_x/spell_fire",
+          "roaring":"textures/wb/base/ball_territory"
+      },
+      "geometry": { 
+          "default": "geometry.spell_fire",
+          "roaring":"geometry.block_ballxb"
+      },
+      "animations": {
+        "roaring":"animation.originking_black.roaring"
+      },
+      "animation_controllers": [
+        { "roaring":"controller.animation.base.roaring" }
+      ],
+      "render_controllers": [ "controller.render.base","controller.render.border_fugitive_armorb"]
+    }
+  }
+}

@@ -1,0 +1,1 @@
+scoreboard players set 剧情线 wbqjsz 1

@@ -1,0 +1,44 @@
+{
+  "format_version": "1.15.0",
+  "minecraft:biome": {
+    "description": {
+      "identifier": "magic_forest"
+    },
+    "components": {
+      "minecraft:climate": {
+        "downfall": 0.8,
+        "snow_accumulation": [0,0.125],
+        "temperature": 0.6
+      },
+      "minecraft:overworld_height": {
+        "noise_params": [0.4,1]
+      },
+      "minecraft:surface_parameters": {
+        "sea_floor_depth": 7,
+        "sea_floor_material": "wb:magic_forest_grass",
+        "foundation_material": "minecraft:stone",
+        "mid_material": "wb:magic_forest_grass",
+        "top_material": "wb:magic_forest_grass",
+        "sea_material": "minecraft:water"
+      },
+      "minecraft:overworld_generation_rules": {
+        "mutate_transformation": "magic_forest_mountain",
+        "hills_transformation": "magic_forest_mountain",
+        "generate_for_climates": [
+          [
+            "cold",
+            1
+          ],
+          [
+            "medium",
+            1
+          ]
+        ]
+      },
+      "animal": {},
+      "magic_forest": {},
+      "monster": {},
+      "overworld_generation": {}
+    }
+  }
+}

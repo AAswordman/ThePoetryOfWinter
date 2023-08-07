@@ -1,0 +1,27 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:ghost_diamond_staff",
+      "min_engine_version": "1.8.0",
+      "materials": {
+        "default": "zombie"
+      },
+      "textures": {
+        "default": "textures/entity/ghost_diamond_staff"
+      },
+      "geometry": {
+        "default": "geometry.diamond_staff"
+      },
+      "spawn_egg": {
+        "base_color": "#4DA09C",
+        "overlay_color": "#58B5B0"
+      },
+      "scripts": {
+        "scale": "1"
+      },
+      "render_controllers": [ "controller.render.sword" ],
+      "enable_attachables": true
+    }
+  }
+}

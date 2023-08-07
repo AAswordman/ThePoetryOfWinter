@@ -1,0 +1,31 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+      "description": {
+      "identifier": "epic:reinforced_metal_group"
+      },  
+      "tags": [ "crafting_table" ],
+      "pattern": [
+        "ACA",
+        "BDB",
+        "ACA"
+      ],
+      "key": {
+        "C": {
+          "item": "minecraft:iron_block"
+        },
+        "A": {
+          "item": "minecraft:copper_block"
+        },
+        "D":{
+            "item":"minecraft:gold_block"
+        },
+        "B":{
+          "item":"dec:steel_block"
+        }
+      },
+      "result": {
+        "item": "epic:reinforced_metal_group"
+      }
+    }
+  }

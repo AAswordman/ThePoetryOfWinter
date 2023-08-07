@@ -1,0 +1,27 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:fried_egg"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.cookedFood"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:fried_egg.name"
+      },
+      "minecraft:icon": {
+        "texture": "fried_egg"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "cookie",
+      "minecraft:use_duration": 1.6,
+      "minecraft:food": {
+        "nutrition": 5,
+        "saturation_modifier": "low"
+      }
+    }
+  }
+}

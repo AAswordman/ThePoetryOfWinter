@@ -1,0 +1,84 @@
+{
+    "minecraft:entity": {
+        "component_groups": {
+            "minecraft:exploding": {
+                "minecraft:explode": {
+                    "causesFire": false,
+                    "fuseLength": 0.0,
+                    "fuseLit": true,
+                    "power": 5.0
+                }
+            }
+        },
+        "components": {
+            "minecraft:collision_box": {
+                "height": 0.31,
+                "width": 0.31
+            },
+            "minecraft:identifier": {
+                "id": "minecraft:dragon_fireball"
+            },
+            "minecraft:explode":{
+                "fuse_length": 4,
+                "fuse_lit": true,
+                "power": 4,
+                "breaks_blocks":false,
+                "causes_fire": false
+            },
+            "minecraft:projectile": {
+                "anchor": 2,
+                "angleoffset": 0.0,
+                "catchFire": true,
+                "destroyOnHurt": false,
+                "gravity": 0.0,
+                "hitSound": "explode",
+                "homing": false,
+                "inertia": 1,
+                "isdangerous": false,
+                "liquid_inertia": 0.0,
+                "offset": [0.0, 0.5, 0.0],
+                "onHit": {
+                    "definition_event": {
+                        "affectProjectile": true,
+                        "eventTrigger": {
+                            "event": "minecraft:explode",
+                            "target": "self"
+                        }
+                    },
+                    "impact_damage": {
+                        "catchFire": true,
+                        "damage": 5,
+                        "destroyonhit": true,
+                        "knockback": false,
+                        "semirandomdiffdamage": true,
+                        "shouldbounce": true
+                    },
+                    "remove_on_hit": {},
+                    "spawn_aoe_cloud": {
+                        "affect_owner": false,
+                        "color": [220, 0, 239],
+                        "duration": 15,
+                        "particle": "dragonbreath",
+                        "potion": 23,
+                        "radius": 6,
+                        "radius_on_use": 0
+                    }
+                },
+                "power": 2.2,
+                "reflectOnHurt": true,
+                "semirandomdiffdamage": true,
+                "shoottarget": true,
+                "uncertaintyBase": 10.0,
+                "uncertaintyMultiplier": 0
+            }
+        },
+        "events": {
+            "minecraft:explode": {
+                "add": {
+                    "component_groups": ["minecraft:exploding"]
+                }
+            }
+        },
+        "format_version": "1.2.0"
+    }
+}

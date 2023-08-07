@@ -1,0 +1,1 @@
+summon dec:vengeful_ghost ~~~

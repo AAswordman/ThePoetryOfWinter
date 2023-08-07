@@ -1,0 +1,68 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "wb:small_block_ball",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball"
+    },
+    "component_groups": {
+      "minecraft:exploding": {
+        "minecraft:explode": {
+          "fuseLength": 0,
+          "fuseLit": true,
+          "breaks_blocks": false,
+          "power": 3,
+          "causesFire": true,
+          "fireAffectedByGriefing": true,
+          "destroyAffectedByGriefing": true
+        }
+      }
+    },
+    "components": {
+      "minecraft:explode": {
+        "fuseLength": 5,
+        "fuseLit": true,
+        "power": 0,
+        "causesFire": true,
+        "fireAffectedByGriefing": true,
+        "destroyAffectedByGriefing": true
+      },
+      "minecraft:physics": {},
+      "minecraft:collision_box": {
+        "width": 0.25,
+        "height": 0.25
+      },
+      "minecraft:projectile": {
+        "onHit": {
+          "impact_damage": {
+            "damage": 50,
+            "knockback": true,
+            "catchFire": false,
+            "semirandomdiffdamage": false
+          },
+          "remove_on_hit": {}
+        },
+        "power": 0.7,
+        "gravity": 0.01,
+        "inertia": 1,
+        "anchor": 2,
+        "offset": [0,2.5,0],
+        "semirandomdiffdamage": false,
+        "uncertaintyBase": 35,
+        "reflectOnHurt": true
+      }
+    },
+    "events": {
+      "minecraft:explode": {
+        "add": {
+          "component_groups": [
+            "minecraft:exploding"
+          ]
+        }
+      }
+    }
+  }
+}

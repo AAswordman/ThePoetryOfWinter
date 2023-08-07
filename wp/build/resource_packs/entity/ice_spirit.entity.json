@@ -1,0 +1,36 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:ice_spirit",
+      "materials": {
+        "default": "slime_outer"
+      },
+      "textures": {
+        "default": "textures/entity/ice_spirit"
+      },
+      "geometry": {
+        "default": "geometry.ice_spirit"
+      },
+      "spawn_egg": {
+        "base_color": "#FFFFFFFF",
+        "overlay_color": "#BCD4FFFF"
+      },
+      "render_controllers": [ "controller.render.ice_spirit" ],
+	  "scripts": { "animate": [ "root", "look", "shoot_controller", "jump_controller", "spawn" ] },
+      "animations": {
+        "root": "controller.animation.ice_spirit.root",
+        "shoot_controller": "controller.animation.ice_spirit.shoot",
+        "jump_controller": "controller.animation.ice_spirit.jump",
+        "look": "controller.animation.ice_spirit.look",
+        "spawn": "animation.ice_spirit.spawn",
+        "defualt": "animation.ice_spirit.defualt",
+        "look_at_target": "animation.common.look_at_target",
+        "move": "animation.ice_spirit.move",
+        "attack": "animation.ice_spirit.attack",
+        "shoot": "animation.ice_spirit.shoot",
+        "jump": "animation.ice_spirit.jump"
+      }
+    }
+  }
+}

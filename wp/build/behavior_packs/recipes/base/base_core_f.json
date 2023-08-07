@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "wb:base_core_f"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "###",
+      "#Y#",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:gold_block"
+      },
+      "Y": {
+        "item":"wb:base_core_e"
+      }
+    },
+    "result": {
+      "item": "wb:base_core_f"
+    }
+  }
+}

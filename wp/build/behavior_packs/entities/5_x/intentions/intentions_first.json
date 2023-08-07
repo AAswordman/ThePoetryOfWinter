@@ -1,0 +1,560 @@
+{
+    "format_version": "1.11.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "wb:intentions_first",
+            "is_spawnable": true,
+            "is_summonable": true,
+            "is_experimental": false,
+            "animations": {
+                "boss": "animation.boss.testplayer"
+            },
+            "scripts": {
+                "animate": [{
+                    "boss": "query.health>1"
+                }]
+            }
+        },
+        "component_groups": {
+            "minecraft:despawn": {
+                "minecraft:instant_despawn": {}
+            },
+            "into": {
+                "minecraft:spawn_entity": [{
+                    "min_wait_time": 0,
+                    "max_wait_time": 0,
+                    "spawn_entity": "wb:boss_translate_use",
+                    "num_to_spawn": 1,
+                    "single_use": true
+                }],
+                "minecraft:transformation": {
+                    "into": "wb:intentions_second<minecraft:entity_spawned>"
+                }
+            },
+            "a_s": {
+                "minecraft:scale": {
+                    "value": 1
+                },
+                "minecraft:behavior.melee_attack": {
+                    "priority": 3,
+                    "speed_multiplier": 1.5,
+                    "track_target": false
+                },
+                "minecraft:timer": {
+                    "time": 5,
+                    "looping": true,
+                    "time_down_event": {
+                        "event": "at",
+                        "target": "self"
+                    }
+                }
+            },
+            "a_t": {
+                "minecraft:timer": {
+                    "time": 5,
+                    "looping": true,
+                    "time_down_event": {
+                        "event": "sss",
+                        "target": "self"
+                    }
+                },
+                "minecraft:scale": {
+                    "value": 1
+                },
+                "minecraft:spawn_entity": [{
+                    "min_wait_time": 0.01,
+                    "max_wait_time": 0.01,
+                    "spawn_entity": "wb:shadow_intentions_first<g>",
+                    "num_to_spawn": 3,
+                    "single_use": true
+                }]
+            },
+            "a_w": {
+                "minecraft:scale": {
+                    "value": 1
+                },
+                "minecraft:timer": {
+                    "time": 4,
+                    "looping": true,
+                    "time_down_event": {
+                        "event": "sss",
+                        "target": "self"
+                    }
+                },
+                "minecraft:behavior.summon_entity": {
+                    "priority": 0,
+                    "summon_choices": [{
+                        "min_activation_range": 0,
+                        "weight": 2,
+                        "cooldown_time": 0,
+                        "cast_duration": 3,
+                        "particle_color": "#FF664D59",
+                        "sequence": [{
+                                "shape": "circle",
+                                "target": "target",
+                                "base_delay": 0.02,
+                                "delay_per_summon": 0,
+                                "num_entities_spawned": 12,
+                                "entity_type": "wb:shadow_intentions_first<w>",
+                                "size": 10,
+                                "entity_lifespan": 6,
+                                "sound_event": "prepare.attack"
+                            },
+                            {
+                                "shape": "circle",
+                                "target": "target",
+                                "base_delay": 0.02,
+                                "delay_per_summon": 0,
+                                "num_entities_spawned": 2,
+                                "entity_type": "wb:shadow_intentions_first<g>",
+                                "size": 5,
+                                "entity_lifespan": 6,
+                                "sound_event": "prepare.attack"
+                            }
+                        ]
+                    }]
+                }
+            },
+            "f_f": {
+                "minecraft:is_charged": {},
+                "minecraft:scale": {
+                    "value": 1
+                },
+                "minecraft:timer": {
+                    "time": 7,
+                    "looping": true,
+                    "time_down_event": {
+                        "event": "fg",
+                        "target": "self"
+                    }
+                },
+                "minecraft:spell_effects": {
+                    "add_effects": [{
+                        "effect": "resistance",
+                        "amplifier": 2,
+                        "visible": false,
+                        "ambient": false,
+                        "duration": 5
+                    }]
+                },
+                "minecraft:shooter": {
+                    "def": "wb:ball_intentions_firstb"
+                },
+                "minecraft:behavior.ranged_attack": {
+                    "priority": 4,
+                    "attack_interval_min": 1,
+                    "attack_interval_max": 1.5,
+                    "charge_charged_trigger": 0,
+                    "charge_shoot_trigger": 1,
+                    "attack_radius": 64,
+                    "burst_shots": 30,
+                    "burst_interval": 0.01
+                }
+            },
+            "f_g": {
+                "minecraft:is_charged": {},
+                "minecraft:behavior.summon_entity": {
+                    "priority": 0,
+                    "summon_choices": [{
+                        "min_activation_range": 0,
+                        "weight": 2,
+                        "cooldown_time": 0,
+                        "cast_duration": 3,
+                        "particle_color": "#FF664D59",
+                        "sequence": [{
+                                "shape": "circle",
+                                "target": "self",
+                                "base_delay": 0.02,
+                                "delay_per_summon": 0,
+                                "num_entities_spawned": 4,
+                                "entity_type": "wb:shadow_intentions_first<y>",
+                                "size": 10,
+                                "entity_lifespan": 5,
+                                "sound_event": "prepare.attack"
+                            },
+                            {
+                                "shape": "circle",
+                                "target": "target",
+                                "base_delay": 0.02,
+                                "delay_per_summon": 0,
+                                "num_entities_spawned": 3,
+                                "entity_type": "wb:shadow_intentions_first<g>",
+                                "size": 5,
+                                "entity_lifespan": 5,
+                                "sound_event": "prepare.attack"
+                            }
+                        ]
+                    }]
+                },
+                "minecraft:spell_effects": {
+                    "add_effects": [{
+                        "effect": "resistance",
+                        "amplifier": 3,
+                        "visible": false,
+                        "ambient": false,
+                        "duration": 8
+                    }]
+                },
+                "minecraft:scale": {
+                    "value": 1
+                },
+                "minecraft:timer": {
+                    "time": 8,
+                    "looping": true,
+                    "time_down_event": {
+                        "event": "sss",
+                        "target": "self"
+                    }
+                }
+            },
+            "z_k": {
+                "minecraft:scale": {
+                    "value": 1
+                },
+                "minecraft:timer": {
+                    "time": 8,
+                    "looping": true,
+                    "time_down_event": {
+                        "event": "sss",
+                        "target": "self"
+                    }
+                },
+                "minecraft:behavior.summon_entity": {
+                    "priority": 0,
+                    "summon_choices": [{
+                        "min_activation_range": 0,
+                        "weight": 2,
+                        "cooldown_time": 0,
+                        "cast_duration": 3.5,
+                        "particle_color": "#FF664D59",
+                        "sequence": [{
+                                "shape": "circle",
+                                "target": "self",
+                                "base_delay": 0.02,
+                                "delay_per_summon": 0,
+                                "num_entities_spawned": 1,
+                                "entity_type": "wb:array_intentions_first",
+                                "size": 7,
+                                "entity_lifespan": 0,
+                                "sound_event": "prepare.attack"
+                            },
+                            {
+                                "shape": "circle",
+                                "target": "self",
+                                "base_delay": 0.02,
+                                "delay_per_summon": 0,
+                                "num_entities_spawned": 1,
+                                "entity_type": "wb:array_intentions_first",
+                                "size": 5,
+                                "entity_lifespan": 0,
+                                "sound_event": "prepare.attack"
+                            },
+                            {
+                                "shape": "circle",
+                                "target": "target",
+                                "base_delay": 0.02,
+                                "delay_per_summon": 0,
+                                "num_entities_spawned": 5,
+                                "entity_type": "wb:array_intentions_first",
+                                "size": 10,
+                                "entity_lifespan": 0,
+                                "sound_event": "prepare.attack"
+                            },
+                            {
+                                "shape": "circle",
+                                "target": "target",
+                                "base_delay": 0.02,
+                                "delay_per_summon": 0,
+                                "num_entities_spawned": 2,
+                                "entity_type": "wb:array_intentions_first",
+                                "size": 5,
+                                "entity_lifespan": 0,
+                                "sound_event": "prepare.attack"
+                            }
+                        ]
+                    }]
+                }
+            },
+            "second": {
+                "minecraft:equipment": {
+                    "table": "loot_tables/wb_item/sword_intentions.json"
+                },
+                "minecraft:timer": {
+                    "time": 2,
+                    "looping": true,
+                    "time_down_event": {
+                        "event": "sss",
+                        "target": "self"
+                    }
+                },
+                "minecraft:knockback_resistance": {
+                    "value": 1
+                },
+                "minecraft:damage_sensor": [{
+                        "on_damage": {
+                            "filters": {
+                                "test": "has_damage",
+                                "value": "fatal"
+                            },
+                            "event": "into"
+                        },
+                        "deals_damage": false
+                    },
+                    {
+                        "on_damage": {
+                            "filters": {
+                                "test": "is_family",
+                                "value": "intentions",
+                                "subject": "other"
+                            }
+                        },
+                        "deals_damage": false
+                    }
+                ],
+                "minecraft:spawn_entity": [{
+                    "min_wait_time": 0.01,
+                    "max_wait_time": 0.01,
+                    "spawn_entity": "wb:ball_intentions_firsta",
+                    "num_to_spawn": 1,
+                    "single_use": true
+                }]
+            },
+            "first": {
+                "minecraft:damage_sensor": [{
+                    "cause": "all",
+                    "deals_damage": false
+                }],
+                "minecraft:timer": {
+                    "time": 12,
+                    "looping": false,
+                    "time_down_event": {
+                        "event": "second",
+                        "target": "self"
+                    }
+                }
+            }
+        },
+        "components": {
+            "minecraft:boss": {
+                "should_darken_sky": true,
+                "name": "Intentions",
+                "hud_range": 128
+            },
+            "minecraft:fire_immune": true,
+            "minecraft:type_family": {
+                "family": [
+                    "monster",
+                    "intentions",
+                    "aboss"
+                ]
+            },
+            "minecraft:scale": {
+                "value": 1
+            },
+            "minecraft:collision_box": {
+                "width": 0.9,
+                "height": 1.8
+            },
+            "minecraft:health": {
+                "value": 1700,
+                "max": 1700
+            },
+            "minecraft:movement": {
+                "value": 0.23
+            },
+            "minecraft:navigation.walk": {},
+            "minecraft:movement.basic": {},
+            "minecraft:jump.static": {},
+            "minecraft:can_climb": {},
+            "minecraft:attack": {
+                "damage": 50
+            },
+            "minecraft:damage_sensor": {
+                "cause": "fall",
+                "deals_damage": false
+            },
+            "minecraft:behavior.random_stroll": {
+                "priority": 6,
+                "speed_multiplier": 1,
+                "xz_dist": 16
+            },
+            "minecraft:behavior.look_at_player": {
+                "priority": 7,
+                "look_distance": 6,
+                "probability": 0.02
+            },
+            "minecraft:behavior.random_look_around": {
+                "priority": 8
+            },
+            "minecraft:behavior.nearest_attackable_target": {
+                "priority": 3,
+                "entity_types": [{
+                    "filters": {
+                        "all_of": [{
+                                "test": "is_family",
+                                "operator": "!=",
+                                "subject": "other",
+                                "value": "intentions"
+                            },
+                            {
+                                "test": "is_family",
+                                "operator": "!=",
+                                "subject": "other",
+                                "value": "aboss"
+                            }
+                        ]
+                    },
+                    "within_default": 64
+                }],
+                "must_see": false,
+                "must_reach": false
+            },
+            "minecraft:behavior.hurt_by_target": {
+                "priority": 2
+            },
+            "minecraft:physics": {},
+            "minecraft:follow_range": {
+                "value": 64
+            }
+        },
+        "events": {
+            "disappear": {
+                "add": {
+                    "component_groups": [
+                        "disappear"
+                    ]
+                }
+            },
+            "sss": {
+                "randomize": [{
+                        "weight": 1,
+                        "remove": {
+                            "component_groups": [
+                                "a_t",
+                                "a_w",
+                                "f_g",
+                                "f_f",
+                                "a_s"
+                            ]
+                        },
+                        "add": {
+                            "component_groups": [
+                                "z_k"
+                            ]
+                        }
+                    },
+                    {
+                        "weight": 1,
+                        "remove": {
+                            "component_groups": [
+                                "z_k",
+                                "a_w",
+                                "f_g",
+                                "f_f"
+                            ]
+                        },
+                        "add": {
+                            "component_groups": [
+                                "a_s"
+                            ]
+                        }
+                    },
+                    {
+                        "weight": 1,
+                        "remove": {
+                            "component_groups": [
+                                "a_t",
+                                "z_k",
+                                "f_g",
+                                "f_f",
+                                "a_s"
+                            ]
+                        },
+                        "add": {
+                            "component_groups": [
+                                "a_w"
+                            ]
+                        }
+                    },
+                    {
+                        "weight": 1,
+                        "remove": {
+                            "component_groups": [
+                                "a_t",
+                                "a_w",
+                                "z_k",
+                                "a_s"
+                            ]
+                        },
+                        "add": {
+                            "component_groups": [
+                                "f_f"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "minecraft:entity_spawned": {
+                "run_command": {
+                    "command": [
+                        "particle wb:intentions_summon_par ~~~"
+                    ],
+                    "target": "self"
+                },
+                "add": {
+                    "component_groups": [
+                        "first"
+                    ]
+                }
+            },
+            "second": {
+                "add": {
+                    "component_groups": [
+                        "second"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "first"
+                    ]
+                }
+            },
+            "into": {
+                "add": {
+                    "component_groups": ["into"]
+                }
+            },
+            "at": {
+                "add": {
+                    "component_groups": [
+                        "a_t"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "a_s"
+                    ]
+                }
+            },
+            "minecraft:despawn": {
+                "add": {
+                    "component_groups": [
+                        "minecraft:despawn"
+                    ]
+                }
+            },
+            "fg": {
+                "add": {
+                    "component_groups": [
+                        "f_g"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "f_f"
+                    ]
+                }
+            }
+        }
+    }
+}

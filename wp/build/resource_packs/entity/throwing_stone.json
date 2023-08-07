@@ -1,0 +1,19 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:throwing_stone",
+      "materials": { "default": "zombie" },
+      "textures": {
+        "default": "textures/entity/throwing_stone"
+      },
+      "scripts": {
+        "scale": "0.125"
+      },
+      "geometry": {
+        "default": "geometry.block"
+      },
+      "render_controllers": [ "controller.render.tnt" ]
+    }
+  }
+}

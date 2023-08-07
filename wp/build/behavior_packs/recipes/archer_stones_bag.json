@@ -1,0 +1,29 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:archer_stones_bag"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " X ",
+      "#B#",
+      " X "
+    ],
+    "key": {
+      "#": {
+        "item": "dec:ghost_ingot"
+      },
+      "X": {
+        "item": "dec:ice_heart"
+      },
+      "B": {
+        "item": "dec:stones_bag"
+      }
+    },
+    "result": {
+      "item": "dec:archer_stones_bag",
+      "count": 1
+    }
+  }
+}

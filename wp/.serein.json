@@ -1,0 +1,8 @@
+{
+	"type": "ts",
+	"res": true,
+	"name": "wp",
+	"mc_preview": false,
+	"output": "build",
+	"mc_dir": null
+}

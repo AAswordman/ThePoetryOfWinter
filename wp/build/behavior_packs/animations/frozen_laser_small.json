@@ -1,0 +1,14 @@
+{
+  "format_version": "1.8.0", 
+  "animations": {
+      "animation.frozen_laser_small_attack": {
+        "timeline": {
+            "0.05": [
+              "/damage @e[type=!item,x=~,z=~,y=-64,dx=0,dy=512,dz=0,family=!frozen] 31 magic"
+            ]
+        }, 
+        "animation_length": 0.1, 
+        "loop": true
+      }
+   }
+}

@@ -1,0 +1,20 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "wb:ball_intentions_first_swordt",
+      "materials": { 
+          "default": "skeleton"
+      },
+      "textures": { 
+          "default": "textures/wb/5_x/ball_intentions_first_sword"
+      },
+      "geometry": { 
+          "default": "geometry.ball_intentions_first_swordt"
+      },
+      "render_controllers": [
+          "controller.render.base"
+    ]
+    }
+  }
+}

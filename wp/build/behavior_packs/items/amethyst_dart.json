@@ -1,0 +1,33 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:amethyst_dart"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.sword"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:amethyst_dart.name"
+      },
+      "minecraft:icon": {
+        "texture": "amethyst_dart"
+      },
+      "minecraft:use_animation": "crossbow",
+      "minecraft:render_offsets": "bow",
+      "minecraft:cooldown": {
+        "category": "missile",
+        "duration": 0.2
+      },
+      "minecraft:throwable": {
+        "do_swing_animation": true
+      },
+      "minecraft:projectile": {
+        "projectile_entity": "dec:amethyst_dart"
+      },
+      "tag:comp:equipment_type:thrown_weapon":{}
+    }
+  }
+}

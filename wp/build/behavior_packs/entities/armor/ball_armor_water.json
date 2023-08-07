@@ -1,0 +1,87 @@
+{
+    "format_version": "1.8.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "wb:ball_armor_water",
+            "is_spawnable": false,
+            "is_summonable": true,
+            "is_experimental": false
+        },
+        "component_groups": {
+            "s": {
+                "minecraft:explode": {
+                    "fuseLength": 0,
+                    "fuseLit": true,
+                    "breaks_blocks": true,
+                    "power": 0,
+                    "causesFire": true,
+                    "fireAffectedByGriefing": true,
+                    "destroyAffectedByGriefing": true
+                }
+            }
+        },
+        "components": {
+            "minecraft:behavior.knockback_roar": {
+                "priority": 0,
+                "duration": 0.2,
+                "attack_time": 0.06,
+                "knockback_damage": 5,
+                "knockback_strength": 4,
+                "knockback_range": 6,
+                "on_roar_end": {
+                    "event": "sss"
+                },
+                "knockback_filters": {
+                    "any_of": [{
+                        "test": "has_tag",
+                        "operator": "!=",
+                        "value": "water"
+                    }]
+                },
+                "damage_filters": {
+                    "any_of": [{
+                        "test": "has_tag",
+                        "operator": "!=",
+                        "value": "water"
+                    }]
+                },
+                "cooldown_time": 0.04
+            },
+            "minecraft:knockback_resistance": {
+                "value": 1
+            },
+            "minecraft:breathable": {
+                "totalSupply": 15,
+                "suffocateTime": 0
+            },
+            "minecraft:collision_box": {
+                "width": 0.1,
+                "height": 0.1
+            },
+            "minecraft:nameable": {},
+            "minecraft:health": {
+                "value": 10000,
+                "max": 10000
+            },
+            "minecraft:movement": {
+                "value": 0
+            }
+        },
+        "events": {
+            "sss": {
+                "run_command": {
+                    "command": [
+                        "execute as @a[tag=water] run say water",
+                        "tag @e[r=25] remove water"
+                    ],
+                    "target": "self"
+                },
+                "add": {
+                    "component_groups": [
+                        "s"
+                    ]
+                }
+            }
+        }
+    }
+}

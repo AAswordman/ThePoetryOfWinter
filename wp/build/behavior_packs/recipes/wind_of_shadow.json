@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:wind_of_shadow"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "BAB",
+      "BAB",
+      "BXB"
+    ],
+    "key": {
+      "X": {
+        "item": "minecraft:stick"
+      },
+      "A": {
+        "item": "dec:stream_stone"
+      },
+      "B": {
+        "item": "dec:ender_core"
+      }
+    },
+    "result": {
+      "item": "dec:wind_of_shadow"
+    }
+  }
+}

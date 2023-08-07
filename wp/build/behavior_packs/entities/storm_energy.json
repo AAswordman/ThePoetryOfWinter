@@ -1,0 +1,208 @@
+{
+  "format_version": "1.12.0",
+ "minecraft:entity": {
+  "description": {
+    "identifier": "dec:storm_energy",
+    "runtime_identifier": "minecraft:egg",
+    "is_spawnable": false,
+    "is_summonable": true,
+    "is_experimental": false,
+    "scripts":{
+      "animate":["ticking"]
+    },
+      "animations":{
+        "ticking":"controller.animation.particle_wave_wake"
+    }
+  },
+  "component_groups": {
+    "minecraft:a": {
+      "minecraft:projectile": {
+        "onHit": {
+          "impact_damage": {
+            "damage": 4,
+            "knockback": true,
+            "catchFire": false,
+            "semirandomdiffdamage": false
+          },
+          "remove_on_hit": { }
+        },
+        "power": 0.08,
+        "gravity": 0.01,
+        "inertia": 1.01,
+        "liquid_inertia": 1.3,
+        "anchor": 1,
+        "offset": [ 0, 0, 1 ],
+        "semirandomdiffdamage": true,
+        "uncertaintyBase": 0.0,
+        "uncertaintyMultiplier": 0,
+        "reflectOnHurt": true
+      }
+    },
+    "minecraft:b": {
+      "minecraft:projectile": {
+        "onHit": {
+          "impact_damage": {
+            "damage": 4,
+            "knockback": true,
+            "catchFire": false,
+            "semirandomdiffdamage": false
+          },
+          "remove_on_hit": { }
+        },
+        "power": 0.1,
+        "gravity": 0.01,
+        "inertia": 1,
+        "liquid_inertia": 1.3,
+        "anchor": 1,
+        "offset": [ 0, 0, 1 ],
+        "semirandomdiffdamage": true,
+        "uncertaintyBase": 0.0,
+        "uncertaintyMultiplier": 0,
+        "reflectOnHurt": true
+      }
+    },
+    "minecraft:c": {
+      "minecraft:projectile": {
+        "onHit": {
+          "impact_damage": {
+            "damage": 4,
+            "knockback": true,
+            "catchFire": false,
+            "semirandomdiffdamage": false
+          },
+          "remove_on_hit": { }
+        },
+        "power": 0.2,
+        "gravity": 0.01,
+        "inertia": 1,
+        "liquid_inertia": 1.3,
+        "anchor": 1,
+        "offset": [ 0, 0, 1 ],
+        "semirandomdiffdamage": true,
+        "uncertaintyBase": 0.0,
+        "uncertaintyMultiplier": 0,
+        "reflectOnHurt": true
+      }
+    },
+    "minecraft:d": {
+      "minecraft:projectile": {
+        "onHit": {
+          "impact_damage": {
+            "damage": 4,
+            "knockback": true,
+            "catchFire": false,
+            "semirandomdiffdamage": false
+          },
+          "remove_on_hit": { }
+        },
+        "power": 0.3,
+        "gravity": 0.01,
+        "inertia": 1,
+        "liquid_inertia": 1.3,
+        "anchor": 1,
+        "offset": [ 0, 0, 1 ],
+        "semirandomdiffdamage": true,
+        "uncertaintyBase": 0.0,
+        "uncertaintyMultiplier": 0,
+        "reflectOnHurt": true
+      }
+    },
+    "minecraft:e": {
+      "minecraft:projectile": {
+        "onHit": {
+          "impact_damage": {
+            "damage": 4,
+            "knockback": true,
+            "catchFire": false,
+            "semirandomdiffdamage": false
+          },
+          "remove_on_hit": { }
+        },
+        "power": 0.4,
+        "gravity": 0.01,
+        "inertia": 1,
+        "liquid_inertia": 1.3,
+        "anchor": 1,
+        "offset": [ 0, 0, 1 ],
+        "semirandomdiffdamage": true,
+        "uncertaintyBase": 0.0,
+        "uncertaintyMultiplier": 0,
+        "reflectOnHurt": true
+      }
+    }
+  },
+  "components": {
+   "minecraft:collision_box": {
+    "width": 0.31,
+    "height": 0.31
+   },
+   "minecraft:explode": {
+    "fuseLength": 5,
+    "fuseLit": true,
+    "power": 0,
+    "causesFire": false
+    },
+   "minecraft:pushable": {
+    "is_pushable": false,
+    "is_pushable_by_piston": true
+   }
+  },
+  "events": {
+    "minecraft:entity_spawned": {
+      "add": {
+        "component_groups": [
+          "minecraft:c"
+          ]
+        }
+      },
+      "minecraft:a": {
+        "add": {
+          "component_groups": [
+            "minecraft:a"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "minecraft:c"
+          ]
+        }
+      },
+      "minecraft:b": {
+        "add": {
+          "component_groups": [
+            "minecraft:b"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "minecraft:c"
+          ]
+        }
+      },
+      "minecraft:d": {
+        "add": {
+          "component_groups": [
+            "minecraft:d"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "minecraft:c"
+          ]
+        }
+      },
+      "minecraft:e": {
+        "add": {
+          "component_groups": [
+            "minecraft:e"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "minecraft:c"
+          ]
+        }
+      }
+    }
+  }
+}

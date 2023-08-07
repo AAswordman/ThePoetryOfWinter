@@ -1,0 +1,27 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:frozen_helmet"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XBX",
+      "XAX"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:golden_helmet"
+      },
+      "X": {
+        "item": "dec:ice_brick"
+      },
+      "B": {
+        "item": "dec:ice_ingot"
+      }
+    },
+    "result": {
+      "item": "dec:frozen_helmet"
+    }
+  }
+}

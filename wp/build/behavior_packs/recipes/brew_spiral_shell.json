@@ -1,0 +1,12 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_brewing_container": {
+    "description": {
+      "identifier": "dec:brew_spiral_shell"
+    },
+    "tags": [ "brewing_stand" ],
+    "input": "minecraft:potion:4",
+    "reagent": "dec:spiral_shell",
+    "output": "dec:resistance_potion"
+  }
+}

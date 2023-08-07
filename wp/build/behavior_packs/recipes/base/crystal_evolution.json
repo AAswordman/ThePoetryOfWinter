@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "wb:crystal_evolution"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "###",
+      "#Y#",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:gold_ingot"
+      },
+      "Y": {
+        "item":"minecraft:emerald"
+      }
+    },
+    "result": {
+      "item": "wb:crystal_evolution"
+    }
+  }
+}

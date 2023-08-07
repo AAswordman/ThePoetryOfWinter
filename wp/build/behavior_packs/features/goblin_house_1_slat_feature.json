@@ -1,0 +1,24 @@
+{
+    "format_version": "1.13.0",
+    "minecraft:beards_and_shavers": {
+        "description": {
+            "identifier": "dec:goblin_house_1_slat_feature"
+        },
+        "places_feature": "dec:goblin_house_1_mcstructure",
+        "bounding_box_min": [
+            -9,
+            0,
+            -10
+        ],
+        "bounding_box_max": [
+            9,
+            8,
+            10
+        ],
+        "y_delta": 2.0,
+        "surface_block_type": "minecraft:red_sandstone",
+        "subsurface_block_type": "minecraft:red_sandstone",
+        "beard_raggedness_min": 0.1,
+        "beard_raggedness_max": 0.3
+    }
+}

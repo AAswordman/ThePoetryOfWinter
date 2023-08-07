@@ -1,0 +1,99 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:bullet_by_ghost_flintlock",
+      "runtime_identifier": "minecraft:egg",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "spawn"
+        ]
+      },
+      "animations": {
+        "spawn": "animation.playsound_random_explode"
+      }
+    },
+    "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+			"minecraft:type_family": {
+				"family": [
+					"bullet_by_ghost_flintlock"
+				]
+			},
+      "minecraft:collision_box": {
+        "width": 0.2,
+        "height": 0.2
+      },
+      "minecraft:projectile": {
+        "onHit": {
+          "definition_event": {
+            "affect_projectile": true,
+            "event_trigger": {
+              "event": "minecraft:explode",
+              "target": "self"
+            }
+          },
+          "impact_damage": {
+            "damage": 13,
+            "knockback": true,
+            "catchFire": false,
+            "semirandomdiffdamage": false
+          }
+        },
+        "power": 3.6,
+        "gravity": 0.01,
+        "inertia": 1,
+        "liquid_inertia": 0.9,
+        "anchor": 1,
+        "offset": [
+          0,
+          0,
+          1
+        ],
+        "semirandomdiffdamage": true,
+        "uncertaintyBase": 2.0,
+        "uncertaintyMultiplier": 0.5,
+        "reflectOnHurt": true
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    },
+    "events": {
+      "minecraft:explode": {
+        "randomize": [
+          {
+            "weight": 7,
+            "add": {
+              "component_groups": [
+                "minecraft:despawn"
+              ]
+            }
+          },
+          {
+            "weight": 3,
+            "run_command": {
+              "command": [
+                "summon dec:friendly_little_soul ~~~",
+                "particle dec:ghost_spurt_particle ~~1~"
+              ]
+            },
+            "add": {
+              "component_groups": [
+                "minecraft:despawn"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

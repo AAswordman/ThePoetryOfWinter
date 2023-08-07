@@ -1,0 +1,36 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "epic:cannon_cart",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/EPIC/entity/cannon_cart"
+			},
+			"geometry": {
+				"default": "geometry.cannon_cart"
+			},
+			"scripts": {
+				"animate": [
+				  "move_controller","attack_controller","death1_controller"
+				]
+			  },
+			"animations": {			
+				"move_controller": "controller.animation.cannon_cart.move",
+			    "attack_controller": "controller.animation.cannon_cart.attack",
+			    "death1_controller": "controller.animation.cannon_cart.death1",
+
+				"move": "animation.cannon_cart.move",
+				"attack": "animation.cannon_cart.attack",
+				"death1": "animation.cannon_cart.death1"
+			   },
+			
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"texture": "cannon_cart_spawn_egg"
+			}
+		}
+	}
+}

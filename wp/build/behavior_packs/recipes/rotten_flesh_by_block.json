@@ -1,0 +1,24 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:rotten_flesh_by_block"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "#"
+    ],
+    "key": {
+      "#": {
+        "item": "dec:rotten_flesh_block"
+      }
+    },
+    "result": {
+      "item": "minecraft:rotten_flesh",
+      "data": 0,
+      "count": 9
+    }
+  }
+}

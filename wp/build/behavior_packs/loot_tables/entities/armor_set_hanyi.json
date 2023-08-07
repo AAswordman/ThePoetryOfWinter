@@ -1,0 +1,50 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "dec:hanyi_clothes",
+          "weight": 1,
+          "pools": [
+            {
+              "rolls": 1,
+              "entries": [
+                {
+                  "type": "item",
+                  "name": "dec:hanyi_hair_accessories",
+                  "weight": 1,
+                  "pools": [
+                    {
+                      "rolls": 1,
+                      "entries": [
+                        {
+                          "type": "item",
+                          "name": "dec:hanyi_pants",
+                          "weight": 1,
+                          "pools": [
+                            {
+                              "rolls": 1,
+                              "entries": [
+                                {
+                                  "type": "item",
+                                  "name": "dec:hanyi_shoes",
+                                  "weight": 1
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,633 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:ash_knight",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          {
+            "teleport_prepare": "query.variant == 1"
+          }
+        ]
+      },
+      "animations": {
+        "teleport_prepare": "animation.ash_knight.teleport_prepare"
+      }
+    },
+    "component_groups": {
+      "minecraft:next": {
+        "minecraft:transformation": {
+          "into": "dec:ash_knight_head"
+        }
+      },
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "minecraft:spawn": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "empty_family"
+                }
+              },
+              "deals_damage": false
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 5,
+          "time_down_event": {
+            "event": "minecraft:change_attack"
+          }
+        },
+        "minecraft:spell_effects": {
+          "add_effects": [
+            {
+              "effect": "slowness",
+              "amplifier": 50,
+              "visible": 0,
+              "ambient": 0,
+              "duration": 5,
+              "display_on_screen_animation": true
+            },
+            {
+              "effect": "resistance",
+              "amplifier": 5,
+              "visible": 0,
+              "ambient": 0,
+              "duration": 5,
+              "display_on_screen_animation": true
+            }
+          ]
+        }
+      },
+      "minecraft:walk": {
+        "minecraft:movement": {
+          "value": 0.24
+        }
+      },
+      "minecraft:run": {
+        "minecraft:movement": {
+          "value": 0.37
+        }
+      },
+      "minecraft:wait": {
+        "minecraft:movement": {
+          "value": 0.1
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 3,
+          "time_down_event": {
+            "event": "minecraft:change_attack_small"
+          }
+        }
+      },
+      "minecraft:summon_mode": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "empty_family"
+                }
+              },
+              "deals_damage": true
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 4,
+          "time_down_event": {
+            "event": "minecraft:change_attack"
+          }
+        },
+        "minecraft:behavior.summon_entity": {
+          "priority": 2,
+          "summon_choices": [
+            {
+              "weight": 1,
+              "cooldown_time": 0.0,
+              "cast_duration": 2.0,
+              "sequence": [
+                {
+                  "shape": "circle",
+                  "target": "self",
+                  "base_delay": 0.0,
+                  "num_entities_spawned": 1,
+                  "entity_type": "dec:elf_of_chaos",
+                  "summon_cap": 8,
+                  "summon_cap_radius": 16.0,
+                  "size": 2.0,
+                  "sound_event": "prepare.summon",
+                  "entity_lifespan": 60
+                }
+              ]
+            },
+            {
+              "weight": 2,
+              "cooldown_time": 0.0,
+              "cast_duration": 2.0,
+              "sequence": [
+                {
+                  "shape": "circle",
+                  "target": "self",
+                  "base_delay": 0.0,
+                  "num_entities_spawned": 2,
+                  "entity_type": "dec:elf_of_ash",
+                  "summon_cap": 8,
+                  "summon_cap_radius": 16.0,
+                  "size": 10.0,
+                  "sound_event": "prepare.summon",
+                  "entity_lifespan": 60
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "minecraft:attack_mode": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "empty_family"
+                }
+              },
+              "deals_damage": true
+            }
+          ]
+        },
+        "minecraft:behavior.melee_attack": {
+          "priority": 4,
+          "target_dist": 1.2,
+          "speed_multiplier": 1,
+          "track_target": true
+        },
+        "minecraft:attack": {
+          "damage": 10
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 22,
+          "time_down_event": {
+            "event": "minecraft:change_attack"
+          }
+        }
+      },
+      "minecraft:no_teleport": {
+        "minecraft:variant": {
+          "value": 0
+        },
+        "minecraft:environment_sensor": {
+          "triggers": {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_moving",
+                  "operator": "=",
+                  "value": false
+                },
+                {
+                  "test": "has_target",
+                  "operator": "=",
+                  "value": true
+                }
+              ]
+            },
+            "event": "minecraft:teleport_prepare"
+          }
+        }
+      },
+      "minecraft:ready_teleport": {
+        "minecraft:variant": {
+          "value": 1
+        },
+        "minecraft:environment_sensor": {
+          "triggers": {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "is_moving",
+                  "operator": "=",
+                  "value": true
+                },
+                {
+                  "test": "has_target",
+                  "operator": "=",
+                  "value": false
+                }
+              ]
+            },
+            "event": "minecraft:teleport_cancel"
+          }
+        }
+      }
+    },
+    "components": {
+      "minecraft:target_nearby_sensor": {
+        "inside_range": 4,
+        "outside_range": 10,
+        "must_see": true,
+        "on_inside_range": {
+          "event": "minecraft:attack_then_walk",
+          "target": "self"
+        },
+        "on_outside_range": {
+          "event": "minecraft:run",
+          "target": "self"
+        },
+        "on_vision_lost_inside_range": {
+          "event": "minecraft:walk",
+          "target": "self"
+        }
+      },
+      "minecraft:on_death": {
+        "event": "minecraft:next",
+        "target": "self"
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1.0
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {
+          "min_distance": 64,
+          "max_distance": 64
+        }
+      },
+      "minecraft:fire_immune": true,
+      "minecraft:experience_reward": {
+        "on_death": "query.last_hit_by_player ? 70 : 0"
+      },
+      "minecraft:equip_item": {},
+      "minecraft:collision_box": {
+        "width": 0.6,
+        "height": 1.9
+      },
+      "minecraft:type_family": {
+        "family": [
+          "monster",
+          "ash_knight",
+          "undead",
+          "ash",
+          "boss"
+        ]
+      },
+      "minecraft:nameable": {},
+      "minecraft:health": {
+        "value": 400,
+        "max": 400
+      },
+      "minecraft:physics": {},
+      "minecraft:breathable": {
+        "totalSupply": 15,
+        "suffocateTime": 0,
+        "breathesAir": true,
+        "breathesWater": false
+      },
+      "minecraft:movement": {
+        "value": 0.2
+      },
+      "minecraft:follow_range": {
+        "value": 256,
+        "max": 256
+      },
+      "minecraft:navigation.walk": {
+        "can_path_over_water": true
+      },
+      "minecraft:equipment": {
+        "table": "loot_tables/entities/ash_knight_gear.json"
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:boss": {
+        "should_darken_sky": false,
+        "name": "boss.dec:ash_knight.name",
+        "hud_range": 32
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.find_mount": {
+        "priority": 1,
+        "within_radius": 16,
+        "start_delay": 0,
+        "max_failed_attempts": 5
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1,
+        "entity_types": {
+          "filters": {
+            "test": "is_family",
+            "subject": "other",
+            "operator": "!=",
+            "value": "ash"
+          },
+          "max_dist": 64
+        }
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "within_radius": 64.0,
+        "reselect_targets": true,
+        "entity_types": [
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "wandering_trader"
+                }
+              ]
+            },
+            "max_dist": 64
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "villager"
+                },
+                {
+                  "test": "has_component",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "minecraft:is_baby"
+                }
+              ]
+            },
+            "max_dist": 64
+          }
+        ],
+        "must_see": false
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 7,
+        "speed_multiplier": 1
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 8,
+        "look_distance": 8
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 8
+      }
+    },
+    "events": {
+      "minecraft:next": {
+        "run_command": {
+          "command": [
+            "summon dec:ash_sword"
+            //这里记得改"summon dec:ash_monster",
+          ],
+          "target": "self"
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:next"
+          ]
+        }
+      },
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "minecraft:spawn",
+            "minecraft:no_teleport"
+          ]
+        }
+      },
+      "minecraft:teleport_cancel": {
+        "remove": {
+          "component_groups": [
+            "minecraft:ready_teleport"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:no_teleport"
+          ]
+        }
+      },
+      "minecraft:teleport_prepare": {
+        "add": {
+          "component_groups": [
+            "minecraft:ready_teleport"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "minecraft:no_teleport"
+          ]
+        }
+      },
+      "minecraft:attack_then_walk": {
+        "randomize": [
+          {
+            "run_command": {
+              "command": [
+                "execute unless entity @e[type=dec:ash_horse,r=5] run tag @s add attack_then_run",
+                "execute if entity @s[tag=attack_then_run] run summon dec:ash_sword_phantom ~1~5~1",
+                "playanimation @s[tag=attack_then_run] animation.ash_knight.hit_ground",
+                "execute if entity @s[tag=attack_then_run] run playsound random.explode @a ~~~",
+                "tag @s remove attack_then_run"
+              ],
+              "target": "self"
+            },
+            "weight": 3
+          },
+          {
+            "run_command": {
+              "command": [
+                "execute unless entity @e[type=dec:ash_horse,r=5] run tag @s add attack_then_run",
+                "execute if entity @s[tag=attack_then_run] run summon dec:group ~~~ 0 0 minecraft:select_blackstone_thorn",
+                "playanimation @s[tag=attack_then_run] animation.ash_knight.hit_ground",
+                "execute if entity @s[tag=attack_then_run] run playsound random.explode @a ~~~",
+                "tag @s remove attack_then_run"
+              ],
+              "target": "self"
+            },
+            "weight": 1
+          }
+        ],
+        "add": {
+          "component_groups": [
+            "minecraft:walk"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "minecraft:run"
+          ]
+        }
+      },
+      "minecraft:walk": {
+        "add": {
+          "component_groups": [
+            "minecraft:walk"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "minecraft:run"
+          ]
+        }
+      },
+      "minecraft:run": {
+        "add": {
+          "component_groups": [
+            "minecraft:run"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "minecraft:walk"
+          ]
+        }
+      },
+      "minecraft:thorn_attack": {
+        "run_command": {
+          "command": [
+            "execute if entity @a[r=64,c=1,m=!1] run playanimation @s animation.ash_knight.summon",
+            "execute at @a[r=64,c=1,m=!1] run summon dec:group ~~~ 0 0 minecraft:select_blackstone_thorn"
+          ],
+          "target": "self"
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:wait"
+          ]
+        }
+      },
+      "minecraft:sword_attack": {
+        "run_command": {
+          "command": [
+            "playanimation @s animation.ash_knight.summon",
+            "summon dec:ash_sword_phantom ^3^1^",
+            "summon dec:ash_sword_phantom ^-3^1^",
+            "summon dec:ash_sword_phantom ^1.7^2.2^",
+            "summon dec:ash_sword_phantom ^-1.7^2.2^"
+          ],
+          "target": "self"
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:wait"
+          ]
+        }
+      },
+      "minecraft:change_attack_small": {
+        "randomize": [
+          {
+            "weight": 1,
+            "add": {
+              "component_groups": [
+                "minecraft:summon_mode"
+              ]
+            }
+          },
+          {
+            "weight": 2,
+            "add": {
+              "component_groups": [
+                "minecraft:attack_mode"
+              ]
+            }
+          }
+        ]
+      },
+      "minecraft:change_attack": {
+        "randomize": [
+          {
+            "weight": 1,
+            "remove": {
+              "component_groups": [
+                "minecraft:summon_mode",
+                "minecraft:attack_mode"
+              ]
+            },
+            "add": {
+              "component_groups": [
+                "minecraft:summon_mode"
+              ]
+            }
+          },
+          {
+            "weight": 3,
+            "remove": {
+              "component_groups": [
+                "minecraft:summon_mode",
+                "minecraft:attack_mode"
+              ]
+            },
+            "add": {
+              "component_groups": [
+                "minecraft:attack_mode"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "remove": {
+              "component_groups": [
+                "minecraft:summon_mode",
+                "minecraft:attack_mode"
+              ]
+            },
+            "trigger": "minecraft:sword_attack"
+          },
+          {
+            "weight": 1,
+            "remove": {
+              "component_groups": [
+                "minecraft:summon_mode",
+                "minecraft:attack_mode"
+              ]
+            },
+            "trigger": "minecraft:thorn_attack"
+          }
+        ]
+      }
+    }
+  }
+}

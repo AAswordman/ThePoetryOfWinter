@@ -1,0 +1,19 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:dragon_head",
+      "materials": { "default": "husk" },
+      "textures": {
+        "default": "textures/entity/baby_ender_dragon"
+      },
+      "geometry": {
+        "default": "geometry.dragon_small_head"
+      },
+      "scripts": {
+        "scale": "2"
+      },
+      "render_controllers": [ "controller.render.star" ]
+    }
+  }
+}

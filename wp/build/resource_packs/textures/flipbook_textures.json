@@ -1,0 +1,42 @@
+[
+  {
+    "flipbook_texture": "textures/wb_blocks/base/portal_boss",
+    "atlas_tile": "portal_boss",
+    "ticks_per_frame": 1
+  },
+  {
+    "flipbook_texture": "textures/wb_blocks/base/portal_stoneboss",
+    "atlas_tile": "portal_stoneboss",
+    "ticks_per_frame": 1
+  },
+  {
+    "flipbook_texture": "textures/wb_blocks/base/portal_caveboss",
+    "atlas_tile": "portal_caveboss",
+    "ticks_per_frame": 1
+  },
+  {
+    "flipbook_texture": "textures/wb_blocks/base/portal_ancientboss",
+    "atlas_tile": "portal_ancientboss",
+    "ticks_per_frame": 1
+  },
+  {
+    "flipbook_texture": "textures/wb_blocks/base/portal_bossx",
+    "atlas_tile": "portal_mindboss",
+    "ticks_per_frame": 1
+  },
+  {
+    "flipbook_texture": "textures/wb_blocks/base/portal_bossx",
+    "atlas_tile": "portal_bossx",
+    "ticks_per_frame": 1
+  },
+  {
+    "flipbook_texture": "textures/wb_blocks/1_x/electric_light",
+    "atlas_tile": "electric_light",
+    "ticks_per_frame": 10
+  },
+  {
+    "flipbook_texture": "textures/wb_blocks/1_x/conveyor_belt",
+    "atlas_tile": "conveyor_belt",
+    "ticks_per_frame": 2
+  }
+]

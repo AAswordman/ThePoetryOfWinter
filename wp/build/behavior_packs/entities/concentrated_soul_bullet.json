@@ -1,0 +1,116 @@
+{
+  "format_version": "1.12.0",
+ "minecraft:entity": {
+  "description": {
+    "identifier": "dec:concentrated_soul_bullet",
+    "runtime_identifier": "minecraft:egg",
+    "is_spawnable": false,
+    "is_summonable": true,
+    "is_experimental": false
+  },
+  "component_groups": {
+    "minecraft:off": {
+      "minecraft:timer": {
+        "looping": false,
+        "time": 0.125,
+        "time_down_event": {
+          "event": "minecraft:turn_on"
+        }
+      }
+    },
+    "minecraft:on": {
+      "minecraft:timer": {
+        "looping": false,
+        "time": 0.124,
+        "time_down_event": {
+          "event": "minecraft:turn_off"
+        }
+      },
+      "minecraft:spawn_entity": {
+        "min_wait_time": 0.9,
+        "max_wait_time": 0.9,
+        "num_to_spawn": 1,
+        "single_use": true,
+        "spawn_entity": "dec:soul_wake_bullet"
+      }
+    }
+  },
+  "components": {
+   "minecraft:collision_box": {
+    "width": 0.31,
+    "height": 0.31
+   },
+   "minecraft:explode": {
+    "fuseLength": 7,
+    "fuseLit": true,
+    "power": 0,
+    "causesFire": false
+    },
+   "minecraft:projectile": {
+    "onHit": {
+      "mob_effect": {
+        "effect": "blindness",
+        "durationeasy": 40,
+        "durationnormal": 40,
+        "durationhard": 40,
+        "amplifier": 1
+      },
+      "impact_damage": {
+        "damage": 8,
+        "knockback": true,
+        "catchFire": false,
+        "semirandomdiffdamage": false
+      },
+      "remove_on_hit": { }
+    },
+    "power": 0.6,
+    "gravity": 0.00,
+    "inertia": 1,
+    "liquid_inertia": 1,
+    "anchor": 1,
+    "offset": [ 0, 0, 1 ],
+    "semirandomdiffdamage": true,
+    "uncertaintyBase": 4.0,
+    "uncertaintyMultiplier": 5,
+    "reflectOnHurt": true
+   },
+   "minecraft:pushable": {
+    "is_pushable": false,
+    "is_pushable_by_piston": true
+   }
+  },
+  "events": {
+    "minecraft:entity_spawned": {
+      "add": {
+        "component_groups": [
+          "minecraft:off"
+          ]
+        }
+      },
+      "minecraft:turn_on": {
+        "add": {
+          "component_groups": [
+            "minecraft:on"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "minecraft:off"
+          ]
+        }
+      },
+      "minecraft:turn_off": {
+        "remove": {
+          "component_groups": [
+            "minecraft:on"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:off"
+          ]
+        }
+      }
+    }
+  }
+}

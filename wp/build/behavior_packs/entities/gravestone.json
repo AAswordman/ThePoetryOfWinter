@@ -1,0 +1,110 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "dec:gravestone",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"minecraft:timer": {
+				"minecraft:item_hopper": {},
+				"minecraft:health": {
+					"value": 2,
+					"max": 2
+				},
+				"minecraft:timer": {
+					"looping": false,
+					"time": 10,
+					"time_down_event": {
+						"event": "minecraft:can_be_destroyed"
+					}
+				}
+			},
+			"minecraft:can_be_destroyed": {
+				"minecraft:health": {
+					"value": 2,
+					"max": 2
+				}
+			}
+		},
+		"components": {
+			"minecraft:inventory": {
+				"container_type": "inventory",
+				"inventory_size": 27,
+				"private": false
+			},
+			"minecraft:type_family": {
+				"family": [
+					"gravestone"
+				]
+			},
+			"minecraft:collision_box": {
+				"width": 0.6875,
+				"height": 1
+			},
+			"minecraft:fire_immune": true,
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "fall",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:hurt_on_condition": {
+				"damage_conditions": [
+					{
+						"filters": {
+							"test": "in_lava",
+							"subject": "self",
+							"operator": "==",
+							"value": true
+						},
+						"cause": "lava",
+						"damage_per_tick": 0
+					}
+				]
+			},
+			"minecraft:nameable": {
+				"always_show": true
+			},
+			"minecraft:physics": {
+				"has_collision": false,
+				"has_gravity": false
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": true
+			},
+			"minecraft:knockback_resistance": {
+				"value": 1
+			},
+			"minecraft:navigation.walk": {},
+			"minecraft:movement.basic": {},
+			"minecraft:persistent": {}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"minecraft:timer"
+					]
+				}
+			},
+			"minecraft:can_be_destroyed": {
+				"add": {
+					"component_groups": [
+						"minecraft:can_be_destroyed"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"minecraft:timer"
+					]
+				}
+			}
+		}
+	}
+}

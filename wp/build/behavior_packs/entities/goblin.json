@@ -1,0 +1,309 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:goblin",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "alert_for_attack_targets": {
+        "minecraft:on_target_acquired": {
+        },
+        "minecraft:block_sensor": {
+          "sensor_radius": 32,
+          "on_break": [
+            {
+              "block_list": [
+                "minecraft:coal_ore",
+                "minecraft:iron_ore",
+                "minecraft:nether_gold_ore",
+                "minecraft:emerald_ore",
+                "minecraft:diamond_ore",
+                "minecraft:gold_ore",
+                "minecraft:redstone_ore",
+                "minecraft:lapis_ore",
+                "minecraft:copper_ore",
+                "minecraft:amethyst_cluster",
+                "dec:uranium_ore",
+                "dec:lava_ore",
+                "dec:end_ore",
+                "dec:stream_ore",
+                "dec:soul_soil_diamond_ore"
+              ],
+              "on_block_broken": "important_block_destroyed_event"
+            }
+          ]
+        },
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 2,
+          "must_see": true,
+          "within_radius": 12.0,
+          "must_see_forget_duration": 40.0,
+
+          "entity_types": [
+            {
+              "filters": {
+                "all_of": [
+                  { "test": "is_family", "subject": "other", "operator": "!=", "value": "goblin" },
+                  { "test": "is_family", "subject": "other", "operator": "==", "value": "monster" }
+                ]
+              },
+              "max_dist": 16
+            },
+            {
+              "filters": {
+                "all_of": [
+                  { "test": "has_container_open", "subject": "other", "operator": "==", "value": true }
+                ]
+              },
+              "max_dist": 16
+            }
+          ]
+        }
+      },
+      "take_target_as_response_to_block_break": {
+        "minecraft:on_target_acquired": {
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 30,
+          "time_down_event": {
+            "event": "become_calm_event"
+          }
+        },
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 7,
+          "entity_types": [
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+              },
+              "max_dist": 16
+            }
+          ]
+        }
+      }
+    },
+
+    "components": {
+      "minecraft:behavior.find_mount": {
+        "priority": 1,
+        "within_radius": 16,
+        "start_delay": 15,
+        "max_failed_attempts": 20
+      },
+      "minecraft:equipment": {
+        "table": "loot_tables/entities/goblin_gear.json"
+      },
+      "minecraft:experience_reward": {
+        "on_death": "query.last_hit_by_player ? 12 + (query.equipment_count * Math.Random(1,3)) : 0"
+      },
+      "minecraft:movement": {
+        "value": 0.35
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:type_family": {
+        "family": [ "goblin", "jockey", "monster", "mob" ]
+      },
+      "minecraft:equip_item": {
+      },
+      "minecraft:collision_box": {
+        "width": 0.8,
+        "height": 1.3
+      },
+      "minecraft:movement.basic": {
+      },
+      "minecraft:navigation.walk": {
+        "is_amphibious": true,
+        "can_pass_doors": true,
+        "can_walk": true,
+        "can_break_doors": true
+      },
+      "minecraft:annotation.break_door": {
+      },
+      "minecraft:jump.static": {
+      },
+      "minecraft:can_climb": {
+      },
+      "minecraft:health": {
+        "value": {
+          "range_min": 18,
+          "range_max": 30
+        }
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0,
+        "breathes_air": true,
+        "breathes_water": true
+      },
+      "minecraft:attack": {
+        "damage": 2
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/goblin.json"
+      },
+      "minecraft:shareables": {
+        "items": [
+          {
+            "item": "minecraft:netherite_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 0
+          },
+          {
+            "item": "minecraft:diamond_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 1
+          },
+          {
+            "item": "minecraft:iron_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 2
+          },
+          {
+            "item": "minecraft:stone_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 3
+          },
+          {
+            "item": "minecraft:golden_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 4
+          },
+          {
+            "item": "minecraft:wooden_sword",
+            "want_amount": 1,
+            "surplus_amount": 1,
+            "priority": 5
+          }
+        ]
+      },
+    "minecraft:despawn": {
+      "despawn_from_distance": {}
+     },
+      "minecraft:behavior.equip_item": {
+        "priority": 2
+      },
+      "minecraft:behavior.melee_attack": {
+        "priority": 3
+      },
+      "minecraft:behavior.stomp_turtle_egg": {
+        "priority": 4,
+        "speed_multiplier": 1,
+        "search_range": 10,
+        "search_height": 2,
+        "goal_radius": 1.14,
+        "interval": 20
+      },
+      "minecraft:behavior.move_towards_restriction": {
+        "priority": 5,
+        "speed_multiplier": 1
+      },
+      "minecraft:behavior.pickup_items": {
+        "priority": 6,
+        "max_dist": 3,
+        "goal_radius": 2,
+        "speed_multiplier": 1.0,
+        "pickup_based_on_chance": true,
+        "can_pickup_any_item": true
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 7,
+        "speed_multiplier": 1
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 8,
+        "look_distance": 6,
+        "probability": 0.02
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 9
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "on_damage": {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "goblin"
+              }
+            },
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1,
+        "entity_types": {
+          "filters": {
+            "test": "is_family",
+            "subject": "other",
+            "operator": "!=",
+            "value": "goblin"
+          },
+          "max_dist": 64
+        }
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      }
+    },
+
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "alert_for_attack_targets"
+          ]
+        }
+      },
+      "important_block_destroyed_event": {
+        "remove": {
+          "component_groups": [
+            "alert_for_attack_targets"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "take_target_as_response_to_block_break"
+          ]
+        }
+      },
+      "become_calm_event": {
+        "remove": {
+          "component_groups": [
+            "take_target_as_response_to_block_break"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "alert_for_attack_targets"
+          ]
+        }
+      }
+    }
+  }
+}

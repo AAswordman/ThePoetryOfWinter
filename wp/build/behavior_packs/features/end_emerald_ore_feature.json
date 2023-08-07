@@ -1,0 +1,17 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:ore_feature": {
+		"description": {
+			"identifier": "dec:end_emerald_ore_feature"
+		},
+		"count": 4,
+		"replace_rules": [
+			{
+				"places_block": "dec:end_emerald_ore",
+				"may_replace": [
+					"minecraft:end_stone"
+				]
+			}
+		]
+	}
+}

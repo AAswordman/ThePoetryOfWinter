@@ -1,0 +1,17 @@
+{
+  "format_version": "1.8.0", 
+  "animations": {
+      "animation.everlasting_winter_ghast.defense": {
+        "timeline": {
+            "1": [
+                "/damage @e[family=!frozen,type=!item,x=~-0.6,y=~-0.2,z=~-0.6,dx=1.2,dy=2.4,dz=1.2] 13 freezing entity @s"
+            ],
+            "2": [
+                "/damage @e[family=!frozen,type=!item,x=~-0.6,y=~-0.2,z=~-0.6,dx=1.2,dy=2.4,dz=1.2] 13 freezing entity @s"
+            ]
+        }, 
+        "animation_length": 2, 
+        "loop": true
+      }
+   }
+}

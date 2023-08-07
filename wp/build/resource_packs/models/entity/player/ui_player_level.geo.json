@@ -1,0 +1,105 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:geometry": [
+    {
+      "description": {
+        "identifier": "geometry.ui_player_level",
+        "texture_width": 16,
+        "texture_height": 8
+      },
+      "bones": [
+        {
+          "name": "ui_player_level",
+          "pivot": [0,0,0],
+          "cubes": [
+            {
+              "origin": [-38,-247,0],
+              "size": [16,8,0],
+              "uv": {
+                "north": {
+                  "uv": [0,0],
+                  "uv_size": [16,8]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.ui_player_level_a",
+        "texture_width": 6,
+        "texture_height": 6
+      },
+      "bones": [
+        {
+          "name": "ui_player_level1",
+          "pivot": [0,0,0],
+          "cubes": [
+            {
+              "origin": [-21,-247,0],
+              "size": [8,8,0],
+              "uv": {
+                "north": {
+                  "uv": [0,0],
+                  "uv_size": [8,8]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.ui_player_level_b",
+        "texture_width": 8,
+        "texture_height": 8
+      },
+      "bones": [
+        {
+          "name": "ui_player_level2",
+          "pivot": [0,0,0],
+          "cubes": [
+            {
+              "origin": [-15,-247,-0.1],
+              "size": [8,8,0],
+              "uv": {
+                "north": {
+                  "uv": [0,0],
+                  "uv_size": [8,8]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": {
+        "identifier": "geometry.ui_player_level_c",
+        "texture_width": 8,
+        "texture_height": 8
+      },
+      "bones": [
+        {
+          "name": "ui_player_level3",
+          "pivot": [0,0,0],
+          "cubes": [
+            {
+              "origin": [-9,-247,-0.2],
+              "size": [8,8,0],
+              "uv": {
+                "north": {
+                  "uv": [0,0],
+                  "uv_size": [8,8]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

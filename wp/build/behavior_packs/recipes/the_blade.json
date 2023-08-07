@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:the_blade"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "A",
+      "B",
+      "X"
+    ],
+    "key": {
+      "X": {
+        "item": "dec:iron_stick"
+      },
+      "A": {
+        "item": "dec:steel_ingot"
+      },
+      "B": {
+        "item": "minecraft:iron_sword"
+      }
+    },
+    "result": {
+      "item": "dec:the_blade"
+    }
+  }
+}

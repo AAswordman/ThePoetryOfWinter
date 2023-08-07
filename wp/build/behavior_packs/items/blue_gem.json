@@ -1,0 +1,58 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "items",
+      "identifier": "dec:blue_gem"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.decorations"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:blue_gem.name"
+      },
+      "minecraft:icon": {
+        "texture": "blue_gem"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "cookie",
+      "minecraft:stacked_by_data": false,
+      "minecraft:foil": true,
+      "minecraft:on_use": {
+        "on_use": {
+          "event": "use",
+          "target": "self"
+        }
+      },
+      "minecraft:cooldown": {
+        "category": "blue_gem",
+        "duration": 0.3
+      }
+    },
+    "events": {
+      "use": {
+        "run_command": {
+          "command": [
+            "tag @s[scores={maxmagic=..9}] add clear_blue_gem",
+            "tellraw @s[scores={maxmagic=0}] { \"rawtext\" : [ { \"translate\" : \"text.dec:uptomm1.name\" } ] }",
+            "tellraw @s[scores={maxmagic=1}] { \"rawtext\" : [ { \"translate\" : \"text.dec:uptomm2.name\" } ] }",
+            "tellraw @s[scores={maxmagic=2}] { \"rawtext\" : [ { \"translate\" : \"text.dec:uptomm3.name\" } ] }",
+            "tellraw @s[scores={maxmagic=3}] { \"rawtext\" : [ { \"translate\" : \"text.dec:uptomm4.name\" } ] }",
+            "tellraw @s[scores={maxmagic=4}] { \"rawtext\" : [ { \"translate\" : \"text.dec:uptomm5.name\" } ] }",
+            "tellraw @s[scores={maxmagic=5}] { \"rawtext\" : [ { \"translate\" : \"text.dec:uptomm6.name\" } ] }",
+            "tellraw @s[scores={maxmagic=6}] { \"rawtext\" : [ { \"translate\" : \"text.dec:uptomm7.name\" } ] }",
+            "tellraw @s[scores={maxmagic=7}] { \"rawtext\" : [ { \"translate\" : \"text.dec:uptomm8.name\" } ] }",
+            "tellraw @s[scores={maxmagic=8}] { \"rawtext\" : [ { \"translate\" : \"text.dec:uptomm9.name\" } ] }",
+            "tellraw @s[scores={maxmagic=9}] { \"rawtext\" : [ { \"translate\" : \"text.dec:uptomm10.name\" } ] }",
+            "tellraw @s[scores={maxmagic=10..19}] { \"rawtext\" : [ { \"translate\" : \"text.dec:blue_gem_max.name\" } ] }",
+            "tellraw @s[scores={maxmagic=20}] { \"rawtext\" : [ { \"translate\" : \"text.dec:red_gem_max.name\" } ] }",
+            "scoreboard players add @s[scores={maxmagic=..9}] maxmagic 1",
+            "clear @s[tag=clear_blue_gem,scores={maxmagic=..10}] dec:blue_gem 0 1",
+            "tag @s[scores={maxmagic=..10}] remove clear_blue_gem"
+          ]
+        }
+      }
+    }
+  }
+}

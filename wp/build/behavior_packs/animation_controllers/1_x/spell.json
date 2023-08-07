@@ -1,0 +1,24 @@
+{
+  "format_version": "1.8.0",
+  "animation_controllers": {
+    "controller.animation.spell.frozen": {
+      "states": {
+        "default": {
+          "on_entry": [
+            "/effect @e[r=3] slowness 1 255 true",
+            "/effect @e[r=3] weakness 1 255 true"
+          ]
+        }
+      }
+    },
+    "controller.animation.spell.poisoning": {
+      "states": {
+        "default": {
+          "on_entry": [
+            "/effect @e[r=3] fatal_poison 5 5 true"
+          ]
+        }
+      }
+    }
+  }
+}

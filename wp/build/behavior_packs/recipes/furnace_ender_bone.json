@@ -1,0 +1,15 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_furnace": {
+    "description": {
+      "identifier": "dec:ender_bone"
+    },
+    "tags": [
+      "furnace",
+      "smoker",
+      "campfire"
+    ],
+    "input": "dec:ender_bone",
+    "output": "minecraft:bone"
+  }
+}

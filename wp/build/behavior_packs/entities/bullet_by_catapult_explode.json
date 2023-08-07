@@ -1,0 +1,70 @@
+{
+  "format_version": "1.12.0",
+ "minecraft:entity": {
+  "description": {
+    "identifier": "dec:bullet_by_catapult_explode",
+    "runtime_identifier": "minecraft:egg",
+    "is_spawnable": false,
+    "is_summonable": true,
+    "is_experimental": false
+  },
+  "component_groups": {
+    "minecraft:exploding": {
+      "minecraft:explode": {
+        "fuseLength": 0,
+        "fuseLit": true,
+        "power": 1,
+        "causesFire": false,
+        "destroy_affected_by_griefing": true,
+        "fire_affected_by_griefing": true
+      }
+    }
+  },
+  "components": {
+   "minecraft:collision_box": {
+    "width": 0.2,
+    "height": 0.2
+   },
+   "minecraft:projectile": {
+    "onHit": {
+      "impact_damage": {
+        "damage": 7,
+        "knockback": true,
+        "catchFire": false,
+        "semirandomdiffdamage": false
+      },
+      "definition_event": {
+        "affectProjectile": true,
+        "eventTrigger": {
+          "event": "minecraft:explode",
+          "target": "self"
+        }
+      }
+    },
+    "power": 1.4,
+    "gravity": 0.02,
+    "inertia": 1.1,
+    "liquid_inertia": 0.95,
+    "anchor": 1,
+    "offset": [ 0, 0, 1 ],
+    "semirandomdiffdamage": true,
+    "uncertaintyBase": 8.0,
+    "uncertaintyMultiplier": 4,
+    "reflectOnHurt": true
+   },
+   "minecraft:pushable": {
+    "is_pushable": false,
+    "is_pushable_by_piston": true
+   }
+  },
+  "events": {
+    "minecraft:explode": {
+      "add": {
+        "component_groups": [
+          "minecraft:exploding"
+        ]
+      }
+    }
+   }
+ }
+}

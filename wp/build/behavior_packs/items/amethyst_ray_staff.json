@@ -1,0 +1,104 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:amethyst_ray_staff"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.sword"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:amethyst_ray_staff.name"
+      },
+      "minecraft:icon": {
+        "texture": "amethyst_ray_staff"
+      },
+      "minecraft:enchantable": {
+        "value": 20,
+        "slot": "flintsteel"
+      },
+      "minecraft:use_animation": "bow",
+      "minecraft:render_offsets": "bow",
+      "minecraft:stacked_by_data": false,
+      "minecraft:max_stack_size": 1,
+      "minecraft:foil": false,
+      "minecraft:hand_equipped": true,
+      "minecraft:on_use": {
+        "on_use": {
+          "event": "shoot",
+          "target": "self"
+        }
+      },
+      "minecraft:cooldown": {
+        "category": "staff",
+        "duration": 1
+      },
+      "minecraft:durability": {
+        "max_durability": 354
+      },
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "minecraft:iron_ingot"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.3"
+          },
+          {
+            "items": [
+              "minecraft:iron_nugget"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.03"
+          },
+          {
+            "items": [
+              "minecraft:amethyst_shard"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.3"
+          }
+        ]
+      },
+      "tag:comp:equipment_type:magic_weapon":{}
+    },
+    "events": {
+      "attack": {
+        "damage": {
+          "type": "magic",
+          "amount": 1
+        }
+      },
+      "shoot": {
+        "sequence": [
+          {
+            "condition": "query.scoreboard('wbfl') > 5",
+            "sequence": [
+              {
+                "run_command": {
+                  "command": [
+                    "playsound item.book.put @a ~~~",
+                    "scoreboard players remove @s wbfl 5"
+                  ],
+                  "target": "holder"
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:amethyst_energy_ray",
+                  "launch_power": 1
+                }
+              },
+              {
+                "damage": {
+                  "type": "magic",
+                  "amount": 1
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

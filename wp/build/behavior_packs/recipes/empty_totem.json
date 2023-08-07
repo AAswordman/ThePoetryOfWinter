@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:empty_totem"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " # ",
+      "AXA",
+      " A "
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:gold_ingot"
+      },
+      "A": {
+        "item": "minecraft:gold_nugget"
+      },
+      "X": {
+        "item": "minecraft:golden_apple"
+      }
+    },
+    "result": {
+      "item": "dec:empty_totem"
+    }
+  }
+}

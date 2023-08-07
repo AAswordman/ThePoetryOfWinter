@@ -1,0 +1,16 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "wb:ball_magic_stoneman_b",
+      "materials": { "default": "skeleton" },
+      "textures": {
+        "default": "textures/wb/2_x/magic_stoneman"
+      },
+      "geometry": {
+        "default": "geometry.ball_magic_stoneman_a"
+      },
+      "render_controllers": [ "controller.render.base" ]
+    }
+  }
+}

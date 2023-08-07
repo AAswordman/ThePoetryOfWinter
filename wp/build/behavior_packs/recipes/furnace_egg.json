@@ -1,0 +1,14 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_furnace": {
+    "description": {
+    "identifier": "dec:furnace_egg"
+    },
+
+    
+    "tags": ["furnace", "smoker", "campfire"],
+    "input": "minecraft:egg",
+    "output": "dec:fried_egg"
+  }
+  
+}

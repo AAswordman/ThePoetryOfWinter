@@ -1,0 +1,24 @@
+{
+	"format_version": "1.10.0",
+	"geometry.station_upgrade_a": {
+		"texturewidth": 128,
+		"textureheight": 128,
+		"visible_bounds_width": 3,
+		"visible_bounds_height": 1,
+		"visible_bounds_offset": [0, 0.5, 0],
+		"bones": [
+			{
+				"name": "body",
+				"pivot": [0, 24, 0],
+				"cubes": [
+					{"origin": [-10, 0, -10], "size": [20, 4, 20], "uv": [0, 0]},
+					{"origin": [-8, 4, -8], "size": [16, 3, 16], "uv": [0, 24]},
+					{"origin": [-9, 6, -9], "size": [4, 2, 4], "uv": [0, 24]},
+					{"origin": [5, 6, -9], "size": [4, 2, 4], "uv": [0, 12]},
+					{"origin": [5, 6, 5], "size": [4, 2, 4], "uv": [0, 6]},
+					{"origin": [-9, 6, 5], "size": [4, 2, 4], "uv": [0, 0]}
+				]
+			}
+		]
+	}
+}

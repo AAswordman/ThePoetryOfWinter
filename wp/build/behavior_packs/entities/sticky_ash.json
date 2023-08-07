@@ -1,0 +1,86 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:sticky_ash",
+      "runtime_identifier": "minecraft:snowball",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+      "minecraft:collision_box": {
+        "width": 0.25,
+        "height": 0.25
+      },
+      "minecraft:projectile": {
+        "onHit": {
+          "definition_event": {
+            "affect_projectile": true,
+            "event_trigger": {
+              "event": "minecraft:explode",
+              "target": "self"
+            }
+          },
+          "mob_effect": {
+            "effect": "wither",
+            "durationeasy": 200,
+            "durationnormal": 200,
+            "durationhard": 200,
+            "amplifier": 1
+          },
+          "impact_damage": {
+            "damage": 6,
+            "catchFire": true,
+            "knockback": true
+          },
+          "particle_on_hit": {
+            "particle_type": "bullet.hit",
+            "num_particles": 6,
+            "on_entity_hit": true,
+            "on_other_hit": true
+          }
+        },
+        "hit_sound": "lava.pop",
+        "power": 1.5,
+        "gravity": 0.03,
+        "inertia": 1.1,
+        "offset": [
+          0,
+          0,
+          1
+        ],
+        "uncertaintyBase": 3.0,
+        "angleoffset": 0.0
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    },
+    "events": {
+      "minecraft:explode": {
+        "run_command": {
+          "command": [
+            "fill ~-2~-2~-2~2~2~2 dec:ash replace lava [\"liquid_depth\":0]",
+            "particle dec:sticky_ash_particle ~~~",
+            "event entity @s minecraft:despawn"
+          ],
+          "target": "self"
+        }
+      },
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:ghost_diamond_axe",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+      "components": {
+        "minecraft:despawn": {
+          "despawn_from_distance": {}
+        },
+        "minecraft:balloonable": {
+        },
+        "minecraft:experience_reward": {
+          "on_death": "query.last_hit_by_player ? 10 : 0"
+        },
+        "minecraft:type_family": {
+          "family": [ "ghost_diamond_axe","ghost", "mob", "monster" ]
+        },
+        "minecraft:breathable": {
+          "total_supply": 15,
+          "suffocate_time": 0
+        },
+        "minecraft:nameable": {
+        },
+        "minecraft:collision_box": {
+          "width": 0.4,
+          "height": 1.8
+        },
+        "minecraft:movement": {
+          "value": 0.2
+        },
+        "minecraft:navigation.walk": {
+        "can_path_over_water": true
+        },
+        "minecraft:movement.basic": {
+
+        },
+        "minecraft:jump.static": {
+        },
+        "minecraft:can_climb": {
+        },
+        "minecraft:health": {
+          "value": {
+            "range_min": 30,
+            "range_max": 40
+          }
+        },
+        "minecraft:attack": {
+          "damage": 6,
+          "effect_name": "slowness",
+          "effect_duration": 15
+        },
+        "minecraft:behavior.float": {
+          "priority": 0
+        },
+        "minecraft:behavior.swell": {
+          "start_distance": 1.5,
+          "priority": 2
+        },
+        "minecraft:behavior.melee_attack": {
+          "priority": 4,
+          "speed_multiplier": 1.25,
+          "track_target": true,
+          "reach_multiplier":  0.0
+        },
+        "minecraft:behavior.random_stroll": {
+          "priority": 5,
+          "speed_multiplier": 1
+        },
+        "minecraft:behavior.look_at_player": {
+          "priority": 6,
+          "look_distance": 8
+        },
+        "minecraft:behavior.random_look_around": {
+          "priority": 6
+        },
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 1,
+          "entity_types": [
+            {
+              "filters": {
+                "any_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "villager"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "wandering_trader"
+                  }
+                ]
+              }
+            }
+          ],
+          "must_see": false
+        },
+        "minecraft:behavior.hurt_by_target": {
+          "priority": 2
+        },
+        "minecraft:physics": {
+        },
+        "minecraft:pushable": {
+          "is_pushable": true,
+          "is_pushable_by_piston": true
+        }
+      }
+    }
+  }

@@ -1,0 +1,27 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:rice"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.miscFood"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:rice.name"
+      },
+      "minecraft:icon": {
+        "texture": "rice"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "cookie",
+      "minecraft:use_duration": 0.4,
+      "minecraft:food": {
+        "nutrition": 1,
+        "saturation_modifier": "normal"
+      }
+    }
+  }
+}

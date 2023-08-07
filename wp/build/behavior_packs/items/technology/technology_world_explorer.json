@@ -1,0 +1,27 @@
+{
+    "format_version": "1.16.100",
+    "minecraft:item": {
+        "description": {
+            "identifier": "wb:technology_world_explorer",
+            "category": "equipment"
+        },
+        "components": {
+            "minecraft:creative_category": {},
+            "minecraft:render_offsets": "tools",
+            "minecraft:icon": {
+                "texture": "technology_world_explorer"
+            },
+            "minecraft:display_name": {
+                "value": "item.wb:technology_world_explorer.name"
+            },
+            "minecraft:hand_equipped": false,
+            "minecraft:food":{
+                "can_always_eat":true
+            },
+            "minecraft:foil": false,
+            "minecraft:max_stack_size": 1,
+            "minecraft:damage": 1,
+            "minecraft:stacked_by_data": false
+        }
+    }
+}

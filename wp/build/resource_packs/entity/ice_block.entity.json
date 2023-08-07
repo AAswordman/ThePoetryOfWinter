@@ -1,0 +1,31 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:ice_block",
+      "materials": {
+        "default": "slime_outer"
+      },
+      "textures": {
+        "default": "textures/blocks/ice"
+      },
+      "geometry": {
+        "default": "geometry.block_1"
+      },
+      "render_controllers": [
+        "controller.render.ice_block"
+      ],
+      "scripts": {
+        "animate": [
+          "root",
+          "spawn"
+        ]
+      },
+      "animations": {
+        "root": "controller.animation.ice_block.root",
+        "spawn": "animation.ice_block.spawn",
+        "defualt": "animation.ice_block.defualt"
+      }
+    }
+  }
+}

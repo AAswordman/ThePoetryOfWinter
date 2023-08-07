@@ -1,0 +1,10 @@
+{
+  "$boss_name_text_color": [ 1.0, 1.0, 1.0 ],
+  "$boss_health_bar_color": [ 1.0, 1.0, 1.0 ],
+  "$base_color_r_wb":[1.0,0.0,0.0],
+  "$base_color_g_wb":[0.0,1.0,0.0],
+  "$base_color_b_wb":[0.0,0.0,1.0],
+  "$base_color_w_wb":[1.0,1.0,1.0],
+  "$http_wp_main_system":"https://aaswordman.github.io/ThePoetryOfWinter/",
+  "$addon_wp_version":"1.5.2"
+}

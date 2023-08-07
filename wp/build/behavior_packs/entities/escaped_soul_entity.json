@@ -1,0 +1,284 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:escaped_soul_entity",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "teleport"
+        ]
+      },
+      "animations": {
+        "teleport": "animation.escaped_soul_entity"
+      }
+    },
+    "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "minecraft:entity": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "soul"
+                }
+              },
+              "deals_damage": true
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "looping": true,
+          "time": 20,
+          "time_down_event": {
+            "event": "minecraft:become_soul"
+          }
+        },
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+      "minecraft:soul": {
+        "minecraft:timer": {
+          "looping": true,
+          "time": 10,
+          "time_down_event": {
+            "event": "minecraft:become_entity"
+          }
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "soul"
+                }
+              },
+              "deals_damage": false
+            }
+          ]
+        },
+        "minecraft:variant": {
+          "value": 1
+        }
+      }
+    },
+    "components": {
+      "minecraft:on_death": {
+        "event": "minecraft:die",
+        "target": "self"
+      },
+      "minecraft:movement": {
+        "value": 0.32
+      },
+      "minecraft:variant": {
+        "value": 0
+      },
+      "minecraft:behavior.melee_attack": {
+        "priority": 3,
+        "speed_multiplier": 1,
+        "track_target": false
+      },
+      "minecraft:attack": {
+        "damage": 20,
+        "effect_name": "blindness",
+        "effect_duration": 1
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "fall",
+            "deals_damage": false
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "operator": "!=",
+                "value": "soul"
+              }
+            },
+            "deals_damage": true
+          }
+        ]
+      },
+      "minecraft:navigation.walk": {
+        "is_amphibious": true,
+        "avoid_sun": true,
+        "avoid_water": true
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
+      "minecraft:nameable": {},
+      "minecraft:behavior.random_stroll": {
+        "priority": 5,
+        "speed_multiplier": 1
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 6,
+        "look_distance": 8
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 6
+      },
+      "minecraft:knockback_resistance": {
+        "value": 0.7
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {
+          "min_distance": 64,
+          "max_distance": 64
+        }
+      },
+      "minecraft:fire_immune": true,
+      "minecraft:experience_reward": {
+        "on_death": "query.last_hit_by_player ? 400 : 0"
+      },
+      "minecraft:boss": {
+        "should_darken_sky": false,
+        "hud_range": 64,
+        "name": "boss.dec:escaped_soul.name"
+      },
+      "minecraft:collision_box": {
+        "width": 0.6,
+        "height": 1.8
+      },
+      "minecraft:type_family": {
+        "family": [
+          "soul",
+          "escaped_soul",
+          "monster",
+          "boss",
+          "mob"
+        ]
+      },
+      "minecraft:breathable": {
+        "totalSupply": 15,
+        "suffocateTime": 0,
+        "breathesWater": true
+      },
+      "minecraft:health": {
+        "value": 400,
+        "max": 400
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/escaped_soul.json"
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1,
+        "entity_types": {
+          "filters": {
+            "test": "is_family",
+            "subject": "other",
+            "operator": "!=",
+            "value": "soul"
+          },
+          "max_dist": 64
+        }
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "reselect_targets": true,
+        "entity_types": [
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "player"
+            },
+            "max_dist": 16
+          },
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "irongolem"
+            },
+            "max_dist": 16
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "baby_turtle"
+                },
+                {
+                  "test": "in_water",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": true
+                }
+              ]
+            },
+            "max_dist": 16
+          }
+        ],
+        "must_see": true
+      },
+      "minecraft:physics": {}
+    },
+    "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "minecraft:soul"
+          ]
+        }
+      },
+      "minecraft:become_entity": {
+        "remove": {
+          "component_groups": [
+            "minecraft:soul"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:entity"
+          ]
+        }
+      },
+      "minecraft:become_soul": {
+        "remove": {
+          "component_groups": [
+            "minecraft:entity"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:soul"
+          ]
+        }
+      },
+      "minecraft:die": {
+        "run_command": {
+          "command": [
+            "event entity @e[c=1,r=64,type=dec:escaped_soul_3] minecraft:despawn"
+          ],
+          "target": "self"
+        }
+      }
+    }
+  }
+}

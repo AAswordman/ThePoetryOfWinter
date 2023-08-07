@@ -1,0 +1,93 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:bullet_by_storm_flintlock",
+      "runtime_identifier": "minecraft:egg",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "spawn"
+        ]
+      },
+      "animations": {
+        "spawn": "animation.playsound_random_explode"
+      }
+    },
+    "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+      "minecraft:collision_box": {
+        "width": 0.2,
+        "height": 0.2
+      },
+      "minecraft:projectile": {
+        "onHit": {
+          "definition_event": {
+            "affect_projectile": true,
+            "event_trigger": {
+              "event": "minecraft:explode",
+              "target": "self"
+            }
+          },
+          "impact_damage": {
+            "damage": 13,
+            "knockback": true,
+            "catchFire": false,
+            "semirandomdiffdamage": false
+          }
+        },
+        "power": 2.1,
+        "gravity": 0.01,
+        "inertia": 1,
+        "liquid_inertia": 1.1,
+        "anchor": 1,
+        "offset": [
+          0,
+          0,
+          1
+        ],
+        "semirandomdiffdamage": true,
+        "uncertaintyBase": 3.0,
+        "uncertaintyMultiplier": 1,
+        "reflectOnHurt": true
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    },
+    "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
+      "minecraft:explode": {
+        "sequence": [
+          {
+            "filters": {
+              "test": "in_water_or_rain",
+              "value": true
+            },
+            "run_command": {
+              "command": [
+                "damage @e[r=3,type=!item] 14 entity_explosion",
+                "particle dec:bubble_spurt_small_particle ~~~",
+                "playsound conduit.activate @a ~~~",
+                "event entity @s minecraft:despawn"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

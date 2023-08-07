@@ -1,0 +1,22 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shapeless": {
+    "description": {
+    "identifier": "dec:artificial_meat_creator_on"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "ingredients": [
+      {
+        "item": "dec:artificial_meat_creator_off"
+      },
+      {
+        "item": "dec:artificial_meat_creator_power"
+      }
+    ],
+    "result": {
+      "item": "dec:artificial_meat_creator_on"
+    }
+  }
+}

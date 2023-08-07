@@ -1,0 +1,36 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:lava_flintlock"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "CCA",
+      "X#X",
+      "BCA"
+    ],
+    "key": {
+      "#": {
+        "item": "dec:flintlock_pro"
+      },
+      "X": {
+        "item": "dec:lava_ingot"
+      },
+      "A": {
+        "item": "minecraft:bucket",
+        "data": 10
+      },
+      "B": {
+        "item": "minecraft:magma"
+      },
+      "C": {
+        "item": "minecraft:magma_cream"
+      }
+    },
+    "result": [
+      { "item": "dec:lava_flintlock" },
+      { "item": "minecraft:bucket", "count": 2, "data": 0 }
+    ]
+  }
+}

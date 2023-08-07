@@ -1,0 +1,27 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "nature",
+      "identifier": "dec:gold_fish"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.rawFood"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:gold_fish.name"
+      },
+      "minecraft:icon": {
+        "texture": "gold_fish"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "fish",
+      "minecraft:use_duration": 1.6,
+      "minecraft:food": {
+        "nutrition": 5,
+        "saturation_modifier": "normal"
+      }
+    }
+  }
+}

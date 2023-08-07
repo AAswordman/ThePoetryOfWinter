@@ -1,0 +1,19 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:abyssal_shadow",
+      "materials": { "default": "drowned" },
+      "textures": {
+        "default": "textures/entity/abyssal_shadow"
+      },
+      "scripts": {
+        "scale": "1"
+      },
+      "geometry": {
+        "default": "geometry.head"
+      },
+      "render_controllers": [ "controller.render.drowned" ]
+    }
+  }
+}

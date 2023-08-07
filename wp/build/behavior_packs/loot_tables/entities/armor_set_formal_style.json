@@ -1,0 +1,26 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "dec:formal_sytle_clothes",
+          "weight": 1,
+          "pools": [
+            {
+              "rolls": 1,
+              "entries": [
+                {
+                  "type": "item",
+                  "name": "dec:formal_sytle_pants",
+                  "weight": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "nature",
+      "identifier": "dec:leek_seeds"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.seed"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:leek_seeds.name"
+      },
+      "minecraft:icon": {
+        "texture": "leek_seeds"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "cookie",
+      "minecraft:block_placer": {
+        "block": "dec:leek_crop"
+      }
+    }
+  }
+}

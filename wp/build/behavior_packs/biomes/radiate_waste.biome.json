@@ -1,0 +1,64 @@
+{
+  "format_version": "1.15.0",
+  "minecraft:biome": {
+    "description": {
+      "identifier": "radiate_waste"
+    },
+    "components": {
+      "minecraft:climate": {
+        "downfall": 0.0,
+        "snow_accumulation": [ 0.0, 0.125 ],
+        "temperature": 2.0
+      },
+      "minecraft:overworld_height": {
+        "noise_type": "lowlands"
+      },
+      "minecraft:surface_parameters": {
+        "top_material": "minecraft:dirt",
+        "mid_material": "minecraft:dirt",
+        "foundation_material": "minecraft:stone",
+        "sea_floor_material": "minecraft:dirt",
+        "sea_material": "minecraft:water",
+        "sea_floor_depth": 7
+      },
+      "minecraft:surface_material_adjustments": {
+        "adjustments": [
+          {
+            "materials": {
+              "top_material": {
+                "name": "minecraft:dirt",
+                "states": {
+                  "dirt_type": "coarse"
+                }
+              }
+            },
+            "noise_frequency_scale": 0.5,
+            "noise_range": [ -1, 1 ]
+          },
+          {
+            "materials": {
+              "top_material": "dec:radiate_dirt"
+            },
+            "noise_frequency_scale": 0.05,
+            "noise_range": [ 0.11, 0.2 ]
+          }
+        ]
+      },
+      "minecraft:overworld_generation_rules": {
+        "hills_transformation": [
+          [ "forest_hills", 1 ],
+          [ "forest", 2 ]
+        ],
+        "mutate_transformation": "flower_forest",
+        "generate_for_climates": [
+          [ "medium", 1 ],
+          [ "warm", 1 ]
+        ]
+      },
+      "animal": {},
+      "monster": {},
+      "overworld": {},
+      "radiate_waste": {}
+    }
+  }
+}

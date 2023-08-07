@@ -1,0 +1,24 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:wind_dagger"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "A",
+      "X"
+    ],
+    "key": {
+      "X": {
+        "item": "minecraft:stick"
+      },
+      "A": {
+        "item": "dec:stream_stone"
+      }
+    },
+    "result": {
+      "item": "dec:wind_dagger"
+    }
+  }
+}

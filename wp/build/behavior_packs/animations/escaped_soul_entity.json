@@ -1,0 +1,21 @@
+{
+  "format_version": "1.8.0", 
+  "animations": {
+      "animation.escaped_soul_entity": {
+        "timeline": {
+            "0": [
+            ],
+            "5": [
+                "/tag @r[r=64,type=dec:soul_soldier,family=soul_soilder_by_boss_last] add escaped_soul_entity_teleport",
+                "/tp @e[tag=escaped_soul_entity_teleport,c=1]",
+                "/execute at @e[tag=escaped_soul_entity_teleport,c=1] run particle dec:ghost_spurt_big_particle ~~1~",
+                "/tp @e[tag=escaped_soul_entity_teleport] ~ -400 ~",
+                "/kill @e[tag=escaped_soul_entity_teleport]",
+                "/tag @e[tag=escaped_soul_entity_teleport] remove escaped_soul_entity_teleport"
+            ]
+        }, 
+        "animation_length": 5, 
+        "loop": true
+      }
+   }
+}

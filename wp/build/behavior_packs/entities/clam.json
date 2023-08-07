@@ -1,0 +1,242 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:clam",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "minecraft:small": {
+        "minecraft:health": {
+          "value": 30,
+          "max": 30
+        },
+        "minecraft:scale_by_age": {
+          "start_scale": 1,
+          "end_scale": 2
+        },
+        "minecraft:ageable": {
+          "duration": 1200,
+          "grow_up": {
+            "event": "minecraft:grow_up_1",
+            "target": "self"
+          }
+        },
+        "minecraft:attack": {
+          "damage": 1
+        }
+      },
+      "minecraft:middle": {
+        "minecraft:health": {
+          "value": 40,
+          "max": 40
+        },
+        "minecraft:scale_by_age": {
+          "start_scale": 2,
+          "end_scale": 3
+        },
+        "minecraft:ageable": {
+          "duration": 1200,
+          "grow_up": {
+            "event": "minecraft:grow_up_2",
+            "target": "self"
+          }
+        },
+        "minecraft:attack": {
+          "damage": 3
+        }
+      },
+      "minecraft:large": {
+        "minecraft:health": {
+          "value": 50,
+          "max": 50
+        },
+        "minecraft:scale_by_age": {
+          "start_scale": 3,
+          "end_scale": 5
+        },
+        "minecraft:ageable": {
+          "duration": 1200,
+          "grow_up": {
+            "event": "minecraft:grow_up_3",
+            "target": "self"
+          }
+        },
+        "minecraft:attack": {
+          "damage": 7
+        }
+      },
+      "minecraft:very_large": {
+        "minecraft:health": {
+          "value": 70,
+          "max": 70
+        },
+        "minecraft:scale": {
+          "value": 5
+        },
+        "minecraft:attack": {
+          "damage": 11
+        }
+      }
+    },
+
+    "components": {
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
+      "minecraft:type_family": {
+        "family": [ "clam", "fish", "animal", "mob" ]
+      },
+      "minecraft:experience_reward": {
+        "on_death": "query.last_hit_by_player ? 5 : 0"
+      },
+      "minecraft:collision_box": {
+        "width": 0.2,
+        "height": 0.1
+      },
+      "minecraft:movement.basic": {
+      },
+        "minecraft:movement": {
+          "value": 0.005
+        },
+        "minecraft:underwater_movement": {
+          "value": 0.005
+        },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/clam.json"
+      },
+      "minecraft:breathable": {
+        "totalSupply": 15,
+        "suffocateTime": 0,
+        "breathesAir": false,
+        "breathesWater": true
+      },
+
+      "minecraft:navigation.generic": {
+        "is_amphibious": true
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:behavior.melee_attack": {
+        "priority": 2,
+        "speed_multiplier": 1,
+        "track_target": false
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "within_radius": 25,
+        "reselect_targets": true,
+        "entity_types": [
+          {
+            "filters": {
+              "any_of": [
+                { "test": "is_family", "subject": "other", "value": "player" },
+                { "test": "is_family", "subject": "other", "value": "snowgolem" },
+                { "test": "is_family", "subject": "other", "value": "irongolem" }
+              ]
+            },
+            "max_dist": 35
+          },
+          {
+            "filters": {
+              "any_of": [
+                { "test": "is_family", "subject": "other", "value": "villager" },
+                { "test": "is_family", "subject": "other", "value": "wandering_trader" }
+              ]
+            },
+            "max_dist": 35,
+            "must_see": false
+          },
+          {
+            "filters": {
+              "all_of": [
+                { "test": "is_family", "subject": "other", "value": "monster" }
+              ]
+            },
+            "max_dist": 35
+          }
+        ],
+        "must_see": true
+      },
+      "minecraft:physics": {
+        "has_gravity": true
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "randomize": [
+          {
+            "weight": 90,
+            "add": {
+              "component_groups": [
+                "minecraft:small"
+              ]
+            }
+          },
+          {
+            "weight": 50,
+            "add": {
+              "component_groups": [
+                "minecraft:middle"
+              ]
+            }
+          },
+          {
+            "weight": 10,
+            "add": {
+              "component_groups": [
+                "minecraft:large"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "add": {
+              "component_groups": [
+                "minecraft:very_large"
+              ]
+            }
+          }
+        ]
+      },
+      "minecraft:grow_up_1": {
+        "remove": {
+          "component_groups": [
+            "minecraft:small"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:middle"
+          ]
+        }
+      },
+      "minecraft:grow_up_2": {
+        "remove": {
+          "component_groups": [
+            "minecraft:middle"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:large"
+          ]
+        }
+      },
+      "minecraft:grow_up_3": {
+        "remove": {
+          "component_groups": [
+            "minecraft:large"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:very_large"
+          ]
+        }
+      }
+    }
+  }
+}

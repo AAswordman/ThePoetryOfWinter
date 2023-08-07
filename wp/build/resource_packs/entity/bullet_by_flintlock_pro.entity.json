@@ -1,0 +1,19 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:bullet_by_flintlock_pro",
+      "textures": {
+        "default": "textures/entity/bullet_by_flintlock"
+      },
+      "geometry": {
+        "default": "geometry.bullet"
+      },
+      "scripts": {
+        "scale": "1"
+      },
+      "render_controllers": [ "controller.render.spots" ],
+      "materials": { "default": "husk" }
+      }
+   }
+}

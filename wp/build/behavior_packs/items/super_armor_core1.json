@@ -1,0 +1,83 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "identifier": "dec:super_armor_core1",
+      "category": "equipment"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.navigation"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:super_armor_core1.name"
+      },
+      "minecraft:icon": {
+        "texture": "super_armor_core1"
+      },
+      "minecraft:stacked_by_data": true,
+      "minecraft:use_duration": 0.1,
+      "minecraft:max_stack_size": 1,
+      "minecraft:foil": false,
+      "minecraft:cooldown": {
+        "category": "super_armor_core",
+        "duration": 45
+      },
+      "minecraft:food": {
+        "on_consume": {
+          "event": "consumed",
+          "target": "self"
+        },
+        "nutrition": 0,
+        "can_always_eat": true,
+        "using_converts_to": "dec:super_armor_core0"
+      }
+    },
+    "events": {
+      "consumed": {
+        "sequence": [
+          {
+            "add_mob_effect": {
+              "effect": "resistance",
+              "duration": 8,
+              "amplifier": 1,
+              "target": "holder"
+            }
+          },
+          {
+            "add_mob_effect": {
+              "effect": "strength",
+              "duration": 8,
+              "amplifier": 5,
+              "target": "holder"
+            }
+          },
+          {
+            "add_mob_effect": {
+              "effect": "absorption",
+              "duration": 8,
+              "amplifier": 1,
+              "target": "holder"
+            }
+          },
+          {
+            "add_mob_effect": {
+              "effect": "slowness",
+              "duration": 8,
+              "amplifier": 1,
+              "target": "holder"
+            }
+          },
+          {
+            "add_mob_effect": {
+              "effect": "regeneration",
+              "duration": 8,
+              "amplifier": 1,
+              "target": "holder"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

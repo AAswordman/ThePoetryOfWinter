@@ -1,0 +1,26 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "wb:particle_store"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "###",
+      "#Y#"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:stone"
+      },
+      "Y": {
+        "item":"minecraft:redstone_block"
+      }
+    },
+    "result": {
+      "item": "wb:particle_store"
+    }
+  }
+}

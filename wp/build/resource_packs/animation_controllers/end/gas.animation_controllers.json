@@ -1,0 +1,13 @@
+{
+ "format_version": "1.8.0",
+  "animation_controllers": {
+   "controller.animation.gas.move": {
+      "states": {
+        "default": {
+        	"animations": [ { "move": [] } ],
+        	"particle_effects": [{"effect": "spel","locator":"thegas"}]
+        }
+      }
+    }
+  }
+}

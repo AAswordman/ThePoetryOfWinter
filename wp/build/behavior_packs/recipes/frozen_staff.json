@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:frozen_staff"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "  X",
+      " # ",
+      "#  "
+    ],
+    "key": {
+      "#": {
+        "item": "dec:ice_rod"
+      },
+      "X": {
+        "item": "minecraft:blue_ice"
+      }
+    },
+    "result": {
+      "item": "dec:frozen_staff"
+    }
+  }
+}

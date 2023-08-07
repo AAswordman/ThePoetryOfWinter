@@ -1,0 +1,52 @@
+ {
+    "geometry.magic_book":  {
+      "texturewidth":  17,
+      "textureheight":  33,
+      "bones":  [
+        {
+          "name":  "body",
+          "pivot":  [  0,  0,  0  ],
+          "cubes":  [
+            {
+              "origin":  [  0,  0,  1  ],
+              "size":  [  7,  10,  1  ],
+              "uv":  [  0,  22  ]
+            }
+          ]
+        },
+        {
+          "name":  "body1",
+          "pivot":  [  0,  0,  0  ],
+          "cubes":  [
+            {
+              "origin":  [  0,  0,  0  ],
+              "size":  [  7,  10,  1  ],
+              "uv":  [  0,  11  ]
+            }
+          ]
+        },
+        {
+          "name":  "body2",
+          "pivot":  [  0.0,  24.0,  0.0  ],
+          "cubes":  [
+            {
+              "origin":  [  0,  0,  -1  ],
+              "size":  [  7,  10,  1  ],
+              "uv":  [  0,  11  ]
+            }
+          ]
+        },
+        {
+          "name":  "body3",
+          "pivot":  [  0.0,  24.0,  0.0  ],
+          "cubes":  [
+            {
+              "origin":  [  0,  0,  -2  ],
+              "size":  [  7,  10,  1  ],
+              "uv":  [  0,  0  ]
+            }
+          ]
+        }
+      ]
+    }
+ }

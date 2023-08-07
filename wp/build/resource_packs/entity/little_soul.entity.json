@@ -1,0 +1,29 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:little_soul",
+      "materials": {
+        "default": "zombie"
+      },
+      "textures": {
+        "default": "textures/entity/little_soul"
+      },
+      "geometry": {
+        "default": "geometry.little_soul"
+      },
+      "animations": {
+        "float": "animation.soul.float"
+      },
+      "scripts": {
+        "animate": [
+          "float"
+        ]
+      },
+      "render_controllers": [
+        "controller.render.zombie"
+      ],
+      "enable_attachables": false
+    }
+  }
+}

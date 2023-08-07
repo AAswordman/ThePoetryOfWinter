@@ -1,0 +1,17 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.border_fugitive": {
+      "rebuild_animation_matrices": true,
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "overlay_color": {
+          "r": 1.0,
+          "g": "1.0-Math.abs(Math.sin(query.life_time*60)*0.5)",
+          "b": "1.0-Math.abs(Math.sin(query.life_time*60)*0.5)",
+          "a": 0.6
+      },
+      "textures": [ "Texture.default" ]
+    }
+  }
+}

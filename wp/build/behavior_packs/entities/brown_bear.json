@@ -1,0 +1,496 @@
+{
+  "format_version": "1.14.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:brown_bear",
+      "runtime_identifier": "minecraft:polar_bear",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "minecraft:baby_tamed": {
+        "minecraft:health": {
+          "value": 30,
+          "max": 30
+        },
+        "minecraft:is_tamed": {},
+        "minecraft:leashable": {
+          "soft_distance": 4.0,
+          "hard_distance": 6.0,
+          "max_distance": 10.0,
+          "on_leash": {
+            "event": "minecraft:on_leash",
+            "target": "self"
+          },
+          "on_unleash": {
+            "event": "minecraft:on_unleash",
+            "target": "self"
+          }
+        },
+        "minecraft:behavior.follow_owner": {
+          "priority": 6,
+          "speed_multiplier": 1.0,
+          "start_distance": 10,
+          "stop_distance": 2
+        },
+        "minecraft:sittable": {},
+        "minecraft:is_baby": {},
+        "minecraft:scale": {
+          "value": 0.5
+        },
+        "minecraft:ageable": {
+          "duration": 1200,
+          "feed_items": [
+            {
+              "item": "fish",
+              "growth": 0.05
+            },
+            {
+              "item": "salmon",
+              "growth": 0.07
+            }
+          ],
+          "grow_up": {
+            "event": "minecraft:ageable_grow_up_tamed",
+            "target": "self"
+          }
+        }
+      },
+      
+      "minecraft:brown_bear_saddled": {
+        "minecraft:is_saddled": {
+        },
+        "minecraft:loot": {
+          "table": "loot_tables/entities/brown_bear_saddled.json"
+        },
+        "minecraft:input_ground_controlled": {
+        },
+        "minecraft:behavior.controlled_by_player": {
+          "priority": 0
+        }
+      },
+      "minecraft:brown_bear_unsaddled": {
+        "minecraft:interact": {
+          "interactions": [
+            {
+              "on_interact": {
+                "filters": { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "saddle"},
+                "event": "minecraft:on_saddled"
+              },
+              "use_item": true,
+              "play_sounds": "saddle",
+              "interact_text": "action.interact.saddle"
+            }
+          ]
+        }
+      },
+      "minecraft:adult_tamed": {
+        "minecraft:movement": {
+          "value": 0.15
+        },
+        "minecraft:health": {
+          "value": 50,
+          "max": 50
+        },
+        "minecraft:healable": {
+          "items": [
+            {
+              "item": "minecraft:fish",
+              "heal_amount": 4
+            },
+            {
+              "item": "minecraft:salmon",
+              "heal_amount": 4
+            }
+          ]
+        },
+        "minecraft:is_tamed": {},
+        "minecraft:rideable": {
+          "seat_count": 1,
+          "family_types": [
+            "player"
+          ],
+          "interact_text": "action.interact.ride.brown_bear",
+          "seats": {
+            "position": [
+              0.0,
+              1.3,
+              -0.2
+            ]
+          }
+        },
+        "minecraft:scale": {
+          "value": 1
+        },
+        "minecraft:leashable": {
+          "soft_distance": 4.0,
+          "hard_distance": 6.0,
+          "max_distance": 10.0,
+          "on_leash": {
+            "event": "minecraft:on_leash",
+            "target": "self"
+          },
+          "on_unleash": {
+            "event": "minecraft:on_unleash",
+            "target": "self"
+          }
+        },
+        "minecraft:behavior.stomp_attack": {
+          "priority": 3,
+          "track_target": true,
+          "require_complete_path": true
+        },
+        "minecraft:behavior.follow_owner": {
+          "priority": 4,
+          "speed_multiplier": 1.0,
+          "start_distance": 8,
+          "stop_distance": 2
+        },
+        "minecraft:behavior.breed": {
+          "priority": 2,
+          "speed_multiplier": 1.0
+        },
+        "minecraft:sittable": {}
+      },
+      "minecraft:baby": {
+        "minecraft:is_baby": {},
+        "minecraft:scale": {
+          "value": 0.5
+        },
+        "minecraft:ageable": {
+          "duration": 1200,
+          "grow_up": {
+            "event": "minecraft:ageable_grow_up",
+            "target": "self"
+          }
+        },
+        "minecraft:behavior.follow_parent": {
+          "priority": 4,
+          "speed_multiplier": 1.25
+        }
+      },
+      "minecraft:baby_wild": {
+        "minecraft:attack": {
+          "damage": 8.0
+        },
+        "minecraft:tameable": {
+          "probability": 0.08,
+          "tame_items": "salmon",
+          "tame_event": {
+            "event": "minecraft:on_tame",
+            "target": "self"
+          }
+        },
+        "minecraft:on_target_acquired": {
+          "event": "minecraft:on_scared",
+          "target": "self"
+        },
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 4,
+          "entity_types": [
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+              },
+              "max_dist": 16
+            }
+          ],
+          "must_see": false
+        }
+      },
+      "minecraft:baby_scared": {
+        "minecraft:angry": {
+          "duration": 1,
+          "broadcast_anger": true,
+          "broadcast_range": 41,
+          "calm_event": {
+            "event": "minecraft:baby_on_calm",
+            "target": "self"
+          }
+        }
+      },
+      "minecraft:adult": {
+        "minecraft:experience_reward": {
+          "on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
+        },
+        "minecraft:loot": {
+          "table": "loot_tables/entities/brown_bear.json"
+        }
+      },
+      "minecraft:adult_wild": {
+        "minecraft:on_target_acquired": {
+          "event": "minecraft:on_anger",
+          "target": "self"
+        },
+        "minecraft:on_friendly_anger": {
+          "event": "minecraft:on_anger",
+          "target": "self"
+        },
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 4,
+          "entity_types": [
+            {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "fox"
+              },
+              "max_dist": 16
+            }
+          ],
+          "must_see": false
+        }
+      },
+      "minecraft:adult_hostile": {
+        "minecraft:attack": {
+          "damage": 8.0
+        },
+        "minecraft:angry": {
+          "duration": 500,
+          "broadcast_anger": false,
+          "broadcast_range": 20,
+          "calm_event": {
+            "event": "minecraft:on_calm",
+            "target": "self"
+          }
+        },
+        "minecraft:behavior.stomp_attack": {
+          "priority": 1,
+          "track_target": true,
+          "require_complete_path": true
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "browm_bear",
+          "bear",
+          "mob"
+        ]
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0
+      },
+      "minecraft:nameable": {},
+      "minecraft:health": {
+        "value": {
+          "range_min": 30,
+          "range_max": 40
+        }
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:rideable": {
+        "seat_count": 1,
+        "family_types": [
+          "zombie"
+        ],
+        "seats": {
+          "position": [
+            0.0,
+            1.4,
+            0.0
+          ]
+        }
+      },
+      "minecraft:collision_box": {
+        "width": 1.3,
+        "height": 1.4
+      },
+      "minecraft:movement": {
+        "value": 0.28
+      },
+      "minecraft:water_movement": {
+        "drag_factor": 0.80
+      },
+      "minecraft:navigation.walk": {
+        "can_path_over_water": true,
+        "avoid_damage_blocks": true
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
+      "minecraft:follow_range": {
+        "value": 32
+      },
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 5
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 6,
+        "target_distance": 6.0,
+        "probability": 0.02
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 7
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:leashable": {
+        "soft_distance": 4.0,
+        "hard_distance": 6.0,
+        "max_distance": 10.0
+      }
+    },
+    "events": {
+      "minecraft:on_tame": {
+        "remove": {
+          "component_groups": [
+            "minecraft:baby",
+            "minecraft:baby_wild",
+            "minecraft:baby_scared"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:baby_tamed"
+          ]
+        }
+      },
+      "minecraft:entity_spawned": {
+        "randomize": [
+          {
+            "weight": 9,
+            "add": {
+              "component_groups": [
+                "minecraft:adult",
+                "minecraft:adult_wild"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "add": {
+              "component_groups": [
+                "minecraft:baby",
+                "minecraft:baby_wild"
+              ]
+            }
+          }
+        ]
+      },
+      "minecraft:entity_born": {
+        "add": {
+          "component_groups": [
+            "minecraft:baby",
+            "minecraft:baby_wild"
+          ]
+        }
+      },
+      "minecraft:ageable_grow_up": {
+        "remove": {
+          "component_groups": [
+            "minecraft:baby",
+            "minecraft:baby_wild",
+            "minecraft:baby_scared"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:adult",
+            "minecraft:adult_wild"
+          ]
+        }
+      },
+      "minecraft:ageable_grow_up_tamed": {
+        "remove": {
+          "component_groups": [
+            "minecraft:baby_tamed"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:adult_tamed",
+            "minecraft:brown_bear_unsaddled"
+          ]
+        }
+      },
+      "minecraft:on_saddled": {
+        "remove": {
+          "component_groups": [
+            "minecraft:brown_bear_unsaddled"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:brown_bear_saddled"
+          ]
+        }
+      },
+      "minecraft:on_calm": {
+        "remove": {
+          "component_groups": [
+            "minecraft:adult_hostile"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:adult_wild"
+          ]
+        }
+      },
+      "minecraft:on_anger": {
+        "remove": {
+          "component_groups": [
+            "minecraft:adult_wild"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:adult_hostile"
+          ]
+        }
+      },
+      "minecraft:baby_on_calm": {
+        "remove": {
+          "component_groups": [
+            "minecraft:baby_scared"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:baby_wild"
+          ]
+        }
+      },
+      "minecraft:on_scared": {
+        "remove": {
+          "component_groups": [
+            "minecraft:baby_wild"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:baby_scared"
+          ]
+        }
+      }
+    }
+  }
+}

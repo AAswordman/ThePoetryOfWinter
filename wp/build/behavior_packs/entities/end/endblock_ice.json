@@ -1,0 +1,90 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "wb:endblock_ice",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+            "animations": {
+        "summon":"animation.originking.endblock_ice"
+      },
+      "scripts": {
+         "animate": [
+           "summon"
+         ]
+      }
+    },
+    "component_groups": {
+    	"start":{
+    "minecraft:explode": {
+     "fuseLength": 0,
+     "fuseLit": true,
+     "power": 0,
+     "causesFire": true,
+     "fireAffectedByGriefing": true,
+     "destroyAffectedByGriefing": true
+    }
+    	}
+    },
+    "components": {
+     "minecraft:explode": {
+     "fuseLength": 15,
+     "fuseLit": true,
+     "breaks_blocks":true,
+     "power": 0,
+     "causesFire": true,
+     "fireAffectedByGriefing": true,
+     "destroyAffectedByGriefing": true
+    },
+      "minecraft:damage_sensor": [
+        {
+          "cause": "all",
+          "deals_damage": false
+        }
+      ],
+      "minecraft:nameable": {
+      },
+      "minecraft:health": {
+        "value": 100,
+        "max": 100
+      },
+      "minecraft:attack": {
+        "damage": 0
+      },
+      "minecraft:collision_box": {
+        "width": 0.4,
+        "height": 0.4
+      },
+      "minecraft:movement": {
+        "value": 0.0
+      },
+      "minecraft:navigation.walk": {
+        "can_path_over_water": true
+      },
+      "minecraft:movement.basic": {
+
+      },
+      "minecraft:jump.static": {
+      },
+      "minecraft:can_climb": {
+      },
+      "minecraft:fire_immune": true,
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1
+      },
+      "minecraft:physics": {
+      }
+    },
+    "events":{
+  	"start":{
+  		"add":{
+  			"component_groups":["start"]
+  		}
+  	}
+  }
+  }
+}

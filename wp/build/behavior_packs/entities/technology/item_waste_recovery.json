@@ -1,0 +1,56 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "wb:item_waste_recovery",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups":{
+        "s":{
+    "minecraft:explode": {
+     "fuseLength": 0.0,
+     "fuseLit": true,
+     "breaks_blocks":true,
+     "power": 0,
+     "causesFire": true,
+     "fireAffectedByGriefing": true,
+     "destroyAffectedByGriefing": true
+    }
+        }
+    },
+    "components": {
+             "minecraft:loot": {
+          "table": "loot_tables/wb/technology/item_waste_recovery.json"
+        },
+    	 "minecraft:knockback_resistance": {
+        "value": 1.0
+      },
+      "minecraft:breathable": {
+        "totalSupply": 15,
+        "suffocateTime": 0
+      },
+      "minecraft:collision_box": {
+        "width": 0.1,
+        "height": 0.1
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:health": {
+        "value": 0,
+        "max": 0
+      },
+      "minecraft:movement": {
+        "value": 0.0
+      }
+    },
+    "events":{
+                "sss":{
+            "add":{
+                "component_groups":["s"]
+            }
+                }
+    }
+  }
+}

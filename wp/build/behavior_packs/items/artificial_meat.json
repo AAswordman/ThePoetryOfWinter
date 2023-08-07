@@ -1,0 +1,45 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:artificial_meat"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.miscFood"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:artificial_meat.name"
+      },
+      "minecraft:icon": {
+        "texture": "artificial_meat"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "cookie",
+      "minecraft:use_duration": 1.6,
+      "minecraft:food": {
+        "on_consume": {
+          "event": "consumed",
+          "target": "self"
+        },
+        "nutrition": 4,
+        "saturation_modifier": "low"
+      }
+    },
+    "events": {
+      "consumed": {
+        "sequence": [
+          {
+            "add_mob_effect": {
+              "effect": "hunger",
+              "duration": 1,
+              "amplifier": 1,
+              "target": "holder"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

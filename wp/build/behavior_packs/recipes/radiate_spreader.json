@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:radiate_spreader"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "X",
+      "A",
+      "B"
+    ],
+    "key": {
+      "X": {
+        "item": "dec:high_concentration_uranium"
+      },
+      "A": {
+        "item": "minecraft:netherstar"
+      },
+      "B": {
+        "item": "dec:energy_ray_staff"
+      }
+    },
+    "result": {
+      "item": "dec:radiate_spreader"
+    }
+  }
+}

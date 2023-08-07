@@ -1,0 +1,32 @@
+{
+  "format_version": "1.8.0", 
+  "animations": {
+      "animation.predators.summon": {
+        "timeline": {
+            "2": [
+                "/summon dec:vampire_bat_by_boss ~~~"
+            ],
+            "3.5": [
+                "/summon dec:vampire_bat_by_boss ~~~"
+            ],
+            "4.3": [
+                "/summon dec:vampire_bat_by_boss ~~~"
+            ],
+            "4.9": [
+                "/summon dec:vampire_bat_by_boss ~~~"
+            ]
+        }, 
+        "animation_length": 5, 
+        "loop": true
+      },
+      "animation.predators.attack": {
+        "timeline": {
+            "1": [
+                "/summon dec:bat_charger ~~~"
+            ]
+        }, 
+        "animation_length": 5, 
+        "loop": true
+      }
+   }
+}

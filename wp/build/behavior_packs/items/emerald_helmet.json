@@ -1,0 +1,58 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:emerald_helmet"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.helmet"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:emerald_helmet.name"
+      },
+      "minecraft:icon": {
+        "texture": "emerald_helmet"
+      },
+      "minecraft:render_offsets": "helmets",
+      "minecraft:max_stack_size": 1,
+      "minecraft:enchantable": {
+        "value": 30,
+        "slot": "armor_head"
+      },
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "minecraft:emerald"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.3"
+          },
+          {
+            "items": [
+              "dec:emerald_nugget"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.03"
+          }
+        ]
+      },
+      "minecraft:durability": {
+        "max_durability": 144,
+        "damage_chance": {
+          "min": 60,
+          "max": 100
+        }
+      },
+      "minecraft:armor": {
+        "protection": 1
+      },
+      "minecraft:wearable": {
+        "slot": "slot.armor.head"
+      },
+      "tag:comp:armor_protection:1": {},
+      "tag:comp:armor_magic_reduction:1": {},
+      "tag:comp:armor_type:suit_:emerald:_": {}
+    }
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:scale_sword"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.sword"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:scale_sword.name"
+      },
+      "minecraft:icon": {
+        "texture": "scale_sword"
+      },
+      "minecraft:weapon": {
+        "on_hurt_entity": {
+          "event": "scale_sword_attack",
+          "target": "self"
+        },
+        "on_hit_block": {
+          "event": "attack",
+          "target": "self"
+        }
+      },
+      "minecraft:stacked_by_data": false,
+      "minecraft:max_stack_size": 1,
+      "minecraft:durability": {
+        "max_durability": 1024
+      },
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "dec:coral_ingot"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.2"
+          },
+          {
+            "items": [
+              "dec:sharp_coral"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.3"
+          },
+          {
+            "items": [
+              "dec:scale_block"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.7"
+          }
+        ]
+      },
+      "minecraft:mining_speed": 1.5,
+      "minecraft:damage": 8,
+      "minecraft:enchantable": {
+        "value": 15,
+        "slot": "sword"
+      },
+      "minecraft:can_destroy_in_creative": false,
+      "minecraft:digger": {
+        "use_efficiency": true,
+        "destroy_speeds": [
+          {
+            "block": "minecraft:web",
+            "speed": 15
+          },
+          {
+            "block": "minecraft:bamboo",
+            "speed": 10
+          }
+        ]
+      },
+      "minecraft:foil": false,
+      "minecraft:hand_equipped": true,
+      "tag:comp:underwater_movement_addition:0.04": {},
+      "tag:comp:equipment_type:melee_weapon":{}
+    },
+    "events": {
+      "attack": {
+        "damage": {
+          "type": "magic",
+          "amount": 1
+        }
+      },
+      "scale_sword_attack": {
+        "sequence": [
+          {
+            "condition": "query.is_in_water_or_rain",
+            "randomize": [
+              {
+                "weight": 1,
+                "sequence": [
+                  {
+                    "run_command": {
+                      "command": [
+                        "tag @e[c=1,hasitem={item=dec:scale_sword,location=slot.weapon.mainhand},type=!item,r=4] add scale_sword_skill",
+                        "damage @e[r=3,tag=!scale_sword_skill,type=!item] 10 drowning entity @e[c=1,tag=scale_sword_skill]",
+                        "tag @e[r=6] remove scale_sword",
+                        "particle dec:bubble_spurt_middle_particle ~~~"
+                      ],
+                      "target": "other"
+                    }
+                  },
+                  {
+                    "run_command": {
+                      "command": [
+                        "effect @s conduit_power 10"
+                      ],
+                      "target": "self"
+                    }
+                  }
+                ]
+              },
+              {
+                "weight": 1
+              }
+            ]
+          },
+          {
+            "damage": {
+              "type": "magic",
+              "amount": 1
+            }
+          }
+        ]
+      }
+    }
+  }
+}

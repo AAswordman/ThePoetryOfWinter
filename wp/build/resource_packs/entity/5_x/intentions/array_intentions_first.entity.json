@@ -1,0 +1,22 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "wb:array_intentions_first",
+      "materials": { 
+          "default": "skeleton",
+          "charged":"wbarmor"
+      },
+      "textures": { 
+          "default": "textures/wb/5_x/array_intentions_first",
+          "charged":"textures/wb/3_x/ball_staff"
+      },
+      "geometry": { 
+          "default": "geometry.array_intentions_first",
+          "charged":"geometry.array_intentions_firstx"
+      },
+      "render_controllers": [ "controller.render.base",
+      "controller.render.array_intentions_first"]
+    }
+  }
+}

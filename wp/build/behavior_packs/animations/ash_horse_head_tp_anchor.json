@@ -1,0 +1,14 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.ash_horse_head_tp_anchor.particle": {
+      "timeline": {
+        "0.02": [
+          "/particle dec:ash_horse_head_teleport_particle ~~3~"
+        ]
+      },
+      "animation_length": 0.02,
+      "loop": true
+    }
+  }
+}

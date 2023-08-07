@@ -1,0 +1,49 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "nature",
+      "identifier": "dec:sea_urchin"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.rawFood"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:sea_urchin.name"
+      },
+      "minecraft:icon": {
+        "texture": "sea_urchin"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "fish",
+      "minecraft:hand_equipped": false,
+      "minecraft:stacked_by_data": false,
+      "minecraft:use_duration": 1.6,
+      "minecraft:foil": false,
+      "minecraft:food": {
+        "on_consume": {
+          "event": "consumed",
+          "target": "self"
+        },
+        "nutrition": 3,
+        "saturation_modifier": "low",
+        "can_always_eat": false
+      }
+    },
+    "events": {
+      "consumed": {
+        "sequence": [
+          {
+            "add_mob_effect": {
+              "effect": "poison",
+              "duration": 5,
+              "amplifier": 1,
+              "target": "holder"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

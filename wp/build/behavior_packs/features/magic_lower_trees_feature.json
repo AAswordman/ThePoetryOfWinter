@@ -1,0 +1,66 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:tree_feature": {
+    "description": {
+      "identifier": "wb:magic_lower_trees_feature"
+    },
+    "trunk": {
+      "trunk_height": {
+        "range_min": 7,
+        "range_max": 12
+      },
+      "trunk_block": {
+        "name": "minecraft:log",
+        "states": {
+          "old_log_type": "oak"
+        }
+      }
+    },
+    "canopy": {
+      "canopy_offset": {
+        "min": -3,
+        "max": 0
+      },
+      "variation_chance": [
+        {
+          "numerator": 1,
+          "denominator": 1
+        },
+        {
+          "numerator": 1,
+          "denominator": 2
+        },
+        {
+          "numerator": 1,
+          "denominator": 2
+        },
+        {
+          "numerator": 1,
+          "denominator": 1
+        }
+      ],
+      "leaf_block": "wb:leaves_magic_lower_tree"
+    },
+    "base_block": [
+      "minecraft:dirt",
+      {
+        "name": "minecraft:dirt",
+        "states": {
+          "dirt_type": "coarse"
+        }
+      }
+    ],
+    "may_grow_on": [
+      "wb:magic_forest_grass"
+    ],
+    "may_replace": [
+      "minecraft:air",
+      "wb:leaves_magic_tree",
+      "wb:leaves_magic_lower_tree",
+      "wb:leaves_magic_bottom_tree"
+    ],
+    "may_grow_through": [
+      "wb:magic_forest_grass"
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:apple_juice"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.miscFood"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:apple_juice.name"
+      },
+      "minecraft:icon": {
+        "texture": "apple_juice"
+      },
+      "minecraft:use_animation": "drink",
+      "minecraft:render_offsets": "cookie",
+      "minecraft:use_duration": 1.6,
+      "minecraft:food": {
+        "nutrition": 2,
+        "saturation_modifier": "low",
+        "on_consume": {
+          "event": "consumed",
+          "target": "self"
+        }
+      }
+    },
+    "events": {
+      "consumed": {
+        "sequence": [
+          {
+            "add_mob_effect": {
+              "effect": "regeneration",
+              "duration": 20,
+              "amplifier": 1,
+              "target": "holder"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

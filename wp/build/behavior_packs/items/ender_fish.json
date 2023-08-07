@@ -1,0 +1,44 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "nature",
+      "identifier": "dec:ender_fish"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.rawFood"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:ender_fish.name"
+      },
+      "minecraft:icon": {
+        "texture": "ender_fish"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "fish",
+      "minecraft:use_duration": 1.6,
+      "minecraft:cooldown": {
+        "category": "ender_fish",
+        "duration": 5
+      },
+      "minecraft:food": {
+        "nutrition": 3,
+        "saturation_modifier": "low",
+        "can_always_eat": true
+      }
+    },
+    "events": {
+      "consumed": {
+        "teleport": {
+          "target": "holder",
+          "max_range": [
+            512,
+            8,
+            512
+          ]
+        }
+      }
+    }
+  }
+}

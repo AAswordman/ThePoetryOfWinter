@@ -1,0 +1,59 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.ender_snake",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 3,
+				"visible_bounds_offset": [0, 0.5, 0]
+			},
+			"bones": [
+				{
+					"name": "head_bone",
+					"pivot": [0, 3, -3],
+					"cubes": [
+						{"origin": [-5, 4, -15], "size": [10, 0, 16], "uv": [-16, 48]},
+						{"origin": [-5, 1, -15], "size": [10, 7, 16], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "horn",
+					"parent": "head_bone",
+					"pivot": [0, 8, 1],
+					"rotation": [-65, 0, 0],
+					"cubes": [
+						{"origin": [-6, 8, 1], "size": [12, 10, 0], "uv": [38, 4]}
+					]
+				},
+				{
+					"name": "horn2",
+					"parent": "head_bone",
+					"pivot": [5, 4, 0],
+					"cubes": [
+						{"origin": [0, 5, 0], "size": [12, 10, 0], "pivot": [5, 5, 0], "rotation": [-60, 0, 90], "uv": [38, 4]}
+					]
+				},
+				{
+					"name": "horn3",
+					"parent": "head_bone",
+					"pivot": [-5, 4, 0],
+					"rotation": [-180, 0, 180],
+					"cubes": [
+						{"origin": [-10, 5, 0], "size": [12, 10, 0], "pivot": [-5, 5, 0], "rotation": [60, 0, 90], "uv": [38, 4]}
+					]
+				},
+				{
+					"name": "jaw",
+					"parent": "head_bone",
+					"pivot": [0, 3, 0],
+					"cubes": [
+						{"origin": [-5, 0, -15], "size": [10, 4, 16], "uv": [0, 24]}
+					]
+				}
+			]
+		}
+	]
+}

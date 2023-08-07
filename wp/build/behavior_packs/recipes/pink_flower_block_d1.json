@@ -1,0 +1,23 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:pink_flower_block_d1"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XXX",
+      "XXX",
+      "XXX"
+    ],
+      "key": {
+      "X": {
+        "item": "minecraft:double_plant",
+        "data": 1
+      }
+    },
+    "result": {
+      "item": "dec:pink_flower_block"
+    }
+  }
+}

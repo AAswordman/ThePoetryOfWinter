@@ -1,0 +1,13 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "wb:base_core_e",
+      "category": "Nature"
+    },
+    "components": {
+      "minecraft:icon": "base_core_e",
+      "minecraft:hover_text_color": "light_purple"
+    }
+  }
+}

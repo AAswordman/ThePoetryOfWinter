@@ -1,0 +1,819 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:everlasting_winter_ghast",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          {
+            "defense": "query.variant == 1"
+          }
+        ]
+      },
+      "animations": {
+        "defense": "animation.everlasting_winter_ghast.defense"
+      }
+    },
+    "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "minecraft:next": {
+        "minecraft:transformation": {
+          "into": "dec:everlasting_winter_ghast_1<minecraft:entity_spawned>"
+        }
+      },
+      "minecraft:spawn": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "empty_family"
+                }
+              },
+              "deals_damage": false
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 5,
+          "time_down_event": {
+            "event": "minecraft:start"
+          }
+        }
+      },
+      "minecraft:summon_no_defense": {
+        "minecraft:variant": {
+          "value": 0
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "frozen"
+                  }
+                },
+              "deals_damage": false
+              },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {"test": "has_damage", "value": "fatal"}
+                  ]
+                },
+                "event": "minecraft:next"
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "empty_family"
+                }
+              },
+              "deals_damage": true
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 2,
+          "time_down_event": {
+            "event": "minecraft:laser_mode"
+          }
+        }
+      },
+      "minecraft:summon_with_defense": {
+        "minecraft:variant": {
+          "value": 1
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {"test": "has_damage", "value": "fatal"}
+                  ]
+                },
+                "event": "minecraft:next"
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "empty_family"
+                }
+              },
+              "deals_damage": false
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 2,
+          "time_down_event": {
+            "event": "minecraft:laser_mode"
+          }
+        }
+      },
+      "minecraft:laser_no_defense": {
+        "minecraft:variant": {
+          "value": 0
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "frozen"
+                  }
+                },
+              "deals_damage": false
+              },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {"test": "has_damage", "value": "fatal"}
+                  ]
+                },
+                "event": "minecraft:next"
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "empty_family"
+                }
+              },
+              "deals_damage": true
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 2,
+          "time_down_event": {
+            "event": "minecraft:change_attack"
+          }
+        }
+      },
+      "minecraft:laser_with_defense": {
+        "minecraft:variant": {
+          "value": 1
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {"test": "has_damage", "value": "fatal"}
+                  ]
+                },
+                "event": "minecraft:next"
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "empty_family"
+                }
+              },
+              "deals_damage": false
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 2,
+          "time_down_event": {
+            "event": "minecraft:change_attack"
+          }
+        }
+      }
+    },
+    "components": {
+      "minecraft:variant": {
+        "value": 0
+      },
+      "minecraft:behavior.look_at_target": {
+        "priority": 5
+      },
+      "minecraft:equipment": {
+        "table": "loot_tables/entities/everlasting_winter_ghast_gear.json",
+        "slot_drop_chance": [
+          {
+            "slot": "slot.weapon.mainhand",
+            "drop_chance": 0
+          }
+        ]
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {
+          "min_distance": 64,
+          "max_distance": 64
+        }
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "fall",
+            "deals_damage": false
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "frozen"
+              }
+            },
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:type_family": {
+        "family": [
+          "monster",
+          "ghast",
+          "everlasting_winter_ghast",
+          "boss",
+          "mob",
+          "frozen"
+        ]
+      },
+      "minecraft:boss": {
+        "should_darken_sky": false,
+        "name": "boss.dec:everlasting_winter_ghast.name",
+        "hud_range": 64
+      },
+      "minecraft:breathable": {
+        "totalSupply": 15,
+        "suffocateTime": 0
+      },
+      "minecraft:nameable": {},
+      "minecraft:health": {
+        "value": 300,
+        "max": 300
+      },
+      "minecraft:collision_box": {
+        "width": 0.6,
+        "height": 1.8
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:movement": {
+        "value": 0.25
+      },
+      "minecraft:navigation.walk": {
+        "can_path_over_water": true,
+        "can_pass_doors": true,
+        "can_open_doors": true,
+        "avoid_water": true
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:fire_immune": true,
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
+      "minecraft:behavior.float": {
+        "priority": 20
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 8,
+        "speed_multiplier": 0.6
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "entity_types": [
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "snowgolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "wandering_trader"
+                }
+              ]
+            },
+            "max_dist": 20
+          }
+        ],
+        "must_see": true
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 9,
+        "look_distance": 3.0,
+        "probability": 1.0
+      },
+      "minecraft:behavior.look_at_entity": {
+        "priority": 10,
+        "look_distance": 8.0,
+        "filters": {
+          "test": "is_family",
+          "subject": "other",
+          "value": "mob"
+        }
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1,
+        "entity_types": {
+          "filters": {
+            "test": "is_family",
+            "subject": "other",
+            "operator": "!=",
+            "value": "frozen"
+          },
+          "max_dist": 64
+        }
+      },
+      "minecraft:physics": {},
+      "minecraft:follow_range": {
+        "value": 256
+      }
+    },
+    "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
+      "minecraft:entity_spawned": {
+        "run_command": {
+          "command": [
+            "summon dec:ice_spirit",
+            "summon dec:ice_spirit",
+            "summon dec:ice_spirit",
+            "summon dec:everlasting_winter_ghast_anchor ~~~"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:spawn"
+          ]
+        }
+      },
+      "minecraft:next": {
+        "run_command": {
+          "command": [
+            "summon dec:ice_spirit",
+            "summon dec:ice_spirit",
+            "summon dec:ice_spirit"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:next"
+          ]
+        }
+      },
+      "minecraft:start": {
+        "add": {
+          "component_groups": [
+            "minecraft:summon_with_defense"
+          ]
+        },
+        "run_command": {
+          "command": [
+            "function entity/frozen_laser_spawn/1"
+          ]
+        },
+        "trigger": "minecraft:summon_attack_defense"
+      },
+      "minecraft:laser_mode": {
+        "remove": {
+          "component_groups": [
+            "minecraft:summon_with_defense",
+            "minecraft:summon_no_defense"
+          ]
+        },
+        "randomize": [
+          {
+            "weight": 1,
+            "add": {
+              "component_groups": [
+                "minecraft:laser_with_defense"
+              ]
+            },
+            "trigger": "minecraft:laser_attack_defense"
+          },
+          {
+            "weight": 1,
+            "add": {
+              "component_groups": [
+                "minecraft:laser_no_defense"
+              ]
+            },
+            "trigger": "minecraft:laser_attack"
+          }
+        ]
+      },
+      "minecraft:change_attack": {
+        "remove": {
+          "component_groups": [
+            "minecraft:summon_with_defense",
+            "minecraft:summon_no_defense",
+            "minecraft:laser_with_defense",
+            "minecraft:laser_no_defense"
+          ]
+        },
+        "randomize": [
+          {
+            "weight": 1,
+            "add": {
+              "component_groups": [
+                "minecraft:laser_with_defense"
+              ]
+            },
+            "trigger": "minecraft:laser_attack_defense"
+          },
+          {
+            "weight": 1,
+            "add": {
+              "component_groups": [
+                "minecraft:laser_no_defense"
+              ]
+            },
+            "trigger": "minecraft:laser_attack"
+          },
+          {
+            "weight": 1,
+            "add": {
+              "component_groups": [
+                "minecraft:summon_no_defense"
+              ]
+            },
+            "trigger": "minecraft:summon_attack"
+          },
+          {
+            "weight": 1,
+            "add": {
+              "component_groups": [
+                "minecraft:summon_with_defense"
+              ]
+            },
+            "trigger": "minecraft:summon_attack_defense"
+          }
+        ]
+      },
+      "minecraft:laser_attack_defense": {
+        "run_command": {
+          "command": [
+            "playanimation @s animation.everlasting_winter_ghast.defense",
+            "event entity @s minecraft:laser_attack_exe",
+            "event entity @s minecraft:laser_attack_exe"
+          ]
+        }
+      },
+      "minecraft:laser_attack": {
+        "run_command": {
+          "command": [
+            "playanimation @s animation.everlasting_winter_ghast.laser_attack",
+            "event entity @s minecraft:laser_attack_exe",
+            "event entity @s minecraft:laser_attack_exe",
+            "event entity @s minecraft:laser_attack_exe"
+          ]
+        }
+      },
+      "minecraft:summon_attack_defense": {
+        "run_command": {
+          "command": [
+            "playanimation @s animation.everlasting_winter_ghast.defense",
+            "event entity @s minecraft:summon_attack_exe"
+          ]
+        }
+      },
+      "minecraft:summon_attack": {
+        "run_command": {
+          "command": [
+            "playanimation @s animation.everlasting_winter_ghast.laser_attack",
+            "event entity @s minecraft:summon_attack_exe",
+            "event entity @s minecraft:summon_attack_exe"
+          ]
+        }
+      },
+      "minecraft:laser_attack_exe": {
+        "randomize": [
+          {
+            "weight": 4,
+            "randomize": [
+              {
+                "weight": 1,
+                "run_command": {
+                  "command": [
+                    "function entity/ice_thorn_spawn/1"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "run_command": {
+                  "command": [
+                    "function entity/ice_thorn_spawn/2"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "run_command": {
+                  "command": [
+                    "function entity/ice_thorn_spawn/3"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "run_command": {
+                  "command": [
+                    "function entity/ice_thorn_spawn/4"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "run_command": {
+                  "command": [
+                    "function entity/ice_thorn_spawn/5"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "run_command": {
+                  "command": [
+                    "function entity/ice_thorn_spawn/6"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "run_command": {
+                  "command": [
+                    "function entity/ice_thorn_spawn/7"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "run_command": {
+                  "command": [
+                    "function entity/ice_thorn_spawn/8"
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "weight": 1,
+            "randomize": [
+              {
+                "weight": 1,
+                "run_command": {
+                  "command": [
+                    "function entity/frozen_laser_spawn/1"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "run_command": {
+                  "command": [
+                    "function entity/frozen_laser_spawn/2"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "run_command": {
+                  "command": [
+                    "function entity/frozen_laser_spawn/3"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "run_command": {
+                  "command": [
+                    "function entity/frozen_laser_spawn/4"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "run_command": {
+                  "command": [
+                    "function entity/frozen_laser_spawn/5"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "run_command": {
+                  "command": [
+                    "function entity/frozen_laser_spawn/6"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "run_command": {
+                  "command": [
+                    "function entity/frozen_laser_spawn/7"
+                  ]
+                }
+              },
+              {
+                "weight": 1,
+                "run_command": {
+                  "command": [
+                    "function entity/frozen_laser_spawn/8"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "minecraft:summon_attack_exe": {
+        "randomize": [
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "summon dec:frozen_shadow ~20~6~"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "summon dec:frozen_shadow ~-20~6~"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "summon dec:frozen_shadow ~~6~20"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "summon dec:frozen_shadow ~~6~-20"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "summon dec:frozen_shadow ~13~6~13"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "summon dec:frozen_shadow ~-13~6~13"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "summon dec:frozen_shadow ~-13~6~-13"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "summon dec:frozen_shadow ~13~6~-13"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "summon dec:frozen_ghast ~20~6~ 0 0 minecraft:from_boss"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "summon dec:frozen_ghast ~-20~6~ 0 0 minecraft:from_boss"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "summon dec:frozen_ghast ~~6~20 0 0 minecraft:from_boss"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "summon dec:frozen_ghast ~~6~-20 0 0 minecraft:from_boss"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "summon dec:frozen_ghast ~13~6~13 0 0 minecraft:from_boss"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "summon dec:frozen_ghast ~-13~6~13 0 0 minecraft:from_boss"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "summon dec:frozen_ghast ~-13~6~-13 0 0 minecraft:from_boss"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "summon dec:frozen_ghast ~13~6~-13 0 0 minecraft:from_boss"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

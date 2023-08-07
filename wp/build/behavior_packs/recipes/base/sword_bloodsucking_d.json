@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "wb:sword_bloodsucking_d"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "###",
+      "#X#",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "wb:mineral_senior_boundary"
+      },
+      "X": {
+        "item": "wb:sword_bloodsucking_c"
+      }
+    },
+    "result": {
+      "item": "wb:sword_bloodsucking_d"
+    }
+  }
+}

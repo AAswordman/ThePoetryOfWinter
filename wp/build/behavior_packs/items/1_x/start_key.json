@@ -1,0 +1,49 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "wb:start_key"
+    },
+    "components": {
+      "minecraft:render_offsets": {
+        "main_hand": {
+          "first_person": {
+            "scale": [0.01,0.01,0.01]
+          },
+          "third_person": {
+            "position": [0.45,1.6,-0.7],
+            "scale": [0.03125,0.03125,0.03125]
+          }
+        },
+        "off_hand": {
+          "first_person": {
+            "position": [0,0,0],
+            "rotation": [0,0,0],
+            "scale": [0,0,0]
+          },
+          "third_person": {
+            "position": [0,0,0],
+            "rotation": [0,0,0],
+            "scale": [0,0,0]
+          }
+        }
+      },
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.navigation"
+      },
+      "minecraft:use_duration": 30000,
+      "minecraft:cooldown": {
+        "category": "chorusfruit",
+        "duration": 3
+      },
+      "minecraft:display_name": {},
+      "minecraft:icon": {
+        "texture": "start_key_a"
+      },
+      "minecraft:foil": true,
+      "minecraft:stacked_by_data": false,
+      "minecraft:max_stack_size": 1
+    }
+  }
+}

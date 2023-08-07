@@ -1,0 +1,78 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:frozen_ball_inaccurated",
+      "runtime_identifier": "minecraft:egg",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {},
+    "components": {
+      "minecraft:timer": {
+        "looping": true,
+        "time": 0.3,
+        "time_down_event": {
+          "event": "minecraft:particle"
+        }
+      },
+      "minecraft:collision_box": {
+        "width": 0.31,
+        "height": 0.31
+      },
+      "minecraft:explode": {
+        "fuseLength": 3,
+        "fuseLit": true,
+        "power": 0,
+        "causesFire": false,
+        "destroy_affected_by_griefing": false
+      },
+      "minecraft:projectile": {
+        "onHit": {
+          "impact_damage": {
+            "damage": 5,
+            "knockback": false,
+            "catchFire": false,
+            "semirandomdiffdamage": false
+          },
+          "particle_on_hit": {
+            "particle_type": "snowballpoof",
+            "num_particles": 6,
+            "on_entity_hit": true,
+            "on_other_hit": true
+          },
+          "remove_on_hit": {}
+        },
+        "power": 1.8,
+        "gravity": 0.00,
+        "inertia": 1,
+        "liquid_inertia": 1,
+        "anchor": 1,
+        "offset": [
+          0,
+          0,
+          1
+        ],
+        "semirandomdiffdamage": true,
+        "uncertaintyBase": 40.0,
+        "uncertaintyMultiplier": 4,
+        "reflectOnHurt": false,
+        "shoot_target": false
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    },
+    "events": {
+      "minecraft:particle": {
+        "run_command": {
+          "command": [
+            "particle dec:everlasting_winter_wake_particle ~~~"
+          ]
+        }
+      }
+    }
+  }
+}

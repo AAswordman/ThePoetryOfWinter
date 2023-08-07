@@ -1,0 +1,25 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "wb:ball_border_fugitivea",
+      "materials": { "default": "skeleton" },
+      "textures": {
+        "default": "textures/wb/1_x/spell_fire"
+      },
+      "particle_effects": {
+        "flame": "wb:border_fugitive_parb"
+      },
+      "animations":{
+          "par":"animation.ball_border_fugitivea.par"
+      },
+      "animation_controllers": [
+        { "par": "controller.animation.base.par" }
+      ],
+      "geometry": {
+        "default": "geometry.spell_fire"
+      },
+      "render_controllers": [ "controller.render.base" ]
+    }
+  }
+}

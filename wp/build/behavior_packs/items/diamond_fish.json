@@ -1,0 +1,27 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "nature",
+      "identifier": "dec:diamond_fish"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.rawFood"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:diamond_fish.name"
+      },
+      "minecraft:icon": {
+        "texture": "diamond_fish"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "cookie",
+      "minecraft:use_duration": 8.0,
+      "minecraft:food": {
+        "nutrition": 8,
+        "saturation_modifier": "normal"
+      }
+    }
+  }
+}

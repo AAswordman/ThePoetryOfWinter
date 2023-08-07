@@ -1,0 +1,41 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.radiate_crystal.float": {
+			"loop": true,
+			"animation_length": 6.24,
+			"bones": {
+				"radiate_crystal": {
+					"position": {
+						"0.0": [0, 0, 0],
+						"3.12": [0, 7, 0],
+						"6.24": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			}
+		},
+		"animation.radiate_crystal.span": {
+			"loop": true,
+			"animation_length": 2.08,
+			"bones": {
+				"outside": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"1.04": [180, 180, 0],
+						"2.08": [360, 360, 0]
+					}
+				},
+				"inside": {
+					"rotation": {
+						"0.0": [45, 0, 45],
+						"1.04": [45, 180, 45],
+						"2.08": [45, 360, 45]
+					}
+				}
+			}
+		}
+	}
+}

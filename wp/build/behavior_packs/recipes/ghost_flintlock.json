@@ -1,0 +1,31 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:ghost_flintlock"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "  C",
+      "ABA",
+      "X  "
+    ],
+    "key": {
+      "X": {
+        "item": "dec:ice_rod"
+      },
+      "A": {
+        "item": "dec:ghost_ingot"
+      },
+      "B": {
+        "item": "dec:flintlock_pro"
+      },
+      "C": {
+        "item": "dec:ice_heart"
+      }
+    },
+    "result": {
+      "item": "dec:ghost_flintlock"
+    }
+  }
+}

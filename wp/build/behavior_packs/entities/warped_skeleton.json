@@ -1,0 +1,175 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:warped_skeleton",
+      "runtime_identifier": "minecraft:skeleton",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "minecraft:from_night_event": {
+        "minecraft:environment_sensor": {
+          "triggers": {
+            "filters": {
+              "test": "is_daytime",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "event": "minecraft:despawn"
+          }
+        }
+      }
+    },
+    "components": {
+      "minecraft:experience_reward": {
+        "on_death": "query.last_hit_by_player ? 5 + (query.equipment_count * Math.Random(1,6)) : 0"
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0,
+        "breathes_water": true
+      },
+      "minecraft:health": {
+        "value": {
+          "range_min": 18,
+          "range_max": 30
+        }
+      },
+      "minecraft:collision_box": {
+        "width": 0.63,
+        "height": 1.98
+      },
+      "minecraft:attack": {
+        "damage": 2,
+        "effect_name": "wither",
+        "effect_duration": 6
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/warped_skeleton.json"
+      },
+      "minecraft:equipment": {
+        "table": "loot_tables/entities/warped_skeleton_gear.json"
+      },
+      "minecraft:movement": {
+        "value": 0.28
+      },
+      "minecraft:navigation.walk": {
+        "is_amphibious": true,
+        "avoid_sun": true,
+        "avoid_water": true
+      },
+      "minecraft:movement.basic": {
+      },
+      "minecraft:jump.static": {
+      },
+      "minecraft:can_climb": {
+      },
+      "minecraft:scale": {
+        "value": 0.9875
+      },
+      "minecraft:fire_immune": true,
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "reselect_targets": true,
+        "entity_types": [
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "player"
+            },
+            "max_dist": 32
+          },
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "irongolem"
+            },
+            "max_dist": 32
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "baby_turtle"
+                },
+                {
+                  "test": "in_water",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": true
+                }
+              ]
+            },
+            "max_dist": 32
+          }
+        ],
+        "must_see": true
+      },
+      "minecraft:behavior.melee_attack": {
+        "priority": 4,
+        "target_dist": 1.2,
+        "speed_multiplier": 1.25,
+        "track_target": true
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 5,
+        "speed_multiplier": 1
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 6,
+        "look_distance": 8
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 6
+      },
+      "minecraft:type_family": {
+        "family": [ "warped_skeleton", "monster", "undead", "skeleton", "warp", "nether" ]
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      }
+    },
+
+    "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
+      "minecraft:from_night_event": {
+        "trigger": "minecraft:entity_spawned",
+        "add": {
+          "component_groups": [
+            "minecraft:from_night_event"
+          ]
+        }
+      },
+      "minecraft:entity_spawned": {
+
+      }
+    }
+  }
+}

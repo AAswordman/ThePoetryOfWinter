@@ -1,0 +1,69 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:glamor_shoes"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.boots"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:glamor_shoes.name"
+      },
+      "minecraft:icon": {
+        "texture": "glamor_shoes"
+      },
+      "minecraft:render_offsets": "boots",
+      "minecraft:max_stack_size": 1,
+      "minecraft:enchantable": {
+        "value": 30,
+        "slot": "armor_feet"
+      },
+      "minecraft:durability": {
+        "max_durability": 397,
+        "damage_chance": {
+          "min": 60,
+          "max": 100
+        }
+      },
+      "minecraft:armor": {
+        "protection": 2
+      },
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "minecraft:wool"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.05"
+          },
+          {
+            "items": [
+              "minecraft:string"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.015"
+          },
+          {
+            "items": [
+              "minecraft:leather"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.06"
+          },
+          {
+            "items": [
+              "minecraft:slime_ball"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.06"
+          }
+        ]
+      },
+      "minecraft:wearable": {
+        "slot": "slot.armor.feet"
+      },
+      "tag:comp:armor_protection:2": {},
+      "tag:comp:armor_type:decorate_": {}
+    }
+  }
+}

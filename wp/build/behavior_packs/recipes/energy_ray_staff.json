@@ -1,0 +1,31 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:energy_ray_staff"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " BX",
+      " AB",
+      "#  "
+    ],
+    "key": {
+      "A": {
+        "item": "dec:wooden_staff"
+      },
+      "#": {
+        "item": "minecraft:stick"
+      },
+      "X": {
+        "item": "minecraft:copper_block"
+      },
+      "B": {
+        "item": "minecraft:copper_ingot"
+      }
+    },
+    "result": {
+      "item": "dec:energy_ray_staff"
+    }
+  }
+}

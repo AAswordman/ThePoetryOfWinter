@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "wb:station_summon",
+      "materials": { "default": "skeleton","fgd":"ball_staff" },
+      "textures": {
+        "default": "textures/wb/1_x/station_summon"
+      },
+      "geometry": {
+        "default": "geometry.station_summon"
+      },
+      "animations": {
+        "move": "animation.station_summon.move"
+      },
+      "scripts": {
+        "animate": [
+            "move"
+        ]
+      },
+      "render_controllers": [ "controller.render.station_summon" ],
+      "spawn_egg": {
+        "texture": "station_summon",
+        "texture_index": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+      "description": {
+      "identifier": "wb:block_senior_seal_ore"
+      },
+      "tags": [ "crafting_table" ],
+      "pattern": [
+        "###",
+        "#Y#",
+        "###"
+      ],
+      "key": {
+        "#": {
+          "item": "wb:mineral_energy_seal"
+        },
+        "Y":{
+            "item": "minecraft:diamond"
+        }
+      },
+      "result": {
+        "item": "wb:block_senior_seal_ore"
+      }
+    }
+  }
+  

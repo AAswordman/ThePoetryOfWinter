@@ -1,0 +1,26 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:concentrated_ice",
+      "textures": {
+        "default": "textures/entity/concentrated_ice"
+      },
+      "geometry": {
+        "default": "geometry.spots"
+      },
+      "materials": {
+      "default": "slime_outer"
+      },
+      "scripts": {
+        "animate": [
+          "spinning"
+        ]
+      },
+      "animations": {
+        "spinning": "animation.spots.spinning"
+      },
+      "render_controllers": [ "controller.render.spots" ]
+      }
+   }
+}

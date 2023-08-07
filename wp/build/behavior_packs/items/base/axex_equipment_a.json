@@ -1,0 +1,15 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "wb:axex_equipment_a",
+      "register_to_creative_menu": true
+    },
+    "components": {
+      "minecraft:hand_equipped": true,
+      "minecraft:foil": false,
+      "minecraft:max_damage": 99999,
+      "minecraft:stacked_by_data": false
+    }
+  }
+}

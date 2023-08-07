@@ -1,0 +1,37 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:herb_bag"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " A ",
+      "BCD",
+      "XXX"
+    ],
+    "key": {
+      "#": {
+        "item": "dec:flintlock_bullet"
+      },
+      "X": {
+        "item": "minecraft:leather"
+      },
+      "A": {
+        "item": "dec:hemp_rope"
+      },
+      "B": {
+        "item": "dec:bizarre_chilli"
+      },
+      "C": {
+        "item": "dec:experience_flower_seeds"
+      },
+      "D": {
+        "item": "minecraft:nether_wart"
+      }
+    },
+    "result": {
+      "item": "dec:herb_bag"
+    }
+  }
+}

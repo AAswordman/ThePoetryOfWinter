@@ -1,0 +1,18 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:single_block_feature": {
+		"description": {
+			"identifier": "wb:magic_grass_tall_single_feature"
+		},
+		"places_block": "wb:grass_magic_tall",
+		"enforce_survivability_rules": true,
+		"enforce_placement_rules": true,
+		"may_replace": [
+			"minecraft:air",
+			"minecraft:grass",
+			"minecraft:dirt",
+			"minecraft:leaves",
+			"minecraft:stone"
+		]
+	}
+}

@@ -1,0 +1,53 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:cooked_brain"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.cookedFood"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:cooked_brain.name"
+      },
+      "minecraft:icon": {
+        "texture": "cooked_brain"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "cookie",
+      "minecraft:use_duration": 1.6,
+      "minecraft:food": {
+        "nutrition": 5,
+        "saturation_modifier": "low",
+        "on_consume": {
+          "event": "consumed",
+          "target": "self"
+        }
+      }
+    },
+    "events": {
+      "consumed": {
+        "sequence": [
+          {
+            "randomize": [
+              {
+                "weight": 3,
+                "add_mob_effect": {
+                  "effect": "nausea",
+                  "duration": 15,
+                  "amplifier": 0,
+                  "target": "holder"
+                }
+              },
+              {
+                "weight": 7
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

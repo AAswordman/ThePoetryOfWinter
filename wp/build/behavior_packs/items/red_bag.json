@@ -1,0 +1,42 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "items",
+      "identifier": "dec:red_bag"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.decorations"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:red_bag.name"
+      },
+      "minecraft:icon": {
+        "texture": "red_bag"
+      },
+      "minecraft:render_offsets": "bow",
+      "minecraft:use_duration": 30000,
+      "minecraft:cooldown": {
+        "category": "red_bag",
+        "duration": 3
+      },
+      "minecraft:on_use": {
+        "on_use": {
+          "event": "red_bag"
+        }
+      },
+      "minecraft:stacked_by_data": true
+    },
+    "events": {
+      "red_bag": {
+        "run_command": {
+          "command": [
+            "loot give @s loot \"items/red_bag\"",
+            "clear @s dec:red_bag 0 1"
+          ]
+        }
+      }
+    }
+  }
+}

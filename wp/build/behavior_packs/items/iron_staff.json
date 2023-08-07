@@ -1,0 +1,99 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:iron_staff"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.sword"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:iron_staff.name"
+      },
+      "minecraft:icon": {
+        "texture": "iron_staff"
+      },
+      "minecraft:use_animation": "bow",
+      "minecraft:render_offsets": "bow",
+      "minecraft:stacked_by_data": false,
+      "minecraft:max_stack_size": 1,
+      "minecraft:foil": false,
+      "minecraft:hand_equipped": true,
+      "minecraft:on_use": {
+        "on_use": {
+          "event": "shoot",
+          "target": "self"
+        }
+      },
+      "minecraft:cooldown": {
+        "category": "staff",
+        "duration": 1.25
+      },
+      "minecraft:durability": {
+        "max_durability": 251
+      },
+      "minecraft:enchantable": {
+        "value": 17,
+        "slot": "flintsteel"
+      },
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "minecraft:iron_ingot"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.3"
+          },
+          {
+            "items": [
+              "minecraft:iron_nugget"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.03"
+          }
+        ]
+      },
+      "tag:comp:equipment_type:magic_weapon":{}
+    },
+    "events": {
+      "attack": {
+        "damage": {
+          "type": "magic",
+          "amount": 1
+        }
+      },
+      "shoot": {
+        "sequence": [
+          {
+            "condition": "query.scoreboard('wbfl') > 4",
+            "sequence": [
+              {
+                "run_command": {
+                  "command": [
+                    "playsound item.book.put @a ~~~",
+                    "scoreboard players remove @s wbfl 5",
+                    "playanimation @s animation.humanoid.staff_use"
+                  ],
+                  "target": "holder"
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:amethyst_energy_ball",
+                  "launch_power": 1
+                }
+              },
+              {
+                "damage": {
+                  "type": "magic",
+                  "amount": 1
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

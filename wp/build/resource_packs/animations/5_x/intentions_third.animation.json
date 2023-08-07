@@ -1,0 +1,80 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.intentions_third.base": {
+			"loop": true,
+			"bones": {
+				"rightArmx" : {
+					"rotation" : [ "variable.tcos1", 0.0, 0.0 ]
+				},
+				"swordb": {
+					"rotation": [45, 0, 0]
+				},
+				"dun": {
+					"rotation": [0, "query.life_time*60", 0],
+					"scale": ["query.is_powered ? 1.0 : 0.0", "query.is_powered ? 1.0 : 0.0", "query.is_powered ? 1.0 : 0.0"]
+				}
+			}
+		},
+		"animation.intentions_third.roaring": {
+			"loop": "hold_on_last_frame",
+			"animation_length":0.5,
+			"bones": {
+				"rightArm": {
+					"rotation": {
+						"0.2": [-110, 5, 80],
+						"0.5": [-20, 5, 80]
+					}
+				},
+				"rightArmx": {
+					"rotation": {
+						"0.2": [-110, 5, 80],
+						"0.5": [-20, 5, 80]
+					}
+				},
+				"swordb": {
+					"rotation": [45, 0, 0],
+					"position": [0, 3, 3]
+				}
+			}
+		},
+		"animation.intentions_third.delayed_attacking": {
+			"loop": "hold_on_last_frame",
+			"animation_length":0.6,
+			"bones": {
+				"leftArm": {
+					"rotation": {
+						"0.2": [-90, 50, 0],
+						"0.6": [-20, 20, 0]
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"0.2": [-125, 5, -35],
+						"0.6": [-25, 5, -35]
+					}
+				},
+				"rightArmx": {
+					"rotation": {
+						"0.2": [-125, 5, -35],
+						"0.6": [-25, 5, -35]
+					}
+				}
+			}
+		},
+		"animation.intentions_third.pre": {
+			"loop": true,
+			"bones": {
+				"leftArm": {
+					"rotation": [-90, 50, 0]
+				},
+				"rightArm": {
+					"rotation": [-125, 5, -35]
+				},
+				"rightArmx": {
+					"rotation":[-125, 5, -35]
+				}
+			}
+        }
+	}
+}

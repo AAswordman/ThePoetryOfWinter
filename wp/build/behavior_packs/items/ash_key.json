@@ -1,0 +1,21 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "items",
+      "identifier": "dec:ash_key"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.decorations"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:ash_key.name"
+      },
+      "minecraft:icon": {
+        "texture": "ash_key"
+      },
+      "minecraft:foil": false
+    }
+  }
+}

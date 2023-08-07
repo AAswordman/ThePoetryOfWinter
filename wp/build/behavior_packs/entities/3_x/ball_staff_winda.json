@@ -1,0 +1,54 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "wb:ball_staff_winda",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "minecraft:snowball"
+    },
+    "components": {
+      "minecraft:explode": {
+        "fuseLength": 3,
+        "fuseLit": true,
+        "power": 0,
+        "causesFire": true,
+        "fireAffectedByGriefing": true,
+        "destroyAffectedByGriefing": true
+      },
+      "minecraft:collision_box": {
+        "width": 0.18,
+        "height": 0.18
+      },
+      "minecraft:projectile": {
+        "onHit": {
+          "impact_damage": {
+            "damage": 28,
+            "knockback": false,
+            "catchFire": false,
+            "semirandomdiffdamage": false,
+            "destroy_on_hit": false
+          },
+          "mob_effect": {
+            "effect": "levitation",
+            "durationeasy": 20,
+            "durationnormal": 20,
+            "durationhard": 20,
+            "amplifier": 5
+          }
+        },
+        "power": 1.7,
+        "gravity": 0,
+        "inertia": 1,
+        "anchor": 2,
+        "offset": [0,0,0],
+        "semirandomdiffdamage": false,
+        "uncertaintyBase": 0,
+        "reflectOnHurt": true,
+        "multiple_targets": true
+      },
+      "minecraft:physics": {}
+    }
+  }
+}

@@ -1,0 +1,1922 @@
+{
+    "format_version": "1.16.100",
+    "minecraft:item": {
+        "description": {
+            "category": "equipment",
+            "identifier": "dec:coral_pickaxe"
+        },
+        "components": {
+            "minecraft:creative_category": {
+                "parent": "itemGroup.name.pickaxe"
+            },
+            "minecraft:display_name": {
+                "value": "item.dec:coral_pickaxe.name"
+            },
+            "minecraft:icon": {
+                "texture": "coral_pickaxe"
+            },
+            "minecraft:max_stack_size": 1,
+            "minecraft:durability": {
+                "max_durability": 180
+            },
+            "minecraft:enchantable": {
+                "value": 16,
+                "slot": "pickaxe"
+            },
+            "minecraft:damage": 4,
+            "minecraft:digger": {
+                "use_efficiency": true,
+                "destroy_speeds": [
+                    {
+                        "block": {
+                            "tags": "q.any_tag('stone','metal','diamond_pick_diggable')"
+                        },
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:ice",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:sandstone",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:blackstone",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:polished_blackstone_bricks",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:polished_blackstone_brick_stairs",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:blackstone_stairs",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:blackstone_wall",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:polished_blackstone_brick_wall",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:chiseled_polished_blackstone",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:cracked_polished_blackstone_bricks",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:gilded_blackstone",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:blackstone_slab",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:blackstone_double_slab",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:polished_blackstone_brick_slab",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:polished_blackstone_brick_double_slab",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:polished_blackstone",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:polished_blackstone_stairs",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:redstone_block",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:red_sandstone",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:stonebrick",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:end_bricks",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:prismarine",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:purpur_block",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:quartz_block",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:quartz_bricks",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:smooth_stone",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:nether_brick",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:red_nether_brick",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:chiseled_nether_bricks",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:cracked_nether_bricks",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:bone_block",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:concrete",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:honeycomb_block",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:packed_ice",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:blue_ice",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:ancient_debris",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:netherrack",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:stonecutter_block",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:stone_block_slab",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:stone_block_slab2",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:stone_block_slab3",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:stone_block_slab4",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:double_stone_slab",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:double_stone_slab2",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:double_stone_slab3",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:double_stone_slab4",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:stone_stairs",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:brick_stairs",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:stone_brick_stairs",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:nether_brick_stairs",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:sandstone_stairs",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:quartz_stairs",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:red_sandstone_stairs",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:purpur_stairs",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:prismarine_stairs",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:prismarine_bricks_stairs",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:dark_prismarine_stairs",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:granite_stairs",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:diorite_stairs",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:polished_granite_stairs",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:andesite_stairs",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:polished_diorite_stairs",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:mossy_stone_brick_stairs",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:smooth_red_sandstone_stairs",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:smooth_sandstone_stairs",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:end_brick_stairs",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:mossy_cobblestone_stairs",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:polished_blackstone_slab",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:polished_blackstone_double_slab",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:polished_blackstone_pressure_plate",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:polished_blackstone_button",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:polished_blackstone_wall",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:crying_obsidian",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:obsidian",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:netherite_block",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:emerald_ore",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:quartz_ore",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:nether_gold_ore",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:diamond_block",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:emerald_block",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:coal_block",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:lapis_block",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:normal_stone_stairs",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:red_nether_brick_stairs",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:smooth_quartz_stairs",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:polished_andesite_stairs",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:brewing_stand",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:lodestone",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:iron_door",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:iron_bars",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:iron_trapdoor",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:magma",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:mob_spawner",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:end_stone",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:ender_chest",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:shulker_box",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:undyed_shulker_box",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:basalt",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:polished_basalt",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:crimson_nylium",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:warped_nylium",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:coral",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:coral_block",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:coral_fan",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:coral_fan_dead",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:coral_fan_hang",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:coral_fan_hang2",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:coral_fan_hang3",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:purple_glazed_terracotta",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:white_glazed_terracotta",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:orange_glazed_terracotta",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:magenta_glazed_terracotta",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:light_blue_glazed_terracotta",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:yellow_glazed_terracotta",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:lime_glazed_terracotta",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:pink_glazed_terracotta",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:gray_glazed_terracotta",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:silver_glazed_terracotta",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:cyan_glazed_terracotta",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:blue_glazed_terracotta",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:brown_glazed_terracotta",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:green_glazed_terracotta",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:red_glazed_terracotta",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:black_glazed_terracotta",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:lantern",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:soul_lantern",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:grindstone",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:anvil",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:respawn_anchor",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:smoker",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:lit_smoker",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:beacon",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:conduit",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:bell",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:stonecutter",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:enchanting_table",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:furnace",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:lit_furnace",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:blast_furnace",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:lit_blast_furnace",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:observer",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:chain",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:dispenser",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:dropper",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:hopper",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:golden_rail",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:detector_rail",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:rail",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:activator_rail",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:nether_brick_fence",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:deepslate",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:deepslate_brick_double_slab",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:deepslate_brick_slab",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:deepslate_brick_stairs",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:deepslate_brick_wall",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:deepslate_bricks",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:deepslate_coal_ore",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:deepslate_copper_ore",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:deepslate_diamond_ore",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:deepslate_emerald_ore",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:deepslate_emerald_ore",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:deepslate_gold_ore",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:deepslate_iron_ore",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:deepslate_lapis_ore",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:deepslate_redstone_ore",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:deepslate_tile_double_slab",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:deepslate_tile_slab",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:deepslate_tile_stairs",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:deepslate_tile_wall",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:deepslate_tiles",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:chiseled_deepslate",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:cobbled_deepslate",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:cobbled_deepslate_double_slab",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:cobbled_deepslate_stairs",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:cobbled_deepslate_wall",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:infested_deepslate",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:lit_deepslate_redstone_ore",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:polished_deepslate",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:polished_deepslate_double_slab",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:polished_deepslate_slab",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:polished_deepslate_stairs",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:polished_deepslate_wall",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:reinforced_deepslate",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:raw_copper_block",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:raw_gold_block",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:raw_iron_block",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:cobblestone_wall",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:mud_brick_double_slab",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:mud_brick_slab",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:mud_brick_stairs",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:mud_brick_wall",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:mud_bricks",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:packed_mud",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:tuff",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:calcite",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:amethyst_block",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:amethyst_cluster",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:budding_amethyst",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:large_amethyst_bud",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:medium_amethyst_bud",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:small_amethyst_bud",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:dripstone_block",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:pointed_dripstone",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:heavy_weighted_pressure_plate",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:stone_pressure_plate",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:coal_ore",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:redstone_ore",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:gold_ore",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:lapis_ore",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:diamond_ore",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:iron_ore",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:copper_ore",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:amethyst_lantern",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:ancient_ice",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:blue_gem_ore",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:blue_ice_brick_block",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:candy_block",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:cave_crate",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:compressed_ice",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:end_altar",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:end_coal_ore",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:end_diamond_ore",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:end_emerald_ore",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:end_gold_ore",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:end_iron_ore",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:end_lapis_ore",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:end_ore",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:end_redstone_ore",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:flowing_block",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:ice_bookshelf",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:ice_brick_block",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:item_picker",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:lava_ore",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:light_obsidian",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:lightning_summoner",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:lurk_end_stone",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:mine",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:mining_machine",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:nether_coal_ore",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:nether_diamond_ore",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:nether_emerald_ore",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:nether_iron_ore",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:nether_lapis_ore",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:nether_redstone_ore",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:radiate_stone",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:radiate_stonebrick",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:raining_summoner",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:red_gem_ore",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:scale_block",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:smooth_amethyst_block",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:snow_brick_block",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:solidified_lava_block",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:soul_soil_diamond_ore",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:steel_block",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:stream_ore",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:sunny_summoner",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:uranium_block",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:uranium_ore",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:chiseled_ice_brick",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:ghost_ice",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:ice_lantern",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:ice_mixed_brick",
+                        "speed": 5,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    }
+                ],
+                "on_dig": {
+                    "event": "attack_more",
+                    "target": "self"
+                }
+            },
+            "minecraft:hand_equipped": true,
+            "minecraft:weapon": {
+                "on_hurt_entity": {
+                    "event": "attack",
+                    "target": "self"
+                },
+                "on_hit_block": {
+                    "event": "attack",
+                    "target": "self"
+                }
+            },
+            "minecraft:repairable": {
+                "repair_items": [
+                    {
+                        "items": [
+                            "minecraft:dec:sharp_coral"
+                        ],
+                        "repair_amount": "context.other->query.remaining_durability + query.max_durability *  1"
+                    },
+                    {
+                        "items": [
+                            "minecraft:dec:coral_ingot"
+                        ],
+                        "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.3"
+                    }
+                ]
+            }
+        },
+        "events": {
+            "attack": {
+                "damage": {
+                    "amount": 1,
+                    "type": "magic"
+                }
+            },
+            "attack_more": {
+                "damage": {
+                    "amount": 2,
+                    "type": "magic"
+                }
+            }
+        }
+    }
+}

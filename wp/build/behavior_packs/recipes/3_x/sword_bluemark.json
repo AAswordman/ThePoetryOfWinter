@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "wb:sword_bluemark"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "#",
+      "Y",
+      "X"
+    ],
+    "key": {
+      "#": {
+        "item": "wb:element_bluemark"
+      },
+      "Y": {
+        "item":"wb:base_core_d"
+      },
+      "X": {
+          "item":"minecraft:stick"
+      }
+    },
+    "result": {
+      "item": "wb:sword_bluemark"
+    }
+  }
+}

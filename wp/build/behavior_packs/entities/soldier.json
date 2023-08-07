@@ -1,0 +1,204 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:soldier",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+
+    "component_groups": {
+      "minecraft:vindicator_aggro": {
+        "minecraft:angry": {
+          "duration": -1,
+          "broadcast_anger": false,
+          "calm_event": {
+            "event": "minecraft:stop_aggro",
+            "target": "self"
+          }
+        }
+      },
+      "minecraft:default_targeting": {
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 2,
+          "within_radius": 12,
+          "must_see": true,
+          "must_see_forget_duration": 40.0,
+          "entity_types": [
+            {
+              "filters": { 
+                  "all_of": [
+                    { "test" :  "is_family", "subject" : "other", "value" :  "monster"},
+                    { "test" :  "is_family", "subject" : "other", "operator": "!=", "value" :  "creeper"}
+                  ] 
+              },
+              "within_default": 10
+            }
+          ]
+        }
+      }
+    },
+
+    "components": {
+      "minecraft:behavior.move_through_village": {
+        "priority": 10,
+        "speed_multiplier": 0.6,
+        "only_at_night": true
+      },
+      "minecraft:behavior.move_towards_restriction": {
+        "priority": 9,
+        "speed_multiplier": 1
+      },
+      "minecraft:dweller": {
+        "dwelling_type": "village",
+        "dweller_role": "defender",
+        "update_interval_base": 60,
+        "update_interval_variant": 40,
+        "can_find_poi": false,
+        "can_migrate": true,
+        "first_founding_reward": 0
+      },
+      "minecraft:experience_reward": {
+        "on_death": "query.last_hit_by_player ? (query.is_baby ? 12 : 5) + (Math.die_roll(query.equipment_count,1,3)) : 0"
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:type_family": {
+        "family": [ "villager", "soldier", "mob" ]
+      },
+      "minecraft:variant": {
+        "value": 0
+      },
+      "minecraft:behavior.stroll_towards_village": {
+        "priority": 11,
+        "speed_multiplier": 1.3,
+        "goal_radius": 128.0,
+        "cooldown_time": 0,
+        "search_range": 1028,
+        "start_chance": 1.0
+      },
+      "minecraft:behavior.defend_village_target": {
+        "priority": 1
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0
+      },
+      "minecraft:collision_box": {
+        "width": 0.6,
+        "height": 1.9
+      },
+      "minecraft:health": {
+        "value": {
+          "range_min": 18,
+          "range_max": 30
+        }
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:attack": {
+        "damage": 2
+      },
+      "minecraft:movement": {
+        "value": 0.30
+      },
+      "minecraft:navigation.walk": {
+        "can_path_over_water": true,
+        "can_pass_doors": true,
+        "can_open_doors": true,
+        "avoid_water": false
+      },
+      "minecraft:movement.basic": {
+      },
+      "minecraft:jump.static": {
+      },
+      "minecraft:follow_range": {
+        "value": 64
+      },
+      "minecraft:equipment": {
+        "table": "loot_tables/entities/soldier_gear.json",
+        "slot_drop_chance": [
+          {
+            "slot": "slot.weapon.mainhand",
+            "drop_chance": 0.06
+          }
+        ]
+      },
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.melee_attack": {
+        "priority": 3,
+        "speed_multiplier": 1.2,
+        "track_target": false
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 9,
+        "speed_multiplier": 1
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 10,
+        "look_distance": 8,
+        "probability": 0.02
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1,
+        "entity_types": {
+          "filters": {
+            "test": "is_family",
+            "subject": "other",
+            "operator": "!=",
+            "value": "villager"
+          },
+          "max_dist": 64
+        }
+      },
+      "minecraft:on_target_acquired": {
+        "event": "minecraft:become_aggro",
+        "target": "self"
+      },
+      "minecraft:on_target_escape": {
+        "event": "minecraft:stop_aggro",
+        "target": "self"
+      },
+      "minecraft:physics": {
+      },
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      }
+    },
+
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "minecraft:default_targeting"
+          ]
+        }
+      },
+      "minecraft:become_aggro": {
+        "add": {
+          "component_groups": [
+            "minecraft:vindicator_aggro"
+          ]
+        }
+      },
+      "minecraft:stop_aggro": {
+        "remove": {
+          "component_groups": [
+            "minecraft:vindicator_aggro"
+          ]
+        }
+      }
+    }
+  }
+}

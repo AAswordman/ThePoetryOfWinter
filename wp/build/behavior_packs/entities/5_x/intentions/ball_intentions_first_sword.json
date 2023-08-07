@@ -1,0 +1,52 @@
+{
+  "format_version": "1.8.0",
+ "minecraft:entity": {
+  "description": {
+    "identifier": "wb:ball_intentions_first_sword",
+    "is_spawnable": false,
+    "is_summonable": true,
+    "is_experimental": false,
+    "runtime_identifier": "minecraft:arrow"
+  },
+  "components": {
+  	  "minecraft:explode": {
+     "fuseLength": 4,
+     "fuseLit": true,
+     "power": 0
+    },
+    "minecraft:collision_box": {
+    "width": 0.6,
+    "height": 1
+   },
+   "minecraft:scale":{"value":0.4},
+   "minecraft:projectile": {
+    "onHit": {
+    "mob_effect": {
+            "effect": "instant_damage",
+            "durationeasy": 8,
+            "durationnormal":8,
+            "durationhard": 8,
+            "amplifier": 1
+          },
+      "impact_damage": {
+        "damage": 25,
+        "knockback": true,
+        "catchFire": false,
+        "semirandomdiffdamage": false
+      },
+      "remove_on_hit": { }
+    },
+    "power": 1.7,
+    "gravity": 0.1,
+    "inertia": 1,
+    "anchor": 2,
+    "offset": [ 0, 0.0, 0.0],
+    "semirandomdiffdamage": false,
+    "uncertaintyBase": 0.0,
+    "reflectOnHurt": true
+   },
+   "minecraft:physics": {
+   }
+  }
+ }
+}

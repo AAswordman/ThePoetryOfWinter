@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:poison_bag"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "A",
+      "X"
+    ],
+    "key": {
+      "X": {
+        "item": "minecraft:leather"
+      },
+      "A": {
+        "item": "dec:poison_gland"
+      }
+    },
+    "result": {
+      "item": "dec:poison_bag",
+      "count": 2
+    }
+  }
+}

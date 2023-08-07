@@ -1,0 +1,22 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "items",
+      "identifier": "dec:red_gem_debris"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.decorations"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:red_gem_debris.name"
+      },
+      "minecraft:icon": {
+        "texture": "red_gem_debris"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "cookie"
+    }
+  }
+}

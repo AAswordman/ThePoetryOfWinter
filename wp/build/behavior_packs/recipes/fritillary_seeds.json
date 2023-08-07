@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:fritillary_seeds"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "#"
+    ],
+    "key": {
+      "#": {
+        "item": "dec:fritillary",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "dec:fritillary_seeds",
+      "data": 0,
+      "count": 2
+    }
+  }
+}

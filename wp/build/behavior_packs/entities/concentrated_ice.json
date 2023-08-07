@@ -1,0 +1,72 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:concentrated_ice",
+      "runtime_identifier": "minecraft:egg",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {},
+    "components": {
+      "minecraft:explode": {
+        "fuseLength": 10,
+        "fuseLit": true,
+        "power": 0,
+        "causesFire": false
+      },
+      "minecraft:collision_box": {
+        "width": 0.31,
+        "height": 0.31
+      },
+      "minecraft:projectile": {
+        "onHit": {
+          "definition_event": {
+            "affect_projectile": true,
+            "event_trigger": {
+              "event": "minecraft:explode",
+              "target": "self"
+            }
+          },
+          "impact_damage": {
+            "damage": 6,
+            "knockback": true,
+            "catchFire": false,
+            "semirandomdiffdamage": false
+          }
+        },
+        "hit_sound": "bullet.hit",
+        "power": 0.3,
+        "gravity": 0.00,
+        "inertia": 1.0,
+        "liquid_inertia": 1.0,
+        "anchor": 1,
+        "offset": [
+          0,
+          0,
+          1
+        ],
+        "semirandomdiffdamage": true,
+        "uncertaintyBase": 4.0,
+        "uncertaintyMultiplier": 2,
+        "reflectOnHurt": true,
+        "shoot_target": false
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    },
+    "events": {
+      "minecraft:explode": {
+        "run_command": {
+          "command": [
+            "fill ~-0.5~-0.5~-0.5~0.5~0.5~0.5 dec:ghost_ice [] replace air []",
+            "kill @s"
+          ]
+        }
+      }
+    }
+  }
+}

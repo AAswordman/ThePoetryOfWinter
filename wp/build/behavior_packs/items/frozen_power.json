@@ -1,0 +1,23 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:frozen_power"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.navigation"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:frozen_power.name"
+      },
+      "minecraft:icon": {
+        "texture": "frozen_power"
+      },
+      "minecraft:stacked_by_data": true,
+      "minecraft:foil": true,
+      "minecraft:hand_equipped": true
+    }
+  }
+}

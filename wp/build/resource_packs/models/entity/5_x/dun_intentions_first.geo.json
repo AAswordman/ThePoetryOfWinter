@@ -1,0 +1,60 @@
+{
+	"format_version": "1.10.0",
+	"geometry.dun_intentions_first": {
+		"texturewidth": 128,
+		"textureheight": 128,
+		"visible_bounds_width": 5,
+		"visible_bounds_height": 2,
+		"visible_bounds_offset": [0, 1, 0],
+		"bones": [
+			{
+				"name": "dun",
+				"pivot": [0, 0, 0]
+			},
+			{
+				"name": "dun1",
+				"parent": "dun",
+				"pivot": [0, 18, 0],
+				"cubes": [
+					{"origin": [-8, 7, -30], "size": [16, 22, 1], "uv": [0, 0]}
+				]
+			},
+			{
+				"name": "dun2",
+				"parent": "dun",
+				"pivot": [0, 18, 0],
+				"rotation": [0, -72, 0],
+				"cubes": [
+					{"origin": [-8, 7, -30], "size": [16, 22, 1], "uv": [0, 0]}
+				]
+			},
+			{
+				"name": "dun3",
+				"parent": "dun",
+				"pivot": [0, 18, 0],
+				"rotation": [0, -144, 0],
+				"cubes": [
+					{"origin": [-8, 7, -30], "size": [16, 22, 1], "uv": [0, 0]}
+				]
+			},
+			{
+				"name": "dun4",
+				"parent": "dun",
+				"pivot": [0, 18, 0],
+				"rotation": [0, 144, 0],
+				"cubes": [
+					{"origin": [-8, 7, -30], "size": [16, 22, 1], "uv": [0, 0]}
+				]
+			},
+			{
+				"name": "dun5",
+				"parent": "dun",
+				"pivot": [0, 18, 0],
+				"rotation": [0, 72, 0],
+				"cubes": [
+					{"origin": [-8, 7, -30], "size": [16, 22, 1], "uv": [0, 0]}
+				]
+			}
+		]
+	}
+}

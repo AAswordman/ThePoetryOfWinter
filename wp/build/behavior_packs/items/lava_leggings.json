@@ -1,0 +1,65 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:lava_leggings"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.leggings"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:lava_leggings.name"
+      },
+      "minecraft:icon": {
+        "texture": "lava_leggings"
+      },
+      "minecraft:render_offsets": "leggings",
+      "minecraft:max_stack_size": 1,
+      "minecraft:enchantable": {
+        "value": 7,
+        "slot": "armor_legs"
+      },
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "dec:lava_ingot"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.4"
+          },
+          {
+            "items": [
+              "dec:lava_nugget"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.04"
+          },
+          {
+            "items": [
+              "minecraft:lava_bucket"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.03"
+          }
+        ]
+      },
+      "minecraft:durability": {
+        "max_durability": 230,
+        "damage_chance": {
+          "min": 60,
+          "max": 100
+        }
+      },
+      "minecraft:armor": {
+        "protection": 5
+      },
+      "minecraft:wearable": {
+        "slot": "slot.armor.legs"
+      },
+      "tag:comp:armor_protection:5": {},
+      "tag:comp:armor_type:suit_:lava:_": {},
+      "tag:comp:armor_magic_protection:2": {},
+      "tag:comp:armor_physical_protection:5": {}
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "wb:magic_insect",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+          },
+
+    "components": {
+        "minecraft:despawn": {
+            "despawn_from_distance": {}
+          },
+    	      "minecraft:experience_reward": {
+        "on_death": "query.last_hit_by_player ? 5 + (query.equipment_count * Math.Random(1,3)) : 0"
+      },
+        "minecraft:loot": {
+          "table": "loot_tables/wb/2_x/magic_insect.json"
+        },
+    	"minecraft:scale":{
+    		"value":0.7
+    	},
+    	"minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "within_radius": 25,
+        "reselect_targets": true,
+        "entity_types": [
+          {
+            "filters": {
+              "any_of": [
+                { "test": "is_family", "subject": "other", "value": "player" }
+              ]
+            },
+            "max_dist": 35
+          }
+        ],
+        "must_see": true,
+        "must_see_forget_duration": 17.0
+      },
+        "minecraft:attack": {
+        "damage": 7,
+        "effect_name": "slowness",
+        "effect_duration": 10
+      },
+         "minecraft:behavior.melee_attack": {
+        "priority": 3,
+        "speed_multiplier": 1,
+        "track_target": false
+      },
+        "minecraft:behavior.leap_at_target": {
+        "priority": 2,
+        "yd": 0.6,
+        "must_be_on_ground": false
+      },
+      "minecraft:type_family": {
+        "family": [ "insect" ,"monster","magic"]
+      },
+      "minecraft:breathable": {
+        "totalSupply": 15,
+        "suffocateTime": 0
+      },
+      "minecraft:navigation.walk": {
+        "can_path_over_water": true,
+        "avoid_water": true,
+        "avoid_damage_blocks": true
+      },
+      "minecraft:movement.basic": {
+
+      },
+      "minecraft:jump.static": {
+      },
+      "minecraft:can_climb": {
+      },
+      "minecraft:collision_box": {
+        "width": 1,
+        "height": 1
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:health": {
+        "value": 80,
+        "max": 80
+      },
+      "minecraft:movement": {
+        "value": 0.25
+      },
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 6,
+        "speed_multiplier": 0.8
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 7,
+        "look_distance": 6.0,
+        "probability": 0.02
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 9
+      },
+      "minecraft:balloonable": {
+      },
+      "minecraft:physics": {
+      }
+    }
+  }
+}

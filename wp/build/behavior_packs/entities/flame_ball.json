@@ -1,0 +1,64 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:flame_ball",
+      "runtime_identifier": "minecraft:egg",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "ticking"
+        ]
+      },
+      "animations": {
+        "ticking": "controller.animation.particle_fire_spurt_small"
+      }
+    },
+    "component_groups": {},
+    "components": {
+      "minecraft:collision_box": {
+        "width": 0.31,
+        "height": 0.31
+      },
+      "minecraft:projectile": {
+        "onHit": {
+          "impact_damage": {
+            "damage": 3,
+            "knockback": false,
+            "catchFire": true,
+            "semirandomdiffdamage": false
+          },
+          "particle_on_hit": {
+            "particle_type": "lava",
+            "num_particles": 6,
+            "on_entity_hit": true,
+            "on_other_hit": true
+          },
+          "remove_on_hit": {}
+        },
+        "power": 1.3,
+        "gravity": 0.035,
+        "inertia": 1.01,
+        "liquid_inertia": 1,
+        "anchor": 1,
+        "offset": [
+          0,
+          0.2,
+          0
+        ],
+        "semirandomdiffdamage": true,
+        "uncertaintyBase": 3.0,
+        "uncertaintyMultiplier": 2,
+        "reflectOnHurt": false,
+        "shoot_target": false
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    },
+    "events": {}
+  }
+}

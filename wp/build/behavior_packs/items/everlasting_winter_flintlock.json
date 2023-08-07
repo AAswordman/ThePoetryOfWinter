@@ -1,0 +1,105 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:everlasting_winter_flintlock"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.sword"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:everlasting_winter_flintlock.name"
+      },
+      "minecraft:icon": {
+        "texture": "everlasting_winter_flintlock"
+      },
+      "minecraft:stacked_by_data": false,
+      "minecraft:max_stack_size": 1,
+      "minecraft:foil": false,
+      "minecraft:hand_equipped": true,
+      "minecraft:cooldown": {
+        "category": "gun",
+        "duration": 3
+      },
+      "minecraft:enchantable": {
+        "value": 24,
+        "slot": "flintsteel"
+      },
+      "minecraft:durability": {
+        "max_durability": 1668
+      },
+      "minecraft:on_use": {
+        "on_use": {
+          "event": "shoot_test",
+          "target": "self"
+        }
+      },
+      "minecraft:use_duration": 0.06,
+      "minecraft:chargeable": {
+        "movement_modifier":0.7,
+        "on_complete": {
+         "event": "shoot",
+         "target": "self"
+        }
+      },
+      "tag:comp:sneak_movement_addition:-0.06": {},
+      "tag:comp:equipment_type:range_weapon":{}
+    },
+    "events": {
+      "shoot_test": {
+        "run_command": {
+          "command": [
+            "scoreboard players set @s[hasitem={item=dec:flintlock_bullet}] bullet_type 1",
+            "scoreboard players set @s[hasitem={item=dec:flintlock_bullet,quantity=0}] bullet_type 0"
+          ],
+          "target": "holder"
+        }
+      },
+      "shoot": {
+        "sequence": [
+          {
+            "condition": "query.scoreboard('bullet_type') == 1",
+            "sequence": [
+              {
+                "run_command": {
+                  "command": [
+                    "playsound random.explode @a ~~~",
+                    "camerashake add @s 4 0.05",
+                    "clear @s dec:flintlock_bullet 0 1"
+                  ],
+                  "target": "holder"
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:bullet_by_everlasting_winter_flintlock",
+                  "launch_power": 1
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:bullet_by_everlasting_winter_flintlock",
+                  "launch_power": 1
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:bullet_by_everlasting_winter_flintlock",
+                  "launch_power": 1
+                }
+              },
+              {
+                "damage": {
+                  "type": "magic",
+                  "amount": 1
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

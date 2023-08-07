@@ -1,0 +1,47 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:christmas_cap"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.helmet"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:christmas_cap.name"
+      },
+      "minecraft:icon": {
+        "texture": "christmas_cap"
+      },
+      "minecraft:render_offsets": "helmets",
+      "minecraft:max_stack_size": 1,
+      "minecraft:enchantable": {
+        "value": 30,
+        "slot": "armor_head"
+      },
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "minecraft:wool"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.3"
+          }
+        ]
+      },
+      "minecraft:durability": {
+        "max_durability": 64
+      },
+      "minecraft:armor": {
+        "protection": 1
+      },
+      "minecraft:wearable": {
+        "slot": "slot.armor.head"
+      },
+      "tag:comp:armor_protection:1": {},
+      "tag:comp:armor_type:decorate_": {}
+    }
+  }
+}

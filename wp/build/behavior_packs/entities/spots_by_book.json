@@ -1,0 +1,58 @@
+{
+  "format_version": "1.12.0",
+ "minecraft:entity": {
+  "description": {
+    "identifier": "dec:spots_by_book",
+    "runtime_identifier": "minecraft:egg",
+    "is_spawnable": false,
+    "is_summonable": true,
+    "is_experimental": false,
+    "scripts":{
+      "animate":["ticking"]
+    },
+      "animations":{
+        "ticking":"controller.animation.particle_fire_wake"
+    }
+  },
+  "components": {
+   "minecraft:collision_box": {
+    "width": 0.31,
+    "height": 0.31
+   },
+   "minecraft:explode": {
+    "fuseLength": 3,
+    "fuseLit": true,
+    "power": 0,
+    "causesFire": false
+    },
+   "minecraft:projectile": {
+    "onHit": {
+      "impact_damage": {
+        "damage": 14,
+        "knockback": false,
+        "catchFire": true,
+        "semirandomdiffdamage": false
+      },
+      "catch_fire": {
+        "fireAffectedByGriefing": true
+      },
+      "remove_on_hit": { }
+    },
+    "power": 1,
+    "gravity": 0.00,
+    "liquid_inertia": 0.95,
+    "inertia": 1.05,
+    "anchor": 1,
+    "offset": [ 0, 0, 1 ],
+    "semirandomdiffdamage": true,
+    "uncertaintyBase": 4.0,
+    "uncertaintyMultiplier": 5,
+    "reflectOnHurt": true
+   },
+   "minecraft:pushable": {
+    "is_pushable": false,
+    "is_pushable_by_piston": true
+   }
+  }
+ }
+}

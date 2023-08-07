@@ -1,0 +1,26 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:lightning_stone"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "###",
+      "#X#",
+      "###"
+    ],
+    "key": {
+      "X": {
+        "item": "dec:stream_stone"
+      },
+      "#": {
+        "item": "minecraft:dye",
+        "data": 4
+      }
+    },
+    "result": {
+      "item": "dec:lightning_stone"
+    }
+  }
+}

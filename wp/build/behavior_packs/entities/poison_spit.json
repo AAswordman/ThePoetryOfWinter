@@ -1,0 +1,61 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:poison_spit",
+      "runtime_identifier": "minecraft:egg",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "ticking"
+        ]
+      },
+      "animations": {
+        "ticking": "controller.animation.particle_poison_spit"
+      }
+    },
+    "components": {
+      "minecraft:collision_box": {
+        "width": 0.2,
+        "height": 0.2
+      },
+      "minecraft:projectile": {
+        "onHit": {
+          "mob_effect": {
+            "effect": "poison",
+            "durationeasy": 100,
+            "durationnormal": 100,
+            "durationhard": 100,
+            "amplifier": 0
+          },
+          "impact_damage": {
+            "damage": 3,
+            "knockback": true,
+            "catchFire": false,
+            "semirandomdiffdamage": false
+          },
+          "remove_on_hit": {}
+        },
+        "power": 0.8,
+        "gravity": 0.06,
+        "inertia": 1.1,
+        "liquid_inertia": 1.1,
+        "uncertainty_base": 10,
+        "uncertainty_multiplier": 4,
+        "anchor": 1,
+        "offset": [
+          0,
+          0,
+          1
+        ],
+        "reflect_on_hurt": true
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    }
+  }
+}

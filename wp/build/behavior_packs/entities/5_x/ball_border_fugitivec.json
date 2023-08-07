@@ -1,0 +1,136 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "wb:ball_border_fugitivec",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+          },
+
+    "component_groups": {
+    "boom":{
+     "minecraft:projectile": {
+        "onHit": {
+          "impact_damage": {
+            "damage": 40,
+            "knockback": true
+          },
+          "remove_on_hit": { },
+          "particle_on_hit": {
+          }
+        },
+        "gravity": 0.0
+      }
+    },
+    "friendly":{
+     "minecraft:behavior.nearest_attackable_target": {
+        "priority": 3,
+        "entity_types": [
+          {
+            "filters": {
+              "any_of" :[
+                {"test" : "is_family","operator":"==","subject":"other","value":"monster"}
+              ]
+            },
+            "max_dist": 70
+          }
+        ],
+        "must_see": true
+      }
+    	}
+    },
+
+    "components": {
+     "minecraft:explode": {
+     "fuseLength": 8,
+     "fuseLit": true,
+     "breaks_blocks":false,
+     "power": 0,
+     "causesFire": true,
+     "fireAffectedByGriefing": true,
+     "destroyAffectedByGriefing": true
+    },
+       "minecraft:target_nearby_sensor": {
+        "inside_range": 1.0,
+        "outside_range": 100.0,
+        "on_inside_range": {
+          "event": "boom",
+          "target": "self"
+        }
+      },
+      "minecraft:damage_sensor": [
+        {
+          "cause": "all",
+          "deals_damage": false
+        }
+      ],
+      "minecraft:nameable": {
+      },
+      "minecraft:health": {
+        "value": 100,
+        "max": 100
+      },
+      "minecraft:attack": {
+        "damage": 0
+      },
+      "minecraft:collision_box": {
+        "width": 0.4,
+        "height": 0.8
+      },
+      "minecraft:movement": {
+        "value": 6.0
+      },
+      "minecraft:navigation.walk": {
+        "can_path_over_water": true
+      },
+      "minecraft:movement.basic": {
+
+      },
+      "minecraft:jump.static": {
+      },
+      "minecraft:can_climb": {
+      },
+      "minecraft:fire_immune": true,
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.charge_attack": {
+        "priority": 4
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 3,
+        "entity_types": [
+          {
+            "filters": {
+              "any_of" :[
+                {"test" : "is_family","operator":"!=","subject":"other","value":"fugitive"}
+              ]
+            },
+            "max_dist": 70
+          }
+        ],
+        "must_see": true
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1
+      },
+      "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": true
+      }
+    },
+    "events":{
+  	"friendly":{
+  		"add":{
+  			"component_groups":["friendly"]
+  		}
+  	},
+  	"boom":{
+  		"add":{
+  			"component_groups":["boom"]
+  		}
+  	}
+  }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:artificial_meat_creator_off"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "ZVZ",
+      "ZBZ",
+      "CXC"
+    ],
+    "key": {
+      "Z": {
+        "item": "minecraft:iron_ingot"
+      },
+      "X": {
+        "item": "minecraft:redstone"
+      },
+      "C": {
+        "item": "minecraft:gold_ingot"
+      },
+      "V": {
+        "item": "minecraft:glass"
+      },
+      "B": {
+        "item": "minecraft:observer"
+      }
+    },
+    "result": {
+      "item": "dec:artificial_meat_creator_off"
+    }
+  }
+}

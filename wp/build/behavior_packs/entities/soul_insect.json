@@ -1,0 +1,148 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:soul_insect",
+      "runtime_identifier": "minecraft:sliverfish",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+
+    "component_groups": {
+      "minecraft:silverfish_calm": {
+        "minecraft:on_target_acquired" : {
+					"event": "minecraft:become_angry",
+					"target": "self"
+				}
+      },
+      "minecraft:silverfish_angry": {
+        "minecraft:angry": {
+          "duration": -1,
+          "broadcastAnger": true,
+          "broadcastRange": 20,
+          "calm_event": {
+            "event": "minecraft:on_calm",
+            "target": "self"
+          }
+        },
+     "minecraft:behavior.melee_attack": {
+				  "priority": 4,
+				  "speed_multiplier": 1.0,
+				  "track_target": true
+			  },
+        "minecraft:behavior.silverfish_wake_up_friends": {
+          "priority": 1
+        }
+      }
+    },
+
+	"components": {
+    "minecraft:experience_reward": {
+      "on_death": "query.last_hit_by_player ? 7 : 0"
+    },
+	  "minecraft:type_family": {
+		  "family":["silverfish", "monster", "arthropod", "soul_insect", "soul", "mob" ]          
+	  },
+      "minecraft:breathable": {
+        "totalSupply": 15,
+        "suffocateTime": 0
+      },
+	  "minecraft:nameable": {
+	  },
+    "minecraft:despawn": {
+      "despawn_from_distance": {}
+    },
+    "minecraft:loot": {
+      "table": "loot_tables/entities/soul_insect.json"
+    },
+    "minecraft:health": {
+      "value": {
+        "range_min": 38,
+        "range_max": 45
+      }
+    },
+			"minecraft:movement": {
+				"value": 0.40
+			},
+    "minecraft:navigation.walk": {
+      "can_path_over_water": true
+    },
+      "minecraft:movement.basic": {
+        
+      },
+      "minecraft:jump.static": {
+      },
+      "minecraft:can_climb": {
+      },
+      "minecraft:fire_immune": true,
+			"minecraft:attack": {
+				"damage": 9
+			},
+      "minecraft:collision_box": {
+				"width": 0.8,
+				"height": 0.6
+			},
+
+      "minecraft:behavior.float": {
+        "priority": 1
+      },      
+      "minecraft:behavior.silverfish_merge_with_stone": {
+        "priority": 5
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "entity_types": [
+          {
+            "filters": {  
+                "any_of": [
+                  { "test" :  "is_family", "subject" : "other", "value" :  "player"},
+                  { "test" :  "is_family", "subject" : "other", "value" :  "snowgolem"},
+                  { "test" :  "is_family", "subject" : "other", "value" :  "irongolem"}
+                ]  },
+            "max_dist": 8,
+            "attack_interval": 10
+          }
+        ]
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1,
+        "alert_same_type": true
+      },
+	    "minecraft:physics": {
+      }
+		},
+
+    "events": {
+      "minecraft:entity_spawned": {
+				"remove": {
+				},
+				"add": {
+					"component_groups": [
+						"minecraft:silverfish_calm"
+					]
+				}
+			},
+      "minecraft:become_angry": {
+        "remove": {
+          "minecraft:silverfish_calm": { }
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:silverfish_angry"
+          ]
+        }
+      },
+      "minecraft:on_calm": {
+        "remove": {
+          "minecraft:silverfish_angry": { }
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:silverfish_calm"
+          ]
+        }
+      }
+    }
+	}
+}

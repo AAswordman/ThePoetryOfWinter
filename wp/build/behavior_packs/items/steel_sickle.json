@@ -1,0 +1,161 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:steel_sickle"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.sword"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:steel_sickle.name"
+      },
+      "minecraft:icon": {
+        "texture": "steel_sickle"
+      },
+      "minecraft:weapon": {
+        "on_hurt_entity": {
+          "event": "steel_sickle_attack",
+          "target": "self"
+        },
+        "on_hit_block": {
+          "event": "attack",
+          "target": "self"
+        }
+      },
+      "minecraft:stacked_by_data": false,
+      "minecraft:max_stack_size": 1,
+      "minecraft:durability": {
+        "max_durability": 421
+      },
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "dec:steel_ingot"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.3"
+          },
+          {
+            "items": [
+              "dec:steel_nugget"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.03"
+          }
+        ]
+      },
+      "minecraft:damage": 7,
+      "minecraft:enchantable": {
+        "value": 15,
+        "slot": "axe"
+      },
+      "minecraft:mining_speed": 1,
+      "minecraft:can_destroy_in_creative": false,
+      "minecraft:digger": {
+        "use_efficiency": true,
+        "destroy_speeds": [
+          {
+            "block": "minecraft:web",
+            "speed": 15,
+            "on_dig": {
+              "event": "attack"
+            }
+          },
+          {
+            "block": "minecraft:bamboo",
+            "speed": 10,
+            "on_dig": {
+              "event": "attack"
+            }
+          }
+        ]
+      },
+      "minecraft:foil": false,
+      "minecraft:hand_equipped": true,
+      "tag:comp:movement_addition:-0.015": {},
+      "tag:comp:equipment_type:melee_weapon":{}
+    },
+    "events": {
+      "attack": {
+        "damage": {
+          "type": "magic",
+          "amount": 1
+        }
+      },
+      "steel_sickle_attack": {
+        "sequence": [
+          {
+            "randomize": [
+              {
+                "weight": 1,
+                "sequence": [
+                  {
+                    "add_mob_effect": {
+                      "effect": "slowness",
+                      "duration": 6,
+                      "amplifier": 0,
+                      "target": "other"
+                    }
+                  },
+                  {
+                    "run_command": {
+                      "command": [
+                        "playanimation @s animation.humanoid.vertical_direction_brandish",
+                        "particle dec:steel_sickle_particle ^^^1"
+                      ],
+                      "target": "holder"
+                    }
+                  },
+                  {
+                    "damage": {
+                      "type": "magic",
+                      "amount": 1
+                    }
+                  }
+                ]
+              },
+              {
+                "weight": 7,
+                "damage": {
+                  "type": "magic",
+                  "amount": 1
+                }
+              }
+            ]
+          },
+          {
+            "randomize": [
+              {
+                "weight": 1,
+                "sequence": [
+                  {
+                    "add_mob_effect": {
+                      "effect": "weakness",
+                      "duration": 7,
+                      "amplifier": 1,
+                      "target": "other"
+                    }
+                  },
+                  {
+                    "run_command": {
+                      "command": [
+                        "playanimation @s animation.humanoid.vertical_direction_brandish",
+                        "particle dec:steel_sickle_particle ^^^1"
+                      ],
+                      "target": "holder"
+                    }
+                  }
+                ]
+              },
+              {
+                "weight": 6
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

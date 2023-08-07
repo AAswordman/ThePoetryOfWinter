@@ -1,0 +1,22 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:challenge_of_ash"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.navigation"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:challenge_of_ash.name"
+      },
+      "minecraft:icon": {
+        "texture": "challenge_of_ash"
+      },
+      "minecraft:foil": true,
+      "minecraft:stacked_by_data": false
+    }
+  }
+}

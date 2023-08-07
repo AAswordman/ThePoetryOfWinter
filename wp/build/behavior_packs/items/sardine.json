@@ -1,0 +1,27 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "nature",
+      "identifier": "dec:sardine"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.rawFood"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:sardine.name"
+      },
+      "minecraft:icon": {
+        "texture": "sardine"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "fish",
+      "minecraft:use_duration": 1.6,
+      "minecraft:food": {
+        "nutrition": 2,
+        "saturation_modifier": "normal"
+      }
+    }
+  }
+}

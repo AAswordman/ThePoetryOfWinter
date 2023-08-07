@@ -1,0 +1,23 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "wb:power",
+      "register_to_creative_menu": true
+    },
+    "components": {
+      "minecraft:food": {
+        "nutrition": 5,
+        "can_always_eat": true,
+        "cooldown_type": "power",
+        "cooldown_time": 2
+      },
+      "minecraft:hand_equipped": true,
+      "minecraft:use_duration": 99999999,
+      "minecraft:foil": true,
+      "minecraft:max_stack_size": 16,
+      "minecraft:max_damage": 50000,
+      "minecraft:stacked_by_data": true
+    }
+  }
+}

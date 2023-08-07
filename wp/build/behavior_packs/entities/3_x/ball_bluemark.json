@@ -1,0 +1,48 @@
+{
+  "format_version": "1.8.0",
+ "minecraft:entity": {
+  "description": {
+    "identifier": "wb:ball_bluemark",
+    "is_spawnable": false,
+    "is_summonable": true,
+    "is_experimental": false,
+    "runtime_identifier": "minecraft:snowball"
+  },
+  "components": {
+  	  "minecraft:explode": {
+     "fuseLength": 1,
+     "fuseLit": true,
+     "power": 3,
+     "causesFire": true,
+          "breaks_blocks":false,
+     "fireAffectedByGriefing": true,
+     "destroyAffectedByGriefing": true
+    },
+    "minecraft:collision_box": {
+    "width": 0.18,
+    "height": 0.18
+   },
+   "minecraft:projectile": {
+    "onHit": {
+      "impact_damage": {
+        "damage": 45,
+        "knockback": true,
+        "catchFire": false,
+        "semirandomdiffdamage": false
+      },
+      "remove_on_hit": { }
+    },
+    "power": 1.7,
+    "gravity": 0.00,
+    "inertia": 1,
+    "anchor": 2,
+    "offset": [ 0, 0.0, 0.0],
+    "semirandomdiffdamage": false,
+    "uncertaintyBase": 0.0,
+    "reflectOnHurt": true
+   },
+   "minecraft:physics": {
+   }
+  }
+ }
+}

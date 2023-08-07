@@ -1,0 +1,26 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "wb:spell_wind",
+      "materials": { "default": "skeleton" },
+      "textures": {
+        "default": "textures/wb/1_x/spell_wind"
+      },
+      "geometry": {
+        "default": "geometry.spell_wind"
+      },
+      "animations": {
+      	"base":"animation.spell_wind.move"
+      },
+      "animation_controllers": [
+      	{ "base": "controller.animation.base.base" }
+      ],
+      "render_controllers": [ "controller.render.base" ],
+      "spawn_egg": {
+        "texture": "spell_wind",
+        "texture_index": 0
+      }
+    }
+  }
+}

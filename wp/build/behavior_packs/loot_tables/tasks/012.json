@@ -1,0 +1,14 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "dec:lapis_magic_book",
+                    "weight": 1
+                }
+            ]
+        }
+    ]
+}

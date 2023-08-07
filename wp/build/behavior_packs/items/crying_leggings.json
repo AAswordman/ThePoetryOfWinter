@@ -1,0 +1,59 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:crying_leggings"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.leggings"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:crying_leggings.name"
+      },
+      "minecraft:icon": {
+        "texture": "crying_leggings"
+      },
+      "minecraft:render_offsets": "leggings",
+      "minecraft:max_stack_size": 1,
+      "minecraft:enchantable": {
+        "value": 15,
+        "slot": "armor_legs"
+      },
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "minecraft:obsidian"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.3"
+          },
+          {
+            "items": [
+              "minecraft:crying_obsidian"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.5"
+          }
+        ]
+      },
+      "minecraft:durability": {
+        "max_durability": 864,
+        "damage_chance": {
+          "min": 60,
+          "max": 100
+        }
+      },
+      "minecraft:armor": {
+        "protection": 7
+      },
+      "minecraft:wearable": {
+        "slot": "slot.armor.legs"
+      },
+      "tag:comp:armor_protection:7": {},
+      "tag:comp:armor_type:suit_:crying:_": {},
+      "tag:comp:armor_physical_protection:7": {},
+      "tag:comp:armor_magic_protection:12": {}
+    }
+  }
+}

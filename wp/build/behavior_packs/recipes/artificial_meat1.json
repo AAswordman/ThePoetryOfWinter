@@ -1,0 +1,31 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:artificial_meat1"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "A",
+      "B",
+      "C"
+    ],
+    "key": {
+      "A": {
+        "item": "minecraft:beef"
+      },
+      "B": {
+        "item": "dec:artificial_meat_creator_on"
+      },
+      "C": {
+        "item": "dec:wet_paper"
+      }
+    },
+    "result": [
+      { "item": "dec:artificial_meat_creator_off" },
+      { "item": "dec:artificial_meat", "count": 3, "data": 0 }
+    ]
+  }
+}

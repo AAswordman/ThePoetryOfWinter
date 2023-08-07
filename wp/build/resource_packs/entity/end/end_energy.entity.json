@@ -1,0 +1,25 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "wb:end_energy",
+      "materials": { 
+        "default": "spider",
+        "invisible": "spider_invisible"
+      },
+      "textures": { 
+          "default":"textures/wb/end/end_energy"
+      },
+      "geometry": { 
+          "default":"geometry.end_energy"
+      },
+      "animations": {
+        "base":"animation.end_energy.base"
+      },
+      "animation_controllers": [
+        { "base":"controller.animation.base.base" }
+      ],
+      "render_controllers": [ "controller.render.spider"]
+    }
+  }
+}

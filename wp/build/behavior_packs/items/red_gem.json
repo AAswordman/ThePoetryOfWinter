@@ -1,0 +1,58 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "items",
+      "identifier": "dec:red_gem"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.decorations"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:red_gem.name"
+      },
+      "minecraft:icon": {
+        "texture": "red_gem"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "cookie",
+      "minecraft:stacked_by_data": false,
+      "minecraft:foil": true,
+      "minecraft:on_use": {
+        "on_use": {
+          "event": "use",
+          "target": "self"
+        }
+      },
+      "minecraft:cooldown": {
+        "category": "red_gem",
+        "duration": 0.3
+      }
+    },
+    "events": {
+      "use": {
+        "run_command": {
+          "command": [
+            "tag @s[scores={maxmagic=10..19}] add clear_red_gem",
+            "tellraw @s[scores={maxmagic=0..9}] { \"rawtext\" : [ { \"translate\" : \"text.dec:red_gem_not_enough.name\" } ] }",
+            "tellraw @s[scores={maxmagic=10}] { \"rawtext\" : [ { \"translate\" : \"text.dec:uptomm11.name\" } ] }",
+            "tellraw @s[scores={maxmagic=11}] { \"rawtext\" : [ { \"translate\" : \"text.dec:uptomm12.name\" } ] }",
+            "tellraw @s[scores={maxmagic=12}] { \"rawtext\" : [ { \"translate\" : \"text.dec:uptomm13.name\" } ] }",
+            "tellraw @s[scores={maxmagic=13}] { \"rawtext\" : [ { \"translate\" : \"text.dec:uptomm14.name\" } ] }",
+            "tellraw @s[scores={maxmagic=14}] { \"rawtext\" : [ { \"translate\" : \"text.dec:uptomm15.name\" } ] }",
+            "tellraw @s[scores={maxmagic=15}] { \"rawtext\" : [ { \"translate\" : \"text.dec:uptomm16.name\" } ] }",
+            "tellraw @s[scores={maxmagic=16}] { \"rawtext\" : [ { \"translate\" : \"text.dec:uptomm17.name\" } ] }",
+            "tellraw @s[scores={maxmagic=17}] { \"rawtext\" : [ { \"translate\" : \"text.dec:uptomm18.name\" } ] }",
+            "tellraw @s[scores={maxmagic=18}] { \"rawtext\" : [ { \"translate\" : \"text.dec:uptomm19.name\" } ] }",
+            "tellraw @s[scores={maxmagic=19}] { \"rawtext\" : [ { \"translate\" : \"text.dec:uptomm20.name\" } ] }",
+            "tellraw @s[scores={maxmagic=20}] { \"rawtext\" : [ { \"translate\" : \"text.dec:red_gem_max.name\" } ] }",
+            "scoreboard players add @s[scores={maxmagic=10..19}] maxmagic 1",
+            "clear @s[tag=clear_red_gem,scores={maxmagic=..20}] dec:red_gem 0 1",
+            "tag @s[scores={maxmagic=..20}] remove clear_red_gem"
+          ]
+        }
+      }
+    }
+  }
+}

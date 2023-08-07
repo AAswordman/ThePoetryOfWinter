@@ -1,0 +1,182 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:escaped_soul",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "minecraft:next": {
+        "minecraft:transformation": {
+          "into": "dec:escaped_soul_1<minecraft:entity_spawned>"
+        }
+      }
+    },
+    "components": {
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "on_damage": {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "operator": "!=",
+                "value": "soul"
+              }
+            },
+            "deals_damage": false
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "fatal"
+                  }
+                ]
+              },
+              "event": "minecraft:next"
+            },
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:type_family": {
+        "family": [
+          "escaped_soul",
+          "soul",
+          "boss",
+          "monster",
+          "mob"
+        ]
+      },
+      "minecraft:boss": {
+        "should_darken_sky": false,
+        "name": "boss.dec:escaped_soul.name",
+        "hud_range": 64
+      },
+      "minecraft:timer": {
+        "looping": true,
+        "time": 5,
+        "time_down_event": {
+          "event": "minecraft:summon"
+        }
+      },
+      "minecraft:health": {
+        "value": 100000,
+        "max": 100000
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": false
+      },
+      "minecraft:collision_box": {
+        "width": 1.8,
+        "height": 0.7
+      }
+    },
+    "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
+      "minecraft:entity_spawned": {
+      },
+      "minecraft:next": {
+        "add": {
+          "component_groups": [
+            "minecraft:next"
+          ]
+        }
+      },
+      "minecraft:summon": {
+        "randomize": [
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "execute if entity @e[family=!soul,r=64] run summon dec:soul_soldier ~24~3~ 0 0 minecraft:summon_by_boss"
+              ],
+              "target": "self"
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "execute if entity @e[family=!soul,r=64] run summon dec:soul_soldier ~-24~3~ 0 0 minecraft:summon_by_boss"
+              ],
+              "target": "self"
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "execute if entity @e[family=!soul,r=64] run summon dec:soul_soldier ~~3~24 0 0 minecraft:summon_by_boss"
+              ],
+              "target": "self"
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "execute if entity @e[family=!soul,r=64] run summon dec:soul_soldier ~~3~-24 0 0 minecraft:summon_by_boss"
+              ],
+              "target": "self"
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "execute if entity @e[family=!soul,r=64] run summon dec:soul_soldier ~17~3~17 0 0 minecraft:summon_by_boss"
+              ],
+              "target": "self"
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "execute if entity @e[family=!soul,r=64] run summon dec:soul_soldier ~-17~3~-17 0 0 minecraft:summon_by_boss"
+              ],
+              "target": "self"
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "execute if entity @e[family=!soul,r=64] run summon dec:soul_soldier ~17~3~-17 0 0 minecraft:summon_by_boss"
+              ],
+              "target": "self"
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "execute if entity @e[family=!soul,r=64] run summon dec:soul_soldier ~-17~3~17 0 0 minecraft:summon_by_boss"
+              ],
+              "target": "self"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "nature",
+      "identifier": "dec:experience_flower_seeds"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.seed"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:experience_flower_seeds.name"
+      },
+      "minecraft:icon": {
+        "texture": "experience_flower_seeds"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "cookie",
+      "minecraft:block_placer": {
+        "block": "dec:experience_flower_crop"
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "nature",
+      "identifier": "dec:complete_bat_wing"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.decorations"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:complete_bat_wing.name"
+      },
+      "minecraft:icon": {
+        "texture": "complete_bat_wing"
+      }
+    }
+  }
+}

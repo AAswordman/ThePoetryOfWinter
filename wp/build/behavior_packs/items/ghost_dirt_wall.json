@@ -1,0 +1,64 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "items",
+      "identifier": "dec:ghost_dirt_wall"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.decorations"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:ghost_dirt_wall.name"
+      },
+      "minecraft:icon": {
+        "texture": "ghost_dirt_wall"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "cookie",
+      "minecraft:max_stack_size": 64,
+      "minecraft:foil": false,
+      "minecraft:on_use": {
+        "on_use": {
+          "event": "ghost_dirt_wall_use",
+          "target": "self"
+        }
+      },
+      "minecraft:cooldown": {
+        "category": "place_block",
+        "duration": 60
+      }
+    },
+    "events": {
+      "ghost_dirt_wall_use": {
+        "run_command": {
+          "command": [
+            "playsound conduit.activate @a ~~~",
+            "fill ~-1~2~2 ~1~-2~2 dec:dirt_ghost_block [] replace air []",
+            "fill ~2~-2~1 ~2~2~-1 dec:dirt_ghost_block [] replace air []",
+            "fill ~1~-2~-2 ~-1~2~-2 dec:dirt_ghost_block [] replace air []",
+            "fill ~-2~2~-1 ~-2~-2~1 dec:dirt_ghost_block [] replace air []",
+            "fill ~-1~2~2 ~1~-2~2 dec:dirt_ghost_block [] replace tallgrass []",
+            "fill ~2~-2~1 ~2~2~-1 dec:dirt_ghost_block [] replace tallgrass []",
+            "fill ~1~-2~-2 ~-1~2~-2 dec:dirt_ghost_block [] replace tallgrass []",
+            "fill ~-2~2~-1 ~-2~-2~1 dec:dirt_ghost_block [] replace tallgrass []",
+            "fill ~-1~2~2 ~1~-2~2 dec:dirt_ghost_block [] replace red_flower []",
+            "fill ~2~-2~1 ~2~2~-1 dec:dirt_ghost_block [] replace red_flower []",
+            "fill ~1~-2~-2 ~-1~2~-2 dec:dirt_ghost_block [] replace red_flower []",
+            "fill ~-2~2~-1 ~-2~-2~1 dec:dirt_ghost_block [] replace red_flower []",
+            "fill ~-1~2~2 ~1~-2~2 dec:dirt_ghost_block [] replace yellow_flower []",
+            "fill ~2~-2~1 ~2~2~-1 dec:dirt_ghost_block [] replace yellow_flower []",
+            "fill ~1~-2~-2 ~-1~2~-2 dec:dirt_ghost_block [] replace yellow_flower []",
+            "fill ~-2~2~-1 ~-2~-2~1 dec:dirt_ghost_block [] replace yellow_flower []",
+            "fill ~-1~2~2 ~1~-2~2 dec:dirt_ghost_block [] replace vine []",
+            "fill ~2~-2~1 ~2~2~-1 dec:dirt_ghost_block [] replace vine []",
+            "fill ~1~-2~-2 ~-1~2~-2 dec:dirt_ghost_block [] replace vine []",
+            "fill ~-2~2~-1 ~-2~-2~1 dec:dirt_ghost_block [] replace vine []",
+            "clear @s dec:ghost_dirt_wall 0 1"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_furnace": {
+    "description": {
+      "identifier": "wb:block_senior_boundary_ore_out"
+    },
+    "tags": ["furnace", "blast_furnace"],
+    "input": "wb:block_senior_boundary_ore",
+    "output": "wb:mineral_senior_boundary"
+  }
+
+}

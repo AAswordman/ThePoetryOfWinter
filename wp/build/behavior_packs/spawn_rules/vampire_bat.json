@@ -1,0 +1,37 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:spawn_rules": {
+    "description": {
+      "identifier": "dec:vampire_bat",
+      "population_control": "ambient"
+    },
+    "conditions": [
+      {
+        "minecraft:spawns_underground": {},
+        "minecraft:brightness_filter": {
+          "min": 0,
+          "max": 7,
+          "adjust_for_weather": true
+        },
+        "minecraft:height_filter": {
+          "min": -64,
+          "max": 32
+        },
+        "minecraft:weight": {
+          "default": 1
+        },
+        "minecraft:herd": {
+          "min_size": 1,
+          "max_size": 1
+        },
+        "minecraft:density_limit": {
+          "surface": 1,
+          "underground": 5
+        },
+        "minecraft:biome_filter": {
+          "test": "has_biome_tag", "operator":"==", "value": "animal"
+        }
+      }
+    ]
+  }
+}

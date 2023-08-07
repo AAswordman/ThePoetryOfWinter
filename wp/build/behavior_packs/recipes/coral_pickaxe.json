@@ -1,0 +1,27 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:coral_pickaxe"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XXX",
+      " # ",
+      " # "
+    ],
+    "key": {
+      "#": {
+        "item": "dec:sharp_coral"
+      },
+      "X": {
+        "item": "dec:coral_ingot"
+      }
+    },
+    "result": {
+      "item": "dec:coral_pickaxe"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:shield",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "enchant_random_gear",
+              "chance": 0.9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "conditions": [
+        {
+          "condition": "random_difficulty_chance",
+          "default_chance": 1,
+          "peaceful": 9.0,
+          "easy": 8.0
+        },
+        {
+          "condition": "random_regional_difficulty_chance",
+          "max_chance": 0.9
+        }
+      ],
+      "tiers": {
+        "initial_range": 1,
+        "bonus_rolls": 3,
+        "bonus_chance": 0.8
+      },
+
+      "entries": [
+        {
+          "type": "loot_table",
+          "name": "loot_tables/entities/armor_set_chain.json"
+        },
+        {
+          "type": "loot_table",
+          "name": "loot_tables/entities/armor_set_iron.json"
+        },
+        {
+          "type": "loot_table",
+          "name": "loot_tables/entities/armor_set_diamond.json"
+        }
+      ]
+    }
+  ]
+}

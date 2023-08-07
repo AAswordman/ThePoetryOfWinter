@@ -1,0 +1,105 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:frozen_ray_staff"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.sword"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:frozen_ray_staff.name"
+      },
+      "minecraft:icon": {
+        "texture": "frozen_ray_staff"
+      },
+      "minecraft:render_offsets": "bow",
+      "minecraft:use_animation": "bow",
+      "minecraft:stacked_by_data": false,
+      "minecraft:max_stack_size": 1,
+      "minecraft:foil": false,
+      "minecraft:hand_equipped": true,
+      "minecraft:on_use": {
+        "on_use": {
+          "event": "shoot",
+          "target": "self"
+        }
+      },
+      "minecraft:enchantable": {
+        "value": 15,
+        "slot": "flintsteel"
+      },
+      "minecraft:cooldown": {
+        "category": "staff",
+        "duration": 0.6
+      },
+      "minecraft:durability": {
+        "max_durability": 476
+      },
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "dec:ice_brick"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.05"
+          },
+          {
+            "items": [
+              "dec:ice_nugget"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.1"
+          },
+          {
+            "items": [
+              "dec:ice_ingot"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.6"
+          }
+        ]
+      },
+      "tag:comp:equipment_type:magic_weapon":{}
+    },
+    "events": {
+      "attack": {
+        "damage": {
+          "type": "magic",
+          "amount": 1
+        }
+      },
+      "shoot": {
+        "sequence": [
+          {
+            "condition": "query.scoreboard('wbfl') > 4",
+            "sequence": [
+              {
+                "run_command": {
+                  "command": [
+                    "playsound dig.snow @a ~~~",
+                    "scoreboard players remove @s wbfl 4",
+                    "playanimation @s animation.humanoid.staff_use"
+                  ],
+                  "target": "holder"
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "dec:frozen_ray",
+                  "launch_power": 1
+                }
+              },
+              {
+                "damage": {
+                  "type": "magic",
+                  "amount": 1
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

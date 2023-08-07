@@ -1,0 +1,20 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "items",
+      "identifier": "dec:everlasting_winter_ingot"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.decorations"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:everlasting_winter_ingot.name"
+      },
+      "minecraft:icon": {
+        "texture": "everlasting_winter_ingot"
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "nature",
+      "identifier": "dec:emerald_fish"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.rawFood"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:emerald_fish.name"
+      },
+      "minecraft:icon": {
+        "texture": "emerald_fish"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "cookie",
+      "minecraft:use_duration": 4.0,
+      "minecraft:food": {
+        "nutrition": 6,
+        "saturation_modifier": "normal"
+      }
+    }
+  }
+}

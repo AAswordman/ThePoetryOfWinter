@@ -1,0 +1,51 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "identifier": "dec:gray_shoes",
+      "category": "equipment"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.boots"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:gray_shoes.name"
+      },
+      "minecraft:icon": {
+        "texture": "gray_shoes"
+      },
+      "minecraft:render_offsets": "boots",
+      "minecraft:max_stack_size": 1,
+      "minecraft:enchantable": {
+        "value": 15,
+        "slot": "armor_feet"
+      },
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "minecraft:wool"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.3"
+          }
+        ]
+      },
+      "minecraft:durability": {
+        "max_durability": 178,
+        "damage_chance": {
+          "min": 40,
+          "max": 100
+        }
+      },
+      "minecraft:armor": {
+        "protection": 1
+      },
+      "minecraft:wearable": {
+        "slot": "slot.armor.feet"
+      },
+      "tag:comp:armor_protection:1": {},
+      "tag:comp:armor_type:decorate_": {}
+    }
+  }
+}

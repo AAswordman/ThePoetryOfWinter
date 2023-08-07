@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:golden_staff"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "  X",
+      " # ",
+      "#  "
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:gold_ingot"
+      },
+      "X": {
+        "item": "dec:sun_stone"
+      }
+    },
+    "result": {
+      "item": "dec:golden_staff"
+    }
+  }
+}

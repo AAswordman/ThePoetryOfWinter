@@ -1,0 +1,40 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+     "animation.originking.endblock_ice": {
+       "animation_length": 2.6,
+       "loop":false,
+       "timeline": {
+      	"0.1":["/spreadplayers ~ ~ 2 64 @s"],
+      	"0.12":["/tp @s ~ ~+128 ~"],
+      	"5.0":["/fill ~ ~-1 ~ ~ ~+4 ~ ice","@s start"]
+      }
+     },
+     "animation.originking.end_blackhole": {
+       "animation_length": 3.2,
+       "loop":false,
+       "timeline": {
+         "1.0":["/fill ~-10 ~-10 ~-10 ~+10 ~+10 ~+10 air"],
+      	"3.0":["@s boom"]
+      }
+     },
+     "animation.originking.endblock_magma": {
+       "animation_length": 2.6,
+       "loop":false,
+       "timeline": {
+      	"0.1":["/spreadplayers ~ ~ 2 64 @s"],
+      	"0.12":["/tp @s ~ ~+128 ~"],
+      	"2.5":["/setblock ~ ~-1 ~ magma","@s start"]
+      }
+     },
+     "animation.originking.endblock_dirt": {
+       "animation_length": 2.6,
+       "loop":false,
+       "timeline": {
+      	"0.1":["/spreadplayers ~ ~ 2 64 @s"],
+      	"0.12":["/tp @s ~ ~+128 ~"],
+      	"5.0":["/fill ~+1 ~+1 ~+1 ~-1 ~-1 ~-1 dirt","@s start"]
+      }
+     }
+  }
+}

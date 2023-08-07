@@ -1,0 +1,150 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:wind_of_shadow"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.sword"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:wind_of_shadow.name"
+      },
+      "minecraft:icon": {
+        "texture": "wind_of_shadow"
+      },
+      "minecraft:weapon": {
+        "on_hurt_entity": {
+          "event": "attack",
+          "target": "self"
+        },
+        "on_hit_block": {
+          "event": "attack",
+          "target": "self"
+        }
+      },
+      "minecraft:cooldown": {
+        "category": "sword",
+        "duration": 4
+      },
+      "minecraft:stacked_by_data": false,
+      "minecraft:max_stack_size": 1,
+      "minecraft:durability": {
+        "max_durability": 524
+      },
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "dec:ender_core"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.4"
+          },
+          {
+            "items": [
+              "dec:ender_breath"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.3"
+          },
+          {
+            "items": [
+              "dec:ender_powder"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.1"
+          },
+          {
+            "items": [
+              "dec:ender_stone"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.2"
+          }
+        ]
+      },
+      "minecraft:mining_speed": 1.5,
+      "minecraft:damage": 8,
+      "minecraft:enchantable": {
+        "value": 15,
+        "slot": "sword"
+      },
+      "minecraft:use_duration": 3,
+      "minecraft:chargeable": {
+        "movement_modifier": 1.4,
+        "on_complete": {
+          "event": "skill_end",
+          "target": "self"
+        }
+      },
+      "minecraft:on_use": {
+        "on_use": {
+          "event": "skill_start",
+          "target": "self"
+        }
+      },
+      "minecraft:can_destroy_in_creative": false,
+      "minecraft:digger": {
+        "use_efficiency": true,
+        "destroy_speeds": [
+          {
+            "block": "minecraft:web",
+            "speed": 15
+          },
+          {
+            "block": "minecraft:bamboo",
+            "speed": 10
+          }
+        ]
+      },
+      "minecraft:foil": false,
+      "minecraft:hand_equipped": true,
+      "tag:comp:equipment_type:melee_weapon":{}
+    },
+    "events": {
+      "attack": {
+        "damage": {
+          "type": "magic",
+          "amount": 1
+        }
+      },
+      "skill_start": {
+        "sequence": [
+          {
+            "condition": "query.scoreboard('wbfl') > 10",
+            "sequence": [
+              {
+                "run_command": {
+                  "command": [
+                    "effect @s invisibility 3 0 true",
+                    "effect @s speed 3 2 true",
+                    "particle dec:ender_spurt_particle ~~~",
+                    "scoreboard players remove @s wbfl 10"
+                  ],
+                  "target": "holder"
+                }
+              },
+              {
+                "damage": {
+                  "type": "magic",
+                  "amount": 1
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "skill_end": {
+        "damage": {
+          "type": "magic",
+          "amount": 1
+        },
+        "run_command": {
+          "command": [
+            "function item/wind_of_shadow"
+          ],
+          "target": "holder"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:nightmare_spore",
+      "runtime_identifier": "minecraft:egg",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "ticking"
+        ]
+      },
+      "animations": {
+        "ticking": "controller.animation.particle_nightmare_spore"
+      }
+    },
+    "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+      "minecraft:explode": {
+        "fuseLength": 8,
+        "fuseLit": true,
+        "power": 0,
+        "causesFire": false
+      },
+      "minecraft:collision_box": {
+        "width": 0.4,
+        "height": 0.4
+      },
+      "minecraft:projectile": {
+        "onHit": {
+          "definition_event": {
+            "affect_projectile": true,
+            "event_trigger": {
+              "event": "minecraft:explode",
+              "target": "self"
+            }
+          },
+          "impact_damage": {
+            "damage": 13,
+            "knockback": true,
+            "catchFire": true,
+            "semirandomdiffdamage": false
+          }
+        },
+        "hit_sound": "bullet.hit",
+        "power": 4,
+        "gravity": 0.00,
+        "inertia": 0.15,
+        "liquid_inertia": 0.1,
+        "anchor": 1,
+        "offset": [
+          0,
+          0,
+          1
+        ],
+        "semirandomdiffdamage": true,
+        "uncertaintyBase": 70.0,
+        "uncertaintyMultiplier": 1,
+        "reflectOnHurt": true,
+        "shoot_target": false
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    },
+    "events": {
+      "minecraft:explode": {
+        "run_command": {
+          "command": [
+            "fill ~-0.3~-0.3~-0.3~0.3~0.3~0.3 dec:nightmare_block [] replace air []",
+            "particle dec:nightmare_block_spawn_particle ~~~",
+            "event entity @s minecraft:despawn"
+          ]
+        }
+      }
+    }
+  }
+}

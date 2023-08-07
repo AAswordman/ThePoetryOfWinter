@@ -1,0 +1,15 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "wb:currency_3",
+      "category": "Nature"
+    },
+    "components": {
+      "minecraft:icon": "currency_3",
+      "minecraft:render_offsets": "appl",
+      "minecraft:use_animation": "eat",
+      "minecraft:hover_text_color": "light_purple"
+    }
+  }
+}

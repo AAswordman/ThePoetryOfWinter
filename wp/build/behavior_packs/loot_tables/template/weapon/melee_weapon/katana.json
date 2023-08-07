@@ -1,0 +1,25 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "dec:absolute_zero"
+        },
+        {
+          "type": "item",
+          "name": "dec:blood_mare"
+        },
+        {
+          "type": "item",
+          "name": "dec:illager_sword"
+        },
+        {
+          "type": "item",
+          "name": "dec:the_blade"
+        }
+      ]
+    }
+  ]
+}

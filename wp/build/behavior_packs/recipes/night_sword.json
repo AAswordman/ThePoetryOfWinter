@@ -1,0 +1,37 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:night_sword"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XXX",
+      "BAB",
+      "CDE"
+    ],
+    "key": {
+      "X": {
+        "item": "dec:dark_debris"
+      },
+      "A": {
+        "item": "dec:star_sword"
+      },
+      "B": {
+        "item": "dec:complete_bat_wing"
+      },
+      "C": {
+        "item": "dec:leaves_dagger"
+      },
+      "D": {
+        "item": "dec:bat_staff"
+      },
+      "E": {
+        "item": "dec:illager_sword"
+      }
+    },
+    "result": {
+      "item": "dec:night_sword"
+    }
+  }
+}

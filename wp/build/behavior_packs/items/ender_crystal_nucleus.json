@@ -1,0 +1,55 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "items",
+      "identifier": "dec:ender_crystal_nucleus"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.decorations"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:ender_crystal_nucleus.name"
+      },
+      "minecraft:icon": {
+        "texture": "ender_crystal_nucleus"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "cookie",
+      "minecraft:stacked_by_data": false,
+      "minecraft:max_stack_size": 64,
+      "minecraft:foil": true,
+      "minecraft:on_use": {
+        "on_use": {
+          "event": "use",
+          "target": "self"
+        }
+      },
+      "minecraft:cooldown": {
+        "category": "magic_nucleus",
+        "duration": 3
+      }
+    },
+    "events": {
+      "use": {
+        "sequence": [
+          {
+            "condition": "query.scoreboard('wbfl') <= 60",
+            "run_command": {
+              "command": [
+                "particle dec:white_star_particle ~~1~",
+                "particle dec:white_star_particle ~~1~",
+                "particle dec:white_star_particle ~~1~",
+                "particle dec:white_star_particle ~~1~",
+                "particle dec:white_star_particle ~~1~",
+                "scoreboard players add @s wbfl 40",
+                "clear @s dec:ender_crystal_nucleus 0 1"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

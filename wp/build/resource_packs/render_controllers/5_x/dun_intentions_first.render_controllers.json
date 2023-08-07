@@ -1,0 +1,21 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.dun_intentions_first": {
+      "geometry": "Geometry.charged",
+      "part_visibility": [
+        { "*": "query.is_powered" }
+      ],
+      "materials": [ { "*": "Material.charged" } ],
+      "textures": [ "Texture.charged" ],
+      "overlay_color": {
+          "r": 0.0,
+          "g": 0.0,
+          "b": 0.0,
+          "a": 0.0
+      },
+      "light_color_multiplier": 0.5,
+      "ignore_lighting" : true
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:entity_soul_1",
+      "materials": { "default": "slime_outer" },
+      "textures": {
+        "default": "textures/entity/entity_soul"
+      },
+      "geometry": {
+        "default": "geometry.escaped_soul"
+      },
+      "scripts": {
+        "scale": "1",
+        "animate": [
+          "look_at_target",
+          "float"
+        ]
+      },
+      "animations": {
+        "look_at_target": "animation.common.look_at_target",
+        "float": "animation.soul.float"
+      },
+      "render_controllers": [ "controller.render.husk" ]
+    }
+  }
+}

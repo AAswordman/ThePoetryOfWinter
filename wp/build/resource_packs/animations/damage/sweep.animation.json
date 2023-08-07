@@ -1,0 +1,47 @@
+{
+	"format_version" : "1.8.0",
+	"animations" : {
+	    "animation.sweep.damage" : {
+			"loop" : true,
+			"bones" : {
+				"rightArm" : {
+					"rotation" : [ -105.0, -5.0, 120.0 ]
+				}
+			}
+		},
+		"animation.sweep.damage_x" : {
+			"loop" : true,
+			"bones" : {
+				"rightArm" : {
+					"rotation" : [ -130.0, 5.0, -35.0 ]
+				}
+			}
+		},
+		"animation.sweep.damagea" : {
+			"loop" : false,
+			"animation_length":0.36,
+			"override_previous_animation":true,
+			"bones" : {
+				"rightArm" : {
+					"rotation":{
+					    "0.01":[-105,-5,120],
+					    "0.35":[40,-5,120]
+					}
+				}
+			}
+		},
+		"animation.sweep.damage_xa" : {
+			"loop" : false,
+			"animation_length":0.51,
+			"override_previous_animation":true,
+			"bones" : {
+				"rightArm" : {
+					"rotation":{
+					    "0.01":[-130,5,-35],
+					    "0.5":[-45,5,-35]
+					}
+				}
+			}
+		}
+	}
+}

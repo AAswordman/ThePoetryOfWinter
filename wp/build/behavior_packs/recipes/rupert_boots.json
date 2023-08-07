@@ -1,0 +1,29 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:rupert_boots"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " A ",
+      "#X#"
+    ],
+    "key": {
+      "A": {
+        "item": "dec:soul_blaze_rod"
+      },
+      "X": {
+        "item": "minecraft:iron_boots"
+      },
+      "#": {
+        "item": "minecraft:ghast_tear"
+      }
+    },
+    "result": {
+      "item": "dec:rupert_boots"
+    }
+  }
+}

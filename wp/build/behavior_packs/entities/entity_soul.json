@@ -1,0 +1,300 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:entity_soul",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "minecraft:summon_by_boss": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "fall",
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "soul"
+                }
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_damage",
+                      "value": "fatal"
+                    }
+                  ]
+                },
+                "event": "minecraft:attack_boss"
+              },
+              "deals_damage": true
+            }
+          ]
+        }
+      }
+    },
+    "components": {
+      "minecraft:despawn": {
+        "despawn_from_distance": {
+          "min_distance": 64,
+          "max_distance": 64
+        }
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "fall",
+            "deals_damage": false
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "soul"
+              }
+            },
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:type_family": {
+        "family": [
+          "undead",
+          "monster",
+          "soul",
+          "entity_soul",
+          "boss",
+          "mob"
+        ]
+      },
+      "minecraft:boss": {
+        "should_darken_sky": false,
+        "name": "boss.dec:entity_soul.name",
+        "hud_range": 64
+      },
+      "minecraft:breathable": {
+        "totalSupply": 15,
+        "suffocateTime": 0
+      },
+      "minecraft:nameable": {},
+      "minecraft:health": {
+        "value": 170,
+        "max": 170
+      },
+      "minecraft:collision_box": {
+        "width": 0.6,
+        "height": 1.8
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:movement": {
+        "value": 0.5
+      },
+      "minecraft:navigation.walk": {
+        "can_path_over_water": true,
+        "can_pass_doors": true,
+        "can_open_doors": true,
+        "avoid_water": true
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:fire_immune": true,
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
+      "minecraft:behavior.float": {
+        "priority": 20
+      },
+      "minecraft:behavior.summon_entity": {
+        "priority": 7,
+        "summon_choices": [
+          {
+            "weight": 5,
+            "cooldown_time": 2.0,
+            "cast_duration": 1.0,
+            "particle_color": "#FFB3B3CC",
+            "sequence": [
+              {
+                "shape": "circle",
+                "target": "self",
+                "base_delay": 2.0,
+                "num_entities_spawned": 2,
+                "entity_type": "dec:real_soul",
+                "summon_cap": 8,
+                "summon_cap_radius": 16.0,
+                "size": 8.0,
+                "entity_lifespan": 40,
+                "sound_event": "prepare.summon"
+              }
+            ]
+          },
+          {
+            "weight": 3,
+            "cooldown_time": 1.0,
+            "cast_duration": 1.0,
+            "particle_color": "#FFB3B3CC",
+            "sequence": [
+              {
+                "shape": "circle",
+                "target": "self",
+                "base_delay": 1.0,
+                "num_entities_spawned": 4,
+                "entity_type": "dec:soul_soldier",
+                "summon_cap": 8,
+                "summon_cap_radius": 16.0,
+                "size": 3.0,
+                "entity_lifespan": 20,
+                "sound_event": "prepare.summon"
+              }
+            ]
+          },
+          {
+            "weight": 3,
+            "cooldown_time": 0.0,
+            "cast_duration": 0.5,
+            "particle_color": "#FFB3B3CC",
+            "sequence": [
+              {
+                "shape": "circle",
+                "target": "self",
+                "base_delay": 2.0,
+                "num_entities_spawned": 3,
+                "entity_type": "dec:soul",
+                "summon_cap": 8,
+                "summon_cap_radius": 16.0,
+                "size": 2.0,
+                "entity_lifespan": 20,
+                "sound_event": "prepare.summon"
+              }
+            ]
+          }
+        ]
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 8,
+        "speed_multiplier": 0.6
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "entity_types": [
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "snowgolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "wandering_trader"
+                }
+              ]
+            },
+            "max_dist": 20
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "villager"
+                },
+                {
+                  "test": "has_component",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "minecraft:is_baby"
+                }
+              ]
+            },
+            "max_dist": 20
+          }
+        ],
+        "must_see": true
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 9,
+        "look_distance": 3.0,
+        "probability": 1.0
+      },
+      "minecraft:behavior.look_at_entity": {
+        "priority": 10,
+        "look_distance": 8.0,
+        "filters": {
+          "test": "is_family",
+          "subject": "other",
+          "value": "mob"
+        }
+      },
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1,
+        "entity_types": {
+          "filters": {
+            "test": "is_family",
+            "subject": "other",
+            "operator": "!=",
+            "value": "soul"
+          },
+          "max_dist": 64
+        }
+      },
+      "minecraft:physics": {},
+      "minecraft:follow_range": {
+        "value": 256
+      }
+    },
+    "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
+      "minecraft:entity_spawned": {
+      },
+      "minecraft:attack_boss": {
+        "run_command": {
+          "command": [
+            "event entity @e[c=1,r=64,type=dec:escaped_soul_1] minecraft:can_be_attacked"
+          ],
+          "target": "self"
+        }
+      },
+      "minecraft:summon_by_boss": {
+        "trigger": "minecraft:entity_spawned",
+        "add": {
+          "component_groups": [
+            "minecraft:summon_by_boss"
+          ]
+        }
+      }
+    }
+  }
+}

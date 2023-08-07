@@ -1,0 +1,39 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "dec:christmas_cap",
+          "weight": 3
+        },
+        {
+          "type": "item",
+          "name": "dec:gingerbread_totem",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "dec:gingerbread_sword",
+          "weight": 2
+        },
+        {
+          "type": "item",
+          "name": "dec:candy_cane",
+          "weight": 3
+        },
+        {
+          "type": "item",
+          "name": "dec:gingerbread_man",
+          "weight": 5
+        },
+        {
+          "type": "item",
+          "name": "dec:christmas_sock",
+          "weight": 1
+        }
+      ]
+    }
+  ]
+}

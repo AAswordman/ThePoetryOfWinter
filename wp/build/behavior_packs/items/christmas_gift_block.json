@@ -1,0 +1,24 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "items",
+      "identifier": "dec:christmas_gift"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.decorations"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:christmas_gift.name"
+      },
+      "minecraft:icon": {
+        "texture": "christmas_gift"
+      },
+      "minecraft:block_placer": {
+        "block": "dec:christmas_gift_block"
+      },
+      "minecraft:render_offsets": "cookie"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "items",
+      "identifier": "dec:old_book"
+    },
+    "components": {
+      "minecraft:fuel": {
+        "duration": 10.0
+      },
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.decorations"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:old_book.name"
+      },
+      "minecraft:icon": {
+        "texture": "old_book"
+      },
+      "minecraft:stacked_by_data": false,
+      "minecraft:max_stack_size": 1,
+      "minecraft:foil": false
+    }
+  }
+}

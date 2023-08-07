@@ -1,0 +1,27 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "nature",
+      "identifier": "dec:melon_piece"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.crop"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:melon_piece.name"
+      },
+      "minecraft:icon": {
+        "texture": "melon_piece"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "cookie",
+      "minecraft:use_duration": 0.5,
+      "minecraft:food": {
+        "nutrition": 1,
+        "saturation_modifier": "low"
+      }
+    }
+  }
+}

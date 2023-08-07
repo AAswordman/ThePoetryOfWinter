@@ -1,0 +1,1204 @@
+{
+	"format_version": "1.11.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "minecraft:player",
+			"is_spawnable": false,
+			"is_summonable": false,
+			"is_experimental": false,
+			"scripts": {
+				"animate": [
+                    "wbtext",
+                    "wbpress",
+                    "delivery",
+                    "order",
+                    "eff",
+                    "sweep",
+                    "cooling",
+                    "coolinguse",
+					"enter_game"
+				]
+			},
+			"animations": {
+                "wbtext": "controller.animation.player.wb.starttext",
+                "wbpress": "controller.animation.player.wb.press",
+                "delivery": "animation.player.wb.delivery",
+                "eff": "controller.animation.player.wb.eff",
+                "order": "animation.player.wb.order",
+                "sweep": "controller.animation.player.wb.sweep",
+                "cooling": "controller.animation.player.wb.global.cooling",
+                "coolinguse": "animation.player.wb.global.cooling",
+				"enter_game": "animation.enter_game"
+			}
+		},
+		"component_groups": {
+            "movement_0": {
+                "minecraft:movement": {
+                    "value": 0
+                }
+            },
+            "movement_0.005": {
+                "minecraft:movement": {
+                    "value": 0.005
+                }
+            },
+            "movement_0.01": {
+                "minecraft:movement": {
+                    "value": 0.01
+                }
+            },
+            "movement_0.015": {
+                "minecraft:movement": {
+                    "value": 0.015
+                }
+            },
+            "movement_0.02": {
+                "minecraft:movement": {
+                    "value": 0.02
+                }
+            },
+            "movement_0.025": {
+                "minecraft:movement": {
+                    "value": 0.025
+                }
+            },
+            "movement_0.03": {
+                "minecraft:movement": {
+                    "value": 0.03
+                }
+            },
+            "movement_0.035": {
+                "minecraft:movement": {
+                    "value": 0.035
+                }
+            },
+            "movement_0.04": {
+                "minecraft:movement": {
+                    "value": 0.04
+                }
+            },
+            "movement_0.045": {
+                "minecraft:movement": {
+                    "value": 0.045
+                }
+            },
+            "movement_0.05": {
+                "minecraft:movement": {
+                    "value": 0.05
+                }
+            },
+            "movement_0.055": {
+                "minecraft:movement": {
+                    "value": 0.055
+                }
+            },
+            "movement_0.06": {
+                "minecraft:movement": {
+                    "value": 0.06
+                }
+            },
+            "movement_0.065": {
+                "minecraft:movement": {
+                    "value": 0.065
+                }
+            },
+            "movement_0.07": {
+                "minecraft:movement": {
+                    "value": 0.07
+                }
+            },
+            "movement_0.075": {
+                "minecraft:movement": {
+                    "value": 0.075
+                }
+            },
+            "movement_0.08": {
+                "minecraft:movement": {
+                    "value": 0.08
+                }
+            },
+            "movement_0.085": {
+                "minecraft:movement": {
+                    "value": 0.085
+                }
+            },
+            "movement_0.09": {
+                "minecraft:movement": {
+                    "value": 0.09
+                }
+            },
+            "movement_0.095": {
+                "minecraft:movement": {
+                    "value": 0.095
+                }
+            },
+            "movement_0.1": {
+                "minecraft:movement": {
+                    "value": 0.1
+                }
+            },
+            "movement_0.105": {
+                "minecraft:movement": {
+                    "value": 0.105
+                }
+            },
+            "movement_0.11": {
+                "minecraft:movement": {
+                    "value": 0.11
+                }
+            },
+            "movement_0.115": {
+                "minecraft:movement": {
+                    "value": 0.115
+                }
+            },
+            "movement_0.12": {
+                "minecraft:movement": {
+                    "value": 0.12
+                }
+            },
+            "movement_0.125": {
+                "minecraft:movement": {
+                    "value": 0.125
+                }
+            },
+            "movement_0.13": {
+                "minecraft:movement": {
+                    "value": 0.13
+                }
+            },
+            "movement_0.135": {
+                "minecraft:movement": {
+                    "value": 0.135
+                }
+            },
+            "movement_0.14": {
+                "minecraft:movement": {
+                    "value": 0.14
+                }
+            },
+            "movement_0.145": {
+                "minecraft:movement": {
+                    "value": 0.145
+                }
+            },
+            "movement_0.15": {
+                "minecraft:movement": {
+                    "value": 0.15
+                }
+            },
+            "movement_0.155": {
+                "minecraft:movement": {
+                    "value": 0.155
+                }
+            },
+            "movement_0.16": {
+                "minecraft:movement": {
+                    "value": 0.16
+                }
+            },
+            "movement_0.165": {
+                "minecraft:movement": {
+                    "value": 0.165
+                }
+            },
+            "movement_0.17": {
+                "minecraft:movement": {
+                    "value": 0.17
+                }
+            },
+            "movement_0.175": {
+                "minecraft:movement": {
+                    "value": 0.175
+                }
+            },
+            "movement_0.18": {
+                "minecraft:movement": {
+                    "value": 0.18
+                }
+            },
+            "movement_0.185": {
+                "minecraft:movement": {
+                    "value": 0.185
+                }
+            },
+            "movement_0.19": {
+                "minecraft:movement": {
+                    "value": 0.19
+                }
+            },
+            "movement_0.195": {
+                "minecraft:movement": {
+                    "value": 0.195
+                }
+            },
+            "movement_0.2": {
+                "minecraft:movement": {
+                    "value": 0.2
+                }
+            },
+
+            "underwater_movement_0": {
+                "minecraft:underwater_movement": {
+                    "value": 0
+                }
+            },
+            "underwater_movement_0.005": {
+                "minecraft:underwater_movement": {
+                    "value": 0.005
+                }
+            },
+            "underwater_movement_0.01": {
+                "minecraft:underwater_movement": {
+                    "value": 0.01
+                }
+            },
+            "underwater_movement_0.015": {
+                "minecraft:underwater_movement": {
+                    "value": 0.015
+                }
+            },
+            "underwater_movement_0.02": {
+                "minecraft:underwater_movement": {
+                    "value": 0.02
+                }
+            },
+            "underwater_movement_0.025": {
+                "minecraft:underwater_movement": {
+                    "value": 0.025
+                }
+            },
+            "underwater_movement_0.03": {
+                "minecraft:underwater_movement": {
+                    "value": 0.03
+                }
+            },
+            "underwater_movement_0.035": {
+                "minecraft:underwater_movement": {
+                    "value": 0.035
+                }
+            },
+            "underwater_movement_0.04": {
+                "minecraft:underwater_movement": {
+                    "value": 0.04
+                }
+            },
+            "underwater_movement_0.045": {
+                "minecraft:underwater_movement": {
+                    "value": 0.045
+                }
+            },
+            "underwater_movement_0.05": {
+                "minecraft:underwater_movement": {
+                    "value": 0.05
+                }
+            },
+            "underwater_movement_0.055": {
+                "minecraft:underwater_movement": {
+                    "value": 0.055
+                }
+            },
+            "underwater_movement_0.06": {
+                "minecraft:underwater_movement": {
+                    "value": 0.06
+                }
+            },
+            "underwater_movement_0.065": {
+                "minecraft:underwater_movement": {
+                    "value": 0.065
+                }
+            },
+            "underwater_movement_0.07": {
+                "minecraft:underwater_movement": {
+                    "value": 0.07
+                }
+            },
+            "underwater_movement_0.075": {
+                "minecraft:underwater_movement": {
+                    "value": 0.075
+                }
+            },
+            "underwater_movement_0.08": {
+                "minecraft:underwater_movement": {
+                    "value": 0.08
+                }
+            },
+            "underwater_movement_0.085": {
+                "minecraft:underwater_movement": {
+                    "value": 0.085
+                }
+            },
+            "underwater_movement_0.09": {
+                "minecraft:underwater_movement": {
+                    "value": 0.09
+                }
+            },
+            "underwater_movement_0.095": {
+                "minecraft:underwater_movement": {
+                    "value": 0.095
+                }
+            },
+            "underwater_movement_0.1": {
+                "minecraft:underwater_movement": {
+                    "value": 0.1
+                }
+            },
+            "underwater_movement_0.105": {
+                "minecraft:underwater_movement": {
+                    "value": 0.105
+                }
+            },
+            "underwater_movement_0.11": {
+                "minecraft:underwater_movement": {
+                    "value": 0.11
+                }
+            },
+            "underwater_movement_0.115": {
+                "minecraft:underwater_movement": {
+                    "value": 0.115
+                }
+            },
+            "underwater_movement_0.12": {
+                "minecraft:underwater_movement": {
+                    "value": 0.12
+                }
+            },
+            "underwater_movement_0.125": {
+                "minecraft:underwater_movement": {
+                    "value": 0.125
+                }
+            },
+            "underwater_movement_0.13": {
+                "minecraft:underwater_movement": {
+                    "value": 0.13
+                }
+            },
+            "underwater_movement_0.135": {
+                "minecraft:underwater_movement": {
+                    "value": 0.135
+                }
+            },
+            "underwater_movement_0.14": {
+                "minecraft:underwater_movement": {
+                    "value": 0.14
+                }
+            },
+            "underwater_movement_0.145": {
+                "minecraft:underwater_movement": {
+                    "value": 0.145
+                }
+            },
+            "underwater_movement_0.15": {
+                "minecraft:underwater_movement": {
+                    "value": 0.15
+                }
+            },
+            "underwater_movement_0.155": {
+                "minecraft:underwater_movement": {
+                    "value": 0.155
+                }
+            },
+            "underwater_movement_0.16": {
+                "minecraft:underwater_movement": {
+                    "value": 0.16
+                }
+            },
+            "underwater_movement_0.165": {
+                "minecraft:underwater_movement": {
+                    "value": 0.165
+                }
+            },
+            "underwater_movement_0.17": {
+                "minecraft:underwater_movement": {
+                    "value": 0.17
+                }
+            },
+            "underwater_movement_0.175": {
+                "minecraft:underwater_movement": {
+                    "value": 0.175
+                }
+            },
+            "underwater_movement_0.18": {
+                "minecraft:underwater_movement": {
+                    "value": 0.18
+                }
+            },
+            "underwater_movement_0.185": {
+                "minecraft:underwater_movement": {
+                    "value": 0.185
+                }
+            },
+            "underwater_movement_0.19": {
+                "minecraft:underwater_movement": {
+                    "value": 0.19
+                }
+            },
+            "underwater_movement_0.195": {
+                "minecraft:underwater_movement": {
+                    "value": 0.195
+                }
+            },
+            "underwater_movement_0.2": {
+                "minecraft:underwater_movement": {
+                    "value": 0.2
+                }
+            },
+            "hp:100000": {
+                "minecraft:health": {
+                    "value": 100000,
+                    "max": 100000
+                }
+            },
+
+			"minecraft:normal_player": {
+                "minecraft:variant": {
+                    "value": 0
+                },
+				"minecraft:attack": {
+					"damage": 1
+				}
+			},
+			
+			"minecraft:fire_totem_player": {
+				"minecraft:hurt_on_condition": {
+					"damage_conditions": [
+						{
+							"filters": {
+								"test": "in_water_or_rain",
+								"operator": "==",
+								"value": true
+							},
+							"cause": "drowning",
+							"damage_per_tick": 2
+						}
+					]
+				}
+			},
+			"minecraft:ocean_totem_player": {
+				"minecraft:hurt_on_condition": {
+					"damage_conditions": [
+						{
+							"filters": {
+								"test": "in_lava",
+								"subject": "self",
+								"operator": "==",
+								"value": true
+							},
+							"cause": "lava",
+							"damage_per_tick": 4
+						},
+						{
+							"filters": {
+								"test": "is_temperature_value",
+								"operator": ">",
+								"value": 1.0
+							},
+							"cause": "temperature",
+							"damage_per_tick": 1
+						}
+					]
+				}
+			},
+			"minecraft:add_bad_omen": {
+				"minecraft:spell_effects": {
+					"add_effects": [
+						{
+							"effect": "bad_omen",
+							"duration": 6000,
+							"display_on_screen_animation": true
+						}
+					]
+				},
+				"minecraft:timer": {
+					"time": [
+						0,
+						0
+					],
+					"looping": false,
+					"time_down_event": {
+						"event": "minecraft:clear_add_bad_omen",
+						"target": "self"
+					}
+				}
+			},
+			"minecraft:clear_bad_omen_spell_effect": {
+				"minecraft:spell_effects": {}
+			},
+			"minecraft:raid_trigger": {
+				"minecraft:raid_trigger": {
+					"triggered_event": {
+						"event": "minecraft:remove_raid_trigger",
+						"target": "self"
+					}
+				},
+				"minecraft:spell_effects": {
+					"remove_effects": "bad_omen"
+				}
+			}
+		},
+		"components": {
+            "minecraft:damage_sensor": [{
+                    "on_damage": {
+                        "filters": {
+                            "all_of": [{
+                                    "test": "has_tag",
+                                    "operator": "==",
+                                    "subject": "other",
+                                    "value": "wbmsyh"
+                                },
+                                {
+                                    "test": "has_tag",
+                                    "operator": "==",
+                                    "subject": "self",
+                                    "value": "wbmsyh"
+                                }
+                            ]
+                        }
+                    },
+                    "deals_damage": true
+                }
+            ],
+			"minecraft:hurt_on_condition": {
+				"damage_conditions": [
+					{
+						"filters": {
+							"test": "in_lava",
+							"subject": "self",
+							"operator": "==",
+							"value": true
+						},
+						"cause": "lava",
+						"damage_per_tick": 4
+					}
+				]
+			},
+            //"minecraft:is_stackable": {},
+			"minecraft:type_family": {
+				"family": [
+					"player",
+					"real_player"
+				]
+			},
+			"minecraft:is_hidden_when_invisible": {},
+			"minecraft:loot": {
+				"table": "loot_tables/empty.json"
+			},
+			"minecraft:health": {
+                "value": 20,
+                "max": 20
+			},
+			"minecraft:collision_box": {
+                "width": 0.5,
+				"height": 1.8
+			},
+			"minecraft:can_climb": {},
+			"minecraft:movement": {
+				"value": 0.1
+			},
+			"minecraft:attack": {
+				"damage": 1
+			},
+			"minecraft:player.saturation": {
+				"value": 20
+			},
+			"minecraft:player.exhaustion": {
+				"value": 0,
+				"max": 4
+			},
+			"minecraft:player.level": {
+				"value": 0,
+				"max": 24791
+			},
+			"minecraft:player.experience": {
+				"value": 0,
+				"max": 1
+			},
+			"minecraft:breathable": {
+                "totalSupply": 15,
+				"suffocateTime": -1,
+				"inhaleTime": 5,
+				"generatesBubbles": true
+			},
+			"minecraft:nameable": {
+                "alwaysShow": true,
+				"allowNameTagRenaming": false
+			},
+			"minecraft:physics": {},
+			"minecraft:insomnia": {
+				"days_until_insomnia": 3
+			},
+			"minecraft:rideable": {
+				"seat_count": 2,
+				"family_types": [
+					"parrot_tame"
+				],
+				"pull_in_entities": true,
+				"seats": [
+					{
+						"position": [
+							0.4,
+							-0.15,
+							0.04
+						],
+						"min_rider_count": 0,
+						"max_rider_count": 0,
+						"lock_rider_rotation": 0
+					},
+					{
+						"position": [
+							-0.4,
+							-0.15,
+							0.04
+						],
+						"min_rider_count": 1,
+						"max_rider_count": 2,
+						"lock_rider_rotation": 0
+					}
+				]
+			},
+			"minecraft:scaffolding_climber": {},
+			"minecraft:environment_sensor": [
+				{
+					"on_environment": {
+						"event": "minecraft:become_normal"
+					}
+				},
+				{
+					"filters": {
+						"all_of": [
+							{
+								"test": "has_mob_effect",
+								"subject": "self",
+								"value": "bad_omen"
+							},
+							{
+								"test": "is_in_village",
+								"subject": "self",
+								"value": true
+							}
+						]
+					},
+					"event": "minecraft:trigger_raid"
+				},
+				{
+					"on_environment": {
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+									"value": "dec:fire_totem"
+								}
+							]
+						},
+						"event": "minecraft:become_fire_totem"
+					}
+				},
+				{
+					"on_environment": {
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_equipment",
+									"subject": "self",
+									"domain": "hand",
+									"value": "dec:ocean_totem"
+								}
+							]
+						},
+						"event": "minecraft:become_ocean_totem"
+					}
+				}
+			]
+		},
+		"events": {
+			"minecraft:become_normal": {
+				"add": {
+					"component_groups": [
+						"minecraft:normal_player"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"minecraft:fire_totem_player",
+						"minecraft:ocean_totem_player"
+					]
+				}
+			},
+			"minecraft:gain_bad_omen": {
+				"add": {
+					"component_groups": [
+						"minecraft:add_bad_omen"
+					]
+				}
+			},
+			"minecraft:clear_add_bad_omen": {
+				"remove": {
+					"component_groups": [
+						"minecraft:add_bad_omen"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"minecraft:clear_bad_omen_spell_effect"
+					]
+				}
+			},
+			"minecraft:trigger_raid": {
+				"add": {
+					"component_groups": [
+						"minecraft:raid_trigger"
+					]
+				}
+			},
+			"minecraft:remove_raid_trigger": {
+				"remove": {
+					"component_groups": [
+						"minecraft:raid_trigger"
+					]
+				}
+			},
+			"minecraft:become_fire_totem": {
+				"remove": {
+					"component_groups": [
+						"minecraft:normal_player"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"minecraft:fire_totem_player"
+					]
+				}
+			},
+			"minecraft:become_ocean_totem": {
+				"remove": {
+					"component_groups": [
+						"minecraft:normal_player"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"minecraft:ocean_totem_player"
+					]
+				}
+			},
+            "hp:100000": {
+                "add": {
+                    "component_groups": ["hp:100000"]
+                }
+            },
+            "movement_0": {
+                "add": {
+                    "component_groups": ["movement_0"]
+                }
+            },
+            "movement_0.005": {
+                "add": {
+                    "component_groups": ["movement_0.005"]
+                }
+            },
+            "movement_0.01": {
+                "add": {
+                    "component_groups": ["movement_0.01"]
+                }
+            },
+            "movement_0.015": {
+                "add": {
+                    "component_groups": ["movement_0.015"]
+                }
+            },
+            "movement_0.02": {
+                "add": {
+                    "component_groups": ["movement_0.02"]
+                }
+            },
+            "movement_0.025": {
+                "add": {
+                    "component_groups": ["movement_0.025"]
+                }
+            },
+            "movement_0.03": {
+                "add": {
+                    "component_groups": ["movement_0.03"]
+                }
+            },
+            "movement_0.035": {
+                "add": {
+                    "component_groups": ["movement_0.035"]
+                }
+            },
+            "movement_0.04": {
+                "add": {
+                    "component_groups": ["movement_0.04"]
+                }
+            },
+            "movement_0.045": {
+                "add": {
+                    "component_groups": ["movement_0.045"]
+                }
+            },
+            "movement_0.05": {
+                "add": {
+                    "component_groups": ["movement_0.05"]
+                }
+            },
+            "movement_0.055": {
+                "add": {
+                    "component_groups": ["movement_0.055"]
+                }
+            },
+            "movement_0.06": {
+                "add": {
+                    "component_groups": ["movement_0.06"]
+                }
+            },
+            "movement_0.065": {
+                "add": {
+                    "component_groups": ["movement_0.065"]
+                }
+            },
+            "movement_0.07": {
+                "add": {
+                    "component_groups": ["movement_0.07"]
+                }
+            },
+            "movement_0.075": {
+                "add": {
+                    "component_groups": ["movement_0.075"]
+                }
+            },
+            "movement_0.08": {
+                "add": {
+                    "component_groups": ["movement_0.08"]
+                }
+            },
+            "movement_0.085": {
+                "add": {
+                    "component_groups": ["movement_0.085"]
+                }
+            },
+            "movement_0.09": {
+                "add": {
+                    "component_groups": ["movement_0.09"]
+                }
+            },
+            "movement_0.095": {
+                "add": {
+                    "component_groups": ["movement_0.095"]
+                }
+            },
+            "movement_0.1": {
+                "add": {
+                    "component_groups": ["movement_0.1"]
+                }
+            },
+            "movement_0.105": {
+                "add": {
+                    "component_groups": ["movement_0.105"]
+                }
+            },
+            "movement_0.11": {
+                "add": {
+                    "component_groups": ["movement_0.11"]
+                }
+            },
+            "movement_0.115": {
+                "add": {
+                    "component_groups": ["movement_0.115"]
+                }
+            },
+            "movement_0.12": {
+                "add": {
+                    "component_groups": ["movement_0.12"]
+                }
+            },
+            "movement_0.125": {
+                "add": {
+                    "component_groups": ["movement_0.125"]
+                }
+            },
+            "movement_0.13": {
+                "add": {
+                    "component_groups": ["movement_0.13"]
+                }
+            },
+            "movement_0.135": {
+                "add": {
+                    "component_groups": ["movement_0.135"]
+                }
+            },
+            "movement_0.14": {
+                "add": {
+                    "component_groups": ["movement_0.14"]
+                }
+            },
+            "movement_0.145": {
+                "add": {
+                    "component_groups": ["movement_0.145"]
+                }
+            },
+            "movement_0.15": {
+                "add": {
+                    "component_groups": ["movement_0.15"]
+                }
+            },
+            "movement_0.155": {
+                "add": {
+                    "component_groups": ["movement_0.155"]
+                }
+            },
+            "movement_0.16": {
+                "add": {
+                    "component_groups": ["movement_0.16"]
+                }
+            },
+            "movement_0.165": {
+                "add": {
+                    "component_groups": ["movement_0.165"]
+                }
+            },
+            "movement_0.17": {
+                "add": {
+                    "component_groups": ["movement_0.17"]
+                }
+            },
+            "movement_0.175": {
+                "add": {
+                    "component_groups": ["movement_0.175"]
+                }
+            },
+            "movement_0.18": {
+                "add": {
+                    "component_groups": ["movement_0.18"]
+                }
+            },
+            "movement_0.185": {
+                "add": {
+                    "component_groups": ["movement_0.185"]
+                }
+            },
+            "movement_0.19": {
+                "add": {
+                    "component_groups": ["movement_0.19"]
+                }
+            },
+            "movement_0.195": {
+                "add": {
+                    "component_groups": ["movement_0.195"]
+                }
+            },
+            "movement_0.2": {
+                "add": {
+                    "component_groups": ["movement_0.2"]
+                }
+            },
+
+            "underwater_movement_0": {
+                "add": {
+                    "component_groups": ["underwater_movement_0"]
+                }
+            },
+            "underwater_movement_0.005": {
+                "add": {
+                    "component_groups": ["underwater_movement_0.005"]
+                }
+            },
+            "underwater_movement_0.01": {
+                "add": {
+                    "component_groups": ["underwater_movement_0.01"]
+                }
+            },
+            "underwater_movement_0.015": {
+                "add": {
+                    "component_groups": ["underwater_movement_0.015"]
+                }
+            },
+            "underwater_movement_0.02": {
+                "add": {
+                    "component_groups": ["underwater_movement_0.02"]
+                }
+            },
+            "underwater_movement_0.025": {
+                "add": {
+                    "component_groups": ["underwater_movement_0.025"]
+                }
+            },
+            "underwater_movement_0.03": {
+                "add": {
+                    "component_groups": ["underwater_movement_0.03"]
+                }
+            },
+            "underwater_movement_0.035": {
+                "add": {
+                    "component_groups": ["underwater_movement_0.035"]
+                }
+            },
+            "underwater_movement_0.04": {
+                "add": {
+                    "component_groups": ["underwater_movement_0.04"]
+                }
+            },
+            "underwater_movement_0.045": {
+                "add": {
+                    "component_groups": ["underwater_movement_0.045"]
+                }
+            },
+            "underwater_movement_0.05": {
+                "add": {
+                    "component_groups": ["underwater_movement_0.05"]
+                }
+            },
+            "underwater_movement_0.055": {
+                "add": {
+                    "component_groups": ["underwater_movement_0.055"]
+                }
+            },
+            "underwater_movement_0.06": {
+                "add": {
+                    "component_groups": ["underwater_movement_0.06"]
+                }
+            },
+            "underwater_movement_0.065": {
+                "add": {
+                    "component_groups": ["underwater_movement_0.065"]
+                }
+            },
+            "underwater_movement_0.07": {
+                "add": {
+                    "component_groups": ["underwater_movement_0.07"]
+                }
+            },
+            "underwater_movement_0.075": {
+                "add": {
+                    "component_groups": ["underwater_movement_0.075"]
+                }
+            },
+            "underwater_movement_0.08": {
+                "add": {
+                    "component_groups": ["underwater_movement_0.08"]
+                }
+            },
+            "underwater_movement_0.085": {
+                "add": {
+                    "component_groups": ["underwater_movement_0.085"]
+                }
+            },
+            "underwater_movement_0.09": {
+                "add": {
+                    "component_groups": ["underwater_movement_0.09"]
+                }
+            },
+            "underwater_movement_0.095": {
+                "add": {
+                    "component_groups": ["underwater_movement_0.095"]
+                }
+            },
+            "underwater_movement_0.1": {
+                "add": {
+                    "component_groups": ["underwater_movement_0.1"]
+                }
+            },
+            "underwater_movement_0.105": {
+                "add": {
+                    "component_groups": ["underwater_movement_0.105"]
+                }
+            },
+            "underwater_movement_0.11": {
+                "add": {
+                    "component_groups": ["underwater_movement_0.11"]
+                }
+            },
+            "underwater_movement_0.115": {
+                "add": {
+                    "component_groups": ["underwater_movement_0.115"]
+                }
+            },
+            "underwater_movement_0.12": {
+                "add": {
+                    "component_groups": ["underwater_movement_0.12"]
+                }
+            },
+            "underwater_movement_0.125": {
+                "add": {
+                    "component_groups": ["underwater_movement_0.125"]
+                }
+            },
+            "underwater_movement_0.13": {
+                "add": {
+                    "component_groups": ["underwater_movement_0.13"]
+                }
+            },
+            "underwater_movement_0.135": {
+                "add": {
+                    "component_groups": ["underwater_movement_0.135"]
+                }
+            },
+            "underwater_movement_0.14": {
+                "add": {
+                    "component_groups": ["underwater_movement_0.14"]
+                }
+            },
+            "underwater_movement_0.145": {
+                "add": {
+                    "component_groups": ["underwater_movement_0.145"]
+                }
+            },
+            "underwater_movement_0.15": {
+                "add": {
+                    "component_groups": ["underwater_movement_0.15"]
+                }
+            },
+            "underwater_movement_0.155": {
+                "add": {
+                    "component_groups": ["underwater_movement_0.155"]
+                }
+            },
+            "underwater_movement_0.16": {
+                "add": {
+                    "component_groups": ["underwater_movement_0.16"]
+                }
+            },
+            "underwater_movement_0.165": {
+                "add": {
+                    "component_groups": ["underwater_movement_0.165"]
+                }
+            },
+            "underwater_movement_0.17": {
+                "add": {
+                    "component_groups": ["underwater_movement_0.17"]
+                }
+            },
+            "underwater_movement_0.175": {
+                "add": {
+                    "component_groups": ["underwater_movement_0.175"]
+                }
+            },
+            "underwater_movement_0.18": {
+                "add": {
+                    "component_groups": ["underwater_movement_0.18"]
+                }
+            },
+            "underwater_movement_0.185": {
+                "add": {
+                    "component_groups": ["underwater_movement_0.185"]
+                }
+            },
+            "underwater_movement_0.19": {
+                "add": {
+                    "component_groups": ["underwater_movement_0.19"]
+                }
+            },
+            "underwater_movement_0.195": {
+                "add": {
+                    "component_groups": ["underwater_movement_0.195"]
+                }
+            },
+            "underwater_movement_0.2": {
+                "add": {
+                    "component_groups": ["underwater_movement_0.2"]
+                }
+            }
+		}
+	}
+}

@@ -1,0 +1,127 @@
+{
+    "format_version": "1.11.0",
+    "minecraft:entity": {
+      "description": {
+        "identifier": "wb:god_of_guard_first",
+        "is_spawnable": true,
+        "is_summonable": true,
+        "is_experimental": false,
+        "animations": {
+          "boss": "animation.boss.testplayer"
+        },
+        "scripts": {
+          "animate": [
+            {
+              "boss": "query.health>1"
+            }
+          ]
+        }
+      },
+      "component_groups": {
+        "isboss": {},
+        "defeated": {},
+        "disappear": {
+          "minecraft:despawn":{
+            "despawn_from_distance": {}
+          }
+        }
+      },
+      "components": {
+        "minecraft:boss": {
+          "should_darken_sky": true,
+          "name": "The God Of Guard",
+          "hud_range": 128
+        },
+        "minecraft:fire_immune": true,
+        "minecraft:type_family": {
+          "family": [
+            "monster",
+            "god",
+            "aboss"
+          ]
+        },
+        "minecraft:scale": {
+          "value": 1
+        },
+        "minecraft:collision_box": {
+          "width": 0.9,
+          "height": 1.8
+        },
+        "minecraft:health": {
+          "value": 2500,
+          "max": 2500
+        },
+        "minecraft:movement": {
+          "value": 0.23
+        },
+        "minecraft:navigation.walk": {},
+        "minecraft:movement.basic": {},
+        "minecraft:jump.static": {},
+        "minecraft:can_climb": {},
+        "minecraft:attack": {
+          "damage": 50
+        },
+        "minecraft:damage_sensor": {
+          "cause": "fall",
+          "deals_damage": false
+        },
+        "minecraft:behavior.random_stroll": {
+          "priority": 6,
+          "speed_multiplier": 1,
+          "xz_dist": 16
+        },
+        "minecraft:behavior.look_at_player": {
+          "priority": 7,
+          "look_distance": 6,
+          "probability": 0.02
+        },
+        "minecraft:behavior.random_look_around": {
+          "priority": 8
+        },
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 3,
+          "entity_types": [
+            {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "operator": "!=",
+                    "subject": "other",
+                    "value": "god"
+                  },
+                  {
+                    "test": "is_family",
+                    "operator": "!=",
+                    "subject": "other",
+                    "value": "aboss"
+                  }
+                ]
+              },
+              "within_default": 64
+            }
+          ],
+          "must_see": false,
+          "must_reach": false
+        },
+        "minecraft:behavior.hurt_by_target": {
+          "priority": 2
+        },
+        "minecraft:physics": {},
+        "minecraft:follow_range": {
+          "value": 64
+        }
+      },
+      "events": {
+        "disappear": {
+          "add": {
+            "component_groups": [
+              "disappear"
+            ]
+          }
+        },
+        "minecraft:entity_spawned": {
+        }
+      }
+    }
+  }

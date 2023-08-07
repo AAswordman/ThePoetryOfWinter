@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:rough_steel"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "X#",
+      "#X"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:coal",
+        "data": 0
+      },
+      "X": {
+        "item": "minecraft:iron_ingot"
+      }
+    },
+    "result": {
+      "item": "dec:rough_steel"
+    }
+  }
+}

@@ -1,0 +1,262 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:escaped_soul_2",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "minecraft:wait_next": {
+        "minecraft:variant": {
+          "value": 1
+        },
+        "minecraft:boss": {
+          "should_darken_sky": false,
+          "name": "boss.dec:escaped_soul.name",
+          "hud_range": 2
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "soul"
+                }
+              },
+              "deals_damage": false
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "looping": true,
+          "time": 3,
+          "time_down_event": {
+            "event": "minecraft:next"
+          }
+        }
+      },
+      "minecraft:next": {
+        "minecraft:transformation": {
+          "into": "dec:escaped_soul_3<minecraft:entity_spawned>"
+        }
+      },
+      "minecraft:cannot_be_attacked": {
+        "minecraft:variant": {
+          "value": 1
+        },
+        "minecraft:boss": {
+          "should_darken_sky": false,
+          "name": "boss.dec:escaped_soul.name",
+          "hud_range": 2
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "soul"
+                }
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_damage",
+                      "value": "fatal"
+                    }
+                  ]
+                },
+                "event": "minecraft:wait_next"
+              },
+              "deals_damage": false
+            }
+          ]
+        }
+      },
+      "minecraft:can_be_attacked": {
+        "minecraft:variant": {
+          "value": 0
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_damage",
+                      "value": "fatal"
+                    }
+                  ]
+                },
+                "event": "minecraft:wait_next"
+              },
+              "deals_damage": false
+            }
+          ]
+        },
+        "minecraft:timer": {
+          "looping": true,
+          "time": 8,
+          "time_down_event": {
+            "event": "minecraft:return"
+          }
+        },
+        "minecraft:boss": {
+          "should_darken_sky": false,
+          "name": "boss.dec:escaped_soul.name",
+          "hud_range": 64
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family": {
+        "family": [
+          "escaped_soul",
+          "soul",
+          "boss",
+          "monster",
+          "mob"
+        ]
+      },
+      "minecraft:health": {
+        "value": 150,
+        "max": 150
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": false
+      },
+      "minecraft:collision_box": {
+        "width": 1.8,
+        "height": 0.7
+      }
+    },
+    "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
+      "minecraft:next": {
+        "add": {
+          "component_groups": [
+            "minecraft:next"
+          ]
+        }
+      },
+      "minecraft:wait_next": {
+        "remove": {
+          "component_groups": [
+            "minecraft:can_be_attacked",
+            "minecraft:cannot_be_attacked"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:wait_next"
+          ]
+        },
+        "run_command": {
+          "command": [
+            "execute if entity @s[scores={random=1}] run tp ~-24~-3~",
+            "execute if entity @s[scores={random=2}] run tp ~24~-3~",
+            "execute if entity @s[scores={random=3}] run tp ~~-3~-24",
+            "execute if entity @s[scores={random=4}] run tp ~~-3~24",
+            "execute if entity @s[scores={random=5}] run tp ~-17~-3~-17",
+            "execute if entity @s[scores={random=6}] run tp ~17~-3~17",
+            "execute if entity @s[scores={random=7}] run tp ~-17~-3~17",
+            "execute if entity @s[scores={random=8}] run tp ~17~-3~-17"
+          ],
+          "target": "self"
+        }
+      },
+      "minecraft:entity_spawned": {
+        "run_command": {
+          "command": [
+            "summon dec:entity_soul_1 ~~~ 0 0 minecraft:summon_by_boss",
+            "summon dec:shadow_soul_1 ~~~ 0 0 minecraft:summon_by_boss",
+            "summon dec:shadow_soul_2 ~~~ 0 0 minecraft:summon_by_boss"
+          ],
+          "target": "self"
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:cannot_be_attacked"
+          ]
+        }
+      },
+      "minecraft:can_be_attacked": {
+        "remove": {
+          "component_groups": [
+            "minecraft:cannot_be_attacked"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:can_be_attacked"
+          ]
+        },
+        "run_command": {
+          "command": [
+            "scoreboard players random @s random 1 8",
+            "execute if entity @s[scores={random=1}] run tp ~24~3~",
+            "execute if entity @s[scores={random=2}] run tp ~-24~3~",
+            "execute if entity @s[scores={random=3}] run tp ~~3~24",
+            "execute if entity @s[scores={random=4}] run tp ~~3~-24",
+            "execute if entity @s[scores={random=5}] run tp ~17~3~17",
+            "execute if entity @s[scores={random=6}] run tp ~-17~3~-17",
+            "execute if entity @s[scores={random=7}] run tp ~17~3~-17",
+            "execute if entity @s[scores={random=8}] run tp ~-17~3~17"
+          ],
+          "target": "self"
+        }
+      },
+      "minecraft:return": {
+        "remove": {
+          "component_groups": [
+            "minecraft:can_be_attacked"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:cannot_be_attacked"
+          ]
+        },
+        "run_command": {
+          "command": [
+            "summon dec:entity_soul_1 ~~~ 0 0 minecraft:summon_by_boss",
+            "execute if entity @s[scores={random=1}] run tp ~-24~-3~",
+            "execute if entity @s[scores={random=2}] run tp ~24~-3~",
+            "execute if entity @s[scores={random=3}] run tp ~~-3~-24",
+            "execute if entity @s[scores={random=4}] run tp ~~-3~24",
+            "execute if entity @s[scores={random=5}] run tp ~-17~-3~-17",
+            "execute if entity @s[scores={random=6}] run tp ~17~-3~17",
+            "execute if entity @s[scores={random=7}] run tp ~-17~-3~17",
+            "execute if entity @s[scores={random=8}] run tp ~17~-3~-17"
+          ],
+          "target": "self"
+        }
+      }
+    }
+  }
+}

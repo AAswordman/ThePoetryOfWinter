@@ -1,0 +1,159 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:soul",
+      "runtime_identifier": "minecraft:vex",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "minecraft:from_soul_blaze": {
+        "minecraft:experience_reward": {
+          "on_death": "query.last_hit_by_player ? 12 : 0"
+        },
+        "minecraft:explode": {
+          "fuseLength": 20,
+          "fuseLit": true,
+          "power": 0,
+          "causesFire": false
+        },
+        "minecraft:loot": {
+          "table": "loot_tables/entities/soul_blaze.json"
+        }
+      },
+      "minecraft:timer": {
+        "minecraft:explode": {
+          "fuseLength": 20,
+          "fuseLit": true,
+          "power": 0,
+          "causesFire": false
+        }
+      }
+    },
+    "components": {
+      "minecraft:behavior.hurt_by_target": {
+        "priority": 1,
+        "entity_types": {
+          "filters": {
+            "test": "is_family",
+            "subject": "other",
+            "operator": "!=",
+            "value": "soul"
+          },
+          "max_dist": 64
+        }
+      },
+      "minecraft:damage_sensor": {
+        "triggers": {
+          "on_damage": {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "soul"
+            }
+          },
+          "deals_damage": false
+        }
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:type_family": {
+        "family": [ "soul", "monster", "undead", "mob" ]
+      },
+      "minecraft:health": {
+        "value": 15,
+        "max": 15
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
+      "minecraft:attack": {
+        "damage": 4,
+        "effect_name": "blindness",
+        "effect_duration": 1
+      },
+      "minecraft:collision_box": {
+        "width": 0.35,
+        "height": 0.6
+      },
+      "minecraft:movement": {
+        "value": 3.0
+      },
+      "minecraft:navigation.walk": {
+        "can_path_over_water": true
+      },
+      "minecraft:movement.basic": {
+
+      },
+      "minecraft:jump.static": {
+      },
+      "minecraft:can_climb": {
+      },
+      "minecraft:fire_immune": true,
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.charge_attack": {
+        "priority": 4
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 3,
+        "entity_types": [
+          {
+            "filters": {
+              "any_of" : [
+                {"test" : "is_family", "subject" : "other", "value" :  "player"},
+                {"test" : "is_family", "subject" : "other", "value" :  "irongolem"},
+                {"test" : "is_family", "subject" : "other", "value" :  "wandering_trader"}
+              ]
+            },
+            "max_dist": 70
+          },
+          {
+            "filters": {
+              "all_of": [
+                { "test": "is_family", "subject": "other", "value": "villager" },
+                { "test": "has_component", "subject": "other", "operator": "!=", "value": "minecraft:is_baby" }
+              ]
+            },
+            "max_dist": 70
+          }
+        ],
+        "must_see": true
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 9,
+        "look_distance": 6.0,
+        "probability": 0.02
+      },
+      "minecraft:behavior.look_at_entity": {
+        "priority": 9,
+        "look_distance": 6.0,
+        "probability": 0.02,
+        "filters": { "test" :  "is_family", "subject" : "other", "value" :  "mob"}
+      },
+      "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": false
+      }
+    },
+    "events": {
+      "minecraft:from_summoner": {
+        "add": {
+          "component_groups": [
+            "minecraft:timer"
+          ]
+        }
+      },
+      "minecraft:from_soul_blaze": {
+        "add": {
+          "component_groups": [
+            "minecraft:from_soul_blaze"
+          ]
+        }
+      }
+    }
+  }
+}

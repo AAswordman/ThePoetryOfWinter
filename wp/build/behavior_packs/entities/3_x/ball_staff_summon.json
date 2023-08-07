@@ -1,0 +1,54 @@
+{
+  "format_version": "1.8.0",
+ "minecraft:entity": {
+  "description": {
+    "identifier": "wb:ball_staff_summon",
+    "is_spawnable": false,
+    "is_summonable": true,
+    "is_experimental": false,
+    "runtime_identifier": "minecraft:snowball"
+  },
+  "components": {
+          "minecraft:explode": {
+     "fuseLength": 3,
+     "fuseLit": true,
+     "power": 0,
+     "causesFire": true,
+     "fireAffectedByGriefing": true,
+     "destroyAffectedByGriefing": true
+    },
+    "minecraft:collision_box": {
+    "width": 0.18,
+    "height": 0.18
+   },
+   "minecraft:projectile": {
+    "onHit": {
+      "impact_damage": {
+        "damage": 65,
+        "knockback": true,
+        "catchFire": false,
+        "semirandomdiffdamage": false
+      },
+          "spawn_chance": {
+            "first_spawn_chance": 0.5,
+            "second_spawn_chance": 1,
+            "first_spawn_count": 1,
+            "second_spawn_count": 2,
+            "spawn_definition": "minecraft:lightning_bolt"
+          },
+      "remove_on_hit": { }
+    },
+    "power": 1.7,
+    "gravity": 0.00,
+    "inertia": 1,
+    "anchor": 2,
+    "offset": [ 0, 0, 0 ],
+    "semirandomdiffdamage": false,
+    "uncertaintyBase": 0.0,
+    "reflectOnHurt": true
+   },
+   "minecraft:physics": {
+   }
+  }
+ }
+}

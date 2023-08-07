@@ -1,0 +1,33 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.chester",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "global",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-5, 0, -4], "size": [9, 6, 9], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "up",
+					"parent": "global",
+					"pivot": [-0.5, 5.75, 5],
+					"cubes": [
+						{"origin": [-5, 6, -4], "size": [9, 3, 9], "uv": [0, 15]},
+						{"origin": [-1, 5, -5], "size": [1, 2, 1], "uv": [0, 28]}
+					]
+				}
+			]
+		}
+	]
+}

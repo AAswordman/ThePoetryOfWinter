@@ -1,0 +1,75 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "wb:endblock_dirt",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+
+  "component_groups": {
+   "minecraft:exploding": {
+    "minecraft:explode": {
+     "fuseLength": 0,
+     "fuseLit": true,
+     "power": 5,
+     "causesFire": true,
+     "fireAffectedByGriefing": true,
+     "destroyAffectedByGriefing": true
+    }
+  }
+  },
+
+  "components": {
+   "minecraft:explode": {
+     "fuseLength": 2,
+     "fuseLit": true,
+     "power": 0,
+     "causesFire": true,
+     "fireAffectedByGriefing": true,
+     "destroyAffectedByGriefing": true
+    },
+  "minecraft:health":{
+  "value":200,
+  "max":200
+  },
+   "minecraft:collision_box": {
+    "width": 0.5,
+    "height": 0.5
+   },
+   "minecraft:projectile": {
+    
+    "onHit": {
+     "definition_event": {
+      "affectProjectile": true,
+      "eventTrigger": {
+            "event": "minecraft:explode",
+            "target": "self"
+      }
+     }
+    },
+    "power": 5,
+    "gravity": 0.00,
+    "inertia": 1,
+    "uncertaintyBase": 0,
+    "uncertaintyMultiplier": 0,
+    "anchor": 1,
+    "offset": [ 0, -0.1, 0 ],
+    "reflectOnHurt": true,
+    "catchFire": true
+   },
+      "minecraft:physics": {
+      }
+  },
+  "events": {
+   "minecraft:explode": {
+    "add": {
+     "component_groups": [
+      "minecraft:exploding"
+     ]
+    }
+   }
+  }
+ }
+}

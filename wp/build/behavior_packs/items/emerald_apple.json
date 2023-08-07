@@ -1,0 +1,86 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "nature",
+      "identifier": "dec:emerald_apple"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.crop"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:emerald_apple.name"
+      },
+      "minecraft:icon": {
+        "texture": "emerald_apple"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "apple",
+      "minecraft:use_duration": 1.6,
+      "minecraft:food": {
+        "nutrition": 4,
+        "saturation_modifier": "supernatural",
+        "can_always_eat": true,
+        "on_consume": {
+          "event": "consumed",
+          "target": "self"
+        }
+      }
+    },
+    "events": {
+      "consumed": {
+        "sequence": [
+          {
+            "add_mob_effect": {
+              "effect": "village_hero",
+              "duration": 180,
+              "amplifier": 0,
+              "target": "holder"
+            }
+          },
+          {
+            "add_mob_effect": {
+              "effect": "haste",
+              "duration": 180,
+              "amplifier": 1,
+              "target": "holder"
+            }
+          },
+          {
+            "add_mob_effect": {
+              "effect": "speed",
+              "duration": 180,
+              "amplifier": 0,
+              "target": "holder"
+            }
+          },
+          {
+            "add_mob_effect": {
+              "effect": "night_vision",
+              "duration": 180,
+              "amplifier": 0,
+              "target": "holder"
+            }
+          },
+          {
+            "add_mob_effect": {
+              "effect": "strength",
+              "duration": 180,
+              "amplifier": 1,
+              "target": "holder"
+            }
+          },
+          {
+            "add_mob_effect": {
+              "effect": "resistance",
+              "duration": 180,
+              "amplifier": 0,
+              "target": "holder"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

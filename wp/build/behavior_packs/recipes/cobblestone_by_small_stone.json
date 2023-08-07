@@ -1,0 +1,26 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:cobblestone_by_small_stone"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "##",
+      "##"
+    ],
+    "key": {
+      "#": {
+        "item": "dec:small_stone",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "minecraft:cobblestone",
+      "data": 0,
+      "count": 1
+    }
+  }
+}

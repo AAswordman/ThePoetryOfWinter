@@ -1,0 +1,35 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:archer_bullet_bag"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "CXC",
+      "#B#",
+      "DXD"
+    ],
+    "key": {
+      "C": {
+        "item": "dec:ender_core"
+      },
+      "D": {
+        "item": "dec:soul_blaze_rod"
+      },
+      "#": {
+        "item": "dec:ghost_ingot"
+      },
+      "X": {
+        "item": "dec:ice_heart"
+      },
+      "B": {
+        "item": "dec:lava_bullet_bag"
+      }
+    },
+    "result": {
+      "item": "dec:archer_bullet_bag",
+      "count": 1
+    }
+  }
+}

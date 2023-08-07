@@ -1,0 +1,13 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_furnace": {
+    "description": {
+    "identifier": "dec:furnace_coal"
+    },
+
+    
+    "tags": ["furnace", "blast_furnace","smoker", "campfire"],
+    "input": "minecraft:coal",
+    "output": "dec:waste"
+  }
+}

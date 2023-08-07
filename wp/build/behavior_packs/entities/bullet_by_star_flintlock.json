@@ -1,0 +1,96 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:bullet_by_star_flintlock",
+      "runtime_identifier": "minecraft:egg",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "spawn"
+        ]
+      },
+      "animations": {
+        "spawn": "animation.playsound_random_explode"
+      }
+    },
+    "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+      "minecraft:collision_box": {
+        "width": 0.2,
+        "height": 0.2
+      },
+      "minecraft:projectile": {
+        "onHit": {
+          "definition_event": {
+            "affect_projectile": true,
+            "event_trigger": {
+              "event": "minecraft:explode",
+              "target": "self"
+            }
+          },
+          "impact_damage": {
+            "damage": 10,
+            "knockback": true,
+            "catchFire": false,
+            "semirandomdiffdamage": false
+          }
+        },
+        "power": 2.5,
+        "gravity": 0.05,
+        "inertia": 1.1,
+        "liquid_inertia": 0.8,
+        "anchor": 1,
+        "offset": [
+          0,
+          0,
+          1
+        ],
+        "semirandomdiffdamage": true,
+        "uncertaintyBase": 4.0,
+        "uncertaintyMultiplier": 1,
+        "reflectOnHurt": true
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    },
+    "events": {
+      "minecraft:explode": {
+        "randomize": [
+          {
+            "weight": 6,
+            "add": {
+              "component_groups": [
+                "minecraft:despawn"
+              ]
+            }
+          },
+          {
+            "weight": 4,
+            "run_command": {
+              "command": [
+                "damage @e[r=3.5,type=!item] 16 entity_explosion",
+                "particle dec:lava_spurt_particle ~~~",
+                "particle dec:star_spurt_particle ~~~",
+                "playsound random.explode @a ~~~"
+              ]
+            },
+            "add": {
+              "component_groups": [
+                "minecraft:despawn"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

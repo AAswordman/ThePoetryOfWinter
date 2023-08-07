@@ -1,0 +1,45 @@
+{
+	"format_version": "1.10.0",
+	"particle_effect": {
+		"description": {
+			"identifier": "dec:frozen_cage_huge_particle",
+			"basic_render_parameters": {
+				"material": "particles_alpha",
+				"texture": "textures/particle/blizzard_wake"
+			}
+		},
+		"components": {
+			"minecraft:emitter_initialization": {
+				"per_update_expression": "variable.a = math.Random(0,359);variable.h = math.Random(0,384);variable.r = math.Random(0,35);"
+			},
+			"minecraft:emitter_rate_steady": {
+				"spawn_rate": 100,
+				"max_particles": 1000
+			},
+			"minecraft:emitter_lifetime_looping": {
+				"active_time": 10
+			},
+			"minecraft:emitter_shape_point": {
+				"offset": ["variable.r * math.cos(variable.a)", "variable.h", "variable.r * math.sin(variable.a)"]
+			},
+			"minecraft:particle_lifetime_expression": {
+				"max_lifetime": "Math.random(0.6, 2.0)"
+			},
+			"minecraft:particle_initial_speed": 0,
+			"minecraft:particle_motion_dynamic": {
+				"linear_acceleration": [0, -1.5, 0]
+			},
+			"minecraft:particle_appearance_billboard": {
+				"size": ["(0.05 + variable.particle_random_1*0.05 - variable.particle_age*0.05)", "(0.05 + variable.particle_random_1*0.05 - variable.particle_age*0.05)"],
+				"facing_camera_mode": "lookat_xyz",
+				"uv": {
+					"texture_width": 8,
+					"texture_height": 8,
+					"uv": [0, 0],
+					"uv_size": [8, 8]
+				}
+			},
+			"minecraft:particle_appearance_lighting": {}
+		}
+	}
+}

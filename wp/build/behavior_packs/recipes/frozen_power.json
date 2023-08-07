@@ -1,0 +1,20 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shapeless": {
+    "description": {
+    "identifier": "dec:frozen_power"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "ingredients": [
+      {
+        "item": "dec:frozen_power_debris",
+        "count": 7
+      }
+    ],
+    "result": {
+      "item": "dec:frozen_power"
+    }
+  }
+}

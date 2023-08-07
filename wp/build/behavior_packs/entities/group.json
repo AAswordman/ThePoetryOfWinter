@@ -1,0 +1,525 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:group",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+      "minecraft:health": {
+        "value": 100000,
+        "max": 100000
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "on_damage": {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "operator": "!=",
+                "value": "empty_family"
+              }
+            },
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:physics": {
+        "has_gravity": false,
+        "has_collision": false
+      },
+      "minecraft:collision_box": {
+        "width": 0,
+        "height": 0
+      }
+    },
+    "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
+      "minecraft:select_ice_thorn": {
+        "randomize": [
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "summon dec:group ~~~ 0 0 minecraft:line_1_ice_thorn",
+                "summon dec:group ~~~ 0 0 minecraft:line_1_ice_thorn",
+                "summon dec:group ~~~ 0 0 minecraft:line_1_ice_thorn",
+                "event entity @s minecraft:despawn"
+              ],
+              "target": "self"
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "summon dec:group ~~~ 0 0 minecraft:line_2_ice_thorn",
+                "summon dec:group ~~~ 0 0 minecraft:line_2_ice_thorn",
+                "summon dec:group ~~~ 0 0 minecraft:line_2_ice_thorn",
+                "event entity @s minecraft:despawn"
+              ],
+              "target": "self"
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "summon dec:group ~~~ 0 0 minecraft:solid_circle_ice_thorn",
+                "summon dec:group ~~~ 0 0 minecraft:solid_circle_ice_thorn",
+                "event entity @s minecraft:despawn"
+              ],
+              "target": "self"
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "summon dec:group ~~~ 0 0 minecraft:circle_ice_thorn",
+                "summon dec:group ~~~ 0 0 minecraft:circle_ice_thorn",
+                "summon dec:group ~~~ 0 0 minecraft:circle_ice_thorn",
+                "event entity @s minecraft:despawn"
+              ],
+              "target": "self"
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "summon dec:group ~~~ 0 0 minecraft:square_ice_thorn",
+                "summon dec:group ~~~ 0 0 minecraft:square_ice_thorn",
+                "summon dec:group ~~~ 0 0 minecraft:square_ice_thorn",
+                "event entity @s minecraft:despawn"
+              ],
+              "target": "self"
+            }
+          }
+        ]
+      },
+      "minecraft:line_1_ice_thorn": {
+        "run_command": {
+          "command": [
+            "spreadplayers ~~ 0 8 @s",
+            "function entity/ice_thorn_spawn/2",
+            "event entity @s minecraft:despawn"
+          ],
+          "target": "self"
+        }
+      },
+      "minecraft:line_2_ice_thorn": {
+        "run_command": {
+          "command": [
+            "spreadplayers ~~ 0 8 @s",
+            "function entity/ice_thorn_spawn/3",
+            "event entity @s minecraft:despawn"
+          ],
+          "target": "self"
+        }
+      },
+      "minecraft:solid_circle_ice_thorn": {
+        "run_command": {
+          "command": [
+            "spreadplayers ~~ 0 8 @s",
+            "function entity/ice_thorn_spawn/1",
+            "event entity @s minecraft:despawn"
+          ],
+          "target": "self"
+        }
+      },
+      "minecraft:circle_ice_thorn": {
+        "randomize": [
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "spreadplayers ~~ 0 8 @s",
+                "function entity/ice_thorn_spawn/4",
+                "event entity @s minecraft:despawn"
+              ],
+              "target": "self"
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "spreadplayers ~~ 0 8 @s",
+                "function entity/ice_thorn_spawn/5",
+                "event entity @s minecraft:despawn"
+              ],
+              "target": "self"
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "spreadplayers ~~ 0 8 @s",
+                "function entity/ice_thorn_spawn/6",
+                "event entity @s minecraft:despawn"
+              ],
+              "target": "self"
+            }
+          }
+        ]
+      },
+      "minecraft:square_ice_thorn": {
+        "randomize": [
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "spreadplayers ~~ 0 8 @s",
+                "function entity/ice_thorn_spawn/7",
+                "event entity @s minecraft:despawn"
+              ],
+              "target": "self"
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "spreadplayers ~~ 0 8 @s",
+                "function entity/ice_thorn_spawn/8",
+                "event entity @s minecraft:despawn"
+              ],
+              "target": "self"
+            }
+          }
+        ]
+      },
+      "minecraft:select_laser": {
+        "randomize": [
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "summon dec:group ~~~ 0 0 minecraft:line_1_laser",
+                "summon dec:group ~~~ 0 0 minecraft:line_1_laser",
+                "summon dec:group ~~~ 0 0 minecraft:line_1_laser",
+                "event entity @s minecraft:despawn"
+              ],
+              "target": "self"
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "summon dec:group ~~~ 0 0 minecraft:line_2_laser",
+                "summon dec:group ~~~ 0 0 minecraft:line_2_laser",
+                "summon dec:group ~~~ 0 0 minecraft:line_2_laser",
+                "event entity @s minecraft:despawn"
+              ],
+              "target": "self"
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "summon dec:group ~~~ 0 0 minecraft:solid_circle_laser",
+                "summon dec:group ~~~ 0 0 minecraft:solid_circle_laser",
+                "event entity @s minecraft:despawn"
+              ],
+              "target": "self"
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "summon dec:group ~~~ 0 0 minecraft:circle_laser",
+                "summon dec:group ~~~ 0 0 minecraft:circle_laser",
+                "summon dec:group ~~~ 0 0 minecraft:circle_laser",
+                "event entity @s minecraft:despawn"
+              ],
+              "target": "self"
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "summon dec:group ~~~ 0 0 minecraft:square_laser",
+                "summon dec:group ~~~ 0 0 minecraft:square_laser",
+                "summon dec:group ~~~ 0 0 minecraft:square_laser",
+                "event entity @s minecraft:despawn"
+              ],
+              "target": "self"
+            }
+          }
+        ]
+      },
+      "minecraft:line_1_laser": {
+        "run_command": {
+          "command": [
+            "spreadplayers ~~ 0 8 @s",
+            "function entity/frozen_laser_spawn/2",
+            "event entity @s minecraft:despawn"
+          ],
+          "target": "self"
+        }
+      },
+      "minecraft:line_2_laser": {
+        "run_command": {
+          "command": [
+            "spreadplayers ~~ 0 8 @s",
+            "function entity/frozen_laser_spawn/3",
+            "event entity @s minecraft:despawn"
+          ],
+          "target": "self"
+        }
+      },
+      "minecraft:solid_circle_laser": {
+        "run_command": {
+          "command": [
+            "spreadplayers ~~ 0 8 @s",
+            "function entity/frozen_laser_spawn/1",
+            "event entity @s minecraft:despawn"
+          ],
+          "target": "self"
+        }
+      },
+      "minecraft:circle_laser": {
+        "randomize": [
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "spreadplayers ~~ 0 8 @s",
+                "function entity/frozen_laser_spawn/4",
+                "event entity @s minecraft:despawn"
+              ],
+              "target": "self"
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "spreadplayers ~~ 0 8 @s",
+                "function entity/frozen_laser_spawn/5",
+                "event entity @s minecraft:despawn"
+              ],
+              "target": "self"
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "spreadplayers ~~ 0 8 @s",
+                "function entity/frozen_laser_spawn/6",
+                "event entity @s minecraft:despawn"
+              ],
+              "target": "self"
+            }
+          }
+        ]
+      },
+      "minecraft:square_laser": {
+        "randomize": [
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "spreadplayers ~~ 0 8 @s",
+                "function entity/frozen_laser_spawn/7",
+                "event entity @s minecraft:despawn"
+              ],
+              "target": "self"
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "spreadplayers ~~ 0 8 @s",
+                "function entity/frozen_laser_spawn/8",
+                "event entity @s minecraft:despawn"
+              ],
+              "target": "self"
+            }
+          }
+        ]
+      },
+      "minecraft:select_blackstone_thorn": {
+        "randomize": [
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "summon dec:group ~~~ 0 0 minecraft:line_1_blackstone_thorn",
+                "summon dec:group ~~~ 0 0 minecraft:line_1_blackstone_thorn",
+                "summon dec:group ~~~ 0 0 minecraft:line_1_blackstone_thorn",
+                "event entity @s minecraft:despawn"
+              ],
+              "target": "self"
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "summon dec:group ~~~ 0 0 minecraft:line_2_blackstone_thorn",
+                "summon dec:group ~~~ 0 0 minecraft:line_2_blackstone_thorn",
+                "summon dec:group ~~~ 0 0 minecraft:line_2_blackstone_thorn",
+                "event entity @s minecraft:despawn"
+              ],
+              "target": "self"
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "summon dec:group ~~~ 0 0 minecraft:solid_circle_blackstone_thorn",
+                "summon dec:group ~~~ 0 0 minecraft:solid_circle_blackstone_thorn",
+                "event entity @s minecraft:despawn"
+              ],
+              "target": "self"
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "summon dec:group ~~~ 0 0 minecraft:circle_blackstone_thorn",
+                "summon dec:group ~~~ 0 0 minecraft:circle_blackstone_thorn",
+                "summon dec:group ~~~ 0 0 minecraft:circle_blackstone_thorn",
+                "event entity @s minecraft:despawn"
+              ],
+              "target": "self"
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "summon dec:group ~~~ 0 0 minecraft:square_blackstone_thorn",
+                "summon dec:group ~~~ 0 0 minecraft:square_blackstone_thorn",
+                "summon dec:group ~~~ 0 0 minecraft:square_blackstone_thorn",
+                "event entity @s minecraft:despawn"
+              ],
+              "target": "self"
+            }
+          }
+        ]
+      },
+      "minecraft:line_1_blackstone_thorn": {
+        "run_command": {
+          "command": [
+            "spreadplayers ~~ 0 8 @s",
+            "function entity/blackstone_thorn_spawn/2",
+            "event entity @s minecraft:despawn"
+          ],
+          "target": "self"
+        }
+      },
+      "minecraft:line_2_blackstone_thorn": {
+        "run_command": {
+          "command": [
+            "spreadplayers ~~ 0 8 @s",
+            "function entity/blackstone_thorn_spawn/3",
+            "event entity @s minecraft:despawn"
+          ],
+          "target": "self"
+        }
+      },
+      "minecraft:solid_circle_blackstone_thorn": {
+        "run_command": {
+          "command": [
+            "spreadplayers ~~ 0 8 @s",
+            "function entity/blackstone_thorn_spawn/1",
+            "event entity @s minecraft:despawn"
+          ],
+          "target": "self"
+        }
+      },
+      "minecraft:circle_blackstone_thorn": {
+        "randomize": [
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "spreadplayers ~~ 0 8 @s",
+                "function entity/blackstone_thorn_spawn/4",
+                "event entity @s minecraft:despawn"
+              ],
+              "target": "self"
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "spreadplayers ~~ 0 8 @s",
+                "function entity/blackstone_thorn_spawn/5",
+                "event entity @s minecraft:despawn"
+              ],
+              "target": "self"
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "spreadplayers ~~ 0 8 @s",
+                "function entity/blackstone_thorn_spawn/6",
+                "event entity @s minecraft:despawn"
+              ],
+              "target": "self"
+            }
+          }
+        ]
+      },
+      "minecraft:square_blackstone_thorn": {
+        "randomize": [
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "spreadplayers ~~ 0 8 @s",
+                "function entity/blackstone_thorn_spawn/7",
+                "event entity @s minecraft:despawn"
+              ],
+              "target": "self"
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "spreadplayers ~~ 0 8 @s",
+                "function entity/blackstone_thorn_spawn/8",
+                "event entity @s minecraft:despawn"
+              ],
+              "target": "self"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

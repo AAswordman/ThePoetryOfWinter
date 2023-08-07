@@ -1,0 +1,23 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "wb:ball_magic_stoneman_a",
+      "materials": { "default": "skeleton" },
+      "textures": {
+        "default": "textures/wb/2_x/magic_stoneman"
+      },
+      "geometry": {
+        "default": "geometry.ball_magic_stoneman_a"
+      },
+      "animations": {
+      	"rise":"animation.ball_magic_stoneman_a.rise",
+      	"look":"animation.ball_magic_stoneman_a.look"
+      },
+      "animation_controllers": [
+      	{ "base": "controller.animation.ball_magic_stoneman_a.base" }
+      ],
+      "render_controllers": [ "controller.render.base" ]
+    }
+  }
+}

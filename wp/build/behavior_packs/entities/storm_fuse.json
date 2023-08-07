@@ -1,0 +1,72 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:storm_fuse",
+      "runtime_identifier": "minecraft:egg",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+    },
+    "components": {
+      "minecraft:collision_box": {
+        "width": 0.1,
+        "height": 0.1
+      },
+      "minecraft:explode": {
+        "fuseLength": 0.5,
+        "fuseLit": true,
+        "power": 0,
+        "causesFire": false
+      },
+      "minecraft:projectile": {
+        "onHit": {
+          "impact_damage": {
+            "damage": 12,
+            "knockback": false,
+            "catchFire": false,
+            "semirandomdiffdamage": false
+          },
+          "definition_event": {
+            "affect_projectile": true,
+            "event_trigger": {
+              "event": "minecraft:explode",
+              "target": "self"
+            }
+          }
+        },
+        "power": 3,
+        "gravity": 0.00,
+        "inertia": 0.9,
+        "liquid_inertia": 1.4,
+        "anchor": 1,
+        "offset": [
+          0,
+          0,
+          1
+        ],
+        "semirandomdiffdamage": true,
+        "uncertaintyBase": 0.0,
+        "uncertaintyMultiplier": 0
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    },
+    "events": {
+      "minecraft:explode": {
+        "run_command": {
+          "command": [
+            "damage @e[type=!item,x=~-2,y=~-1.5,z=~-2,dx=4,dy=4,dz=4] 6 magic",
+            "particle dec:bubble_spurt_particle ~~~",
+            "particle dec:bubble_spurt_particle ~~-0.5~",
+            "kill @s"
+          ]
+        }
+      }
+    }
+  }
+}

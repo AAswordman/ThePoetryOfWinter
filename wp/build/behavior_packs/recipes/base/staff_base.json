@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "wb:staff_base"
+    },
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "#",
+      "#",
+      "Y"
+    ],
+    "key": {
+      "#": {
+        "item": "wb:mineral_senior_equipment"
+      },
+      "Y": {
+        "item":"minecraft:stick"
+      }
+    },
+    "result": {
+      "item": "wb:staff_base"
+    }
+  }
+}

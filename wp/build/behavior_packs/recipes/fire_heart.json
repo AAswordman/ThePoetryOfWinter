@@ -1,0 +1,31 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:fire_heart"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "B#B",
+      "#X#",
+      "C#C"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:gold_ingot"
+      },
+      "B": {
+        "item": "minecraft:netherite_ingot"
+      },
+      "C": {
+        "item": "dec:lava_ingot"
+      },
+      "X": {
+        "item": "dec:health_stone"
+      }
+    },
+    "result": {
+      "item": "dec:fire_heart"
+    }
+  }
+}

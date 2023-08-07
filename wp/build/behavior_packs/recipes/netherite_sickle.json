@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:netherite_sickle"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "  A",
+      " XA",
+      "X A"
+    ],
+    "key": {
+      "X": {
+        "item": "dec:iron_stick"
+      },
+      "A": {
+        "item": "minecraft:netherite_ingot"
+      }
+    },
+    "result": {
+      "item": "dec:netherite_sickle"
+    }
+  }
+}

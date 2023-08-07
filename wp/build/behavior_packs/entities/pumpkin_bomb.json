@@ -1,0 +1,114 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:pumpkin_bomb",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "minecraft:explode": {
+        "minecraft:explode": {
+          "fuse_length": 0,
+          "fuse_lit": true,
+          "power": 0.5,
+          "causes_fire": true,
+          "destroy_affected_by_griefing": true,
+          "fire_affected_by_griefing": true
+        }
+      }
+    },
+    "components": {
+      "minecraft:behavior.swell": {
+        "start_distance": 20,
+        "stop_distance": 20,
+        "priority": 2
+      },
+      "minecraft:explode": {
+        "fuse_length": 3,
+        "fuse_lit": true,
+        "power": 2,
+        "causes_fire": true,
+        "destroy_affected_by_griefing": true,
+        "fire_affected_by_griefing": true
+      },
+      "minecraft:movement": {
+        "value": 0
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1.0
+      },
+      "minecraft:type_family": {
+        "family": [
+          "mob"
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.5,
+        "height": 0.5
+      },
+      "minecraft:health": {
+        "value": 1
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "on_damage": {
+              "filters": {
+                "test": "has_damage",
+                "value": "fatal"
+              },
+              "event": "minecraft:despawn"
+            },
+            "deals_damage": false
+          }
+        ]
+      },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      }
+    },
+    "events": {
+      "minecraft:explode": {
+        "add": {
+          "component_groups": [
+            "minecraft:exploding"
+          ]
+        }
+      },
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      }
+    }
+  }
+}

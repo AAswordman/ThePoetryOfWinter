@@ -1,0 +1,13 @@
+{
+  "format_version": "1.10",
+  "minecraft:item": {
+    "description": {
+      "identifier": "wb:mineral_energy_boundary",
+      "category": "Nature"
+    },
+    "components": {
+      "minecraft:icon": "mineral_energy_boundary",
+      "minecraft:hover_text_color": "light_purple"
+    }
+  }
+}

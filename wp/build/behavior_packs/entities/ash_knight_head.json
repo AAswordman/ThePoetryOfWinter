@@ -1,0 +1,213 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:ash_knight_head",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "teleport"
+        ]
+      },
+      "animations": {
+        "teleport": "animation.ash_knight_head.teleport"
+      }
+    },
+    "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "minecraft:roar": {
+        "minecraft:behavior.knockback_roar": {
+          "priority": 1,
+          "duration": 0.5,
+          "attack_time": 0.5,
+          "knockback_damage": 13,
+          "knockback_strength": 2,
+          "knockback_range": 7,
+          "damage_filters": {
+            "test": "is_family",
+            "subject": "other",
+            "operator": "!=",
+            "value": "ash"
+          },
+          "on_roar_end": {
+            "event": "minecraft:stop_roar"
+          },
+          "cooldown_time": 0
+        }
+      }
+    },
+    "components": {
+      "minecraft:timer": {
+        "looping": true,
+        "time": 7,
+        "time_down_event": {
+          "event": "minecraft:thorn_attack"
+        }
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1.0
+      },
+      "minecraft:experience_reward": {
+        "on_death": "query.last_hit_by_player ? 300 : 0"
+      },
+      "minecraft:loot": {
+        "table": "loot_tables/entities/ash_knight_head.json"
+      },
+      "minecraft:scale_by_age": {
+        "start_scale": 1,
+        "end_scale": 2
+      },
+      "minecraft:ageable": {
+        "duration": 10
+      },
+      "minecraft:type_family": {
+        "family": [
+          "ash_knight_head",
+          "ash",
+          "monster",
+          "boss",
+          "undead",
+          "mob"
+        ]
+      },
+      "minecraft:nameable": {},
+      "minecraft:health": {
+        "value": 300,
+        "max": 300
+      },
+      "minecraft:physics": {
+        "has_gravity": false
+      },
+      "minecraft:attack": {
+        "damage": 14
+      },
+      "minecraft:breathable": {
+        "totalSupply": 15,
+        "suffocateTime": 0,
+        "breathesAir": true,
+        "breathesWater": false
+      },
+      "minecraft:collision_box": {
+        "width": 0.8,
+        "height": 0.8
+      },
+      "minecraft:movement": {
+        "value": 0
+      },
+      "minecraft:follow_range": {
+        "value": 64,
+        "max": 64
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 8,
+        "look_distance": 8
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 8
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 2,
+        "within_radius": 16.0,
+        "reselect_targets": true,
+        "entity_types": [
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "wandering_trader"
+                }
+              ]
+            },
+            "max_dist": 64
+          },
+          {
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "villager"
+                },
+                {
+                  "test": "has_component",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "minecraft:is_baby"
+                }
+              ]
+            },
+            "max_dist": 64
+          }
+        ],
+        "must_see": true
+      },
+      "minecraft:on_death": {
+        "event": "minecraft:next",
+        "target": "self"
+      },
+      "minecraft:boss": {
+        "should_darken_sky": false,
+        "name": "boss.dec:ash_knight_head.name",
+        "hud_range": 32
+      }
+    },
+    "events": {
+      "minecraft:next": {
+        "run_command": {
+          "command": [//这里也记得改
+            "summon dec:ash_monster ~~~",
+            "summon dec:ash_monster ~~~"
+          ],
+          "target": "self"
+        }
+      },
+      "minecraft:thorn_attack": {
+        "run_command": {
+          "command": [
+            "execute if entity @a[r=64,c=1,m=!1] run summon dec:ash_sword_phantom ~~2~",
+            "execute if entity @a[r=64,c=1,m=!1] run particle dec:ash_sword_phantom_particle ~~2~",
+            "execute if entity @a[r=64,c=1,m=!1] run summon dec:group ~~~ 0 0 minecraft:select_blackstone_thorn"
+          ],
+          "target": "self"
+        }
+      },
+      "minecraft:start_roar": {
+        "add": {
+          "component_groups": [
+            "minecraft:roar"
+          ]
+        }
+      },
+      "minecraft:stop_roar": {
+        "remove": {
+          "component_groups": [
+            "minecraft:roar"
+          ]
+        }
+      },
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      }
+    }
+  }
+}

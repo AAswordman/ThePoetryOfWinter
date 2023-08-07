@@ -1,0 +1,572 @@
+{
+    "format_version": "1.11.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "wb:intentions_second",
+            "is_spawnable": false,
+            "is_summonable": true,
+            "is_experimental": false,
+            "animations": {
+                "base": "controller.animation.intentions_second",
+                "new": "animation.intentions_second.wb",
+                "boss": "animation.boss.testplayer"
+            },
+            "scripts": {
+                "animate": [
+                    "base",
+                    {
+                        "boss": "query.health>1"
+                    },
+                    "new"
+                ]
+            }
+        },
+        "component_groups": {
+            "minecraft:despawn": {
+                "minecraft:instant_despawn": {}
+            },
+            "imp": {
+                "minecraft:damage_sensor": [{
+                        "on_damage": {
+                            "filters": {
+                                "test": "has_damage",
+                                "value": "fatal"
+                            },
+                            "event": "into"
+                        },
+                        "deals_damage": false
+                    },
+                    {
+                        "on_damage": {
+                            "filters": {
+                                "test": "is_family",
+                                "value": "intentions",
+                                "subject": "other"
+                            }
+                        },
+                        "deals_damage": false
+                    }
+                ]
+            },
+            "into": {
+                "minecraft:spawn_entity": [{
+                    "min_wait_time": 0,
+                    "max_wait_time": 0,
+                    "spawn_entity": "wb:boss_translate_use",
+                    "num_to_spawn": 1,
+                    "single_use": true
+                }],
+                "minecraft:transformation": {
+                    "into": "wb:intentions_third<minecraft:entity_spawned>"
+                }
+            },
+            "attack_d": {
+                "minecraft:timer": {
+                    "time": 3.5,
+                    "looping": true,
+                    "time_down_event": {
+                        "event": "sss",
+                        "target": "self"
+                    }
+                },
+                "minecraft:behavior.summon_entity": {
+                    "priority": 0,
+                    "summon_choices": [{
+                        "min_activation_range": 0,
+                        "weight": 2,
+                        "cooldown_time": 0,
+                        "cast_duration": 2.5,
+                        "particle_color": "#FF664D59",
+                        "sequence": [{
+                                "shape": "circle",
+                                "target": "self",
+                                "base_delay": 0.02,
+                                "delay_per_summon": 0,
+                                "num_entities_spawned": 3,
+                                "entity_type": "wb:array_intentions_second",
+                                "size": 7,
+                                "entity_lifespan": 0,
+                                "sound_event": "prepare.attack"
+                            },
+                            {
+                                "shape": "circle",
+                                "target": "self",
+                                "base_delay": 0.02,
+                                "delay_per_summon": 0,
+                                "num_entities_spawned": 2,
+                                "entity_type": "wb:array_intentions_second",
+                                "size": 5,
+                                "entity_lifespan": 0,
+                                "sound_event": "prepare.attack"
+                            },
+                            {
+                                "shape": "circle",
+                                "target": "target",
+                                "base_delay": 0.02,
+                                "delay_per_summon": 0,
+                                "num_entities_spawned": 5,
+                                "entity_type": "wb:array_intentions_second",
+                                "size": 10,
+                                "entity_lifespan": 0,
+                                "sound_event": "prepare.attack"
+                            },
+                            {
+                                "shape": "circle",
+                                "target": "target",
+                                "base_delay": 0.02,
+                                "delay_per_summon": 0,
+                                "num_entities_spawned": 2,
+                                "entity_type": "wb:array_intentions_second",
+                                "size": 5,
+                                "entity_lifespan": 0,
+                                "sound_event": "prepare.attack"
+                            }
+                        ]
+                    }]
+                }
+            },
+            "big": {
+                "minecraft:behavior.summon_entity": {
+                    "priority": 0,
+                    "summon_choices": [{
+                        "min_activation_range": 0,
+                        "weight": 2,
+                        "cooldown_time": 0,
+                        "cast_duration": 3,
+                        "particle_color": "#FF664D59",
+                        "sequence": [{
+                            "shape": "circle",
+                            "target": "target",
+                            "base_delay": 0.02,
+                            "delay_per_summon": 0,
+                            "num_entities_spawned": 4,
+                            "entity_type": "wb:shadow_intentions_second",
+                            "size": 10,
+                            "entity_lifespan": 0,
+                            "sound_event": "prepare.attack"
+                        }]
+                    }]
+                },
+                "minecraft:damage_sensor": [{
+                    "cause": "all",
+                    "deals_damage": false
+                }],
+                "minecraft:is_baby": {},
+                "minecraft:timer": {
+                    "time": 8,
+                    "looping": true,
+                    "time_down_event": {
+                        "event": "sss",
+                        "target": "self"
+                    }
+                }
+            },
+            "attack_c": {
+                "minecraft:shooter": {
+                    "def": "wb:ball_intentions_seconda"
+                },
+                "minecraft:timer": {
+                    "time": 7,
+                    "looping": true,
+                    "time_down_event": {
+                        "event": "sss",
+                        "target": "self"
+                    }
+                },
+                "minecraft:behavior.ranged_attack": {
+                    "priority": 4,
+                    "attack_interval_min": 1,
+                    "attack_interval_max": 1.5,
+                    "charge_charged_trigger": 0,
+                    "charge_shoot_trigger": 1,
+                    "attack_radius": 64,
+                    "burst_shots": 2,
+                    "burst_interval": 0.8
+                }
+            },
+            "attack_b": {
+                "minecraft:shooter": {
+                    "def": "wb:ball_intentions_first_gas"
+                },
+                "minecraft:timer": {
+                    "time": 4,
+                    "looping": true,
+                    "time_down_event": {
+                        "event": "sss",
+                        "target": "self"
+                    }
+                },
+                "minecraft:behavior.ranged_attack": {
+                    "priority": 4,
+                    "attack_interval_min": 1,
+                    "attack_interval_max": 1.5,
+                    "charge_charged_trigger": 0,
+                    "charge_shoot_trigger": 1,
+                    "attack_radius": 64,
+                    "burst_shots": 3,
+                    "burst_interval": 0.3
+                }
+            },
+            "attack_a": {
+                "minecraft:shooter": {
+                    "def": "wb:ball_intentions_first_swordt"
+                },
+                "minecraft:timer": {
+                    "time": 4,
+                    "looping": true,
+                    "time_down_event": {
+                        "event": "sss",
+                        "target": "self"
+                    }
+                },
+                "minecraft:behavior.ranged_attack": {
+                    "priority": 4,
+                    "attack_interval_min": 1,
+                    "attack_interval_max": 1.5,
+                    "charge_charged_trigger": 0,
+                    "charge_shoot_trigger": 1,
+                    "attack_radius": 64,
+                    "burst_shots": 200,
+                    "burst_interval": 0.01
+                }
+            },
+            "fly": {
+                "minecraft:movement": {
+                    "value": 0.007
+                },
+                "minecraft:navigation.float": {
+                    "can_path_over_water": true
+                },
+                "minecraft:movement.basic": {},
+                "minecraft:jump.static": {},
+                "minecraft:behavior.float": {
+                    "priority": 0
+                },
+                "minecraft:behavior.float_wander": {
+                    "xz_dist": 8,
+                    "y_dist": 4,
+                    "y_offset": -1.5,
+                    "random_reselect": true,
+                    "float_duration": [3, 5]
+                },
+                "minecraft:can_fly": {},
+                "minecraft:nameable": {}
+            },
+            "second": {
+                "minecraft:equipment": {
+                    "table": "loot_tables/wb_item/sword_intentions.json"
+                },
+                "minecraft:timer": {
+                    "time": 2,
+                    "looping": true,
+                    "time_down_event": {
+                        "event": "sss",
+                        "target": "self"
+                    }
+                },
+                "minecraft:knockback_resistance": {
+                    "value": 1
+                },
+                "minecraft:damage_sensor": [{
+                        "on_damage": {
+                            "filters": {
+                                "test": "has_damage",
+                                "value": "fatal"
+                            },
+                            "event": "into"
+                        },
+                        "deals_damage": false
+                    },
+                    {
+                        "on_damage": {
+                            "filters": {
+                                "test": "is_family",
+                                "value": "intentions",
+                                "subject": "other"
+                            }
+                        },
+                        "deals_damage": false
+                    }
+                ],
+                "minecraft:spawn_entity": [{
+                    "min_wait_time": 0.01,
+                    "max_wait_time": 0.01,
+                    "spawn_entity": "wb:ball_intentions_firsta",
+                    "num_to_spawn": 1,
+                    "single_use": true
+                }]
+            },
+            "first": {
+                "minecraft:damage_sensor": [{
+                    "cause": "all",
+                    "deals_damage": false
+                }],
+                "minecraft:timer": {
+                    "time": 0.5,
+                    "looping": false,
+                    "time_down_event": {
+                        "event": "second",
+                        "target": "self"
+                    }
+                }
+            }
+        },
+        "components": {
+            "minecraft:physics": {},
+            "minecraft:boss": {
+                "should_darken_sky": true,
+                "name": "Intentions",
+                "hud_range": 128
+            },
+            "minecraft:fire_immune": true,
+            "minecraft:type_family": {
+                "family": [
+                    "monster",
+                    "intentions",
+                    "aboss"
+                ]
+            },
+            "minecraft:scale": {
+                "value": 1
+            },
+            "minecraft:collision_box": {
+                "width": 0.9,
+                "height": 1.8
+            },
+            "minecraft:health": {
+                "value": 1700,
+                "max": 1700
+            },
+            "minecraft:attack": {
+                "damage": 50
+            },
+            "minecraft:behavior.look_at_player": {
+                "priority": 7,
+                "look_distance": 6,
+                "probability": 0.02
+            },
+            "minecraft:behavior.random_look_around": {
+                "priority": 8
+            },
+            "minecraft:behavior.nearest_attackable_target": {
+                "priority": 3,
+                "entity_types": [{
+                    "filters": {
+                        "all_of": [{
+                                "test": "is_family",
+                                "operator": "!=",
+                                "subject": "other",
+                                "value": "intentions"
+                            },
+                            {
+                                "test": "is_family",
+                                "operator": "!=",
+                                "subject": "other",
+                                "value": "aboss"
+                            }
+                        ]
+                    },
+                    "within_default": 64
+                }],
+                "must_see": false,
+                "must_reach": false
+            },
+            "minecraft:behavior.hurt_by_target": {
+                "priority": 2
+            },
+            "minecraft:follow_range": {
+                "value": 64
+            }
+        },
+        "events": {
+            "disappear": {
+                "add": {
+                    "component_groups": [
+                        "disappear"
+                    ]
+                }
+            },
+            "sss": {
+                "randomize": [{
+                        "run_command": {
+                            "command": [
+                                "summon wb:shadow_intentions_secondx",
+                                "summon wb:shadow_intentions_secondx",
+                                "summon wb:shadow_intentions_secondx",
+                                "summon wb:shadow_intentions_secondx",
+                                "particle wb:ruin_mind_boss_second_par ~~~",
+                                "tp @s @e[type=wb:shadow_intentions_secondx,r=64,c=-1]",
+                                "kill @e[type=wb:shadow_intentions_secondx,r=64,c=1]"
+                            ],
+                            "target": "self"
+                        },
+                        "weight": 1,
+                        "remove": {
+                            "component_groups": [
+                                "attack_b",
+                                "attack_c",
+                                "big",
+                                "attack_d"
+                            ]
+                        },
+                        "add": {
+                            "component_groups": [
+                                "attack_a",
+                                "imp"
+                            ]
+                        }
+                    },
+                    {
+                        "run_command": {
+                            "command": [
+                                "summon wb:shadow_intentions_secondx",
+                                "summon wb:shadow_intentions_secondx",
+                                "summon wb:shadow_intentions_secondx",
+                                "summon wb:shadow_intentions_secondx",
+                                "particle wb:ruin_mind_boss_second_par ~~~",
+                                "tp @s @e[type=wb:shadow_intentions_secondx,r=64,c=-1]",
+                                "kill @e[type=wb:shadow_intentions_secondx,r=64,c=1]"
+                            ],
+                            "target": "self"
+                        },
+                        "weight": 1,
+                        "remove": {
+                            "component_groups": [
+                                "attack_a",
+                                "attack_c",
+                                "big",
+                                "attack_d"
+                            ]
+                        },
+                        "add": {
+                            "component_groups": [
+                                "attack_b",
+                                "imp"
+                            ]
+                        }
+                    },
+                    {
+                        "run_command": {
+                            "command": [
+                                "summon wb:shadow_intentions_secondx",
+                                "summon wb:shadow_intentions_secondx",
+                                "summon wb:shadow_intentions_secondx",
+                                "summon wb:shadow_intentions_secondx",
+                                "particle wb:ruin_mind_boss_second_par ~~~",
+                                "tp @s @e[type=wb:shadow_intentions_secondx,r=64,c=-1]",
+                                "kill @e[type=wb:shadow_intentions_secondx,r=64,c=1]"
+                            ],
+                            "target": "self"
+                        },
+                        "weight": 1,
+                        "remove": {
+                            "component_groups": [
+                                "attack_b",
+                                "attack_a",
+                                "big",
+                                "attack_d"
+                            ]
+                        },
+                        "add": {
+                            "component_groups": [
+                                "attack_c",
+                                "imp"
+                            ]
+                        }
+                    },
+                    {
+                        "run_command": {
+                            "command": [
+                                "summon wb:shadow_intentions_secondx",
+                                "summon wb:shadow_intentions_secondx",
+                                "summon wb:shadow_intentions_secondx",
+                                "summon wb:shadow_intentions_secondx",
+                                "particle wb:ruin_mind_boss_second_par ~~~",
+                                "tp @s @e[type=wb:shadow_intentions_secondx,r=64,c=-1]",
+                                "kill @e[type=wb:shadow_intentions_secondx,r=64,c=1]"
+                            ],
+                            "target": "self"
+                        },
+                        "weight": 1,
+                        "remove": {
+                            "component_groups": [
+                                "attack_b",
+                                "attack_a",
+                                "attack_c",
+                                "attack_d"
+                            ]
+                        },
+                        "add": {
+                            "component_groups": [
+                                "big"
+                            ]
+                        }
+                    },
+                    {
+                        "run_command": {
+                            "command": [
+                                "summon wb:shadow_intentions_secondx",
+                                "summon wb:shadow_intentions_secondx",
+                                "summon wb:shadow_intentions_secondx",
+                                "summon wb:shadow_intentions_secondx",
+                                "tp @s @e[type=wb:shadow_intentions_secondx,r=64,c=-1]",
+                                "particle wb:ruin_mind_boss_second_par ~~~",
+                                "kill @e[type=wb:shadow_intentions_secondx,r=64,c=1]"
+                            ],
+                            "target": "self"
+                        },
+                        "weight": 1,
+                        "remove": {
+                            "component_groups": [
+                                "attack_b",
+                                "attack_a",
+                                "attack_c",
+                                "big"
+                            ]
+                        },
+                        "add": {
+                            "component_groups": [
+                                "attack_d",
+                                "imp"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "minecraft:entity_spawned": {
+                "add": {
+                    "component_groups": [
+                        "first",
+                        "fly"
+                    ]
+                }
+            },
+            "second": {
+                "add": {
+                    "component_groups": [
+                        "second"
+                    ]
+                },
+                "remove": {
+                    "component_groups": [
+                        "first"
+                    ]
+                }
+            },
+            "into": {
+                "add": {
+                    "component_groups": [
+                        "into"
+                    ]
+                }
+            },
+            "minecraft:despawn": {
+                "add": {
+                    "component_groups": [
+                        "minecraft:despawn"
+                    ]
+                }
+            }
+        }
+    }
+}

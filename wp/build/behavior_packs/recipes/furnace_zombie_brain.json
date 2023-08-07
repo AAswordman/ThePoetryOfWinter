@@ -1,0 +1,14 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_furnace": {
+    "description": {
+    "identifier": "dec:furnace_zombie_brain"
+    },
+
+    
+    "tags": ["furnace", "smoker", "campfire"],
+    "input": "dec:zombie_brain",
+    "output": "dec:cooked_brain"
+  }
+  
+}

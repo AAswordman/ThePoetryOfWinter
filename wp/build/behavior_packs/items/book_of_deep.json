@@ -1,0 +1,21 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:book_of_deep"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.navigation"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:book_of_deep.name"
+      },
+      "minecraft:icon": {
+        "texture": "book_of_deep"
+      },
+      "minecraft:foil": true
+    }
+  }
+}

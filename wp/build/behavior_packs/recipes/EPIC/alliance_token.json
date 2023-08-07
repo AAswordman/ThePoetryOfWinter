@@ -1,0 +1,25 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+      "description": {
+      "identifier": "epic:alliance_token"
+      },  
+      "tags": [ "crafting_table" ],
+      "pattern": [
+        " A ",
+        "ABA",
+        " A "
+      ],
+      "key": {
+        "B": {
+          "item": "minecraft:emerald"
+        },
+        "A":{
+          "item": "minecraft:copper_ingot"
+        }
+      },
+      "result": {
+        "item": "epic:alliance_token"
+      }
+    }
+  }

@@ -1,0 +1,54 @@
+{
+  "format_version": "1.12.0",
+ "minecraft:entity": {
+  "description": {
+    "identifier": "dec:amethyst_energy_ray",
+    "runtime_identifier": "minecraft:egg",
+    "is_spawnable": false,
+    "is_summonable": true,
+    "is_experimental": false,
+    "scripts":{
+      "animate":["ticking"]
+    },
+      "animations":{
+        "ticking":"controller.animation.particle_amethyst_energy_wake"
+    }
+  },
+  "components": {
+   "minecraft:collision_box": {
+    "width": 0.2,
+    "height": 0.2
+   },
+   "minecraft:explode": {
+    "fuseLength": 3,
+    "fuseLit": true,
+    "power": 0,
+    "causesFire": false
+    },
+   "minecraft:projectile": {
+    "onHit": {
+      "impact_damage": {
+        "damage": 9,
+        "knockback": false,
+        "catchFire": false,
+        "semirandomdiffdamage": false
+      },
+      "remove_on_hit": { }
+    },
+    "hit_sound": "bullet.hit",
+    "power": 0.95,
+    "gravity": 0.00,
+    "inertia": 1,
+    "liquid_inertia": 1,
+    "anchor": 1,
+    "offset": [ 0, 0, 1 ],
+    "semirandomdiffdamage": true,
+    "uncertaintyBase": 5.0,
+    "uncertaintyMultiplier": 5,
+    "reflectOnHurt": true
+   },
+   "minecraft:physics": {
+   }
+  }
+ }
+}

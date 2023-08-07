@@ -1,0 +1,43 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.abyssal_controller": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "ticking": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "/execute positioned ~29 60 ~ run particle dec:bubble_line_particle ~~~",
+            "/execute positioned ~-29 60 ~ run particle dec:bubble_line_particle ~~~",
+            "/execute positioned ~ 60 ~29 run particle dec:bubble_line_particle ~~~",
+            "/execute positioned ~ 60 ~-29 run particle dec:bubble_line_particle ~~~",
+            "/execute positioned ~-21 60 ~-21 run particle dec:bubble_line_particle ~~~",
+            "/execute positioned ~21 60 ~-21 run particle dec:bubble_line_particle ~~~",
+            "/execute positioned ~-21 60 ~21 run particle dec:bubble_line_particle ~~~",
+            "/execute positioned ~21 60 ~21 run particle dec:bubble_line_particle ~~~"
+          ]
+        },
+        "ticking": {
+          "transitions": [
+            {
+              "default": "(1.0)"
+            }
+          ],
+          "on_entry": [
+            "/execute positioned ~29 60 ~ run particle dec:bubble_line_particle ~~~",
+            "/execute positioned ~-29 60 ~ run particle dec:bubble_line_particle ~~~",
+            "/execute positioned ~ 60 ~29 run particle dec:bubble_line_particle ~~~",
+            "/execute positioned ~ 60 ~-29 run particle dec:bubble_line_particle ~~~",
+            "/execute positioned ~-21 60 ~-21 run particle dec:bubble_line_particle ~~~",
+            "/execute positioned ~21 60 ~-21 run particle dec:bubble_line_particle ~~~",
+            "/execute positioned ~-21 60 ~21 run particle dec:bubble_line_particle ~~~",
+            "/execute positioned ~21 60 ~21 run particle dec:bubble_line_particle ~~~"
+          ]
+        }
+      }
+    }
+  }
+}

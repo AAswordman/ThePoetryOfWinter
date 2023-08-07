@@ -1,0 +1,28 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:the_imperial_sword"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " X ",
+      "XAX",
+      " B "
+    ],
+    "key": {
+      "X": {
+        "item": "dec:everlasting_winter_ingot"
+      },
+      "B": {
+        "item": "dec:everlasting_winter_stick"
+      },
+      "A": {
+        "item": "dec:sword_fish"
+      }
+    },
+    "result": {
+      "item": "dec:the_imperial_sword"
+    }
+  }
+}

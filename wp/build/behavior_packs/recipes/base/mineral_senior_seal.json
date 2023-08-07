@@ -1,0 +1,23 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "wb:mineral_senior_seal"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "#"
+    ],
+    "key": {
+      "#": {
+        "item": "wb:block_senior_seal"
+      }
+    },
+    "result": {
+      "item": "wb:mineral_senior_seal",
+      "count": 9
+    }
+  }
+}

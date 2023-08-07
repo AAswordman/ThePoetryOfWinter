@@ -1,0 +1,50 @@
+{
+  "pools": [
+    {
+        "rolls": 1,
+        "entries": [
+            {
+                "type": "item",
+                "name": "minecraft:emerald",
+                "weight": 47,
+                "functions": [
+                    {
+                        "function": "set_count",
+                        "count": {
+                            "min": 0,
+                            "max": 1
+                        }
+                    },
+                    {
+                        "function": "looting_enchant",
+                        "count": {
+                            "min": 0,
+                            "max": 1
+                        }
+                    }
+                ]
+            },
+            {
+                "type": "item",
+                "name": "dec:gray_shoes",
+                "weight": 1
+            },
+            {
+                "type": "item",
+                "name": "dec:jacket",
+                "weight": 1
+            },
+            {
+                "type": "item",
+                "name": "dec:striped_pants",
+                "weight": 1
+            }
+        ],
+        "conditions": [
+            {
+                "condition": "killed_by_player"
+            }
+        ]
+    }
+  ]
+}

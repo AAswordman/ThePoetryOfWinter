@@ -1,0 +1,22 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:dark_pearl"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.navigation"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:dark_pearl.name"
+      },
+      "minecraft:icon": {
+        "texture": "dark_pearl"
+      },
+      "minecraft:foil": true,
+      "minecraft:stacked_by_data": false
+    }
+  }
+}

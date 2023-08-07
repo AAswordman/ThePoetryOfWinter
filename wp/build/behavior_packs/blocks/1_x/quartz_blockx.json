@@ -1,0 +1,16 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "wb:quartz_blockx",
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:destroy_time": 4,
+			"minecraft:explosion_resistance": 6,
+			"minecraft:creative_category": {
+				"category": "construction"
+			}
+		}
+	}
+}

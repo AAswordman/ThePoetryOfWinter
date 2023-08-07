@@ -1,0 +1,192 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:the_imperial_sword"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.sword"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:the_imperial_sword.name"
+      },
+      "minecraft:icon": {
+        "texture": "the_imperial_sword"
+      },
+      "minecraft:weapon": {
+        "on_hurt_entity": {
+          "event": "attack",
+          "target": "self"
+        },
+        "on_hit_block": {
+          "event": "attack",
+          "target": "self"
+        }
+      },
+      "minecraft:stacked_by_data": false,
+      "minecraft:max_stack_size": 1,
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "dec:ice_brick"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.05"
+          },
+          {
+            "items": [
+              "dec:ice_nugget"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.1"
+          },
+          {
+            "items": [
+              "dec:ice_ingot"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.6"
+          }
+        ]
+      },
+      "minecraft:durability": {
+        "max_durability": 564
+      },
+      "minecraft:mining_speed": 1.5,
+      "minecraft:damage": 7.5,
+      "minecraft:enchantable": {
+        "value": 20,
+        "slot": "sword"
+      },
+      "minecraft:can_destroy_in_creative": false,
+      "minecraft:digger": {
+        "use_efficiency": false,
+        "destroy_speeds": [
+          {
+            "block": "minecraft:web",
+            "speed": 15
+          },
+          {
+            "block": "minecraft:bamboo",
+            "speed": 10
+          }
+        ]
+      },
+      "minecraft:on_use": {
+        "on_use": {
+          "event": "shoot",
+          "target": "self"
+        }
+      },
+      "tag:use_skill_count": {},
+      "minecraft:foil": false,
+      "minecraft:hand_equipped": true,
+      "tag:comp:equipment_type:melee_weapon":{}
+    },
+    "events": {
+      "attack": {
+        "damage": {
+          "type": "magic",
+          "amount": 1
+        }
+      },
+      "shoot": {
+        "sequence": [
+          {
+            "condition": "query.scoreboard('wbfl') < 15",
+            "sequence": [
+              {
+                "run_command": {
+                  "command": [
+                    "scoreboard players set @s skill_count 0"
+                  ],
+                  "target": "holder"
+                }
+              }
+            ]
+          },
+          {
+            "condition": "query.scoreboard('wbfl') >= 15",
+            "sequence": [
+              {
+                "condition": "query.scoreboard('skill_count') < 16",
+                "sequence": [
+                  {
+                    "run_command": {
+                      "command": [
+                        "scoreboard players add @s skill_count 1"
+                      ],
+                      "target": "holder"
+                    }
+                  }
+                ]
+              },
+              {
+                "condition": "query.scoreboard('skill_count') == 8",
+                "sequence": [
+                  {
+                    "run_command": {
+                      "command": [
+                        "effect @s strength 5 1",
+                        "effect @s resistance 2 2",
+                        "effect @e[r=5,rm=2] slowness 1 255",
+                        "particle dec:frozen_shield_particle ~~~",
+                        "scoreboard players remove @s wbfl 15",
+                        "playanimation @s animation.humanoid.sword_use"
+                      ],
+                      "target": "holder"
+                    }
+                  },
+                  {
+                    "damage": {
+                      "type": "magic",
+                      "amount": 1
+                    }
+                  }
+                ]
+              },
+              {
+                "condition": "query.scoreboard('skill_count') == 16",
+                "sequence": [
+                  {
+                    "run_command": {
+                      "command": [
+                        "effect @s strength 5 2",
+                        "effect @s resistance 2 3",
+                        "effect @e[r=5,rm=2] slowness 2 255",
+                        "particle dec:frozen_shield_particle ~~~",
+                        "particle dec:frozen_shield_particle ~~~",
+                        "scoreboard players remove @s wbfl 15",
+                        "playanimation @s animation.humanoid.sword_use"
+                      ],
+                      "target": "holder"
+                    }
+                  },
+                  {
+                    "damage": {
+                      "type": "magic",
+                      "amount": 1
+                    }
+                  }
+                ]
+              },
+              {
+                "condition": "query.scoreboard('skill_count') >= 16",
+                "sequence": [
+                  {
+                    "run_command": {
+                      "command": [
+                        "scoreboard players set @s skill_count 0"
+                      ],
+                      "target": "holder"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

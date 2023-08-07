@@ -1,0 +1,13 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_furnace": {
+    "description": {
+    "identifier": "dec:furnace_leek"
+    },
+
+    
+    "tags": ["furnace","smoker", "campfire"],
+    "input": "dec:leek",
+    "output": "dec:leek_cooked"
+  }
+}

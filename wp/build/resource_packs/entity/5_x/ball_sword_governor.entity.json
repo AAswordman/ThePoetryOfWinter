@@ -1,0 +1,22 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "wb:ball_sword_governor",
+      "materials": { "default": "skeleton" },
+      "textures": {
+        "default": "textures/wb/5_x/ball_sword_governor"
+      },
+      "animations":{
+          "base":"animation.ball_sword_governor.base"
+      },
+      "animation_controllers": [
+        { "base": "controller.animation.base.base" }
+      ],
+      "geometry": {
+        "default": "geometry.ball_sword_governor"
+      },
+      "render_controllers": [ "controller.render.base" ]
+    }
+  }
+}

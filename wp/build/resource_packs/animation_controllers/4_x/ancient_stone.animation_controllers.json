@@ -1,0 +1,44 @@
+{
+	"format_version" : "1.8.0",
+	"animation_controllers" : {
+		"controller.animation.ancient_stone.spell" : {
+			"states" : {
+				"default" : {
+					"transitions":[{"spell":"query.variant == 3 || query.variant == 4"},{"effect":"query.variant == 5"}]
+				},
+				"spell" : {
+					"transitions":[{"default":"query.variant != 3 && query.variant != 4"}],
+					"particle_effects": [{"locator":"hand","effect": "spell"}],
+					"animations":[{"spell":[]}]
+				},
+				"effect" : {
+					"transitions":[{"default":"query.variant != 5"}],
+					"particle_effects": [{"effect": "effect"}]
+				}
+			}
+		},
+		"controller.animation.ancient_stone.base" : {
+			"states" : {
+				"default" : {
+					"transitions":[
+					{"z":"query.variant == 12"},
+					{"d":"query.variant == 13"},
+					{"j":"query.variant == 14"}
+				  ]
+				},
+				"z" : {
+					"transitions":[{"default":"query.variant != 12"}],
+					"animations":[{"z":[]}]
+				},
+				"d" : {
+					"transitions":[{"default":"query.variant != 13"}],
+					"animations":[{"d":[]}]
+				},
+				"j" : {
+					"transitions":[{"default":"query.variant != 14"}],
+					"animations":[{"j":[]}]
+				}
+			}
+		}
+	}
+}

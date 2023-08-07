@@ -1,0 +1,31 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:blizzard_staff"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " BX",
+      " AB",
+      "#  "
+    ],
+    "key": {
+      "A": {
+        "item": "dec:frozen_ray_staff"
+      },
+      "#": {
+        "item": "dec:ice_rod"
+      },
+      "X": {
+        "item": "minecraft:diamond_block"
+      },
+      "B": {
+        "item": "dec:ice_heart"
+      }
+    },
+    "result": {
+      "item": "dec:blizzard_staff"
+    }
+  }
+}

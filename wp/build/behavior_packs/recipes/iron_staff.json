@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:iron_staff"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "  X",
+      " # ",
+      "#  "
+    ],
+    "key": {
+      "#": {
+        "item": "dec:iron_stick"
+      },
+      "X": {
+        "item": "minecraft:amethyst_shard"
+      }
+    },
+    "result": {
+      "item": "dec:iron_staff"
+    }
+  }
+}

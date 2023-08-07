@@ -1,0 +1,21 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:tofu"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XX"
+    ],
+    "key": {
+      "X": {
+        "item": "dec:soybean"
+      }
+    },
+    "result": {
+      "item": "dec:tofu",
+      "count": 1
+    }
+  }
+}

@@ -1,0 +1,206 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:lurk_zombie",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "minecraft:from_night_event": {
+        "minecraft:environment_sensor": {
+          "triggers": {
+            "filters": {
+              "test": "is_daytime",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "event": "minecraft:despawn"
+          }
+        }
+      }
+    },
+    "components": {
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:movement_sound_distance_offset": {
+        "value": 0.55
+      },
+      "minecraft:experience_reward": {
+        "on_death": "query.last_hit_by_player ? 7 : 0"
+      },
+      "minecraft:attack": {
+        "damage": 5
+      },
+      "minecraft:vibration_listener": {},
+      "minecraft:vibration_damper": {},
+      "minecraft:suspect_tracking": {},
+      "minecraft:anger_level": {
+        "max_anger": 60,
+        "angry_threshold": 40,
+        "remove_targets_below_angry_threshold": true,
+        "angry_boost": 40,
+        "anger_decrement_interval": 1.0,
+        "default_annoyingness": 40,
+        "default_projectile_annoyingness": 40,
+        "on_increase_sounds": [
+          {
+            "sound": "listening_angry",
+            "condition": "query.anger_level(this) >= 30"
+          },
+          {
+            "sound": "listening",
+            "condition": "query.anger_level(this) >= 0"
+          }
+        ],
+        "nuisance_filter": {
+          "all_of": [
+            {
+              "test": "is_family",
+              "subject": "other",
+              "operator": "not",
+              "value": "warden"
+            },
+            {
+              "test": "is_family",
+              "subject": "other",
+              "operator": "not",
+              "value": "inanimate"
+            }
+          ]
+        }
+      },
+      "minecraft:is_hidden_when_invisible": {},
+      "minecraft:type_family": {
+        "family": [
+          "lurk_zombie",
+          "zombie",
+          "monster",
+          "mob",
+          "warden"
+        ]
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0
+      },
+      "minecraft:navigation.walk": {
+        "can_path_over_water": true,
+        "can_path_over_lava": true,
+        "avoid_damage_blocks": true
+      },
+      "minecraft:ambient_sound_interval": {
+        "value": 2.0,
+        "range": 4.0,
+        "event_name": "ambient",
+        "event_names": [
+          {
+            "event_name": "angry",
+            "condition": "query.anger_level(this) >= 40"
+          },
+          {
+            "event_name": "agitated",
+            "condition": "query.anger_level(this) >= 30"
+          }
+        ]
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
+      "minecraft:collision_box": {
+        "width": 0.6,
+        "height": 1.9
+      },
+      "minecraft:burns_in_daylight": {},
+      "minecraft:health": {
+        "value": 70,
+        "max": 70
+      },
+      "minecraft:movement": {
+        "value": 0.3
+      },
+      "minecraft:knockback_resistance": {
+        "value": 0.5
+      },
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.roar": {
+        "priority": 2,
+        "duration": 4.2
+      },
+      "minecraft:behavior.sonic_boom": {
+        "priority": 3,
+        "duration": 5.0,
+        "speed_multiplier": 1.0,
+        "attack_damage": 3,
+        "attack_range_horizontal": 5,
+        "attack_range_vertical": 7,
+        "attack_cooldown": 3,
+        "knockback_vertical_strength": 0.2,
+        "knockback_horizontal_strength": 1.3,
+        "knockback_height_cap": 0.3,
+        "duration_until_attack_sound": 1.7,
+        "charge_sound": "sonic_charge",
+        "attack_sound": "sonic_boom"
+      },
+      "minecraft:behavior.melee_attack": {
+        "priority": 4,
+        "speed_multiplier": 1.1,
+        "melee_fov": 360
+      },
+      "minecraft:behavior.investigate_suspicious_location": {
+        "priority": 5,
+        "speed_multiplier": 0.8
+      },
+      "minecraft:behavior.sniff": {
+        "priority": 6,
+        "duration": 3,
+        "sniffing_radius": 36.0,
+        "suspicion_radius_horizontal": 6.0,
+        "suspicion_radius_vertical": 20.0,
+        "cooldown_range": [
+          2.0,
+          5.0
+        ]
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 9,
+        "speed_multiplier": 0.5
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 11
+      },
+      "minecraft:physics": {},
+      "minecraft:follow_range": 32,
+      "minecraft:nameable": {},
+      "minecraft:loot": {
+        "table": "loot_tables/entities/lurk_zombie.json"
+      }
+    },
+    "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
+      "minecraft:from_night_event": {
+        "trigger": "minecraft:entity_spawned",
+        "add": {
+          "component_groups": [
+            "minecraft:from_night_event"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:clam",
+      "materials": { "default": "husk" },
+      "textures": {
+        "default": "textures/entity/clam"
+      },
+      "geometry": {
+        "default": "geometry.clam"
+      },
+      "scripts": {
+        "scale": "0.5"
+      },
+      "render_controllers": [ "controller.render.clam" ],
+      "spawn_egg": {
+        "base_color": "#FFE1D6",
+        "overlay_color": "#FFE6B7"
+      }
+    }
+  }
+}

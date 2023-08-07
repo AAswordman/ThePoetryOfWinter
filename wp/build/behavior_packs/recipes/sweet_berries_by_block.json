@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:sweet_berries_by_block"
+    },
+
+    
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "#"
+    ],
+    "key": {
+      "#": {
+        "item": "dec:sweet_berries_block",
+        "data": 0
+      }
+    },
+    "result": {
+      "item": "minecraft:sweet_berries",
+      "data": 0,
+      "count": 9
+    }
+  }
+}

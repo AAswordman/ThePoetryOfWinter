@@ -1,0 +1,21 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:exploding_pellets"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.navigation"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:exploding_pellets.name"
+      },
+      "minecraft:icon": {
+        "texture": "exploding_pellets"
+      },
+      "minecraft:allow_off_hand": true
+    }
+  }
+}

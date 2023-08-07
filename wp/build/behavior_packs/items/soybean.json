@@ -1,0 +1,30 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "nature",
+      "identifier": "dec:soybean"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.seed"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:soybean.name"
+      },
+      "minecraft:icon": {
+        "texture": "soybean"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "cookie",
+      "minecraft:block_placer": {
+        "block": "dec:soybean_crop"
+      },
+      "minecraft:use_duration": 0.5,
+      "minecraft:food": {
+        "nutrition": 3,
+        "saturation_modifier": "low"
+      }
+    }
+  }
+}

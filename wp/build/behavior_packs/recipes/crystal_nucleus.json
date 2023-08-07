@@ -1,0 +1,27 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:crystal_nucleus"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "###",
+      "#X#",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "dec:magic_powder"
+      },
+      "X": {
+        "item": "minecraft:dye",
+        "data": 4
+      }
+    },
+    "result": {
+      "item": "dec:crystal_nucleus",
+      "count": 16
+    }
+  }
+}

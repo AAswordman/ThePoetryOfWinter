@@ -1,0 +1,99 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "wb:station_upgrade_c",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier":"minecraft:shulker"
+    },
+    "component_groups": {
+        "into":{
+    "minecraft:explode": {
+     "fuseLength": 0,
+     "fuseLit": true,
+          "breaks_blocks":false,
+     "power": 3,
+     "causesFire": true,
+     "fireAffectedByGriefing": true,
+     "destroyAffectedByGriefing": true
+    }
+        }
+    },
+
+    "components": {
+        "minecraft:rideable": {
+          "seat_count": 1,
+          "family_types": [
+            "player"
+          ],
+          "interact_text":"坐上升级台",
+          "seats": {
+            "position": [ 0.0, 0.5, 0.0 ]
+          }
+        },
+     "minecraft:damage_sensor": [
+        {
+          "on_damage": {
+            "filters": {
+			    "test": "has_damage", "value": "fatal"
+            },
+            "event": "into"
+          }
+        }
+      ],
+      "minecraft:type_family": {
+        "family": [ "upgrade", "station" ]
+      },
+      "minecraft:collision_box": {
+        "width": 1.25,
+        "height": 0.4375
+      },
+      "minecraft:breathable": {
+        "totalSupply": 15,
+        "suffocateTime": 0
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:health": {
+        "value": 100,
+        "max": 100
+      },
+      "minecraft:movement": {
+        "value": 0.0,
+        "max": 0.0
+      },
+            "minecraft:explode": {
+     "fuseLength": 500,
+     "fuseLit": true,
+     "power": 0,
+     "causesFire": true,
+     "fireAffectedByGriefing": true,
+     "destroyAffectedByGriefing": true
+    },
+      "minecraft:behavior.look_at_player": {
+        "priority": 1,
+        "look_distance": 6.0,
+        "probability": 0.02
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 8
+      },
+      "minecraft:navigation.walk": {
+      },
+      "minecraft:movement.basic": {
+      },
+	  "minecraft:physics": {
+      }
+    },
+
+    "events": {
+        "into":{
+            "add":{
+                "component_groups":["into"]
+            }
+        }
+    }
+  }
+}

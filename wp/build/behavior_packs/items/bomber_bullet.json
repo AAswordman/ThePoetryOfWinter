@@ -1,0 +1,21 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "dec:bomber_bullet"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.navigation"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:bomber_bullet.name"
+      },
+      "minecraft:icon": {
+        "texture": "bomber_bullet"
+      },
+      "minecraft:allow_off_hand": true
+    }
+  }
+}

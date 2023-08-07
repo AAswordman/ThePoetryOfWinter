@@ -1,0 +1,40 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:feature_rules": {
+    "description": {
+      "identifier": "dec:houttuynia_crop_feature_rule",
+      "places_feature": "dec:scatter_houttuynia_crop_feature"
+    },
+    "conditions": {
+      "placement_pass": "surface_pass",
+      "minecraft:biome_filter": [
+        {
+          "test": "has_biome_tag",
+          "operator": "==",
+          "value": "forest"
+        },
+        {
+          "any_of": [
+            {
+              "test": "has_biome_tag",
+              "operator": "!=",
+              "value": "river"
+            },
+            {
+              "test": "has_biome_tag",
+              "operator": "!=",
+              "value": "lakes"
+            }
+          ]
+        }
+      ]
+    },
+    "distribution": {
+      "iterations": 1,
+      "scatter_chance": 2,
+      "x": 0,
+      "y": 0,
+      "z": 0
+    }
+  }
+}

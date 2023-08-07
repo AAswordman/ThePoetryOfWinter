@@ -1,0 +1,85 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "nature",
+      "identifier": "dec:intestine"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.rawFood"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:intestine.name"
+      },
+      "minecraft:icon": {
+        "texture": "intestine"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "cookie",
+      "minecraft:use_duration": 1.6,
+      "minecraft:food": {
+        "on_consume": {
+          "event": "consumed",
+          "target": "self"
+        },
+        "nutrition": 3,
+        "saturation_modifier": "low"
+      }
+    },
+    "events": {
+      "consumed": {
+        "sequence": [
+          {
+            "randomize": [
+              {
+                "weight": 7,
+                "add_mob_effect": {
+                  "effect": "poison",
+                  "duration": 10,
+                  "amplifier": 0,
+                  "target": "holder"
+                }
+              },
+              {
+                "weight": 1
+              }
+            ]
+          },
+          {
+            "randomize": [
+              {
+                "weight": 2,
+                "add_mob_effect": {
+                  "effect": "nausea",
+                  "duration": 30,
+                  "amplifier": 0,
+                  "target": "holder"
+                }
+              },
+              {
+                "weight": 1
+              }
+            ]
+          },
+          {
+            "randomize": [
+              {
+                "weight": 4,
+                "run_command": {
+                  "command": [
+                    "damage @s 3 magic"
+                  ],
+                  "target": "self"
+                }
+              },
+              {
+                "weight": 1
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

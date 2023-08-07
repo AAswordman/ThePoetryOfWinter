@@ -1,0 +1,129 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.shadow_portal": {
+            "timeline": {
+                "0.0": [
+                    "/scoreboard players random @s random 0 5"
+                ],
+                "2": [
+                    "/particle dec:ender_fuse_particle ~~~"
+                ],
+                "4": [
+                    "/particle dec:ender_fuse_particle ~~~"
+                ],
+                "6": [
+                    "/particle dec:ender_fuse_particle ~~~",
+                    "/execute as @s[scores={random=!5}] run particle dec:ender_spot_particle ~~~",
+                    "/execute as @s[scores={random=0}] run summon dec:shadow_archer ~~~",
+                    "/execute as @s[scores={random=1}] run summon dec:shadow_creeper ~~~",
+                    "/execute as @s[scores={random=2}] run summon dec:shadow_zombie ~~~",
+                    "/execute as @s[scores={random=3}] run summon dec:shadow_skeleton ~~~",
+                    "/execute as @s[scores={random=4}] run summon dec:end_stone_golem ~~~",
+                    "/execute as @s[scores={random=5}] run particle dec:ender_spot_particle ~~3.5~",
+                    "/execute as @s[scores={random=5}] run summon dec:dragon_head ~~4~"
+                ],
+                "8": [
+                    "/particle dec:ender_fuse_particle ~~~",
+                    "/scoreboard players random @s random 0 6"
+                ],
+                "10": [
+                    "/particle dec:ender_fuse_particle ~~~"
+                ],
+                "12": [
+                    "/particle dec:ender_fuse_particle ~~~",
+                    "/execute as @s[scores={random=!5}] run particle dec:ender_spot_particle ~~~",
+                    "/execute as @s[scores={random=0}] run summon dec:shadow_archer ~~~",
+                    "/execute as @s[scores={random=1}] run summon dec:shadow_creeper ~~~",
+                    "/execute as @s[scores={random=2}] run summon dec:shadow_zombie ~~~",
+                    "/execute as @s[scores={random=3}] run summon dec:shadow_skeleton ~~~",
+                    "/execute as @s[scores={random=4}] run summon dec:end_stone_golem ~~~",
+                    "/execute as @s[scores={random=5}] run particle dec:ender_spot_particle ~~3.5~",
+                    "/execute as @s[scores={random=5}] run summon dec:dragon_head ~~4~",
+                    "/event entity @s[scores={random=7}] minecraft:despawn"
+                ],
+                "14": [
+                    "/particle dec:ender_fuse_particle ~~~",
+                    "/scoreboard players random @s random 0 6"
+                ],
+                "16": [
+                    "/particle dec:ender_fuse_particle ~~~"
+                ],
+                "18": [
+                    "/execute as @s[scores={random=!5}] run particle dec:ender_spot_particle ~~~",
+                    "/execute as @s[scores={random=0}] run summon dec:shadow_archer ~~~",
+                    "/execute as @s[scores={random=1}] run summon dec:shadow_creeper ~~~",
+                    "/execute as @s[scores={random=2}] run summon dec:shadow_zombie ~~~",
+                    "/execute as @s[scores={random=3}] run summon dec:shadow_skeleton ~~~",
+                    "/execute as @s[scores={random=4}] run summon dec:end_stone_golem ~~~",
+                    "/execute as @s[scores={random=5}] run particle dec:ender_spot_particle ~~3.5~",
+                    "/execute as @s[scores={random=5}] run summon dec:dragon_head ~~4~",
+                    "/event entity @s[scores={random=6}] minecraft:despawn"
+                ],
+                "20": [
+                    "/particle dec:ender_fuse_particle ~~~",
+                    "/scoreboard players random @s random 0 6"
+                ],
+                "22": [
+                    "/execute as @s[scores={random=!5}] run particle dec:ender_spot_particle ~~~",
+                    "/execute as @s[scores={random=0}] run summon dec:shadow_archer ~~~",
+                    "/execute as @s[scores={random=1}] run summon dec:shadow_creeper ~~~",
+                    "/execute as @s[scores={random=2}] run summon dec:shadow_zombie ~~~",
+                    "/execute as @s[scores={random=3}] run summon dec:shadow_skeleton ~~~",
+                    "/execute as @s[scores={random=4}] run summon dec:end_stone_golem ~~~",
+                    "/execute as @s[scores={random=5}] run particle dec:ender_spot_particle ~~3.5~",
+                    "/execute as @s[scores={random=5}] run summon dec:dragon_head ~~4~",
+                    "/event entity @s[scores={random=6}] minecraft:despawn"
+                ],
+                "24": [
+                    "/particle dec:ender_fuse_particle ~~~",
+                    "/scoreboard players random @s random 0 6"
+                ],
+                "26": [
+                    "/execute as @s[scores={random=!6}] run particle dec:ender_spot_particle ~~~",
+                    "/execute as @s[scores={random=0}] run summon dec:shadow_archer ~~~",
+                    "/execute as @s[scores={random=1}] run summon dec:shadow_creeper ~~~",
+                    "/execute as @s[scores={random=2}] run summon dec:shadow_zombie ~~~",
+                    "/execute as @s[scores={random=3}] run summon dec:shadow_skeleton ~~~",
+                    "/execute as @s[scores={random=4}] run summon dec:end_stone_golem ~~~",
+                    "/execute as @s[scores={random=5}] run particle dec:ender_spot_particle ~~3.5~",
+                    "/execute as @s[scores={random=5}] run summon dec:dragon_head ~~4~",
+                    "/event entity @s[scores={random=6}] minecraft:despawn",
+                    "/scoreboard players random @s random 0 6"
+                ],
+                "28": [
+                    "/execute as @s[scores={random=!6}] run particle dec:ender_spot_particle ~~~",
+                    "/execute as @s[scores={random=0}] run summon dec:shadow_archer ~~~",
+                    "/execute as @s[scores={random=1}] run summon dec:shadow_creeper ~~~",
+                    "/execute as @s[scores={random=2}] run summon dec:shadow_zombie ~~~",
+                    "/execute as @s[scores={random=3}] run summon dec:shadow_skeleton ~~~",
+                    "/execute as @s[scores={random=4}] run summon dec:end_stone_golem ~~~",
+                    "/execute as @s[scores={random=5}] run particle dec:ender_spot_particle ~~3.5~",
+                    "/execute as @s[scores={random=5}] run summon dec:dragon_head ~~4~",
+                    "/event entity @s[scores={random=6}] minecraft:despawn",
+                    "/scoreboard players random @s random 0 6"
+                ],
+                "30": [
+                    "/execute as @s[scores={random=!6}] run particle dec:ender_spot_particle ~~~",
+                    "/execute as @s[scores={random=0}] run summon dec:shadow_archer ~~~",
+                    "/execute as @s[scores={random=1}] run summon dec:shadow_creeper ~~~",
+                    "/execute as @s[scores={random=2}] run summon dec:shadow_zombie ~~~",
+                    "/execute as @s[scores={random=3}] run summon dec:shadow_skeleton ~~~",
+                    "/execute as @s[scores={random=4}] run summon dec:end_stone_golem ~~~",
+                    "/execute as @s[scores={random=5}] run particle dec:ender_spot_particle ~~3.5~",
+                    "/execute as @s[scores={random=5}] run summon dec:dragon_head ~~4~",
+                    "/event entity @s[scores={random=6}] minecraft:despawn"
+                ],
+                "36": [
+                    "/particle dec:ender_spot_particle ~~~",
+                    "/scoreboard players reset @s random"
+                ],
+                "36.2": [
+                    "/event entity @s minecraft:despawn"
+                ]
+            },
+            "animation_length": 37,
+            "loop": true
+        }
+    }
+}

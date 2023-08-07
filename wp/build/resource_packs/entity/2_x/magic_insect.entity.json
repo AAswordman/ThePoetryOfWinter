@@ -1,0 +1,20 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "wb:magic_insect",
+      "materials": { "default": "skeleton" },
+      "textures": {
+        "default": "textures/wb/2_x/magic_insect"
+      },
+      "geometry": {
+        "default": "geometry.magic_insect"
+      },
+      "render_controllers": [ "controller.render.base" ],
+      "spawn_egg": {
+        "texture": "magic_insect",
+        "texture_index": 0
+      }
+    }
+  }
+}
