@@ -1,87 +1,69 @@
 {
-    "format_version": "1.16.100",
-    "minecraft:item": {
-        "description": {
-            "identifier": "epic:alliance_token",
-            "category": "equipment"
-        },
-        "components": {
-            "minecraft:creative_category": {
-                "parent": "itemGroup.name.sword"
+  "format_version": "1.19.83",
+  "minecraft:item": {
+    "description": {
+      "identifier": "epic:alliance_token",
+      "category": "equipment"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.sword"
+      },
+      "minecraft:display_name": {
+        "value": "item.epic:alliance_token.name"
+      },
+      "minecraft:icon": {
+        "texture": "epic:alliance_token"
+      },
+        "minecraft:render_offsets": {
+          "main_hand": {
+            "first_person": {
+              "scale": [0.01,0.0055,0.01],
+              "position": [0.315,0.05,-0.85],
+              "rotation": [90,0,0]
+  
             },
-            "minecraft:display_name": {
-                // "value": "盟军令牌"
-                "value": "item.epic:alliance_token.name"
-            },
-            "minecraft:icon": {
-                "texture": "epic:alliance_token"
-            },
-            "minecraft:render_offsets": {
-                "main_hand": {
-                    "first_person": {
-                        "scale": [
-                            0.01,
-                            0.006,
-                            0.01
-                        ]
-                    },
-                    "third_person": {
-                        "position": [
-                            0.45,
-                            1.6,
-                            -0.7
-                        ],
-                        "scale": [
-                            0.03125,
-                            0.01825,
-                            0.03125
-                        ]
-                    }
-                },
-                "off_hand": {
-                    "first_person": {
-                        "position": [
-                            0,
-                            0,
-                            0
-                        ],
-                        "rotation": [
-                            0,
-                            0,
-                            0
-                        ],
-                        "scale": [
-                            0,
-                            0,
-                            0
-                        ]
-                    },
-                    "third_person": {
-                        "position": [
-                            0,
-                            0,
-                            0
-                        ],
-                        "rotation": [
-                            0,
-                            0,
-                            0
-                        ],
-                        "scale": [
-                            0,
-                            0,
-                            0
-                        ]
-                    }
-                }
-            },
-
-            "minecraft:stacked_by_data": false,
-            "minecraft:max_stack_size": 1,
-            "minecraft:on_use": {},
-            "events": {
-
+            "third_person": {
+              "position": [0.725,1.525,-0.85],
+              "scale": [0.035,0.02000,0.035]
             }
+          },
+          "off_hand": {
+            "first_person": {
+              "scale": [0.01,0.0065,0.01],
+              "position": [0.4,0.05,-1.075]
+            },
+            "third_person": {
+              "position": [0.45,1.6,-0.7],
+              "scale": [0.03125,0.03125,0.03125]
+            }
+          }
+        },
+
+      "minecraft:stacked_by_data": false,
+      "minecraft:max_stack_size": 1,
+      "minecraft:chargeable": {
+        "movement_modifier":1,
+        "on_complete": {
+         "event": "give",
+         "target": "self"
         }
+      },
+      "minecraft:use_duration": 11.4514
+    },
+
+      "events": {
+        "give": {
+         "run_command":{
+         "command":[
+          "title @s title 你的虔诚换来了太阳神的恩赐",
+          "replaceitem entity @s slot.weapon.mainhand 0 gold_ingot 2",
+          "function EPIC/epic_test"
+        ]
+        }
+        }
+       
+
     }
-}
+  }
+ }

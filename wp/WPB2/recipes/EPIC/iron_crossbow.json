@@ -1,0 +1,35 @@
+{
+    "format_version": "1.12",
+    "minecraft:recipe_shaped": {
+      "description": {
+      "identifier": "iron_crossbow"
+      },  
+      "tags": [ "crafting_table" ],
+      "pattern": [
+        "ABC",
+        "BED",
+        "CDB"
+      ],
+      "priority": 0,
+      "key": {
+        "A": {
+          "item": "minecraft:spyglass"
+        },
+        "D": {
+          "item": "minecraft:string"
+        },
+        "C":{
+            "item":"minecraft:iron_ingot"
+        },
+        "B":{
+          "item":"dec:steel_ingot"
+        },
+        "E":{
+          "item":"minecraft:crossbow"
+        }
+      },
+      "result": {
+        "item": "epic:iron_crossbow"
+      }
+    }
+  }

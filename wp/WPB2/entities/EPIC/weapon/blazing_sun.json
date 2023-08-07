@@ -1,0 +1,329 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "epic:blazing_sun",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
+      "runtime_identifier": "epic:blazing_sun",
+
+    "animations": {
+      "skill":"animation.blazing_sun_skill"
+    },
+     "scripts": {
+       "animate": [
+         "skill"
+       ]
+    }
+  },
+
+    "component_groups": {
+
+      "spawn_skill": {
+        "minecraft:collision_box": {
+          "width": 0,
+          "height": 0
+        },
+        "minecraft:type_family": {
+          "family": [ "weapon_skill","blazing_sun" ]
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": false
+          }
+          ]
+        },
+        
+        "minecraft:timer":{
+          "looping": false,
+          "time": 2.7,
+          "time_down_event": {
+              "event":"spawn_skill"
+          }
+        }
+        },
+      
+      "normal": {
+        "minecraft:collision_box": {
+          "width": 2.25,
+          "height": 6
+        },
+        "minecraft:type_family": {
+          "family": [ "blazing_sun","weapon_skill","player" ]
+        },
+        "minecraft:is_tamed": {
+        },
+        "minecraft:health": {
+          "value": 200,
+          "min" :0,
+          "max": 200
+        },
+        "minecraft:boss": {
+          "name": "entity.epic:blazing_sun.name",
+          "should_darken_sky": false,
+          "hud_range": 6
+        },
+        "minecraft:is_stackable":{
+        },
+        "minecraft:timer":{
+          "looping": false,
+          "time": 60,
+          "time_down_event": {
+              "event":"change"
+          }
+        },
+          "minecraft:on_death": {
+            "filters": {
+              "all_of": [
+                  {
+                      "test": "has_damage",
+                      "operator": "!=",
+                      "subject": "self",
+                      "value": "suicide"
+                  }
+              ]
+          },
+            "event": "change",
+            "target": "self"
+          }
+    },
+
+    "defence": {
+      "minecraft:damage_sensor": {
+      "triggers": [
+        {
+          "on_damage": {
+              "filters": {
+                  "any_of": [
+                      {
+                          "test": "has_tag",
+                          "operator": "==",
+                          "subject": "other",
+                          "value": "wbmsyh"
+                      },
+                      {
+                          "test": "has_tag",
+                          "operator": "==",
+                          "subject": "other",
+                          "value": "blazing_sun"
+                      }
+                  ]
+              }
+          },
+          "deals_damage":false
+        },
+        {
+          "on_damage": {
+            "cause": "entity_attack",
+            "event": "skill"
+          },
+          "deals_damage":true,
+          "damage_modifier": -5,
+          "damage_multiplier": 0.5
+        },
+        {
+          "on_damage": {
+            "cause": "magic",
+            "event": "skill"
+          },
+          "deals_damage":true,
+          "damage_modifier": -2,
+          "damage_multiplier": 0.6
+        }
+        
+      ]
+  }
+},
+
+
+      "death_turn": {
+        "minecraft:collision_box": {
+          "width": 0,
+          "height": 0
+        },
+      "minecraft:type_family": {
+        "family": [ "weapon_skill","player","blazing_sun" ]
+      },
+        "minecraft:transformation": {
+          "into": "epic:blazing_sun<death_skill_add>",
+          "value": 1,
+          "delay": 0,
+          "begin_transform_sound":"explode",
+          "transformation_sound":"random.anvil_use",
+          "keep_owner": true
+        },
+        "minecraft:damage_sensor": {
+          "triggers": [
+          {
+            "cause": "all",
+            "deals_damage": false
+          }
+          ]
+        }
+      },
+      "death_skill": {
+        "minecraft:collision_box": {
+          "width": 0,
+          "height": 0
+        },
+        "minecraft:type_family": {
+          "family": [ "weapon_skill","player","blazing_sun" ]
+        },
+          "minecraft:damage_sensor": {
+              "triggers": [
+              {
+                "cause": "all",
+                "deals_damage": false
+              }
+              ]
+            },
+        "minecraft:timer":{
+          "looping": false,
+          "time": 3,
+          "time_down_event": {
+              "event":"death_skill"
+          }
+        }
+        }
+   
+             
+    },
+
+    "components": {
+      "minecraft:type_family": {
+        "family": [ "blazing_sun","weapon_skill" ]
+      },
+      "minecraft:breathable": {
+        "totalSupply": 99999,
+        "suffocateTime": 99999,
+        "breathesWater": true
+      },
+      "minecraft:health": {
+        "value": 200,
+        "min" :0,
+        "max": 200
+      },
+      "minecraft:knockback_resistance": {
+        "value": 10
+      },
+      "minecraft:movement": {
+        "value": 0.0
+      }, 
+      "minecraft:movement.basic": {
+      },
+      "minecraft:jump.static": {
+      },
+      "minecraft:nameable": {
+      },
+      "minecraft:physics": {
+      }
+    },
+
+    "events": {
+     "minecraft:entity_spawned": {
+        "sequence": [
+          {
+            "remove": {
+            },
+            "add": {
+              "component_groups": [
+                "spawn_skill",
+                "tag @s add blazing_sun"
+              ]
+            },
+            "run_command":{
+              "command":[
+             "tag @s add wbmsyh",
+             "effect @e[r=5,tag=!wbmsyh,tag=!blazing_sun] slowness 6 3 true"        
+             ]
+            }
+          }
+        ]
+      },
+
+      "skill": {
+        "run_command":{
+          "command":[
+         "damage @e[r=5,c=3,tag=!wbmsyh,tag=!blazing_sun] 10 void entity @s",
+         "effect @e[r=5,c=1,tag=!wbmsyh,tag=!blazing_sun] slowness 1 255 true",
+         "effect @e[r=5,c=1,tag=!wbmsyh,tag=!blazing_sun] weakness 1 255 true",
+         "damage @e[r=16,tag=!wbmsyh,tag=!blazing_sun] 0 void entity @s"
+         ]
+        }
+      },
+
+      "change": {
+        "remove": {
+          "component_groups": [
+            "defence"
+          ]
+        },
+        "run_command":{
+          "command":[
+         "tag @s add wbmsyh",
+         "tag @s add blazing_sun"
+         ]
+        },
+        "add": {
+          "component_groups": [
+            "death_turn"
+          ]
+        }
+      },
+
+      "spawn_skill": {
+        "run_command":{
+          "command":[
+         "damage @e[r=5,tag=!wbmsyh,tag=!blazing_sun] 30 void entity @s",
+         "damage @e[r=32,tag=!wbmsyh,tag=!blazing_sun] 0 void entity @s",
+         "effect @e[r=5,tag=!wbmsyh,tag=!blazing_sun] slowness 4 255 true",
+         "effect @e[r=5,tag=!wbmsyh,tag=!blazing_sun] weakness 4 255 true"
+         ]
+        },
+        "remove": {
+          "component_groups": [
+            "spawn_skill"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "defence","normal"
+          ]
+        }
+      },
+      "death_skill_add": {
+        "remove": {
+          "component_groups": [
+            "death_turn"
+          ]
+        },
+        "run_command":{
+          "command":[
+         "tag @s add wbmsyh",
+         "tag @s add blazing_sun"
+         ]
+        },
+        "add": {
+          "component_groups": [
+            "death_skill"
+          ]
+        }
+      },
+      "death_skill": {
+        "run_command":{
+          "command":[
+         "damage @e[r=5,tag=!wbmsyh,tag=!blazing_sun] 50 void entity @s",
+         "kill @s"
+         ]
+        }
+      }
+ 
+     
+     
+   
+    }
+  }
+}

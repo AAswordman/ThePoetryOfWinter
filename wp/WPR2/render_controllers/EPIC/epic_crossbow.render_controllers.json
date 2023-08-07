@@ -1,0 +1,42 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.epic_crossbow": {
+      "arrays": {
+        "textures": {
+          "array.crossbow_texture_frames": [
+            "texture.default",
+            "texture.crossbow_pulling_1",
+            "texture.crossbow_pulling_2",
+            "texture.crossbow_pulling_3",
+            "texture.crossbow_pulling_4",
+            "texture.crossbow_pulling_5",
+            "texture.crossbow_pulling_6",
+            "texture.crossbow_pulling_7",
+            "texture.crossbow_pulling_8",
+            "texture.crossbow_pulling_9",
+            "texture.crossbow_pulling_10"
+          ]
+        },
+        "geometries": {
+          "array.crossbow_geo_frames": [
+            "geometry.default",
+            "geometry.crossbow_pulling_1",
+            "geometry.crossbow_pulling_2",
+            "geometry.crossbow_pulling_3",
+            "geometry.crossbow_pulling_4",
+            "geometry.crossbow_pulling_5",
+            "geometry.crossbow_pulling_6",
+            "geometry.crossbow_pulling_7",
+            "geometry.crossbow_pulling_8",
+            "geometry.crossbow_pulling_9",
+            "geometry.crossbow_pulling_10"
+          ]
+        }
+      },
+      "geometry": "array.crossbow_geo_frames[variable.use]",
+      "materials": [ { "*": "variable.is_enchanted ? material.enchanted : material.default" } ],
+      "textures": [ "array.crossbow_texture_frames[variable.use]", "texture.enchanted" ]
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+	"format_version": "1.19.63",
+	"animations": {
+	  "animation.blazing_sun_skill": {
+		"timeline": {
+		  "0.05": [
+			"/tag @e[r=6,hasitem={item=epic:sun_worshipping_sword,location=slot.weapon.mainhand}] add blazing_sun",
+			"/tag @e[r=16,family=!blazing_sun,hasitem={item=epic:sun_worshipping_sword,location=slot.weapon.mainhand,quantity=0}] remove blazing_sun",
+			"/tag @e[tag=!wbmsyh,r=5,tag=!blazing_sun] add blazing_sun_target",
+			"/tag @e[tag=!wbmsyh,r=16,tag=blazing_sun] remove blazing_sun_target",
+			"/tag @e[tag=!wbmsyh,rm=5,r=16] remove blazing_sun_target",
+			"/effect @a[r=3,tag=wbmsyh,tag=blazing_sun] invisibility 3 255 true"
+		  ]
+		},
+		"animation_length": 0.1,
+		"loop": true
+	  }
+	}
+  }

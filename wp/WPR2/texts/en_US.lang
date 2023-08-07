@@ -1,3 +1,33 @@
+
+=============================EPIC==================================
+item.spawn_egg.entity.epic:cannon_cart.name=Place - CannonCart
+item.epic:machanical_operator.name=Machanical Operator
+
+item.epic:crystal_electronics_group.name=Crystal Electronics Group
+item.epic:crystal_electronics_group_broken.name=Crystal Electronics Group §8(Broken)
+item.epic:reinforced_metal_group.name=Reinforced Metal Group
+item.epic:alliance_token.name=Alliance Toke
+
+entity.epic:cannon_cart.name=CannonCart
+entity.epic:blazing_sun.name=§e>Blazing Sun<
+entity.epic:sunlight_arrow.name=Sunlight Arrow
+
+item.epic:iron_crossbow.name=Iron Crossbow
+item.epic:iron_crossbow_drawn.name=Iron Crossbow [Drawn]
+item.epic:sun_worshipping_sword.name=Sun-Worshipping Sword
+item.epic:sunlight_sword.name=Sunlight Sword
+item.epic:sunlight_staff.name=Sunlight Staff
+item.epic:sunlight_crossbow.name=Sunlight Crossbow
+item.epic:sunlight_crossbow_drawn.name=Sunlight Crossbow [Drawn]
+item.epic:sunlight_crossbow_drawn1.name=Sunlight Crossbow [Drawn] §e【Sunlight Arrow】
+item.epic:sunlight_crossbow_unlimitedfire.name=Sunlight Crossbow §e【Special】
+item.epic:sunlight_arrow.name=Sunlight Arrow
+item.epic:sunlight_helmet.name=Sunlight Helmet
+item.epic:sunlight_chestplate.name=Sunlight Chestplate
+item.epic:sunlight_leggings.name=Sunlight Leggings
+item.epic:sunlight_boots.name=Sunlight Boots
+===================================================================
+
 item.dec:rice.name=Rice
 item.dec:a_bowl_of_rice.name=A Bowl Of Rice
 item.dec:potato_rice.name=Ptato Rice

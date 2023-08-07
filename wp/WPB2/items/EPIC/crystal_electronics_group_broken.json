@@ -10,7 +10,6 @@
         "parent": "itemGroup.name.sword"
       },
       "minecraft:display_name": {
-        // "value": "损坏的 晶体电子核心"
         "value": "item.epic:crystal_electronics_group_broken.name"
       },
       "minecraft:icon": {
@@ -18,63 +17,28 @@
       },
       "minecraft:render_offsets": {
         "main_hand": {
-            "first_person": {
-                "scale": [
-                    0.01,
-                    0.006,
-                    0.01
-                ]
-            },
-            "third_person": {
-                "position": [
-                    0.45,
-                    1.6,
-                    -0.7
-                ],
-                "scale": [
-                    0.03125,
-                    0.01825,
-                    0.03125
-                ]
-            }
+          "first_person": {
+            "scale": [0.01,0.0055,0.01],
+            "position": [0.315,0.05,-0.85],
+            "rotation": [90,0,0]
+
+          },
+          "third_person": {
+            "position": [0.725,1.525,-0.85],
+            "scale": [0.035,0.02000,0.035]
+          }
         },
         "off_hand": {
-            "first_person": {
-                "position": [
-                    0,
-                    0,
-                    0
-                ],
-                "rotation": [
-                    0,
-                    0,
-                    0
-                ],
-                "scale": [
-                    0,
-                    0,
-                    0
-                ]
-            },
-            "third_person": {
-                "position": [
-                    0,
-                    0,
-                    0
-                ],
-                "rotation": [
-                    0,
-                    0,
-                    0
-                ],
-                "scale": [
-                    0,
-                    0,
-                    0
-                ]
-            }
+          "first_person": {
+            "scale": [0.01,0.0065,0.01],
+            "position": [0.4,0.05,-1.075]
+          },
+          "third_person": {
+            "position": [0.45,1.6,-0.7],
+            "scale": [0.03125,0.03125,0.03125]
+          }
         }
-    },
+      },
 
       "minecraft:stacked_by_data": true,
       "minecraft:max_stack_size": 64,

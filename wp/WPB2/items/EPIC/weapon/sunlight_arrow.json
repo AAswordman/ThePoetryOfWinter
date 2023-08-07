@@ -1,0 +1,31 @@
+{
+  "format_version": "1.20.1",
+  "minecraft:item": {
+    "description": {
+      "identifier": "epic:sunlight_arrow",
+      "category": "equipment"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.arrow"
+      },
+      "minecraft:display_name": {
+        "value": "item.epic:sunlight_arrow.name"
+      },
+      "minecraft:icon": {
+        "texture": "epic:sunlight_arrow"
+      },
+      "minecraft:render_offsets": {
+      },
+      "minecraft:allow_off_hand": true,
+      "minecraft:stacked_by_data": true,
+      "minecraft:max_stack_size": 64,
+      "minecraft:hand_equipped": false,
+      "minecraft:on_use": {
+      },
+    "events": {
+      
+    }
+  }
+}
+}

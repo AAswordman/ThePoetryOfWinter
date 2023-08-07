@@ -1,13 +1,31 @@
+=============================EPIC==================================
 item.spawn_egg.entity.epic:cannon_cart.name=放置 加农炮战车
-item.epic:machanical_operator.name=机械操纵者
+item.epic:machanical_operator.name=机械操纵者§a（站立右键“加农炮战车”可以更改行动模式，潜行右键更改攻击模式）
+
+item.epic:crystal_electronics_group.name=晶体电子核心
+item.epic:crystal_electronics_group_broken.name=晶体电子核心 §8(已损坏)
+item.epic:reinforced_metal_group.name=强化合金组
+item.epic:alliance_token.name=盟军令牌§a（站立右键“加农炮战车”可以使其进入友好模式，潜行右键进入敌对模式）
 
 entity.epic:cannon_cart.name=加农炮战车
+entity.epic:blazing_sun.name=§e>耀阳<
+entity.epic:sunlight_arrow.name=日光箭矢
 
-item.epic:alliance_token.name=盟军令牌
-item.epic:crystal_electronics_group_broken.name=损坏的 晶体电子核心
-item.epic:crystal_electronics_group.name=晶体电子核心
-item.epic:machanical_operator.name=机械操纵者
-item.epic:reinforced_metal_group.name=强化合金组
+item.epic:iron_crossbow.name=重弩
+item.epic:iron_crossbow_drawn.name=重弩【已上弦】
+item.epic:sun_worshipping_sword.name=（预告）祭日圣刃
+item.epic:sunlight_sword.name=（预告）日光长剑
+item.epic:sunlight_staff.name=（预告）日光射线法杖
+item.epic:sunlight_crossbow.name=（预告）日光弩
+item.epic:sunlight_crossbow_drawn.name=（预告）日光弩【已上弦】
+item.epic:sunlight_crossbow_drawn1.name=（预告）日光弩【已上弦】§e【日光箭矢】
+item.epic:sunlight_crossbow_unlimitedfire.name=（预告）日光弩 §e【典藏】
+item.epic:sunlight_arrow.name=（预告）日光箭矢
+item.epic:sunlight_helmet.name=（预告）日光战盔
+item.epic:sunlight_chestplate.name=（预告）日光板甲
+item.epic:sunlight_leggings.name=（预告）日光护腿
+item.epic:sunlight_boots.name=（预告）日光战靴
+====================================================================
 
 howtoplay.wb0.title=BOSS流程
 howtoplay.wb0=BOSS流程

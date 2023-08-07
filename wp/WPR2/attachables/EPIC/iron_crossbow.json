@@ -1,0 +1,74 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "epic:iron_crossbow",
+      "materials": {
+        "default": "entity_alphatest",
+        "enchanted": "entity_alphatest_glint"
+      },
+      "textures": {
+        "default": "textures/EPIC/items/weapon/iron_crossbow",
+        "crossbow_pulling_1": "textures/EPIC/items/weapon/iron_crossbow_frames/iron_crossbow_pulling_1",
+        "crossbow_pulling_2": "textures/EPIC/items/weapon/iron_crossbow_frames/iron_crossbow_pulling_2",
+        "crossbow_pulling_3": "textures/EPIC/items/weapon/iron_crossbow_frames/iron_crossbow_pulling_3",
+        "crossbow_pulling_4": "textures/EPIC/items/weapon/iron_crossbow_frames/iron_crossbow_pulling_4",
+        "crossbow_pulling_5": "textures/EPIC/items/weapon/iron_crossbow_frames/iron_crossbow_pulling_4",
+        "crossbow_pulling_6": "textures/EPIC/items/weapon/iron_crossbow_frames/iron_crossbow_pulling_4",
+        "crossbow_pulling_7": "textures/EPIC/items/weapon/iron_crossbow_frames/iron_crossbow_pulling_4",
+        "crossbow_pulling_8": "textures/EPIC/items/weapon/iron_crossbow_frames/iron_crossbow_pulling_4",
+        "crossbow_pulling_9": "textures/EPIC/items/weapon/iron_crossbow_frames/iron_crossbow_pulling_4",
+        "crossbow_pulling_10": "textures/EPIC/items/weapon/iron_crossbow_frames/iron_crossbow_pulling_4",
+        "enchanted": "textures/misc/enchanted_item_glint"
+      },
+      "geometry": {
+        "default": "geometry.epic_crossbow",
+        "crossbow_pulling_1": "geometry.epic_crossbow_pulling_1",
+        "crossbow_pulling_2": "geometry.epic_crossbow_pulling_2",
+        "crossbow_pulling_3": "geometry.epic_crossbow_pulling_3",
+        "crossbow_pulling_4": "geometry.epic_crossbow_pulling_4",
+        "crossbow_pulling_5": "geometry.epic_crossbow_pulling_4",
+        "crossbow_pulling_6": "geometry.epic_crossbow_pulling_4",
+        "crossbow_pulling_7": "geometry.epic_crossbow_pulling_4",
+        "crossbow_pulling_8": "geometry.epic_crossbow_pulling_4",
+        "crossbow_pulling_9": "geometry.epic_crossbow_pulling_4",
+        "crossbow_pulling_10": "geometry.epic_crossbow_pulling_4"
+      },
+      "animations": {
+        "wield": "animation.crossbow.wield",
+        "wield_first_person_pull": "animation.crossbow.wield_first_person_pull",
+        "first_person_crossbow_equipped": "animation.player.first_person.epic_crossbow_drawing",
+        "third_person_crossbow_equipped": "animation.player.crossbow_equipped",
+        "first_person_crossbow_hold": "animation.player.first_person.crossbow_hold",
+        "crossbow_hold": "animation.player.crossbow_hold",
+        "crossbow_controller": "controller.animation.player.epic_crossbow",
+        "crossbow_base":"controller.animation.epic_crossbow.base",
+        "charging": "animation.humanoid.charging",
+        "test" : "controller.animation.crossbow"
+      },
+      "particle_effects": {
+				"epic_base_effect": "epic:sunlight_arrow_particle2"
+			},
+      "scripts": {
+        "initialize": [
+          "variable.short_arm_offset_left=10;",
+          "variable.use=0;"
+        ],
+        "pre_animation": [
+          "variable.is_first_person = c.is_first_person;",
+					"variable.charge_amount = math.clamp((query.main_hand_item_max_duration - (query.main_hand_item_use_duration - query.frame_alpha + 1.0)) / 10.0, 0.0, 1.0f);",
+          "variable.item_use_normalized = query.main_hand_item_use_duration / query.main_hand_item_max_duration;",
+          "variable.use = query.is_using_item*5.5*(1-(query.main_hand_item_use_duration / query.main_hand_item_max_duration));"
+				],
+        "animate": [
+          "wield",
+          "crossbow_base",
+          {
+						"wield_first_person_pull": "query.main_hand_item_use_duration > 0.0f && c.is_first_person"
+					}
+        ]
+      },
+      "render_controllers": [ "controller.render.epic_crossbow" ]
+    }
+  }
+}

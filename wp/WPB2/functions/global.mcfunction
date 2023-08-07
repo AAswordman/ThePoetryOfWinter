@@ -36,3 +36,4 @@ clear @a[tag=!wbstartkeyok] wb:mineral_senior_forget
 clear @a[tag=!wbstartkeyok] wb:mineral_senior_ink
 clear @a[tag=!wbstartkeyok] wb:mineral_senior_water
 clear @a[tag=!wbstartkeyok] wb:mineral_senior_seal
+

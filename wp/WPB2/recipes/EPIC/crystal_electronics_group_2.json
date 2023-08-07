@@ -10,6 +10,7 @@
         "CAC",
         "EFD"
       ],
+      "priority": 1,
       "key": {
         "A": {
           "item": "epic:crystal_electronics_group_broken"

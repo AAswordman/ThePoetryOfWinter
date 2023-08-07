@@ -1,0 +1,89 @@
+{
+  "format_version": "1.19.83",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "epic:sunlight_crossbow_drawn1"
+    },
+    "components": {
+      "minecraft:render_offsets": {
+        "main_hand": {
+          "first_person": {
+            "scale": [0.0375,0.04,0.0375],
+            "position": [0,-0.225,-1.05],
+            "rotation": [0,-45,0]
+
+          },
+          "third_person": {
+            "position": [0.7,0.775,-1.05],
+            "scale": [0.0925,0.1,0.0925],
+            "rotation": [-10,0,190]
+          }
+        },
+        "off_hand": {
+          "first_person": {
+            "scale": [0.005,0.0065,0.005],
+            "position": [0.4,0.005,-1.075]
+          },
+          "third_person": {
+            "position": [0.45,1.5,-0.7],
+            "scale": [0.03125,0.03125,0.03125]
+          }
+        }
+      },
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.sword"
+      },
+      "minecraft:icon": {
+        "texture": "epic:sunlight_crossbow_drawn1"
+      },
+      "minecraft:display_name": {
+        "value": "item.epic:sunlight_crossbow_drawn1.name"
+      },
+      "minecraft:stacked_by_data": false,
+      "minecraft:max_stack_size": 1,
+      "minecraft:foil": false,
+      "minecraft:hand_equipped": true,
+
+      "minecraft:on_use": {
+        "on_use": {
+          "event": "shoot",
+          "target": "self"
+        }
+      },
+      "tag:crossbow_drawn":{},
+      "tag:comp:sneak_movement_addition:-0.095": {},
+      "tag:comp:equipment_type:range_weapon":{}
+     
+    },
+    "events": {
+      "shoot": {
+        "sequence": [
+          {
+            "condition":"query.scoreboard('skill_cooldown') == 0",
+            "sequence": [
+              {
+                "run_command": {
+                  "command": [
+                    "playsound crossbow.shoot",
+                    "replaceitem entity @s slot.weapon.mainhand 0 epic:sunlight_crossbow 1"
+                  ],
+                  "target": "holder"
+                }
+              },
+              {
+                "shoot": {
+                  "projectile": "epic:sunlight_arrow",
+                  "launch_power": 2
+                }
+              }
+          
+            ]
+          }
+
+
+        ]
+      }
+    }
+  }
+}

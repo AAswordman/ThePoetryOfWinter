@@ -1,0 +1,133 @@
+{
+  "format_version": "1.20.0",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "epic:iron_crossbow"
+    },
+    "components": {
+      "minecraft:render_offsets": {
+        "main_hand": {
+          "first_person": {
+            "scale": [0.035,0.04,0.035],
+            "position": [0.45,-0.3,-1.05],
+            "rotation": [0,-50,0]
+
+          },
+          "third_person": {
+            "position": [0.7,0.775,-1.05],
+            "scale": [0.0925,0.1,0.0925],
+            "rotation": [-10,0,190]
+          }
+        },
+        "off_hand": {
+          "first_person": {
+            "scale": [0.01,0.0065,0.01],
+            "position": [0.4,0.05,-1.075]
+          },
+          "third_person": {
+            "position": [0.45,1.6,-0.7],
+            "scale": [0.03125,0.03125,0.03125]
+          }
+        }
+      },
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.sword"
+      },
+      "minecraft:icon": {
+        "texture": "epic:iron_crossbow"
+      }, 
+      "minecraft:display_name": {
+        "value": "item.epic:iron_crossbow.name"
+      },
+      "minecraft:stacked_by_data": false,
+      "minecraft:max_stack_size": 1,
+      "minecraft:foil": false,
+      "minecraft:hand_equipped": true,
+      "minecraft:on_use": {
+        "on_use": {
+          "event": "test",
+          "target": "self"
+        }
+      },
+      "minecraft:chargeable": {
+        "movement_modifier":0.35,
+        "on_complete": {
+         "event": "drawn",
+         "target": "self",
+         "condition":"query.scoreboard('arrow_type') > 0"
+        }
+      },
+      "minecraft:use_duration": 1.8,
+      "minecraft:enchantable": {
+        "slot": "crossbow",
+        "value": 20
+      },
+   
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "iron_ingot"
+            ],
+            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.3"
+          }
+        ]
+      },
+//tags
+"tag:crossbow":{}
+    },
+
+    "events": {
+//arrow=1
+      "test": {
+        "sequence": [
+              {
+                "run_command": {
+                  "command": [
+                    "scoreboard players set @s arrow_type 0",
+                    "execute as @s[m=1] run scoreboard players set @s arrow_type 1",
+                    "execute as @s[m=!1,hasitem={item=arrow,data=0,quantity=1..}] run scoreboard players set @s arrow_type 1"
+                  ],
+                  "target": "holder"
+                }
+              },
+              {
+                "run_command": {
+                  "command": [
+                    "execute as @s if score @s arrow_type matches 1.. run playsound crossbow.loading.start",
+                    "execute as @s if score @s arrow_type matches 1.. run playsound crossbow.loading.middle"
+                  ],
+                  "target": "holder"
+                }
+              }
+
+            ]
+          },
+      "drawn": {
+        "sequence": [
+              {
+                "run_command": {
+                  "command": [
+                    "execute as @s if score @s arrow_type matches 1 run replaceitem entity @s slot.weapon.mainhand 0 epic:iron_crossbow_drawn 1 0",
+                    "execute as @s if score @s arrow_type matches 1 run scoreboard players set @s skill_cooldown 15",
+                    "execute as @s if score @s arrow_type matches 1 run playsound crossbow.loading.end",
+                    "execute as @s if score @s arrow_type matches 1 run clear @s[m=!1] arrow 0 1"
+                  ],
+                  "target": "holder"
+                }
+              },
+              {
+                "run_command": {
+                  "command": [
+                    "scoreboard players set @s arrow_type 0"
+                  ],
+                  "target": "holder"
+                }
+              }
+
+            ]
+          }
+    }
+  }
+}

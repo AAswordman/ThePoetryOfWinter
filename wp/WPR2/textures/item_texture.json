@@ -2001,6 +2001,7 @@
         "armor_senior_equipment_boots": {
             "textures": "textures/wb_item/armor/armor_senior_equipment_boots"
         },
+    //=============================EPIC==================================
         "cannon_cart_spawn_egg": {
             "textures": ["textures/EPIC/items/cannon_cart_spawn_egg"]
         },
@@ -2021,6 +2022,46 @@
         },
         "epic_cannon_cart_bullet": {
             "textures": "textures/EPIC/items/pamobile/epic_cannon_cart_bullet"
-        }
+        },
+        "epic:sun_worshipping_sword": {
+			"textures": ["textures/EPIC/items/weapon/sun_worshipping_sword"]
+		},
+		"epic:sunlight_sword": {
+			"textures": ["textures/EPIC/items/weapon/sunlight_sword"]
+		},
+		"epic:sunlight_staff": {
+			"textures": ["textures/EPIC/items/weapon/sunlight_staff"]
+		},
+		"epic:sunlight_crossbow": {
+			"textures": ["textures/EPIC/items/weapon/sunlight_crossbow"]
+		},
+		"epic:sunlight_crossbow_drawn": {
+			"textures": ["textures/EPIC/items/weapon/sunlight_crossbow_drawn"]
+		},
+		"epic:sunlight_crossbow_drawn1": {
+			"textures": ["textures/EPIC/items/weapon/sunlight_crossbow_drawn1"]
+		},
+		"epic:sunlight_arrow": {
+			"textures": ["textures/EPIC/items/weapon/sunlight_arrow"]
+		},
+		"epic:sunlight_helmet": {
+			"textures": ["textures/EPIC/items/weapon/sunlight_helmet"]
+		},
+		"epic:sunlight_chestplate": {
+			"textures": ["textures/EPIC/items/weapon/sunlight_chestplate"]
+		},
+		"epic:sunlight_leggings": {
+			"textures": ["textures/EPIC/items/weapon/sunlight_leggings"]
+		},
+		"epic:sunlight_boots": {
+			"textures": ["textures/EPIC/items/weapon/sunlight_boots"]
+		},
+		"epic:iron_crossbow": {
+			"textures": ["textures/EPIC/items/weapon/iron_crossbow"]
+		},
+		"epic:iron_crossbow_drawn": {
+			"textures": ["textures/EPIC/items/weapon/iron_crossbow_drawn"]
+		}
+    //======================================================================
     }
 }
