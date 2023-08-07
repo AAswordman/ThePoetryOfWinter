@@ -13,29 +13,28 @@ export default class DecNukeController extends ExEntityController {
         super.onSpawn();
         this.setTimeout(() => {
             const tmpV = new Vector3();
-            // for (let i = 0; i <= 50; i += 10) {
-            const i = 50;
-            this.setTimeout(() => {
-                const dim = this.exEntity.exDimension;
-                const pos = this.entity.location;
-                let task = new ExTaskRunner();
-                task.run(function* () {
-                    for (let x = -i; x <= i; x++) {
-                        for (let y = -i; y <= i; y++) {
-                            for (let z = -i; z <= i; z++) {
-                                tmpV.set(x, y, z);
-                                if (tmpV.len() <= i) {
-                                    dim.setBlock(tmpV.add(pos), MinecraftBlockTypes.Air);
+            for (let i = 0; i <= 50; i += 10) {
+                this.setTimeout(() => {
+                    const dim = this.exEntity.exDimension;
+                    const pos = this.entity.location;
+                    let task = new ExTaskRunner();
+                    task.run(function* () {
+                        for (let x = -i; x <= i; x++) {
+                            for (let y = -i; y <= i; y++) {
+                                for (let z = -i; z <= i; z++) {
+                                    tmpV.set(x, y, z);
+                                    if (tmpV.len() <= i) {
+                                        dim.setBlock(tmpV.add(pos), MinecraftBlockTypes.Air);
+                                    }
                                 }
+                                dim.spawnParticle("dec:nuke_blast", pos);
+                                yield true;
                             }
-                            dim.spawnParticle("dec:nuke_blast", pos);
-                            yield true;
                         }
-                    }
-                });
-                task.start(1, 20);
-            }, i * 100);
-            // }
+                    });
+                    task.start(1, 20);
+                }, i * 100);
+            }
         }, 10000);
     }
 }

@@ -7,7 +7,6 @@ import menuFunctionUI from "../data/menuFunctionUI.js";
 import MenuUIAlert from "../ui/MenuUIAlert.js";
 import GameController from "./GameController.js";
 import { MinecraftEffectTypes } from '../../../modules/vanilla-data/lib/index.js';
-import RuinsLoaction from './ruins/RuinsLoaction.js';
 export default class SimpleItemUseFunc extends GameController {
     onJoin() {
         //连锁挖矿
@@ -101,8 +100,6 @@ export default class SimpleItemUseFunc extends GameController {
     }
     chainDigging(v, idType, times, posData) {
         var _a;
-        if (RuinsLoaction.isInProtectArea(v))
-            return;
         let o = posData === undefined;
         if (!posData) {
             posData = new Set();

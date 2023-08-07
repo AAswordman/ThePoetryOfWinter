@@ -26,7 +26,7 @@ import ExSound from "./env/ExSound.js";
 import { ExEventNames } from "./events/events.js";
 import { falseIfError } from "../utils/tool.js";
 import ExSystem from "../utils/ExSystem.js";
-export default class ExGameServer {
+class ExGameServer {
     constructor(config) {
         this.entityControllers = new Map();
         this.playerIsInSet = new Set();
@@ -194,6 +194,7 @@ export default class ExGameServer {
 }
 ExGameServer.dimensionMap = new Map();
 ExGameServer.musicMap = new Map();
+export default ExGameServer;
 __decorate([
     registerEvent(ExEventNames.afterEntitySpawn),
     __metadata("design:type", Function),

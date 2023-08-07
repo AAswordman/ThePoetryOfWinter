@@ -1,6 +1,6 @@
 import Vector3 from '../../../math/Vector3.js';
 import ExStructure from './ExStructure.js';
-export default class ExStructureJigsaw {
+class ExStructureJigsaw {
     constructor(girdSize, gridWidthNum, gridHeightNum = 1) {
         this.width = gridWidthNum;
         this.height = gridHeightNum;
@@ -152,6 +152,7 @@ export default class ExStructureJigsaw {
     }
 }
 ExStructureJigsaw.ContinueStructure = 1;
+export default ExStructureJigsaw;
 /**
  * offsetX, offsetY, offsetZ,  structureName, structureRot,mirror,coverGridLength, coverGridWidth, coverGridHeight
  */

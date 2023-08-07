@@ -1,10 +1,9 @@
-import { ItemCooldownComponent, ItemDurabilityComponent, ItemEnchantsComponent, ItemStack } from "@minecraft/server";
+import { ItemDurabilityComponent, ItemEnchantsComponent, ItemStack } from "@minecraft/server";
 if (ItemStack.prototype === undefined)
     ItemStack.prototype = {};
 const compId = {
     [ItemDurabilityComponent.componentId]: ItemDurabilityComponent,
-    [ItemEnchantsComponent.componentId]: ItemEnchantsComponent,
-    [ItemCooldownComponent.componentId]: ItemCooldownComponent
+    [ItemEnchantsComponent.componentId]: ItemEnchantsComponent
 };
 Object.assign(ItemStack.prototype, {
     addTag: function (tag) {

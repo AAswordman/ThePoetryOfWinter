@@ -3,7 +3,23 @@ import ExErrorQueue from '../ExErrorQueue.js';
 import ExGame from '../ExGame.js';
 import { ExOtherEventNames } from './events.js';
 //顶层事件分发
-export default class ExServerEvents {
+class ExServerEvents {
+    _subscribe(name, callback) {
+        let e = ExServerEvents.monitorMap.get(name);
+        if (e === undefined) {
+            e = [];
+            ExServerEvents.monitorMap.set(name, e);
+        }
+        e.push(callback);
+    }
+    _unsubscribe(name, callback) {
+        var _a;
+        let arr = (_a = ExServerEvents.monitorMap.get(name)) !== null && _a !== void 0 ? _a : [];
+        arr.splice(arr.findIndex((v, i) => {
+            if (v === callback)
+                return true;
+        }), 1);
+    }
     constructor(server) {
         this.exEvents = {
             [ExOtherEventNames.tick]: {
@@ -118,22 +134,6 @@ export default class ExServerEvents {
             }
         }
     }
-    _subscribe(name, callback) {
-        let e = ExServerEvents.monitorMap.get(name);
-        if (e === undefined) {
-            e = [];
-            ExServerEvents.monitorMap.set(name, e);
-        }
-        e.push(callback);
-    }
-    _unsubscribe(name, callback) {
-        var _a;
-        let arr = (_a = ExServerEvents.monitorMap.get(name)) !== null && _a !== void 0 ? _a : [];
-        arr.splice(arr.findIndex((v, i) => {
-            if (v === callback)
-                return true;
-        }), 1);
-    }
     cancelAll() {
         throw new Error('Method not implemented.');
     }
@@ -159,4 +159,5 @@ export default class ExServerEvents {
 ExServerEvents.monitorMap = new Map;
 ExServerEvents.init = false;
 ExServerEvents.interceptor = new Map();
+export default ExServerEvents;
 //# sourceMappingURL=ExServerEvents.js.map

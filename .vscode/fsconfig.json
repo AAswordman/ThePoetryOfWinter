@@ -3,18 +3,18 @@
         "name": "sample_sync_config",
         "enabled": true,
         "sync": [{
-                "src": "D:/eclipse/file/root/mygitbackup/wp/WPB2",
-                "dest": "D:/eclipse/file/root/release/installations/2131213/1.20.12.1/packageData/development_behavior_packs/WPB2",
+                "src": "C:/Users/16938/Desktop/GT_WP/mygitbackup2/wp/WPB2",
+                "dest": "C:/Users/16938/AppData/Local/Packages/Microsoft.MinecraftUWP_8wekyb3d8bbwe/LocalState/games/com.mojang/development_behavior_packs/WPB2",
                 "bidir": true
             },
             {
-                "src": "D:/eclipse/file/root/mygitbackup/decDimPark/decDimParkB",
-                "dest": "D:/eclipse/file/root/release/installations/2131213/1.20.12.1/packageData/development_behavior_packs/decDimParkB",
+                "src": "C:/Users/16938/Desktop/GT_WP/mygitbackup2/wp/decDimParkB",
+                "dest": "C:/Users/16938/AppData/Local/Packages/Microsoft.MinecraftUWP_8wekyb3d8bbwe/LocalState/games/com.mojang/development_behavior_packs/decDimParkB",
                 "bidir": true
             },
             {
-                "src": "D:/eclipse/file/root/mygitbackup/wp/WPR2",
-                "dest": "D:/eclipse/file/root/release/installations/2131213/1.20.12.1/packageData/development_resource_packs/WPR2",
+                "src": "C:/Users/16938/Desktop/GT_WP/mygitbackup2/wp/WPR2",
+                "dest": "C:/Users/16938/AppData/Local/Packages/Microsoft.MinecraftUWP_8wekyb3d8bbwe/LocalState/games/com.mojang/development_resource_packs/WPR2",
                 "bidir": true
             }
         ]

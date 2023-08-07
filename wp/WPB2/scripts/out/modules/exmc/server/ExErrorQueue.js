@@ -1,5 +1,5 @@
 import { system } from '@minecraft/server';
-export default class ExErrorQueue {
+class ExErrorQueue {
     static throwError(error) {
         this.reportError(error);
         this.errorStack.push(error);
@@ -27,6 +27,7 @@ export default class ExErrorQueue {
 }
 ExErrorQueue.errorStack = [];
 ExErrorQueue.errorFlow = "";
+export default ExErrorQueue;
 export function to(p) {
     return p.then(res => [res, undefined]).catch(err => { ExErrorQueue.throwError(err); return [undefined, err]; });
 }

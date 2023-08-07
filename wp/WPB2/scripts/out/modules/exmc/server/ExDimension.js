@@ -1,11 +1,7 @@
 import { MolangVariableMap, MinecraftBlockTypes } from '@minecraft/server';
 import ExGameConfig from './ExGameConfig.js';
 import ExCommand from './env/ExCommand.js';
-export default class ExDimension {
-    constructor(dimension) {
-        this.command = new ExCommand(this);
-        this._dimension = dimension;
-    }
+class ExDimension {
     spawnParticle(p, v, varMap = new MolangVariableMap()) {
         try {
             this._dimension.spawnParticle(p, v, varMap);
@@ -21,6 +17,10 @@ export default class ExDimension {
     }
     get dimension() {
         return this._dimension;
+    }
+    constructor(dimension) {
+        this.command = new ExCommand(this);
+        this._dimension = dimension;
     }
     getPlayers(entityQueryOptions) {
         return Array.from(this._dimension.getPlayers(entityQueryOptions));
@@ -94,4 +94,5 @@ export default class ExDimension {
     }
 }
 ExDimension.propertyNameCache = "exCache";
+export default ExDimension;
 //# sourceMappingURL=ExDimension.js.map

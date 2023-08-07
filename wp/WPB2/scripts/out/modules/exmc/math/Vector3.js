@@ -1,5 +1,5 @@
 import Matrix4 from './Matrix4.js';
-export default class Vector3 {
+class Vector3 {
     constructor(a, b, c) {
         if (typeof a === "number" && typeof b === "number" && typeof c === "number") {
             this.x = a;
@@ -212,4 +212,5 @@ Vector3.one = new Vector3(1, 1, 1);
 Vector3.right = new Vector3(1, 0, 0);
 Vector3.up = new Vector3(0, 1, 0);
 Vector3.zero = new Vector3(0, 0, 0);
+export default Vector3;
 //# sourceMappingURL=Vector3.js.map

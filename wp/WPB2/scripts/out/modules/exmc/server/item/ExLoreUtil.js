@@ -1,8 +1,5 @@
 import ExGameConfig from "../ExGameConfig.js";
 export default class LoreUtil {
-    constructor(item) {
-        this.item = item;
-    }
     append(str) {
         let i = this.getLore();
         i.push(str);
@@ -19,6 +16,9 @@ export default class LoreUtil {
     }
     setLore(lore) {
         this.item.setLore(lore);
+    }
+    constructor(item) {
+        this.item = item;
     }
     search(key) {
         let lore = this.getLore();
