@@ -574,14 +574,14 @@ text.wb:defeat_god_of_guard.name=§e守卫战神已被击败
 
 
 text.help.wb.new.how_to_play.1=BOSS推荐流程和召唤方法
-text.help.wb.new.how_to_play.2=需要用到的:召唤者方块(使用泥土围住原木合成)
-text.help.wb.new.how_to_play.3=接着，只要在上面丢BOSS召唤物/或者用召唤物点击 就行了。(至于BOSS召唤物 是什么，请自己对照着boss名字找)
-text.help.wb.new.how_to_play.4=(ps.以下BOSS如果不在主题群系召唤就会狂怒，名字变成红色) (第二个括号是相应的召唤物，扔召唤者方块上面或者用相应物品点击专属召唤者方块) 
+text.help.wb.new.how_to_play.2=WARNING:本指南年久失修，以下内容可能会存在问题，可自行前往各大网站查找教程，也可以加入我们修订指南。
+text.help.wb.new.how_to_play.3=跑图，找到召唤者方块。可能需要激活，激活后用铁钥匙点击 就行了。(至于激活物品 是什么，可能是召唤物，也可能是其他的物品甚至方法。
+text.help.wb.new.how_to_play.4=(ps.以下BOSS如果不在主题群系召唤就会狂怒，名字变成红色) (第二个括号是相应的召唤物，用相应物品点击专属召唤者方块) 
 text.help.wb.new.how_to_play.5=绿叶精华（主题地形：森林）（激活:自然精华 召唤:铁钥匙）
 text.help.wb.new.how_to_play.6=掠夺者之王（主题地形：平原）（激活:青金石 召唤:神秘钥匙）        
 text.help.wb.new.how_to_play.7=深海牢笼（主题地形：海洋）（黑暗石）
-text.help.wb.new.how_to_play.8=扑食者（主题群系：恶地）（蝙蝠诱饵）
-text.help.wb.new.how_to_play.9=附魔师（主题地形: 神秘森林）（黑暗珍珠）
+text.help.wb.new.how_to_play.8=扑食者（主题群系：黏土山）（蝙蝠诱饵）
+text.help.wb.new.how_to_play.9=附魔师（主题地形: 丛林）（黑暗珍珠）
 text.help.wb.new.how_to_play.10=永冬恶魂（主题地形：雪地）（激活:冰霜能量 召唤:铁钥匙）
 text.help.wb.new.how_to_play.11=凋灵
 text.help.wb.new.how_to_play.12=实体灵魂（主题地形：灵魂峡谷）（实体灵魂）
@@ -1803,7 +1803,6 @@ text.dec:command_help_4.name=§a>/diemode open   用于开启死亡模式（权�
 text.dec:command_help_5.name=§a>/magic display true   用于开启魔法显示（权限需求：管理员）
 text.dec:command_help_6.name=§a>/magic display false   用于关闭魔法显示（权限需求：管理员）
 
-//冬诗得改成和升级方式、技能加成有关的
 text.dec:guide_book_0.name=§a指导书
 text.dec:guide_book_1.name=§a你很虚弱，所以请不要让它们轻易的靠近你。在夜间需额外消息，否则怪物能轻易将你撕成碎片。如果雾气在夜间聚集，为了你的安全，请不要出门。
 text.dec:guide_book_2.name=§a

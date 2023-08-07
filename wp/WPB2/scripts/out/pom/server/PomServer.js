@@ -7,7 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { ChatSendBeforeEvent, EntityDamageCause, EntityHurtAfterEvent, GameMode, MinecraftBlockTypes, MinecraftDimensionTypes, MinecraftEntityTypes } from '@minecraft/server';
+import { ChatSendBeforeEvent, EntityDamageCause, EntityHurtAfterEvent, GameMode, MinecraftBlockTypes, MinecraftDimensionTypes, MinecraftEntityTypes, Player } from '@minecraft/server';
 import Vector3 from '../../modules/exmc/math/Vector3.js';
 import ExDimension from "../../modules/exmc/server/ExDimension.js";
 import ExGameServer from "../../modules/exmc/server/ExGameServer.js";
@@ -16,29 +16,29 @@ import ExBlockStructureNormal from '../../modules/exmc/server/block/structure/Ex
 import ExEntity from '../../modules/exmc/server/entity/ExEntity.js';
 import ExPlayer from '../../modules/exmc/server/entity/ExPlayer.js';
 import { Objective } from "../../modules/exmc/server/entity/ExScoresManager.js";
+import ExEnvironment from '../../modules/exmc/server/env/ExEnvironment.js';
 import { registerEvent } from '../../modules/exmc/server/events/eventDecoratorFactory.js';
+import { ExEventNames } from '../../modules/exmc/server/events/events.js';
+import ExSystem from '../../modules/exmc/utils/ExSystem.js';
 import Random from "../../modules/exmc/utils/Random.js";
 import TimeLoopTask from "../../modules/exmc/utils/TimeLoopTask.js";
+import { falseIfError } from '../../modules/exmc/utils/tool.js';
+import { MinecraftEffectTypes } from '../../modules/vanilla-data/lib/index.js';
 import PomClient from "./PomClient.js";
 import GlobalSettings from "./cache/GlobalSettings.js";
+import PomAncientStoneBoss from './entities/PomAncientStoneBoss.js';
 import PomHeadlessGuardBoss from './entities/PomHeadlessGuardBoss.js';
+import { PomIntentionsBoss1, PomIntentionsBoss2, PomIntentionsBoss3 } from './entities/PomIntentionsBoss.js';
 import PomMagicStoneBoss from './entities/PomMagicStoneBoss.js';
+import PomBossBarrier from './func/barrier/PomBossBarrier.js';
 import RuinsLoaction from "./func/ruins/RuinsLoaction.js";
+import PomAncientBossRuin from './func/ruins/ancient/PomAncientBossRuin.js';
 import PomCaveBossRuin from './func/ruins/cave/PomCaveBossRuin.js';
 import PomDesertBossRuin from "./func/ruins/desert/PomDesertBossRuin.js";
+import PomMindBossRuin from './func/ruins/mind/PomMindBossRuin.js';
 import PomStoneBossRuin from './func/ruins/stone/PomStoneBossRuin.js';
 import damageShow from './helper/damageShow.js';
-import PomAncientBossRuin from './func/ruins/ancient/PomAncientBossRuin.js';
-import PomAncientStoneBoss from './entities/PomAncientStoneBoss.js';
-import PomMindBossRuin from './func/ruins/mind/PomMindBossRuin.js';
-import { PomIntentionsBoss1, PomIntentionsBoss2, PomIntentionsBoss3 } from './entities/PomIntentionsBoss.js';
 import itemCanChangeBlock from './items/itemCanChangeBlock.js';
-import PomBossBarrier from './func/barrier/PomBossBarrier.js';
-import ExEnvironment from '../../modules/exmc/server/env/ExEnvironment.js';
-import ExSystem from '../../modules/exmc/utils/ExSystem.js';
-import { ExEventNames } from '../../modules/exmc/server/events/events.js';
-import { MinecraftEffectTypes } from '../../modules/vanilla-data/lib/index.js';
-import { falseIfError } from '../../modules/exmc/utils/tool.js';
 // import * as b from "brain.js";
 export default class PomServer extends ExGameServer {
     constructor(config) {
@@ -48,43 +48,54 @@ export default class PomServer extends ExGameServer {
         //虚拟玩家
         this.fakeplayers = [];
         this.setting = new GlobalSettings(new Objective("wpsetting"));
+        if (!this.setting.has("entityShowMsg"))
+            this.setting.entityShowMsg = true;
+        if (!this.setting.has("damageShow"))
+            this.setting.damageShow = true;
+        if (!this.setting.has("playerTpListShowPos"))
+            this.setting.playerTpListShowPos = true;
+        if (!this.setting.has("playerCanTp"))
+            this.setting.playerCanTp = true;
+        if (!this.setting.has("tpPointRecord"))
+            this.setting.tpPointRecord = true;
+        if (!this.setting.has("chainMining"))
+            this.setting.chainMining = true;
         //实体清理
         (this.clearEntityNumUpdate = new TimeLoopTask(this.getEvents(), () => {
             this.updateClearEntityNum();
         }).delay(10000)).start();
         this.updateClearEntityNum();
         this.entityCleaner = new TimeLoopTask(this.getEvents(), () => {
-            let entities = Array.from(ExDimension.getInstance(this.getDimension(MinecraftDimensionTypes.overworld)).getEntities())
-                .concat(Array.from(ExDimension.getInstance(this.getDimension(MinecraftDimensionTypes.theEnd)).getEntities()))
-                .concat(Array.from(ExDimension.getInstance(this.getDimension(MinecraftDimensionTypes.nether)).getEntities()));
-            //ExGameConfig.console.log("当前实体数：" + entities.length);
-            let map = new Map();
-            entities.forEach(e => {
-                var _a;
-                if ((e === null || e === void 0 ? void 0 : e.typeId) == undefined)
-                    return;
-                map.set(e.typeId, ((_a = map.get(e.typeId)) !== null && _a !== void 0 ? _a : 0) + 1);
-            });
-            let max = [0, ""];
-            map.forEach((v, k) => {
-                if (v > max[0] && [MinecraftEntityTypes.player.id, MinecraftEntityTypes.villager.id, MinecraftEntityTypes.villagerV2.id].indexOf(k) === -1) {
-                    max[0] = v;
-                    max[1] = k;
+            if (!this.entityCleanerLooper.isStarted()) {
+                let entities = (Array.from(ExDimension.getInstance(this.getDimension(MinecraftDimensionTypes.overworld)).getEntities())
+                    .concat(Array.from(ExDimension.getInstance(this.getDimension(MinecraftDimensionTypes.theEnd)).getEntities()))
+                    .concat(Array.from(ExDimension.getInstance(this.getDimension(MinecraftDimensionTypes.nether)).getEntities())));
+                if (entities.length > this.entityCleanerLeastNum) {
+                    cleanTimes = 11;
+                    this.entityCleanerLooper.start();
                 }
-            });
-            if (entities.length > this.entityCleanerLeastNum) {
-                this.say("Clear Entity Type：" + max[1]);
-                this.say("Clear Entity Num：" + max[0]);
-                entities.forEach(e => {
-                    if (!e || !e.typeId || e.typeId !== max[1])
-                        return;
-                    if (e.typeId === "minecraft:item" && e.getViewDirection().y !== 0)
-                        return;
-                    //if (e.nameTag) return;
-                    e.kill();
-                });
             }
         }).delay(8000);
+        let cleanTimes = 11;
+        this.entityCleanerLooper = new TimeLoopTask(this.getEvents(), () => {
+            if (cleanTimes === 11) {
+                if (this.setting.entityShowMsg)
+                    this.say("Prepare for entities cleaning...");
+            }
+            else if (cleanTimes === 10 || cleanTimes === 5) {
+                if (this.setting.entityShowMsg)
+                    this.say(`Remaining ${cleanTimes}s for entities cleaning`);
+            }
+            else if (cleanTimes === 0) {
+                this.clearEntity();
+                this.entityCleanerLooper.stop();
+            }
+            else if (cleanTimes <= 3) {
+                if (this.setting.entityShowMsg)
+                    this.say(`Remaining ${cleanTimes}s for entities cleaning`);
+            }
+            cleanTimes -= 1;
+        }).delay(1000);
         this.upDateEntityCleaner();
         let ticks = 0;
         this.tpsListener = new TimeLoopTask(this.getEvents(), () => {
@@ -281,16 +292,9 @@ export default class PomServer extends ExGameServer {
         }).delay(60 * 20);
         upDateMonster();
         this.ruinCleaner.start();
-        const isInProtectArea = (v) => {
-            return RuinsLoaction.DESERT_RUIN_PROTECT_AREA.contains(v)
-                || RuinsLoaction.STONE_RUIN_PROTECT_AREA.contains(v)
-                || RuinsLoaction.CAVE_RUIN_PROTECT_AREA.contains(v)
-                || RuinsLoaction.ANCIENT_RUIN_PROTECT_AREA.contains(v)
-                || RuinsLoaction.MIND_RUIN_PROTECT_AREA.contains(v);
-        };
         //遗迹保护
         this.getEvents().events.afterBlockBreak.subscribe(e => {
-            if (e.dimension === this.getDimension(MinecraftDimensionTypes.theEnd) && (isInProtectArea(e.block))) {
+            if (e.dimension === this.getDimension(MinecraftDimensionTypes.theEnd) && (RuinsLoaction.isInProtectArea(e.block))) {
                 let ex = ExPlayer.getInstance(e.player);
                 // if (ex.getGameMode() === GameMode.creative) return;
                 let b = e.dimension.getBlock(e.block.location);
@@ -308,7 +312,7 @@ export default class PomServer extends ExGameServer {
             }
         });
         this.getEvents().events.beforeItemUseOn.subscribe(e => {
-            if (e.source.dimension === this.getDimension(MinecraftDimensionTypes.theEnd) && (isInProtectArea(e.block))) {
+            if (e.source.dimension === this.getDimension(MinecraftDimensionTypes.theEnd) && (RuinsLoaction.isInProtectArea(e.block))) {
                 // if (e.source instanceof Player) {
                 //     let ex = ExPlayer.getInstance(e.source);
                 //     if (ex.getGameMode() === GameMode.creative) return;
@@ -317,16 +321,23 @@ export default class PomServer extends ExGameServer {
             }
         });
         this.getEvents().events.beforeExplosion.subscribe(e => {
-            if (e.source && e.dimension === this.getDimension(MinecraftDimensionTypes.theEnd) && (isInProtectArea(e.source.location))) {
-                if (e.getImpactedBlocks.length !== 0) {
-                    this.getExDimension(MinecraftDimensionTypes.theEnd).spawnParticle("dec:damp_explosion_particle", e.source.location);
-                    e.cancel = true;
-                }
+            if (e.source && e.dimension === this.getDimension(MinecraftDimensionTypes.theEnd) && (RuinsLoaction.isInProtectArea(e.source.location))) {
+                e.setImpactedBlocks([]);
+                // bugjump nmsl 
+                // bugjump nmsl 
+                // bugjump nmsl 
+                // bugjump nmsl 
+                // bugjump nmsl 
+                // bugjump nmsl 
+                // if (e.getImpactedBlocks.length !== 0) {
+                //     this.getExDimension(MinecraftDimensionTypes.theEnd).spawnParticle("dec:damp_explosion_particle", e.source.location);
+                //     e.cancel = true;
+                // }
                 //this.getExDimension(MinecraftDimensionTypes.theEnd).createExplosion(e.source.location,e.impactedBlocks.length);
             }
         });
         this.getEvents().events.beforeItemUse.subscribe(e => {
-            if (e.source.dimension === this.getDimension(MinecraftDimensionTypes.theEnd) && (isInProtectArea(e.source.location))) {
+            if (e.source.dimension === this.getDimension(MinecraftDimensionTypes.theEnd) && (RuinsLoaction.isInProtectArea(e.source.location))) {
                 if (itemCanChangeBlock(e.itemStack.typeId)) {
                     e.cancel = true;
                 }
@@ -412,7 +423,7 @@ export default class PomServer extends ExGameServer {
                 return;
             if (e.entity.typeId === MinecraftEntityTypes.enderman.id) {
                 if (e.entity.dimension === this.getDimension(MinecraftDimensionTypes.theEnd) &&
-                    (isInProtectArea(e.entity.location))) {
+                    (RuinsLoaction.isInProtectArea(e.entity.location))) {
                     e.entity.triggerEvent("minecraft:despawn");
                 }
             }
@@ -434,6 +445,40 @@ export default class PomServer extends ExGameServer {
     }
     sayTo(str) {
         this.getExDimension(MinecraftDimensionTypes.theEnd).command.run(`tellraw @a {"rawtext": [{"text": "${str}"}]}`);
+    }
+    clearEntity() {
+        let entities = Array.from(ExDimension.getInstance(this.getDimension(MinecraftDimensionTypes.overworld)).getEntities())
+            .concat(Array.from(ExDimension.getInstance(this.getDimension(MinecraftDimensionTypes.theEnd)).getEntities()))
+            .concat(Array.from(ExDimension.getInstance(this.getDimension(MinecraftDimensionTypes.nether)).getEntities()));
+        //ExGameConfig.console.log("当前实体数：" + entities.length);
+        let map = new Map();
+        entities.forEach(e => {
+            var _a;
+            if ((e === null || e === void 0 ? void 0 : e.typeId) == undefined)
+                return;
+            map.set(e.typeId, ((_a = map.get(e.typeId)) !== null && _a !== void 0 ? _a : 0) + 1);
+        });
+        let max = [0, ""];
+        map.forEach((v, k) => {
+            if (v > max[0] && [MinecraftEntityTypes.player.id, MinecraftEntityTypes.villager.id, MinecraftEntityTypes.villagerV2.id].indexOf(k) === -1) {
+                max[0] = v;
+                max[1] = k;
+            }
+        });
+        if (entities.length > this.entityCleanerLeastNum) {
+            if (this.setting.entityShowMsg)
+                this.say("Clear Entity Type：" + max[1]);
+            if (this.setting.entityShowMsg)
+                this.say("Clear Entity Num：" + max[0]);
+            entities.forEach(e => {
+                if (!e || !e.typeId || e.typeId !== max[1])
+                    return;
+                if (e.typeId === "minecraft:item" && e.getViewDirection().y !== 0)
+                    return;
+                //if (e.nameTag) return;
+                e.kill();
+            });
+        }
     }
     updateClearEntityNum() {
         this.entityCleanerStrength = this.setting.entityCleanerStrength;
@@ -458,9 +503,10 @@ export default class PomServer extends ExGameServer {
         new ExEnvironment().print();
     }
     damageShow(e) {
-        if (!falseIfError(() => (e.hurtEntity.typeId)))
+        if (!e.hurtEntity.isValid())
             return;
-        damageShow(ExDimension.getInstance(e.hurtEntity.dimension), e.damage, e.hurtEntity.location);
+        if (!(e instanceof Player))
+            damageShow(this.getExDimension(e.hurtEntity.dimension.id), e.damage, e.hurtEntity.location);
     }
     newClient(id, player) {
         return new PomClient(this, id, player);

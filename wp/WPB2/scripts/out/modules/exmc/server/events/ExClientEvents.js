@@ -164,7 +164,8 @@ ExClientEvents.exEventSetting = {
         pattern: ExClientEvents.eventHandlers.registerToServerByEntity,
         filter: {
             "name": "damagingEntity"
-        }
+        },
+        name: ExEventNames.afterEntityHitBlock
     },
     [ExOtherEventNames.afterPlayerHitEntity]: {
         pattern: ExClientEvents.eventHandlers.registerToServerByEntity,

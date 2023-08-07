@@ -39,6 +39,10 @@ export default class GlobalScoreBoardCache {
         this.useMap.delete(name);
         return this.scores.deleteScore(this.objective);
     }
+    has(name) {
+        this.entity.nameTag = name;
+        return this.scores.hasScore(this.objective);
+    }
 }
 GlobalScoreBoardCache.varMap = new Map();
 //# sourceMappingURL=GlobalScoreBoardCache.js.map
