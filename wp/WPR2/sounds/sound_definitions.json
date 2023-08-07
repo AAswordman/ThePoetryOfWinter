@@ -1,4 +1,44 @@
 {
+//===========================EPIC==================================
+        "epic.weapon.attack1": {
+            "sounds": [{
+                "name": "sounds/EPIC/attack/sweep1",
+                "volume": 2.4
+            }, {
+                "name": "sounds/EPIC/attack/sweep2",
+                "volume": 2.4
+            }, {
+                "name": "sounds/EPIC/attack/sweep3",
+                "volume": 2.4
+            }, {
+                "name": "sounds/EPIC/attack/sweep4",
+                "volume": 2.4
+            }, {
+                "name": "sounds/EPIC/attack/sweep5",
+                "volume": 2.4
+            }, {
+                "name": "sounds/EPIC/attack/sweep6",
+                "volume": 2.4
+            }, {
+                "name": "sounds/EPIC/attack/sweep7",
+                "volume": 2.4
+            }, {
+                "name": "sounds/EPIC/attack/sweep8",
+                "volume": 2.4
+            }, {
+                "name": "sounds/EPIC/attack/sweep9",
+                "volume": 2.4
+            }
+          ]
+        },
+      "epic.weapon.attack2": {
+            "sounds": [{
+                "name": "sounds/EPIC/attack/sword_draw",
+                "volume": 3.6
+            }
+          ]
+        },
+//=================================================================
     "mob.mcow.say": {
         "category": "hostile",
         "sounds": [

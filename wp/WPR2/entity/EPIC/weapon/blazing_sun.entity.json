@@ -1,0 +1,44 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "epic:blazing_sun",
+			"materials": {
+				"default": "slime_outer"
+			},
+			"textures": {
+				"default": "textures/EPIC/entity/weapon/blazing_sun"
+			},
+			"geometry": {
+				"default": "geometry.blazing_sun"
+			},
+			"particle_effects": {
+				"epic_base_effect": "minecraft:lava_particle"
+			},
+			"scripts": {
+				"animate": [
+				  "particle",
+				  "spawn",
+				  "move_controller",
+				  "attack_controller",
+				  "death1_controller"
+				]
+			  },
+			"animations": {	
+				"particle":"controller.animation.epic_base.particle",		
+				"move_controller": "controller.animation.blazing_sun.move",
+			    "attack_controller": "controller.animation.blazing_sun.attack",
+			    "death1_controller": "controller.animation.blazing_sun.death1",
+                "spawn":"animation.blazing_sun.spawn",
+				"move": "animation.blazing_sun.move",
+				"attack": "animation.blazing_sun.attack",
+				"death1": "animation.blazing_sun.death1"
+			   },
+			
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"texture": "blazing_sun_spawn_egg"
+			}
+		}
+	}
+}

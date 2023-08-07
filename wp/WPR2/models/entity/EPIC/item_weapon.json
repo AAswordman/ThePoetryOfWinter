@@ -1,0 +1,25 @@
+{
+	"format_version" : "1.16.0",
+	"minecraft:geometry" : [
+		{
+			"description" : {
+				"identifier" : "geometry.item_weapon",
+				"texture_width" : 16.0,
+				"texture_height" : 16.0
+			},
+			"bones" : [
+				{
+					"name" : "rightitem",
+					"texture_meshes" : [
+						{
+							"local_pivot" : [ 6.0, 0.0, 6.0 ],
+							"position" : [ 1.0, 1.0, -3.0 ],
+							"rotation" : [ 0.0, -135.0, 90.0 ],
+							"texture" : "default"
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -26,7 +26,11 @@
             "/scoreboard objectives add wbkjlqjs dummy 盔甲冷却加速",
             "/scoreboard objectives add wbkjlqzh dummy 盔甲冷却总和",
             "/scoreboard objectives add wbfinal dummy 常量",
-            "/scoreboard objectives add wbkjlqcg dummy 盔甲冷却草稿"
+            "/scoreboard objectives add wbkjlqcg dummy 盔甲冷却草稿",
+            //epic
+            "/scoreboard objectives add skill_cooldown dummy skill_cooldown",
+            "/scoreboard objectives add arrow_type dummy arrow_type"
+
           ]
         }
       }

@@ -1,0 +1,71 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.sun_worshipping_sword": {
+      "arrays": {
+        "textures": {
+          "array.sword_texture_frames": [
+            "texture.frame1",
+            "texture.frame2",
+            "texture.frame3",
+            "texture.frame4",
+            "texture.frame5",
+            "texture.frame6",
+            "texture.frame7",
+            "texture.frame8",
+            "texture.frame9",
+            "texture.frame10",
+            "texture.frame11",
+            "texture.frame12",
+            "texture.frame13",
+            "texture.frame14",
+            "texture.frame15",
+            "texture.frame16",
+            "texture.frame17",
+            "texture.frame18",
+            "texture.frame19",
+            "texture.frame20",
+            "texture.frame21",
+            "texture.frame22",
+            "texture.frame23",
+            "texture.frame24",
+            "texture.frame25",
+            "texture.frame26",
+            "texture.frame27",
+            "texture.frame28",
+            "texture.frame29",
+            "texture.frame30",
+            "texture.frame31",
+            "texture.frame32",
+            "texture.frame33",
+            "texture.frame34",
+            "texture.frame35",
+            "texture.frame36",
+            "texture.frame37",
+            "texture.frame38",
+            "texture.frame39",
+            "texture.frame40",
+            "texture.frame41",
+            "texture.frame42",
+            "texture.frame43",
+            "texture.frame44",
+            "texture.frame45",
+            "texture.frame46",
+            "texture.frame47",
+            "texture.frame48",
+            "texture.frame49",
+            "texture.frame50"
+          ]
+        },
+        "geometries": {
+          "array.crossbow_geo_frames": [
+            "geometry.default"
+          ]
+        }
+      },
+      "geometry": "array.crossbow_geo_frames[query.life_time*25]",
+      "materials": [ { "*": "variable.is_enchanted ? material.enchanted : material.default" } ],
+      "textures": [ "array.sword_texture_frames[query.life_time*25]", "texture.enchanted" ]
+    }
+  }
+}

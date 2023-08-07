@@ -1,0 +1,14 @@
+{
+	"format_version": "1.10.0",
+	"animations": {
+		"animation.item_weapon": {
+			"loop": true,
+			"bones": {
+			  	"rightitem": {
+					"position": [ "c.is_first_person ? -5.5 : 0.5", "c.is_first_person ? -3.0 : -2.0", "c.is_first_person ? -3.0 : -10.0" ],
+					"rotation": [ "c.is_first_person ? 38.0 : 190.0", "c.is_first_person ? -120.0 : 0.0", "c.is_first_person ? -63.0 : 180.0" ]
+			  	}
+			}
+		}
+	}
+}

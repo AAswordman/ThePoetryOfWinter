@@ -1,0 +1,94 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:attachable": {
+    "description": {
+      "identifier": "epic:sun_worshipping_sword",
+      "materials": {
+        "default": "entity_alphatest",
+        "enchanted": "entity_alphatest_glint"
+      },
+      "textures": {
+        "default": "textures/EPIC/items/weapon/sun_worshipping_sword",
+        "frame1": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame1",
+        "frame2": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame2",
+        "frame3": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame3",
+        "frame4": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame4",
+        "frame5": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame5",
+        "frame6": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame6",
+        "frame7": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame7",
+        "frame8": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame8",
+        "frame9": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame9",
+        "frame10": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame10",
+        "frame11": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame11",
+        "frame12": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame12",
+        "frame13": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame13",
+        "frame14": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame14",
+        "frame15": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame15",
+        "frame16": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame16",
+        "frame17": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame17",
+        "frame18": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame18",
+        "frame19": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame19",
+        "frame20": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame20",
+        "frame21": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame21",
+        "frame22": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame22",
+        "frame23": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame23",
+        "frame24": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame24",
+        "frame25": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame25",
+        "frame26": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame26",
+        "frame27": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame27",
+        "frame28": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame28",
+        "frame29": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame29",
+        "frame30": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame30",
+        "frame31": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame31",
+        "frame32": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame32",
+        "frame33": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame33",
+        "frame34": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame34",
+        "frame35": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame35",
+        "frame36": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame36",
+        "frame37": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame37",
+        "frame38": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame38",
+        "frame39": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame39",
+        "frame40": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame40",
+        "frame41": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame41",
+        "frame42": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame42",
+        "frame43": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame43",
+        "frame44": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame44",
+        "frame45": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame45",
+        "frame46": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame46",
+        "frame47": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame47",
+        "frame48": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame48",
+        "frame49": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame49",
+        "frame50": "textures/EPIC/items/weapon/sun_worshipping_sword_frames/sun_worshipping_sword_frame50",
+        "enchanted": "textures/misc/enchanted_item_glint"
+      },
+      "geometry": {
+        "default": "geometry.item_weapon"
+      },
+      "animations": {
+        "wield": "animation.item_weapon",
+        "test": "controller.animation.crossbow"
+      },
+      "particle_effects": {
+        "epic_base_effect": "epic:sunlight_arrow_particle2"
+      },
+      "scripts": {
+          "initialize": [
+            "variable.attack_wave_time = 27;",
+            "variable.durability = query.remaining_durability;",
+            "variable.is_dynamic = 1;"
+          ],
+          "pre_animation": [
+            "variable.durability = query.remaining_durability;",
+            "variable.is_dynamic = variable.durability > 1 ? 1:0 ;",
+            "variable.is_first_person = c.is_first_person;",
+            "variable.attack_wave_time=variable.attack_wave_time>27?(variable.attack_time>0?0:10):(variable.attack_wave_time+0.5);"
+          ],
+        "animate": [
+          "wield",
+          "test"
+        ]
+      },
+      "render_controllers": ["controller.render.sun_worshipping_sword"]
+    }
+  }
+}

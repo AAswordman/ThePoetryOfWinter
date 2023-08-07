@@ -1,0 +1,734 @@
+{
+  "format_version": "1.20.0",
+ "minecraft:entity": {
+  "description": {
+    "identifier": "epic:sunlight_arrow",
+    "is_spawnable": false,
+    "is_summonable": true,
+    "is_experimental": false,
+    "runtime_identifier": "minecraft:arrow"
+  },
+
+//自毁
+"component_groups": {
+    "explode": {
+      "minecraft:explode": {
+        "fuseLength":0.5,
+        "fuseLit": true,
+        "breaks_blocks":false,
+        "power": 1.5,
+        "causesFire": false,
+        "fireAffectedByGriefing": true,
+        "destroyAffectedByGriefing": true
+       },
+       "minecraft:variant": {
+        "value": 2
+       },
+       "minecraft:timer": {
+        "time": 1,
+        "looping": true,
+        "time_down_event": {
+          "event": "kill",
+          "target": "self"
+        }
+       }
+    },
+//普通
+"normal":{
+"minecraft:timer": {
+  "time": 0.005,
+  "looping": true,
+  "time_down_event": {
+    "event": "boost1",
+    "target": "self"
+  }
+ },
+ "minecraft:variant": {
+  "value": 0
+ },
+ "minecraft:projectile": {
+  "on_hit": {
+    "impact_damage": {
+      "damage": 25,
+      "destroy_on_hit":false,
+      "catch_fire": true,
+      "power_multiplier": 3,
+      "knockback": true
+    },
+    "stick_in_ground": {
+    "shake_time" : 0.2
+    },
+    "hurt_owner": {
+      "owner_damage": 0,
+      "knockback": false,
+      "ignite": false
+    },
+    "particle_on_hit": {
+      "num_particles": 5,
+      "on_entity_hit": true,
+      "on_other_hit": false,
+      "particle_type": "flame"
+    },
+    "definition_event": {
+      "event_trigger": {
+        "event": "skill",
+        "target": "self"
+      }
+    }
+  },
+  "power": 2.25,
+  "gravity": 0.005,
+  "inertia": 1.2,                        //惯性
+  "liquid_inertia": 1.2,                 //液体惯性
+  "anchor": 1,                            //抛射位置【0为初始，1为眼睛，2为身体】
+  "offset": [ 0, -0.2, 0 ],               //抛射位置的偏移量
+  "angle_offset": 0,                      //抛射的实际角度
+  "uncertaintyBase": 0.0,                 //基础准度
+  "uncertainty_multiplier": 0,            //难度对准度的影响
+  "reflectOnHurt": false,                 //击中后反弹
+  "should_bounce": false,                 //击中前弹起
+  "multiple_targets":true,                //多重目标
+  "catch_fire": true,                     //引燃
+  "on_fire_time":8,                       //着火时间
+  "fire_affected_by_griefing": false,     //火焰是否被gamerule影响
+  "knockback": true,                      //是否击退
+  "destroy_on_hurt": false,               //造成伤害后是否立刻摧毁
+  "stop_on_hurt": false,                  //击中后是否停下
+  "shoot_target": true,  
+  "shoot_sound": "item.trident.throw",    //射击音效
+  "hit_sound": "explode",                 //击中音效
+  "hit_ground_sound": "explode"
+ }
+},
+//增伤
+  "boost1":{
+  "minecraft:timer": {
+    "time": 0.01,
+    "looping": true,
+    "time_down_event": {
+      "event": "boost2",
+      "target": "self"
+    }
+   },
+   "minecraft:variant": {
+    "value": 0
+   },
+   "minecraft:projectile": {
+    "on_hit": {
+      "impact_damage": {
+        "damage": 31,
+        "destroy_on_hit":false,
+        "catch_fire": true,
+        "power_multiplier": 3,
+        "knockback": true
+      },
+      "stick_in_ground": {
+      "shake_time" : 0.2
+      },
+      "hurt_owner": {
+        "owner_damage": 0,
+        "knockback": false,
+        "ignite": false
+      },
+      "particle_on_hit": {
+        "num_particles": 5,
+        "on_entity_hit": true,
+        "on_other_hit": false,
+        "particle_type": "flame"
+      },
+      "definition_event": {
+        "event_trigger": {
+          "event": "skill1",
+          "target": "self"
+        }
+      }
+    },
+    "power": 2.25,
+    "gravity": 0.005,
+    "inertia": 1.2,                        //惯性
+    "liquid_inertia": 1.2,                 //液体惯性
+    "anchor": 1,                            //抛射位置【0为初始，1为眼睛，2为身体】
+    "offset": [ 0, -0.2, 0 ],               //抛射位置的偏移量
+    "angle_offset": 0,                      //抛射的实际角度
+    "uncertaintyBase": 0.0,                 //基础准度
+    "uncertainty_multiplier": 0,            //难度对准度的影响
+    "reflectOnHurt": false,                 //击中后反弹
+    "should_bounce": false,                 //击中前弹起
+    "multiple_targets":true,                //多重目标
+    "catch_fire": true,                     //引燃
+    "on_fire_time":8,                       //着火时间
+    "fire_affected_by_griefing": false,     //火焰是否被gamerule影响
+    "knockback": true,                      //是否击退
+    "destroy_on_hurt": false,               //造成伤害后是否立刻摧毁
+    "stop_on_hurt": false,                  //击中后是否停下
+    "shoot_target": true,  
+    "shoot_sound": "item.trident.throw",    //射击音效
+    "hit_sound": "explode",                 //击中音效
+    "hit_ground_sound": "explode"
+   }
+  },
+
+  "boost2":{
+    "minecraft:timer": {
+      "time": 0.01,
+      "looping": true,
+      "time_down_event": {
+        "event": "boost3",
+        "target": "self"
+      }
+     },
+     "minecraft:variant": {
+      "value": 0
+     },
+     "minecraft:projectile": {
+      "on_hit": {
+        "impact_damage": {
+          "damage": 39,
+          "destroy_on_hit":false,
+          "catch_fire": true,
+          "power_multiplier": 3,
+          "knockback": true
+        },
+        "stick_in_ground": {
+        "shake_time" : 0.2
+        },
+        "hurt_owner": {
+          "owner_damage": 0,
+          "knockback": false,
+          "ignite": false
+        },
+        "particle_on_hit": {
+          "num_particles": 5,
+          "on_entity_hit": true,
+          "on_other_hit": false,
+          "particle_type": "flame"
+        },
+        "definition_event": {
+          "event_trigger": {
+            "event": "skill2",
+            "target": "self"
+          }
+        }
+      },
+      "power": 2.25,
+      "gravity": 0.005,
+      "inertia": 1.2,                        //惯性
+      "liquid_inertia": 1.2,                 //液体惯性
+      "anchor": 1,                            //抛射位置【0为初始，1为眼睛，2为身体】
+      "offset": [ 0, -0.2, 0 ],               //抛射位置的偏移量
+      "angle_offset": 0,                      //抛射的实际角度
+      "uncertaintyBase": 0.0,                 //基础准度
+      "uncertainty_multiplier": 0,            //难度对准度的影响
+      "reflectOnHurt": false,                 //击中后反弹
+      "should_bounce": false,                 //击中前弹起
+      "multiple_targets":true,                //多重目标
+      "catch_fire": true,                     //引燃
+      "on_fire_time":8,                       //着火时间
+      "fire_affected_by_griefing": false,     //火焰是否被gamerule影响
+      "knockback": true,                      //是否击退
+      "destroy_on_hurt": false,               //造成伤害后是否立刻摧毁
+      "stop_on_hurt": false,                  //击中后是否停下
+      "shoot_target": true,  
+      "shoot_sound": "item.trident.throw",    //射击音效
+      "hit_sound": "explode",                 //击中音效
+      "hit_ground_sound": "explode"
+     }
+    },
+    
+    "boost3":{
+      "minecraft:timer": {
+        "time": 0.01,
+        "looping": true,
+        "time_down_event": {
+          "event": "boost4",
+          "target": "self"
+        }
+       },
+       "minecraft:variant": {
+        "value": 1
+       },
+       "minecraft:projectile": {
+        "on_hit": {
+          "impact_damage": {
+            "damage": 48,
+            "destroy_on_hit":false,
+            "catch_fire": true,
+            "power_multipli53er": 3,
+            "knockback": true
+          },
+          "stick_in_ground": {
+          "shake_time" : 0.2
+          },
+          "hurt_owner": {
+            "owner_damage": 0,
+            "knockback": false,
+            "ignite": false
+          },
+          "particle_on_hit": {
+            "num_particles": 5,
+            "on_entity_hit": true,
+            "on_other_hit": false,
+            "particle_type": "flame"
+          },
+          "definition_event": {
+            "event_trigger": {
+              "event": "skill3",
+              "target": "self"
+            }
+          }
+        },
+        "power": 2.25,
+        "gravity": 0.005,
+        "inertia": 1.2,                        //惯性
+        "liquid_inertia": 1.2,                 //液体惯性
+        "anchor": 1,                            //抛射位置【0为初始，1为眼睛，2为身体】
+        "offset": [ 0, -0.2, 0 ],               //抛射位置的偏移量
+        "angle_offset": 0,                      //抛射的实际角度
+        "uncertaintyBase": 0.0,                 //基础准度
+        "uncertainty_multiplier": 0,            //难度对准度的影响
+        "reflectOnHurt": false,                 //击中后反弹
+        "should_bounce": false,                 //击中前弹起
+        "multiple_targets":true,                //多重目标
+        "catch_fire": true,                     //引燃
+        "on_fire_time":8,                       //着火时间
+        "fire_affected_by_griefing": false,     //火焰是否被gamerule影响
+        "knockback": true,                      //是否击退
+        "destroy_on_hurt": false,               //造成伤害后是否立刻摧毁
+        "stop_on_hurt": false,                  //击中后是否停下
+        "shoot_target": true,  
+        "shoot_sound": "item.trident.throw",    //射击音效
+        "hit_sound": "explode",                 //击中音效
+        "hit_ground_sound": "explode"
+       }
+      },
+
+
+      "boost4":{
+        "minecraft:timer": {
+          "time": 0.01,
+          "looping": true,
+          "time_down_event": {
+            "event": "boost5",
+            "target": "self"
+          }
+         },
+         "minecraft:variant": {
+          "value": 1
+         },
+         "minecraft:projectile": {
+          "on_hit": {
+            "impact_damage": {
+              "damage": 61,
+              "destroy_on_hit":false,
+              "catch_fire": true,
+              "power_multiplier": 3,
+              "knockback": true
+            },
+            "stick_in_ground": {
+            "shake_time" : 0.2
+            },
+            "hurt_owner": {
+              "owner_damage": 0,
+              "knockback": false,
+              "ignite": false
+            },
+            "particle_on_hit": {
+              "num_particles": 5,
+              "on_entity_hit": true,
+              "on_other_hit": false,
+              "particle_type": "flame"
+            },
+            "definition_event": {
+              "event_trigger": {
+                "event": "skill4",
+                "target": "self"
+              }
+            }
+          },
+          "power": 2.25,
+          "gravity": 0.005,
+          "inertia": 1.2,                        //惯性
+          "liquid_inertia": 1.2,                 //液体惯性
+          "anchor": 1,                            //抛射位置【0为初始，1为眼睛，2为身体】
+          "offset": [ 0, -0.2, 0 ],               //抛射位置的偏移量
+          "angle_offset": 0,                      //抛射的实际角度
+          "uncertaintyBase": 0.0,                 //基础准度
+          "uncertainty_multiplier": 0,            //难度对准度的影响
+          "reflectOnHurt": false,                 //击中后反弹
+          "should_bounce": false,                 //击中前弹起
+          "multiple_targets":true,                //多重目标
+          "catch_fire": true,                     //引燃
+          "on_fire_time":8,                       //着火时间
+          "fire_affected_by_griefing": false,     //火焰是否被gamerule影响
+          "knockback": true,                      //是否击退
+          "destroy_on_hurt": false,               //造成伤害后是否立刻摧毁
+          "stop_on_hurt": false,                  //击中后是否停下
+          "shoot_target": true,  
+          "shoot_sound": "item.trident.throw",    //射击音效
+          "hit_sound": "explode",                 //击中音效
+          "hit_ground_sound": "explode"
+         }
+        },
+
+        "boost5":{
+          "minecraft:timer": {
+            "time": 0.01,
+            "looping": true,
+            "time_down_event": {
+              "event": "boost6",
+              "target": "self"
+            }
+           },
+           "minecraft:variant": {
+            "value": 2
+           },
+           "minecraft:projectile": {
+            "on_hit": {
+              "impact_damage": {
+                "damage": 76,
+                "destroy_on_hit":false,
+                "catch_fire": true,
+                "power_multiplier": 3,
+                "knockback": true
+              },
+              "stick_in_ground": {
+              "shake_time" : 0.2
+              },
+              "hurt_owner": {
+                "owner_damage": 0,
+                "knockback": false,
+                "ignite": false
+              },
+              "particle_on_hit": {
+                "num_particles": 5,
+                "on_entity_hit": true,
+                "on_other_hit": false,
+                "particle_type": "flame"
+              },
+              "definition_event": {
+                "event_trigger": {
+                  "event": "skill5",
+                  "target": "self"
+                }
+              }
+            },
+            "power": 2.25,
+            "gravity": 0.005,
+            "inertia": 1.2,                        //惯性
+            "liquid_inertia": 1.2,                 //液体惯性
+            "anchor": 1,                            //抛射位置【0为初始，1为眼睛，2为身体】
+            "offset": [ 0, -0.2, 0 ],               //抛射位置的偏移量
+            "angle_offset": 0,                      //抛射的实际角度
+            "uncertaintyBase": 0.0,                 //基础准度
+            "uncertainty_multiplier": 0,            //难度对准度的影响
+            "reflectOnHurt": false,                 //击中后反弹
+            "should_bounce": false,                 //击中前弹起
+            "multiple_targets":true,                //多重目标
+            "catch_fire": true,                     //引燃
+            "on_fire_time":8,                       //着火时间
+            "fire_affected_by_griefing": false,     //火焰是否被gamerule影响
+            "knockback": true,                      //是否击退
+            "destroy_on_hurt": false,               //造成伤害后是否立刻摧毁
+            "stop_on_hurt": false,                  //击中后是否停下
+            "shoot_target": true,  
+            "shoot_sound": "item.trident.throw",    //射击音效
+            "hit_sound": "explode",                 //击中音效
+            "hit_ground_sound": "explode"
+           }
+          },
+
+          "boost6":{
+            "minecraft:timer": {
+              "time": 1,
+              "looping": true,
+              "time_down_event": {
+                "event": "skill6",
+                "target": "self"
+              }
+             },
+             "minecraft:variant": {
+              "value": 2
+             },
+             "minecraft:projectile": {
+              "on_hit": {
+                "impact_damage": {
+                  "damage": 95,
+                  "destroy_on_hit":false,
+                  "catch_fire": true,
+                  "power_multiplier": 3,
+                  "knockback": true
+                },
+                "stick_in_ground": {
+                "shake_time" : 0.2
+                },
+                "hurt_owner": {
+                  "owner_damage": 0,
+                  "knockback": false,
+                  "ignite": false
+                },
+                "particle_on_hit": {
+                  "num_particles": 5,
+                  "on_entity_hit": true,
+                  "on_other_hit": false,
+                  "particle_type": "flame"
+                },
+                "definition_event": {
+                  "event_trigger": {
+                    "event": "skill6",
+                    "target": "self"
+                  }
+                }
+              },
+              "power": 2.25,
+              "gravity": 0.005,
+              "inertia": 1.2,                        //惯性
+              "liquid_inertia": 1.2,                 //液体惯性
+              "anchor": 1,                            //抛射位置【0为初始，1为眼睛，2为身体】
+              "offset": [ 0, -0.2, 0 ],               //抛射位置的偏移量
+              "angle_offset": 0,                      //抛射的实际角度
+              "uncertaintyBase": 0.0,                 //基础准度
+              "uncertainty_multiplier": 0,            //难度对准度的影响
+              "reflectOnHurt": false,                 //击中后反弹
+              "should_bounce": false,                 //击中前弹起
+              "multiple_targets":true,                //多重目标
+              "catch_fire": true,                     //引燃
+              "on_fire_time":8,                       //着火时间
+              "fire_affected_by_griefing": false,     //火焰是否被gamerule影响
+              "knockback": true,                      //是否击退
+              "destroy_on_hurt": false,               //造成伤害后是否立刻摧毁
+              "stop_on_hurt": false,                  //击中后是否停下
+              "shoot_target": true,  
+              "shoot_sound": "item.trident.throw",    //射击音效
+              "hit_sound": "explode",                 //击中音效
+              "hit_ground_sound": "explode"
+             }
+            }
+ },
+
+
+
+    "components": {
+    "minecraft:collision_box": {
+    "width": 0.125,
+    "height": 0.125
+   },
+
+   "minecraft:projectile": {
+    "on_hit": {
+      "impact_damage": {
+        "damage": 30,
+        "destroy_on_hit":false,
+        "catch_fire": true,
+        "power_multiplier": 3,
+        "knockback": true,
+        "destroy_on_hit_requires_damage": false,
+        "channeling": false,
+        "filter": "not set",
+        "min_critical_damage": 20,
+        "max_critical_damage": 40,
+        "semi_random_diff_damage": false
+      },
+      "stick_in_ground": {
+      "shake_time" : 0.2
+      },
+      "ignite": false,                     //生成火焰块
+      "hurt_owner": {
+        "owner_damage": 0,
+        "knockback": false,
+        "ignite": false
+      },
+      "particle_on_hit": {
+        "num_particles": 5,
+        "on_entity_hit": true,
+        "on_other_hit": false,
+        "particle_type": "flame"
+      },
+      "definition_event": {
+        "event_trigger": {
+          "event": "skill",
+          "target": "self"
+        }
+      }
+      
+    },
+    "power": 2.25,
+    "gravity": 0.005,
+    "inertia": 1.2,                        //惯性
+    "liquid_inertia": 1.2,                 //液体惯性
+    "anchor": 1,                            //抛射位置【0为初始，1为眼睛，2为身体】
+    "offset": [ 0, -0.2, 0 ],               //抛射位置的偏移量
+    "angle_offset": 0,                      //抛射的实际角度
+    "uncertaintyBase": 0.0,                 //基础准度
+    "uncertainty_multiplier": 0,            //难度对准度的影响
+    "reflectOnHurt": false,                 //击中后反弹
+    "should_bounce": false,                 //击中前弹起
+    "multiple_targets":true,                //多重目标
+    "catch_fire": true,                     //引燃
+    "on_fire_time":8,                       //着火时间
+    "fire_affected_by_griefing": false,     //火焰是否被gamerule影响
+    "knockback": true,                      //是否击退
+    "destroy_on_hurt": false,               //造成伤害后是否立刻摧毁
+    "stop_on_hurt": false,                  //击中后是否停下
+    "semi_random_diff_damage": false,       //随机伤害和速度
+    "shoot_target": true,  
+    "shoot_sound": "item.trident.throw",    //射击音效
+    "hit_sound": "explode",                 //击中音效
+    "hit_ground_sound": "explode"
+   },
+   "minecraft:physics": {
+   }
+  },
+  "events": {
+    "minecraft:entity_spawned": {
+      "add": {
+        "component_groups": ["normal"]
+      },
+      "run_command":{
+        "command":[ 
+          "tag @s add immune"
+       ]
+      }
+    },
+
+     "skill":{
+      "run_command":{
+        "command":[ 
+          "execute as @s at @s positioned ~~0.75~ run particle epic:sunlight_arrow_particle1",
+          "damage @e[r=2,tag=!wbmsyh,tag=!immune] 12 fire_tick entity @s",
+          "damage @e[r=2,tag=!wbmsyh,tag=!immune] 0 suicide entity @s"
+       ]
+      }
+     },
+
+     "skill1":{
+      "run_command":{
+        "command":[ 
+         "execute as @s at @s positioned ~~0.75~ run particle epic:sunlight_arrow_particle1",
+          "damage @e[r=2,tag=!wbmsyh,tag=!immune] 16 fire_tick entity @s",
+          "damage @e[r=2,tag=!wbmsyh,tag=!immune] 0 suicide entity @s"
+       ]
+      }
+     },
+
+     "skill2":{
+      "run_command":{
+        "command":[ 
+         "execute as @s at @s positioned ~~0.75~ run particle epic:sunlight_arrow_particle1",
+          "damage @e[r=2,tag=!wbmsyh,tag=!immune] 19 fire_tick entity @s",
+          "damage @e[r=2,tag=!wbmsyh,tag=!immune] 0 suicide entity @s"
+       ]
+      }
+     },
+
+     "skill3":{
+      "run_command":{
+        "command":[ 
+         "execute as @s at @s positioned ~~0.75~ run particle epic:sunlight_arrow_particle1",
+          "damage @e[r=2,tag=!wbmsyh,tag=!immune] 24 fire_tick entity @s",
+          "damage @e[r=2,tag=!wbmsyh,tag=!immune] 0 suicide entity @s"
+       ]
+      }
+     },
+
+     "skill4":{
+      "run_command":{
+        "command":[ 
+         "execute as @s at @s positioned ~~0.75~ run particle epic:sunlight_arrow_particle1",
+          "damage @e[r=2,tag=!wbmsyh,tag=!immune] 30 fire_tick entity @s",
+          "damage @e[r=2,tag=!wbmsyh,tag=!immune] 0 suicide entity @s"
+       ]
+      }
+     },
+
+     "skill5":{
+      "run_command":{
+        "command":[ 
+         "execute as @s at @s positioned ~~0.75~ run particle epic:sunlight_arrow_particle1",
+          "damage @e[r=2,tag=!wbmsyh,tag=!immune] 38 fire_tick entity @s",
+          "damage @e[r=2,tag=!wbmsyh,tag=!immune] 0 suicide entity @s"
+       ]
+      }
+     },
+
+     "skill6":{
+      "run_command":{
+        "command":[ 
+         "execute as @s at @s positioned ~~0.5~ run particle epic:sunlight_arrow_particle1",
+          "damage @e[r=2,tag=!wbmsyh,tag=!immune] 48 fire_tick entity @s",
+          "damage @e[r=2,tag=!wbmsyh,tag=!immune] 0 suicide entity @s"
+       ]
+      },
+      "remove": {
+        "component_groups": ["boost6"]
+      },
+      "add": {
+        "component_groups": ["explode"]
+      }
+     },
+
+     "boost1": {
+      "remove": {
+        "component_groups": ["normal"]
+      },
+      "add": {
+        "component_groups": ["boost1"]
+      }
+    },
+
+    "boost2": {
+      "remove": {
+        "component_groups": ["boost1"]
+      },
+      "add": {
+        "component_groups": ["boost2"]
+      }
+    },
+
+    "boost3": {
+      "remove": {
+        "component_groups": ["boost2"]
+      },
+      "add": {
+        "component_groups": ["boost3"]
+      }
+    },
+
+    "boost4": {
+      "remove": {
+        "component_groups": ["boost3"]
+      },
+      "add": {
+        "component_groups": ["boost4"]
+      }
+    },
+
+    "boost5": {
+      "remove": {
+        "component_groups": ["boost4"]
+      },
+      "add": {
+        "component_groups": ["boost5"]
+      }
+    },
+
+    "boost6": {
+      "remove": {
+        "component_groups": ["boost5"]
+      },
+      "add": {
+        "component_groups": ["boost6"]
+      }
+    },
+
+    "kill": {
+      "run_command":{
+        "command":[ 
+          "kill @s"
+       ]
+      }
+    }
+
+  
+  }
+ }
+}

@@ -1,0 +1,447 @@
+{
+  "format_version": "1.20.0",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "epic:sun_worshipping_sword"
+    },
+    "components": {
+      "minecraft:render_offsets": {
+        "main_hand": {
+          "first_person": {
+            "scale": [0.0215,0.012,0.0215],
+            "position": [0.5,-0.0725,-1.085],
+            "rotation": [0,-50,90]
+
+          },
+          "third_person": {
+            "position": [0.375,1.65,-0.75],
+            "scale": [0.07,0.0400,0.07]
+          }
+        },
+        "off_hand": {
+          "first_person": {
+            "scale": [0.01,0.0065,0.01],
+            "position": [0.4,0.05,-1.075]
+          },
+          "third_person": {
+            "position": [0.45,1.6,-0.7],
+            "scale": [0.03125,0.03125,0.03125]
+          }
+        }
+      },
+      "minecraft:creative_category": {
+				"parent": "itemGroup.name.sword"
+			},
+      "minecraft:display_name": {
+        "value": "item.epic:sun_worshipping_sword.name"
+      },
+      "minecraft:icon": {
+        "texture": "epic:sun_worshipping_sword"
+      },
+      "minecraft:animates_in_toolbar" : true,
+      "minecraft:damage": 12,
+      "minecraft:durability": {
+       "max_durability": 300
+      },
+      "minecraft:weapon": {
+        "on_hurt_entity": {
+          "event": "attack1",
+          "target": "self"
+          
+        }
+      },
+      "minecraft:on_use": {
+        "on_use": {
+          "event": "attack2",
+          "target": "self",
+          "condition": "query.is_sneaking == 0"
+        }
+      },
+      
+      "minecraft:chargeable": {
+        "movement_modifier":1.5,
+        "on_complete": {
+         "event": "attack3",
+         "target": "self",
+         "condition": "query.is_sneaking == 1"
+        }
+      },
+      "minecraft:use_duration": 3.5,
+      "minecraft:cooldown": {
+        "category": "epic:sun_worshipping_sword",
+        "duration": 2.75
+      },
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "iron_ingot"
+            ],
+            "repair_amount": 250
+          }
+        ]
+      },
+      "minecraft:digger": {
+        "destroy_speeds": [
+          {
+            "block": "minecraft:web",
+            "speed": 15
+          },
+          {
+            "block": "minecraft:bamboo",
+            "speed": 10
+          }
+        ],
+        "use_efficiency": false
+      },
+      "minecraft:can_destroy_in_creative": false,
+      "minecraft:hand_equipped": true,
+      "minecraft:max_stack_size": 1,
+      "minecraft:mining_speed": 1,
+//tags
+      "tag:minecraft:is_sword":{},
+      "tag:minecraft:netherite_tier":{}
+    },
+    "events": {
+      "attack1": {
+        "sequence": [
+          {
+            "sequence": [
+          {
+            "run_command":{
+            "command":[
+              "playsound epic.weapon.attack1 @a[r=2]",
+              "execute as @s unless score @s skill_cooldown matches 9.. run scoreboard players set @s skill_cooldown 8"
+         ]
+        }
+        }
+        ]
+        }, 
+
+      {
+          "condition":"query.remaining_durability >= 1 && query.scoreboard('skill_cooldown') == 0",
+          "sequence": [
+        {
+          "run_command":{
+          "command":[
+            "tag @s add skill_user",
+            "execute as @s anchored eyes positioned ^^-0.2^1.25 run particle epic:sun_worshipping_sword_particle1",
+            "playanimation @s animation.humanoid.brandish",
+            "playsound epic.weapon.attack2 @a[r=2]"
+       ]
+      }
+     }
+    ]
+   },
+
+        {
+          "condition":"query.remaining_durability >= 250 && query.scoreboard('skill_cooldown') == 0",
+          "sequence": [
+        {
+          "run_command":{
+          "command":[
+            "execute as @s anchored eyes positioned ^^-0.35^2 rotated ~~ run damage @e[tag=!wbmsyh,tag=!skill_user,type=!item,r=2.4] 20 void entity @s",
+            "execute as @s anchored eyes positioned ^^-0.35^2 rotated ~~ run damage @e[tag=blazing_sun_target,tag=!wbmsyh,tag=!skill_user,type=!item,r=2.4] 32 void entity @s",
+            "execute as @s anchored eyes positioned ^^-0.35^2 rotated ~~ at @e[tag=!wbmsyh,tag=!skill_user,type=!item,r=2.4] run particle minecraft:critical_hit_emitter ~~1.8~"
+        ]
+        }
+        }
+        ]
+        },
+
+        {
+          "condition":"query.remaining_durability >= 200 && query.scoreboard('skill_cooldown') == 0",
+          "sequence": [
+        {
+          "run_command":{
+          "command":[
+            "execute as @s anchored eyes positioned ^^-0.35^2 rotated ~~ run damage @e[tag=!wbmsyh,tag=!skill_user,type=!item,r=2.4] 17 void entity @s",
+            "execute as @s anchored eyes positioned ^^-0.35^2 rotated ~~ run damage @e[tag=blazing_sun_target,tag=!wbmsyh,tag=!skill_user,type=!item,r=2.4] 27 void entity @s",
+            "execute as @s anchored eyes positioned ^^-0.35^2 rotated ~~ at @e[tag=!wbmsyh,tag=!skill_user,type=!item,r=2.4] run particle minecraft:critical_hit_emitter ~~1.8~"
+        ]
+        }
+        }
+        ]
+        },
+
+        {
+          "condition":"query.remaining_durability >= 150 && query.scoreboard('skill_cooldown') == 0",
+          "sequence": [
+        {
+          "run_command":{
+          "command":[
+            "execute as @s anchored eyes positioned ^^-0.35^1.8 rotated ~~ run damage @e[tag=!wbmsyh,tag=!skill_user,type=!item,r=2.2] 14 void entity @s",
+            "execute as @s anchored eyes positioned ^^-0.35^1.8 rotated ~~ run damage @e[tag=blazing_sun_target,tag=!wbmsyh,tag=!skill_user,type=!item,r=2.2] 22 void entity @s",
+            "execute as @s anchored eyes positioned ^^-0.35^1.8 rotated ~~ at @e[tag=!wbmsyh,tag=!skill_user,type=!item,r=2.2] run particle minecraft:critical_hit_emitter ~~1.8~"
+        ]
+        }
+        }
+        ]
+        },
+
+        {
+          "condition":"query.remaining_durability >= 100 && query.scoreboard('skill_cooldown') == 0",
+          "sequence": [
+        {
+          "run_command":{
+          "command":[
+            "execute as @s anchored eyes positioned ^^-0.35^1.8 rotated ~~ run damage @e[tag=!wbmsyh,tag=!skill_user,type=!item,r=2.2] 11 void entity @s",
+            "execute as @s anchored eyes positioned ^^-0.35^1.8 rotated ~~ run damage @e[tag=blazing_sun_target,tag=!wbmsyh,tag=!skill_user,type=!item,r=2.2] 18 void entity @s",
+            "execute as @s anchored eyes positioned ^^-0.35^1.8 rotated ~~ at @e[tag=!wbmsyh,tag=!skill_user,type=!item,r=2.2] run particle minecraft:critical_hit_emitter ~~1.8~"
+        ]
+        }
+        }
+        ]
+        },
+
+        {
+          "condition":"query.remaining_durability >= 50 && query.scoreboard('skill_cooldown') == 0",
+          "sequence": [
+        {
+          "run_command":{
+          "command":[
+            "execute as @s anchored eyes positioned ^^-0.35^1.6 rotated ~~ run damage @e[tag=!wbmsyh,tag=!skill_user,type=!item,r=2] 8 void entity @s",
+            "execute as @s anchored eyes positioned ^^-0.35^1.6 rotated ~~ run damage @e[tag=blazing_sun_target,tag=!wbmsyh,tag=!skill_user,type=!item,r=2] 13 void entity @s",
+            "execute as @s anchored eyes positioned ^^-0.35^1.6 rotated ~~ at @e[tag=!wbmsyh,tag=!skill_user,type=!item,r=2] run particle minecraft:critical_hit_emitter ~~1.8~"
+        ]
+        }
+        }
+        ]
+        },
+
+     {
+       "condition":"query.remaining_durability >= 1 && query.scoreboard('skill_cooldown') == 0",
+       "sequence": [
+     {
+       "run_command":{
+       "command":[
+         "execute as @s anchored eyes positioned ^^-0.35^1.6 rotated ~~ run effect @e[tag=!wbmsyh,tag=!skill_user,type=!item,r=2] slowness 1 1 true",
+         "execute as @s anchored eyes positioned ^^-0.35^1.6 rotated ~~ run damage @e[tag=!wbmsyh,tag=!skill_user,type=!item,r=2] 5 void entity @s",
+         "execute as @s anchored eyes positioned ^^-0.35^1.6 rotated ~~ run damage @e[tag=blazing_sun_target,tag=!wbmsyh,tag=!skill_user,type=!item,r=1.8] 8 void entity @s",
+         "execute as @s anchored eyes positioned ^^-0.35^1.6 rotated ~~ at @e[tag=!wbmsyh,tag=!skill_user,type=!item,r=2] run particle minecraft:critical_hit_emitter ~~1.8~",
+         "tag @s remove skill_user",
+         "execute as @s anchored eyes positioned ^^-0.35^2 run tag @e[type=!item,r=2.5] remove blazing_sun_target",
+         "scoreboard players set @s skill_cooldown 14",
+         "scoreboard players set @s[tag=blazing_sun] skill_cooldown 7",
+         "tag @s[tag=blazing_sun] remove blazing_sun"
+    ]
+   }
+  },
+  {
+    "damage": {
+    "type": "magic",
+    "amount": 1
+    }
+   }
+ ]
+}
+
+ 
+   ]
+ },
+  "attack2": {
+  "sequence": [
+    {
+      "condition":"query.remaining_durability >= 5 && query.is_sneaking == 0",
+      "sequence": [
+     {
+      "run_command":{
+      "command":[ 
+      "tag @s add skill_user",
+      "playsound epic.weapon.attack2 @a[r=2]",
+      "execute as @s anchored eyes positioned ^^-0.2^1.25 run particle epic:sun_worshipping_sword_particle2",
+      "execute as @s anchored eyes positioned ^^-0.35^8.75 run tag @e[tag=!wbmsyh,tag=!skill_user,type=!item,r=2.25] add epic_target_select1",
+      "execute as @s anchored eyes positioned ^^-0.35^6.25 run tag @e[tag=!wbmsyh,tag=!skill_user,type=!item,r=2.5] add epic_target_select1",
+      "execute as @s anchored eyes positioned ^^-0.35^3.5 run tag @e[tag=!wbmsyh,tag=!skill_user,type=!item,r=2.75] add epic_target_select1",
+      "execute as @s anchored eyes positioned ^^-0.35^0.5 run tag @e[tag=!wbmsyh,tag=!skill_user,type=!item,r=3] add epic_target_select1",
+      "execute as @s anchored eyes positioned ^^-0.35^1 run tag @e[tag=!wbmsyh,tag=!skill_user,type=!item,r=1.6] add epic_target_select2",
+      "execute as @s anchored eyes positioned ^^-0.35^2 run tag @e[tag=!wbmsyh,tag=!skill_user,type=!item,r=1.5] add epic_target_select2",
+      "execute as @s anchored eyes positioned ^^-0.35^3 run tag @e[tag=!wbmsyh,tag=!skill_user,type=!item,r=1.4] add epic_target_select2",
+      "execute as @s anchored eyes positioned ^^-0.35^4 run tag @e[tag=!wbmsyh,tag=!skill_user,type=!item,r=1.3] add epic_target_select2",
+      "execute as @s anchored eyes positioned ^^-0.35^5 run tag @e[tag=!wbmsyh,tag=!skill_user,type=!item,r=1.2] add epic_target_select2"
+     ]
+     }
+     }
+     ]
+     },
+
+     {
+      "condition":"query.remaining_durability >= 250 && query.is_sneaking == 0",
+      "sequence": [
+    {
+      "run_command":{
+      "command":[
+        "execute as @s at @e[tag=!wbmsyh,tag=!skill_user,type=!item,tag=epic_target_select1,r=12] run particle minecraft:critical_hit_emitter ~~1.8~",
+        "damage @e[tag=!wbmsyh,tag=!skill_user,tag=epic_target_select1,type=!item,r=12] 25 void entity @s",
+        "damage @e[tag=blazing_sun_target,tag=!wbmsyh,tag=!skill_user,tag=epic_target_select1,type=!item,r=12] 40 void entity @s",
+        "damage @e[tag=!wbmsyh,tag=!skill_user,tag=epic_target_select2,type=!item,r=12] 75 void entity @s",
+        "damage @e[tag=blazing_sun_target,tag=!wbmsyh,tag=!skill_user,tag=epic_target_select2,type=!item,r=12] 120 void entity @s"
+    ]
+    }
+    }
+    ]
+    },
+
+    {
+      "condition":"query.remaining_durability >= 200 && query.is_sneaking == 0",
+      "sequence": [
+    {
+      "run_command":{
+      "command":[
+        "execute as @s at @e[tag=!wbmsyh,tag=!skill_user,type=!item,tag=epic_target_select1,r=12] run particle minecraft:critical_hit_emitter ~~1.8~",
+        "damage @e[tag=!wbmsyh,tag=!skill_user,tag=epic_target_select1,type=!item,r=12] 22 void entity @s",
+        "damage @e[tag=blazing_sun_target,tag=!wbmsyh,tag=!skill_user,tag=epic_target_select1,type=!item,r=12] 35 void entity @s",
+        "damage @e[tag=!wbmsyh,tag=!skill_user,tag=epic_target_select2,type=!item,r=12] 65 void entity @s",
+        "damage @e[tag=blazing_sun_target,tag=!wbmsyh,tag=!skill_user,tag=epic_target_select2,type=!item,r=12] 104 void entity @s"
+    ]
+    }
+    }
+    ]
+    },
+
+    {
+      "condition":"query.remaining_durability >= 150 && query.is_sneaking == 0",
+      "sequence": [
+    {
+      "run_command":{
+      "command":[
+        "execute as @s at @e[tag=!wbmsyh,tag=!skill_user,type=!item,tag=epic_target_select1,r=12] run particle minecraft:critical_hit_emitter ~~1.8~",
+        "damage @e[tag=!wbmsyh,tag=!skill_user,tag=epic_target_select1,type=!item,r=12] 19 void entity @s",
+        "damage @e[tag=blazing_sun_target,tag=!wbmsyh,tag=!skill_user,tag=epic_target_select1,type=!item,r=12] 30 void entity @s",
+        "damage @e[tag=!wbmsyh,tag=!skill_user,tag=epic_target_select2,type=!item,r=12] 55 void entity @s",
+        "damage @e[tag=blazing_sun_target,tag=!wbmsyh,tag=!skill_user,tag=epic_target_select2,type=!item,r=12] 88 void entity @s"
+    ]
+    }
+    }
+    ]
+    },
+
+    {
+      "condition":"query.remaining_durability >= 100 && query.is_sneaking == 0",
+      "sequence": [
+    {
+      "run_command":{
+      "command":[
+        "execute as @s at @e[tag=!wbmsyh,tag=!skill_user,type=!item,tag=epic_target_select1,r=12] run particle minecraft:critical_hit_emitter ~~1.8~",
+        "damage @e[tag=!wbmsyh,tag=!skill_user,tag=epic_target_select1,type=!item,r=12] 16 void entity @s",
+        "damage @e[tag=blazing_sun_target,tag=!wbmsyh,tag=!skill_user,tag=epic_target_select1,type=!item,r=12] 26 void entity @s",
+        "damage @e[tag=!wbmsyh,tag=!skill_user,tag=epic_target_select2,type=!item,r=12] 45 void entity @s",
+        "damage @e[tag=blazing_sun_target,tag=!wbmsyh,tag=!skill_user,tag=epic_target_select2,type=!item,r=12] 72 void entity @s"
+    ]
+    }
+    }
+    ]
+    },
+
+    {
+      "condition":"query.remaining_durability >= 50 && query.is_sneaking == 0",
+      "sequence": [
+    {
+      "run_command":{
+      "command":[
+        "execute as @s at @e[tag=!wbmsyh,tag=!skill_user,type=!item,tag=epic_target_select1,r=12] run particle minecraft:critical_hit_emitter ~~1.8~",
+        "damage @e[tag=!wbmsyh,tag=!skill_user,tag=epic_target_select1,type=!item,r=12] 13 void entity @s",
+        "damage @e[tag=blazing_sun_target,tag=!wbmsyh,tag=!skill_user,tag=epic_target_select1,type=!item,r=12] 21 void entity @s",
+        "damage @e[tag=!wbmsyh,tag=!skill_user,tag=epic_target_select2,type=!item,r=12] 35 void entity @s",
+        "damage @e[tag=blazing_sun_target,tag=!wbmsyh,tag=!skill_user,tag=epic_target_select2,type=!item,r=12] 56 void entity @s"
+    ]
+    }
+    }
+    ]
+    },
+
+{
+ "condition":"query.remaining_durability >= 5 && query.is_sneaking == 0",
+ "sequence": [
+{
+ "run_command":{
+ "command":[ 
+ "effect @e[tag=!wbmsyh,tag=!skill_user,tag=epic_target_select1,type=!item,r=12] slowness 1 255 true",
+ "effect @e[tag=!wbmsyh,tag=!skill_user,tag=epic_target_select1,type=!item,r=12] weakness 1 255 true",
+ "effect @e[tag=!wbmsyh,tag=!skill_user,tag=blazing_sun_target,tag=epic_target_select1,type=!item,r=12] slowness 2 255 true",
+ "effect @e[tag=!wbmsyh,tag=!skill_user,tag=blazing_sun_target,tag=epic_target_select1,type=!item,r=12] weakness 2 255 true",
+ "execute as @s at @e[tag=!wbmsyh,tag=!skill_user,type=!item,tag=epic_target_select1,r=12] run particle minecraft:critical_hit_emitter ~~1.8~",
+ "damage @e[tag=!wbmsyh,tag=!skill_user,tag=epic_target_select1,type=!item,r=12] 10 void entity @s",
+ "damage @e[tag=blazing_sun_target,tag=!wbmsyh,tag=!skill_user,tag=epic_target_select2,type=!item,r=12] 16 void entity @s",
+ "damage @e[tag=!wbmsyh,tag=!skill_user,tag=epic_target_select2,type=!item,r=12] 25 void entity @s",
+ "damage @e[tag=blazing_sun_target,tag=!wbmsyh,tag=!skill_user,tag=epic_target_select2,type=!item,r=12] 40 void entity @s",
+ "tag @e[tag=epic_target_select1,r=12] remove blazing_sun_target",
+ "tag @e[tag=epic_target_select2,r=12] remove blazing_sun_target",
+ "tag @e[tag=!wbmsyh,tag=!skill_user,type=!item,r=12] remove epic_target_select1",
+ "tag @e[tag=!wbmsyh,tag=!skill_user,type=!item,r=12] remove epic_target_select2",
+ "tag @s remove skill_user"
+
+]
+}
+},
+{
+"damage": {
+"type": "magic",
+"amount": 5
+}
+}
+]
+}
+
+
+]
+},
+"attack3": {
+  "sequence": [
+{
+ "condition":"query.get_equipped_item_name(1) == 'arrow' && query.is_sneaking == 1",
+ "sequence": [
+{
+ "run_command":{
+ "command":[
+  "camerashake add @s 0.01 0.05 rotational",
+  "playsound mob.blaze.shoot @a[r=2]",
+  "camerashake add @s 0.2 0.1 positional",
+  "clear @s arrow 0 1"
+]
+}
+},
+{
+  "damage": {
+  "type": "magic",
+  "amount": -50
+  }
+}
+
+]
+},
+
+{
+  "condition":"query.get_equipped_item_name(1) != 'arrow' && query.is_sneaking == 1 && query.remaining_durability >= 40",
+  "sequence": [
+ {
+  "run_command":{
+  "command":[
+   "camerashake add @s 0.01 0.05 rotational",
+   "playsound mob.blaze.shoot @a[r=2]",
+   "camerashake add @s 0.2 0.1 positional",
+   "execute as @s anchored eyes positioned ^^-0.35^2.5 run summon epic:blazing_sun ~~~ facing @s",
+   "effect @s invisibility 5 255 true"
+ ]
+ }
+ },
+ {
+   "damage": {
+   "type": "magic",
+   "amount": 40
+   }
+ }
+ 
+ ]
+ }
+
+
+]
+}
+
+
+      
+    }
+  }
+}
