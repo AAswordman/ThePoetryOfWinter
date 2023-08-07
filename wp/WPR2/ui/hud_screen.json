@@ -196,10 +196,11 @@
         "anchor_from": "top_right",
         "anchor_to": "top_right",
         "offset": [0, 0],
-        "size": [105, 22.5],
+        "size": [157.5, 33.75],
         "controls": [{
                 "empty_progress_barx": {
                     "layer": 1,
+                    "size": [157.5, 33.75],
                     "type": "image",
                     "texture": "$texture_empty"
                 }
@@ -208,6 +209,7 @@
                 "filled_progress_bar_for_collections": {
                     "layer": 2,
                     "type": "image",
+                    "size": [157.5, 33.75],
                     "texture": "$texture_data",
                     "clip_direction": "left",
                     "color": "$boss_health_bar_color",
@@ -246,7 +248,7 @@
         "shadow": true,
         "anchor_from": "center",
         "anchor_to":"center",
-        "font_scale_factor": 0.45,
+        "font_scale_factor": 0.55,
         "bindings": [{
                 "binding_name": "$test_progress_percentage",
                 "binding_condition": "$test_progress_percentage",
@@ -974,20 +976,20 @@
     },
     "boss_health_panel": {
         "type": "panel",
-        "size": [110, 22.5],
+        "size": [165, 33.75],
         "anchor_from": "top_right",
         "anchor_to": "top_right",
         "$progress_bar_collection": "boss_bars",
         "controls": [{
                 "show_label@boss_label_layout": {
-                    "offset": [4, 5],
+                    "offset": [5, 8],
                     "size": ["100%", "default"]
                 }
             },
             {
                 "boss_name@boss_name_panel": {
                     "layer": 3,
-                    "offset": [3, -2]
+                    "offset": [3, 5]
                 }
             },
             {
@@ -1123,7 +1125,7 @@
         "anchor_to": "top_right",
         "anchor_from": "top_right",
         "size": [
-            110,
+            165,
             "40%"
         ]
     },
@@ -5520,6 +5522,7 @@
         "$last_use_clip_ratio": 0.6,
         "$use_clip_ratio": 0.6,
         "$anim_time": 0.2,
+        "$anim_type|default": "linear",
         "$clip_image|default": "",
         "$use_clip_layout1": "('hud.fuck_mojang_image_clipper_layout1' + $clip_persentage)",
         "controls": [{
@@ -5528,7 +5531,7 @@
     },
     "clipper_dur_anim": {
         "anim_type": "clip",
-        "easing": "linear",
+        "easing": "$anim_type",
         "from": "$last_use_clip_ratio",
         "to": "$use_clip_ratio",
         "duration": "$anim_time"
@@ -5788,6 +5791,7 @@
                                     "$clip_persentage": "('_' +(100 - $res1))",
                                     "$clip_last_persentage": "('_' +(100 - $res2))",
                                     "$anim_time": 0.3,
+                                    "$anim_type":"out_circ",
                                     "$clip_image": "hud.pom_health2_render_item",
                                     "anchor_from": "top_left",
                                     "anchor_to": "top_left",

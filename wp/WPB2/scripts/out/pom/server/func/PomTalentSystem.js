@@ -195,7 +195,7 @@ export default class PomTalentSystem extends GameController {
             let damage = e.damage * damageFac + extraDamage;
             // console.warn(damage);
             if (this.globalSettings.damageShow) {
-                damageShow(this.getExDimension(), damage, target.entity.location);
+                damageShow(this.getExDimension(), e.damage + damage, target.entity.location);
             }
             this.hasCauseDamage.trigger(e.damage + damage, e.hurtEntity);
             usetarget = e.hurtEntity;
@@ -229,15 +229,8 @@ export default class PomTalentSystem extends GameController {
             // console.warn(add);
             let anotherAdd = 0;
             if (PomTalentSystem.physicalDamageType.has(e.damageSource.cause)) {
-                let absorb = Math.max(0, this.client.magicSystem.damageAbsorbed - (damage - add));
-                if (absorb >= 0) {
-                    this.client.magicSystem.damageAbsorbed = absorb;
-                    anotherAdd += absorb;
-                }
-                else {
-                    anotherAdd += this.client.magicSystem.damageAbsorbed;
-                    this.client.magicSystem.damageAbsorbed = 0;
-                }
+                let remain = this.client.magicSystem.tryReducedamageAbsorbed(damage - add);
+                anotherAdd = (damage - add) - (remain);
             }
             add += anotherAdd;
             if (this.client.magicSystem.gameHealth - damage + add <= 0) {

@@ -29,6 +29,19 @@ export default class ExScoresManager {
         }
         ;
     }
+    hasScore(objective) {
+        let name = typeof objective === "string" ? objective : objective.name;
+        let id = this.getIdentity(name);
+        if (!id)
+            return false;
+        try {
+            return world.scoreboard.getObjective(name).hasParticipant(id);
+        }
+        catch (e) {
+            return false;
+        }
+        ;
+    }
     setScore(objective, num) {
         let name = typeof objective === "string" ? objective : objective.name;
         let id = this.getIdentity(name);

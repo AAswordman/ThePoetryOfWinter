@@ -1148,7 +1148,6 @@ text.dec:command_help_4.name=§a>/diemode open   Used to open diemode(Authority 
 text.dec:command_help_5.name=§a>/magic display true   Used to display everyone's magic point(Authority needed:Op)
 text.dec:command_help_6.name=§a>/magic display false   Used to close the display of everyone's magic point(Authority needed:Op)
 
-//冬诗得改成和升级方式、技能加成有关的
 text.dec:guide_book_0.name=§aGuide Book
 text.dec:guide_book_1.name=§aYou're week,don't let them get close to you.Be careful at night,or the monsters will kill you easily.If fog gather at night,don't go out for your own safty
 text.dec:guide_book_2.name=§a

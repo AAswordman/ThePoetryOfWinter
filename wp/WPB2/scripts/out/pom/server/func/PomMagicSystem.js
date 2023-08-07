@@ -25,8 +25,8 @@ export default class PomMagicSystem extends GameController {
                 this.scoresManager.addScore("wbfl", 2);
         }).delay(5 * 20);
         this.experienceAddLooper = ExSystem.tickTask(() => {
-            // this.data.gameExperience += 1;
-        }).delay(20 * 3);
+            this.data.gameExperience += 1;
+        }).delay(12 * 20);
         this.armorCoolingLooper = ExSystem.tickTask(() => {
             if (this.scoresManager.getScore("wbkjlq") > 0)
                 this.scoresManager.removeScore("wbkjlq", 1);
@@ -166,9 +166,9 @@ export default class PomMagicSystem extends GameController {
         const health = this.exPlayer.getComponent("minecraft:health");
         let healthListener = new VarOnChangeListener((n, l) => {
             let change = n - (l !== null && l !== void 0 ? l : 0);
-            this.gameHealth = Math.min(this.gameHealth + change, this.gameMaxHealth);
-            this.exPlayer.health = 50000;
-            healthListener.value = 50000;
+            this.gameHealth = MathUtil.clamp(this.gameHealth + change, -1, this.gameMaxHealth);
+            // health.setCurrentValue(50000 + this.gameHealth);
+            // healthListener.value = 50000 + this.gameHealth;
         }, health.currentValue);
         // this.getEvents().exEvents.tick.subscribe(e => {
         //     healthListener.upDate(health!.currentValue);
@@ -180,7 +180,7 @@ export default class PomMagicSystem extends GameController {
             this.gameHealth = this.gameMaxHealth;
         });
         this.healthSaver.start();
-        this.gameHealth = (_a = this.player.getDynamicProperty("health")) !== null && _a !== void 0 ? _a : 0;
+        this.gameHealth = (_a = this.player.getDynamicProperty("health")) !== null && _a !== void 0 ? _a : this.gameMaxHealth;
         this.actionbarShow.delay(this.globalSettings.uiUpdateDelay);
         this.getEvents().exEvents.afterEffectAdd.subscribe(e => {
             if (e.effect.typeId === MinecraftEffectTypes.Absorption) {
@@ -193,7 +193,7 @@ export default class PomMagicSystem extends GameController {
                 return;
             let eff;
             if ((eff = this.player.getEffect(MinecraftEffectTypes.Absorption)) !== undefined) {
-                this.setdamageAbsorbed(eff.amplifier * 4);
+                this.setdamageAbsorbed((eff.amplifier + 1) * 4);
                 this.player.removeEffect(MinecraftEffectTypes.Absorption);
             }
         });
@@ -201,6 +201,17 @@ export default class PomMagicSystem extends GameController {
     setdamageAbsorbed(num) {
         if (num > this.damageAbsorbed) {
             this.damageAbsorbed = num;
+        }
+    }
+    tryReducedamageAbsorbed(num) {
+        if (num > this.damageAbsorbed) {
+            let res = num - this.damageAbsorbed;
+            this.damageAbsorbed = 0;
+            return res;
+        }
+        else {
+            this.damageAbsorbed -= num;
+            return 0;
         }
     }
     onLoad() {
@@ -241,7 +252,7 @@ export default class PomMagicSystem extends GameController {
         this.wbflLooper.stop();
         this.armorCoolingLooper.stop();
         this.experienceAddLooper.stop();
-        this.experienceAddLooper.delay((2 * 20) / this.client.getDifficulty().LevelFactor);
+        this.experienceAddLooper.delay((12 * 20) / this.client.getDifficulty().LevelFactor);
         this.wbflLooper.delay((1 / this.client.getDifficulty().wbflAddFactor) *
             (5 * 20 / ((1 + ((_b = talentRes.get(Talent.SOURCE)) !== null && _b !== void 0 ? _b : 0) / 100) * (1 + this.data.gameGrade * 3 / 100))));
         this.armorCoolingLooper.delay((1 / this.client.getDifficulty().coolingFactor) *

@@ -2,6 +2,13 @@ var _a;
 import Vector3 from "../../../../modules/exmc/math/Vector3.js";
 import { ExBlockArea } from '../../../../modules/exmc/server/block/ExBlockArea.js';
 export default class RuinsLoaction {
+    static isInProtectArea(v) {
+        return RuinsLoaction.DESERT_RUIN_PROTECT_AREA.contains(v)
+            || RuinsLoaction.STONE_RUIN_PROTECT_AREA.contains(v)
+            || RuinsLoaction.CAVE_RUIN_PROTECT_AREA.contains(v)
+            || RuinsLoaction.ANCIENT_RUIN_PROTECT_AREA.contains(v)
+            || RuinsLoaction.MIND_RUIN_PROTECT_AREA.contains(v);
+    }
 }
 _a = RuinsLoaction;
 RuinsLoaction.DESERT_RUIN_NUM = 0;
