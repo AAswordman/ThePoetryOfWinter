@@ -146,7 +146,7 @@ export default function taskDaily_b(lang) {
                 "rewards": [
                     {
                         "name": "模组经验",
-                        "count": 550,
+                        "count": 275,
                         "unit": "点",
                         "type": "integral"
                     }
@@ -196,7 +196,7 @@ export default function taskDaily_b(lang) {
                 "rewards": [
                     {
                         "name": "模组经验",
-                        "count": 350,
+                        "count": 175,
                         "unit": "点",
                         "type": "integral"
                     }
@@ -215,7 +215,7 @@ export default function taskDaily_b(lang) {
                 "rewards": [
                     {
                         "name": "模组经验",
-                        "count": 350,
+                        "count": 175,
                         "unit": "点",
                         "type": "integral"
                     }

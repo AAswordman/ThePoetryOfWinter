@@ -1,11 +1,11 @@
 import ExGame from "./ExGame.js";
 export default class ExServerTickDelayTask {
+    getDelay() {
+        return this.time;
+    }
     constructor(looper) {
         this.time = 20;
         this.looper = looper;
-    }
-    getDelay() {
-        return this.time;
     }
     delay(time) {
         if (this.isStarted())

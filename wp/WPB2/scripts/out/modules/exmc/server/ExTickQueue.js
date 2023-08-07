@@ -1,5 +1,5 @@
 import ExSystem from '../utils/ExSystem.js';
-export default class ExTickQueue {
+class ExTickQueue {
     static push(f) {
         this.queue.push(f);
         return this;
@@ -15,4 +15,5 @@ export default class ExTickQueue {
     }
 }
 ExTickQueue.queue = [];
+export default ExTickQueue;
 //# sourceMappingURL=ExTickQueue.js.map

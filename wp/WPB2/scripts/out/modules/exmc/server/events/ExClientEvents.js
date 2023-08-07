@@ -5,7 +5,20 @@ import EventHandle from './EventHandle.js';
 import { MinecraftEntityTypes } from "../../../vanilla-data/lib/mojang-entity.js";
 import ExEntity from "../entity/ExEntity.js";
 import Vector3 from "../../math/Vector3.js";
-export default class ExClientEvents {
+class ExClientEvents {
+    _subscribe(arg0, callback) {
+        ExClientEvents.eventHandlers.subscribe(this._client.player, arg0, callback);
+    }
+    _unsubscribe(arg0, callback) {
+        ExClientEvents.eventHandlers.unsubscribe(this._client.player, arg0, callback);
+    }
+    cancelAll() {
+        ExClientEvents.eventHandlers.unsubscribeAll(this._client.player);
+    }
+    static init(s) {
+        this.eventHandlers.setEventLiseners(this.exEventSetting);
+        this.eventHandlers.init(s);
+    }
     constructor(client) {
         this.exEvents = {
             [ExEventNames.beforeItemDefinitionEvent]: new Listener(this, ExEventNames.beforeItemDefinitionEvent),
@@ -32,19 +45,6 @@ export default class ExClientEvents {
             [ExEventNames.afterEffectAdd]: new Listener(this, ExEventNames.afterEffectAdd)
         };
         this._client = client;
-    }
-    _subscribe(arg0, callback) {
-        ExClientEvents.eventHandlers.subscribe(this._client.player, arg0, callback);
-    }
-    _unsubscribe(arg0, callback) {
-        ExClientEvents.eventHandlers.unsubscribe(this._client.player, arg0, callback);
-    }
-    cancelAll() {
-        ExClientEvents.eventHandlers.unsubscribeAll(this._client.player);
-    }
-    static init(s) {
-        this.eventHandlers.setEventLiseners(this.exEventSetting);
-        this.eventHandlers.init(s);
     }
     register(name, fun) {
         let func = fun;
@@ -164,8 +164,7 @@ ExClientEvents.exEventSetting = {
         pattern: ExClientEvents.eventHandlers.registerToServerByEntity,
         filter: {
             "name": "damagingEntity"
-        },
-        name: ExEventNames.afterEntityHitBlock
+        }
     },
     [ExOtherEventNames.afterPlayerHitEntity]: {
         pattern: ExClientEvents.eventHandlers.registerToServerByEntity,
@@ -288,6 +287,7 @@ ExClientEvents.exEventSetting = {
 };
 ExClientEvents.onHandItemMap = new Map();
 ExClientEvents.onceItemUseOnMap = new Map();
+export default ExClientEvents;
 class Listener {
     constructor(e, name) {
         this.subscribe = (callback) => {

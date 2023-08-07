@@ -15,17 +15,7 @@ const compId = {
     [EntityMovementComponent.componentId]: EntityMovementComponent,
     [EntityHealthComponent.componentId]: EntityHealthComponent
 };
-export default class ExEntity {
-    constructor(entity) {
-        this.command = new ExCommand(this);
-        this._entity = entity;
-        if (ExEntity.propertyNameCache in entity) {
-            throw new Error("Already have a instance in entity.please use ExEntity.getInstance to get it.");
-        }
-        else {
-            Reflect.set(entity, ExEntity.propertyNameCache, this);
-        }
-    }
+class ExEntity {
     damage(d, source) {
         this.entity.applyDamage(d, source);
     }
@@ -74,6 +64,16 @@ export default class ExEntity {
     }
     getVelocity() {
         return new Vector3(this._entity.getVelocity());
+    }
+    constructor(entity) {
+        this.command = new ExCommand(this);
+        this._entity = entity;
+        if (ExEntity.propertyNameCache in entity) {
+            throw new Error("Already have a instance in entity.please use ExEntity.getInstance to get it.");
+        }
+        else {
+            Reflect.set(entity, ExEntity.propertyNameCache, this);
+        }
     }
     static getInstance(source) {
         let entity = source;
@@ -217,4 +217,5 @@ export default class ExEntity {
     }
 }
 ExEntity.propertyNameCache = "exCache";
+export default ExEntity;
 //# sourceMappingURL=ExEntity.js.map

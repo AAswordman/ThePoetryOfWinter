@@ -2,7 +2,7 @@ import { EntityDamageCause } from '@minecraft/server';
 import PomBossController from './PomBossController.js';
 import VarOnChangeListener from '../../../modules/exmc/utils/VarOnChangeListener.js';
 import Vector3 from '../../../modules/exmc/math/Vector3.js';
-export default class PomAncientStoneBoss extends PomBossController {
+class PomAncientStoneBoss extends PomBossController {
     constructor(e, server) {
         super(e, server);
         this.viewTime = 0;
@@ -87,4 +87,5 @@ export default class PomAncientStoneBoss extends PomBossController {
     }
 }
 PomAncientStoneBoss.typeId = "wb:ancient_stone";
+export default PomAncientStoneBoss;
 //# sourceMappingURL=PomAncientStoneBoss.js.map

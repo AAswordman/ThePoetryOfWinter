@@ -15,7 +15,7 @@ import VarOnChangeListener from '../../../modules/exmc/utils/VarOnChangeListener
 import ExGame from '../../../modules/exmc/server/ExGame.js';
 import PomOccupationSkillTrack from '../entities/PomOccupationSkillTrack.js';
 import ExDimension from '../../../modules/exmc/server/ExDimension.js';
-export default class PomTalentSystem extends GameController {
+class PomTalentSystem extends GameController {
     constructor() {
         super(...arguments);
         this.strikeSkill = true;
@@ -195,7 +195,7 @@ export default class PomTalentSystem extends GameController {
             let damage = e.damage * damageFac + extraDamage;
             // console.warn(damage);
             if (this.globalSettings.damageShow) {
-                damageShow(this.getExDimension(), e.damage + damage, target.entity.location);
+                damageShow(this.getExDimension(), damage, target.entity.location);
             }
             this.hasCauseDamage.trigger(e.damage + damage, e.hurtEntity);
             usetarget = e.hurtEntity;
@@ -229,8 +229,15 @@ export default class PomTalentSystem extends GameController {
             // console.warn(add);
             let anotherAdd = 0;
             if (PomTalentSystem.physicalDamageType.has(e.damageSource.cause)) {
-                let remain = this.client.magicSystem.tryReducedamageAbsorbed(damage - add);
-                anotherAdd = (damage - add) - (remain);
+                let absorb = Math.max(0, this.client.magicSystem.damageAbsorbed - (damage - add));
+                if (absorb >= 0) {
+                    this.client.magicSystem.damageAbsorbed = absorb;
+                    anotherAdd += absorb;
+                }
+                else {
+                    anotherAdd += this.client.magicSystem.damageAbsorbed;
+                    this.client.magicSystem.damageAbsorbed = 0;
+                }
             }
             add += anotherAdd;
             if (this.client.magicSystem.gameHealth - damage + add <= 0) {
@@ -486,4 +493,5 @@ PomTalentSystem.physicalDamageType = new Set([
     EntityDamageCause.stalagmite,
     EntityDamageCause.suffocation
 ]);
+export default PomTalentSystem;
 //# sourceMappingURL=PomTalentSystem.js.map
