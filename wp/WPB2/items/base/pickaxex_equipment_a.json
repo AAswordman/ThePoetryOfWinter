@@ -1633,7 +1633,7 @@
                         }
                     },
                     {
-                        "block": "dec:flowing_block_0",
+                        "block": "dec:flowing_block",
                         "speed": 5,
                         "on_dig": {
                             "event": "attack"
@@ -1641,27 +1641,6 @@
                     },
                     {
                         "block": "dec:flowing_block_1",
-                        "speed": 5,
-                        "on_dig": {
-                            "event": "attack"
-                        }
-                    },
-                    {
-                        "block": "dec:flowing_block_2",
-                        "speed": 5,
-                        "on_dig": {
-                            "event": "attack"
-                        }
-                    },
-                    {
-                        "block": "dec:flowing_block_3",
-                        "speed": 5,
-                        "on_dig": {
-                            "event": "attack"
-                        }
-                    },
-                    {
-                        "block": "dec:flowing_block_4",
                         "speed": 5,
                         "on_dig": {
                             "event": "attack"

@@ -12,6 +12,13 @@ import { to, tofunc } from "../../../modules/exmc/server/ExErrorQueue.js";
 export class MenuUIAlertView {
 }
 export default class MenuUIAlert {
+    constructor(client, uiJson) {
+        this.choose = [];
+        this.pageNum = 0;
+        this.maxPageNum = 4;
+        this._uiJson = uiJson;
+        this._client = client;
+    }
     static getLabelViews(msg) {
         let arr = [];
         for (let i = 0; i < msg.length; i++) {
@@ -22,13 +29,6 @@ export default class MenuUIAlert {
         }
         ;
         return arr;
-    }
-    constructor(client, uiJson) {
-        this.choose = [];
-        this.pageNum = 0;
-        this.maxPageNum = 4;
-        this._uiJson = uiJson;
-        this._client = client;
     }
     getJSON() {
         return this._uiJson;

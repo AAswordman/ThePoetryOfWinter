@@ -1,11 +1,11 @@
 export default class TimeLoopTask {
-    getDelay() {
-        return this.time;
-    }
     constructor(timeOut, looper) {
         this.time = 1000;
         this.timeOut = timeOut;
         this.looper = looper;
+    }
+    getDelay() {
+        return this.time;
     }
     delay(time) {
         this.time = time;

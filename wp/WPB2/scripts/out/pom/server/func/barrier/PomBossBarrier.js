@@ -2,23 +2,7 @@ import UUID from "../../../../modules/exmc/utils/UUID.js";
 import { ignorn } from "../../../../modules/exmc/server/ExErrorQueue.js";
 import VarOnChangeListener from '../../../../modules/exmc/utils/VarOnChangeListener.js';
 import { MinecraftEffectTypes } from "../../../../modules/vanilla-data/lib/index.js";
-class PomBossBarrier {
-    particle(arg0) {
-        this.dim.spawnParticle(arg0, this.center);
-    }
-    static find(startPos) {
-        for (let [k, v] of this.map) {
-            if (v.area.contains(startPos)) {
-                return v;
-            }
-        }
-    }
-    setBoss(e) {
-        this.boss = e;
-    }
-    static isInBarrier(e) {
-        return PomBossBarrier.find(e.location) !== undefined;
-    }
+export default class PomBossBarrier {
     constructor(server, dim, area, boss) {
         this.deathTimes = 0;
         this.fogListener = new VarOnChangeListener((n, l) => {
@@ -45,6 +29,22 @@ class PomBossBarrier {
         this.manager = server.getEvents();
         this.manager.register("onLongTick", this.tickEvent);
         this.boss = boss;
+    }
+    particle(arg0) {
+        this.dim.spawnParticle(arg0, this.center);
+    }
+    static find(startPos) {
+        for (let [k, v] of this.map) {
+            if (v.area.contains(startPos)) {
+                return v;
+            }
+        }
+    }
+    setBoss(e) {
+        this.boss = e;
+    }
+    static isInBarrier(e) {
+        return PomBossBarrier.find(e.location) !== undefined;
     }
     dispose() {
         PomBossBarrier.map.delete(this.id);
@@ -119,5 +119,4 @@ class PomBossBarrier {
     }
 }
 PomBossBarrier.map = new Map();
-export default PomBossBarrier;
 //# sourceMappingURL=PomBossBarrier.js.map

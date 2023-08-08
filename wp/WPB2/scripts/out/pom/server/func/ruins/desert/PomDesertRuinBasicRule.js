@@ -7,79 +7,6 @@ import Vector3 from "../../../../../modules/exmc/math/Vector3.js";
 import ExErrorQueue from "../../../../../modules/exmc/server/ExErrorQueue.js";
 import VarOnChangeListener from "../../../../../modules/exmc/utils/VarOnChangeListener.js";
 export default class PomDesertRuinBasicRule extends GameControllerRuinRule {
-    getShowMap() {
-        const show = [];
-        const mapSize = 8;
-        const spos = this.client.exPlayer.position.sub(RuinsLoaction.DESERT_RUIN_LOCATION_START).div(16).floor();
-        spos.div(mapSize, 1, mapSize).floor().scl(mapSize, 1, mapSize);
-        const playerPos = this.client.exPlayer.position.sub(RuinsLoaction.DESERT_RUIN_LOCATION_START).div(16).floor();
-        const spos2 = spos.clone();
-        const epos = spos.clone().add(mapSize, 0, mapSize);
-        const ruin = this.client.getServer().ruin_desertBoss;
-        //ExGameConfig.console.warn(this.client.getServer());
-        // console.warn(spos);
-        // console.warn(epos);
-        this.tmpA.set(this.client.getServer().ruinDesertGuardPos).sub(RuinsLoaction.DESERT_RUIN_LOCATION_START).div(16).floor();
-        for (; spos.z < epos.z; spos.z++) {
-            let line = [];
-            for (spos.x = spos2.x; spos.x < epos.x; spos.x++) {
-                const posStr = `${spos.x},${spos.y},${spos.z}`;
-                if (spos.x === this.tmpA.x && spos.y === this.tmpA.y && spos.z === this.tmpA.z) {
-                    line.push(PomMazeMapBuilder.CHAR_MAZE_PATH_GUARD);
-                }
-                else if (spos.x === playerPos.x && spos.z === playerPos.z) {
-                    const view = this.game.player.getViewDirection();
-                    if (ruin.isInRoom(posStr)) {
-                        if (view.x > view.z) {
-                            if (Math.abs(view.x) > Math.abs(view.z))
-                                line.push(PomMazeMapBuilder.CHAR_MAZE_ROOM_ARROW_LEFT);
-                            else
-                                line.push(PomMazeMapBuilder.CHAR_MAZE_ROOM_ARROW_DOWN);
-                        }
-                        else {
-                            if (Math.abs(view.x) > Math.abs(view.z))
-                                line.push(PomMazeMapBuilder.CHAR_MAZE_ROOM_ARROW_RIGHT);
-                            else
-                                line.push(PomMazeMapBuilder.CHAR_MAZE_ROOM_ARROW_UP);
-                        }
-                    }
-                    else if (ruin.isOnPath(posStr)) {
-                        if (view.x > view.z) {
-                            if (Math.abs(view.x) > Math.abs(view.z))
-                                line.push(PomMazeMapBuilder.CHAR_MAZE_PATH_ARROW_LEFT);
-                            else
-                                line.push(PomMazeMapBuilder.CHAR_MAZE_PATH_ARROW_DOWN);
-                        }
-                        else {
-                            if (Math.abs(view.x) > Math.abs(view.z))
-                                line.push(PomMazeMapBuilder.CHAR_MAZE_PATH_ARROW_RIGHT);
-                            else
-                                line.push(PomMazeMapBuilder.CHAR_MAZE_PATH_ARROW_UP);
-                        }
-                    }
-                    else {
-                        line.push(PomMazeMapBuilder.CHAR_MAZE_EMPTY);
-                    }
-                }
-                else if (ruin.isInRoom(posStr)) {
-                    if (this.desertRoomCounter.has(posStr)) {
-                        line.push(PomMazeMapBuilder.CHAR_MAZE_ROOM_PASSED);
-                    }
-                    else {
-                        line.push(PomMazeMapBuilder.CHAR_MAZE_ROOM);
-                    }
-                }
-                else if (ruin.isOnPath(posStr)) {
-                    line.push(PomMazeMapBuilder.CHAR_MAZE_PATH);
-                }
-                else {
-                    line.push(PomMazeMapBuilder.CHAR_MAZE_EMPTY);
-                }
-            }
-            show.unshift(line.reverse().join(""));
-        }
-        return show;
-    }
     constructor(game) {
         super(game);
         this.tmpA = new Vector3();
@@ -204,6 +131,79 @@ export default class PomDesertRuinBasicRule extends GameControllerRuinRule {
                 }
             }
         }, "0,0,0");
+    }
+    getShowMap() {
+        const show = [];
+        const mapSize = 8;
+        const spos = this.client.exPlayer.position.sub(RuinsLoaction.DESERT_RUIN_LOCATION_START).div(16).floor();
+        spos.div(mapSize, 1, mapSize).floor().scl(mapSize, 1, mapSize);
+        const playerPos = this.client.exPlayer.position.sub(RuinsLoaction.DESERT_RUIN_LOCATION_START).div(16).floor();
+        const spos2 = spos.clone();
+        const epos = spos.clone().add(mapSize, 0, mapSize);
+        const ruin = this.client.getServer().ruin_desertBoss;
+        //ExGameConfig.console.warn(this.client.getServer());
+        // console.warn(spos);
+        // console.warn(epos);
+        this.tmpA.set(this.client.getServer().ruinDesertGuardPos).sub(RuinsLoaction.DESERT_RUIN_LOCATION_START).div(16).floor();
+        for (; spos.z < epos.z; spos.z++) {
+            let line = [];
+            for (spos.x = spos2.x; spos.x < epos.x; spos.x++) {
+                const posStr = `${spos.x},${spos.y},${spos.z}`;
+                if (spos.x === this.tmpA.x && spos.y === this.tmpA.y && spos.z === this.tmpA.z) {
+                    line.push(PomMazeMapBuilder.CHAR_MAZE_PATH_GUARD);
+                }
+                else if (spos.x === playerPos.x && spos.z === playerPos.z) {
+                    const view = this.game.player.getViewDirection();
+                    if (ruin.isInRoom(posStr)) {
+                        if (view.x > view.z) {
+                            if (Math.abs(view.x) > Math.abs(view.z))
+                                line.push(PomMazeMapBuilder.CHAR_MAZE_ROOM_ARROW_LEFT);
+                            else
+                                line.push(PomMazeMapBuilder.CHAR_MAZE_ROOM_ARROW_DOWN);
+                        }
+                        else {
+                            if (Math.abs(view.x) > Math.abs(view.z))
+                                line.push(PomMazeMapBuilder.CHAR_MAZE_ROOM_ARROW_RIGHT);
+                            else
+                                line.push(PomMazeMapBuilder.CHAR_MAZE_ROOM_ARROW_UP);
+                        }
+                    }
+                    else if (ruin.isOnPath(posStr)) {
+                        if (view.x > view.z) {
+                            if (Math.abs(view.x) > Math.abs(view.z))
+                                line.push(PomMazeMapBuilder.CHAR_MAZE_PATH_ARROW_LEFT);
+                            else
+                                line.push(PomMazeMapBuilder.CHAR_MAZE_PATH_ARROW_DOWN);
+                        }
+                        else {
+                            if (Math.abs(view.x) > Math.abs(view.z))
+                                line.push(PomMazeMapBuilder.CHAR_MAZE_PATH_ARROW_RIGHT);
+                            else
+                                line.push(PomMazeMapBuilder.CHAR_MAZE_PATH_ARROW_UP);
+                        }
+                    }
+                    else {
+                        line.push(PomMazeMapBuilder.CHAR_MAZE_EMPTY);
+                    }
+                }
+                else if (ruin.isInRoom(posStr)) {
+                    if (this.desertRoomCounter.has(posStr)) {
+                        line.push(PomMazeMapBuilder.CHAR_MAZE_ROOM_PASSED);
+                    }
+                    else {
+                        line.push(PomMazeMapBuilder.CHAR_MAZE_ROOM);
+                    }
+                }
+                else if (ruin.isOnPath(posStr)) {
+                    line.push(PomMazeMapBuilder.CHAR_MAZE_PATH);
+                }
+                else {
+                    line.push(PomMazeMapBuilder.CHAR_MAZE_EMPTY);
+                }
+            }
+            show.unshift(line.reverse().join(""));
+        }
+        return show;
     }
 }
 //# sourceMappingURL=PomDesertRuinBasicRule.js.map

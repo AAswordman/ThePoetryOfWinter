@@ -4,9 +4,6 @@ import { ExBlockArea } from '../../../../../modules/exmc/server/block/ExBlockAre
 import ExStructureJigsaw from '../../../../../modules/exmc/server/block/structure/ExStructureJigsaw.js';
 import Random from '../../../../../modules/exmc/utils/Random.js';
 export default class PomDesertBossRuin {
-    isCompleted() {
-        return this.completed;
-    }
     constructor(seed) {
         this.structure_bossArea = "mystructure:boss_desert_1";
         this.structure_straightLine = "mystructure:boss_desert_2"; // |
@@ -33,6 +30,9 @@ export default class PomDesertBossRuin {
         this._airMonsterArea = [];
         this._playerArea = [];
         this.seed = seed;
+    }
+    isCompleted() {
+        return this.completed;
     }
     isInRoom(v) {
         return this.rooms.has(v);

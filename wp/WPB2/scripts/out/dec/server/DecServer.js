@@ -204,7 +204,7 @@ export default class DecServer extends ExGameServer {
                 }
             }
         });
-        const block_except = ['minecraft:chest', 'minecraft:anvil', 'minecraft:enchanting_table', 'minecraft:black_shulker_box', 'minecraft:blue_shulker_box',
+        const block_except = new Set(['minecraft:chest', 'minecraft:anvil', 'minecraft:enchanting_table', 'minecraft:black_shulker_box', 'minecraft:blue_shulker_box',
             'minecraft:brown_shulker_box', 'minecraft:cyan_shulker_box', 'minecraft:gray_shulker_box', 'minecraft:green_shulker_box', 'minecraft:light_blue_shulker_box',
             'minecraft:light_gray_shulker_box', 'minecraft:lime_shulker_box', 'minecraft:magenta_shulker_box', 'minecraft:orange_shulker_box', 'minecraft:pink_shulker_box',
             'minecraft:purple_shulker_box', 'minecraft:red_shulker_box', 'minecraft:undyed_shulker_box', 'minecraft:white_shulker_box', 'minecraft:yellow_shulker_box',
@@ -213,8 +213,8 @@ export default class DecServer extends ExGameServer {
             'minecraft:acacia_door', 'minecraft:acacia_trapdoor', 'minecraft:bamboo_door', 'minecraft:bamboo_trapdoor', 'minecraft:birch_door', 'minecraft:birch_trapdoor',
             'minecraft:cherry_door', 'minecraft:cherry_trapdoor', 'minecraft:crimson_door', 'minecraft:crimson_trapdoor', 'minecraft:dark_oak_door', 'minecraft:dark_oak_trapdoor',
             'minecraft:jungle_door', 'minecraft:jungle_trapdoor', 'minecraft:mangrove_door', 'minecraft:mangrove_trapdoor', 'minecraft:spruce_door', 'minecraft:spruce_trapdoor',
-            'minecraft:warped_door', 'minecraft:warped_trapdoor', 'minecraft:trapdoor', 'minecraft:wooden_door', 'minecraft:smoker', 'minecraft:blast_furnace', 'minecraft:furnace'];
-        let item_except = ['dec:iron_key', 'dec:frozen_power', 'dec:ash_key', 'dec:challenge_of_ash', 'dec:ice_ingot'];
+            'minecraft:warped_door', 'minecraft:warped_trapdoor', 'minecraft:trapdoor', 'minecraft:wooden_door', 'minecraft:smoker', 'minecraft:blast_furnace', 'minecraft:furnace']);
+        let item_except = new Set(['dec:iron_key', 'dec:frozen_power', 'dec:ash_key', 'dec:challenge_of_ash', 'dec:ice_ingot']);
         this.getEvents().events.beforeItemUseOn.subscribe(e => {
             const entity = ExEntity.getInstance(e.source);
             //防放方块
@@ -223,7 +223,7 @@ export default class DecServer extends ExGameServer {
                     e.cancel = true;
                 }
                 else {
-                    if ((block_except.includes(e.block.typeId) || item_except.includes(e.itemStack.typeId)) == false) {
+                    if ((block_except.has(e.block.typeId) || item_except.has(e.itemStack.typeId)) == false) {
                         e.cancel = true;
                     }
                 }

@@ -196,11 +196,11 @@
         "anchor_from": "top_right",
         "anchor_to": "top_right",
         "offset": [0, 0],
-        "size": [157.5, 33.75],
+        "size": [157.5, 41.25],
         "controls": [{
                 "empty_progress_barx": {
                     "layer": 1,
-                    "size": [157.5, 33.75],
+                    "size": [157.5, 41.25],
                     "type": "image",
                     "texture": "$texture_empty"
                 }
@@ -209,7 +209,9 @@
                 "filled_progress_bar_for_collections": {
                     "layer": 2,
                     "type": "image",
-                    "size": [157.5, 33.75],
+                    "size": [157.5, 41.25],
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
                     "texture": "$texture_data",
                     "clip_direction": "left",
                     "color": "$boss_health_bar_color",
@@ -246,8 +248,8 @@
         "color": [1.0, 1.0, 1.0, 1.0],
         "$test_progress_percentage": "#progress_percentage",
         "shadow": true,
-        "anchor_from": "center",
-        "anchor_to":"center",
+        "anchor_from": "top_middle",
+        "anchor_to": "top_middle",
         "font_scale_factor": 0.55,
         "bindings": [{
                 "binding_name": "$test_progress_percentage",
@@ -976,13 +978,13 @@
     },
     "boss_health_panel": {
         "type": "panel",
-        "size": [165, 33.75],
+        "size": [165, 30],
         "anchor_from": "top_right",
         "anchor_to": "top_right",
         "$progress_bar_collection": "boss_bars",
         "controls": [{
                 "show_label@boss_label_layout": {
-                    "offset": [4, 8],
+                    "offset": [4, 28],
                     "size": ["100%", "default"]
                 }
             },
@@ -2944,7 +2946,7 @@
                 "boss_name": {
                     "type": "label",
                     "layer": 40,
-                    "font_scale_factor":0.8,
+                    "font_scale_factor": 0.8,
                     "color": "$boss_name_text_color",
                     "text": "#bossName",
                     "anchor_from": "top_middle",
@@ -5791,7 +5793,7 @@
                                     "$clip_persentage": "('_' +(100 - $res1))",
                                     "$clip_last_persentage": "('_' +(100 - $res2))",
                                     "$anim_time": 0.3,
-                                    "$anim_type":"out_circ",
+                                    "$anim_type": "out_circ",
                                     "$clip_image": "hud.pom_health2_render_item",
                                     "anchor_from": "top_left",
                                     "anchor_to": "top_left",

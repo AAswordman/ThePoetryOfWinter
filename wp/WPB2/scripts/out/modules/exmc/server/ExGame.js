@@ -4,7 +4,7 @@ import ExSystem from "../utils/ExSystem.js";
 import { system } from "@minecraft/server";
 import MonitorManager from "../utils/MonitorManager.js";
 import ExErrorQueue from "./ExErrorQueue.js";
-class ExGame {
+export default class ExGame {
     static createServer(serverCons, config) {
         let server = new serverCons(config);
         this.serverMap.set(serverCons, server);
@@ -100,7 +100,6 @@ ExGame.longTickMonitor = new MonitorManager();
     ExGame.runInterval(fun, 5);
 })();
 ExGame.serverMap = new Map;
-export default ExGame;
 export function receiveMessage(exportName) {
     return function (target, propertyName, descriptor) {
         Reflect.defineMetadata("exportName", exportName, target, propertyName);

@@ -18,16 +18,6 @@ import { eventDecoratorFactory } from "./events/eventDecoratorFactory.js";
 import notUtillTask from "../utils/notUtillTask.js";
 import ExGame from "./ExGame.js";
 export default class ExGameClient {
-    debug_removeAllTag() {
-        for (let i of this.exPlayer.getTags()) {
-            this.exPlayer.removeTag(i);
-        }
-    }
-    debug_alert() {
-        new ExActionAlert().title("aaa").body("bbbb").button("alert", () => { })
-            .button("alert", () => { })
-            .show(this.player);
-    }
     constructor(server, id, player) {
         this.debuggerChatTest = (e) => {
             ExGame.run(() => {
@@ -59,6 +49,16 @@ export default class ExGameClient {
         }), () => { this.onLoad(); this.isLoaded = true; });
         this.onJoin();
         eventDecoratorFactory(this.getEvents(), this);
+    }
+    debug_removeAllTag() {
+        for (let i of this.exPlayer.getTags()) {
+            this.exPlayer.removeTag(i);
+        }
+    }
+    debug_alert() {
+        new ExActionAlert().title("aaa").body("bbbb").button("alert", () => { })
+            .button("alert", () => { })
+            .show(this.player);
     }
     getDimension(type) {
         if (type !== undefined) {

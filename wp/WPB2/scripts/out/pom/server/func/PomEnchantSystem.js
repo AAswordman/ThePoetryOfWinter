@@ -4,7 +4,7 @@ import "../../../modules/exmc/server/block/ExBlock.js";
 import ExColorLoreUtil from "../../../modules/exmc/server/item/ExColorLoreUtil.js";
 import "../../../modules/exmc/server/item/ExItem.js";
 import GameController from "./GameController.js";
-class PomEnChantSystem extends GameController {
+export default class PomEnChantSystem extends GameController {
     onJoin() {
         /*
         this.getEvents().exEvents.afterItemOnHandChange.subscribe((e) => {
@@ -109,5 +109,4 @@ class PomEnChantSystem extends GameController {
     }
 }
 PomEnChantSystem.blockTranslateData = new Map();
-export default PomEnChantSystem;
 //# sourceMappingURL=PomEnchantSystem.js.map

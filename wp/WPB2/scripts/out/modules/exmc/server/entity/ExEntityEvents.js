@@ -2,20 +2,7 @@ var _a;
 import ExPlayer from '../entity/ExPlayer.js';
 import EventHandle from "../events/EventHandle.js";
 import { ExEventNames, ExOtherEventNames, ItemOnHandChangeEvent } from "../events/events.js";
-class ExEntityEvents {
-    _subscribe(arg0, callback) {
-        ExEntityEvents.eventHandlers.subscribe(this._ctrl.entity, arg0, callback);
-    }
-    _unsubscribe(arg0, callback) {
-        ExEntityEvents.eventHandlers.unsubscribe(this._ctrl.entity, arg0, callback);
-    }
-    cancelAll() {
-        ExEntityEvents.eventHandlers.unsubscribeAll(this._ctrl.entity);
-    }
-    static init(s) {
-        this.eventHandlers.setEventLiseners(this.exEventSetting);
-        this.eventHandlers.init(s);
-    }
+export default class ExEntityEvents {
     constructor(ctrl) {
         this.exEvents = {
             [ExEventNames.beforeItemUse]: new Listener(this, ExEventNames.beforeItemUse),
@@ -30,6 +17,19 @@ class ExEntityEvents {
             [ExEventNames.afterBlockBreak]: new Listener(this, ExEventNames.afterBlockBreak)
         };
         this._ctrl = ctrl;
+    }
+    _subscribe(arg0, callback) {
+        ExEntityEvents.eventHandlers.subscribe(this._ctrl.entity, arg0, callback);
+    }
+    _unsubscribe(arg0, callback) {
+        ExEntityEvents.eventHandlers.unsubscribe(this._ctrl.entity, arg0, callback);
+    }
+    cancelAll() {
+        ExEntityEvents.eventHandlers.unsubscribeAll(this._ctrl.entity);
+    }
+    static init(s) {
+        this.eventHandlers.setEventLiseners(this.exEventSetting);
+        this.eventHandlers.init(s);
     }
     register(name, fun) {
         let func = fun;
@@ -117,7 +117,6 @@ ExEntityEvents.exEventSetting = {
 };
 ExEntityEvents.onHandItemMap = new Map();
 ExEntityEvents.onceItemUseOnMap = new Map();
-export default ExEntityEvents;
 class Listener {
     constructor(e, name) {
         this.subscribe = (callback) => {

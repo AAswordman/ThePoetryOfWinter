@@ -40,9 +40,6 @@
 				"default": {
 					"transitions": [
 						{
-							"hold": "query.is_sneaking"
-						},
-						{
 							"charge": "query.item_remaining_use_duration > 0.0"
 						}
 					]

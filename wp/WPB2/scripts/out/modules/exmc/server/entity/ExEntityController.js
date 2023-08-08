@@ -14,6 +14,17 @@ import { eventDecoratorFactory, registerEvent } from "../events/eventDecoratorFa
 import { ExOtherEventNames } from "../events/events.js";
 import { falseIfError } from "../../utils/tool.js";
 export default class ExEntityController {
+    constructor(e, server) {
+        this._isKilled = false;
+        this.isDestroyed = false;
+        this._entity = e;
+        this.server = server;
+        this._events = new ExEntityEvents(this);
+        this.init(server);
+        this.onSpawn();
+        eventDecoratorFactory(this.getEvents(), this);
+        // console.warn("track " + e.typeId);
+    }
     get entity() {
         return this._entity;
     }
@@ -25,17 +36,6 @@ export default class ExEntityController {
     }
     set exEntity(value) {
         this._exEntity = value;
-    }
-    constructor(e, server) {
-        this._isKilled = false;
-        this.isDestroyed = false;
-        this._entity = e;
-        this.server = server;
-        this._events = new ExEntityEvents(this);
-        this.init(server);
-        this.onSpawn();
-        eventDecoratorFactory(this.getEvents(), this);
-        // console.warn("track " + e.typeId);
     }
     setTimeout(fun, timeout) {
         let time = 0;
