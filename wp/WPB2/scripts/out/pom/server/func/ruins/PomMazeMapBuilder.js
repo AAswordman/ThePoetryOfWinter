@@ -1,4 +1,4 @@
-class PomMazeMapBuilder {
+export default class PomMazeMapBuilder {
 }
 PomMazeMapBuilder.CHAR_MAZE_EMPTY = "";
 PomMazeMapBuilder.CHAR_MAZE_PATH = "";
@@ -13,5 +13,4 @@ PomMazeMapBuilder.CHAR_MAZE_PATH_ARROW_RIGHT = "";
 PomMazeMapBuilder.CHAR_MAZE_PATH_ARROW_DOWN = "";
 PomMazeMapBuilder.CHAR_MAZE_PATH_ARROW_LEFT = "";
 PomMazeMapBuilder.CHAR_MAZE_PATH_GUARD = "";
-export default PomMazeMapBuilder;
 //# sourceMappingURL=PomMazeMapBuilder.js.map

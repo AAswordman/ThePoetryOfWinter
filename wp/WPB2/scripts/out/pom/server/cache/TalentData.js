@@ -149,6 +149,10 @@ Talent.SOURCE = 8;
 Talent.SUDDEN_STRIKE = 9;
 Talent.REGENERATE = 10;
 export class Occupation {
+    constructor(occupation, talentId) {
+        this.id = occupation;
+        this.talentId = talentId;
+    }
     getCharacter(lang) {
         switch (this.id) {
             case 0:
@@ -167,10 +171,6 @@ export class Occupation {
                 return lang.occupationPriest;
         }
         return "";
-    }
-    constructor(occupation, talentId) {
-        this.id = occupation;
-        this.talentId = talentId;
     }
 }
 Occupation.EMPTY = new Occupation(0, []);

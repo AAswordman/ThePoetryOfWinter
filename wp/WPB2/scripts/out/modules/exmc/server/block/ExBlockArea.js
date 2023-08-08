@@ -1,14 +1,6 @@
 import Matrix4 from '../../math/Matrix4.js';
 import Vector3 from '../../math/Vector3.js';
 export class ExBlockArea {
-    center() {
-        return this.end.clone().sub(this.start).scl(1 / 2).add(this.start);
-    }
-    contains(tmpV) {
-        return this.start.x <= tmpV.x && this.start.z <= tmpV.z &&
-            tmpV.x <= this.end.x && tmpV.z <= this.end.z &&
-            this.start.y <= tmpV.y && tmpV.y <= this.end.y;
-    }
     constructor(a, b, usePoint) {
         this._width = new Vector3();
         this._tmpA = new Vector3();
@@ -32,6 +24,14 @@ export class ExBlockArea {
             this.end.add(1, 1, 1);
         }
         this.resetRotation();
+    }
+    center() {
+        return this.end.clone().sub(this.start).scl(1 / 2).add(this.start);
+    }
+    contains(tmpV) {
+        return this.start.x <= tmpV.x && this.start.z <= tmpV.z &&
+            tmpV.x <= this.end.x && tmpV.z <= this.end.z &&
+            this.start.y <= tmpV.y && tmpV.y <= this.end.y;
     }
     resetRotation() {
         this.setMatrix4(new Matrix4([

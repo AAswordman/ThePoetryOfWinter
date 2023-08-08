@@ -16,12 +16,12 @@ import Vector3 from '../../../../../modules/exmc/math/Vector3.js';
 import ExSystem from "../../../../../modules/exmc/utils/ExSystem.js";
 import { MinecraftEffectTypes } from "../../../../../modules/vanilla-data/lib/index.js";
 export default class PomDesertRuinRules {
-    clear() {
-        this.collections.splice(0, this.collections.length);
-    }
     constructor(game) {
         this.collections = [];
         this.game = game;
+    }
+    clear() {
+        this.collections.splice(0, this.collections.length);
     }
     init() {
         this.collections = [];

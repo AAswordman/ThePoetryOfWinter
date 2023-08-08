@@ -2,6 +2,11 @@ import { GameMode } from '@minecraft/server';
 import ExEntity from "./ExEntity.js";
 import ExPlayerBag from './ExPlayerBag.js';
 export default class ExPlayer extends ExEntity {
+    constructor(player) {
+        super(player);
+        this.bag = new ExPlayerBag(this);
+        this.scoresManager = super.getScoresManager();
+    }
     get entity() {
         return super.entity;
     }
@@ -93,11 +98,6 @@ export default class ExPlayer extends ExEntity {
         this.teleport(this.position, {
             "rotation": ivec
         });
-    }
-    constructor(player) {
-        super(player);
-        this.bag = new ExPlayerBag(this);
-        this.scoresManager = super.getScoresManager();
     }
     getBag() {
         return this.bag;

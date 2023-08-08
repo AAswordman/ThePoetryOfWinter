@@ -1,5 +1,5 @@
 import PomBossController from './PomBossController.js';
-class PomHeadlessGuardBoss extends PomBossController {
+export default class PomHeadlessGuardBoss extends PomBossController {
     constructor(e, server) {
         super(e, server);
         this.music = server.getSound("music.wb.unknown_world", "2:16");
@@ -37,5 +37,4 @@ class PomHeadlessGuardBoss extends PomBossController {
     }
 }
 PomHeadlessGuardBoss.typeId = "wb:headless_guard";
-export default PomHeadlessGuardBoss;
 //# sourceMappingURL=PomHeadlessGuardBoss.js.map
