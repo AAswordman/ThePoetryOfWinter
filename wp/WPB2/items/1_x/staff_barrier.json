@@ -6,6 +6,30 @@
             "category": "equipment"
         },
         "components": {
+            "minecraft:render_offsets": {
+                "main_hand": {
+                    "first_person": {
+                        "scale": [0.0215, 0.012, 0.0215],
+                        "position": [0.5, -0.0725, -1.085],
+                        "rotation": [0, -50, 90]
+
+                    },
+                    "third_person": {
+                        "position": [0.375, 1.65, -0.75],
+                        "scale": [0.07, 0.0400, 0.07]
+                    }
+                },
+                "off_hand": {
+                    "first_person": {
+                        "scale": [0.01, 0.0065, 0.01],
+                        "position": [0.4, 0.05, -1.075]
+                    },
+                    "third_person": {
+                        "position": [0.45, 1.6, -0.7],
+                        "scale": [0.03125, 0.03125, 0.03125]
+                    }
+                }
+            },
             "minecraft:creative_category": {
                 "parent": "itemGroup.name.sword"
             },
@@ -14,7 +38,6 @@
             },
             "minecraft:use_animation": "bow",
             "minecraft:display_name": {},
-            "minecraft:render_offsets": "tools",
             "minecraft:stacked_by_data": false,
             "minecraft:max_stack_size": 1,
             "minecraft:foil": true,
@@ -25,6 +48,10 @@
                     "target": "self"
                 }
             },
+            "minecraft:enchantable": {
+                "value": 20,
+                "slot": "flintsteel"
+              },
             "minecraft:cooldown": {
                 "category": "barrier",
                 "duration": 120

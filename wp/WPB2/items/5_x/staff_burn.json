@@ -9,6 +9,10 @@
             "minecraft:icon": {
                 "texture": "staff_burn"
             },
+            "minecraft:enchantable": {
+                "value": 20,
+                "slot": "flintsteel"
+              },
             "minecraft:use_animation": "bow",
             "minecraft:display_name": {},
             "minecraft:stacked_by_data": false,
