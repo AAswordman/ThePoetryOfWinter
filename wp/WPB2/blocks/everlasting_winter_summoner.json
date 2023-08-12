@@ -51,7 +51,7 @@
               1200
             ],
             "on_tick": {
-              "event": "minecraft:activate_naturally"
+              "event": "activate_naturally"
             }
           },
           "minecraft:light_dampening": 15,

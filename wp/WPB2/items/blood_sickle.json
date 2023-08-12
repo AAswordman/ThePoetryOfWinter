@@ -86,7 +86,7 @@
         "category": "blood_sickle",
         "duration": 0.4
       },
-      "tag:comp:movement_addition:-0.05": {},
+      "tag:comp:movement_addition:-0.01": {},
       "tag:comp:equipment_type:melee_weapon":{}
     },
     "events": {
