@@ -5625,6 +5625,18 @@
         "alpha": 1,
         "layer": 2
     },
+    "pom_addtionHealth2_render@image_clipper_item": {
+        "type": "image",
+        "offset": [48, 23.5],
+        "texture": "textures/wb_ui/hd2_bg_96_41",
+        "size": [83.5, 13.5],
+        "anchor_from": "top_left",
+        "anchor_to": "top_left",
+        "clip_direction": "left",
+        "clip_pixelperfect": false,
+        "alpha": 1,
+        "layer": 2
+    },
 
 
     "pom_hud_show": {
@@ -5824,6 +5836,35 @@
                                     "$clip_persentage": "('_' +(100 - $res1))",
                                     "$clip_last_persentage": "('_' +(100 - $res2))",
                                     "$clip_image": "hud.pom_addtionHealth_render",
+                                    "anchor_from": "top_left",
+                                    "anchor_to": "top_left",
+                                    "offset": [0, 0]
+                                }
+                            }]
+                        }
+                    }]
+                }
+            },
+            {
+                "pom_addtionHealth2_render_layout": {
+                    "$var_index": 10,
+                    "type": "panel",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "layer": 0,
+                    "offset": [0, 0],
+                    "controls": [{
+                        "pom_addtionHealth2_render_layout2@persentage_paser": {
+                            "type": "panel",
+                            "anchor_from": "top_left",
+                            "anchor_to": "top_left",
+                            "offset": [0, 0],
+                            "controls": [{
+                                "pom_addtionHealth2_render_layout3@fuck_mojang_image_clipper": {
+                                    "type": "panel",
+                                    "$clip_persentage": "('_' +(100 - $res1))",
+                                    "$clip_last_persentage": "('_' +(100 - $res2))",
+                                    "$clip_image": "hud.pom_addtionHealth2_render",
                                     "anchor_from": "top_left",
                                     "anchor_to": "top_left",
                                     "offset": [0, 0]
