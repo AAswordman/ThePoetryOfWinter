@@ -12,7 +12,7 @@
         "minecraft:light_dampening": 15,
         "minecraft:light_emission": 0,
         "minecraft:destroy_time": 1,
-        "minecraft:explosion_resistance": 5,
+        "minecraft:explosion_resistance": 255,
         "minecraft:on_interact": {
           "event": "summon"
         },
