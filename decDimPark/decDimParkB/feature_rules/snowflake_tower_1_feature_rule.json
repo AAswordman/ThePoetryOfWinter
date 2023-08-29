@@ -30,7 +30,7 @@
         },
         "distribution": {
             "iterations": 1,
-            "scatter_chance": "v.distance = 768;v.x2 = math.floor((variable.originx)/v.distance)*v.distance;v.z2 = math.floor((variable.originz)/v.distance)*v.distance;v.c1 = math.round(10000*math.abs(query.noise((v.x2+64) / 200.0, (v.x2+64) / 200.0)));v.c2 = math.round(10000*math.abs(query.noise((v.x2+128)  / 200.0, (v.z2+128) / 200.0)));v.r1 = math.mod((v.c1 * 9301 + 49297),233280) / 233280.0;v.r2 = math.mod((v.c2 * 9301 + 49297),233280) / 233280.0;v.x1 = v.x2 + math.round(v.r1*(v.distance/16/2))*16 + v.distance/4;v.z1 = v.z2 + math.round(v.r2*(v.distance/16/2))*16 + v.distance/4;v.len = math.sqrt(math.pow(variable.originx-v.x1,2)+math.pow(variable.originz-v.z1,2));return v.len > 60 && v.len <= 124 ?  (160 - v.len*160/96)/6 : 0;",
+            "scatter_chance": "v.distance = 512;v.x2 = math.floor((variable.originx)/v.distance)*v.distance;v.z2 = math.floor((variable.originz)/v.distance)*v.distance;v.c1 = math.round(10000*math.abs(query.noise((v.x2+64) / 200.0, (v.x2+64) / 200.0)));v.c2 = math.round(10000*math.abs(query.noise((v.x2+128)  / 200.0, (v.z2+128) / 200.0)));v.r1 = math.mod((v.c1 * 9301 + 49297),233280) / 233280.0;v.r2 = math.mod((v.c2 * 9301 + 49297),233280) / 233280.0;v.x1 = v.x2 + math.round(v.r1*(v.distance/16/2))*16 + v.distance/4;v.z1 = v.z2 + math.round(v.r2*(v.distance/16/2))*16 + v.distance/4;v.len = math.sqrt(math.pow(variable.originx-v.x1,2)+math.pow(variable.originz-v.z1,2));return v.len > 60 && v.len <= 124 ?  (160 - v.len*160/96)/6 : 0;",
             /*
             v.distance = 576;
             v.range = 96;
