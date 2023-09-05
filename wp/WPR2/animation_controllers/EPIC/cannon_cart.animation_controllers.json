@@ -28,7 +28,7 @@
             "default": {  
               "transitions": [
               {
-                "attack": "query.has_target"
+                "attack": "query.facing_target_to_range_attack && query.is_charged"
               }
             ]
           },
@@ -37,7 +37,7 @@
               "attack"
             ],
             "transitions": [{
-              "default": "!query.has_target"
+              "default": "!query.facing_target_to_range_attack"
             }]
           }
             }       

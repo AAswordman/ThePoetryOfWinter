@@ -1,11 +1,11 @@
 =============================EPIC==================================
-item.spawn_egg.entity.epic:cannon_cart.name=放置 加农炮战车
-item.epic:machanical_operator.name=机械操纵者§a（站立右键“加农炮战车”可以更改行动模式，潜行右键更改攻击模式）
+item.spawn_egg.entity.epic:cannon_cart.name=放置 加农炮战车§a（用铁锭认主）
+item.epic:machanical_operator.name=机械操纵者§a（右键“加农炮战车”可以进入设置菜单）
 
 item.epic:crystal_electronics_group.name=晶体电子核心
 item.epic:crystal_electronics_group_broken.name=晶体电子核心 §8(已损坏)
 item.epic:reinforced_metal_group.name=强化合金组
-item.epic:alliance_token.name=盟军令牌§a（站立右键“加农炮战车”可以使其进入友好模式，潜行右键进入敌对模式）
+item.epic:alliance_token.name=盟军令牌§a（暂时弃用）
 
 entity.epic:cannon_cart.name=加农炮战车
 entity.epic:blazing_sun.name=§e>耀阳<

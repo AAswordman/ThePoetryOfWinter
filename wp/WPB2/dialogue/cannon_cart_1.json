@@ -1,0 +1,242 @@
+{
+    "format_version": "1.20.0",
+    "minecraft:npc_dialogue": {
+        "scenes": [
+            {
+                "scene_tag": "cannon_cart_menu",
+                "npc_name": { "rawtext": [ { "translate": "entity.epic:cannon_cart.name", "with": ["\n"] } ] },
+                "text": "在这里更改加农炮战车的状态",
+                "on_open_commands": [
+                    "/event entity @s add_npc_module"
+                ],
+                "on_close_commands": [
+                    "/event entity @s remove_npc_module"
+                ],
+                "buttons": [
+                    {
+                        "name": "更改攻击模式",
+                        "commands": [
+                            "/dialogue open @s @initiator cannon_cart_submenu_1"
+                        ]
+                    },
+                    {
+                        "name": "更改行动模式",
+                        "commands": [
+                            "/dialogue open @s @initiator cannon_cart_submenu_2"
+                        ]
+                    },
+                    {
+                        "name": "切换友好模式",
+                        "commands": [
+                            "/dialogue open @s @initiator cannon_cart_submenu_3"
+                        ]
+                    }
+
+                ]
+            },
+
+            {
+                "scene_tag": "cannon_cart_submenu_1",
+                "npc_name": { "rawtext": [ { "translate": "entity.epic:cannon_cart.name", "with": ["\n"] } ] },
+                "text": "在这里更改攻击模式",
+                "on_open_commands": [
+                    "/event entity @s add_npc_module"
+                ],
+                "on_close_commands": [
+                    "/event entity @s remove_npc_module"
+                ],
+                "buttons": [
+                    {
+                        "name": "攻击模式：待命",
+                        "commands": [
+                            "/event entity @s clear_attack_mode",
+                            "/event entity @s attack_mode1",
+                            "/dialogue open @s @initiator cannon_cart_menu"
+                        ]
+                    },
+                    {
+                        "name": "攻击模式：护卫",
+                        "commands": [
+                            "/event entity @s clear_attack_mode",
+                            "/event entity @s attack_mode2",
+                            "/dialogue open @s @initiator cannon_cart_menu"
+                        ]
+                    },
+                    {
+                        "name": "攻击模式：破坏",
+                        "commands": [
+                            "/event entity @s clear_attack_mode",
+                            "/event entity @s attack_mode3",
+                            "/dialogue open @s @initiator cannon_cart_menu"
+                        ]
+                    }
+                    
+                ]
+            },
+
+            {
+                "scene_tag": "cannon_cart_submenu_2",
+                "npc_name": { "rawtext": [ { "translate": "entity.epic:cannon_cart.name", "with": ["\n"] } ] },
+                "text": "在这里更改行动模式",
+                "on_open_commands": [
+                    "/event entity @s add_npc_module"
+                ],
+                "on_close_commands": [
+                    "/event entity @s remove_npc_module"
+                ],
+                "buttons": [
+                    {
+                        "name": "行动模式：待命",
+                        "commands": [
+                            "/event entity @s clear_action_mode",
+                            "/event entity @s action_mode1",
+                            "/dialogue open @s @initiator cannon_cart_menu"
+                        ]
+                    },
+                    {
+                        "name": "行动模式：跟随",
+                        "commands": [
+                            "/event entity @s clear_action_mode",
+                            "/event entity @s action_mode2",
+                            "/dialogue open @s @initiator cannon_cart_menu"
+                        ]
+                    },
+                    {
+                        "name": "行动模式：自由",
+                        "commands": [
+                            "/event entity @s clear_action_mode",
+                            "/event entity @s action_mode3",
+                            "/dialogue open @s @initiator cannon_cart_menu"
+                        ]
+                    }
+                    
+                ]
+            },
+
+            {
+                "scene_tag": "cannon_cart_submenu_3",
+                "npc_name": { "rawtext": [ { "translate": "entity.epic:cannon_cart.name", "with": ["\n"] } ] },
+                "text": "在这里切换友好模式",
+                "on_open_commands": [
+                    "/event entity @s add_npc_module"
+                ],
+                "on_close_commands": [
+                    "/event entity @s remove_npc_module"
+                ],
+                "buttons": [
+                    {
+                        "name": "切换为友好模式",
+                        "commands": [
+                            "/event entity @s alliance_on",
+                            "/dialogue open @s @initiator cannon_cart_menu"
+                        ]
+                    },
+                    {
+                        "name": "切换为敌对模式",
+                        "commands": [
+                            "/event entity @s alliance_off",
+                            "/dialogue open @s @initiator cannon_cart_menu"
+                        ]
+                    }
+                   
+                ]
+            },
+
+            {
+                "scene_tag": "cannon_menu",
+                "npc_name": { "rawtext": [ { "translate": "entity.epic:cannon_cart.name", "with": ["\n"] } ] },
+                "text": "在这里更改加农炮战车(损坏）的状态",
+                "on_open_commands": [
+                    "/event entity @s add_npc_module"
+                ],
+                "on_close_commands": [
+                    "/event entity @s remove_npc_module"
+                ],
+                "buttons": [
+                    {
+                        "name": "更改攻击模式",
+                        "commands": [
+                            "/dialogue open @s @initiator cannon_submenu_1"
+                        ]
+                    },
+                    {
+                        "name": "切换友好模式",
+                        "commands": [
+                            "/dialogue open @s @initiator cannon_submenu_2"
+                        ]
+                    }
+
+                ]
+            },
+
+            {
+                "scene_tag": "cannon_submenu_1",
+                "npc_name": { "rawtext": [ { "translate": "entity.epic:cannon_cart.name", "with": ["\n"] } ] },
+                "text": "在这里更改攻击模式",
+                "on_open_commands": [
+                    "/event entity @s add_npc_module"
+                ],
+                "on_close_commands": [
+                    "/event entity @s remove_npc_module"
+                ],
+                "buttons": [
+                    {
+                        "name": "攻击模式：待命",
+                        "commands": [
+                            "/event entity @s clear_attack_mode",
+                            "/event entity @s attack_mode1",
+                            "/dialogue open @s @initiator cannon_menu"
+                        ]
+                    },
+                    {
+                        "name": "攻击模式：护卫",
+                        "commands": [
+                            "/event entity @s clear_attack_mode",
+                            "/event entity @s attack_mode2",
+                            "/dialogue open @s @initiator cannon_menu"
+                        ]
+                    },
+                    {
+                        "name": "攻击模式：破坏",
+                        "commands": [
+                            "/event entity @s clear_attack_mode",
+                            "/event entity @s attack_mode3",
+                            "/dialogue open @s @initiator cannon_menu"
+                        ]
+                    }
+                    
+                ]
+            },
+
+            {
+                "scene_tag": "cannon_submenu_2",
+                "npc_name": { "rawtext": [ { "translate": "entity.epic:cannon_cart.name", "with": ["\n"] } ] },
+                "text": "在这里切换友好模式",
+                "on_open_commands": [
+                    "/event entity @s add_npc_module"
+                ],
+                "on_close_commands": [
+                    "/event entity @s remove_npc_module"
+                ],
+                "buttons": [
+                    {
+                        "name": "切换为友好模式",
+                        "commands": [
+                            "/event entity @s alliance_on",
+                            "/dialogue open @s @initiator cannon_menu"
+                        ]
+                    },
+                    {
+                        "name": "切换为敌对模式",
+                        "commands": [
+                            "/event entity @s alliance_off",
+                            "/dialogue open @s @initiator cannon_menu"
+                        ]
+                    }
+                   
+                ]
+            }
+
+        ]
+    }
+}
