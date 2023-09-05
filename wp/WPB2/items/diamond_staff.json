@@ -15,11 +15,13 @@
       "minecraft:icon": {
         "texture": "diamond_staff"
       },
+      "minecraft:durability": {
+        "max_durability": 1671
+      },
       "minecraft:use_animation": "bow",
       "minecraft:render_offsets": "bow",
       "minecraft:stacked_by_data": false,
       "minecraft:max_stack_size": 1,
-      "minecraft:foil": false,
       "minecraft:hand_equipped": true,
       "minecraft:on_use": {
         "on_use": {
@@ -70,21 +72,17 @@
                       "command": [
                         "playsound item.book.put @a ~~~",
                         "playanimation @s animation.humanoid.staff_use",
-                        "scoreboard players remove @s wbfl 3"
+                        "scoreboard players remove @s magicpoint 3"
                       ],
                       "target": "holder"
-                    }
-                  },
-                  {
-                    "shoot": {
-                      "projectile": "dec:stream_energy_ball",
-                      "launch_power": 1
-                    }
-                  },
-                  {
+                    },
                     "damage": {
                       "type": "magic",
                       "amount": 1
+                    },
+                    "shoot": {
+                      "projectile": "dec:stream_energy_ball",
+                      "launch_power": 1
                     }
                   }
                 ]

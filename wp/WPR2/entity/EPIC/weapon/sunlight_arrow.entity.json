@@ -27,7 +27,7 @@
 				]
 			  },
 			"animations": {			
-				"particle":"controller.animation.epic_base.particle",
+				"particle":"controller.animation.sunlight_arrow.particle",
 				"move_controller": "controller.animation.blazing_sun.move",
 				"move": "animation.arrow.move"
 			   },
