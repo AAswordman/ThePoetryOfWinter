@@ -6,7 +6,7 @@
         "name": "The Poetry Of Winter",
         "uuid": "c2021c25-08e8-9ade-0916-6cd21931fac5",
         "version": [1, 6, 0],
-        "min_engine_version": [1, 20, 10]
+        "min_engine_version": [1, 20, 41]
     },
     "modules": [{
             "description": "Explore the new World!!!Made by AA swordsman,LiLeyi and many their friends.Ver. 1.8.0B4",
@@ -22,12 +22,20 @@
         }
     ],
     "dependencies": [{
+            "module_name": "@minecraft/vanilla-data",
+            "version": "1.20.10"
+        },
+        {
             "module_name": "@minecraft/server",
-            "version": "1.4.0-beta"
+            "version": "1.7.0-beta"
         },
         {
             "module_name": "@minecraft/server-ui",
             "version": "1.2.0-beta"
+        },
+        {
+            "module_name": "@minecraft/server-gametest",
+            "version": "1.0.0-beta"
         },
         {
             "uuid": "c2021c95-08e8-9ade-0916-6cd21931fac5",
