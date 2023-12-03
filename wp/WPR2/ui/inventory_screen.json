@@ -738,10 +738,6 @@
                                 }
                               ]
                             }
-                          },
-                          {
-                            "open_search_tab@game_tip.open_search_tab_factory": {
-                            }
                           }
                         ]
                       }
@@ -879,10 +875,18 @@
                         "max_length": 30,
                         "$text_edit_binding_name": "#text_box_item_name",
                         "$text_edit_box_label_size": [ "default", 10 ],
+                        "$text_edit_box_label_offset": [ 10, 0 ],
                         "$text_edit_box_hovered_button_id": "button.search_bar_hovered",
                         "$text_edit_box_clear_to_button_id": "button.search_bar_clear",
                         "$text_edit_box_selected_to_button_id": "button.search_bar_selected",
                         "$text_edit_box_deselected_to_button_id": "button.search_bar_deselected",
+  
+                        "$text_clear_button_enabled" : true,
+                        "$text_clear_button_size": [ 15, 15 ],
+                        "$text_clear_button_offset": [ 2, 0 ],
+                        "$magnifying_glass_enabled" : true,
+                        "$magnifying_glass_size": [ 8, 8 ],
+                        "$magnifying_glass_offset": [0, -0.5],
   
                         "focus_wrap_enabled": false,
   
@@ -1571,32 +1575,6 @@
       "$cell_images_binding_condition|default": "visible",
       "size": "$cell_image_size",
       "$cell_image_size|default": [ "default", "default" ],
-      "controls": [
-        {
-          "recipe_tip@game_tip.recipe_item_tip": {
-            "bindings": [
-              {
-                "binding_name": "#recipe_search_tip_chevron_visible",
-                "binding_name_override": "#visible",
-                "binding_type": "collection",
-                "binding_collection_name": "recipe_book"
-              }
-            ]
-          }
-        },
-        {
-          "recipe_tip1@game_tip.recipe_item_tip_box": {
-            "bindings": [
-              {
-                "binding_name": "#recipe_search_tip_box_visible",
-                "binding_name_override": "#visible",
-                "binding_type": "collection",
-                "binding_collection_name": "recipe_book"
-              }
-            ]
-          }
-        }
-      ],
       "bindings": [
         {
           "binding_name": "#container_item_background_texture",
@@ -1707,7 +1685,6 @@
         { "cell_invert@crafting.cell_image_invert": {} },
         { "cell_red@crafting.cell_image_red": {} },
         { "cell_selected@crafting.cell_image_selected": {} },
-        { "cell_hint@game_tip.cell_image_classic_hint": {} },
         { "cell_darkgrey@crafting.cell_image_darkgrey": {} }
       ],
       "bindings": [
@@ -2214,14 +2191,14 @@
     },
   
     "help_button@common.button": {
-    "size": [ 25, 25 ],
+      "size": [ 15, 15 ],
       "layer": 5,
   
       "visible": "(not $education_edition_china)",
   
-    "$default_texture|default": "textures/ui/how_to_play_use",
-    "$hover_texture|default": "textures/ui/how_to_play_use",
-    "$pressed_texture|default": "textures/ui/how_to_play_use",
+      "$default_texture|default": "textures/ui/how_to_play_use",
+      "$hover_texture|default": "textures/ui/how_to_play_use",
+      "$pressed_texture|default": "textures/ui/how_to_play_use",
   
       "$pressed_button_name": "button.help",
   
@@ -2486,8 +2463,7 @@
                             "recipe_book_layout_toggle@crafting.recipe_book_layout_toggle": {
                               "$focus_override_left": "search_tab"
                             }
-                          },
-                          { "open_recipe_book_tip@game_tip.open_recipe_book_factory": {} }
+                          }
                         ]
                       }
                     },
@@ -2554,8 +2530,7 @@
                               "anchor_from": "center",
                               "anchor_to": "center"
                             }
-                          },
-                          { "close_inventory_tip@game_tip.close_inventory_factory": {} }
+                          }
                         ]
                       }
                     },
@@ -2865,19 +2840,6 @@
         {
           "flying_item_renderer@common.flying_item_renderer": {
             "layer": 13
-          }
-        },
-        {
-          "game_tip@game_tip.game_tip_panel": {
-            "layer": 100,
-            "$offset|default": [ 0, 110 ],
-            "variables": [
-              {
-                "requires": "$game_pad",
-                "$offset": [ 0, "38%" ]
-              }
-            ],
-            "offset": "$offset"
           }
         },
         { "selected_item_details_factory@common.selected_item_details_factory": {} },

@@ -214,8 +214,7 @@
                         "anchor_from": "center",
                         "anchor_to": "center"
                       }
-                    },
-                    { "open_recipe_book_factory@game_tip.open_recipe_book_factory": {} }
+                    }
                   ]
                 }
               },
@@ -333,8 +332,7 @@
                         "offset": [ 0, 0 ],
                         "layer": 2
                       }
-                    },
-                    { "close_inventory_tip@game_tip.close_inventory_factory": {} }
+                    }
                   ],
                   "bindings": [
                     {
@@ -1101,13 +1099,12 @@
     "right_panel": {
       "type": "input_panel",
       "size": [ "100%", "100%" ],
-    "layer": 5,
       "controls": [
         {
           "right_background@common.common_panel": {
             "$dialog_background": "common.dialog_background_opaque",
             "$show_close_button": false
-          }
+}
         },
       {
         "help_button@crafting.help_button": {
@@ -1118,8 +1115,8 @@
           "$default_texture": "textures/ui/how_to_play_use",
           "$hover_texture": "textures/ui/how_to_play_use",
           "$pressed_texture": "textures/ui/how_to_play_use"
-        }
-      },
+          }
+        },
         {
           "crafting_tab_content@crafting_pocket.right_tab_content": {
             "$right_tab_view_toggle_name": "crafting_tab_toggle",
@@ -1339,12 +1336,6 @@
         {
           "flying_item_renderer@common.flying_item_renderer": {
             "layer": 14
-          }
-        },
-        {
-          "game_tip@game_tip.game_tip_panel": {
-            "layer": 14,
-            "offset": [ 0, "5%" ]
           }
         },
         {
