@@ -37,31 +37,31 @@ document.addEventListener('readystatechange', function () {
     }
 });
 
-window.setInterval(function () {
-    var cX = $("div[class='earnest_check_mask_box']");
-    cX.click();
-}, 10);
-window.setInterval(function () {
-    $(".ccH5PlayBtn").click();
-    window.hooker.changeVideoSpeed();
+// window.setInterval(function () {
+//     var cX = $("div[class='earnest_check_mask_box']");
+//     cX.click();
+// }, 10);
+// window.setInterval(function () {
+//     $(".ccH5PlayBtn").click();
+//     window.hooker.changeVideoSpeed();
 
-}, 1000);
-window.setInterval(function () {
-    var videos = document.getElementsByTagName("video") || [];
-    if (videos.length) {
-        for (var i = 0; i < videos.length; i++) {
-            if (videos[i].setAlready == null) {
-                videos[i].setAlready = true;
-                videos[i].addEventListener(
-                    "ended",
-                    function (e) {
-                        window.close();
-                    }
-                )
-            }
-        }
-    }
-}, 5000);
+// }, 1000);
+// window.setInterval(function () {
+//     var videos = document.getElementsByTagName("video") || [];
+//     if (videos.length) {
+//         for (var i = 0; i < videos.length; i++) {
+//             if (videos[i].setAlready == null) {
+//                 videos[i].setAlready = true;
+//                 videos[i].addEventListener(
+//                     "ended",
+//                     function (e) {
+//                         window.close();
+//                     }
+//                 )
+//             }
+//         }
+//     }
+// }, 5000);
 
 ~ function (global) {
 
@@ -598,7 +598,7 @@ window.setInterval(function () {
                 _timeoutIds: {},
                 _auoUniqueId: 1,
                 // 计时器速率
-                __percentage: 1 / 16.0,
+                __percentage: 1 / 1.0,
                 // 劫持前的原始的方法
                 _setInterval: window['setInterval'],
                 _clearInterval: window['clearInterval'],
@@ -707,7 +707,7 @@ window.setInterval(function () {
 
             window.hooker = timerHooker;
             console.log('changeVideoSpeed');
-
+            
 
         }
     };
