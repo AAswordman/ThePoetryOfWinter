@@ -1,34 +1,37 @@
 {
-  "format_version": "1.8.0",
-  "minecraft:client_entity": {
-    "description": {
-      "identifier": "wb:shadow_intentions_first",
-      "materials": { 
-          "default": "skeleton"
-      },
-      "textures": { 
-          "default": "textures/wb/5_x/shadow_intentions_first"
-      },
-      "geometry": { 
-          "default": "geometry.border_fugitive"
-      },
-      "scripts": {
-        "pre_animation": [
-          "variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
-          "variable.tcos1 = -variable.tcos0;"
-        ]
-      },
-      "animations": {
-        "look_at_target_default": "animation.humanoid.look_at_target.default.v1.0",
-        "look_at_target_gliding": "animation.humanoid.look_at_target.gliding.v1.0",
-        "look_at_target_swimming": "animation.humanoid.look_at_target.swimming.v1.0",
-        "base": "animation.border_fugitive.move"
-      },
-      "animation_controllers": [
-        { "look_at_target": "controller.animation.humanoid.look_at_target" },
-        { "base": "controller.animation.base.base" }
-      ],
-      "render_controllers": [ "controller.render.base"]
+    "format_version": "1.8.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "wb:shadow_intentions_first",
+            "materials": {
+                "default": "skeleton"
+            },
+            "textures": {
+                "default": "textures/wb/5_x/shadow_intentions_first"
+            },
+            "geometry": {
+                "default": "geometry.border_fugitive"
+            },
+            "scripts": {
+                "pre_animation": [
+                    "variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
+                    "variable.tcos1 = -variable.tcos0;"
+                ]
+            },
+            "animations": {
+                "look_at_target_default": "animation.humanoid.look_at_target.default.v1.0",
+                "look_at_target_gliding": "animation.humanoid.look_at_target.gliding.v1.0",
+                "look_at_target_swimming": "animation.humanoid.look_at_target.swimming.v1.0",
+                "base": "animation.border_fugitive.move"
+            },
+            "animation_controllers": [{
+                    "look_at_target": "controller.animation.humanoid.look_at_target"
+                },
+                {
+                    "base": "controller.animation.base.base"
+                }
+            ],
+            "render_controllers": ["controller.render.base"]
+        }
     }
-  }
 }

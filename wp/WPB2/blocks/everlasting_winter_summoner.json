@@ -13,7 +13,7 @@
     },
     "permutations": [
       {
-        "condition": "query.block_property('dec:state') == 'locked'",
+        "condition": "query.block_state('dec:state') == 'locked'",
         "components": {
           "minecraft:material_instances": {
             "*": {
@@ -32,7 +32,7 @@
         }
       },
       {
-        "condition": "query.block_property('dec:state') == 'empty'",
+        "condition": "query.block_state('dec:state') == 'empty'",
         "components": {
           "minecraft:material_instances": {
             "*": {
@@ -61,7 +61,7 @@
         }
       },
       {
-        "condition": "query.block_property('dec:state') == 'activated'",
+        "condition": "query.block_state('dec:state') == 'activated'",
         "components": {
           "minecraft:material_instances": {
             "*": {
@@ -98,7 +98,7 @@
           "target": "other",
           "sound": "conduit.activate"
         },
-        "set_block_property": {
+        "set_block_state": {
           "dec:state": "'empty'"
         },
         "run_command": {
@@ -118,12 +118,12 @@
             "playsound random.anvil_break @a ~~~"
           ]
         },
-        "set_block_property": {
+        "set_block_state": {
           "dec:state": "'empty'"
         }
       },
       "activate": {
-        "set_block_property": {
+        "set_block_state": {
           "dec:state": "'activated'"
         },
         "run_command": {
@@ -134,7 +134,7 @@
         "decrement_stack": {}
       },
       "activate_naturally": {
-        "set_block_property": {
+        "set_block_state": {
           "dec:state": "'activated'"
         },
         "run_command": {

@@ -3,7 +3,7 @@
     "minecraft:feature_rules": {
         "description": {
             "identifier": "dec:warehouse_of_watcher_feature_rule",
-            "places_feature": "dec:warehouse_of_watcher_slat_feature"
+            "places_feature": "dec:warehouse_of_watcher_mcstructure"
         },
         "conditions": {
             "placement_pass": "surface_pass",
