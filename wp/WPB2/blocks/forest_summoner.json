@@ -12,7 +12,7 @@
     },
     "permutations": [
       {
-        "condition": "query.block_property('dec:state') == 'empty'",
+        "condition": "query.block_state('dec:state') == 'empty'",
         "components": {
           "minecraft:map_color": "#081908",
           "minecraft:material_instances": {
@@ -42,7 +42,7 @@
         }
       },
       {
-        "condition": "query.block_property('dec:state') == 'activated'",
+        "condition": "query.block_state('dec:state') == 'activated'",
         "components": {
           "minecraft:map_color": "#153F15",
           "minecraft:material_instances": {
@@ -81,7 +81,7 @@
           "target": "other",
           "sound": "conduit.activate"
         },
-        "set_block_property": {
+        "set_block_state": {
           "dec:state": "'empty'"
         },
         "run_command": {
@@ -102,7 +102,7 @@
         "decrement_stack": {}
       },
       "activate": {
-        "set_block_property": {
+        "set_block_state": {
           "dec:state": "'activated'"
         },
         "run_command": {
@@ -113,7 +113,7 @@
         "decrement_stack": {}
       },
       "activate_naturally": {
-        "set_block_property": {
+        "set_block_state": {
           "dec:state": "'activated'"
         },
         "run_command": {

@@ -59,8 +59,8 @@
                     },
                     {
                         "weight": 1,
-                        "set_block_property": {
-                            "dec:growth_stage": "(query.block_property('dec:growth_stage')<4) ? query.block_property('dec:growth_stage') + 1 : 4"
+                        "set_block_state": {
+                            "dec:growth_stage": "(query.block_state('dec:growth_stage')<4) ? query.block_state('dec:growth_stage') + 1 : 4"
                         }
                     }
                 ]
@@ -69,7 +69,7 @@
                 "spawn_loot": {
                     "table": "loot_tables/blocks/fritillary_crop.json"
                 },
-                "set_block_property": {
+                "set_block_state": {
                     "dec:growth_stage": 2
                 }
             },
@@ -95,7 +95,7 @@
         },
         "permutations": [
             {
-                "condition": "query.block_property('dec:growth_stage') == 0",
+                "condition": "query.block_state('dec:growth_stage') == 0",
                 "components": {
                     "minecraft:on_interact": {
                         "event": "meal",
@@ -123,7 +123,7 @@
                 }
             },
             {
-                "condition": "query.block_property('dec:growth_stage') == 1",
+                "condition": "query.block_state('dec:growth_stage') == 1",
                 "components": {
                     "minecraft:on_interact": {
                         "event": "meal",
@@ -151,7 +151,7 @@
                 }
             },
             {
-                "condition": "query.block_property('dec:growth_stage') == 2",
+                "condition": "query.block_state('dec:growth_stage') == 2",
                 "components": {
                     "minecraft:on_interact": {
                         "event": "meal",
@@ -179,7 +179,7 @@
                 }
             },
             {
-                "condition": "query.block_property('dec:growth_stage') == 3",
+                "condition": "query.block_state('dec:growth_stage') == 3",
                 "components": {
                     "minecraft:on_interact": {
                         "event": "meal",
@@ -207,7 +207,7 @@
                 }
             },
             {
-                "condition": "query.block_property('dec:growth_stage') == 4",
+                "condition": "query.block_state('dec:growth_stage') == 4",
                 "components": {
                     "minecraft:material_instances": {
                         "*": {

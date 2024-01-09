@@ -33,7 +33,7 @@
     },
     "permutations": [
       {
-        "condition": "query.block_property('dec:energy') == 0",
+        "condition": "query.block_state('dec:energy') == 0",
         "components": {
           "minecraft:on_interact": {
             "event": "power_up",
@@ -58,7 +58,7 @@
         }
       },
       {
-        "condition": "query.block_property('dec:energy') == 1",
+        "condition": "query.block_state('dec:energy') == 1",
         "components": {
           "minecraft:on_interact": {
             "event": "power_up",
@@ -83,7 +83,7 @@
         }
       },
       {
-        "condition": "query.block_property('dec:energy') == 2",
+        "condition": "query.block_state('dec:energy') == 2",
         "components": {
           "minecraft:on_interact": {
             "event": "power_up",
@@ -108,7 +108,7 @@
         }
       },
       {
-        "condition": "query.block_property('dec:energy') == 3",
+        "condition": "query.block_state('dec:energy') == 3",
         "components": {
           "minecraft:on_interact": {
             "event": "power_up",
@@ -133,7 +133,7 @@
         }
       },
       {
-        "condition": "query.block_property('dec:energy') == 4",
+        "condition": "query.block_state('dec:energy') == 4",
         "components": {
           "minecraft:light_emission": 8,
           "minecraft:material_instances": {
@@ -156,8 +156,8 @@
     ],
     "events": {
       "power_up": {
-        "set_block_property": {
-          "dec:energy": "(query.block_property('dec:energy')<4) ? query.block_property('dec:energy') + 1 : 4"
+        "set_block_state": {
+          "dec:energy": "(query.block_state('dec:energy')<4) ? query.block_state('dec:energy') + 1 : 4"
         },
         "run_command": {
           "command": [

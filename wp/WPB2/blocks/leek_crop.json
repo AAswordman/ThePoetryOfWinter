@@ -42,8 +42,8 @@
                     },
                     {
                         "weight": 1,
-                        "set_block_property": {
-                            "dec:growth_stage": "(query.block_property('dec:growth_stage')<2) ? query.block_property('dec:growth_stage') + 1 : 2"
+                        "set_block_state": {
+                            "dec:growth_stage": "(query.block_state('dec:growth_stage')<2) ? query.block_state('dec:growth_stage') + 1 : 2"
                         }
                     }
                 ]
@@ -78,7 +78,7 @@
         },
         "permutations": [
             {
-                "condition": "query.block_property('dec:growth_stage') == 0",
+                "condition": "query.block_state('dec:growth_stage') == 0",
                 "components": {
                     "minecraft:on_interact": {
                         "event": "meal",
@@ -98,7 +98,7 @@
                 }
             },
             {
-                "condition": "query.block_property('dec:growth_stage') == 1",
+                "condition": "query.block_state('dec:growth_stage') == 1",
                 "components": {
                     "minecraft:on_interact": {
                         "event": "meal",
@@ -118,7 +118,7 @@
                 }
             },
             {
-                "condition": "query.block_property('dec:growth_stage') == 2",
+                "condition": "query.block_state('dec:growth_stage') == 2",
                 "components": {
                     "minecraft:material_instances": {
                         "*": {
