@@ -1,5 +1,5 @@
 {
-  "format_version": "1.20.0",
+  "format_version": "1.20.1",
  "minecraft:entity": {
   "description": {
     "identifier": "epic:sunlight_arrow",
@@ -11,6 +11,10 @@
 
 //自毁
 "component_groups": {
+
+  "kill": {
+    "minecraft:despawn":{}
+   },
     "explode": {
       "minecraft:explode": {
         "fuseLength":0.5,
@@ -36,7 +40,7 @@
 //普通
 "normal":{
 "minecraft:timer": {
-  "time": 0.005,
+  "time": 0.01,
   "looping": true,
   "time_down_event": {
     "event": "boost1",
@@ -78,8 +82,8 @@
   },
   "power": 2.25,
   "gravity": 0.005,
-  "inertia": 1.2,                        //惯性
-  "liquid_inertia": 1.2,                 //液体惯性
+  "inertia": 1.25,                        //惯性
+  "liquid_inertia": 1.25,                 //液体惯性
   "anchor": 1,                            //抛射位置【0为初始，1为眼睛，2为身体】
   "offset": [ 0, -0.2, 0 ],               //抛射位置的偏移量
   "angle_offset": 0,                      //抛射的实际角度
@@ -145,8 +149,8 @@
     },
     "power": 2.25,
     "gravity": 0.005,
-    "inertia": 1.2,                        //惯性
-    "liquid_inertia": 1.2,                 //液体惯性
+    "inertia": 1.25,                        //惯性
+    "liquid_inertia": 1.25,                 //液体惯性
     "anchor": 1,                            //抛射位置【0为初始，1为眼睛，2为身体】
     "offset": [ 0, -0.2, 0 ],               //抛射位置的偏移量
     "angle_offset": 0,                      //抛射的实际角度
@@ -212,8 +216,8 @@
       },
       "power": 2.25,
       "gravity": 0.005,
-      "inertia": 1.2,                        //惯性
-      "liquid_inertia": 1.2,                 //液体惯性
+      "inertia": 1.25,                        //惯性
+      "liquid_inertia": 1.25,                 //液体惯性
       "anchor": 1,                            //抛射位置【0为初始，1为眼睛，2为身体】
       "offset": [ 0, -0.2, 0 ],               //抛射位置的偏移量
       "angle_offset": 0,                      //抛射的实际角度
@@ -279,8 +283,8 @@
         },
         "power": 2.25,
         "gravity": 0.005,
-        "inertia": 1.2,                        //惯性
-        "liquid_inertia": 1.2,                 //液体惯性
+        "inertia": 1.25,                        //惯性
+        "liquid_inertia": 1.25,                 //液体惯性
         "anchor": 1,                            //抛射位置【0为初始，1为眼睛，2为身体】
         "offset": [ 0, -0.2, 0 ],               //抛射位置的偏移量
         "angle_offset": 0,                      //抛射的实际角度
@@ -347,8 +351,8 @@
           },
           "power": 2.25,
           "gravity": 0.005,
-          "inertia": 1.2,                        //惯性
-          "liquid_inertia": 1.2,                 //液体惯性
+          "inertia": 1.25,                        //惯性
+          "liquid_inertia": 1.25,                 //液体惯性
           "anchor": 1,                            //抛射位置【0为初始，1为眼睛，2为身体】
           "offset": [ 0, -0.2, 0 ],               //抛射位置的偏移量
           "angle_offset": 0,                      //抛射的实际角度
@@ -414,8 +418,8 @@
             },
             "power": 2.25,
             "gravity": 0.005,
-            "inertia": 1.2,                        //惯性
-            "liquid_inertia": 1.2,                 //液体惯性
+            "inertia": 1.25,                        //惯性
+            "liquid_inertia": 1.25,                 //液体惯性
             "anchor": 1,                            //抛射位置【0为初始，1为眼睛，2为身体】
             "offset": [ 0, -0.2, 0 ],               //抛射位置的偏移量
             "angle_offset": 0,                      //抛射的实际角度
@@ -481,8 +485,8 @@
               },
               "power": 2.25,
               "gravity": 0.005,
-              "inertia": 1.2,                        //惯性
-              "liquid_inertia": 1.2,                 //液体惯性
+              "inertia": 1.25,                        //惯性
+              "liquid_inertia": 1.25,                 //液体惯性
               "anchor": 1,                            //抛射位置【0为初始，1为眼睛，2为身体】
               "offset": [ 0, -0.2, 0 ],               //抛射位置的偏移量
               "angle_offset": 0,                      //抛射的实际角度
@@ -553,8 +557,8 @@
     },
     "power": 2.25,
     "gravity": 0.005,
-    "inertia": 1.2,                        //惯性
-    "liquid_inertia": 1.2,                 //液体惯性
+    "inertia": 1.25,                        //惯性
+    "liquid_inertia": 1.25,                 //液体惯性
     "anchor": 1,                            //抛射位置【0为初始，1为眼睛，2为身体】
     "offset": [ 0, -0.2, 0 ],               //抛射位置的偏移量
     "angle_offset": 0,                      //抛射的实际角度
@@ -719,15 +723,18 @@
         "component_groups": ["boost6"]
       }
     },
-
+    
     "kill": {
-      "run_command":{
-        "command":[ 
-          "kill @s"
-       ]
+      "sequence": [
+        {
+        "add": {
+          "component_groups": [
+            "kill"
+          ]
+        }
       }
+      ]
     }
-
   
   }
  }

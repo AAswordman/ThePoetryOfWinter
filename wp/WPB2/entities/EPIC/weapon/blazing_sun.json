@@ -19,7 +19,9 @@
   },
 
     "component_groups": {
-
+      "kill": {
+        "minecraft:despawn":{}
+       },
       "spawn_skill": {
         "minecraft:collision_box": {
           "width": 0,
@@ -316,11 +318,21 @@
         "run_command":{
           "command":[
          "damage @e[r=5,tag=!wbmsyh,tag=!blazing_sun] 50 void entity @s",
-         "kill @s"
+         "event entity @s kill"
          ]
         }
+      },
+      "kill": {
+        "sequence": [
+          {
+          "add": {
+            "component_groups": [
+              "kill"
+            ]
+          }
+        }
+        ]
       }
- 
      
      
    

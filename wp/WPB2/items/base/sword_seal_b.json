@@ -62,66 +62,31 @@
       "minecraft:render_offsets": {
         "main_hand": {
           "first_person": {
-            "scale": [
-              0.01,
-              0.01,
-              0.01
-            ]
+            "scale": [0.011,0.006,0.011],
+            "position": [0.425,-0.0775,-1.085],
+            "rotation": [0,-45,90]
+
           },
           "third_person": {
-            "position": [
-              0.45,
-              1.6,
-              -0.7
-            ],
-            "scale": [
-              0.03125,
-              0.03125,
-              0.03125
-            ]
+            "position": [0.375,1.735,-0.75],
+            "scale": [0.035,0.02000,0.035]
           }
         },
         "off_hand": {
           "first_person": {
-            "position": [
-              0,
-              0,
-              0
-            ],
-            "rotation": [
-              0,
-              0,
-              0
-            ],
-            "scale": [
-              0,
-              0,
-              0
-            ]
+            "scale": [0.01,0.0065,0.01],
+            "position": [0.4,0.05,-1.075]
           },
           "third_person": {
-            "position": [
-              0,
-              0,
-              0
-            ],
-            "rotation": [
-              0,
-              0,
-              0
-            ],
-            "scale": [
-              0,
-              0,
-              0
-            ]
+            "position": [0.45,1.6,-0.7],
+            "scale": [0.03125,0.03125,0.03125]
           }
         }
       },
-            "tag:comp:equipment_type:melee_weapon": {},
-            "tag:comp:equipment_type:melee_weapon": {},
-            "tag:comp:equipment_type:melee_weapon": {},
-            "tag:comp:equipment_type:melee_weapon": {},
+          
+          
+          
+          
             "tag:comp:equipment_type:melee_weapon": {}
     },
     "events": {
