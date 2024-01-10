@@ -31,63 +31,28 @@
             },
             "minecraft:render_offsets": {
                 "main_hand": {
-                    "first_person": {
-                        "scale": [
-                            0.01,
-                            0.01,
-                            0.01
-                        ]
-                    },
-                    "third_person": {
-                        "position": [
-                            0.43,
-                            1.4,
-                            -0.63
-                        ],
-                        "scale": [
-                            0.025,
-                            0.025,
-                            0.025
-                        ]
-                    }
+                  "first_person": {
+                    "scale": [0.009,0.006,0.009],
+                    "position": [0.425,-0.0775,-1.085],
+                    "rotation": [0,-45,90]
+        
+                  },
+                  "third_person": {
+                    "position": [0.375,1.635,-0.75],
+                    "scale": [0.03,0.02000,0.03]
+                  }
                 },
                 "off_hand": {
-                    "first_person": {
-                        "position": [
-                            0,
-                            0,
-                            0
-                        ],
-                        "rotation": [
-                            0,
-                            0,
-                            0
-                        ],
-                        "scale": [
-                            0,
-                            0,
-                            0
-                        ]
-                    },
-                    "third_person": {
-                        "position": [
-                            0,
-                            0,
-                            0
-                        ],
-                        "rotation": [
-                            0,
-                            0,
-                            0
-                        ],
-                        "scale": [
-                            0,
-                            0,
-                            0
-                        ]
-                    }
+                  "first_person": {
+                    "scale": [0.01,0.0065,0.01],
+                    "position": [0.4,0.05,-1.075]
+                  },
+                  "third_person": {
+                    "position": [0.45,1.6,-0.7],
+                    "scale": [0.03125,0.03125,0.03125]
+                  }
                 }
-            },
+              },
             "minecraft:durability": {
                 "max_durability": 140
             },

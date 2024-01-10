@@ -58,7 +58,7 @@
          "condition":"query.scoreboard('arrow_type') > 0"
         }
       },
-      "minecraft:use_duration": 1.8,
+      "minecraft:use_duration": 1.5,
       "minecraft:enchantable": {
         "slot": "crossbow",
         "value": 20

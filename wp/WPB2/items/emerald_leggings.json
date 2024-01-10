@@ -45,14 +45,16 @@
         }
       },
       "minecraft:armor": {
-        "protection": 1
+        "protection": 4
       },
       "minecraft:wearable": {
         "slot": "slot.armor.legs"
       },
-      "tag:comp:armor_protection:1": {},
-      "tag:comp:armor_magic_reduction:3": {},
-      "tag:comp:armor_type:suit_:emerald:_": {}
+      "tag:comp:armor_protection:4": {},
+      "tag:comp:armor_type:suit_:emerald:_": {},
+      "tag:comp:armor_magic_protection:2": {},
+      "tag:comp:armor_physical_protection:0": {},
+      "tag:comp:armor_resilience:1": {}
     }
   }
 }

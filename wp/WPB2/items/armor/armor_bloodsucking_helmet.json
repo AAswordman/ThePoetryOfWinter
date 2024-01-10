@@ -32,7 +32,7 @@
             "minecraft:mining_speed": 1.5,
             "minecraft:damage": 3,
             "minecraft:armor": {
-                "protection": 3
+                "protection": 2
             },
             "minecraft:wearable": {
                 "slot": "slot.armor.head"
@@ -41,9 +41,9 @@
                 "texture": "armor_bloodsucking_helmet"
             },
             "tag:comp:use_data_group:tag_:default:_": {},
-            "tag:comp:armor_protection:3": {},
+            "tag:comp:armor_protection:2": {},
             "tag:comp:armor_resilience:2": {},
-            "tag:comp:armor_physical_protection:6": {},
+            "tag:comp:armor_physical_protection:4": {},
             "tag:comp:armor_magic_protection:1": {},
             "tag:comp:armor_physical_reduction:0": {},
             "tag:comp:armor_magic_reduction:0": {},

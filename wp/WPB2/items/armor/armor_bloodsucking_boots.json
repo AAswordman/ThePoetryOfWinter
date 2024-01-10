@@ -29,8 +29,9 @@
                     "max": 100
                 }
             },
+            "minecraft:damage": 3,
             "minecraft:armor": {
-                "protection": 3
+                "protection": 2
             },
             "minecraft:wearable": {
                 "slot": "slot.armor.feet"
@@ -39,7 +40,7 @@
                 "texture": "armor_bloodsucking_boots"
             },
             "tag:comp:use_data_group:tag_:default:_": {},
-            "tag:comp:armor_protection:3": {},
+            "tag:comp:armor_protection:2": {},
             "tag:comp:armor_resilience:2": {},
             "tag:comp:armor_physical_protection:4": {},
             "tag:comp:armor_magic_protection:1": {},
