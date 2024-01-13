@@ -443,7 +443,7 @@
                     "value": 0.2
                 }
             },
-            "hp:100000": {
+            "hp:50000": {
                 "minecraft:damage_sensor": [{
                     "on_damage": {
                         "filters": {
@@ -465,8 +465,8 @@
                     "deals_damage": false
                 }],
                 "minecraft:health": {
-                    "value": 100000,
-                    "max": 100000
+                    "value": 50000,
+                    "max": 50000
                 }
             },
 
@@ -788,9 +788,9 @@
                     ]
                 }
             },
-            "hp:100000": {
+            "hp:50000": {
                 "add": {
-                    "component_groups": ["hp:100000"]
+                    "component_groups": ["hp:50000"]
                 }
             },
             "movement_0": {
