@@ -1210,6 +1210,19 @@
         "type": "image",
         "texture": "textures/ui/empty_progress_bar_f"
     },
+//动态图模板
+
+        "gif_test": {
+            "type": "image",
+            "texture": "textures/ui/gif_test",
+            "uv_size": [64, 64],
+            "uv": "@hud.gif_uv_animation"
+        },
+    
+        "gif_uv_animation": {
+            "anim_type": "aseprite_flip_book",
+            "initial_uv": [0, 0]
+        },
 
     "armor_renderer": {
         "type": "custom",
@@ -2221,14 +2234,56 @@
                     "anchor_to": "bottom_left"
                 }
             },
-             {
+            {
                 "armor_rend@armor_renderer": {
                   "offset": [-1, 1],
                   "anchor_from": "bottom_left",
                   "anchor_to": "bottom_left"
                 }
-              },
+            },
+
+            启用动态图测试 
+            {
+                "gif_rend@gif_test": {
+                  "offset": [10, -45],
+                  "alpha": 0.6,
+                  "anchor_from": "bottom_left",
+                  "anchor_to": "bottom_left"
+                }
+            },
             */
+          
+            {
+                "armor_rend@armor_renderer": {
+                  "offset": [-1, 24959],
+                  "anchor_from": "bottom_left",
+                  "anchor_to": "bottom_left"
+                }
+              },
+            {
+                "horse_heart_rend_0@horse_heart_renderer": {
+                    "offset": [180, -50],
+                    "anchor_from": "bottom_left",
+                    "anchor_to": "bottom_left",
+                    "bindings": [{
+                        "binding_name": "#is_creative_mode",
+                        "binding_name_override": "#visible"
+                    }]
+                }
+            },
+            {
+                "horse_heart_rend_1@horse_heart_renderer": {
+                    "offset": [180, -41],
+                    "anchor_from": "bottom_left",
+                    "anchor_to": "bottom_left",
+                    "bindings": [{
+                        "binding_name": "#show_survival_ui",
+                        "binding_name_override": "#visible"
+                    }]
+                }
+            },
+            /*
+            原版
             {
                 "horse_heart_rend_0@horse_heart_renderer": {
                     "offset": [180, -56],
@@ -2251,6 +2306,7 @@
                     }]
                 }
             },
+            */
             {
                 "bubbles_rend_0@bubbles_renderer": {
                     "offset": [180, -50],
