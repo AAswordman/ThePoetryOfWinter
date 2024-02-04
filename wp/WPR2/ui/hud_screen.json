@@ -2306,8 +2306,7 @@
                     }]
                 }
             },
-            */
-            {
+             {
                 "bubbles_rend_0@bubbles_renderer": {
                     "offset": [180, -50],
                     "anchor_from": "bottom_left",
@@ -2321,6 +2320,29 @@
             {
                 "bubbles_rend_1@bubbles_renderer": {
                     "offset": [180, -70],
+                    "anchor_from": "bottom_left",
+                    "anchor_to": "bottom_left",
+                    "bindings": [{
+                        "binding_name": "#is_riding",
+                        "binding_name_override": "#visible"
+                    }]
+                }
+            },
+            */
+            {
+                "bubbles_rend_0@bubbles_renderer": {
+                    "offset": [180, -41],
+                    "anchor_from": "bottom_left",
+                    "anchor_to": "bottom_left",
+                    "bindings": [{
+                        "binding_name": "#is_not_riding",
+                        "binding_name_override": "#visible"
+                    }]
+                }
+            },
+            {
+                "bubbles_rend_1@bubbles_renderer": {
+                    "offset": [180, -52],
                     "anchor_from": "bottom_left",
                     "anchor_to": "bottom_left",
                     "bindings": [{
