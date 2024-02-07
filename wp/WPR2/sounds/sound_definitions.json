@@ -140,5 +140,14 @@
             "volume": 0.5,
             "load_on_low_memory": true
         }]
+    },
+    "music.none10": {
+        "category": "music",
+        "sounds": [{
+            "name": "sounds/None",
+            "stream": true,
+            "volume": 0.5,
+            "load_on_low_memory": true
+        }]
     }
 }
