@@ -4,7 +4,7 @@
         "target": "es6",
         "outDir": "out",
         "lib": [
-            "ES6", "DOM"
+            "ES6", "DOM","ES2020"
         ],
         "sourceMap": true,
         //"rootDir": "ExcellentMInecraftscripts/src",
