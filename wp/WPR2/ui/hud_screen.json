@@ -1210,32 +1210,30 @@
         "type": "image",
         "texture": "textures/ui/empty_progress_bar_f"
     },
-//动态图模板
+    //动态图模板
 
-        "gif_test": {
-            "type": "image",
-            "texture": "textures/ui/gif_test",
-            "uv_size": [64, 64],
-            "uv": "@hud.gif_uv_animation"
-        },
-    
-        "gif_uv_animation": {
-            "anim_type": "aseprite_flip_book",
-            "initial_uv": [0, 0]
-        },
+    "gif_test": {
+        "type": "image",
+        "texture": "textures/ui/gif_test",
+        "uv_size": [64, 64],
+        "uv": "@hud.gif_uv_animation"
+    },
+
+    "gif_uv_animation": {
+        "anim_type": "aseprite_flip_book",
+        "initial_uv": [0, 0]
+    },
 
     "armor_renderer": {
         "type": "custom",
-        "size": [ 1, 1],
+        "size": [1, 1],
         "renderer": "armor_renderer",
         "layer": 1,
-        "bindings": [
-          {
+        "bindings": [{
             "binding_name": "#is_armor_visible",
             "binding_name_override": "#visible"
-          }
-        ]
-      },
+        }]
+    },
 
     "heart_renderer": {
         "type": "custom",
@@ -2252,14 +2250,14 @@
                 }
             },
             */
-          
+
             {
                 "armor_rend@armor_renderer": {
-                  "offset": [-1, 24959],
-                  "anchor_from": "bottom_left",
-                  "anchor_to": "bottom_left"
+                    "offset": [-1, 24959],
+                    "anchor_from": "bottom_left",
+                    "anchor_to": "bottom_left"
                 }
-              },
+            },
             {
                 "horse_heart_rend_0@horse_heart_renderer": {
                     "offset": [180, -50],
@@ -3739,1853 +3737,816 @@
     },
 
     "fuck_mojang_image_clipper_layout1_0@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.0
+        "$float_output_1": 0.0
     },
 
     "fuck_mojang_image_clipper_layout1_1@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.01
+        "$float_output_1": 0.01
     },
 
     "fuck_mojang_image_clipper_layout1_2@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.02
+        "$float_output_1": 0.02
     },
 
     "fuck_mojang_image_clipper_layout1_3@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.03
+        "$float_output_1": 0.03
     },
 
     "fuck_mojang_image_clipper_layout1_4@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.04
+        "$float_output_1": 0.04
     },
 
     "fuck_mojang_image_clipper_layout1_5@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.05
+        "$float_output_1": 0.05
     },
 
     "fuck_mojang_image_clipper_layout1_6@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.06
+        "$float_output_1": 0.06
     },
 
     "fuck_mojang_image_clipper_layout1_7@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.07
+        "$float_output_1": 0.07
     },
 
     "fuck_mojang_image_clipper_layout1_8@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.08
+        "$float_output_1": 0.08
     },
 
     "fuck_mojang_image_clipper_layout1_9@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.09
+        "$float_output_1": 0.09
     },
 
     "fuck_mojang_image_clipper_layout1_10@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.1
+        "$float_output_1": 0.1
     },
 
     "fuck_mojang_image_clipper_layout1_11@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.11
+        "$float_output_1": 0.11
     },
 
     "fuck_mojang_image_clipper_layout1_12@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.12
+        "$float_output_1": 0.12
     },
 
     "fuck_mojang_image_clipper_layout1_13@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.13
+        "$float_output_1": 0.13
     },
 
     "fuck_mojang_image_clipper_layout1_14@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.14
+        "$float_output_1": 0.14
     },
 
     "fuck_mojang_image_clipper_layout1_15@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.15
+        "$float_output_1": 0.15
     },
 
     "fuck_mojang_image_clipper_layout1_16@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.16
+        "$float_output_1": 0.16
     },
 
     "fuck_mojang_image_clipper_layout1_17@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.17
+        "$float_output_1": 0.17
     },
 
     "fuck_mojang_image_clipper_layout1_18@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.18
+        "$float_output_1": 0.18
     },
 
     "fuck_mojang_image_clipper_layout1_19@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.19
+        "$float_output_1": 0.19
     },
 
     "fuck_mojang_image_clipper_layout1_20@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.2
+        "$float_output_1": 0.2
     },
 
     "fuck_mojang_image_clipper_layout1_21@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.21
+        "$float_output_1": 0.21
     },
 
     "fuck_mojang_image_clipper_layout1_22@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.22
+        "$float_output_1": 0.22
     },
 
     "fuck_mojang_image_clipper_layout1_23@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.23
+        "$float_output_1": 0.23
     },
 
     "fuck_mojang_image_clipper_layout1_24@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.24
+        "$float_output_1": 0.24
     },
 
     "fuck_mojang_image_clipper_layout1_25@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.25
+        "$float_output_1": 0.25
     },
 
     "fuck_mojang_image_clipper_layout1_26@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.26
+        "$float_output_1": 0.26
     },
 
     "fuck_mojang_image_clipper_layout1_27@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.27
+        "$float_output_1": 0.27
     },
 
     "fuck_mojang_image_clipper_layout1_28@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.28
+        "$float_output_1": 0.28
     },
 
     "fuck_mojang_image_clipper_layout1_29@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.29
+        "$float_output_1": 0.29
     },
 
     "fuck_mojang_image_clipper_layout1_30@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.3
+        "$float_output_1": 0.3
     },
 
     "fuck_mojang_image_clipper_layout1_31@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.31
+        "$float_output_1": 0.31
     },
 
     "fuck_mojang_image_clipper_layout1_32@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.32
+        "$float_output_1": 0.32
     },
 
     "fuck_mojang_image_clipper_layout1_33@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.33
+        "$float_output_1": 0.33
     },
 
     "fuck_mojang_image_clipper_layout1_34@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.34
+        "$float_output_1": 0.34
     },
 
     "fuck_mojang_image_clipper_layout1_35@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.35
+        "$float_output_1": 0.35
     },
 
     "fuck_mojang_image_clipper_layout1_36@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.36
+        "$float_output_1": 0.36
     },
 
     "fuck_mojang_image_clipper_layout1_37@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.37
+        "$float_output_1": 0.37
     },
 
     "fuck_mojang_image_clipper_layout1_38@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.38
+        "$float_output_1": 0.38
     },
 
     "fuck_mojang_image_clipper_layout1_39@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.39
+        "$float_output_1": 0.39
     },
 
     "fuck_mojang_image_clipper_layout1_40@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.4
+        "$float_output_1": 0.4
     },
 
     "fuck_mojang_image_clipper_layout1_41@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.41
+        "$float_output_1": 0.41
     },
 
     "fuck_mojang_image_clipper_layout1_42@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.42
+        "$float_output_1": 0.42
     },
 
     "fuck_mojang_image_clipper_layout1_43@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.43
+        "$float_output_1": 0.43
     },
 
     "fuck_mojang_image_clipper_layout1_44@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.44
+        "$float_output_1": 0.44
     },
 
     "fuck_mojang_image_clipper_layout1_45@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.45
+        "$float_output_1": 0.45
     },
 
     "fuck_mojang_image_clipper_layout1_46@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.46
+        "$float_output_1": 0.46
     },
 
     "fuck_mojang_image_clipper_layout1_47@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.47
+        "$float_output_1": 0.47
     },
 
     "fuck_mojang_image_clipper_layout1_48@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.48
+        "$float_output_1": 0.48
     },
 
     "fuck_mojang_image_clipper_layout1_49@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.49
+        "$float_output_1": 0.49
     },
 
     "fuck_mojang_image_clipper_layout1_50@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.5
+        "$float_output_1": 0.5
     },
 
     "fuck_mojang_image_clipper_layout1_51@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.51
+        "$float_output_1": 0.51
     },
 
     "fuck_mojang_image_clipper_layout1_52@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.52
+        "$float_output_1": 0.52
     },
 
     "fuck_mojang_image_clipper_layout1_53@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.53
+        "$float_output_1": 0.53
     },
 
     "fuck_mojang_image_clipper_layout1_54@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.54
+        "$float_output_1": 0.54
     },
 
     "fuck_mojang_image_clipper_layout1_55@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.55
+        "$float_output_1": 0.55
     },
 
     "fuck_mojang_image_clipper_layout1_56@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.56
+        "$float_output_1": 0.56
     },
 
     "fuck_mojang_image_clipper_layout1_57@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.57
+        "$float_output_1": 0.57
     },
 
     "fuck_mojang_image_clipper_layout1_58@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.58
+        "$float_output_1": 0.58
     },
 
     "fuck_mojang_image_clipper_layout1_59@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.59
+        "$float_output_1": 0.59
     },
 
     "fuck_mojang_image_clipper_layout1_60@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.6
+        "$float_output_1": 0.6
     },
 
     "fuck_mojang_image_clipper_layout1_61@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.61
+        "$float_output_1": 0.61
     },
 
     "fuck_mojang_image_clipper_layout1_62@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.62
+        "$float_output_1": 0.62
     },
 
     "fuck_mojang_image_clipper_layout1_63@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.63
+        "$float_output_1": 0.63
     },
 
     "fuck_mojang_image_clipper_layout1_64@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.64
+        "$float_output_1": 0.64
     },
 
     "fuck_mojang_image_clipper_layout1_65@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.65
+        "$float_output_1": 0.65
     },
 
     "fuck_mojang_image_clipper_layout1_66@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.66
+        "$float_output_1": 0.66
     },
 
     "fuck_mojang_image_clipper_layout1_67@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.67
+        "$float_output_1": 0.67
     },
 
     "fuck_mojang_image_clipper_layout1_68@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.68
+        "$float_output_1": 0.68
     },
 
     "fuck_mojang_image_clipper_layout1_69@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.69
+        "$float_output_1": 0.69
     },
 
     "fuck_mojang_image_clipper_layout1_70@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.7
+        "$float_output_1": 0.7
     },
 
     "fuck_mojang_image_clipper_layout1_71@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.71
+        "$float_output_1": 0.71
     },
 
     "fuck_mojang_image_clipper_layout1_72@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.72
+        "$float_output_1": 0.72
     },
 
     "fuck_mojang_image_clipper_layout1_73@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.73
+        "$float_output_1": 0.73
     },
 
     "fuck_mojang_image_clipper_layout1_74@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.74
+        "$float_output_1": 0.74
     },
 
     "fuck_mojang_image_clipper_layout1_75@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.75
+        "$float_output_1": 0.75
     },
 
     "fuck_mojang_image_clipper_layout1_76@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.76
+        "$float_output_1": 0.76
     },
 
     "fuck_mojang_image_clipper_layout1_77@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.77
+        "$float_output_1": 0.77
     },
 
     "fuck_mojang_image_clipper_layout1_78@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.78
+        "$float_output_1": 0.78
     },
 
     "fuck_mojang_image_clipper_layout1_79@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.79
+        "$float_output_1": 0.79
     },
 
     "fuck_mojang_image_clipper_layout1_80@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.8
+        "$float_output_1": 0.8
     },
 
     "fuck_mojang_image_clipper_layout1_81@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.81
+        "$float_output_1": 0.81
     },
 
     "fuck_mojang_image_clipper_layout1_82@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.82
+        "$float_output_1": 0.82
     },
 
     "fuck_mojang_image_clipper_layout1_83@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.83
+        "$float_output_1": 0.83
     },
 
     "fuck_mojang_image_clipper_layout1_84@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.84
+        "$float_output_1": 0.84
     },
 
     "fuck_mojang_image_clipper_layout1_85@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.85
+        "$float_output_1": 0.85
     },
 
     "fuck_mojang_image_clipper_layout1_86@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.86
+        "$float_output_1": 0.86
     },
 
     "fuck_mojang_image_clipper_layout1_87@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.87
+        "$float_output_1": 0.87
     },
 
     "fuck_mojang_image_clipper_layout1_88@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.88
+        "$float_output_1": 0.88
     },
 
     "fuck_mojang_image_clipper_layout1_89@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.89
+        "$float_output_1": 0.89
     },
 
     "fuck_mojang_image_clipper_layout1_90@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.9
+        "$float_output_1": 0.9
     },
 
     "fuck_mojang_image_clipper_layout1_91@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.91
+        "$float_output_1": 0.91
     },
 
     "fuck_mojang_image_clipper_layout1_92@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.92
+        "$float_output_1": 0.92
     },
 
     "fuck_mojang_image_clipper_layout1_93@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.93
+        "$float_output_1": 0.93
     },
 
     "fuck_mojang_image_clipper_layout1_94@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.94
+        "$float_output_1": 0.94
     },
 
     "fuck_mojang_image_clipper_layout1_95@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.95
+        "$float_output_1": 0.95
     },
 
     "fuck_mojang_image_clipper_layout1_96@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.96
+        "$float_output_1": 0.96
     },
 
     "fuck_mojang_image_clipper_layout1_97@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.97
+        "$float_output_1": 0.97
     },
 
     "fuck_mojang_image_clipper_layout1_98@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.98
+        "$float_output_1": 0.98
     },
 
     "fuck_mojang_image_clipper_layout1_99@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 0.99
+        "$float_output_1": 0.99
     },
 
     "fuck_mojang_image_clipper_layout1_100@fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_ratio": 1.0
+        "$float_output_1": 1.0
     },
 
     "fuck_mojang_image_clipper_layout2_0@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.0
+        "$float_output_2": 0.0
     },
 
     "fuck_mojang_image_clipper_layout2_1@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.01
+        "$float_output_2": 0.01
     },
 
     "fuck_mojang_image_clipper_layout2_2@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.02
+        "$float_output_2": 0.02
     },
 
     "fuck_mojang_image_clipper_layout2_3@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.03
+        "$float_output_2": 0.03
     },
 
     "fuck_mojang_image_clipper_layout2_4@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.04
+        "$float_output_2": 0.04
     },
 
     "fuck_mojang_image_clipper_layout2_5@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.05
+        "$float_output_2": 0.05
     },
 
     "fuck_mojang_image_clipper_layout2_6@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.06
+        "$float_output_2": 0.06
     },
 
     "fuck_mojang_image_clipper_layout2_7@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.07
+        "$float_output_2": 0.07
     },
 
     "fuck_mojang_image_clipper_layout2_8@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.08
+        "$float_output_2": 0.08
     },
 
     "fuck_mojang_image_clipper_layout2_9@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.09
+        "$float_output_2": 0.09
     },
 
     "fuck_mojang_image_clipper_layout2_10@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.1
+        "$float_output_2": 0.1
     },
 
     "fuck_mojang_image_clipper_layout2_11@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.11
+        "$float_output_2": 0.11
     },
 
     "fuck_mojang_image_clipper_layout2_12@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.12
+        "$float_output_2": 0.12
     },
 
     "fuck_mojang_image_clipper_layout2_13@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.13
+        "$float_output_2": 0.13
     },
 
     "fuck_mojang_image_clipper_layout2_14@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.14
+        "$float_output_2": 0.14
     },
 
     "fuck_mojang_image_clipper_layout2_15@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.15
+        "$float_output_2": 0.15
     },
 
     "fuck_mojang_image_clipper_layout2_16@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.16
+        "$float_output_2": 0.16
     },
 
     "fuck_mojang_image_clipper_layout2_17@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.17
+        "$float_output_2": 0.17
     },
 
     "fuck_mojang_image_clipper_layout2_18@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.18
+        "$float_output_2": 0.18
     },
 
     "fuck_mojang_image_clipper_layout2_19@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.19
+        "$float_output_2": 0.19
     },
 
     "fuck_mojang_image_clipper_layout2_20@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.2
+        "$float_output_2": 0.2
     },
 
     "fuck_mojang_image_clipper_layout2_21@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.21
+        "$float_output_2": 0.21
     },
 
     "fuck_mojang_image_clipper_layout2_22@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.22
+        "$float_output_2": 0.22
     },
 
     "fuck_mojang_image_clipper_layout2_23@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.23
+        "$float_output_2": 0.23
     },
 
     "fuck_mojang_image_clipper_layout2_24@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.24
+        "$float_output_2": 0.24
     },
 
     "fuck_mojang_image_clipper_layout2_25@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.25
+        "$float_output_2": 0.25
     },
 
     "fuck_mojang_image_clipper_layout2_26@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.26
+        "$float_output_2": 0.26
     },
 
     "fuck_mojang_image_clipper_layout2_27@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.27
+        "$float_output_2": 0.27
     },
 
     "fuck_mojang_image_clipper_layout2_28@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.28
+        "$float_output_2": 0.28
     },
 
     "fuck_mojang_image_clipper_layout2_29@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.29
+        "$float_output_2": 0.29
     },
 
     "fuck_mojang_image_clipper_layout2_30@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.3
+        "$float_output_2": 0.3
     },
 
     "fuck_mojang_image_clipper_layout2_31@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.31
+        "$float_output_2": 0.31
     },
 
     "fuck_mojang_image_clipper_layout2_32@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.32
+        "$float_output_2": 0.32
     },
 
     "fuck_mojang_image_clipper_layout2_33@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.33
+        "$float_output_2": 0.33
     },
 
     "fuck_mojang_image_clipper_layout2_34@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.34
+        "$float_output_2": 0.34
     },
 
     "fuck_mojang_image_clipper_layout2_35@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.35
+        "$float_output_2": 0.35
     },
 
     "fuck_mojang_image_clipper_layout2_36@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.36
+        "$float_output_2": 0.36
     },
 
     "fuck_mojang_image_clipper_layout2_37@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.37
+        "$float_output_2": 0.37
     },
 
     "fuck_mojang_image_clipper_layout2_38@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.38
+        "$float_output_2": 0.38
     },
 
     "fuck_mojang_image_clipper_layout2_39@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.39
+        "$float_output_2": 0.39
     },
 
     "fuck_mojang_image_clipper_layout2_40@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.4
+        "$float_output_2": 0.4
     },
 
     "fuck_mojang_image_clipper_layout2_41@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.41
+        "$float_output_2": 0.41
     },
 
     "fuck_mojang_image_clipper_layout2_42@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.42
+        "$float_output_2": 0.42
     },
 
     "fuck_mojang_image_clipper_layout2_43@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.43
+        "$float_output_2": 0.43
     },
 
     "fuck_mojang_image_clipper_layout2_44@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.44
+        "$float_output_2": 0.44
     },
 
     "fuck_mojang_image_clipper_layout2_45@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.45
+        "$float_output_2": 0.45
     },
 
     "fuck_mojang_image_clipper_layout2_46@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.46
+        "$float_output_2": 0.46
     },
 
     "fuck_mojang_image_clipper_layout2_47@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.47
+        "$float_output_2": 0.47
     },
 
     "fuck_mojang_image_clipper_layout2_48@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.48
+        "$float_output_2": 0.48
     },
 
     "fuck_mojang_image_clipper_layout2_49@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.49
+        "$float_output_2": 0.49
     },
 
     "fuck_mojang_image_clipper_layout2_50@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.5
+        "$float_output_2": 0.5
     },
 
     "fuck_mojang_image_clipper_layout2_51@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.51
+        "$float_output_2": 0.51
     },
 
     "fuck_mojang_image_clipper_layout2_52@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.52
+        "$float_output_2": 0.52
     },
 
     "fuck_mojang_image_clipper_layout2_53@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.53
+        "$float_output_2": 0.53
     },
 
     "fuck_mojang_image_clipper_layout2_54@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.54
+        "$float_output_2": 0.54
     },
 
     "fuck_mojang_image_clipper_layout2_55@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.55
+        "$float_output_2": 0.55
     },
 
     "fuck_mojang_image_clipper_layout2_56@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.56
+        "$float_output_2": 0.56
     },
 
     "fuck_mojang_image_clipper_layout2_57@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.57
+        "$float_output_2": 0.57
     },
 
     "fuck_mojang_image_clipper_layout2_58@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.58
+        "$float_output_2": 0.58
     },
 
     "fuck_mojang_image_clipper_layout2_59@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.59
+        "$float_output_2": 0.59
     },
 
     "fuck_mojang_image_clipper_layout2_60@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.6
+        "$float_output_2": 0.6
     },
 
     "fuck_mojang_image_clipper_layout2_61@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.61
+        "$float_output_2": 0.61
     },
 
     "fuck_mojang_image_clipper_layout2_62@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.62
+        "$float_output_2": 0.62
     },
 
     "fuck_mojang_image_clipper_layout2_63@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.63
+        "$float_output_2": 0.63
     },
 
     "fuck_mojang_image_clipper_layout2_64@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.64
+        "$float_output_2": 0.64
     },
 
     "fuck_mojang_image_clipper_layout2_65@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.65
+        "$float_output_2": 0.65
     },
 
     "fuck_mojang_image_clipper_layout2_66@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.66
+        "$float_output_2": 0.66
     },
 
     "fuck_mojang_image_clipper_layout2_67@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.67
+        "$float_output_2": 0.67
     },
 
     "fuck_mojang_image_clipper_layout2_68@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.68
+        "$float_output_2": 0.68
     },
 
     "fuck_mojang_image_clipper_layout2_69@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.69
+        "$float_output_2": 0.69
     },
 
     "fuck_mojang_image_clipper_layout2_70@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.7
+        "$float_output_2": 0.7
     },
 
     "fuck_mojang_image_clipper_layout2_71@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.71
+        "$float_output_2": 0.71
     },
 
     "fuck_mojang_image_clipper_layout2_72@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.72
+        "$float_output_2": 0.72
     },
 
     "fuck_mojang_image_clipper_layout2_73@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.73
+        "$float_output_2": 0.73
     },
 
     "fuck_mojang_image_clipper_layout2_74@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.74
+        "$float_output_2": 0.74
     },
 
     "fuck_mojang_image_clipper_layout2_75@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.75
+        "$float_output_2": 0.75
     },
 
     "fuck_mojang_image_clipper_layout2_76@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.76
+        "$float_output_2": 0.76
     },
 
     "fuck_mojang_image_clipper_layout2_77@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.77
+        "$float_output_2": 0.77
     },
 
     "fuck_mojang_image_clipper_layout2_78@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.78
+        "$float_output_2": 0.78
     },
 
     "fuck_mojang_image_clipper_layout2_79@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.79
+        "$float_output_2": 0.79
     },
 
     "fuck_mojang_image_clipper_layout2_80@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.8
+        "$float_output_2": 0.8
     },
 
     "fuck_mojang_image_clipper_layout2_81@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.81
+        "$float_output_2": 0.81
     },
 
     "fuck_mojang_image_clipper_layout2_82@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.82
+        "$float_output_2": 0.82
     },
 
     "fuck_mojang_image_clipper_layout2_83@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.83
+        "$float_output_2": 0.83
     },
 
     "fuck_mojang_image_clipper_layout2_84@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.84
+        "$float_output_2": 0.84
     },
 
     "fuck_mojang_image_clipper_layout2_85@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.85
+        "$float_output_2": 0.85
     },
 
     "fuck_mojang_image_clipper_layout2_86@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.86
+        "$float_output_2": 0.86
     },
 
     "fuck_mojang_image_clipper_layout2_87@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.87
+        "$float_output_2": 0.87
     },
 
     "fuck_mojang_image_clipper_layout2_88@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.88
+        "$float_output_2": 0.88
     },
 
     "fuck_mojang_image_clipper_layout2_89@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.89
+        "$float_output_2": 0.89
     },
 
     "fuck_mojang_image_clipper_layout2_90@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.9
+        "$float_output_2": 0.9
     },
 
     "fuck_mojang_image_clipper_layout2_91@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.91
+        "$float_output_2": 0.91
     },
 
     "fuck_mojang_image_clipper_layout2_92@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.92
+        "$float_output_2": 0.92
     },
 
     "fuck_mojang_image_clipper_layout2_93@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.93
+        "$float_output_2": 0.93
     },
 
     "fuck_mojang_image_clipper_layout2_94@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.94
+        "$float_output_2": 0.94
     },
 
     "fuck_mojang_image_clipper_layout2_95@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.95
+        "$float_output_2": 0.95
     },
 
     "fuck_mojang_image_clipper_layout2_96@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.96
+        "$float_output_2": 0.96
     },
 
     "fuck_mojang_image_clipper_layout2_97@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.97
+        "$float_output_2": 0.97
     },
 
     "fuck_mojang_image_clipper_layout2_98@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.98
+        "$float_output_2": 0.98
     },
 
     "fuck_mojang_image_clipper_layout2_99@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 0.99
+        "$float_output_2": 0.99
     },
 
     "fuck_mojang_image_clipper_layout2_100@fuck_mojang_image_clipper_layout2_base": {
-        "$last_use_clip_ratio": 1.0
+        "$float_output_2": 1.0
     },
-    "persent_to_lable_0to100@dichotomy_label_tree": {
-        "$mid": 0.5,
-        "$left_tree_view": "hud.persent_to_lable_0to49",
-        "$right_tree_view": "hud.persent_to_lable_51to100"
-    },
-
-    "persent_to_lable_0to49@dichotomy_label_tree": {
-        "$mid": 0.24,
-        "$left_tree_view": "hud.persent_to_lable_0to23",
-        "$right_tree_view": "hud.persent_to_lable_25to49"
-    },
-
-    "persent_to_lable_0to23@dichotomy_label_tree": {
-        "$mid": 0.11,
-        "$left_tree_view": "hud.persent_to_lable_0to10",
-        "$right_tree_view": "hud.persent_to_lable_12to23"
-    },
-
-    "persent_to_lable_0to10@dichotomy_label_tree": {
-        "$mid": 0.05,
-        "$left_tree_view": "hud.persent_to_lable_0to4",
-        "$right_tree_view": "hud.persent_to_lable_6to10"
-    },
-
-    "persent_to_lable_0to4@dichotomy_label_tree": {
-        "$mid": 0.02,
-        "$left_tree_view": "hud.persent_to_lable_0to1",
-        "$right_tree_view": "hud.persent_to_lable_3to4"
-    },
-
-    "persent_to_lable_0to1@dichotomy_label_tree": {
-        "$mid": 0.0,
-        "$left_tree_view": "hud.persent_to_lable_leaves_0",
-        "$right_tree_view": "hud.persent_to_lable_1to1"
-    },
-
-    "persent_to_lable_1to1@dichotomy_label_tree": {
-        "$mid": 0.01,
-        "$left_tree_view": "hud.persent_to_lable_leaves_1",
-        "$right_tree_view": "hud.persent_to_lable_leaves_2"
-    },
-
-    "persent_to_lable_3to4@dichotomy_label_tree": {
-        "$mid": 0.03,
-        "$left_tree_view": "hud.persent_to_lable_leaves_3",
-        "$right_tree_view": "hud.persent_to_lable_4to4"
-    },
-
-    "persent_to_lable_4to4@dichotomy_label_tree": {
-        "$mid": 0.04,
-        "$left_tree_view": "hud.persent_to_lable_leaves_4",
-        "$right_tree_view": "hud.persent_to_lable_leaves_5"
-    },
-
-    "persent_to_lable_6to10@dichotomy_label_tree": {
-        "$mid": 0.08,
-        "$left_tree_view": "hud.persent_to_lable_6to7",
-        "$right_tree_view": "hud.persent_to_lable_9to10"
-    },
-
-    "persent_to_lable_6to7@dichotomy_label_tree": {
-        "$mid": 0.06,
-        "$left_tree_view": "hud.persent_to_lable_leaves_6",
-        "$right_tree_view": "hud.persent_to_lable_7to7"
-    },
-
-    "persent_to_lable_7to7@dichotomy_label_tree": {
-        "$mid": 0.07,
-        "$left_tree_view": "hud.persent_to_lable_leaves_7",
-        "$right_tree_view": "hud.persent_to_lable_leaves_8"
-    },
-
-    "persent_to_lable_9to10@dichotomy_label_tree": {
-        "$mid": 0.09,
-        "$left_tree_view": "hud.persent_to_lable_leaves_9",
-        "$right_tree_view": "hud.persent_to_lable_10to10"
-    },
-
-    "persent_to_lable_10to10@dichotomy_label_tree": {
-        "$mid": 0.1,
-        "$left_tree_view": "hud.persent_to_lable_leaves_10",
-        "$right_tree_view": "hud.persent_to_lable_leaves_11"
-    },
-
-    "persent_to_lable_12to23@dichotomy_label_tree": {
-        "$mid": 0.17,
-        "$left_tree_view": "hud.persent_to_lable_12to16",
-        "$right_tree_view": "hud.persent_to_lable_18to23"
-    },
-
-    "persent_to_lable_12to16@dichotomy_label_tree": {
-        "$mid": 0.14,
-        "$left_tree_view": "hud.persent_to_lable_12to13",
-        "$right_tree_view": "hud.persent_to_lable_15to16"
-    },
-
-    "persent_to_lable_12to13@dichotomy_label_tree": {
-        "$mid": 0.12,
-        "$left_tree_view": "hud.persent_to_lable_leaves_12",
-        "$right_tree_view": "hud.persent_to_lable_13to13"
-    },
-
-    "persent_to_lable_13to13@dichotomy_label_tree": {
-        "$mid": 0.13,
-        "$left_tree_view": "hud.persent_to_lable_leaves_13",
-        "$right_tree_view": "hud.persent_to_lable_leaves_14"
-    },
-
-    "persent_to_lable_15to16@dichotomy_label_tree": {
-        "$mid": 0.15,
-        "$left_tree_view": "hud.persent_to_lable_leaves_15",
-        "$right_tree_view": "hud.persent_to_lable_16to16"
-    },
-
-    "persent_to_lable_16to16@dichotomy_label_tree": {
-        "$mid": 0.16,
-        "$left_tree_view": "hud.persent_to_lable_leaves_16",
-        "$right_tree_view": "hud.persent_to_lable_leaves_17"
-    },
-
-    "persent_to_lable_18to23@dichotomy_label_tree": {
-        "$mid": 0.2,
-        "$left_tree_view": "hud.persent_to_lable_18to19",
-        "$right_tree_view": "hud.persent_to_lable_21to23"
-    },
-
-    "persent_to_lable_18to19@dichotomy_label_tree": {
-        "$mid": 0.18,
-        "$left_tree_view": "hud.persent_to_lable_leaves_18",
-        "$right_tree_view": "hud.persent_to_lable_19to19"
-    },
-
-    "persent_to_lable_19to19@dichotomy_label_tree": {
-        "$mid": 0.19,
-        "$left_tree_view": "hud.persent_to_lable_leaves_19",
-        "$right_tree_view": "hud.persent_to_lable_leaves_20"
-    },
-
-    "persent_to_lable_21to23@dichotomy_label_tree": {
-        "$mid": 0.22,
-        "$left_tree_view": "hud.persent_to_lable_21to21",
-        "$right_tree_view": "hud.persent_to_lable_23to23"
-    },
-
-    "persent_to_lable_21to21@dichotomy_label_tree": {
-        "$mid": 0.21,
-        "$left_tree_view": "hud.persent_to_lable_leaves_21",
-        "$right_tree_view": "hud.persent_to_lable_leaves_22"
-    },
-
-    "persent_to_lable_23to23@dichotomy_label_tree": {
-        "$mid": 0.23,
-        "$left_tree_view": "hud.persent_to_lable_leaves_23",
-        "$right_tree_view": "hud.persent_to_lable_leaves_24"
-    },
-
-    "persent_to_lable_25to49@dichotomy_label_tree": {
-        "$mid": 0.37,
-        "$left_tree_view": "hud.persent_to_lable_25to36",
-        "$right_tree_view": "hud.persent_to_lable_38to49"
-    },
-
-    "persent_to_lable_25to36@dichotomy_label_tree": {
-        "$mid": 0.3,
-        "$left_tree_view": "hud.persent_to_lable_25to29",
-        "$right_tree_view": "hud.persent_to_lable_31to36"
-    },
-
-    "persent_to_lable_25to29@dichotomy_label_tree": {
-        "$mid": 0.27,
-        "$left_tree_view": "hud.persent_to_lable_25to26",
-        "$right_tree_view": "hud.persent_to_lable_28to29"
-    },
-
-    "persent_to_lable_25to26@dichotomy_label_tree": {
-        "$mid": 0.25,
-        "$left_tree_view": "hud.persent_to_lable_leaves_25",
-        "$right_tree_view": "hud.persent_to_lable_26to26"
-    },
-
-    "persent_to_lable_26to26@dichotomy_label_tree": {
-        "$mid": 0.26,
-        "$left_tree_view": "hud.persent_to_lable_leaves_26",
-        "$right_tree_view": "hud.persent_to_lable_leaves_27"
-    },
-
-    "persent_to_lable_28to29@dichotomy_label_tree": {
-        "$mid": 0.28,
-        "$left_tree_view": "hud.persent_to_lable_leaves_28",
-        "$right_tree_view": "hud.persent_to_lable_29to29"
-    },
-
-    "persent_to_lable_29to29@dichotomy_label_tree": {
-        "$mid": 0.29,
-        "$left_tree_view": "hud.persent_to_lable_leaves_29",
-        "$right_tree_view": "hud.persent_to_lable_leaves_30"
-    },
-
-    "persent_to_lable_31to36@dichotomy_label_tree": {
-        "$mid": 0.33,
-        "$left_tree_view": "hud.persent_to_lable_31to32",
-        "$right_tree_view": "hud.persent_to_lable_34to36"
-    },
-
-    "persent_to_lable_31to32@dichotomy_label_tree": {
-        "$mid": 0.31,
-        "$left_tree_view": "hud.persent_to_lable_leaves_31",
-        "$right_tree_view": "hud.persent_to_lable_32to32"
-    },
-
-    "persent_to_lable_32to32@dichotomy_label_tree": {
-        "$mid": 0.32,
-        "$left_tree_view": "hud.persent_to_lable_leaves_32",
-        "$right_tree_view": "hud.persent_to_lable_leaves_33"
-    },
-
-    "persent_to_lable_34to36@dichotomy_label_tree": {
-        "$mid": 0.35,
-        "$left_tree_view": "hud.persent_to_lable_34to34",
-        "$right_tree_view": "hud.persent_to_lable_36to36"
-    },
-
-    "persent_to_lable_34to34@dichotomy_label_tree": {
-        "$mid": 0.34,
-        "$left_tree_view": "hud.persent_to_lable_leaves_34",
-        "$right_tree_view": "hud.persent_to_lable_leaves_35"
-    },
-
-    "persent_to_lable_36to36@dichotomy_label_tree": {
-        "$mid": 0.36,
-        "$left_tree_view": "hud.persent_to_lable_leaves_36",
-        "$right_tree_view": "hud.persent_to_lable_leaves_37"
-    },
-
-    "persent_to_lable_38to49@dichotomy_label_tree": {
-        "$mid": 0.43,
-        "$left_tree_view": "hud.persent_to_lable_38to42",
-        "$right_tree_view": "hud.persent_to_lable_44to49"
-    },
-
-    "persent_to_lable_38to42@dichotomy_label_tree": {
-        "$mid": 0.4,
-        "$left_tree_view": "hud.persent_to_lable_38to39",
-        "$right_tree_view": "hud.persent_to_lable_41to42"
-    },
-
-    "persent_to_lable_38to39@dichotomy_label_tree": {
-        "$mid": 0.38,
-        "$left_tree_view": "hud.persent_to_lable_leaves_38",
-        "$right_tree_view": "hud.persent_to_lable_39to39"
-    },
-
-    "persent_to_lable_39to39@dichotomy_label_tree": {
-        "$mid": 0.39,
-        "$left_tree_view": "hud.persent_to_lable_leaves_39",
-        "$right_tree_view": "hud.persent_to_lable_leaves_40"
-    },
-
-    "persent_to_lable_41to42@dichotomy_label_tree": {
-        "$mid": 0.41,
-        "$left_tree_view": "hud.persent_to_lable_leaves_41",
-        "$right_tree_view": "hud.persent_to_lable_42to42"
-    },
-
-    "persent_to_lable_42to42@dichotomy_label_tree": {
-        "$mid": 0.42,
-        "$left_tree_view": "hud.persent_to_lable_leaves_42",
-        "$right_tree_view": "hud.persent_to_lable_leaves_43"
-    },
-
-    "persent_to_lable_44to49@dichotomy_label_tree": {
-        "$mid": 0.46,
-        "$left_tree_view": "hud.persent_to_lable_44to45",
-        "$right_tree_view": "hud.persent_to_lable_47to49"
-    },
-
-    "persent_to_lable_44to45@dichotomy_label_tree": {
-        "$mid": 0.44,
-        "$left_tree_view": "hud.persent_to_lable_leaves_44",
-        "$right_tree_view": "hud.persent_to_lable_45to45"
-    },
-
-    "persent_to_lable_45to45@dichotomy_label_tree": {
-        "$mid": 0.45,
-        "$left_tree_view": "hud.persent_to_lable_leaves_45",
-        "$right_tree_view": "hud.persent_to_lable_leaves_46"
-    },
-
-    "persent_to_lable_47to49@dichotomy_label_tree": {
-        "$mid": 0.48,
-        "$left_tree_view": "hud.persent_to_lable_47to47",
-        "$right_tree_view": "hud.persent_to_lable_49to49"
-    },
-
-    "persent_to_lable_47to47@dichotomy_label_tree": {
-        "$mid": 0.47,
-        "$left_tree_view": "hud.persent_to_lable_leaves_47",
-        "$right_tree_view": "hud.persent_to_lable_leaves_48"
-    },
-
-    "persent_to_lable_49to49@dichotomy_label_tree": {
-        "$mid": 0.49,
-        "$left_tree_view": "hud.persent_to_lable_leaves_49",
-        "$right_tree_view": "hud.persent_to_lable_leaves_50"
-    },
-
-    "persent_to_lable_51to100@dichotomy_label_tree": {
-        "$mid": 0.75,
-        "$left_tree_view": "hud.persent_to_lable_51to74",
-        "$right_tree_view": "hud.persent_to_lable_76to100"
-    },
-
-    "persent_to_lable_51to74@dichotomy_label_tree": {
-        "$mid": 0.62,
-        "$left_tree_view": "hud.persent_to_lable_51to61",
-        "$right_tree_view": "hud.persent_to_lable_63to74"
-    },
-
-    "persent_to_lable_51to61@dichotomy_label_tree": {
-        "$mid": 0.56,
-        "$left_tree_view": "hud.persent_to_lable_51to55",
-        "$right_tree_view": "hud.persent_to_lable_57to61"
-    },
-
-    "persent_to_lable_51to55@dichotomy_label_tree": {
-        "$mid": 0.53,
-        "$left_tree_view": "hud.persent_to_lable_51to52",
-        "$right_tree_view": "hud.persent_to_lable_54to55"
-    },
-
-    "persent_to_lable_51to52@dichotomy_label_tree": {
-        "$mid": 0.51,
-        "$left_tree_view": "hud.persent_to_lable_leaves_51",
-        "$right_tree_view": "hud.persent_to_lable_52to52"
-    },
-
-    "persent_to_lable_52to52@dichotomy_label_tree": {
-        "$mid": 0.52,
-        "$left_tree_view": "hud.persent_to_lable_leaves_52",
-        "$right_tree_view": "hud.persent_to_lable_leaves_53"
-    },
-
-    "persent_to_lable_54to55@dichotomy_label_tree": {
-        "$mid": 0.54,
-        "$left_tree_view": "hud.persent_to_lable_leaves_54",
-        "$right_tree_view": "hud.persent_to_lable_55to55"
-    },
-
-    "persent_to_lable_55to55@dichotomy_label_tree": {
-        "$mid": 0.55,
-        "$left_tree_view": "hud.persent_to_lable_leaves_55",
-        "$right_tree_view": "hud.persent_to_lable_leaves_56"
-    },
-
-    "persent_to_lable_57to61@dichotomy_label_tree": {
-        "$mid": 0.59,
-        "$left_tree_view": "hud.persent_to_lable_57to58",
-        "$right_tree_view": "hud.persent_to_lable_60to61"
-    },
-
-    "persent_to_lable_57to58@dichotomy_label_tree": {
-        "$mid": 0.57,
-        "$left_tree_view": "hud.persent_to_lable_leaves_57",
-        "$right_tree_view": "hud.persent_to_lable_58to58"
-    },
-
-    "persent_to_lable_58to58@dichotomy_label_tree": {
-        "$mid": 0.58,
-        "$left_tree_view": "hud.persent_to_lable_leaves_58",
-        "$right_tree_view": "hud.persent_to_lable_leaves_59"
-    },
-
-    "persent_to_lable_60to61@dichotomy_label_tree": {
-        "$mid": 0.6,
-        "$left_tree_view": "hud.persent_to_lable_leaves_60",
-        "$right_tree_view": "hud.persent_to_lable_61to61"
-    },
-
-    "persent_to_lable_61to61@dichotomy_label_tree": {
-        "$mid": 0.61,
-        "$left_tree_view": "hud.persent_to_lable_leaves_61",
-        "$right_tree_view": "hud.persent_to_lable_leaves_62"
-    },
-
-    "persent_to_lable_63to74@dichotomy_label_tree": {
-        "$mid": 0.68,
-        "$left_tree_view": "hud.persent_to_lable_63to67",
-        "$right_tree_view": "hud.persent_to_lable_69to74"
-    },
-
-    "persent_to_lable_63to67@dichotomy_label_tree": {
-        "$mid": 0.65,
-        "$left_tree_view": "hud.persent_to_lable_63to64",
-        "$right_tree_view": "hud.persent_to_lable_66to67"
-    },
-
-    "persent_to_lable_63to64@dichotomy_label_tree": {
-        "$mid": 0.63,
-        "$left_tree_view": "hud.persent_to_lable_leaves_63",
-        "$right_tree_view": "hud.persent_to_lable_64to64"
-    },
-
-    "persent_to_lable_64to64@dichotomy_label_tree": {
-        "$mid": 0.64,
-        "$left_tree_view": "hud.persent_to_lable_leaves_64",
-        "$right_tree_view": "hud.persent_to_lable_leaves_65"
-    },
-
-    "persent_to_lable_66to67@dichotomy_label_tree": {
-        "$mid": 0.66,
-        "$left_tree_view": "hud.persent_to_lable_leaves_66",
-        "$right_tree_view": "hud.persent_to_lable_67to67"
-    },
-
-    "persent_to_lable_67to67@dichotomy_label_tree": {
-        "$mid": 0.67,
-        "$left_tree_view": "hud.persent_to_lable_leaves_67",
-        "$right_tree_view": "hud.persent_to_lable_leaves_68"
-    },
-
-    "persent_to_lable_69to74@dichotomy_label_tree": {
-        "$mid": 0.71,
-        "$left_tree_view": "hud.persent_to_lable_69to70",
-        "$right_tree_view": "hud.persent_to_lable_72to74"
-    },
-
-    "persent_to_lable_69to70@dichotomy_label_tree": {
-        "$mid": 0.69,
-        "$left_tree_view": "hud.persent_to_lable_leaves_69",
-        "$right_tree_view": "hud.persent_to_lable_70to70"
-    },
-
-    "persent_to_lable_70to70@dichotomy_label_tree": {
-        "$mid": 0.7,
-        "$left_tree_view": "hud.persent_to_lable_leaves_70",
-        "$right_tree_view": "hud.persent_to_lable_leaves_71"
-    },
-
-    "persent_to_lable_72to74@dichotomy_label_tree": {
-        "$mid": 0.73,
-        "$left_tree_view": "hud.persent_to_lable_72to72",
-        "$right_tree_view": "hud.persent_to_lable_74to74"
-    },
-
-    "persent_to_lable_72to72@dichotomy_label_tree": {
-        "$mid": 0.72,
-        "$left_tree_view": "hud.persent_to_lable_leaves_72",
-        "$right_tree_view": "hud.persent_to_lable_leaves_73"
-    },
-
-    "persent_to_lable_74to74@dichotomy_label_tree": {
-        "$mid": 0.74,
-        "$left_tree_view": "hud.persent_to_lable_leaves_74",
-        "$right_tree_view": "hud.persent_to_lable_leaves_75"
-    },
-
-    "persent_to_lable_76to100@dichotomy_label_tree": {
-        "$mid": 0.88,
-        "$left_tree_view": "hud.persent_to_lable_76to87",
-        "$right_tree_view": "hud.persent_to_lable_89to100"
-    },
-
-    "persent_to_lable_76to87@dichotomy_label_tree": {
-        "$mid": 0.81,
-        "$left_tree_view": "hud.persent_to_lable_76to80",
-        "$right_tree_view": "hud.persent_to_lable_82to87"
-    },
-
-    "persent_to_lable_76to80@dichotomy_label_tree": {
-        "$mid": 0.78,
-        "$left_tree_view": "hud.persent_to_lable_76to77",
-        "$right_tree_view": "hud.persent_to_lable_79to80"
-    },
-
-    "persent_to_lable_76to77@dichotomy_label_tree": {
-        "$mid": 0.76,
-        "$left_tree_view": "hud.persent_to_lable_leaves_76",
-        "$right_tree_view": "hud.persent_to_lable_77to77"
-    },
-
-    "persent_to_lable_77to77@dichotomy_label_tree": {
-        "$mid": 0.77,
-        "$left_tree_view": "hud.persent_to_lable_leaves_77",
-        "$right_tree_view": "hud.persent_to_lable_leaves_78"
-    },
-
-    "persent_to_lable_79to80@dichotomy_label_tree": {
-        "$mid": 0.79,
-        "$left_tree_view": "hud.persent_to_lable_leaves_79",
-        "$right_tree_view": "hud.persent_to_lable_80to80"
-    },
-
-    "persent_to_lable_80to80@dichotomy_label_tree": {
-        "$mid": 0.8,
-        "$left_tree_view": "hud.persent_to_lable_leaves_80",
-        "$right_tree_view": "hud.persent_to_lable_leaves_81"
-    },
-
-    "persent_to_lable_82to87@dichotomy_label_tree": {
-        "$mid": 0.84,
-        "$left_tree_view": "hud.persent_to_lable_82to83",
-        "$right_tree_view": "hud.persent_to_lable_85to87"
-    },
-
-    "persent_to_lable_82to83@dichotomy_label_tree": {
-        "$mid": 0.82,
-        "$left_tree_view": "hud.persent_to_lable_leaves_82",
-        "$right_tree_view": "hud.persent_to_lable_83to83"
-    },
-
-    "persent_to_lable_83to83@dichotomy_label_tree": {
-        "$mid": 0.83,
-        "$left_tree_view": "hud.persent_to_lable_leaves_83",
-        "$right_tree_view": "hud.persent_to_lable_leaves_84"
-    },
-
-    "persent_to_lable_85to87@dichotomy_label_tree": {
-        "$mid": 0.86,
-        "$left_tree_view": "hud.persent_to_lable_85to85",
-        "$right_tree_view": "hud.persent_to_lable_87to87"
-    },
-
-    "persent_to_lable_85to85@dichotomy_label_tree": {
-        "$mid": 0.85,
-        "$left_tree_view": "hud.persent_to_lable_leaves_85",
-        "$right_tree_view": "hud.persent_to_lable_leaves_86"
-    },
-
-    "persent_to_lable_87to87@dichotomy_label_tree": {
-        "$mid": 0.87,
-        "$left_tree_view": "hud.persent_to_lable_leaves_87",
-        "$right_tree_view": "hud.persent_to_lable_leaves_88"
-    },
-
-    "persent_to_lable_89to100@dichotomy_label_tree": {
-        "$mid": 0.94,
-        "$left_tree_view": "hud.persent_to_lable_89to93",
-        "$right_tree_view": "hud.persent_to_lable_95to100"
-    },
-
-    "persent_to_lable_89to93@dichotomy_label_tree": {
-        "$mid": 0.91,
-        "$left_tree_view": "hud.persent_to_lable_89to90",
-        "$right_tree_view": "hud.persent_to_lable_92to93"
-    },
-
-    "persent_to_lable_89to90@dichotomy_label_tree": {
-        "$mid": 0.89,
-        "$left_tree_view": "hud.persent_to_lable_leaves_89",
-        "$right_tree_view": "hud.persent_to_lable_90to90"
-    },
-
-    "persent_to_lable_90to90@dichotomy_label_tree": {
-        "$mid": 0.9,
-        "$left_tree_view": "hud.persent_to_lable_leaves_90",
-        "$right_tree_view": "hud.persent_to_lable_leaves_91"
-    },
-
-    "persent_to_lable_92to93@dichotomy_label_tree": {
-        "$mid": 0.92,
-        "$left_tree_view": "hud.persent_to_lable_leaves_92",
-        "$right_tree_view": "hud.persent_to_lable_93to93"
-    },
-
-    "persent_to_lable_93to93@dichotomy_label_tree": {
-        "$mid": 0.93,
-        "$left_tree_view": "hud.persent_to_lable_leaves_93",
-        "$right_tree_view": "hud.persent_to_lable_leaves_94"
-    },
-
-    "persent_to_lable_95to100@dichotomy_label_tree": {
-        "$mid": 0.97,
-        "$left_tree_view": "hud.persent_to_lable_95to96",
-        "$right_tree_view": "hud.persent_to_lable_98to100"
-    },
-
-    "persent_to_lable_95to96@dichotomy_label_tree": {
-        "$mid": 0.95,
-        "$left_tree_view": "hud.persent_to_lable_leaves_95",
-        "$right_tree_view": "hud.persent_to_lable_96to96"
-    },
-
-    "persent_to_lable_96to96@dichotomy_label_tree": {
-        "$mid": 0.96,
-        "$left_tree_view": "hud.persent_to_lable_leaves_96",
-        "$right_tree_view": "hud.persent_to_lable_leaves_97"
-    },
-
-    "persent_to_lable_98to100@dichotomy_label_tree": {
-        "$mid": 0.99,
-        "$left_tree_view": "hud.persent_to_lable_98to98",
-        "$right_tree_view": "hud.persent_to_lable_100to100"
-    },
-
-    "persent_to_lable_98to98@dichotomy_label_tree": {
-        "$mid": 0.98,
-        "$left_tree_view": "hud.persent_to_lable_leaves_98",
-        "$right_tree_view": "hud.persent_to_lable_leaves_99"
-    },
-
-    "persent_to_lable_100to100@dichotomy_label_tree": {
-        "$mid": 1.0,
-        "$left_tree_view": "hud.persent_to_lable_leaves_100",
-        "$right_tree_view": "hud.persent_to_lable_leaves_100"
-    },
-
-    "persent_to_lable_leaves_0@dichotomy_label_tree_leaves": {
-        "$show_res": 0
-    },
-
-    "persent_to_lable_leaves_1@dichotomy_label_tree_leaves": {
-        "$show_res": 1
-    },
-
-    "persent_to_lable_leaves_2@dichotomy_label_tree_leaves": {
-        "$show_res": 2
-    },
-
-    "persent_to_lable_leaves_3@dichotomy_label_tree_leaves": {
-        "$show_res": 3
-    },
-
-    "persent_to_lable_leaves_4@dichotomy_label_tree_leaves": {
-        "$show_res": 4
-    },
-
-    "persent_to_lable_leaves_5@dichotomy_label_tree_leaves": {
-        "$show_res": 5
-    },
-
-    "persent_to_lable_leaves_6@dichotomy_label_tree_leaves": {
-        "$show_res": 6
-    },
-
-    "persent_to_lable_leaves_7@dichotomy_label_tree_leaves": {
-        "$show_res": 7
-    },
-
-    "persent_to_lable_leaves_8@dichotomy_label_tree_leaves": {
-        "$show_res": 8
-    },
-
-    "persent_to_lable_leaves_9@dichotomy_label_tree_leaves": {
-        "$show_res": 9
-    },
-
-    "persent_to_lable_leaves_10@dichotomy_label_tree_leaves": {
-        "$show_res": 10
-    },
-
-    "persent_to_lable_leaves_11@dichotomy_label_tree_leaves": {
-        "$show_res": 11
-    },
-
-    "persent_to_lable_leaves_12@dichotomy_label_tree_leaves": {
-        "$show_res": 12
-    },
-
-    "persent_to_lable_leaves_13@dichotomy_label_tree_leaves": {
-        "$show_res": 13
-    },
-
-    "persent_to_lable_leaves_14@dichotomy_label_tree_leaves": {
-        "$show_res": 14
-    },
-
-    "persent_to_lable_leaves_15@dichotomy_label_tree_leaves": {
-        "$show_res": 15
-    },
-
-    "persent_to_lable_leaves_16@dichotomy_label_tree_leaves": {
-        "$show_res": 16
-    },
-
-    "persent_to_lable_leaves_17@dichotomy_label_tree_leaves": {
-        "$show_res": 17
-    },
-
-    "persent_to_lable_leaves_18@dichotomy_label_tree_leaves": {
-        "$show_res": 18
-    },
-
-    "persent_to_lable_leaves_19@dichotomy_label_tree_leaves": {
-        "$show_res": 19
-    },
-
-    "persent_to_lable_leaves_20@dichotomy_label_tree_leaves": {
-        "$show_res": 20
-    },
-
-    "persent_to_lable_leaves_21@dichotomy_label_tree_leaves": {
-        "$show_res": 21
-    },
-
-    "persent_to_lable_leaves_22@dichotomy_label_tree_leaves": {
-        "$show_res": 22
-    },
-
-    "persent_to_lable_leaves_23@dichotomy_label_tree_leaves": {
-        "$show_res": 23
-    },
-
-    "persent_to_lable_leaves_24@dichotomy_label_tree_leaves": {
-        "$show_res": 24
-    },
-
-    "persent_to_lable_leaves_25@dichotomy_label_tree_leaves": {
-        "$show_res": 25
-    },
-
-    "persent_to_lable_leaves_26@dichotomy_label_tree_leaves": {
-        "$show_res": 26
-    },
-
-    "persent_to_lable_leaves_27@dichotomy_label_tree_leaves": {
-        "$show_res": 27
-    },
-
-    "persent_to_lable_leaves_28@dichotomy_label_tree_leaves": {
-        "$show_res": 28
-    },
-
-    "persent_to_lable_leaves_29@dichotomy_label_tree_leaves": {
-        "$show_res": 29
-    },
-
-    "persent_to_lable_leaves_30@dichotomy_label_tree_leaves": {
-        "$show_res": 30
-    },
-
-    "persent_to_lable_leaves_31@dichotomy_label_tree_leaves": {
-        "$show_res": 31
-    },
-
-    "persent_to_lable_leaves_32@dichotomy_label_tree_leaves": {
-        "$show_res": 32
-    },
-
-    "persent_to_lable_leaves_33@dichotomy_label_tree_leaves": {
-        "$show_res": 33
-    },
-
-    "persent_to_lable_leaves_34@dichotomy_label_tree_leaves": {
-        "$show_res": 34
-    },
-
-    "persent_to_lable_leaves_35@dichotomy_label_tree_leaves": {
-        "$show_res": 35
-    },
-
-    "persent_to_lable_leaves_36@dichotomy_label_tree_leaves": {
-        "$show_res": 36
-    },
-
-    "persent_to_lable_leaves_37@dichotomy_label_tree_leaves": {
-        "$show_res": 37
-    },
-
-    "persent_to_lable_leaves_38@dichotomy_label_tree_leaves": {
-        "$show_res": 38
-    },
-
-    "persent_to_lable_leaves_39@dichotomy_label_tree_leaves": {
-        "$show_res": 39
-    },
-
-    "persent_to_lable_leaves_40@dichotomy_label_tree_leaves": {
-        "$show_res": 40
-    },
-
-    "persent_to_lable_leaves_41@dichotomy_label_tree_leaves": {
-        "$show_res": 41
-    },
-
-    "persent_to_lable_leaves_42@dichotomy_label_tree_leaves": {
-        "$show_res": 42
-    },
-
-    "persent_to_lable_leaves_43@dichotomy_label_tree_leaves": {
-        "$show_res": 43
-    },
-
-    "persent_to_lable_leaves_44@dichotomy_label_tree_leaves": {
-        "$show_res": 44
-    },
-
-    "persent_to_lable_leaves_45@dichotomy_label_tree_leaves": {
-        "$show_res": 45
-    },
-
-    "persent_to_lable_leaves_46@dichotomy_label_tree_leaves": {
-        "$show_res": 46
-    },
-
-    "persent_to_lable_leaves_47@dichotomy_label_tree_leaves": {
-        "$show_res": 47
-    },
-
-    "persent_to_lable_leaves_48@dichotomy_label_tree_leaves": {
-        "$show_res": 48
-    },
-
-    "persent_to_lable_leaves_49@dichotomy_label_tree_leaves": {
-        "$show_res": 49
-    },
-
-    "persent_to_lable_leaves_50@dichotomy_label_tree_leaves": {
-        "$show_res": 50
-    },
-
-    "persent_to_lable_leaves_51@dichotomy_label_tree_leaves": {
-        "$show_res": 51
-    },
-
-    "persent_to_lable_leaves_52@dichotomy_label_tree_leaves": {
-        "$show_res": 52
-    },
-
-    "persent_to_lable_leaves_53@dichotomy_label_tree_leaves": {
-        "$show_res": 53
-    },
-
-    "persent_to_lable_leaves_54@dichotomy_label_tree_leaves": {
-        "$show_res": 54
-    },
-
-    "persent_to_lable_leaves_55@dichotomy_label_tree_leaves": {
-        "$show_res": 55
-    },
-
-    "persent_to_lable_leaves_56@dichotomy_label_tree_leaves": {
-        "$show_res": 56
-    },
-
-    "persent_to_lable_leaves_57@dichotomy_label_tree_leaves": {
-        "$show_res": 57
-    },
-
-    "persent_to_lable_leaves_58@dichotomy_label_tree_leaves": {
-        "$show_res": 58
-    },
-
-    "persent_to_lable_leaves_59@dichotomy_label_tree_leaves": {
-        "$show_res": 59
-    },
-
-    "persent_to_lable_leaves_60@dichotomy_label_tree_leaves": {
-        "$show_res": 60
-    },
-
-    "persent_to_lable_leaves_61@dichotomy_label_tree_leaves": {
-        "$show_res": 61
-    },
-
-    "persent_to_lable_leaves_62@dichotomy_label_tree_leaves": {
-        "$show_res": 62
-    },
-
-    "persent_to_lable_leaves_63@dichotomy_label_tree_leaves": {
-        "$show_res": 63
-    },
-
-    "persent_to_lable_leaves_64@dichotomy_label_tree_leaves": {
-        "$show_res": 64
-    },
-
-    "persent_to_lable_leaves_65@dichotomy_label_tree_leaves": {
-        "$show_res": 65
-    },
-
-    "persent_to_lable_leaves_66@dichotomy_label_tree_leaves": {
-        "$show_res": 66
-    },
-
-    "persent_to_lable_leaves_67@dichotomy_label_tree_leaves": {
-        "$show_res": 67
-    },
-
-    "persent_to_lable_leaves_68@dichotomy_label_tree_leaves": {
-        "$show_res": 68
-    },
-
-    "persent_to_lable_leaves_69@dichotomy_label_tree_leaves": {
-        "$show_res": 69
-    },
-
-    "persent_to_lable_leaves_70@dichotomy_label_tree_leaves": {
-        "$show_res": 70
-    },
-
-    "persent_to_lable_leaves_71@dichotomy_label_tree_leaves": {
-        "$show_res": 71
-    },
-
-    "persent_to_lable_leaves_72@dichotomy_label_tree_leaves": {
-        "$show_res": 72
-    },
-
-    "persent_to_lable_leaves_73@dichotomy_label_tree_leaves": {
-        "$show_res": 73
-    },
-
-    "persent_to_lable_leaves_74@dichotomy_label_tree_leaves": {
-        "$show_res": 74
-    },
-
-    "persent_to_lable_leaves_75@dichotomy_label_tree_leaves": {
-        "$show_res": 75
-    },
-
-    "persent_to_lable_leaves_76@dichotomy_label_tree_leaves": {
-        "$show_res": 76
-    },
-
-    "persent_to_lable_leaves_77@dichotomy_label_tree_leaves": {
-        "$show_res": 77
-    },
-
-    "persent_to_lable_leaves_78@dichotomy_label_tree_leaves": {
-        "$show_res": 78
-    },
-
-    "persent_to_lable_leaves_79@dichotomy_label_tree_leaves": {
-        "$show_res": 79
-    },
-
-    "persent_to_lable_leaves_80@dichotomy_label_tree_leaves": {
-        "$show_res": 80
-    },
-
-    "persent_to_lable_leaves_81@dichotomy_label_tree_leaves": {
-        "$show_res": 81
-    },
-
-    "persent_to_lable_leaves_82@dichotomy_label_tree_leaves": {
-        "$show_res": 82
-    },
-
-    "persent_to_lable_leaves_83@dichotomy_label_tree_leaves": {
-        "$show_res": 83
-    },
-
-    "persent_to_lable_leaves_84@dichotomy_label_tree_leaves": {
-        "$show_res": 84
-    },
-
-    "persent_to_lable_leaves_85@dichotomy_label_tree_leaves": {
-        "$show_res": 85
-    },
-
-    "persent_to_lable_leaves_86@dichotomy_label_tree_leaves": {
-        "$show_res": 86
-    },
-
-    "persent_to_lable_leaves_87@dichotomy_label_tree_leaves": {
-        "$show_res": 87
-    },
-
-    "persent_to_lable_leaves_88@dichotomy_label_tree_leaves": {
-        "$show_res": 88
-    },
-
-    "persent_to_lable_leaves_89@dichotomy_label_tree_leaves": {
-        "$show_res": 89
-    },
-
-    "persent_to_lable_leaves_90@dichotomy_label_tree_leaves": {
-        "$show_res": 90
-    },
-
-    "persent_to_lable_leaves_91@dichotomy_label_tree_leaves": {
-        "$show_res": 91
-    },
-
-    "persent_to_lable_leaves_92@dichotomy_label_tree_leaves": {
-        "$show_res": 92
-    },
-
-    "persent_to_lable_leaves_93@dichotomy_label_tree_leaves": {
-        "$show_res": 93
-    },
-
-    "persent_to_lable_leaves_94@dichotomy_label_tree_leaves": {
-        "$show_res": 94
-    },
-
-    "persent_to_lable_leaves_95@dichotomy_label_tree_leaves": {
-        "$show_res": 95
-    },
-
-    "persent_to_lable_leaves_96@dichotomy_label_tree_leaves": {
-        "$show_res": 96
-    },
-
-    "persent_to_lable_leaves_97@dichotomy_label_tree_leaves": {
-        "$show_res": 97
-    },
-
-    "persent_to_lable_leaves_98@dichotomy_label_tree_leaves": {
-        "$show_res": 98
-    },
-
-    "persent_to_lable_leaves_99@dichotomy_label_tree_leaves": {
-        "$show_res": 99
-    },
-
-    "persent_to_lable_leaves_100@dichotomy_label_tree_leaves": {
-        "$show_res": 100
-    },
-
-    "dichotomy_label_tree": {
-        "type": "panel",
-        "$use_inner": "$left_tree_view",
-        "bindings": "$use_bingding",
-        "variables": [{
-            "requires": "($input_value > $mid)",
-            "$use_inner": "$right_tree_view"
-        }],
-        "controls": [{
-            "inner@$use_inner": {}
-        }]
-    },
-    "dichotomy_label_tree_leaves": {
-        "type": "panel",
-        "$use_inner": "$target_view",
-        "controls": [{
-            "result_inner@$use_inner": {}
-        }]
-    },
-
-    //input_value(float) -> show_res(int)
-    "persent_to_lable@persent_to_lable_0to100": {
-        "$target_view|default": "",
-        "$input_value|default": 0.7,
-        "$use_bingding|default": []
-    },
-
 
 
     "fuck_mojang_image_clipper_layout1_base": {
-        "$use_clip_layout2": "('hud.fuck_mojang_image_clipper_layout2' + $clip_last_persentage)",
+        "$use_clip_layout2": "('hud.fuck_mojang_image_clipper_layout2' + $int_input_2)",
         "type": "panel",
         "controls": [{
             "layout2@$use_clip_layout2": {
@@ -5596,20 +4557,20 @@
     "fuck_mojang_image_clipper_layout2_base": {
         "type": "panel",
         "controls": [{
-            "inner@$clip_image": {}
+            "inner@$inner_view": {}
         }]
     },
 
     //clip_persentage/clip_last_persentage(string int) -> clip_ratio(set float)
     "fuck_mojang_image_clipper": {
-        "$clip_persentage|default": "_60",
-        "$clip_last_persentage|default": "_60",
-        "$last_use_clip_ratio": 0.6,
-        "$use_clip_ratio": 0.6,
+        "$int_input_1|default": "_60",
+        "$int_input_2|default": "_60",
+        "$float_output_2": 0.6,
+        "$float_output_1": 0.6,
         "$anim_time": 0.2,
         "$anim_type|default": "linear",
-        "$clip_image|default": "",
-        "$use_clip_layout1": "('hud.fuck_mojang_image_clipper_layout1' + $clip_persentage)",
+        "$inner_view|default": "",
+        "$use_clip_layout1": "('hud.fuck_mojang_image_clipper_layout1' + $int_input_1)",
         "controls": [{
             "layout1@$use_clip_layout1": {}
         }]
@@ -5617,12 +4578,163 @@
     "clipper_dur_anim": {
         "anim_type": "clip",
         "easing": "$anim_type",
-        "from": "$last_use_clip_ratio",
-        "to": "$use_clip_ratio",
+        "from": "$float_output_2",
+        "to": "$float_output_1",
         "duration": "$anim_time"
     },
     "image_clipper_item": {
         "clip_ratio": "@hud.clipper_dur_anim"
+    },
+    
+    "pom_hud_bg_render_1": {
+        "$var_index": 16,
+        "type": "panel",
+        "anchor_from": "top_left",
+        "anchor_to": "top_left",
+        "offset": [0, 0],
+        "controls": [{
+            "selector@persentage_paser": {
+                "type": "panel",
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [0, 0],
+                "$use_layout":"('textures/wb_ui/layout' + $res1 +'_1')",
+                "controls": [
+                    {
+                        "pom_hud_bg_render_0": {
+                            "type": "image",
+                            "size": [230, 120],
+                            "texture": "$use_layout",
+                            "offset": [-22, -9.5],
+                            "anchor_from": "top_left",
+                            "anchor_to": "top_left",
+                            "alpha": "$float_output_1",
+                            "layer": 1
+                        }
+                    }
+                ]
+            }
+        }]
+    },
+    "pom_hud_bg_render_2": {
+        "$var_index": 16,
+        "type": "panel",
+        "anchor_from": "top_left",
+        "anchor_to": "top_left",
+        "offset": [0, 0],
+        "controls": [{
+            "selector@persentage_paser": {
+                "type": "panel",
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [0, 0],
+                "$use_layout":"('textures/wb_ui/layout' + $res1 +'_2')",
+                "controls": [
+                    {
+                        "pom_hud_bg_render_0": {
+                            "type": "image",
+                            "size": [230, 120],
+                            "texture": "$use_layout",
+                            "offset": [-22, -9.5],
+                            "anchor_from": "top_left",
+                            "anchor_to": "top_left",
+                            "alpha": "$float_output_1",
+                            "layer": 1
+                        }
+                    }
+                ]
+            }
+        }]
+    },
+    "pom_hud_bg_render_3": {
+        "$var_index": 16,
+        "type": "panel",
+        "anchor_from": "top_left",
+        "anchor_to": "top_left",
+        "offset": [0, 0],
+        "controls": [{
+            "selector@persentage_paser": {
+                "type": "panel",
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [0, 0],
+                "$use_layout":"('textures/wb_ui/layout' + $res1 +'_3')",
+                "controls": [
+                    {
+                        "pom_hud_bg_render_0": {
+                            "type": "image",
+                            "size": [230, 120],
+                            "texture": "$use_layout",
+                            "offset": [-22, -9.5],
+                            "anchor_from": "top_left",
+                            "anchor_to": "top_left",
+                            "alpha": "$float_output_1",
+                            "layer": 1
+                        }
+                    }
+                ]
+            }
+        }]
+    },
+    "pom_hud_bg_render_4": {
+        "$var_index": 16,
+        "type": "panel",
+        "anchor_from": "top_left",
+        "anchor_to": "top_left",
+        "offset": [0, 0],
+        "controls": [{
+            "selector@persentage_paser": {
+                "type": "panel",
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [0, 0],
+                "$use_layout":"('textures/wb_ui/layout' + $res1 +'_4')",
+                "controls": [
+                    {
+                        "pom_hud_bg_render_0": {
+                            "type": "image",
+                            "size": [230, 120],
+                            "texture": "$use_layout",
+                            "offset": [-22, -9.5],
+                            "anchor_from": "top_left",
+                            "anchor_to": "top_left",
+                            "alpha": "$float_output_1",
+                            "layer": 1
+                        }
+                    }
+                ]
+            }
+        }]
+    },
+    "pom_hud_bg_render_5": {
+        "$var_index": 16,
+        "type": "panel",
+        "anchor_from": "top_left",
+        "anchor_to": "top_left",
+        "offset": [0, 0],
+        "controls": [{
+            "selector@persentage_paser": {
+                "type": "panel",
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [0, 0],
+                "$use_layout":"('textures/wb_ui/layout' + $res1 +'_5')",
+                "controls": [
+                    {
+                        "pom_hud_bg_render_0": {
+                            "type": "image",
+                            "size": [230, 120],
+                            "texture": "$use_layout",
+                            "offset": [-22, -9.5],
+                            "anchor_from": "top_left",
+                            "anchor_to": "top_left",
+                            "alpha": "$float_output_1",
+                            "layer": 1
+                        }
+                    }
+                ]
+            }
+        }]
     },
     "pom_health_render_item@image_clipper_item": {
         "type": "image",
@@ -5657,7 +4769,7 @@
         "clip_direction": "down",
         "clip_pixelperfect": false,
         "alpha": 1,
-        "layer": 0
+        "layer": -10
     },
     "pom_eqCooling_render@image_clipper_item": {
         "type": "image",
@@ -5669,7 +4781,7 @@
         "clip_direction": "down",
         "clip_pixelperfect": false,
         "alpha": 1,
-        "layer": 0
+        "layer": -10
     },
 
     "pom_wbfl_render@image_clipper_item": {
@@ -5798,15 +4910,148 @@
                 }
             },
             {
-                "bg_img": {
-                    "type": "image",
-                    "size": [230, 120],
-                    "texture": "textures/wb_ui/layout",
-                    "offset": [-22, -9.5],
+                "bg_img_layout1_1": {
+                    "$var_index": 11,
+                    "type": "panel",
                     "anchor_from": "top_left",
                     "anchor_to": "top_left",
-                    "alpha": 1,
-                    "layer": 1
+                    "layer": -5,
+                    "offset": [0, 0],
+                    "controls": [{
+                        "bg_img_layout2@persentage_paser": {
+                            "type": "panel",
+                            "anchor_from": "top_left",
+                            "anchor_to": "top_left",
+                            "offset": [0, 0],
+                            "controls": [{
+                                "bg_img_layout3@fuck_mojang_image_clipper": {
+                                    "type": "panel",
+                                    "$int_input_1": "('_' +($res1))",
+                                    "$int_input_2": "('_' +($res2))",
+                                    "$inner_view": "hud.pom_hud_bg_render_1",
+                                    "anchor_from": "top_left",
+                                    "anchor_to": "top_left",
+                                    "offset": [0, 0]
+                                }
+                            }]
+                        }
+                    }]
+                }
+            },
+            {
+                "bg_img_layout1_2": {
+                    "$var_index": 12,
+                    "type": "panel",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "layer": -4,
+                    "offset": [0, 0],
+                    "controls": [{
+                        "bg_img_layout2@persentage_paser": {
+                            "type": "panel",
+                            "anchor_from": "top_left",
+                            "anchor_to": "top_left",
+                            "offset": [0, 0],
+                            "controls": [{
+                                "bg_img_layout3@fuck_mojang_image_clipper": {
+                                    "type": "panel",
+                                    "$int_input_1": "('_' +($res1))",
+                                    "$int_input_2": "('_' +($res2))",
+                                    "$inner_view": "hud.pom_hud_bg_render_2",
+                                    "anchor_from": "top_left",
+                                    "anchor_to": "top_left",
+                                    "offset": [0, 0]
+                                }
+                            }]
+                        }
+                    }]
+                }
+            },
+            {
+                "bg_img_layout1_3": {
+                    "$var_index": 13,
+                    "type": "panel",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "layer": -3,
+                    "offset": [0, 0],
+                    "controls": [{
+                        "bg_img_layout2@persentage_paser": {
+                            "type": "panel",
+                            "anchor_from": "top_left",
+                            "anchor_to": "top_left",
+                            "offset": [0, 0],
+                            "controls": [{
+                                "bg_img_layout3@fuck_mojang_image_clipper": {
+                                    "type": "panel",
+                                    "$int_input_1": "('_' +($res1))",
+                                    "$int_input_2": "('_' +($res2))",
+                                    "$inner_view": "hud.pom_hud_bg_render_3",
+                                    "anchor_from": "top_left",
+                                    "anchor_to": "top_left",
+                                    "offset": [0, 0]
+                                }
+                            }]
+                        }
+                    }]
+                }
+            },
+            {
+                "bg_img_layout1_4": {
+                    "$var_index": 14,
+                    "type": "panel",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "layer": -2,
+                    "offset": [0, 0],
+                    "controls": [{
+                        "bg_img_layout2@persentage_paser": {
+                            "type": "panel",
+                            "anchor_from": "top_left",
+                            "anchor_to": "top_left",
+                            "offset": [0, 0],
+                            "controls": [{
+                                "bg_img_layout3@fuck_mojang_image_clipper": {
+                                    "type": "panel",
+                                    "$int_input_1": "('_' +($res1))",
+                                    "$int_input_2": "('_' +($res2))",
+                                    "$inner_view": "hud.pom_hud_bg_render_4",
+                                    "anchor_from": "top_left",
+                                    "anchor_to": "top_left",
+                                    "offset": [0, 0]
+                                }
+                            }]
+                        }
+                    }]
+                }
+            },
+            {
+                "bg_img_layout1_5": {
+                    "$var_index": 15,
+                    "type": "panel",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "layer": -1,
+                    "offset": [0, 0],
+                    "controls": [{
+                        "bg_img_layout2@persentage_paser": {
+                            "type": "panel",
+                            "anchor_from": "top_left",
+                            "anchor_to": "top_left",
+                            "offset": [0, 0],
+                            "controls": [{
+                                "bg_img_layout3@fuck_mojang_image_clipper": {
+                                    "type": "panel",
+                                    "$int_input_1": "('_' +($res1))",
+                                    "$int_input_2": "('_' +($res2))",
+                                    "$inner_view": "hud.pom_hud_bg_render_5",
+                                    "anchor_from": "top_left",
+                                    "anchor_to": "top_left",
+                                    "offset": [0, 0]
+                                }
+                            }]
+                        }
+                    }]
                 }
             },
             {
@@ -5826,9 +5071,9 @@
                             "controls": [{
                                 "pom_experience_render_layout3@fuck_mojang_image_clipper": {
                                     "type": "panel",
-                                    "$clip_persentage": "('_' +(100 - $res1))",
-                                    "$clip_last_persentage": "('_' +(100 - $res2))",
-                                    "$clip_image": "hud.pom_experience_render",
+                                    "$int_input_1": "('_' +(100 - $res1))",
+                                    "$int_input_2": "('_' +(100 - $res2))",
+                                    "$inner_view": "hud.pom_experience_render",
                                     "anchor_from": "top_left",
                                     "anchor_to": "top_left",
                                     "offset": [0, 0]
@@ -5855,9 +5100,9 @@
                             "controls": [{
                                 "pom_health_render_layout3@fuck_mojang_image_clipper": {
                                     "type": "panel",
-                                    "$clip_persentage": "('_' +(100 - $res1))",
-                                    "$clip_last_persentage": "('_' +(100 - $res2))",
-                                    "$clip_image": "hud.pom_health_render_item",
+                                    "$int_input_1": "('_' +(100 - $res1))",
+                                    "$int_input_2": "('_' +(100 - $res2))",
+                                    "$inner_view": "hud.pom_health_render_item",
                                     "anchor_from": "top_left",
                                     "anchor_to": "top_left",
                                     "$anim_time": 0.0,
@@ -5885,11 +5130,11 @@
                             "controls": [{
                                 "pom_health2_render_layout3@fuck_mojang_image_clipper": {
                                     "type": "panel",
-                                    "$clip_persentage": "('_' +(100 - $res1))",
-                                    "$clip_last_persentage": "('_' +(100 - $res2))",
+                                    "$int_input_1": "('_' +(100 - $res1))",
+                                    "$int_input_2": "('_' +(100 - $res2))",
                                     "$anim_time": 0.3,
                                     "$anim_type": "out_circ",
-                                    "$clip_image": "hud.pom_health2_render_item",
+                                    "$inner_view": "hud.pom_health2_render_item",
                                     "anchor_from": "top_left",
                                     "anchor_to": "top_left",
                                     "offset": [0, 0]
@@ -5916,9 +5161,9 @@
                             "controls": [{
                                 "pom_addtionHealth_render_layout3@fuck_mojang_image_clipper": {
                                     "type": "panel",
-                                    "$clip_persentage": "('_' +(100 - $res1))",
-                                    "$clip_last_persentage": "('_' +(100 - $res2))",
-                                    "$clip_image": "hud.pom_addtionHealth_render",
+                                    "$int_input_1": "('_' +(100 - $res1))",
+                                    "$int_input_2": "('_' +(100 - $res2))",
+                                    "$inner_view": "hud.pom_addtionHealth_render",
                                     "anchor_from": "top_left",
                                     "anchor_to": "top_left",
                                     "offset": [0, 0]
@@ -5945,9 +5190,9 @@
                             "controls": [{
                                 "pom_addtionHealth2_render_layout3@fuck_mojang_image_clipper": {
                                     "type": "panel",
-                                    "$clip_persentage": "('_' +(100 - $res1))",
-                                    "$clip_last_persentage": "('_' +(100 - $res2))",
-                                    "$clip_image": "hud.pom_addtionHealth2_render",
+                                    "$int_input_1": "('_' +(100 - $res1))",
+                                    "$int_input_2": "('_' +(100 - $res2))",
+                                    "$inner_view": "hud.pom_addtionHealth2_render",
                                     "anchor_from": "top_left",
                                     "anchor_to": "top_left",
                                     "offset": [0, 0]
@@ -5975,9 +5220,9 @@
                             "controls": [{
                                 "pom_wbfl_render_layout3@fuck_mojang_image_clipper": {
                                     "type": "panel",
-                                    "$clip_persentage": "('_' + (100 - $res1))",
-                                    "$clip_last_persentage": "('_' +( 100 - $res2))",
-                                    "$clip_image": "hud.pom_wbfl_render",
+                                    "$int_input_1": "('_' + (100 - $res1))",
+                                    "$int_input_2": "('_' +( 100 - $res2))",
+                                    "$inner_view": "hud.pom_wbfl_render",
                                     "anchor_from": "top_left",
                                     "layer": 2,
                                     "anchor_to": "top_left",
@@ -6005,9 +5250,9 @@
                             "controls": [{
                                 "pom_health_render_layout3@fuck_mojang_image_clipper": {
                                     "type": "panel",
-                                    "$clip_persentage": "('_' + $res1)",
-                                    "$clip_last_persentage": "('_' +$res2)",
-                                    "$clip_image": "hud.pom_armorCooling_render",
+                                    "$int_input_1": "('_' + $res1)",
+                                    "$int_input_2": "('_' +$res2)",
+                                    "$inner_view": "hud.pom_armorCooling_render",
                                     "anchor_from": "top_left",
                                     "anchor_to": "top_left",
                                     "offset": [0, 0]
@@ -6034,9 +5279,9 @@
                             "controls": [{
                                 "pom_health_render_layout3@fuck_mojang_image_clipper": {
                                     "type": "panel",
-                                    "$clip_persentage": "('_' + $res1)",
-                                    "$clip_last_persentage": "('_' + $res2)",
-                                    "$clip_image": "hud.pom_eqCooling_render",
+                                    "$int_input_1": "('_' + $res1)",
+                                    "$int_input_2": "('_' + $res2)",
+                                    "$inner_view": "hud.pom_eqCooling_render",
                                     "anchor_from": "top_left",
                                     "anchor_to": "top_left",
                                     "offset": [0, 0]
@@ -6309,7 +5554,7 @@
                                 "alpha": 0.5,
                                 "text": "为了最佳游戏体验，建议前往设置/视频 切换经典UI",
                                 "color": [1, 1, 1, 1]
-                                
+
                             }
                         }
                         //     {
