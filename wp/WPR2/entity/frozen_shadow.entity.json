@@ -4,13 +4,13 @@
     "description": {
       "identifier": "dec:frozen_shadow",
       "materials": {
-        "default": "slime_outer"
+        "default": "entity_alphatest"
       },
       "textures": {
         "default": "textures/entity/frozen_shadow"
       },
       "geometry": {
-        "default": "geometry.cuteboi"
+        "default": "geometry.frozen_shadow"
       },
       "scripts": {
         "pre_animation": [

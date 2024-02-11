@@ -8,8 +8,51 @@
       "is_summonable": true,
       "is_experimental": false
     },
-
     "component_groups": {
+      "minecraft:look_to_start_drowned_transformation": {
+        "minecraft:environment_sensor": {
+          "triggers": {
+            "filters": {
+              "test": "is_underwater",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "event": "minecraft:start_transforming"
+          }
+        }
+      },
+      "minecraft:start_drowned_transformation": {
+        "minecraft:environment_sensor": {
+          "triggers": {
+            "filters": {
+              "test": "is_underwater",
+              "subject": "self",
+              "operator": "==",
+              "value": false
+            },
+            "event": "minecraft:stop_transforming"
+          }
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 30,
+          "time_down_event": {
+            "event": "minecraft:convert_to_drowned"
+          }
+        }
+      },
+      "minecraft:convert_to_drowned": {
+        "minecraft:transformation": {
+          "into": "minecraft:drowned<minecraft:as_adult>",
+          "transformation_sound": "convert_to_drowned",
+          "drop_equipment": false,
+          "delay": {
+            "value": 15
+          }
+        },
+        "minecraft:is_shaking": {}
+      },
       "minecraft:jump": {
         "minecraft:behavior.leap_at_target": {
           "priority": 4,
@@ -27,13 +70,21 @@
         }
       }
     },
-
     "components": {
+      "minecraft:environment_sensor": {
+        "triggers": {
+          "filters": {
+            "test": "is_underwater",
+            "operator": "==",
+            "value": true
+          },
+          "event": "minecraft:start_transforming"
+        }
+      },
       "minecraft:despawn": {
         "despawn_from_distance": {}
       },
-      "minecraft:burns_in_daylight": {
-      },
+      "minecraft:burns_in_daylight": {},
       "minecraft:breathable": {
         "totalSupply": 15,
         "suffocateTime": 0,
@@ -43,10 +94,15 @@
         "width": 0.6,
         "height": 1.8
       },
-      "minecraft:nameable": {
-      },
+      "minecraft:nameable": {},
       "minecraft:type_family": {
-        "family": [ "undead", "monster","zombie_warrior","zombie", "mob" ]
+        "family": [
+          "undead",
+          "monster",
+          "zombie_warrior",
+          "zombie",
+          "mob"
+        ]
       },
       "minecraft:loot": {
         "table": "loot_tables/entities/zombie.json"
@@ -76,7 +132,6 @@
           }
         ]
       },
-
       "minecraft:health": {
         "value": {
           "range_min": 18,
@@ -95,18 +150,13 @@
         "can_break_doors": true,
         "avoid_portals": false
       },
-      "minecraft:annotation.break_door": {
-      },
-      "minecraft:movement.basic": {
-
-      },
+      "minecraft:annotation.break_door": {},
+      "minecraft:movement.basic": {},
       "minecraft:movement": {
         "value": 0.23
       },
-      "minecraft:jump.static": {
-      },
-      "minecraft:can_climb": {
-      },
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
       "minecraft:behavior.melee_attack": {
         "priority": 5,
         "target_dist": 1.2,
@@ -149,9 +199,21 @@
           {
             "filters": {
               "any_of": [
-                { "test": "is_family", "subject": "other", "value": "player" },
-                { "test": "is_family", "subject": "other", "value": "snowgolem" },
-                { "test": "is_family", "subject": "other", "value": "irongolem" }
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "snowgolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                }
               ]
             },
             "max_dist": 35
@@ -159,8 +221,16 @@
           {
             "filters": {
               "any_of": [
-                { "test": "is_family", "subject": "other", "value": "villager" },
-                { "test": "is_family", "subject": "other", "value": "wandering_trader" }
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "villager"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "wandering_trader"
+                }
               ]
             },
             "max_dist": 35,
@@ -169,8 +239,17 @@
           {
             "filters": {
               "all_of": [
-                { "test": "is_family", "subject": "other", "value": "baby_turtle" },
-                { "test": "in_water", "subject": "other", "operator": "!=", "value": true }
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "baby_turtle"
+                },
+                {
+                  "test": "in_water",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": true
+                }
               ]
             },
             "max_dist": 35
@@ -178,10 +257,8 @@
         ],
         "must_see": true
       },
-      "minecraft:physics": {
-      }
+      "minecraft:physics": {}
     },
-
     "events": {
       "minecraft:entity_spawned": {
         "randomize": [
@@ -202,6 +279,42 @@
             }
           }
         ]
+      },
+      "minecraft:start_transforming": {
+        "add": {
+          "component_groups": [
+            "minecraft:start_drowned_transformation"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "minecraft:look_to_start_drowned_transformation"
+          ]
+        }
+      },
+      "minecraft:stop_transforming": {
+        "add": {
+          "component_groups": [
+            "minecraft:look_to_start_drowned_transformation"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "minecraft:start_drowned_transformation"
+          ]
+        }
+      },
+      "minecraft:convert_to_drowned": {
+        "add": {
+          "component_groups": [
+            "minecraft:convert_to_drowned"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "minecraft:start_drowned_transformation"
+          ]
+        }
       }
     }
   }

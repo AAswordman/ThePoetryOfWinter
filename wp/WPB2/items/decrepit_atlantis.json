@@ -32,7 +32,6 @@
         "value": 15,
         "slot": "sword"
       },
-      "minecraft:foil": false,
       "minecraft:hand_equipped": true,
       "tag:comp:equipment_type:melee_weapon":{}
     },

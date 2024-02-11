@@ -30,6 +30,35 @@
 					"cubes": [
 						{"origin": [-4, -4, -4], "size": [8, 8, 8], "uv": [0, 20]}
 					]
+				},
+				{
+					"name": "particle",
+					"parent": "main",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "particle1",
+					"parent": "particle",
+					"pivot": [0, 0, 0],
+					"locators": {
+						"particle": [0, 0, 0]
+					}
+				},
+				{
+					"name": "particle2",
+					"parent": "particle",
+					"pivot": [0, 0, 0],
+					"locators": {
+						"particle2": [0, 0, 0]
+					}
+				},
+				{
+					"name": "particle3",
+					"parent": "particle",
+					"pivot": [0, 0, 0],
+					"locators": {
+						"particle3": [0, 0, 0]
+					}
 				}
 			]
 		}

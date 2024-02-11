@@ -41,7 +41,7 @@
 						}
 					}
 				},
-				"power": 1.1,
+				"power": 0.7,
 				"gravity": 0.05,
 				"anchor": 1,
 				"inertia": 1.2,

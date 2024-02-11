@@ -17,7 +17,7 @@
         "timeline": {
             "5": [
                 "/particle dec:abyssal_controller_spawn_particle ~~~",
-                "/execute at @p[m=!1] run spreadplayers ~~ 8 16 @s"
+                "/execute at @p[tag=gaming] run spreadplayers ~~ 8 16 @s"
             ]
         }, 
         "animation_length": 30,

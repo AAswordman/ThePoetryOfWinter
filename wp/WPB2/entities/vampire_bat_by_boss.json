@@ -94,7 +94,7 @@
         ],
         "must_see": false,
         "must_see_forget_duration": 0.5,
-        "scan_interval": 5,
+        "scan_interval": 10,
         "target_search_height": 80.0
       },
       "minecraft:behavior.swoop_attack": {

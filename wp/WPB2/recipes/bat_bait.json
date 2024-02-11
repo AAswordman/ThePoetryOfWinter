@@ -22,7 +22,8 @@
       }
     },
     "result": {
-      "item": "dec:bat_bait"
+      "item": "dec:bat_bait",
+      "count": 10
     }
   }
 }

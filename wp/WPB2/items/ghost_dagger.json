@@ -73,13 +73,13 @@
                 "repair_items": [
                     {
                         "items": [
-                            "minecraft:dec:ghost_ingot"
+                            "dec:ghost_ingot"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.4"
                     },
                     {
                         "items": [
-                            "minecraft:dec:ghost_essence"
+                            "dec:ghost_essence"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.3"
                     }

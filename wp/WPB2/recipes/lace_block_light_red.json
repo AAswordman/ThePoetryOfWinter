@@ -1,0 +1,26 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:lace_block_light_red"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XXX",
+      "X#X",
+      "XXX"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:web"
+      },
+      "X": {
+        "item": "minecraft:red_wool"
+      }
+    },
+    "result": {
+      "item": "dec:lace_block_light_red",
+      "count": 16
+    }
+  }
+}

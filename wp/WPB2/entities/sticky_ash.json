@@ -67,7 +67,7 @@
       "minecraft:explode": {
         "run_command": {
           "command": [
-            "fill ~-2~-2~-2~2~2~2 dec:ash replace lava [\"liquid_depth\":0]",
+            "fill ~-2~-2~-2~2~2~2 dec:ash replace lava [\"liquid_depth\"=0]",
             "particle dec:sticky_ash_particle ~~~",
             "event entity @s minecraft:despawn"
           ],

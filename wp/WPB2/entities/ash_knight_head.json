@@ -180,9 +180,9 @@
       "minecraft:thorn_attack": {
         "run_command": {
           "command": [
-            "execute if entity @a[r=64,c=1,m=!1] run summon dec:ash_sword_phantom ~~2~",
-            "execute if entity @a[r=64,c=1,m=!1] run particle dec:ash_sword_phantom_particle ~~2~",
-            "execute if entity @a[r=64,c=1,m=!1] run summon dec:group ~~~ 0 0 minecraft:select_blackstone_thorn"
+            "execute if entity @a[r=64,c=1,tag=gaming] run summon dec:ash_sword_phantom ~~2~",
+            "execute if entity @a[r=64,c=1,tag=gaming] run particle dec:ash_sword_phantom_particle ~~2~",
+            "execute if entity @a[r=64,c=1,tag=gaming] run summon dec:group ~~~ 0 0 minecraft:select_blackstone_thorn"
           ],
           "target": "self"
         }

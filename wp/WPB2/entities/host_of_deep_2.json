@@ -23,20 +23,6 @@
       "minecraft:despawn": {
         "minecraft:instant_despawn": {}
       },
-      "minecraft:angry": {
-        "minecraft:boss": {
-          "should_darken_sky": false,
-          "name":"boss.dec:host_of_deep_angry.name",
-          "hud_range": 64
-        },
-        "minecraft:health": {
-          "value": 400,
-          "max": 400
-        },
-        "minecraft:movement": {
-          "value": 0.44
-        }
-      },
       "minecraft:ranged_mode": {
         "minecraft:timer": {
           "looping": false,
@@ -466,23 +452,11 @@
         }
       },
       "minecraft:entity_spawned": {
-        "sequence": [
-          {
-            "filters": { "test" :  "has_biome_tag", "operator": "!=", "value" :  "crimson_forest"},
-            "randomize": [
-              {
-                "add": { "component_groups": [ "minecraft:angry" ] }
-              }
-            ]
-          },
-          {
-            "add": {
-              "component_groups": [
-                "minecraft:summon_mode"
-              ]
-            }
-          }
-        ]
+        "add": {
+          "component_groups": [
+            "minecraft:summon_mode"
+          ]
+        }
       },
       "minecraft:ranged_mode": {
         "remove": {

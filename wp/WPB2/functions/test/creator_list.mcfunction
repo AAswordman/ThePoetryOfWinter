@@ -29,6 +29,14 @@ tellraw @s { "rawtext" : [ { "translate" : "text.dec:creator_list_28.name" } ] }
 tellraw @s { "rawtext" : [ { "translate" : "text.dec:creator_list_29.name" } ] }
 tellraw @s { "rawtext" : [ { "translate" : "text.dec:creator_list_30.name" } ] }
 tellraw @s { "rawtext" : [ { "translate" : "text.dec:creator_list_31.name" } ] }
+tellraw @s { "rawtext" : [ { "translate" : "text.dec:creator_list_32.name" } ] }
+tellraw @s { "rawtext" : [ { "translate" : "text.dec:creator_list_33.name" } ] }
+tellraw @s { "rawtext" : [ { "translate" : "text.dec:creator_list_34.name" } ] }
+tellraw @s { "rawtext" : [ { "translate" : "text.dec:creator_list_35.name" } ] }
+tellraw @s { "rawtext" : [ { "translate" : "text.dec:creator_list_36.name" } ] }
+tellraw @s { "rawtext" : [ { "translate" : "text.dec:creator_list_37.name" } ] }
+tellraw @s { "rawtext" : [ { "translate" : "text.dec:creator_list_38.name" } ] }
+tellraw @s { "rawtext" : [ { "translate" : "text.dec:creator_list_39.name" } ] }
 tellraw @s { "rawtext" : [ { "translate" : "text.dec:omit.name"} ] }
 tellraw @s { "rawtext" : [ { "translate" : "text.dec:qq_group.name" } ] }
 tellraw @s { "rawtext" : [ { "translate" : "text.dec:thanks.name" } ] }

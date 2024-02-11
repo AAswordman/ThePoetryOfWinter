@@ -159,7 +159,7 @@
                 }
               ]
             },
-            "event": "minecraft:start_exploding_forced",
+            "event": "minecraft:start_exploding",
             "target": "self"
           },
           "hurt_item": 1,

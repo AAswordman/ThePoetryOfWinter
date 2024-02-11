@@ -73,25 +73,25 @@
                 "repair_items": [
                     {
                         "items": [
-                            "minecraft:minecraft:amethyst_shard"
+                            "minecraft:amethyst_shard"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.3"
                     },
                     {
                         "items": [
-                            "minecraft:minecraft:amethyst_cluster"
+                            "minecraft:amethyst_cluster"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.3"
                     },
                     {
                         "items": [
-                            "minecraft:minecraft:amethyst_block"
+                            "minecraft:amethyst_block"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.2"
                     },
                     {
                         "items": [
-                            "minecraft:minecraft:budding_amethyst"
+                            "minecraft:budding_amethyst"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.2"
                     }

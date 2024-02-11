@@ -31,7 +31,7 @@
       "minecraft:effect": {
         "run_command": {
           "command": [
-            "execute as @a[x=~,y=~10,z=~,r=40,m=!1] unless entity @s[hasitem={item=dec:dust_ring}] run tag @s add ash_cage",
+            "execute as @a[x=~,y=~10,z=~,r=40,tag=gaming] unless entity @s[hasitem={item=dec:dust_ring}] run tag @s add ash_cage",
             "effect @e[x=~,y=~10,z=~,r=40] fire_resistance 0 255",
             "scoreboard players set @a[tag=ash_cage,scores={i_inviolable=..300}] i_inviolable 300",
             "scoreboard players set @a[tag=ash_cage,scores={i_soft=..300}] i_soft 300",

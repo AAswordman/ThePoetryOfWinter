@@ -10,6 +10,11 @@
         {
           "type": "item",
           "weight": 1,
+          "name": "dec:farmer_hat"
+        },
+        {
+          "type": "item",
+          "weight": 1,
           "functions": [
             {
               "function": "set_count",

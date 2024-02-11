@@ -19,7 +19,8 @@
       }
     },
     "result": {
-      "item": "dec:nature_essence"
+      "item": "dec:nature_essence",
+      "count": 5
     }
   }
 }

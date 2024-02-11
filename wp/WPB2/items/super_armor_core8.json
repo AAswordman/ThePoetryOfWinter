@@ -18,7 +18,6 @@
       "minecraft:stacked_by_data": true,
       "minecraft:use_duration": 0.1,
       "minecraft:max_stack_size": 1,
-      "minecraft:foil": false,
       "minecraft:cooldown": {
         "category": "super_armor_core",
         "duration": 45

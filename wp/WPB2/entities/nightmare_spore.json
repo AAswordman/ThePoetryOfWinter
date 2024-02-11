@@ -6,15 +6,7 @@
       "runtime_identifier": "minecraft:egg",
       "is_spawnable": false,
       "is_summonable": true,
-      "is_experimental": false,
-      "scripts": {
-        "animate": [
-          "ticking"
-        ]
-      },
-      "animations": {
-        "ticking": "controller.animation.particle_nightmare_spore"
-      }
+      "is_experimental": false
     },
     "component_groups": {
       "minecraft:despawn": {
@@ -77,6 +69,13 @@
             "fill ~-0.3~-0.3~-0.3~0.3~0.3~0.3 dec:nightmare_block [] replace air []",
             "particle dec:nightmare_block_spawn_particle ~~~",
             "event entity @s minecraft:despawn"
+          ]
+        }
+      },
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
           ]
         }
       }

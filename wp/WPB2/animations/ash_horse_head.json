@@ -13,7 +13,7 @@
     "animation.ash_horse_head.teleport": {
       "timeline": {
         "13": [
-          "/execute as @r[r=70,m=!1] at @s positioned ~~1~ run summon dec:ash_horse_head_tp_anchor ~~~",
+          "/execute as @r[r=70,tag=gaming] at @s positioned ~~1~ run summon dec:ash_horse_head_tp_anchor ~~~",
           "/particle dec:ash_horse_head_teleport_particle ~~~"
         ]
       },

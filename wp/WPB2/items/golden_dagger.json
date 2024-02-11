@@ -73,13 +73,13 @@
                 "repair_items": [
                     {
                         "items": [
-                            "minecraft:minecraft:gold_ingot"
+                            "minecraft:gold_ingot"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.3"
                     },
                     {
                         "items": [
-                            "minecraft:minecraft:gold_nugget"
+                            "minecraft:gold_nugget"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.03"
                     }

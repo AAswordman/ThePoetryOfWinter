@@ -4,38 +4,38 @@
     "animation.ash_knight.teleport_prepare": {
       "timeline": {
         "0": [
-          "/execute unless @e[r=5,type=dec:ash_horse] at @a[r=64,m=!1] run particle dec:ash_knight_head_teleport_particle ~~1~"
+          "/execute unless @e[r=5,type=dec:ash_horse] at @a[r=64,tag=gaming] run particle dec:ash_knight_head_teleport_particle ~~1~"
         ],
         "1": [
-          "/execute unless @e[r=5,type=dec:ash_horse] at @a[r=64,m=!1] run particle dec:ash_knight_head_teleport_particle ~~1~"
+          "/execute unless @e[r=5,type=dec:ash_horse] at @a[r=64,tag=gaming] run particle dec:ash_knight_head_teleport_particle ~~1~"
         ],
         "2": [
-          "/execute unless @e[r=5,type=dec:ash_horse] at @a[r=64,m=!1] run particle dec:ash_knight_head_teleport_particle ~~1~"
+          "/execute unless @e[r=5,type=dec:ash_horse] at @a[r=64,tag=gaming] run particle dec:ash_knight_head_teleport_particle ~~1~"
         ],
         "2.5": [
-          "/execute unless @e[r=5,type=dec:ash_horse] at @a[r=64,m=!1] run particle dec:ash_knight_head_teleport_particle ~~1~"
+          "/execute unless @e[r=5,type=dec:ash_horse] at @a[r=64,tag=gaming] run particle dec:ash_knight_head_teleport_particle ~~1~"
         ],
         "3": [
-          "/execute unless @e[r=5,type=dec:ash_horse] at @a[r=64,m=!1] run particle dec:ash_knight_head_teleport_particle ~~1~"
+          "/execute unless @e[r=5,type=dec:ash_horse] at @a[r=64,tag=gaming] run particle dec:ash_knight_head_teleport_particle ~~1~"
         ],
         "3.5": [
-          "/execute unless @e[r=5,type=dec:ash_horse] at @a[r=64,m=!1] run particle dec:ash_knight_head_teleport_particle ~~1~"
+          "/execute unless @e[r=5,type=dec:ash_horse] at @a[r=64,tag=gaming] run particle dec:ash_knight_head_teleport_particle ~~1~"
         ],
         "4": [
-          "/execute unless @e[r=5,type=dec:ash_horse] at @a[r=64,m=!1] run particle dec:ash_knight_head_teleport_particle ~~1~"
+          "/execute unless @e[r=5,type=dec:ash_horse] at @a[r=64,tag=gaming] run particle dec:ash_knight_head_teleport_particle ~~1~"
         ],
         "4.25": [
-          "/execute unless @e[r=5,type=dec:ash_horse] at @a[r=64,m=!1] run particle dec:ash_knight_head_teleport_particle ~~1~"
+          "/execute unless @e[r=5,type=dec:ash_horse] at @a[r=64,tag=gaming] run particle dec:ash_knight_head_teleport_particle ~~1~"
         ],
         "4.5": [
-          "/execute unless @e[r=5,type=dec:ash_horse] at @a[r=64,m=!1] run particle dec:ash_knight_head_teleport_particle ~~1~"
+          "/execute unless @e[r=5,type=dec:ash_horse] at @a[r=64,tag=gaming] run particle dec:ash_knight_head_teleport_particle ~~1~"
         ],
         "4.75": [
-          "/execute unless @e[r=5,type=dec:ash_horse] at @a[r=64,m=!1] run particle dec:ash_knight_head_teleport_particle ~~1~"
+          "/execute unless @e[r=5,type=dec:ash_horse] at @a[r=64,tag=gaming] run particle dec:ash_knight_head_teleport_particle ~~1~"
         ],
         "5": [
           "/execute unless @e[r=5,type=dec:ash_horse] run camera @a[r=32] fade time 0 0.5 1.5 color 15 0 0",
-          "/execute unless @e[r=5,type=dec:ash_horse] run tp @a[r=64,c=1,m=!1]",
+          "/execute unless @e[r=5,type=dec:ash_horse] run tp @a[r=64,c=1,tag=gaming]",
           "/execute unless @e[r=5,type=dec:ash_horse] run particle dec:ash_knight_head_teleport_particle ~~~",
           "/execute if @e[r=5,type=dec:ash_horse] run playanimation @s animation.ash_knight.summon",
           "/execute if @e[r=5,type=dec:ash_horse] run summon dec:ash_sword_phantom ~~3~"

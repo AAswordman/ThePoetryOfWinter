@@ -18,7 +18,6 @@
       "minecraft:render_offsets": "miscellaneous",
       "minecraft:stacked_by_data": true,
       "minecraft:max_stack_size": 1,
-      "minecraft:foil": false,
       "minecraft:hand_equipped": true
     }
   }

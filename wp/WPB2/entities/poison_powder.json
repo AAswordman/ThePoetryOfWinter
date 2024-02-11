@@ -6,13 +6,7 @@
       "runtime_identifier": "minecraft:egg",
       "is_spawnable": false,
       "is_summonable": true,
-      "is_experimental": false,
-      "scripts":{
-        "animate":["ticking"]
-      },
-        "animations":{
-          "ticking":"controller.animation.particle_poison_spit"
-      }
+      "is_experimental": false
     },
     "components": {
       "minecraft:collision_box": {

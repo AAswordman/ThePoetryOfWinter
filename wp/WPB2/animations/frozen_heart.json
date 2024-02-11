@@ -4,7 +4,7 @@
     "animation.frozen_heart.go_forward": {
       "timeline": {
         "0.05": [
-          "/tp ~~~ facing @p[m=!1]",
+          "/tp ~~~ facing @p[tag=gaming]",
           "/execute if block ^^^1 air run tp ^^^1"
         ]
       },

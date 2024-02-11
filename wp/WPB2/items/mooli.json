@@ -1,0 +1,27 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "nature",
+      "identifier": "dec:mooli"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.crop"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:mooli.name"
+      },
+      "minecraft:icon": {
+        "texture": "mooli"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "cookie",
+      "minecraft:use_duration": 1.6,
+      "minecraft:food": {
+        "nutrition": 4,
+        "saturation_modifier": "poor"
+      }
+    }
+  }
+}

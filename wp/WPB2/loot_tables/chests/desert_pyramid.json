@@ -8,6 +8,16 @@
       "entries": [
         {
           "type": "item",
+          "name": "dec:dead_wood_dagger",
+          "weight": 1
+        },
+        {
+          "type": "item",
+          "name": "dec:dead_wood_rapier",
+          "weight": 1
+        },
+        {
+          "type": "item",
           "name": "dec:iron_apple_enchanted",
           "weight": 2,
           "functions": [
@@ -240,6 +250,20 @@
               "count": {
                 "min": 1,
                 "max": 8
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "dec:mooli_seeds",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 4
               }
             }
           ]

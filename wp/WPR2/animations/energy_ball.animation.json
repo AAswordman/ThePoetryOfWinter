@@ -110,6 +110,36 @@
 					}
 				}
 			}
+		},
+		"animation.energy_ball.wake": {
+			"loop": true,
+			"animation_length": 0.04,
+			"particle_effects": {
+				"0.02": {
+					"effect": "wake",
+					"locator": "particle1"
+				}
+			}
+		},
+		"animation.energy_ball.wake.speed0d6": {
+			"loop": true,
+			"animation_length": 0.6,
+			"particle_effects": {
+				"0.5": {
+					"effect": "wake",
+					"locator": "particle1"
+				}
+			}
+		},
+		"animation.energy_ball.wake.speed1": {
+			"loop": true,
+			"animation_length": 1,
+			"particle_effects": {
+				"0.8": {
+					"effect": "wake",
+					"locator": "particle1"
+				}
+			}
 		}
 	}
 }

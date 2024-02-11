@@ -1,0 +1,18 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.humanoid.armor.hat.scale": {
+			"loop" : true,
+			"bones" : {
+				"hat" : {
+					"scale" : 1.2,
+					"position": [
+						0,
+						-1,
+						0
+					]
+				}
+			}
+		}
+	}
+}

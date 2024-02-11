@@ -30,8 +30,8 @@
       "minecraft:nameable": {
       },
       "minecraft:health": {
-        "value": 40,
-        "max": 40
+        "value": 23,
+        "max": 23
       },
       "minecraft:physics": {
         "has_gravity": false

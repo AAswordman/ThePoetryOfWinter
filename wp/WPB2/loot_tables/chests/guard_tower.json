@@ -155,6 +155,11 @@
         },
         {
           "type": "item",
+          "weight": 2,
+          "name": "dec:farmer_hat"
+        },
+        {
+          "type": "item",
           "name": "dec:stones_bag",
           "weight": 1
         }

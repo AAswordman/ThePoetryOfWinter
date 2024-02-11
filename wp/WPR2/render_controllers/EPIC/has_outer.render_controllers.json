@@ -1,0 +1,10 @@
+{
+  "format_version": "1.10.0",
+  "render_controllers": {
+    "controller.render.outer": {
+      "geometry": "variable.is_armor_on ? Geometry.armor",
+      "materials": [ { "*": "Material.outer" } ],
+      "textures": [ "Texture.default" ]
+    }
+  }
+}

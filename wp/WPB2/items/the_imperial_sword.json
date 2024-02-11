@@ -79,7 +79,6 @@
         }
       },
       "tag:use_skill_count": {},
-      "minecraft:foil": false,
       "minecraft:hand_equipped": true,
       "tag:comp:equipment_type:melee_weapon":{}
     },

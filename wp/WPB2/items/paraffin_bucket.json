@@ -23,7 +23,6 @@
       "minecraft:durability": {
         "max_durability": 20
       },
-      "minecraft:foil": false,
       "minecraft:hand_equipped": false
     }
   }

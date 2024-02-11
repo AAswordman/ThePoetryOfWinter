@@ -60,7 +60,6 @@
           }
         ]
       },
-      "minecraft:foil": false,
       "minecraft:hand_equipped": true,
       "minecraft:on_use": {
         "on_use": {
@@ -85,7 +84,7 @@
       "night_sword_use_attack": {
         "sequence": [
           {
-            "condition": "query.scoreboard('wbfl') > 25 && (query.time_of_day > 0.25 || query.time_of_day < 0.75)",
+            "condition": "query.scoreboard('wbfl') > 25 && (query.time_of_day > 0.25 && query.time_of_day < 0.75)",
             "sequence": [
               {
                 "run_command": {

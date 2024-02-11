@@ -1,0 +1,22 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "items",
+      "identifier": "dec:patterned_vase_red"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.decorations"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:patterned_vase_red.name"
+      },
+      "minecraft:icon": {
+        "texture": "patterned_vase_red"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "cookie"
+    }
+  }
+}

@@ -38,7 +38,6 @@
         ]
       },
       "minecraft:mining_speed": 1.5,
-      "minecraft:foil": false,
       "minecraft:hand_equipped": true,
       "minecraft:enchantable": {
         "value": 15,

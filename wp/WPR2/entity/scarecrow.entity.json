@@ -1,0 +1,19 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:scarecrow",
+      "materials": { "default": "husk" },
+      "textures": {
+        "default": "textures/entity/scarecrow"
+      },
+      "geometry": {
+        "default": "geometry.scarecrow"
+      },
+      "scripts": {
+        "scale": "1"
+      },
+      "render_controllers": [ "controller.render.star" ]
+    }
+  }
+}

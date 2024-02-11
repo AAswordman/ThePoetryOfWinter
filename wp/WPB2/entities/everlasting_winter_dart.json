@@ -9,10 +9,8 @@
       "is_experimental": false
     },
     "component_groups": {
-      "minecraft:exploding": {
-        "minecraft:transformation": {
-          "into": "dec:snow_energy_fuse"
-        }
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
       }
     },
     "components": {
@@ -64,12 +62,53 @@
       }
     },
     "events": {
-      "minecraft:explode": {
+      "minecraft:despawn": {
         "add": {
           "component_groups": [
-            "minecraft:exploding"
+            "minecraft:despawn"
           ]
         }
+      },
+      "minecraft:explode": {
+        "randomize": [
+          {
+            "weight": 3,
+            "add": {
+              "run_command": {
+                "command": [
+                  "event entity @s minecraft:despawn"
+                ]
+              }
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "function entity/snow_energy_spawn/1",
+                "event entity @s minecraft:despawn"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "function entity/snow_energy_spawn/2",
+                "event entity @s minecraft:despawn"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "run_command": {
+              "command": [
+                "function entity/snow_energy_spawn/4",
+                "event entity @s minecraft:despawn"
+              ]
+            }
+          }
+        ]
       }
     }
   }

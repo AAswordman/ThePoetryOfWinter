@@ -36,6 +36,25 @@
             "entries": [
                 {
                     "type": "item",
+                    "name": "dec:red_spider_lily",
+                    "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "dec:lava_flower_seeds",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "min": 1,
+                                "max": 3
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
                     "name": "dec:ash",
                     "weight": 5,
                     "functions": [

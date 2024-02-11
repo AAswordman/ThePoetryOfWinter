@@ -73,31 +73,31 @@
                 "repair_items": [
                     {
                         "items": [
-                            "minecraft:minecraft:cobblestone"
+                            "minecraft:cobblestone"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.2"
                     },
                     {
                         "items": [
-                            "minecraft:minecraft:stone"
+                            "minecraft:stone"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.3"
                     },
                     {
                         "items": [
-                            "minecraft:minecraft:cobbled_deepslate"
+                            "minecraft:cobbled_deepslate"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.3"
                     },
                     {
                         "items": [
-                            "minecraft:minecraft:deepslate"
+                            "minecraft:deepslate"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.4"
                     },
                     {
                         "items": [
-                            "minecraft:dec:small_stone"
+                            "dec:small_stone"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.2"
                     }

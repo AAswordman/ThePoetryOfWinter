@@ -8,6 +8,50 @@
       "is_experimental": false
     },
     "component_groups": {
+      "minecraft:look_to_start_drowned_transformation": {
+        "minecraft:environment_sensor": {
+          "triggers": {
+            "filters": {
+              "test": "is_underwater",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "event": "minecraft:start_transforming"
+          }
+        }
+      },
+      "minecraft:start_drowned_transformation": {
+        "minecraft:environment_sensor": {
+          "triggers": {
+            "filters": {
+              "test": "is_underwater",
+              "subject": "self",
+              "operator": "==",
+              "value": false
+            },
+            "event": "minecraft:stop_transforming"
+          }
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 30,
+          "time_down_event": {
+            "event": "minecraft:convert_to_drowned"
+          }
+        }
+      },
+      "minecraft:convert_to_drowned": {
+        "minecraft:transformation": {
+          "into": "minecraft:drowned<minecraft:as_adult>",
+          "transformation_sound": "convert_to_drowned",
+          "drop_equipment": false,
+          "delay": {
+            "value": 15
+          }
+        },
+        "minecraft:is_shaking": {}
+      },
       "minecraft:melee_attack": {
         "minecraft:behavior.melee_attack": {
           "priority": 4,
@@ -49,6 +93,16 @@
       },
 
       "components": {
+        "minecraft:environment_sensor": {
+          "triggers": {
+            "filters": {
+              "test": "is_underwater",
+              "operator": "==",
+              "value": true
+            },
+            "event": "minecraft:start_transforming"
+          }
+        },
         "minecraft:burns_in_daylight": {
         },
         "minecraft:experience_reward": {
@@ -227,6 +281,42 @@
         "minecraft:summon_attack": {
           "add": { "component_groups": [ "minecraft:summon_attack" ] },
           "remove": { "component_groups": [ "minecraft:melee_attack" ] }
+        },
+        "minecraft:start_transforming": {
+          "add": {
+            "component_groups": [
+              "minecraft:start_drowned_transformation"
+            ]
+          },
+          "remove": {
+            "component_groups": [
+              "minecraft:look_to_start_drowned_transformation"
+            ]
+          }
+        },
+        "minecraft:stop_transforming": {
+          "add": {
+            "component_groups": [
+              "minecraft:look_to_start_drowned_transformation"
+            ]
+          },
+          "remove": {
+            "component_groups": [
+              "minecraft:start_drowned_transformation"
+            ]
+          }
+        },
+        "minecraft:convert_to_drowned": {
+          "add": {
+            "component_groups": [
+              "minecraft:convert_to_drowned"
+            ]
+          },
+          "remove": {
+            "component_groups": [
+              "minecraft:start_drowned_transformation"
+            ]
+          }
         }
       }
     }

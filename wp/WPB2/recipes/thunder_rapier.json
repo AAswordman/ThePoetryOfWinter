@@ -6,9 +6,9 @@
     },  
     "tags": [ "crafting_table" ],
     "pattern": [
-      "  #",
-      "B# ",
-      "XB "
+      "DD#",
+      "B#D",
+      "XBD"
     ],
     "key": {
       "#": {
@@ -20,6 +20,9 @@
       },
       "X": {
         "item": "dec:iron_stick"
+      },
+      "D": {
+        "item": "minecraft:copper_block"
       }
     },
     "result": {

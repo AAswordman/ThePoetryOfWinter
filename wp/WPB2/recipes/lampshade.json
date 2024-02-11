@@ -1,0 +1,26 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:lampshade"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " X ",
+      "X#X",
+      " X "
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:red_dye"
+      },
+      "X": {
+        "item": "minecraft:iron_ingot"
+      }
+    },
+    "result": {
+      "item": "dec:lampshade",
+      "count": 4
+    }
+  }
+}

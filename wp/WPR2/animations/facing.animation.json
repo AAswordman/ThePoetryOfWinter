@@ -1,0 +1,17 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.facing.direct": {
+			"loop": true,
+			"bones": {
+				"body": {
+					"rotation": [
+						"-query.target_x_rotation",
+						"-query.body_y_rotation",
+						0
+					]
+				}
+			}
+		}
+	}
+}

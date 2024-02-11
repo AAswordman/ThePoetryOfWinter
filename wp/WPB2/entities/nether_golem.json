@@ -193,35 +193,22 @@
     },
     "events": {
       "minecraft:entity_spawned": {
-        "sequence": [
+        "randomize": [
           {
-            "randomize": [
-              {
-                "weight": 1,
-                "sequence": [
-                  {
-                    "randomize": [
-                      {
-                        "weight": 1,
-                        "add": {
-                          "component_groups": [
-                            "minecraft:ranged_mode"
-                          ]
-                        }
-                      },
-                      {
-                        "weight": 1,
-                        "add": {
-                          "component_groups": [
-                            "minecraft:attack_mode"
-                          ]
-                        }
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
+            "weight": 1,
+            "add": {
+              "component_groups": [
+                "minecraft:ranged_mode"
+              ]
+            }
+          },
+          {
+            "weight": 1,
+            "add": {
+              "component_groups": [
+                "minecraft:attack_mode"
+              ]
+            }
           }
         ]
       },

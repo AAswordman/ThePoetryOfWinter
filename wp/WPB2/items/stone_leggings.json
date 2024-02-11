@@ -69,8 +69,7 @@
         "slot": "slot.armor.legs"
       },
       "tag:comp:armor_protection:2": {},
-      "tag:comp:armor_type:suit_:stone:_": {},
-      "tag:comp:armor_resilience:1": {}
+      "tag:comp:armor_type:suit_:stone:_": {}
     }
   }
 }

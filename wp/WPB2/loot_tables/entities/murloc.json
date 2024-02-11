@@ -5,7 +5,7 @@
             "entries": [
                 {
                     "type": "loot_table",
-                    "name": "loot_tables/gameplay/fishing/ocean_fish",
+                    "name": "loot_tables/gameplay/fishing/ocean_fish.json",
                     "weight": 1
                 }
             ]

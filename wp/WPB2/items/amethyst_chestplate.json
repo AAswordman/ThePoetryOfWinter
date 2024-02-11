@@ -57,14 +57,14 @@
         }
       },
       "minecraft:armor": {
-        "protection": 4
+        "protection": 5
       },
       "minecraft:wearable": {
         "slot": "slot.armor.chest"
       },
-      "tag:comp:armor_protection:4": {},
+      "tag:comp:armor_protection:5": {},
       "tag:comp:armor_type:suit_:amethyst:_": {},
-      "tag:comp:armor_magic_reduction:3": {}
+      "tag:comp:armor_magic_reduction:1": {}
     }
   }
 }

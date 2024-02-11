@@ -44,7 +44,7 @@
       "minecraft:stacked_by_data": false,
       "minecraft:max_stack_size": 1,
       "minecraft:durability": {
-        "max_durability": 421
+        "max_durability": 851
       },
       "minecraft:mining_speed": 1.5,
       "minecraft:damage": 6.5,
@@ -66,7 +66,6 @@
           }
         ]
       },
-      "minecraft:foil": false,
       "minecraft:hand_equipped": true,
       "tag:comp:equipment_type:melee_weapon":{}
     },

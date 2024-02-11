@@ -1,0 +1,24 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.everlasting_winter_ghast.armor",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 28,
+				"visible_bounds_offset": [0, -11, 0]
+			},
+			"bones": [
+				{
+					"name": "ice_shell",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-4, 0, -4], "size": [8, 16, 8], "uv": [64, 0]}
+					]
+				}
+			]
+		}
+	]
+}

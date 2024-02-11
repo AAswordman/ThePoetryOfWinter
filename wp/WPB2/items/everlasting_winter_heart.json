@@ -18,7 +18,6 @@
       "minecraft:use_animation": "eat",
       "minecraft:render_offsets": "cookie",
       "minecraft:max_stack_size": 64,
-      "minecraft:foil": false,
       "minecraft:on_use": {
         "on_use": {
           "event": "everlasting_winter_heart_use",

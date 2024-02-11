@@ -1,0 +1,48 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.trellis_cover",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "bb_main",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-8, 13, -8],
+							"size": [16, 3, 16],
+							"inflate": -0.5,
+							"uv": {
+								"north": {"uv": [32, 16], "uv_size": [16, 3],"material_instance":"trellis"},
+								"east": {"uv": [32, 16], "uv_size": [16, 3],"material_instance":"trellis"},
+								"south": {"uv": [32, 16], "uv_size": [16, 3],"material_instance":"trellis"},
+								"west": {"uv": [32, 16], "uv_size": [16, 3],"material_instance":"trellis"},
+								"up": {"uv": [32, 0], "uv_size": [16, 16],"material_instance":"trellis"},
+								"down": {"uv": [32, 16], "uv_size": [16, -16],"material_instance":"trellis"}
+							}
+						},
+						{
+							"origin": [-8, 0, -8],
+							"size": [16, 16, 16],
+							"uv": {
+								"north": {"uv": [16, 16], "uv_size": [16, 16],"material_instance":"crop"},
+								"east": {"uv": [16, 16], "uv_size": [16, 16],"material_instance":"crop"},
+								"south": {"uv": [16, 16], "uv_size": [16, 16],"material_instance":"crop"},
+								"west": {"uv": [16, 16], "uv_size": [16, 16],"material_instance":"crop"},
+								"up": {"uv": [16, 0], "uv_size": [16, 16],"material_instance":"crop"},
+								"down": {"uv": [64, 64], "uv_size": [0, 0]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

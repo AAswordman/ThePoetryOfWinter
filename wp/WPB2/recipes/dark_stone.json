@@ -19,7 +19,8 @@
       }
     },
     "result": {
-      "item": "dec:dark_stone"
+      "item": "dec:dark_stone",
+      "count": 10
     }
   }
 }

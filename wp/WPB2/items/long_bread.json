@@ -48,7 +48,6 @@
         "value": 15,
         "slot": "sword"
       },
-      "minecraft:foil": false,
       "minecraft:hand_equipped": true,
       "minecraft:food": {
         "nutrition": 17,

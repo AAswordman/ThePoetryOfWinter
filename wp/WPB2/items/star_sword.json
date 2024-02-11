@@ -67,7 +67,6 @@
           }
         ]
       },
-      "minecraft:foil": false,
       "minecraft:hand_equipped": true,
       "tag:comp:equipment_type:melee_weapon":{}
     },
@@ -136,31 +135,37 @@
                   {
                     "shoot": {
                       "projectile": "dec:spots_by_sword",
-                      "launch_power": 1
+                      "launch_power": 0.2
                     }
                   },
                   {
                     "shoot": {
                       "projectile": "dec:spots_by_sword",
-                      "launch_power": 1.5
+                      "launch_power": 0.4
+                    }
+                  },
+                  {
+                    "shoot": {
+                      "projectile": "dec:spots_by_sword",
+                      "launch_power": 0.5
+                    }
+                  },
+                  {
+                    "shoot": {
+                      "projectile": "dec:spots_by_sword",
+                      "launch_power": 0.9
+                    }
+                  },
+                  {
+                    "shoot": {
+                      "projectile": "dec:spots_by_sword",
+                      "launch_power": 1.4
                     }
                   },
                   {
                     "shoot": {
                       "projectile": "dec:spots_by_sword",
                       "launch_power": 2
-                    }
-                  },
-                  {
-                    "shoot": {
-                      "projectile": "dec:spots_by_sword",
-                      "launch_power": 2.5
-                    }
-                  },
-                  {
-                    "shoot": {
-                      "projectile": "dec:spots_by_sword",
-                      "launch_power": 3
                     }
                   },
                   {

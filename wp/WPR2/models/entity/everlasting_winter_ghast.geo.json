@@ -70,14 +70,6 @@
 					}
 				},
 				{
-					"name": "ice_shell",
-					"parent": "waist",
-					"pivot": [0, -400, 0],
-					"cubes": [
-						{"origin": [-4, -400, -4], "size": [8, 16, 8], "uv": [64, 0]}
-					]
-				},
-				{
 					"name": "rightLeg",
 					"parent": "root",
 					"pivot": [-1.9, 12, 0],

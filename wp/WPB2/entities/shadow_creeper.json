@@ -54,6 +54,8 @@
       "minecraft:type_family": {
         "family": [
           "creeper",
+          "shadow_creeper",
+          "shadow",
           "monster",
           "mob"
         ]

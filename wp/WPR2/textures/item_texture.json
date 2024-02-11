@@ -2,6 +2,7 @@
     "resource_pack_name": "vanilla",
     "texture_name": "atlas.items",
     "texture_data": {
+ //=============================DEC==================================
         "rice": {
             "textures": "textures/items/rice"
         },
@@ -1442,7 +1443,86 @@
         "snow_lotus": {
             "textures": "textures/items/snow_lotus"
         },
-
+//Decisland1.9.3 Added
+        "hunter_book": {
+		"textures": "textures/items/hunter_book"
+		},
+		"patterned_vase_red": {
+			"textures": "textures/items/patterned_vase_red"
+		},
+		"lava_essence": {
+			"textures": "textures/items/lava_essence"
+		},
+		"lava_flower_seeds": {
+			"textures": "textures/items/lava_flower_seeds"
+		},
+		"mooli": {
+			"textures": "textures/items/mooli"
+		},
+		"mooli_seeds": {
+			"textures": "textures/items/mooli_seeds"
+		},
+		"red_spider_lily": {
+			"textures": "textures/items/red_spider_lily"
+		},
+		"cob": {
+			"textures": "textures/items/cob"
+		},
+		"corn": {
+			"textures": "textures/items/corn"
+		},
+	    "corn_seeds": {
+			"textures": "textures/items/corn_seeds"
+		},
+        "giant_bat_wings": {
+			"textures": "textures/items/giant_bat_wings"
+		},
+        "smoke_bomb": {
+			"textures": "textures/items/smoke_bomb"
+		},
+	    "gas_bomb": {
+			"textures": "textures/items/gas_bomb"
+		},
+     	"golden_fence": {
+			"textures": "textures/items/golden_fence"
+		},
+        "bamboo_katana": {
+			"textures": "textures/items/bamboo_katana"
+		},
+		"hard_bamboo_katana": {
+			"textures": "textures/items/hard_bamboo_katana"
+		},
+		"rapier": {
+			"textures": "textures/items/rapier"
+		},
+		"dead_wood_rapier": {
+			"textures": "textures/items/dead_wood_rapier"
+		},
+		"dead_wood_dagger": {
+			"textures": "textures/items/dead_wood_dagger"
+		},
+		"moon_jellyfish": {
+			"textures": "textures/items/moon_jellyfish"
+		},
+		"scarecrow": {
+			"textures": "textures/items/scarecrow"
+		},
+		"archer_hat": {
+			"textures": "textures/items/archer_hat"
+		},
+		"black_courtesy": {
+			"textures": "textures/items/black_courtesy"
+		},
+		"blue_gem_hat": {
+			"textures": "textures/items/blue_gem_hat"
+		},
+		"farmer_hat": {
+			"textures": "textures/items/farmer_hat"
+		},
+		"red_gem_hat": {
+			"textures": "textures/items/red_gem_hat"
+		},
+ //=============================WB==================================
         "energy_core_a": {
             "textures": "textures/wb_item/technology/energy_core_a"
         },

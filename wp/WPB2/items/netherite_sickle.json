@@ -66,7 +66,6 @@
           }
         ]
       },
-      "minecraft:foil": false,
       "minecraft:hand_equipped": true,
       "tag:comp:movement_addition:-0.015": {},
       "tag:comp:equipment_type:melee_weapon":{}

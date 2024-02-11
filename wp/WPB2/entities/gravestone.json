@@ -9,7 +9,7 @@
 		},
 		"component_groups": {
 			"minecraft:timer": {
-				"minecraft:item_hopper": {},
+				//"minecraft:item_hopper": {},
 				"minecraft:health": {
 					"value": 2,
 					"max": 2
@@ -30,15 +30,20 @@
 			}
 		},
 		"components": {
-			"minecraft:inventory": {
-				"container_type": "inventory",
-				"inventory_size": 27,
-				"private": false
-			},
+			//"minecraft:inventory": {
+			//	"container_type": "inventory",
+			//	"inventory_size": 27,
+			//	"private": false
+			//},
 			"minecraft:type_family": {
 				"family": [
 					"gravestone"
 				]
+			},
+			"minecraft:explode": {
+			  "fuse_length": 300.0,
+			  "fuse_lit": false,
+			  "power": 0
 			},
 			"minecraft:collision_box": {
 				"width": 0.6875,

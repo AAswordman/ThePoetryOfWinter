@@ -35,10 +35,10 @@
       "use": {
         "run_command": {
           "command": [
-            "tellraw @s[scores={maxmagic=0}] { \"rawtext\" : [ { \"translate\" : \"text.dec:guide_book_0.name\" } ] }",
-            "tellraw @s[scores={maxmagic=0}] { \"rawtext\" : [ { \"translate\" : \"text.dec:guide_book_1.name\" } ] }",
-            "tellraw @s[scores={maxmagic=0}] { \"rawtext\" : [ { \"translate\" : \"text.dec:guide_book_2.name\" } ] }",
-            "tellraw @s[scores={maxmagic=0}] { \"rawtext\" : [ { \"translate\" : \"text.dec:guide_book_3.name\" } ] }"
+            "tellraw @s { \"rawtext\" : [ { \"translate\" : \"text.dec:guide_book_0.name\" } ] }",
+            "tellraw @s { \"rawtext\" : [ { \"translate\" : \"text.dec:guide_book_1.name\" } ] }",
+            "tellraw @s { \"rawtext\" : [ { \"translate\" : \"text.dec:guide_book_2.name\" } ] }",
+            "tellraw @s { \"rawtext\" : [ { \"translate\" : \"text.dec:guide_book_3.name\" } ] }"
           ],
           "target": "holder"
         }

@@ -22,7 +22,7 @@
       },
       "minecraft:use_duration": 0.5,
       "minecraft:food": {
-        "nutrition": 3,
+        "nutrition": 1,
         "saturation_modifier": "low"
       }
     }

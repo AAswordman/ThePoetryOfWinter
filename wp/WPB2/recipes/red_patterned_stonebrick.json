@@ -1,0 +1,29 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:red_patterned_stonebrick"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XAX",
+      "X#X",
+      "XAX"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:gold_nugget"
+      },
+      "X": {
+        "item": "dec:red_stonebrick"
+      },
+      "A": {
+        "item": "minecraft:red_dye"
+      }
+    },
+    "result": {
+      "item": "dec:red_patterned_stonebrick",
+      "count": 6
+    }
+  }
+}

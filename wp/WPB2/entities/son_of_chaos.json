@@ -6,19 +6,69 @@
       "runtime_identifier": "minecraft:iron_golem",
       "is_spawnable": false,
       "is_summonable": true,
-      "is_experimental": false
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "disappear"
+        ]
+      },
+      "animations": {
+        "disappear": "animation.disappear.10s"
+      }
     },
     "component_groups": {
-      "minecraft:disappear": {
-        "minecraft:explode": {
-          "fuseLength": 0.01,
-          "fuseLit": true,
-          "power": 0,
-          "causesFire": false
+      "minecraft:tame": {
+        "minecraft:behavior.owner_hurt_by_target": {
+          "priority": 1
+        },
+        "minecraft:behavior.owner_hurt_target": {
+          "priority": 2
+        },
+        "minecraft:is_tamed": {},
+        "minecraft:behavior.follow_owner": {
+          "priority": 2,
+          "speed_multiplier": 1.0,
+          "start_distance": 5,
+          "stop_distance": 1
         }
+      },
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
       }
     },
     "components": {
+      "minecraft:tameable": {
+        "probability": 1,
+        "tame_items": [
+          "diamond"
+        ],
+        "tame_event": {
+          "event": "minecraft:on_tame",
+          "target": "self"
+        }
+      },
+      "minecraft:damage_sensor": {
+        "triggers": [
+          {
+            "cause": "fall",
+            "deals_damage": false
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "fatal"
+                  }
+                ]
+              },
+              "event": "minecraft:disappear"
+            },
+            "deals_damage": false
+          }
+        ]
+      },
       "minecraft:type_family": {
         "family": [
           "son_of_chaos",
@@ -26,26 +76,6 @@
           "villager",
           "player"
         ]
-      },
-      "minecraft:behavior.follow_caravan": {
-        "priority": 3,
-        "speed_multiplier": 1.5,
-        "entity_count": 1,
-        "entity_types": {
-          "filters": {
-            "test": "is_family",
-            "subject": "other",
-            "value": "player"
-          }
-        }
-      },
-      "minecraft:timer": {
-        "looping": false,
-        "time": 10,
-        "time_down_event": {
-          "event": "minecraft:disappear",
-          "target": "self"
-        }
       },
       "minecraft:collision_box": {
         "width": 0.7,
@@ -73,12 +103,6 @@
         },
         "effect_name": "wither",
         "effect_duration": 5
-      },
-      "minecraft:damage_sensor": {
-        "triggers": {
-          "cause": "fall",
-          "deals_damage": false
-        }
       },
       "minecraft:knockback_resistance": {
         "value": 1.0
@@ -164,12 +188,22 @@
       "minecraft:disappear": {
         "run_command": {
           "command": [
-            "particle dec:summon_staff_spawn_disappear ~~~"
+            "particle dec:summon_staff_spawn_disappear ~~~",
+            "event entity @s minecraft:despawn"
           ]
-        },
+        }
+      },
+      "minecraft:on_tame": {
         "add": {
           "component_groups": [
-            "minecraft:disappear"
+            "minecraft:tame"
+          ]
+        }
+      },
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
           ]
         }
       }

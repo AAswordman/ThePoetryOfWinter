@@ -22,7 +22,8 @@
       }
     },
     "result": {
-      "item": "dec:challenge_of_ash"
+      "item": "dec:challenge_of_ash",
+      "count": 10
     }
   }
 }

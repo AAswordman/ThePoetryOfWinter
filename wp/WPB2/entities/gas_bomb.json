@@ -1,0 +1,74 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:gas_bomb",
+      "runtime_identifier": "minecraft:snowball",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      }
+    },
+    "components": {
+      "minecraft:collision_box": {
+        "width": 0.25,
+        "height": 0.25
+      },
+      "minecraft:projectile": {
+        "onHit": {
+          "definition_event": {
+            "affect_projectile": true,
+            "event_trigger": {
+              "event": "minecraft:explode",
+              "target": "self"
+            }
+          },
+          "impact_damage": {
+            "damage": 6,
+            "knockback": true
+          }
+        },
+        "power": 1.1,
+        "gravity": 0.05,
+        "inertia": 1.1,
+        "offset": [
+          0,
+          0,
+          1
+        ],
+        "uncertaintyBase": 5.0,
+        "angleoffset": 0.0
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    },
+    "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
+      "minecraft:explode": {
+        "run_command": {
+          "command": [
+            "playsound random.explode @a ~~~",
+            "particle dec:gas_bomb_particle ~~0.5~",
+            "effect @e[r=4,type=!item,type=!painting] poison 10 0",
+            "effect @e[r=4,type=!item,type=!painting] nausea 10 0",
+            "camerashake add @a[r=6,tag=gaming] 0.1 15 rotational",
+            "camerashake add @a[r=4,tag=gaming] 1 1 rotational"
+            //sapi修好后记得在这加个r=3内的gamer玩家随机转视角
+          ]
+        }
+      }
+    }
+  }
+}

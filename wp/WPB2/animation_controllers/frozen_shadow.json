@@ -24,11 +24,11 @@
             }
           ],
           "on_entry": [
-            "/tp ~~~ facing @p[m=!1]",
+            "/tp ~~~ facing @p[tag=gaming]",
             "/execute if block ^^^0.05 air run tp ^^^0.1",
 
-            "/execute if entity @a[m=!1,r=0.5] run tag @s add frozen_shadow_explode",
-            "/execute if entity @s[tag=frozen_shadow_explode] run damage @a[r=4,m=!1] 42 entity_explosion entity @s",
+            "/execute if entity @a[tag=gaming,r=0.5] run tag @s add frozen_shadow_explode",
+            "/execute if entity @s[tag=frozen_shadow_explode] run damage @a[r=4,tag=gaming] 42 entity_explosion entity @s",
             "/execute if entity @s[tag=frozen_shadow_explode] run particle dec:everlasting_winter_explode_particle ~~1~",
             "/execute if entity @s[tag=frozen_shadow_explode] run event entity @s minecraft:despawn"
           ]

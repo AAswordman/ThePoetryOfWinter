@@ -9,10 +9,17 @@
                     "weight": 2,
                     "functions": [
                         {
+                            "function": "set_count",
+                            "count": {
+                                "min": 3,
+                                "max": 6
+                            }
+                        },
+                        {
                             "function": "looting_enchant",
                             "count": {
                                 "min": 1,
-                                "max": 5
+                                "max": 2
                             }
                         }
                     ]
@@ -28,6 +35,13 @@
                                 "min": 3,
                                 "max": 9
                             }
+                        },
+                        {
+                            "function": "looting_enchant",
+                            "count": {
+                                "min": 1,
+                                "max": 2
+                            }
                         }
                     ]
                 },
@@ -42,6 +56,13 @@
                                 "min": 1,
                                 "max": 2
                             }
+                        },
+                        {
+                            "function": "looting_enchant",
+                            "count": {
+                                "min": 3,
+                                "max": 7
+                            }
                         }
                     ]
                 },
@@ -55,6 +76,13 @@
                             "count": {
                                 "min": 2,
                                 "max": 7
+                            }
+                        },
+                        {
+                            "function": "looting_enchant",
+                            "count": {
+                                "min": 1,
+                                "max": 4
                             }
                         }
                     ]
@@ -74,6 +102,13 @@
                             "count": {
                                 "min": 1,
                                 "max": 3
+                            }
+                        },
+                        {
+                            "function": "looting_enchant",
+                            "count": {
+                                "min": 1,
+                                "max": 2
                             }
                         }
                     ]
@@ -103,6 +138,13 @@
                                 "min": 1,
                                 "max": 1
                             }
+                        },
+                        {
+                            "function": "looting_enchant",
+                            "count": {
+                                "min": 1,
+                                "max": 2
+                            }
                         }
                     ]
                 }
@@ -124,6 +166,11 @@
                 {
                     "type": "item",
                     "name": "dec:scimitar",
+                    "weight": 3
+                },
+                {
+                    "type": "item",
+                    "name": "dec:rapier",
                     "weight": 3
                 },
                 {

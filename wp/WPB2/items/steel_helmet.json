@@ -41,7 +41,7 @@
         ]
       },
       "minecraft:durability": {
-        "max_durability": 205,
+        "max_durability": 453,
         "damage_chance": {
           "min": 60,
           "max": 100
@@ -55,7 +55,7 @@
       },
       "tag:comp:armor_protection:3": {},
       "tag:comp:armor_type:suit_:steel:_": {},
-      "tag:comp:armor_resilience:1": {}
+      "tag:comp:armor_resilience:2": {}
     }
   }
 }

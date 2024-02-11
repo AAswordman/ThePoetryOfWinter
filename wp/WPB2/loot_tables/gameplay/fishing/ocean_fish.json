@@ -90,6 +90,11 @@
         },
         {
           "type": "item",
+          "name": "dec:moon_jellyfish",
+          "weight": 1
+        },
+        {
+          "type": "item",
           "name": "dec:lamprey",
           "weight": 1
         },

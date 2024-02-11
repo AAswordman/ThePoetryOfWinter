@@ -16,6 +16,11 @@
         "ticking": "controller.animation.particle_fire_wake"
       }
     },
+    "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      }
+    },
     "components": {
       "minecraft:collision_box": {
         "width": 0.31,
@@ -33,12 +38,20 @@
             "damage": 14,
             "knockback": false,
             "catchFire": true,
-            "semirandomdiffdamage": false
+            "destroy_on_hit": false
+          },
+          "stick_in_ground": {
+            "shake_time": 0.02
+          },
+          "definition_event": {
+            "event_trigger": {
+              "event": "minecraft:despawn",
+              "target": "self"
+            }
           },
           "catch_fire": {
             "fireAffectedByGriefing": true
-          },
-          "remove_on_hit": {}
+          }
         },
         "power": 1,
         "gravity": 0.00,
@@ -50,14 +63,22 @@
           0,
           1
         ],
-        "semirandomdiffdamage": true,
+        "destroy_on_hurt": false,
         "uncertaintyBase": 10.0,
-        "uncertaintyMultiplier": 5,
-        "reflectOnHurt": true
+        "uncertaintyMultiplier": 5
       },
       "minecraft:pushable": {
         "is_pushable": false,
         "is_pushable_by_piston": true
+      }
+    },
+    "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
       }
     }
   }

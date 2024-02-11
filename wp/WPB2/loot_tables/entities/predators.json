@@ -73,6 +73,11 @@
                 {
                     "type": "item",
                     "name": "dec:bat_staff",
+                    "weight": 4
+                },
+                {
+                    "type": "item",
+                    "name": "dec:giant_bat_wings",
                     "weight": 1
                 }
             ]

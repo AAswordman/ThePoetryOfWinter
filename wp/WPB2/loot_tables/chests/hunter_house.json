@@ -205,6 +205,11 @@
         },
         {
           "type": "item",
+          "name": "dec:archer_hat",
+          "weight": 2
+        },
+        {
+          "type": "item",
           "name": "dec:bullet_bag",
           "weight": 1
         }

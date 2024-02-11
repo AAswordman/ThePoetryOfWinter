@@ -55,7 +55,7 @@ tag @a remove flowing_block_4
 execute at @a run fill ~-5 ~-5 ~-5 ~5 ~5 ~5 dec:lurk_mushroom_lit [] replace dec:lurk_mushroom []
 
 ##监视者
-execute at @a[m=!1] run fill ~-4 ~-4 ~-4 ~4 ~4 ~4 dec:monitor_activated [] replace dec:monitor []
+execute at @a[tag=gaming] run fill ~-4 ~-4 ~-4 ~4 ~4 ~4 dec:monitor_activated [] replace dec:monitor []
 
 ##潜影末地石
 execute as @e at @s if block ~~-0.1~ dec:lurk_end_stone [] run effect @s slowness 2 0

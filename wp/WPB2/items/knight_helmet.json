@@ -25,13 +25,13 @@
         "repair_items": [
           {
             "items": [
-              "minecraft:minecraft:iron_ingot"
+              "minecraft:iron_ingot"
             ],
             "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.2"
           },
           {
             "items": [
-              "minecraft:minecraft:iron_nugget"
+              "minecraft:iron_nugget"
             ],
             "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.02"
           }

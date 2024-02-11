@@ -22,7 +22,6 @@
         "category": "super_armor_core",
         "duration": 45
       },
-      "minecraft:foil": false,
       "minecraft:food": {
         "on_consume": {
           "event": "consumed",

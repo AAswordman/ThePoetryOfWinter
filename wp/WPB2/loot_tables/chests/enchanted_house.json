@@ -82,6 +82,20 @@
         },
         {
           "type": "item",
+          "name": "dec:mooli_seeds",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
           "name": "dec:lapis_sword",
           "weight": 1,
           "functions": [

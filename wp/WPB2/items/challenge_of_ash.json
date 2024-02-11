@@ -15,8 +15,7 @@
       "minecraft:icon": {
         "texture": "challenge_of_ash"
       },
-      "minecraft:foil": true,
-      "minecraft:stacked_by_data": false
+      "minecraft:foil": true
     }
   }
 }
