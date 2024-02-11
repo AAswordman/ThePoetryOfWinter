@@ -1,0 +1,29 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:crimson_lamp"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XAX",
+      "X#X",
+      "XAX"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:crimson_fungus"
+      },
+      "X": {
+        "item": "minecraft:shroomlight"
+      },
+      "A": {
+        "item": "minecraft:nether_wart_block"
+      }
+    },
+    "result": {
+      "item": "dec:crimson_lamp",
+      "count": 3
+    }
+  }
+}

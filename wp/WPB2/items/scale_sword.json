@@ -58,6 +58,16 @@
         "value": 15,
         "slot": "sword"
       },
+      "minecraft:cooldown": {
+          "category": "sword",
+          "duration": 0.5
+      },
+      "minecraft:on_use": {
+        "on_use": {
+          "event": "scale_sword_skill",
+          "target": "self"
+        }
+      },
       "minecraft:can_destroy_in_creative": false,
       "minecraft:digger": {
         "use_efficiency": true,
@@ -72,7 +82,6 @@
           }
         ]
       },
-      "minecraft:foil": false,
       "minecraft:hand_equipped": true,
       "tag:comp:underwater_movement_addition:0.04": {},
       "tag:comp:equipment_type:melee_weapon":{}
@@ -123,6 +132,48 @@
               "type": "magic",
               "amount": 1
             }
+          }
+        ]
+      },
+      "scale_sword_skill": {
+        "sequence": [
+          {
+            "condition": "query.scoreboard('wbfl') > 6 && query.is_in_water_or_rain",
+            "sequence": [
+              {
+                "run_command": {
+                  "command": [
+                    "function item/scale_sword_skill_water"
+                  ],
+                  "target": "holder"
+                }
+              },
+              {
+                "damage": {
+                  "type": "magic",
+                  "amount": 1
+                }
+              }
+            ]
+          },
+          {
+            "condition": "query.scoreboard('wbfl') > 10 && !query.is_in_water_or_rain",
+            "sequence": [
+              {
+                "run_command": {
+                  "command": [
+                    "function item/scale_sword_skill_land"
+                  ],
+                  "target": "holder"
+                }
+              },
+              {
+                "damage": {
+                  "type": "magic",
+                  "amount": 2
+                }
+              }
+            ]
           }
         ]
       }

@@ -1,0 +1,25 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:item": {
+    "description": {
+      "category": "nature",
+      "identifier": "dec:red_spider_lily"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.flower"
+      },
+      "minecraft:display_name": {
+        "value": "item.dec:red_spider_lily.name"
+      },
+      "minecraft:icon": {
+        "texture": "red_spider_lily"
+      },
+      "minecraft:use_animation": "eat",
+      "minecraft:render_offsets": "cookie",
+      "minecraft:block_placer": {
+        "block": "dec:red_spider_lily_crop"
+      }
+    }
+  }
+}

@@ -10,15 +10,23 @@
         "default": "textures/items/frozen_dart"
       },
       "geometry": {
-        "default": "geometry.item_sprite"
+        "default": "geometry.dart"
       },
-      "render_controllers": [ "controller.render.item_sprite" ],
+      "render_controllers": [
+        "controller.render.arrow"
+      ],
       "animations": {
-        "flying": "animation.actor.billboard"
+        "flying": "animation.facing.direct",
+        "spining": "animation.dart.spin"
       },
       "scripts": {
         "animate": [
-          "flying"
+          "flying",
+          "spining"
+        ],
+        "pre_animation": [
+          "variable.shake = query.shake_time - query.frame_alpha;",
+          "variable.shake_power = variable.shake > 0.0 ? -Math.sin(variable.shake * 200.0) * variable.shake : 0.0;"
         ]
       }
     }

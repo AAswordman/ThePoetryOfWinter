@@ -18,6 +18,14 @@
         {
           "type": "item",
           "name": "dec:the_blade"
+        },
+        {
+          "type": "item",
+          "name": "dec:bamboo_katana"
+        },
+        {
+          "type": "item",
+          "name": "dec:hard_bamboo_katana"
         }
       ]
     }

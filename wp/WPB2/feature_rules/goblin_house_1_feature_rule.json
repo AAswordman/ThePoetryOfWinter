@@ -3,7 +3,7 @@
     "minecraft:feature_rules": {
         "description": {
             "identifier": "dec:goblin_house_1_feature_rule",
-            "places_feature": "dec:goblin_house_1_mcstructure"
+            "places_feature": "dec:goblin_house_1_mcstructure"//decgoblin_house_1_slat_feature
         },
         "conditions": {
             "placement_pass": "surface_pass",

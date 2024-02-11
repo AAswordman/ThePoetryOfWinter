@@ -79,7 +79,7 @@
                     },
                     {
                         "items": [
-                            "minecraft:dec:lapis_nugget"
+                            "dec:lapis_nugget"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.03"
                     }

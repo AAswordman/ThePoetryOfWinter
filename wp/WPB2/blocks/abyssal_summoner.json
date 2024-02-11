@@ -51,7 +51,7 @@
               1200
             ],
             "on_tick": {
-              "event": "activate_naturally"
+              "event": "minecraft:activate_naturally"
             }
           },
           "minecraft:light_dampening": 15,
@@ -115,13 +115,13 @@
       "unlocked": {
         "run_command": {
           "command": [
-            "tag @p remove abyssal_summoner_unlock",
             "execute unless block ~3 53 ~3 dec:scale_block unless block ~-3 53 ~3 dec:scale_block unless block ~3 53 ~-3 dec:scale_block unless block ~-3 53 ~-3 dec:scale_block unless block ~2 47 ~2 dec:scale_block unless block ~-2 47 ~2 dec:scale_block unless block ~2 47 ~-2 dec:scale_block unless block ~-2 47 ~-2 dec:scale_block unless block ~3 41 ~3 dec:scale_block unless block ~-3 41 ~3 dec:scale_block unless block ~3 41 ~-3 dec:scale_block unless block ~-3 41 ~-3 dec:scale_block run tag @p add abyssal_summoner_unlock",
             "execute if entity @p[tag=abyssal_summoner_unlock] run playsound conduit.activate @a ~~~",
             "execute if entity @p[tag=abyssal_summoner_unlock] run particle minecraft:critical_hit_emitter ~~~",
             "execute if entity @p[tag=abyssal_summoner_unlock] run setblock ~~~ dec:abyssal_summoner [\"dec:state\"= \"empty\"]",
             "execute unless entity @p[tag=abyssal_summoner_unlock] run tellraw @a { \"rawtext\" : [ { \"translate\" : \"text.dec:abyssal_summoner_unlock_fail.name\" } ] }",
-            "execute unless entity @p[tag=abyssal_summoner_unlock] run playsound random.anvil_break @a ~~~"
+            "execute unless entity @p[tag=abyssal_summoner_unlock] run playsound random.anvil_break @a ~~~",
+            "tag @p remove abyssal_summoner_unlock"
           ]
         }
       },

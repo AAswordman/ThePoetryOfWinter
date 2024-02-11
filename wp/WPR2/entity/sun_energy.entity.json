@@ -9,14 +9,19 @@
       "geometry": {
         "default": "geometry.energy_ball_v2"
       },
+      "particle_effects": {
+        "wake": "dec:fire_wake_particle"
+      },
       "scripts": {
         "scale": "0.75",
         "animate": [
-          "fly"
+          "fly",
+          "wake"
         ]
       },
       "animations": {
-        "fly": "animation.energy_ball.fly"
+        "fly": "animation.energy_ball.fly",
+        "wake": "animation.energy_ball.wake"
       },
       "render_controllers": [ "controller.render.spots" ],
       "materials": { "default": "husk" }

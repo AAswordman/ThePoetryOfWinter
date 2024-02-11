@@ -1,0 +1,52 @@
+{
+	"format_version": "1.10.0",
+	"particle_effect": {
+		"description": {
+			"identifier": "dec:bubble_vortex_particle",
+			"basic_render_parameters": {
+				"material": "particles_alpha",
+				"texture": "textures/particle/bubble"
+			}
+		},
+		"curves": {
+			"variable.size": {
+				"type": "linear",
+				"input": "v.particle_lifetime",
+				"horizontal_range": "v.particle_age",
+				"nodes": [0.5, 0]
+			}
+		},
+		"components": {
+			"minecraft:emitter_initialization": {
+				"creation_expression": "variable.a = math.random(0,360);variable.r = math.random(1.5,3.3);variable.w = 10;variable.l = math.random(1,2);"
+			},
+			"minecraft:emitter_rate_steady": {
+				"spawn_rate": 10,
+				"max_particles": 100
+			},
+			"minecraft:emitter_lifetime_once": {
+				"active_time": 1
+			},
+			"minecraft:emitter_shape_point": {
+				"offset": ["math.cos(variable.a + variable.emitter_age * 240) * variable.r", "variable.emitter_age * ( 3 - math.random(-1,1))", "math.sin(variable.a + variable.emitter_age * 240) * variable.r"]
+			},
+			"minecraft:particle_initialization": {
+				"per_render_expression": "variable.size = 0.75 * math.pow(1.0-(variable.particle_age / variable.particle_lifetime), 0.08);"
+			},
+			"minecraft:particle_lifetime_expression": {
+				"max_lifetime": "variable.l"
+			},
+			"minecraft:particle_appearance_billboard": {
+				"size": ["variable.size * 0.2", "variable.size * 0.2"],
+				"facing_camera_mode": "lookat_xyz",
+				"uv": {
+					"texture_width": 8,
+					"texture_height": 8,
+					"uv": [0, 0],
+					"uv_size": [8, 8]
+				}
+			},
+			"minecraft:particle_appearance_lighting": {}
+		}
+	}
+}

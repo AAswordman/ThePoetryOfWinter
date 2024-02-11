@@ -5,7 +5,7 @@
 			"identifier": "dec:abyssal_shadow_disappear_particle",
 			"basic_render_parameters": {
 				"material": "particles_alpha",
-				"texture": "textures/particle/bubble_line"
+				"texture": "textures/particle/bubble"
 			}
 		},
 		"components": {

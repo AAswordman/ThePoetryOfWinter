@@ -1057,6 +1057,20 @@
                         "on_dig": {
                             "event": "attack"
                         }
+                    },
+                    {
+                        "block": "dec:trellis",
+                        "speed": 6,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:trellis_cover",
+                        "speed": 6,
+                        "on_dig": {
+                            "event": "attack"
+                        }
                     }
                 ],
                 "on_dig": {
@@ -1083,7 +1097,7 @@
                 "repair_items": [
                     {
                         "items": [
-                            "minecraft:dec:stream_stone"
+                            "dec:stream_stone"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.3"
                     }
@@ -1095,28 +1109,21 @@
                     "target": "self"
                 }
             },
-            "tag:minecraft:is_axe": {},
-            "tag:comp:movement_addition:-0.01": {}
+            "tag:minecraft:is_axe": {}
         },
         "events": {
-            "attack": {
-                "damage": {
-                    "amount": 1,
-                    "type": "magic"
-                }
-            },
-            "attack_more": {
-                "damage": {
-                    "amount": 2,
-                    "type": "magic"
-                }
-            },
             "storm_battleaxe_skill": {
                 "run_command": {
                     "command": [
                         "function item/storm_battleaxe_skill"
                     ],
                     "target": "holder"
+                }
+            },
+            "attack_more": {
+                "damage": {
+                    "amount": 2,
+                    "type": "magic"
                 }
             },
             "storm_battleaxe_attack": {
@@ -1160,6 +1167,12 @@
                         ]
                     }
                 ]
+            },
+            "attack": {
+                "damage": {
+                    "amount": 1,
+                    "type": "magic"
+                }
             }
         }
     }

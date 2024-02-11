@@ -178,6 +178,14 @@
         {
           "type": "item",
           "name": "dec:wind_of_shadow"
+        },
+        {
+          "type": "item",
+          "name": "dec:rapier"
+        },
+        {
+          "type": "item",
+          "name": "dec:dead_wood_rapier"
         }
       ]
     }

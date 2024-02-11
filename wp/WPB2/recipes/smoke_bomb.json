@@ -1,0 +1,36 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:smoke_bomb"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "BCA",
+      "#XC",
+      "B#B"
+    ],
+    "key": {
+      "A": {
+        "item": "dec:hemp_rope"
+      },
+      "#": {
+        "item": "minecraft:dirt"
+      },
+      "C": {
+        "item": "minecraft:dirt",
+        "data": 1
+      },
+      "X": {
+        "item": "minecraft:gunpowder"
+      },
+      "B": {
+        "item": "minecraft:gravel"
+      }
+    },
+    "result": {
+      "item": "dec:smoke_bomb",
+      "count": 4
+    }
+  }
+}

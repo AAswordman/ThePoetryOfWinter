@@ -22,7 +22,8 @@
       }
     },
     "result": {
-      "item": "dec:dark_pearl"
+      "item": "dec:dark_pearl",
+      "count": 10
     }
   }
 }

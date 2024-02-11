@@ -25,6 +25,11 @@
         },
         {
           "type": "item",
+          "name": "dec:sardine",
+          "weight": 50
+        },
+        {
+          "type": "item",
           "name": "dec:ender_fish",
           "weight": 10
         },

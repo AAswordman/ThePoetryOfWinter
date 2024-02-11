@@ -93,8 +93,8 @@
         "suffocateTime": 0
       },
       "minecraft:health": {
-        "value": 100,
-        "max": 100
+        "value": 150,
+        "max": 150
       },
       "minecraft:knockback_resistance": {
         "value": 1
@@ -210,6 +210,7 @@
         },
         "run_command": {
           "command": [
+            "effect @s resistance 6 5",
             "particle dec:abyssal_controller_spawn_particle ~~~",
             "particle dec:abyssal_controller_spawn_particle ~~~",
             "particle dec:abyssal_controller_spawn_particle ~~~"

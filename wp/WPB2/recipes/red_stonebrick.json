@@ -1,0 +1,26 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:red_stonebrick"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "###",
+      "#X#",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:brick_block"
+      },
+      "X": {
+        "item": "minecraft:red_dye"
+      }
+    },
+    "result": {
+      "item": "dec:red_stonebrick",
+      "count": 8
+    }
+  }
+}

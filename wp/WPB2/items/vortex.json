@@ -25,6 +25,12 @@
           "target": "self"
         }
       },
+      "minecraft:on_use": {
+        "on_use": {
+          "event": "vortex_attack",
+          "target": "self"
+        }
+      },
       "minecraft:stacked_by_data": false,
       "minecraft:max_stack_size": 1,
       "minecraft:durability": {
@@ -52,6 +58,10 @@
         "value": 15,
         "slot": "sword"
       },
+      "minecraft:cooldown": {
+          "category": "sword",
+          "duration": 0.5
+      },
       "minecraft:can_destroy_in_creative": false,
       "minecraft:digger": {
         "use_efficiency": true,
@@ -66,10 +76,9 @@
           }
         ]
       },
-      "minecraft:foil": false,
       "minecraft:hand_equipped": true,
       "tag:comp:underwater_movement_addition:0.03": {},
-      "tag:comp:equipment_type:melee_weapon":{}
+      "tag:comp:equipment_type:melee_weapon": {}
     },
     "events": {
       "attack": {
@@ -77,6 +86,48 @@
           "type": "magic",
           "amount": 1
         }
+      },
+      "vortex_attack": {
+        "sequence": [
+          {
+            "condition": "query.scoreboard('wbfl') > 7 && query.is_in_water_or_rain",
+            "sequence": [
+              {
+                "run_command": {
+                  "command": [
+                    "function item/vortex_water"
+                  ],
+                  "target": "holder"
+                }
+              },
+              {
+                "damage": {
+                  "type": "magic",
+                  "amount": 1
+                }
+              }
+            ]
+          },
+          {
+            "condition": "query.scoreboard('wbfl') > 11 && !query.is_in_water_or_rain",
+            "sequence": [
+              {
+                "run_command": {
+                  "command": [
+                    "function item/vortex_land"
+                  ],
+                  "target": "holder"
+                }
+              },
+              {
+                "damage": {
+                  "type": "magic",
+                  "amount": 2
+                }
+              }
+            ]
+          }
+        ]
       }
     }
   }

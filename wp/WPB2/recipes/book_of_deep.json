@@ -21,7 +21,8 @@
       }
     },
     "result": {
-      "item": "dec:book_of_deep"
+      "item": "dec:book_of_deep",
+      "count": 10
     }
   }
 }

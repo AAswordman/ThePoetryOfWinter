@@ -27,6 +27,7 @@ item.epic:sunlight_leggings.name=（预告）日光护腿
 item.epic:sunlight_boots.name=（预告）日光战靴
 ====================================================================
 
+============================WB&POW==================================
 howtoplay.wb0.title=BOSS流程
 howtoplay.wb0=BOSS流程
 howtoplay.wb0x.title=生存指南
@@ -668,7 +669,7 @@ text.help.wb.new.how_to_play.74=末影祭坛玩家踩上去随机传送，消耗
 
 text.gradeup.wb=§a恭喜升级
 
-
+===========================Decisland==================================
 
 item.dec:rice.name=大米
 item.dec:a_bowl_of_rice.name=一碗饭
@@ -1155,6 +1156,34 @@ item.dec:ash_key.name=灰烬钥匙
 item.dec:dust_ring.name=尘埃戒
 item.dec:sticky_ash.name=粘稠灰烬
 item.dec:snow_lotus.name=雪莲花
+//DEC1.9.3
+item.dec:hunter_book.name=猎人之书
+item.dec:patterned_vase_red.name=红色纹饰花瓶
+item.dec:lava_essence.name=岩浆精华
+item.dec:lava_flower_seeds.name=岩浆花种子
+item.dec:mooli.name=白萝卜
+item.dec:mooli_seeds.name=白萝卜种子
+item.dec:red_spider_lily.name=绽金彼岸
+item.dec:cob.name=玉米棒
+item.dec:corn.name=玉米
+item.dec:corn_seeds.name=玉米粒
+item.dec:giant_bat_wings.name=巨型蝙蝠翅
+item.dec:smoke_bomb.name=烟雾弹
+item.dec:gas_bomb.name=毒气弹
+item.dec:golden_fence.name=流金栅栏
+item.dec:bamboo_katana.name=竹太刀
+item.dec:hard_bamboo_katana.name=硬化竹太刀
+item.dec:rapier.name=刺剑
+item.dec:dead_wood_rapier.name=枯木之握
+item.dec:dead_wood_dagger.name=枯蔓
+item.dec:moon_jellyfish.name=海月水母
+item.dec:scarecrow.name=稻草人
+item.dec:archer_hat.name=射手帽
+item.dec:black_courtesy.name=黑礼帽
+item.dec:blue_gem_hat.name=蓝宝石帽
+item.dec:farmer_hat.name=草帽
+item.dec:red_gem_hat.name=红宝石帽
+
 
 tile.dec:ancient_ice.name=远古冰块
 tile.dec:lava_ore.name=岩浆矿石
@@ -1163,16 +1192,16 @@ tile.dec:fuse.name=导火索
 tile.dec:light_obsidian.name=轻质黑曜石
 tile.dec:end_altar.name=终末祭坛
 tile.dec:crate.name=板条箱
-tile.dec:yellow_flower_block.name=黄花块
-tile.dec:white_flower_block.name=白花块
-tile.dec:blue_flower_block.name=蓝花块
-tile.dec:pink_flower_block.name=粉花块
-tile.dec:black_flower_block.name=黑花块
-tile.dec:red_flower_block.name=红花块
+tile.dec:yellow_flower_block.name=黄花团
+tile.dec:white_flower_block.name=白花团
+tile.dec:blue_flower_block.name=蓝花团
+tile.dec:pink_flower_block.name=粉花团
+tile.dec:black_flower_block.name=黑花团
+tile.dec:red_flower_block.name=红花团
 tile.dec:ice_brick_block.name=冰砖块
 tile.dec:compressed_ice.name=压缩冰
 tile.dec:snow_brick_block.name=雪砖块
-tile.dec:compress_flower_block.name=压缩花块
+tile.dec:compress_flower_block.name=压缩花团
 tile.dec:uranium_ore.name=铀矿石
 tile.dec:uranium_block.name=铀块
 tile.dec:solidified_lava_block.name=凝固岩浆块
@@ -1235,7 +1264,7 @@ tile.dec:experience_flower_crop.name=经验花
 tile.dec:snow_lotus_crop.name=雪莲花
 tile.dec:blue_gem_ore.name=蓝宝石矿
 tile.dec:red_gem_ore.name=红宝石矿
-tile.dec:flower_ghost_block.name=幽魂花块
+tile.dec:flower_ghost_block.name=幽魂花团
 tile.dec:nightmare_block.name=夜魔块
 tile.dec:eye_of_nature_log.name=自然之眼木
 tile.dec:forest_summoner.name=深林召唤者
@@ -1262,6 +1291,27 @@ tile.dec:ice_lantern.name=冰灯
 tile.dec:magic_letter_box.name=魔法信箱
 tile.dec:ash_summoner.name=灰烬召唤者
 tile.dec:ash_cage.name=灰烬牢笼
+//DEC1.9.3
+tile.dec:trellis.name=种植架
+tile.dec:trellis_cover.name=横向种植架
+tile.dec:patterned_vase_red_block.name=红色纹饰花瓶
+tile.dec:lace_block_black.name=深红蕾丝块
+tile.dec:lace_block_light_red.name=浅红蕾丝块
+tile.dec:red_patterned_stonebrick.name=红色纹饰瓷砖
+tile.dec:red_stonebrick.name=红色石砖
+tile.dec:lava_flower_crop.name=岩浆花
+tile.dec:mooli_crop.name=白萝卜
+tile.dec:red_spider_lily_crop.name=绽金彼岸
+tile.dec:corn_crop.name=玉米
+tile.dec:golden_chain.name=流金锁链
+tile.dec:golden_fence_block.name=流金栏杆
+tile.dec:golden_lamp.name=流金之灯
+tile.dec:golden_bookshelf_frame.name=流金书架框架
+tile.dec:golden_bookshelf.name=流金书架
+tile.dec:crimson_lamp.name=绯红之灯
+tile.dec:lampshade.name=灯罩
+
+
 
 item.spawn_egg.entity.dec:ice_zombie.name=生成 寒冰僵尸
 item.spawn_egg.entity.dec:ash_blaze.name=生成 灰烬烈焰人
@@ -1386,6 +1436,10 @@ item.spawn_egg.entity.dec:ice_bat.name=生成 冰冻蝙蝠
 item.spawn_egg.entity.dec:ice_spirit.name=生成 冰魂
 item.spawn_egg.entity.dec:ice_wizard.name=生成 寒潮法师
 item.spawn_egg.entity.dec:ice_monster.name=生成 冰雪怪
+//DEC1.9.3
+item.spawn_egg.entity.dec:frozen_man.name=生成 冰人
+
+
 
 entity.dec:ice_zombie.name=寒冰僵尸
 entity.dec:ash_blaze.name=灰烬烈焰人
@@ -1402,7 +1456,7 @@ entity.dec:ice_blaze.name=寒霜人
 entity.dec:predators.name=扑食者
 entity.dec:vampire_bat.name=吸血蝙蝠
 entity.dec:abyssal_controller.name=深海牢笼
-entity.dec:son_of_natura.name=自然之子
+entity.dec:son_of_nature.name=自然之子
 entity.dec:star.name=星星
 entity.dec:sea_urchin.name=海胆
 entity.dec:clam.name=蛤
@@ -1552,6 +1606,11 @@ entity.dec:ice_monster.name=冰雪怪
 entity.dec:ash_sword.name=灰烬之刃
 entity.dec:ash_horse_head.name=灰烬马的头
 entity.dec:ash_knight_head.name=灰烬之首
+//DEC1.9.3
+entity.dec:frozen_man.name=冰人
+entity.dec:scarecrow.name=稻草人
+
+
 
 entity.dec:thrown_bomb.name=炸药包
 entity.dec:saucer_ray.name=飞碟射线
@@ -1649,29 +1708,25 @@ entity.dec:supply_package.name=补给包
 
 item.record_star.desc=fish - 拥抱星辰
 
-createWorldScreen.immediaterespawn=立即重生§4强制关闭§r
+createWorldScreen.immediaterespawn=立即重生§4§l强制关闭§r
 
 action.hint.exit.dec:simple_car=简单小车，蹲下或跳跃离开
 action.hint.exit.dec:simple_glider=简单滑翔机，蹲下或跳跃离开
 action.hint.exit.dec:brown_bear=棕熊，蹲下或跳跃离开
 action.interact.collect=采集
 action.interact.ride.brown_bear=骑乘
+action.interact.scarecrow_resort=回收
 
 boss.dec:leaves_golem.name=绿叶精华
 boss.dec:ash_knight.name=灰烬骑士
 boss.dec:predators.name=扑食者
-boss.dec:predators_angry.name=§4扑食者§r
 boss.dec:enchant_illager.name=附魔师
-boss.dec:enchant_illager_angry.name=§4附魔师§r
 boss.dec:abyssal_controller.name=深海牢笼
-boss.dec:abyssal_controller_angry.name=§4深海牢笼§r
 boss.dec:entity_soul.name=实体灵魂
-boss.dec:entity_soul_angry.name=§4实体灵魂§r
 boss.dec:everlasting_winter_ghast.name=永冬恶魂
 boss.dec:king_of_pillager.name=掠夺者之王
 boss.dec:shadow_soul.name=暗影之魂
 boss.dec:host_of_deep.name=深渊之主
-boss.dec:host_of_deep_angry.name=§4深渊之主§4
 boss.dec:escaped_soul.name=逃逸之魂
 boss.dec:ash_knight_head.name=灰烬之首
 boss.dec:ash_sword.name=灰烬之刃
@@ -1698,7 +1753,7 @@ text.dec:creator_list_2.name=§bEnderghostScale - 人造肉、部分怪物、投
 text.dec:creator_list_3.name=§bhaveyouwantto - 技术支持
 text.dec:creator_list_4.name=§bhuo鱼一只 - 技术支持
 text.dec:creator_list_5.name=§bAR_UnryAllenCN - 技术支持
-text.dec:creator_list_6.name=§bAA剑侠 - 技术支持
+text.dec:creator_list_6.name=§bAA剑侠 - Sapi部分和技术支持
 text.dec:creator_list_7.name=§b世心 - 狼人，暗狼人
 text.dec:creator_list_8.name=§b論娘 - 幻术师
 text.dec:creator_list_9.name=§b荷叶 - 提供灵感，新手指南
@@ -1720,10 +1775,18 @@ text.dec:creator_list_24.name=§bMr.龙灵 - 提供结构和贴图
 text.dec:creator_list_25.name=§b寒翼 - 灵感、建筑和贴图
 text.dec:creator_list_26.name=§bKucerLuo - 建筑
 text.dec:creator_list_27.name=§bRepforce - 建筑
-text.dec:creator_list_28.name=§b豆沙 - 部分怪物
+text.dec:creator_list_28.name=§b豆沙 - 部分怪物、建筑
 text.dec:creator_list_29.name=§b夜长生 - 建筑
 text.dec:creator_list_30.name=§b默笙 - 建筑
 text.dec:creator_list_31.name=§bStereoRoom411 - 建筑
+text.dec:creator_list_32.name=§b岚天 - 建筑
+text.dec:creator_list_33.name=§b一只有疑问的猪 - 建筑
+text.dec:creator_list_34.name=§bLZN - 建筑
+text.dec:creator_list_35.name=§b纸盒Alifang - 生物动画
+text.dec:creator_list_36.name=§bKale - 美工、建筑、设计、物品和技术支持等
+text.dec:creator_list_37.name=§bLolktype - 建筑、介绍
+text.dec:creator_list_38.name=§bKoffyt93 - 建筑
+text.dec:creator_list_39.name=§b幻想贝壳 - 建筑、贴图
 text.dec:qq_group.name=§e反馈和测试群号 - 486864907
 text.dec:thanks.name=§e最后,衷心感谢所有为此addon做出贡献的人以及群内的所有小伙伴
 text.dec:omit.name=§b......
@@ -1774,29 +1837,13 @@ text.dec:uptohpl7.name=§a生命值10->11
 text.dec:uptohpl8.name=§a生命值11->12，生命值已满
 text.dec:ender_egg_max.name=§a生命值12，生命值已满
 
-text.dec:uptomm1.name=§a魔法值20->22
-text.dec:uptomm2.name=§a魔法值22->24
-text.dec:uptomm3.name=§a魔法值24->26
-text.dec:uptomm4.name=§a魔法值26->28
-text.dec:uptomm5.name=§a魔法值28->30
-text.dec:uptomm6.name=§a魔法值30->32
-text.dec:uptomm7.name=§a魔法值32->34
-text.dec:uptomm8.name=§a魔法值34->36
-text.dec:uptomm9.name=§a魔法值36->38
-text.dec:uptomm10.name=§a魔法值38->40，需用红宝石进一步提升魔法值
+text.dec:blue_gem_magic_up.name=§a最大魔法已被提升至:
 text.dec:red_gem_not_enough.name=§a魔法值不足40，需用蓝宝石提升魔法值至40才能使用红宝石
-text.dec:blue_gem_max.name=§a魔法值40，需用红宝石进一步提升魔法值
-text.dec:uptomm11.name=§a魔法值40->42
-text.dec:uptomm12.name=§a魔法值42->44
-text.dec:uptomm13.name=§a魔法值44->46
-text.dec:uptomm14.name=§a魔法值46->48
-text.dec:uptomm15.name=§a魔法值48->50
-text.dec:uptomm16.name=§a魔法值50->52
-text.dec:uptomm17.name=§a魔法值52->54
-text.dec:uptomm18.name=§a魔法值54->56
-text.dec:uptomm19.name=§a魔法值56->58
-text.dec:uptomm20.name=§a魔法值58->60，魔法值已满
-text.dec:red_gem_max.name=§a魔法值60，魔法值已满
+text.dec:blue_gem_max.name=§a需用红宝石进一步提升最大魔法值
+text.dec:red_gem_magic_up.name=§a最大魔法已被提升至:
+text.dec:red_gem_max.name=§a最大魔法值已满
+text.dec:magic_crystal_magicgain_up.name=§a魔法恢复速度已提升至:
+text.dec:magic_crystal_max.name=§a魔法恢复速度已达到极限
 
 text.dec:experience_book_empty_fail.name=§a如此干涸的经验谁会渴望呢？
 text.dec:village_guardian_fail_boss.name=§a力量被压制了
@@ -1821,10 +1868,19 @@ text.dec:command_help_4.name=§a>/diemode open   用于开启死亡模式（权�
 text.dec:command_help_5.name=§a>/magic display true   用于开启魔法显示（权限需求：管理员）
 text.dec:command_help_6.name=§a>/magic display false   用于关闭魔法显示（权限需求：管理员）
 
+//冬诗得改成和升级方式、技能加成有关的
+
 text.dec:guide_book_0.name=§a指导书
 text.dec:guide_book_1.name=§a你很虚弱，所以请不要让它们轻易的靠近你。在夜间需额外消息，否则怪物能轻易将你撕成碎片。如果雾气在夜间聚集，为了你的安全，请不要出门。
 text.dec:guide_book_2.name=§a
 text.dec:guide_book_3.name=§a
+
+text.dec:hunter_book_new.name=§a新任务地点已发布
+text.dec:hunter_book_coordinate_1.name=§a任务地点:
+text.dec:hunter_book_coordinate_2.name=,
+text.dec:hunter_book_not_complete.name=§a你还没有到达任务地点
+text.dec:hunter_book_success.name=§a你已到达任务地点
+----TASKS------
 
 text.dec:task_choose_title.name=任务
 text.dec:task_choose_body.name=选择一个任务并查看详情
@@ -1925,7 +1981,7 @@ text.dec:task_030_title.name=矿物交易！
 text.dec:task_030_body.name=提交2影击碎片。奖励：21-48铁锭，978点经验。
 text.dec:task_030_complete.name=任务完成！
 text.dec:task_031_title.name=黑市交易单
-text.dec:task_031_body.name=提交13溪流石。奖励：1灵魂钥匙碎片，134点经验。
+text.dec:task_031_body.name=提交13溪流石。奖励：1神秘钥匙碎片，134点经验。
 text.dec:task_031_complete.name=任务完成！
 text.dec:task_032_title.name=黑市交易单
 text.dec:task_032_body.name=提交32溪流石，26青金石。奖励：1-4污染海藻，164点经验。

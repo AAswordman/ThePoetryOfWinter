@@ -1057,6 +1057,20 @@
                         "on_dig": {
                             "event": "attack"
                         }
+                    },
+                    {
+                        "block": "dec:trellis",
+                        "speed": 16,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:trellis_cover",
+                        "speed": 16,
+                        "on_dig": {
+                            "event": "attack"
+                        }
                     }
                 ],
                 "on_dig": {
@@ -1079,31 +1093,31 @@
                 "repair_items": [
                     {
                         "items": [
-                            "minecraft:minecraft:glass"
+                            "minecraft:glass"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.7"
                     },
                     {
                         "items": [
-                            "minecraft:minecraft:glass_pane"
+                            "minecraft:glass_pane"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.5"
                     },
                     {
                         "items": [
-                            "minecraft:minecraft:stained_glass"
+                            "minecraft:stained_glass"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.7"
                     },
                     {
                         "items": [
-                            "minecraft:minecraft:stained_glass_pane"
+                            "minecraft:stained_glass_pane"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.5"
                     },
                     {
                         "items": [
-                            "minecraft:dec:glass_ingot"
+                            "dec:glass_ingot"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  1"
                     }
@@ -1112,15 +1126,15 @@
             "tag:minecraft:is_axe": {}
         },
         "events": {
-            "attack": {
-                "damage": {
-                    "amount": 1,
-                    "type": "magic"
-                }
-            },
             "attack_more": {
                 "damage": {
                     "amount": 2,
+                    "type": "magic"
+                }
+            },
+            "attack": {
+                "damage": {
+                    "amount": 1,
                     "type": "magic"
                 }
             }

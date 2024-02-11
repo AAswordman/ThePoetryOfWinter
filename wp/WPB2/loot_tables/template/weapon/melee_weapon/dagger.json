@@ -66,6 +66,10 @@
         {
           "type": "item",
           "name": "dec:wooden_dagger"
+        },
+        {
+          "type": "item",
+          "name": "dec:dead_wood_dagger"
         }
       ]
     }

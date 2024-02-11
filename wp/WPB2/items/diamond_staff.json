@@ -60,6 +60,10 @@
                         "scoreboard players add @s skill_count 1"
                       ],
                       "target": "holder"
+                    },
+                    "damage": {
+                      "type": "magic",
+                      "amount": 1
                     }
                   }
                 ]
@@ -72,7 +76,7 @@
                       "command": [
                         "playsound item.book.put @a ~~~",
                         "playanimation @s animation.humanoid.staff_use",
-                        "scoreboard players remove @s magicpoint 3"
+                        "scoreboard players remove @s wbfl 3"
                       ],
                       "target": "holder"
                     },

@@ -1,0 +1,29 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:golden_fence"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XAX",
+      "X#X",
+      "XAX"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:gold_nugget"
+      },
+      "X": {
+        "item": "minecraft:nether_brick_fence"
+      },
+      "A": {
+        "item": "minecraft:red_dye"
+      }
+    },
+    "result": {
+      "item": "dec:golden_fence",
+      "count": 6
+    }
+  }
+}

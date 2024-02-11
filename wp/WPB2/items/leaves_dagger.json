@@ -73,37 +73,37 @@
                 "repair_items": [
                     {
                         "items": [
-                            "minecraft:minecraft:leaves"
+                            "minecraft:leaves"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.01"
                     },
                     {
                         "items": [
-                            "minecraft:minecraft:leaves2"
+                            "minecraft:leaves2"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.01"
                     },
                     {
                         "items": [
-                            "minecraft:minecraft:log"
+                            "minecraft:log"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.03"
                     },
                     {
                         "items": [
-                            "minecraft:minecraft:log2"
+                            "minecraft:log2"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.03"
                     },
                     {
                         "items": [
-                            "minecraft:minecraft:azalea_leaves"
+                            "minecraft:azalea_leaves"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.01"
                     },
                     {
                         "items": [
-                            "minecraft:minecraft:azalea_leaves_flowered"
+                            "minecraft:azalea_leaves_flowered"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.01"
                     }

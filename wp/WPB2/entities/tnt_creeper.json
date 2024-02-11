@@ -10,6 +10,15 @@
     "component_groups": {
     },
     "components": {
+      "minecraft:behavior.ranged_attack": {
+        "attack_interval_min": 2,
+        "attack_interval_max": 3,
+        "attack_radius": 15
+      },
+      "minecraft:shooter": {
+        "type": "Tnt",
+        "def": "minecraft:tnt"
+      },
       "minecraft:experience_reward": {
         "on_death": "10"
       },
@@ -53,31 +62,6 @@
       },
       "minecraft:behavior.float": {
         "priority": 0
-      },
-      "minecraft:behavior.summon_entity": {
-        "priority": 2,
-
-        "summon_choices": [
-          {
-            "min_activation_range": 3.0,
-            "weight": 1,
-            "cooldown_time": 5.0,
-            "cast_duration": 1.0,
-            "start_sound_event": "cast.spell",
-            "sequence": [
-              {
-                "shape": "line",
-                "target": "self",
-                "base_delay": 1.0,
-                "delay_per_summon": 1,
-                "num_entities_spawned": 1,
-                "entity_type": "minecraft:tnt",
-                "size": 4,
-                "entity_lifespan": 10.0
-              }
-            ]
-          }
-        ]
       },
       "minecraft:behavior.avoid_mob_type": {
         "priority": 5,

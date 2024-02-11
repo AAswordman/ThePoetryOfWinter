@@ -28,7 +28,7 @@
 			"look": {
 				"run_command": {
 					"command": [
-            "effect @a[r=10,m=!1] mining_fatigue 5"
+            "effect @a[r=10,tag=gaming] mining_fatigue 5"
           ]
 				}
 			}

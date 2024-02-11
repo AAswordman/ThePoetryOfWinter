@@ -1,0 +1,86 @@
+ {
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:scarecrow",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      },
+      "minecraft:resort": {
+        "minecraft:instant_despawn": {},
+        "minecraft:spawn_entity": {
+          "entities": {
+            "min_wait_time": 0,
+            "max_wait_time": 0,
+            "spawn_item": "dec:scarecrow"
+          }
+        }
+      }
+    },
+    "components": {
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "cooldown": 0,
+            "use_item": false,
+            "hurt_item": 1,
+            "play_sounds": "shear",
+            "interact_text": "action.interact.scarecrow_resort",
+            "vibration": "shear",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "shears"},
+                  { "test" :  "is_family", "subject" : "other", "value" :  "player"}
+                ]
+              },
+              "event": "minecraft:resort",
+              "target": "self"
+            }
+          }
+        ]
+      },
+      "minecraft:health": {
+        "value": 100000,
+        "max": 100000
+      },
+      "minecraft:knockback_resistance": {
+        "value": 1
+      },
+      "minecraft:physics": {
+        "has_gravity": true,
+        "has_collision": true
+      },
+      "minecraft:collision_box": {
+        "width": 0.6,
+        "height": 1.8
+      },
+      "minecraft:type_family": {
+        "family": [
+          "scarecrow"
+        ]
+      }
+    },
+    "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
+      "minecraft:resort": {
+        "add": {
+          "component_groups": [
+            "minecraft:resort"
+          ]
+        }
+      }
+    }
+  }
+}

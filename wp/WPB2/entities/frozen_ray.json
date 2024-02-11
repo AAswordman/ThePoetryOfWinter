@@ -6,13 +6,7 @@
     "runtime_identifier": "minecraft:egg",
     "is_spawnable": false,
     "is_summonable": true,
-    "is_experimental": false,
-    "scripts":{
-      "animate":["ticking"]
-    },
-      "animations":{
-        "ticking":"controller.animation.particle_frozen_wake"
-    }
+    "is_experimental": false
   },
   "components": {
    "minecraft:collision_box": {
@@ -51,7 +45,7 @@
     "hit_sound": "bullet.hit",
     "power": 0.3,
     "gravity": 0.00,
-    "inertia": 1.4,
+    "inertia": 1.2,
     "liquid_inertia": 0.7,
     "anchor": 1,
     "offset": [ 0, 0, 1 ],

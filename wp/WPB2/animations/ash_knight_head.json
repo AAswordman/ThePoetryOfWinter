@@ -4,7 +4,7 @@
     "animation.ash_knight_head.teleport": {
       "timeline": {
         "7": [
-          "/execute as @r[r=70,m=!1] at @s positioned ~~1~ run summon dec:ash_knight_head_tp_anchor ~~~",
+          "/execute as @r[r=70,tag=gaming] at @s positioned ~~1~ run summon dec:ash_knight_head_tp_anchor ~~~",
           "/particle dec:ash_knight_head_teleport_particle ~~~"
         ]
       },

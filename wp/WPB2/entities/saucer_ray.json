@@ -5,14 +5,8 @@
     "identifier": "dec:saucer_ray",
     "runtime_identifier": "minecraft:egg",
     "is_spawnable": false,
-    "is_summonable": false,
-    "is_experimental": false,
-    "scripts":{
-      "animate":["ticking"]
-    },
-      "animations":{
-        "ticking":"controller.animation.particle_saucer_ray_wake"
-    }
+    "is_summonable": true,
+    "is_experimental": false
   },
   "components": {
    "minecraft:collision_box": {

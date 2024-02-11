@@ -18,7 +18,6 @@
       "minecraft:use_animation": "eat",
       "minecraft:render_offsets": "cookie",
       "minecraft:stacked_by_data": false,
-      "minecraft:max_stack_size": 1,
       "minecraft:foil": true,
       "minecraft:on_use": {
         "on_use": {
@@ -28,18 +27,19 @@
       },
       "minecraft:cooldown": {
         "category": "magic_nucleus",
-        "duration": 1
+        "duration": 0.3
       }
     },
     "events": {
       "use": {
         "run_command": {
           "command": [
-            "tag @s[scores={magicgain=1}] add clear_magic_crystal",
-            "scoreboard players set @s[scores={magicgain=1}] magicgain 2",
-            "clear @s[tag=clear_magic_crystal,scores={magicgain=2}] dec:magic_crystal 0 1",
-            "tag @s[scores={magicgain=2}] remove clear_magic_crystal",
-            "playsound mob.enderdragon.growl @a ~~~"
+            "tag @s[scores={magicgain=0..19}] add clear_magic_crystal",
+            "scoreboard players add @s[scores={magicgain=0..19},tag=clear_magic_crystal] magicgain 1",
+            "tellraw @s[scores={magicgain=20..}] { \"rawtext\" : [ { \"translate\" : \"text.dec:magic_crystal_max.name\" } ] }",
+            "tellraw @s[tag=clear_magic_crystal] { \"rawtext\" : [ { \"translate\" : \"text.dec:magic_crystal_magicgain_up.name\" },{ \"score\":{ \"name\": \"@s\",\"objective\": \"magicgain\" } } ] }",
+            "clear @s[tag=clear_magic_crystal] dec:magic_crystal 0 1",
+            "tag @s[tag=clear_magic_crystal] remove clear_magic_crystal"
           ]
         }
       }

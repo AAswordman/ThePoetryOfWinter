@@ -1,6 +1,28 @@
 {
 	"entity_sounds": {
 		"entities": {
+			"dec:scarecrow": {
+				"volume": 1.0,
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"events": {
+					"hurt": "use.cloth",
+					"death": "use.cloth"
+				}
+			},
+			"dec:frozen_man": {
+				"volume": 1.0,
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"events": {
+					"hurt": "random.glass",
+					"death": "random.glass"
+				}
+			},
 			"dec:ash_bomb": {
 				"volume": 1.0,
 				"pitch": [
@@ -2408,6 +2430,26 @@
 					"death": "item.trident.throw"
 				}
 			},
+			"dec:abyssal_shadow": {
+				"volume": 2.0,
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"events": {
+					"ambient": "item.trident.return",
+					"hurt": {
+						"sound": "item.trident.return",
+						"volume": 0.7
+					},
+					"death": "item.trident.thunder",
+					"step": {
+						"sound": "item.trident.hit",
+						"volume": 1.0,
+						"pitch": 1.0
+					}
+				}
+			},
 			"dec:abyssal_controller": {
 				"volume": 3.0,
 				"pitch": [
@@ -2555,7 +2597,7 @@
 					"shoot": "mob.blaze.shoot"
 				}
 			},
-			"dec:son_of_natura": {
+			"dec:son_of_nature": {
 				"volume": 1.0,
 				"pitch": [
 					0.9,

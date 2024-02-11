@@ -1,35 +1,90 @@
 {
-  "format_version": "1.13.0",
+  "format_version": "1.12.0",
   "minecraft:entity": {
     "description": {
       "identifier": "dec:snow_energy_fuse",
       "is_spawnable": false,
       "is_summonable": true,
-      "is_experimental": false,
-      "scripts":{
-        "animate":["ticking"]
-      },
-        "animations":{
-          "ticking":"controller.animation.snow_energy_fuse"
-      }
+      "is_experimental": false
     },
     "component_groups": {
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
+      }
     },
-
     "components": {
-      "minecraft:physics": {
-        "has_gravity": true
+      "minecraft:timer": {
+        "looping": true,
+        "time": 0.05,
+        "time_down_event": {
+          "event": "minecraft:spawn_snow_energy"
+        }
       },
-      "minecraft:explode": {
-        "fuse_length": 0.01,
-        "fuse_lit": true,
-        "power": 0,
-        "causes_fire": false,
-        "destroy_affected_by_griefing": true
+      "minecraft:collision_box": {
+        "width": 0.0,
+        "height": 0.0
       },
-      "minecraft:health": {
-        "value": 1,
-        "max": 1
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": false
+      }
+    },
+    "events": {
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
+          ]
+        }
+      },
+      "minecraft:spawn_snow_energy": {
+        "randomize": [
+          {
+            "run_command": {
+              "command": [
+                "summon dec:snow_energy ~~3~",
+                "event entity @s minecraft:despawn"
+              ]
+            },
+            "weight": 4
+          },
+          {
+            "run_command": {
+              "command": [
+                "summon dec:snow_energy ~~4~",
+                "event entity @s minecraft:despawn"
+              ]
+            },
+            "weight": 5
+          },
+          {
+            "run_command": {
+              "command": [
+                "summon dec:snow_energy ~~5~",
+                "event entity @s minecraft:despawn"
+              ]
+            },
+            "weight": 4
+          },
+          {
+            "run_command": {
+              "command": [
+                "summon dec:snow_energy ~~6~",
+                "event entity @s minecraft:despawn"
+              ]
+            },
+            "weight": 4
+          },
+          {
+            "run_command": {
+              "command": [
+                "summon dec:snow_energy ~~7~",
+                "event entity @s minecraft:despawn"
+              ]
+            },
+            "weight": 2
+          }
+        ]
       }
     }
   }

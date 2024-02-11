@@ -37,6 +37,10 @@
           "target": "self"
         }
       },
+      "minecraft:enchantable": {
+        "value": 10,
+        "slot": "sword"
+      },
       "minecraft:damage": 6,
       "minecraft:repairable": {
         "repair_items": [
@@ -54,7 +58,6 @@
           }
         ]
       },
-      "minecraft:foil": false,
       "minecraft:hand_equipped": true,
       "minecraft:cooldown": {
         "category": "katana",

@@ -1,0 +1,102 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.trellis.bottom",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "main",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "crop",
+					"parent": "main",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-6.5, -1, -6.5],
+							"size": [13, 17, 13],
+							"uv": {
+								"north": {"uv": [0, 32], "uv_size": [13, 17],"material_instance":"crop"},
+								"east": {"uv": [0, 32], "uv_size": [13, 17],"material_instance":"crop"},
+								"south": {"uv": [0, 32], "uv_size": [13, 17],"material_instance":"crop"},
+								"west": {"uv": [0, 32], "uv_size": [13, 17],"material_instance":"crop"},
+								"up": {"uv": [64, 64], "uv_size": [0, 0]},
+								"down": {"uv": [64, 64], "uv_size": [0, 0]}
+							}
+						}
+					]
+				},
+				{
+					"name": "crop_top",
+					"parent": "crop",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-8, 16.5, -8],
+							"size": [16, 0, 16],
+							"uv": {
+								"north": {"uv": [0, 0], "uv_size": [16, 0]},
+								"east": {"uv": [0, 0], "uv_size": [16, 0]},
+								"south": {"uv": [0, 0], "uv_size": [16, 0]},
+								"west": {"uv": [0, 0], "uv_size": [16, 0]},
+								"up": {"uv": [16, 16], "uv_size": [-16, -16],"material_instance":"crop_top"},
+								"down": {"uv": [64, 64], "uv_size": [0, 0]}
+							}
+						}
+					]
+				},
+				{
+					"name": "trellis",
+					"parent": "main",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "top",
+					"parent": "trellis",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-8, 13, -8],
+							"size": [16, 3, 16],
+							"uv": {
+								"north": {"uv": [32, 16], "uv_size": [16, 3],"material_instance":"trellis_top"},
+								"east": {"uv": [32, 16], "uv_size": [16, 3],"material_instance":"trellis_top"},
+								"south": {"uv": [32, 16], "uv_size": [16, 3],"material_instance":"trellis_top"},
+								"west": {"uv": [32, 16], "uv_size": [16, 3],"material_instance":"trellis_top"},
+								"up": {"uv": [32, 16], "uv_size": [16, -16],"material_instance":"trellis_top"},
+								"down": {"uv": [32, 16], "uv_size": [16, -16],"material_instance":"trellis_top"}
+							}
+						}
+					]
+				},
+				{
+					"name": "vertical",
+					"parent": "trellis",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-6, -1, -6],
+							"size": [12, 17, 12],
+							"uv": {
+								"north": {"uv": [32, 19], "uv_size": [12, 17],"material_instance":"trellis"},
+								"east": {"uv": [32, 19], "uv_size": [12, 17],"material_instance":"trellis"},
+								"south": {"uv": [32, 19], "uv_size": [12, 17],"material_instance":"trellis"},
+								"west": {"uv": [32, 19], "uv_size": [12, 17],"material_instance":"trellis"},
+								"up": {"uv": [64, 64], "uv_size": [0, 0]},
+								"down": {"uv": [32, 48], "uv_size": [12, -12],"material_instance":"trellis"}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

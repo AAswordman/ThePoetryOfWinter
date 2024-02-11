@@ -1,0 +1,31 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:scarecrow"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "BBX",
+      "BAB",
+      "#BB"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:oak_log"
+      },
+      "X": {
+        "item": "minecraft:carved_pumpkin"
+      },
+      "A": {
+        "item": "minecraft:hay_block"
+      },
+      "B": {
+        "item": "dec:soul"
+      }
+    },
+    "result": {
+      "item": "dec:scarecrow"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:gas_bomb"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      " X ",
+      "XAX",
+      " X "
+    ],
+    "key": {
+      "X": {
+        "item": "dec:smoke_bomb"
+      },
+      "A": {
+        "item": "dec:poison_gland"
+      }
+    },
+    "result": {
+      "item": "dec:gas_bomb",
+      "count": 4
+    }
+  }
+}

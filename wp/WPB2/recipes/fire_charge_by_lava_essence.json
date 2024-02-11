@@ -1,0 +1,25 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:fire_charge_by_lava_essence"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "C",
+      "B"
+    ],
+    "key": {
+      "C": {
+        "item": "minecraft:gunpowder"
+      },
+      "B": {
+        "item": "dec:lava_essence"
+      }
+    },
+    "result": {
+      "item": "minecraft:fire_charge",
+      "count": 3
+    }
+  }
+}

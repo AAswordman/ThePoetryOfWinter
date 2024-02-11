@@ -28,7 +28,6 @@
       "minecraft:stacked_by_data": false,
       "minecraft:max_stack_size": 1,
       "minecraft:damage": 6,
-      "minecraft:foil": false,
       "minecraft:hand_equipped": true,
       "minecraft:durability": {
         "max_durability": 12310

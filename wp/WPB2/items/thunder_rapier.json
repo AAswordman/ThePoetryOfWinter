@@ -61,6 +61,16 @@
           }
         ]
       },
+      "minecraft:cooldown": {
+          "category": "rapier",
+          "duration": 4.4
+      },
+      "minecraft:on_use": {
+        "on_use": {
+          "event": "thunder_rapier_skill",
+          "target": "self"
+        }
+      },
       "minecraft:hand_equipped": true,
       "tag:comp:equipment_type:melee_weapon":{}
     },
@@ -112,6 +122,14 @@
             ]
           }
         ]
+      },
+      "thunder_rapier_skill": {
+        "run_command": {
+          "command": [
+            "function item/thunder_rapier_skill"
+          ],
+          "target": "holder"
+        }
       }
     }
   }

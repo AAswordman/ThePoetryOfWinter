@@ -859,8 +859,248 @@
         "textures/blocks/ash_cage"
       ]
     },
-    
-        //wb part
+//Decisland1.9.3 Added
+    "trellis": {
+      "textures": [
+        "textures/blocks/trellis"
+      ]
+    },
+    "trellis_cover": {
+      "textures": [
+        "textures/blocks/trellis_cover"
+      ]
+    },
+    "empty": {
+      "textures": [
+        "textures/blocks/empty"
+      ]
+    },
+    "grape_crop_0": {
+      "textures": [
+        "textures/blocks/grape_crop_0"
+      ]
+    },
+    "grape_crop_1": {
+      "textures": [
+        "textures/blocks/grape_crop_1"
+      ]
+    },
+    "trellis_crop_wither": {
+      "textures": [
+        "textures/blocks/trellis_crop_wither"
+      ]
+    },
+    "patterned_vase_red_block": {
+      "textures": [
+        "textures/blocks/patterned_vase_red_block"
+      ]
+    },
+    "lace_block_black_side": {
+      "textures": [
+        "textures/blocks/lace_block_black_side"
+      ]
+    },
+    "lace_block_black_up": {
+      "textures": [
+        "textures/blocks/lace_block_black_up"
+      ]
+    },
+    "lace_block_light_red_side": {
+      "textures": [
+        "textures/blocks/lace_block_light_red_side"
+      ]
+    },
+    "lace_block_light_red_up": {
+      "textures": [
+        "textures/blocks/lace_block_light_red_up"
+      ]
+    },
+    "red_patterned_stonebrick_side": {
+      "textures": [
+        "textures/blocks/red_patterned_stonebrick_side"
+      ]
+    },
+    "red_patterned_stonebrick_up": {
+      "textures": [
+        "textures/blocks/red_patterned_stonebrick_up"
+      ]
+    },
+    "red_stonebrick": {
+      "textures": [
+        "textures/blocks/red_stonebrick"
+      ]
+    },
+    "lava_flower_crop_0": {
+      "textures": [
+        "textures/blocks/lava_flower_crop_0"
+      ]
+    },
+    "lava_flower_crop_1": {
+      "textures": [
+        "textures/blocks/lava_flower_crop_1"
+      ]
+    },
+    "lava_flower_crop_2": {
+      "textures": [
+        "textures/blocks/lava_flower_crop_2"
+      ]
+    },
+    "lava_flower_crop_3": {
+      "textures": [
+        "textures/blocks/lava_flower_crop_3"
+      ]
+    },
+    "lava_flower_crop_4": {
+      "textures": [
+        "textures/blocks/lava_flower_crop_4"
+      ]
+    },
+    "mooli_crop_0": {
+      "textures": [
+        "textures/blocks/mooli_crop_0"
+      ]
+    },
+    "mooli_crop_1": {
+      "textures": [
+        "textures/blocks/mooli_crop_1"
+      ]
+    },
+    "mooli_crop_2": {
+      "textures": [
+        "textures/blocks/mooli_crop_2"
+      ]
+    },
+    "mooli_crop_3": {
+      "textures": [
+        "textures/blocks/mooli_crop_3"
+      ]
+    },
+    "red_spider_lily_crop": {
+      "textures": [
+        "textures/blocks/red_spider_lily_crop"
+      ]
+    },
+    "corn_crop_0_0": {
+      "textures": [
+        "textures/blocks/corn_crop_0_0"
+      ]
+    },
+    "corn_crop_0_1": {
+      "textures": [
+        "textures/blocks/corn_crop_0_1"
+      ]
+    },
+    "corn_crop_0_2": {
+      "textures": [
+        "textures/blocks/corn_crop_0_2"
+      ]
+    },
+    "corn_crop_0_3": {
+      "textures": [
+        "textures/blocks/corn_crop_0_3"
+      ]
+    },
+    "corn_crop_0_4": {
+      "textures": [
+        "textures/blocks/corn_crop_0_4"
+      ]
+    },
+    "corn_crop_1_0": {
+      "textures": [
+        "textures/blocks/corn_crop_1_0"
+      ]
+    },
+    "corn_crop_1_1": {
+      "textures": [
+        "textures/blocks/corn_crop_1_1"
+      ]
+    },
+    "corn_crop_1_2": {
+      "textures": [
+        "textures/blocks/corn_crop_1_2"
+      ]
+    },
+    "corn_crop_1_3": {
+      "textures": [
+        "textures/blocks/corn_crop_1_3"
+      ]
+    },
+    "crimson_lamp_bottom": {
+      "textures": [
+        "textures/blocks/crimson_lamp_bottom"
+      ]
+    },
+    "crimson_lamp_side": {
+      "textures": [
+        "textures/blocks/crimson_lamp_side"
+      ]
+    },
+    "crimson_lamp_top": {
+      "textures": [
+        "textures/blocks/crimson_lamp_top"
+      ]
+    },
+    "golden_bookshelf_back": {
+      "textures": [
+        "textures/blocks/golden_bookshelf_back"
+      ]
+    },
+    "golden_bookshelf_frame_front": {
+      "textures": [
+        "textures/blocks/golden_bookshelf_frame_front"
+      ]
+    },
+    "golden_bookshelf_frame_side": {
+      "textures": [
+        "textures/blocks/golden_bookshelf_frame_side"
+      ]
+    },
+    "golden_bookshelf_front": {
+      "textures": [
+        "textures/blocks/golden_bookshelf_front"
+      ]
+    },
+    "golden_bookshelf_side": {
+      "textures": [
+        "textures/blocks/golden_bookshelf_side"
+      ]
+    },
+    "golden_bookshelf_up_down": {
+      "textures": [
+        "textures/blocks/golden_bookshelf_up_down"
+      ]
+    },
+    "golden_chain": {
+      "textures": [
+        "textures/blocks/golden_chain"
+      ]
+    },
+    "golden_fence_block": {
+      "textures": [
+        "textures/blocks/golden_fence_block"
+      ]
+    },
+    "golden_lamp_bottom": {
+      "textures": [
+        "textures/blocks/golden_lamp_bottom"
+      ]
+    },
+    "golden_lamp_side": {
+      "textures": [
+        "textures/blocks/golden_lamp_side"
+      ]
+    },
+    "golden_lamp_top": {
+      "textures": [
+        "textures/blocks/golden_lamp_top"
+      ]
+    },
+    "lampshade": {
+      "textures": [
+        "textures/blocks/lampshade"
+      ]
+    },
+//=============================WB==================================
         "waste_recovery": {
             "textures": "textures/wb_blocks/technology/waste_recovery"
         },

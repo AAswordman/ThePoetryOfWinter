@@ -73,13 +73,13 @@
                 "repair_items": [
                     {
                         "items": [
-                            "minecraft:minecraft:copper_ingot"
+                            "minecraft:copper_ingot"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.3"
                     },
                     {
                         "items": [
-                            "minecraft:minecraft:copper_nugget"
+                            "minecraft:copper_nugget"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.03"
                     }

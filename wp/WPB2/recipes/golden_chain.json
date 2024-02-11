@@ -1,0 +1,32 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:golden_chain"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XBX",
+      "X#X",
+      "XAX"
+    ],
+    "key": {
+      "#": {
+        "item": "dec:lace_block_black"
+      },
+      "X": {
+        "item": "minecraft:chain"
+      },
+      "A": {
+        "item": "minecraft:red_dye"
+      },
+      "B": {
+        "item": "minecraft:gold_nugget"
+      }
+    },
+    "result": {
+      "item": "dec:golden_chain",
+      "count": 6
+    }
+  }
+}

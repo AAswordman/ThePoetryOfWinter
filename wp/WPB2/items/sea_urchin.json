@@ -20,7 +20,6 @@
       "minecraft:hand_equipped": false,
       "minecraft:stacked_by_data": false,
       "minecraft:use_duration": 1.6,
-      "minecraft:foil": false,
       "minecraft:food": {
         "on_consume": {
           "event": "consumed",

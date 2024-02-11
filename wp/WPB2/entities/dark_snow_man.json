@@ -40,7 +40,6 @@
       },
       "minecraft:type_family": {
         "family": [
-          "tnt_snow_man",
           "monster",
           "mob",
           "snow_man",

@@ -5,34 +5,70 @@
       "identifier": "dec:elf_of_dust",
       "is_spawnable": false,
       "is_summonable": true,
-      "is_experimental": false
+      "is_experimental": false,
+      "scripts": {
+        "animate": [
+          "disappear"
+        ]
+      },
+      "animations": {
+        "disappear": "animation.disappear.20s"
+      }
     },
     "component_groups": {
-      "minecraft:disappear": {
-        "minecraft:explode": {
-          "fuseLength": 0.01,
-          "fuseLit": true,
-          "power": 0,
-          "causesFire": false
+      "minecraft:tame": {
+        "minecraft:behavior.owner_hurt_by_target": {
+          "priority": 1
+        },
+        "minecraft:behavior.owner_hurt_target": {
+          "priority": 2
+        },
+        "minecraft:is_tamed": {},
+        "minecraft:behavior.follow_owner": {
+          "priority": 2,
+          "speed_multiplier": 1.0,
+          "start_distance": 5,
+          "stop_distance": 1
         }
+      },
+      "minecraft:despawn": {
+        "minecraft:instant_despawn": {}
       }
     },
     "components": {
-      "minecraft:timer": {
-        "looping": false,
-        "time": 20,
-        "time_down_event": {
-          "event": "minecraft:disappear",
+      "minecraft:tameable": {
+        "probability": 1,
+        "tame_items": [
+          "diamond"
+        ],
+        "tame_event": {
+          "event": "minecraft:on_tame",
           "target": "self"
         }
       },
-      "minecraft:fire_immune": true,
       "minecraft:damage_sensor": {
-        "triggers": {
-          "cause": "fall",
-          "deals_damage": false
-        }
+        "triggers": [
+          {
+            "cause": "fall",
+            "deals_damage": false
+          },
+          {
+            "on_damage": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_damage",
+                    "value": "fatal"
+                  }
+                ]
+              },
+              "event": "minecraft:disappear"
+            },
+            "deals_damage": false
+          }
+        ]
       },
+      "minecraft:fire_immune": true,
       "minecraft:type_family": {
         "family": ["elf_of_dust", "villager", "player", "mob" ]
       },
@@ -147,12 +183,22 @@
       "minecraft:disappear": {
         "run_command": {
           "command": [
-            "particle dec:summon_staff_spawn_disappear ~~~"
+            "particle dec:summon_staff_spawn_disappear ~~~",
+            "event entity @s minecraft:despawn"
           ]
-        },
+        }
+      },
+      "minecraft:on_tame": {
         "add": {
           "component_groups": [
-            "minecraft:disappear"
+            "minecraft:tame"
+          ]
+        }
+      },
+      "minecraft:despawn": {
+        "add": {
+          "component_groups": [
+            "minecraft:despawn"
           ]
         }
       }

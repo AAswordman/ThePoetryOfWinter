@@ -19,7 +19,6 @@
       "minecraft:render_offsets": "bow",
       "minecraft:stacked_by_data": false,
       "minecraft:max_stack_size": 1,
-      "minecraft:foil": false,
       "minecraft:hand_equipped": true,
       "minecraft:on_use": {
         "on_use": {
@@ -68,15 +67,10 @@
                     "playsound item.book.put @a ~~~",
                     "particle dec:summon_staff_spawn ^^1.6^1.3",
                     "scoreboard players remove @s wbfl 3",
-                    "playanimation @s animation.humanoid.staff_use"
+                    "playanimation @s animation.humanoid.staff_use",
+                    "structure load entity:angry_chicken ^^1.6^1.3"
                   ],
                   "target": "holder"
-                }
-              },
-              {
-                "shoot": {
-                  "projectile": "dec:angry_chicken",
-                  "launch_power": 1
                 }
               },
               {

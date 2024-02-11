@@ -76,7 +76,7 @@
                 "repair_items": [
                     {
                         "items": [
-                            "minecraft:minecraft:planks"
+                            "minecraft:planks"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.25"
                     }

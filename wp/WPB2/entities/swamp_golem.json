@@ -131,16 +131,13 @@
         "max": 64
       },
       "minecraft:navigation.walk": {
-        "can_path_over_water": true
+        "can_path_over_water": false
       },
       "minecraft:movement.basic": {},
       "minecraft:jump.static": {},
       "minecraft:pushable": {
         "is_pushable": true,
         "is_pushable_by_piston": true
-      },
-      "minecraft:behavior.float": {
-        "priority": 0
       },
       "minecraft:behavior.hurt_by_target": {
         "priority": 1

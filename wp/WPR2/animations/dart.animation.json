@@ -7,17 +7,17 @@
 			"bones": {
 				"body": {
 					"rotation": {
-						"0.0": [0, 0, 0],
-						"0.5": [360, 0, 0]
+						"0.0": [
+							0,
+							0,
+							0
+						],
+						"0.5": [
+							"query.ground_speed * 10",
+							0,
+							0
+						]
 					}
-				}
-			}
-		},
-		"animation.dart.face" : {
-			"loop" : true,
-			"bones" : {
-				"body" : {
-					"rotation" : [ "variable.shake_power - query.target_x_rotation", "-query.target_y_rotation", 0.0 ]
 				}
 			}
 		}

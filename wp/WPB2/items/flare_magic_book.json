@@ -22,7 +22,6 @@
       "minecraft:use_animation": "bow",
       "minecraft:stacked_by_data": false,
       "minecraft:max_stack_size": 1,
-      "minecraft:foil": false,
       "minecraft:hand_equipped": false,
       "minecraft:use_duration": 30000,
       "minecraft:on_use": {
@@ -69,7 +68,9 @@
               {
                 "run_command": {
                   "command": [
+                    "particle dec:fire_powering_particle ~~0.5~",
                     "playsound fire.fire @a ~~~",
+                    "playsound mob.blaze.shoot @a ~~~",
                     "scoreboard players remove @s wbfl 6",
                     "playanimation @s animation.humanoid.staff_use"
                   ],

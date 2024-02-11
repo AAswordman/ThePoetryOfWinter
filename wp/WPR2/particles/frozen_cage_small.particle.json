@@ -14,7 +14,7 @@
 				"max_particles": 50
 			},
 			"minecraft:emitter_lifetime_looping": {
-				"active_time": 10
+				"active_time": 5
 			},
 			"minecraft:emitter_shape_box": {
 				"offset": [0, 0.3, 0],

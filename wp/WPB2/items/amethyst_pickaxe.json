@@ -1869,6 +1869,34 @@
                         "on_dig": {
                             "event": "attack"
                         }
+                    },
+                    {
+                        "block": "dec:red_stonebrick",
+                        "speed": 7,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:red_patterned_stonebrick",
+                        "speed": 7,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:frozen_cage",
+                        "speed": 7,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:ash_cage",
+                        "speed": 7,
+                        "on_dig": {
+                            "event": "attack"
+                        }
                     }
                 ],
                 "on_dig": {
@@ -1891,25 +1919,25 @@
                 "repair_items": [
                     {
                         "items": [
-                            "minecraft:minecraft:amethyst_shard"
+                            "minecraft:amethyst_shard"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.3"
                     },
                     {
                         "items": [
-                            "minecraft:minecraft:amethyst_cluster"
+                            "minecraft:amethyst_cluster"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.3"
                     },
                     {
                         "items": [
-                            "minecraft:minecraft:amethyst_block"
+                            "minecraft:amethyst_block"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.2"
                     },
                     {
                         "items": [
-                            "minecraft:minecraft:budding_amethyst"
+                            "minecraft:budding_amethyst"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.2"
                     }
@@ -1917,15 +1945,15 @@
             }
         },
         "events": {
-            "attack": {
-                "damage": {
-                    "amount": 1,
-                    "type": "magic"
-                }
-            },
             "attack_more": {
                 "damage": {
                     "amount": 2,
+                    "type": "magic"
+                }
+            },
+            "attack": {
+                "damage": {
+                    "amount": 1,
                     "type": "magic"
                 }
             }

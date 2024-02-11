@@ -6,16 +6,16 @@
     },  
     "tags": [ "crafting_table" ],
     "pattern": [
-      "XXX",
+      " X ",
       "X#X",
-      "XXX"
+      " X "
     ],
     "key": {
       "#": {
         "item": "dec:wither_substance"
       },
       "X": {
-        "item": "minecraft:coal_block"
+        "item": "minecraft:coal"
       }
     },
     "result": {

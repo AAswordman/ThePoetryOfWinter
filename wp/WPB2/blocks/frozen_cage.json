@@ -19,8 +19,8 @@
       "minecraft:ticking": {
         "looping": true,
         "range": [
-          5,
-          5
+          1,
+          1
         ],
         "on_tick": {
           "event": "minecraft:effect"

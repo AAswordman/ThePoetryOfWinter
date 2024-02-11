@@ -44,7 +44,6 @@
         "max_durability": 256
       },
       "minecraft:damage": 6,
-      "minecraft:foil": false,
       "minecraft:hand_equipped": true,
       "minecraft:food": {
         "nutrition": 14,

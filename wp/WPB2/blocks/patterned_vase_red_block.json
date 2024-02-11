@@ -1,0 +1,94 @@
+{
+    "format_version": "1.16.100",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dec:patterned_vase_red_block",
+            "properties": {
+                "dec:location": [
+                    0,
+                    1
+                ]
+            }
+        },
+        "permutations": [
+            {
+                "condition": "q.block_state('dec:location') == 0",
+                "components": {
+                    "minecraft:pick_collision": {
+                        "origin": [
+                            -8,
+                            0,
+                            -8
+                        ],
+                        "size": [
+                            16,
+                            16,
+                            16
+                        ]
+                    },
+                    "minecraft:entity_collision": {
+                        "origin": [
+                            -8,
+                            0,
+                            -8
+                        ],
+                        "size": [
+                            16,
+                            16,
+                            16
+                        ]
+                    },
+                    "minecraft:geometry": "geometry.patterned_vase_red",
+                    "minecraft:light_dampening": 15
+                }
+            },
+            {
+                "condition": "q.block_state('dec:location') == 1",
+                "components": {
+                    "minecraft:pick_collision": {
+                        "origin": [
+                            -8,
+                            0,
+                            -8
+                        ],
+                        "size": [
+                            16,
+                            16,
+                            16
+                        ]
+                    },
+                    "minecraft:entity_collision": {
+                        "origin": [
+                            -8,
+                            0,
+                            -8
+                        ],
+                        "size": [
+                            16,
+                            16,
+                            16
+                        ]
+                    },
+                    "minecraft:geometry": "geometry.patterned_vase_red_up",
+                    "minecraft:light_dampening": 3
+                }
+            }
+        ],
+        "components": {
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "patterned_vase_red_block",
+                    "render_method": "alpha_test"
+                }
+            },
+            "minecraft:geometry": "geometry.patterned_vase_red",
+            "minecraft:map_color": "#D8C5C4",
+            "minecraft:loot": "loot_tables/blocks/patterned_vase_red.json",
+            "minecraft:light_emission": 0.0,
+            "minecraft:destroy_time": 0,
+            "tag:stone": {}
+        },
+        "events": {
+        }
+    }
+}

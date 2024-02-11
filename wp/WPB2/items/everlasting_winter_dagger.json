@@ -73,19 +73,19 @@
                 "repair_items": [
                     {
                         "items": [
-                            "minecraft:dec:ice_brick"
+                            "dec:ice_brick"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.05"
                     },
                     {
                         "items": [
-                            "minecraft:dec:ice_nugget"
+                            "dec:ice_nugget"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.1"
                     },
                     {
                         "items": [
-                            "minecraft:dec:ice_ingot"
+                            "dec:ice_ingot"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.6"
                     }

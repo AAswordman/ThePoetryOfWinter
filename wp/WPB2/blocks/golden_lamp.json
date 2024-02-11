@@ -1,0 +1,21 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:block": {
+    "description": {
+      "identifier": "dec:golden_lamp"
+    },
+    "components": {
+      "minecraft:creative_category": {
+        "group": "itemGroup.name.outside",
+        "category": "items"
+      },
+      "minecraft:light_dampening": 7,
+      "minecraft:light_emission": 15,
+      "minecraft:destroy_time": 1.5,
+      "minecraft:explosion_resistance": 5,
+      "minecraft:loot": "loot_tables/blocks/golden_lamp.json",
+      "minecraft:map_color": "#FFE798",
+      "tag:stone": {}
+    }
+  }
+}

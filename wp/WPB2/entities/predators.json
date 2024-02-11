@@ -27,26 +27,6 @@
       "minecraft:despawn": {
         "minecraft:instant_despawn": {}
       },
-      "minecraft:angry": {
-        "minecraft:movement": {
-          "value": 1.5
-        },
-        "minecraft:boss": {
-          "should_darken_sky": false,
-          "name":"boss.dec:predators_angry.name",
-          "hud_range": 64
-        },
-        "minecraft:health": {
-          "value": 800,
-          "max": 800
-        },
-        "minecraft:attack": {
-          "damage": {
-            "range_min": 18,
-            "range_max": 36
-          }
-        }
-      },
       "minecraft:spawn": {
         "minecraft:timer": {
           "looping": false,
@@ -180,23 +160,11 @@
         }
       },
       "minecraft:entity_spawned": {
-        "sequence": [
-          {
-            "filters": { "test" :  "has_biome_tag", "operator": "!=", "value" :  "mesa"},
-            "randomize": [
-              {
-                "add": { "component_groups": [ "minecraft:angry" ] }
-              }
+        "add": {
+          "component_groups": [
+            "minecraft:spawn"
             ]
-          },
-          {
-            "add": {
-              "component_groups": [
-                "minecraft:spawn"
-                ]
-              }
-            }
-          ]
+          }
         },
         "minecraft:change_attack": {
           "sequence": [

@@ -1057,6 +1057,20 @@
                         "on_dig": {
                             "event": "attack"
                         }
+                    },
+                    {
+                        "block": "dec:trellis",
+                        "speed": 2,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:trellis_cover",
+                        "speed": 2,
+                        "on_dig": {
+                            "event": "attack"
+                        }
                     }
                 ],
                 "on_dig": {
@@ -1094,15 +1108,15 @@
             "tag:minecraft:is_axe": {}
         },
         "events": {
-            "attack": {
-                "damage": {
-                    "amount": 1,
-                    "type": "magic"
-                }
-            },
             "attack_more": {
                 "damage": {
                     "amount": 2,
+                    "type": "magic"
+                }
+            },
+            "attack": {
+                "damage": {
+                    "amount": 1,
                     "type": "magic"
                 }
             }

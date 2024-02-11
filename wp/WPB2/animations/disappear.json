@@ -1,0 +1,32 @@
+{
+  "format_version": "1.8.0", 
+  "animations": {
+      "animation.disappear.8s": {
+        "timeline": {
+            "8": [
+                "@s minecraft:disappear"
+            ]
+        }, 
+        "animation_length": 8, 
+        "loop": false
+      },
+      "animation.disappear.10s": {
+        "timeline": {
+            "10": [
+                "@s minecraft:disappear"
+            ]
+        }, 
+        "animation_length": 10, 
+        "loop": false
+      },
+      "animation.disappear.20s": {
+        "timeline": {
+            "20": [
+                "@s minecraft:disappear"
+            ]
+        }, 
+        "animation_length": 20, 
+        "loop": false
+      }
+   }
+}

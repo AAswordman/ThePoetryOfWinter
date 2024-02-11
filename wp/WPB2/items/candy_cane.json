@@ -49,7 +49,6 @@
         "slot": "sword"
       },
       "minecraft:damage": 5,
-      "minecraft:foil": false,
       "minecraft:hand_equipped": true,
       "minecraft:food": {
         "on_consume": {

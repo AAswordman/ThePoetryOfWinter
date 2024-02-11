@@ -398,7 +398,7 @@
   },
   "dec:christmas_gift_block": {
     "textures": "christmas_gift_block",
-    "sound": "wool"
+    "sound": "cloth"
   },
   "dec:soybean_crop": {
     "textures": "soybean_stage_0",
@@ -414,7 +414,7 @@
   },
   "dec:red_lantern": {
     "textures": "red_lantern",
-    "sound": "wool"
+    "sound": "cloth"
   },
   "dec:lurk_block": {
     "textures": "lurk_block",
@@ -614,6 +614,75 @@
   },
   "dec:ash_cage": {
     "textures": "ash_cage",
+    "sound": "stone"
+  },
+//DEC1.9.3
+  "dec:patterned_vase_red_block": {
+    "textures": "patterned_vase_red_block",
+    "sound": "decorated_pot"
+  },
+  "dec:lace_block_black": {
+    "textures": "lace_block_black_side",
+    "sound": "cloth"
+  },
+  "dec:lace_block_light_red": {
+    "textures": "lace_block_light_red_side",
+    "sound": "cloth"
+  },
+  "dec:red_patterned_stonebrick": {
+    "textures": "red_patterned_stonebrick_side",
+    "sound": "stone"
+  },
+  "dec:red_stonebrick": {
+    "textures": "red_stonebrick",
+    "sound": "stone"
+  },
+  "dec:lava_flower_crop": {
+    "textures": "lava_flower_crop_0",
+    "sound": "grass"
+  },
+  "dec:mooli_crop": {
+    "textures": "mooli_crop_0",
+    "sound": "grass"
+  },
+  "dec:red_spider_lily_crop": {
+    "textures": "red_spider_lily_crop",
+    "sound": "grass"
+  },
+  "dec:corn_crop": {
+    "textures": "corn_crop_0_0",
+    "sound": "grass"
+  },
+  "dec:golden_chain": {
+    "textures": "golden_chain",
+    "sound": "chain"
+  },
+  "dec:golden_lamp": {
+    "textures": {
+      "up": "golden_lamp_top",
+      "down": "golden_lamp_bottom",
+      "side": "golden_lamp_side"
+    },
+    "sound": "stone"
+  },
+  "dec:golden_bookshelf_frame": {
+    "textures": "golden_bookshelf_frame",
+    "sound": "wood"
+  },
+  "dec:golden_bookshelf": {
+    "textures": "golden_bookshelf",
+    "sound": "wood"
+  },
+  "dec:crimson_lamp": {
+    "textures": {
+      "up": "crimson_lamp_top",
+      "down": "crimson_lamp_bottom",
+      "side": "crimson_lamp_side"
+    },
+    "sound": "stone"
+  },
+  "dec:lampshade": {
+    "textures": "lampshade",
     "sound": "stone"
   }
 }

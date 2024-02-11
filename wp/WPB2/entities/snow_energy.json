@@ -11,7 +11,7 @@
     "components": {
       "minecraft:timer": {
         "looping": true,
-        "time": 0.3,
+        "time": 0.2,
         "time_down_event": {
           "event": "minecraft:particle"
         }

@@ -1057,6 +1057,20 @@
                         "on_dig": {
                             "event": "attack"
                         }
+                    },
+                    {
+                        "block": "dec:trellis",
+                        "speed": 7,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:trellis_cover",
+                        "speed": 7,
+                        "on_dig": {
+                            "event": "attack"
+                        }
                     }
                 ],
                 "on_dig": {
@@ -1083,13 +1097,13 @@
                 "repair_items": [
                     {
                         "items": [
-                            "minecraft:minecraft:copper_ingot"
+                            "minecraft:copper_ingot"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.3"
                     },
                     {
                         "items": [
-                            "minecraft:minecraft:copper_nugget"
+                            "minecraft:copper_nugget"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.03"
                     }
@@ -1101,8 +1115,7 @@
                     "target": "self"
                 }
             },
-            "tag:minecraft:is_axe": {},
-            "tag:comp:movement_addition:-0.015": {}
+            "tag:minecraft:is_axe": {}
         },
         "events": {
             "copper_battleaxe_skill": {
@@ -1111,12 +1124,6 @@
                         "function item/copper_battleaxe_skill"
                     ],
                     "target": "holder"
-                }
-            },
-            "attack": {
-                "damage": {
-                    "amount": 1,
-                    "type": "magic"
                 }
             },
             "copper_battleaxe_attack": {
@@ -1164,6 +1171,12 @@
             "attack_more": {
                 "damage": {
                     "amount": 2,
+                    "type": "magic"
+                }
+            },
+            "attack": {
+                "damage": {
+                    "amount": 1,
                     "type": "magic"
                 }
             }

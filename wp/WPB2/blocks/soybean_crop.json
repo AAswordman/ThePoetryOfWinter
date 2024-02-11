@@ -228,7 +228,7 @@
                             16
                         ]
                     },
-                    "minecraft:loot": "loot_tables/empty.json",
+                    "minecraft:loot": "loot_tables/blocks/soybean_crop.json",
                     "minecraft:on_interact": {
                         "event": "final_drop",
                         "target": "self"

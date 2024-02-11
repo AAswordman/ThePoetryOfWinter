@@ -19,7 +19,8 @@
       }
     },
     "result": {
-      "item": "dec:entity_soul"
+      "item": "dec:entity_soul",
+      "count": 10
     }
   }
 }

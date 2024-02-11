@@ -72,7 +72,6 @@
           }
         ]
       },
-      "minecraft:foil": false,
       "minecraft:hand_equipped": true,
       "minecraft:on_use": {
         "on_use": {

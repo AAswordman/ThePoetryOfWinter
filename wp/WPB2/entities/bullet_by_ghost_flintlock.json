@@ -41,7 +41,7 @@
             }
           },
           "impact_damage": {
-            "damage": 13,
+            "damage": 17,
             "knockback": true,
             "catchFire": false,
             "semirandomdiffdamage": false
@@ -58,8 +58,8 @@
           1
         ],
         "semirandomdiffdamage": true,
-        "uncertaintyBase": 2.0,
-        "uncertaintyMultiplier": 0.5,
+        "uncertaintyBase": 0,
+        "uncertaintyMultiplier": 0,
         "reflectOnHurt": true
       },
       "minecraft:pushable": {

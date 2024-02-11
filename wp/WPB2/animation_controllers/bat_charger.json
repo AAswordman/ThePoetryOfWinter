@@ -24,11 +24,11 @@
             }
           ],
           "on_entry": [
-            "/tp ~~~ facing @p[m=!1]",
+            "/tp ~~~ facing @p[tag=gaming]",
             "/execute if block ^^^0.05 air run tp ^^^0.1",
 
-            "/execute if entity @a[m=!1,r=2] run tag @s add bat_charger_explode",
-            "/execute if entity @s[tag=bat_charger_explode] run damage @a[r=5,m=!1] 30 entity_explosion entity @s",
+            "/execute if entity @a[tag=gaming,r=2] run tag @s add bat_charger_explode",
+            "/execute if entity @s[tag=bat_charger_explode] run damage @a[r=5,tag=gaming] 30 entity_explosion entity @s",
             "/execute if entity @s[tag=bat_charger_explode] run particle dec:bat_dust_spurt_particle ~~1~",
             "/execute if entity @s[tag=bat_charger_explode] run event entity @s minecraft:despawn"
           ]
