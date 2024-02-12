@@ -2113,13 +2113,10 @@
 			"textures": ["textures/EPIC/items/weapon/sunlight_staff"]
 		},
 		"epic:sunlight_crossbow": {
-			"textures": ["textures/EPIC/items/weapon/sunlight_crossbow"]
+			"textures": ["textures/EPIC/items/weapon/sunlight_crossbow/sunlight_crossbow"]
 		},
 		"epic:sunlight_crossbow_drawn": {
-			"textures": ["textures/EPIC/items/weapon/sunlight_crossbow_drawn"]
-		},
-		"epic:sunlight_crossbow_drawn1": {
-			"textures": ["textures/EPIC/items/weapon/sunlight_crossbow_drawn1"]
+			"textures": ["textures/EPIC/items/weapon/sunlight_crossbow/sunlight_crossbow_drawn"]
 		},
 		"epic:sunlight_arrow": {
 			"textures": ["textures/EPIC/items/weapon/sunlight_arrow"]
@@ -2137,10 +2134,7 @@
 			"textures": ["textures/EPIC/items/weapon/sunlight_boots"]
 		},
 		"epic:iron_crossbow": {
-			"textures": ["textures/EPIC/items/weapon/iron_crossbow"]
-		},
-		"epic:iron_crossbow_drawn": {
-			"textures": ["textures/EPIC/items/weapon/iron_crossbow_drawn"]
+			"textures": ["textures/EPIC/items/weapon/iron_crossbow/iron_crossbow"]
 		}
     //======================================================================
     }
