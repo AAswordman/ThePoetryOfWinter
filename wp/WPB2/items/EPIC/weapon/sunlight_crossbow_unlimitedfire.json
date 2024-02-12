@@ -35,7 +35,7 @@
         "parent": "itemGroup.name.sword"
       },
       "minecraft:icon": {
-        "texture": "epic:sunlight_crossbow_drawn1"
+        "texture": "epic:sunlight_crossbow_drawn"
       },
       "minecraft:display_name": {
         "value": "item.epic:sunlight_crossbow_unlimitedfire.name"
