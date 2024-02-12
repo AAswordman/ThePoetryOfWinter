@@ -16,7 +16,7 @@
         "texture": "super_armor_core7"
       },
       "minecraft:stacked_by_data": true,
-      "minecraft:use_duration": 0.1,
+      "minecraft:use_duration": 1,
       "minecraft:max_stack_size": 1,
       "minecraft:cooldown": {
         "category": "super_armor_core",

@@ -10,11 +10,11 @@
         "minecraft:spawns_on_surface": {},
         "minecraft:brightness_filter": {
           "min": 0,
-          "max": 7,
+          "max": 15,
           "adjust_for_weather": false
         },
         "minecraft:weight": {
-          "default": 10
+          "default": 25
         },
         "minecraft:herd": {
           "min_size": 1,
@@ -30,7 +30,7 @@
         "minecraft:spawns_on_surface": {},
         "minecraft:brightness_filter": {
           "min": 0,
-          "max": 7,
+          "max": 10,
           "adjust_for_weather": false
         },
         "minecraft:weight": {

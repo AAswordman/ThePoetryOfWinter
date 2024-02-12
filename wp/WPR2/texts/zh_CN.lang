@@ -12,19 +12,18 @@ entity.epic:blazing_sun.name=§e>耀阳<
 entity.epic:sunlight_arrow.name=日光箭矢
 
 item.epic:iron_crossbow.name=重弩
-item.epic:iron_crossbow_drawn.name=重弩【已上弦】
 item.epic:sun_worshipping_sword.name=（预告）祭日圣刃
 item.epic:sunlight_sword.name=（预告）日光长剑
 item.epic:sunlight_staff.name=（预告）日光射线法杖
 item.epic:sunlight_crossbow.name=（预告）日光弩
-item.epic:sunlight_crossbow_drawn.name=（预告）日光弩【已上弦】
-item.epic:sunlight_crossbow_drawn1.name=（预告）日光弩【已上弦】§e【日光箭矢】
 item.epic:sunlight_crossbow_unlimitedfire.name=（预告）日光弩 §e【典藏】
 item.epic:sunlight_arrow.name=（预告）日光箭矢
 item.epic:sunlight_helmet.name=（预告）日光战盔
 item.epic:sunlight_chestplate.name=（预告）日光板甲
 item.epic:sunlight_leggings.name=（预告）日光护腿
 item.epic:sunlight_boots.name=（预告）日光战靴
+
+item.dec:everlasting_winter_pickaxe-axe.name=永冬镐斧
 ====================================================================
 
 ============================WB&POW==================================

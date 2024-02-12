@@ -17,7 +17,7 @@
       },
       "minecraft:use_animation": "eat",
       "minecraft:render_offsets": "cookie",
-      "minecraft:use_duration": 0.1,
+      "minecraft:use_duration": 1,
       "minecraft:cooldown": {
         "category": "ender_mind",
         "duration": 15

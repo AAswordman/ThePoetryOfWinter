@@ -1,23 +1,24 @@
 {
     "format_version": 1,
     "header": {
-        "description": "Explore the new World!!!Made by AA swordsman,LiLeyi and many their friends.Ver. 1.8.2B1",
-        "name": "The Poetry Of Winter",
+        "description": "Ver. 1.8.2B1 -Made by AA swordsman,LiLeyi and many their friends.",
+        "name": "The Poetry Of Winter[Res]",
         "uuid": "c2021c95-08e8-9ade-0916-6cd21931fac5",
         "version": [1, 6, 0],
         "min_engine_version": [1, 9, 80]
     },
     "modules": [{
-        "description": "Explore the new World!!!Made by AA swordsman,LiLeyi and many their friends.Ver. 1.8.2B1",
+        "description": "Ver. 1.8.2B1 -Made by AA swordsman,LiLeyi and many their friends.",
         "type": "resources",
         "uuid": "c2021c98-08e8-9ade-0916-6cd21931fac5",
         "version": [1, 6, 0]
     }],
-    "dependencies": [{
-            // 方块修复
+    "dependencies": [
+        /*  方块修复
+          {
             "uuid": "008f2e56-7e74-48b4-8f6b-457208e24e63",
             "version": [0, 1, 0]
-        },
+           },*/
         {
             "uuid": "c2021c25-08e8-9ade-0916-6cd21931fac5",
             "version": [1, 6, 0]

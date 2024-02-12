@@ -17,7 +17,8 @@
       },
       "minecraft:use_animation": "eat",
       "minecraft:render_offsets": "cookie",
-      "minecraft:use_duration": 0.5,
+       "minecraft:use_duration": 1,
+      /*"minecraft:use_duration": 0.5,*/
       "minecraft:food": {
         "nutrition": 8,
         "saturation_modifier": "normal"

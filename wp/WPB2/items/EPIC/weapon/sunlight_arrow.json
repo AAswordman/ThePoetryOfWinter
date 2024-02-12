@@ -17,6 +17,10 @@
       },
       "minecraft:render_offsets": {
       },
+      "minecraft:projectile":{
+        "minimum_critical_power": 2,
+        "projectile_entity": "epic:sunlight_arrow"
+      },
       "minecraft:allow_off_hand": true,
       "minecraft:stacked_by_data": true,
       "minecraft:max_stack_size": 64,
