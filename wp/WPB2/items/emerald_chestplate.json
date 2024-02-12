@@ -51,8 +51,10 @@
         "slot": "slot.armor.chest"
       },
       "tag:comp:armor_protection:5": {},
-      "tag:comp:armor_magic_reduction:2": {},
-      "tag:comp:armor_type:suit_:emerald:_": {}
+      "tag:comp:armor_type:suit_:emerald:_": {},
+      "tag:comp:armor_magic_protection:3": {},
+      "tag:comp:armor_physical_protection:0": {},
+      "tag:comp:armor_resilience:1": {}
     }
   }
 }
