@@ -10,12 +10,7 @@
             "texture.crossbow_pulling_2",
             "texture.crossbow_pulling_3",
             "texture.crossbow_pulling_4",
-            "texture.crossbow_pulling_5",
-            "texture.crossbow_pulling_6",
-            "texture.crossbow_pulling_7",
-            "texture.crossbow_pulling_8",
-            "texture.crossbow_pulling_9",
-            "texture.crossbow_pulling_10"
+            "texture.crossbow_drawn"
           ]
         },
         "geometries": {
@@ -25,12 +20,7 @@
             "geometry.crossbow_pulling_2",
             "geometry.crossbow_pulling_3",
             "geometry.crossbow_pulling_4",
-            "geometry.crossbow_pulling_5",
-            "geometry.crossbow_pulling_6",
-            "geometry.crossbow_pulling_7",
-            "geometry.crossbow_pulling_8",
-            "geometry.crossbow_pulling_9",
-            "geometry.crossbow_pulling_10"
+            "geometry.crossbow_drawn"
           ]
         }
       },
