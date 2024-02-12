@@ -23,7 +23,7 @@ item.epic:sunlight_chestplate.name=（预告）日光板甲
 item.epic:sunlight_leggings.name=（预告）日光护腿
 item.epic:sunlight_boots.name=（预告）日光战靴
 
-item.dec:everlasting_winter_pickaxe-axe.name=永冬镐斧
+item.dec:everlasting_winter_pickaxe_axe.name=永冬镐斧(潜行时开启连锁挖掘)
 ====================================================================
 
 ============================WB&POW==================================
@@ -229,7 +229,7 @@ item.wb:sword_seal_d=封尘剑§r§9§o[高级]§o§c[尘埃][破尘]
 item.wb:sword_seal_e=封尘剑§r§9§o[高级]§o§c[尘埃][破尘]
 item.wb:sword_seal_f=封尘剑§o§c[尘埃][破尘][土崩瓦解]
 item.wb:axex_equipment_a.name=魔能斧§r§9§o[普通]
-item.wb:pickaxex_equipment_a.name=魔能镐§r§9§o[普通][§e长按破坏周围方块,不要手残！小心使用！§r]
+item.wb:pickaxex_equipment_a.name=魔能镐§r§9§o[普通][潜行时开启连锁挖掘]
 item.wb:sword_equipment_a=魔能剑§r§9§o[普通]
 item.wb:sword_equipment_b=魔能剑§r§9§o[普通]
 item.wb:sword_equipment_c=魔能剑§r§9§o[普通]
