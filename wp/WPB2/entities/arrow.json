@@ -60,6 +60,33 @@
                     "offset": [0, -0.1, 0]
                 }
             },
+            "player_iron_crossbow_arrow": {
+                "minecraft:projectile": {
+                    "on_hit": {
+                        "impact_damage": {
+                            "damage": 5,
+                            "knockback": true,
+                            "semi_random_diff_damage": true,
+                            "destroy_on_hit": true,
+                            "max_critical_damage": 21,
+                            "min_critical_damage": 18,
+                            "power_multiplier": 0.97
+                        },
+                        "stick_in_ground": {
+                            "shake_time": 0.35
+                        },
+                        "arrow_effect": {}
+                    },
+                    "hit_sound": "bow.hit",
+                    "power": 6.0,
+                    "gravity": 0.03,
+                    "uncertainty_base": 0.5,
+                    "uncertainty_multiplier": 0,
+                    "anchor": 1,
+                    "should_bounce": true,
+                    "offset": [0, -0.1, 0]
+                }
+            },
 
             "minecraft:pillager_arrow": {
                 "minecraft:projectile": {
@@ -151,12 +178,39 @@
                     },
                     {
                         "filters": {
+                        "all_of":[
+                        {
+                            "test": "is_family",
+                            "subject": "other",
+                            "value": "player"
+                        }
+                        ]
+                        },
+                        "add": {
+                            "component_groups": ["minecraft:player_arrow"]
+                        }
+                    },
+                    {
+                        "filters": {
+                        "all_of":[
+                        {
                             "test": "is_family",
                             "subject": "other",
                             "value": "player"
                         },
-                        "add": {
+                        {
+                            "test": "has_equipment",
+                            "domain": "hand",
+                            "subject": "other",
+                            "value": "epic:iron_crossbow"
+                        }
+                        ]
+                        },
+                        "remove": {
                             "component_groups": ["minecraft:player_arrow"]
+                        },
+                        "add": {
+                            "component_groups": ["player_iron_crossbow_arrow"]
                         }
                     },
                     {

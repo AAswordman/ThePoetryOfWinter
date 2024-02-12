@@ -123,15 +123,6 @@
             "load_on_low_memory": true
         }]
     },
-    "music.wb.wooden_heart": {
-        "category": "music",
-        "sounds": [{
-            "name": "sounds/wb/wooden_heart",
-            "stream": true,
-            "volume": 0.65,
-            "load_on_low_memory": true
-        }]
-    },
     "music.wb.twin_guard": {
         "category": "music",
         "sounds": [{

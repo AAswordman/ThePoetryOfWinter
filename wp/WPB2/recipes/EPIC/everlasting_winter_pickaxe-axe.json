@@ -1,0 +1,31 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "dec:everlasting_winter_pickaxe-axe"
+    },  
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "XCX",
+      "XAX",
+      "BXB"
+    ],
+    "key": {
+      "X": {
+        "item": "dec:everlasting_winter_ingot"
+      },
+      "B": {
+        "item": "dec:everlasting_winter_stick"
+      },
+      "A": {
+        "item": "minecraft:diamond_pickaxe"
+      },
+      "C": {
+        "item": "minecraft:diamond_axe"
+      }
+    },
+    "result": {
+      "item": "dec:everlasting_winter_pickaxe-axe"
+    }
+  }
+}
