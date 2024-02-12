@@ -515,6 +515,40 @@
                 }
             },
             {
+                "img_notice_wp": {
+                    "layer": 20,
+                    "type": "image",
+                    "size": [
+                        "100%",
+                        "84px"
+                    ],
+                    "bindings": [{
+                            "binding_type": "collection",
+                            "binding_collection_name": "form_buttons",
+                            "binding_name": "((#form_button_text = 'img_notice_wp'))",
+                            "binding_name_override": "#visible"
+                        },
+                        {
+                            "binding_name": "bg5.png",
+                            "binding_name_override": "#texture",
+                            "binding_type": "collection",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_name": "ftp://45.153.129.23:22224/bg5.png",
+                            "binding_name_override": "#texture_file_system",
+                            "binding_type": "collection",
+                            "binding_collection_name": "form_buttons"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(not ((#texture = '') or (#texture = 'loading')))",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
                 "img_adjustToScreen": {
                     "layer": 20,
                     "type": "image",
