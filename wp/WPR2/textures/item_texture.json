@@ -2136,8 +2136,8 @@
 		"epic:iron_crossbow": {
 			"textures": ["textures/EPIC/items/weapon/iron_crossbow/iron_crossbow"]
 		},
-        "dec:everlasting_winter_pickaxe-axe": {
-			"textures": ["textures/EPIC/items/tool/everlasting_winter_pickaxe-axe"]
+        "dec:everlasting_winter_pickaxe_axe": {
+			"textures": ["textures/EPIC/items/tool/everlasting_winter_pickaxe_axe"]
 		}
     //======================================================================
     }

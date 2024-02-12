@@ -2,13 +2,13 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "dec:everlasting_winter_pickaxe-axe"
+    "identifier": "dec:everlasting_winter_pickaxe_axe"
     },  
     "tags": [ "crafting_table" ],
     "pattern": [
       "XCX",
       "XAX",
-      "BXB"
+      "BDB"
     ],
     "key": {
       "X": {
@@ -22,10 +22,16 @@
       },
       "C": {
         "item": "minecraft:diamond_axe"
+      },
+      "D": {
+        "item": "dec:everlasting_winter_heart"
+      },
+      "E": {
+        "item": "wb:pickaxex_equipment_a"
       }
     },
     "result": {
-      "item": "dec:everlasting_winter_pickaxe-axe"
+      "item": "dec:everlasting_winter_pickaxe_axe"
     }
   }
 }
