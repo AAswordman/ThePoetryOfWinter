@@ -1339,8 +1339,7 @@
                                 "layer": 1,
                                 "anchor_from": "center",
                                 "anchor_to": "center",
-                                "controls": [
-                                    {
+                                "controls": [{
                                         "center_bg": {
                                             "type": "image",
                                             "layer": 10,
@@ -1366,28 +1365,27 @@
                                                 "100% - 40px",
                                                 "100% - 30px"
                                             ],
-                                            "controls": [
-                                                {
-                                                    "layout@canvas_layout":{
-                                                        
+                                            "controls": [{
+                                                    "layout@canvas_layout": {
+
                                                     }
                                                 },
                                                 {
-                                                "centerbg": {
-                                                    "type": "image",
-                                                    "layer": 14,
-                                                    "offset": [
-                                                        0,
-                                                        0
-                                                    ],
-                                                    "size": [
-                                                        "100%",
-                                                        "100%"
-                                                    ],
-                                                    "texture": "textures/wb_ui/dialog_bubble"
+                                                    "centerbg": {
+                                                        "type": "image",
+                                                        "layer": 14,
+                                                        "offset": [
+                                                            0,
+                                                            0
+                                                        ],
+                                                        "size": [
+                                                            "100%",
+                                                            "100%"
+                                                        ],
+                                                        "texture": "textures/wb_ui/dialog_bubble"
+                                                    }
                                                 }
-                                            }
-                                        ]
+                                            ]
                                         }
                                     }
                                 ]
@@ -1503,8 +1501,7 @@
             "100%",
             "100%c"
         ],
-        "controls": [
-            {
+        "controls": [{
                 "label1": {
                     "layer": 20,
                     "type": "label",
@@ -1515,7 +1512,7 @@
                     "offset": [15, 0],
                     "color": "$main_header_text_color",
                     "anchor_from": "top_left",
-                    "font_scale_factor":0.06,
+                    "font_scale_factor": 0.06,
                     "anchor_to": "top_left",
                     "text": "#form_button_texture",
                     "bindings": [{
@@ -1540,7 +1537,7 @@
                         "100%",
                         "200px"
                     ],
-                    "font_scale_factor":0.06,
+                    "font_scale_factor": 0.06,
                     "offset": [15, -200],
                     "color": "$main_header_text_color",
                     "anchor_from": "top_left",
@@ -1568,7 +1565,7 @@
                         "100%",
                         "200px"
                     ],
-                    "font_scale_factor":0.06,
+                    "font_scale_factor": 0.06,
                     "offset": [15, -400],
                     "color": "$main_header_text_color",
                     "anchor_from": "top_left",
@@ -1596,7 +1593,7 @@
                         "100%",
                         "200px"
                     ],
-                    "font_scale_factor":0.06,
+                    "font_scale_factor": 0.06,
                     "offset": [15, -600],
                     "color": "$main_header_text_color",
                     "anchor_from": "top_left",
@@ -1624,7 +1621,7 @@
                         "100%",
                         "200px"
                     ],
-                    "font_scale_factor":0.06,
+                    "font_scale_factor": 0.06,
                     "offset": [15, -800],
                     "color": "$main_header_text_color",
                     "anchor_from": "top_left",
@@ -1652,7 +1649,7 @@
                         "100%",
                         "200px"
                     ],
-                    "font_scale_factor":0.06,
+                    "font_scale_factor": 0.06,
                     "offset": [15, -1000],
                     "color": "$main_header_text_color",
                     "anchor_from": "top_left",
