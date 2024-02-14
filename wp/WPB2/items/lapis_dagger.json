@@ -73,7 +73,7 @@
                 "repair_items": [
                     {
                         "items": [
-                            "minecraft:miecraft:lapis_lazuli"
+                            "minecraft:lapis_lazuli"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.3"
                     },
