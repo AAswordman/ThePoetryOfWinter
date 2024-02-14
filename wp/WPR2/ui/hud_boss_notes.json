@@ -1124,7 +1124,8 @@
               "scrolling_panel@common.scrolling_panel": {
                 "$scrolling_content": "hud_boss_notes.message",
                 "$show_background": false,
-                "$scroll_size": [264,110],
+                "$scroll_size": [5,110],
+                "size": [264,110],
                 "layer": 106,
                 "$scroll_bar_left_padding_size": [0,0]
               }
@@ -1144,7 +1145,8 @@
               "scrolling_panel@common.scrolling_panel": {
                 "$scrolling_content": "hud_boss_notes.bottom_process",
                 "$show_background": false,
-                "$scroll_size": [280,33],
+                "$scroll_size": [5,33],
+                "size": [280,33],
                 "layer": 106,
                 "$scroll_bar_left_padding_size": [0,0]
               }

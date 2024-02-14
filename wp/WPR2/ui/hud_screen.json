@@ -4585,7 +4585,7 @@
     "image_clipper_item": {
         "clip_ratio": "@hud.clipper_dur_anim"
     },
-    
+
     "pom_hud_bg_render_1": {
         "$var_index": 16,
         "type": "panel",
@@ -4598,21 +4598,19 @@
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [0, 0],
-                "$use_layout":"('textures/wb_ui/layout' + $res1 +'_1')",
-                "controls": [
-                    {
-                        "pom_hud_bg_render_0": {
-                            "type": "image",
-                            "size": [230, 120],
-                            "texture": "$use_layout",
-                            "offset": [-22, -9.5],
-                            "anchor_from": "top_left",
-                            "anchor_to": "top_left",
-                            "alpha": "$float_output_1",
-                            "layer": 1
-                        }
+                "$use_layout": "('textures/wb_ui/layout' + $res1 +'_1')",
+                "controls": [{
+                    "pom_hud_bg_render_0": {
+                        "type": "image",
+                        "size": [230, 120],
+                        "texture": "$use_layout",
+                        "offset": [-22, -9.5],
+                        "anchor_from": "top_left",
+                        "anchor_to": "top_left",
+                        "alpha": "$float_output_1",
+                        "layer": 1
                     }
-                ]
+                }]
             }
         }]
     },
@@ -4628,21 +4626,19 @@
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [0, 0],
-                "$use_layout":"('textures/wb_ui/layout' + $res1 +'_2')",
-                "controls": [
-                    {
-                        "pom_hud_bg_render_0": {
-                            "type": "image",
-                            "size": [230, 120],
-                            "texture": "$use_layout",
-                            "offset": [-22, -9.5],
-                            "anchor_from": "top_left",
-                            "anchor_to": "top_left",
-                            "alpha": "$float_output_1",
-                            "layer": 1
-                        }
+                "$use_layout": "('textures/wb_ui/layout' + $res1 +'_2')",
+                "controls": [{
+                    "pom_hud_bg_render_0": {
+                        "type": "image",
+                        "size": [230, 120],
+                        "texture": "$use_layout",
+                        "offset": [-22, -9.5],
+                        "anchor_from": "top_left",
+                        "anchor_to": "top_left",
+                        "alpha": "$float_output_1",
+                        "layer": 1
                     }
-                ]
+                }]
             }
         }]
     },
@@ -4658,21 +4654,19 @@
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [0, 0],
-                "$use_layout":"('textures/wb_ui/layout' + $res1 +'_3')",
-                "controls": [
-                    {
-                        "pom_hud_bg_render_0": {
-                            "type": "image",
-                            "size": [230, 120],
-                            "texture": "$use_layout",
-                            "offset": [-22, -9.5],
-                            "anchor_from": "top_left",
-                            "anchor_to": "top_left",
-                            "alpha": "$float_output_1",
-                            "layer": 1
-                        }
+                "$use_layout": "('textures/wb_ui/layout' + $res1 +'_3')",
+                "controls": [{
+                    "pom_hud_bg_render_0": {
+                        "type": "image",
+                        "size": [230, 120],
+                        "texture": "$use_layout",
+                        "offset": [-22, -9.5],
+                        "anchor_from": "top_left",
+                        "anchor_to": "top_left",
+                        "alpha": "$float_output_1",
+                        "layer": 1
                     }
-                ]
+                }]
             }
         }]
     },
@@ -4688,21 +4682,19 @@
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [0, 0],
-                "$use_layout":"('textures/wb_ui/layout' + $res1 +'_4')",
-                "controls": [
-                    {
-                        "pom_hud_bg_render_0": {
-                            "type": "image",
-                            "size": [230, 120],
-                            "texture": "$use_layout",
-                            "offset": [-22, -9.5],
-                            "anchor_from": "top_left",
-                            "anchor_to": "top_left",
-                            "alpha": "$float_output_1",
-                            "layer": 1
-                        }
+                "$use_layout": "('textures/wb_ui/layout' + $res1 +'_4')",
+                "controls": [{
+                    "pom_hud_bg_render_0": {
+                        "type": "image",
+                        "size": [230, 120],
+                        "texture": "$use_layout",
+                        "offset": [-22, -9.5],
+                        "anchor_from": "top_left",
+                        "anchor_to": "top_left",
+                        "alpha": "$float_output_1",
+                        "layer": 1
                     }
-                ]
+                }]
             }
         }]
     },
@@ -4718,21 +4710,19 @@
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "offset": [0, 0],
-                "$use_layout":"('textures/wb_ui/layout' + $res1 +'_5')",
-                "controls": [
-                    {
-                        "pom_hud_bg_render_0": {
-                            "type": "image",
-                            "size": [230, 120],
-                            "texture": "$use_layout",
-                            "offset": [-22, -9.5],
-                            "anchor_from": "top_left",
-                            "anchor_to": "top_left",
-                            "alpha": "$float_output_1",
-                            "layer": 1
-                        }
+                "$use_layout": "('textures/wb_ui/layout' + $res1 +'_5')",
+                "controls": [{
+                    "pom_hud_bg_render_0": {
+                        "type": "image",
+                        "size": [230, 120],
+                        "texture": "$use_layout",
+                        "offset": [-22, -9.5],
+                        "anchor_from": "top_left",
+                        "anchor_to": "top_left",
+                        "alpha": "$float_output_1",
+                        "layer": 1
                     }
-                ]
+                }]
             }
         }]
     },
@@ -5592,9 +5582,6 @@
             {
                 "menu_render@menu_render": {}
             },
-            //   {
-            //     "notes@boss_notes": {}
-            //   },
             {
                 "chunkmap2@hud.chunkmap2": {
                     "controls": [{
