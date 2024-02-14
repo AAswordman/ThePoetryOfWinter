@@ -20,6 +20,11 @@
             }
         },
         "component_groups": {
+            "awake_": {
+                "minecraft:transformation": {
+                    "into": "minecraft:ender_dragon<awake>"
+                }
+            },
             "dragon_sitting": {
                 "minecraft:behavior.dragonlanding": {
                     "priority": 0
@@ -180,7 +185,7 @@
                     "randomInterval": false,
                     "time": 20,
                     "time_down_event": {
-                        "event": "awake",
+                        "event": "awake_",
                         "target": "self"
                     }
                 },
@@ -462,6 +467,13 @@
                 "add": {
                     "component_groups": [
                         "to_awake"
+                    ]
+                }
+            },
+            "awake_": {
+                "add": {
+                    "component_groups": [
+                        "awake_"
                     ]
                 }
             }
