@@ -1,15 +1,1153 @@
 {
-  "format_version": "1.10",
-  "minecraft:item": {
-    "description": {
-      "identifier": "wb:axex_equipment_a",
-      "register_to_creative_menu": true
-    },
-    "components": {
-      "minecraft:hand_equipped": true,
-      "minecraft:foil": false,
-      "minecraft:max_damage": 99999,
-      "minecraft:stacked_by_data": false
+    "format_version": "1.16.100",
+    "minecraft:item": {
+        "description": {
+            "category": "equipment",
+            "identifier": "wb:axex_equipment_a"
+        },
+        "components": {
+            "minecraft:creative_category": {
+                "parent": "itemGroup.name.axe"
+            },
+            "minecraft:display_name": {
+                "value": "item.wb:axex_equipment_a.name"
+            },
+            "minecraft:icon": {
+                "texture": "axex_equipment_a"
+            },
+            "minecraft:max_stack_size": 1,
+            "minecraft:durability": {
+                "max_durability": 56
+            },
+            "minecraft:enchantable": {
+                "value": 30,
+                "slot": "axe"
+            },
+            "minecraft:render_offsets": {
+                "main_hand": {
+                    "first_person": {
+                        "scale": [0.0215, 0.012, 0.0215],
+                        "position": [0.5, -0.0725, -1.085],
+                        "rotation": [0, -50, 90]
+
+                    },
+                    "third_person": {
+                        "position": [0.375, 1.65, -0.75],
+                        "scale": [0.07, 0.0400, 0.07]
+                    }
+                },
+                "off_hand": {
+                    "first_person": {
+                        "scale": [0.01, 0.0065, 0.01],
+                        "position": [0.4, 0.05, -1.075]
+                    },
+                    "third_person": {
+                        "position": [0.45, 1.6, -0.7],
+                        "scale": [0.03125, 0.03125, 0.03125]
+                    }
+                }
+            },
+            "minecraft:damage": 4,
+            "minecraft:digger": {
+                "use_efficiency": true,
+                "destroy_speeds": [{
+                        "block": {
+                            "tags": "q.any_tag('wood','pumpkin','plant')"
+                        },
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:crimson_hyphae",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:crimson_slab",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:crimson_pressure_plate",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:crimson_fence",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:crimson_trapdoor",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:crimson_fence_gate",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:crimson_stairs",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:crimson_button",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:crimson_wall_sign",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:warped_planks",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:warped_stem",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:stripped_warped_stem",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:stripped_warped_hyphae",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:warped_hyphae",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:warped_slab",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:warped_pressure_plate",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:warped_fence",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:warped_trapdoor",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:warped_fence_gate",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:warped_button",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:warped_door",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:warped_wall_sign",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:melon_block",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:chest",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:crafting_table",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:crimson_planks",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:crimson_stem",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:stripped_crimson_stem",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:stripped_crimson_hyphae",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:crimson_door",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:loom",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:trapped_chest",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:lectern",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:bookshelf",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:composter",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:jukebox",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:soul_campfire",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:campfire",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:bee_nest",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:beehive",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:cartography_table",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:scaffolding",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:warped_stairs",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:noteblock",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:trapdoor",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:acacia_trapdoor",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:birch_trapdoor",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:dark_oak_trapdoor",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:jungle_trapdoor",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:mangrove_trapdoor",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:spruce_trapdoor",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:acacia_door",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:birch_door",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:dark_oak_door",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:jungle_door",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:mangrove_door",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:spruce_door",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:wooden_door",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:smithing_table",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:barrel",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:fence",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:fence_gate",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:acacia_fence_gate",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:birch_fence_gate",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:dark_oak_fence_gate",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:jungle_fence_gate",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:mangrove_fence",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:mangrove_fence_gate",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:spruce_fence_gate",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:log",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:log2",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:mangrove_log",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:stripped_acacia_log",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:stripped_birch_log",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:stripped_dark_oak_log",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:stripped_jungle_log",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:stripped_mangrove_log",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:stripped_oak_log",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:stripped_spruce_log",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:planks",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:mangrove_planks",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:wood",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:wooden_pressure_plate",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:wooden_slab",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:double_wooden_slab",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:acacia_pressure_plate",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:birch_pressure_plate",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:dark_oak_pressure_plate",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:jungle_pressure_plate",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:mangrove_pressure_plate",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:spruce_pressure_plate",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:acacia_standing_sign",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:acacia_wall_sign",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:birch_standing_sign",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:birch_wall_sign",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:crimson_standing_sign",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:darkoak_standing_sign",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:darkoak_wall_sign",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:jungle_standing_sign",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:jungle_wall_sign",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:mangrove_standing_sign",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:mangrove_wall_sign",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:spruce_standing_sign",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:spruce_wall_sign",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:standing_sign",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:wall_sign",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:warped_standing_sign",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:mangrove_button",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:acacia_button",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:birch_button",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:dark_oak_button",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:jungle_button",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:spruce_button",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:wooden_button",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:crimson_double_slab",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:mangrove_double_slab",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:warped_double_slab",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:mangrove_slab",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:acacia_stairs",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:oak_stairs",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:dark_oak_stairs",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:spruce_stairs",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:birch_stairs",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:jungle_stairs",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:pumpkin",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:carved_pumpkin",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:lit_pumpkin",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:bamboo",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:bed",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:cocoa",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:daylight_detector",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:daylight_detector_inverted",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:brown_mushroom_block",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:red_mushroom_block",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:vine",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:mangrove_wood",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:mangrove_roots",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:crate",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:enchanted_summoner",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:eye_of_nature_log",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:frozen_crate",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:lurk_log",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:monitor",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:monitor_activated",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:plain_tower_summoner",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:purpur_summoner",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:trellis",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "dec:trellis_cover",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    }
+                ],
+                "on_dig": {
+                    "event": "attack_more",
+                    "target": "self"
+                }
+            },
+            "minecraft:hand_equipped": true,
+            "minecraft:weapon": {
+                "on_hurt_entity": {
+                    "event": "attack",
+                    "target": "self"
+                },
+                "on_hit_block": {
+                    "event": "attack",
+                    "target": "self"
+                }
+            },
+            "minecraft:repairable": {
+                "repair_items": [{
+                        "items": [
+                            "wb:axex_equipment_a"
+                        ],
+                        "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.4"
+                    },
+                    {
+                        "items": [
+                            "wb:mineral_magic_equipment"
+                        ],
+                        "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.4"
+                    },
+                    {
+                        "items": [
+                            "wb:mineral_senior_equipment"
+                        ],
+                        "repair_amount": "context.other->query.remaining_durability + query.max_durability *  1.0"
+                    }
+                ]
+            },
+            "tag:minecraft:is_axe": {}
+        },
+        "events": {
+            "attack_more": {
+                "damage": {
+                    "amount": 2,
+                    "type": "magic"
+                }
+            },
+            "attack": {
+                "damage": {
+                    "amount": 1,
+                    "type": "magic"
+                }
+            }
+        }
     }
-  }
 }
