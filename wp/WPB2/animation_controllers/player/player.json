@@ -130,10 +130,6 @@
                             "sword_water_ca": "(query.get_equipped_item_name == 'sword_water_e' || query.get_equipped_item_name == 'sword_water_f')"
                         },
                         {
-                            "axex_equipment_a": "(!query.is_sneaking && query.get_equipped_item_name == 'axex_equipment_a')"
-                        },
-
-                        {
                             "technology_world_explorer": "query.get_equipped_item_name == 'technology_world_explorer'"
                         },
                         {
@@ -154,27 +150,6 @@
                     "transitions": [{
                         "default": "query.get_equipped_item_name != 'technology_world_explorer'"
                     }]
-                },
-                "axex_equipment_a": {
-                    "transitions": [{
-                            "axex_equipment_aa": "(!query.is_sneaking && query.get_equipped_item_name == 'axex_equipment_a') && query.is_using_item"
-                        },
-                        {
-                            "default": "(query.is_sneaking || query.get_equipped_item_name != 'axex_equipment_a')"
-                        }
-                    ]
-                },
-                "axex_equipment_aa": {
-                    "transitions": [{
-                            "axex_equipment_a": "(!query.is_sneaking && query.get_equipped_item_name == 'axex_equipment_a') && !query.is_using_item"
-                        },
-                        {
-                            "default": "(query.is_sneaking || query.get_equipped_item_name != 'axex_equipment_a')"
-                        }
-                    ],
-                    "on_entry": [
-                        "/tag @s remove xxx"
-                    ]
                 },
                 "sword_water_aa": {
                     "transitions": [{
