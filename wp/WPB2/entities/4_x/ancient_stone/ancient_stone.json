@@ -427,6 +427,7 @@
                 "must_see": false,
                 "must_reach": false
             },
+            "minecraft:tick_world": {},
             "minecraft:behavior.hurt_by_target": {
                 "priority": 2
             },

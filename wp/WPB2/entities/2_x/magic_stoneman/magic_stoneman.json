@@ -100,8 +100,7 @@
                 }
             },
             "minecraft:despawn": {
-                "minecraft:instant_despawn":{
-                }
+                "minecraft:instant_despawn": {}
             }
         },
         "components": {
@@ -203,6 +202,7 @@
                 "must_see": false,
                 "must_see_forget_duration": 17
             },
+            "minecraft:tick_world": {},
             "minecraft:attack": {
                 "damage": 12
             },

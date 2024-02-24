@@ -390,6 +390,7 @@
             }
         },
         "components": {
+            "minecraft:tick_world": {},
             "minecraft:experience_reward": {
                 "on_death": "500 + Math.Random(80,200)"
             },

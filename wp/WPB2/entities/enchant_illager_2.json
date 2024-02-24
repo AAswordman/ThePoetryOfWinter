@@ -79,6 +79,7 @@
           "max_distance": 64
         }
       },
+      "minecraft:tick_world": {},
       "minecraft:boss": {
         "should_darken_sky": false,
         "name":"boss.dec:enchant_illager.name",

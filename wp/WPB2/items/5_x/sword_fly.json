@@ -46,7 +46,6 @@
             "minecraft:repairable": {
                 "repair_items": [{
                     "items": [
-
                         "wb:sword_fly"
                     ],
                     "repair_amount": 20000

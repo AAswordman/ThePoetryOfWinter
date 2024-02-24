@@ -234,6 +234,7 @@
         "name": "boss.dec:ash_horse.name",
         "hud_range": 32
       },
+      "minecraft:tick_world": {},
       "minecraft:pushable": {
         "is_pushable": true,
         "is_pushable_by_piston": true

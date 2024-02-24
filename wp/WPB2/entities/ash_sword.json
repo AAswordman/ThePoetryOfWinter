@@ -20,6 +20,7 @@
       "minecraft:ageable": {
         "duration": 10
       },
+      "minecraft:tick_world": {},
       "minecraft:boss": {
         "should_darken_sky": false,
         "name": "boss.dec:ash_sword.name",

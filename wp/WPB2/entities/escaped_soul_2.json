@@ -133,6 +133,7 @@
           "mob"
         ]
       },
+      "minecraft:tick_world": {},
       "minecraft:health": {
         "value": 150,
         "max": 150

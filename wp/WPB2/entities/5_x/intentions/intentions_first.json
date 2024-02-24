@@ -335,6 +335,7 @@
             }
         },
         "components": {
+            "minecraft:tick_world": {},
             "minecraft:boss": {
                 "should_darken_sky": true,
                 "name": "Intentions",
