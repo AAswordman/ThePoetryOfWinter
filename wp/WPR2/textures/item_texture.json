@@ -2138,6 +2138,9 @@
 		},
         "dec:everlasting_winter_pickaxe_axe": {
 			"textures": ["textures/EPIC/items/tool/everlasting_winter_pickaxe_axe"]
+		},
+        "epic:echoing_scream_saber": {
+			"textures": ["textures/EPIC/items/weapon/echoing_scream_saber"]
 		}
     //======================================================================
     }
