@@ -307,7 +307,8 @@
         "should_darken_sky": false,
         "name": "event.dec:radiate_crystal.name",
         "hud_range": 64
-      }
+      },
+      "minecraft:tick_world": {}
     },
     "events": {
       "minecraft:despawn": {

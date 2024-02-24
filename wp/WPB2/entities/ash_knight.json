@@ -290,6 +290,7 @@
           "boss"
         ]
       },
+      "minecraft:tick_world": {},
       "minecraft:nameable": {},
       "minecraft:health": {
         "value": 400,

@@ -130,6 +130,7 @@
         "name":"boss.dec:predators.name",
         "hud_range": 64
       },
+      "minecraft:tick_world": {},
       "minecraft:behavior.nearest_attackable_target": {
         "priority": 1,
         "within_radius": 256,

@@ -43,6 +43,7 @@
         "width": 5,
         "height": 5
       },
+      "minecraft:tick_world": {},
       "minecraft:boss": {
         "should_darken_sky": true,
         "name": "boss.dec:everlasting_winter_ghast.name",

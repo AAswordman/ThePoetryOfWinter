@@ -161,6 +161,7 @@
         "event": "minecraft:next",
         "target": "self"
       },
+      "minecraft:tick_world": {},
       "minecraft:boss": {
         "should_darken_sky": false,
         "name": "boss.dec:ash_knight_head.name",

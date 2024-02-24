@@ -310,6 +310,7 @@
           }
         ]
       },
+      "minecraft:tick_world": {},
       "minecraft:boss": {
         "should_darken_sky": false,
         "name": "boss.dec:host_of_deep.name",

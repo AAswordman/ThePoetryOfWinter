@@ -312,6 +312,7 @@
       },
       "minecraft:movement.basic": {},
       "minecraft:jump.static": {},
+      "minecraft:tick_world": {},
       "minecraft:boss": {
         "should_darken_sky": false,
         "name": "boss.dec:king_of_pillager.name",

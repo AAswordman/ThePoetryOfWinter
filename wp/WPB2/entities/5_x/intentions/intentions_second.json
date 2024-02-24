@@ -312,6 +312,7 @@
             }
         },
         "components": {
+            "minecraft:tick_world": {},
             "minecraft:physics": {},
             "minecraft:boss": {
                 "should_darken_sky": true,

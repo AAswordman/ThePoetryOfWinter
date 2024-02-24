@@ -273,6 +273,7 @@
           "frozen"
         ]
       },
+      "minecraft:tick_world": {},
       "minecraft:boss": {
         "should_darken_sky": false,
         "name": "boss.dec:everlasting_winter_ghast.name",

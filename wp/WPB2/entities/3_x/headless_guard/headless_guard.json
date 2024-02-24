@@ -180,6 +180,7 @@
                 "value": 64,
                 "max": 64
             },
+            "minecraft:tick_world": {},
             "minecraft:target_nearby_sensor": {
                 "inside_range": 10,
                 "outside_range": 11,

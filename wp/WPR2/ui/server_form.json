@@ -240,6 +240,62 @@
                 }
             },
             {
+                "textWithBigBg": {
+                    "layer": 21,
+                    "type": "stack_panel",
+                    "orientation": "horizontal",
+                    "size": [
+                        "100%",
+                        "64px"
+                    ],
+                    "bindings": [{
+                        "binding_type": "collection",
+                        "binding_collection_name": "form_buttons",
+                        "binding_name": "((#form_button_text = 'textWithBigBg'))",
+                        "binding_name_override": "#visible"
+                    }],
+                    "controls": [{
+                        "left": {
+                            "type": "panel",
+                            "size": [
+                                "100% - 0px",
+                                "100%"
+                            ],
+                            "controls": [{
+                                    "back": {
+                                        "type": "image",
+                                        "texture": "textures/ui/button_borderless_dark",
+                                        "size": [
+                                            "100%",
+                                            "100%"
+                                        ]
+                                    }
+                                },
+                                {
+                                    "header_label": {
+                                        "type": "label",
+                                        "color": "$body_text_color",
+                                        "layer": 1,
+                                        "anchor_from": "left_middle",
+                                        "anchor_to": "left_middle",
+                                        "offset": [
+                                            10,
+                                            0
+                                        ],
+                                        "text": "#form_button_texture",
+                                        "bindings": [{
+                                            "binding_name": "#form_button_texture",
+                                            "binding_type": "collection",
+                                            "binding_collection_name": "form_buttons"
+                                        }]
+                                    }
+                                }
+                            ]
+                        }
+                    }]
+                }
+            },
+            {
                 "canvas": {
                     "layer": 21,
                     "type": "panel",
