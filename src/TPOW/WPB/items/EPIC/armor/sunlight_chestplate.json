@@ -1,0 +1,74 @@
+{
+  "format_version": "1.19.63",
+  "minecraft:item": {
+    "description": {
+      "category": "equipment",
+      "identifier": "epic:sunlight_chestplate"
+    },
+    "components": {
+      "minecraft:render_offsets": {
+      },
+      "minecraft:creative_category": {
+				"parent": "itemGroup.name.chestplate"
+			},
+      "minecraft:display_name": {
+        "value": "item.epic:sunlight_chestplate.name"
+      },
+      "minecraft:icon": {
+        "texture": "epic:sunlight_chestplate"
+      },
+       "minecraft:enchantable": {
+        "value": 10,
+        "slot": "armor_torso"
+      },
+      "minecraft:repairable": {
+        "repair_items": [
+          {
+            "items": [
+              "iron_ingot"
+            ],
+            "repair_amount": 10
+          }
+        ]
+      },
+      "minecraft:digger": {
+      },
+      "minecraft:durability": {
+        "max_durability": 3000,
+        "damage_chance": {
+          "min": 50,
+          "max": 80
+      }
+      },
+      "minecraft:armor": {
+        "protection": 7,
+        "texture_type": "netherite"
+      },
+      "minecraft:wearable": {
+        "dispensable": false,
+        "slot": "slot.armor.chest"
+      },
+      "minecraft:can_destroy_in_creative": true,
+      "minecraft:hand_equipped": false,
+      "minecraft:max_stack_size": 1,
+      "minecraft:mining_speed": 1,
+
+      "tag:comp:use_data_group:tag_:default:_": {},
+      "tag:comp:armor_type:suit_:sunlight:_": {},           //所属套装
+      "tag:comp:armor_protection:7": {},                    //护甲值(显示)
+      "tag:comp:armor_resilience:5": {},                    //护甲韧性
+      "tag:comp:armor_physical_protection:7": {},           //物理抗性(%)
+      "tag:comp:armor_magic_protection:6": {},              //魔法抗性(%)
+      "tag:comp:armor_physical_reduction:2": {},            //物理防御
+      "tag:comp:armor_magic_reduction:1": {},               //魔法防御
+      "tag:comp:attack_addition:1":{}                       //额外附伤
+      
+    //"tag:comp:movement_addition:0":{},                    //移速加成
+    //"tag:comp:sneak_movement_addition:0.005":{},          //潜行移速加成
+    //"tag:comp:actual_level:5": {}                         //等级（显示）
+    },
+    "events": { 
+    
+    }
+  }
+}

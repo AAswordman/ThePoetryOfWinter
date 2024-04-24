@@ -2121,17 +2121,17 @@
 		"epic:sunlight_arrow": {
 			"textures": ["textures/EPIC/items/weapon/sunlight_arrow"]
 		},
-		"epic:sunlight_helmet": {
-			"textures": ["textures/EPIC/items/weapon/sunlight_helmet"]
+        "epic:sunlight_helmet": {
+			"textures": ["textures/EPIC/items/armor/sunlight_helmet"]
 		},
 		"epic:sunlight_chestplate": {
-			"textures": ["textures/EPIC/items/weapon/sunlight_chestplate"]
+			"textures": ["textures/EPIC/items/armor/sunlight_chestplate"]
 		},
 		"epic:sunlight_leggings": {
-			"textures": ["textures/EPIC/items/weapon/sunlight_leggings"]
+			"textures": ["textures/EPIC/items/armor/sunlight_leggings"]
 		},
 		"epic:sunlight_boots": {
-			"textures": ["textures/EPIC/items/weapon/sunlight_boots"]
+			"textures": ["textures/EPIC/items/armor/sunlight_boots"]
 		},
 		"epic:iron_crossbow": {
 			"textures": ["textures/EPIC/items/weapon/iron_crossbow/iron_crossbow"]
