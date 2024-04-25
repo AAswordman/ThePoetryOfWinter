@@ -18,12 +18,12 @@ item.epic:sunlight_staff.name=（预告）日光射线法杖
 item.epic:sunlight_crossbow.name=（预告）日光弩
 item.epic:sunlight_crossbow_unlimitedfire.name=（预告）日光弩 §e【典藏】
 item.epic:sunlight_arrow.name=（预告）日光箭矢
-item.epic:sunlight_helmet.name=（预告）日光战盔
-item.epic:sunlight_chestplate.name=（预告）日光板甲
-item.epic:sunlight_leggings.name=（预告）日光护腿
-item.epic:sunlight_boots.name=（预告）日光战靴
+item.epic:sunlight_helmet.name=日光战盔
+item.epic:sunlight_chestplate.name=日光板甲
+item.epic:sunlight_leggings.name=日光护腿
+item.epic:sunlight_boots.name=日光战靴
 
-item.epic:echoing_scream_saber.name=（预告）尖啸回响
+item.epic:echoing_scream_saber.name=尖啸回响
 
 item.dec:everlasting_winter_pickaxe_axe.name=永冬镐斧(潜行时开启连锁挖掘)
 ====================================================================
