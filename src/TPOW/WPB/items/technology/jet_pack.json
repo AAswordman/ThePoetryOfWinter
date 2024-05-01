@@ -1,23 +1,66 @@
 {
-  "format_version": "1.10",
+  "format_version": "1.19.83",
   "minecraft:item": {
     "description": {
       "identifier": "wb:jet_pack",
-      "register_to_creative_menu": true
+      "category": "equipment"
     },
     "components": {
-      "minecraft:food": {
-        "nutrition": 5,
-        "can_always_eat": true,
-        "cooldown_type": "issue",
-        "cooldown_time": 2
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.sword"
       },
-      "minecraft:hand_equipped": true,
-      "minecraft:use_duration": 99999999,
-      "minecraft:foil": false,
-      "minecraft:max_stack_size": 1,
-      "minecraft:max_damage": 50000,
-      "minecraft:stacked_by_data": false
+      "minecraft:display_name": {
+        "value": "item.wb:jetpack.name"
+      },
+      "minecraft:icon": {
+        "texture": "jet_pack"
+      },
+        "minecraft:render_offsets": {
+          "main_hand": {
+            "first_person": {
+              "scale": [0.01,0.0055,0.01],
+              "position": [0.315,0.05,-0.85],
+              "rotation": [90,0,0]
+  
+            },
+            "third_person": {
+              "position": [0.725,1.525,-0.85],
+              "scale": [0.035,0.02000,0.035]
+            }
+          },
+          "off_hand": {
+            "first_person": {
+              "scale": [0.01,0.0065,0.01],
+              "position": [0.4,0.05,-1.075]
+            },
+            "third_person": {
+              "position": [0.45,1.6,-0.7],
+              "scale": [0.03125,0.03125,0.03125]
+            }
+          }
+        },
+        "minecraft:chargeable": {
+          "movement_modifier": 1.6,
+          "on_complete": {
+              "event": "fly",
+              "target": "self"
+          }
+      },
+
+      "minecraft:use_duration": 10,
+      "minecraft:stacked_by_data": false,
+      "minecraft:max_stack_size": 1
+    },
+
+      "events": {
+        "fly": {
+         "run_command":{
+         "command":[
+        ]
+        }
+        }
+       
+
     }
   }
-}
+ }
