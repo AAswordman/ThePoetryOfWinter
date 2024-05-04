@@ -31,7 +31,9 @@ let ArmorPlayerPomFrom = {
     senior_forget: new ArmorData("wb:armor_senior_forget_helmet", "wb:armor_senior_forget_chestplate", "wb:armor_senior_forget_leggings", "wb:armor_senior_forget_boots"),
     senior_seal: new ArmorData("wb:armor_senior_seal_helmet", "wb:armor_senior_seal_chestplate", "wb:armor_senior_seal_leggings", "wb:armor_senior_seal_boots"),
     senior_equipment: new ArmorData("wb:armor_senior_equipment_helmet", "wb:armor_senior_equipment_chestplate", "wb:armor_senior_equipment_leggings", "wb:armor_senior_equipment_boots"),
-    senior_water: new ArmorData("wb:armor_senior_water_helmet", "wb:armor_senior_water_chestplate", "wb:armor_senior_water_leggings", "wb:armor_senior_water_boots")
+    senior_water: new ArmorData("wb:armor_senior_water_helmet", "wb:armor_senior_water_chestplate", "wb:armor_senior_water_leggings", "wb:armor_senior_water_boots"),
+    //Epic
+    sunlight: new ArmorData("epic:sunlight_helmet", "epic:sunlight_chestplate", "epic:sunlight_leggings", "epic:sunlight_boots")
 };
 export let ArmorPlayerPom = jsonMerge(ArmorPlayerPomFrom, ArmorPlayerDec);
 let ArmorToName = new Map();

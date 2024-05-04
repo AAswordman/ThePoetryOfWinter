@@ -1,4 +1,4 @@
-import { ItemStack, ItemTypes, MinecraftDimensionTypes } from '@minecraft/server';
+import { EntityDamageCause, ItemStack, ItemTypes, MinecraftDimensionTypes } from '@minecraft/server';
 import { ModalFormData } from "@minecraft/server-ui";
 import Vector3 from '../../../modules/exmc/math/Vector3.js';
 import ExDimension from '../../../modules/exmc/server/ExDimension.js';
@@ -79,18 +79,83 @@ export default class SimpleItemUseFunc extends GameController {
                 else {
                     new MenuUIAlert(this.client, menuFunctionUI(this.getLang())).showPage("main", "notice");
                 }
-            }
-            else if (item.typeId === "wb:jet_pack") {
+            } /*else if (item.typeId === "wb:jet_pack") {
+                 //jet pack
+                this.setTimeout(() => {
+                    this.exPlayer.addEffect(MinecraftEffectTypes.Levitation, 2, 100, false);
+                    this.exPlayer.addEffect(MinecraftEffectTypes.SlowFalling, 10, 3, false);
+                    this.exPlayer.dimension.spawnEntity("wb:ball_jet_pack", this.exPlayer.position.sub(this.exPlayer.viewDirection.scl(2)));
+                }, 0);
+            }*/
+        });
+        this.getEvents().exEvents.afterItemStartUse.subscribe(e => {
+            const item = e.itemStack;
+            let time = 5 / e.useDuration;
+            if (item.typeId === "wb:jet_pack") {
                 // jet pack
                 this.setTimeout(() => {
-                    this.exPlayer.addEffect(MinecraftEffectTypes.Levitation, 7, 15, false);
-                    this.exPlayer.addEffect(MinecraftEffectTypes.SlowFalling, 150, 3, false);
-                    this.exPlayer.dimension.spawnEntity("wb:ball_jet_pack", this.exPlayer.position.sub(this.exPlayer.viewDirection.scl(2)));
+                    this.exPlayer.addEffect(MinecraftEffectTypes.Levitation, 2, time, false);
+                    this.exPlayer.addEffect(MinecraftEffectTypes.SlowFalling, 10, 3, false);
+                    this.exPlayer.command.run("/say " + time);
                 }, 0);
             }
         });
-        this.getEvents().exEvents.afterItemUse.subscribe(e => {
+        this.getEvents().exEvents.beforeItemUse.subscribe(e => {
+            var _a, _b;
             const item = e.itemStack;
+            const fl = this.exPlayer.getScoresManager().getScore("wbfl");
+            const cd = this.player.getItemCooldown((_a = e.itemStack.getComponent('minecraft:cooldown')) === null || _a === void 0 ? void 0 : _a.cooldownCategory);
+            if (cd == 0) {
+                if (item.typeId === "epic:echoing_scream_saber" && fl >= 25) {
+                    //尖啸回响
+                    const tmpV = new Vector3();
+                    const sharpness = ((_b = item === null || item === void 0 ? void 0 : item.getComponentById("minecraft:enchantable").getEnchantment("sharpness")) === null || _b === void 0 ? void 0 : _b.level) || 0;
+                    //const strength = (this.exPlayer.entity.getEffect("strength")?.amplifier || -1) + 1;
+                    //const weakness = (this.exPlayer.entity.getEffect("weakness")?.amplifier || -1) + 1;
+                    const base_atk = 7 + sharpness * 1.25;
+                    //let eff_atk = base_atk*(1.25^strength)/(1.25^weakness)
+                    let dam = 2.4 * Math.round(base_atk) + 15;
+                    this.setTimeout(() => {
+                        this.exPlayer.addTag("skill_user");
+                        this.exPlayer.command.run("/function EPIC/weapon/echoing_scream_saber");
+                    }, 0);
+                    this.setTimeout(() => {
+                        for (let e of this.getExDimension().getEntities({
+                            "maxDistance": 5,
+                            "excludeTags": ["skill_user", "wbmsyh"],
+                            "excludeFamilies": [],
+                            "excludeTypes": ["item"],
+                            "location": this.player.location
+                        })) {
+                            try {
+                                for (let i = 3; i > 0 && i < 4; i--) {
+                                    e.runCommand("/say " + i);
+                                    var t = "echo_record_";
+                                    e.addTag(t + "add");
+                                    if (e.hasTag(t + i)) {
+                                        e.removeTag(t + i);
+                                        e.removeTag(t + "add");
+                                        e.addTag(t + (i + 1));
+                                    }
+                                    else {
+                                    }
+                                }
+                                e.runCommand("/tag @s[tag=echo_record_add] add echo_record_1");
+                                e.runCommand("/tag @s[tag=echo_record_add] remove echo_record_add");
+                                e.applyDamage(dam, {
+                                    "cause": EntityDamageCause.magic,
+                                    "damagingEntity": this.player
+                                });
+                                let direction = tmpV.set(e.location).sub(this.player.location).normalize();
+                                e.applyKnockback(direction.x, direction.z, 1.5, 0.7);
+                            }
+                            catch (e) { }
+                        }
+                        this.exPlayer.removeTag("skill_user");
+                        this.exPlayer.getScoresManager().removeScore("wbfl", 25);
+                    }, 150);
+                }
+            }
             // if (item.typeId === "wb:technology_world_explorer") {
             //     const e = this.player.runCommand("locate biome ice_plains");
             //     console.warn(e);

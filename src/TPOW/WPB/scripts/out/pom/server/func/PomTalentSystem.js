@@ -521,6 +521,7 @@ PomTalentSystem.magicDamageType = new Set([
     EntityDamageCause.wither
 ]);
 PomTalentSystem.physicalDamageType = new Set([
+    EntityDamageCause.none,
     EntityDamageCause.anvil,
     EntityDamageCause.contact,
     EntityDamageCause.magma,
