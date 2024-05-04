@@ -42,7 +42,8 @@ class ExClientEvents {
             [ExEventNames.afterPlayerBreakBlock]: new Listener(this, ExEventNames.afterPlayerBreakBlock),
             [ExEventNames.afterPlayerSpawn]: new Listener(this, ExEventNames.afterPlayerSpawn),
             [ExEventNames.afterEntityHealthChanged]: new Listener(this, ExEventNames.afterEntityHealthChanged),
-            [ExEventNames.afterEffectAdd]: new Listener(this, ExEventNames.afterEffectAdd)
+            [ExEventNames.afterEffectAdd]: new Listener(this, ExEventNames.afterEffectAdd),
+            [ExEventNames.afterItemStartUse]: new Listener(this, ExEventNames.afterItemStartUse)
         };
         this._client = client;
     }
@@ -294,7 +295,13 @@ ExClientEvents.exEventSetting = {
         filter: {
             "name": "entity"
         }
-    }
+    },
+    [ExEventNames.afterItemStartUse]: {
+        pattern: ExClientEvents.eventHandlers.registerToServerByEntity,
+        filter: {
+            "name": "source"
+        }
+    },
 };
 ExClientEvents.onHandItemMap = new Map();
 ExClientEvents.onceItemUseOnMap = new Map();
