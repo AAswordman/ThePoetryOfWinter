@@ -1,3 +1,3 @@
-[submodule "src/TPOW/WPB/scripts/ExcellentMInecraftscripts"]
-	path = src/TPOW/WPB/scripts/ExcellentMInecraftscripts
-	url = git@github.com:AAswordman/ExcellentMInecraftscripts.git
+node_modules
+out
+.vscode
