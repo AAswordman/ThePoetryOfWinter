@@ -27,16 +27,17 @@
                     "target": "self"
                 }
             },
-            "minecraft:on_use": {
-                "on_use": {
-                    "event": "attack2",
-                    "target": "self",
-                    "condition": "variable.z == 1"
+            "minecraft:chargeable": {
+                "movement_modifier": 0.6,
+                "on_complete": {
+                    "event": "attack3",
+                    "target": "self"
                 }
             },
+            "minecraft:use_duration": 20,
             "minecraft:cooldown": {
-                "category": "epic:sword",
-                "duration": 5
+                "category": "sword",
+                "duration": 1
             },
             "minecraft:repairable": {
                 "repair_items": [{
