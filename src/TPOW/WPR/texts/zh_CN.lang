@@ -13,15 +13,15 @@ entity.epic:sunlight_arrow.name=日光箭矢
 
 item.epic:iron_crossbow.name=重弩
 item.epic:sun_worshipping_sword.name=（预告）祭日圣刃
-item.epic:sunlight_sword.name=日光长剑
-item.epic:sunlight_staff.name=日光射线法杖
-item.epic:sunlight_crossbow.name=日光弩
+item.epic:sunlight_sword.name=（试验）日光长剑
+item.epic:sunlight_staff.name=（预告）日光射线法杖
+item.epic:sunlight_crossbow.name=（试验）日光弩
 item.epic:sunlight_crossbow_unlimitedfire.name=（开发者道具）日光弩 §e【典藏】
-item.epic:sunlight_arrow.name=日光箭矢
-item.epic:sunlight_helmet.name=日光战盔
-item.epic:sunlight_chestplate.name=日光板甲
-item.epic:sunlight_leggings.name=日光护腿
-item.epic:sunlight_boots.name=日光战靴
+item.epic:sunlight_arrow.name=（试验）日光箭矢
+item.epic:sunlight_helmet.name=（试验）日光战盔
+item.epic:sunlight_chestplate.name=（试验）日光板甲
+item.epic:sunlight_leggings.name=（试验）日光护腿
+item.epic:sunlight_boots.name=（试验）日光战靴
 
 item.epic:echoing_scream_saber.name=尖啸回响
 
@@ -624,12 +624,12 @@ text.help.wb.new.how_to_play.29=职业与对应技能点推荐搭配（不同职
 
 text.help.wb.new.how_to_play.30=如果找不到特定的建筑并不是模组问题,可以适当调高模拟距离以便寻找。§r
 text.help.wb.new.how_to_play.31=矿物简介（盔甲全套效果/武器效果）:§r
-text.help.wb.new.how_to_play.32=墨痕矿(墨痕盔甲:受伤瞬间免疫该次伤害，并随机瞬移⾄⼩范围内任意位置 墨痕剑:)§r
-text.help.wb.new.how_to_play.33=朱红矿(嗜血盔甲:受伤瞬间获得⽣命回复III 嗜血剑:)§r
-text.help.wb.new.how_to_play.34=水源矿(水源盔甲:受伤瞬间弹开附近所有实体(包括⾃身）并造成5点伤害 水源剑:攻击附带范围凋零)§r
-text.help.wb.new.how_to_play.35=封尘矿(封尘盔甲:受伤瞬间给予附近⽣物⾼级缓慢10s 封尘剑:)§r
-text.help.wb.new.how_to_play.36=遗忘矿(遗忘盔甲:受伤瞬间获得⼒量V,速度IV,隐身 遗忘剑:)§r
-text.help.wb.new.how_to_play.37=魔能矿(魔能盔甲:受伤瞬间获得⼒量IV,伤害吸收III 魔能剑: 魔能斧:潜行连锁砍树 魔能镐:消耗蓝量连锁挖掘)§r
+text.help.wb.new.how_to_play.32=墨痕矿(墨痕盔甲:受伤瞬间免疫该次伤害，并随机瞬移⾄⼩范围内任意位置 墨痕剑:普攻使你向前方瞬移；技能对前方小范围内的敌人造成少量伤害，然后使你传送到最近的记录点并回复少量法力；潜行技能使你在原地设置一个记录点)§r
+text.help.wb.new.how_to_play.33=朱红矿(嗜血盔甲:受伤瞬间获得⽣命回复III 嗜血剑:普攻为你恢复少量生命；技能使你短时间内攻击力较大幅度提升，挖掘速度提升并且获得护盾；潜行技能对大范围内的敌人造成少量伤害并为你恢复生命值，每攻击到一个敌人为你恢复2点法力值)§r
+text.help.wb.new.how_to_play.34=水源矿(水源盔甲:受伤瞬间弹开附近所有实体(包括⾃身）并造成5点伤害 水源剑:普攻使前方小范围内敌人持续受到伤害；对前方中范围内的敌人造成少量伤害并且使其持续受到伤害；潜行技能对大范围内的敌人造成中量伤害，中幅度降低移动速度并且持续受到伤害++)§r
+text.help.wb.new.how_to_play.35=封尘矿(封尘盔甲:受伤瞬间给予附近⽣物⾼级缓慢10s 封尘剑:普攻使前方小范围内的敌人移动速度下降；技能对前方小范围内敌人造成一定伤害，并为大范围内所有实体清除药水效果；潜行技能对大范围内的敌人造成大量伤害并且击飞他们，同时较大幅降低其移动速度)§r
+text.help.wb.new.how_to_play.36=遗忘矿(遗忘盔甲:受伤瞬间获得⼒量V,速度IV,隐身 遗忘剑:普攻使前方小范围敌人暂时失明；技能对前方小范围内的敌人造成中量伤害，然后使你短暂进入隐身状态；潜行技能对大范围内的敌人造成少量伤害并使其暂时失明，然后使你短暂进入隐身状态)§r
+text.help.wb.new.how_to_play.37=魔能矿(魔能盔甲:受伤瞬间获得⼒量IV,伤害吸收III 魔能剑: 纯面板高 魔能斧:潜行连锁砍树 魔能镐:潜行消耗魔力连锁挖掘)§r
 text.help.wb.new.how_to_play.38=红宝石/蓝宝石(目前暂时没有作用)§r
 text.help.wb.new.how_to_play.39=屏障矿(屏障法杖:长按搭建16*16平台，潜行长按删除平台)溪流矿(激活机器)铀矿(合成核弹)§r
 text.help.wb.new.how_to_play.40=高级矿石可以用来合成进阶装备。注意！打败觉醒末影龙之前无法使用高级矿石！高级矿石由基础矿石和钻石合成得到，烧炼高级矿石需要高炉。§r
