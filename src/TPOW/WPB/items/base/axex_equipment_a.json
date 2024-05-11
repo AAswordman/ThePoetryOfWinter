@@ -60,6 +60,146 @@
                         }
                     },
                     {
+                        "block": "minecraft:bamboo_mosaic",
+                        "speed": 12.0,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:bamboo_mosaic_slab",
+                        "speed": 12.0,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:bamboo_mosaic_stairs",
+                        "speed": 12.0,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:bamboo_block",
+                        "speed": 12.0,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:stripped_bamboo_block",
+                        "speed": 12.0,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:bamboo_stairs",
+                        "speed": 12.0,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:bamboo_slab",
+                        "speed": 12.0,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:bamboo_sign",
+                        "speed": 12.0,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:bamboo_hanging_sign",
+                        "speed": 12.0,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:cherry_stairs",
+                        "speed": 12.0,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:cherry_slab",
+                        "speed": 12.0,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:cherry_sign",
+                        "speed": 12.0,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:cherry_hanging_sign",
+                        "speed": 12.0,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:bamboo_door",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:bamboo_fence",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:bamboo_mosaic",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:bamboo_planks",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:cherry_door",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:cherry_fence",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
+                        "block": "minecraft:cherry_planks",
+                        "speed": 12,
+                        "on_dig": {
+                            "event": "attack"
+                        }
+                    },
+                    {
                         "block": "minecraft:crimson_hyphae",
                         "speed": 12,
                         "on_dig": {
