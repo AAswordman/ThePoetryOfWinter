@@ -10,8 +10,9 @@
         "parent": "itemGroup.name.sword"
       },
       "minecraft:display_name": {
-        "value": "item.wb:jetpack.name"
+        "value": "item.wb:jet_pack.name"
       },
+      "minecraft:hover_text_color": "light_purple",
       "minecraft:icon": {
         "texture": "jet_pack"
       },
