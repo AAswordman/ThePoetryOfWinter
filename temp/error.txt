@@ -1,0 +1,46 @@
+[Item][error]-components | minecraft:foil | minecraft:foil has been deprecated in format versions 1.20.20 and above. Use minecraft:glint instead.
+
+[Item][warning]-The "minecraft:food" component requires "minecraft:use_duration > use_duration" to be set with a non-zero value.
+
+[Actor][error]-我的世界 | actor_definitions | C:/Users/Administrator/AppData/Local/Packages/Microsoft.MinecraftUWP_8wekyb3d8bbwe/LocalState/games/com.mojang/development_behavior_packs/WPB | epic:blazing_sun | minecraft:entity | component_groups | normal | minecraft:on_death | filters | all_of | Filter member value of test has_damage must be a preset string.
+
+[Actor][error]-我的世界 | actor_definitions | C:/Users/Administrator/AppData/Local/Packages/Microsoft.MinecraftUWP_8wekyb3d8bbwe/LocalState/games/com.mojang/development_behavior_packs/WPB | epic:blazing_sun | minecraft:entity | component_groups | normal | minecraft:on_death | filters | all_of | Filter test failed to parse inputs -> has_damage
+
+[Localization][warning]-Line: 673 - Invalid lang file format. New line character was found while parsing key: '//old'.
+
+[Localization][warning]-Line: 1238 - Invalid lang file format. New line character was found while parsing key: '//dec1.9.3'.
+
+[Localization][warning]-Line: 1373 - Invalid lang file format. New line character was found while parsing key: '//dec1.9.3'.
+
+[Localization][warning]-Line: 1518 - Invalid lang file format. New line character was found while parsing key: '//dec1.9.3'.
+
+[Localization][warning]-Line: 1688 - Invalid lang file format. New line character was found while parsing key: '//dec1.9.3'.
+
+[Localization][warning]-Line: 1950 - Invalid lang file format. New line character was found while parsing key: '//冬诗得改成和升级方式、技能加成有关的'.
+
+[Localization][warning]-Line: 1962 - Invalid lang file format. New line character was found while parsing key: '----tasks------'.
+
+[Scripting][warning]-[Watchdog] 142.453 ms script spike detected in behavior pack 'The Poetry Of Winter[Beh]'
+
+[Effects][error]-particles/EPIC/sunlight_sword_particle2.particle.json | events | event | sound_effect.event_name 'random.explode' did not map to a known level sound event
+
+[AI][error]-dec:dark_snow_man | Can't use SwellGoal unless Mob is a Creeper mob.
+
+[Molang][error]- | Error: unhandled request for unknown variable 'variable.global_is_in_game'
+
+[Scripting][warning]-2024-5-1
+
+[Geometry][error]-dec:shadow_archer | dec:shadow_archer | geometry not found?
+
+[UI][warning]-UI Control: inventory_screen | UI Control: variables_button_mappings_and_controls | UI Control: safezone_screen_matrix | UI Control: inner_matrix | UI Control: safezone_screen_panel | UI Control: root_screen_panel | UI Control: content_stack_panel | UI Control: toolbar_anchor | UI Control: toolbar_panel | UI Control: toolbar_background | UI Control: toolbar_stack_panel | UI Control: help_button_panel | On Control Path: /inventory_screen/variables_button_mappings_and_controls/safezone_screen_matrix/inner_matrix/safezone_screen_panel/root_screen_panel/content_stack_panel/toolbar_anchor/toolbar_panel/toolbar_background/toolbar_stack_panel/help_button_panel/help_button | Expected variable not found in ancestor tree: '$education_edition_china'
+
+[UI][error]-UI Control: hud_screen | UI Control: variables_button_mappings_and_controls | UI Control: safezone_screen_matrix | UI Control: inner_matrix | UI Control: safezone_screen_panel | UI Control: root_screen_panel | UI Control: root_panel | UI Control Key: hotbar_game_tip@game_tip.hotbar_game_tip_factory | UI control reference not found: 'hotbar_game_tip_factory'
+
+[UI][error]-UI Control: hud_screen | UI Control: variables_button_mappings_and_controls | UI Control: safezone_screen_matrix | UI Control: inner_matrix | UI Control: safezone_screen_panel | UI Control: root_screen_panel | UI Control: root_panel | ----------------------------------------------------
+Unknown properties found in def[hotbar_game_tip] from namespace[game_tip]
+- Unknown property [anchor_from]
+- Unknown property [anchor_to]
+- Unknown property [size]
+----------------------------------------------------
+
+
