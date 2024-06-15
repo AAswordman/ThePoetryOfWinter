@@ -1,38 +1,42 @@
 {
-  "format_version": "1.10.0",
-  "minecraft:client_entity": {
-    "description": {
-      "identifier": "dec:leaves_golem",
-      "materials": { "default": "spider" },
-      "textures": {
-        "default": "textures/entity/leaves_golem"
-      },
-      "spawn_egg": {
-        "base_color": "#548B54",
-        "overlay_color": "#556B2F"
-      },
-      "scripts": {
-        "animate": [
-          "spawn",
-          "roar_ac",
-          {"walk" : "query.modified_move_speed * 1.2"},
-          "attacking_ac",
-          "look_at_target"
-        ]
-      },
-      "geometry": {
-        "default": "geometry.leaves_golem"
-      },
-      "animations": {
-        "spawn": "animation.leaves_golem.spawn",
-        "roaring": "animation.leaves_golem.roar",
-        "roar_ac": "controller.animation.wait.roaring",
-        "look_at_target": "animation.common.look_at_target",
-        "walk": "animation.leaves_golem.move",
-        "attack": "animation.leaves_golem.attack",
-        "attacking_ac": "controller.animation.wait.attacky"
-      },
-      "render_controllers": [ "controller.render.leaves_golem" ]
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "dec:leaves_golem",
+            "materials": {
+                "default": "spider"
+            },
+            "textures": {
+                "default": "textures/entity/leaves_golem"
+            },
+            "spawn_egg": {
+                "base_color": "#548B54",
+                "overlay_color": "#556B2F"
+            },
+            "scripts": {
+                "animate": [
+                    "spawn",
+                    "roar_ac",
+                    {
+                        "walk": "query.modified_move_speed * 1.2"
+                    },
+                    "attacking_ac",
+                    "look_at_target"
+                ]
+            },
+            "geometry": {
+                "default": "geometry.leaves_golem"
+            },
+            "animations": {
+                "spawn": "animation.leaves_golem.spawn",
+                "roaring": "animation.leaves_golem.roar",
+                "roar_ac": "controller.animation.wait.roaring",
+                "look_at_target": "animation.common.look_at_target",
+                "walk": "animation.leaves_golem.move",
+                "attack": "animation.leaves_golem.attack",
+                "attacking_ac": "controller.animation.wait.attacky"
+            },
+            "render_controllers": ["controller.render.leaves_golem"]
+        }
     }
-  }
 }

@@ -256,9 +256,6 @@
             "minecraft:movement": {
                 "value": 0.27
             },
-            "minecraft:behavior.float": {
-                "priority": 0
-            },
             "minecraft:behavior.random_stroll": {
                 "priority": 6,
                 "speed_multiplier": 0.8
