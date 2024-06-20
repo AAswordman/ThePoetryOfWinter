@@ -1,0 +1,79 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "wb:god_of_guard_settle",
+            "is_spawnable": false,
+            "is_summonable": true,
+            "is_experimental": false,
+
+            "animations": {
+                "skill": "animation.blazing_sun_skill"
+            },
+            "scripts": {
+                "animate": [
+                    "skill"
+                ]
+            }
+        },
+
+        "component_groups": {
+
+            "normal": {
+                "minecraft:collision_box": {
+                    "width": 2.25,
+                    "height": 6
+                },
+                "minecraft:type_family": {
+                    "family": ["blazing_sun"]
+                },
+                "minecraft:is_tamed": {},
+                "minecraft:health": {
+                    "value": 200,
+                    "max": 200
+                },
+                "minecraft:is_stackable": {},
+                "minecraft:on_death": {
+                    "event": "change",
+                    "target": "self"
+                }
+            }
+
+        },
+
+        "components": {
+            "minecraft:explode":{
+                "fuse_length": 10,
+                "fuse_lit": true,
+                "power": 0,
+                "causes_fire": false
+            },
+            "minecraft:type_family": {
+                "family": ["blazing_sun", "weapon_skill"]
+            },
+            "minecraft:breathable": {
+                "totalSupply": 99999,
+                "suffocateTime": 99999,
+                "breathesWater": true
+            },
+            "minecraft:health": {
+                "value": 200,
+                "max": 200
+            },
+            "minecraft:knockback_resistance": {
+                "value": 10
+            },
+            "minecraft:movement": {
+                "value": 0.0
+            },
+            "minecraft:movement.basic": {},
+            "minecraft:jump.static": {},
+            "minecraft:nameable": {},
+            "minecraft:physics": {}
+        },
+
+        "events": {
+            "minecraft:entity_spawned": {}
+        }
+    }
+}

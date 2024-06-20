@@ -41,6 +41,9 @@
 						"loop": true
 					}
 				}
+			},
+			"minecraft:particle_appearance_tinting": {
+				"color": [1, 0, 0, 1]
 			}
 		}
 	}
