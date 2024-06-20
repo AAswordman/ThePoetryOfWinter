@@ -78,6 +78,9 @@
         "minecraft:behavior.random_look_around": {
           "priority": 8
         },
+        "minecraft:knockback_resistance":{
+            "value": 0.6
+        },
         "minecraft:behavior.nearest_attackable_target": {
           "priority": 3,
           "entity_types": [

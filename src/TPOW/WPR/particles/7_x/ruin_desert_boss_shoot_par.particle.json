@@ -25,7 +25,7 @@
 			"minecraft:particle_initial_speed": "v.def.speed",
 			"minecraft:particle_motion_dynamic": {},
 			"minecraft:particle_appearance_billboard": {
-				"size": [0.6, 0.6],
+				"size": ["Math.min(1,v.particle_age*v.def.speed/1.5)*0.6", "Math.min(1,v.particle_age*v.def.speed/1.5)*0.6"],
 				"facing_camera_mode": "rotate_xyz",
 				"uv": {
 					"texture_width": 10,
