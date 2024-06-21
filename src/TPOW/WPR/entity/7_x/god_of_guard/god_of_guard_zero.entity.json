@@ -1,0 +1,48 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "wb:god_of_guard_zero",
+            "materials": {
+                "default": "skeleton"
+            },
+            "textures": {
+                "default": "textures/wb/7_x/god_of_guard"
+            },
+            "geometry": {
+                "default": "geometry.god_of_guard"
+            },
+            "scripts": {
+                "animate": [
+                    "look_at_target", "base",
+                    {
+                        "move": "query.modified_move_speed"
+                    }
+                ],
+                "pre_animation": [
+                    "variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
+                    "variable.tcos1 = -variable.tcos0;"
+                ]
+            },
+            "animations": {
+                "look_at_target": "controller.animation.humanoid.look_at_target",
+                "look_at_target_default": "animation.humanoid.look_at_target.default.v1.0",
+                "look_at_target_gliding": "animation.humanoid.look_at_target.gliding.v1.0",
+                "look_at_target_swimming": "animation.humanoid.look_at_target.swimming.v1.0",
+                "move": "animation.god_of_guard.walk",
+                "base": "animation.god_of_guard.staff"
+            },
+            "render_controllers": [
+                "controller.render.intentions_second"
+            ],
+            "particle_effects":{
+                "staff_center":"epic:sunlight_arrow_particle1",
+                "center":"epic:sunlight_sword_particle2"
+            },
+            "spawn_egg": {
+                "base_color": "#ff7837",
+                "overlay_color": "#ecf10e"
+            }
+        }
+    }
+}

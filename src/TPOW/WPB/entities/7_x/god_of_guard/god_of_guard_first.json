@@ -3,7 +3,7 @@
     "minecraft:entity": {
       "description": {
         "identifier": "wb:god_of_guard_first",
-        "is_spawnable": true,
+        "is_spawnable": false,
         "is_summonable": true,
         "is_experimental": false,
         "animations": {
@@ -48,11 +48,11 @@
           "height": 1.8
         },
         "minecraft:health": {
-          "value": 2500,
-          "max": 2500
+          "value": 1000,
+          "max": 1000
         },
         "minecraft:movement": {
-          "value": 0.23
+          "value": 0.0
         },
         "minecraft:navigation.walk": {},
         "minecraft:movement.basic": {},
@@ -60,6 +60,11 @@
         "minecraft:can_climb": {},
         "minecraft:attack": {
           "damage": 50
+        },
+        "minecraft:behavior.melee_attack":{
+            "priority": 3,
+            "track_target": true,
+            "reach_multiplier": 0.8
         },
         "minecraft:damage_sensor": {
           "cause": "fall",
@@ -79,7 +84,7 @@
           "priority": 8
         },
         "minecraft:knockback_resistance":{
-            "value": 0.6
+            "value": 5
         },
         "minecraft:behavior.nearest_attackable_target": {
           "priority": 3,
