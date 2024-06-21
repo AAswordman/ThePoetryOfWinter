@@ -124,15 +124,6 @@
 				}
 			}
 		},
-		"animation.god_of_guard.sword": {
-			"loop": true,
-			"animation_length": 0.66667,
-			"bones": {
-				"bone46": {
-					"scale": [0, 0, 0]
-				}
-			}
-		},
 		"animation.god_of_guard.staff": {
 			"loop": true,
 			"bones": {
@@ -184,6 +175,39 @@
 				"jian": {
 					"scale": 0
 				}
+			}
+		},
+		"animation.god_of_guard.sword": {
+			"loop": true,
+			"animation_length": 1,
+			"bones": {
+				"bone46": {
+					"scale": [0, 0, 0]
+				}
+			}
+		},
+		"animation.god_of_guard.staff_effect": {
+			"animation_length": 1,
+            "loop":false,
+			"bones": {
+				"rightArm": {
+					"rotation": [-27.5, 0, 0]
+				},
+				"bone15": {
+					"rotation": [10, 0, 0]
+				}
+			},
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "staff_center",
+						"locator": "staff_center"
+					},
+					{
+						"effect": "center",
+						"locator": "center"
+					}
+				]
 			}
 		}
 	}

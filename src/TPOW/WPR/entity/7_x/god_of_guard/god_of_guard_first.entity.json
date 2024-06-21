@@ -30,11 +30,15 @@
                 "look_at_target_gliding": "animation.humanoid.look_at_target.gliding.v1.0",
                 "look_at_target_swimming": "animation.humanoid.look_at_target.swimming.v1.0",
                 "move": "animation.god_of_guard.walk",
-                "base": "animation.god_of_guard.sword"
+                "base": "animation.god_of_guard.staff"
             },
             "render_controllers": [
-                "controller.render.base"
+                "controller.render.intentions_second"
             ],
+            "particle_effects":{
+                "staff_center":"epic:sunlight_arrow_particle1",
+                "center":"epic:sunlight_sword_particle2"
+            },
             "spawn_egg": {
                 "base_color": "#ff7837",
                 "overlay_color": "#ecf10e"

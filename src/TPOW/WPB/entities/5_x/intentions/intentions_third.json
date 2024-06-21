@@ -196,7 +196,7 @@
             },
             "attack_c": {
                 "minecraft:movement": {
-                    "value": 0.28
+                    "value": 0.33
                 },
                 "minecraft:attack": {
                     "damage": 2000
@@ -232,7 +232,7 @@
                     "track_target": true
                 },
                 "minecraft:movement": {
-                    "value": 0.28
+                    "value": 0.33
                 },
                 "minecraft:variant": {
                     "value": 2
@@ -296,7 +296,7 @@
             },
             "attack_a": {
                 "minecraft:movement": {
-                    "value": 0.28
+                    "value": 0.33
                 },
                 "minecraft:attack": {
                     "damage": 100
@@ -322,7 +322,7 @@
             },
             "fly": {
                 "minecraft:movement": {
-                    "value": 0.28
+                    "value": 0.33
                 },
                 "minecraft:navigation.walk": {},
                 "minecraft:movement.basic": {},

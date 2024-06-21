@@ -1,32 +1,32 @@
 {
-	"format_version": "1.10.0",
-	"minecraft:client_entity": {
-		"description": {
-			"identifier": "wb:god_of_guard_settle",
-			"materials": {
-				"default": "slime_outer"
-			},
-			"textures": {
-				"default": "textures/EPIC/entity/weapon/blazing_sun"
-			},
-			"geometry": {
-				"default": "geometry.blazing_sun"
-			},
-			"particle_effects": {
-				"epic_base_effect": "minecraft:lava_particle"
-			},
-			"scripts": {
-				"animate": [
-				  "particle",
-				  "spawn"
-				]
-			  },
-			"animations": {	
-				"particle":"controller.animation.epic_base.particle",
-                "spawn":"animation.blazing_sun.spawn"
-			   },
-			
-			"render_controllers": ["controller.render.default"]
-		}
-	}
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "wb:god_of_guard_settle",
+            "materials": {
+                "default": "wbarmor"
+            },
+            "textures": {
+                "default": "textures/wb/7_x/god_of_guard_settle"
+            },
+            "geometry": {
+                "default": "geometry.god_of_guard_settle"
+            },
+            "particle_effects": {
+                "epic_base_effect": "minecraft:lava_particle"
+            },
+            "scripts": {
+                "animate": [
+                    "particle",
+                    "spawn"
+                ]
+            },
+            "animations": {
+                "particle": "controller.animation.epic_base.particle",
+                "spawn": "animation.god_of_guard_settle.spawn"
+            },
+
+            "render_controllers": ["controller.render.light"]
+        }
+    }
 }
