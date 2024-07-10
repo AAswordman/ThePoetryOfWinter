@@ -152,5 +152,4 @@ BunBun不是笨笨    在矿里的小金呀
   <img src="https://contrib.rocks/image?repo=AAswordman/ThePoetryOfWinter&max=1000" alt="contributors" />
 </a>
 
-
 [^1]: 这里的“我们”指的是最后形成的冬诗开发者团队的成员
