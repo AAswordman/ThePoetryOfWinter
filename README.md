@@ -1,22 +1,69 @@
+<div align="center">
+  <img style = "width: 50%;height: 50%" src=https://github.com/AAswordman/ThePoetryOfWinter/assets/91937041/86c0436b-90c3-44ab-acde-02062aba4cd6>
 
-# 冬之纪行诗Addon
-## 简介
+# ❄冬之纪行诗❄
 
-这是一款Minecraft 基岩版Addon，能够让你的游戏世界更加精彩。
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable-next-line MD036 -->
+_✨ 一场发生于未知世界的冒险 ✨_
+<!-- prettier-ignore-end -->
 
-Addon信息（最新） | 内容
+</div>
+
+</div>
+
+<p align="center">
+  <a href="https://raw.githubusercontent.com/AAswordman/ThePoetryOfWinter/master/LICENSE">
+    <img src="https://img.shields.io/github/license/AAswordman/ThePoetryOfWinter" alt="license">
+  </a>
+  <a href="https://github.com/HookyQR/VSCodeBeautify">
+    <img src="https://img.shields.io/badge/code%20style-beautuful-000000.svg?logo=javascript&logoColor=edb641" alt="beautuful">
+  </a>
+  <br />
+  <a href="https://qm.qq.com/q/baQx43gfIc">
+    <img src="https://img.shields.io/badge/QQ2%E7%BE%A4-909972860-orange?style=flat-square" alt="QQ Chat Group">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://nonebot.dev/">文档</a>
+</p>
+
+## ✨简介
+
+这是一款 Minecraft 基岩版 Addon，在 Minecraft 世界中添加的多样的武器和方块，以及有挑战性的 Boss，让你的 Minecraft 世界更加精彩
+
+<div align="center">
+
+### 📃Addon 相关信息
+
+📃Addon信息（最新） | 内容
 ------------ | -------------
 名称 | 冬之纪行诗
 类型 | RPG
 Addon版本 | 1.8.5B2
 支持版本 | 基岩版1.20.60/1.20.62
-售价 | 免费
+售价 | 免费 （女装获取最新快照版）
 最后更新时间 | 2024.3
 
-## 反馈
-任何你在游玩中遇到的问题都可以在这里提出，或者加入我们的玩家群。
+</div>
 
-## 历史
+## 🎨特色
+
+- 游戏知识，玩家薪火相传，没有攻略，探索价值极高
+- 超多特性，等你发现
+- 毫无预备的更新
+- 非常经典的血条不兼容
+- 微软MC啊，它不识别！
+- 超难boss，心态爆炸
+- 管理员态度恶劣，除了发广告都不踢的
+- 仓库star数为1
+- 历史悠久
+
+## 💬反馈
+任何你在游玩中遇到的问题都可以在这里提出 Issue ，或者加入我们的[玩家 2 群](https://qm.qq.com/q/baQx43gfIc)。
+
+## 📖历史
 最初想法是2019年7月份诞生的。当年我们[^1]开始着手制作了世界边境、decisland、Epic。在2022年1月份，Epic和世界边境合并，在2022年7月，decisland加入了这个体系当中。
 
 decisland将独立更新下去，而世界边境和Epic将不再独立更新，而是完全作为冬诗的一部分存在。
@@ -25,7 +72,16 @@ decisland将独立更新下去，而世界边境和Epic将不再独立更新，�
 
 冬诗将会继续更新下去。
 
-## 鸣谢
+## 💰赞助我们
+
+想不到吧，不接受赞助（
+
+~~给剑侠看女装照片也算赞助~~
+
+## 🔥鸣谢
+
+### 😇参与人员
+
 名字排序为随机排序
 ```
 Main creator:   - LiLeyi   AAswordsman
@@ -82,6 +138,19 @@ Our Team
 Special Thanks
 BunBun不是笨笨    在矿里的小金呀
 ```
+### 🤑赞助者
+
+感谢以下赞助者对 《冬之纪行诗》 项目提供的资金支持：
+
+```
+暂无
+```
+
+### 🧑🏻‍💻仓库内开发者
+
+<a href="https://github.com/AAswordman/ThePoetryOfWinter/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=AAswordman/ThePoetryOfWinter&max=1000" alt="contributors" />
+</a>
 
 
 [^1]: 这里的“我们”指的是最后形成的冬诗开发者团队的成员
