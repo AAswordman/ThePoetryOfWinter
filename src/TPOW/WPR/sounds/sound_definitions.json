@@ -141,6 +141,33 @@
             "load_on_low_memory": true
         }]
     },
+    "music.wb.chasing_stage2": {
+        "category": "music",
+        "sounds": [{
+            "name": "sounds/wb/chasing_stage2",
+            "stream": true,
+            "volume": 0.5,
+            "load_on_low_memory": true
+        }]
+    },
+    "music.wb.chasing_stage1": {
+        "category": "music",
+        "sounds": [{
+            "name": "sounds/wb/chasing_stage1",
+            "stream": true,
+            "volume": 0.5,
+            "load_on_low_memory": true
+        }]
+    },
+    "music.wb.chasing_stage3": {
+        "category": "music",
+        "sounds": [{
+            "name": "sounds/wb/chasing_stage3",
+            "stream": true,
+            "volume": 0.5,
+            "load_on_low_memory": true
+        }]
+    },
     "music.none10": {
         "category": "music",
         "sounds": [{
