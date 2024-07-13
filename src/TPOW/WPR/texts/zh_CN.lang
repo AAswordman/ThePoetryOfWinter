@@ -568,16 +568,7 @@ wb.boss.showname.yanzhipaoxiao=§4炎之咆哮
 wb.boss.showname.jiniankuangxiang=§e极念狂想
 
 item.skill.wb.technology_world_explorer=§d周围32半径实体:
-item.skill.wb.sword_guardb=§b绝对防御
-item.skill.wb.sword_forget_cd=§d遗忘之光
-item.skill.wb.sword_ink_cd=§d笔走龙蛇
-item.skill.wb.sword_seal_cd=§d土崩瓦解
-item.skill.wb.sword_water_cd=§d水尽鹅飞
-item.skill.wb.sword_flyb=§4凌空斩
-item.skill.wb.sword_bluemarkb=§d痕.耀
-item.skill.wb.sword_bloodsucking_cd=§d嗜血风暴
-item.skill.wb.sword_intentionsx=§e极念狂想
-item.skill.wb.sword_intentionsx_a=§b[系统]能量不足
+
 
 text.wb:summon_magic_stoneman.name=§e魔化石块已被召唤
 text.wb:summon_headless_guard.name=§e无头守卫已被召唤

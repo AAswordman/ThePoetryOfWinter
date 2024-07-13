@@ -4633,16 +4633,6 @@ wb.boss.showname.yanzhipaoxiao=§4Inflammation of the roar
 wb.boss.showname.jiniankuangxiang=§eA read fantasy 
 
 item.skill.wb.technology_world_explorer=§d32 radius around entities: 
-item.skill.wb.sword_guardb=§bAbsolute defense
-item.skill.wb.sword_forget_cd=§dThe light of forgetting
-item.skill.wb.sword_ink_cd=§dBiZouLongShe 
-item.skill.wb.sword_seal_cd=§dFall apart 
-item.skill.wb.sword_water_cd=§dWater goose to fly 
-item.skill.wb.sword_flyb=§4Cut through the air
-item.skill.wb.sword_bluemarkb=§dMark. Flash 
-item.skill.wb.sword_bloodsucking_cd=§dBloodthirsty storm 
-item.skill.wb.sword_intentionsx=§eA read fantasy 
-item.skill.wb.sword_intentionsx_a=§b[system] lack of energy
 
 enter.text.wb.text1=Please use the key to see the guide.
 enter.text.wb.text2=The key icon of the key icon in the handheld item bar and long press, please open the experimental gameplay and a series of switches later

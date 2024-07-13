@@ -1126,7 +1126,7 @@
             "textures": "textures/wb_blocks/base/portal_ancientboss"
         },
         "portal_mindboss": {
-            "textures": "textures/wb_blocks/base/portal_mindboss"
+            "textures": "textures/wb_blocks/base/portal_bossx"
         },
         "portal_bossx": {
             "textures": "textures/wb_blocks/base/portal_bossx"

@@ -1,0 +1,1341 @@
+{
+    "format_version": "1.8.0",
+    "animation_controllers": {
+        "controller.animation.player.wb.test": {
+            "states": {
+                "default": {
+                    "transitions": [{
+                        "b": "variable.damage_nearby_mobs"
+                    }]
+                },
+                "b": {
+                    "on_entry": [
+                        "/titleraw @s title {\"rawtext\":[{\"translate\":\"unknown\"}]}"
+                    ],
+                    "transitions": [{
+                        "default": "!variable.damage_nearby_mobs"
+                    }]
+                }
+            }
+        },
+        "controller.animation.player.wb.eff": {
+            "states": {
+                "default": {
+                    "transitions": [{
+                        "sword_fly": "query.get_equipped_item_name == 'sword_fly'"
+                    }]
+                },
+                "sword_fly": {
+                    "on_entry": [
+                        "/effect @s jump_boost 1 4",
+                        "/effect @s slow_falling 1 5"
+                    ],
+                    "transitions": [{
+                        "sword_flyx": "(1.0)"
+                    }]
+                },
+                "sword_flyx": {
+                    "transitions": [{
+                            "default": "query.get_equipped_item_name != 'sword_fly'"
+                        },
+                        {
+                            "sword_fly": "query.get_equipped_item_name == 'sword_fly'"
+                        }
+                    ]
+                }
+            }
+        },
+        "controller.animation.player.wb.press": {
+            "states": {
+                "default": {
+                    "on_entry": [
+                        "@s remove_all",
+                        "/tag @s remove wbflx",
+                        "/tag @s remove fugitivec",
+                        "@s attribute_attack1"
+                    ],
+                    "transitions": [{
+                            "p_flame": "(!query.is_sneaking && query.get_equipped_item_name == 'particle_flame')"
+                        },
+                        {
+                            "p_love": "(!query.is_sneaking && query.get_equipped_item_name == 'particle_love')"
+                        },
+                        {
+                            "p_halo": "(!query.is_sneaking && query.get_equipped_item_name == 'particle_halo')"
+                        },
+                        {
+                            "p_rune": "(!query.is_sneaking && query.get_equipped_item_name == 'particle_rune')"
+                        },
+                        {
+                            "sword_guard": "query.get_equipped_item_name == 'sword_guard'"
+                        },
+                        {
+                            "staff_barrier": "query.get_equipped_item_name == 'staff_barrier'"
+                        },
+                        {
+                            "sword_bluemark": "query.get_equipped_item_name == 'sword_bluemark'"
+                        },
+                        {
+                            "sword_fly": "query.get_equipped_item_name == 'sword_fly'"
+                        },
+                        {
+                            "sword_intentions": "query.get_equipped_item_name == 'sword_intentions'"
+                        },
+                        {
+                            "sword_bloodsucking_aa": "(query.get_equipped_item_name == 'sword_bloodsucking_a' || query.get_equipped_item_name == 'sword_bloodsucking_b')"
+                        },
+                        {
+                            "sword_bloodsucking_ba": "(query.get_equipped_item_name == 'sword_bloodsucking_c' || query.get_equipped_item_name == 'sword_bloodsucking_d')"
+                        },
+                        {
+                            "sword_bloodsucking_ca": "(query.get_equipped_item_name == 'sword_bloodsucking_e' || query.get_equipped_item_name == 'sword_bloodsucking_f')"
+                        },
+                        {
+                            "sword_forget_aa": "(query.get_equipped_item_name == 'sword_forget_a' || query.get_equipped_item_name == 'sword_forget_b')"
+                        },
+                        {
+                            "sword_forget_ba": "(query.get_equipped_item_name == 'sword_forget_c' || query.get_equipped_item_name == 'sword_forget_d')"
+                        },
+                        {
+                            "sword_forget_ca": "(query.get_equipped_item_name == 'sword_forget_e' || query.get_equipped_item_name == 'sword_forget_f')"
+                        },
+                        {
+                            "sword_ink_aa": "(query.get_equipped_item_name == 'sword_ink_a' || query.get_equipped_item_name == 'sword_ink_b')"
+                        },
+                        {
+                            "sword_ink_ba": "(query.get_equipped_item_name == 'sword_ink_c' || query.get_equipped_item_name == 'sword_ink_d')"
+                        },
+                        {
+                            "sword_ink_ca": "(query.get_equipped_item_name == 'sword_ink_e' || query.get_equipped_item_name == 'sword_ink_f')"
+                        },
+                        {
+                            "sword_ink_ga": "query.get_equipped_item_name == 'sword_ink_g'"
+                        },
+                        {
+                            "sword_seal_aa": "(query.get_equipped_item_name == 'sword_seal_a' || query.get_equipped_item_name == 'sword_seal_b')"
+                        },
+                        {
+                            "sword_seal_ba": "(query.get_equipped_item_name == 'sword_seal_c' || query.get_equipped_item_name == 'sword_seal_d')"
+                        },
+                        {
+                            "sword_seal_ca": "(query.get_equipped_item_name == 'sword_seal_e' || query.get_equipped_item_name == 'sword_seal_f')"
+                        },
+                        {
+                            "sword_water_aa": "(query.get_equipped_item_name == 'sword_water_a' || query.get_equipped_item_name == 'sword_water_b')"
+                        },
+                        {
+                            "sword_water_ba": "(query.get_equipped_item_name == 'sword_water_c' || query.get_equipped_item_name == 'sword_water_d')"
+                        },
+                        {
+                            "sword_water_ca": "(query.get_equipped_item_name == 'sword_water_e' || query.get_equipped_item_name == 'sword_water_f')"
+                        },
+                        {
+                            "technology_world_explorer": "query.get_equipped_item_name == 'technology_world_explorer'"
+                        },
+                        {
+                            "technology_infernal_explorer": "query.get_equipped_item_name == 'technology_infernal_explorer'"
+                        }
+                    ]
+                },
+                "technology_infernal_explorer": {
+                    "transitions": [{
+                        "default": "query.get_equipped_item_name != 'technology_infernal_explorer'"
+                    }]
+                },
+                "technology_world_explorer": {
+                    "on_entry": [
+                        "/tellraw @s {\"rawtext\":[{\"translate\":\"item.skill.wb.technology_world_explorer\"},{\"selector\":\"@e[rm=1,r=32,type=!item]\"}]}",
+                        "/execute as @e[r=32,rm=1] at @s run particle wb:tech_explorer_para ~ ~+1 ~"
+                    ],
+                    "transitions": [{
+                        "default": "query.get_equipped_item_name != 'technology_world_explorer'"
+                    }]
+                },
+                "sword_water_aa": {
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_water_a' && query.get_equipped_item_name != 'sword_water_b')"
+                        },
+                        {
+                            "sword_water_ab": "((query.get_equipped_item_name == 'sword_water_a' || query.get_equipped_item_name == 'sword_water_b')) && variable.attack_time > 0"
+                        }
+                    ]
+                },
+                "sword_water_ab": {
+                    "on_entry": [
+                        "/execute as @s at @s run summon wb:damage_execute ^ ^+0.35 ^+3.0",
+                        "/particle wb:sword_water_para ~ ~ ~",
+                        "/execute as @s[tag=wbmsyh] at @s run execute as @e[r=5,type=wb:damage_execute] at @s run execute as @e[r=2.5] at @s run effect @s[tag=!wbmsyh] wither 2 2 true",
+                        "/execute as @s[tag=!wbmsyh] at @s run execute as @e[r=5,type=wb:damage_execute] at @s run execute as @e[r=2.5] at @s run effect @s wither 2 2 true",
+                        "/kill @e[type=wb:damage_execute,r=5]"
+                    ],
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_water_a' && query.get_equipped_item_name != 'sword_water_b')"
+                        },
+                        {
+                            "sword_water_aa": "((query.get_equipped_item_name == 'sword_water_a' || query.get_equipped_item_name == 'sword_water_b')) && variable.attack_time <= 0"
+                        }
+                    ]
+                },
+                "sword_water_ba": {
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_water_c' && query.get_equipped_item_name != 'sword_water_d')"
+                        },
+                        {
+                            "sword_water_bb": "((query.get_equipped_item_name == 'sword_water_c' || query.get_equipped_item_name == 'sword_water_d')) && variable.attack_time > 0"
+                        },
+                        {
+                            "sword_water_bc": "((query.get_equipped_item_name == 'sword_water_c' || query.get_equipped_item_name == 'sword_water_d')) && query.is_using_item"
+                        }
+                    ]
+                },
+                "sword_water_bb": {
+                    "on_entry": [
+                        "/execute as @s at @s run summon wb:damage_execute ^ ^+0.35 ^+3.0",
+                        "/particle wb:sword_water_para ~ ~ ~",
+                        "/execute as @s[tag=wbmsyh] at @s run execute as @e[r=5,type=wb:damage_execute] at @s run execute as @e[r=2.5] at @s run effect @s[tag=!wbmsyh] wither 6 2 true",
+                        "/execute as @s[tag=!wbmsyh] at @s run execute as @e[r=5,type=wb:damage_execute] at @s run execute as @e[r=2.5] at @s run effect @s wither 6 2 true",
+                        "/kill @e[type=wb:damage_execute,r=5]"
+                    ],
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_water_c' && query.get_equipped_item_name != 'sword_water_d')"
+                        },
+                        {
+                            "sword_water_ba": "((query.get_equipped_item_name == 'sword_water_c' || query.get_equipped_item_name == 'sword_water_d')) && variable.attack_time <= 0"
+                        }
+                    ]
+                },
+                "sword_water_bc": {
+                    "on_entry": [
+                        "/execute as @s[scores={wbfl=..49}] at @s run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.29.name\"}]}",
+                        "/execute as @s[scores={wbfl=50..}] at @s run particle wb:sword_water_parb ^ ^+0.3 ^+5.0",
+                        "/execute as @s[scores={wbfl=50..}] at @s run summon wb:damage_execute ^ ^+0.35 ^+5.0",
+                        "/execute as @s[tag=wbmsyh,scores={wbfl=50..}] at @s run execute as @e[r=6,type=wb:damage_execute] at @s run damage @e[r=4.5,tag=!wbmsyh] 15 entity_attack entity @s",
+                        "/execute as @s[tag=!wbmsyh,scores={wbfl=50..}] at @s run execute as @e[r=6,type=wb:damage_execute] at @s run damage @e[r=4.5] 15 entity_attack entity @s",
+                        "/execute as @s[tag=wbmsyh,scores={wbfl=50..}] at @s run execute as @e[r=6,type=wb:damage_execute] at @s run execute as @e[r=4.5] at @s run effect @s[tag=!wbmsyh] wither 3 1 true",
+                        "/execute as @s[tag=!wbmsyh,scores={wbfl=50..}] at @s run execute as @e[r=6,type=wb:damage_execute] at @s run execute as @e[r=4.5] at @s run effect @s wither 3 1 true",
+                        "/execute as @s[scores={wbfl=50..}] at @s run kill @e[type=wb:damage_execute,r=6]",
+                        "/execute as @s[scores={wbfl=50..}] at @s run scoreboard players remove @s wbfl 50",
+                        "variable.global_cooling=4;",
+                        "variable.global_cooling_total=4;"
+                    ],
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_water_c' && query.get_equipped_item_name != 'sword_water_d')&&variable.global_cooling==0"
+                        },
+                        {
+                            "sword_water_ba": "((query.get_equipped_item_name == 'sword_water_c' || query.get_equipped_item_name == 'sword_water_d')) && !query.is_using_item&&variable.global_cooling==0"
+                        }
+                    ]
+                },
+                "sword_water_ca": {
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_water_e' && query.get_equipped_item_name != 'sword_water_f')"
+                        },
+                        {
+                            "sword_water_cb": "((query.get_equipped_item_name == 'sword_water_e' || query.get_equipped_item_name == 'sword_water_f')) && variable.attack_time > 0"
+                        },
+                        {
+                            "sword_water_cc": "(!query.is_sneaking && (query.get_equipped_item_name == 'sword_water_e' || query.get_equipped_item_name == 'sword_water_f')) && query.is_using_item"
+                        },
+                        {
+                            "sword_water_cd": "(query.is_sneaking && (query.get_equipped_item_name == 'sword_water_e' || query.get_equipped_item_name == 'sword_water_f')) && query.is_using_item"
+                        }
+                    ]
+                },
+                "sword_water_cb": {
+                    "on_entry": [
+                        "/execute as @s at @s run summon wb:damage_execute ^ ^+0.35 ^+3.0",
+                        "/particle wb:sword_water_para ~ ~ ~",
+                        "/execute as @s[tag=wbmsyh] at @s run execute as @e[r=5,type=wb:damage_execute] at @s run execute as @e[r=2.5] at @s run effect @s[tag=!wbmsyh] wither 3 3 true",
+                        "/execute as @s[tag=!wbmsyh] at @s run execute as @e[r=5,type=wb:damage_execute] at @s run execute as @e[r=2.5] at @s run effect @s wither 3 3 true",
+                        "/kill @e[type=wb:damage_execute,r=5]"
+                    ],
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_water_e' && query.get_equipped_item_name != 'sword_water_f')"
+                        },
+                        {
+                            "sword_water_ca": "((query.get_equipped_item_name == 'sword_water_e' || query.get_equipped_item_name == 'sword_water_f')) && variable.attack_time <= 0"
+                        }
+                    ]
+                },
+                "sword_water_cc": {
+                    "on_entry": [
+                        "/execute as @s[scores={wbfl=..29}] at @s run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.30.name\"}]}",
+                        "/execute as @s[scores={wbfl=30..}] at @s run particle wb:sword_water_parb ^ ^+0.3 ^+5.0",
+                        "/execute as @s[scores={wbfl=30..}] at @s run summon wb:damage_execute ^ ^+0.35 ^+5.0",
+                        "/execute as @s[tag=wbmsyh,scores={wbfl=30..}] at @s run execute as @e[r=6,type=wb:damage_execute] at @s run damage @e[r=4.5,tag=!wbmsyh] 15 entity_attack entity @s",
+                        "/execute as @s[tag=!wbmsyh,scores={wbfl=30..}] at @s run execute as @e[r=6,type=wb:damage_execute] at @s run damage @e[r=4.5] 15 entity_attack entity @s",
+                        "/execute as @s[tag=wbmsyh,scores={wbfl=30..}] at @s run execute as @e[r=6,type=wb:damage_execute] at @s run execute as @e[r=4.5] at @s run effect @s[tag=!wbmsyh] wither 3 1 true",
+                        "/execute as @s[tag=!wbmsyh,scores={wbfl=30..}] at @s run execute as @e[r=6,type=wb:damage_execute] at @s run execute as @e[r=4.5] at @s run effect @s wither 3 1 true",
+                        "/execute as @s[scores={wbfl=30..}] at @s run kill @e[type=wb:damage_execute,r=6]",
+                        "/execute as @s[scores={wbfl=30..}] at @s run scoreboard players remove @s wbfl 30",
+                        "variable.global_cooling=3;",
+                        "variable.global_cooling_total=3;"
+                    ],
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_water_e' && query.get_equipped_item_name != 'sword_water_f')&&variable.global_cooling==0"
+                        },
+                        {
+                            "sword_water_ca": "!query.is_using_item&&variable.global_cooling==0"
+                        }
+                    ]
+                },
+                "sword_water_cd": {
+                    "on_entry": [
+                        "/execute as @s[scores={wbfl=..49}] at @s run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.31.name\"}]}",
+                        "/execute as @s[tag=wbmsyh,scores={wbfl=50..}] at @s run effect @e[tag=!wbmsyh,rm=2,r=10] slowness 6 2 true",
+                        "/execute as @s[tag=!wbmsyh,scores={wbfl=50..}] at @s run effect @e[rm=2,r=10] slowness 6 2 true",
+                        "/execute as @s[tag=wbmsyh,scores={wbfl=50..}] at @s run damage @e[rm=2,r=10,tag=!wbmsyh] 35 entity_attack entity @s",
+                        "/execute as @s[tag=!wbmsyh,scores={wbfl=50..}] at @s run damage @e[rm=2,r=10] 35 entity_attack entity @s",
+                        "/execute as @s[tag=wbmsyh,scores={wbfl=50..}] at @s run effect @e[tag=!wbmsyh,r=10,rm=2] wither 6 4 true",
+                        "/execute as @s[tag=!wbmsyh,scores={wbfl=50..}] at @s run effect @e[r=10,rm=2] wither 6 4 true",
+                        "/execute as @s[scores={wbfl=50..}] at @s run particle wb:sword_water_par ~ ~ ~",
+                        "/execute as @s[scores={wbfl=50..}] at @s run scoreboard players remove @s wbfl 50",
+                        "variable.global_cooling=5;",
+                        "variable.global_cooling_total=5;"
+                    ],
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_water_e' && query.get_equipped_item_name != 'sword_water_f')&&variable.global_cooling==0"
+                        },
+                        {
+                            "sword_water_ca": "!query.is_using_item&&variable.global_cooling==0"
+                        }
+                    ]
+                },
+                "sword_seal_aa": {
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_seal_a' && query.get_equipped_item_name != 'sword_seal_b')"
+                        },
+                        {
+                            "sword_seal_ab": "((query.get_equipped_item_name == 'sword_seal_a' || query.get_equipped_item_name == 'sword_seal_b')) && variable.attack_time > 0"
+                        }
+                    ]
+                },
+                "sword_seal_ab": {
+                    "on_entry": [
+                        "/particle wb:sword_seal_para ~ ~ ~",
+                        "/execute as @s at @s run summon wb:damage_execute ^ ^+0.35 ^+3.0",
+                        "/execute as @s[tag=wbmsyh] at @s run execute as @e[r=5,type=wb:damage_execute] at @s run execute as @e[r=2.5] at @s run effect @s[tag=!wbmsyh] slowness 2 1 true",
+                        "/execute as @s[tag=!wbmsyh] at @s run execute as @e[r=5,type=wb:damage_execute] at @s run execute as @e[r=2.5] at @s run effect @s slowness 2 1 true",
+                        "/kill @e[type=wb:damage_execute,r=5]"
+                    ],
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_seal_a' && query.get_equipped_item_name != 'sword_seal_b')"
+                        },
+                        {
+                            "sword_seal_aa": "((query.get_equipped_item_name == 'sword_seal_a' || query.get_equipped_item_name == 'sword_seal_b')) && variable.attack_time <= 0"
+                        }
+                    ]
+                },
+                "sword_seal_ba": {
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_seal_c' && query.get_equipped_item_name != 'sword_seal_d')"
+                        },
+                        {
+                            "sword_seal_bb": "((query.get_equipped_item_name == 'sword_seal_c' || query.get_equipped_item_name == 'sword_seal_d')) && variable.attack_time > 0"
+                        },
+                        {
+                            "sword_seal_bc": "((query.get_equipped_item_name == 'sword_seal_c' || query.get_equipped_item_name == 'sword_seal_d')) && query.is_using_item"
+                        }
+                    ]
+                },
+                "sword_seal_bb": {
+                    "on_entry": [
+                        "/particle wb:sword_seal_para ~ ~ ~",
+                        "/execute as @s at @s run summon wb:damage_execute ^ ^+0.35 ^+3.0",
+                        "/execute as @s[tag=wbmsyh] at @s run execute as @e[r=5,type=wb:damage_execute] at @s run execute as @e[r=2.5] at @s run effect @s[tag=!wbmsyh] slowness 4 1 true",
+                        "/execute as @s[tag=!wbmsyh] at @s run execute as @e[r=5,type=wb:damage_execute] at @s run execute as @e[r=2.5] at @s run effect @s slowness 4 1 true",
+                        "/kill @e[type=wb:damage_execute,r=5]"
+                    ],
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_seal_c' && query.get_equipped_item_name != 'sword_seal_d')"
+                        },
+                        {
+                            "sword_seal_ba": "((query.get_equipped_item_name == 'sword_seal_c' || query.get_equipped_item_name == 'sword_seal_d')) && variable.attack_time <= 0"
+                        }
+                    ]
+                },
+                "sword_seal_bc": {
+                    "on_entry": [
+                        "/execute as @s[scores={wbfl=..99}] at @s run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.32.name\"}]}",
+                        "/execute as @s[scores={wbfl=100..}] at @s run particle wb:sword_seal_parb ^ ^+0.35 ^+3.0",
+                        "/execute as @s[scores={wbfl=100..}] at @s run summon wb:damage_execute ^ ^+0.35 ^+3.0",
+                        "/execute as @s[tag=wbmsyh,scores={wbfl=100..}] at @s run execute as @e[r=10,rm=2] at @s run effect @s[tag=!wbmsyh] clear",
+                        "/execute as @s[tag=!wbmsyh,scores={wbfl=100..}] at @s run execute as @e[r=10,rm=2] at @s run effect @s clear",
+                        "/execute as @s[tag=wbmsyh,scores={wbfl=100..}] at @s run execute as @e[r=5,type=wb:damage_execute] at @s run damage @e[r=2.5,tag=!wbmsyh] 20 entity_attack entity @s",
+                        "/execute as @s[tag=!wbmsyh,scores={wbfl=100..}] at @s run execute as @e[r=5,type=wb:damage_execute] at @s run damage @e[r=2.5] 20 entity_attack entity @s",
+                        "/execute as @s[tag=wbmsyh,scores={wbfl=100..}] at @s run effect @s[tag=wbmsyh] clear",
+                        "/execute as @s[tag=!wbmsyh,scores={wbfl=100..}] at @s run effect @s clear",
+                        "/execute as @s[scores={wbfl=100..}] at @s run kill @e[type=wb:damage_execute,r=5]",
+                        "/execute as @s[scores={wbfl=100..}] at @s run scoreboard players remove @s wbfl 100",
+                        "variable.global_cooling=3;",
+                        "variable.global_cooling_total=3;"
+                    ],
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_seal_c' && query.get_equipped_item_name != 'sword_seal_d')&&variable.global_cooling==0"
+                        },
+                        {
+                            "sword_seal_ba": "((query.get_equipped_item_name == 'sword_seal_c' || query.get_equipped_item_name == 'sword_seal_d')) && !query.is_using_item&&variable.global_cooling==0"
+                        }
+                    ]
+                },
+                "sword_seal_ca": {
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_seal_e' && query.get_equipped_item_name != 'sword_seal_f')"
+                        },
+                        {
+                            "sword_seal_cb": "((query.get_equipped_item_name == 'sword_seal_e' || query.get_equipped_item_name == 'sword_seal_f')) && variable.attack_time > 0"
+                        },
+                        {
+                            "sword_seal_cc": "(!query.is_sneaking && (query.get_equipped_item_name == 'sword_seal_e' || query.get_equipped_item_name == 'sword_seal_f')) && query.is_using_item"
+                        },
+                        {
+                            "sword_seal_cd": "(query.is_sneaking && (query.get_equipped_item_name == 'sword_seal_e' || query.get_equipped_item_name == 'sword_seal_f')) && query.is_using_item"
+                        }
+                    ]
+                },
+                "sword_seal_cb": {
+                    "on_entry": [
+                        "/execute as @s at @s run summon wb:damage_execute ^ ^+0.35 ^+3.0",
+                        "/particle wb:sword_seal_para ~ ~ ~",
+                        "/execute as @s[tag=wbmsyh] at @s run execute as @e[r=5,type=wb:damage_execute] at @s run execute as @e[r=2.5] at @s run effect @s[tag=!wbmsyh] slowness 3 2 true",
+                        "/execute as @s[tag=!wbmsyh] at @s run execute as @e[r=5,type=wb:damage_execute] at @s run execute as @e[r=2.5] at @s run effect @s slowness 3 2 true",
+                        "/kill @e[type=wb:damage_execute,r=5]"
+                    ],
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_seal_e' && query.get_equipped_item_name != 'sword_seal_f')"
+                        },
+                        {
+                            "sword_seal_ca": "((query.get_equipped_item_name == 'sword_seal_e' || query.get_equipped_item_name == 'sword_seal_f')) && variable.attack_time <= 0"
+                        }
+                    ]
+                },
+                "sword_seal_cc": {
+                    "on_entry": [
+                        "/execute as @s[scores={wbfl=60..}] at @s run particle wb:sword_seal_parb ^ ^+0.35 ^+3.0",
+                        "/execute as @s[scores={wbfl=..59}] at @s run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.33.name\"}]}",
+                        "/execute as @s[scores={wbfl=60..}] at @s run summon wb:damage_execute ^ ^+0.35 ^+3.0",
+                        "/execute as @s[tag=wbmsyh,scores={wbfl=60..}] at @s run execute as @e[r=10,rm=2] at @s run effect @s[tag=!wbmsyh] clear",
+                        "/execute as @s[tag=!wbmsyh,scores={wbfl=60..}] at @s run execute as @e[r=10,rm=2] at @s run effect @s clear",
+                        "/execute as @s[tag=wbmsyh,scores={wbfl=60..}] at @s run execute as @e[r=5,type=wb:damage_execute] at @s run damage @e[r=2.5,tag=!wbmsyh] 20 entity_attack entity @s",
+                        "/execute as @s[tag=!wbmsyh,scores={wbfl=60..}] at @s run execute as @e[r=5,type=wb:damage_execute] at @s run damage @e[r=2.5] 20 entity_attack entity @s",
+                        "/execute as @s[tag=wbmsyh,scores={wbfl=60..}] at @s run effect @s[tag=wbmsyh] clear",
+                        "/execute as @s[tag=!wbmsyh,scores={wbfl=60..}] at @s run effect @s clear",
+                        "/execute as @s[scores={wbfl=60..}] at @s run kill @e[type=wb:damage_execute,r=5]",
+                        "/execute as @s[scores={wbfl=60..}] at @s run scoreboard players remove @s wbfl 60",
+                        "variable.global_cooling=2.5;",
+                        "variable.global_cooling_total=2.5;"
+                    ],
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_seal_e' && query.get_equipped_item_name != 'sword_seal_f')&&variable.global_cooling==0"
+                        },
+                        {
+                            "sword_seal_ca": "!query.is_using_item&&variable.global_cooling==0"
+                        }
+                    ]
+                },
+                "sword_seal_cd": {
+                    "on_entry": [
+                        "/execute as @s[scores={wbfl=..79}] at @s run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.34.name\"}]}",
+                        "/execute as @s[tag=wbmsyh,scores={wbfl=80..}] at @s run damage @e[r=10,rm=2,tag=!wbmsyh] 70 entity_attack entity @s",
+                        "/execute as @s[tag=!wbmsyh,scores={wbfl=80..}] at @s run damage @e[r=10,rm=2] 70 entity_attack entity @s",
+                        "/execute as @s[tag=wbmsyh,scores={wbfl=80..}] at @s run execute as @e[r=10,rm=2] at @s run effect @s[tag=!wbmsyh] slowness 5 3 true",
+                        "/execute as @s[tag=!wbmsyh,scores={wbfl=80..}] at @s run execute as @e[r=10,rm=2] at @s run effect @s slowness 5 3 true",
+                        "/execute as @s[tag=wbmsyh,scores={wbfl=80..}] at @s run execute as @e[r=10,rm=2] at @s run effect @s[tag=!wbmsyh] levitation 1 12 true",
+                        "/execute as @s[tag=!wbmsyh,scores={wbfl=80..}] at @s run execute as @e[r=10,rm=2] at @s run effect @s levitation 1 12 true",
+                        "/execute as @s[scores={wbfl=80..}] at @s run execute as @e[r=10,rm=2] at @s run particle wb:sword_seal_par ~ ~ ~",
+                        "/execute as @s[scores={wbfl=80..}] at @s run scoreboard players remove @s wbfl 80",
+                        "variable.global_cooling=5;",
+                        "variable.global_cooling_total=5;"
+                    ],
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_seal_e' && query.get_equipped_item_name != 'sword_seal_f')&&variable.global_cooling==0"
+                        },
+                        {
+                            "sword_seal_ca": "!query.is_using_item&&variable.global_cooling==0"
+                        }
+                    ]
+                },
+                "sword_ink_aa": {
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_ink_a' && query.get_equipped_item_name != 'sword_ink_b')"
+                        },
+                        {
+                            "sword_ink_ab": "((query.get_equipped_item_name == 'sword_ink_a' || query.get_equipped_item_name == 'sword_ink_b')) && variable.attack_time > 0"
+                        }
+                    ]
+                },
+                "sword_ink_ab": {
+                    "on_entry": [
+                        "/particle wb:sword_ink_para ~ ~ ~",
+                        "/execute as @s at @s run tp @s ^ ^+0.35 ^+2.0",
+                        "variable.global_cooling=1;",
+                        "variable.global_cooling_total=1;"
+                    ],
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_ink_a' && query.get_equipped_item_name != 'sword_ink_b')&&variable.global_cooling==0"
+                        },
+                        {
+                            "sword_ink_aa": "((query.get_equipped_item_name == 'sword_ink_a' || query.get_equipped_item_name == 'sword_ink_b')) && variable.attack_time <= 0&&variable.global_cooling==0"
+                        }
+                    ]
+                },
+                "sword_ink_ba": {
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_ink_c' && query.get_equipped_item_name != 'sword_ink_d')"
+                        },
+                        {
+                            "sword_ink_bb": "((query.get_equipped_item_name == 'sword_ink_c' || query.get_equipped_item_name == 'sword_ink_d')) && variable.attack_time > 0"
+                        },
+                        {
+                            "sword_ink_bc": "((query.get_equipped_item_name == 'sword_ink_c' || query.get_equipped_item_name == 'sword_ink_d')) && query.is_using_item"
+                        }
+                    ]
+                },
+                "sword_ink_bb": {
+                    "on_entry": [
+                        "/particle wb:sword_ink_para ~ ~ ~",
+                        "/execute as @s at @s run tp @s ^ ^+0.35 ^+3.0",
+                        "variable.global_cooling=1;",
+                        "variable.global_cooling_total=1;"
+                    ],
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_ink_c' && query.get_equipped_item_name != 'sword_ink_d')&&variable.global_cooling==0"
+                        },
+                        {
+                            "sword_ink_ba": "((query.get_equipped_item_name == 'sword_ink_c' || query.get_equipped_item_name == 'sword_ink_d')) && variable.attack_time <= 0&&variable.global_cooling==0"
+                        }
+                    ]
+                },
+                "sword_ink_bc": {
+                    "on_entry": [
+                        "/execute as @s[scores={wbfl=30..}] at @s run particle wb:sword_ink_parb ~ ~ ~",
+                        "/execute as @s[scores={wbfl=..29}] at @s run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.35.name\"}]}",
+                        "/execute as @s[scores={wbfl=30..}] at @s run summon wb:damage_execute ^ ^+0.35 ^+3.0",
+                        "/execute as @s[tag=wbmsyh,scores={wbfl=30..}] at @s run execute as @e[r=5,type=wb:damage_execute] at @s run execute as @e[c=1,r=2.5,tag=!wbmsyh] at @s run summon wb:damage_blast2 ~ ~ ~",
+                        "/execute as @s[tag=!wbmsyh,scores={wbfl=30..}] at @s run execute as @e[r=5,type=wb:damage_execute] at @s run execute as @e[c=1,r=2.5] at @s run summon wb:damage_blast2 ~ ~ ~",
+                        "/execute as @s at @s run tp @s ^ ^+0.35 ^-2.0",
+                        "/execute as @s[scores={wbfl=30..}] at @s run kill @e[type=wb:damage_execute,r=5]",
+                        "/execute as @s[scores={wbfl=30..}] at @s run scoreboard players remove @s wbfl 30",
+                        "variable.global_cooling=2.5;",
+                        "variable.global_cooling_total=2.5;"
+                    ],
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_ink_c' && query.get_equipped_item_name != 'sword_ink_d')&&variable.global_cooling==0"
+                        },
+                        {
+                            "sword_ink_ba": "((query.get_equipped_item_name == 'sword_ink_c' || query.get_equipped_item_name == 'sword_ink_d')) && !query.is_using_item&&variable.global_cooling==0"
+                        }
+                    ]
+                },
+                "sword_ink_ca": {
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_ink_e' && query.get_equipped_item_name != 'sword_ink_f')"
+                        },
+                        {
+                            "sword_ink_cb": "((query.get_equipped_item_name == 'sword_ink_e' || query.get_equipped_item_name == 'sword_ink_f')) && variable.attack_time > 0"
+                        },
+                        {
+                            "sword_ink_cc": "(!query.is_sneaking && (query.get_equipped_item_name == 'sword_ink_e' || query.get_equipped_item_name == 'sword_ink_f')) && query.is_using_item"
+                        },
+                        {
+                            "sword_ink_cd": "(query.is_sneaking && (query.get_equipped_item_name == 'sword_ink_e' || query.get_equipped_item_name == 'sword_ink_f')) && query.is_using_item"
+                        }
+                    ]
+                },
+                "sword_ink_cb": {
+                    "on_entry": [
+                        "/particle wb:sword_ink_para ~ ~ ~",
+                        "/execute as @s at @s run tp @s ^ ^+0.35 ^+3.5",
+                        "variable.global_cooling=1;",
+                        "variable.global_cooling_total=1;"
+                    ],
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_ink_e' && query.get_equipped_item_name != 'sword_ink_f')&&variable.global_cooling==0"
+                        },
+                        {
+                            "sword_ink_ca": "((query.get_equipped_item_name == 'sword_ink_e' || query.get_equipped_item_name == 'sword_ink_f')) && variable.attack_time <= 0&&variable.global_cooling==0"
+                        }
+                    ]
+                },
+                "sword_ink_cc": {
+                    "on_entry": [
+                        "/execute as @s[scores={wbfl=30..}] at @s run particle wb:sword_ink_parb ~ ~ ~",
+                        "/execute as @s[scores={wbfl=..29}] at @s run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.36.name\"}]}",
+                        "/execute as @s[scores={wbfl=30..}] at @s run summon wb:damage_execute ^ ^+0.35 ^+3.0",
+                        "/execute as @s[tag=wbmsyh,scores={wbfl=30..}] at @s run execute as @e[r=5,type=wb:damage_execute] at @s run damage @e[r=2.5,tag=!wbmsyh] 10 entity_attack entity @s",
+                        "/execute as @s[tag=!wbmsyh,scores={wbfl=30..}] at @s run execute as @e[r=5,type=wb:damage_execute] at @s run damage @e[r=2.5] 10 entity_attack entity @s",
+                        "/execute as @s[scores={wbfl=30..}] at @s run tp @s @e[c=1,r=256,type=wb:ball_sword_ink]",
+                        "/execute as @s[scores={wbfl=30..}] at @s run execute as @e[c=1,r=3,type=wb:ball_sword_ink] at @s run scoreboard players add @a[r=4] wbfl 20",
+                        "/execute as @s[scores={wbfl=30..}] at @s run kill @e[type=wb:ball_sword_ink,r=3,c=1]",
+                        "/execute as @s[scores={wbfl=30..}] at @s run scoreboard players remove @s wbfl 30"
+                    ],
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_ink_e' && query.get_equipped_item_name != 'sword_ink_f')"
+                        },
+                        {
+                            "sword_ink_ca": "!query.is_using_item"
+                        }
+                    ]
+                },
+                "sword_ink_cd": {
+                    "on_entry": [
+                        "/execute as @s[scores={wbfl=..79}] at @s run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.37.name\"}]}",
+                        "/execute as @s[scores={wbfl=80..}] at @s run summon wb:ball_sword_ink ~ ~ ~",
+                        "/execute as @s[scores={wbfl=80..}] at @s run particle wb:sword_ink_par ~ ~ ~",
+                        "/execute as @s[scores={wbfl=80..}] at @s run scoreboard players remove @s wbfl 40"
+                    ],
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_ink_e' && query.get_equipped_item_name != 'sword_ink_f')"
+                        },
+                        {
+                            "sword_ink_ca": "!query.is_using_item"
+                        }
+                    ]
+                },
+                "sword_ink_ga": {
+                    "on_entry": [
+                        "@s attribute_attack1",
+                        "variable.wb_player_speed=0;",
+                        "/effect @s speed 4 0"
+                    ],
+                    "transitions": [{
+                            "default": "query.get_equipped_item_name != 'sword_ink_g'"
+                        },
+                        {
+                            "sword_ink_gb": "variable.wb_player_speed>=5.5"
+                        }
+                    ]
+                },
+                "sword_ink_gb": {
+                    "on_entry": [
+                        "@s attribute_attack5",
+                        "/effect @s speed 4 1"
+                    ],
+                    "transitions": [{
+                            "default": "query.get_equipped_item_name != 'sword_ink_g'"
+                        },
+                        {
+                            "sword_ink_ggx": "variable.wb_player_speed<5.5"
+                        },
+                        {
+                            "sword_ink_gc": "variable.wb_player_speed>=6.6"
+                        }
+                    ]
+                },
+                "sword_ink_gc": {
+                    "on_entry": [
+                        "@s attribute_attack20",
+                        "/effect @s speed 4 2"
+                    ],
+                    "transitions": [{
+                            "default": "query.get_equipped_item_name != 'sword_ink_g'"
+                        },
+                        {
+                            "sword_ink_ggx": "variable.wb_player_speed<6.6"
+                        },
+                        {
+                            "sword_ink_gd": "variable.wb_player_speed>=7.7"
+                        }
+                    ]
+                },
+                "sword_ink_gd": {
+                    "on_entry": [
+                        "@s attribute_attack40",
+                        "/effect @s speed 4 3"
+                    ],
+                    "transitions": [{
+                            "default": "query.get_equipped_item_name != 'sword_ink_g'"
+                        },
+                        {
+                            "sword_ink_ggx": "variable.wb_player_speed<7.7"
+                        },
+                        {
+                            "sword_ink_ge": "variable.wb_player_speed>=8.85"
+                        }
+                    ]
+                },
+                "sword_ink_ge": {
+                    "on_entry": [
+                        "@s attribute_attack60",
+                        "/effect @s speed 4 4"
+                    ],
+                    "transitions": [{
+                            "default": "query.get_equipped_item_name != 'sword_ink_g'"
+                        },
+                        {
+                            "sword_ink_ggx": "variable.wb_player_speed<8.85"
+                        },
+                        {
+                            "sword_ink_gf": "variable.wb_player_speed>=10"
+                        }
+                    ]
+                },
+                "sword_ink_gf": {
+                    "on_entry": [
+                        "@s attribute_attack80",
+                        "/effect @s speed 4 5"
+                    ],
+                    "transitions": [{
+                            "default": "query.get_equipped_item_name != 'sword_ink_g'"
+                        },
+                        {
+                            "sword_ink_ggx": "variable.wb_player_speed<10"
+                        },
+                        {
+                            "sword_ink_gg": "variable.wb_player_speed>=11.1"
+                        }
+                    ]
+                },
+                "sword_ink_gg": {
+                    "on_entry": [
+                        "@s attribute_attack100",
+                        "/effect @s speed 4 6"
+                    ],
+                    "transitions": [{
+                            "default": "query.get_equipped_item_name != 'sword_ink_g'"
+                        },
+                        {
+                            "sword_ink_ga": "variable.wb_player_speed<11.1"
+                        },
+                        {
+                            "sword_ink_ggx": "variable.attack_time>0"
+                        }
+                    ]
+                },
+                "sword_ink_ggx": {
+                    "on_entry": [
+                        "variable.global_cooling=4;",
+                        "variable.wb_player_speed=0;",
+                        "variable.global_cooling_total=4;"
+                    ],
+                    "transitions": [{
+                            "default": "variable.global_cooling==0&&query.get_equipped_item_name != 'sword_ink_g'"
+                        },
+                        {
+                            "sword_ink_ga": "variable.global_cooling==0"
+                        }
+                    ]
+                },
+                "sword_forget_aa": {
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_forget_a' && query.get_equipped_item_name != 'sword_forget_b')"
+                        },
+                        {
+                            "sword_forget_ab": "((query.get_equipped_item_name == 'sword_forget_a' || query.get_equipped_item_name == 'sword_forget_b')) && variable.attack_time > 0"
+                        }
+                    ]
+                },
+                "sword_forget_ab": {
+                    "on_entry": [
+                        "/execute as @s at @s run summon wb:damage_execute ^ ^+0.35 ^+3.0",
+                        "/execute as @s[tag=wbmsyh] at @s run execute as @e[r=5,type=wb:damage_execute] at @s run execute as @e[r=2.5] at @s run effect @s[tag=!wbmsyh] blindness 1 1 true",
+                        "/execute as @s[tag=!wbmsyh] at @s run execute as @e[r=5,type=wb:damage_execute] at @s run execute as @e[r=2.5] at @s run effect @s blindness 1 1 true",
+                        "/kill @e[type=wb:damage_execute,r=5]"
+                    ],
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_forget_a' && query.get_equipped_item_name != 'sword_forget_b')"
+                        },
+                        {
+                            "sword_forget_aa": "((query.get_equipped_item_name == 'sword_forget_a' || query.get_equipped_item_name == 'sword_forget_b')) && variable.attack_time <= 0"
+                        }
+                    ]
+                },
+                "sword_forget_ba": {
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_forget_c' && query.get_equipped_item_name != 'sword_forget_d')"
+                        },
+                        {
+                            "sword_forget_bb": "((query.get_equipped_item_name == 'sword_forget_c' || query.get_equipped_item_name == 'sword_forget_d')) && variable.attack_time > 0"
+                        },
+                        {
+                            "sword_forget_bc": "((query.get_equipped_item_name == 'sword_forget_c' || query.get_equipped_item_name == 'sword_forget_d')) && query.is_using_item"
+                        }
+                    ]
+                },
+                "sword_forget_bb": {
+                    "on_entry": [
+                        "/execute as @s at @s run summon wb:damage_execute ^ ^+0.35 ^+3.0",
+                        "/execute as @s[tag=wbmsyh] at @s run execute as @e[r=5,type=wb:damage_execute] at @s run execute as @e[r=2.5] at @s run effect @s[tag=!wbmsyh] blindness 3 1 true",
+                        "/execute as @s[tag=!wbmsyh] at @s run execute as @e[r=5,type=wb:damage_execute] at @s run execute as @e[r=2.5] at @s run effect @s blindness 3 1 true",
+                        "/kill @e[type=wb:damage_execute,r=5]"
+                    ],
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_forget_c' && query.get_equipped_item_name != 'sword_forget_d')"
+                        },
+                        {
+                            "sword_forget_ba": "((query.get_equipped_item_name == 'sword_forget_c' || query.get_equipped_item_name == 'sword_forget_d')) && variable.attack_time <= 0"
+                        }
+                    ]
+                },
+                "sword_forget_bc": {
+                    "on_entry": [
+                        "/execute as @s[scores={wbfl=..79}] at @s run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.38.name\"}]}",
+                        "/execute as @s[scores={wbfl=80..}] at @s run summon wb:damage_execute ^ ^+0.35 ^+3.0",
+                        "/execute as @s[tag=wbmsyh,scores={wbfl=80..}] at @s run execute as @e[r=5,type=wb:damage_execute] at @s run damage @e[r=2.5,tag=!wbmsyh] 20 entity_attack entity @s",
+                        "/execute as @s[tag=!wbmsyh,scores={wbfl=80..}] at @s run execute as @e[r=5,type=wb:damage_execute] at @s run damage @e[r=2.5] 20 entity_attack entity @s",
+                        "/execute as @s[tag=wbmsyh,scores={wbfl=80..}] at @s run effect @s[tag=wbmsyh] invisibility 3 1 true",
+                        "/execute as @s[tag=!wbmsyh,scores={wbfl=80..}] at @s run effect @s invisibility 3 1 true",
+                        "/execute as @s[scores={wbfl=80..}] at @s run kill @e[type=wb:damage_execute,r=5]",
+                        "/execute as @s[scores={wbfl=80..}] at @s run scoreboard players remove @s wbfl 80",
+                        "variable.global_cooling=3;",
+                        "variable.global_cooling_total=3;"
+                    ],
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_forget_c' && query.get_equipped_item_name != 'sword_forget_d')&&variable.global_cooling==0"
+                        },
+                        {
+                            "sword_forget_ba": "((query.get_equipped_item_name == 'sword_forget_c' || query.get_equipped_item_name == 'sword_forget_d')) && !query.is_using_item&&variable.global_cooling==0"
+                        }
+                    ]
+                },
+                "sword_forget_ca": {
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_forget_e' && query.get_equipped_item_name != 'sword_forget_f')"
+                        },
+                        {
+                            "sword_forget_cb": "((query.get_equipped_item_name == 'sword_forget_e' || query.get_equipped_item_name == 'sword_forget_f')) && variable.attack_time > 0"
+                        },
+                        {
+                            "sword_forget_cc": "(!query.is_sneaking && (query.get_equipped_item_name == 'sword_forget_e' || query.get_equipped_item_name == 'sword_forget_f')) && query.is_using_item"
+                        },
+                        {
+                            "sword_forget_cd": "(query.is_sneaking && (query.get_equipped_item_name == 'sword_forget_e' || query.get_equipped_item_name == 'sword_forget_f')) && query.is_using_item"
+                        }
+                    ]
+                },
+                "sword_forget_cb": {
+                    "on_entry": [
+                        "/execute as @s at @s run summon wb:damage_execute ^ ^+0.35 ^+3.0",
+                        "/execute as @s[tag=wbmsyh] at @s run execute as @e[r=5,type=wb:damage_execute] at @s run execute as @e[r=2.5] at @s run effect @s[tag=!wbmsyh] blindness 5 1 true",
+                        "/execute as @s[tag=!wbmsyh] at @s run execute as @e[r=5,type=wb:damage_execute] at @s run execute as @e[r=2.5] at @s run effect @s blindness 5 1 true",
+                        "/kill @e[type=wb:damage_execute,r=5]"
+                    ],
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_forget_e' && query.get_equipped_item_name != 'sword_forget_f')"
+                        },
+                        {
+                            "sword_forget_ca": "((query.get_equipped_item_name == 'sword_forget_e' || query.get_equipped_item_name == 'sword_forget_f')) && variable.attack_time <= 0"
+                        }
+                    ]
+                },
+                "sword_forget_cc": {
+                    "on_entry": [
+                        "/execute as @s[scores={wbfl=..39}] at @s run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.39.name\"}]}",
+                        "/execute as @s[scores={wbfl=40..}] at @s run summon wb:damage_execute ^ ^+0.35 ^+3.0",
+                        "/execute as @s[tag=wbmsyh,scores={wbfl=40..}] at @s run execute as @e[r=5,type=wb:damage_execute] at @s run damage @e[r=2.5,tag=!wbmsyh] 45 entity_attack entity @s",
+                        "/execute as @s[tag=!wbmsyh,scores={wbfl=40..}] at @s run execute as @e[r=5,type=wb:damage_execute] at @s run damage @e[r=2.5] 45 entity_attack entity @s",
+                        "/execute as @s[tag=wbmsyh,scores={wbfl=40..}] at @s run effect @s[tag=wbmsyh] invisibility 3 1 true",
+                        "/execute as @s[tag=!wbmsyh,scores={wbfl=40..}] at @s run effect @s invisibility 3 1 true",
+                        "/execute as @s[scores={wbfl=40..}] at @s run kill @e[type=wb:damage_execute,r=5]",
+                        "/execute as @s[scores={wbfl=40..}] at @s run scoreboard players remove @s wbfl 40",
+                        "variable.global_cooling=3;",
+                        "variable.global_cooling_total=3;"
+                    ],
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_forget_e' && query.get_equipped_item_name != 'sword_forget_f')&&variable.global_cooling==0"
+                        },
+                        {
+                            "sword_forget_ca": "!query.is_using_item&&variable.global_cooling==0"
+                        }
+                    ]
+                },
+                "sword_forget_cd": {
+                    "on_entry": [
+                        "/execute as @s[scores={wbfl=..59}] at @s run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.40.name\"}]}",
+                        "/execute as @s[tag=wbmsyh,scores={wbfl=60..}] at @s run execute as @e[r=10,rm=2] at @s run effect @s[tag=!wbmsyh] blindness 5 1",
+                        "/execute as @s[tag=!wbmsyh,scores={wbfl=60..}] at @s run execute as @e[r=10,rm=2] at @s run effect @s blindness 5 1",
+                        "/execute as @s[tag=wbmsyh,scores={wbfl=60..}] at @s run effect @s[tag=wbmsyh] invisibility 5 1",
+                        "/execute as @s[tag=!wbmsyh,scores={wbfl=60..}] at @s run effect @s invisibility 5 1",
+                        "/execute as @s[scores={wbfl=60..}] at @s run execute as @e[r=10] at @s run particle wb:sword_forget_par ~ ~ ~",
+                        "/execute as @s[tag=wbmsyh,scores={wbfl=60..}] at @s run damage @e[r=10,rm=2,tag=!wbmsyh] 15 entity_attack entity @s",
+                        "/execute as @s[tag=!wbmsyh,scores={wbfl=60..}] at @s run damage @e[r=10,rm=2] 15 entity_attack entity @s",
+                        "/execute as @s[scores={wbfl=60..}] at @s run particle wb:sword_forget_par ~ ~ ~",
+                        "/execute as @s[scores={wbfl=60..}] at @s run scoreboard players remove @s wbfl 60",
+                        "variable.global_cooling=5;",
+                        "variable.global_cooling_total=5;"
+                    ],
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_forget_e' && query.get_equipped_item_name != 'sword_forget_f')&&variable.global_cooling==0"
+                        },
+                        {
+                            "sword_forget_ca": "!query.is_using_item&&variable.global_cooling==0"
+                        }
+                    ]
+                },
+                "sword_bloodsucking_aa": {
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_bloodsucking_a' && query.get_equipped_item_name != 'sword_bloodsucking_b')"
+                        },
+                        {
+                            "sword_bloodsucking_ab": "((query.get_equipped_item_name == 'sword_bloodsucking_a' || query.get_equipped_item_name == 'sword_bloodsucking_b')) && variable.attack_time > 0"
+                        }
+                    ]
+                },
+                "sword_bloodsucking_ab": {
+                    "on_entry": [
+                        "/particle wb:sword_bloodsucking_para ~ ~ ~",
+                        "/effect @s regeneration 1 2 true",
+                        "variable.global_cooling=5;",
+                        "variable.global_cooling_total=5;"
+                    ],
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_bloodsucking_a' && query.get_equipped_item_name != 'sword_bloodsucking_b')&&variable.global_cooling==0"
+                        },
+                        {
+                            "sword_bloodsucking_aa": "((query.get_equipped_item_name == 'sword_bloodsucking_a' || query.get_equipped_item_name == 'sword_bloodsucking_b')) && variable.attack_time <= 0&&variable.global_cooling==0"
+                        }
+                    ]
+                },
+                "sword_bloodsucking_ba": {
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_bloodsucking_c' && query.get_equipped_item_name != 'sword_bloodsucking_d')"
+                        },
+                        {
+                            "sword_bloodsucking_bb": "((query.get_equipped_item_name == 'sword_bloodsucking_c' || query.get_equipped_item_name == 'sword_bloodsucking_d')) && variable.attack_time > 0"
+                        },
+                        {
+                            "sword_bloodsucking_bc": "((query.get_equipped_item_name == 'sword_bloodsucking_c' || query.get_equipped_item_name == 'sword_bloodsucking_d')) && query.is_using_item"
+                        }
+                    ]
+                },
+                "sword_bloodsucking_bb": {
+                    "on_entry": [
+                        "/particle wb:sword_bloodsucking_para ~ ~ ~",
+                        "/effect @s regeneration 1 2 true",
+                        "variable.global_cooling=3;",
+                        "variable.global_cooling_total=3;"
+                    ],
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_bloodsucking_c' && query.get_equipped_item_name != 'sword_bloodsucking_d')&&variable.global_cooling==0"
+                        },
+                        {
+                            "sword_bloodsucking_ba": "((query.get_equipped_item_name == 'sword_bloodsucking_c' || query.get_equipped_item_name == 'sword_bloodsucking_d')) && variable.attack_time <= 0&&variable.global_cooling==0"
+                        }
+                    ]
+                },
+                "sword_bloodsucking_bc": {
+                    "on_entry": [
+                        "/execute as @s[scores={wbfl=140..}] at @s run particle wb:sword_bloodsucking_parb ~ ~ ~",
+                        "/execute as @s[scores={wbfl=..139}] at @s run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.41.name\"}]}",
+                        "/execute as @s[tag=wbmsyh,scores={wbfl=140..}] at @s run effect @s[tag=wbmsyh] absorption 16 3 true",
+                        "/execute as @s[tag=!wbmsyh,scores={wbfl=140..}] at @s run effect @s absorption 16 3 true",
+                        "/execute as @s[tag=wbmsyh,scores={wbfl=140..}] at @s run effect @s[tag=wbmsyh] haste 4 2",
+                        "/execute as @s[tag=!wbmsyh,scores={wbfl=140..}] at @s run effect @s haste 4 2",
+                        "/execute as @s[tag=wbmsyh,scores={wbfl=140..}] at @s run effect @s[tag=wbmsyh] strength 2 3 true",
+                        "/execute as @s[tag=!wbmsyh,scores={wbfl=140..}] at @s run effect @s strength 2 3 true",
+                        "/execute as @s[scores={wbfl=140..}] at @s run scoreboard players remove @s wbfl 140",
+                        "variable.global_cooling=10;",
+                        "variable.global_cooling_total=10;"
+                    ],
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_bloodsucking_c' && query.get_equipped_item_name != 'sword_bloodsucking_d')&&variable.global_cooling==0"
+                        },
+                        {
+                            "sword_bloodsucking_ba": "((query.get_equipped_item_name == 'sword_bloodsucking_c' || query.get_equipped_item_name == 'sword_bloodsucking_d')) && !query.is_using_item&&variable.global_cooling==0"
+                        }
+                    ]
+                },
+                "sword_bloodsucking_ca": {
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_bloodsucking_e' && query.get_equipped_item_name != 'sword_bloodsucking_f')"
+                        },
+                        {
+                            "sword_bloodsucking_cb": "((query.get_equipped_item_name == 'sword_bloodsucking_e' || query.get_equipped_item_name == 'sword_bloodsucking_f')) && variable.attack_time > 0"
+                        },
+                        {
+                            "sword_bloodsucking_cc": "(!query.is_sneaking && (query.get_equipped_item_name == 'sword_bloodsucking_e' || query.get_equipped_item_name == 'sword_bloodsucking_f')) && query.is_using_item"
+                        },
+                        {
+                            "sword_bloodsucking_cd": "(query.is_sneaking && (query.get_equipped_item_name == 'sword_bloodsucking_e' || query.get_equipped_item_name == 'sword_bloodsucking_f')) && query.is_using_item"
+                        }
+                    ]
+                },
+                "sword_bloodsucking_cb": {
+                    "on_entry": [
+                        "/particle wb:sword_bloodsucking_para ~ ~ ~",
+                        "/effect @s regeneration 1 2 true",
+                        "variable.global_cooling=2;",
+                        "variable.global_cooling_total=2;"
+                    ],
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_bloodsucking_e' && query.get_equipped_item_name != 'sword_bloodsucking_f')&&variable.global_cooling==0"
+                        },
+                        {
+                            "sword_bloodsucking_ca": "((query.get_equipped_item_name == 'sword_bloodsucking_e' || query.get_equipped_item_name == 'sword_bloodsucking_f')) && variable.attack_time <= 0&&variable.global_cooling==0"
+                        }
+                    ]
+                },
+                "sword_bloodsucking_cc": {
+                    "on_entry": [
+                        "/execute as @s[scores={wbfl=100..}] at @s run particle wb:sword_bloodsucking_parb ~ ~ ~",
+                        "/execute as @s[scores={wbfl=..99}] at @s run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.42.name\"}]}",
+                        "/execute as @s[tag=wbmsyh,scores={wbfl=100..}] at @s run effect @s[tag=wbmsyh] absorption 16 4 true",
+                        "/execute as @s[tag=!wbmsyh,scores={wbfl=100..}] at @s run effect @s absorption 16 4 true",
+                        "/execute as @s[tag=wbmsyh,scores={wbfl=100..}] at @s run effect @s[tag=wbmsyh] haste 4 2",
+                        "/execute as @s[tag=!wbmsyh,scores={wbfl=100..}] at @s run effect @s haste 4 2",
+                        "/execute as @s[tag=wbmsyh,scores={wbfl=100..}] at @s run effect @s[tag=wbmsyh] strength 3 3 true",
+                        "/execute as @s[tag=!wbmsyh,scores={wbfl=100..}] at @s run effect @s strength 3 3 true",
+                        "/execute as @s[scores={wbfl=100..}] at @s run scoreboard players remove @s wbfl 100",
+                        "variable.global_cooling=10;",
+                        "variable.global_cooling_total=10;"
+                    ],
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_bloodsucking_e' && query.get_equipped_item_name != 'sword_bloodsucking_f')&&variable.global_cooling==0"
+                        },
+                        {
+                            "sword_bloodsucking_ca": "!query.is_using_item&&variable.global_cooling==0"
+                        }
+                    ]
+                },
+                "sword_bloodsucking_cd": {
+                    "on_entry": [
+                        "/execute as @s[scores={wbfl=..39}] at @s run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.43.name\"}]}",
+                        "/execute as @s[tag=wbmsyh,scores={wbfl=40..}] at @s run damage @e[r=10,rm=2,tag=!wbmsyh] 12 entity_attack entity @s",
+                        "/execute as @s[tag=!wbmsyh,scores={wbfl=40..}] at @s run damage @e[r=10,rm=2] 12 entity_attack entity @s",
+                        "/execute as @s[tag=wbmsyh,scores={wbfl=40..}] at @s run effect @s[tag=wbmsyh] regeneration 2 2",
+                        "/execute as @s[tag=!wbmsyh,scores={wbfl=40..}] at @s run effect @s regeneration 2 2",
+                        "/execute as @s[scores={wbfl=40..}] at @s run particle wb:sword_bloodsucking_par ~ ~ ~",
+                        "/execute as @s[scores={wbfl=40..}] at @s run execute as @e[type=!minecraft:player,r=12] at @s run scoreboard players add @p wbfl 2",
+                        "/execute as @s[scores={wbfl=40..}] at @s run scoreboard players remove @s wbfl 40",
+                        "variable.global_cooling=3;",
+                        "variable.global_cooling_total=3;"
+                    ],
+                    "transitions": [{
+                            "default": "(query.get_equipped_item_name != 'sword_bloodsucking_e' && query.get_equipped_item_name != 'sword_bloodsucking_f')&&variable.global_cooling==0"
+                        },
+                        {
+                            "sword_bloodsucking_ca": "!query.is_using_item&&variable.global_cooling==0"
+                        }
+                    ]
+                },
+                "sword_intentions": {
+                    "on_entry": [
+                        "@s add_sword_intentions",
+                        "/tag @s add wbflx"
+                    ],
+                    "transitions": [{
+                        "default": "query.get_equipped_item_name != 'sword_intentions'"
+                    }]
+                },
+                "sword_fly": {
+                    "on_entry": [
+                        "/execute as @s[scores={wbfl=150..}] at @s run tp @s ~ ~+4 ~",
+                        "/execute as @s[scores={wbfl=150..}] at @s run scoreboard players remove @s wbfl 10",
+                        "/particle wb:sword_fly_para ~ ~ ~"
+                    ],
+                    "transitions": [{
+                            "sword_flya": "query.get_equipped_item_name == 'sword_fly'"
+                        },
+                        {
+                            "default": "query.get_equipped_item_name != 'sword_fly'"
+                        }
+                    ]
+                },
+                "sword_flya": {
+                    "transitions": [{
+                            "sword_flyb": "(!query.is_sneaking && query.get_equipped_item_name == 'sword_fly') && query.is_using_item"
+                        },
+                        {
+                            "sword_flyc": "(query.is_sneaking && query.get_equipped_item_name == 'sword_fly') && !query.is_using_item"
+                        },
+                        {
+                            "default": "query.get_equipped_item_name != 'sword_fly'"
+                        }
+                    ]
+                },
+                "sword_flyc": {
+                    "transitions": [{
+                            "sword_flyd": "(query.is_sneaking && query.get_equipped_item_name == 'sword_fly') && query.is_using_item"
+                        },
+                        {
+                            "sword_flya": "(!query.is_sneaking && query.get_equipped_item_name == 'sword_fly') && !query.is_using_item"
+                        },
+                        {
+                            "default": "query.get_equipped_item_name != 'sword_fly'"
+                        }
+                    ],
+                    "on_entry": [
+                        "/particle wb:sword_fly_para ~ ~ ~",
+                        "/execute as @s[tag=wbmsyh,scores={wbfl=20..}] at @s run effect @s[tag=wbmsyh] speed 8 3",
+                        "/execute as @s[tag=!wbmsyh,scores={wbfl=20..}] at @s run effect @s speed 8 3",
+                        "/execute as @s[scores={wbfl=20..}] at @s run scoreboard players remove @s wbfl 20"
+                    ]
+                },
+                "sword_flyd": {
+                    "on_entry": [
+                        "/particle wb:sword_fly_para ~ ~ ~",
+                        "@s add_fly"
+                    ],
+                    "transitions": [{
+                            "sword_flyc": "!query.is_using_item"
+                        },
+                        {
+                            "default": "query.get_equipped_item_name != 'sword_fly'"
+                        }
+                    ]
+                },
+                "sword_flyb": {
+                    "on_entry": [
+                        "/particle wb:sword_fly_parb ~ ~ ~",
+                        "/execute as @s[tag=wbmsyh] at @s run damage @e[r=8,rm=2,tag=!wbmsyh] 60 entity_attack entity @s",
+                        "/execute as @s[tag=!wbmsyh] at @s run damage @e[r=8,rm=2] 60 entity_attack entity @s",
+                        "/execute as @s[tag=wbmsyh] at @s run execute as @e[r=8,rm=2] at @s run effect @s[tag=!wbmsyh] levitation 2 5",
+                        "/execute as @s[tag=!wbmsyh] at @s run execute as @e[r=8,rm=2] at @s run effect @s levitation 2 5",
+                        "/effect @s levitation 4 1",
+                        "/particle wb:sword_fly_parb ~ ~ ~",
+                        "/tp @s ~ ~+4 ~ facing ~ ~ ~",
+                        "variable.global_cooling=10;",
+                        "variable.global_cooling_total=10;"
+                    ],
+                    "transitions": [{
+                            "sword_flya": "!query.is_using_item&&variable.global_cooling==0"
+                        },
+                        {
+                            "default": "query.get_equipped_item_name != 'sword_fly'&&variable.global_cooling==0"
+                        }
+                    ]
+                },
+                "sword_bluemark": {
+                    "on_entry": [
+                        "/execute as @s[scores={wbfl=1..}] at @s run particle wb:sword_bluemark_para ~ ~ ~",
+                        "/execute as @s[tag=wbmsyh,scores={wbfl=1..}] at @s run effect @e[tag=!wbmsyh,r=10,rm=3] slowness 2 1",
+                        "/execute as @s[tag=!wbmsyh,scores={wbfl=1..}] at @s run effect @e[r=10,rm=3] slowness 2 1",
+                        "/execute as @s[scores={wbfl=1..}] at @s run scoreboard players remove @s wbfl 1"
+                    ],
+                    "transitions": [{
+                            "sword_bluemarka": "query.get_equipped_item_name == 'sword_bluemark'"
+                        },
+                        {
+                            "default": "query.get_equipped_item_name != 'sword_bluemark'"
+                        }
+                    ]
+                },
+                "sword_bluemarka": {
+                    "transitions": [{
+                            "sword_bluemarkb": "(!query.is_sneaking && query.get_equipped_item_name == 'sword_bluemark') && query.is_using_item"
+                        },
+                        {
+                            "sword_bluemarkc": "(query.is_sneaking && query.get_equipped_item_name == 'sword_bluemark') && !query.is_using_item"
+                        },
+                        {
+                            "default": "query.get_equipped_item_name != 'sword_bluemark'"
+                        }
+                    ]
+                },
+                "sword_bluemarkc": {
+                    "transitions": [{
+                            "sword_bluemarka": "(!query.is_sneaking && query.get_equipped_item_name == 'sword_bluemark')&&variable.global_cooling==0"
+                        },
+                        {
+                            "default": "query.get_equipped_item_name != 'sword_bluemark'&&variable.global_cooling==0"
+                        }
+                    ],
+                    "on_entry": [
+                        "/execute as @s[scores={wbfl=0..}] at @s run particle wb:sword_bluemark_parb ~ ~ ~",
+                        "/execute as @s[scores={wbfl=0..}] at @s run scoreboard players add @s wbfl 50",
+                        "variable.global_cooling=6;",
+                        "variable.global_cooling_total=6;"
+                    ]
+                },
+                "sword_bluemarkb": {
+                    "on_entry": [
+                        "/execute as @s[scores={wbfl=..19}] at @s run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.44.name\"}]}",
+                        "/execute as @s[tag=wbmsyh,scores={wbfl=20..}] at @s run damage @e[rm=3,r=10,tag=!wbmsyh] 45 entity_attack entity @s",
+                        "/execute as @s[tag=!wbmsyh,scores={wbfl=20..}] at @s run damage @e[rm=3,r=10] 45 entity_attack entity @s",
+                        "/execute as @s[scores={wbfl=20..}] at @s run execute as @e[rm=3,r=10] at @s run particle wb:sword_bluemark_parc ~ ~ ~",
+                        "/execute as @s[scores={wbfl=20..}] at @s run scoreboard players remove @s wbfl 20",
+                        "variable.global_cooling=4;",
+                        "variable.global_cooling_total=4;"
+                    ],
+                    "transitions": [{
+                            "sword_bluemarka": "!query.is_using_item&&variable.global_cooling==0"
+                        },
+                        {
+                            "default": "query.get_equipped_item_name != 'sword_bluemark'&&variable.global_cooling==0"
+                        }
+                    ]
+                },
+                "staff_barrier": {
+                    "transitions": [{
+                            "default": "query.get_equipped_item_name != 'staff_barrier'"
+                        },
+                        {
+                            "staff_barriera": "query.is_using_item"
+                        }
+                    ]
+                },
+                "staff_barriera": {
+                    "on_entry": [
+                        "/setblock ~ ~-1 ~ wb:block_magic_barrier [] keep"
+                    ],
+                    "transitions": [{
+                            "default": "query.get_equipped_item_name != 'staff_barrier'"
+                        },
+                        {
+                            "staff_barrier": "!query.is_using_item"
+                        }
+                    ]
+                },
+                "sword_guard": {
+                    "on_entry": [
+                        "/execute as @s[tag=wbmsyh,scores={wbfl=5..}] at @s run effect @s[tag=wbmsyh] resistance 1 5 true",
+                        "/execute as @s[tag=!wbmsyh,scores={wbfl=5..}] at @s run effect @s resistance 1 5 true",
+                        "/execute as @s[scores={wbfl=5..}] at @s run scoreboard players remove @s wbfl 5",
+                        "variable.global_cooling=2;",
+                        "variable.global_cooling_total=2;"
+                    ],
+                    "transitions": [{
+                            "sword_guarda": "query.get_equipped_item_name == 'sword_guard'&&variable.global_cooling==0"
+                        },
+                        {
+                            "default": "query.get_equipped_item_name != 'sword_guard'&&variable.global_cooling==0"
+                        }
+                    ]
+                },
+                "sword_guarda": {
+                    "transitions": [{
+                            "sword_guardb": "(!query.is_sneaking && query.get_equipped_item_name == 'sword_guard') && query.is_using_item"
+                        },
+                        {
+                            "sword_guardc": "(query.is_sneaking && query.get_equipped_item_name == 'sword_guard') && !query.is_using_item"
+                        },
+                        {
+                            "default": "query.get_equipped_item_name != 'sword_guard'"
+                        }
+                    ]
+                },
+                "sword_guardc": {
+                    "transitions": [{
+                            "sword_guarda": "(!query.is_sneaking && query.get_equipped_item_name == 'sword_guard')&&variable.global_cooling==0"
+                        },
+                        {
+                            "default": "query.get_equipped_item_name != 'sword_guard'&&variable.global_cooling==0"
+                        }
+                    ],
+                    "on_entry": [
+                        "/execute as @s[tag=wbmsyh,scores={wbfl=20..}] at @s run effect @s[tag=wbmsyh] resistance 4 3 true",
+                        "/execute as @s[tag=!wbmsyh,scores={wbfl=20..}] at @s run effect @s resistance 4 3 true",
+                        "/execute as @s[scores={wbfl=20..}] at @s run scoreboard players remove @s wbfl 20",
+                        "variable.global_cooling=3;",
+                        "variable.global_cooling_total=3;"
+                    ]
+                },
+                "sword_guardb": {
+                    "on_entry": [
+                        "/execute as @s[scores={wbfl=..79}] at @s run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.45.name\"}]}",
+                        "/execute as @s[tag=wbmsyh,scores={wbfl=80..}] at @s run effect @a[tag=wbmsyh,r=8] resistance 6 4 false",
+                        "/execute as @s[tag=!wbmsyh,scores={wbfl=80..}] at @s run effect @s[r=8] resistance 6 4 false",
+                        "/execute as @s[scores={wbfl=80..}] at @s run particle wb:sword_guard_par ~ ~ ~",
+                        "/execute as @s[scores={wbfl=80..}] at @s run scoreboard players remove @s wbfl 80",
+                        "variable.global_cooling=8;",
+                        "variable.global_cooling_total=8;"
+                    ],
+                    "transitions": [{
+                            "sword_guarda": "!query.is_using_item&&variable.global_cooling==0"
+                        },
+                        {
+                            "default": "query.get_equipped_item_name != 'sword_guard'&&variable.global_cooling==0"
+                        }
+                    ]
+                },
+                "p_flame": {
+                    "transitions": [{
+                            "p_flamea": "(!query.is_sneaking && query.get_equipped_item_name == 'particle_flame') && query.is_using_item"
+                        },
+                        {
+                            "default": "(query.is_sneaking || query.get_equipped_item_name != 'particle_flame')"
+                        }
+                    ]
+                },
+                "p_flamea": {
+                    "transitions": [{
+                            "p_flame": "(!query.is_sneaking && query.get_equipped_item_name == 'particle_flame') && !query.is_using_item"
+                        },
+                        {
+                            "default": "(query.is_sneaking || query.get_equipped_item_name != 'particle_flame')"
+                        }
+                    ],
+                    "on_entry": [
+                        "/execute as @s[tag=pflame] at @s run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.46.name\"}]}",
+                        "/execute as @s[tag=!pflame] at @s run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.47.name\"}]}",
+                        "/execute as @s[tag=!pflame] at @s run replaceitem entity @s slot.weapon.mainhand 0 glass_bottle 1",
+                        "/execute as @s[tag=!pflame] at @s run tag @s add pflame"
+                    ]
+                },
+
+                "p_love": {
+                    "transitions": [{
+                            "p_lovea": "(!query.is_sneaking && query.get_equipped_item_name == 'particle_love') && query.is_using_item"
+                        },
+                        {
+                            "default": "(query.is_sneaking || query.get_equipped_item_name != 'particle_love')"
+                        }
+                    ]
+                },
+                "p_lovea": {
+                    "transitions": [{
+                            "p_love": "(!query.is_sneaking && query.get_equipped_item_name == 'particle_love') && !query.is_using_item"
+                        },
+                        {
+                            "default": "(query.is_sneaking || query.get_equipped_item_name != 'particle_love')"
+                        }
+                    ],
+                    "on_entry": [
+                        "/execute as @s[tag=plove] at @s run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.48.name\"}]}",
+                        "/execute as @s[tag=!plove] at @s run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.49.name\"}]}",
+                        "/execute as @s[tag=!plove] at @s run replaceitem entity @s slot.weapon.mainhand 0 glass_bottle 1",
+                        "/execute as @s[tag=!plove] at @s run tag @s add plove"
+                    ]
+                },
+                "p_halo": {
+                    "transitions": [{
+                            "p_haloa": "(!query.is_sneaking && query.get_equipped_item_name == 'particle_halo') && query.is_using_item"
+                        },
+                        {
+                            "default": "(query.is_sneaking || query.get_equipped_item_name != 'particle_halo')"
+                        }
+                    ]
+                },
+                "p_haloa": {
+                    "transitions": [{
+                            "p_halo": "(!query.is_sneaking && query.get_equipped_item_name == 'particle_halo') && !query.is_using_item"
+                        },
+                        {
+                            "default": "(query.is_sneaking || query.get_equipped_item_name != 'particle_halo')"
+                        }
+                    ],
+                    "on_entry": [
+                        "/execute as @s[tag=phalo] at @s run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.50.name\"}]}",
+                        "/execute as @s[tag=!phalo] at @s run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.51.name\"}]}",
+                        "/execute as @s[tag=!phalo] at @s run replaceitem entity @s slot.weapon.mainhand 0 glass_bottle 1",
+                        "/execute as @s[tag=!phalo] at @s run tag @s add phalo"
+                    ]
+                },
+                "p_rune": {
+                    "transitions": [{
+                            "p_runea": "(!query.is_sneaking && query.get_equipped_item_name == 'particle_rune') && query.is_using_item"
+                        },
+                        {
+                            "default": "(query.is_sneaking || query.get_equipped_item_name != 'particle_rune')"
+                        }
+                    ]
+                },
+                "p_runea": {
+                    "transitions": [{
+                            "p_rune": "(!query.is_sneaking && query.get_equipped_item_name == 'particle_rune') && !query.is_using_item"
+                        },
+                        {
+                            "default": "(query.is_sneaking || query.get_equipped_item_name != 'particle_rune')"
+                        }
+                    ],
+                    "on_entry": [
+                        "/execute as @s[tag=prune] at @s run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.52.name\"}]}",
+                        "/execute as @s[tag=!prune] at @s run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.53.name\"}]}",
+                        "/execute as @s[tag=!prune] at @s run replaceitem entity @s slot.weapon.mainhand 0 glass_bottle 1",
+                        "/execute as @s[tag=!prune] at @s run tag @s add prune"
+                    ]
+                }
+            }
+        }
+    }
+}

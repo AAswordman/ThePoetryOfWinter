@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "wb:technology_world_explorer",
+      "materials": {
+        "default": "snowball"
+      },
+      "textures": {
+        "default": "textures/wb_item/technology/technology_world_explorer"
+      },
+      "geometry": {
+        "default": "geometry.item_sprite"
+      },
+      
+      "render_controllers": [ "controller.render.item_sprite" ],
+      "animations": {
+        "flying": "animation.actor.billboard"
+      },
+      "scripts": {
+        "animate": [
+          "flying"
+        ],
+        "scale":1.5
+      }
+    }
+  }
+} 

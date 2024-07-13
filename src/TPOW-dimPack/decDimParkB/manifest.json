@@ -3,9 +3,9 @@
     "capabilities": ["script_eval"],
     "header": {
         "name": "DecIsland BiomesPark V0.1.1",
-        "description": "test for boss structure",
+        "description": "跑图什么最烦人了！我不要跑图补丁包",
         "uuid": "2d4ede5c-5ac6-49ba-ab2b-44be7fbaa757",
-        "min_engine_version": [1, 19, 50],
+        "min_engine_version": [1, 21, 0],
         "version": [1, 8, 0]
     },
     "modules": [{

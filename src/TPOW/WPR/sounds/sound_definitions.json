@@ -146,7 +146,7 @@
         "sounds": [{
             "name": "sounds/wb/chasing_stage2",
             "stream": true,
-            "volume": 0.5,
+            "volume": 0.8,
             "load_on_low_memory": true
         }]
     },
@@ -155,7 +155,7 @@
         "sounds": [{
             "name": "sounds/wb/chasing_stage1",
             "stream": true,
-            "volume": 0.5,
+            "volume": 0.8,
             "load_on_low_memory": true
         }]
     },
@@ -164,7 +164,7 @@
         "sounds": [{
             "name": "sounds/wb/chasing_stage3",
             "stream": true,
-            "volume": 0.5,
+            "volume": 0.8,
             "load_on_low_memory": true
         }]
     },

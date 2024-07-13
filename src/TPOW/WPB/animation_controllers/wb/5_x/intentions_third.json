@@ -1,0 +1,219 @@
+{
+  "format_version": "1.8.0",
+  "animation_controllers": {
+    "controller.animation.intentions_third": {
+      "states": {
+        "default": {
+          "on_entry": [
+            "/tag @s remove gj"
+          ],
+          "transitions": [
+            {
+              "oo": "query.is_baby"
+            }
+          ]
+        },
+        "oo": {
+          "on_entry": [
+            "/tag @s add gj",
+            "/effect @s invisibility 8 1 true",
+            "/weather thunder 100"
+          ],
+          "transitions": [
+            {
+              "default": "!query.is_baby"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.intentions_third.boom": {
+      "states": {
+        "default": {
+          "on_entry": [
+            "variable.max=query.max_health/10;",
+            "/summon wb:ball_intentions_firsta"
+          ],
+          "transitions": [
+            {
+              "a": "variable.max*9<=query.health&&query.health<=variable.max*10"
+            },
+            {
+              "b": "variable.max*8<=query.health&&query.health<=variable.max*9"
+            },
+            {
+              "c": "variable.max*7<=query.health&&query.health<=variable.max*8"
+            },
+            {
+              "d": "variable.max*6<=query.health&&query.health<=variable.max*7"
+            },
+            {
+              "e": "variable.max*5<=query.health&&query.health<=variable.max*6"
+            },
+            {
+              "f": "variable.max*4<=query.health&&query.health<=variable.max*5"
+            },
+            {
+              "g": "variable.max*3<=query.health&&query.health<=variable.max*4"
+            },
+            {
+              "h": "variable.max*2<=query.health&&query.health<=variable.max*3"
+            },
+            {
+              "i": "variable.max*1<=query.health&&query.health<=variable.max*2"
+            }
+          ]
+        },
+        "a": {
+          "transitions": [
+            {
+              "default": "variable.max*9>query.health||query.health>variable.max*10"
+            }
+          ]
+        },
+        "b": {
+          "transitions": [
+            {
+              "default": "variable.max*8>query.health||query.health>variable.max*9"
+            }
+          ]
+        },
+        "c": {
+          "transitions": [
+            {
+              "default": "variable.max*7>query.health||query.health>variable.max*8"
+            }
+          ]
+        },
+        "d": {
+          "transitions": [
+            {
+              "default": "variable.max*6>query.health||query.health>variable.max*7"
+            }
+          ]
+        },
+        "e": {
+          "transitions": [
+            {
+              "default": "variable.max*5>query.health||query.health>variable.max*6"
+            }
+          ]
+        },
+        "f": {
+          "transitions": [
+            {
+              "default": "variable.max*4>query.health||query.health>variable.max*5"
+            }
+          ]
+        },
+        "g": {
+          "transitions": [
+            {
+              "default": "variable.max*3>query.health||query.health>variable.max*4"
+            }
+          ]
+        },
+        "h": {
+          "transitions": [
+            {
+              "default": "variable.max*2>query.health||query.health>variable.max*3"
+            }
+          ]
+        },
+        "i": {
+          "transitions": [
+            {
+              "default": "variable.max*1>query.health||query.health>variable.max*2"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.intentions_third.wb": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "aa": "query.variant == 1 && query.is_delayed_attacking"
+            },
+            {
+              "bb": "query.variant == 2 && query.is_delayed_attacking"
+            },
+            {
+              "cc": "query.variant == 3 && query.is_delayed_attacking"
+            }
+          ]
+        },
+        "aa": {
+          "on_entry": [
+            "/execute as @e[r=6,c=1,type=!wb:intentions_third] at @s run tp @e[r=6,type=wb:intentions_third,c=1] ^ ^+1.8 ^-2 facing @s"
+          ],
+          "transitions": [
+            {
+              "default": "query.variant != 1"
+            },
+            {
+              "aax": "query.variant == 1 && !query.is_delayed_attacking"
+            }
+          ]
+        },
+        "aax": {
+          "on_entry": [
+            "@s aa"
+          ],
+          "transitions": [
+            {
+              "default": "query.variant != 1"
+            }
+          ]
+        },
+        "bb": {
+          "on_entry": [
+            "/execute as @e[r=6,c=1,type=!wb:intentions_third] at @s run tp @e[r=6,type=wb:intentions_third,c=1] ^ ^+1.8 ^+2 facing @s"
+          ],
+          "transitions": [
+            {
+              "default": "query.variant != 2"
+            },
+            {
+              "bbx": "query.variant == 2 && !query.is_delayed_attacking"
+            }
+          ]
+        },
+        "bbx": {
+          "on_entry": [
+            "@s bb"
+          ],
+          "transitions": [
+            {
+              "default": "query.variant != 2"
+            }
+          ]
+        },
+        "cc": {
+          "on_entry": [
+            "/execute as @e[r=6,c=1,type=!wb:intentions_third] at @s run tp @e[r=6,type=wb:intentions_third,c=1] ^ ^+1.8 ^-2 facing @s"
+          ],
+          "transitions": [
+            {
+              "default": "query.variant != 3"
+            },
+            {
+              "ccx": "query.variant == 3 && !query.is_delayed_attacking"
+            }
+          ]
+        },
+        "ccx": {
+          "on_entry": [
+            "@s cc"
+          ],
+          "transitions": [
+            {
+              "default": "query.variant != 3"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

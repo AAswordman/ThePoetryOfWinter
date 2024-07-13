@@ -1,0 +1,112 @@
+{
+  "format_version": "1.8.0",
+  "animation_controllers": {
+    "controller.animation.player.wb.sweep": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "sword_intentions": "query.get_equipped_item_name == 'sword_intentions'"
+            }
+          ]
+        },
+        "sword_intentions": {
+          "transitions": [
+            {
+              "default": "query.get_equipped_item_name != 'sword_intentions'"
+            },
+            {
+              "sword_intentionsa": "(!query.is_sneaking && query.get_equipped_item_name == 'sword_intentions') && query.is_using_item"
+            },
+            {
+              "sword_intentionsa_a": "(query.is_sneaking && query.get_equipped_item_name == 'sword_intentions') && query.is_using_item"
+            }
+          ]
+        },
+        "sword_intentionsa": {
+          "on_entry": [
+            "/summon wb:sweep_damage1 ~ ~ ~",
+            "/replaceitem entity @e[r=2,type=wb:sweep_damage1] slot.weapon.mainhand 0 wb:sword_intentions 1 0"
+          ],
+          "transitions": [
+            {
+              "default": "query.get_equipped_item_name != 'sword_intentions'"
+            },
+            {
+              "sword_intentionsx": "!query.is_using_item"
+            }
+          ]
+        },
+        "sword_intentionsx": {
+          "on_entry": [
+            "/execute as @s at @s run particle wb:sweep_a ^ ^+1.0 ^+4",
+            "/execute as @s at @s run summon wb:damage_blast1 ^ ^+1.0 ^+4",
+            "/execute as @s at @s run summon wb:damage_execute ^ ^+1.0 ^+4",
+            "/execute as @e[r=5,type=wb:damage_execute] at @s run damage @e[r=3] 20 entity_attack entity @s",
+            "/scoreboard players add @s[scores={wbnldx=..19}] wbnldx 1",
+            "/summon wb:sweep_damage2 ~ ~ ~",
+            "/replaceitem entity @e[r=2,type=wb:sweep_damage2] slot.weapon.mainhand 0 wb:sword_intentions 1 0",
+            "/kill @e[r=2,type=wb:sweep_damage1]"
+          ],
+          "transitions": [
+            {
+              "default": "query.get_equipped_item_name != 'sword_intentions'"
+            },
+            {
+              "sword_intentionsa": "(!query.is_sneaking && query.get_equipped_item_name == 'sword_intentions') && query.is_using_item"
+            },
+            {
+              "sword_intentions": "(query.is_sneaking && query.get_equipped_item_name == 'sword_intentions')"
+            }
+          ]
+        },
+        "sword_intentionsa_a": {
+          "transitions": [
+            {
+              "default": "query.get_equipped_item_name != 'sword_intentions'"
+            },
+            {
+              "sword_intentionsx_a": "!query.is_using_item"
+            }
+          ]
+        },
+        "sword_intentionsx_a": {
+          "on_entry": [
+            "/execute as @s[scores={wbnldx=6..11}] at @s run summon wb:ball_intentions_first_sword ^-0.18455780003001943 ^+6.488909668721896 ^+4.602024645750209",
+            "/execute as @s[scores={wbnldx=6..11}] at @s run summon wb:ball_intentions_first_sword ^0.5498492933172683 ^+5.0273625592857005 ^+3.4846523635656963",
+            "/execute as @s[scores={wbnldx=6..11}] at @s run summon wb:ball_intentions_first_sword ^-0.4593432153585226 ^+5.308916550640911 ^+5.236150165673667",
+            "/execute as @s[scores={wbnldx=6..11}] at @s run summon wb:ball_intentions_first_sword ^0.6587910630949874 ^+5.854682690694004 ^+4.432394577584391",
+            "/execute as @s[scores={wbnldx=6..11}] at @s run summon wb:ball_intentions_first_sword ^0.7904838499879479 ^+6.211050600847485 ^+3.027981198405578",
+            "/execute as @s[scores={wbnldx=6..11}] at @s run summon wb:ball_intentions_first_sword ^-0.898437705052382 ^+4.034087509049009 ^+5.387854858570765",
+            "/execute as @s[scores={wbnldx=6..11}] at @s run summon wb:ball_intentions_first_sword ^0.06027036712106182 ^+4.035573251767585 ^+2.8010612422820587",
+            "/execute as @s[scores={wbnldx=6..11}] at @s run summon wb:ball_intentions_first_sword ^-0.6143249482921247 ^+5.07277805247786 ^+4.387873218564797",
+            "/execute as @s[scores={wbnldx=6..11}] at @s run summon wb:ball_intentions_first_sword ^-0.831211061639292 ^+7.1475095283404695 ^+4.190453666641969",
+            "/execute as @s[scores={wbnldx=6..11}] at @s run summon wb:ball_intentions_first_sword ^-0.4438819283130857 ^+4.783120335708374 ^+2.24112298669245",
+            "/execute as @s[scores={wbnldx=12..19}] at @s run summon wb:damage_execute ^ ^+1.0 ^+4",
+            "/execute as @s[scores={wbnldx=12..19}] at @s run execute as @e[r=5,type=wb:damage_execute] at @s run damage @e[r=3] 60 entity_attack entity @s",
+            "/execute as @s[scores={wbnldx=12..19}] at @s run execute as @e[r=5,type=wb:damage_execute] at @s run execute as @e[r=3] at @s run summon wb:damage_blast1 ~ ~ ~",
+            "/execute as @s[scores={wbnldx=20..}] at @s run summon wb:shadow_intentions_second ~+1 ~ ~+1",
+            "/execute as @s[scores={wbnldx=20..}] at @s run summon wb:shadow_intentions_second ~+1 ~ ~-1",
+            "/execute as @s[scores={wbnldx=20..}] at @s run summon wb:shadow_intentions_second ~-1 ~ ~-1",
+            "/execute as @s[scores={wbnldx=20..}] at @s run summon wb:shadow_intentions_second ~-1 ~ ~+1",
+            "/execute as @s[scores={wbnldx=20..}] at @s run effect @s invisibility 8 1 true",
+            "/scoreboard players remove @s[scores={wbnldx=6..11}] wbnldx 6",
+            "/scoreboard players remove @s[scores={wbnldx=12..19}] wbnldx 12",
+            "/scoreboard players remove @s[scores={wbnldx=20..}] wbnldx 20"
+          ],
+          "transitions": [
+            {
+              "default": "query.get_equipped_item_name != 'sword_intentions'"
+            },
+            {
+              "sword_intentionsa_a": "(query.is_sneaking && query.get_equipped_item_name == 'sword_intentions') && query.is_using_item"
+            },
+            {
+              "sword_intentions": "(!query.is_sneaking && query.get_equipped_item_name == 'sword_intentions')"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

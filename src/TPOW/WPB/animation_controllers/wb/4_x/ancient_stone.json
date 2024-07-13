@@ -1,0 +1,174 @@
+{
+  "format_version": "1.8.0",
+  "animation_controllers": {
+    "controller.animation.ancient_stone.new": {
+      "states": {
+        "default": {
+          "on_entry": [
+            "variable.rskills=Math.floor(Math.random(0,4.9));",
+            "variable.use_time=query.life_time;",
+            "/tag @s add cannon"
+          ],
+          "transitions": [
+            {
+              "01": "variable.rskills == 0&&query.life_time-variable.use_time>=1"
+            },
+            {
+              "02": "variable.rskills == 1&&query.life_time-variable.use_time>=1"
+            },
+            {
+              "03": "variable.rskills == 2&&query.life_time-variable.use_time>=1"
+            },
+            {
+              "04": "variable.rskills == 3&&query.life_time-variable.use_time>=1"
+            },
+            {
+              "05": "variable.rskills == 4&&query.life_time-variable.use_time>=1"
+            }
+          ]
+        },
+        "01": {
+          "on_entry": [
+            "/execute as @p at @s run function 4_x/cannon_ancient_stone_a",
+            "variable.use_time=query.life_time;",
+            "/tag @s remove cannon"
+          ],
+          "transitions": [
+            {
+              "default": "query.life_time-variable.use_time>=14"
+            }
+          ]
+        },
+        "02": {
+          "on_entry": [
+            "/execute as @p at @s run function 4_x/cannon_ancient_stone_b",
+            "variable.use_time=query.life_time;",
+            "/tag @s remove cannon"
+
+          ],
+          "transitions": [
+            {
+              "default": "query.life_time-variable.use_time>=14"
+            }
+          ]
+        },
+        "03": {
+          "on_entry": [
+            "/execute as @p at @s run function 4_x/cannon_ancient_stone_c",
+            "variable.use_time=query.life_time;",
+            "/tag @s remove cannon"
+
+          ],
+          "transitions": [
+            {
+              "default": "query.life_time-variable.use_time>=14"
+            }
+          ]
+        },
+        "04": {
+          "on_entry": [
+            "/execute as @p at @s run function 4_x/cannon_ancient_stone_d",
+            "variable.use_time=query.life_time;",
+            "/tag @s remove cannon"
+
+          ],
+          "transitions": [
+            {
+              "default": "query.life_time-variable.use_time>=14"
+            }
+          ]
+        },
+        "05": {
+          "on_entry": [
+            "/execute as @p at @s run function 4_x/cannon_ancient_stone_e",
+            "variable.use_time=query.life_time;",
+            "/tag @s remove cannon"
+
+          ],
+          "transitions": [
+            {
+              "default": "query.life_time-variable.use_time>=14"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.ancient_stone": {
+      "states": {
+        "default": {
+          "on_entry": [
+            "/tag @s remove gja",
+            "/tag @s remove gjb",
+            "/kill @e[type=wb:ball_ancient_stonea]"
+          ],
+          "transitions": [
+            {
+              "summon": "query.variant == 1"
+            },
+            {
+              "shoot": "query.variant == 5"
+            },
+            {
+              "shootx": "query.variant == 10"
+            },
+            {
+              "summonx": "query.variant == 11"
+            }
+          ]
+        },
+        "summon": {
+          "on_entry": [
+            "/tag @s add gja"
+          ],
+          "transitions": [
+            {
+              "default": "query.variant != 1"
+            }
+          ]
+        },
+        "shoot": {
+          "on_entry": [
+            "/function base/lightning",
+            "/function base/magmablock"
+          ],
+          "transitions": [
+            {
+              "default": "query.variant != 5"
+            }
+          ]
+        },
+        "summonx": {
+          "on_entry": [
+            "/tag @s add gjb"
+          ],
+          "transitions": [
+            {
+              "default": "query.variant != 11"
+            }
+          ]
+        },
+        "shootx": {
+          "on_entry": [
+            "/function base/lightning",
+            "/execute as @e[type=minecraft:item] at @s run summon minecraft:lightning ~ ~ ~",
+            "/function base/magmablock2"
+          ],
+          "transitions": [
+            {
+              "default": "query.variant != 10"
+            }
+          ]
+        }
+      }
+    },
+    "controller.animation.cannon_ancient_stone": {
+      "states": {
+        "default": {
+          "on_entry": [
+            "/tp @s ~ ~ ~ facing @e[type=!minecraft:item,type=!wb:ancient_stone,type=!wb:cannon_ancient_stone,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:arrow,c=1,r=10,type=!wb:ball_ancient_stonea,type=!wb:ball_ancient_stoneb,type=!wb:ball_ancient_stonec]"
+          ]
+        }
+      }
+    }
+  }
+}

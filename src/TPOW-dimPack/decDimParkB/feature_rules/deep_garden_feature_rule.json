@@ -1,0 +1,32 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:feature_rules": {
+		"description": {
+			"identifier": "dec:deep_garden_feature_rule",
+			"places_feature": "dec:deep_garden_mcstructure"
+		},
+		"conditions": {
+			"placement_pass": "surface_pass",
+			"minecraft:biome_filter": [
+				{
+					"test": "has_biome_tag",
+					"operator": "==",
+					"value": "crimson_forest"
+				}
+			]
+		},
+		"distribution": {
+			"iterations": 1,
+			"x": 0,
+			"y": {
+				"distribution": "uniform",
+				"extent": [
+					15,
+					83
+				]
+			},
+			"z": 0,
+			"scatter_chance": "v.distance = 324 ;v.x2 = math.floor((variable.originx)/v.distance)*v.distance;v.z2 = math.floor((variable.originz)/v.distance)*v.distance;v.c1 = math.round(10000*math.abs(query.noise((v.x2+64) / 200.0, (v.x2+64) / 200.0)));v.c2 = math.round(10000*math.abs(query.noise((v.x2+128)  / 200.0, (v.z2+128) / 200.0)));v.r1 = math.mod((v.c1 * 9301 + 49297),233280) / 233280.0;v.r2 = math.mod((v.c2 * 9301 + 49297),233280) / 233280.0;v.x1 = v.x2 + math.round(v.r1*(v.distance/16/2))*16 + v.distance/4;v.z1 = v.z2 + math.round(v.r2*(v.distance/16/2))*16 + v.distance/4;v.len1 = math.abs(variable.originx-v.x1);v.len2 = math.abs(variable.originz-v.z1);return v.len1<8&&v.len2<8 ? 100 : 0;"
+		}
+	}
+}
