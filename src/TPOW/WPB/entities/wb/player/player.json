@@ -13,7 +13,6 @@
                     "delivery",
                     "order",
                     "eff",
-                    "sweep",
                     "cooling",
                     "coolinguse",
                     "enter_game"
@@ -25,7 +24,6 @@
                 "delivery": "animation.player.wb.delivery",
                 "eff": "controller.animation.player.wb.eff",
                 "order": "animation.player.wb.order",
-                "sweep": "controller.animation.player.wb.sweep",
                 "cooling": "controller.animation.player.wb.global.cooling",
                 "coolinguse": "animation.player.wb.global.cooling",
                 "enter_game": "animation.enter_game"
