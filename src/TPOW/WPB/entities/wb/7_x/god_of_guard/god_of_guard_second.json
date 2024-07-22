@@ -2,23 +2,15 @@
   "format_version": "1.11.0",
   "minecraft:entity": {
     "description": {
-      "identifier": "wb:god_of_guard_first",
+      "identifier": "wb:god_of_guard_second",
       "is_spawnable": false,
       "is_summonable": true,
-      "is_experimental": false,
-      "animations": {
-        "boss": "animation.boss.testplayer"
-      },
-      "scripts": {
-        "animate": [{
-          "boss": "query.health>1"
-        }]
-      }
+      "is_experimental": false
     },
     "component_groups": {
       "into":{
         "minecraft:transformation":{
-          "into": "wb:god_of_guard_second",
+          "into": "wb:god_of_guard_third",
           "delay": 0.5
         }
       },

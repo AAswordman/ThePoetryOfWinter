@@ -80,10 +80,15 @@
             "minecraft:icon": {
                 "texture": "sword_ink_g"
             },
+            "minecraft:chargeable": {
+                "movement_modifier": 1.0
+            },
             "minecraft:food": {
                 "nutrition": 5,
                 "can_always_eat": true
-            }
+            },
+            "tag:comp:equipment_type:melee_weapon":{}
+            
         },
         "events": {
             "attack": {

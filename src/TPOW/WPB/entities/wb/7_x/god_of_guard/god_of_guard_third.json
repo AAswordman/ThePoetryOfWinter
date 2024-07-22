@@ -2,25 +2,14 @@
   "format_version": "1.11.0",
   "minecraft:entity": {
     "description": {
-      "identifier": "wb:god_of_guard_first",
+      "identifier": "wb:god_of_guard_third",
       "is_spawnable": false,
       "is_summonable": true,
-      "is_experimental": false,
-      "animations": {
-        "boss": "animation.boss.testplayer"
-      },
-      "scripts": {
-        "animate": [{
-          "boss": "query.health>1"
-        }]
-      }
+      "is_experimental": false
     },
     "component_groups": {
       "into":{
-        "minecraft:transformation":{
-          "into": "wb:god_of_guard_second",
-          "delay": 0.5
-        }
+        
       },
       "isboss": {},
       "defeated": {},
@@ -73,17 +62,7 @@
       "minecraft:damage_sensor": [{
         "cause": "fall",
         "deals_damage": false
-      },
-      {
-        "on_damage": {
-            "filters": {
-                "test": "has_damage",
-                "value": "fatal"
-            },
-            "event": "into"
-        },
-        "deals_damage": false
-    }],
+      }],
       "minecraft:behavior.random_stroll": {
         "priority": 6,
         "speed_multiplier": 1,

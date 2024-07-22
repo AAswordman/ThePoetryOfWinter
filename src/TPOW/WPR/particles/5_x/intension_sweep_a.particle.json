@@ -2,7 +2,7 @@
 	"format_version": "1.10.0",
 	"particle_effect": {
 		"description": {
-			"identifier": "wb:sweep_a",
+			"identifier": "wb:intension_sweep_a",
 			"basic_render_parameters": {
 				"material": "particles_alpha",
 				"texture": "textures/wb_par/sweep_a"
@@ -44,7 +44,7 @@
 				"collision_radius": 0.001
 			},
 			"minecraft:particle_appearance_tinting": {
-				"color": ["v.particle_color.r", "v.particle_color.g", "v.particle_color.b", 1]
+				"color": [0.63922, 0.35686, 0.74118, 1]
 			}
 		}
 	}
