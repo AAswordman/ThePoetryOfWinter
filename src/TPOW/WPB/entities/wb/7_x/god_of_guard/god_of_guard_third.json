@@ -88,12 +88,6 @@
                 "operator": "!=",
                 "subject": "other",
                 "value": "god"
-              },
-              {
-                "test": "is_family",
-                "operator": "!=",
-                "subject": "other",
-                "value": "aboss"
               }
             ]
           },

@@ -79,8 +79,7 @@
             "filters": {
                 "test": "has_damage",
                 "value": "fatal"
-            },
-            "event": "into"
+            }
         },
         "deals_damage": false
     }],
@@ -109,12 +108,6 @@
                 "operator": "!=",
                 "subject": "other",
                 "value": "god"
-              },
-              {
-                "test": "is_family",
-                "operator": "!=",
-                "subject": "other",
-                "value": "aboss"
               }
             ]
           },

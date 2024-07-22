@@ -30,7 +30,7 @@
                 "look_at_target_gliding": "animation.humanoid.look_at_target.gliding.v1.0",
                 "look_at_target_swimming": "animation.humanoid.look_at_target.swimming.v1.0",
                 "move": "animation.god_of_guard.walk",
-                "base": "animation.god_of_guard.staff"
+                "base": "animation.god_of_guard.sword"
             },
             "render_controllers": [
                 "controller.render.intentions_second"

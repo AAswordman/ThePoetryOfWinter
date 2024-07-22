@@ -8,14 +8,53 @@
       "is_experimental": false
     },
     "component_groups": {
-      "into":{
-        
+      "into": {
+
       },
       "isboss": {},
       "defeated": {},
       "disappear": {
         "minecraft:despawn": {
           "despawn_from_distance": {}
+        }
+      },
+      "melee": {
+        "minecraft:behavior.melee_attack": {
+          "priority": 3,
+          "speed_multiplier": 1,
+          "track_target": true
+        }
+      },
+      "range": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 0,
+          "attack_interval_min": 1,
+          "attack_interval_max": 3,
+          "attack_radius": 15
+        },
+        "minecraft:shooter": {
+          "def": "minecraft:arrow",
+          "aux_val": 19
+        }
+      },
+      "move": {
+        "minecraft:movement": {
+          "value": 0.32
+        }
+      },
+      "move0": {
+        "minecraft:movement": {
+          "value": 0
+        }
+      },
+      "variant0": {
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+      "variant1": {
+        "minecraft:variant": {
+          "value": 1
         }
       }
     },
@@ -55,9 +94,20 @@
         "reach_multiplier": 0.8
       },
       "minecraft:damage_sensor": [{
-        "cause": "fall",
-        "deals_damage": false
-      }],
+          "cause": "fall",
+          "deals_damage": false
+        },
+        {
+          "on_damage": {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "god"
+            }
+          },
+          "deals_damage": false
+        }
+      ],
       "minecraft:behavior.random_stroll": {
         "priority": 6,
         "speed_multiplier": 1,
@@ -78,19 +128,10 @@
         "priority": 3,
         "entity_types": [{
           "filters": {
-            "all_of": [{
-                "test": "is_family",
-                "operator": "!=",
-                "subject": "other",
-                "value": "god"
-              },
-              {
-                "test": "is_family",
-                "operator": "!=",
-                "subject": "other",
-                "value": "aboss"
-              }
-            ]
+            "test": "is_family",
+            "operator": "!=",
+            "subject": "other",
+            "value": "god"
           },
           "within_default": 64
         }],
@@ -120,7 +161,47 @@
           ]
         }
       },
-      "minecraft:entity_spawned": {}
+      "minecraft:entity_spawned": {},
+      "add_range": {
+        "add": {
+          "component_groups": ["range"]
+        }
+      },
+      "remove_range": {
+        "remove": {
+          "component_groups": ["range"]
+        }
+      },
+      "add_melee": {
+        "add": {
+          "component_groups": ["melee"]
+        }
+      },
+      "remove_melee": {
+        "remove": {
+          "component_groups": ["melee"]
+        }
+      },
+      "add_move": {
+        "add": {
+          "component_groups": ["move"]
+        }
+      },
+      "remove_move": {
+        "add": {
+          "component_groups": ["move0"]
+        }
+      },
+      "variant0": {
+        "add": {
+          "component_groups": ["variant0"]
+        }
+      },
+      "variant1": {
+        "add": {
+          "component_groups": ["variant1"]
+        }
+      }
     }
   }
 }
