@@ -1,169 +1,101 @@
 {
-    "pools": [
+    "pools": [{
+            "rolls": 1,
+            "entries": [{
+                "type": "item",
+                "name": "wb:sword_intentions",
+                "weight": 1,
+                "functions": [{
+                    "function": "set_count",
+                    "count": {
+                        "min": 1,
+                        "max": 1
+                    }
+                }]
+            }]
+        },
         {
             "rolls": 1,
-            "entries": [
+            "entries": [{
+                    "type": "item",
+                    "name": "minecraft:nether_star",
+                    "weight": 90,
+                    "functions": [{
+                        "function": "set_count",
+                        "count": {
+                            "min": 1,
+                            "max": 1
+                        }
+                    }]
+                },
                 {
                     "type": "item",
-                    "name": "wb:sword_intentions",
-                    "weight": 1,
-                    "functions": [
-                        {
-                            "function": "set_count",
-                            "count": {
-                                "min": 1,
-                                "max": 1
-                            }
+                    "name": "wb:staff_base",
+                    "weight": 90,
+                    "functions": [{
+                        "function": "set_count",
+                        "count": {
+                            "min": 1,
+                            "max": 1
                         }
-                    ]
+                    }]
+                }
+            ]
+        },
+        {
+            "rolls": 2,
+            "entries": [{
+                    "type": "item",
+                    "name": "dec:magic_scroll_blue",
+                    "weight": 90,
+                    "functions": [{
+                        "function": "set_count",
+                        "count": {
+                            "min": 1,
+                            "max": 2
+                        }
+                    }]
+                },
+                {
+                    "type": "item",
+                    "name": "dec:ender_substance",
+                    "weight": 60,
+                    "functions": [{
+                        "function": "set_count",
+                        "count": {
+                            "min": 8,
+                            "max": 14
+                        }
+                    }]
+                },
+                {
+                    "type": "item",
+                    "name": "dec:magic_powder",
+                    "weight": 60,
+                    "functions": [{
+                        "function": "set_count",
+                        "count": {
+                            "min": 13,
+                            "max": 16
+                        }
+                    }]
                 }
             ]
         },
         {
             "rolls": 1,
-            "entries": [
-                {
-                    "type": "item",
-                    "name": "wb:mineral_senior_equipment",
-                    "weight": 75,
-                    "functions": [
-                        {
-                            "function": "set_count",
-                            "count": {
-                                "min": 1,
-                                "max": 3
-                            }
-                        }
-                    ]
-                },
-                {
-                    "type": "item",
-                    "name": "wb:element_base",
-                    "weight": 5,
-                    "functions": [
-                        {
-                            "function": "set_count",
-                            "count": {
-                                "min": 1,
-                                "max": 1
-                            }
-                        }
-                    ]
-                },
-                {
-                    "rolls": 1,
-                    "entries": [
-                        {
-                            "type": "item",
-                            "name": "dec:magic_scroll_blue",
-                            "weight": 90,
-                            "functions": [
-                                {
-                                    "function": "set_count",
-                                    "count": {
-                                        "min": 1,
-                                        "max": 2
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "item",
-                            "name": "dec:ender_substance",
-                            "weight": 60,
-                            "functions": [
-                                {
-                                    "function": "set_count",
-                                    "count": {
-                                        "min": 8,
-                                        "max": 14
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "item",
-                            "name": "dec:magic_powder",
-                            "weight": 60,
-                            "functions": [
-                                {
-                                    "function": "set_count",
-                                    "count": {
-                                        "min": 13,
-                                        "max": 16
-                                    }
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "rolls": 1,
-                    "entries": [
-                        {
-                            "type": "item",
-                            "name": "minecraft:nether_star",
-                            "weight": 90,
-                            "functions": [
-                                {
-                                    "function": "set_count",
-                                    "count": {
-                                        "min": 3,
-                                        "max": 3
-                                    }
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "rolls": 2,
-                    "entries": [
-                        {
-                            "type": "item",
-                            "name": "minecraft:nether_star",
-                            "weight": 90,
-                            "functions": [
-                                {
-                                    "function": "set_count",
-                                    "count": {
-                                        "min": 3,
-                                        "max": 3
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "item",
-                            "name": "wb:staff_base",
-                            "weight": 90,
-                            "functions": [
-                                {
-                                    "function": "set_count",
-                                    "count": {
-                                        "min": 1,
-                                        "max": 2
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "type": "item",
-                            "name": "wb:element_base",
-                            "weight": 90,
-                            "functions": [
-                                {
-                                    "function": "set_count",
-                                    "count": {
-                                        "min": 1,
-                                        "max": 2
-                                    }
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
+            "entries": [{
+                "type": "item",
+                "name": "minecraft:nether_star",
+                "weight": 90,
+                "functions": [{
+                    "function": "set_count",
+                    "count": {
+                        "min": 1,
+                        "max": 1
+                    }
+                }]
+            }]
         }
     ]
 }

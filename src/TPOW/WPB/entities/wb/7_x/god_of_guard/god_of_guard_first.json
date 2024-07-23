@@ -79,7 +79,8 @@
             "filters": {
                 "test": "has_damage",
                 "value": "fatal"
-            }
+            },
+            "event":"into"
         },
         "deals_damage": false
     }],

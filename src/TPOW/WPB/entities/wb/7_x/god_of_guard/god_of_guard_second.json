@@ -31,13 +31,13 @@
       "range": {
         "minecraft:behavior.ranged_attack": {
           "priority": 0,
-          "attack_interval_min": 1,
-          "attack_interval_max": 3,
-          "attack_radius": 15
+          "attack_interval": 99,
+          "charge_charged_trigger":0,
+          "charge_shoot_trigger":0,
+          "attack_radius": 64
         },
         "minecraft:shooter": {
-          "def": "minecraft:arrow",
-          "aux_val": 19
+          "def": "epic:sunlight_arrow"
         }
       },
       "move": {
