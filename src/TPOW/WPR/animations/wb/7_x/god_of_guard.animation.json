@@ -1,56 +1,6 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"animation.god_of_guard.staff_effect_only": {
-			"loop": "hold_on_last_frame",
-			"animation_length": 1,
-			"override_previous_animation": true,
-			"bones": {
-				"rightArm": {
-					"rotation": [-35, 0, 0]
-				},
-				"rightarm_lower": {
-					"rotation": [-55.03677, -1.61724, 1.93146]
-				},
-				"sword": {
-					"scale": 0
-				}
-			},
-			"particle_effects": {
-				"0.0": {
-					"effect": "staff_center",
-					"locator": "staff_center"
-				}
-			}
-		},
-		"animation.god_of_guard.staff_effect": {
-			"loop": "hold_on_last_frame",
-			"animation_length": 1,
-			"override_previous_animation": true,
-			"bones": {
-				"rightArm": {
-					"rotation": [-35, 0, 0]
-				},
-				"rightarm_lower": {
-					"rotation": [-55.03677, -1.61724, 1.93146]
-				},
-				"sword": {
-					"scale": 0
-				}
-			},
-			"particle_effects": {
-				"0.0": [
-					{
-						"effect": "staff_center",
-						"locator": "staff_center"
-					},
-					{
-						"effect": "center",
-						"locator": "center"
-					}
-				]
-			}
-		},
 		"animation.god_of_guard.staff": {
 			"loop": true,
 			"bones": {
@@ -179,6 +129,54 @@
 				"aa": {
 					"rotation": [0, 0, 0]
 				}
+			}
+		},
+		"animation.god_of_guard.staff_effect_only": {
+			"animation_length": 1,
+			"override_previous_animation": true,
+			"bones": {
+				"rightArm": {
+					"rotation": [-35, 0, 0]
+				},
+				"rightarm_lower": {
+					"rotation": [-55.03677, -1.61724, 1.93146]
+				},
+				"sword": {
+					"scale": 0
+				}
+			},
+			"particle_effects": {
+				"0.0": {
+					"effect": "staff_center",
+					"locator": "staff_center"
+				}
+			}
+		},
+		"animation.god_of_guard.staff_effect": {
+			"animation_length": 1,
+			"override_previous_animation": true,
+			"bones": {
+				"rightArm": {
+					"rotation": [-35, 0, 0]
+				},
+				"rightarm_lower": {
+					"rotation": [-55.03677, -1.61724, 1.93146]
+				},
+				"sword": {
+					"scale": 0
+				}
+			},
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "staff_center",
+						"locator": "staff_center"
+					},
+					{
+						"effect": "center",
+						"locator": "center"
+					}
+				]
 			}
 		},
 		"animation.god_of_guard.sword": {
@@ -414,6 +412,137 @@
 						"0.6667": [10, 0, 0],
 						"1.5": [11.24314, 27.0478, 5.16524]
 					}
+				}
+			}
+		},
+		"animation.god_of_guard.double_melee": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 1,
+			"bones": {
+				"root": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.5": [15, 0, 0]
+					},
+					"position": {
+						"0.25": [0, 0, 0],
+						"0.5": [0, 31, 0]
+					}
+				},
+				"AllBody": {
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.25": [0, -2, 0],
+						"0.5": [0, -2, 0]
+					}
+				},
+				"rightwing": {
+					"rotation": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.25": {
+							"post": [0, -15, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.375": {
+							"post": [0, 15, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": {
+							"post": [0, -15, 0],
+							"lerp_mode": "catmullrom"
+						}
+					},
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.25": [0, 0, 0]
+					}
+				},
+				"leftwing": {
+					"rotation": {
+						"0.0": {
+							"post": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.25": {
+							"post": [0, 15, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.375": {
+							"post": [0, -15, 0],
+							"lerp_mode": "catmullrom"
+						},
+						"0.5": {
+							"post": [0, 15, 0],
+							"lerp_mode": "catmullrom"
+						}
+					},
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.25": [0, 0, 0]
+					}
+				},
+				"upbody": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [25, 0, 0]
+					},
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.25": [0, 0, 0]
+					}
+				},
+				"body": {
+					"position": {
+						"0.0": [0, 0, 0],
+						"0.25": [0, 0, 0]
+					}
+				},
+				"rightArm": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [-32.5, 0, 0]
+					}
+				},
+				"leftArm": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [0, 0, 0]
+					}
+				},
+				"rightLeg": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [-12.5, 0, 0]
+					}
+				},
+				"rightleg_lower": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [40, 0, 0]
+					}
+				},
+				"leftLeg": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [0, 0, 0]
+					}
+				},
+				"leftleg_lower": {
+					"rotation": {
+						"0.0": [0, 0, 0],
+						"0.25": [27.5, 0, 0]
+					}
+				}
+			}
+		},
+		"animation.god_of_guard.melee_p": {
+			"loop": "hold_on_last_frame",
+			"bones": {
+				"rightLeg": {
+					"rotation": [0, 0, 0]
 				}
 			}
 		}

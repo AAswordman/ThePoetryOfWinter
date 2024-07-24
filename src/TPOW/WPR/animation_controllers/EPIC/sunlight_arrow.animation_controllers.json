@@ -6,41 +6,35 @@
 			"initial_state": "default",
 			"states": {
 				"default": {
-					"particle_effects": [
-					],
-					"transitions": [
-						{
-							"repeat1":"query.variant > 0"
-						}
-					]
-				
+					"particle_effects": [],
+					"transitions": [{
+						"repeat1": "query.variant > 0"
+					}]
+
 				},
 				"repeat1": {
-					"particle_effects": [
-						{ "effect": "epic_base_effect" }
-					],
-					"transitions": [
-						{
-							"default":"query.variant == 1"
+					"particle_effects": [{
+						"effect": "epic_base_effect"
+					}],
+					"transitions": [{
+							"default": "query.variant == 1"
 						},
 						{
-							"repeat2":"query.variant == 2"
+							"repeat2": "query.variant == 2"
 						}
 					]
 				},
 				"repeat2": {
-					"particle_effects": [
-						{ "effect": "epic_base_effect" }
-					],
-					"transitions": [
-						{
-							"default":"(1.0)"
-						}
-					]
-				
+					"particle_effects": [{
+						"effect": "epic_base_effect"
+					}],
+					"transitions": [{
+						"default": "(1.0)"
+					}]
+
 				}
 			}
 		}
 
-			}
-		}
+	}
+}

@@ -1,0 +1,13 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.god_of_guard_sword_p.move": {
+			"loop": true,
+			"bones": {
+				"root": {
+					"rotation" : [ "variable.shake_power - query.target_x_rotation", "-query.target_y_rotation", 0.0 ]
+				}
+			}
+		}
+	}
+}
