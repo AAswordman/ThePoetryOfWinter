@@ -94,7 +94,7 @@
       "minecraft:jump.static": {},
       "minecraft:can_climb": {},
       "minecraft:attack": {
-        "damage": 50
+        "damage": 0
       },
       "minecraft:damage_sensor": [{
           "cause": "fall",

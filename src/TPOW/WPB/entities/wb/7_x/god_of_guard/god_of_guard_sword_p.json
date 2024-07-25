@@ -10,7 +10,7 @@
   },
   "components": {
     "minecraft:collision_box": {
-    "width": 0.3,
+    "width": 0.1,
     "height": 0.1
    },
     "minecraft:explode": {
@@ -39,7 +39,7 @@
     "offset": [ 0, 0, 0 ],
     "semirandomdiffdamage": false,
     "uncertaintyBase": 0.0,
-    "reflectOnHurt": true,
+    "reflectOnHurt": false,
     "multiple_targets":true
    },
    "minecraft:physics": {
