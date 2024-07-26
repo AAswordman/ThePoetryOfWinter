@@ -2,7 +2,7 @@
   "format_version": "1.8.0",
  "minecraft:entity": {
   "description": {
-    "identifier": "wb:ball_intentions_first_gas",
+    "identifier": "wb:god_of_guard_sword_s",
     "is_spawnable": false,
     "is_summonable": true,
     "is_experimental": false,
@@ -10,14 +10,14 @@
   },
   "components": {
     "minecraft:collision_box": {
-    "width": 0.8,
+    "width": 0.1,
     "height": 0.1
    },
     "minecraft:explode": {
-     "fuseLength": 3,
+     "fuseLength": 4,
      "fuseLit": true,
      "breaks_blocks":false,
-     "power": 2,
+     "power": 0,
      "causesFire": false,
      "fireAffectedByGriefing": true,
      "destroyAffectedByGriefing": true
@@ -25,14 +25,14 @@
    "minecraft:projectile": {
     "onHit": {
       "impact_damage": {
-        "damage": 40,
+        "damage": 25,
         "knockback": true,
         "catchFire": false,
         "semirandomdiffdamage": false,
         "destroy_on_hit":false
       }
     },
-    "power": 0.68,
+    "power": 0,
     "gravity": 0.00,
     "inertia": 1,
     "anchor": 2,
