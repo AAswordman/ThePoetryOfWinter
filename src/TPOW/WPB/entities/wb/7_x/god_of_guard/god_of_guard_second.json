@@ -42,7 +42,7 @@
       },
       "move": {
         "minecraft:movement": {
-          "value": 0.34
+          "value": 0.41
         }
       },
       "move0": {

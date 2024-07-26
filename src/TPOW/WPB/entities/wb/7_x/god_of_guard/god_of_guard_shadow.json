@@ -9,7 +9,10 @@
     },
     "component_groups": {
       "into": {
-
+        "minecraft:transformation": {
+          "into": "wb:god_of_guard_third",
+          "delay": 0.5
+        }
       },
       "isboss": {},
       "defeated": {},
@@ -28,18 +31,18 @@
       "range": {
         "minecraft:behavior.ranged_attack": {
           "priority": 0,
-          "attack_interval_min": 1,
-          "attack_interval_max": 3,
-          "attack_radius": 15
+          "attack_interval": 99,
+          "charge_charged_trigger":0,
+          "charge_shoot_trigger":0,
+          "attack_radius": 64
         },
         "minecraft:shooter": {
-          "def": "minecraft:arrow",
-          "aux_val": 19
+          "def": "epic:sunlight_arrow"
         }
       },
       "move": {
         "minecraft:movement": {
-          "value": 0.34
+          "value": 0.41
         }
       },
       "move0": {
@@ -75,8 +78,8 @@
         "height": 1.8
       },
       "minecraft:health": {
-        "value": 2000,
-        "max": 2000
+        "value": 3000,
+        "max": 3000
       },
       "minecraft:movement": {
         "value": 0.0
@@ -86,12 +89,7 @@
       "minecraft:jump.static": {},
       "minecraft:can_climb": {},
       "minecraft:attack": {
-        "damage": 50
-      },
-      "minecraft:behavior.melee_attack": {
-        "priority": 3,
-        "track_target": true,
-        "reach_multiplier": 0.8
+        "damage": 0
       },
       "minecraft:damage_sensor": [{
           "cause": "fall",
