@@ -16,9 +16,6 @@
 			}
 		},
 		"components": {
-			"minecraft:emitter_initialization": {
-				"creation_expression": "v.r = 4;v.angle = 40;v.cent_angle = 30;"
-			},
 			"minecraft:emitter_rate_instant": {
 				"num_particles": 120
 			},
