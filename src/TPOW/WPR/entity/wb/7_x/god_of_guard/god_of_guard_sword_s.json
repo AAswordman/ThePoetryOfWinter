@@ -7,10 +7,10 @@
         "default": "wbarmor"
       },
       "textures": {
-        "default": "textures/wb/5_x/ball_intentions_first_gas"
+        "default": "textures/wb/7_x/god_of_guard_sword_s"
       },
       "geometry": {
-        "default": "geometry.ball_intentions_first_gas"
+        "default": "geometry.god_of_guard_sword_s"
       },
       "render_controllers": [
         "controller.render.light"
