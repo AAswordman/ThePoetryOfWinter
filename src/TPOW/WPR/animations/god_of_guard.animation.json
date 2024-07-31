@@ -1,56 +1,6 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"animation.god_of_guard.staff_effect_only": {
-			"loop": "hold_on_last_frame",
-			"animation_length": 1,
-			"override_previous_animation": true,
-			"bones": {
-				"rightArm": {
-					"rotation": [-35, 0, 0]
-				},
-				"rightarm_lower": {
-					"rotation": [-55.03677, -1.61724, 1.93146]
-				},
-				"sword": {
-					"scale": 0
-				}
-			},
-			"particle_effects": {
-				"0.0": {
-					"effect": "staff_center",
-					"locator": "staff_center"
-				}
-			}
-		},
-		"animation.god_of_guard.staff_effect": {
-			"loop": "hold_on_last_frame",
-			"animation_length": 1,
-			"override_previous_animation": true,
-			"bones": {
-				"rightArm": {
-					"rotation": [-35, 0, 0]
-				},
-				"rightarm_lower": {
-					"rotation": [-55.03677, -1.61724, 1.93146]
-				},
-				"sword": {
-					"scale": 0
-				}
-			},
-			"particle_effects": {
-				"0.0": [
-					{
-						"effect": "staff_center",
-						"locator": "staff_center"
-					},
-					{
-						"effect": "center",
-						"locator": "center"
-					}
-				]
-			}
-		},
 		"animation.god_of_guard.staff": {
 			"loop": true,
 			"bones": {
@@ -179,6 +129,54 @@
 				"aa": {
 					"rotation": [0, 0, 0]
 				}
+			}
+		},
+		"animation.god_of_guard.staff_effect_only": {
+			"animation_length": 1,
+			"bones": {
+				"rightArm": {
+					"rotation": [-35, 0, 0]
+				},
+				"rightarm_lower": {
+					"rotation": [-55.03677, -1.61724, 1.93146]
+				},
+				"sword": {
+					"scale": 0
+				}
+			},
+			"particle_effects": {
+				"0.0": {
+					"effect": "staff_center",
+					"locator": "staff_center"
+				}
+			}
+		},
+		"animation.god_of_guard.staff_effect": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 1,
+			"override_previous_animation": true,
+			"bones": {
+				"rightArm": {
+					"rotation": [-35, 0, 0]
+				},
+				"rightarm_lower": {
+					"rotation": [-55.03677, -1.61724, 1.93146]
+				},
+				"sword": {
+					"scale": 0
+				}
+			},
+			"particle_effects": {
+				"0.0": [
+					{
+						"effect": "staff_center",
+						"locator": "staff_center"
+					},
+					{
+						"effect": "center",
+						"locator": "center"
+					}
+				]
 			}
 		},
 		"animation.god_of_guard.sword": {
@@ -995,17 +993,17 @@
 						"0.0": [0, 0, 0],
 						"0.2083": [0, -0.16, 0],
 						"0.3333": [0, -0.58, 0],
-						"0.5833": [0, -3.83, 0],
-						"1.0": [0, -6.33, 0],
-						"1.0833": [0, -0.71, 0],
-						"1.1667": [0, -0.08, 0],
-						"1.25": [0, -0.83, 0],
-						"1.375": [0, -1.66, 0],
-						"1.5": [0, -3.5, 0],
-						"1.7083": [0, -4.2, 0],
-						"2.0": [0, 2.5, 0],
-						"2.2083": [0, 0.21, 0],
-						"2.5": [0, 0, 0]
+						"0.5833": [0, -3.83, -3],
+						"1.0": [0, -6.33, -3],
+						"1.0833": [0, -0.71, -3],
+						"1.1667": [0, -0.08, -3],
+						"1.25": [0, -0.83, -3],
+						"1.375": [0, -1.66, -3],
+						"1.5": [0, -3.5, -3],
+						"1.7083": [0, -4.2, -3],
+						"2.0": [0, 2.5, -3.25],
+						"2.2083": [0, 0.21, -8.98],
+						"2.5": [0, 0, -17]
 					}
 				},
 				"upbody": {
