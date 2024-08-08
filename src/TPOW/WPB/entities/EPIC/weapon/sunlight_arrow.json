@@ -598,7 +598,7 @@
           "command": [
             "execute as @s at @s positioned ~~0.75~ run particle epic:sunlight_arrow_particle1",
             "damage @e[r=2,tag=!wbmsyh,tag=!immune] 12 fire_tick entity @s",
-            "damage @e[r=2,tag=!wbmsyh,tag=!immune] 0 selfDestruct entity @s"
+            "damage @e[r=2,tag=!wbmsyh,tag=!immune] 0 self_destruct entity @s"
           ]
         }
       },
@@ -608,7 +608,7 @@
           "command": [
             "execute as @s at @s positioned ~~0.75~ run particle epic:sunlight_arrow_particle1",
             "damage @e[r=2,tag=!wbmsyh,tag=!immune] 16 fire_tick entity @s",
-            "damage @e[r=2,tag=!wbmsyh,tag=!immune] 0 selfDestruct entity @s"
+            "damage @e[r=2,tag=!wbmsyh,tag=!immune] 0 self_destruct entity @s"
           ]
         }
       },
@@ -618,7 +618,7 @@
           "command": [
             "execute as @s at @s positioned ~~0.75~ run particle epic:sunlight_arrow_particle1",
             "damage @e[r=2,tag=!wbmsyh,tag=!immune] 19 fire_tick entity @s",
-            "damage @e[r=2,tag=!wbmsyh,tag=!immune] 0 selfDestruct entity @s"
+            "damage @e[r=2,tag=!wbmsyh,tag=!immune] 0 self_destruct entity @s"
           ]
         }
       },
@@ -628,7 +628,7 @@
           "command": [
             "execute as @s at @s positioned ~~0.75~ run particle epic:sunlight_arrow_particle1",
             "damage @e[r=2,tag=!wbmsyh,tag=!immune] 24 fire_tick entity @s",
-            "damage @e[r=2,tag=!wbmsyh,tag=!immune] 0 selfDestruct entity @s"
+            "damage @e[r=2,tag=!wbmsyh,tag=!immune] 0 self_destruct entity @s"
           ]
         }
       },
@@ -638,7 +638,7 @@
           "command": [
             "execute as @s at @s positioned ~~0.75~ run particle epic:sunlight_arrow_particle1",
             "damage @e[r=2,tag=!wbmsyh,tag=!immune] 30 fire_tick entity @s",
-            "damage @e[r=2,tag=!wbmsyh,tag=!immune] 0 selfDestruct entity @s"
+            "damage @e[r=2,tag=!wbmsyh,tag=!immune] 0 self_destruct entity @s"
           ]
         }
       },
@@ -648,7 +648,7 @@
           "command": [
             "execute as @s at @s positioned ~~0.75~ run particle epic:sunlight_arrow_particle1",
             "damage @e[r=2,tag=!wbmsyh,tag=!immune] 38 fire_tick entity @s",
-            "damage @e[r=2,tag=!wbmsyh,tag=!immune] 0 selfDestruct entity @s"
+            "damage @e[r=2,tag=!wbmsyh,tag=!immune] 0 self_destruct entity @s"
           ]
         }
       },
@@ -658,7 +658,7 @@
           "command": [
             "execute as @s at @s positioned ~~0.5~ run particle epic:sunlight_arrow_particle1",
             "damage @e[r=2,tag=!wbmsyh,tag=!immune] 48 fire_tick entity @s",
-            "damage @e[r=2,tag=!wbmsyh,tag=!immune] 0 selfDestruct entity @s"
+            "damage @e[r=2,tag=!wbmsyh,tag=!immune] 0 self_destruct entity @s"
           ]
         },
         "remove": {

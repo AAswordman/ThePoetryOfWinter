@@ -49,7 +49,7 @@
             "tag:comp:armor_type:suit_:senior_forget:_": {},
             "tag:comp:movement_addition:0.005":{},
             "tag:comp:sneak_movement_addition:0.005":{},
-            "tag:comp:attack_addition:2":{},
+            "tag:comp:attack_addition:1":{},
             "tag:comp:actual_level:5": {}
         }
     }

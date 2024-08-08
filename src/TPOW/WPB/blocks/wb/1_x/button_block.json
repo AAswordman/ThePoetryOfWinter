@@ -11,7 +11,8 @@
 			"minecraft:block_light_emission": 0.7,
 			"minecraft:creative_category": {
 				"category": "construction"
-			}
+			},
+            "tag:stone":{}
 		}
 	}
 }

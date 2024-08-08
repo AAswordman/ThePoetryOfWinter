@@ -28,6 +28,10 @@
     "textures": "portal_boss",
     "sound": "stone"
   },
+  "wb:portal_guardboss": {
+    "textures": "portal_boss",
+    "sound": "stone"
+  },
   "wb:portal_stoneboss": {
     "textures": "portal_stoneboss",
     "sound": "stone"

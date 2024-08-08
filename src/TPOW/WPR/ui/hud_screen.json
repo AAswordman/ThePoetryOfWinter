@@ -4726,6 +4726,14 @@
             }
         }]
     },
+    "hud_center_accessory_render": {
+        "type": "image",
+        "offset": [-0.5, -0.5],
+        "size": [5, 5],
+        "texture": "textures/ui/centerpoint",
+        "alpha": "$float_output_1",
+        "layer": 0
+    },
     "pom_health_render_item@image_clipper_item": {
         "type": "image",
         "offset": [50.5, 26],
@@ -4735,7 +4743,7 @@
         "anchor_to": "top_left",
         "clip_direction": "left",
         "clip_pixelperfect": false,
-        "alpha": 3
+        "alpha": 1
     },
     "pom_health2_render_item@image_clipper_item": {
         "type": "image",
@@ -4746,7 +4754,44 @@
         "anchor_to": "top_left",
         "clip_direction": "left",
         "clip_pixelperfect": false,
-        "alpha": 3
+        "alpha": 1
+    },
+    "pom_health4_render_item": {
+        "type": "image",
+        "offset": [50.5, 26],
+        "texture": "textures/wb_ui/hl_bg4_101_52",
+        "size": [78.5, 8.5],
+        "anchor_from": "top_left",
+        "anchor_to": "top_left",
+        "alpha":"$float_output_1"
+    },
+
+    "pom_health3_render_item_al1": {
+        "anim_type": "alpha",
+        "easing": "linear",
+        "duration": 0.4,
+        "from": 0,
+        "to": 0.3,
+        "next": "@hud.pom_health3_render_item_al3"
+    },
+    "pom_health3_render_item_al3": {
+        "anim_type": "wait",
+        "duration": 0.2,
+        "next": "@hud.pom_health3_render_item_al2"
+    },
+
+    "pom_health3_render_item_al2": {
+        "anim_type": "alpha",
+        "easing": "linear",
+        "duration": 0.3,
+        "from": 0.3,
+        "to": 0.0,
+        "next": "@hud.pom_health3_render_item_al4"
+    },
+    "pom_health3_render_item_al4": {
+        "anim_type": "wait",
+        "duration": 0.3,
+        "next": "@hud.pom_health3_render_item_al1"
     },
 
     "pom_armorCooling_render@image_clipper_item": {
@@ -4808,7 +4853,31 @@
         "clip_direction": "left",
         "clip_pixelperfect": false,
         "alpha": 1,
+        "layer": 3
+    },
+    "pom_addtionHealth3_render@image_clipper_item": {
+        "type": "image",
+        "offset": [48, 23.5],
+        "texture": "textures/wb_ui/hd_bg2_96_41",
+        "size": [83.5, 13.5],
+        "anchor_from": "top_left",
+        "anchor_to": "top_left",
+        "clip_direction": "left",
+        "clip_pixelperfect": false,
+        "alpha": 1,
         "layer": 2
+    },
+    "pom_addtionHealth4_render@image_clipper_item": {
+        "type": "image",
+        "offset": [48, 23.5],
+        "texture": "textures/wb_ui/hd_bg2_96_41",
+        "size": [83.5, 13.5],
+        "anchor_from": "top_left",
+        "anchor_to": "top_left",
+        "clip_direction": "left",
+        "clip_pixelperfect": false,
+        "alpha": 1,
+        "layer": 4
     },
     "pom_addtionHealth2_render@image_clipper_item": {
         "type": "image",
@@ -4820,13 +4889,82 @@
         "clip_direction": "left",
         "clip_pixelperfect": false,
         "alpha": 1,
-        "layer": 2
+        "layer": 5
     },
 
-
+    "hud_center_x": {
+        "type": "panel",
+        "$one": 1.0,
+        "$onessd": 0.5,
+        "anchor_from": "top_left",
+        "anchor_to": "top_left",
+        "offset": [0, 0],
+        "$actionbar_raw_text": "$actionbar_text",
+        "controls": [{
+            "c": {
+                "$var_index": 17,
+                "type": "panel",
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "layer": -5,
+                "offset": [0, 0],
+                "controls": [{
+                    "hud_center_x@persentage_paser": {
+                        "type": "panel",
+                        "anchor_from": "top_left",
+                        "anchor_to": "top_left",
+                        "offset": [0, 0],
+                        "controls": [{
+                            "bg_img_layout3@fuck_mojang_image_clipper": {
+                                "type": "panel",
+                                "$int_input_1": "('_' +($res1))",
+                                "$int_input_2": "('_' +($res2))",
+                                "$inner_view": "hud.hud_center_accessory_render",
+                                "anchor_from": "top_left",
+                                "anchor_to": "top_left",
+                                "offset": [0, 0]
+                            }
+                        }]
+                    }
+                }]
+            }
+        }]
+    },
+    "pom_hud_show_static": {
+        "type": "panel",
+        "anchor_from": "top_left",
+        "anchor_to": "top_left",
+        "offset": [0, 0],
+        "layer":0,
+        "controls": [{
+                "pom_health3_render_item": {
+                    "type": "image",
+                    "offset": [50.5, 26],
+                    "texture": "textures/wb_ui/hl_bg3_101_52",
+                    "size": [78.5, 8.5],
+                    "layer": 1,
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "alpha": "@hud.pom_health3_render_item_al1"
+                }
+            },
+            {
+                "pom_health3_render_item_bg": {
+                    "type": "image",
+                    "offset": [50.5, 26],
+                    "texture": "textures/wb_ui/hl_bg4_101_52",
+                    "size": [78.5, 8.5],
+                    "layer": 0,
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left"
+                }
+            }
+        ]
+    },
     "pom_hud_show": {
         "type": "panel",
         "$one": 1.0,
+        "layer":1,
         "$onessd": 0.5,
         "anchor_from": "top_left",
         "anchor_to": "top_left",
@@ -4844,7 +4982,7 @@
                             "type": "label",
                             "anchor_from": "top_left",
                             "anchor_to": "top_left",
-                            "layer": 5,
+                            "layer": 10,
                             "font_scale_factor": 0.8,
                             "color": "$chat_text_color",
                             "text": "('§r' + $res)",
@@ -5079,7 +5217,7 @@
                     "type": "panel",
                     "anchor_from": "top_left",
                     "anchor_to": "top_left",
-                    "layer": 4,
+                    "layer": 5,
                     "offset": [0, 0],
                     "controls": [{
                         "pom_health_render_layout2@persentage_paser": {
@@ -5094,8 +5232,9 @@
                                     "$int_input_2": "('_' +(100 - $res2))",
                                     "$inner_view": "hud.pom_health_render_item",
                                     "anchor_from": "top_left",
+                                    "$anim_time": 0.3,
+                                    "$anim_type": "out_circ",
                                     "anchor_to": "top_left",
-                                    "$anim_time": 0.0,
                                     "offset": [0, 0]
                                 }
                             }]
@@ -5135,6 +5274,35 @@
                 }
             },
             {
+                "pom_health3_render_layout": {
+                    "$var_index": 1,
+                    "type": "panel",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "layer": 2,
+                    "offset": [0, 0],
+                    "controls": [{
+                        "pom_health3_render_layout2@persentage_paser": {
+                            "type": "panel",
+                            "anchor_from": "top_left",
+                            "anchor_to": "top_left",
+                            "offset": [0, 0],
+                            "controls": [{
+                                "pom_health3_render_layout3@fuck_mojang_image_clipper": {
+                                    "type": "panel",
+                                    "$int_input_1": "('_' +($res1))",
+                                    "$int_input_2": "('_' +($res2))",
+                                    "$inner_view": "hud.pom_health4_render_item",
+                                    "anchor_from": "top_left",
+                                    "anchor_to": "top_left",
+                                    "offset": [0, 0]
+                                }
+                            }]
+                        }
+                    }]
+                }
+            },
+            {
                 "pom_addtionHealth_render_layout": {
                     "$var_index": 6,
                     "type": "panel",
@@ -5155,6 +5323,69 @@
                                     "$int_input_2": "('_' +(100 - $res2))",
                                     "$inner_view": "hud.pom_addtionHealth_render",
                                     "anchor_from": "top_left",
+                                    "anchor_to": "top_left",
+                                    "$anim_time": 0.0,
+                                    "offset": [0, 0]
+                                }
+                            }]
+                        }
+                    }]
+                }
+            },
+            {
+                "pom_addtionHealth3_render_layout": {
+                    "$var_index": 6,
+                    "type": "panel",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "layer": 0,
+                    "offset": [0, 0],
+                    "controls": [{
+                        "pom_addtionHealth3_render_layout2@persentage_paser": {
+                            "type": "panel",
+                            "anchor_from": "top_left",
+                            "anchor_to": "top_left",
+                            "offset": [0, 0],
+                            "controls": [{
+                                "pom_addtionHealth3_render_layout3@fuck_mojang_image_clipper": {
+                                    "type": "panel",
+                                    "$int_input_1": "('_' +(100 - $res1))",
+                                    "$int_input_2": "('_' +(100 - $res2))",
+                                    "$inner_view": "hud.pom_addtionHealth3_render",
+                                    "anchor_from": "top_left",
+                                    "anchor_to": "top_left",
+                                    "$anim_time": 0.3,
+                                    "$anim_type": "out_circ",
+                                    "offset": [0, 0]
+                                }
+                            }]
+                        }
+                    }]
+                }
+            },
+            {
+                "pom_addtionHealt4_render_layout": {
+                    "$var_index": 10,
+                    "type": "panel",
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left",
+                    "layer": 0,
+                    "offset": [0, 0],
+                    "controls": [{
+                        "pom_addtionHealth4_render_layout2@persentage_paser": {
+                            "type": "panel",
+                            "anchor_from": "top_left",
+                            "anchor_to": "top_left",
+                            "offset": [0, 0],
+                            "controls": [{
+                                "pom_addtionHealth4_render_layout3@fuck_mojang_image_clipper": {
+                                    "type": "panel",
+                                    "$int_input_1": "('_' +(100 - $res1))",
+                                    "$int_input_2": "('_' +(100 - $res2))",
+                                    "$inner_view": "hud.pom_addtionHealth4_render",
+                                    "anchor_from": "top_left",
+                                    "$anim_time": 0.3,
+                                    "$anim_type": "out_circ",
                                     "anchor_to": "top_left",
                                     "offset": [0, 0]
                                 }
@@ -5185,6 +5416,7 @@
                                     "$inner_view": "hud.pom_addtionHealth2_render",
                                     "anchor_from": "top_left",
                                     "anchor_to": "top_left",
+                                    "$anim_time": 0.0,
                                     "offset": [0, 0]
                                 }
                             }]
@@ -5464,15 +5696,20 @@
                 }
             },
             {
-                "c": {
-                    "type": "image",
-                    "offset": [-0.5, -0.5],
-                    "size": [5, 5],
-                    "texture": "textures/ui/centerpoint",
-                    "alpha": 0.6,
-                    "layer": 0
+                "hud_center_x": {
+                    "layer": 4,
+                    "type": "panel",
+                    "anchor_from": "center",
+                    "anchor_to": "center",
+                    "factory": {
+                        "name": "hud_actionbar_text_factory",
+                        "control_ids": {
+                            "hud_actionbar_text": "hud_center_x@hud_center_x"
+                        }
+                    }
                 }
             },
+
             {
                 "main_ui_layout": {
                     "type": "panel",
@@ -5512,6 +5749,9 @@
                                     }
                                 }
                             }
+                        },
+                        {
+                            "pom_hud_show_static@pom_hud_show_static": {}
                         }
                     ]
                 }
@@ -5535,30 +5775,18 @@
                 "not_centered_gui_elements": {
                     "type": "panel",
                     "controls": [{
-                            "text": {
-                                "type": "label",
-                                "anchor_to": "bottom_middle",
-                                "anchor_from": "bottom_middle",
-                                "offset": [0, -50],
-                                "layer": 1,
-                                "alpha": 0.5,
-                                "text": "为了最佳游戏体验，建议前往设置/视频 切换经典UI",
-                                "color": [1, 1, 1, 1]
+                        "text": {
+                            "type": "label",
+                            "anchor_to": "bottom_middle",
+                            "anchor_from": "bottom_middle",
+                            "offset": [0, -50],
+                            "layer": 1,
+                            "alpha": 0.5,
+                            "text": "为了最佳游戏体验，建议前往设置/视频 切换经典UI",
+                            "color": [1, 1, 1, 1]
 
-                            }
                         }
-                        //     {
-                        //     "text": {
-                        //         "type": "label",
-                        //         "anchor_to": "bottom_middle",
-                        //         "anchor_from": "bottom_middle",
-                        //         "offset": [20, -50],
-                        //         "layer": 1,
-                        //         "text": "Please use classical ui\n请使用经典UI\nIf you dont't known how to change it,please google\n如果你不会，请百度",
-                        //         "color": [1, 1, 1, 1]
-                        //     }
-                        // }
-                    ],
+                    }],
                     "bindings": [{
                         "binding_name": "#hud_visible_not_centered",
                         "binding_name_override": "#visible",

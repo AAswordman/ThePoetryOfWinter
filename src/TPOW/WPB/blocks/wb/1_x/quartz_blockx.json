@@ -6,11 +6,12 @@
 			"is_experimental": false
 		},
 		"components": {
-			"minecraft:destroy_time": 4,
+			"minecraft:destroy_time": 3,
 			"minecraft:explosion_resistance": 6,
 			"minecraft:creative_category": {
 				"category": "construction"
-			}
+			},
+            "tag:stone":{}
 		}
 	}
 }
