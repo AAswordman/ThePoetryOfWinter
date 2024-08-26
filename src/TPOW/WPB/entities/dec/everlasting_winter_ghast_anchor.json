@@ -44,7 +44,7 @@
         }
       },
       "minecraft:die": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "loot spawn ~~1~ loot \"entities/everlasting_winter_ghast\"",
             "particle dec:frozen_shield_particle ~~1~",
@@ -53,14 +53,14 @@
         }
       },
       "minecraft:summon_laser": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "execute at @a[r=64,c=1,tag=gaming] run summon dec:group ~~~ 0 0 minecraft:select_laser"
           ]
         }
       },
       "minecraft:summon_ice_thorn": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "execute at @a[r=64,c=1,tag=gaming] run summon dec:group ~~~ 0 0 minecraft:select_ice_thorn"
           ]

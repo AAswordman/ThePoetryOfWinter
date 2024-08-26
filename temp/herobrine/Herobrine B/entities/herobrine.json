@@ -82,7 +82,7 @@
 						"miss"
 					]
 				},
-				"run_command": {
+				"queue_command": {
 					"command": [
 						"spreadplayers ~ ~ 16 64 @s",
 						"playsound ambient.cave @a ~~~ 10"
@@ -95,7 +95,7 @@
 						"miss"
 					]
 				},
-				"run_command": {
+				"queue_command": {
 					"command": [
 						"spreadplayers ~ ~ 16 64 @s"
 					]

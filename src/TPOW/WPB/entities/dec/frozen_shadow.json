@@ -94,7 +94,7 @@
         }
       },
       "minecraft:attack": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "particle dec:frozen_shield_particle ~~~",
             "event entity @s minecraft:despawn"

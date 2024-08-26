@@ -198,7 +198,7 @@
 
     "events": {
       "minecraft:loot": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "kill @s"
           ]
@@ -211,7 +211,7 @@
         "add": {
           "component_groups": [ "die" ]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
             "particle dec:zombie_fish_cloud_particle ~~~"
           ]

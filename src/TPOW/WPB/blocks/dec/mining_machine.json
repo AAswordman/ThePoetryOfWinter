@@ -1,43 +1,25 @@
 {
-    "format_version": "1.16.0",
+    "format_version": "1.20.80",
     "minecraft:block": {
         "description": {
-            "identifier": "dec:mining_machine"
-        },
-        "components": {
-            "minecraft:creative_category": {
+            "identifier": "dec:mining_machine",
+            "menu_category": {
                 "group": "itemGroup.name.outside",
                 "category": "items"
-            },
-            "minecraft:light_dampening": 15,
-            "minecraft:light_emission": 0,
-            "minecraft:destroy_time": 3,
-            "minecraft:explosion_resistance": 10,
-            "minecraft:map_color": "#3C3B3B",
-            "minecraft:loot": "loot_tables/blocks/mining_machine.json",
-            "tag:stone": {},
-            "minecraft:on_interact": {
-                "event": "activate",
-                "condition": "query.get_equipped_item_name('main_hand') == 'pulse_stone'"
             }
         },
-        "events": {
-            "activate": {
-                "run_command": {
-                    "command": [
-                        "fill ~-1~-1~-1~1 0 ~1 air [] replace gravel []",
-                        "fill ~-1~-1~-1~1 0 ~1 air [] replace stone []",
-                        "fill ~-1~-1~-1~1 0 ~1 air [] replace dirt []",
-                        "fill ~-1~-1~-1~1 0 ~1 air [] replace sand []",
-                        "fill ~-1~-1~-1~1 0 ~1 air [] replace sandstone []",
-                        "fill ~-1~-1~-1~1 0 ~1 air [] replace red_sandstone []",
-                        "fill ~-1~-1~-1~1 0 ~1 air [] replace end_stone []",
-                        "fill ~-1~-1~-1~1 0 ~1 air [] replace grass []",
-                        "fill ~-1~-1~-1~1 0 ~1 air [] replace netherrack []"
-                    ]
-                },
-                "decrement_stack": {}
-            }
+        "components": {
+            "minecraft:light_dampening": 15,
+            "minecraft:light_emission": 0,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 3
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 10
+            },
+            "minecraft:map_color": "#3C3B3B",
+            "minecraft:loot": "loot_tables/blocks/mining_machine.json",
+            "tag:stone": {}
         }
     }
 }

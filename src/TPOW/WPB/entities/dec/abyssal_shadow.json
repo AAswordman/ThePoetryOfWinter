@@ -177,7 +177,7 @@
 		},
 		"events": {
 			"minecraft:explode": {
-				"run_command": {
+				"queue_command": {
 					"command": [
 						"particle dec:abyssal_shadow_disappear_particle ~~~"
 					]

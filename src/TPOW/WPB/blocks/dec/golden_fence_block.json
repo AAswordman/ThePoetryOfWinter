@@ -1,9 +1,9 @@
 {
-    "format_version": "1.16.100",
+    "format_version": "1.20.80",
     "minecraft:block": {
         "description": {
             "identifier": "dec:golden_fence_block",
-            "properties": {
+            "states": {
                 "dec:location": [
                     0,
                     1
@@ -14,6 +14,10 @@
                     "east",
                     "west"
                 ]
+            },
+            "menu_category": {
+                "group": "itemGroup.name.outside",
+                "category": "construction"
             }
         },
         "permutations": [
@@ -27,7 +31,7 @@
                         }
                     },
                     "minecraft:geometry": "geometry.golden_fence_block",
-                    "minecraft:pick_collision": {
+                    "minecraft:selection_box": {
                         "origin": [
                             -8,
                             0,
@@ -39,7 +43,7 @@
                             4
                         ]
                     },
-                    "minecraft:entity_collision": {
+                    "minecraft:collision_box": {
                         "origin": [
                             -8,
                             0,
@@ -63,7 +67,7 @@
                             "render_method": "alpha_test"
                         }
                     },
-                    "minecraft:pick_collision": {
+                    "minecraft:selection_box": {
                         "origin": [
                             -8,
                             0,
@@ -75,7 +79,7 @@
                             4
                         ]
                     },
-                    "minecraft:entity_collision": {
+                    "minecraft:collision_box": {
                         "origin": [
                             -8,
                             0,
@@ -92,82 +96,61 @@
             {
                 "condition": "q.block_state('dec:facing') == 'north'",
                 "components": {
-                    "minecraft:rotation": [
-                        0,
-                        0,
-                        0
-                    ]
+                    "minecraft:transformation": {
+                        "minecraft:rotation": [
+                            0,
+                            0,
+                            0
+                        ]
+                    }
                 }
             },
             {
                 "condition": "q.block_state('dec:facing') == 'south'",
                 "components": {
-                    "minecraft:rotation": [
-                        0,
-                        180,
-                        0
-                    ]
+                    "minecraft:transformation": {
+                        "minecraft:rotation": [
+                            0,
+                            180,
+                            0
+                        ]
+                    }
                 }
             },
             {
                 "condition": "q.block_state('dec:facing') == 'west'",
                 "components": {
-                    "minecraft:rotation": [
-                        0,
-                        90,
-                        0
-                    ]
+                    "minecraft:transformation": {
+                        "minecraft:rotation": [
+                            0,
+                            90,
+                            0
+                        ]
+                    }
                 }
             },
             {
                 "condition": "q.block_state('dec:facing') == 'east'",
                 "components": {
-                    "minecraft:rotation": [
-                        0,
-                        -90,
-                        0
-                    ]
+                    "minecraft:transformation": {
+                        "minecraft:rotation": [
+                            0,
+                            -90,
+                            0
+                        ]
+                    }
                 }
             }
         ],
-        "events": {
-            "on_player_placing": {
-                "sequence": [
-                    {
-                        "condition": "q.cardinal_facing_2d == 2",
-                        "set_block_state": {
-                            "dec:facing": "'south'"
-                        }
-                    },
-                    {
-                        "condition": "q.cardinal_facing_2d == 3",
-                        "set_block_state": {
-                            "dec:facing": "'north'"
-                        }
-                    },
-                    {
-                        "condition": "q.cardinal_facing_2d == 4",
-                        "set_block_state": {
-                            "dec:facing": "'east'"
-                        }
-                    },
-                    {
-                        "condition": "q.cardinal_facing_2d == 5",
-                        "set_block_state": {
-                            "dec:facing": "'west'"
-                        }
-                    }
-                ]
-            }
-        },
         "components": {
-            "minecraft:on_player_placing": {
-                "event": "on_player_placing"
-            },
             "minecraft:light_dampening": 0,
             "minecraft:light_emission": 0,
-            "minecraft:destroy_time": 2,
-            "minecraft:explosion_resistance": 30,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 2
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 30
+            },
             "minecraft:loot": "loot_tables/blocks/golden_fence_block.json",
             "minecraft:map_color": "#7D5A39",
             "tag:metal": {}

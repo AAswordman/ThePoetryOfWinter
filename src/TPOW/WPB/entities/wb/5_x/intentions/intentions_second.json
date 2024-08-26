@@ -389,7 +389,7 @@
             },
             "sss": {
                 "randomize": [{
-                        "run_command": {
+                        "queue_command": {
                             "command": [
                                 "summon wb:shadow_intentions_secondx",
                                 "summon wb:shadow_intentions_secondx",
@@ -418,7 +418,7 @@
                         }
                     },
                     {
-                        "run_command": {
+                        "queue_command": {
                             "command": [
                                 "summon wb:shadow_intentions_secondx",
                                 "summon wb:shadow_intentions_secondx",
@@ -447,7 +447,7 @@
                         }
                     },
                     {
-                        "run_command": {
+                        "queue_command": {
                             "command": [
                                 "summon wb:shadow_intentions_secondx",
                                 "summon wb:shadow_intentions_secondx",
@@ -476,7 +476,7 @@
                         }
                     },
                     {
-                        "run_command": {
+                        "queue_command": {
                             "command": [
                                 "summon wb:shadow_intentions_secondx",
                                 "summon wb:shadow_intentions_secondx",
@@ -504,7 +504,7 @@
                         }
                     },
                     {
-                        "run_command": {
+                        "queue_command": {
                             "command": [
                                 "summon wb:shadow_intentions_secondx",
                                 "summon wb:shadow_intentions_secondx",

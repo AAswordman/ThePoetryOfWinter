@@ -38,7 +38,7 @@
     },
     "events": {
       "minecraft:entity_spawned": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "spreadplayers ~~ 16 32 @s"
           ],
@@ -58,7 +58,7 @@
             "randomize": [
               {
                 "weight": 1,
-                "run_command": {
+                "queue_command": {
                   "command": [
                     "summon dec:shadow_archer ~~~ 0 0 minecraft:from_night_event"
                   ],
@@ -67,7 +67,7 @@
               },
               {
                 "weight": 1,
-                "run_command": {
+                "queue_command": {
                   "command": [
                     "summon dec:shadow_creeper ~~~ 0 0 minecraft:from_night_event"
                   ],
@@ -76,7 +76,7 @@
               },
               {
                 "weight": 1,
-                "run_command": {
+                "queue_command": {
                   "command": [
                     "summon dec:shadow_skeleton ~~~ 0 0 minecraft:from_night_event"
                   ],
@@ -85,7 +85,7 @@
               },
               {
                 "weight": 1,
-                "run_command": {
+                "queue_command": {
                   "command": [
                     "summon dec:shadow_zombie ~~~ 0 0 minecraft:from_night_event"
                   ],

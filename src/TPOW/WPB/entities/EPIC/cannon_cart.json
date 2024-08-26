@@ -693,7 +693,7 @@
             "cannon_cart_form_untamed"
           ]
         },
-        "run_command":{
+        "queue_command":{
           "command":[
          "tag @s add wbmsyh"
          ]
@@ -715,7 +715,7 @@
             "cannon_cart_form_untamed","cannon_form_untamed"
           ]
         },
-        "run_command":{
+        "queue_command":{
           "command":[
          "tag @s add wbmsyh"
          ]
@@ -748,7 +748,7 @@
             "can_attack","protect_owner","attack_monster","attack_all","can_move","cannot_move","following","free"
           ]
         },
-        "run_command":{
+        "queue_command":{
           "command":[
          "tag @s add wbmsyh"
          ]
@@ -782,7 +782,7 @@
             "cannon_form"
           ]
         },
-        "run_command":{
+        "queue_command":{
           "command":[
          "tag @s add wbmsyh"
          ]
@@ -797,14 +797,14 @@
 
       
       "alliance_on": {
-        "run_command":{
+        "queue_command":{
           "command":[
          "tag @s add wbmsyh"
          ]
         }
       },
       "alliance_off": {
-        "run_command":{
+        "queue_command":{
           "command":[
          "tag @s remove wbmsyh"
          ]
@@ -882,7 +882,7 @@
             "npc_module"
           ]
         },
-        "run_command":{
+        "queue_command":{
           "command":[
           "dialogue open @s @p[r=3,hasitem={location=slot.weapon.mainhand,item=epic:machanical_operator}] cannon_cart_menu"
          ]
@@ -895,7 +895,7 @@
             "npc_module"
           ]
         },
-        "run_command":{
+        "queue_command":{
           "command":[
           "dialogue open @s @p[r=3,hasitem={location=slot.weapon.mainhand,item=epic:machanical_operator}] cannon_menu"
          ]

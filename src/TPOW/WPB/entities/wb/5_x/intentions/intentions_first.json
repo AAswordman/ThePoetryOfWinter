@@ -496,7 +496,7 @@
                 ]
             },
             "minecraft:entity_spawned": {
-                "run_command": {
+                "queue_command": {
                     "command": [
                         "particle wb:intentions_summon_par ~~~"
                     ],

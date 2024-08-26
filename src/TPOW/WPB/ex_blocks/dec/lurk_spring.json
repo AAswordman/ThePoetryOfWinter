@@ -1,0 +1,53 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dec:lurk_spring",
+            "menu_category": {
+                "group": "itemGroup.name.sapling",
+                "category": "nature"
+            }
+        },
+        "components": {
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "lurk_spring",
+                    "render_method": "alpha_test"
+                }
+            },
+            "minecraft:geometry": "geometry.crop.sparse.on_dirt",
+            "minecraft:collision_box": false,
+            "minecraft:selection_box": {
+                "origin": [
+                    -6,
+                    0,
+                    -6
+                ],
+                "size": [
+                    12,
+                    15,
+                    12
+                ]
+            },
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 0.001
+            },
+            "minecraft:map_color": "#00847D",
+            "minecraft:light_dampening": 0.0,
+            "minecraft:loot": "loot_tables/blocks/lurk_spring.json",
+            "minecraft:placement_filter": {
+                "conditions": [
+                    {
+                        "allowed_faces": [
+                            "up"
+                        ],
+                        "block_filter": [
+                            "end_stone",
+                            "dec:lurk_end_stone"
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

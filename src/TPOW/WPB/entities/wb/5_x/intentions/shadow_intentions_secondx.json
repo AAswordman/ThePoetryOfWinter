@@ -109,7 +109,7 @@
     },
     "events": {
       "tag": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "tag @s add wbboss"
           ]

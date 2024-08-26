@@ -353,7 +353,7 @@
     },
     "events": {
       "minecraft:invisibility": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "effect @s invisibility 3 0"
           ]
@@ -372,7 +372,7 @@
             "minecraft:shadow_of_sea_angry"
           ]
         },
-        "run_command":  {
+        "queue_command":  {
           "command": [
             "effect @s invisibility 3 0 true"
           ]

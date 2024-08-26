@@ -65,7 +65,7 @@
     },
     "events": {
       "minecraft:explode": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "fill ~-2~-2~-2~2~2~2 dec:ash replace lava [\"liquid_depth\"=0]",
             "particle dec:sticky_ash_particle ~~~",

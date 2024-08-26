@@ -1,20 +1,24 @@
 {
-    "format_version": "1.16.100",
+    "format_version": "1.20.80",
     "minecraft:block": {
         "description": {
             "identifier": "dec:patterned_vase_red_block",
-            "properties": {
+            "states": {
                 "dec:location": [
                     0,
                     1
                 ]
+            },
+            "menu_category": {
+                "group": "itemGroup.name.outside",
+                "category": "construction"
             }
         },
         "permutations": [
             {
                 "condition": "q.block_state('dec:location') == 0",
                 "components": {
-                    "minecraft:pick_collision": {
+                    "minecraft:selection_box": {
                         "origin": [
                             -8,
                             0,
@@ -26,7 +30,7 @@
                             16
                         ]
                     },
-                    "minecraft:entity_collision": {
+                    "minecraft:collision_box": {
                         "origin": [
                             -8,
                             0,
@@ -45,7 +49,7 @@
             {
                 "condition": "q.block_state('dec:location') == 1",
                 "components": {
-                    "minecraft:pick_collision": {
+                    "minecraft:selection_box": {
                         "origin": [
                             -8,
                             0,
@@ -57,7 +61,7 @@
                             16
                         ]
                     },
-                    "minecraft:entity_collision": {
+                    "minecraft:collision_box": {
                         "origin": [
                             -8,
                             0,
@@ -84,11 +88,11 @@
             "minecraft:geometry": "geometry.patterned_vase_red",
             "minecraft:map_color": "#D8C5C4",
             "minecraft:loot": "loot_tables/blocks/patterned_vase_red.json",
-            "minecraft:light_emission": 0.0,
-            "minecraft:destroy_time": 0,
+            "minecraft:light_emission": 0,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 0
+            },
             "tag:stone": {}
-        },
-        "events": {
         }
     }
 }

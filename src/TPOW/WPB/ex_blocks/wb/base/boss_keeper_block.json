@@ -1,0 +1,69 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:block": {
+        "description": {
+            "identifier": "wb:boss_keeper_block",
+            "is_experimental": false,
+            "menu_category": {
+                "category": "construction"
+            }
+        },
+        "events": {
+            "tick": {
+                "sequence": [
+                    {
+                        "run_command": {
+                            "command": [
+                                "tag @a[r=57] add wbldcza",
+                                "tag @a[r=57] add wbldczb",
+                                "tag @a[r=57] add wbldkza",
+                                "tag @a[r=57] add wbldkzb",
+                                "tag @a[r=57] add wbldkzc",
+                                "scoreboard players set @a[r=57] wbldcg 9999999",
+                                "tp @e[type=wb:magic_crystal,r=64,c=1] ~~~",
+                                "tp @e[tag=wbboss,x=~-40,z=~-40,dz=81,y=190,dy=21,dx=4] ~ ~ ~",
+                                "tp @e[tag=wbboss,x=~+36,z=~-40,dz=81,y=190,dy=21,dx=4] ~ ~ ~",
+                                "tp @e[tag=wbboss,x=~-40,dx=81,z=~-40,y=190,dy=21,dz=4] ~ ~ ~",
+                                "tp @e[tag=wbboss,x=~-40,dx=81,z=~+36,y=190,dy=21,dz=4] ~ ~ ~",
+                                "execute as @e[tag=wbboss,x=~-40,z=~-40,dx=81,dz=81,y=205,dy=6] at @s run tp @s ~ ~-4 ~",
+                                "tp @a[x=~-40,z=~-40,dz=81,y=190,dy=21,dx=4] ~ ~ ~",
+                                "tp @a[x=~+36,z=~-40,dz=81,y=190,dy=21,dx=4] ~ ~ ~",
+                                "tp @a[x=~-40,dx=81,z=~-40,y=190,dy=21,dz=4] ~ ~ ~",
+                                "tp @a[x=~-40,dx=81,z=~+36,y=190,dy=21,dz=4] ~ ~ ~",
+                                "execute as @a[x=~-40,z=~-40,dx=81,dz=81,y=205,dy=6] at @s run tp @s ~ ~-4 ~",
+                                "tp @a[tag=wbdie] ~ ~-58 ~"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        "components": {
+            "minecraft:light_dampening": 1,
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "boss_keeper_block",
+                    "render_method": "alpha_test"
+                }
+            },
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 1000000000
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 1000000000
+            },
+            "minecraft:light_emission": 0.6,
+            "minecraft:map_color": "#2222dd",
+            "minecraft:ticking": {
+                "range": [
+                    0.05,
+                    0.05
+                ],
+                "on_tick": {
+                    "event": "tick"
+                },
+                "looping": true
+            }
+        }
+    }
+}

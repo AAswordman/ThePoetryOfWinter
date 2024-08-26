@@ -80,7 +80,7 @@
           },
           {
             "weight": 3,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "summon dec:friendly_little_soul ~~~",
                 "particle dec:ghost_spurt_particle ~~1~"

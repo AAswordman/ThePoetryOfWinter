@@ -74,7 +74,7 @@
         "randomize": [
           {
             "weight": 2,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "function entity/snow_energy_spawn/1",
                 "event entity @s minecraft:despawn"
@@ -83,7 +83,7 @@
           },
           {
             "weight": 2,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "function entity/snow_energy_spawn/2",
                 "event entity @s minecraft:despawn"
@@ -92,7 +92,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "function entity/snow_energy_spawn/3",
                 "event entity @s minecraft:despawn"
@@ -101,7 +101,7 @@
           },
           {
             "weight": 2,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "function entity/snow_energy_spawn/4",
                 "event entity @s minecraft:despawn"
@@ -110,7 +110,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "function entity/snow_energy_spawn/5",
                 "event entity @s minecraft:despawn"
@@ -119,7 +119,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "function entity/snow_energy_spawn/6",
                 "event entity @s minecraft:despawn"

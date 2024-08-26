@@ -38,7 +38,7 @@
     },
     "events": {
       "minecraft:entity_spawned": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "spreadplayers ~~ 16 32 @s"
           ],
@@ -58,7 +58,7 @@
             "randomize": [
               {
                 "weight": 40,
-                "run_command": {
+                "queue_command": {
                   "command": [
                     "summon skeleton ~~~"
                   ],
@@ -67,7 +67,7 @@
               },
               {
                 "weight": 40,
-                "run_command": {
+                "queue_command": {
                   "command": [
                     "summon dec:skeleton_warrior ~~~"
                   ],
@@ -76,7 +76,7 @@
               },
               {
                 "weight": 10,
-                "run_command": {
+                "queue_command": {
                   "command": [
                     "summon dec:mystical_skeleton ~~~"
                   ],
@@ -85,7 +85,7 @@
               },
               {
                 "weight": 20,
-                "run_command": {
+                "queue_command": {
                   "command": [
                     "summon dec:skeleton_wizard ~~~"
                   ],
@@ -94,7 +94,7 @@
               },
               {
                 "weight": 30,
-                "run_command": {
+                "queue_command": {
                   "command": [
                     "summon dec:skeleton_knight ~~~"
                   ],
@@ -103,7 +103,7 @@
               },
               {
                 "weight": 2,
-                "run_command": {
+                "queue_command": {
                   "command": [
                     "summon dec:skeleton_knight ~~~",
                     "summon skeleton_horse ~~~"
@@ -113,7 +113,7 @@
               },
               {
                 "weight": 1,
-                "run_command": {
+                "queue_command": {
                   "command": [
                     "summon dec:soul_skeleton ~~~ 0 0 minecraft:from_night_event"
                   ],
@@ -122,7 +122,7 @@
               },
               {
                 "weight": 1,
-                "run_command": {
+                "queue_command": {
                   "command": [
                     "summon dec:mummy_skeleton ~~~ 0 0 minecraft:from_night_event"
                   ],
@@ -131,7 +131,7 @@
               },
               {
                 "weight": 1,
-                "run_command": {
+                "queue_command": {
                   "command": [
                     "summon wither_skeleton ~~~ 0 0 minecraft:from_night_event"
                   ],
@@ -140,7 +140,7 @@
               },
               {
                 "weight": 1,
-                "run_command": {
+                "queue_command": {
                   "command": [
                     "summon dec:skeleton_assassin ~~~ 0 0 minecraft:from_night_event"
                   ],
@@ -149,7 +149,7 @@
               },
               {
                 "weight": 1,
-                "run_command": {
+                "queue_command": {
                   "command": [
                     "summon dec:nether_skeleton_wizard ~~~ 0 0 minecraft:from_night_event"
                   ],
@@ -158,7 +158,7 @@
               },
               {
                 "weight": 1,
-                "run_command": {
+                "queue_command": {
                   "command": [
                     "summon dec:nether_skeleton ~~~ 0 0 minecraft:from_night_event"
                   ],
@@ -167,7 +167,7 @@
               },
               {
                 "weight": 1,
-                "run_command": {
+                "queue_command": {
                   "command": [
                     "summon dec:warped_skeleton ~~~ 0 0 minecraft:from_night_event"
                   ],
@@ -176,7 +176,7 @@
               },
               {
                 "weight": 1,
-                "run_command": {
+                "queue_command": {
                   "command": [
                     "summon dec:radiate_skeleton ~~~ 0 0 minecraft:from_night_event"
                   ],
@@ -185,7 +185,7 @@
               },
               {
                 "weight": 1,
-                "run_command": {
+                "queue_command": {
                   "command": [
                     "execute unless entity @e[r=32,type=dec:skeleton_knight_commander] run tag @s add skeleton_knight_commander_success",
                     "execute if entity @s[tag=skeleton_knight_commander_success] run summon dec:skeleton_knight_commander ~~~ 0 0 minecraft:from_night_event",

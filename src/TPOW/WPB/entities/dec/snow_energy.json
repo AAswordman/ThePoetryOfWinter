@@ -65,7 +65,7 @@
     },
     "events": {
       "minecraft:particle": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "particle dec:everlasting_winter_wake_particle ~~~"
           ]

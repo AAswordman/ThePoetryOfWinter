@@ -77,7 +77,7 @@
               "test": "in_water_or_rain",
               "value": true
             },
-            "run_command": {
+            "queue_command": {
               "command": [
                 "damage @e[r=3,type=!item] 14 entity_explosion",
                 "particle dec:bubble_spurt_small_particle ~~~",

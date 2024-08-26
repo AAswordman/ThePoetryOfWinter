@@ -1,0 +1,45 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dec:monitor_activated",
+            "menu_category": {
+                "group": "itemGroup.name.outside",
+                "category": "construction"
+            }
+        },
+        "components": {
+            "minecraft:light_dampening": 15,
+            "minecraft:light_emission": 0.3,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 3
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 50
+            },
+            "minecraft:map_color": "#27C3C2",
+            "minecraft:loot": "loot_tables/blocks/monitor.json",
+            "minecraft:ticking": {
+                "looping": true,
+                "range": [
+                    2,
+                    4
+                ],
+                "on_tick": {
+                    "event": "look",
+                    "target": "self"
+                }
+            },
+            "tag:wood": {}
+        },
+        "events": {
+            "look": {
+                "run_command": {
+                    "command": [
+                        "effect @a[r=10,tag=gaming] mining_fatigue 5"
+                    ]
+                }
+            }
+        }
+    }
+}

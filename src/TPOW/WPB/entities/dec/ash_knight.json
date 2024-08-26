@@ -410,7 +410,7 @@
     },
     "events": {
       "minecraft:next": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "summon dec:ash_sword"
             //这里记得改"summon dec:ash_monster",
@@ -465,7 +465,7 @@
       "minecraft:attack_then_walk": {
         "randomize": [
           {
-            "run_command": {
+            "queue_command": {
               "command": [
                 "execute unless entity @e[type=dec:ash_horse,r=5] run tag @s add attack_then_run",
                 "execute if entity @s[tag=attack_then_run] run summon dec:ash_sword_phantom ~1~5~1",
@@ -478,7 +478,7 @@
             "weight": 3
           },
           {
-            "run_command": {
+            "queue_command": {
               "command": [
                 "execute unless entity @e[type=dec:ash_horse,r=5] run tag @s add attack_then_run",
                 "execute if entity @s[tag=attack_then_run] run summon dec:group ~~~ 0 0 minecraft:select_blackstone_thorn",
@@ -527,7 +527,7 @@
         }
       },
       "minecraft:thorn_attack": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "execute if entity @a[r=64,c=1,tag=gaming] run playanimation @s animation.ash_knight.summon",
             "execute at @a[r=64,c=1,tag=gaming] run summon dec:group ~~~ 0 0 minecraft:select_blackstone_thorn"
@@ -541,7 +541,7 @@
         }
       },
       "minecraft:sword_attack": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "playanimation @s animation.ash_knight.summon",
             "summon dec:ash_sword_phantom ^3^1^",

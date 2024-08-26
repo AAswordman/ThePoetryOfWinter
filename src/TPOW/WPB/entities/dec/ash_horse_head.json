@@ -182,7 +182,7 @@
     },
     "events": {
       "minecraft:next": {
-        "run_command": {
+        "queue_command": {
           "command": [//这里也记得改
             "summon dec:ash_monster ~~~",
             "summon dec:ash_monster ~~~"

@@ -1,0 +1,42 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es2017",
+        "outDir": "build",
+        "lib": [
+            "ES6", "DOM","ES2020"
+        ],
+        "sourceMap": true,
+        //"rootDir": "ExcellentMInecraftscripts/src",
+        "moduleResolution": "node",
+        "strict": true,
+        "downlevelIteration": true,
+        "alwaysStrict": true,
+        "resolveJsonModule": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "allowJs": true,
+        "skipLibCheck": true,
+        "noImplicitOverride": true,
+        "strictNullChecks": true,
+        "forceConsistentCasingInFileNames": true,
+        "noEmitOnError": true
+        // "allowUnreachableCode": true,
+        // "allowUnusedLabels": true
+        /*
+        "module":"system",
+        "outFile": "./out.js",
+        "rootDir": "src"
+        */
+        /* Additional Checks */
+        // "noImplicitReturns": true, /* Report error when not all code paths in function return a value. */
+        // "noFallthroughCasesInSwitch": true, /* Report errors for fallthrough cases in switch statement. */
+        // "noUnusedParameters": true,  /* Report errors on unused parameters. */
+    },
+    "exclude": [
+        "node_modules"
+    ],
+    "include": [
+        "src/builder"
+    ]
+}

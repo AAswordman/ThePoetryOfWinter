@@ -1,0 +1,42 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dec:nuke_block",
+            "menu_category": {
+                "group": "itemGroup.name.outside",
+                "category": "items"
+            }
+        },
+        "components": {
+            "minecraft:light_dampening": 15,
+            "minecraft:light_emission": 0,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 1
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 10
+            },
+            "minecraft:map_color": "#B11527",
+            "minecraft:loot": "loot_tables/blocks/nuke_block.json",
+            "minecraft:on_interact": {
+                "event": "unlock",
+                "condition": "query.get_equipped_item_name('main_hand') == 'flint_and_steel'"
+            }
+        },
+        "events": {
+            "unlock": {
+                "set_block": {
+                    "block_type": "minecraft:air"
+                },
+                "run_command": {
+                    "command": [
+                        "playsound random.fuse @a ~~~",
+                        "summon dec:nuke ~~~"
+                    ]
+                },
+                "decrement_stack": {}
+            }
+        }
+    }
+}

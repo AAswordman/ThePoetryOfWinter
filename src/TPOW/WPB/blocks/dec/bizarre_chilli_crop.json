@@ -1,9 +1,9 @@
 {
-    "format_version": "1.16.100",
+    "format_version": "1.20.80",
     "minecraft:block": {
         "description": {
             "identifier": "dec:bizarre_chilli_crop",
-            "properties": {
+            "states": {
                 "dec:growth_stage": [
                     0,
                     1,
@@ -13,12 +13,16 @@
                     5,
                     6
                 ]
+            },
+            "menu_category": {
+                "group": "itemGroup.name.outside",
+                "category": "construction"
             }
         },
         "components": {
             "minecraft:geometry": "geometry.crop.sparse",
-            "minecraft:entity_collision": false,
-            "minecraft:pick_collision": {
+            "minecraft:collision_box": false,
+            "minecraft:selection_box": {
                 "origin": [
                     -3.5,
                     0,
@@ -30,15 +34,12 @@
                     7
                 ]
             },
-            "minecraft:destroy_time": 0.001,
-            "minecraft:map_color": "#8FE08B",
-            "minecraft:light_dampening": 0.0,
-            "minecraft:loot": "loot_tables/blocks/bizarre_chilli_crop.json",
-            "minecraft:random_ticking": {
-                "on_tick": {
-                    "event": "grow_stage"
-                }
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 0.001
             },
+            "minecraft:map_color": "#8FE08B",
+            "minecraft:light_dampening": 0,
+            "minecraft:loot": "loot_tables/blocks/bizarre_chilli_crop.json",
             "minecraft:placement_filter": {
                 "conditions": [
                     {
@@ -50,66 +51,19 @@
                         ]
                     }
                 ]
-            },
-            "minecraft:breathability": "air"
-        },
-        "events": {
-            "grow_stage": {
-                "randomize": [
-                    {
-                        "weight": 4
-                    },
-                    {
-                        "weight": 1,
-                        "set_block_state": {
-                            "dec:growth_stage": "(query.block_state('dec:growth_stage')<6) ? query.block_state('dec:growth_stage') + 1 : 6"
-                        }
-                    }
-                ]
-            },
-            "final_drop": {
-                "spawn_loot": {
-                    "table": "loot_tables/blocks/bizarre_chilli_crop.json"
-                },
-                "set_block_state": {
-                    "dec:growth_stage": 5
-                }
-            },
-            "meal": {
-                "sequence": [
-                    {
-                        "decrement_stack": {}
-                    },
-                    {
-                        "run_command": {
-                            "command": [
-                                "particle minecraft:crop_growth_emitter ~~~"
-                            ]
-                        }
-                    },
-                    {
-                        "trigger": {
-                            "event": "grow_stage"
-                        }
-                    }
-                ]
             }
         },
         "permutations": [
             {
                 "condition": "query.block_state('dec:growth_stage') == 0",
                 "components": {
-                    "minecraft:on_interact": {
-                        "event": "meal",
-                        "condition": "query.get_equipped_item_name('main_hand') == 'bone_meal'"
-                    },
                     "minecraft:material_instances": {
                         "*": {
                             "texture": "bizarre_chilli_crop_stage_0",
                             "render_method": "alpha_test"
                         }
                     },
-                    "minecraft:pick_collision": {
+                    "minecraft:selection_box": {
                         "origin": [
                             -3,
                             0,
@@ -127,17 +81,13 @@
             {
                 "condition": "query.block_state('dec:growth_stage') == 1",
                 "components": {
-                    "minecraft:on_interact": {
-                        "event": "meal",
-                        "condition": "query.get_equipped_item_name('main_hand') == 'bone_meal'"
-                    },
                     "minecraft:material_instances": {
                         "*": {
                             "texture": "bizarre_chilli_crop_stage_1",
                             "render_method": "alpha_test"
                         }
                     },
-                    "minecraft:pick_collision": {
+                    "minecraft:selection_box": {
                         "origin": [
                             -3,
                             0,
@@ -155,17 +105,13 @@
             {
                 "condition": "query.block_state('dec:growth_stage') == 2",
                 "components": {
-                    "minecraft:on_interact": {
-                        "event": "meal",
-                        "condition": "query.get_equipped_item_name('main_hand') == 'bone_meal'"
-                    },
                     "minecraft:material_instances": {
                         "*": {
                             "texture": "bizarre_chilli_crop_stage_2",
                             "render_method": "alpha_test"
                         }
                     },
-                    "minecraft:pick_collision": {
+                    "minecraft:selection_box": {
                         "origin": [
                             -4,
                             0,
@@ -183,17 +129,13 @@
             {
                 "condition": "query.block_state('dec:growth_stage') == 3",
                 "components": {
-                    "minecraft:on_interact": {
-                        "event": "meal",
-                        "condition": "query.get_equipped_item_name('main_hand') == 'bone_meal'"
-                    },
                     "minecraft:material_instances": {
                         "*": {
                             "texture": "bizarre_chilli_crop_stage_3",
                             "render_method": "alpha_test"
                         }
                     },
-                    "minecraft:pick_collision": {
+                    "minecraft:selection_box": {
                         "origin": [
                             -5,
                             0,
@@ -211,17 +153,13 @@
             {
                 "condition": "query.block_state('dec:growth_stage') == 4",
                 "components": {
-                    "minecraft:on_interact": {
-                        "event": "meal",
-                        "condition": "query.get_equipped_item_name('main_hand') == 'bone_meal'"
-                    },
                     "minecraft:material_instances": {
                         "*": {
                             "texture": "bizarre_chilli_crop_stage_4",
                             "render_method": "alpha_test"
                         }
                     },
-                    "minecraft:pick_collision": {
+                    "minecraft:selection_box": {
                         "origin": [
                             -5,
                             0,
@@ -239,17 +177,13 @@
             {
                 "condition": "query.block_state('dec:growth_stage') == 5",
                 "components": {
-                    "minecraft:on_interact": {
-                        "event": "meal",
-                        "condition": "query.get_equipped_item_name('main_hand') == 'bone_meal'"
-                    },
                     "minecraft:material_instances": {
                         "*": {
                             "texture": "bizarre_chilli_crop_stage_5",
                             "render_method": "alpha_test"
                         }
                     },
-                    "minecraft:pick_collision": {
+                    "minecraft:selection_box": {
                         "origin": [
                             -7,
                             0,
@@ -273,7 +207,7 @@
                             "render_method": "alpha_test"
                         }
                     },
-                    "minecraft:pick_collision": {
+                    "minecraft:selection_box": {
                         "origin": [
                             -7,
                             0,
@@ -285,11 +219,7 @@
                             14
                         ]
                     },
-                    "minecraft:loot": "loot_tables/blocks/bizarre_chilli_crop.json",
-                    "minecraft:on_interact": {
-                        "event": "final_drop",
-                        "target": "self"
-                    }
+                    "minecraft:loot": "loot_tables/blocks/bizarre_chilli_crop.json"
                 }
             }
         ]

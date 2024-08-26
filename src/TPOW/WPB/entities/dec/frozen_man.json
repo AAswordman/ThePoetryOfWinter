@@ -160,7 +160,7 @@
     },
     "events": {
       "minecraft:die": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "fill ~-1.5~-1.5~-1.5~1.5~2~1.5 dec:ghost_ice [] replace air []"
           ]

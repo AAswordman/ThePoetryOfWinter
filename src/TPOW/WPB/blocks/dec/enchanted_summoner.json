@@ -1,140 +1,90 @@
 {
-  "format_version": "1.16.0",
-  "minecraft:block": {
-    "description": {
-      "identifier": "dec:enchanted_summoner",
-      "properties": {
-        "dec:state": [
-          "empty",
-          "activated"
-        ]
-      }
-    },
-    "permutations": [
-      {
-        "condition": "query.block_state('dec:state') == 'empty'",
-        "components": {
-          "minecraft:material_instances": {
-                "north": "sides",
-                "south": "sides",
-                "east": "sides",
-                "west": "sides",
-                "sides": {
-                    "texture": "enchanted_summoner_side"
-                },
-                "up": {
-                    "texture": "enchanted_summoner_up"
-                },
-                "down": {
-                    "texture": "enchanted_summoner_up"
-                }
-          },
-          "minecraft:on_interact": {
-            "event": "activate",
-            "condition": "query.get_equipped_item_name('main_hand') == 'dark_pearl'"
-          },
-          "minecraft:ticking": {
-            "looping": true,
-            "range": [
-              600,
-              1200
-            ],
-            "on_tick": {
-              "event": "minecraft:activate_naturally"
+    "format_version": "1.20.80",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dec:enchanted_summoner",
+            "states": {
+                "dec:state": [
+                    "empty",
+                    "activated"
+                ]
+            },
+            "menu_category": {
+                "group": "itemGroup.name.outside",
+                "category": "items"
             }
-          },
-          "minecraft:light_dampening": 15,
-          "minecraft:light_emission": 0,
-          "minecraft:destroy_time": 3.0,
-          "minecraft:explosion_resistance": 100
-        }
-      },
-      {
-        "condition": "query.block_state('dec:state') == 'activated'",
-        "components": {
-          "minecraft:material_instances": {
-                "north": "sides",
-                "south": "sides",
-                "east": "sides",
-                "west": "sides",
-                "sides": {
-                    "texture": "enchanted_summoner_activated_side"
-                },
-                "up": {
-                    "texture": "enchanted_summoner_up"
-                },
-                "down": {
-                    "texture": "enchanted_summoner_up"
+        },
+        "permutations": [
+            {
+                "condition": "query.block_state('dec:state') == 'empty'",
+                "components": {
+                    "minecraft:material_instances": {
+                        "north": "sides",
+                        "south": "sides",
+                        "east": "sides",
+                        "west": "sides",
+                        "sides": {
+                            "texture": "enchanted_summoner_side"
+                        },
+                        "up": {
+                            "texture": "enchanted_summoner_up"
+                        },
+                        "down": {
+                            "texture": "enchanted_summoner_up"
+                        }
+                    },
+                    "minecraft:light_dampening": 15,
+                    "minecraft:light_emission": 0,
+                    "minecraft:destructible_by_mining": {
+                        "seconds_to_destroy": 3
+                    },
+                    "minecraft:destructible_by_explosion": {
+                        "explosion_resistance": 100
+                    }
                 }
-          },
-          "minecraft:on_interact": {
-            "event": "summon",
-            "condition": "query.get_equipped_item_name('main_hand') == 'iron_key'"
-          },
-          "minecraft:light_dampening": 15,
-          "minecraft:light_emission": 7,
-          "minecraft:destroy_time": 3.0,
-          "minecraft:map_color": "#897053",
-          "minecraft:explosion_resistance": 100
+            },
+            {
+                "condition": "query.block_state('dec:state') == 'activated'",
+                "components": {
+                    "minecraft:material_instances": {
+                        "north": "sides",
+                        "south": "sides",
+                        "east": "sides",
+                        "west": "sides",
+                        "sides": {
+                            "texture": "enchanted_summoner_activated_side"
+                        },
+                        "up": {
+                            "texture": "enchanted_summoner_up"
+                        },
+                        "down": {
+                            "texture": "enchanted_summoner_up"
+                        }
+                    },
+                    "minecraft:light_dampening": 15,
+                    "minecraft:light_emission": 7,
+                    "minecraft:destructible_by_mining": {
+                        "seconds_to_destroy": 3
+                    },
+                    "minecraft:map_color": "#897053",
+                    "minecraft:destructible_by_explosion": {
+                        "explosion_resistance": 100
+                    }
+                }
+            }
+        ],
+        "components": {
+            "minecraft:light_dampening": 15,
+            "minecraft:light_emission": 0,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 3
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 100
+            },
+            "minecraft:map_color": "#63513C",
+            "minecraft:loot": "loot_tables/empty.json",
+            "minecraft:geometry": "minecraft:geometry.full_block"
         }
-      }
-    ],
-    "components": {
-      "minecraft:creative_category": {
-        "group": "itemGroup.name.outside",
-        "category": "items"
-      },
-      "minecraft:unit_cube": {},
-      "minecraft:light_dampening": 15,
-      "minecraft:light_emission": 0,
-      "minecraft:destroy_time": 3.0,
-      "minecraft:explosion_resistance": 100,
-      "minecraft:map_color": "#63513C",
-      "minecraft:loot": "loot_tables/empty.json"
-    },
-    "events": {
-      "summon": {
-        "play_sound": {
-          "target": "other",
-          "sound": "conduit.activate"
-        },
-        "set_block_state": {
-          "dec:state": "'empty'"
-        },
-        "run_command": {
-          "command": [
-            "tellraw @a { \"rawtext\" : [ { \"translate\" : \"text.dec:summon_enchant_illager.name\" } ] }",
-            "summon dec:enchant_illager ~~1~",
-            "fill ~-2~~-2 ~-1~5~2 air [] destroy",
-            "fill ~~~1 ~2~5~2 air [] destroy",
-            "fill ~1~~ ~2~5~-2 air [] destroy",
-            "fill ~~~-1 ~~5~-2 air [] destroy",
-            "fill ~~1~ ~~5~ air [] destroy"
-          ]
-        },
-        "decrement_stack": {}
-      },
-      "activate": {
-        "set_block_state": {
-          "dec:state": "'activated'"
-        },
-        "run_command": {
-          "command": [
-            "playsound conduit.activate @a ~~~"
-          ]
-        },
-        "decrement_stack": {}
-      },
-      "activate_naturally": {
-        "set_block_state": {
-          "dec:state": "'activated'"
-        },
-        "run_command": {
-          "command": [
-            "playsound conduit.activate @a ~~~"
-          ]
-        }
-      }
     }
-  }
 }

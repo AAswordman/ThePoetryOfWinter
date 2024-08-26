@@ -1,0 +1,55 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dec:red_spider_lily_crop",
+            "menu_category": {
+                "group": "itemGroup.name.outside",
+                "category": "construction"
+            }
+        },
+        "components": {
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "red_spider_lily_crop",
+                    "render_method": "alpha_test"
+                }
+            },
+            "minecraft:geometry": "geometry.crop.sparse.on_dirt",
+            "minecraft:collision_box": false,
+            "minecraft:selection_box": {
+                "origin": [
+                    -6,
+                    0,
+                    -6
+                ],
+                "size": [
+                    12,
+                    14,
+                    12
+                ]
+            },
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 0.001
+            },
+            "minecraft:map_color": "#EB4460",
+            "minecraft:light_emission": 7,
+            "minecraft:light_dampening": 0.0,
+            "minecraft:loot": "loot_tables/blocks/red_spider_lily_crop.json",
+            "minecraft:placement_filter": {
+                "conditions": [
+                    {
+                        "allowed_faces": [
+                            "up"
+                        ],
+                        "block_filter": [
+                            "netherrack",
+                            "crimson_nylium",
+                            "ash"
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

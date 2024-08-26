@@ -130,7 +130,7 @@
         },
         "events": {
             "minecraft:entity_spawned": {
-                "run_command": {
+                "queue_command": {
                     "command": [
                         "effect @s levitation 3 1 true"
                     ],
@@ -138,7 +138,7 @@
                 }
             },
             "rotate": {
-                "run_command": {
+                "queue_command": {
                     "command": [
                         "tp @s ~ ~ ~ facing @p",
                         "tp @s ~ ~ ~ ~ ~-45"

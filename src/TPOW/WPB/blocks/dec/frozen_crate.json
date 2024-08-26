@@ -1,89 +1,75 @@
 {
-  "format_version": "1.16.0",
-  "minecraft:block": {
-    "description": {
-      "identifier": "dec:frozen_crate",
-      "properties": {
-        "dec:is_unlocked": [
-          0,
-          1
+    "format_version": "1.20.80",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dec:frozen_crate",
+            "states": {
+                "dec:is_unlocked": [
+                    0,
+                    1
+                ]
+            },
+            "menu_category": {
+                "group": "itemGroup.name.outside",
+                "category": "items"
+            }
+        },
+        "components": {
+            "minecraft:light_dampening": 15,
+            "minecraft:light_emission": 0,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 2
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 10
+            },
+            "minecraft:map_color": "#FFFFFF",
+            "tag:wood": {},
+            "minecraft:geometry": "minecraft:geometry.full_block"
+        },
+        "permutations": [
+            {
+                "condition": "query.block_state('dec:is_unlocked') == 0",
+                "components": {
+                    "minecraft:material_instances": {
+                        "north": "sides",
+                        "south": "sides",
+                        "east": "sides",
+                        "west": "sides",
+                        "sides": {
+                            "texture": "frozen_crate_locked"
+                        },
+                        "up": {
+                            "texture": "frozen_crate_up"
+                        },
+                        "down": {
+                            "texture": "crate_locked"
+                        }
+                    },
+                    "minecraft:loot": "loot_tables/blocks/frozen_crate_locked.json"
+                }
+            },
+            {
+                "condition": "query.block_state('dec:is_unlocked') == 1",
+                "components": {
+                    "minecraft:material_instances": {
+                        "north": "sides",
+                        "south": "sides",
+                        "east": "sides",
+                        "west": "sides",
+                        "sides": {
+                            "texture": "frozen_crate"
+                        },
+                        "up": {
+                            "texture": "frozen_crate_up"
+                        },
+                        "down": {
+                            "texture": "crate"
+                        }
+                    },
+                    "minecraft:loot": "loot_tables/blocks/frozen_crate.json"
+                }
+            }
         ]
-      }
-    },
-    "components": {
-		  "minecraft:creative_category": {
-        "group": "itemGroup.name.outside",
-				"category": "items"
-			},
-      "minecraft:light_dampening": 15,
-      "minecraft:light_emission": 0,
-      "minecraft:destroy_time": 2.0,
-      "minecraft:explosion_resistance": 10,
-      "minecraft:map_color": "#FFFFFF",
-      "minecraft:unit_cube": {},
-      "tag:wood": {}
-    },
-    "permutations": [
-      {
-        "condition": "query.block_state('dec:is_unlocked') == 0",
-        "components": {
-          "minecraft:on_interact": {
-            "event": "unlock",
-            "condition": "query.get_equipped_item_name('main_hand') == 'iron_key'"
-          },
-          "minecraft:material_instances": {
-            "north": "sides",
-            "south": "sides",
-            "east": "sides",
-            "west": "sides",
-            "sides": {
-              "texture": "frozen_crate_locked"
-            },
-            "up": {
-              "texture": "frozen_crate_up"
-            },
-            "down": {
-              "texture": "crate_locked"
-            }
-          },
-          "minecraft:loot": "loot_tables/blocks/frozen_crate_locked.json"
-        }
-      },
-      {
-        "condition": "query.block_state('dec:is_unlocked') == 1",
-        "components": {
-          "minecraft:material_instances": {
-            "north": "sides",
-            "south": "sides",
-            "east": "sides",
-            "west": "sides",
-            "sides": {
-              "texture": "frozen_crate"
-            },
-            "up": {
-              "texture": "frozen_crate_up"
-            },
-            "down": {
-              "texture": "crate"
-            }
-          },
-          "minecraft:loot": "loot_tables/blocks/frozen_crate.json"
-        }
-      }
-    ],
-    "events": {
-      "unlock": {
-        "set_block_state": {
-          "dec:is_unlocked": 1
-        },
-        "run_command": {
-          "command": [
-            "playsound random.anvil_land @a ~~~",
-            "particle minecraft:critical_hit_emitter ~~~"
-          ]
-        },
-        "decrement_stack": {}
-      }
     }
-  }
 }

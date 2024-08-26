@@ -74,7 +74,7 @@
     "events": {
       "minecraft:entity_spawned": {
         "trigger": "minecraft:summon",
-        "run_command": {
+        "queue_command": {
           "command": [
             "summon dec:escaped_soul_entity ~~~"
           ],
@@ -92,7 +92,7 @@
         "randomize": [
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "execute if entity @e[family=!soul,r=64] run summon dec:soul_soldier ~24~3~ 0 0 minecraft:summon_by_boss_last",
                 "execute if entity @e[family=!soul,r=64] run summon dec:soul_soldier ~24~3~ 0 0 minecraft:summon_by_boss_last",
@@ -105,7 +105,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "execute if entity @e[family=!soul,r=64] run summon dec:soul_soldier ~-24~3~ 0 0 minecraft:summon_by_boss_last",
                 "execute if entity @e[family=!soul,r=64] run summon dec:soul_soldier ~-24~3~ 0 0 minecraft:summon_by_boss_last",
@@ -118,7 +118,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "execute if entity @e[family=!soul,r=64] run summon dec:soul_soldier ~~3~24 0 0 minecraft:summon_by_boss_last",
                 "execute if entity @e[family=!soul,r=64] run summon dec:soul_soldier ~~3~24 0 0 minecraft:summon_by_boss_last",
@@ -131,7 +131,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "execute if entity @e[family=!soul,r=64] run summon dec:soul_soldier ~~3~-24 0 0 minecraft:summon_by_boss_last",
                 "execute if entity @e[family=!soul,r=64] run summon dec:soul_soldier ~~3~-24 0 0 minecraft:summon_by_boss_last",
@@ -144,7 +144,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "execute if entity @e[family=!soul,r=64] run summon dec:soul_soldier ~17~3~17 0 0 minecraft:summon_by_boss_last",
                 "execute if entity @e[family=!soul,r=64] run summon dec:soul_soldier ~17~3~17 0 0 minecraft:summon_by_boss_last",
@@ -157,7 +157,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "execute if entity @e[family=!soul,r=64] run summon dec:soul_soldier ~-17~3~-17 0 0 minecraft:summon_by_boss_last",
                 "execute if entity @e[family=!soul,r=64] run summon dec:soul_soldier ~-17~3~-17 0 0 minecraft:summon_by_boss_last",
@@ -170,7 +170,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "execute if entity @e[family=!soul,r=64] run summon dec:soul_soldier ~17~3~-17 0 0 minecraft:summon_by_boss_last",
                 "execute if entity @e[family=!soul,r=64] run summon dec:soul_soldier ~17~3~-17 0 0 minecraft:summon_by_boss_last",
@@ -183,7 +183,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "execute if entity @e[family=!soul,r=64] run summon dec:soul_soldier ~-17~3~17 0 0 minecraft:summon_by_boss_last",
                 "execute if entity @e[family=!soul,r=64] run summon dec:soul_soldier ~-17~3~17 0 0 minecraft:summon_by_boss_last",

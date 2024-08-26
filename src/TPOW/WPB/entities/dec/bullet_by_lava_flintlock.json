@@ -75,7 +75,7 @@
           },
           {
             "weight": 3,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "damage @e[r=3,type=!item] 14 entity_explosion",
                 "particle dec:lava_spurt_particle ~~~",

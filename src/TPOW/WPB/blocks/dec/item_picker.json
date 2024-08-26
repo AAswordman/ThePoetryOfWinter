@@ -1,34 +1,25 @@
 {
-  "format_version": "1.16.0",
-  "minecraft:block": {
-    "description": {
-      "identifier": "dec:item_picker"
-    },
-    "components": {
-		  "minecraft:creative_category": {
-        "group": "itemGroup.name.outside",
-				"category": "items"
-			},
-      "minecraft:light_dampening": 15,
-      "minecraft:light_emission": 0,
-      "minecraft:destroy_time": 3.0,
-      "minecraft:explosion_resistance": 10,
-      "minecraft:map_color": "#858585",
-      "minecraft:loot": "loot_tables/blocks/item_picker.json",
-      "tag:stone": {},
-      "minecraft:on_interact": {
-        "event": "activate",
-        "condition": "query.get_equipped_item_name('main_hand') == 'pulse_stone'"
-      }
-    },
-    "events": {
-      "activate": {
-        "run_command": {
-          "command": [
-            "tp @e[type=item,r=64] ~~~"
-          ]
+    "format_version": "1.20.80",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dec:item_picker",
+            "menu_category": {
+                "group": "itemGroup.name.outside",
+                "category": "items"
+            }
+        },
+        "components": {
+            "minecraft:light_dampening": 15,
+            "minecraft:light_emission": 0,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 3
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 10
+            },
+            "minecraft:map_color": "#858585",
+            "minecraft:loot": "loot_tables/blocks/item_picker.json",
+            "tag:stone": {}
         }
-      }
     }
-  }
 }

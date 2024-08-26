@@ -586,7 +586,7 @@
         "add": {
           "component_groups": ["normal"]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
             "tag @s add immune"
           ]
@@ -594,7 +594,7 @@
       },
 
       "skill": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "execute as @s at @s positioned ~~0.75~ run particle epic:sunlight_arrow_particle1",
             "damage @e[r=2,tag=!wbmsyh,tag=!immune] 12 fire_tick entity @s",
@@ -604,7 +604,7 @@
       },
 
       "skill1": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "execute as @s at @s positioned ~~0.75~ run particle epic:sunlight_arrow_particle1",
             "damage @e[r=2,tag=!wbmsyh,tag=!immune] 16 fire_tick entity @s",
@@ -614,7 +614,7 @@
       },
 
       "skill2": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "execute as @s at @s positioned ~~0.75~ run particle epic:sunlight_arrow_particle1",
             "damage @e[r=2,tag=!wbmsyh,tag=!immune] 19 fire_tick entity @s",
@@ -624,7 +624,7 @@
       },
 
       "skill3": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "execute as @s at @s positioned ~~0.75~ run particle epic:sunlight_arrow_particle1",
             "damage @e[r=2,tag=!wbmsyh,tag=!immune] 24 fire_tick entity @s",
@@ -634,7 +634,7 @@
       },
 
       "skill4": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "execute as @s at @s positioned ~~0.75~ run particle epic:sunlight_arrow_particle1",
             "damage @e[r=2,tag=!wbmsyh,tag=!immune] 30 fire_tick entity @s",
@@ -644,7 +644,7 @@
       },
 
       "skill5": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "execute as @s at @s positioned ~~0.75~ run particle epic:sunlight_arrow_particle1",
             "damage @e[r=2,tag=!wbmsyh,tag=!immune] 38 fire_tick entity @s",
@@ -654,7 +654,7 @@
       },
 
       "skill6": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "execute as @s at @s positioned ~~0.5~ run particle epic:sunlight_arrow_particle1",
             "damage @e[r=2,tag=!wbmsyh,tag=!immune] 48 fire_tick entity @s",

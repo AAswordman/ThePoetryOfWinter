@@ -289,7 +289,7 @@
                 }
             },
             "attack_tp": {
-                "run_command": {
+                "queue_command": {
                     "command": [
                         "execute as @p at @s run tp @e[r=128,type=wb:headless_guard] ~ ~+6 ~"
                     ],
@@ -302,7 +302,7 @@
                 }
             },
             "attack_jump": {
-                "run_command": {
+                "queue_command": {
                     "command": [
                         "effect @e[r=6,rm=2] levitation 2 15 true"
                     ],

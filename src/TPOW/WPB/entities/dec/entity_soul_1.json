@@ -281,7 +281,7 @@
       "minecraft:entity_spawned": {
       },
       "minecraft:attack_boss": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "event entity @e[c=1,r=64,type=dec:escaped_soul_2] minecraft:can_be_attacked"
           ],

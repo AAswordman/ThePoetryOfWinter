@@ -96,7 +96,7 @@
             "minecraft:start"
           ]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
             "particle dec:frozen_laser_small_particle ~~~"
           ]
@@ -108,7 +108,7 @@
             "minecraft:attack_mode"
           ]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
             "execute if entity @e[type=!item,x=~,z=~,y=-64,dx=0,dy=512,dz=0,family=!frozen] run damage @e[type=!item,x=~,z=~,y=-64,dx=0,dy=512,dz=0,family=!frozen] 24 magic",
             "execute if entity @e[type=!item,x=~,z=~,y=-64,dx=0,dy=512,dz=0,family=!frozen] run event entity @s minecraft:despawn"

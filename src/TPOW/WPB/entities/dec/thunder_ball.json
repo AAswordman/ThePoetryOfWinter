@@ -75,7 +75,7 @@
         "randomize": [
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "summon lightning_bolt ~~~",
                 "event entity @s minecraft:despawn"
@@ -84,7 +84,7 @@
           },
           {
             "weight": 3,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "event entity @s minecraft:despawn"
               ]

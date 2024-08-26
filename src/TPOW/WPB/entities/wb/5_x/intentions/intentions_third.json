@@ -513,7 +513,7 @@
                         }
                     },
                     {
-                        "run_command": {
+                        "queue_command": {
                             "command": [
                                 "particle wb:intentions_third_attack_par ~~~",
                                 "summon wb:array_intentions_thirda",
@@ -599,7 +599,7 @@
                 }
             },
             "pa": {
-                "run_command": {
+                "queue_command": {
                     "command": [
                         "tp @s @e[c=1,r=64,type=wb:array_intentions_third]"
                     ],
@@ -617,7 +617,7 @@
                 }
             },
             "pb": {
-                "run_command": {
+                "queue_command": {
                     "command": [
                         "tp @s @e[c=1,r=64,type=wb:array_intentions_third]"
                     ],
@@ -635,7 +635,7 @@
                 }
             },
             "pc": {
-                "run_command": {
+                "queue_command": {
                     "command": [
                         "tp @s @e[c=1,r=64,type=wb:array_intentions_third]"
                     ],
@@ -653,7 +653,7 @@
                 }
             },
             "abx": {
-                "run_command": {
+                "queue_command": {
                     "command": [
                         "tp @s @e[c=-1,r=64,type=wb:array_intentions_thirda]",
                         "particle wb:intentions_third_attack_par ~~~"
@@ -672,7 +672,7 @@
                 }
             },
             "bcx": {
-                "run_command": {
+                "queue_command": {
                     "command": [
                         "tp @s @e[c=-1,r=64,type=wb:array_intentions_thirda]",
                         "particle wb:intentions_third_attack_par ~~~"

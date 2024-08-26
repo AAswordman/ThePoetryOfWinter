@@ -56,7 +56,7 @@
     },
     "events": {
       "minecraft:tp": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "tp @e[type=dec:ash_knight_head,r=64,c=1] @s",
             "event entity @e[type=dec:ash_knight_head,r=64,c=1] minecraft:start_roar",

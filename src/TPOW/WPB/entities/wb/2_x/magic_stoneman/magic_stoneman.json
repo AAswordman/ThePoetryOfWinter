@@ -262,7 +262,7 @@
                 }
             },
             "0": {
-                "run_command": {
+                "queue_command": {
                     "command": [
                         "effect @e[r=4] weakness 6 5 true",
                         "summon wb:ball_magic_stoneman_a ~+2.0572483830236563 ~ ~-2.8315594803123156",
@@ -280,7 +280,7 @@
                 }
             },
             "12": {
-                "run_command": {
+                "queue_command": {
                     "command": [
                         "summon wb:ball_magic_stoneman_c ~ ~ ~",
                         "summon wb:ball_magic_stoneman_c ~ ~ ~",
@@ -295,7 +295,7 @@
                 }
             },
             "23": {
-                "run_command": {
+                "queue_command": {
                     "command": [
                         "summon wb:ball_magic_stoneman_c ~ ~ ~",
                         "summon wb:ball_magic_stoneman_c ~ ~ ~",
@@ -312,7 +312,7 @@
                 }
             },
             "34": {
-                "run_command": {
+                "queue_command": {
                     "command": [
                         "summon wb:ball_magic_stoneman_c ~ ~ ~",
                         "summon wb:ball_magic_stoneman_c ~ ~ ~",
@@ -329,7 +329,7 @@
                 }
             },
             "45": {
-                "run_command": {
+                "queue_command": {
                     "command": [
                         "summon wb:ball_magic_stoneman_c ~ ~ ~",
                         "summon wb:ball_magic_stoneman_c ~ ~ ~",
@@ -354,7 +354,7 @@
                 }
             },
             "01": {
-                "run_command": {
+                "queue_command": {
                     "command": [
                         "summon wb:ball_magic_stoneman_c ~ ~ ~",
                         "summon wb:ball_magic_stoneman_c ~ ~ ~",

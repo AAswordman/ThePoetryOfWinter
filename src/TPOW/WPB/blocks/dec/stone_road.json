@@ -1,22 +1,22 @@
 {
-    "format_version": "1.16.100",
+    "format_version": "1.20.80",
     "minecraft:block": {
         "description": {
-            "identifier": "dec:stone_road"
+            "identifier": "dec:stone_road",
+            "menu_category": {
+                "group": "itemGroup.name.outside",
+                "category": "construction"
+            }
         },
         "components": {
             "minecraft:breathability": "air",
-            "minecraft:creative_category": {
-                "group": "itemGroup.name.outside",
-                "category": "construction"
-            },
             "minecraft:material_instances": {
                 "*": {
                     "texture": "small_stone",
                     "render_method": "alpha_test"
                 }
             },
-            "minecraft:pick_collision": {
+            "minecraft:selection_box": {
                 "origin": [
                     -8,
                     0,
@@ -28,7 +28,7 @@
                     16
                 ]
             },
-            "minecraft:entity_collision": {
+            "minecraft:collision_box": {
                 "origin": [
                     -8,
                     0,
@@ -52,9 +52,11 @@
             "minecraft:geometry": "geometry.stone_road",
             "minecraft:map_color": "#A36FD5",
             "minecraft:loot": "loot_tables/blocks/stone_heap.json",
-            "minecraft:light_emission": 0.0,
-            "minecraft:light_dampening": 0.0,
-            "minecraft:destroy_time": 0.2,
+            "minecraft:light_emission": 0,
+            "minecraft:light_dampening": 0,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 0.2
+            },
             "tag:stone": {}
         }
     }

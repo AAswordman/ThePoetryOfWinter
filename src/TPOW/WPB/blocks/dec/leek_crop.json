@@ -1,77 +1,50 @@
 {
-    "format_version": "1.16.100",
+    "format_version": "1.20.80",
     "minecraft:block": {
         "description": {
             "identifier": "dec:leek_crop",
-            "properties": {
-                "dec:growth_stage": [0, 1, 2]
+            "states": {
+                "dec:growth_stage": [
+                    0,
+                    1,
+                    2
+                ]
+            },
+            "menu_category": {
+                "group": "itemGroup.name.outside",
+                "category": "construction"
             }
         },
-		
         "components": {
             "minecraft:geometry": "geometry.crop.hash",
-            "minecraft:entity_collision": false,
-            "minecraft:pick_collision": {
-                "origin": [-8,0,-8],
-                "size": [16,16,16]
+            "minecraft:collision_box": false,
+            "minecraft:selection_box": {
+                "origin": [
+                    -8,
+                    0,
+                    -8
+                ],
+                "size": [
+                    16,
+                    16,
+                    16
+                ]
             },
-            "minecraft:destroy_time": 0.001,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 0.001
+            },
             "minecraft:map_color": "#8FE08B",
-            "minecraft:light_dampening": 0.0,
+            "minecraft:light_dampening": 0,
             "minecraft:loot": "loot_tables/blocks/leek_crop.json",
-            "minecraft:random_ticking": {
-                "on_tick": {
-                    "event": "grow_stage"
-                }
-            },
             "minecraft:placement_filter": {
                 "conditions": [
                     {
-                        "allowed_faces": ["up"],
-                        "block_filter": ["farmland"]
-                    }
-                ]
-            },
-			"minecraft:breathability": "air"
-        },
-        "events": {
-            "grow_stage": {
-                "randomize": [
-                    {
-                        "weight": 1
-                    },
-                    {
-                        "weight": 1,
-                        "set_block_state": {
-                            "dec:growth_stage": "(query.block_state('dec:growth_stage')<2) ? query.block_state('dec:growth_stage') + 1 : 2"
-                        }
-                    }
-                ]
-            },
-            "final_drop": {
-                "spawn_loot": {
-                    "table": "loot_tables/blocks/leek_crop.json"
-                },
-				"set_block": {
-					"block_type": "dec:leek_crop"
-				}
-            },
-            "meal": {
-                "sequence": [
-                    {
-                        "decrement_stack": {}
-                    },
-                    {
-                        "run_command": {
-                            "command": [
-                                "particle minecraft:crop_growth_emitter ~~~"
-                            ]
-                        }
-                    },
-                    {
-                        "trigger": {
-                            "event": "grow_stage"
-                        }
+                        "allowed_faces": [
+                            "up"
+                        ],
+                        "block_filter": [
+                            "farmland"
+                        ]
                     }
                 ]
             }
@@ -80,41 +53,49 @@
             {
                 "condition": "query.block_state('dec:growth_stage') == 0",
                 "components": {
-                    "minecraft:on_interact": {
-                        "event": "meal",
-                        "condition": "query.get_equipped_item_name('main_hand') == 'bone_meal'"
-                    },
                     "minecraft:material_instances": {
                         "*": {
                             "texture": "leek_crop_0",
                             "render_method": "alpha_test"
                         }
                     },
-                    "minecraft:pick_collision": {
-                        "origin": [-5,0,-5],
-                        "size": [10,4,10]
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -5,
+                            0,
+                            -5
+                        ],
+                        "size": [
+                            10,
+                            4,
+                            10
+                        ]
                     },
-					"minecraft:loot": "loot_tables/empty.json"
+                    "minecraft:loot": "loot_tables/empty.json"
                 }
             },
             {
                 "condition": "query.block_state('dec:growth_stage') == 1",
                 "components": {
-                    "minecraft:on_interact": {
-                        "event": "meal",
-                        "condition": "query.get_equipped_item_name('main_hand') == 'bone_meal'"
-                    },
                     "minecraft:material_instances": {
                         "*": {
                             "texture": "leek_crop_1",
                             "render_method": "alpha_test"
                         }
                     },
-                    "minecraft:pick_collision": {
-                        "origin": [-5,0,-5],
-                        "size": [10,7,10]
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -5,
+                            0,
+                            -5
+                        ],
+                        "size": [
+                            10,
+                            7,
+                            10
+                        ]
                     },
-					"minecraft:loot": "loot_tables/empty.json"
+                    "minecraft:loot": "loot_tables/empty.json"
                 }
             },
             {
@@ -126,15 +107,19 @@
                             "render_method": "alpha_test"
                         }
                     },
-                    "minecraft:pick_collision": {
-                        "origin": [-8,0,-8],
-                        "size": [16,12,16]
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -8,
+                            0,
+                            -8
+                        ],
+                        "size": [
+                            16,
+                            12,
+                            16
+                        ]
                     },
-                    "minecraft:loot": "loot_tables/blocks/leek_crop.json",
-                    "minecraft:on_interact": {
-                        "event": "final_drop",
-                        "target": "self"
-                    }
+                    "minecraft:loot": "loot_tables/blocks/leek_crop.json"
                 }
             }
         ]

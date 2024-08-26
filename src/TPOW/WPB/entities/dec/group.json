@@ -56,7 +56,7 @@
         "randomize": [
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "summon dec:group ~~~ 0 0 minecraft:line_1_ice_thorn",
                 "summon dec:group ~~~ 0 0 minecraft:line_1_ice_thorn",
@@ -68,7 +68,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "summon dec:group ~~~ 0 0 minecraft:line_2_ice_thorn",
                 "summon dec:group ~~~ 0 0 minecraft:line_2_ice_thorn",
@@ -80,7 +80,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "summon dec:group ~~~ 0 0 minecraft:solid_circle_ice_thorn",
                 "summon dec:group ~~~ 0 0 minecraft:solid_circle_ice_thorn",
@@ -91,7 +91,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "summon dec:group ~~~ 0 0 minecraft:circle_ice_thorn",
                 "summon dec:group ~~~ 0 0 minecraft:circle_ice_thorn",
@@ -103,7 +103,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "summon dec:group ~~~ 0 0 minecraft:square_ice_thorn",
                 "summon dec:group ~~~ 0 0 minecraft:square_ice_thorn",
@@ -116,7 +116,7 @@
         ]
       },
       "minecraft:line_1_ice_thorn": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "spreadplayers ~~ 0 8 @s",
             "function entity/ice_thorn_spawn/2",
@@ -126,7 +126,7 @@
         }
       },
       "minecraft:line_2_ice_thorn": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "spreadplayers ~~ 0 8 @s",
             "function entity/ice_thorn_spawn/3",
@@ -136,7 +136,7 @@
         }
       },
       "minecraft:solid_circle_ice_thorn": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "spreadplayers ~~ 0 8 @s",
             "function entity/ice_thorn_spawn/1",
@@ -149,7 +149,7 @@
         "randomize": [
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "spreadplayers ~~ 0 8 @s",
                 "function entity/ice_thorn_spawn/4",
@@ -160,7 +160,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "spreadplayers ~~ 0 8 @s",
                 "function entity/ice_thorn_spawn/5",
@@ -171,7 +171,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "spreadplayers ~~ 0 8 @s",
                 "function entity/ice_thorn_spawn/6",
@@ -186,7 +186,7 @@
         "randomize": [
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "spreadplayers ~~ 0 8 @s",
                 "function entity/ice_thorn_spawn/7",
@@ -197,7 +197,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "spreadplayers ~~ 0 8 @s",
                 "function entity/ice_thorn_spawn/8",
@@ -212,7 +212,7 @@
         "randomize": [
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "summon dec:group ~~~ 0 0 minecraft:line_1_laser",
                 "summon dec:group ~~~ 0 0 minecraft:line_1_laser",
@@ -224,7 +224,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "summon dec:group ~~~ 0 0 minecraft:line_2_laser",
                 "summon dec:group ~~~ 0 0 minecraft:line_2_laser",
@@ -236,7 +236,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "summon dec:group ~~~ 0 0 minecraft:solid_circle_laser",
                 "summon dec:group ~~~ 0 0 minecraft:solid_circle_laser",
@@ -247,7 +247,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "summon dec:group ~~~ 0 0 minecraft:circle_laser",
                 "summon dec:group ~~~ 0 0 minecraft:circle_laser",
@@ -259,7 +259,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "summon dec:group ~~~ 0 0 minecraft:square_laser",
                 "summon dec:group ~~~ 0 0 minecraft:square_laser",
@@ -272,7 +272,7 @@
         ]
       },
       "minecraft:line_1_laser": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "spreadplayers ~~ 0 8 @s",
             "function entity/frozen_laser_spawn/2",
@@ -282,7 +282,7 @@
         }
       },
       "minecraft:line_2_laser": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "spreadplayers ~~ 0 8 @s",
             "function entity/frozen_laser_spawn/3",
@@ -292,7 +292,7 @@
         }
       },
       "minecraft:solid_circle_laser": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "spreadplayers ~~ 0 8 @s",
             "function entity/frozen_laser_spawn/1",
@@ -305,7 +305,7 @@
         "randomize": [
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "spreadplayers ~~ 0 8 @s",
                 "function entity/frozen_laser_spawn/4",
@@ -316,7 +316,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "spreadplayers ~~ 0 8 @s",
                 "function entity/frozen_laser_spawn/5",
@@ -327,7 +327,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "spreadplayers ~~ 0 8 @s",
                 "function entity/frozen_laser_spawn/6",
@@ -342,7 +342,7 @@
         "randomize": [
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "spreadplayers ~~ 0 8 @s",
                 "function entity/frozen_laser_spawn/7",
@@ -353,7 +353,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "spreadplayers ~~ 0 8 @s",
                 "function entity/frozen_laser_spawn/8",
@@ -368,7 +368,7 @@
         "randomize": [
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "summon dec:group ~~~ 0 0 minecraft:line_1_blackstone_thorn",
                 "summon dec:group ~~~ 0 0 minecraft:line_1_blackstone_thorn",
@@ -380,7 +380,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "summon dec:group ~~~ 0 0 minecraft:line_2_blackstone_thorn",
                 "summon dec:group ~~~ 0 0 minecraft:line_2_blackstone_thorn",
@@ -392,7 +392,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "summon dec:group ~~~ 0 0 minecraft:solid_circle_blackstone_thorn",
                 "summon dec:group ~~~ 0 0 minecraft:solid_circle_blackstone_thorn",
@@ -403,7 +403,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "summon dec:group ~~~ 0 0 minecraft:circle_blackstone_thorn",
                 "summon dec:group ~~~ 0 0 minecraft:circle_blackstone_thorn",
@@ -415,7 +415,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "summon dec:group ~~~ 0 0 minecraft:square_blackstone_thorn",
                 "summon dec:group ~~~ 0 0 minecraft:square_blackstone_thorn",
@@ -428,7 +428,7 @@
         ]
       },
       "minecraft:line_1_blackstone_thorn": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "spreadplayers ~~ 0 8 @s",
             "function entity/blackstone_thorn_spawn/2",
@@ -438,7 +438,7 @@
         }
       },
       "minecraft:line_2_blackstone_thorn": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "spreadplayers ~~ 0 8 @s",
             "function entity/blackstone_thorn_spawn/3",
@@ -448,7 +448,7 @@
         }
       },
       "minecraft:solid_circle_blackstone_thorn": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "spreadplayers ~~ 0 8 @s",
             "function entity/blackstone_thorn_spawn/1",
@@ -461,7 +461,7 @@
         "randomize": [
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "spreadplayers ~~ 0 8 @s",
                 "function entity/blackstone_thorn_spawn/4",
@@ -472,7 +472,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "spreadplayers ~~ 0 8 @s",
                 "function entity/blackstone_thorn_spawn/5",
@@ -483,7 +483,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "spreadplayers ~~ 0 8 @s",
                 "function entity/blackstone_thorn_spawn/6",
@@ -498,7 +498,7 @@
         "randomize": [
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "spreadplayers ~~ 0 8 @s",
                 "function entity/blackstone_thorn_spawn/7",
@@ -509,7 +509,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "spreadplayers ~~ 0 8 @s",
                 "function entity/blackstone_thorn_spawn/8",

@@ -1,8 +1,12 @@
 {
-    "format_version": "1.16.100",
+    "format_version": "1.20.80",
     "minecraft:block": {
         "description": {
-            "identifier": "dec:christmas_gift_block"
+            "identifier": "dec:christmas_gift_block",
+            "menu_category": {
+                "group": "itemGroup.name.outside",
+                "category": "construction"
+            }
         },
         "components": {
             "minecraft:material_instances": {
@@ -11,20 +15,38 @@
                     "render_method": "alpha_test"
                 }
             },
-            "minecraft:pick_collision": {
-                "origin": [ -4, 0, -4 ],
-                "size": [ 8, 8, 8 ]
+            "minecraft:selection_box": {
+                "origin": [
+                    -4,
+                    0,
+                    -4
+                ],
+                "size": [
+                    8,
+                    8,
+                    8
+                ]
             },
-            "minecraft:entity_collision": {
-                "origin": [ -4, 0, -4 ],
-                "size": [ 8, 8, 8 ]
+            "minecraft:collision_box": {
+                "origin": [
+                    -4,
+                    0,
+                    -4
+                ],
+                "size": [
+                    8,
+                    8,
+                    8
+                ]
             },
             "minecraft:geometry": "geometry.christmas_gift_block",
             "minecraft:map_color": "#79180C",
             "minecraft:loot": "loot_tables/blocks/christmas_gift_block.json",
-            "minecraft:light_emission": 0.0,
+            "minecraft:light_emission": 0,
             "minecraft:light_dampening": 7,
-            "minecraft:destroy_time": 0.3
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 0.3
+            }
         }
     }
 }

@@ -64,7 +64,7 @@
     },
     "events": {
       "minecraft:explode": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "damage @e[type=!item,r=2] 4 magic",
             "particle dec:lapis_bullet_boom_particle ~~~",

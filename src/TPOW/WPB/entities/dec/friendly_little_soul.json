@@ -169,7 +169,7 @@
 		},
 		"events": {
 			"minecraft:disappear": {
-			  "run_command": {
+			  "queue_command": {
 				"command": [
 				  "particle dec:summon_staff_spawn_disappear ~~~",
 				  "event entity @s minecraft:despawn"
@@ -191,7 +191,7 @@
 			  }
 			},
 			"minecraft:entity_spawned": {
-				"run_command": {
+				"queue_command": {
 					"command": [
 						"effect @s resistance 5 5",
 						"effect @s invisibility 7 0"

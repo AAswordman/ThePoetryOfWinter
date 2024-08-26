@@ -48,7 +48,7 @@
 		},
 		"events": {
 			"spawn": {
-				"run_command": {
+				"queue_command": {
 					"command": "tellraw @a {\"rawtext\":[{\"text\":\"§eHerobrine joined the game§f\"}]}"
 				}
 			}

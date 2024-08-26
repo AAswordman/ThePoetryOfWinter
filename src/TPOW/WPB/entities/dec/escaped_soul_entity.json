@@ -273,7 +273,7 @@
         }
       },
       "minecraft:die": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "event entity @e[c=1,r=64,type=dec:escaped_soul_3] minecraft:despawn"
           ],

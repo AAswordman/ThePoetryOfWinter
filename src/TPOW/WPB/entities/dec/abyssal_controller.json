@@ -209,7 +209,7 @@
             "minecraft:scattering_shoot"
           ]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
             "effect @s resistance 6 5",
             "particle dec:abyssal_controller_spawn_particle ~~~",

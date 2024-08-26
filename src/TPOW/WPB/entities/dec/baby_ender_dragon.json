@@ -224,7 +224,7 @@
         }
       },
       "minecraft:melee_attack": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "summon dec:dragon_head ^^2^",
             "summon dec:dragon_head ^^-2^",

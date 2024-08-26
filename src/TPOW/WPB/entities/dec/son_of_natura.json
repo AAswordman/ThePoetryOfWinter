@@ -162,7 +162,7 @@
 
     "events": {
       "minecraft:disappear": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "particle dec:summon_staff_spawn_disappear ~~~"
           ]

@@ -59,7 +59,7 @@
         }
       },
       "minecraft:below_and_70": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "execute if entity @s[y=71,dy=300,x=~,z=~] run setblock ~~~ stone",
             "event entity @s minecraft:despawn"

@@ -1,151 +1,91 @@
 {
-  "format_version": "1.16.0",
-  "minecraft:block": {
-    "description": {
-      "identifier": "dec:ash_summoner",
-      "properties": {
-        "dec:state": [
-          "locked",
-          "empty",
-          "activated"
-        ]
-      }
-    },
-    "permutations": [
-      {
-        "condition": "query.block_state('dec:state') == 'locked'",
+    "format_version": "1.20.80",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dec:ash_summoner",
+            "states": {
+                "dec:state": [
+                    "locked",
+                    "empty",
+                    "activated"
+                ]
+            },
+            "menu_category": {
+                "group": "itemGroup.name.outside",
+                "category": "items"
+            }
+        },
+        "permutations": [
+            {
+                "condition": "query.block_state('dec:state') == 'locked'",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "ash_summoner_locked",
+                            "render_method": "opaque"
+                        }
+                    },
+                    "minecraft:light_dampening": 15,
+                    "minecraft:light_emission": 0,
+                    "minecraft:destructible_by_mining": {
+                        "seconds_to_destroy": 3
+                    },
+                    "minecraft:destructible_by_explosion": {
+                        "explosion_resistance": 100
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('dec:state') == 'empty'",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "ash_summoner",
+                            "render_method": "opaque"
+                        }
+                    },
+                    "minecraft:light_dampening": 15,
+                    "minecraft:light_emission": 0,
+                    "minecraft:destructible_by_mining": {
+                        "seconds_to_destroy": 3
+                    },
+                    "minecraft:destructible_by_explosion": {
+                        "explosion_resistance": 100
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('dec:state') == 'activated'",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "ash_summoner_activated",
+                            "render_method": "opaque"
+                        }
+                    },
+                    "minecraft:light_dampening": 15,
+                    "minecraft:light_emission": 7,
+                    "minecraft:destructible_by_mining": {
+                        "seconds_to_destroy": 3
+                    },
+                    "minecraft:destructible_by_explosion": {
+                        "explosion_resistance": 100
+                    }
+                }
+            }
+        ],
         "components": {
-          "minecraft:material_instances": {
-            "*": {
-              "texture": "ash_summoner_locked",
-              "render_method": "opaque"
-            }
-          },
-          "minecraft:on_interact": {
-            "event": "unlocked",
-            "condition": "query.get_equipped_item_name('main_hand') == 'ash_key'"
-          },
-          "minecraft:light_dampening": 15,
-          "minecraft:light_emission": 0,
-          "minecraft:destroy_time": 3.0,
-          "minecraft:explosion_resistance": 100
+            "minecraft:light_dampening": 15,
+            "minecraft:light_emission": 0,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 3
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 100
+            },
+            "minecraft:map_color": "#7D3E34",
+            "minecraft:loot": "loot_tables/empty.json",
+            "minecraft:geometry": "minecraft:geometry.full_block"
         }
-      },
-      {
-        "condition": "query.block_state('dec:state') == 'empty'",
-        "components": {
-          "minecraft:material_instances": {
-            "*": {
-              "texture": "ash_summoner",
-              "render_method": "opaque"
-            }
-          },
-          "minecraft:on_interact": {
-            "event": "activate",
-            "condition": "query.get_equipped_item_name('main_hand') == 'challenge_of_ash'"
-          },
-          "minecraft:ticking": {
-            "looping": true,
-            "range": [
-              600,
-              1200
-            ],
-            "on_tick": {
-              "event": "minecraft:activate_naturally"
-            }
-          },
-          "minecraft:light_dampening": 15,
-          "minecraft:light_emission": 0,
-          "minecraft:destroy_time": 3.0,
-          "minecraft:explosion_resistance": 100
-        }
-      },
-      {
-        "condition": "query.block_state('dec:state') == 'activated'",
-        "components": {
-          "minecraft:material_instances": {
-            "*": {
-              "texture": "ash_summoner_activated",
-              "render_method": "opaque"
-            }
-          },
-          "minecraft:on_interact": {
-            "event": "summon",
-            "condition": "query.get_equipped_item_name('main_hand') == 'iron_key'"
-          },
-          "minecraft:light_dampening": 15,
-          "minecraft:light_emission": 7,
-          "minecraft:destroy_time": 3.0,
-          "minecraft:explosion_resistance": 100
-        }
-      }
-    ],
-    "components": {
-      "minecraft:creative_category": {
-        "group": "itemGroup.name.outside",
-        "category": "items"
-      },
-      "minecraft:unit_cube":{},
-      "minecraft:light_dampening": 15,
-      "minecraft:light_emission": 0,
-      "minecraft:destroy_time": 3.0,
-      "minecraft:explosion_resistance": 100,
-      "minecraft:map_color": "#7D3E34",
-      "minecraft:loot": "loot_tables/empty.json"
-    },
-    "events": {
-      "summon": {
-        "play_sound": {
-          "target": "other",
-          "sound": "conduit.activate"
-        },
-        "set_block_state": {
-          "dec:state": "'empty'"
-        },
-        "run_command": {
-          "command": [
-            "tellraw @a { \"rawtext\" : [ { \"translate\" : \"text.dec:summon_ash_knight.name\" } ] }",
-            "camera @a[r=32] fade time 0 1 2 color 10 0 0",
-            "summon dec:ash_knight ~~1~",
-            "execute as @e[type=dec:ash_knight,c=1] at @s run ride @s summon_ride dec:ash_horse",
-            "particle dec:ash_spawn_particle ~~1~"
-          ]
-        },
-        "decrement_stack": {}
-      },
-      "unlocked": {
-        "run_command": {
-          "command": [
-            "playsound conduit.activate @a ~~~",
-            "particle minecraft:critical_hit_emitter ~~~",
-            "playsound random.anvil_break @a ~~~"
-          ]
-        },
-        "set_block_state": {
-          "dec:state": "'empty'"
-        }
-      },
-      "activate": {
-        "set_block_state": {
-          "dec:state": "'activated'"
-        },
-        "run_command": {
-          "command": [
-            "playsound conduit.activate @a ~~~"
-          ]
-        },
-        "decrement_stack": {}
-      },
-      "activate_naturally": {
-        "set_block_state": {
-          "dec:state": "'activated'"
-        },
-        "run_command": {
-          "command": [
-            "playsound conduit.activate @a ~~~"
-          ]
-        }
-      }
     }
-  }
 }

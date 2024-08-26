@@ -253,7 +253,7 @@
                 "minecraft:spurt_mode"
               ]
             },
-            "run_command": {
+            "queue_command": {
               "command": [
                 "tp ~~~ ~ -180",
                 "effect @s regeneration 5"

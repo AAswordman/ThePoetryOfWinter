@@ -363,7 +363,7 @@
             "minecraft:cure"
           ]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
             "effect @s regeneration 2 6",
             "playanimation @s animation.frozen_heart.cure"
@@ -397,7 +397,7 @@
             "condition": "query.has_target",
             "sequence": [
               {
-                "run_command": {
+                "queue_command": {
                   "command": [
                     "playanimation @s animation.frozen_heart.go_forward"
                   ]

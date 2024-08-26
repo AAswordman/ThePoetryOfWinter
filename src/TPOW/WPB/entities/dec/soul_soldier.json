@@ -445,7 +445,7 @@
         }
       },
       "minecraft:attack_boss": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "damage @e[c=1,r=64,type=dec:escaped_soul] 5000 magic entity @s"
           ],
@@ -453,7 +453,7 @@
         }
       },
       "minecraft:summon_by_boss": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "particle dec:ghost_spurt_particle ~~1~"
           ],
@@ -467,7 +467,7 @@
         "trigger": "minecraft:entity_spawned"
       },
       "minecraft:summon_by_boss_last": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "particle dec:ghost_spurt_particle ~~1~"
           ],

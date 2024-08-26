@@ -1,0 +1,262 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dec:rice_crop",
+            "states": {
+                "dec:growth_stage": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5
+                ]
+            },
+            "menu_category": {
+                "group": "itemGroup.name.outside",
+                "category": "construction"
+            }
+        },
+        "components": {
+            "minecraft:breathability": "air",
+            "minecraft:geometry": "geometry.crop.hash",
+            "minecraft:collision_box": false,
+            "minecraft:selection_box": {
+                "origin": [
+                    -8,
+                    0,
+                    -8
+                ],
+                "size": [
+                    16,
+                    16,
+                    16
+                ]
+            },
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 0.001
+            },
+            "minecraft:map_color": "#8FE08B",
+            "minecraft:light_dampening": 0.0,
+            "minecraft:loot": "loot_tables/blocks/rice_crop.json",
+            "minecraft:random_ticking": {
+                "on_tick": {
+                    "event": "grow_stage"
+                }
+            },
+            "minecraft:placement_filter": {
+                "conditions": [
+                    {
+                        "allowed_faces": [
+                            "up"
+                        ],
+                        "block_filter": [
+                            "farmland"
+                        ]
+                    }
+                ]
+            }
+        },
+        "events": {
+            "grow_stage": {
+                "randomize": [
+                    {
+                        "weight": 1
+                    },
+                    {
+                        "weight": 1,
+                        "set_block_state": {
+                            "dec:growth_stage": "(query.block_state('dec:growth_stage')<5) ? query.block_state('dec:growth_stage') + 1 : 5"
+                        }
+                    }
+                ]
+            },
+            "meal": {
+                "sequence": [
+                    {
+                        "decrement_stack": {}
+                    },
+                    {
+                        "run_command": {
+                            "command": [
+                                "particle minecraft:crop_growth_emitter ~~~"
+                            ]
+                        }
+                    },
+                    {
+                        "trigger": {
+                            "event": "grow_stage"
+                        }
+                    }
+                ]
+            }
+        },
+        "permutations": [
+            {
+                "condition": "query.block_state('dec:growth_stage') == 0",
+                "components": {
+                    "minecraft:on_interact": {
+                        "event": "meal",
+                        "condition": "query.get_equipped_item_name('main_hand') == 'bone_meal'"
+                    },
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "rice_crop_0",
+                            "render_method": "alpha_test"
+                        }
+                    },
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -5,
+                            0,
+                            -5
+                        ],
+                        "size": [
+                            10,
+                            5,
+                            10
+                        ]
+                    },
+                    "minecraft:loot": "loot_tables/empty.json"
+                }
+            },
+            {
+                "condition": "query.block_state('dec:growth_stage') == 1",
+                "components": {
+                    "minecraft:on_interact": {
+                        "event": "meal",
+                        "condition": "query.get_equipped_item_name('main_hand') == 'bone_meal'"
+                    },
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "rice_crop_1",
+                            "render_method": "alpha_test"
+                        }
+                    },
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -5,
+                            0,
+                            -5
+                        ],
+                        "size": [
+                            10,
+                            5,
+                            10
+                        ]
+                    },
+                    "minecraft:loot": "loot_tables/empty.json"
+                }
+            },
+            {
+                "condition": "query.block_state('dec:growth_stage') == 2",
+                "components": {
+                    "minecraft:on_interact": {
+                        "event": "meal",
+                        "condition": "query.get_equipped_item_name('main_hand') == 'bone_meal'"
+                    },
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "rice_crop_2",
+                            "render_method": "alpha_test"
+                        }
+                    },
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -6.5,
+                            0,
+                            -6.5
+                        ],
+                        "size": [
+                            12,
+                            7,
+                            12
+                        ]
+                    },
+                    "minecraft:loot": "loot_tables/empty.json"
+                }
+            },
+            {
+                "condition": "query.block_state('dec:growth_stage') == 3",
+                "components": {
+                    "minecraft:on_interact": {
+                        "event": "meal",
+                        "condition": "query.get_equipped_item_name('main_hand') == 'bone_meal'"
+                    },
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "rice_crop_3",
+                            "render_method": "alpha_test"
+                        }
+                    },
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -8,
+                            0,
+                            -8
+                        ],
+                        "size": [
+                            13,
+                            12,
+                            13
+                        ]
+                    },
+                    "minecraft:loot": "loot_tables/empty.json"
+                }
+            },
+            {
+                "condition": "query.block_state('dec:growth_stage') == 4",
+                "components": {
+                    "minecraft:on_interact": {
+                        "event": "meal",
+                        "condition": "query.get_equipped_item_name('main_hand') == 'bone_meal'"
+                    },
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "rice_crop_4",
+                            "render_method": "alpha_test"
+                        }
+                    },
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -8,
+                            0,
+                            -8
+                        ],
+                        "size": [
+                            13,
+                            12,
+                            13
+                        ]
+                    },
+                    "minecraft:loot": "loot_tables/empty.json"
+                }
+            },
+            {
+                "condition": "query.block_state('dec:growth_stage') == 5",
+                "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "rice_crop_5",
+                            "render_method": "alpha_test"
+                        }
+                    },
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -8,
+                            0,
+                            -8
+                        ],
+                        "size": [
+                            16,
+                            12,
+                            16
+                        ]
+                    },
+                    "minecraft:loot": "loot_tables/blocks/rice_crop.json"
+                }
+            }
+        ]
+    }
+}

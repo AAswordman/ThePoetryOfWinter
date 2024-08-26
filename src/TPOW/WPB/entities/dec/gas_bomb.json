@@ -57,7 +57,7 @@
         }
       },
       "minecraft:explode": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "playsound random.explode @a ~~~",
             "particle dec:gas_bomb_particle ~~0.5~",

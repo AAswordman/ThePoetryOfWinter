@@ -1,9 +1,9 @@
 {
-    "format_version": "1.16.100",
+    "format_version": "1.20.80",
     "minecraft:block": {
         "description": {
             "identifier": "dec:soybean_crop",
-            "properties": {
+            "states": {
                 "dec:growth_stage": [
                     0,
                     1,
@@ -11,12 +11,16 @@
                     3,
                     4
                 ]
+            },
+            "menu_category": {
+                "group": "itemGroup.name.outside",
+                "category": "construction"
             }
         },
         "components": {
             "minecraft:geometry": "geometry.crop.hash",
-            "minecraft:entity_collision": false,
-            "minecraft:pick_collision": {
+            "minecraft:collision_box": false,
+            "minecraft:selection_box": {
                 "origin": [
                     -8,
                     0,
@@ -28,15 +32,12 @@
                     16
                 ]
             },
-            "minecraft:destroy_time": 0.001,
-            "minecraft:map_color": "#8FE08B",
-            "minecraft:light_dampening": 0.0,
-            "minecraft:loot": "loot_tables/blocks/soybean_crop.json",
-            "minecraft:random_ticking": {
-                "on_tick": {
-                    "event": "grow_stage"
-                }
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 0.001
             },
+            "minecraft:map_color": "#8FE08B",
+            "minecraft:light_dampening": 0,
+            "minecraft:loot": "loot_tables/blocks/soybean_crop.json",
             "minecraft:placement_filter": {
                 "conditions": [
                     {
@@ -49,66 +50,19 @@
                         ]
                     }
                 ]
-            },
-			"minecraft:breathability": "air"
-        },
-        "events": {
-            "grow_stage": {
-                "randomize": [
-                    {
-                        "weight": 1
-                    },
-                    {
-                        "weight": 1,
-                        "set_block_state": {
-                            "dec:growth_stage": "(query.block_state('dec:growth_stage')<4) ? query.block_state('dec:growth_stage') + 1 : 4"
-                        }
-                    }
-                ]
-            },
-            "final_drop": {
-                "spawn_loot": {
-                    "table": "loot_tables/blocks/soybean_crop.json"
-                },
-                "set_block": {
-                    "block_type": "dec:soybean_crop"
-                }
-            },
-            "meal": {
-                "sequence": [
-                    {
-                        "decrement_stack": {}
-                    },
-                    {
-                        "run_command": {
-                            "command": [
-                                "particle minecraft:crop_growth_emitter ~~~"
-                            ]
-                        }
-                    },
-                    {
-                        "trigger": {
-                            "event": "grow_stage"
-                        }
-                    }
-                ]
             }
         },
         "permutations": [
             {
                 "condition": "query.block_state('dec:growth_stage') == 0",
                 "components": {
-                    "minecraft:on_interact": {
-                        "event": "meal",
-                        "condition": "query.get_equipped_item_name('main_hand') == 'bone_meal'"
-                    },
                     "minecraft:material_instances": {
                         "*": {
                             "texture": "soybean_crop_0",
                             "render_method": "alpha_test"
                         }
                     },
-                    "minecraft:pick_collision": {
+                    "minecraft:selection_box": {
                         "origin": [
                             -7,
                             0,
@@ -126,17 +80,13 @@
             {
                 "condition": "query.block_state('dec:growth_stage') == 1",
                 "components": {
-                    "minecraft:on_interact": {
-                        "event": "meal",
-                        "condition": "query.get_equipped_item_name('main_hand') == 'bone_meal'"
-                    },
                     "minecraft:material_instances": {
                         "*": {
                             "texture": "soybean_crop_1",
                             "render_method": "alpha_test"
                         }
                     },
-                    "minecraft:pick_collision": {
+                    "minecraft:selection_box": {
                         "origin": [
                             -7,
                             0,
@@ -154,17 +104,13 @@
             {
                 "condition": "query.block_state('dec:growth_stage') == 2",
                 "components": {
-                    "minecraft:on_interact": {
-                        "event": "meal",
-                        "condition": "query.get_equipped_item_name('main_hand') == 'bone_meal'"
-                    },
                     "minecraft:material_instances": {
                         "*": {
                             "texture": "soybean_crop_2",
                             "render_method": "alpha_test"
                         }
                     },
-                    "minecraft:pick_collision": {
+                    "minecraft:selection_box": {
                         "origin": [
                             -6.5,
                             0,
@@ -182,17 +128,13 @@
             {
                 "condition": "query.block_state('dec:growth_stage') == 3",
                 "components": {
-                    "minecraft:on_interact": {
-                        "event": "meal",
-                        "condition": "query.get_equipped_item_name('main_hand') == 'bone_meal'"
-                    },
                     "minecraft:material_instances": {
                         "*": {
                             "texture": "soybean_crop_3",
                             "render_method": "alpha_test"
                         }
                     },
-                    "minecraft:pick_collision": {
+                    "minecraft:selection_box": {
                         "origin": [
                             -8,
                             0,
@@ -216,7 +158,7 @@
                             "render_method": "alpha_test"
                         }
                     },
-                    "minecraft:pick_collision": {
+                    "minecraft:selection_box": {
                         "origin": [
                             -8,
                             0,
@@ -228,11 +170,7 @@
                             16
                         ]
                     },
-                    "minecraft:loot": "loot_tables/blocks/soybean_crop.json",
-                    "minecraft:on_interact": {
-                        "event": "final_drop",
-                        "target": "self"
-                    }
+                    "minecraft:loot": "loot_tables/blocks/soybean_crop.json"
                 }
             }
         ]

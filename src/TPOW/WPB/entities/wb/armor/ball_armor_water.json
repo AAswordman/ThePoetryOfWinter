@@ -69,7 +69,7 @@
         },
         "events": {
             "sss": {
-                "run_command": {
+                "queue_command": {
                     "command": [
                         "execute as @a[tag=water] run say water",
                         "tag @e[r=25] remove water"

@@ -1,0 +1,52 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dec:ash_cage",
+            "menu_category": {
+                "group": "itemGroup.name.outside",
+                "category": "construction"
+            }
+        },
+        "components": {
+            "minecraft:light_dampening": 15,
+            "minecraft:light_emission": 0,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 3.2
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 500
+            },
+            "minecraft:friction": 0.7,
+            "minecraft:map_color": "#BBDBFF",
+            "tag:stone": {},
+            "minecraft:ticking": {
+                "looping": true,
+                "range": [
+                    10,
+                    10
+                ],
+                "on_tick": {
+                    "event": "minecraft:effect"
+                }
+            }
+        },
+        "events": {
+            "minecraft:effect": {
+                "run_command": {
+                    "command": [
+                        "execute as @a[x=~,y=~10,z=~,r=40,tag=gaming] unless entity @s[hasitem={item=dec:dust_ring}] run tag @s add ash_cage",
+                        "effect @e[x=~,y=~10,z=~,r=40] fire_resistance 0 255",
+                        "scoreboard players set @a[tag=ash_cage,scores={i_inviolable=..300}] i_inviolable 300",
+                        "scoreboard players set @a[tag=ash_cage,scores={i_soft=..300}] i_soft 300",
+                        "scoreboard players set @a[tag=ash_cage,scores={i_heavy=..300}] i_heavy 300",
+                        "tag @a[x=~,y=~10,z=~,r=45] remove ash_cage",
+                        "scoreboard players set @e[x=~,y=~10,z=~,r=40,scores={i_damp=..300},family=!ash_explode] i_damp 300",
+                        "particle dec:ash_cage_huge_particle ~~~",
+                        "particle dec:ash_cage_small_particle ~~~"
+                    ]
+                }
+            }
+        }
+    }
+}

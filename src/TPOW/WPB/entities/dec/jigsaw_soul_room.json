@@ -62,7 +62,7 @@
         "randomize": [
           {
             "weight": 2,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "execute unless entity @e[family=jigsaw_soul_room,x=~16,y=~,z=~,r=2] run function structure/soul_room/xp_room"
               ],
@@ -71,7 +71,7 @@
           },
           {
             "weight": 2,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "execute unless entity @e[family=jigsaw_soul_room,x=~-16,y=~,z=~,r=2] run function structure/soul_room/xn_room"
               ],
@@ -80,7 +80,7 @@
           },
           {
             "weight": 2,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "execute unless entity @e[family=jigsaw_soul_room,x=~,y=~,z=~16,r=2] run function structure/soul_room/zp_room"
               ],
@@ -89,7 +89,7 @@
           },
           {
             "weight": 2,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "execute unless entity @e[family=jigsaw_soul_room,x=~,y=~,z=~-16,r=2] run function structure/soul_room/zn_room"
               ],
@@ -98,7 +98,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "execute unless entity @e[family=jigsaw_soul_room,x=~16,y=~,z=~,r=2] unless entity @e[family=jigsaw_soul_room,x=~16,y=~8,z=~,r=2] run function structure/soul_room/xp_stair"
               ],
@@ -107,7 +107,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "execute unless entity @e[family=jigsaw_soul_room,x=~-16,y=~,z=~,r=2] unless entity @e[family=jigsaw_soul_room,x=~-16,y=~8,z=~,r=2] run function structure/soul_room/xn_stair"
               ],
@@ -116,7 +116,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "execute unless entity @e[family=jigsaw_soul_room,x=~,y=~,z=~16,r=2] unless entity @e[family=jigsaw_soul_room,x=~,y=~8,z=~16,r=2] run function structure/soul_room/zp_stair"
               ],
@@ -125,7 +125,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "execute unless entity @e[family=jigsaw_soul_room,x=~,y=~,z=~-16,r=2] unless entity @e[family=jigsaw_soul_room,x=~,y=~8,z=~-16,r=2] run function structure/soul_room/zn_stair"
               ],
@@ -135,7 +135,7 @@
         ]
       },
       "minecraft:jigsaw_test": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "execute if entity @e[family=jigsaw_soul_room,x=~16,y=~,z=~,r=2] if entity @e[family=jigsaw_soul_room,x=~-16,y=~,z=~,r=2] if entity @e[family=jigsaw_soul_room,x=~,y=~,z=~16,r=2] if entity @e[family=jigsaw_soul_room,x=~,y=~,z=~-16,r=2] run tag @s add transfer",
             "execute if entity @e[family=jigsaw_soul_room,x=~-64,dx=128,y=~6,dy=59,z=~-64,dz=128] run tag @s add transfer",

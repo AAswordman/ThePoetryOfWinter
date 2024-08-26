@@ -1,52 +1,25 @@
 {
-  "format_version": "1.16.0",
-  "minecraft:block": {
-    "description": {
-      "identifier": "dec:frozen_cage"
-    },
-    "components": {
-		  "minecraft:creative_category": {
-        "group": "itemGroup.name.outside",
-				"category": "construction"
-			},
-      "minecraft:light_dampening": 15,
-      "minecraft:light_emission": 0,
-      "minecraft:destroy_time": 3.2,
-      "minecraft:explosion_resistance": 500,
-      "minecraft:friction": 0.7,
-      "minecraft:map_color": "#BBDBFF",
-      "tag:stone": {},
-      "minecraft:ticking": {
-        "looping": true,
-        "range": [
-          1,
-          1
-        ],
-        "on_tick": {
-          "event": "minecraft:effect"
+    "format_version": "1.20.80",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dec:frozen_cage",
+            "menu_category": {
+                "group": "itemGroup.name.outside",
+                "category": "construction"
+            }
+        },
+        "components": {
+            "minecraft:light_dampening": 15,
+            "minecraft:light_emission": 0,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 3.2
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 500
+            },
+            "minecraft:friction": 0.7,
+            "minecraft:map_color": "#BBDBFF",
+            "tag:stone": {}
         }
-      }
-    },
-    "events": {
-      "minecraft:effect": {
-        "run_command": {
-          "command": [
-            "scoreboard players add @e[x=~-35,z=~-35,dx=71,dz=71,y=-64,dy=390,type=!item] i_soft 0",
-            "scoreboard players add @e[x=~-35,z=~-35,dx=71,dz=71,y=-64,dy=390,type=!item] i_inviolable 0",
-            "execute as @a[x=~-35,z=~-35,dx=71,dz=71,y=-64,dy=390,m=0] unless entity @s[hasitem={location=slot.armor.head,item=dec:everlasting_winter_helmet}] unless entity @s[hasitem={location=slot.armor.chest,item=dec:everlasting_winter_chestplate}] unless entity @s[hasitem={location=slot.armor.legs,item=dec:everlasting_winter_leggings}] unless entity @s[hasitem={location=slot.armor.feet,item=dec:everlasting_winter_boots}] run tag @s add frozen_cage",
-            "scoreboard players set @a[tag=frozen_cage,scores={i_inviolable=..300}] i_inviolable 300",
-            "scoreboard players set @a[tag=frozen_cage,scores={i_soft=..300}] i_soft 300",
-            "tag @a[x=~-37,z=~-37,dx=75,dz=75,y=-64,dy=390] remove frozen_cage",
-
-            "scoreboard players add @e[x=~-35,z=~-35,dx=71,dz=71,y=-64,dy=390,type=!item] i_damp 0",
-            "scoreboard players set @e[x=~-35,z=~-35,dx=71,dz=71,y=-64,dy=390,scores={i_damp=..300},family=!frozen] i_damp 300",
-            "scoreboard players set @e[x=~-35,z=~-35,dx=71,dz=71,y=-64,dy=390,scores={i_damp=..300},type=dec:tnt_snow_man] i_damp 300",
-
-            "particle dec:frozen_cage_huge_particle ~ -64 ~",
-            "particle dec:frozen_cage_small_particle ~~~"
-          ]
-        }
-      }
     }
-  }
 }

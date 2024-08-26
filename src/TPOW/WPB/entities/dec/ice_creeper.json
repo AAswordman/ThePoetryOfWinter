@@ -285,7 +285,7 @@
     },
     "events": {
       "minecraft:charged_explode": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "damage @e[r=4] 21 entity_explosion entity @s",
             "fill ~-4~-4~-4~4~4~4 dec:ghost_ice [] replace air []"
@@ -298,7 +298,7 @@
         }
       },
       "minecraft:explode": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "damage @e[r=2.5] 14 entity_explosion entity @s",
             "fill ~-2.5~-2.5~-2.5~2.5~2.5~2.5 dec:ghost_ice [] replace air []"

@@ -56,7 +56,7 @@
     },
     "events": {
       "minecraft:tp": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "tp @e[type=dec:ash_horse_head,r=64,c=1] @s",
             "execute if entity @e[type=dec:ash_horse_head,r=64] run damage @e[type=!item,r=7,family=!ash] 7 magic entity @e[c=1,r=64,type=dec:ash_horse_head]",

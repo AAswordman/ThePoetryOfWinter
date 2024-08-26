@@ -1,15 +1,14 @@
 {
-    "format_version": "1.16.100",
+    "format_version": "1.20.80",
     "minecraft:block": {
         "description": {
-            "identifier": "dec:lurk_grass"
+            "identifier": "dec:lurk_grass",
+            "menu_category": {
+                "group": "itemGroup.name.grass",
+                "category": "nature"
+            }
         },
-		
         "components": {
-		  "minecraft:creative_category": {
-				"group": "itemGroup.name.grass",
-				"category": "nature"
-			},
             "minecraft:material_instances": {
                 "*": {
                     "texture": "lurk_grass",
@@ -17,20 +16,35 @@
                 }
             },
             "minecraft:geometry": "geometry.crop.sparse.on_dirt",
-            "minecraft:entity_collision": false,
-            "minecraft:pick_collision": {
-                "origin": [-5,0,-5],
-                "size": [10,15,10]
+            "minecraft:collision_box": false,
+            "minecraft:selection_box": {
+                "origin": [
+                    -5,
+                    0,
+                    -5
+                ],
+                "size": [
+                    10,
+                    15,
+                    10
+                ]
             },
-            "minecraft:destroy_time": 0.001,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 0.001
+            },
             "minecraft:map_color": "#00847D",
-            "minecraft:light_dampening": 0.0,
+            "minecraft:light_dampening": 0,
             "minecraft:loot": "loot_tables/blocks/lurk_grass.json",
             "minecraft:placement_filter": {
                 "conditions": [
                     {
-                        "allowed_faces": ["up"],
-                        "block_filter": ["end_stone", "dec:lurk_end_stone"]
+                        "allowed_faces": [
+                            "up"
+                        ],
+                        "block_filter": [
+                            "end_stone",
+                            "dec:lurk_end_stone"
+                        ]
                     }
                 ]
             }

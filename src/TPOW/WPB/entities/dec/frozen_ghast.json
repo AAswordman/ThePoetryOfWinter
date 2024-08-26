@@ -229,7 +229,7 @@
             ]
           },
           {
-            "run_command": {
+            "queue_command": {
               "command": [
                 "particle dec:frozen_shield_particle ~~~"
               ]

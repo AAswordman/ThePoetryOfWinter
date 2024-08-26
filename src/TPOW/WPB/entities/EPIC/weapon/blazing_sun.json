@@ -223,7 +223,7 @@
                             "tag @s add blazing_sun"
                         ]
                     },
-                    "run_command": {
+                    "queue_command": {
                         "command": [
                             "tag @s add wbmsyh",
                             "effect @e[r=5,tag=!wbmsyh,tag=!blazing_sun] slowness 6 3 true"
@@ -233,7 +233,7 @@
             },
 
             "skill": {
-                "run_command": {
+                "queue_command": {
                     "command": [
                         "damage @e[r=5,c=3,tag=!wbmsyh,tag=!blazing_sun] 10 void entity @s",
                         "effect @e[r=5,c=1,tag=!wbmsyh,tag=!blazing_sun] slowness 1 255 true",
@@ -249,7 +249,7 @@
                         "defence"
                     ]
                 },
-                "run_command": {
+                "queue_command": {
                     "command": [
                         "tag @s add wbmsyh",
                         "tag @s add blazing_sun"
@@ -263,7 +263,7 @@
             },
 
             "spawn_skill": {
-                "run_command": {
+                "queue_command": {
                     "command": [
                         "damage @e[r=5,tag=!wbmsyh,tag=!blazing_sun] 30 void entity @s",
                         "damage @e[r=32,tag=!wbmsyh,tag=!blazing_sun] 0 void entity @s",
@@ -288,7 +288,7 @@
                         "death_turn"
                     ]
                 },
-                "run_command": {
+                "queue_command": {
                     "command": [
                         "tag @s add wbmsyh",
                         "tag @s add blazing_sun"
@@ -301,7 +301,7 @@
                 }
             },
             "death_skill": {
-                "run_command": {
+                "queue_command": {
                     "command": [
                         "damage @e[r=5,tag=!wbmsyh,tag=!blazing_sun] 50 void entity @s",
                         "event entity @s kill"

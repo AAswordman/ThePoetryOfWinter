@@ -388,7 +388,7 @@
         }
       },
       "minecraft:entity_spawned": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "summon dec:ice_spirit",
             "summon dec:ice_spirit",
@@ -403,7 +403,7 @@
         }
       },
       "minecraft:next": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "summon dec:ice_spirit",
             "summon dec:ice_spirit",
@@ -422,7 +422,7 @@
             "minecraft:summon_with_defense"
           ]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
             "function entity/frozen_laser_spawn/1"
           ]
@@ -506,7 +506,7 @@
         ]
       },
       "minecraft:laser_attack_defense": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "playanimation @s animation.everlasting_winter_ghast.defense",
             "event entity @s minecraft:laser_attack_exe",
@@ -515,7 +515,7 @@
         }
       },
       "minecraft:laser_attack": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "playanimation @s animation.everlasting_winter_ghast.laser_attack",
             "event entity @s minecraft:laser_attack_exe",
@@ -525,7 +525,7 @@
         }
       },
       "minecraft:summon_attack_defense": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "playanimation @s animation.everlasting_winter_ghast.defense",
             "event entity @s minecraft:summon_attack_exe"
@@ -533,7 +533,7 @@
         }
       },
       "minecraft:summon_attack": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "playanimation @s animation.everlasting_winter_ghast.laser_attack",
             "event entity @s minecraft:summon_attack_exe",
@@ -548,7 +548,7 @@
             "randomize": [
               {
                 "weight": 1,
-                "run_command": {
+                "queue_command": {
                   "command": [
                     "function entity/ice_thorn_spawn/1"
                   ]
@@ -556,7 +556,7 @@
               },
               {
                 "weight": 1,
-                "run_command": {
+                "queue_command": {
                   "command": [
                     "function entity/ice_thorn_spawn/2"
                   ]
@@ -564,7 +564,7 @@
               },
               {
                 "weight": 1,
-                "run_command": {
+                "queue_command": {
                   "command": [
                     "function entity/ice_thorn_spawn/3"
                   ]
@@ -572,7 +572,7 @@
               },
               {
                 "weight": 1,
-                "run_command": {
+                "queue_command": {
                   "command": [
                     "function entity/ice_thorn_spawn/4"
                   ]
@@ -580,7 +580,7 @@
               },
               {
                 "weight": 1,
-                "run_command": {
+                "queue_command": {
                   "command": [
                     "function entity/ice_thorn_spawn/5"
                   ]
@@ -588,7 +588,7 @@
               },
               {
                 "weight": 1,
-                "run_command": {
+                "queue_command": {
                   "command": [
                     "function entity/ice_thorn_spawn/6"
                   ]
@@ -596,7 +596,7 @@
               },
               {
                 "weight": 1,
-                "run_command": {
+                "queue_command": {
                   "command": [
                     "function entity/ice_thorn_spawn/7"
                   ]
@@ -604,7 +604,7 @@
               },
               {
                 "weight": 1,
-                "run_command": {
+                "queue_command": {
                   "command": [
                     "function entity/ice_thorn_spawn/8"
                   ]
@@ -617,7 +617,7 @@
             "randomize": [
               {
                 "weight": 1,
-                "run_command": {
+                "queue_command": {
                   "command": [
                     "function entity/frozen_laser_spawn/1"
                   ]
@@ -625,7 +625,7 @@
               },
               {
                 "weight": 1,
-                "run_command": {
+                "queue_command": {
                   "command": [
                     "function entity/frozen_laser_spawn/2"
                   ]
@@ -633,7 +633,7 @@
               },
               {
                 "weight": 1,
-                "run_command": {
+                "queue_command": {
                   "command": [
                     "function entity/frozen_laser_spawn/3"
                   ]
@@ -641,7 +641,7 @@
               },
               {
                 "weight": 1,
-                "run_command": {
+                "queue_command": {
                   "command": [
                     "function entity/frozen_laser_spawn/4"
                   ]
@@ -649,7 +649,7 @@
               },
               {
                 "weight": 1,
-                "run_command": {
+                "queue_command": {
                   "command": [
                     "function entity/frozen_laser_spawn/5"
                   ]
@@ -657,7 +657,7 @@
               },
               {
                 "weight": 1,
-                "run_command": {
+                "queue_command": {
                   "command": [
                     "function entity/frozen_laser_spawn/6"
                   ]
@@ -665,7 +665,7 @@
               },
               {
                 "weight": 1,
-                "run_command": {
+                "queue_command": {
                   "command": [
                     "function entity/frozen_laser_spawn/7"
                   ]
@@ -673,7 +673,7 @@
               },
               {
                 "weight": 1,
-                "run_command": {
+                "queue_command": {
                   "command": [
                     "function entity/frozen_laser_spawn/8"
                   ]
@@ -687,7 +687,7 @@
         "randomize": [
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "summon dec:frozen_shadow ~20~6~"
               ]
@@ -695,7 +695,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "summon dec:frozen_shadow ~-20~6~"
               ]
@@ -703,7 +703,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "summon dec:frozen_shadow ~~6~20"
               ]
@@ -711,7 +711,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "summon dec:frozen_shadow ~~6~-20"
               ]
@@ -719,7 +719,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "summon dec:frozen_shadow ~13~6~13"
               ]
@@ -727,7 +727,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "summon dec:frozen_shadow ~-13~6~13"
               ]
@@ -735,7 +735,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "summon dec:frozen_shadow ~-13~6~-13"
               ]
@@ -743,7 +743,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "summon dec:frozen_shadow ~13~6~-13"
               ]
@@ -751,7 +751,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "summon dec:frozen_ghast ~20~6~ 0 0 minecraft:from_boss"
               ]
@@ -759,7 +759,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "summon dec:frozen_ghast ~-20~6~ 0 0 minecraft:from_boss"
               ]
@@ -767,7 +767,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "summon dec:frozen_ghast ~~6~20 0 0 minecraft:from_boss"
               ]
@@ -775,7 +775,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "summon dec:frozen_ghast ~~6~-20 0 0 minecraft:from_boss"
               ]
@@ -783,7 +783,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "summon dec:frozen_ghast ~13~6~13 0 0 minecraft:from_boss"
               ]
@@ -791,7 +791,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "summon dec:frozen_ghast ~-13~6~13 0 0 minecraft:from_boss"
               ]
@@ -799,7 +799,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "summon dec:frozen_ghast ~-13~6~-13 0 0 minecraft:from_boss"
               ]
@@ -807,7 +807,7 @@
           },
           {
             "weight": 1,
-            "run_command": {
+            "queue_command": {
               "command": [
                 "summon dec:frozen_ghast ~13~6~-13 0 0 minecraft:from_boss"
               ]

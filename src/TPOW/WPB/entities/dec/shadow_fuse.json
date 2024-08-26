@@ -52,7 +52,7 @@
         }
       },
       "minecraft:set_dragon": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "scoreboard players set @s random -1"
           ]

@@ -221,7 +221,7 @@
             "minecraft:exploding"
           ]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
             "tp ~~5~"
           ]

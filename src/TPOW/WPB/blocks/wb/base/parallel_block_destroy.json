@@ -1,44 +1,29 @@
 {
-	"format_version": "1.16.100",
-	"minecraft:block": {
-		"description": {
-			"identifier": "wb:parallel_block_destroy",
-			"is_experimental": false
-		},
-		"events": {
-			"destroy": {
-				"run_command": {
-					"command": [
-						"setblock ~ ~ ~ air"
-					]
-				}
-			}
-		},
-		"components": {
-			"minecraft:block_light_absorption": 1,
-			"minecraft:material_instances": {
-				"*": {
-					"texture": "parallel_block_destroy",
-					"render_method": "alpha_test"
-				}
-			},
-			"minecraft:destroy_time": 1000000000,
-			"minecraft:explosion_resistance": 1000000000,
-			"minecraft:block_light_emission": 0.6,
-			"minecraft:map_color": "#2222dd",
-			"minecraft:ticking": {
-				"range": [
-					10,
-					14
-				],
-				"on_tick": {
-					"event": "destroy"
-				},
-				"looping": true
-			},
-			"minecraft:creative_category": {
-				"category": "construction"
-			}
-		}
-	}
+    "format_version": "1.20.80",
+    "minecraft:block": {
+        "description": {
+            "identifier": "wb:parallel_block_destroy",
+            "is_experimental": false,
+            "menu_category": {
+                "category": "construction"
+            }
+        },
+        "components": {
+            "minecraft:light_dampening": 1,
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "parallel_block_destroy",
+                    "render_method": "alpha_test"
+                }
+            },
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 1000000000
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 1000000000
+            },
+            "minecraft:light_emission": 0.6,
+            "minecraft:map_color": "#2222dd"
+        }
+    }
 }

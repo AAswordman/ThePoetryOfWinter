@@ -231,7 +231,7 @@
 				}
 			},
 			"minecraft:summon_start": {
-				"run_command": {
+				"queue_command": {
 					"command": [
 						"summon dec:shadow_skeleton_puppet ~~~ 0 0 minecraft:timer"
 					]

@@ -1,72 +1,58 @@
 {
-    "format_version": "1.16.100",
+    "format_version": "1.20.80",
     "minecraft:block": {
         "description": {
             "identifier": "dec:lace_block_light_red",
-            "properties": {
+            "states": {
                 "dec:facing": [
                     "vertical",
                     "south_north",
                     "east_west"
                 ]
+            },
+            "menu_category": {
+                "group": "itemGroup.name.outside",
+                "category": "items"
             }
         },
         "permutations": [
             {
                 "condition": "q.block_state('dec:facing') == 'vertical'",
                 "components": {
-                    "minecraft:rotation": [
-                        0,
-                        0,
-                        0
-                    ]
+                    "minecraft:transformation": {
+                        "minecraft:rotation": [
+                            0,
+                            0,
+                            0
+                        ]
+                    }
                 }
             },
             {
                 "condition": "q.block_state('dec:facing') == 'south_north'",
                 "components": {
-                    "minecraft:rotation": [
-                        90,
-                        0,
-                        0
-                    ]
+                    "minecraft:transformation": {
+                        "minecraft:rotation": [
+                            90,
+                            0,
+                            0
+                        ]
+                    }
                 }
             },
             {
                 "condition": "q.block_state('dec:facing') == 'east_west'",
                 "components": {
-                    "minecraft:rotation": [
-                        90,
-                        90,
-                        0
-                    ]
+                    "minecraft:transformation": {
+                        "minecraft:rotation": [
+                            90,
+                            90,
+                            0
+                        ]
+                    }
                 }
             }
         ],
-        "events": {
-            "on_player_placing": {
-                "sequence": [
-                    {
-                        "condition": "q.cardinal_player_facing == 0 || q.cardinal_player_facing == 1",
-                        "set_block_state": {
-                            "dec:facing": "'vertical'"
-                        }
-                    },
-                    {
-                        "condition": "q.cardinal_player_facing == 2 || q.cardinal_player_facing == 3",
-                        "set_block_state": {
-                            "dec:facing": "'south_north'"
-                        }
-                    },
-                    {
-                        "condition": "q.cardinal_player_facing == 4 || q.cardinal_player_facing == 5",
-                        "set_block_state": {
-                            "dec:facing": "'east_west'"
-                        }
-                    }
-                ]
-            }
-        },
         "components": {
             "minecraft:material_instances": {
                 "north": "sides",
@@ -83,25 +69,22 @@
                     "texture": "lace_block_light_red_up"
                 }
             },
-            "minecraft:creative_category": {
-                "group": "itemGroup.name.outside",
-                "category": "items"
-            },
-            "minecraft:on_player_placing": {
-                "event": "on_player_placing"
-            },
             "minecraft:light_emission": 0,
             "minecraft:map_color": "#4F0608",
             "minecraft:light_dampening": 15,
-            "minecraft:destroy_time": 1,
-            "minecraft:explosion_resistance": 0,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 1
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 0
+            },
             "minecraft:flammable": {
                 "flame_odds": 4,
                 "burn_odds": 5
             },
-            "minecraft:unit_cube": {},
             "minecraft:loot": "loot_tables/blocks/8F5758.json",
-            "tag:wool": {}
+            "tag:wool": {},
+            "minecraft:geometry": "minecraft:geometry.full_block"
         }
     }
 }

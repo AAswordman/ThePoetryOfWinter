@@ -1,0 +1,185 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dec:golden_chain",
+            "states": {
+                "dec:facing": [
+                    "vertical_0",
+                    "vertical_1",
+                    "south_north_0",
+                    "south_north_1",
+                    "east_west_0",
+                    "east_west_1"
+                ]
+            },
+            "menu_category": {
+                "group": "itemGroup.name.outside",
+                "category": "items"
+            }
+        },
+        "permutations": [
+            {
+                "condition": "q.block_state('dec:facing') == 'vertical_0'",
+                "components": {
+                    "minecraft:transformation": {
+                        "minecraft:rotation": [
+                            0,
+                            0,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('dec:facing') == 'vertical_1'",
+                "components": {
+                    "minecraft:transformation": {
+                        "minecraft:rotation": [
+                            90,
+                            90,
+                            90
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('dec:facing') == 'south_north_0'",
+                "components": {
+                    "minecraft:transformation": {
+                        "minecraft:rotation": [
+                            90,
+                            0,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('dec:facing') == 'south_north_1'",
+                "components": {
+                    "minecraft:transformation": {
+                        "minecraft:rotation": [
+                            90,
+                            0,
+                            90
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('dec:facing') == 'east_west_0'",
+                "components": {
+                    "minecraft:transformation": {
+                        "minecraft:rotation": [
+                            90,
+                            90,
+                            0
+                        ]
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('dec:facing') == 'east_west_1'",
+                "components": {
+                    "minecraft:transformation": {
+                        "minecraft:rotation": [
+                            0,
+                            0,
+                            90
+                        ]
+                    }
+                }
+            }
+        ],
+        "events": {
+            "on_player_placing": {
+                "sequence": [
+                    {
+                        "condition": "q.cardinal_player_facing == 0",
+                        "set_block_state": {
+                            "dec:facing": "'vertical_0'"
+                        }
+                    },
+                    {
+                        "condition": "q.cardinal_player_facing == 1",
+                        "set_block_state": {
+                            "dec:facing": "'vertical_1'"
+                        }
+                    },
+                    {
+                        "condition": "q.cardinal_player_facing == 2",
+                        "set_block_state": {
+                            "dec:facing": "'south_north_0'"
+                        }
+                    },
+                    {
+                        "condition": "q.cardinal_player_facing == 3",
+                        "set_block_state": {
+                            "dec:facing": "'south_north_1'"
+                        }
+                    },
+                    {
+                        "condition": "q.cardinal_player_facing == 4",
+                        "set_block_state": {
+                            "dec:facing": "'east_west_0'"
+                        }
+                    },
+                    {
+                        "condition": "q.cardinal_player_facing == 5",
+                        "set_block_state": {
+                            "dec:facing": "'east_west_1'"
+                        }
+                    }
+                ]
+            }
+        },
+        "components": {
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "golden_chain",
+                    "render_method": "alpha_test"
+                }
+            },
+            "minecraft:selection_box": {
+                "origin": [
+                    -2.5,
+                    0,
+                    -2.5
+                ],
+                "size": [
+                    5,
+                    16,
+                    5
+                ]
+            },
+            "minecraft:collision_box": {
+                "origin": [
+                    -2.5,
+                    0,
+                    -2.5
+                ],
+                "size": [
+                    5,
+                    16,
+                    5
+                ]
+            },
+            "minecraft:geometry": "geometry.golden_chain",
+            "minecraft:on_player_placing": {
+                "event": "on_player_placing"
+            },
+            "minecraft:light_emission": 0,
+            "minecraft:map_color": "#252C3D",
+            "minecraft:light_dampening": 0,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 1.7
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 40
+            },
+            "minecraft:loot": "loot_tables/blocks/golden_chain.json",
+            "tag:metal": {}
+        }
+    }
+}

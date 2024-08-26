@@ -58,7 +58,7 @@
     },
     "events": {
       "minecraft:explode": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "damage @e[type=!item,x=~-2,y=~-1.5,z=~-2,dx=4,dy=4,dz=4] 6 magic",
             "particle dec:bubble_spurt_particle ~~~",

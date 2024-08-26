@@ -1,9 +1,9 @@
 {
-    "format_version": "1.16.100",
+    "format_version": "1.20.80",
     "minecraft:block": {
         "description": {
             "identifier": "dec:corn_crop",
-            "properties": {
+            "states": {
                 "dec:growth_stage": [
                     0,
                     1,
@@ -19,12 +19,16 @@
                     false,
                     true
                 ]
+            },
+            "menu_category": {
+                "group": "itemGroup.name.outside",
+                "category": "construction"
             }
         },
         "components": {
             "minecraft:geometry": "geometry.crop.sparse",
-            "minecraft:entity_collision": false,
-            "minecraft:pick_collision": {
+            "minecraft:collision_box": false,
+            "minecraft:selection_box": {
                 "origin": [
                     -3.5,
                     0,
@@ -36,94 +40,12 @@
                     7
                 ]
             },
-            "minecraft:destroy_time": 0.001,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 0.001
+            },
             "minecraft:map_color": "#365210",
-            "minecraft:light_dampening": 0.0,
-            "minecraft:loot": "loot_tables/blocks/corn_crop.json",
-            "minecraft:random_ticking": {
-                "on_tick": {
-                    "event": "grow_stage"
-                }
-            },
-            "minecraft:breathability": "air"
-        },
-        "events": {
-            "grow": {
-                "set_block_state": {
-                    "dec:growth_stage": "query.block_state('dec:crop_location') == 0 ? (query.block_state('dec:growth_stage')<4 ? query.block_state('dec:growth_stage') + 1 : 4) : (query.block_state('dec:growth_stage')<3 ? query.block_state('dec:growth_stage') + 1 : 3)"
-                }
-            },
-            "grow_stage": {
-                "randomize": [
-                    {
-                        "weight": 1
-                    },
-                    {
-                        "weight": 1,
-                        "sequence": [
-                            {
-                                "condition": "(query.block_state('dec:crop_location') == 1 && query.block_state('dec:growth_stage') < 3) || (query.block_state('dec:crop_location') == 0 && query.block_state('dec:harvestable') && query.block_state('dec:growth_stage') == 3) || (query.block_state('dec:crop_location') == 0 &&query.block_state('dec:growth_stage') < 3)",
-                                "sequence": [
-                                    {
-                                        "trigger": {
-                                            "event": "grow"
-                                        }
-                                    }
-                                ]
-                            },
-                            {
-                                "condition": "query.block_state('dec:crop_location') == 0 && !query.block_state('dec:harvestable') && query.block_state('dec:growth_stage') == 3",
-                                "sequence": [
-                                    {
-                                        "run_command": {
-                                            "command": [
-                                                "execute if block ~~1~ air run setblock ~~1~ dec:corn_crop [\"dec:crop_location\"=1,\"dec:growth_stage\"=0,\"dec:harvestable\"=true]",
-                                                "execute if block ~~1~ dec:corn_crop [\"dec:crop_location\"=1,\"dec:growth_stage\"=0,\"dec:harvestable\"=true] run setblock ~~~ dec:corn_crop [\"dec:crop_location\"=0,\"dec:growth_stage\"=3,\"dec:harvestable\"=true]"
-                                            ],
-                                            "target": "self"
-                                        }
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            },
-            "final_drop_0": {
-                "spawn_loot": {
-                    "table": "loot_tables/blocks/corn_crop.json"
-                },
-                "set_block_state": {
-                    "dec:growth_stage": 3
-                }
-            },
-            "final_drop_1": {
-                "spawn_loot": {
-                    "table": "loot_tables/blocks/corn_crop.json"
-                },
-                "set_block_state": {
-                    "dec:growth_stage": 2
-                }
-            },
-            "meal": {
-                "sequence": [
-                    {
-                        "decrement_stack": {}
-                    },
-                    {
-                        "run_command": {
-                            "command": [
-                                "particle minecraft:crop_growth_emitter ~~~"
-                            ]
-                        }
-                    },
-                    {
-                        "trigger": {
-                            "event": "grow_stage"
-                        }
-                    }
-                ]
-            }
+            "minecraft:light_dampening": 0,
+            "minecraft:loot": "loot_tables/blocks/corn_crop.json"
         },
         "permutations": [
             {
@@ -163,17 +85,13 @@
             {
                 "condition": "query.block_state('dec:crop_location') == 0 && query.block_state('dec:growth_stage') == 0",
                 "components": {
-                    "minecraft:on_interact": {
-                        "event": "meal",
-                        "condition": "query.get_equipped_item_name('main_hand') == 'bone_meal'"
-                    },
                     "minecraft:material_instances": {
                         "*": {
                             "texture": "corn_crop_0_0",
                             "render_method": "alpha_test"
                         }
                     },
-                    "minecraft:pick_collision": {
+                    "minecraft:selection_box": {
                         "origin": [
                             -3,
                             0,
@@ -191,17 +109,13 @@
             {
                 "condition": "query.block_state('dec:crop_location') == 0 && query.block_state('dec:growth_stage') == 1",
                 "components": {
-                    "minecraft:on_interact": {
-                        "event": "meal",
-                        "condition": "query.get_equipped_item_name('main_hand') == 'bone_meal'"
-                    },
                     "minecraft:material_instances": {
                         "*": {
                             "texture": "corn_crop_0_1",
                             "render_method": "alpha_test"
                         }
                     },
-                    "minecraft:pick_collision": {
+                    "minecraft:selection_box": {
                         "origin": [
                             -3.5,
                             0,
@@ -219,17 +133,13 @@
             {
                 "condition": "query.block_state('dec:crop_location') == 0 && query.block_state('dec:growth_stage') == 2",
                 "components": {
-                    "minecraft:on_interact": {
-                        "event": "meal",
-                        "condition": "query.get_equipped_item_name('main_hand') == 'bone_meal'"
-                    },
                     "minecraft:material_instances": {
                         "*": {
                             "texture": "corn_crop_0_2",
                             "render_method": "alpha_test"
                         }
                     },
-                    "minecraft:pick_collision": {
+                    "minecraft:selection_box": {
                         "origin": [
                             -4,
                             0,
@@ -247,17 +157,13 @@
             {
                 "condition": "query.block_state('dec:crop_location') == 0 && query.block_state('dec:growth_stage') == 3",
                 "components": {
-                    "minecraft:on_interact": {
-                        "event": "meal",
-                        "condition": "query.get_equipped_item_name('main_hand') == 'bone_meal'"
-                    },
                     "minecraft:material_instances": {
                         "*": {
                             "texture": "corn_crop_0_3",
                             "render_method": "alpha_test"
                         }
                     },
-                    "minecraft:pick_collision": {
+                    "minecraft:selection_box": {
                         "origin": [
                             -6,
                             0,
@@ -281,7 +187,7 @@
                             "render_method": "alpha_test"
                         }
                     },
-                    "minecraft:pick_collision": {
+                    "minecraft:selection_box": {
                         "origin": [
                             -6,
                             0,
@@ -293,27 +199,19 @@
                             12
                         ]
                     },
-                    "minecraft:loot": "loot_tables/blocks/corn_crop.json",
-                    "minecraft:on_interact": {
-                        "event": "final_drop_0",
-                        "target": "self"
-                    }
+                    "minecraft:loot": "loot_tables/blocks/corn_crop.json"
                 }
             },
             {
                 "condition": "query.block_state('dec:crop_location') == 1 && query.block_state('dec:growth_stage') == 0",
                 "components": {
-                    "minecraft:on_interact": {
-                        "event": "meal",
-                        "condition": "query.get_equipped_item_name('main_hand') == 'bone_meal'"
-                    },
                     "minecraft:material_instances": {
                         "*": {
                             "texture": "corn_crop_1_0",
                             "render_method": "alpha_test"
                         }
                     },
-                    "minecraft:pick_collision": {
+                    "minecraft:selection_box": {
                         "origin": [
                             -4,
                             0,
@@ -331,17 +229,13 @@
             {
                 "condition": "query.block_state('dec:crop_location') == 1 && query.block_state('dec:growth_stage') == 1",
                 "components": {
-                    "minecraft:on_interact": {
-                        "event": "meal",
-                        "condition": "query.get_equipped_item_name('main_hand') == 'bone_meal'"
-                    },
                     "minecraft:material_instances": {
                         "*": {
                             "texture": "corn_crop_1_1",
                             "render_method": "alpha_test"
                         }
                     },
-                    "minecraft:pick_collision": {
+                    "minecraft:selection_box": {
                         "origin": [
                             -5,
                             0,
@@ -359,17 +253,13 @@
             {
                 "condition": "query.block_state('dec:crop_location') == 1 && query.block_state('dec:growth_stage') == 2",
                 "components": {
-                    "minecraft:on_interact": {
-                        "event": "meal",
-                        "condition": "query.get_equipped_item_name('main_hand') == 'bone_meal'"
-                    },
                     "minecraft:material_instances": {
                         "*": {
                             "texture": "corn_crop_1_2",
                             "render_method": "alpha_test"
                         }
                     },
-                    "minecraft:pick_collision": {
+                    "minecraft:selection_box": {
                         "origin": [
                             -5.5,
                             0,
@@ -393,7 +283,7 @@
                             "render_method": "alpha_test"
                         }
                     },
-                    "minecraft:pick_collision": {
+                    "minecraft:selection_box": {
                         "origin": [
                             -6,
                             0,
@@ -405,11 +295,7 @@
                             12
                         ]
                     },
-                    "minecraft:loot": "loot_tables/blocks/corn_crop.json",
-                    "minecraft:on_interact": {
-                        "event": "final_drop_1",
-                        "target": "self"
-                    }
+                    "minecraft:loot": "loot_tables/blocks/corn_crop.json"
                 }
             }
         ]

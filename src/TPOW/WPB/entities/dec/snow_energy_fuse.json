@@ -40,7 +40,7 @@
       "minecraft:spawn_snow_energy": {
         "randomize": [
           {
-            "run_command": {
+            "queue_command": {
               "command": [
                 "summon dec:snow_energy ~~3~",
                 "event entity @s minecraft:despawn"
@@ -49,7 +49,7 @@
             "weight": 4
           },
           {
-            "run_command": {
+            "queue_command": {
               "command": [
                 "summon dec:snow_energy ~~4~",
                 "event entity @s minecraft:despawn"
@@ -58,7 +58,7 @@
             "weight": 5
           },
           {
-            "run_command": {
+            "queue_command": {
               "command": [
                 "summon dec:snow_energy ~~5~",
                 "event entity @s minecraft:despawn"
@@ -67,7 +67,7 @@
             "weight": 4
           },
           {
-            "run_command": {
+            "queue_command": {
               "command": [
                 "summon dec:snow_energy ~~6~",
                 "event entity @s minecraft:despawn"
@@ -76,7 +76,7 @@
             "weight": 4
           },
           {
-            "run_command": {
+            "queue_command": {
               "command": [
                 "summon dec:snow_energy ~~7~",
                 "event entity @s minecraft:despawn"

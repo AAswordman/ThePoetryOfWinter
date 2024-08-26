@@ -1,0 +1,72 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dec:lurk_mushroom_lit",
+            "menu_category": {
+                "group": "itemGroup.name.outside",
+                "category": "construction"
+            }
+        },
+        "components": {
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "lurk_mushroom_lit",
+                    "render_method": "alpha_test"
+                }
+            },
+            "minecraft:geometry": "geometry.crop.sparse.on_dirt",
+            "minecraft:collision_box": false,
+            "minecraft:selection_box": {
+                "origin": [
+                    -5,
+                    0,
+                    -5
+                ],
+                "size": [
+                    10,
+                    9,
+                    10
+                ]
+            },
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 0.001
+            },
+            "minecraft:light_emission": 6,
+            "minecraft:map_color": "#00847D",
+            "minecraft:light_dampening": 0.0,
+            "minecraft:loot": "loot_tables/blocks/lurk_mushroom.json",
+            "minecraft:placement_filter": {
+                "conditions": [
+                    {
+                        "allowed_faces": [
+                            "up"
+                        ],
+                        "block_filter": [
+                            "end_stone",
+                            "dec:lurk_end_stone"
+                        ]
+                    }
+                ]
+            },
+            "minecraft:ticking": {
+                "looping": true,
+                "range": [
+                    3,
+                    5
+                ],
+                "on_tick": {
+                    "event": "turn_off",
+                    "target": "self"
+                }
+            }
+        },
+        "events": {
+            "turn_off": {
+                "set_block": {
+                    "block_type": "dec:lurk_mushroom"
+                }
+            }
+        }
+    }
+}

@@ -349,7 +349,7 @@
             "minecraft:can_trade"
           ]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
             "particle minecraft:villager_angry ~~1~"
           ],
@@ -383,7 +383,7 @@
                 "minecraft:before_trade"
               ]
             },
-            "run_command": {
+            "queue_command": {
               "command": [
                 "particle minecraft:villager_angry ~~1~"
               ],
@@ -411,7 +411,7 @@
                 "minecraft:can_trade"
               ]
             },
-            "run_command": {
+            "queue_command": {
               "command": [
                 "loot spawn ~~1~ loot \"entities/chest_monster_trade\"",
                 "playanimation @s animation.chest_monster.trade_successfully"
@@ -437,7 +437,7 @@
             "minecraft:escape"
           ]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
             "playanimation @s animation.chest_monster.escape_successfully"
           ],

@@ -284,7 +284,7 @@
             "minecraft:no_partner"
           ]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
             "particle dec:ghost_spurt_big_particle ~~1~"
           ]
@@ -296,7 +296,7 @@
             "minecraft:die_wait"
           ]
         },
-        "run_command": {
+        "queue_command": {
           "command": [
             "event entity @e[c=1,r=64,type=dec:shadow_soul_2] minecraft:no_partner"
           ],
@@ -304,7 +304,7 @@
         }
       },
       "minecraft:die": {
-        "run_command": {
+        "queue_command": {
           "command": [
             "event entity @e[c=1,r=64,type=dec:shadow_soul_2] minecraft:no_partner"
           ],
@@ -318,7 +318,7 @@
       },
       "minecraft:time_down": {
         "trigger": "minecraft:has_partner_stay",
-        "run_command": {
+        "queue_command": {
           "command": [
             "event entity @e[c=1,r=64,type=dec:shadow_soul_2] minecraft:has_partner_attack"
           ],

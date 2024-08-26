@@ -1,0 +1,207 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dec:mooli_crop",
+            "states": {
+                "dec:growth_stage": [
+                    0,
+                    1,
+                    2,
+                    3
+                ]
+            },
+            "menu_category": {
+                "group": "itemGroup.name.outside",
+                "category": "construction"
+            }
+        },
+        "components": {
+            "minecraft:geometry": "geometry.crop.sparse",
+            "minecraft:collision_box": false,
+            "minecraft:selection_box": {
+                "origin": [
+                    -3.5,
+                    0,
+                    -3.5
+                ],
+                "size": [
+                    7,
+                    9,
+                    7
+                ]
+            },
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 0.001
+            },
+            "minecraft:map_color": "#8FE08B",
+            "minecraft:light_dampening": 0.0,
+            "minecraft:loot": "loot_tables/blocks/mooli_crop.json",
+            "minecraft:random_ticking": {
+                "on_tick": {
+                    "event": "grow_stage"
+                }
+            },
+            "minecraft:placement_filter": {
+                "conditions": [
+                    {
+                        "allowed_faces": [
+                            "up"
+                        ],
+                        "block_filter": [
+                            "farmland"
+                        ]
+                    }
+                ]
+            }
+        },
+        "events": {
+            "grow_stage": {
+                "randomize": [
+                    {
+                        "weight": 1
+                    },
+                    {
+                        "weight": 3,
+                        "set_block_state": {
+                            "dec:growth_stage": "(query.block_state('dec:growth_stage')<3) ? query.block_state('dec:growth_stage') + 1 : 3"
+                        }
+                    }
+                ]
+            },
+            "meal": {
+                "sequence": [
+                    {
+                        "decrement_stack": {}
+                    },
+                    {
+                        "run_command": {
+                            "command": [
+                                "particle minecraft:crop_growth_emitter ~~~"
+                            ]
+                        }
+                    },
+                    {
+                        "trigger": {
+                            "event": "grow_stage"
+                        }
+                    }
+                ]
+            }
+        },
+        "permutations": [
+            {
+                "condition": "query.block_state('dec:growth_stage') == 0",
+                "components": {
+                    "minecraft:on_interact": {
+                        "event": "meal",
+                        "condition": "query.get_equipped_item_name('main_hand') == 'bone_meal'"
+                    },
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "mooli_crop_0",
+                            "render_method": "alpha_test"
+                        }
+                    },
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -1,
+                            0,
+                            -1
+                        ],
+                        "size": [
+                            2,
+                            4,
+                            2
+                        ]
+                    },
+                    "minecraft:loot": "loot_tables/empty.json"
+                }
+            },
+            {
+                "condition": "query.block_state('dec:growth_stage') == 1",
+                "components": {
+                    "minecraft:on_interact": {
+                        "event": "meal",
+                        "condition": "query.get_equipped_item_name('main_hand') == 'bone_meal'"
+                    },
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "mooli_crop_1",
+                            "render_method": "alpha_test"
+                        }
+                    },
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -3,
+                            0,
+                            -3
+                        ],
+                        "size": [
+                            6,
+                            6,
+                            6
+                        ]
+                    },
+                    "minecraft:loot": "loot_tables/empty.json"
+                }
+            },
+            {
+                "condition": "query.block_state('dec:growth_stage') == 2",
+                "components": {
+                    "minecraft:on_interact": {
+                        "event": "meal",
+                        "condition": "query.get_equipped_item_name('main_hand') == 'bone_meal'"
+                    },
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "mooli_crop_2",
+                            "render_method": "alpha_test"
+                        }
+                    },
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -5,
+                            0,
+                            -5
+                        ],
+                        "size": [
+                            10,
+                            9,
+                            10
+                        ]
+                    },
+                    "minecraft:loot": "loot_tables/empty.json"
+                }
+            },
+            {
+                "condition": "query.block_state('dec:growth_stage') == 3",
+                "components": {
+                    "minecraft:on_interact": {
+                        "event": "meal",
+                        "condition": "query.get_equipped_item_name('main_hand') == 'bone_meal'"
+                    },
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "mooli_crop_3",
+                            "render_method": "alpha_test"
+                        }
+                    },
+                    "minecraft:selection_box": {
+                        "origin": [
+                            -5,
+                            0,
+                            -5
+                        ],
+                        "size": [
+                            10,
+                            12,
+                            10
+                        ]
+                    },
+                    "minecraft:loot": "loot_tables/blocks/mooli_crop.json"
+                }
+            }
+        ]
+    }
+}

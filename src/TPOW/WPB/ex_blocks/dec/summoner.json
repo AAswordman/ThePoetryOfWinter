@@ -1,0 +1,61 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dec:summoner",
+            "menu_category": {
+                "group": "itemGroup.name.outside",
+                "category": "items"
+            }
+        },
+        "components": {
+            "minecraft:light_dampening": 15,
+            "minecraft:light_emission": 0,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 1
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 5
+            },
+            "minecraft:on_interact": {
+                "event": "summon"
+            },
+            "minecraft:map_color": "#79553A"
+        },
+        "events": {
+            "summon": {
+                "sequence": [
+                    {
+                        "condition": "query.get_equipped_item_name('main_hand') == 'magic_chest_debris'",
+                        "sequence": [
+                            {
+                                "run_command": {
+                                    "command": [
+                                        "playsound conduit.activate @a ~~~",
+                                        "summon dec:chester ~~1~"
+                                    ],
+                                    "target": "self"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "condition": "query.get_equipped_item_name('main_hand') == 'radiate_crystal'",
+                        "sequence": [
+                            {
+                                "run_command": {
+                                    "command": [
+                                        "playsound conduit.activate @a ~~~",
+                                        "summon dec:radiate_crystal ~~1~",
+                                        "tellraw @a { \"rawtext\" : [ { \"translate\" : \"text.dec:summon_radiate_crystal.name\" } ] }"
+                                    ],
+                                    "target": "self"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}
