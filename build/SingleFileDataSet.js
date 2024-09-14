@@ -135,7 +135,8 @@ const temps = {
     "db.ts": `export default {}`,
     "index.ts": ""
 };
-let tmpAppender = `import * as _keys from "./keys.js";
+let tmpAppender = `import * as __keys from "./keys.js";
+const _keys = __keys.default;
 type PathDir = { [key: string]: string | PathDir }
 const keys:PathDir = _keys as any;
 declare global {
@@ -172,6 +173,9 @@ for (let i = 0; i < SingleFileDataSet.PIECE_NUM; i++) {
 dbMap.set(${i}, db${i});`;
 }
 tmpAppender += `
+${'type PathType<T extends JSONObject> = { [K in keyof T as (K extends string ? `${K}${T[K] extends JSONObject ? `/${keyof PathType<T[K]>}` : ``}` : string)]:never };'}
+type KeysType = keyof PathType<typeof _keys>
+
 class ExFileProvider{
     constructor(){
         
