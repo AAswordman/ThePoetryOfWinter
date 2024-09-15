@@ -1,0 +1,66 @@
+{
+    "format_version": "1.20.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "epic:sunlight_boots",
+            "menu_category": {
+                "group": "itemGroup.name.boots",
+                "is_hidden_in_commands": false,
+                "category": "equipment"
+            }
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.epic:sunlight_boots.name"
+            },
+            "minecraft:icon": {
+                "texture": "epic:sunlight_boots"
+            },
+            "minecraft:enchantable": {
+                "value": 10,
+                "slot": "armor_feet"
+            },
+            "minecraft:repairable": {
+                "repair_items": [
+                    {
+                        "items": [
+                            "iron_ingot"
+                        ],
+                        "repair_amount": 10
+                    }
+                ]
+            },
+            "minecraft:digger": {},
+            "minecraft:durability": {
+                "max_durability": 2200,
+                "damage_chance": {
+                    "min": 50,
+                    "max": 80
+                }
+            },
+            "minecraft:wearable": {
+                "dispensable": false,
+                "slot": "slot.armor.feet",
+                "protection": 4
+            },
+            "minecraft:can_destroy_in_creative": true,
+            "minecraft:hand_equipped": false,
+            "minecraft:max_stack_size": 1,
+            "minecraft:mining_speed": 1,
+            "minecraft:tags": {
+                "tags": [
+                    "comp:use_data_group:tag_:default:_",
+                    "comp:armor_type:suit_:sunlight:_",
+                    "comp:armor_protection:4",
+                    "comp:armor_resilience:3",
+                    "comp:armor_physical_protection:3",
+                    "comp:armor_magic_protection:2",
+                    "comp:armor_physical_reduction:1",
+                    "comp:armor_magic_reduction:0",
+                    "comp:attack_addition:1"
+                ]
+            }
+        },
+        "events": {}
+    }
+}

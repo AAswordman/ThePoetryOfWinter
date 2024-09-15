@@ -20,7 +20,11 @@
             "minecraft:friction": 0.74,
             "minecraft:map_color": "#547CC6",
             "minecraft:loot": "loot_tables/blocks/ancient_ice.json",
-            "tag:stone": {}
+            "minecraft:tags": {
+                "tags": [
+                    "stone"
+                ]
+            }
         }
     }
 }

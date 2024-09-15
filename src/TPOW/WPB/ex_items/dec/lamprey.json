@@ -1,0 +1,55 @@
+{
+    "format_version": "1.20.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dec:lamprey",
+            "menu_category": {
+                "group": "itemGroup.name.rawFood",
+                "is_hidden_in_commands": false,
+                "category": "nature"
+            }
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.dec:lamprey.name"
+            },
+            "minecraft:icon": {
+                "texture": "lamprey"
+            },
+            "minecraft:use_animation": "eat",
+            "minecraft:food": {
+                "nutrition": 3,
+                "saturation_modifier": 0.6,
+                "on_consume": {
+                    "event": "consumed",
+                    "target": "self"
+                }
+            },
+            "minecraft:use_modifiers": {
+                "use_duration": 1.6
+            }
+        },
+        "events": {
+            "consumed": {
+                "sequence": [
+                    {
+                        "randomize": [
+                            {
+                                "weight": 7,
+                                "add_mob_effect": {
+                                    "effect": "instant_damage",
+                                    "duration": 1,
+                                    "amplifier": 1,
+                                    "target": "holder"
+                                }
+                            },
+                            {
+                                "weight": 3
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

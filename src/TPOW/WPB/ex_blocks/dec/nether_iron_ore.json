@@ -19,7 +19,11 @@
             },
             "minecraft:map_color": "#EEF6B4",
             "minecraft:loot": "loot_tables/blocks/nether_iron_ore.json",
-            "tag:stone": {}
+            "minecraft:tags": {
+                "tags": [
+                    "stone"
+                ]
+            }
         }
     }
 }

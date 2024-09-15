@@ -34,7 +34,7 @@
             },
             "minecraft:map_color": "#EB4460",
             "minecraft:light_emission": 7,
-            "minecraft:light_dampening": 0.0,
+            "minecraft:light_dampening": 0,
             "minecraft:loot": "loot_tables/blocks/red_spider_lily_crop.json",
             "minecraft:placement_filter": {
                 "conditions": [

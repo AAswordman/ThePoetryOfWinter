@@ -19,7 +19,11 @@
             },
             "minecraft:map_color": "#27C3C2",
             "minecraft:loot": "loot_tables/blocks/lurk_log.json",
-            "tag:wood": {}
+            "minecraft:tags": {
+                "tags": [
+                    "wood"
+                ]
+            }
         }
     }
 }

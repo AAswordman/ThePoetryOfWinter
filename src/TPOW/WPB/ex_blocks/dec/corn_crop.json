@@ -44,13 +44,14 @@
                 "seconds_to_destroy": 0.001
             },
             "minecraft:map_color": "#365210",
-            "minecraft:light_dampening": 0.0,
+            "minecraft:light_dampening": 0,
             "minecraft:loot": "loot_tables/blocks/corn_crop.json",
             "minecraft:random_ticking": {
                 "on_tick": {
                     "event": "grow_stage"
                 }
-            }
+            },
+            "minecraft:breathability": "air"
         },
         "events": {
             "grow": {

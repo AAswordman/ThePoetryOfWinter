@@ -1,0 +1,53 @@
+{
+    "format_version": "1.20.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dec:rice_wine",
+            "menu_category": {
+                "group": "itemGroup.name.miscFood",
+                "is_hidden_in_commands": false,
+                "category": "equipment"
+            }
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.dec:rice_wine.name"
+            },
+            "minecraft:icon": {
+                "texture": "rice_wine"
+            },
+            "minecraft:use_animation": "drink",
+            "minecraft:food": {
+                "on_consume": {
+                    "event": "consumed",
+                    "target": "self"
+                },
+                "nutrition": 2,
+                "saturation_modifier": 0.4,
+                "can_always_eat": true,
+                "using_converts_to": "dec:wine_glass"
+            },
+            "minecraft:use_modifiers": {
+                "use_duration": 1.8
+            }
+        },
+        "events": {
+            "consumed": {
+                "randomize": [
+                    {
+                        "weight": 3,
+                        "add_mob_effect": {
+                            "effect": "nausea",
+                            "duration": 60,
+                            "amplifier": 0,
+                            "target": "holder"
+                        }
+                    },
+                    {
+                        "weight": 7
+                    }
+                ]
+            }
+        }
+    }
+}

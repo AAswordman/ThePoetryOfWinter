@@ -1,91 +1,54 @@
 {
-  "format_version": "1.20.80",
-  "minecraft:item": {
-    "description": {
-      "category": "equipment",
-      "identifier": "dec:wooden_enchant_book"
-    },
-    "components": {
-      "minecraft:fuel": {
-        "duration": 10.0
-      },
-      "minecraft:creative_category": {
-        "parent": "itemGroup.name.sword"
-      },
-      "minecraft:display_name": {
-        "value": "item.dec:wooden_enchant_book.name"
-      },
-      "minecraft:icon": {
-        "texture": "wooden_enchant_book"
-      },
-      "minecraft:use_animation": "bow",
-      "minecraft:render_offsets": "bow",
-      "minecraft:stacked_by_data": false,
-      "minecraft:max_stack_size": 1,
-      "minecraft:hand_equipped": false,
-      "minecraft:on_use": {
-        "on_use": {
-          "event": "shoot",
-          "target": "self"
+    "format_version": "1.20.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dec:wooden_enchant_book",
+            "menu_category": {
+                "group": "itemGroup.name.sword",
+                "is_hidden_in_commands": false,
+                "category": "equipment"
+            }
+        },
+        "components": {
+            "minecraft:fuel": {
+                "duration": 10
+            },
+            "minecraft:display_name": {
+                "value": "item.dec:wooden_enchant_book.name"
+            },
+            "minecraft:icon": {
+                "texture": "wooden_enchant_book"
+            },
+            "minecraft:use_animation": "bow",
+            "minecraft:stacked_by_data": false,
+            "minecraft:max_stack_size": 1,
+            "minecraft:hand_equipped": false,
+            "minecraft:cooldown": {
+                "category": "magic_book",
+                "duration": 1
+            },
+            "minecraft:enchantable": {
+                "value": 33,
+                "slot": "flintsteel"
+            },
+            "minecraft:durability": {
+                "max_durability": 189
+            },
+            "minecraft:repairable": {
+                "repair_items": [
+                    {
+                        "items": [
+                            "minecraft:planks"
+                        ],
+                        "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.25"
+                    }
+                ]
+            },
+            "minecraft:tags": {
+                "tags": [
+                    "comp:equipment_type:summon_weapon"
+                ]
+            }
         }
-      },
-      "minecraft:cooldown": {
-        "category": "magic_book",
-        "duration": 1
-      },
-      "minecraft:enchantable": {
-        "value": 33,
-        "slot": "flintsteel"
-      },
-      "minecraft:durability": {
-        "max_durability": 189
-      },
-      "minecraft:repairable": {
-        "repair_items": [
-          {
-            "items": [
-              "minecraft:planks"
-            ],
-            "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.25"
-          }
-        ]
-      },
-      "tag:comp:equipment_type:summon_weapon":{}
-    },
-    "events": {
-      "attack": {
-        "damage": {
-          "type": "magic",
-          "amount": 1
-        }
-      },
-      "shoot": {
-        "sequence": [
-          {
-            "condition": "query.scoreboard('wbfl') > 5",
-            "sequence": [
-              {
-                "run_command": {
-                  "command": [
-                    "playsound item.book.put @a ~~~",
-                    "particle dec:summon_staff_spawn ^^1.6^1.3",
-                    "scoreboard players remove @s wbfl 5",
-                    "playanimation @s animation.humanoid.staff_use",
-                    "structure load entity:ghost_wooden_sword ^^1.6^1.3"
-                  ],
-                  "target": "holder"
-                }
-              },
-              {
-                "damage": {
-                  "type": "magic",
-                  "amount": 1
-                }
-              }
-            ]
-          }
-        ]
-      }
     }
-  }
 }

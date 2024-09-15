@@ -19,10 +19,14 @@
             },
             "minecraft:map_color": "#ECECEC",
             "minecraft:loot": "loot_tables/blocks/sunny_summoner.json",
-            "tag:stone": {},
             "minecraft:on_interact": {
                 "event": "activate",
                 "condition": "query.get_equipped_item_name('main_hand') == 'pulse_stone'"
+            },
+            "minecraft:tags": {
+                "tags": [
+                    "stone"
+                ]
             }
         },
         "events": {

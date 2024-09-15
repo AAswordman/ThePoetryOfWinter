@@ -15,7 +15,7 @@ async function fileDisplay(filePath: string) {
     }
 }
 
-let dataSet = new SingleFileDataSet("src/TPOW/WPB/scripts/ExcellentMInecraftscripts/filepack");
+let dataSet = new SingleFileDataSet("src/TPOW/WPB/scripts/ExcellentMInecraftscripts/src/filepack");
 dataSet.init().then(async () => {
     await dataSet.setCacheMode(true);
     let watcher = chokidar.watch(ROOT, {
@@ -47,11 +47,107 @@ function transPath(path: string) {
 }
 
 async function compile(path: string) {
-    // console.log("try compile  " + path);
-    if (path.endsWith(".json")) {
-        if (path.startsWith(ROOT + "/ex_blocks")) {
-            await compileExBlock(path);
+    try {
+        // console.log("try compile  " + path);
+        if (path.endsWith(".json")) {
+            if (path.startsWith(ROOT + "/ex_blocks")) {
+                await compileExBlock(path);
+            } else if (path.startsWith(ROOT + "/ex_items")) {
+                await compileExItem(path);
+            }
         }
+    } catch (e) {
+        console.error(e);
+        console.error("error in " + path + "\n")
+    }
+}
+async function compileExItem(path: string) {
+    console.log("compileItem  " + path);
+    if (!fs.existsSync(path)) {
+        await dataSet.remove(path);
+    } else {
+        let jsonObj: JSONObject = eval("(" + await readFile(path) + ")");
+        await dataSet.write(path.replace(ROOT + "/", ""), jsonObj);
+
+        let blocks = ROOT + "/items";
+        let targetFile = blocks + path.replace(ROOT + "/ex_items", "");
+        let targetDir = targetFile.substring(0, targetFile.lastIndexOf("/"));
+        fs.mkdirSync(targetDir, { recursive: true })
+        let item = jsonObj['minecraft:item'] as JSONObject;
+        let format_version = jsonObj['format_version'] as string;
+        if (format_version != "1.10") {
+            let components = item['components'] as JSONObject;
+
+            let category = components['minecraft:creative_category'] as JSONObject | undefined;
+            let description = item['description'] as JSONObject;
+
+            /*
+            if (category) {
+                delete components['minecraft:creative_category'];
+                description['menu_category'] = category;
+                category['group'] = category['parent'];
+                delete category['parent'];
+            } else {
+                category = {
+                }
+                description['menu_category'] = category;
+            }
+            category['is_hidden_in_commands'] = false;
+            category["category"] = description['category']
+
+            if ('minecraft:armor' in components) {
+                (components['minecraft:wearable'] as JSONObject)['protection'] = (components['minecraft:armor'] as JSONObject)['protection']
+                delete components['minecraft:armor'];
+            }
+
+            delete description['category'];
+
+            if ("minecraft:use_duration" in components) {
+                components["minecraft:use_modifiers"] = {
+                    "use_duration": components["minecraft:use_duration"]
+                }
+                delete components["minecraft:use_duration"];
+            }
+            delete components["minecraft:render_offsets"];
+
+            if ("minecraft:food" in components) {
+                let food = components["minecraft:food"] as JSONObject;
+                if ("saturation_modifier" in food) {
+                    food["saturation_modifier"] = ({
+                        "low":0.5,
+                        "normal":0.6,
+                        "poor":0.4,
+                        "good":0.8,
+                        "supernatural":1.0
+                    } as any)[(food as any)["saturation_modifier"]]
+                }
+            }
+            let tag = {
+                "tags": [] as string[]
+            }
+            for (let t of Object.keys(components)) {
+                if (t.startsWith("tag:")) {
+                    tag.tags.push(t.slice(4))
+                    delete components[t]
+                }
+            }
+            if (tag.tags.length > 0) components["minecraft:tags"] = tag;
+            */
+
+            if ("minecraft:food" in components) {
+                let food = components["minecraft:food"] as JSONObject;
+                if ("on_consume" in food) {
+                    delete food["on_consume"];
+                }
+            }
+            delete item["events"];
+            delete components["minecraft:chargeable"];
+            delete components["minecraft:weapon"];
+            delete components["minecraft:on_use"];
+
+        }
+        fs.mkdirSync(blocks, { recursive: true })
+        writeFile(targetFile, JSON.stringify(jsonObj, undefined, 4));
     }
 }
 
@@ -61,7 +157,7 @@ async function compileExBlock(path: string) {
         await dataSet.remove(path);
     } else {
         let jsonObj: JSONObject = eval("(" + await readFile(path) + ")");
-        await dataSet.write(path.replace(ROOT + "/", ""), JSON.stringify(jsonObj));
+        await dataSet.write(path.replace(ROOT + "/", ""), jsonObj);
 
         let blocks = ROOT + "/blocks";
         let targetFile = blocks + path.replace(ROOT + "/ex_blocks", "");
@@ -81,11 +177,20 @@ async function compileExBlock(path: string) {
             delete i["minecraft:on_player_destroyed"];
             delete i["minecraft:random_ticking"];
             delete i["minecraft:ticking"];
+            delete i["minecraft:breathability"];
             if ('minecraft:unit_cube' in i) {
                 delete i["minecraft:unit_cube"];
                 i['minecraft:geometry'] = 'minecraft:geometry.full_block';
             }
         }
+        if ("minecraft:tags" in components) {
+            let tags = (components["minecraft:tags"] as JSONObject).tags as string[];
+            for (let i of tags) {
+                components["tag:" + i] = {};
+            }
+            delete components["minecraft:tags"];
+        }
+
         fs.mkdirSync(blocks, { recursive: true })
         writeFile(targetFile, JSON.stringify(jsonObj, undefined, 4));
     }

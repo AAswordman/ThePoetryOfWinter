@@ -23,7 +23,11 @@
                 "event": "level_up",
                 "condition": "query.get_equipped_item_name('main_hand') == 'magic_article'"
             },
-            "tag:stone": {}
+            "minecraft:tags": {
+                "tags": [
+                    "stone"
+                ]
+            }
         },
         "events": {
             "unlock": {

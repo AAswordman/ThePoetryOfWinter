@@ -1,0 +1,42 @@
+{
+    "format_version": "1.20.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dec:ghost_dirt_wall",
+            "menu_category": {
+                "group": "itemGroup.name.decorations",
+                "is_hidden_in_commands": false,
+                "category": "items"
+            }
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.dec:ghost_dirt_wall.name"
+            },
+            "minecraft:icon": {
+                "texture": "ghost_dirt_wall"
+            },
+            "minecraft:use_animation": "eat",
+            "minecraft:max_stack_size": 64,
+            "minecraft:on_use": {
+                "on_use": {
+                    "event": "ghost_dirt_wall_use",
+                    "target": "self"
+                }
+            },
+            "minecraft:cooldown": {
+                "category": "place_block",
+                "duration": 60
+            }
+        },
+        "events": {
+            "ghost_dirt_wall_use": {
+                "run_command": {
+                    "command": [
+                        "function item/ghost_dirt_wall"
+                    ]
+                }
+            }
+        }
+    }
+}

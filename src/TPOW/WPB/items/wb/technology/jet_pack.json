@@ -1,79 +1,27 @@
 {
-  "format_version": "1.19.83",
-  "minecraft:item": {
-    "description": {
-      "identifier": "wb:jet_pack",
-      "category": "equipment"
-    },
-    "components": {
-      "minecraft:creative_category": {
-        "parent": "itemGroup.name.sword"
-      },
-      "minecraft:display_name": {
-        "value": "item.wb:jet_pack.name"
-      },
-      "minecraft:hover_text_color": "light_purple",
-      "minecraft:icon": {
-        "texture": "jet_pack"
-      },
-      "minecraft:render_offsets": {
-        "main_hand": {
-          "first_person": {
-            "scale": [0.021,0.012,0.021],
-            "position": [0.5,-0.0725,-1.085],
-            "rotation": [0,-50,90]
-
-          },
-          "third_person": {
-            "position": [0.375,1.65,-0.75],
-            "scale": [0.07,0.0400,0.07]
-          }
+    "format_version": "1.20.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "wb:jet_pack",
+            "menu_category": {
+                "group": "itemGroup.name.sword",
+                "is_hidden_in_commands": false,
+                "category": "equipment"
+            }
         },
-        "off_hand": {
-          "first_person": {
-            "scale": [0.01,0.0065,0.01],
-            "position": [0.4,0.05,-1.075]
-          },
-          "third_person": {
-            "position": [0.45,1.6,-0.7],
-            "scale": [0.03125,0.03125,0.03125]
-          }
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.wb:jet_pack.name"
+            },
+            "minecraft:hover_text_color": "light_purple",
+            "minecraft:icon": {
+                "texture": "jet_pack"
+            },
+            "minecraft:durability": {
+                "max_durability": 7500
+            },
+            "minecraft:stacked_by_data": false,
+            "minecraft:max_stack_size": 1
         }
-      },
-       /* "minecraft:chargeable": {
-          "movement_modifier": 1,
-          "on_complete": {
-              "event": "fly",
-              "target": "self"
-          }
-      },*/
-      "minecraft:durability": {
-        "max_durability": 7500
-       },
-      //"minecraft:use_duration": 10,
-      "minecraft:on_use": {
-        "on_use": {
-            "event": "fly",
-            "target": "self"
-        }
-    },
-      "minecraft:stacked_by_data": false,
-      "minecraft:max_stack_size": 1
-    },
-
-      "events": {
-        "fly": {
-         "run_command":{
-         "command":[
-        ]
-      },
-          "damage": {
-          "type": "magic",
-          "amount": 1
-          }
-        }
-       
-
     }
-  }
- }
+}

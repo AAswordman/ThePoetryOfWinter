@@ -19,7 +19,11 @@
             },
             "minecraft:map_color": "#00847D",
             "minecraft:loot": "loot_tables/blocks/lurk_end_stone.json",
-            "tag:stone": {}
+            "minecraft:tags": {
+                "tags": [
+                    "stone"
+                ]
+            }
         }
     }
 }

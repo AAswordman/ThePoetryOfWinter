@@ -52,12 +52,16 @@
             "minecraft:geometry": "geometry.stone_heap",
             "minecraft:map_color": "#A36FD5",
             "minecraft:loot": "loot_tables/blocks/stone_heap.json",
-            "minecraft:light_emission": 0.0,
-            "minecraft:light_dampening": 0.0,
+            "minecraft:light_emission": 0,
+            "minecraft:light_dampening": 0,
             "minecraft:destructible_by_mining": {
                 "seconds_to_destroy": 0.2
             },
-            "tag:stone": {}
+            "minecraft:tags": {
+                "tags": [
+                    "stone"
+                ]
+            }
         }
     }
 }

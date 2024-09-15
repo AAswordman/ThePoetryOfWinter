@@ -88,11 +88,15 @@
             "minecraft:geometry": "geometry.patterned_vase_red",
             "minecraft:map_color": "#D8C5C4",
             "minecraft:loot": "loot_tables/blocks/patterned_vase_red.json",
-            "minecraft:light_emission": 0.0,
+            "minecraft:light_emission": 0,
             "minecraft:destructible_by_mining": {
                 "seconds_to_destroy": 0
             },
-            "tag:stone": {}
+            "minecraft:tags": {
+                "tags": [
+                    "stone"
+                ]
+            }
         },
         "events": {}
     }

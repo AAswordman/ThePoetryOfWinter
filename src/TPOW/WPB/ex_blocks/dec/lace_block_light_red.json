@@ -111,7 +111,11 @@
             },
             "minecraft:unit_cube": {},
             "minecraft:loot": "loot_tables/blocks/8F5758.json",
-            "tag:wool": {}
+            "minecraft:tags": {
+                "tags": [
+                    "wool"
+                ]
+            }
         }
     }
 }

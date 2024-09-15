@@ -9,7 +9,6 @@
             }
         },
         "components": {
-            "minecraft:breathability": "air",
             "minecraft:geometry": "geometry.crop.hash.on_dirt",
             "minecraft:collision_box": false,
             "minecraft:selection_box": {

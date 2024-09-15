@@ -1,0 +1,87 @@
+{
+    "format_version": "1.20.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dec:intestine",
+            "menu_category": {
+                "group": "itemGroup.name.rawFood",
+                "is_hidden_in_commands": false,
+                "category": "nature"
+            }
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.dec:intestine.name"
+            },
+            "minecraft:icon": {
+                "texture": "intestine"
+            },
+            "minecraft:use_animation": "eat",
+            "minecraft:food": {
+                "on_consume": {
+                    "event": "consumed",
+                    "target": "self"
+                },
+                "nutrition": 3,
+                "saturation_modifier": 0.5
+            },
+            "minecraft:use_modifiers": {
+                "use_duration": 1.6
+            }
+        },
+        "events": {
+            "consumed": {
+                "sequence": [
+                    {
+                        "randomize": [
+                            {
+                                "weight": 7,
+                                "add_mob_effect": {
+                                    "effect": "poison",
+                                    "duration": 10,
+                                    "amplifier": 0,
+                                    "target": "holder"
+                                }
+                            },
+                            {
+                                "weight": 1
+                            }
+                        ]
+                    },
+                    {
+                        "randomize": [
+                            {
+                                "weight": 2,
+                                "add_mob_effect": {
+                                    "effect": "nausea",
+                                    "duration": 30,
+                                    "amplifier": 0,
+                                    "target": "holder"
+                                }
+                            },
+                            {
+                                "weight": 1
+                            }
+                        ]
+                    },
+                    {
+                        "randomize": [
+                            {
+                                "weight": 4,
+                                "run_command": {
+                                    "command": [
+                                        "damage @s 3 magic"
+                                    ],
+                                    "target": "self"
+                                }
+                            },
+                            {
+                                "weight": 1
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

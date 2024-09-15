@@ -19,7 +19,11 @@
             },
             "minecraft:map_color": "#747474",
             "minecraft:loot": "loot_tables/blocks/red_gem_ore.json",
-            "tag:stone": {}
+            "minecraft:tags": {
+                "tags": [
+                    "stone"
+                ]
+            }
         }
     }
 }

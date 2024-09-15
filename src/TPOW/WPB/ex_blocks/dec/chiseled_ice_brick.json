@@ -19,7 +19,11 @@
             },
             "minecraft:friction": 0.7,
             "minecraft:map_color": "#BBDBFF",
-            "tag:stone": {}
+            "minecraft:tags": {
+                "tags": [
+                    "stone"
+                ]
+            }
         }
     }
 }

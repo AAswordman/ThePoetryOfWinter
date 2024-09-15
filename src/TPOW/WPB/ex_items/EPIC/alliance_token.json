@@ -1,0 +1,44 @@
+{
+    "format_version": "1.20.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "epic:alliance_token",
+            "menu_category": {
+                "group": "itemGroup.name.sword",
+                "is_hidden_in_commands": false,
+                "category": "equipment"
+            }
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.epic:alliance_token.name"
+            },
+            "minecraft:icon": {
+                "texture": "epic:alliance_token"
+            },
+            "minecraft:stacked_by_data": false,
+            "minecraft:max_stack_size": 1,
+            "minecraft:chargeable": {
+                "movement_modifier": 1,
+                "on_complete": {
+                    "event": "give",
+                    "target": "self"
+                }
+            },
+            "minecraft:use_modifiers": {
+                "use_duration": 11.4514
+            }
+        },
+        "events": {
+            "give": {
+                "run_command": {
+                    "command": [
+                        "title @s title 你的虔诚换来了太阳神的恩赐",
+                        "replaceitem entity @s slot.weapon.mainhand 0 gold_ingot 2",
+                        "function EPIC/epic_test"
+                    ]
+                }
+            }
+        }
+    }
+}

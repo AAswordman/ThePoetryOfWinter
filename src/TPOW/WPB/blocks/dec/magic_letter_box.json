@@ -131,9 +131,9 @@
                 "burn_odds": 5
             },
             "minecraft:loot": "loot_tables/blocks/magic_letter_box/magic_letter_box.json",
+            "minecraft:geometry": "minecraft:geometry.full_block",
             "tag:planks": {},
-            "tag:axe_diggable": {},
-            "minecraft:geometry": "minecraft:geometry.full_block"
+            "tag:axe_diggable": {}
         }
     }
 }

@@ -19,7 +19,11 @@
             },
             "minecraft:map_color": "#D6A0CF",
             "minecraft:loot": "loot_tables/blocks/candy_block.json",
-            "tag:stone": {}
+            "minecraft:tags": {
+                "tags": [
+                    "stone"
+                ]
+            }
         }
     }
 }

@@ -1,0 +1,92 @@
+{
+    "format_version": "1.20.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dec:dust_staff",
+            "menu_category": {
+                "group": "itemGroup.name.sword",
+                "is_hidden_in_commands": false,
+                "category": "equipment"
+            }
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.dec:dust_staff.name"
+            },
+            "minecraft:icon": {
+                "texture": "dust_staff"
+            },
+            "minecraft:use_animation": "bow",
+            "minecraft:stacked_by_data": false,
+            "minecraft:max_stack_size": 1,
+            "minecraft:hand_equipped": true,
+            "minecraft:on_use": {
+                "on_use": {
+                    "event": "shoot",
+                    "target": "self"
+                }
+            },
+            "minecraft:cooldown": {
+                "category": "staff",
+                "duration": 1
+            },
+            "minecraft:repairable": {
+                "repair_items": [
+                    {
+                        "items": [
+                            "dec:ash"
+                        ],
+                        "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.05"
+                    }
+                ]
+            },
+            "minecraft:enchantable": {
+                "value": 19,
+                "slot": "flintsteel"
+            },
+            "minecraft:durability": {
+                "max_durability": 268
+            },
+            "minecraft:tags": {
+                "tags": [
+                    "comp:equipment_type:summon_weapon"
+                ]
+            }
+        },
+        "events": {
+            "attack": {
+                "damage": {
+                    "type": "magic",
+                    "amount": 1
+                }
+            },
+            "shoot": {
+                "sequence": [
+                    {
+                        "condition": "query.scoreboard('wbfl') > 6",
+                        "sequence": [
+                            {
+                                "run_command": {
+                                    "command": [
+                                        "playsound item.book.put @a ~~~",
+                                        "particle dec:summon_staff_spawn ^^1.6^1.3",
+                                        "scoreboard players remove @s wbfl 6",
+                                        "playanimation @s animation.humanoid.staff_use",
+                                        "structure load entity:elf_of_dust ^^1.6^1.3"
+                                    ],
+                                    "target": "holder"
+                                }
+                            },
+                            {
+                                "damage": {
+                                    "type": "magic",
+                                    "amount": 1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

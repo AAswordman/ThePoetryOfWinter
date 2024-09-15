@@ -1,0 +1,48 @@
+{
+    "format_version": "1.20.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dec:guide_book",
+            "menu_category": {
+                "group": "itemGroup.name.enchantedBook",
+                "is_hidden_in_commands": false,
+                "category": "items"
+            }
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.dec:guide_book.name"
+            },
+            "minecraft:icon": {
+                "texture": "guide_book"
+            },
+            "minecraft:use_animation": "bow",
+            "minecraft:hand_equipped": true,
+            "minecraft:max_stack_size": 64,
+            "minecraft:foil": true,
+            "minecraft:on_use": {
+                "on_use": {
+                    "event": "use",
+                    "target": "self"
+                }
+            },
+            "minecraft:cooldown": {
+                "category": "guide_book",
+                "duration": 10
+            }
+        },
+        "events": {
+            "use": {
+                "run_command": {
+                    "command": [
+                        "tellraw @s { \"rawtext\" : [ { \"translate\" : \"text.dec:guide_book_0.name\" } ] }",
+                        "tellraw @s { \"rawtext\" : [ { \"translate\" : \"text.dec:guide_book_1.name\" } ] }",
+                        "tellraw @s { \"rawtext\" : [ { \"translate\" : \"text.dec:guide_book_2.name\" } ] }",
+                        "tellraw @s { \"rawtext\" : [ { \"translate\" : \"text.dec:guide_book_3.name\" } ] }"
+                    ],
+                    "target": "holder"
+                }
+            }
+        }
+    }
+}

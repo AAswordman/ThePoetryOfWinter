@@ -1,0 +1,82 @@
+{
+    "format_version": "1.20.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dec:diamond_apple",
+            "menu_category": {
+                "group": "itemGroup.name.crop",
+                "is_hidden_in_commands": false,
+                "category": "nature"
+            }
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.dec:diamond_apple.name"
+            },
+            "minecraft:icon": {
+                "texture": "diamond_apple"
+            },
+            "minecraft:use_animation": "eat",
+            "minecraft:hand_equipped": false,
+            "minecraft:stacked_by_data": true,
+            "minecraft:food": {
+                "nutrition": 4,
+                "saturation_modifier": 1,
+                "can_always_eat": true,
+                "on_consume": {
+                    "event": "consumed",
+                    "target": "self"
+                }
+            },
+            "minecraft:use_modifiers": {
+                "use_duration": 1.6
+            }
+        },
+        "events": {
+            "consumed": {
+                "sequence": [
+                    {
+                        "add_mob_effect": {
+                            "effect": "regeneration",
+                            "duration": 20,
+                            "amplifier": 2,
+                            "target": "holder"
+                        }
+                    },
+                    {
+                        "add_mob_effect": {
+                            "effect": "absorption",
+                            "duration": 180,
+                            "amplifier": 2,
+                            "target": "holder"
+                        }
+                    },
+                    {
+                        "add_mob_effect": {
+                            "effect": "resistance",
+                            "duration": 120,
+                            "amplifier": 0,
+                            "target": "holder"
+                        }
+                    },
+                    {
+                        "add_mob_effect": {
+                            "effect": "fire_resistance",
+                            "duration": 120,
+                            "amplifier": 0,
+                            "target": "holder"
+                        }
+                    },
+                    {
+                        "add_mob_effect": {
+                            "effect": "strength",
+                            "duration": 180,
+                            "amplifier": 0,
+                            "target": "holder"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

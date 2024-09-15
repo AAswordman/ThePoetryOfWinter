@@ -1,0 +1,120 @@
+{
+    "format_version": "1.20.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dec:coffee_of_lileyi",
+            "menu_category": {
+                "group": "itemGroup.name.miscFood",
+                "is_hidden_in_commands": false,
+                "category": "equipment"
+            }
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.dec:coffee_of_lileyi.name"
+            },
+            "minecraft:icon": {
+                "texture": "coffee_of_lileyi"
+            },
+            "minecraft:use_animation": "eat",
+            "minecraft:food": {
+                "nutrition": 0,
+                "saturation_modifier": 1,
+                "can_always_eat": true,
+                "on_consume": {
+                    "event": "consumed",
+                    "target": "self"
+                }
+            },
+            "minecraft:use_modifiers": {
+                "use_duration": 1.6
+            }
+        },
+        "events": {
+            "consumed": {
+                "sequence": [
+                    {
+                        "add_mob_effect": {
+                            "effect": "village_hero",
+                            "duration": 600,
+                            "amplifier": 0,
+                            "target": "holder"
+                        }
+                    },
+                    {
+                        "add_mob_effect": {
+                            "effect": "haste",
+                            "duration": 600,
+                            "amplifier": 1,
+                            "target": "holder"
+                        }
+                    },
+                    {
+                        "add_mob_effect": {
+                            "effect": "speed",
+                            "duration": 600,
+                            "amplifier": 0,
+                            "target": "holder"
+                        }
+                    },
+                    {
+                        "add_mob_effect": {
+                            "effect": "night_vision",
+                            "duration": 600,
+                            "amplifier": 0,
+                            "target": "holder"
+                        }
+                    },
+                    {
+                        "add_mob_effect": {
+                            "effect": "strength",
+                            "duration": 600,
+                            "amplifier": 0,
+                            "target": "holder"
+                        }
+                    },
+                    {
+                        "add_mob_effect": {
+                            "effect": "resistance",
+                            "duration": 600,
+                            "amplifier": 0,
+                            "target": "holder"
+                        }
+                    },
+                    {
+                        "add_mob_effect": {
+                            "effect": "fire_resistance",
+                            "duration": 600,
+                            "amplifier": 0,
+                            "target": "holder"
+                        }
+                    },
+                    {
+                        "add_mob_effect": {
+                            "effect": "water_breathing",
+                            "duration": 600,
+                            "amplifier": 0,
+                            "target": "holder"
+                        }
+                    },
+                    {
+                        "add_mob_effect": {
+                            "effect": "regeneration",
+                            "duration": 600,
+                            "amplifier": 0,
+                            "target": "holder"
+                        }
+                    },
+                    {
+                        "add_mob_effect": {
+                            "effect": "absorption",
+                            "duration": 600,
+                            "amplifier": 0,
+                            "target": "holder"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

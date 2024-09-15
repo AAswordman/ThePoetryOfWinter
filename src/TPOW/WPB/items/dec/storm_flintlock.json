@@ -1,38 +1,41 @@
 {
-  "format_version": "1.20.80",
-  "minecraft:item": {
-    "description": {
-      "category": "equipment",
-      "identifier": "dec:storm_flintlock"
-    },
-    "components": {
-      "minecraft:creative_category": {
-        "parent": "itemGroup.name.sword"
-      },
-      "minecraft:display_name": {
-        "value": "item.dec:storm_flintlock.name"
-      },
-      "minecraft:icon": {
-        "texture": "storm_flintlock"
-      },
-      "minecraft:stacked_by_data": false,
-      "minecraft:max_stack_size": 1,
-      "minecraft:hand_equipped": true,
-      "minecraft:cooldown": {
-        "category": "gun",
-        "duration": 3
-      },
-      "minecraft:durability": {
-        "max_durability": 394
-      },
-      "minecraft:enchantable": {
-        "value": 26,
-        "slot": "flintsteel"
-      },
-      "tag:comp:sneak_movement_addition:-0.06": {},
-      "tag:comp:equipment_type:range_weapon":{}
-    },
-    "events": {
+    "format_version": "1.20.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dec:storm_flintlock",
+            "menu_category": {
+                "group": "itemGroup.name.sword",
+                "is_hidden_in_commands": false,
+                "category": "equipment"
+            }
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.dec:storm_flintlock.name"
+            },
+            "minecraft:icon": {
+                "texture": "storm_flintlock"
+            },
+            "minecraft:stacked_by_data": false,
+            "minecraft:max_stack_size": 1,
+            "minecraft:hand_equipped": true,
+            "minecraft:cooldown": {
+                "category": "gun",
+                "duration": 3
+            },
+            "minecraft:durability": {
+                "max_durability": 394
+            },
+            "minecraft:enchantable": {
+                "value": 26,
+                "slot": "flintsteel"
+            },
+            "minecraft:tags": {
+                "tags": [
+                    "comp:sneak_movement_addition:-0.06",
+                    "comp:equipment_type:range_weapon"
+                ]
+            }
+        }
     }
-  }
 }

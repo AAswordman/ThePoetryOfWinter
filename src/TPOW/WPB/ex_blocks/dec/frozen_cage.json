@@ -19,7 +19,6 @@
             },
             "minecraft:friction": 0.7,
             "minecraft:map_color": "#BBDBFF",
-            "tag:stone": {},
             "minecraft:ticking": {
                 "looping": true,
                 "range": [
@@ -29,6 +28,11 @@
                 "on_tick": {
                     "event": "minecraft:effect"
                 }
+            },
+            "minecraft:tags": {
+                "tags": [
+                    "stone"
+                ]
             }
         },
         "events": {

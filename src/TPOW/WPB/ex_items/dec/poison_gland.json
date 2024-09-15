@@ -1,0 +1,47 @@
+{
+    "format_version": "1.20.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dec:poison_gland",
+            "menu_category": {
+                "group": "itemGroup.name.decorations",
+                "is_hidden_in_commands": false,
+                "category": "items"
+            }
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.dec:poison_gland.name"
+            },
+            "minecraft:icon": {
+                "texture": "poison_gland"
+            },
+            "minecraft:use_animation": "eat",
+            "minecraft:food": {
+                "nutrition": 2,
+                "saturation_modifier": 0.4,
+                "on_consume": {
+                    "event": "consumed",
+                    "target": "self"
+                }
+            },
+            "minecraft:use_modifiers": {
+                "use_duration": 1.6
+            }
+        },
+        "events": {
+            "consumed": {
+                "sequence": [
+                    {
+                        "add_mob_effect": {
+                            "effect": "poison",
+                            "duration": 20,
+                            "amplifier": 4,
+                            "target": "holder"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

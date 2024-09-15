@@ -1,0 +1,49 @@
+{
+    "format_version": "1.20.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dec:blue_gem",
+            "menu_category": {
+                "group": "itemGroup.name.decorations",
+                "is_hidden_in_commands": false,
+                "category": "items"
+            }
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.dec:blue_gem.name"
+            },
+            "minecraft:icon": {
+                "texture": "blue_gem"
+            },
+            "minecraft:use_animation": "eat",
+            "minecraft:stacked_by_data": false,
+            "minecraft:foil": true,
+            "minecraft:on_use": {
+                "on_use": {
+                    "event": "use",
+                    "target": "self"
+                }
+            },
+            "minecraft:cooldown": {
+                "category": "blue_gem",
+                "duration": 0.3
+            }
+        },
+        "events": {
+            "use": {
+                "run_command": {
+                    "command": [
+                        "tag @s[scores={maxmagic=..38}] add clear_blue_gem",
+                        "tellraw @s[scores={maxmagic=38..59}] { \"rawtext\" : [ { \"translate\" : \"text.dec:blue_gem_max.name\" } ] }",
+                        "tellraw @s[scores={maxmagic=60..}] { \"rawtext\" : [ { \"translate\" : \"text.dec:red_gem_max.name\" } ] }",
+                        "scoreboard players add @s[tag=clear_blue_gem] maxmagic 2",
+                        "tellraw @s[tag=clear_blue_gem] { \"rawtext\" : [ { \"translate\" : \"text.dec:blue_gem_magic_up.name\" },{ \"score\":{ \"name\": \"@s\",\"objective\": \"maxmagic\" } } ] }",
+                        "clear @s[tag=clear_blue_gem] dec:blue_gem 0 1",
+                        "tag @s[tag=clear_blue_gem] remove clear_blue_gem"
+                    ]
+                }
+            }
+        }
+    }
+}

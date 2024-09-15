@@ -1,41 +1,44 @@
 {
-  "format_version": "1.20.80",
-  "minecraft:item": {
-    "description": {
-      "category": "equipment",
-      "identifier": "dec:flintlock_pro"
-    },
-    "components": {
-      "minecraft:fuel": {
-        "duration": 10.0
-      },
-      "minecraft:creative_category": {
-        "parent": "itemGroup.name.sword"
-      },
-      "minecraft:display_name": {
-        "value": "item.dec:flintlock_pro.name"
-      },
-      "minecraft:icon": {
-        "texture": "flintlock_pro"
-      },
-      "minecraft:stacked_by_data": false,
-      "minecraft:max_stack_size": 1,
-      "minecraft:hand_equipped": true,
-      "minecraft:cooldown": {
-        "category": "gun",
-        "duration": 4
-      },
-      "minecraft:enchantable": {
-        "value": 14,
-        "slot": "flintsteel"
-      },
-      "minecraft:durability": {
-        "max_durability": 784
-      },
-      "tag:comp:sneak_movement_addition:-0.06": {},
-      "tag:comp:equipment_type:range_weapon":{}
-    },
-    "events": {
+    "format_version": "1.20.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dec:flintlock_pro",
+            "menu_category": {
+                "group": "itemGroup.name.sword",
+                "is_hidden_in_commands": false,
+                "category": "equipment"
+            }
+        },
+        "components": {
+            "minecraft:fuel": {
+                "duration": 10
+            },
+            "minecraft:display_name": {
+                "value": "item.dec:flintlock_pro.name"
+            },
+            "minecraft:icon": {
+                "texture": "flintlock_pro"
+            },
+            "minecraft:stacked_by_data": false,
+            "minecraft:max_stack_size": 1,
+            "minecraft:hand_equipped": true,
+            "minecraft:cooldown": {
+                "category": "gun",
+                "duration": 4
+            },
+            "minecraft:enchantable": {
+                "value": 14,
+                "slot": "flintsteel"
+            },
+            "minecraft:durability": {
+                "max_durability": 784
+            },
+            "minecraft:tags": {
+                "tags": [
+                    "comp:sneak_movement_addition:-0.06",
+                    "comp:equipment_type:range_weapon"
+                ]
+            }
+        }
     }
-  }
 }

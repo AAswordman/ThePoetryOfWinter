@@ -1,0 +1,47 @@
+{
+    "format_version": "1.20.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dec:apple_pie",
+            "menu_category": {
+                "group": "itemGroup.name.miscFood",
+                "is_hidden_in_commands": false,
+                "category": "equipment"
+            }
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.dec:apple_pie.name"
+            },
+            "minecraft:icon": {
+                "texture": "apple_pie"
+            },
+            "minecraft:use_animation": "eat",
+            "minecraft:food": {
+                "nutrition": 12,
+                "saturation_modifier": 0.6,
+                "on_consume": {
+                    "event": "consumed",
+                    "target": "self"
+                }
+            },
+            "minecraft:use_modifiers": {
+                "use_duration": 1.6
+            }
+        },
+        "events": {
+            "consumed": {
+                "sequence": [
+                    {
+                        "add_mob_effect": {
+                            "effect": "regeneration",
+                            "duration": 20,
+                            "amplifier": 2,
+                            "target": "holder"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

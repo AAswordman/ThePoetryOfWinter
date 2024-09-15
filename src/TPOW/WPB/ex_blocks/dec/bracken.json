@@ -28,7 +28,7 @@
                 "seconds_to_destroy": 0.001
             },
             "minecraft:map_color": "#9DDF7B",
-            "minecraft:light_dampening": 0.0,
+            "minecraft:light_dampening": 0,
             "minecraft:loot": "loot_tables/blocks/bracken_crop.json",
             "minecraft:material_instances": {
                 "*": {

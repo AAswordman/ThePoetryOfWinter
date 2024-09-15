@@ -1,0 +1,71 @@
+{
+    "format_version": "1.20.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dec:zombie_brain",
+            "menu_category": {
+                "group": "itemGroup.name.rawFood",
+                "is_hidden_in_commands": false,
+                "category": "nature"
+            }
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.dec:zombie_brain.name"
+            },
+            "minecraft:icon": {
+                "texture": "zombie_brain"
+            },
+            "minecraft:use_animation": "eat",
+            "minecraft:food": {
+                "on_consume": {
+                    "event": "consumed",
+                    "target": "self"
+                },
+                "nutrition": 3,
+                "saturation_modifier": 0.5
+            },
+            "minecraft:use_modifiers": {
+                "use_duration": 1.6
+            }
+        },
+        "events": {
+            "consumed": {
+                "sequence": [
+                    {
+                        "randomize": [
+                            {
+                                "weight": 9,
+                                "add_mob_effect": {
+                                    "effect": "poison",
+                                    "duration": 15,
+                                    "amplifier": 0,
+                                    "target": "holder"
+                                }
+                            },
+                            {
+                                "weight": 1
+                            }
+                        ]
+                    },
+                    {
+                        "randomize": [
+                            {
+                                "weight": 1,
+                                "add_mob_effect": {
+                                    "effect": "nausea",
+                                    "duration": 20,
+                                    "amplifier": 0,
+                                    "target": "holder"
+                                }
+                            },
+                            {
+                                "weight": 1
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

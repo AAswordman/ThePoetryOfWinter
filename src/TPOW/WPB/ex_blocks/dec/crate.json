@@ -18,14 +18,18 @@
             "minecraft:light_dampening": 15,
             "minecraft:light_emission": 0,
             "minecraft:destructible_by_mining": {
-                "seconds_to_destroy": 2.0
+                "seconds_to_destroy": 2
             },
             "minecraft:destructible_by_explosion": {
                 "explosion_resistance": 10
             },
             "minecraft:map_color": "#C29D62",
             "minecraft:unit_cube": {},
-            "tag:wood": {}
+            "minecraft:tags": {
+                "tags": [
+                    "wood"
+                ]
+            }
         },
         "permutations": [
             {

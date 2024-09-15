@@ -19,7 +19,11 @@
             },
             "minecraft:map_color": "#005900",
             "minecraft:loot": "loot_tables/blocks/uranium_block.json",
-            "tag:stone": {}
+            "minecraft:tags": {
+                "tags": [
+                    "stone"
+                ]
+            }
         }
     }
 }

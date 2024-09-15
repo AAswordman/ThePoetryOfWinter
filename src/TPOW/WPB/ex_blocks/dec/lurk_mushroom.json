@@ -33,7 +33,7 @@
                 "seconds_to_destroy": 0.001
             },
             "minecraft:map_color": "#00847D",
-            "minecraft:light_dampening": 0.0,
+            "minecraft:light_dampening": 0,
             "minecraft:loot": "loot_tables/blocks/lurk_mushroom.json",
             "minecraft:placement_filter": {
                 "conditions": [

@@ -5,6 +5,7 @@
             "identifier": "wb:block_magic_equipment_ore",
             "is_experimental": false,
             "menu_category": {
+                "group": "itemGroup.name.ore",
                 "category": "construction"
             }
         },

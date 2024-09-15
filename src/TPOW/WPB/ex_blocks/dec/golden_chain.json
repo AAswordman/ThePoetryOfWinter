@@ -179,7 +179,11 @@
                 "explosion_resistance": 40
             },
             "minecraft:loot": "loot_tables/blocks/golden_chain.json",
-            "tag:metal": {}
+            "minecraft:tags": {
+                "tags": [
+                    "metal"
+                ]
+            }
         }
     }
 }

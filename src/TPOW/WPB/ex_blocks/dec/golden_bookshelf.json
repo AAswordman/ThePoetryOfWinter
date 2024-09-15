@@ -136,8 +136,12 @@
                 "burn_odds": 10
             },
             "minecraft:unit_cube": {},
-            "tag:planks": {},
-            "tag:axe_diggable": {}
+            "minecraft:tags": {
+                "tags": [
+                    "planks",
+                    "axe_diggable"
+                ]
+            }
         }
     }
 }

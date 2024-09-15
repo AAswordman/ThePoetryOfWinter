@@ -19,7 +19,11 @@
             },
             "minecraft:loot": "loot_tables/blocks/smooth_amethyst_block.json",
             "minecraft:map_color": "#A36FD5",
-            "tag:stone": {}
+            "minecraft:tags": {
+                "tags": [
+                    "stone"
+                ]
+            }
         }
     }
 }

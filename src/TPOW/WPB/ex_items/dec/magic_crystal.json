@@ -1,0 +1,48 @@
+{
+    "format_version": "1.20.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dec:magic_crystal",
+            "menu_category": {
+                "group": "itemGroup.name.decorations",
+                "is_hidden_in_commands": false,
+                "category": "items"
+            }
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.dec:magic_crystal.name"
+            },
+            "minecraft:icon": {
+                "texture": "magic_crystal"
+            },
+            "minecraft:use_animation": "eat",
+            "minecraft:stacked_by_data": false,
+            "minecraft:foil": true,
+            "minecraft:on_use": {
+                "on_use": {
+                    "event": "use",
+                    "target": "self"
+                }
+            },
+            "minecraft:cooldown": {
+                "category": "magic_nucleus",
+                "duration": 0.3
+            }
+        },
+        "events": {
+            "use": {
+                "run_command": {
+                    "command": [
+                        "tag @s[scores={magicgain=0..19}] add clear_magic_crystal",
+                        "scoreboard players add @s[scores={magicgain=0..19},tag=clear_magic_crystal] magicgain 1",
+                        "tellraw @s[scores={magicgain=20..}] { \"rawtext\" : [ { \"translate\" : \"text.dec:magic_crystal_max.name\" } ] }",
+                        "tellraw @s[tag=clear_magic_crystal] { \"rawtext\" : [ { \"translate\" : \"text.dec:magic_crystal_magicgain_up.name\" },{ \"score\":{ \"name\": \"@s\",\"objective\": \"magicgain\" } } ] }",
+                        "clear @s[tag=clear_magic_crystal] dec:magic_crystal 0 1",
+                        "tag @s[tag=clear_magic_crystal] remove clear_magic_crystal"
+                    ]
+                }
+            }
+        }
+    }
+}

@@ -24,8 +24,8 @@
                 "explosion_resistance": 10
             },
             "minecraft:map_color": "#FFFFFF",
-            "tag:wood": {},
-            "minecraft:geometry": "minecraft:geometry.full_block"
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "tag:wood": {}
         },
         "permutations": [
             {

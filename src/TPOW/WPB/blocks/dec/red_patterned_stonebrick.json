@@ -79,8 +79,8 @@
                 "explosion_resistance": 10
             },
             "minecraft:loot": "loot_tables/blocks/red_patterned_stonebrick.json",
-            "tag:stone": {},
-            "minecraft:geometry": "minecraft:geometry.full_block"
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "tag:stone": {}
         }
     }
 }

@@ -1,0 +1,49 @@
+{
+    "format_version": "1.20.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dec:red_gem",
+            "menu_category": {
+                "group": "itemGroup.name.decorations",
+                "is_hidden_in_commands": false,
+                "category": "items"
+            }
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.dec:red_gem.name"
+            },
+            "minecraft:icon": {
+                "texture": "red_gem"
+            },
+            "minecraft:use_animation": "eat",
+            "minecraft:stacked_by_data": false,
+            "minecraft:foil": true,
+            "minecraft:on_use": {
+                "on_use": {
+                    "event": "use",
+                    "target": "self"
+                }
+            },
+            "minecraft:cooldown": {
+                "category": "red_gem",
+                "duration": 0.3
+            }
+        },
+        "events": {
+            "use": {
+                "run_command": {
+                    "command": [
+                        "tag @s[scores={maxmagic=40..58}] add clear_red_gem",
+                        "tellraw @s[scores={maxmagic=20..38}] { \"rawtext\" : [ { \"translate\" : \"text.dec:red_gem_not_enough.name\" } ] }",
+                        "tellraw @s[scores={maxmagic=58..}] { \"rawtext\" : [ { \"translate\" : \"text.dec:red_gem_max.name\" } ] }",
+                        "scoreboard players add @s[tag=clear_red_gem] maxmagic 2",
+                        "tellraw @s[tag=clear_red_gem] { \"rawtext\" : [ { \"translate\" : \"text.dec:red_gem_magic_up.name\" },{ \"score\":{ \"name\": \"@s\",\"objective\": \"maxmagic\" } } ] }",
+                        "clear @s[tag=clear_red_gem] dec:red_gem 0 1",
+                        "tag @s[tag=clear_red_gem] remove clear_red_gem"
+                    ]
+                }
+            }
+        }
+    }
+}

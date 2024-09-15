@@ -14,7 +14,7 @@
         "@types/jest": "^29.5.12",
         "@types/node": "^22.4.1",
         "object-sizeof": "^2.6.1",
-        "typescript": "^4.8.4"
+        "typescript": "^4.9.5"
     },
     "name": "wp",
     "version": "1.0.0",

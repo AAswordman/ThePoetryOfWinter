@@ -5,6 +5,7 @@
             "identifier": "wb:block_senior_forget_ore",
             "is_experimental": false,
             "menu_category": {
+                "group": "itemGroup.name.ore",
                 "category": "construction"
             }
         },

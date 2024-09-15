@@ -20,7 +20,11 @@
             "minecraft:friction": 0.5,
             "minecraft:map_color": "#E0ECEC",
             "minecraft:loot": "loot_tables/blocks/snow_brick_block.json",
-            "tag:stone": {}
+            "minecraft:tags": {
+                "tags": [
+                    "stone"
+                ]
+            }
         }
     }
 }

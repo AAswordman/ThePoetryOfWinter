@@ -19,10 +19,14 @@
             },
             "minecraft:map_color": "#747474",
             "minecraft:loot": "loot_tables/blocks/radiate_stone.json",
-            "tag:stone": {},
             "minecraft:on_step_on": {
                 "event": "step_on",
                 "target": "other"
+            },
+            "minecraft:tags": {
+                "tags": [
+                    "stone"
+                ]
             }
         },
         "events": {

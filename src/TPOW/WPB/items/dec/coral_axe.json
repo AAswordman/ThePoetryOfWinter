@@ -1,14 +1,15 @@
 {
-    "format_version": "1.20.80",
+    "format_version": "1.20.50",
     "minecraft:item": {
         "description": {
-            "category": "equipment",
-            "identifier": "dec:coral_axe"
+            "identifier": "dec:coral_axe",
+            "menu_category": {
+                "group": "itemGroup.name.axe",
+                "is_hidden_in_commands": false,
+                "category": "equipment"
+            }
         },
         "components": {
-            "minecraft:creative_category": {
-                "parent": "itemGroup.name.axe"
-            },
             "minecraft:display_name": {
                 "value": "item.dec:coral_axe.name"
             },
@@ -26,7 +27,8 @@
             "minecraft:damage": 5,
             "minecraft:digger": {
                 "use_efficiency": true,
-                "destroy_speeds": [{
+                "destroy_speeds": [
+                    {
                         "block": {
                             "tags": "q.any_tag('wood','pumpkin','plant')"
                         },
@@ -37,91 +39,91 @@
                     },
                     {
                         "block": "minecraft:bamboo_mosaic",
-                        "speed": 6.0,
+                        "speed": 6,
                         "on_dig": {
                             "event": "attack"
                         }
                     },
                     {
                         "block": "minecraft:bamboo_mosaic_slab",
-                        "speed": 6.0,
+                        "speed": 6,
                         "on_dig": {
                             "event": "attack"
                         }
                     },
                     {
                         "block": "minecraft:bamboo_mosaic_stairs",
-                        "speed": 6.0,
+                        "speed": 6,
                         "on_dig": {
                             "event": "attack"
                         }
                     },
                     {
                         "block": "minecraft:bamboo_block",
-                        "speed": 6.0,
+                        "speed": 6,
                         "on_dig": {
                             "event": "attack"
                         }
                     },
                     {
                         "block": "minecraft:stripped_bamboo_block",
-                        "speed": 6.0,
+                        "speed": 6,
                         "on_dig": {
                             "event": "attack"
                         }
                     },
                     {
                         "block": "minecraft:bamboo_stairs",
-                        "speed": 6.0,
+                        "speed": 6,
                         "on_dig": {
                             "event": "attack"
                         }
                     },
                     {
                         "block": "minecraft:bamboo_slab",
-                        "speed": 6.0,
+                        "speed": 6,
                         "on_dig": {
                             "event": "attack"
                         }
                     },
                     {
                         "block": "minecraft:bamboo_sign",
-                        "speed": 6.0,
+                        "speed": 6,
                         "on_dig": {
                             "event": "attack"
                         }
                     },
                     {
                         "block": "minecraft:bamboo_hanging_sign",
-                        "speed": 6.0,
+                        "speed": 6,
                         "on_dig": {
                             "event": "attack"
                         }
                     },
                     {
                         "block": "minecraft:cherry_stairs",
-                        "speed": 6.0,
+                        "speed": 6,
                         "on_dig": {
                             "event": "attack"
                         }
                     },
                     {
                         "block": "minecraft:cherry_slab",
-                        "speed": 6.0,
+                        "speed": 6,
                         "on_dig": {
                             "event": "attack"
                         }
                     },
                     {
                         "block": "minecraft:cherry_sign",
-                        "speed": 6.0,
+                        "speed": 6,
                         "on_dig": {
                             "event": "attack"
                         }
                     },
                     {
                         "block": "minecraft:cherry_hanging_sign",
-                        "speed": 6.0,
+                        "speed": 6,
                         "on_dig": {
                             "event": "attack"
                         }
@@ -1218,18 +1220,9 @@
                 }
             },
             "minecraft:hand_equipped": true,
-            "minecraft:weapon": {
-                "on_hurt_entity": {
-                    "event": "attack",
-                    "target": "self"
-                },
-                "on_hit_block": {
-                    "event": "attack",
-                    "target": "self"
-                }
-            },
             "minecraft:repairable": {
-                "repair_items": [{
+                "repair_items": [
+                    {
                         "items": [
                             "dec:sharp_coral"
                         ],
@@ -1243,20 +1236,10 @@
                     }
                 ]
             },
-            "tag:minecraft:is_axe": {}
-        },
-        "events": {
-            "attack_more": {
-                "damage": {
-                    "amount": 2,
-                    "type": "magic"
-                }
-            },
-            "attack": {
-                "damage": {
-                    "amount": 1,
-                    "type": "magic"
-                }
+            "minecraft:tags": {
+                "tags": [
+                    "minecraft:is_axe"
+                ]
             }
         }
     }

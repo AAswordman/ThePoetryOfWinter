@@ -18,7 +18,11 @@
             },
             "minecraft:map_color": "#FF9643",
             "minecraft:loot": "loot_tables/blocks/solidified_lava_block.json",
-            "tag:stone": {}
+            "minecraft:tags": {
+                "tags": [
+                    "stone"
+                ]
+            }
         }
     }
 }

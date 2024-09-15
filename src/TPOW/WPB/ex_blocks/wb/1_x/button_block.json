@@ -16,7 +16,11 @@
                 "explosion_resistance": 3
             },
             "minecraft:light_emission": 0.7,
-            "tag:stone": {}
+            "minecraft:tags": {
+                "tags": [
+                    "stone"
+                ]
+            }
         }
     }
 }

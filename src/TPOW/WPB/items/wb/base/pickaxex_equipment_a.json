@@ -1,38 +1,15 @@
 {
-    "format_version": "1.20.80",
+    "format_version": "1.20.50",
     "minecraft:item": {
         "description": {
-            "category": "equipment",
-            "identifier": "wb:pickaxex_equipment_a"
+            "identifier": "wb:pickaxex_equipment_a",
+            "menu_category": {
+                "group": "itemGroup.name.pickaxe",
+                "is_hidden_in_commands": false,
+                "category": "equipment"
+            }
         },
         "components": {
-            "minecraft:render_offsets": {
-                "main_hand": {
-                    "first_person": {
-                        "scale": [0.0215, 0.012, 0.0215],
-                        "position": [0.5, -0.0725, -1.085],
-                        "rotation": [0, -50, 90]
-
-                    },
-                    "third_person": {
-                        "position": [0.375, 1.65, -0.75],
-                        "scale": [0.07, 0.0400, 0.07]
-                    }
-                },
-                "off_hand": {
-                    "first_person": {
-                        "scale": [0.01, 0.0065, 0.01],
-                        "position": [0.4, 0.05, -1.075]
-                    },
-                    "third_person": {
-                        "position": [0.45, 1.6, -0.7],
-                        "scale": [0.03125, 0.03125, 0.03125]
-                    }
-                }
-            },
-            "minecraft:creative_category": {
-                "parent": "itemGroup.name.pickaxe"
-            },
             "minecraft:display_name": {
                 "value": "item.wb:pickaxex_equipment_a.name"
             },
@@ -50,7 +27,8 @@
             "minecraft:damage": 4,
             "minecraft:digger": {
                 "use_efficiency": true,
-                "destroy_speeds": [{
+                "destroy_speeds": [
+                    {
                         "block": {
                             "tags": "q.any_tag('stone','metal','diamond_pick_diggable')"
                         },
@@ -1907,31 +1885,15 @@
                 }
             },
             "minecraft:hand_equipped": true,
-            "minecraft:weapon": {
-                "on_hurt_entity": {
-                    "event": "attack",
-                    "target": "self"
-                },
-                "on_hit_block": {
-                    "event": "attack",
-                    "target": "self"
-                }
-            },
             "minecraft:repairable": {
-                "repair_items": [{
-                    "items": [
-                        "wb:mineral_magic_equipment"
-                    ],
-                    "repair_amount": "context.other->query.remaining_durability + query.max_durability *  1"
-                }]
-            }
-        },
-        "events": {
-            "attack": {
-                "damage": {
-                    "amount": 1,
-                    "type": "magic"
-                }
+                "repair_items": [
+                    {
+                        "items": [
+                            "wb:mineral_magic_equipment"
+                        ],
+                        "repair_amount": "context.other->query.remaining_durability + query.max_durability *  1"
+                    }
+                ]
             }
         }
     }

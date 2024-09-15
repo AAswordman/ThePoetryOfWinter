@@ -32,7 +32,11 @@
                 "seconds_to_destroy": 10
             },
             "minecraft:map_color": "#00847D",
-            "tag:stone": {}
+            "minecraft:tags": {
+                "tags": [
+                    "stone"
+                ]
+            }
         }
     }
 }

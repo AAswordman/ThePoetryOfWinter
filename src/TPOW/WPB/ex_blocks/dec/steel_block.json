@@ -19,7 +19,11 @@
             },
             "minecraft:map_color": "#565656",
             "minecraft:loot": "loot_tables/blocks/steel_block.json",
-            "tag:metal": {}
+            "minecraft:tags": {
+                "tags": [
+                    "metal"
+                ]
+            }
         }
     }
 }

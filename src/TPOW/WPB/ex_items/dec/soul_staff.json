@@ -1,0 +1,86 @@
+{
+    "format_version": "1.20.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dec:soul_staff",
+            "menu_category": {
+                "group": "itemGroup.name.sword",
+                "is_hidden_in_commands": false,
+                "category": "equipment"
+            }
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.dec:soul_staff.name"
+            },
+            "minecraft:icon": {
+                "texture": "soul_staff"
+            },
+            "minecraft:use_animation": "bow",
+            "minecraft:stacked_by_data": false,
+            "minecraft:max_stack_size": 1,
+            "minecraft:hand_equipped": true,
+            "minecraft:on_use": {
+                "on_use": {
+                    "event": "shoot",
+                    "target": "self"
+                }
+            },
+            "minecraft:enchantable": {
+                "value": 14,
+                "slot": "flintsteel"
+            },
+            "minecraft:cooldown": {
+                "category": "staff",
+                "duration": 0.9
+            },
+            "minecraft:durability": {
+                "max_durability": 189
+            },
+            "minecraft:tags": {
+                "tags": [
+                    "comp:equipment_type:magic_weapon"
+                ]
+            }
+        },
+        "events": {
+            "attack": {
+                "damage": {
+                    "type": "magic",
+                    "amount": 1
+                }
+            },
+            "shoot": {
+                "sequence": [
+                    {
+                        "condition": "query.scoreboard('wbfl') > 3",
+                        "sequence": [
+                            {
+                                "run_command": {
+                                    "command": [
+                                        "playsound item.book.put @a ~~~",
+                                        "scoreboard players remove @s wbfl 3",
+                                        "playanimation @s animation.humanoid.staff_use"
+                                    ],
+                                    "target": "holder"
+                                }
+                            },
+                            {
+                                "shoot": {
+                                    "projectile": "dec:concentrated_soul_bullet",
+                                    "launch_power": 1
+                                }
+                            },
+                            {
+                                "damage": {
+                                    "type": "magic",
+                                    "amount": 1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

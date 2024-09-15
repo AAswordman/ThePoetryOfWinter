@@ -15,7 +15,11 @@
             "minecraft:destructible_by_explosion": {
                 "explosion_resistance": 18
             },
-            "tag:stone": {}
+            "minecraft:tags": {
+                "tags": [
+                    "stone"
+                ]
+            }
         }
     }
 }

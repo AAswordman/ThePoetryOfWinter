@@ -179,7 +179,11 @@
             },
             "minecraft:loot": "loot_tables/blocks/lampshade.json",
             "minecraft:map_color": "#7C8193",
-            "tag:metal": {}
+            "minecraft:tags": {
+                "tags": [
+                    "metal"
+                ]
+            }
         }
     }
 }

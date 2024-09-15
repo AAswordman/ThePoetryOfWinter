@@ -25,7 +25,11 @@
             },
             "minecraft:map_color": "#6E6B66",
             "minecraft:unit_cube": {},
-            "tag:wood": {}
+            "minecraft:tags": {
+                "tags": [
+                    "wood"
+                ]
+            }
         },
         "permutations": [
             {

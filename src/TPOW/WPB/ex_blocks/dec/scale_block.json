@@ -19,7 +19,11 @@
             },
             "minecraft:map_color": "#7BE2D4",
             "minecraft:loot": "loot_tables/blocks/scale_block.json",
-            "tag:stone": {}
+            "minecraft:tags": {
+                "tags": [
+                    "stone"
+                ]
+            }
         }
     }
 }

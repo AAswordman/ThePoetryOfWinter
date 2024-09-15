@@ -1,14 +1,15 @@
 {
-    "format_version": "1.20.80",
+    "format_version": "1.20.50",
     "minecraft:item": {
         "description": {
-            "category": "equipment",
-            "identifier": "dec:copper_dagger"
+            "identifier": "dec:copper_dagger",
+            "menu_category": {
+                "group": "itemGroup.name.sword",
+                "is_hidden_in_commands": false,
+                "category": "equipment"
+            }
         },
         "components": {
-            "minecraft:creative_category": {
-                "parent": "itemGroup.name.sword"
-            },
             "minecraft:display_name": {
                 "value": "item.dec:copper_dagger.name"
             },
@@ -59,16 +60,6 @@
                 "duration": 4
             },
             "minecraft:hand_equipped": true,
-            "minecraft:weapon": {
-                "on_hurt_entity": {
-                    "event": "attack",
-                    "target": "self"
-                },
-                "on_hit_block": {
-                    "event": "attack",
-                    "target": "self"
-                }
-            },
             "minecraft:repairable": {
                 "repair_items": [
                     {
@@ -85,34 +76,12 @@
                     }
                 ]
             },
-            "minecraft:on_use": {
-                "on_use": {
-                    "event": "copper_dagger_attack",
-                    "target": "self"
-                }
-            },
             "minecraft:can_destroy_in_creative": false,
-            "tag:comp:movement_addition:0.01": {},
-            "tag:comp:equipment_type:melee_weapon":{}
-        },
-        "events": {
-            "copper_dagger_attack": {
-                "run_command": {
-                    "command": [
-                        "function item/copper_dagger"
-                    ],
-                    "target": "holder"
-                },
-                "damage": {
-                    "amount": 1,
-                    "type": "magic"
-                }
-            },
-            "attack": {
-                "damage": {
-                    "amount": 1,
-                    "type": "magic"
-                }
+            "minecraft:tags": {
+                "tags": [
+                    "comp:movement_addition:0.01",
+                    "comp:equipment_type:melee_weapon"
+                ]
             }
         }
     }

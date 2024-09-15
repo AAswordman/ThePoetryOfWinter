@@ -19,7 +19,11 @@
             },
             "minecraft:loot": "loot_tables/blocks/crimson_lamp.json",
             "minecraft:map_color": "#FFA271",
-            "tag:stone": {}
+            "minecraft:tags": {
+                "tags": [
+                    "stone"
+                ]
+            }
         }
     }
 }

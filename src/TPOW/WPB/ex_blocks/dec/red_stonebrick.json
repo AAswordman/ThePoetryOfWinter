@@ -19,7 +19,11 @@
             },
             "minecraft:map_color": "#711B13",
             "minecraft:loot": "loot_tables/blocks/red_stonebrick.json",
-            "tag:stone": {}
+            "minecraft:tags": {
+                "tags": [
+                    "stone"
+                ]
+            }
         },
         "events": {}
     }

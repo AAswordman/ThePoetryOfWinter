@@ -19,7 +19,11 @@
             },
             "minecraft:map_color": "#F6FABD",
             "minecraft:loot": "loot_tables/blocks/end_ore.json",
-            "tag:stone": {}
+            "minecraft:tags": {
+                "tags": [
+                    "stone"
+                ]
+            }
         }
     }
 }

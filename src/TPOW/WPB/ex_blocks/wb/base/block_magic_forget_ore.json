@@ -5,6 +5,7 @@
             "identifier": "wb:block_magic_forget_ore",
             "is_experimental": false,
             "menu_category": {
+                "group": "itemGroup.name.ore",
                 "category": "construction"
             }
         },
@@ -15,7 +16,11 @@
             "minecraft:destructible_by_explosion": {
                 "explosion_resistance": 3
             },
-            "tag:stone": {}
+            "minecraft:tags": {
+                "tags": [
+                    "stone"
+                ]
+            }
         }
     }
 }

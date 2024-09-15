@@ -1,0 +1,171 @@
+{
+    "format_version": "1.20.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dec:poison_bag",
+            "menu_category": {
+                "group": "itemGroup.name.sword",
+                "is_hidden_in_commands": false,
+                "category": "equipment"
+            }
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.dec:poison_bag.name"
+            },
+            "minecraft:icon": {
+                "texture": "poison_bag"
+            },
+            "minecraft:on_use": {
+                "on_use": {
+                    "event": "shoot",
+                    "target": "self"
+                }
+            },
+            "minecraft:cooldown": {
+                "category": "missile",
+                "duration": 2.5
+            },
+            "minecraft:tags": {
+                "tags": [
+                    "comp:equipment_type:thrown_weapon"
+                ]
+            }
+        },
+        "events": {
+            "shoot": {
+                "sequence": [
+                    {
+                        "run_command": {
+                            "command": [
+                                "playsound mob.snowgolem.shoot @a ~~~",
+                                "clear @s dec:poison_bag 0 1"
+                            ],
+                            "target": "holder"
+                        }
+                    },
+                    {
+                        "shoot": {
+                            "projectile": "dec:poison_powder",
+                            "launch_power": 1
+                        }
+                    },
+                    {
+                        "shoot": {
+                            "projectile": "dec:poison_powder",
+                            "launch_power": 1
+                        }
+                    },
+                    {
+                        "shoot": {
+                            "projectile": "dec:poison_powder",
+                            "launch_power": 1
+                        }
+                    },
+                    {
+                        "shoot": {
+                            "projectile": "dec:poison_powder",
+                            "launch_power": 1
+                        }
+                    },
+                    {
+                        "shoot": {
+                            "projectile": "dec:poison_powder",
+                            "launch_power": 1
+                        }
+                    },
+                    {
+                        "shoot": {
+                            "projectile": "dec:poison_powder",
+                            "launch_power": 1
+                        }
+                    },
+                    {
+                        "shoot": {
+                            "projectile": "dec:poison_powder",
+                            "launch_power": 1
+                        }
+                    },
+                    {
+                        "shoot": {
+                            "projectile": "dec:poison_powder",
+                            "launch_power": 1
+                        }
+                    },
+                    {
+                        "shoot": {
+                            "projectile": "dec:poison_powder",
+                            "launch_power": 1
+                        }
+                    },
+                    {
+                        "shoot": {
+                            "projectile": "dec:poison_powder",
+                            "launch_power": 1
+                        }
+                    },
+                    {
+                        "shoot": {
+                            "projectile": "dec:poison_powder",
+                            "launch_power": 1
+                        }
+                    },
+                    {
+                        "shoot": {
+                            "projectile": "dec:poison_powder",
+                            "launch_power": 1
+                        }
+                    },
+                    {
+                        "shoot": {
+                            "projectile": "dec:poison_powder",
+                            "launch_power": 1
+                        }
+                    },
+                    {
+                        "shoot": {
+                            "projectile": "dec:poison_powder",
+                            "launch_power": 1
+                        }
+                    },
+                    {
+                        "shoot": {
+                            "projectile": "dec:poison_powder",
+                            "launch_power": 1
+                        }
+                    },
+                    {
+                        "shoot": {
+                            "projectile": "dec:poison_powder",
+                            "launch_power": 1
+                        }
+                    },
+                    {
+                        "shoot": {
+                            "projectile": "dec:poison_powder",
+                            "launch_power": 1
+                        }
+                    },
+                    {
+                        "shoot": {
+                            "projectile": "dec:poison_powder",
+                            "launch_power": 1
+                        }
+                    },
+                    {
+                        "shoot": {
+                            "projectile": "dec:poison_powder",
+                            "launch_power": 1
+                        }
+                    },
+                    {
+                        "shoot": {
+                            "projectile": "dec:poison_powder",
+                            "launch_power": 1
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

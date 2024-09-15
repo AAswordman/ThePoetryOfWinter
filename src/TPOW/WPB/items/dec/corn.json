@@ -1,32 +1,30 @@
 {
-  "format_version": "1.20.80",
-  "minecraft:item": {
-    "description": {
-      "category": "nature",
-      "identifier": "dec:corn"
-    },
-    "components": {
-      "minecraft:creative_category": {
-        "parent": "itemGroup.name.crop"
-      },
-      "minecraft:display_name": {
-        "value": "item.dec:corn.name"
-      },
-      "minecraft:icon": {
-        "texture": "corn"
-      },
-      "minecraft:use_animation": "eat",
-      "minecraft:render_offsets": "cookie",
-      "minecraft:use_duration": 3.2,
-      "minecraft:food": {
-        "on_consume": {
-          "event": "consumed",
-          "target": "self"
+    "format_version": "1.20.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dec:corn",
+            "menu_category": {
+                "group": "itemGroup.name.crop",
+                "is_hidden_in_commands": false,
+                "category": "nature"
+            }
         },
-        "nutrition": 4,
-        "saturation_modifier": "normal",
-        "using_converts_to": "dec:cob"
-      }
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.dec:corn.name"
+            },
+            "minecraft:icon": {
+                "texture": "corn"
+            },
+            "minecraft:use_animation": "eat",
+            "minecraft:food": {
+                "nutrition": 4,
+                "saturation_modifier": 0.6,
+                "using_converts_to": "dec:cob"
+            },
+            "minecraft:use_modifiers": {
+                "use_duration": 3.2
+            }
+        }
     }
-  }
 }

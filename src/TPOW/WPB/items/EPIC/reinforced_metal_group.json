@@ -1,52 +1,25 @@
 {
-  "format_version": "1.20.80",
-  "minecraft:item": {
-    "description": {
-      "identifier": "epic:reinforced_metal_group",
-      "category": "equipment"
-    },
-    "components": {
-      "minecraft:creative_category": {
-        "parent": "itemGroup.name.sword"
-      },
-      "minecraft:display_name": {
-        "value": "item.epic:reinforced_metal_group.name"
-      },
-      "minecraft:icon": {
-        "texture": "epic:reinforced_metal_group"
-      },
-      "minecraft:render_offsets": {
-        "main_hand": {
-          "first_person": {
-            "scale": [0.01,0.0055,0.01],
-            "position": [0.315,0.05,-0.85],
-            "rotation": [90,0,0]
-
-          },
-          "third_person": {
-            "position": [0.725,1.525,-0.85],
-            "scale": [0.035,0.02000,0.035]
-          }
+    "format_version": "1.20.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "epic:reinforced_metal_group",
+            "menu_category": {
+                "group": "itemGroup.name.sword",
+                "is_hidden_in_commands": false,
+                "category": "equipment"
+            }
         },
-        "off_hand": {
-          "first_person": {
-            "scale": [0.01,0.0065,0.01],
-            "position": [0.4,0.05,-1.075]
-          },
-          "third_person": {
-            "position": [0.45,1.6,-0.7],
-            "scale": [0.03125,0.03125,0.03125]
-          }
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.epic:reinforced_metal_group.name"
+            },
+            "minecraft:icon": {
+                "texture": "epic:reinforced_metal_group"
+            },
+            "minecraft:stacked_by_data": true,
+            "minecraft:max_stack_size": 64,
+            "minecraft:hand_equipped": false,
+            "events": {}
         }
-      },
-      "minecraft:stacked_by_data": true,
-      "minecraft:max_stack_size": 64,
-      "minecraft:hand_equipped": false,
-      "minecraft:on_use": {
-      },
-    "events": {
-      
     }
-  }
-}
 }

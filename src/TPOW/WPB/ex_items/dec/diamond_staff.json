@@ -1,0 +1,117 @@
+{
+    "format_version": "1.20.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dec:diamond_staff",
+            "menu_category": {
+                "group": "itemGroup.name.sword",
+                "is_hidden_in_commands": false,
+                "category": "equipment"
+            }
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.dec:diamond_staff.name"
+            },
+            "minecraft:icon": {
+                "texture": "diamond_staff"
+            },
+            "minecraft:durability": {
+                "max_durability": 1671
+            },
+            "minecraft:use_animation": "bow",
+            "minecraft:stacked_by_data": false,
+            "minecraft:max_stack_size": 1,
+            "minecraft:hand_equipped": true,
+            "minecraft:on_use": {
+                "on_use": {
+                    "event": "shoot",
+                    "target": "self"
+                }
+            },
+            "minecraft:tags": {
+                "tags": [
+                    "use_skill_count",
+                    "comp:equipment_type:magic_weapon"
+                ]
+            }
+        },
+        "events": {
+            "shoot": {
+                "sequence": [
+                    {
+                        "condition": "query.scoreboard('wbfl') < 3",
+                        "sequence": [
+                            {
+                                "run_command": {
+                                    "command": [
+                                        "scoreboard players set @s skill_count 0"
+                                    ],
+                                    "target": "holder"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "condition": "query.scoreboard('wbfl') >= 3",
+                        "sequence": [
+                            {
+                                "condition": "query.scoreboard('skill_count') < 6",
+                                "sequence": [
+                                    {
+                                        "run_command": {
+                                            "command": [
+                                                "scoreboard players add @s skill_count 1"
+                                            ],
+                                            "target": "holder"
+                                        },
+                                        "damage": {
+                                            "type": "magic",
+                                            "amount": 1
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "condition": "query.scoreboard('skill_count') >= 5",
+                                "sequence": [
+                                    {
+                                        "run_command": {
+                                            "command": [
+                                                "playsound item.book.put @a ~~~",
+                                                "playanimation @s animation.humanoid.staff_use",
+                                                "scoreboard players remove @s wbfl 3"
+                                            ],
+                                            "target": "holder"
+                                        },
+                                        "damage": {
+                                            "type": "magic",
+                                            "amount": 1
+                                        },
+                                        "shoot": {
+                                            "projectile": "dec:stream_energy_ball",
+                                            "launch_power": 1
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "condition": "query.scoreboard('skill_count') >= 6",
+                                "sequence": [
+                                    {
+                                        "run_command": {
+                                            "command": [
+                                                "scoreboard players set @s skill_count 0"
+                                            ],
+                                            "target": "holder"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

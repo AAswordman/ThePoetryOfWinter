@@ -19,7 +19,11 @@
             },
             "minecraft:map_color": "#747474",
             "minecraft:loot": "loot_tables/blocks/stream_ore.json",
-            "tag:stone": {}
+            "minecraft:tags": {
+                "tags": [
+                    "stone"
+                ]
+            }
         }
     }
 }

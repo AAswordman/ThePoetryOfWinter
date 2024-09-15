@@ -32,7 +32,7 @@
                     "minecraft:light_dampening": 15,
                     "minecraft:light_emission": 0,
                     "minecraft:destructible_by_mining": {
-                        "seconds_to_destroy": 3.0
+                        "seconds_to_destroy": 3
                     },
                     "minecraft:destructible_by_explosion": {
                         "explosion_resistance": 100
@@ -65,7 +65,7 @@
                     "minecraft:light_dampening": 15,
                     "minecraft:light_emission": 0,
                     "minecraft:destructible_by_mining": {
-                        "seconds_to_destroy": 3.0
+                        "seconds_to_destroy": 3
                     },
                     "minecraft:destructible_by_explosion": {
                         "explosion_resistance": 100
@@ -88,7 +88,7 @@
                     "minecraft:light_dampening": 15,
                     "minecraft:light_emission": 7,
                     "minecraft:destructible_by_mining": {
-                        "seconds_to_destroy": 3.0
+                        "seconds_to_destroy": 3
                     },
                     "minecraft:destructible_by_explosion": {
                         "explosion_resistance": 100
@@ -101,7 +101,7 @@
             "minecraft:light_dampening": 15,
             "minecraft:light_emission": 0,
             "minecraft:destructible_by_mining": {
-                "seconds_to_destroy": 3.0
+                "seconds_to_destroy": 3
             },
             "minecraft:destructible_by_explosion": {
                 "explosion_resistance": 100

@@ -1,0 +1,53 @@
+{
+    "format_version": "1.20.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dec:resistance_potion",
+            "menu_category": {
+                "group": "itemGroup.name.potion",
+                "is_hidden_in_commands": false,
+                "category": "equipment"
+            }
+        },
+        "components": {
+            "minecraft:max_stack_size": 1,
+            "minecraft:display_name": {
+                "value": "item.dec:resistance_potion.name"
+            },
+            "minecraft:icon": {
+                "texture": "resistance_potion"
+            },
+            "minecraft:use_animation": "drink",
+            "minecraft:hand_equipped": false,
+            "minecraft:stacked_by_data": false,
+            "minecraft:foil": true,
+            "minecraft:food": {
+                "on_consume": {
+                    "event": "consumed",
+                    "target": "self"
+                },
+                "using_converts_to": "glass_bottle",
+                "nutrition": 0,
+                "saturation_modifier": 1,
+                "can_always_eat": true
+            },
+            "minecraft:use_modifiers": {
+                "use_duration": 1.6
+            }
+        },
+        "events": {
+            "consumed": {
+                "sequence": [
+                    {
+                        "add_mob_effect": {
+                            "effect": "resistance",
+                            "duration": 300,
+                            "amplifier": 0,
+                            "target": "holder"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

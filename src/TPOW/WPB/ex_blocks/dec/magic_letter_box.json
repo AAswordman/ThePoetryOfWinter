@@ -195,8 +195,12 @@
             },
             "minecraft:unit_cube": {},
             "minecraft:loot": "loot_tables/blocks/magic_letter_box/magic_letter_box.json",
-            "tag:planks": {},
-            "tag:axe_diggable": {}
+            "minecraft:tags": {
+                "tags": [
+                    "planks",
+                    "axe_diggable"
+                ]
+            }
         }
     }
 }

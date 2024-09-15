@@ -1,0 +1,55 @@
+{
+    "format_version": "1.20.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dec:poison_fish",
+            "menu_category": {
+                "group": "itemGroup.name.rawFood",
+                "is_hidden_in_commands": false,
+                "category": "nature"
+            }
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.dec:poison_fish.name"
+            },
+            "minecraft:icon": {
+                "texture": "poison_fish"
+            },
+            "minecraft:use_animation": "eat",
+            "minecraft:food": {
+                "nutrition": 3,
+                "saturation_modifier": 0.6,
+                "on_consume": {
+                    "event": "consumed",
+                    "target": "self"
+                }
+            },
+            "minecraft:use_modifiers": {
+                "use_duration": 1.6
+            }
+        },
+        "events": {
+            "consumed": {
+                "sequence": [
+                    {
+                        "randomize": [
+                            {
+                                "weight": 9,
+                                "add_mob_effect": {
+                                    "effect": "poison",
+                                    "duration": 5,
+                                    "amplifier": 3,
+                                    "target": "holder"
+                                }
+                            },
+                            {
+                                "weight": 1
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

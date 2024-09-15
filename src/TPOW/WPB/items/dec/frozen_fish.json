@@ -1,45 +1,29 @@
 {
-  "format_version": "1.20.80",
-  "minecraft:item": {
-    "description": {
-      "category": "nature",
-      "identifier": "dec:frozen_fish"
-    },
-    "components": {
-      "minecraft:creative_category": {
-        "parent": "itemGroup.name.rawFood"
-      },
-      "minecraft:display_name": {
-        "value": "item.dec:frozen_fish.name"
-      },
-      "minecraft:icon": {
-        "texture": "frozen_fish"
-      },
-      "minecraft:use_animation": "eat",
-      "minecraft:render_offsets": "fish",
-      "minecraft:use_duration": 1.6,
-      "minecraft:food": {
-        "nutrition": 4,
-        "saturation_modifier": "low",
-        "on_consume": {
-          "event": "consumed",
-          "target": "self"
-        }
-      }
-    },
-    "events": {
-      "consumed": {
-        "sequence": [
-          {
-            "add_mob_effect": {
-              "effect": "slowness",
-              "duration": 30,
-              "amplifier": 1,
-              "target": "holder"
+    "format_version": "1.20.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dec:frozen_fish",
+            "menu_category": {
+                "group": "itemGroup.name.rawFood",
+                "is_hidden_in_commands": false,
+                "category": "nature"
             }
-          }
-        ]
-      }
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.dec:frozen_fish.name"
+            },
+            "minecraft:icon": {
+                "texture": "frozen_fish"
+            },
+            "minecraft:use_animation": "eat",
+            "minecraft:food": {
+                "nutrition": 4,
+                "saturation_modifier": 0.5
+            },
+            "minecraft:use_modifiers": {
+                "use_duration": 1.6
+            }
+        }
     }
-  }
 }

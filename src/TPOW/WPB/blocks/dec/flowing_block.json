@@ -28,8 +28,8 @@
             },
             "minecraft:loot": "loot_tables/blocks/flowing_block.json",
             "minecraft:map_color": "#130672",
-            "tag:stone": {},
-            "minecraft:geometry": "minecraft:geometry.full_block"
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "tag:stone": {}
         },
         "permutations": [
             {

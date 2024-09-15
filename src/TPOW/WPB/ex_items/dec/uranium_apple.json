@@ -1,0 +1,82 @@
+{
+    "format_version": "1.20.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dec:uranium_apple",
+            "menu_category": {
+                "group": "itemGroup.name.crop",
+                "is_hidden_in_commands": false,
+                "category": "nature"
+            }
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.dec:uranium_apple.name"
+            },
+            "minecraft:icon": {
+                "texture": "uranium_apple"
+            },
+            "minecraft:use_animation": "eat",
+            "minecraft:hand_equipped": false,
+            "minecraft:stacked_by_data": true,
+            "minecraft:food": {
+                "on_consume": {
+                    "event": "consumed",
+                    "target": "self"
+                },
+                "nutrition": 4,
+                "saturation_modifier": 1,
+                "can_always_eat": true
+            },
+            "minecraft:use_modifiers": {
+                "use_duration": 1.6
+            }
+        },
+        "events": {
+            "consumed": {
+                "sequence": [
+                    {
+                        "add_mob_effect": {
+                            "effect": "hunger",
+                            "duration": 10,
+                            "amplifier": 1,
+                            "target": "holder"
+                        }
+                    },
+                    {
+                        "add_mob_effect": {
+                            "effect": "poison",
+                            "duration": 10,
+                            "amplifier": 2,
+                            "target": "holder"
+                        }
+                    },
+                    {
+                        "add_mob_effect": {
+                            "effect": "strength",
+                            "duration": 10,
+                            "amplifier": 7,
+                            "target": "holder"
+                        }
+                    },
+                    {
+                        "add_mob_effect": {
+                            "effect": "nausea",
+                            "duration": 10,
+                            "amplifier": 0,
+                            "target": "holder"
+                        }
+                    },
+                    {
+                        "add_mob_effect": {
+                            "effect": "slowness",
+                            "duration": 10,
+                            "amplifier": 2,
+                            "target": "holder"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

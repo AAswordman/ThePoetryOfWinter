@@ -1,0 +1,108 @@
+{
+    "format_version": "1.20.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "wb:staff_burn",
+            "menu_category": {
+                "group": "itemGroup.name.sword",
+                "is_hidden_in_commands": false,
+                "category": "equipment"
+            }
+        },
+        "components": {
+            "minecraft:icon": {
+                "texture": "staff_burn"
+            },
+            "minecraft:enchantable": {
+                "value": 20,
+                "slot": "flintsteel"
+            },
+            "minecraft:use_animation": "bow",
+            "minecraft:display_name": {},
+            "minecraft:stacked_by_data": false,
+            "minecraft:max_stack_size": 1,
+            "minecraft:foil": true,
+            "minecraft:hand_equipped": true,
+            "minecraft:on_use": {
+                "on_use": {
+                    "event": "shoot",
+                    "target": "self"
+                }
+            },
+            "minecraft:cooldown": {
+                "category": "staff",
+                "duration": 2.1
+            },
+            "minecraft:durability": {
+                "max_durability": 140
+            },
+            "minecraft:repairable": {
+                "repair_items": [
+                    {
+                        "items": [
+                            "wb:mineral_magic_equipment"
+                        ],
+                        "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.4"
+                    }
+                ]
+            },
+            "minecraft:tags": {
+                "tags": [
+                    "comp:equipment_type:magic_weapon"
+                ]
+            }
+        },
+        "events": {
+            "attack": {
+                "damage": {
+                    "type": "magic",
+                    "amount": 1
+                }
+            },
+            "shoot": {
+                "randomize": [
+                    {
+                        "weight": 1,
+                        "sequence": [
+                            {
+                                "shoot": {
+                                    "projectile": "wb:ball_border_fugitivea<friendly>",
+                                    "launch_power": 1
+                                }
+                            },
+                            {
+                                "damage": {
+                                    "type": "magic",
+                                    "amount": 1
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "weight": 1,
+                        "sequence": [
+                            {
+                                "shoot": {
+                                    "projectile": "wb:ball_border_fugitivea<friendly>",
+                                    "launch_power": 1
+                                }
+                            },
+                            {
+                                "shoot": {
+                                    "projectile": "wb:ball_staff_burna",
+                                    "launch_power": 1
+                                }
+                            },
+                            {
+                                "damage": {
+                                    "type": "magic",
+                                    "amount": 1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,92 @@
+{
+    "format_version": "1.20.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dec:chaos_staff",
+            "menu_category": {
+                "group": "itemGroup.name.sword",
+                "is_hidden_in_commands": false,
+                "category": "equipment"
+            }
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.dec:chaos_staff.name"
+            },
+            "minecraft:icon": {
+                "texture": "chaos_staff"
+            },
+            "minecraft:use_animation": "bow",
+            "minecraft:stacked_by_data": false,
+            "minecraft:max_stack_size": 1,
+            "minecraft:hand_equipped": true,
+            "minecraft:on_use": {
+                "on_use": {
+                    "event": "shoot",
+                    "target": "self"
+                }
+            },
+            "minecraft:enchantable": {
+                "value": 5,
+                "slot": "flintsteel"
+            },
+            "minecraft:cooldown": {
+                "category": "staff",
+                "duration": 2
+            },
+            "minecraft:repairable": {
+                "repair_items": [
+                    {
+                        "items": [
+                            "dec:ash"
+                        ],
+                        "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.05"
+                    }
+                ]
+            },
+            "minecraft:durability": {
+                "max_durability": 268
+            },
+            "minecraft:tags": {
+                "tags": [
+                    "comp:equipment_type:summon_weapon"
+                ]
+            }
+        },
+        "events": {
+            "attack": {
+                "damage": {
+                    "type": "magic",
+                    "amount": 1
+                }
+            },
+            "shoot": {
+                "sequence": [
+                    {
+                        "condition": "query.scoreboard('wbfl') > 10",
+                        "sequence": [
+                            {
+                                "run_command": {
+                                    "command": [
+                                        "playsound item.book.put @a ~~~",
+                                        "particle dec:summon_staff_spawn ^^1.6^1.3",
+                                        "scoreboard players remove @s wbfl 10",
+                                        "playanimation @s animation.humanoid.staff_use",
+                                        "structure load entity:son_of_chaos ^^1.6^1.3"
+                                    ],
+                                    "target": "holder"
+                                }
+                            },
+                            {
+                                "damage": {
+                                    "type": "magic",
+                                    "amount": 1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

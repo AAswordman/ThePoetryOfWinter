@@ -1,0 +1,52 @@
+{
+    "format_version": "1.20.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dec:chocolates",
+            "menu_category": {
+                "group": "itemGroup.name.miscFood",
+                "is_hidden_in_commands": false,
+                "category": "equipment"
+            }
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.dec:chocolates.name"
+            },
+            "minecraft:icon": {
+                "texture": "chocolates"
+            },
+            "minecraft:use_animation": "eat",
+            "minecraft:food": {
+                "using_converts_to": "paper",
+                "nutrition": 7,
+                "saturation_modifier": 0.6,
+                "on_consume": {
+                    "event": "consumed",
+                    "target": "self"
+                }
+            },
+            "minecraft:use_modifiers": {
+                "use_duration": 1.6
+            }
+        },
+        "events": {
+            "consumed": {
+                "randomize": [
+                    {
+                        "weight": 8,
+                        "add_mob_effect": {
+                            "effect": "speed",
+                            "duration": 20,
+                            "amplifier": 0,
+                            "target": "holder"
+                        }
+                    },
+                    {
+                        "weight": 3
+                    }
+                ]
+            }
+        }
+    }
+}

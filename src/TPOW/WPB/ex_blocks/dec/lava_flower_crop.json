@@ -36,7 +36,7 @@
                 "seconds_to_destroy": 0.001
             },
             "minecraft:map_color": "#A43544",
-            "minecraft:light_dampening": 0.0,
+            "minecraft:light_dampening": 0,
             "minecraft:loot": "loot_tables/blocks/lava_flower_crop.json",
             "minecraft:random_ticking": {
                 "on_tick": {

@@ -1,0 +1,66 @@
+{
+    "format_version": "1.20.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dec:redstone_apple_enchanted",
+            "menu_category": {
+                "group": "itemGroup.name.crop",
+                "is_hidden_in_commands": false,
+                "category": "nature"
+            }
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.dec:redstone_apple_enchanted.name"
+            },
+            "minecraft:icon": {
+                "texture": "redstone_apple"
+            },
+            "minecraft:use_animation": "eat",
+            "minecraft:hover_text_color": "light_purple",
+            "minecraft:foil": true,
+            "minecraft:food": {
+                "on_consume": {
+                    "event": "consumed",
+                    "target": "self"
+                },
+                "nutrition": 4,
+                "saturation_modifier": 1,
+                "can_always_eat": true
+            },
+            "minecraft:use_modifiers": {
+                "use_duration": 1.6
+            }
+        },
+        "events": {
+            "consumed": {
+                "sequence": [
+                    {
+                        "add_mob_effect": {
+                            "effect": "absorption",
+                            "duration": 180,
+                            "amplifier": 2,
+                            "target": "holder"
+                        }
+                    },
+                    {
+                        "add_mob_effect": {
+                            "effect": "night_vision",
+                            "duration": 120,
+                            "amplifier": 0,
+                            "target": "holder"
+                        }
+                    },
+                    {
+                        "add_mob_effect": {
+                            "effect": "regeneration",
+                            "duration": 180,
+                            "amplifier": 0,
+                            "target": "holder"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

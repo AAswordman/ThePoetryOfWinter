@@ -42,7 +42,7 @@
             "minecraft:geometry": "geometry.christmas_gift_block",
             "minecraft:map_color": "#79180C",
             "minecraft:loot": "loot_tables/blocks/christmas_gift_block.json",
-            "minecraft:light_emission": 0.0,
+            "minecraft:light_emission": 0,
             "minecraft:light_dampening": 7,
             "minecraft:destructible_by_mining": {
                 "seconds_to_destroy": 0.3

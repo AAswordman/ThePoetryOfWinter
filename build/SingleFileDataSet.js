@@ -7,6 +7,9 @@ class SingleFileDataSet {
         this.pathDir = pathDir;
         this.cacheMode = false;
         this.cache = new Map();
+        if (!fs.existsSync(pathDir)) {
+            fs.mkdirSync(pathDir);
+        }
     }
     async setCacheMode(arg0) {
         this.cacheMode = arg0;
@@ -135,8 +138,7 @@ const temps = {
     "db.ts": `export default {}`,
     "index.ts": ""
 };
-let tmpAppender = `import * as __keys from "./keys.js";
-const _keys = __keys.default;
+let tmpAppender = `import _keys from "./keys.js";
 type PathDir = { [key: string]: string | PathDir }
 const keys:PathDir = _keys as any;
 declare global {
@@ -164,7 +166,7 @@ String.prototype.hashCode = function () {
 `;
 for (let i = 0; i < SingleFileDataSet.PIECE_NUM; i++) {
     tmpAppender += `
-import * as db${i} from "./db${i}.js";`;
+import db${i} from "./db${i}.js";`;
 }
 tmpAppender += `
 const dbMap = new Map<number, any>();`;
@@ -173,32 +175,48 @@ for (let i = 0; i < SingleFileDataSet.PIECE_NUM; i++) {
 dbMap.set(${i}, db${i});`;
 }
 tmpAppender += `
-${'type PathType<T extends JSONObject> = { [K in keyof T as (K extends string ? `${K}${T[K] extends JSONObject ? `/${keyof PathType<T[K]>}` : ``}` : string)]:never };'}
-type KeysType = keyof PathType<typeof _keys>
+//${'type FilePathType<T extends JSONObject> = { [K in keyof T as (K extends string ? `${K}${T[K] extends JSONObject ? `/${Exclude<keyof FilePathType<T[K]>, symbol|``>}` : ``}` : ``)]: never };'}
+//type KeysType = keyof PathType<typeof _keys>
 
 class ExFileProvider{
     constructor(){
         
     }
-    get(path:string): unknown{
+    get(path:string): JSONObject|undefined {
         return (dbMap.get(path.hashCode() % ${SingleFileDataSet.PIECE_NUM}) as any)[path];
     }
-    list(path:string){
+    list(path: string) {
+        return Object.keys(this.find(path));
+    }
+    find(path: string) {
         let dir = keys;
-        for(const name of path.split('/')){
-            if(!(name in dir)){
+        for (const name of path.split('/')) {
+            if (!(name in dir)) {
                 throw new Error("File not found");
             }
             let d = dir[name];
-            if(typeof d === "string"){
+            if (typeof d === "string") {
                 throw new Error("Not a directory");
             }
             dir = d;
         }
-        return Object.keys(dir);
+        return dir;
+    }
+    *listAll(path: string): IterableIterator<string> {
+        let dir = this.find(path);
+        if (typeof dir !== "object") {
+            throw new Error("Not a directory");
+        }
+        for (let k of Object.keys(dir)) {
+            if (typeof dir[k] === "string") {
+                yield path + "/" + k;
+            } else {
+                yield* this.listAll(path + "/" + k);
+            }
+        }
     }
 }
-export const fileProvider = new ExFileProvider()
+export const fileProvider = new ExFileProvider();
 `;
-temps["index.ts"] = tmpAppender;
+temps['index.ts'] = tmpAppender;
 //# sourceMappingURL=SingleFileDataSet.js.map

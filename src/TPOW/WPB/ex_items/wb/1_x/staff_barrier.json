@@ -1,0 +1,87 @@
+{
+    "format_version": "1.20.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "wb:staff_barrier",
+            "menu_category": {
+                "group": "itemGroup.name.sword",
+                "is_hidden_in_commands": false,
+                "category": "equipment"
+            }
+        },
+        "components": {
+            "minecraft:icon": {
+                "texture": "staff_barrier"
+            },
+            "minecraft:use_animation": "bow",
+            "minecraft:display_name": {},
+            "minecraft:stacked_by_data": false,
+            "minecraft:max_stack_size": 1,
+            "minecraft:foil": true,
+            "minecraft:hand_equipped": true,
+            "minecraft:on_use": {
+                "on_use": {
+                    "event": "shoot",
+                    "target": "self"
+                }
+            },
+            "minecraft:enchantable": {
+                "value": 20,
+                "slot": "flintsteel"
+            },
+            "minecraft:cooldown": {
+                "category": "barrier",
+                "duration": 120
+            },
+            "minecraft:durability": {
+                "max_durability": 326
+            },
+            "minecraft:repairable": {
+                "repair_items": [
+                    {
+                        "items": [
+                            "wb:mineral_magic_equipment"
+                        ],
+                        "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.4"
+                    }
+                ]
+            },
+            "minecraft:tags": {
+                "tags": [
+                    "comp:equipment_type:magic_weapon"
+                ]
+            }
+        },
+        "events": {
+            "attack": {
+                "damage": {
+                    "type": "magic",
+                    "amount": 1
+                }
+            },
+            "shoot": {
+                "sequence": [
+                    {
+                        "condition": "query.scoreboard('wbfl') >= 50",
+                        "sequence": [
+                            {
+                                "run_command": {
+                                    "command": [
+                                        "fill ~-32 ~-3 ~-32 ~+32 ~-3 ~+32 wb:parallel_block_destroy keep",
+                                        "scoreboard players remove @s wbfl 50"
+                                    ]
+                                }
+                            },
+                            {
+                                "damage": {
+                                    "type": "magic",
+                                    "amount": 1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

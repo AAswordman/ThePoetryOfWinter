@@ -29,7 +29,11 @@
             "minecraft:loot": "loot_tables/blocks/flowing_block.json",
             "minecraft:map_color": "#130672",
             "minecraft:unit_cube": {},
-            "tag:stone": {}
+            "minecraft:tags": {
+                "tags": [
+                    "stone"
+                ]
+            }
         },
         "permutations": [
             {

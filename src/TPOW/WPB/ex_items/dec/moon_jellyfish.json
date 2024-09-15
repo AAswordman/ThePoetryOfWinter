@@ -1,0 +1,71 @@
+{
+    "format_version": "1.20.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dec:moon_jellyfish",
+            "menu_category": {
+                "group": "itemGroup.name.rawFood",
+                "is_hidden_in_commands": false,
+                "category": "nature"
+            }
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.dec:moon_jellyfish.name"
+            },
+            "minecraft:icon": {
+                "texture": "moon_jellyfish"
+            },
+            "minecraft:use_animation": "eat",
+            "minecraft:food": {
+                "nutrition": 2,
+                "saturation_modifier": 0.6,
+                "on_consume": {
+                    "event": "consumed",
+                    "target": "self"
+                }
+            },
+            "minecraft:use_modifiers": {
+                "use_duration": 1.6
+            }
+        },
+        "events": {
+            "consumed": {
+                "sequence": [
+                    {
+                        "randomize": [
+                            {
+                                "weight": 7,
+                                "add_mob_effect": {
+                                    "effect": "poison",
+                                    "duration": 5,
+                                    "amplifier": 2,
+                                    "target": "holder"
+                                }
+                            },
+                            {
+                                "weight": 3
+                            }
+                        ]
+                    },
+                    {
+                        "randomize": [
+                            {
+                                "weight": 3,
+                                "add_mob_effect": {
+                                    "effect": "instant_damage",
+                                    "duration": 1,
+                                    "amplifier": 0,
+                                    "target": "holder"
+                                }
+                            },
+                            {
+                                "weight": 1
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

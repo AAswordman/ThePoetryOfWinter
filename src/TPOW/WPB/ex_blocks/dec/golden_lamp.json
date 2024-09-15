@@ -19,7 +19,11 @@
             },
             "minecraft:loot": "loot_tables/blocks/golden_lamp.json",
             "minecraft:map_color": "#FFE798",
-            "tag:stone": {}
+            "minecraft:tags": {
+                "tags": [
+                    "stone"
+                ]
+            }
         }
     }
 }

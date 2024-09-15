@@ -1,0 +1,92 @@
+{
+    "format_version": "1.20.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dec:chicken_staff",
+            "menu_category": {
+                "group": "itemGroup.name.sword",
+                "is_hidden_in_commands": false,
+                "category": "equipment"
+            }
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.dec:chicken_staff.name"
+            },
+            "minecraft:icon": {
+                "texture": "chicken_staff"
+            },
+            "minecraft:use_animation": "bow",
+            "minecraft:stacked_by_data": false,
+            "minecraft:max_stack_size": 1,
+            "minecraft:hand_equipped": true,
+            "minecraft:on_use": {
+                "on_use": {
+                    "event": "shoot",
+                    "target": "self"
+                }
+            },
+            "minecraft:enchantable": {
+                "value": 5,
+                "slot": "flintsteel"
+            },
+            "minecraft:cooldown": {
+                "category": "staff",
+                "duration": 0.9
+            },
+            "minecraft:durability": {
+                "max_durability": 34
+            },
+            "minecraft:repairable": {
+                "repair_items": [
+                    {
+                        "items": [
+                            "minecraft:bamboo"
+                        ],
+                        "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.6"
+                    }
+                ]
+            },
+            "minecraft:tags": {
+                "tags": [
+                    "comp:equipment_type:summon_weapon"
+                ]
+            }
+        },
+        "events": {
+            "attack": {
+                "damage": {
+                    "type": "magic",
+                    "amount": 1
+                }
+            },
+            "shoot": {
+                "sequence": [
+                    {
+                        "condition": "query.scoreboard('wbfl') > 3",
+                        "sequence": [
+                            {
+                                "run_command": {
+                                    "command": [
+                                        "playsound item.book.put @a ~~~",
+                                        "particle dec:summon_staff_spawn ^^1.6^1.3",
+                                        "scoreboard players remove @s wbfl 3",
+                                        "playanimation @s animation.humanoid.staff_use",
+                                        "structure load entity:angry_chicken ^^1.6^1.3"
+                                    ],
+                                    "target": "holder"
+                                }
+                            },
+                            {
+                                "damage": {
+                                    "type": "magic",
+                                    "amount": 1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

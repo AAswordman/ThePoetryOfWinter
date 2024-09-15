@@ -1,99 +1,32 @@
 {
-  "format_version": "1.20.80",
-  "minecraft:item": {
-    "description": {
-      "category": "items",
-      "identifier": "dec:unknow_book"
-    },
-    "components": {
-      "minecraft:fuel": {
-        "duration": 10.0
-      },
-      "minecraft:creative_category": {
-        "parent": "itemGroup.name.decorations"
-      },
-      "minecraft:display_name": {
-        "value": "item.dec:unknow_book.name"
-      },
-      "minecraft:icon": {
-        "texture": "unknow_book"
-      },
-      "minecraft:use_animation": "eat",
-      "minecraft:render_offsets": "cookie",
-      "minecraft:stacked_by_data": false,
-      "minecraft:max_stack_size": 1,
-      "minecraft:foil": true,
-      "minecraft:on_use": {
-        "on_use": {
-          "event": "read",
-          "target": "self"
+    "format_version": "1.20.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dec:unknow_book",
+            "menu_category": {
+                "group": "itemGroup.name.decorations",
+                "is_hidden_in_commands": false,
+                "category": "items"
+            }
+        },
+        "components": {
+            "minecraft:fuel": {
+                "duration": 10
+            },
+            "minecraft:display_name": {
+                "value": "item.dec:unknow_book.name"
+            },
+            "minecraft:icon": {
+                "texture": "unknow_book"
+            },
+            "minecraft:use_animation": "eat",
+            "minecraft:stacked_by_data": false,
+            "minecraft:max_stack_size": 1,
+            "minecraft:foil": true,
+            "minecraft:cooldown": {
+                "category": "unknow_book",
+                "duration": 1
+            }
         }
-      },
-      "minecraft:cooldown": {
-        "category": "unknow_book",
-        "duration": 1
-      }
-    },
-    "events": {
-      "read": {
-        "randomize": [
-          {
-            "weight": 1,
-            "run_command": {
-              "command": [
-                "function story",
-                "replaceitem entity @s slot.weapon.mainhand 0 book"
-              ]
-            }
-          },
-          {
-            "weight": 3,
-            "run_command": {
-              "command": [
-                "function story",
-                "function story",
-                "replaceitem entity @s slot.weapon.mainhand 0 book"
-              ]
-            }
-          },
-          {
-            "weight": 4,
-            "run_command": {
-              "command": [
-                "function story",
-                "function story",
-                "function story",
-                "replaceitem entity @s slot.weapon.mainhand 0 book"
-              ]
-            }
-          },
-          {
-            "weight": 3,
-            "run_command": {
-              "command": [
-                "function story",
-                "function story",
-                "function story",
-                "function story",
-                "replaceitem entity @s slot.weapon.mainhand 0 book"
-              ]
-            }
-          },
-          {
-            "weight": 1,
-            "run_command": {
-              "command": [
-                "function story",
-                "function story",
-                "function story",
-                "function story",
-                "function story",
-                "replaceitem entity @s slot.weapon.mainhand 0 book"
-              ]
-            }
-          }
-        ]
-      }
     }
-  }
 }

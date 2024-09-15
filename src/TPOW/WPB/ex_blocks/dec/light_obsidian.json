@@ -19,7 +19,11 @@
             },
             "minecraft:map_color": "#59516C",
             "minecraft:loot": "loot_tables/blocks/light_obsidian.json",
-            "tag:stone": {}
+            "minecraft:tags": {
+                "tags": [
+                    "stone"
+                ]
+            }
         }
     }
 }

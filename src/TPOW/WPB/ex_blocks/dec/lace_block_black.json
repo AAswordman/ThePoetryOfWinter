@@ -111,7 +111,11 @@
             },
             "minecraft:unit_cube": {},
             "minecraft:loot": "loot_tables/blocks/lace_block_black.json",
-            "tag:wool": {}
+            "minecraft:tags": {
+                "tags": [
+                    "wool"
+                ]
+            }
         }
     }
 }

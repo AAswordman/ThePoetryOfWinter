@@ -1,0 +1,61 @@
+{
+    "format_version": "1.20.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dec:heart_egg",
+            "menu_category": {
+                "group": "itemGroup.name.decorations",
+                "is_hidden_in_commands": false,
+                "category": "items"
+            }
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.dec:heart_egg.name"
+            },
+            "minecraft:icon": {
+                "texture": "heart_egg"
+            },
+            "minecraft:use_animation": "bow",
+            "minecraft:stacked_by_data": false,
+            "minecraft:max_stack_size": 64,
+            "minecraft:foil": true,
+            "minecraft:on_use": {
+                "on_use": {
+                    "event": "use",
+                    "target": "self"
+                }
+            },
+            "minecraft:cooldown": {
+                "category": "heart_egg",
+                "duration": 0.3
+            }
+        },
+        "events": {
+            "use": {
+                "run_command": {
+                    "command": [
+                        "tag @s[tag=hpl1] add uptohpl2",
+                        "tag @s[tag=uptohpl2] add hpl2",
+                        "tag @a[tag=uptohpl2] remove hpl1",
+                        "tellraw @s[tag=uptohpl2] { \"rawtext\" : [ { \"translate\" : \"text.dec:uptohpl2.name\" } ] }",
+                        "tag @s[tag=hpl2,tag=!uptohpl2] add uptohpl3",
+                        "tag @s[tag=uptohpl3] add hpl3",
+                        "tag @s[tag=uptohpl3] remove hpl2",
+                        "tellraw @s[tag=uptohpl3] { \"rawtext\" : [ { \"translate\" : \"text.dec:uptohpl3.name\" } ] }",
+                        "tag @s[tag=hpl3,tag=!uptohpl2,tag=!uptohpl3] add uptohpl4",
+                        "tag @s[tag=uptohpl4] add hpl4",
+                        "tag @s[tag=uptohpl4] remove hpl3",
+                        "tellraw @s[tag=uptohpl4] { \"rawtext\" : [ { \"translate\" : \"text.dec:uptohpl4.name\" } ] }",
+                        "clear @s[tag=uptohpl2] dec:heart_egg 0 1",
+                        "clear @s[tag=uptohpl3] dec:heart_egg 0 1",
+                        "clear @s[tag=uptohpl4] dec:heart_egg 0 1",
+                        "tag @s[tag=uptohpl2] remove uptohpl2",
+                        "tag @s[tag=uptohpl3] remove uptohpl3",
+                        "tag @s[tag=uptohpl4] remove uptohpl4"
+                    ]
+                }
+            }
+        }
+    }
+}

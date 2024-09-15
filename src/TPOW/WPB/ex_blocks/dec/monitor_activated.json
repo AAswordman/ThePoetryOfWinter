@@ -30,7 +30,11 @@
                     "target": "self"
                 }
             },
-            "tag:wood": {}
+            "minecraft:tags": {
+                "tags": [
+                    "wood"
+                ]
+            }
         },
         "events": {
             "look": {

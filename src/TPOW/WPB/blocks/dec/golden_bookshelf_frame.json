@@ -102,9 +102,9 @@
                 "flame_odds": 10,
                 "burn_odds": 10
             },
+            "minecraft:geometry": "minecraft:geometry.full_block",
             "tag:planks": {},
-            "tag:axe_diggable": {},
-            "minecraft:geometry": "minecraft:geometry.full_block"
+            "tag:axe_diggable": {}
         }
     }
 }

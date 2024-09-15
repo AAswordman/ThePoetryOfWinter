@@ -12,14 +12,18 @@
             "minecraft:light_dampening": 15,
             "minecraft:light_emission": 0,
             "minecraft:destructible_by_mining": {
-                "seconds_to_destroy": 3.0
+                "seconds_to_destroy": 3
             },
             "minecraft:destructible_by_explosion": {
                 "explosion_resistance": 100
             },
             "minecraft:map_color": "#F6FABD",
             "minecraft:loot": "loot_tables/blocks/end_altar.json",
-            "tag:stone": {}
+            "minecraft:tags": {
+                "tags": [
+                    "stone"
+                ]
+            }
         }
     }
 }

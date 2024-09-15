@@ -5,6 +5,7 @@
             "identifier": "wb:block_senior_equipment_ore",
             "is_experimental": false,
             "menu_category": {
+                "group": "itemGroup.name.ore",
                 "category": "construction"
             }
         },
@@ -15,7 +16,11 @@
             "minecraft:destructible_by_explosion": {
                 "explosion_resistance": 6
             },
-            "tag:stone": {}
+            "minecraft:tags": {
+                "tags": [
+                    "stone"
+                ]
+            }
         }
     }
 }

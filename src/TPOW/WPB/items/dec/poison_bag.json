@@ -1,167 +1,30 @@
 {
-  "format_version": "1.20.80",
-  "minecraft:item": {
-    "description": {
-      "category": "equipment",
-      "identifier": "dec:poison_bag"
-    },
-    "components": {
-      "minecraft:creative_category": {
-        "parent": "itemGroup.name.sword"
-      },
-      "minecraft:display_name": {
-        "value": "item.dec:poison_bag.name"
-      },
-      "minecraft:icon": {
-        "texture": "poison_bag"
-      },
-      "minecraft:render_offsets": "bow",
-      "minecraft:on_use": {
-        "on_use": {
-          "event": "shoot",
-          "target": "self"
+    "format_version": "1.20.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dec:poison_bag",
+            "menu_category": {
+                "group": "itemGroup.name.sword",
+                "is_hidden_in_commands": false,
+                "category": "equipment"
+            }
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.dec:poison_bag.name"
+            },
+            "minecraft:icon": {
+                "texture": "poison_bag"
+            },
+            "minecraft:cooldown": {
+                "category": "missile",
+                "duration": 2.5
+            },
+            "minecraft:tags": {
+                "tags": [
+                    "comp:equipment_type:thrown_weapon"
+                ]
+            }
         }
-      },
-      "minecraft:cooldown": {
-        "category": "missile",
-        "duration": 2.5
-      },
-      "tag:comp:equipment_type:thrown_weapon":{}
-    },
-    "events": {
-      "shoot": {
-        "sequence": [
-          {
-            "run_command": {
-              "command": [
-                "playsound mob.snowgolem.shoot @a ~~~",
-                "clear @s dec:poison_bag 0 1"
-              ],
-              "target": "holder"
-            }
-          },
-          {
-            "shoot": {
-              "projectile": "dec:poison_powder",
-              "launch_power": 1
-            }
-          },
-          {
-            "shoot": {
-              "projectile": "dec:poison_powder",
-              "launch_power": 1
-            }
-          },
-          {
-            "shoot": {
-              "projectile": "dec:poison_powder",
-              "launch_power": 1
-            }
-          },
-          {
-            "shoot": {
-              "projectile": "dec:poison_powder",
-              "launch_power": 1
-            }
-          },
-          {
-            "shoot": {
-              "projectile": "dec:poison_powder",
-              "launch_power": 1
-            }
-          },
-          {
-            "shoot": {
-              "projectile": "dec:poison_powder",
-              "launch_power": 1
-            }
-          },
-          {
-            "shoot": {
-              "projectile": "dec:poison_powder",
-              "launch_power": 1
-            }
-          },
-          {
-            "shoot": {
-              "projectile": "dec:poison_powder",
-              "launch_power": 1
-            }
-          },
-          {
-            "shoot": {
-              "projectile": "dec:poison_powder",
-              "launch_power": 1
-            }
-          },
-          {
-            "shoot": {
-              "projectile": "dec:poison_powder",
-              "launch_power": 1
-            }
-          },
-          {
-            "shoot": {
-              "projectile": "dec:poison_powder",
-              "launch_power": 1
-            }
-          },
-          {
-            "shoot": {
-              "projectile": "dec:poison_powder",
-              "launch_power": 1
-            }
-          },
-          {
-            "shoot": {
-              "projectile": "dec:poison_powder",
-              "launch_power": 1
-            }
-          },
-          {
-            "shoot": {
-              "projectile": "dec:poison_powder",
-              "launch_power": 1
-            }
-          },
-          {
-            "shoot": {
-              "projectile": "dec:poison_powder",
-              "launch_power": 1
-            }
-          },
-          {
-            "shoot": {
-              "projectile": "dec:poison_powder",
-              "launch_power": 1
-            }
-          },
-          {
-            "shoot": {
-              "projectile": "dec:poison_powder",
-              "launch_power": 1
-            }
-          },
-          {
-            "shoot": {
-              "projectile": "dec:poison_powder",
-              "launch_power": 1
-            }
-          },
-          {
-            "shoot": {
-              "projectile": "dec:poison_powder",
-              "launch_power": 1
-            }
-          },
-          {
-            "shoot": {
-              "projectile": "dec:poison_powder",
-              "launch_power": 1
-            }
-          }
-        ]
-      }
     }
-  }
 }

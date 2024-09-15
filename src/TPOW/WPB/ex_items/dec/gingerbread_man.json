@@ -1,0 +1,47 @@
+{
+    "format_version": "1.20.50",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dec:gingerbread_man",
+            "menu_category": {
+                "group": "itemGroup.name.miscFood",
+                "is_hidden_in_commands": false,
+                "category": "equipment"
+            }
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.dec:gingerbread_man.name"
+            },
+            "minecraft:icon": {
+                "texture": "gingerbread_man"
+            },
+            "minecraft:use_animation": "eat",
+            "minecraft:food": {
+                "on_consume": {
+                    "event": "consumed",
+                    "target": "self"
+                },
+                "nutrition": 2,
+                "saturation_modifier": 0.5
+            },
+            "minecraft:use_modifiers": {
+                "use_duration": 1.6
+            }
+        },
+        "events": {
+            "consumed": {
+                "sequence": [
+                    {
+                        "add_mob_effect": {
+                            "effect": "regeneration",
+                            "duration": 5,
+                            "amplifier": 1,
+                            "target": "holder"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
