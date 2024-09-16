@@ -1013,9 +1013,9 @@
                 "sword_bluemarkb": {
                     "on_entry": [
                         "/execute as @s[scores={wbfl=..19}] at @s run tellraw @s {\"rawtext\":[{\"translate\":\"tell.play.44.name\"}]}",
+                        "/execute as @s[scores={wbfl=20..}] at @s run execute as @e[rm=3,r=10] at @s run particle wb:sword_bluemark_parc ~ ~ ~",
                         "/execute as @s[tag=wbmsyh,scores={wbfl=20..}] at @s run damage @e[rm=3,r=10,tag=!wbmsyh] 45 entity_attack entity @s",
                         "/execute as @s[tag=!wbmsyh,scores={wbfl=20..}] at @s run damage @e[rm=3,r=10] 45 entity_attack entity @s",
-                        "/execute as @s[scores={wbfl=20..}] at @s run execute as @e[rm=3,r=10] at @s run particle wb:sword_bluemark_parc ~ ~ ~",
                         "/execute as @s[scores={wbfl=20..}] at @s run scoreboard players remove @s wbfl 20",
                         "variable.global_cooling=4;",
                         "variable.global_cooling_total=4;"

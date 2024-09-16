@@ -35,7 +35,7 @@
           "arm_controller"
         ]
       },
-      "render_controllers": [ "controller.render.iron_golem" ]
+      "render_controllers": [ "controller.render.base" ]
     }
   }
 }
