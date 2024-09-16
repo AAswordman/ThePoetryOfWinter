@@ -362,7 +362,7 @@
   },
   "dec:summoner": {
     "textures": "summoner",
-    "sound": "dirt"
+    "sound": "gravel"
   },
   "dec:soul_soil_diamond_ore": {
     "sound": "soul_soil",
@@ -378,7 +378,7 @@
   },
   "dec:radiate_dirt": {
     "textures": "radiate_dirt",
-    "sound": "dirt"
+    "sound": "gravel"
   },
   "dec:radiate_stone": {
     "textures": "radiate_stone",
@@ -390,7 +390,7 @@
   },
   "dec:broken_dirt": {
     "textures": "broken_dirt",
-    "sound": "dirt"
+    "sound": "gravel"
   },
   "dec:mine": {
     "textures": {
@@ -398,7 +398,7 @@
       "down": "mine",
       "side": "mine"
     },
-    "sound": "dirt"
+    "sound": "gravel"
   },
   "dec:christmas_gift_block": {
     "textures": "christmas_gift_block",
@@ -578,7 +578,7 @@
   },
   "dec:dirt_ghost_block": {
     "textures": "dirt_ghost_block",
-    "sound": "dirt"
+    "sound": "gravel"
   },
   "dec:houttuynia_crop": {
     "textures": "houttuynia_crop_stage_0",
@@ -594,7 +594,7 @@
   },
   "dec:rotten_flesh_block": {
     "textures": "rotten_flesh_block",
-    "sound": "dirt"
+    "sound": "gravel"
   },
   "dec:ghost_ice": {
     "textures": "ghost_ice",

@@ -102,6 +102,9 @@
                 "flame_odds": 10,
                 "burn_odds": 10
             },
+            "minecraft:custom_components": [
+                "ex:on_player_placing"
+            ],
             "minecraft:geometry": "minecraft:geometry.full_block",
             "tag:planks": {},
             "tag:axe_diggable": {}

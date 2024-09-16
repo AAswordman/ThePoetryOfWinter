@@ -18,7 +18,10 @@
                 "explosion_resistance": 7
             },
             "minecraft:map_color": "#8E6045",
-            "minecraft:loot": "loot_tables/blocks/radiate_dirt.json"
+            "minecraft:loot": "loot_tables/blocks/radiate_dirt.json",
+            "minecraft:custom_components": [
+                "ex:on_step_on"
+            ]
         }
     }
 }

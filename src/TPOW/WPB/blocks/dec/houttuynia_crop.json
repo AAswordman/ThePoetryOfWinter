@@ -48,7 +48,11 @@
                         ]
                     }
                 ]
-            }
+            },
+            "minecraft:custom_components": [
+                "ex:on_interact",
+                "ex:random_ticking"
+            ]
         },
         "permutations": [
             {

@@ -31,7 +31,17 @@
                     },
                     "minecraft:destructible_by_explosion": {
                         "explosion_resistance": 100
-                    }
+                    },
+                    "minecraft:tick": {
+                        "interval_range": [
+                            600,
+                            1200
+                        ]
+                    },
+                    "minecraft:custom_components": [
+                        "ex:on_interact",
+                        "ex:ticking"
+                    ]
                 }
             },
             {
@@ -51,7 +61,10 @@
                     },
                     "minecraft:destructible_by_explosion": {
                         "explosion_resistance": 100
-                    }
+                    },
+                    "minecraft:custom_components": [
+                        "ex:on_interact"
+                    ]
                 }
             }
         ],

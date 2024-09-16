@@ -24,7 +24,16 @@
             "minecraft:destructible_by_explosion": {
                 "explosion_resistance": 0
             },
-            "minecraft:map_color": "#1C92D6"
+            "minecraft:map_color": "#1C92D6",
+            "minecraft:tick": {
+                "interval_range": [
+                    1,
+                    2
+                ]
+            },
+            "minecraft:custom_components": [
+                "ex:ticking"
+            ]
         }
     }
 }

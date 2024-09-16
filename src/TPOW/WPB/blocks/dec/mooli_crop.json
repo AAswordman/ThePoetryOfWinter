@@ -48,7 +48,10 @@
                         ]
                     }
                 ]
-            }
+            },
+            "minecraft:custom_components": [
+                "ex:random_ticking"
+            ]
         },
         "permutations": [
             {
@@ -72,7 +75,10 @@
                             2
                         ]
                     },
-                    "minecraft:loot": "loot_tables/empty.json"
+                    "minecraft:loot": "loot_tables/empty.json",
+                    "minecraft:custom_components": [
+                        "ex:on_interact"
+                    ]
                 }
             },
             {
@@ -96,7 +102,10 @@
                             6
                         ]
                     },
-                    "minecraft:loot": "loot_tables/empty.json"
+                    "minecraft:loot": "loot_tables/empty.json",
+                    "minecraft:custom_components": [
+                        "ex:on_interact"
+                    ]
                 }
             },
             {
@@ -120,7 +129,10 @@
                             10
                         ]
                     },
-                    "minecraft:loot": "loot_tables/empty.json"
+                    "minecraft:loot": "loot_tables/empty.json",
+                    "minecraft:custom_components": [
+                        "ex:on_interact"
+                    ]
                 }
             },
             {
@@ -144,7 +156,10 @@
                             10
                         ]
                     },
-                    "minecraft:loot": "loot_tables/blocks/mooli_crop.json"
+                    "minecraft:loot": "loot_tables/blocks/mooli_crop.json",
+                    "minecraft:custom_components": [
+                        "ex:on_interact"
+                    ]
                 }
             }
         ]

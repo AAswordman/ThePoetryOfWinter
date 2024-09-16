@@ -60,6 +60,10 @@
             {
                 "binding_collection_name": "$hotbar_collection_name",
                 "binding_type": "collection_details"
+            },
+            {
+                "binding_name": "#hotbar_visible",
+                "binding_name_override": "#visible"
             }
         ],
         "controls": [
@@ -1336,26 +1340,11 @@
             0
         ]
     },
-    "armor_renderer": {
-        "type": "custom",
-        "size": [
-            1,
-            1
-        ],
-        "renderer": "armor_renderer",
-        "layer": 1,
-        "bindings": [
-            {
-                "binding_name": "#is_armor_visible",
-                "binding_name_override": "#visible"
-            }
-        ]
-    },
     "heart_renderer": {
         "type": "custom",
         "size": [
             1,
-            -1000
+            1
         ],
         "renderer": "heart_renderer",
         "layer": 1,
@@ -1374,6 +1363,21 @@
         ],
         "renderer": "horse_heart_renderer",
         "layer": 1
+    },
+    "armor_renderer": {
+        "type": "custom",
+        "size": [
+            1,
+            1
+        ],
+        "renderer": "armor_renderer",
+        "layer": 1,
+        "bindings": [
+            {
+                "binding_name": "#is_armor_visible",
+                "binding_name_override": "#visible"
+            }
+        ]
     },
     "exp_progress_bar_and_hotbar": {
         "type": "panel",
@@ -1476,7 +1480,7 @@
                     ],
                     "bindings": [
                         {
-                            "binding_name": "#show_survival_ui",
+                            "binding_name": "#hotbar_with_xp_bar",
                             "binding_name_override": "#visible"
                         }
                     ]
@@ -1502,7 +1506,7 @@
                                 "layer": 7,
                                 "bindings": [
                                     {
-                                        "binding_name": "#is_creative_mode",
+                                        "binding_name": "#hotbar_no_xp_bar",
                                         "binding_name_override": "#visible"
                                     }
                                 ],
@@ -1619,7 +1623,7 @@
                     ],
                     "bindings": [
                         {
-                            "binding_name": "#show_survival_ui",
+                            "binding_name": "#hotbar_with_xp_bar",
                             "binding_name_override": "#visible"
                         },
                         {
@@ -1967,6 +1971,11 @@
         "renderer": "camera_renderer",
         "layer": 1
     },
+    "editor_volume_highlight_renderer": {
+        "type": "custom",
+        "renderer": "editor_volume_highlight_renderer",
+        "layer": 4
+    },
     "hotbar_hud_item_icon@common.item_renderer": {
         "$item_collection_name": "$hotbar_collection_name",
         "property_bag": {
@@ -2083,6 +2092,12 @@
                     "$cap_image_size": "$cap_size"
                 }
             }
+        ],
+        "bindings": [
+            {
+                "binding_name": "#hotbar_visible",
+                "binding_name_override": "#visible"
+            }
         ]
     },
     "hotbar_end_cap@hotbar_start_cap": {
@@ -2120,7 +2135,7 @@
         ],
         "size": "$hotbar_slot_image_size",
         "layer": 1,
-        "alpha": 0.65
+        "alpha": 1
     },
     "hotbar_slot_selected_image": {
         "type": "image",
@@ -2178,7 +2193,47 @@
             }
         ]
     },
-    // Displays player's position in the form "Position: 0, 0, 0", as well as "Agent Pos: 0, 0, 0" if an owned agent is present
+    
+    // Displays number of played in-game days
+    "number_of_days_played": {
+        "type": "image",
+        "size": [
+            "100%c + 6px",
+            "100%c + 2px"
+        ],
+        "texture": "textures/ui/Black",
+        "alpha": 0.7,
+        "controls": [
+            {
+                "number_of_days_played_text": {
+                    "type": "label",
+                    "anchor_from": "bottom_middle",
+                    "anchor_to": "bottom_middle",
+                    "layer": 1,
+                    "enable_profanity_filter": false,
+                    "color": "$chat_text_color",
+                    "text": "#text",
+                    "shadow": true,
+                    "bindings": [
+                        {
+                            "binding_name": "#number_of_days_played_text",
+                            "binding_name_override": "#text",
+                            "binding_condition": "always_when_visible",
+                            "binding_type": "global"
+                        }
+                    ]
+                }
+            }
+        ],
+        "bindings": [
+            {
+                "binding_name": "#number_of_days_played_visible",
+                "binding_name_override": "#visible",
+                "binding_condition": "always",
+                "binding_type": "global"
+            }
+        ]
+    },
     "anim_chat_txt_alpha": {
         "anim_type": "alpha",
         "easing": "in_quart",
@@ -2409,6 +2464,12 @@
             {
                 "hotbar_slot_button@gui_hotbar_slot_button_prototype": {}
             }
+        ],
+        "bindings": [
+            {
+                "binding_name": "#hotbar_visible",
+                "binding_name_override": "#visible"
+            }
         ]
     },
     // redo layout for each hotbar grid item to work with the binding trick
@@ -2504,6 +2565,12 @@
             },
             {
                 "hotbar_slot_button@gui_hotbar_slot_button_prototype": {}
+            }
+        ],
+        "bindings": [
+            {
+                "binding_name": "#hotbar_visible",
+                "binding_name_override": "#visible"
             }
         ]
     },
@@ -3670,7 +3737,8 @@
             {
                 "binding_name": "#helper_description",
                 "binding_type": "collection",
-                "binding_collection_name": "$tooltip_collection_name"
+                "binding_collection_name": "$tooltip_collection_name",
+                "binding_condition": "visible"
             }
         ]
     },
@@ -3779,6 +3847,7 @@
             {
                 "gamepad_tooltip@hud.tooltip_helper": {
                     "$icon_image_ref": "hud.base_icon_image",
+                    "visible": false,
                     "bindings": [
                         {
                             "binding_name": "#is_gamepad_tip",
@@ -3836,6 +3905,7 @@
             {
                 "gamepad_tooltip@hud.tooltip_helper_form_fitting": {
                     "$icon_image_ref": "hud.base_icon_image",
+                    "visible": false,
                     "bindings": [
                         {
                             "binding_name": "#is_gamepad_tip",
@@ -3903,7 +3973,8 @@
                             "binding_name": "#gamepad_button_icon",
                             "binding_name_override": "#texture",
                             "binding_type": "collection",
-                            "binding_collection_name": "$tooltip_collection_name"
+                            "binding_collection_name": "$tooltip_collection_name",
+                            "binding_condition": "visible"
                         }
                     ]
                 }
@@ -3930,7 +4001,8 @@
                                     {
                                         "binding_name": "#gamepad_postfix_text",
                                         "binding_type": "collection",
-                                        "binding_collection_name": "$tooltip_collection_name"
+                                        "binding_collection_name": "$tooltip_collection_name",
+                                        "binding_condition": "visible"
                                     }
                                 ]
                             }
@@ -6570,6 +6642,8 @@
             }
         ]
     },
+    
+    
     "wysiwyg_reset_modal_ok@library_modal.modal_button": {
         "$button_mapping": "button.confirm_reset",
         "$button_text": "hudScreen.controlCustomization.resetConfirm"
@@ -6709,7 +6783,8 @@
                         },
                         {
                             "binding_name": "#layout_customization_hint_offset_y",
-                            "binding_name_override": "#anchored_offset_value_y"
+                            "binding_name_override": "#anchored_offset_value_y",
+                            "binding_condition": "visible"
                         }
                     ]
                 }
@@ -6746,7 +6821,8 @@
                         },
                         {
                             "binding_name": "#layout_customization_hint_offset_y",
-                            "binding_name_override": "#anchored_offset_value_y"
+                            "binding_name_override": "#anchored_offset_value_y",
+                            "binding_condition": "visible"
                         }
                     ]
                 }
@@ -6783,7 +6859,8 @@
                         },
                         {
                             "binding_name": "#layout_customization_hint_offset_y",
-                            "binding_name_override": "#anchored_offset_value_y"
+                            "binding_name_override": "#anchored_offset_value_y",
+                            "binding_condition": "visible"
                         }
                     ]
                 }
@@ -6887,7 +6964,7 @@
                                     -50
                                 ],
                                 "layer": 1,
-                                "alpha": 0.5,
+                                "alpha": 0.1,
                                 "text": "为了最佳游戏体验，建议前往设置/视频 切换经典UI",
                                 "color": [
                                     1,
@@ -6990,26 +7067,6 @@
                 }
             },
             {
-                "hotbar_game_tip@game_tip.hotbar_game_tip_factory": {
-                    "anchor_from": "bottom_middle",
-                    "anchor_to": "bottom_middle",
-                    "$tip_size|default": [
-                        0,
-                        50
-                    ],
-                    "variables": [
-                        {
-                            "requires": "$pocket_screen",
-                            "$tip_size": [
-                                "100%",
-                                50
-                            ]
-                        }
-                    ],
-                    "size": "$tip_size"
-                }
-            },
-            {
                 "exp_rend_resizable@exp_progress_bar_and_hotbar_pocket": {
                     "bindings": [
                         {
@@ -7051,7 +7108,7 @@
                     "anchor_to": "center",
                     "bindings": [
                         {
-                            "binding_name": "(not #on_new_death_screen)",
+                            "binding_name": "#status_effects_visible",
                             "binding_name_override": "#visible"
                         }
                     ]
@@ -7071,28 +7128,17 @@
                 }
             },
             {
-                "game_tip@game_tip.game_tip_factory": {
-                    "$offset": [
-                        0,
-                        "-90px"
-                    ],
-                    "variables": [
-                        {
-                            "requires": "$pocket_screen",
-                            "$offset": [
-                                0,
-                                "-60px"
-                            ]
-                        }
-                    ],
-                    "offset": "$offset",
+                "editor_volume_highlight_rend@editor_volume_highlight_renderer": {
                     "bindings": [
                         {
-                            "binding_name": "(not #on_new_death_screen)",
+                            "binding_name": "#is_editor_mode_paste_preview_visible",
                             "binding_name_override": "#visible"
                         }
                     ]
                 }
+            },
+            {
+                "game_tip@game_tip.game_tip_factory": {}
             },
             {
                 "sidebar@scoreboard.scoreboard_sidebar": {
@@ -7172,9 +7218,9 @@
                                 "type": "panel",
                                 "size": [
                                     "100%",
-                                    5
+                                    20
                                 ],
-                                "visible": "#boss_hud_padding",
+                                "visible": "#boss_hud_padding", //Make this visible to move the boss hud panel down
                                 "bindings": [
                                     {
                                         "binding_name": "#boss_hud_padding",
@@ -7315,16 +7361,57 @@
                 "from_button_id": "button.slot0",
                 "to_button_id": "button.slot_0",
                 "mapping_type": "global"
+            },
+            {
+                "from_button_id": "button.arrow_up",
+                "to_button_id": "button.arrow_key",
+                "mapping_type": "global"
+            },
+            {
+                "from_button_id": "button.arrow_down",
+                "to_button_id": "button.arrow_key",
+                "mapping_type": "global"
+            },
+            {
+                "from_button_id": "button.arrow_left",
+                "to_button_id": "button.arrow_key",
+                "mapping_type": "global"
+            },
+            {
+                "from_button_id": "button.arrow_right",
+                "to_button_id": "button.arrow_key",
+                "mapping_type": "global"
             }
         ],
         "$screen_content": "hud.hud_content"
     },
     "hud_content": {
         "type": "panel",
+        "$hud_size": [
+            "100%",
+            "100%"
+        ],
         "$hud_player_rend_desktop_offset|default": [
             15,
             -24
         ],
+        "variables": [
+            {
+                "requires": "($is_holographic and not $is_living_room_mode)",
+                "$hud_player_rend_desktop_offset": [
+                    100,
+                    50
+                ]
+            },
+            {
+                "requires": "($compress_hud_width)",
+                "$hud_size": [
+                    "90%",
+                    "100%"
+                ]
+            }
+        ],
+        "size": "$hud_size",
         "controls": [
             {
                 "root_panel@hud.root_panel": {}
@@ -7364,7 +7451,7 @@
     },
     "layout_customization_main_panel": {
         "type": "panel",
-        "layer": 45,
+        "layer": 55,
         "size": [
             100,
             100
@@ -7408,7 +7495,8 @@
                                             "$button_bindings": [
                                                 {
                                                     "binding_name": "#wysiwyg_reset_button_enabled",
-                                                    "binding_name_override": "#enabled"
+                                                    "binding_name_override": "#enabled",
+                                                    "binding_condition": "visible"
                                                 }
                                             ],
                                             "bindings": [
@@ -7465,15 +7553,18 @@
         "bindings": [
             {
                 "binding_name": "#layout_customization_main_panel_offset_y",
-                "binding_name_override": "#anchored_offset_value_y"
+                "binding_name_override": "#anchored_offset_value_y",
+                "binding_condition": "visible"
             },
             {
                 "binding_name": "#layout_customization_main_panel_size_x",
-                "binding_name_override": "#size_binding_x"
+                "binding_name_override": "#size_binding_x",
+                "binding_condition": "visible"
             },
             {
                 "binding_name": "#layout_customization_main_panel_size_y",
-                "binding_name_override": "#size_binding_y"
+                "binding_name_override": "#size_binding_y",
+                "binding_condition": "visible"
             },
             {
                 "binding_name": "#layout_customization_main_panel_visible",
@@ -7500,11 +7591,11 @@
                         2
                     ],
                     "$focus_override_right": "FOCUS_OVERRIDE_STOP",
-                    "$slider_binding_condition": "always",
+                    "$slider_binding_condition": "always_when_visible",
                     "$label_bindings": [
                         {
                             "binding_name": "$option_label",
-                            "binding_condition": "always"
+                            "binding_condition": "always_when_visible"
                         }
                     ]
                 }
@@ -7582,8 +7673,7 @@
                             "binding_name": "#scale_option_visible",
                             "binding_name_override": "#visible",
                             "binding_type": "collection",
-                            "binding_collection_name": "$customization_option_collection_name",
-                            "binding_condition": "always"
+                            "binding_collection_name": "$customization_option_collection_name"
                         }
                     ]
                 }
@@ -7600,8 +7690,7 @@
                             "binding_name": "#opacity_option_visible",
                             "binding_name_override": "#visible",
                             "binding_type": "collection",
-                            "binding_collection_name": "$customization_option_collection_name",
-                            "binding_condition": "always"
+                            "binding_collection_name": "$customization_option_collection_name"
                         }
                     ]
                 }
@@ -7684,8 +7773,7 @@
                             "binding_name": "#apply_to_all_option_visible",
                             "binding_name_override": "#visible",
                             "binding_type": "collection",
-                            "binding_collection_name": "$customization_option_collection_name",
-                            "binding_condition": "always"
+                            "binding_collection_name": "$customization_option_collection_name"
                         }
                     ]
                 }
@@ -7711,7 +7799,7 @@
             {
                 "binding_name": "#layout_customization_option_size_y",
                 "binding_name_override": "#size_binding_y",
-                "binding_condition": "always"
+                "binding_condition": "visible"
             }
         ]
     },
@@ -7751,14 +7839,14 @@
                                     "100%",
                                     "100%"
                                 ],
-                                "grid_item_template": "layout_customization_option",
+                                "grid_item_template": "hud.layout_customization_option",
                                 "$customization_option_collection_name|default": "option_items",
                                 "collection_name": "$customization_option_collection_name",
                                 "grid_dimension_binding": "#layout_customization_dimension",
                                 "bindings": [
                                     {
                                         "binding_name": "#layout_customization_dimension",
-                                        "binding_condition": "always"
+                                        "binding_condition": "visible"
                                     }
                                 ]
                             }
@@ -7771,22 +7859,21 @@
             {
                 "binding_name": "#layout_customization_sub_panel_offset_y",
                 "binding_name_override": "#anchored_offset_value_y",
-                "binding_condition": "always"
+                "binding_condition": "visible"
             },
             {
                 "binding_name": "#layout_customization_sub_panel_size_x",
                 "binding_name_override": "#size_binding_x",
-                "binding_condition": "always"
+                "binding_condition": "visible"
             },
             {
                 "binding_name": "#layout_customization_sub_panel_size_y",
                 "binding_name_override": "#size_binding_y",
-                "binding_condition": "always"
+                "binding_condition": "visible"
             },
             {
                 "binding_name": "#layout_customization_sub_panel_visible",
-                "binding_name_override": "#visible",
-                "binding_condition": "always"
+                "binding_name_override": "#visible"
             }
         ]
     }

@@ -19,6 +19,9 @@
             },
             "minecraft:map_color": "#747474",
             "minecraft:loot": "loot_tables/blocks/radiate_stone.json",
+            "minecraft:custom_components": [
+                "ex:on_step_on"
+            ],
             "tag:stone": {}
         }
     }

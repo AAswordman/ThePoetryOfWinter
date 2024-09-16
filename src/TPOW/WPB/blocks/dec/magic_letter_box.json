@@ -89,7 +89,10 @@
                         "down": {
                             "texture": "magic_letter_box_top"
                         }
-                    }
+                    },
+                    "minecraft:custom_components": [
+                        "ex:random_ticking"
+                    ]
                 }
             },
             {
@@ -112,7 +115,10 @@
                         "down": {
                             "texture": "magic_letter_box_top"
                         }
-                    }
+                    },
+                    "minecraft:custom_components": [
+                        "ex:on_interact"
+                    ]
                 }
             }
         ],
@@ -131,6 +137,9 @@
                 "burn_odds": 5
             },
             "minecraft:loot": "loot_tables/blocks/magic_letter_box/magic_letter_box.json",
+            "minecraft:custom_components": [
+                "ex:on_player_placing"
+            ],
             "minecraft:geometry": "minecraft:geometry.full_block",
             "tag:planks": {},
             "tag:axe_diggable": {}

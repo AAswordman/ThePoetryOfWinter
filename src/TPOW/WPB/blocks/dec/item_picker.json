@@ -19,6 +19,9 @@
             },
             "minecraft:map_color": "#858585",
             "minecraft:loot": "loot_tables/blocks/item_picker.json",
+            "minecraft:custom_components": [
+                "ex:on_interact"
+            ],
             "tag:stone": {}
         }
     }

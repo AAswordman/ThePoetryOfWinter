@@ -9,11 +9,7 @@
 			}
 		},
 		"events": {
-			"event": {
-				"sound_effect": {
-					"event_name": "random.explode"
-				}
-			}
+			"event": {}
 		},
 		"components": {
 			"minecraft:emitter_rate_instant": {

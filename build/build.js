@@ -59,6 +59,9 @@ async function compile(path) {
         console.error("error in " + path + "\n");
     }
 }
+const ex = (name) => "ex:" + name;
+const minecraft = (name) => "minecraft:" + name;
+const fnamespace = (name) => name.split(":").slice(1).join(":");
 async function compileExItem(path) {
     console.log("compileItem  " + path);
     if (!fs.existsSync(path)) {
@@ -66,7 +69,7 @@ async function compileExItem(path) {
     }
     else {
         let jsonObj = eval("(" + await (0, fileOper_js_1.readFile)(path) + ")");
-        await dataSet.write(path.replace(ROOT + "/", ""), jsonObj);
+        await dataSet.write(path.replace(ROOT + "/", ""), JSON.parse(JSON.stringify(jsonObj)));
         let blocks = ROOT + "/items";
         let targetFile = blocks + path.replace(ROOT + "/ex_items", "");
         let targetDir = targetFile.substring(0, targetFile.lastIndexOf("/"));
@@ -152,7 +155,7 @@ async function compileExBlock(path) {
     }
     else {
         let jsonObj = eval("(" + await (0, fileOper_js_1.readFile)(path) + ")");
-        await dataSet.write(path.replace(ROOT + "/", ""), jsonObj);
+        await dataSet.write(path.replace(ROOT + "/", ""), JSON.parse(JSON.stringify(jsonObj)));
         let blocks = ROOT + "/blocks";
         let targetFile = blocks + path.replace(ROOT + "/ex_blocks", "");
         let targetDir = targetFile.substring(0, targetFile.lastIndexOf("/"));
@@ -164,12 +167,30 @@ async function compileExBlock(path) {
         permutationsArray.push({ "components": components, "condition": "" });
         for (let obj of permutationsArray) {
             let i = obj["components"];
-            delete i["minecraft:on_interact"];
-            delete i["minecraft:on_step_on"];
-            delete i["minecraft:on_player_placing"];
-            delete i["minecraft:on_player_destroyed"];
-            delete i["minecraft:random_ticking"];
-            delete i["minecraft:ticking"];
+            const custom = [];
+            const list = [
+                "on_interact",
+                "on_step_on",
+                "on_player_placing",
+                "on_player_destroyed",
+                "random_ticking"
+            ];
+            for (let j of list) {
+                if (minecraft(j) in i) {
+                    custom.push(ex(j));
+                    delete i[minecraft(j)];
+                }
+            }
+            if (minecraft("ticking") in i) {
+                custom.push(ex("ticking"));
+                i[minecraft("tick")] = {
+                    "interval_range": i[minecraft("ticking")].range
+                };
+                delete i[minecraft("ticking")];
+            }
+            if (custom.length > 0) {
+                i["minecraft:custom_components"] = custom;
+            }
             delete i["minecraft:breathability"];
             if ('minecraft:unit_cube' in i) {
                 delete i["minecraft:unit_cube"];

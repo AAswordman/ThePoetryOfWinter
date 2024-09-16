@@ -49,7 +49,10 @@
                         ]
                     }
                 ]
-            }
+            },
+            "minecraft:custom_components": [
+                "ex:random_ticking"
+            ]
         },
         "permutations": [
             {
@@ -73,7 +76,10 @@
                             7
                         ]
                     },
-                    "minecraft:loot": "loot_tables/empty.json"
+                    "minecraft:loot": "loot_tables/empty.json",
+                    "minecraft:custom_components": [
+                        "ex:on_interact"
+                    ]
                 }
             },
             {
@@ -97,7 +103,10 @@
                             7
                         ]
                     },
-                    "minecraft:loot": "loot_tables/empty.json"
+                    "minecraft:loot": "loot_tables/empty.json",
+                    "minecraft:custom_components": [
+                        "ex:on_interact"
+                    ]
                 }
             },
             {
@@ -121,7 +130,10 @@
                             12
                         ]
                     },
-                    "minecraft:loot": "loot_tables/empty.json"
+                    "minecraft:loot": "loot_tables/empty.json",
+                    "minecraft:custom_components": [
+                        "ex:on_interact"
+                    ]
                 }
             },
             {
@@ -145,7 +157,10 @@
                             12
                         ]
                     },
-                    "minecraft:loot": "loot_tables/empty.json"
+                    "minecraft:loot": "loot_tables/empty.json",
+                    "minecraft:custom_components": [
+                        "ex:on_interact"
+                    ]
                 }
             },
             {
@@ -169,7 +184,10 @@
                             12
                         ]
                     },
-                    "minecraft:loot": "loot_tables/blocks/fritillary_crop.json"
+                    "minecraft:loot": "loot_tables/blocks/fritillary_crop.json",
+                    "minecraft:custom_components": [
+                        "ex:on_interact"
+                    ]
                 }
             }
         ]

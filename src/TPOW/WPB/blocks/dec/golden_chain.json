@@ -134,6 +134,9 @@
                 "explosion_resistance": 40
             },
             "minecraft:loot": "loot_tables/blocks/golden_chain.json",
+            "minecraft:custom_components": [
+                "ex:on_player_placing"
+            ],
             "tag:metal": {}
         }
     }

@@ -19,6 +19,9 @@
             },
             "minecraft:loot": "loot_tables/blocks/flowing_block.json",
             "minecraft:map_color": "#130672",
+            "minecraft:custom_components": [
+                "ex:on_interact"
+            ],
             "tag:stone": {}
         }
     }

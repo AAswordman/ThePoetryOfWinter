@@ -19,6 +19,9 @@
             },
             "minecraft:map_color": "#3C3B3B",
             "minecraft:loot": "loot_tables/blocks/mining_machine.json",
+            "minecraft:custom_components": [
+                "ex:on_interact"
+            ],
             "tag:stone": {}
         }
     }

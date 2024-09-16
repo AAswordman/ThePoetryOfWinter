@@ -10,7 +10,7 @@
         "default": "textures/entity/frozen_shadow"
       },
       "geometry": {
-        "default": "geometry.frozen_shadow"
+        "default": "geometry.cuteboi"
       },
       "scripts": {
         "pre_animation": [

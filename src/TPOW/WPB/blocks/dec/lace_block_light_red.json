@@ -83,6 +83,9 @@
                 "burn_odds": 5
             },
             "minecraft:loot": "loot_tables/blocks/8F5758.json",
+            "minecraft:custom_components": [
+                "ex:on_player_placing"
+            ],
             "minecraft:geometry": "minecraft:geometry.full_block",
             "tag:wool": {}
         }

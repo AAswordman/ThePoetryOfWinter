@@ -50,7 +50,10 @@
                         ]
                     }
                 ]
-            }
+            },
+            "minecraft:custom_components": [
+                "ex:random_ticking"
+            ]
         },
         "permutations": [
             {
@@ -74,7 +77,10 @@
                             14
                         ]
                     },
-                    "minecraft:loot": "loot_tables/empty.json"
+                    "minecraft:loot": "loot_tables/empty.json",
+                    "minecraft:custom_components": [
+                        "ex:on_interact"
+                    ]
                 }
             },
             {
@@ -98,7 +104,10 @@
                             14
                         ]
                     },
-                    "minecraft:loot": "loot_tables/empty.json"
+                    "minecraft:loot": "loot_tables/empty.json",
+                    "minecraft:custom_components": [
+                        "ex:on_interact"
+                    ]
                 }
             },
             {
@@ -122,7 +131,10 @@
                             13
                         ]
                     },
-                    "minecraft:loot": "loot_tables/empty.json"
+                    "minecraft:loot": "loot_tables/empty.json",
+                    "minecraft:custom_components": [
+                        "ex:on_interact"
+                    ]
                 }
             },
             {
@@ -146,7 +158,10 @@
                             16
                         ]
                     },
-                    "minecraft:loot": "loot_tables/empty.json"
+                    "minecraft:loot": "loot_tables/empty.json",
+                    "minecraft:custom_components": [
+                        "ex:on_interact"
+                    ]
                 }
             },
             {
@@ -170,7 +185,10 @@
                             16
                         ]
                     },
-                    "minecraft:loot": "loot_tables/blocks/soybean_crop.json"
+                    "minecraft:loot": "loot_tables/blocks/soybean_crop.json",
+                    "minecraft:custom_components": [
+                        "ex:on_interact"
+                    ]
                 }
             }
         ]

@@ -37,7 +37,10 @@
                             "render_method": "opaque"
                         }
                     },
-                    "minecraft:loot": "loot_tables/blocks/crate_locked.json"
+                    "minecraft:loot": "loot_tables/blocks/crate_locked.json",
+                    "minecraft:custom_components": [
+                        "ex:on_interact"
+                    ]
                 }
             },
             {

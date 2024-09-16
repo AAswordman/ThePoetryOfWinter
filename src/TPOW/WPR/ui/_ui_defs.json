@@ -2,7 +2,7 @@
   "ui_defs": [
     "ui/how_to_play_screen.json",
     "ui/hud_screen.json",
-    "ui/inventory_screen_pocket.json.json",
+    "ui/inventory_screen_pocket.json",
     "ui/inventory_screen.json",
     "ui/npc_interact_screen.json",
     "ui/hud_boss_notes.json"

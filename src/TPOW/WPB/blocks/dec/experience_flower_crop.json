@@ -47,7 +47,11 @@
                         ]
                     }
                 ]
-            }
+            },
+            "minecraft:custom_components": [
+                "ex:on_interact",
+                "ex:random_ticking"
+            ]
         },
         "permutations": [
             {
@@ -119,7 +123,10 @@
                             6
                         ]
                     },
-                    "minecraft:loot": "loot_tables/blocks/experience_flower_crop.json"
+                    "minecraft:loot": "loot_tables/blocks/experience_flower_crop.json",
+                    "minecraft:custom_components": [
+                        "ex:on_player_destroyed"
+                    ]
                 }
             }
         ]

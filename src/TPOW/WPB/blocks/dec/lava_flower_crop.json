@@ -50,7 +50,10 @@
                         ]
                     }
                 ]
-            }
+            },
+            "minecraft:custom_components": [
+                "ex:random_ticking"
+            ]
         },
         "permutations": [
             {
@@ -75,7 +78,10 @@
                         ]
                     },
                     "minecraft:light_emission": 1,
-                    "minecraft:loot": "loot_tables/empty.json"
+                    "minecraft:loot": "loot_tables/empty.json",
+                    "minecraft:custom_components": [
+                        "ex:on_interact"
+                    ]
                 }
             },
             {
@@ -100,7 +106,10 @@
                         ]
                     },
                     "minecraft:light_emission": 3,
-                    "minecraft:loot": "loot_tables/empty.json"
+                    "minecraft:loot": "loot_tables/empty.json",
+                    "minecraft:custom_components": [
+                        "ex:on_interact"
+                    ]
                 }
             },
             {
@@ -125,7 +134,10 @@
                         ]
                     },
                     "minecraft:light_emission": 5,
-                    "minecraft:loot": "loot_tables/empty.json"
+                    "minecraft:loot": "loot_tables/empty.json",
+                    "minecraft:custom_components": [
+                        "ex:on_interact"
+                    ]
                 }
             },
             {
@@ -150,7 +162,10 @@
                         ]
                     },
                     "minecraft:light_emission": 7,
-                    "minecraft:loot": "loot_tables/empty.json"
+                    "minecraft:loot": "loot_tables/empty.json",
+                    "minecraft:custom_components": [
+                        "ex:on_interact"
+                    ]
                 }
             },
             {
@@ -175,7 +190,10 @@
                         ]
                     },
                     "minecraft:loot": "loot_tables/blocks/lava_flower_crop.json",
-                    "minecraft:light_emission": 9
+                    "minecraft:light_emission": 9,
+                    "minecraft:custom_components": [
+                        "ex:on_interact"
+                    ]
                 }
             }
         ]

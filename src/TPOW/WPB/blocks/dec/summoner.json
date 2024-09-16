@@ -17,7 +17,10 @@
             "minecraft:destructible_by_explosion": {
                 "explosion_resistance": 5
             },
-            "minecraft:map_color": "#79553A"
+            "minecraft:map_color": "#79553A",
+            "minecraft:custom_components": [
+                "ex:on_interact"
+            ]
         }
     }
 }

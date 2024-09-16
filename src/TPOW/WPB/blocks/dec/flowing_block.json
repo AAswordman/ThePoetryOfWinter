@@ -50,7 +50,10 @@
                         "down": {
                             "texture": "flowing_block_down"
                         }
-                    }
+                    },
+                    "minecraft:custom_components": [
+                        "ex:on_interact"
+                    ]
                 }
             },
             {
@@ -71,7 +74,10 @@
                         "down": {
                             "texture": "flowing_block_down"
                         }
-                    }
+                    },
+                    "minecraft:custom_components": [
+                        "ex:on_interact"
+                    ]
                 }
             },
             {
@@ -92,7 +98,10 @@
                         "down": {
                             "texture": "flowing_block_down"
                         }
-                    }
+                    },
+                    "minecraft:custom_components": [
+                        "ex:on_interact"
+                    ]
                 }
             },
             {
@@ -113,7 +122,10 @@
                         "down": {
                             "texture": "flowing_block_down"
                         }
-                    }
+                    },
+                    "minecraft:custom_components": [
+                        "ex:on_interact"
+                    ]
                 }
             },
             {

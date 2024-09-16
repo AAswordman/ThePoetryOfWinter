@@ -23,7 +23,16 @@
                 "explosion_resistance": 1000000000
             },
             "minecraft:light_emission": 0.6,
-            "minecraft:map_color": "#2222dd"
+            "minecraft:map_color": "#2222dd",
+            "minecraft:tick": {
+                "interval_range": [
+                    0.05,
+                    0.05
+                ]
+            },
+            "minecraft:custom_components": [
+                "ex:ticking"
+            ]
         }
     }
 }
