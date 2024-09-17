@@ -1,10 +1,11 @@
 import * as chokidar from "chokidar"
 import * as fs from 'fs';
+import * as os from 'os';
 import SingleFileDataSet, { JSONObject } from "./SingleFileDataSet.js";
 import { readFile, writeFile } from "./fileOper.js";
 
 const ROOT = "src/TPOW/WPB"
-
+const GAMEROOT = "C:/Users/" + os.userInfo().username + "/AppData/Local/Packages/Microsoft.MinecraftUWP_8wekyb3d8bbwe/LocalState/games/com.mojang/development_behavior_packs/WPB"
 async function fileDisplay(filePath: string) {
     for (let f of fs.readdirSync(filePath)) {
         if (fs.statSync(filePath + "/" + f).isDirectory()) {
@@ -72,10 +73,10 @@ async function compileExItem(path: string) {
         await dataSet.remove(path);
     } else {
         let jsonObj: JSONObject = eval("(" + await readFile(path) + ")");
-        await dataSet.write(path.replace(ROOT + "/", ""),  JSON.parse(JSON.stringify(jsonObj)));
+        await dataSet.write(path.replace(ROOT + "/", ""), JSON.parse(JSON.stringify(jsonObj)));
 
-        let blocks = ROOT + "/items";
-        let targetFile = blocks + path.replace(ROOT + "/ex_items", "");
+        let items = GAMEROOT + "/items";
+        let targetFile = items + path.replace(ROOT + "/ex_items", "");
         let targetDir = targetFile.substring(0, targetFile.lastIndexOf("/"));
         fs.mkdirSync(targetDir, { recursive: true })
         let item = jsonObj['minecraft:item'] as JSONObject;
@@ -151,7 +152,7 @@ async function compileExItem(path: string) {
             delete components["minecraft:on_use"];
 
         }
-        fs.mkdirSync(blocks, { recursive: true })
+        fs.mkdirSync(items, { recursive: true })
         writeFile(targetFile, JSON.stringify(jsonObj, undefined, 4));
     }
 }
@@ -164,7 +165,7 @@ async function compileExBlock(path: string) {
         let jsonObj: JSONObject = eval("(" + await readFile(path) + ")");
         await dataSet.write(path.replace(ROOT + "/", ""), JSON.parse(JSON.stringify(jsonObj)));
 
-        let blocks = ROOT + "/blocks";
+        let blocks = GAMEROOT + "/blocks";
         let targetFile = blocks + path.replace(ROOT + "/ex_blocks", "");
         let targetDir = targetFile.substring(0, targetFile.lastIndexOf("/"));
         fs.mkdirSync(targetDir, { recursive: true })
@@ -194,7 +195,7 @@ async function compileExBlock(path: string) {
             if (minecraft("ticking") in i) {
                 custom.push(ex("ticking"));
                 i[minecraft("tick")] = {
-                    "interval_range": (i[minecraft("ticking")] as JSONObject).range
+                    "interval_range": ((i[minecraft("ticking")] as JSONObject).range as number[]).map(e => e * 20)
                 };
                 delete i[minecraft("ticking")];
             }

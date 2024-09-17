@@ -7,25 +7,22 @@
       "is_summonable": true,
       "is_experimental": false,
       "runtime_identifier": "epic:cannon_cart",
-
-    "animations": {
-      "status_display":"controller.animation.cannon_cart_status_display"
+      "animations": {
+        "status_display": "controller.animation.cannon_cart_status_display"
+      },
+      "scripts": {
+        "animate": [
+          "status_display"
+        ]
+      }
     },
-     "scripts": {
-       "animate": [
-         "status_display"
-       ]
-    }
-  },
-
     "component_groups": {
-    
-   "cannon_cart_form_untamed": {
-       "minecraft:health": {
-        "value": 100,
-        "min" :0,
-        "max": 100
-       },
+      "cannon_cart_form_untamed": {
+        "minecraft:health": {
+          "value": 100,
+          "min": 0,
+          "max": 100
+        },
         "minecraft:tameable": {
           "probability": 1,
           "tameItems": "iron_ingot",
@@ -34,18 +31,16 @@
             "target": "self"
           }
         },
-        "minecraft:is_stackable":{
-        },
+        "minecraft:is_stackable": {},
         "minecraft:on_death": {
           "event": "change_untamed",
           "target": "self"
         }
       },
-      
       "cannon_cart_form": {
         "minecraft:health": {
           "value": 100,
-          "min" :0,
+          "min": 0,
           "max": 100
         },
         "minecraft:boss": {
@@ -53,546 +48,554 @@
           "should_darken_sky": false,
           "hud_range": 2
         },
-        "minecraft:is_stackable":{
-        },
-          "minecraft:healable": {
-            "items": [
-              {
-                "item": "iron_ingot",
-                "heal_amount": 10
-              }
-            ]
-          },
-          "minecraft:on_death": {
-            "event": "change",
-            "target": "self"
-          }
-       },
-
-  "npc_module":{
-    "minecraft:npc": {
-      "npc_data": {
-        "portrait_offsets": {
-          "translate": [-7,100,0],
-          "scale": [1.75,1.75,1.75]
-        },
-        "picker_offsets": {
-          "translate": [0,20,0],
-          "scale": [1.7,1.7,1.7]
-        },
-        "skin_list": [
-          {
-            "variant": 0
-          }
-        ]
-      }
-    }
-  },
-
-"owner_call_on":{
-  "minecraft:entity_sensor": {
-    "event_filters": {
-      "all_of": [
-        {
-            "test": "has_equipment",
-            "domain": "hand",
-            "subject": "other",
-            "operator":"!=",
-            "value": "epic:machanical_operator"
-        },
-        {
-          "test": "is_owner",
-          "subject": "other",
-          "value": true
-        }
-    ]
-  },
-  "event": "owner_call_off",
-  "sensor_range": 128,
-  "relative_range": false,
-  "minimum_count": 1
-  },
-  "minecraft:behavior.tempt": {
-    "priority": 0,
-    "speed_multiplier": 1.65,
-    "items": [
-      "epic:machanical_operator"
-    ],
-    "within_radius" : 20.0,
-    "can_tempt_vertically": true
-  }      
-},
-
-"owner_call_off":{
-  "minecraft:entity_sensor": {
-    "event_filters": {
-      "all_of": [
-        {
-            "test": "is_owner",
-            "subject": "other",
-            "value": true
-        },
-        {
-            "test": "has_equipment",
-            "domain": "hand",
-            "subject": "other",
-            "value": "epic:machanical_operator"
-        },
-        {
-          "test": "is_sneaking",
-          "subject": "other",
-          "value": true
-        }
-    ]
-  },
-  "event": "owner_call_on",
-  "sensor_range": 24,
-  "relative_range": false,
-  "minimum_count": 1
-  }  
-},
-
-    "hostile_mode": {
-      "minecraft:damage_sensor": {
-        "triggers": [
-      {
-          "on_damage": {
-              "filters": {
-                  "all_of": [{
-                          "test": "has_tag",
-                          "operator": "==",
-                          "subject": "other",
-                          "value": "wbmsyh"
-                      },
-                      {
-                          "test": "has_tag",
-                          "operator": "==",
-                          "subject": "self",
-                          "value": "wbmsyh"
-                      }
-                  ]
-              }
-          },
-          "deals_damage": false
-      },
-      {
-        "on_damage": {
-            "filters": {
-                "all_of": [{
-                        "test": "has_tag",
-                        "operator": "!=",
-                        "subject": "other",
-                        "value": "wbmsyh"
-                    }
-                ]
+        "minecraft:is_stackable": {},
+        "minecraft:healable": {
+          "items": [
+            {
+              "item": "iron_ingot",
+              "heal_amount": 10
             }
+          ]
         },
-        "deals_damage": true
-    }
-  ]
-  }
-  },
-
-    "cannon_form":{
-      "minecraft:mark_variant":{
-        "value": 4
-      },
-      "minecraft:loot": {
-        "table": "loot_tables/EPIC/entities/cannon_cart.json"
-      },
-      "minecraft:health": {
-        "value": 75,
-        "min" :0,
-        "max": 75
-      }
-     },
-    
-     "cannon_form_untamed":{
-      "minecraft:tameable": {
-        "probability": 1,
-        "tameItems": "iron_ingot",
-        "tame_event": {
-          "event": "cannon_form_tame",
+        "minecraft:on_death": {
+          "event": "change",
           "target": "self"
         }
       },
-      "minecraft:mark_variant":{
-        "value": 4
-      },
-      "minecraft:loot": {
-        "table": "loot_tables/EPIC/entities/cannon_cart.json"
-      },
-      "minecraft:health": {
-        "value": 75,
-        "min" :0,
-        "max": 75
-      },         
-      "minecraft:interact":{
-        "interactions": [
-          {
-           "on_interact": {
-               "filters": {
-                   "all_of": [
-                       {
-                           "test": "has_equipment",
-                           "domain": "hand",
-                           "subject": "other",
-                           "value": "iron_block"
-                       }
-                      
-                   ]
-               },
-               "event": "fix",
-               "target": "self"
-           },
-           "hurt_item": 1,
-           "play_sounds": "random.anvil_use",
-           "interact_text": "修复"
-           }
-         ]
-        }
-     },
-
-     "can_attack":{
-      "minecraft:shooter": {
-        "def": "epic:cannon_cart_bullet"
-        },
-       "minecraft:behavior.ranged_attack": {
-       "priority": 1,
-       "attack_interval_min": 1,
-       "attack_interval_max": 1,
-       "charge_charged_trigger": 0,
-       "charge_shoot_trigger": 0.5,
-       "attack_radius": 48,
-       "burst_shots": 1,
-       "burst_interval": 0
-       }
-     },
-
-     "can_move":{
-      "minecraft:movement": {
-       "value": 0.25
-      },
-      "minecraft:navigation.walk": {
-        "is_amphibious": true,
-        "avoid_water": true
-      }
-     },
-
-     "cannot_move":{
-      "minecraft:movement": {
-       "value": 0.0
-      },
-      "minecraft:push_through": {
-        "value": 1
-      },
-      "minecraft:navigation.walk": {
-        "is_amphibious": true,
-        "avoid_water": true
-      }
-     },
-
-     "protect_owner":{
-     "minecraft:behavior.owner_hurt_by_target": {
-      "priority": 1
-    },
-    "minecraft:behavior.owner_hurt_target": {
-      "priority": 0
-    }
-   }, 
-      "chest_up": {
-        "minecraft:inventory": {
-        "inventory_size": 27,
-        "container_type": "container", 
-        "restrict_to_owner": true
-      }
-    },
-
-    "attack_monster":{
-      "minecraft:behavior.nearest_attackable_target": {
-        "priority": 2,
-        "reselect_targets": true,
-        "entity_types": [
-          {
-            "filters": {
-              "test": "is_family",
-              "subject": "other",
-              "value": "monster"
-            },
-            "max_dist": 32
-          },
-          {
-            "filters": {
-              "all_of": [
-                {
-                  "test": "is_family",
-                  "subject": "other",
-                  "value": "undead"
-                }
+      "npc_module": {
+        "minecraft:npc": {
+          "npc_data": {
+            "portrait_offsets": {
+              "translate": [
+                -7,
+                100,
+                0
+              ],
+              "scale": [
+                1.75,
+                1.75,
+                1.75
               ]
             },
-            "max_dist": 32
+            "picker_offsets": {
+              "translate": [
+                0,
+                20,
+                0
+              ],
+              "scale": [
+                1.7,
+                1.7,
+                1.7
+              ]
+            },
+            "skin_list": [
+              {
+                "variant": 0
+              }
+            ]
           }
-        ],
-        "must_see": true
-      }
-    },
-
-      "attack_all":{
+        }
+      },
+      "owner_call_on": {
+        "minecraft:entity_sensor": {
+          "event_filters": {
+            "all_of": [
+              {
+                "test": "has_equipment",
+                "domain": "hand",
+                "subject": "other",
+                "operator": "!=",
+                "value": "epic:machanical_operator"
+              },
+              {
+                "test": "is_owner",
+                "subject": "other",
+                "value": true
+              }
+            ]
+          },
+          "event": "owner_call_off",
+          "sensor_range": 128,
+          "relative_range": false,
+          "minimum_count": 1
+        },
+        "minecraft:behavior.tempt": {
+          "priority": 0,
+          "speed_multiplier": 1.65,
+          "items": [
+            "epic:machanical_operator"
+          ],
+          "within_radius": 20.0,
+          "can_tempt_vertically": true
+        }
+      },
+      "owner_call_off": {
+        "minecraft:entity_sensor": {
+          "event_filters": {
+            "all_of": [
+              {
+                "test": "is_owner",
+                "subject": "other",
+                "value": true
+              },
+              {
+                "test": "has_equipment",
+                "domain": "hand",
+                "subject": "other",
+                "value": "epic:machanical_operator"
+              },
+              {
+                "test": "is_sneaking",
+                "subject": "other",
+                "value": true
+              }
+            ]
+          },
+          "event": "owner_call_on",
+          "sensor_range": 24,
+          "relative_range": false,
+          "minimum_count": 1
+        }
+      },
+      "hostile_mode": {
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_tag",
+                      "operator": "==",
+                      "subject": "other",
+                      "value": "wbmsyh"
+                    },
+                    {
+                      "test": "has_tag",
+                      "operator": "==",
+                      "subject": "self",
+                      "value": "wbmsyh"
+                    }
+                  ]
+                }
+              },
+              "deals_damage": false
+            },
+            {
+              "on_damage": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_tag",
+                      "operator": "!=",
+                      "subject": "other",
+                      "value": "wbmsyh"
+                    }
+                  ]
+                }
+              },
+              "deals_damage": true
+            }
+          ]
+        }
+      },
+      "cannon_form": {
+        "minecraft:mark_variant": {
+          "value": 4
+        },
+        "minecraft:loot": {
+          "table": "loot_tables/EPIC/entities/cannon_cart.json"
+        },
+        "minecraft:health": {
+          "value": 75,
+          "min": 0,
+          "max": 75
+        }
+      },
+      "cannon_form_untamed": {
+        "minecraft:tameable": {
+          "probability": 1,
+          "tameItems": "iron_ingot",
+          "tame_event": {
+            "event": "cannon_form_tame",
+            "target": "self"
+          }
+        },
+        "minecraft:mark_variant": {
+          "value": 4
+        },
+        "minecraft:loot": {
+          "table": "loot_tables/EPIC/entities/cannon_cart.json"
+        },
+        "minecraft:health": {
+          "value": 75,
+          "min": 0,
+          "max": 75
+        },
+        "minecraft:interact": {
+          "interactions": [
+            {
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_equipment",
+                      "domain": "hand",
+                      "subject": "other",
+                      "value": "iron_block"
+                    }
+                  ]
+                },
+                "event": "fix",
+                "target": "self"
+              },
+              "hurt_item": 1,
+              "play_sounds": "random.anvil_use",
+              "interact_text": "修复"
+            }
+          ]
+        }
+      },
+      "can_attack": {
+        "minecraft:shooter": {
+          "def": "epic:cannon_cart_bullet"
+        },
+        "minecraft:behavior.ranged_attack": {
+          "priority": 1,
+          "attack_interval_min": 1,
+          "attack_interval_max": 1,
+          "charge_charged_trigger": 0,
+          "charge_shoot_trigger": 0.5,
+          "attack_radius": 48,
+          "burst_shots": 1,
+          "burst_interval": 0
+        }
+      },
+      "can_move": {
+        "minecraft:movement": {
+          "value": 0.25
+        },
+        "minecraft:navigation.walk": {
+          "is_amphibious": true,
+          "avoid_water": true
+        }
+      },
+      "cannot_move": {
+        "minecraft:movement": {
+          "value": 0.0
+        },
+        "minecraft:push_through": {
+          "value": 1
+        },
+        "minecraft:navigation.walk": {
+          "is_amphibious": true,
+          "avoid_water": true
+        }
+      },
+      "protect_owner": {
+        "minecraft:behavior.owner_hurt_by_target": {
+          "priority": 1
+        },
+        "minecraft:behavior.owner_hurt_target": {
+          "priority": 0
+        }
+      },
+      "chest_up": {
+        "minecraft:inventory": {
+          "inventory_size": 27,
+          "container_type": "container",
+          "restrict_to_owner": true
+        }
+      },
+      "attack_monster": {
         "minecraft:behavior.nearest_attackable_target": {
           "priority": 2,
-          "within_radius": 64,
           "reselect_targets": true,
-          "entity_types": [    
+          "entity_types": [
             {
               "filters": {
-                 "all_of": [
-                  { 
-                       "test" :  "is_owner", 
-                       "subject" : "other",
-                       "operator": "==", 
-                       "value" : false
-                  },  
-                  { 
-                    "test" :  "has_tag", 
-                    "subject" : "other",
-                    "operator": "!=", 
-                    "value" : "wbmsyh"
-                  },
-                  { 
-                    "test" :  "has_tag", 
-                    "subject" : "self",
-                    "operator": "==", 
-                    "value" : "wbmsyh"
-                  }                       
-                ]
+                "test": "is_family",
+                "subject": "other",
+                "value": "monster"
               },
               "max_dist": 32
             },
             {
               "filters": {
-                 "all_of": [
-                  { 
-                    "test" :  "is_owner", 
-                    "subject" : "other",
-                    "operator": "==", 
-                    "value" : false
-                  },  
-                  { 
-                    "test" :  "has_tag", 
-                    "subject" : "self",
-                    "operator": "!=", 
-                    "value" : "wbmsyh"
-                  }                       
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "undead"
+                  }
                 ]
               },
               "max_dist": 32
             }
           ],
           "must_see": true
-        }  
-      },
-     "following":{
-      "minecraft:behavior.follow_owner": {
-        "priority": 0,
-        "speed_multiplier": 1.8,
-        "start_distance": 6,
-        "stop_distance": 2
-      },
-      "minecraft:walk_animation_speed":{
-        "value": 1.8
-    }
-    },
-    "free":{
-      "minecraft:behavior.avoid_mob_type": {
-        "priority": 0,
-        "entity_types": [
-        {
-            "filters": {
-            "test": "is_target",
-            "subject": "other",
-            "value": true
-            },
-            "max_dist": 2,
-            "min_dist": 1.25,
-            "walk_speed_multiplier": 1.85,
-            "sprint_speed_multiplier": 1.85
         }
-       ]
-     },
-     "minecraft:walk_animation_speed":{
-      "value": 1.5
-     },
-      "minecraft:behavior.follow_owner": {
-        "priority": 1,
-        "speed_multiplier": 1.5,
-        "start_distance": 28,
-        "stop_distance": 8
       },
-      "minecraft:behavior.random_stroll": {
-        "priority": 5,
-        "speed_multiplier": 1
+      "attack_all": {
+        "minecraft:behavior.nearest_attackable_target": {
+          "priority": 2,
+          "within_radius": 64,
+          "reselect_targets": true,
+          "entity_types": [
+            {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_owner",
+                    "subject": "other",
+                    "operator": "==",
+                    "value": false
+                  },
+                  {
+                    "test": "has_tag",
+                    "subject": "other",
+                    "operator": "!=",
+                    "value": "wbmsyh"
+                  },
+                  {
+                    "test": "has_tag",
+                    "subject": "self",
+                    "operator": "==",
+                    "value": "wbmsyh"
+                  }
+                ]
+              },
+              "max_dist": 32
+            },
+            {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "is_owner",
+                    "subject": "other",
+                    "operator": "==",
+                    "value": false
+                  },
+                  {
+                    "test": "has_tag",
+                    "subject": "self",
+                    "operator": "!=",
+                    "value": "wbmsyh"
+                  }
+                ]
+              },
+              "max_dist": 32
+            }
+          ],
+          "must_see": true
+        }
       },
-      "minecraft:behavior.look_at_player": {
-        "priority": 6,
-        "look_distance": 8
-      }
-    },
-
-"interact_module":{
-   "minecraft:interact":{
-    "interactions": [
-        {
-          "on_interact": {
+      "following": {
+        "minecraft:behavior.follow_owner": {
+          "priority": 0,
+          "speed_multiplier": 1.8,
+          "start_distance": 6,
+          "stop_distance": 2
+        },
+        "minecraft:walk_animation_speed": {
+          "value": 1.8
+        }
+      },
+      "free": {
+        "minecraft:behavior.avoid_mob_type": {
+          "priority": 0,
+          "entity_types": [
+            {
               "filters": {
-                  "all_of": [
-                      {
-                          "test": "is_owner",
-                          "subject": "other",
-                          "value": true
-                      },
-                      {
-                          "test": "has_equipment",
-                          "domain": "hand",
-                          "subject": "other",
-                          "value": "epic:machanical_operator"
-                      }
-                  ]
+                "test": "is_target",
+                "subject": "other",
+                "value": true
               },
-              "event": "cannon_cart_form_menu",
-              "target": "self"
-          },
-          "hurt_item": 0,
-          "play_sounds": "beacon.activate",
-          "interact_text": "打开管理面板"
-      }
-     ]
-    }
-    },
-
-    "interact_module_cannon":{
-      "minecraft:interact":{
-       "interactions": [
-           {
-             "on_interact": {
-                 "filters": {
-                     "all_of": [
-                         {
-                             "test": "is_owner",
-                             "subject": "other",
-                             "value": true
-                         },
-                         {
-                             "test": "has_equipment",
-                             "domain": "hand",
-                             "subject": "other",
-                             "value": "epic:machanical_operator"
-                         }
-                     ]
-                 },
-                 "event": "cannon_form_menu",
-                 "target": "self"
-             },
-             "hurt_item": 0,
-             "play_sounds": "beacon.activate",
-             "interact_text": "打开管理面板"
-         },
-         {
-          "on_interact": {
-              "filters": {
+              "max_dist": 2,
+              "min_dist": 1.25,
+              "walk_speed_multiplier": 1.85,
+              "sprint_speed_multiplier": 1.85
+            }
+          ]
+        },
+        "minecraft:walk_animation_speed": {
+          "value": 1.5
+        },
+        "minecraft:behavior.follow_owner": {
+          "priority": 1,
+          "speed_multiplier": 1.5,
+          "start_distance": 28,
+          "stop_distance": 8
+        },
+        "minecraft:behavior.random_stroll": {
+          "priority": 5,
+          "speed_multiplier": 1
+        },
+        "minecraft:behavior.look_at_player": {
+          "priority": 6,
+          "look_distance": 8
+        }
+      },
+      "interact_module": {
+        "minecraft:interact": {
+          "interactions": [
+            {
+              "on_interact": {
+                "filters": {
                   "all_of": [
-                      {
-                          "test": "is_owner",
-                          "subject": "other",
-                          "value": true
-                      },
-                      {
-                          "test": "has_equipment",
-                          "domain": "hand",
-                          "subject": "other",
-                          "value": "iron_block"
-                      }
-                     
+                    {
+                      "test": "is_owner",
+                      "subject": "other",
+                      "value": true
+                    },
+                    {
+                      "test": "has_equipment",
+                      "domain": "hand",
+                      "subject": "other",
+                      "value": "epic:machanical_operator"
+                    }
                   ]
+                },
+                "event": "cannon_cart_form_menu",
+                "target": "self"
               },
-              "event": "fix",
-              "target": "self"
-          },
-          "hurt_item": 1,
-          "play_sounds": "random.anvil_use",
-          "interact_text": "修复"
-          }
-        ]
-       }
-       },
-
+              "hurt_item": 0,
+              "play_sounds": "beacon.activate",
+              "interact_text": "打开管理面板"
+            }
+          ]
+        }
+      },
+      "interact_module_cannon": {
+        "minecraft:interact": {
+          "interactions": [
+            {
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_owner",
+                      "subject": "other",
+                      "value": true
+                    },
+                    {
+                      "test": "has_equipment",
+                      "domain": "hand",
+                      "subject": "other",
+                      "value": "epic:machanical_operator"
+                    }
+                  ]
+                },
+                "event": "cannon_form_menu",
+                "target": "self"
+              },
+              "hurt_item": 0,
+              "play_sounds": "beacon.activate",
+              "interact_text": "打开管理面板"
+            },
+            {
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "is_owner",
+                      "subject": "other",
+                      "value": true
+                    },
+                    {
+                      "test": "has_equipment",
+                      "domain": "hand",
+                      "subject": "other",
+                      "value": "iron_block"
+                    }
+                  ]
+                },
+                "event": "fix",
+                "target": "self"
+              },
+              "hurt_item": 1,
+              "play_sounds": "random.anvil_use",
+              "interact_text": "修复"
+            }
+          ]
+        }
+      },
       "cannon_change": {
-      "minecraft:type_family": {
-        "family": [ "defence","cannon_cart" ]
-      },
+        "minecraft:type_family": {
+          "family": [
+            "defence",
+            "cannon_cart"
+          ]
+        },
         "minecraft:transformation": {
           "into": "epic:cannon_cart<turn_to_cannon>",
           "value": 1,
           "delay": 0,
-          "begin_transform_sound":"explode",
-          "transformation_sound":"random.anvil_use",
+          "begin_transform_sound": "explode",
+          "transformation_sound": "random.anvil_use",
           "keep_owner": true
         }
       },
-
       "cannon_change_untamed": {
         "minecraft:type_family": {
-          "family": [ "defence","cannon_cart" ]
+          "family": [
+            "defence",
+            "cannon_cart"
+          ]
         },
-          "minecraft:transformation": {
-            "into": "epic:cannon_cart<turn_to_cannon_untamed>",
-            "value": 1,
-            "delay": 0,
-            "begin_transform_sound":"explode",
-            "transformation_sound":"random.anvil_use",
-            "keep_owner": true
-          }
-        },
-
+        "minecraft:transformation": {
+          "into": "epic:cannon_cart<turn_to_cannon_untamed>",
+          "value": 1,
+          "delay": 0,
+          "begin_transform_sound": "explode",
+          "transformation_sound": "random.anvil_use",
+          "keep_owner": true
+        }
+      },
       "fix": {
-    
         "minecraft:type_family": {
-          "family": [ "defence","cannon_cart" ]
+          "family": [
+            "defence",
+            "cannon_cart"
+          ]
         },
-          "minecraft:transformation": {
-            "into": "epic:cannon_cart<tame>",
-            "value": 1,
-            "delay": 0,
-            "begin_transform_sound":"explode",
-            "transformation_sound":"random.anvil_use",
-            "keep_owner": true
-          }
-        },
-
-        
+        "minecraft:transformation": {
+          "into": "epic:cannon_cart<tame>",
+          "value": 1,
+          "delay": 0,
+          "begin_transform_sound": "explode",
+          "transformation_sound": "random.anvil_use",
+          "keep_owner": true
+        }
+      },
       "fix_untamed": {
         "minecraft:type_family": {
-          "family": [ "defence","cannon_cart" ]
+          "family": [
+            "defence",
+            "cannon_cart"
+          ]
         },
-          "minecraft:transformation": {
-            "into": "epic:cannon_cart<minecraft:entity_spawned>",
-            "value": 1,
-            "delay": 0,
-            "begin_transform_sound":"explode",
-            "transformation_sound":"random.anvil_use",
-            "keep_owner": true
-          }
+        "minecraft:transformation": {
+          "into": "epic:cannon_cart<minecraft:entity_spawned>",
+          "value": 1,
+          "delay": 0,
+          "begin_transform_sound": "explode",
+          "transformation_sound": "random.anvil_use",
+          "keep_owner": true
         }
-             
+      }
     },
-
     "components": {
       "minecraft:collision_box": {
         "width": 1.1,
         "height": 0.65
       },
       "minecraft:type_family": {
-        "family": [ "defence", "cannon_cart" ]
+        "family": [
+          "defence",
+          "cannon_cart"
+        ]
       },
       "minecraft:breathable": {
         "totalSupply": 99999,
@@ -601,7 +604,7 @@
       },
       "minecraft:health": {
         "value": 100,
-        "min" :0,
+        "min": 0,
         "max": 100
       },
       "minecraft:knockback_resistance": {
@@ -609,57 +612,54 @@
       },
       "minecraft:movement": {
         "value": 0.0
-      }, 
-      "minecraft:movement.basic": {
       },
-      "minecraft:jump.static": {
-      },
-      "minecraft:nameable": {
-      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:nameable": {},
       "minecraft:behavior.hurt_by_target": {
         "priority": 1,
         "entity_types": [
           {
             "filters": {
-               "all_of": [
-                { 
-                     "test" :  "is_owner", 
-                     "subject" : "other",
-                     "operator": "==", 
-                     "value" : false
-                }  
+              "all_of": [
+                {
+                  "test": "is_owner",
+                  "subject": "other",
+                  "operator": "==",
+                  "value": false
+                }
               ]
             },
             "max_dist": 32
           },
           {
             "filters": {
-               "all_of": [
-                { 
-                  "test" :  "has_tag", 
-                  "subject" : "other",
-                  "operator": "!=", 
-                  "value" : "wbmsyh"
+              "all_of": [
+                {
+                  "test": "has_tag",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "wbmsyh"
                 },
-                { 
-                  "test" :  "has_tag", 
-                  "subject" : "self",
-                  "operator": "==", 
-                  "value" : "wbmsyh"
-                }                       
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "==",
+                  "value": "wbmsyh"
+                }
               ]
             },
             "max_dist": 32
           },
           {
             "filters": {
-               "all_of": [
-                { 
-                  "test" :  "has_tag", 
-                  "subject" : "self",
-                  "operator": "!=", 
-                  "value" : "wbmsyh"
-                }                       
+              "all_of": [
+                {
+                  "test": "has_tag",
+                  "subject": "self",
+                  "operator": "!=",
+                  "value": "wbmsyh"
+                }
               ]
             },
             "max_dist": 32
@@ -667,17 +667,14 @@
         ],
         "must_see": true
       },
-      "minecraft:physics": {
-      }
+      "minecraft:physics": {}
     },
-
     "events": {
       "minecraft:entity_spawned": {
         "randomize": [
           {
             "weight": 100,
-            "remove": {
-            },
+            "remove": {},
             "add": {
               "component_groups": [
                 "cannon_cart_form_untamed"
@@ -686,85 +683,118 @@
           }
         ]
       },
-
       "tame": {
         "remove": {
           "component_groups": [
             "cannon_cart_form_untamed"
           ]
         },
-        "queue_command":{
-          "command":[
-         "tag @s add wbmsyh"
-         ]
+        "queue_command": {
+          "command": [
+            "tag @s add wbmsyh"
+          ]
         },
         "add": {
           "component_groups": [
-            "cannon_cart_form","owner_call_off",
-            "hostile_mode","interact_module",
-            "can_attack","protect_owner","attack_monster",
-            "can_move","following",
+            "cannon_cart_form",
+            "owner_call_off",
+            "hostile_mode",
+            "interact_module",
+            "can_attack",
+            "protect_owner",
+            "attack_monster",
+            "can_move",
+            "following",
             "chest_up"
           ]
         }
       },
-
       "cannon_form_tame": {
         "remove": {
           "component_groups": [
-            "cannon_cart_form_untamed","cannon_form_untamed"
+            "cannon_cart_form_untamed",
+            "cannon_form_untamed"
           ]
         },
-        "queue_command":{
-          "command":[
-         "tag @s add wbmsyh"
-         ]
+        "queue_command": {
+          "command": [
+            "tag @s add wbmsyh"
+          ]
         },
         "add": {
           "component_groups": [
-            "have_been_start_following","owner_call_off",
-            "hostile_mode","interact_module_cannon",
+            "have_been_start_following",
+            "owner_call_off",
+            "hostile_mode",
+            "interact_module_cannon",
             "chest_up"
           ]
         }
       },
-
       "turn_to_cannon_untamed": {
         "remove": {
           "component_groups": [
-            "can_attack","protect_owner","attack_monster","attack_all","can_move","cannot_move","following","free"
+            "can_attack",
+            "protect_owner",
+            "attack_monster",
+            "attack_all",
+            "can_move",
+            "cannot_move",
+            "following",
+            "free"
           ]
         },
         "add": {
           "component_groups": [
-            "cannon_form_untamed","can_attack","protect_owner","attack_monster","cannot_move"
+            "cannon_form_untamed",
+            "can_attack",
+            "protect_owner",
+            "attack_monster",
+            "cannot_move"
           ]
         }
       },
-
       "turn_to_cannon": {
         "remove": {
           "component_groups": [
-            "can_attack","protect_owner","attack_monster","attack_all","can_move","cannot_move","following","free"
+            "can_attack",
+            "protect_owner",
+            "attack_monster",
+            "attack_all",
+            "can_move",
+            "cannot_move",
+            "following",
+            "free"
           ]
         },
-        "queue_command":{
-          "command":[
-         "tag @s add wbmsyh"
-         ]
+        "queue_command": {
+          "command": [
+            "tag @s add wbmsyh"
+          ]
         },
         "add": {
           "component_groups": [
-            "cannon_form","can_attack","protect_owner","attack_monster","cannot_move",
-            "hostile_mode","interact_module_cannon"
+            "cannon_form",
+            "can_attack",
+            "protect_owner",
+            "attack_monster",
+            "cannot_move",
+            "hostile_mode",
+            "interact_module_cannon"
           ]
         }
       },
-
       "fix_untamed": {
         "remove": {
           "component_groups": [
-            "can_attack","protect_owner","attack_monster","attack_all","can_move","cannot_move","following","free",
+            "can_attack",
+            "protect_owner",
+            "attack_monster",
+            "attack_all",
+            "can_move",
+            "cannot_move",
+            "following",
+            "free",
             "cannon_form_untamed"
           ]
         },
@@ -774,18 +804,24 @@
           ]
         }
       },
-
       "fix": {
         "remove": {
           "component_groups": [
-            "can_attack","protect_owner","attack_monster","attack_all","can_move","cannot_move","following","free",
+            "can_attack",
+            "protect_owner",
+            "attack_monster",
+            "attack_all",
+            "can_move",
+            "cannot_move",
+            "following",
+            "free",
             "cannon_form"
           ]
         },
-        "queue_command":{
-          "command":[
-         "tag @s add wbmsyh"
-         ]
+        "queue_command": {
+          "command": [
+            "tag @s add wbmsyh"
+          ]
         },
         "add": {
           "component_groups": [
@@ -793,29 +829,23 @@
           ]
         }
       },
-
-
-      
       "alliance_on": {
-        "queue_command":{
-          "command":[
-         "tag @s add wbmsyh"
-         ]
+        "queue_command": {
+          "command": [
+            "tag @s add wbmsyh"
+          ]
         }
       },
       "alliance_off": {
-        "queue_command":{
-          "command":[
-         "tag @s remove wbmsyh"
-         ]
+        "queue_command": {
+          "command": [
+            "tag @s remove wbmsyh"
+          ]
         }
       },
-
-
       "chest_up": {
         "remove": {
-          "component_groups": [
-          ]
+          "component_groups": []
         },
         "add": {
           "component_groups": [
@@ -847,11 +877,17 @@
           ]
         }
       },
-
       "change_untamed": {
         "remove": {
           "component_groups": [
-            "can_attack","protect_owner","attack_monster","attack_all","can_move","cannot_move","following","free",
+            "can_attack",
+            "protect_owner",
+            "attack_monster",
+            "attack_all",
+            "can_move",
+            "cannot_move",
+            "following",
+            "free",
             "cannon_form"
           ]
         },
@@ -861,11 +897,17 @@
           ]
         }
       },
-
       "change": {
         "remove": {
           "component_groups": [
-            "can_attack","protect_owner","attack_monster","attack_all","can_move","cannot_move","following","free",
+            "can_attack",
+            "protect_owner",
+            "attack_monster",
+            "attack_all",
+            "can_move",
+            "cannot_move",
+            "following",
+            "free",
             "cannon_form"
           ]
         },
@@ -875,33 +917,30 @@
           ]
         }
       },
-
       "cannon_cart_form_menu": {
         "add": {
           "component_groups": [
             "npc_module"
           ]
         },
-        "queue_command":{
-          "command":[
-          "dialogue open @s @p[r=3,hasitem={location=slot.weapon.mainhand,item=epic:machanical_operator}] cannon_cart_menu"
-         ]
+        "queue_command": {
+          "command": [
+            "dialogue open @s @p[r=3,hasitem={location=slot.weapon.mainhand,item=epic:machanical_operator}] cannon_cart_menu"
+          ]
         }
       },
-
       "cannon_form_menu": {
         "add": {
           "component_groups": [
             "npc_module"
           ]
         },
-        "queue_command":{
-          "command":[
-          "dialogue open @s @p[r=3,hasitem={location=slot.weapon.mainhand,item=epic:machanical_operator}] cannon_menu"
-         ]
+        "queue_command": {
+          "command": [
+            "dialogue open @s @p[r=3,hasitem={location=slot.weapon.mainhand,item=epic:machanical_operator}] cannon_menu"
+          ]
         }
       },
-
       "add_npc_module": {
         "add": {
           "component_groups": [
@@ -916,48 +955,49 @@
           ]
         }
       },
-
       "clear_attack_mode": {
         "remove": {
           "component_groups": [
-            "can_attack","protect_owner","attack_monster","attack_all"
+            "can_attack",
+            "protect_owner",
+            "attack_monster",
+            "attack_all"
           ]
         }
-        },
-
-      
+      },
       "clear_action_mode": {
         "remove": {
           "component_groups": [
-            "can_move","cannot_move","following","free"
+            "can_move",
+            "cannot_move",
+            "following",
+            "free"
           ]
         }
-        },
-
-
-        "attack_mode1": {
-          "add": {
-            "component_groups": [
-            ]
-          }
-        },
-  
-        "attack_mode2": {
-          "add": {
-            "component_groups": [
-              "can_attack","protect_owner","attack_monster"
-            ]
-          }
-        },
-  
-        "attack_mode3": {
-          "add": {
-            "component_groups": [
-              "can_attack","protect_owner","attack_all"
-            ]
-          }
-        },
-
+      },
+      "attack_mode1": {
+        "add": {
+          "component_groups": []
+        }
+      },
+      "attack_mode2": {
+        "add": {
+          "component_groups": [
+            "can_attack",
+            "protect_owner",
+            "attack_monster"
+          ]
+        }
+      },
+      "attack_mode3": {
+        "add": {
+          "component_groups": [
+            "can_attack",
+            "protect_owner",
+            "attack_all"
+          ]
+        }
+      },
       "action_mode1": {
         "add": {
           "component_groups": [
@@ -965,25 +1005,22 @@
           ]
         }
       },
-
       "action_mode2": {
         "add": {
           "component_groups": [
-            "can_move","following"
+            "can_move",
+            "following"
           ]
         }
       },
-
       "action_mode3": {
         "add": {
           "component_groups": [
-            "can_move","free"
+            "can_move",
+            "free"
           ]
         }
       }
-
-
-   
     }
   }
 }
