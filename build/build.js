@@ -70,7 +70,13 @@ async function compileExItem(path) {
         await dataSet.remove(path);
     }
     else {
-        let jsonObj = eval("(" + await (0, fileOper_js_1.readFile)(path) + ")");
+        let jsonObj;
+        try {
+            jsonObj = eval("(" + await (0, fileOper_js_1.readFile)(path) + ")");
+        }
+        catch (e) {
+            return;
+        }
         await dataSet.write(path.replace(ROOT + "/", ""), JSON.parse(JSON.stringify(jsonObj)));
         let items = GAMEROOT + "/items";
         let targetFile = items + path.replace(ROOT + "/ex_items", "");
@@ -140,10 +146,31 @@ async function compileExItem(path) {
                     delete food["on_consume"];
                 }
             }
+            let i = item["components"];
+            if ("minecraft:on_use" in i) {
+                if (!("minecraft:use_modifiers" in i)) {
+                    i["minecraft:use_modifiers"] = {
+                        "use_duration": 10,
+                        "movement_modifier": 0.7
+                    };
+                }
+                delete i["minecraft:on_use"];
+            }
+            const custom = [];
+            const list = [
+                "chargeable",
+                "weapon"
+            ];
+            for (let j of list) {
+                if (minecraft(j) in i) {
+                    custom.push(ex(j));
+                    delete i[minecraft(j)];
+                }
+            }
+            if (custom.length > 0) {
+                i["minecraft:custom_components"] = custom;
+            }
             delete item["events"];
-            delete components["minecraft:chargeable"];
-            delete components["minecraft:weapon"];
-            delete components["minecraft:on_use"];
         }
         fs.mkdirSync(items, { recursive: true });
         (0, fileOper_js_1.writeFile)(targetFile, JSON.stringify(jsonObj, undefined, 4));
@@ -156,7 +183,13 @@ async function compileExBlock(path) {
         await dataSet.remove(path);
     }
     else {
-        let jsonObj = eval("(" + await (0, fileOper_js_1.readFile)(path) + ")");
+        let jsonObj;
+        try {
+            jsonObj = eval("(" + await (0, fileOper_js_1.readFile)(path) + ")");
+        }
+        catch (e) {
+            return;
+        }
         await dataSet.write(path.replace(ROOT + "/", ""), JSON.parse(JSON.stringify(jsonObj)));
         let blocks = GAMEROOT + "/blocks";
         let targetFile = blocks + path.replace(ROOT + "/ex_blocks", "");

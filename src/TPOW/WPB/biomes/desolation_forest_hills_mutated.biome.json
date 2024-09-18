@@ -1,34 +1,38 @@
 {
-
-    "format_version": "1.15.0",
+  "format_version": "1.15.0",
   "minecraft:biome": {
     "description": {
       "identifier": "desolation_forest_hills_mutated"
     },
     "components": {
-    "minecraft:climate": {
-      "downfall": 0.8,
-      "snow_accumulation": [ 0.0, 0.125 ],
-      "temperature": 0.75
-    },
-    "minecraft:overworld_height": {
-      "noise_params": [ 1.2, 0.8 ]
-    },
-    "minecraft:surface_parameters": {
-      "sea_floor_depth": 7,
-      "sea_floor_material": "minecraft:gravel",
-      "foundation_material": "minecraft:stone",
-      "sea_material": "minecraft:water",
-      "mid_material": "minecraft:dirt",
-      "top_material": "minecraft:grass"
-    },
-
-    "animal": {},
-    "desolation_forest": {},
-    "forest": {},
-    "hills": {},
-    "monster": {},
-    "mutated": {}
+      "minecraft:climate": {
+        "downfall": 0.8,
+        "snow_accumulation": [
+          0.0,
+          0.125
+        ],
+        "temperature": 0.75
+      },
+      "minecraft:overworld_height": {
+        "noise_params": [
+          1.2,
+          0.8
+        ]
+      },
+      "minecraft:surface_parameters": {
+        "sea_floor_depth": 7,
+        "sea_floor_material": "minecraft:gravel",
+        "foundation_material": "minecraft:stone",
+        "sea_material": "minecraft:water",
+        "mid_material": "minecraft:dirt",
+        "top_material": "minecraft:grass"
+      },
+      "animal": {},
+      "desolation_forest": {},
+      "forest": {},
+      "hills": {},
+      "monster": {},
+      "mutated": {}
+    }
   }
-}
 }
