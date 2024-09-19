@@ -53,7 +53,6 @@
                 "max_durability": 563
             },
             "minecraft:chargeable": {
-                "movement_modifier": 1.1,
                 "on_complete": {
                     "event": "angry",
                     "target": "self"
@@ -81,6 +80,7 @@
             },
             "minecraft:hand_equipped": true,
             "minecraft:use_modifiers": {
+                "movement_modifier": 1.0,
                 "use_duration": 1.5
             },
             "minecraft:tags": {

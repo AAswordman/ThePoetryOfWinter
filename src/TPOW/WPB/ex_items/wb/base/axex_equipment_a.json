@@ -32,1186 +32,679 @@
                         "block": {
                             "tags": "q.any_tag('wood','pumpkin','plant')"
                         },
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:bamboo_mosaic",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:bamboo_mosaic_slab",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:bamboo_mosaic_stairs",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:bamboo_block",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:stripped_bamboo_block",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:bamboo_stairs",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:bamboo_slab",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:bamboo_sign",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:bamboo_hanging_sign",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:cherry_stairs",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:cherry_slab",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:cherry_sign",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:cherry_hanging_sign",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:bamboo_door",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:bamboo_fence",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:bamboo_mosaic",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:bamboo_planks",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:cherry_door",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:cherry_fence",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:cherry_planks",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:crimson_hyphae",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:crimson_slab",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:crimson_pressure_plate",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:crimson_fence",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:crimson_trapdoor",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:crimson_fence_gate",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:crimson_stairs",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:crimson_button",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:crimson_wall_sign",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:warped_planks",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:warped_stem",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:stripped_warped_stem",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:stripped_warped_hyphae",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:warped_hyphae",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:warped_slab",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:warped_pressure_plate",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:warped_fence",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:warped_trapdoor",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:warped_fence_gate",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:warped_button",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:warped_door",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:warped_wall_sign",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:melon_block",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:chest",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:crafting_table",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:crimson_planks",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:crimson_stem",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:stripped_crimson_stem",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:stripped_crimson_hyphae",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:crimson_door",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:loom",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:trapped_chest",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:lectern",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:bookshelf",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:composter",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:jukebox",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:soul_campfire",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:campfire",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:bee_nest",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:beehive",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:cartography_table",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:scaffolding",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:warped_stairs",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:noteblock",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:trapdoor",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:acacia_trapdoor",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:birch_trapdoor",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:dark_oak_trapdoor",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:jungle_trapdoor",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:mangrove_trapdoor",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:spruce_trapdoor",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:acacia_door",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:birch_door",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:dark_oak_door",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:jungle_door",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:mangrove_door",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:spruce_door",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:wooden_door",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:smithing_table",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:barrel",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:fence",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:fence_gate",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:acacia_fence_gate",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:birch_fence_gate",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:dark_oak_fence_gate",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:jungle_fence_gate",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:mangrove_fence",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:mangrove_fence_gate",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:spruce_fence_gate",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:log",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:log2",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:mangrove_log",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:stripped_acacia_log",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:stripped_birch_log",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:stripped_dark_oak_log",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:stripped_jungle_log",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:stripped_mangrove_log",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:stripped_oak_log",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:stripped_spruce_log",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:planks",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:mangrove_planks",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:wood",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:wooden_pressure_plate",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:wooden_slab",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:double_wooden_slab",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:acacia_pressure_plate",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:birch_pressure_plate",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:dark_oak_pressure_plate",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:jungle_pressure_plate",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:mangrove_pressure_plate",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:spruce_pressure_plate",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:acacia_standing_sign",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:acacia_wall_sign",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:birch_standing_sign",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:birch_wall_sign",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:crimson_standing_sign",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:darkoak_standing_sign",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:darkoak_wall_sign",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:jungle_standing_sign",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:jungle_wall_sign",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:mangrove_standing_sign",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:mangrove_wall_sign",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:spruce_standing_sign",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:spruce_wall_sign",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:standing_sign",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:wall_sign",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:warped_standing_sign",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:mangrove_button",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:acacia_button",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:birch_button",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:dark_oak_button",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:jungle_button",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:spruce_button",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:wooden_button",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:crimson_double_slab",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:mangrove_double_slab",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:warped_double_slab",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:mangrove_slab",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:acacia_stairs",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:oak_stairs",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:dark_oak_stairs",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:spruce_stairs",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:birch_stairs",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:jungle_stairs",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:pumpkin",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:carved_pumpkin",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:lit_pumpkin",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:bamboo",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:bed",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:cocoa",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:daylight_detector",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:daylight_detector_inverted",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:brown_mushroom_block",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:red_mushroom_block",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:vine",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:mangrove_wood",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "minecraft:mangrove_roots",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "dec:crate",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "dec:enchanted_summoner",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "dec:eye_of_nature_log",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "dec:frozen_crate",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "dec:lurk_log",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "dec:monitor",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "dec:monitor_activated",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "dec:plain_tower_summoner",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "dec:purpur_summoner",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "dec:trellis",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     },
                     {
                         "block": "dec:trellis_cover",
-                        "speed": 12,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 12
                     }
                 ],
                 "on_dig": {

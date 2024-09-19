@@ -5606,7 +5606,7 @@ var __webpack_exports__ = {};
             }), this.despawn()
         }
         onKilled(t) {
-            this.destroyBossEntity(), t.damageSource.cause === e.EntityDamageCause.suicide && this.stopBarrier(), super.onKilled(t)
+            this.destroyBossEntity(), t.damageSource.cause === e.EntityDamageCause.self_destruct && this.stopBarrier(), super.onKilled(t)
         }
         onSpawn() {
             super.onSpawn()
@@ -5643,7 +5643,7 @@ var __webpack_exports__ = {};
                     }]
                 }), console.warn("onWin"), this.stopBarrier(), this.music.stop()
             }
-            t.damageSource.cause === e.EntityDamageCause.suicide && this.music.stop(), super.onKilled(t)
+            t.damageSource.cause === e.EntityDamageCause.self_destruct && this.music.stop(), super.onKilled(t)
         }
         onFail() {
             this.music.stop(), super.onFail()
@@ -9126,7 +9126,7 @@ var __webpack_exports__ = {};
             return new oi(this, e, t)
         }
     }
-    bi([(0, k.K)(u.gw.beforeChatSend, ((e, t) => "time" === t.message)), vi("design:type", Function), vi("design:paramtypes", [e.ChatSendBeforeEvent]), vi("design:returntype", void 0)], _i.prototype, "time", null), bi([(0, k.K)(u.gw.afterEntityHurt, ((t, n) => t.setting.damageShow && n.damageSource.cause !== e.EntityDamageCause.suicide)), vi("design:type", Function), vi("design:paramtypes", [e.EntityHurtAfterEvent]), vi("design:returntype", void 0)], _i.prototype, "damageShow", null);
+    bi([(0, k.K)(u.gw.beforeChatSend, ((e, t) => "time" === t.message)), vi("design:type", Function), vi("design:paramtypes", [e.ChatSendBeforeEvent]), vi("design:returntype", void 0)], _i.prototype, "time", null), bi([(0, k.K)(u.gw.afterEntityHurt, ((t, n) => t.setting.damageShow && n.damageSource.cause !== e.EntityDamageCause.self_destruct)), vi("design:type", Function), vi("design:paramtypes", [e.EntityHurtAfterEvent]), vi("design:returntype", void 0)], _i.prototype, "damageShow", null);
     class ki {
         constructor(e, t, n, s) {
             this.head = e, this.chest = t, this.legs = n, this.boots = s

@@ -151,6 +151,12 @@ async function compileExItem(path: string) {
                     delete food["on_consume"];
                 }
             }
+            if ("minecraft:digger" in components) {
+                let food = components["minecraft:digger"] as JSONObject;
+                if ("on_dig" in food) {
+                    delete food["on_dig"];
+                }
+            }
 
             let i = item["components"] as JSONObject;
 
@@ -164,22 +170,12 @@ async function compileExItem(path: string) {
                 delete i["minecraft:on_use"];
             }
 
+            delete i["minecraft:weapon"];
+            delete i["minecraft:chargeable"];
 
-            const custom = [] as string[];
-            const list = [
-                "chargeable",
-                "weapon"
-            ]
-            for (let j of list) {
-                if (minecraft(j) in i) {
-                    custom.push(ex(j));
-                    delete i[minecraft(j)];
-                }
-            }
-
-            if (custom.length > 0) {
-                i["minecraft:custom_components"] = custom;
-            }
+            // if (custom.length > 0) {
+            //     i["minecraft:custom_components"] = custom;
+            // }
 
             delete item["events"];
 
@@ -232,7 +228,7 @@ async function compileExBlock(path: string) {
             if (minecraft("ticking") in i) {
                 custom.push(ex("ticking"));
                 i[minecraft("tick")] = {
-                    "interval_range": ((i[minecraft("ticking")] as JSONObject).range as number[]).map(e => e * 20)
+                    "interval_range": ((i[minecraft("ticking")] as JSONObject).range as number[]).map(e => e * 1)
                 };
                 delete i[minecraft("ticking")];
             }

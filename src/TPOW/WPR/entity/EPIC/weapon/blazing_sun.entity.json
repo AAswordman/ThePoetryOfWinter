@@ -19,14 +19,12 @@
 				"animate": [
 				  "particle",
 				  "spawn",
-				  "move_controller",
 				  "attack_controller",
 				  "death1_controller"
 				]
 			  },
 			"animations": {	
-				"particle":"controller.animation.epic_base.particle",		
-				"move_controller": "controller.animation.blazing_sun.move",
+				"particle":"controller.animation.epic_base.particle",
 			    "attack_controller": "controller.animation.blazing_sun.attack",
 			    "death1_controller": "controller.animation.blazing_sun.death1",
                 "spawn":"animation.blazing_sun.spawn",

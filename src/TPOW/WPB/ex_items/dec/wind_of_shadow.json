@@ -70,7 +70,6 @@
                 "slot": "sword"
             },
             "minecraft:chargeable": {
-                "movement_modifier": 1.4,
                 "on_complete": {
                     "event": "skill_end",
                     "target": "self"
@@ -98,6 +97,7 @@
             },
             "minecraft:hand_equipped": true,
             "minecraft:use_modifiers": {
+                "movement_modifier": 1.0,
                 "use_duration": 3
             },
             "minecraft:tags": {

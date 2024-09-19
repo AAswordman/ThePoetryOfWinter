@@ -61,7 +61,7 @@
         "offset": [
           0,
           0,
-          1
+          0
         ],
         "destroy_on_hurt": false,
         "uncertaintyBase": 10.0,

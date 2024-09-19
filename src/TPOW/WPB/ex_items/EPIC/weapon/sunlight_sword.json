@@ -27,7 +27,6 @@
                 }
             },
             "minecraft:chargeable": {
-                "movement_modifier": 0.6,
                 "on_complete": {
                     "event": "attack3",
                     "target": "self"
@@ -69,6 +68,7 @@
                 "value": 10
             },
             "minecraft:use_modifiers": {
+                "movement_modifier": 0.6,
                 "use_duration": 20
             }
         },

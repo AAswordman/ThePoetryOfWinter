@@ -35,7 +35,6 @@
                 }
             },
             "minecraft:chargeable": {
-                "movement_modifier": 1.5,
                 "on_complete": {
                     "event": "attack3",
                     "target": "self",
@@ -74,6 +73,7 @@
             "minecraft:max_stack_size": 1,
             "minecraft:mining_speed": 1,
             "minecraft:use_modifiers": {
+                "movement_modifier": 1.0,
                 "use_duration": 3.5
             },
             "minecraft:tags": {

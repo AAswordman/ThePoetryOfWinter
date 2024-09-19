@@ -22,13 +22,11 @@
 				],
 				"animate": [
 					"move",
-					"move_controller",
 					"particle"
 				]
 			},
 			"animations": {
 				"particle": "controller.animation.sunlight_arrow.particle",
-				"move_controller": "controller.animation.blazing_sun.move",
 				"move": "animation.arrow.move"
 			},
 

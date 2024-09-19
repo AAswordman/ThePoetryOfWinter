@@ -81,26 +81,6 @@
             "attack1": {
                 "sequence": [
                     {
-                        "sequence": [
-                            {
-                                "run_command": {
-                                    "command": [
-                                        "execute as @s unless score @s skill_cooldown matches 2.. run scoreboard players set @s skill_cooldown 8",
-                                        "playsound mob.warden.attack @a[r=3]",
-                                        "tag @s add skill_user"
-                                    ],
-                                    "target": "holder"
-                                }
-                            },
-                            {
-                                "damage": {
-                                    "type": "magic",
-                                    "amount": 1
-                                }
-                            }
-                        ]
-                    },
-                    {
                         "condition": "query.scoreboard('skill_cooldown') == 0",
                         "sequence": [
                             {
@@ -125,12 +105,12 @@
                                         "execute as @s[tag=!echo_record_4] run effect @e[r=1.5,c=4,tag=!skill_user,tag=!wbmsyh] wither 1 1 true",
                                         "execute as @s[tag=!echo_record_4] run effect @e[r=1.5,c=4,tag=!skill_user,tag=!wbmsyh] weakness 1 1 true",
                                         "damage @s[tag=echo_record_4] 40 magic entity @p[tag=skill_user]",
-                                        "damage @s[tag=echo_record_4] 0 suicide entity @p[tag=skill_user]",
-                                        "damage @s[tag=echo_record_4] 0 suicide entity @p[tag=skill_user]",
-                                        "damage @s[tag=echo_record_4] 0 suicide entity @p[tag=skill_user]",
-                                        "damage @s[tag=echo_record_4] 0 suicide entity @p[tag=skill_user]",
-                                        "damage @s[tag=echo_record_4] 0 suicide entity @p[tag=skill_user]",
-                                        "damage @s[tag=echo_record_4] 0 suicide entity @p[tag=skill_user]",
+                                        "damage @s[tag=echo_record_4] 0 self_destruct entity @p[tag=skill_user]",
+                                        "damage @s[tag=echo_record_4] 0 self_destruct entity @p[tag=skill_user]",
+                                        "damage @s[tag=echo_record_4] 0 self_destruct entity @p[tag=skill_user]",
+                                        "damage @s[tag=echo_record_4] 0 self_destruct entity @p[tag=skill_user]",
+                                        "damage @s[tag=echo_record_4] 0 self_destruct entity @p[tag=skill_user]",
+                                        "damage @s[tag=echo_record_4] 0 self_destruct entity @p[tag=skill_user]",
                                         "execute as @s[tag=echo_record_4] run damage @e[r=3,tag=!skill_user,tag=!wbmsyh] 15 magic entity @p[tag=skill_user]",
                                         "execute as @s[tag=echo_record_4] run effect @e[r=3,tag=!skill_user,tag=!wbmsyh] slowness 3 4 true",
                                         "execute as @s[tag=echo_record_4] run effect @e[r=3,tag=!skill_user,tag=!wbmsyh] wither 3 4 true",
@@ -154,6 +134,26 @@
                                         "playsound epic.weapon.attack2 @a[r=2] ~~~ 0.3"
                                     ],
                                     "target": "holder"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "sequence": [
+                            {
+                                "run_command": {
+                                    "command": [
+                                        "execute as @s unless score @s skill_cooldown matches 2.. run scoreboard players set @s skill_cooldown 8",
+                                        "playsound mob.warden.attack @a[r=3]",
+                                        "tag @s add skill_user"
+                                    ],
+                                    "target": "holder"
+                                }
+                            },
+                            {
+                                "damage": {
+                                    "type": "magic",
+                                    "amount": 1
                                 }
                             }
                         ]

@@ -30,24 +30,15 @@
                 "destroy_speeds": [
                     {
                         "block": "minecraft:web",
-                        "speed": 15,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 15
                     },
                     {
                         "block": "minecraft:bamboo",
-                        "speed": 15,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 15
                     },
                     {
                         "block": "dec:christmas_gift",
-                        "speed": 15,
-                        "on_dig": {
-                            "event": "attack"
-                        }
+                        "speed": 15
                     }
                 ],
                 "on_dig": {
