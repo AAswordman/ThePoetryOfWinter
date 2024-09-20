@@ -12,7 +12,10 @@
         "minecraft:environment_sensor": {
           "triggers": {
             "filters": {
-              "test": "is_underwater", "subject": "self", "operator": "==", "value": true
+              "test": "is_underwater",
+              "subject": "self",
+              "operator": "==",
+              "value": true
             },
             "event": "minecraft:start_transforming"
           }
@@ -22,7 +25,10 @@
         "minecraft:environment_sensor": {
           "triggers": {
             "filters": {
-              "test": "is_underwater", "subject": "self", "operator": "==", "value": false
+              "test": "is_underwater",
+              "subject": "self",
+              "operator": "==",
+              "value": false
             },
             "event": "minecraft:stop_transforming"
           }
@@ -35,7 +41,6 @@
           }
         }
       },
-
       "minecraft:convert_to_drowned": {
         "minecraft:transformation": {
           "into": "minecraft:drowned<minecraft:as_adult>",
@@ -45,10 +50,8 @@
             "value": 15
           }
         },
-        "minecraft:is_shaking": {
-        }
+        "minecraft:is_shaking": {}
       },
-
       "minecraft:convert_to_baby_drowned": {
         "minecraft:transformation": {
           "into": "minecraft:drowned<minecraft:as_baby>",
@@ -58,10 +61,8 @@
             "value": 15
           }
         },
-        "minecraft:is_shaking": {
-        }
+        "minecraft:is_shaking": {}
       },
-
       "minecraft:zombie_baby": {
         "minecraft:experience_reward": {
           "on_death": "query.last_hit_by_player ? 12 + (query.equipment_count * Math.Random(1,3)) : 0"
@@ -82,7 +83,6 @@
           "value": 0.35
         }
       },
-
       "minecraft:zombie_adult": {
         "minecraft:experience_reward": {
           "on_death": "query.last_hit_by_player ? 5 + (query.equipment_count * Math.Random(1,3)) : 0"
@@ -96,7 +96,11 @@
             "zombie"
           ],
           "seats": {
-            "position": [ 0.0, 1.1, -0.35 ],
+            "position": [
+              0.0,
+              1.1,
+              -0.35
+            ],
             "lock_rider_rotation": 0
           }
         },
@@ -107,7 +111,6 @@
           "track_target": true
         }
       },
-
       "minecraft:frank": {
         "minecraft:experience_reward": {
           "on_death": "query.last_hit_by_player ? 5 + (query.equipment_count * Math.Random(10,17)) : 0"
@@ -147,7 +150,6 @@
           ]
         }
       },
-
       "minecraft:zombie_jockey": {
         "minecraft:behavior.find_mount": {
           "priority": 1,
@@ -182,37 +184,34 @@
             }
           ]
         }
-      } 
+      }
     },
-
     "components": {
-      "minecraft:nameable": {
-      },
+      "minecraft:nameable": {},
       "minecraft:type_family": {
-        "family": [ "zombie", "undead", "monster", "mob" ]
+        "family": [
+          "zombie",
+          "undead",
+          "monster",
+          "mob"
+        ]
       },
-      "minecraft:equip_item": {
-      },
+      "minecraft:equip_item": {},
       "minecraft:collision_box": {
         "width": 0.6,
         "height": 1.9
       },
-      "minecraft:burns_in_daylight": {
-      },
-      "minecraft:movement.basic": {
-      },
+      "minecraft:burns_in_daylight": {},
+      "minecraft:movement.basic": {},
       "minecraft:navigation.walk": {
         "is_amphibious": true,
         "can_pass_doors": true,
         "can_walk": true,
         "can_break_doors": true
       },
-      "minecraft:annotation.break_door": {
-      },
-      "minecraft:jump.static": {
-      },
-      "minecraft:can_climb": {
-      },
+      "minecraft:annotation.break_door": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
       "minecraft:health": {
         "value": {
           "range_min": 18,
@@ -222,7 +221,12 @@
       "minecraft:hurt_on_condition": {
         "damage_conditions": [
           {
-            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
             "cause": "lava",
             "damage_per_tick": 4
           }
@@ -318,7 +322,7 @@
             "item": "minecraft:turtle_helmet",
             "want_amount": 1,
             "surplus_amount": 1,
-            "priority":  6
+            "priority": 6
           },
           {
             "item": "minecraft:skull:0",
@@ -448,7 +452,6 @@
           }
         ]
       },
-
       "minecraft:environment_sensor": {
         "triggers": {
           "filters": {
@@ -459,10 +462,9 @@
           "event": "minecraft:start_transforming"
         }
       },
-
-    "minecraft:despawn": {
-      "despawn_from_distance": {}
-     },
+      "minecraft:despawn": {
+        "despawn_from_distance": {}
+      },
       "minecraft:behavior.equip_item": {
         "priority": 2
       },
@@ -514,9 +516,21 @@
           {
             "filters": {
               "any_of": [
-                { "test": "is_family", "subject": "other", "value": "player" },
-                { "test": "is_family", "subject": "other", "value": "snowgolem" },
-                { "test": "is_family", "subject": "other", "value": "irongolem" }
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "snowgolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                }
               ]
             },
             "max_dist": 35
@@ -524,8 +538,16 @@
           {
             "filters": {
               "any_of": [
-                { "test": "is_family", "subject": "other", "value": "villager" },
-                { "test": "is_family", "subject": "other", "value": "wandering_trader" }
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "villager"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "wandering_trader"
+                }
               ]
             },
             "max_dist": 35,
@@ -534,22 +556,29 @@
           {
             "filters": {
               "all_of": [
-                { "test": "is_family", "subject": "other", "value": "baby_turtle" },
-                { "test": "in_water", "subject": "other", "operator": "!=", "value": true }
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "baby_turtle"
+                },
+                {
+                  "test": "in_water",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": true
+                }
               ]
             },
             "max_dist": 35
           }
         ]
       },
-      "minecraft:physics": {
-      },
+      "minecraft:physics": {},
       "minecraft:pushable": {
         "is_pushable": true,
         "is_pushable_by_piston": true
       }
     },
-
     "events": {
       "minecraft:entity_spawned": {
         "randomize": [
@@ -565,20 +594,17 @@
           },
           {
             "weight": 50,
-            "remove": {
-            },
+            "remove": {},
             "add": {
               "component_groups": [
                 "minecraft:zombie_baby",
                 "minecraft:can_have_equipment"
               ]
-
             }
           },
           {
             "weight": 10,
-            "remove": {
-            },
+            "remove": {},
             "add": {
               "component_groups": [
                 "minecraft:zombie_baby",
@@ -589,8 +615,7 @@
           },
           {
             "weight": 1,
-            "remove": {
-            },
+            "remove": {},
             "add": {
               "component_groups": [
                 "minecraft:frank"
@@ -632,7 +657,9 @@
           ]
         },
         "remove": {
-          "component_groups": [ "minecraft:look_to_start_drowned_transformation" ]
+          "component_groups": [
+            "minecraft:look_to_start_drowned_transformation"
+          ]
         }
       },
       "minecraft:stop_transforming": {
@@ -656,10 +683,14 @@
               "value": "minecraft:is_baby"
             },
             "add": {
-              "component_groups": [ "minecraft:convert_to_drowned" ]
+              "component_groups": [
+                "minecraft:convert_to_drowned"
+              ]
             },
             "remove": {
-              "component_groups": [ "minecraft:start_drowned_transformation" ]
+              "component_groups": [
+                "minecraft:start_drowned_transformation"
+              ]
             }
           },
           {
@@ -668,10 +699,14 @@
               "value": "minecraft:is_baby"
             },
             "add": {
-              "component_groups": [ "minecraft:convert_to_baby_drowned" ]
+              "component_groups": [
+                "minecraft:convert_to_baby_drowned"
+              ]
             },
             "remove": {
-              "component_groups": [ "minecraft:start_drowned_transformation" ]
+              "component_groups": [
+                "minecraft:start_drowned_transformation"
+              ]
             }
           }
         ]

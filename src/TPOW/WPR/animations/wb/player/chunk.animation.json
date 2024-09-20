@@ -18,6 +18,16 @@
                     "rotation": ["0", "0", "0"],
                     "position": ["-345 + -500", "179 + (query.is_swimming * -24.25)", "10.002"],
                     "scale": "5.2"
+                },
+                "cooling_bg": {
+                    "rotation": ["0", "0", "0"],
+                    "position": ["-311.5 + -500", "128 + (query.is_swimming * -24.25)", "10.002"],
+                    "scale": "0.4"
+                },
+                "cooling_bar": {
+                    "rotation": ["0", "0", "0"],
+                    "position": ["-311.5 + -500", "128 + (query.is_swimming * -24.25)", "10.002"],
+                    "scale": "0.4"
                 }
             }
         }

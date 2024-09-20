@@ -300,8 +300,8 @@
             0,
             0
         ],
-        "anchor_from": "bottom_right",
-        "anchor_to": "bottom_right",
+        "anchor_from": "center",
+        "anchor_to": "center",
         "type": "custom"
     },
     "boss_health_label": {
@@ -7013,8 +7013,8 @@
                     "controls": [
                         {
                             "chunkmap": {
-                                "anchor_from": "bottom_right",
-                                "anchor_to": "bottom_right",
+                                "anchor_from": "center",
+                                "anchor_to": "center",
                                 "renderer": "live_player_renderer",
                                 "size": [
                                     14,

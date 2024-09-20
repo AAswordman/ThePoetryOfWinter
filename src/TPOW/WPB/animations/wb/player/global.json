@@ -10,10 +10,6 @@
           "variable.wb_last_position_z=query.position(2);"
         ],
         "0.4": [
-          "variable.wb_ground_speed=Math.sqrt(Math.pow(variable.wb_last_position_x-query.position(0),2)+Math.pow(variable.wb_last_position_z-query.position(2),2))/0.4;",
-
-          "variable.wb_player_speed = variable.wb_player_speed+(variable.wb_ground_speed-variable.wb_player_speed)/2;",
-
           "variable.global_cooling = variable.global_cooling > 0 ? variable.global_cooling - 0.5 * query.scoreboard('wbwqlqjs') / 100:0;",
           "variable.global_cooling_result = Math.round(20*variable.global_cooling/variable.global_cooling_total);",
           "/execute as @s[scores={wbkjlq=1..}] at @s run tag @s add wbkjlq",

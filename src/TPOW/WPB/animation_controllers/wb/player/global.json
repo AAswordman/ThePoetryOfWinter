@@ -21,9 +21,6 @@
             {
               "cooling": "(1.0)"
             }
-          ],
-          "on_entry": [
-            "variable.wb_player_speed=0;"
           ]
         },
         "cooling": {

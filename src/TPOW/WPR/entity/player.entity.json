@@ -12,6 +12,8 @@
                 "default": "textures/entity/steve",
                 "cape": "textures/entity/cape_invisible",
                 "cbg2": "textures/sketch/chunkbg2",
+                "cooling": "textures/pom_ui/cooling_bar",
+                "cooling_bg": "textures/pom_ui/cooling_bg",
                 "cbg_wg": "textures/sketch/cbg_wg",
                 "cbg_ruin1": "textures/sketch/ruin"
             },
@@ -20,7 +22,9 @@
                 "cape": "geometry.cape",
                 "cbg": "geometry.cbg",
                 "cbg_wg": "geometry.cbg_wg",
-                "cbg_ruin1": "geometry.cbg_ruin1"
+                "cbg_ruin1": "geometry.cbg_ruin1",
+                "cooling":"geometry.cooling",
+                "cooling_bg":"geometry.cooling_bg"
             },
             "scripts": {
                 "scale": "0.9375",
@@ -129,10 +133,10 @@
                 "shield_block_main_hand": "animation.player.shield_block_main_hand",
                 "shield_block_off_hand": "animation.player.shield_block_off_hand",
                 "blink": "controller.animation.persona.blink",
-
                 "chunk": "animation.player.chunk"
             },
-            "render_controllers": [{
+            "render_controllers": [
+                {
                     "controller.render.player.first_person": "variable.is_first_person"
                 },
                 {
@@ -140,6 +144,9 @@
                 },
                 {
                     "controller.render.player.map": "variable.map_face_icon"
+                },
+                {
+                    "controller.render.cooling": "query.is_alive && query.is_in_ui && query.is_gliding == 0 && query.is_riding == 0"
                 }
                 // {
                 //     "controller.render.cbg": "query.is_alive && query.is_in_ui && query.is_gliding == 0 && query.is_riding == 0"

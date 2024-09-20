@@ -1,21 +1,125 @@
 {
     "format_version": "1.12.0",
-    "minecraft:geometry": [{
+    "minecraft:geometry": [
+        {
             "description": {
                 "identifier": "geometry.cbg",
                 "texture_width": 16,
                 "texture_height": 16
             },
-            "bones": [{
-                "name": "cbg",
-                "pivot": [0.0, 16.0, 0.0],
-                "cubes": [{
-                    "origin": [-8.0, 8.0, 0.0],
-                    "size": [16.0, 16.0, 0.0],
-                    "uv": [0, 0],
-                    "rotation": [0.0, 0.0, 0.0]
-                }]
-            }]
+            "bones": [
+                {
+                    "name": "cbg",
+                    "pivot": [
+                        0.0,
+                        16.0,
+                        0.0
+                    ],
+                    "cubes": [
+                        {
+                            "origin": [
+                                -8.0,
+                                8.0,
+                                0.0
+                            ],
+                            "size": [
+                                16.0,
+                                16.0,
+                                0.0
+                            ],
+                            "uv": [
+                                0,
+                                0
+                            ],
+                            "rotation": [
+                                0.0,
+                                0.0,
+                                0.0
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": {
+                "identifier": "geometry.cooling",
+                "texture_width": 96,
+                "texture_height": 16
+            },
+            "bones": [
+                {
+                    "name": "cooling_bar",
+                    "pivot": [
+                        0.0,
+                        16.0,
+                        0.0
+                    ],
+                    "cubes": [
+                        {
+                            "origin": [
+                                -48.0,
+                                8.0,
+                                -0.1
+                            ],
+                            "size": [
+                                96.0,
+                                16.0,
+                                0.0
+                            ],
+                            "uv": [
+                                0,
+                                0
+                            ],
+                            "rotation": [
+                                0.0,
+                                0.0,
+                                0.0
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "description": {
+                "identifier": "geometry.cooling_bg",
+                "texture_width": 96,
+                "texture_height": 16
+            },
+            "bones": [
+                {
+                    "name": "cooling_bg",
+                    "pivot": [
+                        0.0,
+                        16.0,
+                        0.0
+                    ],
+                    "cubes": [
+                        {
+                            "origin": [
+                                -48.0,
+                                8.0,
+                                0.0
+                            ],
+                            "size": [
+                                96.0,
+                                16.0,
+                                0.0
+                            ],
+                            "uv": [
+                                0,
+                                0
+                            ],
+                            "rotation": [
+                                0.0,
+                                0.0,
+                                0.0
+                            ]
+                        }
+                    ]
+                }
+            ]
         },
         {
             "description": {
@@ -23,21 +127,47 @@
                 "texture_width": 32,
                 "texture_height": 32
             },
-            "bones": [{
-                "name": "cbg_wg",
-                "pivot": [0.0, 16.0, 0.0],
-                "cubes": [{
-                    "origin": [-8.0, 8.0, -0.1],
-                    "size": [14.0, 14.0, 0.0],
-                    "uv": {
-                        "north": {
-                            "uv": [0, 0],
-                            "uv_size": [14, 14]
+            "bones": [
+                {
+                    "name": "cbg_wg",
+                    "pivot": [
+                        0.0,
+                        16.0,
+                        0.0
+                    ],
+                    "cubes": [
+                        {
+                            "origin": [
+                                -8.0,
+                                8.0,
+                                -0.1
+                            ],
+                            "size": [
+                                14.0,
+                                14.0,
+                                0.0
+                            ],
+                            "uv": {
+                                "north": {
+                                    "uv": [
+                                        0,
+                                        0
+                                    ],
+                                    "uv_size": [
+                                        14,
+                                        14
+                                    ]
+                                }
+                            },
+                            "rotation": [
+                                0.0,
+                                0.0,
+                                0.0
+                            ]
                         }
-                    },
-                    "rotation": [0.0, 0.0, 0.0]
-                }]
-            }]
+                    ]
+                }
+            ]
         },
         {
             "description": {
@@ -45,21 +175,47 @@
                 "texture_width": 32,
                 "texture_height": 32
             },
-            "bones": [{
-                "name": "cbg_ruin1",
-                "pivot": [0.0, 16.0, 0.0],
-                "cubes": [{
-                    "origin": [-8.0, 8.0, -0.1],
-                    "size": [14.0, 14.0, 0.0],
-                    "uv": {
-                        "north": {
-                            "uv": [0, 0],
-                            "uv_size": [14, 14]
+            "bones": [
+                {
+                    "name": "cbg_ruin1",
+                    "pivot": [
+                        0.0,
+                        16.0,
+                        0.0
+                    ],
+                    "cubes": [
+                        {
+                            "origin": [
+                                -8.0,
+                                8.0,
+                                -0.1
+                            ],
+                            "size": [
+                                14.0,
+                                14.0,
+                                0.0
+                            ],
+                            "uv": {
+                                "north": {
+                                    "uv": [
+                                        0,
+                                        0
+                                    ],
+                                    "uv_size": [
+                                        14,
+                                        14
+                                    ]
+                                }
+                            },
+                            "rotation": [
+                                0.0,
+                                0.0,
+                                0.0
+                            ]
                         }
-                    },
-                    "rotation": [0.0, 0.0, 0.0]
-                }]
-            }]
+                    ]
+                }
+            ]
         }
     ]
 }
