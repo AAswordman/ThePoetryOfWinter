@@ -18,6 +18,23 @@
                 }
             }
         },
+        "controller.animation.player.wb.send_attack": {
+            "states": {
+                "default": {
+                    "transitions": [{
+                        "b": "variable.attack_time"
+                    }]
+                },
+                "b": {
+                    "on_entry": [
+                        "/scriptevent wb:attack_send msg"
+                    ],
+                    "transitions": [{
+                        "default": "!variable.attack_time"
+                    }]
+                }
+            }
+        },
         "controller.animation.player.wb.eff": {
             "states": {
                 "default": {
