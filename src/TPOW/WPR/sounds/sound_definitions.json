@@ -1,44 +1,54 @@
 {
-//===========================EPIC==================================
-        "epic.weapon.attack1": {
-            "sounds": [{
+    //===========================EPIC==================================
+    "epic.weapon.attack1": {
+        "sounds": [
+            {
                 "name": "sounds/EPIC/attack/sweep1",
                 "volume": 2.4
-            }, {
+            },
+            {
                 "name": "sounds/EPIC/attack/sweep2",
                 "volume": 2.4
-            }, {
+            },
+            {
                 "name": "sounds/EPIC/attack/sweep3",
                 "volume": 2.4
-            }, {
+            },
+            {
                 "name": "sounds/EPIC/attack/sweep4",
                 "volume": 2.4
-            }, {
+            },
+            {
                 "name": "sounds/EPIC/attack/sweep5",
                 "volume": 2.4
-            }, {
+            },
+            {
                 "name": "sounds/EPIC/attack/sweep6",
                 "volume": 2.4
-            }, {
+            },
+            {
                 "name": "sounds/EPIC/attack/sweep7",
                 "volume": 2.4
-            }, {
+            },
+            {
                 "name": "sounds/EPIC/attack/sweep8",
                 "volume": 2.4
-            }, {
+            },
+            {
                 "name": "sounds/EPIC/attack/sweep9",
                 "volume": 2.4
             }
-          ]
-        },
-      "epic.weapon.attack2": {
-            "sounds": [{
+        ]
+    },
+    "epic.weapon.attack2": {
+        "sounds": [
+            {
                 "name": "sounds/EPIC/attack/sword_draw",
                 "volume": 3.6
             }
-          ]
-        },
-//=================================================================
+        ]
+    },
+    //=================================================================
     "mob.mcow.say": {
         "category": "hostile",
         "sounds": [
@@ -69,112 +79,154 @@
             "sounds/wb_entity/2_x/stone"
         ]
     },
+
+    "attack.sword.heavy_hit":{
+        "sounds": [
+            {
+                "name": "sounds/wb_entity/base/sword_heavy_hit",
+                "volume": 1.9
+            }
+        ]
+    },
+    "attack.sword.sweep":{
+        "sounds": [
+            {
+                "name": "sounds/wb_entity/base/sword_heavy_sweep",
+                "volume": 0.6
+            }
+        ]
+    },
+
     "music.wb.anger_of_ancient": {
         "category": "music",
-        "sounds": [{
-            "name": "sounds/wb/anger_of_ancient",
-            "stream": true,
-            "volume": 0.65,
-            "load_on_low_memory": true
-        }]
+        "sounds": [
+            {
+                "name": "sounds/wb/anger_of_ancient",
+                "stream": true,
+                "volume": 0.65,
+                "load_on_low_memory": true
+            }
+        ]
     },
     "music.wb.unknown_world": {
         "category": "music",
-        "sounds": [{
-            "name": "sounds/wb/unknown_world",
-            "stream": true,
-            "volume": 0.65,
-            "load_on_low_memory": true
-        }]
+        "sounds": [
+            {
+                "name": "sounds/wb/unknown_world",
+                "stream": true,
+                "volume": 0.65,
+                "load_on_low_memory": true
+            }
+        ]
     },
     "music.wb.everlasting_winter_ambient": {
         "category": "music",
-        "sounds": [{
-            "name": "sounds/wb/everlasting_winter_ambient",
-            "stream": true,
-            "volume": 0.5,
-            "load_on_low_memory": true
-        }]
+        "sounds": [
+            {
+                "name": "sounds/wb/everlasting_winter_ambient",
+                "stream": true,
+                "volume": 0.5,
+                "load_on_low_memory": true
+            }
+        ]
     },
     "music.wb.ghost_tears": {
         "category": "music",
-        "sounds": [{
-            "name": "sounds/wb/ghost_tears",
-            "stream": true,
-            "volume": 0.65,
-            "load_on_low_memory": true
-        }]
+        "sounds": [
+            {
+                "name": "sounds/wb/ghost_tears",
+                "stream": true,
+                "volume": 0.65,
+                "load_on_low_memory": true
+            }
+        ]
     },
     "music.wb.the_peotry_of_ghost": {
         "category": "music",
-        "sounds": [{
-            "name": "sounds/wb/the_peotry_of_ghost",
-            "stream": true,
-            "volume": 0.65,
-            "load_on_low_memory": true
-        }]
+        "sounds": [
+            {
+                "name": "sounds/wb/the_peotry_of_ghost",
+                "stream": true,
+                "volume": 0.65,
+                "load_on_low_memory": true
+            }
+        ]
     },
     "music.wb.from_the_burning_deep": {
         "category": "music",
-        "sounds": [{
-            "name": "sounds/wb/from_the_burning_deep",
-            "stream": true,
-            "volume": 0.65,
-            "load_on_low_memory": true
-        }]
+        "sounds": [
+            {
+                "name": "sounds/wb/from_the_burning_deep",
+                "stream": true,
+                "volume": 0.65,
+                "load_on_low_memory": true
+            }
+        ]
     },
     "music.wb.twin_guard": {
         "category": "music",
-        "sounds": [{
-            "name": "sounds/wb/twin_guard",
-            "stream": true,
-            "volume": 0.5,
-            "load_on_low_memory": true
-        }]
+        "sounds": [
+            {
+                "name": "sounds/wb/twin_guard",
+                "stream": true,
+                "volume": 0.5,
+                "load_on_low_memory": true
+            }
+        ]
     },
     "music.wb.candlelight_afterthought": {
         "category": "music",
-        "sounds": [{
-            "name": "sounds/wb/candlelight_afterthought",
-            "stream": true,
-            "volume": 0.5,
-            "load_on_low_memory": true
-        }]
+        "sounds": [
+            {
+                "name": "sounds/wb/candlelight_afterthought",
+                "stream": true,
+                "volume": 0.5,
+                "load_on_low_memory": true
+            }
+        ]
     },
     "music.wb.chasing_stage2": {
         "category": "music",
-        "sounds": [{
-            "name": "sounds/wb/chasing_stage2",
-            "stream": true,
-            "volume": 0.8,
-            "load_on_low_memory": true
-        }]
+        "sounds": [
+            {
+                "name": "sounds/wb/chasing_stage2",
+                "stream": true,
+                "volume": 0.8,
+                "load_on_low_memory": true
+            }
+        ]
     },
     "music.wb.chasing_stage1": {
         "category": "music",
-        "sounds": [{
-            "name": "sounds/wb/chasing_stage1",
-            "stream": true,
-            "volume": 0.8,
-            "load_on_low_memory": true
-        }]
+        "sounds": [
+            {
+                "name": "sounds/wb/chasing_stage1",
+                "stream": true,
+                "volume": 0.8,
+                "load_on_low_memory": true
+            }
+        ]
     },
     "music.wb.chasing_stage3": {
         "category": "music",
-        "sounds": [{
-            "name": "sounds/wb/chasing_stage3",
-            "stream": true,
-            "volume": 0.8,
-            "load_on_low_memory": true
-        }]
+        "sounds": [
+            {
+                "name": "sounds/wb/chasing_stage3",
+                "stream": true,
+                "volume": 0.8,
+                "load_on_low_memory": true
+            }
+        ]
     },
     "music.none10": {
         "category": "music",
-        "sounds": [{
-            "name": "sounds/None",
-            "stream": true,
-            "volume": 0.5,
-            "load_on_low_memory": true
-        }]
+        "sounds": [
+            {
+                "name": "sounds/None",
+                "stream": true,
+                "volume": 0.5,
+                "load_on_low_memory": true
+            }
+        ]
     }
 }
