@@ -7,77 +7,77 @@
 			"is_summonable": true,
 			"is_experimental": false,
 			"scripts": {
-			  "animate": [
-				"disappear"
-			  ]
+				"animate": [
+					"disappear"
+				]
 			},
 			"animations": {
-			  "disappear": "animation.disappear.10s"
+				"disappear": "animation.disappear.10s"
 			}
 		},
 		"component_groups": {
 			"minecraft:tame": {
-			  "minecraft:behavior.owner_hurt_by_target": {
-				"priority": 1
-			  },
-			  "minecraft:behavior.owner_hurt_target": {
-				"priority": 2
-			  },
-			  "minecraft:is_tamed": {},
-			  "minecraft:behavior.follow_owner": {
-				"priority": 2,
-				"speed_multiplier": 1.0,
-				"start_distance": 5,
-				"stop_distance": 1
-			  }
+				"minecraft:behavior.owner_hurt_by_target": {
+					"priority": 1
+				},
+				"minecraft:behavior.owner_hurt_target": {
+					"priority": 2
+				},
+				"minecraft:is_tamed": {},
+				"minecraft:behavior.follow_owner": {
+					"priority": 2,
+					"speed_multiplier": 1.0,
+					"start_distance": 5,
+					"stop_distance": 1
+				}
 			},
 			"minecraft:despawn": {
-			  "minecraft:instant_despawn": {}
+				"minecraft:instant_despawn": {}
 			}
 		},
 		"components": {
 			"minecraft:tameable": {
-			  "probability": 1,
-			  "tame_items": [
-				"diamond"
-			  ],
-			  "tame_event": {
-				"event": "minecraft:on_tame",
-				"target": "self"
-			  }
+				"probability": 1,
+				"tame_items": [
+					"diamond"
+				],
+				"tame_event": {
+					"event": "minecraft:on_tame",
+					"target": "self"
+				}
 			},
 			"minecraft:damage_sensor": {
-			  "triggers": [
-				{
-				  "cause": "fall",
-				  "deals_damage": false
-				},
-				{
-				  "on_damage": {
-					"filters": {
-					  "test": "is_family",
-					  "subject": "other",
-					  "operator": "==",
-					  "value": "bullet_by_ghost_flintlock"
-					}
-				  },
-				  "deals_damage": false
-				},
-				{
-				  "on_damage": {
-					"filters": {
-					  "all_of": [
-						{
-						  "test": "has_damage",
-						  "value": "fatal"
-						}
-					  ]
+				"triggers": [
+					{
+						"cause": "fall",
+						"deals_damage": false
 					},
-					"event": "minecraft:disappear"
-				  },
-				  "deals_damage": false
-				}
-			  ]
+					{
+						"on_damage": {
+							"filters": {
+								"test": "is_family",
+								"subject": "other",
+								"operator": "==",
+								"value": "bullet_by_ghost_flintlock"
+							}
+						},
+						"deals_damage": false
+					},
+					{
+						"on_damage": {
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_damage",
+										"value": "fatal"
+									}
+								]
+							},
+							"event": "minecraft:disappear"
+						},
+						"deals_damage": false
+					}
+				]
 			},
 			"minecraft:follow_range": {
 				"value": 64,
@@ -124,8 +124,8 @@
 				"damage": 4
 			},
 			"minecraft:behavior.leap_at_target": {
-			  "priority": 4,
-			  "target_dist": 0.3
+				"priority": 4,
+				"target_dist": 0.3
 			},
 			"minecraft:behavior.random_stroll": {
 				"priority": 6,
@@ -143,23 +143,23 @@
 				"value": 0.2
 			},
 			"minecraft:behavior.nearest_attackable_target": {
-			  "priority": 2,
-			  "entity_types": [
-				{
-				  "filters": {
-					"any_of": [
-					  {
-						"test": "is_family",
-						"subject": "other",
-						"value": "monster"
-					  }
-					]
-				  },
-				  "max_dist": 16
-				}
-			  ],
-			  "attack_interval": 5,
-			  "must_see": true
+				"priority": 2,
+				"entity_types": [
+					{
+						"filters": {
+							"any_of": [
+								{
+									"test": "is_family",
+									"subject": "other",
+									"value": "monster"
+								}
+							]
+						},
+						"max_dist": 16
+					}
+				],
+				"attack_interval": 5,
+				"must_see": true
 			},
 			"minecraft:physics": {},
 			"minecraft:pushable": {
@@ -169,26 +169,26 @@
 		},
 		"events": {
 			"minecraft:disappear": {
-			  "queue_command": {
-				"command": [
-				  "particle dec:summon_staff_spawn_disappear ~~~",
-				  "event entity @s minecraft:despawn"
-				]
-			  }
+				"queue_command": {
+					"command": [
+						"particle dec:summon_staff_spawn_disappear ~~~",
+						"event entity @s minecraft:despawn"
+					]
+				}
 			},
 			"minecraft:on_tame": {
-			  "add": {
-				"component_groups": [
-				  "minecraft:tame"
-				]
-			  }
+				"add": {
+					"component_groups": [
+						"minecraft:tame"
+					]
+				}
 			},
 			"minecraft:despawn": {
-			  "add": {
-				"component_groups": [
-				  "minecraft:despawn"
-				]
-			  }
+				"add": {
+					"component_groups": [
+						"minecraft:despawn"
+					]
+				}
 			},
 			"minecraft:entity_spawned": {
 				"queue_command": {

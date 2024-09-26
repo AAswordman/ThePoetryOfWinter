@@ -80,7 +80,7 @@
             "minecraft:hand_equipped": true,
             "minecraft:tags": {
                 "tags": [
-                    "comp:equipment_type:melee_weapon"
+                    "comp:equipment_type:melee_weapon_:sword:_"
                 ]
             }
         },

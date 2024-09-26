@@ -4,7 +4,9 @@
         "description": {
             "identifier": "epic:iron_crossbow",
             "menu_category": {
-                "is_hidden_in_commands": false
+                "group": "itemGroup.name.sword",
+                "is_hidden_in_commands": false,
+                "category": "equipment"
             }
         },
         "components": {

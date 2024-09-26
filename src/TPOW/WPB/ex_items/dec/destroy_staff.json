@@ -54,11 +54,6 @@
                     "event": "destroy_staff_use",
                     "target": "self"
                 }
-            },
-            "minecraft:tags": {
-                "tags": [
-                    "comp:equipment_type:magic_weapon"
-                ]
             }
         },
         "events": {

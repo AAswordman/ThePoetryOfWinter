@@ -54,11 +54,6 @@
                     "event": "god_of_destroy_use",
                     "target": "self"
                 }
-            },
-            "minecraft:tags": {
-                "tags": [
-                    "comp:equipment_type:magic_weapon"
-                ]
             }
         },
         "events": {

@@ -142,9 +142,8 @@ async function compileExItem(path) {
             */
             if ("minecraft:food" in components) {
                 let food = components["minecraft:food"];
-                if ("on_consume" in food) {
-                    delete food["on_consume"];
-                }
+                delete food["on_consume"];
+                delete food["using_converts_to"];
             }
             if ("minecraft:digger" in components) {
                 let food = components["minecraft:digger"];
@@ -216,7 +215,7 @@ async function compileExBlock(path) {
             if (minecraft("ticking") in i) {
                 custom.push(ex("ticking"));
                 i[minecraft("tick")] = {
-                    "interval_range": i[minecraft("ticking")].range.map(e => e * 1)
+                    "interval_range": i[minecraft("ticking")].range.map(e => e * 20)
                 };
                 delete i[minecraft("ticking")];
             }

@@ -28,7 +28,7 @@
                     "target": "self"
                 },
                 "nutrition": 0,
-                "can_always_eat": false,
+                "can_always_eat": true,
                 "using_converts_to": "dec:super_armor_core7"
             },
             "minecraft:use_modifiers": {

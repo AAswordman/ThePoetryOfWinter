@@ -105,7 +105,7 @@
             "minecraft:tags": {
                 "tags": [
                     "comp:movement_addition:0.01",
-                    "comp:equipment_type:melee_weapon"
+                    "comp:equipment_type:melee_weapon_:dagger:_"
                 ]
             }
         },

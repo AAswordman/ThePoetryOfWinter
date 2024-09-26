@@ -49,7 +49,7 @@
             },
             "minecraft:tags": {
                 "tags": [
-                    "comp:equipment_type:summon_weapon"
+                    "comp:equipment_type:summon_weapon_:summon_weapon:_"
                 ]
             }
         },
@@ -71,10 +71,15 @@
                                         "playsound item.book.put @a ~~~",
                                         "particle dec:summon_staff_spawn ^^1.6^1.3",
                                         "scoreboard players remove @s wbfl 6",
-                                        "playanimation @s animation.humanoid.staff_use",
-                                        "structure load entity:fire_storm ^^1.6^1.3"
+                                        "playanimation @s animation.humanoid.staff_use"
                                     ],
                                     "target": "holder"
+                                }
+                            },
+                            {
+                                "shoot":{
+                                    "launch_power":1,
+                                    "projectile":"dec:fire_storm"
                                 }
                             },
                             {

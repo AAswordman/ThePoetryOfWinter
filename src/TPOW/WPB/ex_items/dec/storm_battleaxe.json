@@ -745,7 +745,8 @@
             },
             "minecraft:tags": {
                 "tags": [
-                    "minecraft:is_axe"
+                    "minecraft:is_axe",
+                    "comp:equipment_type:melee_weapon_:axe:_"
                 ]
             }
         },

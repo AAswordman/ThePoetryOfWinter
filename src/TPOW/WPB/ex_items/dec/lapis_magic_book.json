@@ -57,11 +57,6 @@
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.4"
                     }
                 ]
-            },
-            "minecraft:tags": {
-                "tags": [
-                    "comp:equipment_type:magic_weapon"
-                ]
             }
         },
         "events": {

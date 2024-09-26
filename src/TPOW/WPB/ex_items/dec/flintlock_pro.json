@@ -36,7 +36,7 @@
             "minecraft:tags": {
                 "tags": [
                     "comp:sneak_movement_addition:-0.06",
-                    "comp:equipment_type:range_weapon"
+                    "comp:equipment_type:range_weapon_:range_weapon:_"
                 ]
             }
         },

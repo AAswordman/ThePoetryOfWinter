@@ -16,7 +16,6 @@
         "disappear": "animation.disappear.10s"
       }
     },
-
     "component_groups": {
       "minecraft:tame": {
         "minecraft:behavior.owner_hurt_by_target": {
@@ -37,7 +36,6 @@
         "minecraft:instant_despawn": {}
       }
     },
-
     "components": {
       "minecraft:tameable": {
         "probability": 1,
@@ -72,10 +70,14 @@
         ]
       },
       "minecraft:type_family": {
-        "family": [ "mob", "villager","little_bat", "player" ]
+        "family": [
+          "mob",
+          "villager",
+          "little_bat",
+          "player"
+        ]
       },
-      "minecraft:nameable": {
-      },
+      "minecraft:nameable": {},
       "minecraft:health": {
         "value": 5,
         "max": 5
@@ -128,14 +130,26 @@
       },
       "minecraft:behavior.swoop_attack": {
         "priority": 2,
-        "delay_range": [ 3.0, 3.0 ]
+        "delay_range": [
+          3.0,
+          3.0
+        ]
       },
       "minecraft:behavior.circle_around_anchor": {
         "priority": 3,
-        "radius_range": [ 30.0, 30.0 ],
+        "radius_range": [
+          30.0,
+          30.0
+        ],
         "radius_change_chance": 100,
-        "height_above_target_range": [ 10.0, 20.0 ],
-        "height_offset_range": [ -4.0, 5.0 ],
+        "height_above_target_range": [
+          10.0,
+          20.0
+        ],
+        "height_offset_range": [
+          -4.0,
+          5.0
+        ],
         "height_change_chance": 350,
         "goal_radius": 1.0
       }

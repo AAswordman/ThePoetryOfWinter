@@ -30,7 +30,7 @@
             "minecraft:max_stack_size": 1,
             "minecraft:tags": {
                 "tags": [
-                    "comp:equipment_type:range_weapon"
+                    "comp:equipment_type:range_weapon_:range_weapon:_"
                 ]
             }
         },

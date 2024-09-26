@@ -147,9 +147,8 @@ async function compileExItem(path: string) {
 
             if ("minecraft:food" in components) {
                 let food = components["minecraft:food"] as JSONObject;
-                if ("on_consume" in food) {
-                    delete food["on_consume"];
-                }
+                delete food["on_consume"];
+                delete food["using_converts_to"];
             }
             if ("minecraft:digger" in components) {
                 let food = components["minecraft:digger"] as JSONObject;
@@ -228,7 +227,7 @@ async function compileExBlock(path: string) {
             if (minecraft("ticking") in i) {
                 custom.push(ex("ticking"));
                 i[minecraft("tick")] = {
-                    "interval_range": ((i[minecraft("ticking")] as JSONObject).range as number[]).map(e => e * 1)
+                    "interval_range": ((i[minecraft("ticking")] as JSONObject).range as number[]).map(e => e * 20)
                 };
                 delete i[minecraft("ticking")];
             }

@@ -71,7 +71,7 @@
             "minecraft:tags": {
                 "tags": [
                     "use_skill_count",
-                    "comp:equipment_type:melee_weapon"
+                    "comp:equipment_type:melee_weapon_:sword:_"
                 ]
             }
         },
