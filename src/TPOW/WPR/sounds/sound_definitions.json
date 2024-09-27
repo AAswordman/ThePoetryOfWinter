@@ -96,6 +96,54 @@
             }
         ]
     },
+    "hurted.heavily.boom":{
+        "sounds": [
+            {
+                "name": "sounds/wb_entity/base/hurted_heavily",
+                "volume": 0.8
+            }
+        ]
+    },
+    "menu.tp.common":{
+        "sounds": [
+            {
+                "name": "sounds/wb_entity/base/menu_tp_common",
+                "volume": 1.0
+            }
+        ]
+    },
+    "game.portal.active":{
+        "sounds": [
+            {
+                "name": "sounds/wb_entity/base/game_portal_active",
+                "volume": 1.0
+            }
+        ]
+    },
+    "person.task.ok":{
+        "sounds": [
+            {
+                "name": "sounds/wb_entity/base/person_task_ok",
+                "volume": 1.0
+            }
+        ]
+    },
+    "person.task.fail":{
+        "sounds": [
+            {
+                "name": "sounds/wb_entity/base/person_task_fail",
+                "volume": 1.0
+            }
+        ]
+    },
+    "game.boss.summon":{
+        "sounds": [
+            {
+                "name": "sounds/wb_entity/base/game_boss_summon",
+                "volume": 1.0
+            }
+        ]
+    },
 
     "music.wb.anger_of_ancient": {
         "category": "music",
