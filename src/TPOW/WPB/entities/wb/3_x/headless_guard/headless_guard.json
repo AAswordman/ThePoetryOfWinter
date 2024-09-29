@@ -132,6 +132,7 @@
                     }
                 },
                 "minecraft:shooter": {
+                    "sound":"shoot",
                     "def": "wb:small_block_ball"
                 },
                 "minecraft:behavior.ranged_attack": {
@@ -155,6 +156,7 @@
                     }
                 },
                 "minecraft:shooter": {
+                    "sound":"shoot",
                     "def": "wb:block_stone<big>"
                 },
                 "minecraft:behavior.ranged_attack": {

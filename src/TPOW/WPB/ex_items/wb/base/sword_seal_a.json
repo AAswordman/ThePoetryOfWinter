@@ -57,7 +57,7 @@
             "minecraft:max_stack_size": 1,
             "minecraft:mining_speed": 1.5,
             "minecraft:icon": {
-                "texture": "sword_seal_a"
+                "texture": "sword_seal_f"
             },
             "minecraft:use_modifiers": {
                 "use_duration": 3600

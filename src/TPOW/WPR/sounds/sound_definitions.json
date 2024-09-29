@@ -140,7 +140,7 @@
         "sounds": [
             {
                 "name": "sounds/wb_entity/base/game_boss_summon",
-                "volume": 1.0
+                "volume": 2.0
             }
         ]
     },

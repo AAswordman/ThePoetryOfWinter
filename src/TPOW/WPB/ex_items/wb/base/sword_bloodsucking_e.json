@@ -57,7 +57,7 @@
             "minecraft:max_stack_size": 1,
             "minecraft:mining_speed": 1.5,
             "minecraft:icon": {
-                "texture": "sword_bloodsucking_e"
+                "texture": "sword_bloodsucking_f"
             },
             "minecraft:food": {
                 "nutrition": 5,

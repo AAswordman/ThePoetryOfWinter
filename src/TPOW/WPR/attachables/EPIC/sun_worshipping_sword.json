@@ -65,27 +65,14 @@
         "default": "geometry.item_weapon"
       },
       "animations": {
-        "wield": "animation.item_weapon",
-        "test": "controller.animation.crossbow"
+        "wield": "animation.item_weapon"
       },
       "particle_effects": {
         "epic_base_effect": "epic:sunlight_arrow_particle2"
       },
       "scripts": {
-          "initialize": [
-            "variable.attack_wave_time = 27;",
-            "variable.durability = query.remaining_durability;",
-            "variable.is_dynamic = 1;"
-          ],
-          "pre_animation": [
-            "variable.durability = query.remaining_durability;",
-            "variable.is_dynamic = variable.durability > 1 ? 1:0 ;",
-            "variable.is_first_person = c.is_first_person;",
-            "variable.attack_wave_time=variable.attack_wave_time>27?(variable.attack_time>0?0:10):(variable.attack_wave_time+0.5);"
-          ],
         "animate": [
-          "wield",
-          "test"
+          "wield"
         ]
       },
       "render_controllers": ["controller.render.sun_worshipping_sword"]

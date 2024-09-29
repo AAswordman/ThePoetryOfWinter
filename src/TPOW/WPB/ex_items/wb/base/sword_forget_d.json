@@ -57,7 +57,7 @@
             "minecraft:max_stack_size": 1,
             "minecraft:mining_speed": 1.5,
             "minecraft:icon": {
-                "texture": "sword_forget_d"
+                "texture": "sword_forget_f"
             },
             "minecraft:food": {
                 "nutrition": 5,

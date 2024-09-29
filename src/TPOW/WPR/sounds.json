@@ -2989,7 +2989,134 @@
 						"pitch": 0.5
 					}
 				}
+			},
+			"wb:magic_stoneman": {
+				"volume": 3.0,
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"events": {
+					"ambient": "item.trident.return",
+					"hurt": {
+						"sound": "block.scaffolding.hit",
+						"volume": 0.7
+					},
+					"death": "item.trident.thunder"
+				}
+			},
+			"wb:desert_skeleton": {
+				"volume": 1.0,
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"events": {
+					"ambient": "mob.skeleton.say",
+					"hurt": {
+						"sound": "mob.skeleton.hurt",
+						"volume": 0.7
+					},
+					"death": "mob.skeleton.death",
+					"step": {
+						"sound": "mob.skeleton.step",
+						"volume": 1.0,
+						"pitch": 1.0
+					}
+				}
+			},
+			"wb:desert_zombie": {
+				"volume": 1.0,
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"events": {
+					"hurt": "mob.zombie.hurt",
+					"death": "mob.zombie.death"
+				}
+			},
+			"wb:headless_guard": {
+				"volume": 3.0,
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"events": {
+					"ambient": "mob.zombiepig.zpigangry",
+					"hurt": {
+						"sound": "block.scaffolding.hit",
+						"volume": 0.7
+					},
+					"death": "item.trident.thunder",
+					"step": {
+						"sound": "mob.panda.step",
+						"volume": 1.0,
+						"pitch": 1.0
+					},
+					"shoot": {
+						"pitch": 1.0,
+						"sound": "mob.irongolem.throw",
+						"volume": 1.0
+					}
+				}
+			},
+			"wb:ancient_stone": {
+				"volume": 3.0,
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"events": {
+					"ambient": "item.trident.return",
+					"hurt": {
+						"sound": "mob.irongolem.hit",
+						"volume": 0.7
+					},
+					"death": "item.trident.thunder",
+					"step": {
+						"sound": "mob.panda.step",
+						"volume": 1.0,
+						"pitch": 1.0
+					},
+					"shoot": {
+						"pitch": 1.0,
+						"sound": "mob.irongolem.throw",
+						"volume": 1.0
+					}
+				}
+			},
+			"wb:intensions_first": {
+				"volume": 3.0,
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"events": {
+					"death": "item.trident.thunder"
+				}
+			},
+			"wb:intensions_second": {
+				"volume": 3.0,
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"events": {
+					"death": "item.trident.thunder"
+				}
+			},
+			"wb:intensions_third": {
+				"volume": 3.0,
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"events": {
+					"death": "item.trident.thunder"
+				}
 			}
+
 		}
 	}
 }
