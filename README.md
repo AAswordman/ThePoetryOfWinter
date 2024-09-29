@@ -26,7 +26,7 @@ _✨ 一场发生于未知世界的冒险 ✨_
 </p>
 
 <p align="center">
-  <a href="https://nonebot.dev/">文档</a>
+  <a href="https://powitemintroduction.pages.dev/">文档</a>
 </p>
 
 ## ✨简介
