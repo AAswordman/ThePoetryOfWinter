@@ -133,8 +133,7 @@ item.base.name=物品名称
 item.hostile_mode=暂时没用
 
 item.wb:wb_help.name=§d请打开聊天栏仔细看完全部内容。游戏指南里有本add详细介绍。	
-item.wb:element_base.name=魔法能量基础	
-item.wb:staff_base.name=法杖基础	
+item.wb:element_base.name=魔法能量基础
 item.wb:crystal_fuse.name=融合宝石	
 item.wb:crystal_evolution.name=合成宝石	
 item.wb:base_core_a.name=简陋的魔法核心	
@@ -1782,7 +1781,7 @@ text.dec:creator_list_39.name=§b幻想贝壳 - 建筑、贴图
 text.dec:qq_group.name=§e反馈和测试群号 - 486864907
 text.dec:thanks.name=§e最后,衷心感谢所有为此addon做出贡献的人以及群内的所有小伙伴
 text.dec:omit.name=§b......
-text.dec:load_ok.name=§b加载完成
+text.dec:load_ok.name=§b加载完成。本Addon适配的Minecraft版本为1.21.30/1.21.31/1.21.32。
 
 text.dec:killed_by_boss.name=§e你已被Boss击败
 text.dec:summon_entity_soul.name=§e实体灵魂已被召唤

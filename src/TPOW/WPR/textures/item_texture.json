@@ -1577,9 +1577,6 @@
         "base_core_g": {
             "textures": "textures/wb_item/base/base_core_g"
         },
-        "staff_base": {
-            "textures": "textures/wb_item/base/staff_base"
-        },
         "skill_tracking_arrow": {
             "textures": "textures/wb_item/base/skill_tracking_arrow"
         },

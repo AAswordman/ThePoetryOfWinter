@@ -31,7 +31,7 @@
         "power": 0.9,
         "gravity": 0.1,
         "inertia": 1.01,
-        "offset": [ 0, 0, 1 ],
+        "offset": [ 0, 0, 0],
         "uncertaintyBase": 20.0,
         "uncertaintyMultiplier": 0,
         "angleoffset": 0.0

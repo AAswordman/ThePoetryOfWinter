@@ -34,7 +34,7 @@
 				{
 					"name": "body",
 					"parent": "ZHE",
-					"pivot": [0, 0, 1],
+					"pivot": [ 0, 0, 0],
 					"cubes": [
 						{"origin": [-15, 49, -5], "size": [30, 12, 15], "uv": [0, 100]},
 						{"origin": [-15, 49, -6], "size": [15, 11, 1], "inflate": 0.001, "pivot": [0, 50, 1], "rotation": [0, 2.5, 5], "uv": [0, 100]},

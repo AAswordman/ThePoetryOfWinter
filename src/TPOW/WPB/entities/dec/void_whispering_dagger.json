@@ -47,7 +47,7 @@
     "power": 1.5,
     "gravity": 0.035,
     "anchor": 1,
-    "offset": [ 0, 0, 1 ],
+    "offset": [ 0, 0, 0],
     "semirandomdiffdamage": true,
     "uncertaintyBase": 8.0,
     "uncertaintyMultiplier": 6,

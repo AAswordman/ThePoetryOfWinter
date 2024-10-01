@@ -33,12 +33,14 @@ dataSet.init().then(async () => {
         catch (e) {
         }
     })
-        .on('change', function (path) { compile(transPath(path)); })
-        .on('unlink', function (path) { compile(transPath(path)); })
+        .on('change', async function (path) { await compile(transPath(path)); })
+        .on('unlink', async function (path) { await compile(transPath(path)); })
         .on('error', function (error) { log('Error happened', error); })
         .on('ready', async function () {
-        await dataSet.setCacheMode(false);
-        log('Initial scan complete. Ready for changes.');
+        setTimeout(async () => {
+            await dataSet.setCacheMode(false);
+            log('Initial scan complete. Ready for changes.');
+        }, 1000);
     });
 });
 function transPath(path) {
@@ -53,6 +55,9 @@ async function compile(path) {
             }
             else if (path.startsWith(ROOT + "/ex_items")) {
                 await compileExItem(path);
+            }
+            else if (path.startsWith(ROOT + "/entities")) {
+                await compileEntity(path);
             }
         }
     }
@@ -237,6 +242,34 @@ async function compileExBlock(path) {
         }
         fs.mkdirSync(blocks, { recursive: true });
         (0, fileOper_js_1.writeFile)(targetFile, JSON.stringify(jsonObj, undefined, 4));
+    }
+}
+async function compileEntity(path) {
+    var _a, _b, _c, _d;
+    console.log("compileEntity  " + path);
+    if (!fs.existsSync(path)) {
+        await dataSet.remove(path);
+    }
+    else {
+        let ent = eval("(" + await (0, fileOper_js_1.readFile)(path) + ")");
+        let proj = (_b = (_a = ent["minecraft:entity"]) === null || _a === void 0 ? void 0 : _a["components"]) === null || _b === void 0 ? void 0 : _b['minecraft:projectile'];
+        let power = (_c = proj === null || proj === void 0 ? void 0 : proj['power']) !== null && _c !== void 0 ? _c : 1;
+        let uncertaintyBase = (_d = proj === null || proj === void 0 ? void 0 : proj['uncertaintyBase']) !== null && _d !== void 0 ? _d : 0;
+        let des = ent[minecraft("entity")]["description"];
+        if (proj && des) {
+            let saver = {
+                "minecraft:entity": {
+                    "description": des,
+                    "components": {
+                        "minecraft:projectile": {
+                            "power": power,
+                            "uncertaintyBase": uncertaintyBase
+                        }
+                    }
+                }
+            };
+            await dataSet.write(path.replace(ROOT + "/", ""), saver);
+        }
     }
 }
 async function compileCommonJson(path) {

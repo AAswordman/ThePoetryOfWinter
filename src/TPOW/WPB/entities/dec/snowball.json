@@ -27,7 +27,7 @@
           }
         },
         "power": 1.5,
-        "offset": [ 0, 0, 1 ],
+        "offset": [ 0, 0, 0],
         "gravity": 0.03,
         "angleoffset": 0.0
       },

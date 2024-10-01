@@ -4272,7 +4272,6 @@ entity.base.name=Summon Entity
 item.base.name=Item's Name	
 item.wb:wb_help.name=§dPls open the chat bar to read all texts, there is more detailed introduction in the game guidance.	
 item.wb:element_base.name=Basical Magic Power
-item.wb:staff_base.name=Base of Wand	
 item.wb:crystal_fuse.name=Fusion Gem	
 item.wb:crystal_evolution.name=Crafting Gem	
 item.wb:base_core_a.name=Simple Magic Core	

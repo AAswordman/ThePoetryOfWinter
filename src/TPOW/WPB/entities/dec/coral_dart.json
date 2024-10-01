@@ -25,7 +25,7 @@
         "gravity": 0.03,
         "inertia": 1.1,
         "liquid_inertia": 1.1,
-        "offset": [ 0, 0, 1 ],
+        "offset": [ 0, 0, 0],
         "uncertaintyBase": 4.0,
         "angleoffset": 0.0
       },

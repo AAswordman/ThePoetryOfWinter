@@ -34,12 +34,14 @@ dataSet.init().then(async () => {
 
             }
         })
-        .on('change', function (path) { compile(transPath(path)); })
-        .on('unlink', function (path) { compile(transPath(path)); })
+        .on('change', async function (path) { await compile(transPath(path)); })
+        .on('unlink', async function (path) { await compile(transPath(path)); })
         .on('error', function (error) { log('Error happened', error); })
         .on('ready', async function () {
-            await dataSet.setCacheMode(false);
-            log('Initial scan complete. Ready for changes.');
+            setTimeout(async () => {
+                await dataSet.setCacheMode(false);
+                log('Initial scan complete. Ready for changes.');
+            }, 1000);
         })
 });
 
@@ -55,6 +57,8 @@ async function compile(path: string) {
                 await compileExBlock(path);
             } else if (path.startsWith(ROOT + "/ex_items")) {
                 await compileExItem(path);
+            } else if (path.startsWith(ROOT + "/entities")) {
+                await compileEntity(path);
             }
         }
     } catch (e) {
@@ -159,8 +163,8 @@ async function compileExItem(path: string) {
 
             let i = item["components"] as JSONObject;
 
-            if("minecraft:on_use" in i){
-                if(!("minecraft:use_modifiers" in i)){
+            if ("minecraft:on_use" in i) {
+                if (!("minecraft:use_modifiers" in i)) {
                     i["minecraft:use_modifiers"] = {
                         "use_duration": 10,
                         "movement_modifier": 0.7
@@ -254,6 +258,35 @@ async function compileExBlock(path: string) {
         writeFile(targetFile, JSON.stringify(jsonObj, undefined, 4));
     }
 }
+
+async function compileEntity(path: string) {
+    console.log("compileEntity  " + path);
+    if (!fs.existsSync(path)) {
+        await dataSet.remove(path);
+    } else {
+        let ent = eval("(" + await readFile(path) + ")") as JSONObject;
+        let proj = (ent as any)["minecraft:entity"]?.["components"]?.['minecraft:projectile'];
+        let power = proj?.['power'] ?? 1;
+        let uncertaintyBase = proj?.['uncertaintyBase'] ?? 0;
+        let des = (ent[minecraft("entity")] as any)["description"];
+        if (proj && des) {
+            let saver = {
+                "minecraft:entity": {
+                    "description": des,
+                    "components": {
+                        "minecraft:projectile": {
+                            "power": power,
+                            "uncertaintyBase":uncertaintyBase
+                        }
+                    }
+                }
+            }
+
+            await dataSet.write(path.replace(ROOT + "/", ""), saver);
+        }
+    }
+}
+
 async function compileCommonJson(path: string) {
     console.log("compile  " + path);
     if (!fs.existsSync(path)) {

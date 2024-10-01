@@ -277,24 +277,6 @@
               "trader_exp": 10,
               "max_uses": 3,
               "reward_exp": true
-            },
-            {
-              "wants": [
-                {
-                  "item": "wb:staff_base",
-                  "quantity": 1,
-                  "price_multiplier": 0
-                }
-              ],
-              "gives": [
-                {
-                  "item": "minecraft:diamond",
-                  "quantity": 38
-                }
-              ],
-              "trader_exp": 15,
-              "max_uses": 1,
-              "reward_exp": true
             }
           ]
         }
@@ -447,33 +429,6 @@
     {
       "total_exp_required": 160,
       "groups": [
-        {
-          "num_to_select": 1,
-          "trades": [
-            {
-              "wants": [
-                {
-                  "item": "wb:staff_base",
-                  "quantity": 1,
-                  "price_multiplier": 0.0
-                },
-                {
-                  "item": "minecraft:diamond",
-                  "quantity": 2
-                }
-              ],
-              "gives": [
-                {
-                  "item": "wb:element_frost",
-                  "quantity": 1
-                }
-              ],
-              "trader_exp": 10,
-              "max_uses": 1,
-              "reward_exp": true
-            }
-          ]
-        },
         {
           "num_to_select": 1,
           "trades": [
