@@ -2,9 +2,11 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "wb:staff_summon"
+      "identifier": "wb:staff_summon"
     },
-    "tags": [ "crafting_table" ],
+    "tags": [
+      "crafting_table"
+    ],
     "pattern": [
       "#",
       "Y",
@@ -15,10 +17,10 @@
         "item": "wb:element_summon"
       },
       "Y": {
-        "item":"wb:base_core_d"
+        "item": "wb:base_core_d"
       },
       "X": {
-          "item":"wb:thunder_staff"
+        "item": "dec:thunder_staff"
       }
     },
     "result": {

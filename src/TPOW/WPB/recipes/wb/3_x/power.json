@@ -2,11 +2,11 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "wb:power"
+      "identifier": "wb:power"
     },
-
-    
-    "tags": [ "crafting_table" ],
+    "tags": [
+      "crafting_table"
+    ],
     "pattern": [
       "# #",
       "###",
@@ -16,7 +16,6 @@
       "#": {
         "item": "minecraft:emerald"
       }
-      
     },
     "result": {
       "item": "wb:power"

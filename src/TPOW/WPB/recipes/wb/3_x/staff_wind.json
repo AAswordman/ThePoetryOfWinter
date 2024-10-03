@@ -2,9 +2,11 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "wb:staff_wind"
+      "identifier": "wb:staff_wind"
     },
-    "tags": [ "crafting_table" ],
+    "tags": [
+      "crafting_table"
+    ],
     "pattern": [
       "#",
       "Y",
@@ -15,10 +17,10 @@
         "item": "wb:element_wind"
       },
       "Y": {
-        "item":"wb:base_core_c"
+        "item": "wb:base_core_c"
       },
       "X": {
-          "item":"dec:emerald_staff"
+        "item": "dec:emerald_staff"
       }
     },
     "result": {

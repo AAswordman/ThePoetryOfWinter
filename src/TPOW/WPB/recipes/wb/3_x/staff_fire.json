@@ -2,9 +2,11 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "wb:staff_fire"
+      "identifier": "wb:staff_fire"
     },
-    "tags": [ "crafting_table" ],
+    "tags": [
+      "crafting_table"
+    ],
     "pattern": [
       "#",
       "Y",
@@ -15,10 +17,10 @@
         "item": "wb:element_flame"
       },
       "Y": {
-        "item":"wb:base_core_b"
+        "item": "wb:base_core_b"
       },
       "X": {
-          "item":"dec:blaze_staff"
+        "item": "dec:blaze_staff"
       }
     },
     "result": {

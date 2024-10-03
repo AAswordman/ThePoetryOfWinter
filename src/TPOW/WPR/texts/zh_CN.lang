@@ -46,65 +46,65 @@ item.wb:book_cache=转移附魔书
 tile.wb:block_translate.name=未激活的转移台
 tile.wb:block_translate_book.name=激活了但没卵用的转移台
 
-item.wb:armor_bloodsucking_helmet=嗜血头盔
-item.wb:armor_bloodsucking_boots=嗜血靴子
-item.wb:armor_bloodsucking_leggings=嗜血护腿
-item.wb:armor_bloodsucking_chestplate=嗜血胸甲
+item.wb:armor_bloodsucking_helmet=嗜血头盔 I
+item.wb:armor_bloodsucking_boots=嗜血靴子 I
+item.wb:armor_bloodsucking_leggings=嗜血护腿 I
+item.wb:armor_bloodsucking_chestplate=嗜血胸甲 I
 
-item.wb:armor_ink_helmet=墨痕头盔
-item.wb:armor_ink_boots=墨痕靴子
-item.wb:armor_ink_leggings=墨痕护腿
-item.wb:armor_ink_chestplate=墨痕胸甲
+item.wb:armor_ink_helmet=墨痕头盔 I
+item.wb:armor_ink_boots=墨痕靴子 I
+item.wb:armor_ink_leggings=墨痕护腿 I
+item.wb:armor_ink_chestplate=墨痕胸甲 I
 
-item.wb:armor_forget_helmet=遗忘头盔
-item.wb:armor_forget_boots=遗忘靴子
-item.wb:armor_forget_leggings=遗忘护腿
-item.wb:armor_forget_chestplate=遗忘胸甲
+item.wb:armor_forget_helmet=遗忘头盔 I
+item.wb:armor_forget_boots=遗忘靴子 I
+item.wb:armor_forget_leggings=遗忘护腿 I
+item.wb:armor_forget_chestplate=遗忘胸甲 I
 
-item.wb:armor_water_helmet=水源头盔
-item.wb:armor_water_boots=水源靴子
-item.wb:armor_water_leggings=水源护腿
-item.wb:armor_water_chestplate=水源胸甲
+item.wb:armor_water_helmet=水源头盔 I
+item.wb:armor_water_boots=水源靴子 I
+item.wb:armor_water_leggings=水源护腿 I
+item.wb:armor_water_chestplate=水源胸甲 I
 
-item.wb:armor_seal_helmet=封尘头盔
-item.wb:armor_seal_boots=封尘靴子
-item.wb:armor_seal_leggings=封尘护腿
-item.wb:armor_seal_chestplate=封尘胸甲
+item.wb:armor_seal_helmet=封尘头盔 I
+item.wb:armor_seal_boots=封尘靴子 I
+item.wb:armor_seal_leggings=封尘护腿 I
+item.wb:armor_seal_chestplate=封尘胸甲 I
 
-item.wb:armor_equipment_helmet=魔能头盔
-item.wb:armor_equipment_boots=魔能靴子
-item.wb:armor_equipment_leggings=魔能护腿
-item.wb:armor_equipment_chestplate=魔能胸甲
+item.wb:armor_equipment_helmet=魔能头盔 I
+item.wb:armor_equipment_boots=魔能靴子 I
+item.wb:armor_equipment_leggings=魔能护腿 I
+item.wb:armor_equipment_chestplate=魔能胸甲 I
 
-item.wb:armor_senior_bloodsucking_helmet=嗜血头盔
-item.wb:armor_senior_bloodsucking_boots=嗜血靴子
-item.wb:armor_senior_bloodsucking_leggings=嗜血护腿
-item.wb:armor_senior_bloodsucking_chestplate=嗜血胸甲
+item.wb:armor_senior_bloodsucking_helmet=嗜血头盔 II
+item.wb:armor_senior_bloodsucking_boots=嗜血靴子 II
+item.wb:armor_senior_bloodsucking_leggings=嗜血护腿 II
+item.wb:armor_senior_bloodsucking_chestplate=嗜血胸甲 II
 
-item.wb:armor_senior_ink_helmet=墨痕头盔
-item.wb:armor_senior_ink_boots=墨痕靴子
-item.wb:armor_senior_ink_leggings=墨痕护腿
-item.wb:armor_senior_ink_chestplate=墨痕胸甲
+item.wb:armor_senior_ink_helmet=墨痕头盔 II
+item.wb:armor_senior_ink_boots=墨痕靴子 II
+item.wb:armor_senior_ink_leggings=墨痕护腿 II
+item.wb:armor_senior_ink_chestplate=墨痕胸甲 II
 
-item.wb:armor_senior_forget_helmet=遗忘头盔
-item.wb:armor_senior_forget_boots=遗忘靴子
-item.wb:armor_senior_forget_leggings=遗忘护腿
-item.wb:armor_senior_forget_chestplate=遗忘胸甲
+item.wb:armor_senior_forget_helmet=遗忘头盔 II
+item.wb:armor_senior_forget_boots=遗忘靴子 II
+item.wb:armor_senior_forget_leggings=遗忘护腿 II
+item.wb:armor_senior_forget_chestplate=遗忘胸甲 II
 
-item.wb:armor_senior_water_helmet=水源头盔
-item.wb:armor_senior_water_boots=水源靴子
-item.wb:armor_senior_water_leggings=水源护腿
-item.wb:armor_senior_water_chestplate=水源胸甲
+item.wb:armor_senior_water_helmet=水源头盔 II
+item.wb:armor_senior_water_boots=水源靴子 II
+item.wb:armor_senior_water_leggings=水源护腿 II
+item.wb:armor_senior_water_chestplate=水源胸甲 II
 
-item.wb:armor_senior_seal_helmet=封尘头盔
-item.wb:armor_senior_seal_boots=封尘靴子
-item.wb:armor_senior_seal_leggings=封尘护腿
-item.wb:armor_senior_seal_chestplate=封尘胸甲
+item.wb:armor_senior_seal_helmet=封尘头盔 II
+item.wb:armor_senior_seal_boots=封尘靴子 II
+item.wb:armor_senior_seal_leggings=封尘护腿 II
+item.wb:armor_senior_seal_chestplate=封尘胸甲 II
 
-item.wb:armor_senior_equipment_helmet=魔能头盔
-item.wb:armor_senior_equipment_boots=魔能靴子
-item.wb:armor_senior_equipment_leggings=魔能护腿
-item.wb:armor_senior_equipment_chestplate=魔能胸甲
+item.wb:armor_senior_equipment_helmet=魔能头盔 II
+item.wb:armor_senior_equipment_boots=魔能靴子 II
+item.wb:armor_senior_equipment_leggings=魔能护腿 II
+item.wb:armor_senior_equipment_chestplate=魔能胸甲 II
 
 
 item.wb:technology_world_explorer.name=世界探索者
@@ -1147,7 +1147,7 @@ item.dec:ash_key.name=灰烬钥匙
 item.dec:dust_ring.name=尘埃戒
 item.dec:sticky_ash.name=粘稠灰烬
 item.dec:snow_lotus.name=雪莲花
-//DEC1.9.3
+===DEC1.9.3===
 item.dec:hunter_book.name=猎人之书
 item.dec:patterned_vase_red.name=红色纹饰花瓶
 item.dec:lava_essence.name=岩浆精华
@@ -1282,7 +1282,7 @@ tile.dec:ice_lantern.name=冰灯
 tile.dec:magic_letter_box.name=魔法信箱
 tile.dec:ash_summoner.name=灰烬召唤者
 tile.dec:ash_cage.name=灰烬牢笼
-//DEC1.9.3
+===DEC1.9.3===
 tile.dec:trellis.name=种植架
 tile.dec:trellis_cover.name=横向种植架
 tile.dec:patterned_vase_red_block.name=红色纹饰花瓶
@@ -1427,7 +1427,7 @@ item.spawn_egg.entity.dec:ice_bat.name=生成 冰冻蝙蝠
 item.spawn_egg.entity.dec:ice_spirit.name=生成 冰魂
 item.spawn_egg.entity.dec:ice_wizard.name=生成 寒潮法师
 item.spawn_egg.entity.dec:ice_monster.name=生成 冰雪怪
-//DEC1.9.3
+===DEC1.9.3===
 item.spawn_egg.entity.dec:frozen_man.name=生成 冰人
 
 
@@ -1597,7 +1597,7 @@ entity.dec:ice_monster.name=冰雪怪
 entity.dec:ash_sword.name=灰烬之刃
 entity.dec:ash_horse_head.name=灰烬马的头
 entity.dec:ash_knight_head.name=灰烬之首
-//DEC1.9.3
+===DEC1.9.3===
 entity.dec:frozen_man.name=冰人
 entity.dec:scarecrow.name=稻草人
 
@@ -1858,8 +1858,6 @@ text.dec:command_help_3.name=§a>/diemode test   用于检测死亡模式是否�
 text.dec:command_help_4.name=§a>/diemode open   用于开启死亡模式（权限需求：房主）
 text.dec:command_help_5.name=§a>/magic display true   用于开启魔法显示（权限需求：管理员）
 text.dec:command_help_6.name=§a>/magic display false   用于关闭魔法显示（权限需求：管理员）
-
-//冬诗得改成和升级方式、技能加成有关的
 
 text.dec:guide_book_0.name=§a指导书
 text.dec:guide_book_1.name=§a你很虚弱，所以请不要让它们轻易的靠近你。在夜间需额外消息，否则怪物能轻易将你撕成碎片。如果雾气在夜间聚集，为了你的安全，请不要出门。
