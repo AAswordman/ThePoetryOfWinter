@@ -17,7 +17,7 @@
             "minecraft:destructible_by_explosion": {
                 "explosion_resistance": 15
             },
-            "minecraft:friction": 0.74,
+            "minecraft:friction": 0.57,
             "minecraft:map_color": "#547CC6",
             "minecraft:loot": "loot_tables/blocks/ancient_ice.json",
             "minecraft:tags": {

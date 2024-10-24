@@ -19,7 +19,8 @@
                 "tags": [
                     "stone"
                 ]
-            }
+            },
+            "minecraft:friction": 0.8
         }
     }
 }

@@ -17,7 +17,7 @@
             "minecraft:destructible_by_explosion": {
                 "explosion_resistance": 500
             },
-            "minecraft:friction": 0.7,
+            "minecraft:friction": 0.55,
             "minecraft:map_color": "#BBDBFF",
             "minecraft:ticking": {
                 "looping": true,

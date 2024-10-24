@@ -20,6 +20,10 @@
             "minecraft:durability": {
                 "max_durability": 7500
             },
+            "minecraft:cooldown": {
+                "category": "jet_pack",
+                "duration": 0.5
+            },
             "minecraft:on_use": {
                 "on_use": {
                     "event": "fly",
@@ -31,12 +35,13 @@
         },
         "events": {
             "fly": {
-                "run_command": {
-                    "command": []
-                },
                 "damage": {
                     "type": "magic",
                     "amount": 1
+                },
+                "script":{
+                    "output":"item:jet_pack_skill",
+                    "args":[]
                 }
             }
         }

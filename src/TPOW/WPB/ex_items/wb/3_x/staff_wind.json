@@ -60,6 +60,7 @@
                 }
             },
             "shoot": {
+                "condition": "query.consume_scoreboard('wbfl', 1)",
                 "randomize": [
                     {
                         "weight": 10,

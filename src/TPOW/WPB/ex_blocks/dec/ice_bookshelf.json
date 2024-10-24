@@ -18,7 +18,7 @@
                 "explosion_resistance": 10
             },
             "minecraft:loot": "loot_tables/blocks/ice_bookshelf.json",
-            "minecraft:friction": 0.7,
+            "minecraft:friction": 0.55,
             "minecraft:map_color": "#BBDBFF",
             "minecraft:tags": {
                 "tags": [

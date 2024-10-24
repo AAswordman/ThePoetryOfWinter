@@ -1056,7 +1056,7 @@
                 },
                 "staff_barriera": {
                     "on_entry": [
-                        "/setblock ~ ~-1 ~ wb:block_magic_barrier [] keep"
+                        "/setblock ~ ~-1 ~ wb:parallel_block_destroy [] keep"
                     ],
                     "transitions": [{
                             "default": "query.get_equipped_item_name != 'staff_barrier'"
