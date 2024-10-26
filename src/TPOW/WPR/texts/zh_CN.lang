@@ -1781,7 +1781,8 @@ text.dec:creator_list_39.name=§b幻想贝壳 - 建筑、贴图
 text.dec:qq_group.name=§e反馈和测试群号 - 486864907
 text.dec:thanks.name=§e最后,衷心感谢所有为此addon做出贡献的人以及群内的所有小伙伴
 text.dec:omit.name=§b......
-text.dec:load_ok.name=§b加载完成。本Addon适配的Minecraft版本为1.21.30/1.21.31/1.21.32。
+text.dec:load_ok.name=§b加载完成。本Addon适配的Minecraft版本为1.21.40/41/42/43。
+text.dec:load_fail.name=§c加载失败。请检查版本是否对应以及是否正确导入。本Addon适配的Minecraft版本为1.21.40/41/42/43。
 
 text.dec:killed_by_boss.name=§e你已被Boss击败
 text.dec:summon_entity_soul.name=§e实体灵魂已被召唤

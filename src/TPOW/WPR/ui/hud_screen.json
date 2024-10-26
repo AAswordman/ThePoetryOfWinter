@@ -1800,133 +1800,13 @@
             1
         ],
         "renderer": "hunger_renderer",
-        "layer": 10
-    },
-    "xbase_color_wb_red_a": {
-        "anim_type": "alpha",
-        "easing": "linear",
-        "duration": 2,
-        "from": 0.6,
-        "to": 0,
-        "next": "@hud.xbase_color_wb_red_b"
-    },
-    "xbase_color_wb_red_b": {
-        "anim_type": "wait",
-        "duration": 2,
-        "next": "@hud.xbase_color_wb_red_c"
-    },
-    "xbase_color_wb_red_c": {
-        "anim_type": "alpha",
-        "easing": "linear",
-        "duration": 2,
-        "from": 0,
-        "to": 0.6,
-        "next": "@hud.xbase_color_wb_red_a"
-    },
-    "xbase_color_wb_green_a": {
-        "anim_type": "alpha",
-        "easing": "linear",
-        "duration": 2,
-        "from": 0,
-        "to": 0.6,
-        "next": "@hud.xbase_color_wb_green_b"
-    },
-    "xbase_color_wb_green_b": {
-        "anim_type": "alpha",
-        "easing": "linear",
-        "duration": 2,
-        "from": 0.6,
-        "to": 0,
-        "next": "@hud.xbase_color_wb_green_c"
-    },
-    "xbase_color_wb_green_c": {
-        "anim_type": "wait",
-        "duration": 2,
-        "next": "@hud.xbase_color_wb_green_a"
-    },
-    "xbase_color_wb_blue_a": {
-        "anim_type": "wait",
-        "duration": 2,
-        "next": "@hud.xbase_color_wb_blue_b"
-    },
-    "xbase_color_wb_blue_b": {
-        "anim_type": "alpha",
-        "easing": "linear",
-        "duration": 2,
-        "from": 0,
-        "to": 0.6,
-        "next": "@hud.xbase_color_wb_blue_c"
-    },
-    "xbase_color_wb_blue_c": {
-        "anim_type": "alpha",
-        "easing": "linear",
-        "duration": 2,
-        "from": 0.6,
-        "to": 0,
-        "next": "@hud.xbase_color_wb_blue_a"
-    },
-    "base_color_wb_red_a": {
-        "anim_type": "alpha",
-        "easing": "linear",
-        "duration": 2,
-        "from": 1,
-        "to": 0,
-        "next": "@hud.base_color_wb_red_b"
-    },
-    "base_color_wb_red_b": {
-        "anim_type": "wait",
-        "duration": 2,
-        "next": "@hud.base_color_wb_red_c"
-    },
-    "base_color_wb_red_c": {
-        "anim_type": "alpha",
-        "easing": "linear",
-        "duration": 2,
-        "from": 0,
-        "to": 1,
-        "next": "@hud.base_color_wb_red_a"
-    },
-    "base_color_wb_green_a": {
-        "anim_type": "alpha",
-        "easing": "linear",
-        "duration": 2,
-        "from": 0,
-        "to": 1,
-        "next": "@hud.base_color_wb_green_b"
-    },
-    "base_color_wb_green_b": {
-        "anim_type": "alpha",
-        "easing": "linear",
-        "duration": 2,
-        "from": 1,
-        "to": 0,
-        "next": "@hud.base_color_wb_green_c"
-    },
-    "base_color_wb_green_c": {
-        "anim_type": "wait",
-        "duration": 2,
-        "next": "@hud.base_color_wb_green_a"
-    },
-    "base_color_wb_blue_a": {
-        "anim_type": "wait",
-        "duration": 2,
-        "next": "@hud.base_color_wb_blue_b"
-    },
-    "base_color_wb_blue_b": {
-        "anim_type": "alpha",
-        "easing": "linear",
-        "duration": 2,
-        "from": 0,
-        "to": 1,
-        "next": "@hud.base_color_wb_blue_c"
-    },
-    "base_color_wb_blue_c": {
-        "anim_type": "alpha",
-        "easing": "linear",
-        "duration": 2,
-        "from": 1,
-        "to": 0,
-        "next": "@hud.base_color_wb_blue_a"
+        "layer": 10,
+        "bindings": [
+            {
+                "binding_name": "#show_survival_ui",
+                "binding_name_override": "#visible"
+            }
+        ]
     },
     "bubbles_renderer": {
         "type": "custom",
@@ -2193,7 +2073,6 @@
             }
         ]
     },
-    
     // Displays number of played in-game days
     "number_of_days_played": {
         "type": "image",
@@ -2291,8 +2170,8 @@
         "layer": 1,
         "size": [
             "100%-2px",
-            "100%c"
-        ],
+            "100%c+0.3px"
+        ], // Crafted to fit messages with neither gap or overlap
         "anchor_from": "top_left",
         "anchor_to": "top_left",
         "bindings": [
@@ -2334,8 +2213,8 @@
         "type": "panel",
         //Uncomment when text formatting is being accounted for in word length
         //"clips_children": true,
-        "anchor_from": "bottom_left",
-        "anchor_to": "bottom_left",
+        "anchor_from": "top_left",
+        "anchor_to": "top_left",
         "size": [
             "100%",
             "100%c"
@@ -2595,44 +2474,24 @@
             50
         ],
         "controls": [
-            /*
-            {
-                "heart_rend@heart_renderer": {
-                    "offset": [-1, -40],
-                    "anchor_from": "bottom_left",
-                    "anchor_to": "bottom_left"
-                }
-            },
-            {
-                "armor_rend@armor_renderer": {
-                  "offset": [-1, 1],
-                  "anchor_from": "bottom_left",
-                  "anchor_to": "bottom_left"
-                }
-            },
-
-            启用动态图测试 
-            {
-                "gif_rend@gif_test": {
-                  "offset": [10, -45],
-                  "alpha": 0.6,
-                  "anchor_from": "bottom_left",
-                  "anchor_to": "bottom_left"
-                }
-            },
-            */
-            {
-                "armor_rend@armor_renderer": {
-                    "offset": [
-                        -1,
-                        24959
-                    ],
-                    "anchor_from": "bottom_left",
-                    "anchor_to": "bottom_left"
-                }
-            },
             {
                 "horse_heart_rend_0@horse_heart_renderer": {
+                    "offset": [
+                        180,
+                        -56
+                    ],
+                    "anchor_from": "bottom_left",
+                    "anchor_to": "bottom_left",
+                    "bindings": [
+                        {
+                            "binding_name": "#creative_horse_hearts",
+                            "binding_name_override": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "horse_heart_rend_1@horse_heart_renderer": {
                     "offset": [
                         180,
                         -50
@@ -2641,86 +2500,33 @@
                     "anchor_to": "bottom_left",
                     "bindings": [
                         {
-                            "binding_name": "#is_creative_mode",
+                            "binding_name": "#survival_horse_hearts",
                             "binding_name_override": "#visible"
                         }
                     ]
                 }
             },
             {
-                "horse_heart_rend_1@horse_heart_renderer": {
+                "armor_rend@armor_renderer": {
+                    "offset": [
+                        0,
+                        20
+                    ],
+                    "anchor_from": "bottom_left",
+                    "anchor_to": "bottom_left"
+                }
+            },
+            {
+                "bubbles_rend_0@bubbles_renderer": {
                     "offset": [
                         180,
-                        -41
+                        -50
                     ],
                     "anchor_from": "bottom_left",
                     "anchor_to": "bottom_left",
                     "bindings": [
                         {
-                            "binding_name": "#show_survival_ui",
-                            "binding_name_override": "#visible"
-                        }
-                    ]
-                }
-            },
-            /*
-            原版
-            {
-                "horse_heart_rend_0@horse_heart_renderer": {
-                    "offset": [180, -56],
-                    "anchor_from": "bottom_left",
-                    "anchor_to": "bottom_left",
-                    "bindings": [{
-                        "binding_name": "#is_creative_mode",
-                        "binding_name_override": "#visible"
-                    }]
-                }
-            },
-            {
-                "horse_heart_rend_1@horse_heart_renderer": {
-                    "offset": [180, -50],
-                    "anchor_from": "bottom_left",
-                    "anchor_to": "bottom_left",
-                    "bindings": [{
-                        "binding_name": "#show_survival_ui",
-                        "binding_name_override": "#visible"
-                    }]
-                }
-            },
-             {
-                "bubbles_rend_0@bubbles_renderer": {
-                    "offset": [180, -50],
-                    "anchor_from": "bottom_left",
-                    "anchor_to": "bottom_left",
-                    "bindings": [{
-                        "binding_name": "#is_not_riding",
-                        "binding_name_override": "#visible"
-                    }]
-                }
-            },
-            {
-                "bubbles_rend_1@bubbles_renderer": {
-                    "offset": [180, -70],
-                    "anchor_from": "bottom_left",
-                    "anchor_to": "bottom_left",
-                    "bindings": [{
-                        "binding_name": "#is_riding",
-                        "binding_name_override": "#visible"
-                    }]
-                }
-            },
-            */
-            {
-                "bubbles_rend_0@bubbles_renderer": {
-                    "offset": [
-                        180,
-                        -41
-                    ],
-                    "anchor_from": "bottom_left",
-                    "anchor_to": "bottom_left",
-                    "bindings": [
-                        {
-                            "binding_name": "#is_not_riding",
+                            "binding_name": "#is_not_riding_bubbles",
                             "binding_name_override": "#visible"
                         }
                     ]
@@ -2730,13 +2536,13 @@
                 "bubbles_rend_1@bubbles_renderer": {
                     "offset": [
                         180,
-                        -52
+                        -50
                     ],
                     "anchor_from": "bottom_left",
                     "anchor_to": "bottom_left",
                     "bindings": [
                         {
-                            "binding_name": "#is_riding",
+                            "binding_name": "#is_riding_bubbles",
                             "binding_name_override": "#visible"
                         }
                     ]
@@ -2745,6 +2551,45 @@
             {
                 "exp_rend@exp_progress_bar_and_hotbar": {}
             } // for classic
+        ],
+        "bindings": [
+            {
+                "binding_name": "(#hud_visible_centered || #hud_visible_centered_touch)",
+                "binding_name_override": "#visible",
+                "binding_type": "global"
+            }
+        ]
+    },
+    "not_centered_gui_elements": {
+        "type": "panel",
+        "controls": [
+            {
+                "armor_rend@armor_renderer": {
+                    "offset": [
+                        -90,
+                        -100
+                    ],
+                    "anchor_from": "bottom_middle",
+                    "anchor_to": "bottom_middle"
+                }
+            },
+            {
+                "hud_player_rend_pocket@hud_player_renderer": {
+                    "offset": [
+                        15,
+                        15
+                    ],
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left"
+                }
+            }
+        ],
+        "bindings": [
+            {
+                "binding_name": "#hud_visible_not_centered",
+                "binding_name_override": "#visible",
+                "binding_type": "global"
+            }
         ]
     },
     "hotbar_chooser": {
@@ -3592,78 +3437,6 @@
                             "binding_name": "#bossName",
                             "binding_type": "collection",
                             "binding_collection_name": "boss_bars"
-                        }
-                    ]
-                }
-            },
-            {
-                "boss_name_a": {
-                    "type": "panel",
-                    "layer": 9,
-                    "anchor_from": "top_middle",
-                    "anchor_to": "top_middle",
-                    "controls": [
-                        {
-                            "base_name_r": {
-                                "type": "label",
-                                "color": "$base_color_r_wb",
-                                "text": "#bossName",
-                                "anchor_from": "top_middle",
-                                "anchor_to": "top_middle",
-                                "alpha": "@base_color_wb_red_a",
-                                "shadow": true,
-                                "bindings": [
-                                    {
-                                        "binding_name": "#bossName",
-                                        "binding_type": "collection",
-                                        "binding_collection_name": "boss_bars"
-                                    }
-                                ]
-                            }
-                        },
-                        {
-                            "base_name_g": {
-                                "type": "label",
-                                "color": "$base_color_g_wb",
-                                "text": "#bossName",
-                                "anchor_from": "top_middle",
-                                "alpha": "@base_color_wb_green_a",
-                                "anchor_to": "top_middle",
-                                "shadow": true,
-                                "bindings": [
-                                    {
-                                        "binding_name": "#bossName",
-                                        "binding_type": "collection",
-                                        "binding_collection_name": "boss_bars"
-                                    }
-                                ]
-                            }
-                        },
-                        {
-                            "base_name_b": {
-                                "type": "label",
-                                "color": "$base_color_b_wb",
-                                "text": "#bossName",
-                                "alpha": "@base_color_wb_blue_a",
-                                "anchor_from": "top_middle",
-                                "anchor_to": "top_middle",
-                                "shadow": true,
-                                "bindings": [
-                                    {
-                                        "binding_name": "#bossName",
-                                        "binding_type": "collection",
-                                        "binding_collection_name": "boss_bars"
-                                    }
-                                ]
-                            }
-                        }
-                    ],
-                    "bindings": [
-                        {
-                            "binding_name": "(#bossName = 'Origin King')",
-                            "binding_type": "collection",
-                            "binding_collection_name": "boss_bars",
-                            "binding_name_override": "#visible"
                         }
                     ]
                 }
@@ -5481,7 +5254,7 @@
             50.5,
             26
         ],
-        "alpha":0.6,
+        "alpha": 0.6,
         "texture": "textures/wb_ui/hl_bg5_101_52",
         "size": [
             78.5,
@@ -5515,7 +5288,7 @@
         "duration": 0.3,
         "from": 1.0,
         "to": 0.0,
-        "next":"@health_tophightlight_render_item_al2"
+        "next": "@health_tophightlight_render_item_al2"
     },
     "health_tophightlight_render_item_al2": {
         "anim_type": "alpha",
@@ -5814,7 +5587,7 @@
                 "pom_health_render_text_layout": {
                     "$var_index": 0,
                     "type": "panel",
-                    "layer":20,
+                    "layer": 20,
                     "anchor_from": "top_left",
                     "anchor_to": "top_left",
                     "offset": [
@@ -6341,27 +6114,40 @@
                     "anchor_from": "top_left",
                     "anchor_to": "top_left",
                     "layer": 2,
-                    "offset": [0, 0],
-                    "controls": [{
-                        "pom_health_heavyhit_render_layout2@persentage_paser": {
-                            "type": "panel",
-                            "anchor_from": "top_left",
-                            "anchor_to": "top_left",
-                            "offset": [0, 0],
-                            "controls": [{
-                                "pom_health_heavyhit_render_layout3@fuck_mojang_image_clipper": {
-                                    "type": "panel",
-                                    "$int_input_1": "('_' +(100 - $res1))",
-                                    "$int_input_2": "('_' +(100 - $res2))",
-                                    "$inner_view": "hud.pom_health52_render_item",
-                                    "anchor_from": "top_left",
-                                    "anchor_to": "top_left",
-                                    "$anim_time": 0.3,
-                                    "offset": [0, 0]
-                                }
-                            }]
+                    "offset": [
+                        0,
+                        0
+                    ],
+                    "controls": [
+                        {
+                            "pom_health_heavyhit_render_layout2@persentage_paser": {
+                                "type": "panel",
+                                "anchor_from": "top_left",
+                                "anchor_to": "top_left",
+                                "offset": [
+                                    0,
+                                    0
+                                ],
+                                "controls": [
+                                    {
+                                        "pom_health_heavyhit_render_layout3@fuck_mojang_image_clipper": {
+                                            "type": "panel",
+                                            "$int_input_1": "('_' +(100 - $res1))",
+                                            "$int_input_2": "('_' +(100 - $res2))",
+                                            "$inner_view": "hud.pom_health52_render_item",
+                                            "anchor_from": "top_left",
+                                            "anchor_to": "top_left",
+                                            "$anim_time": 0.3,
+                                            "offset": [
+                                                0,
+                                                0
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
                         }
-                    }]
+                    ]
                 }
             },
             {
@@ -6668,8 +6454,6 @@
             }
         ]
     },
-    
-    
     "wysiwyg_reset_modal_ok@library_modal.modal_button": {
         "$button_mapping": "button.confirm_reset",
         "$button_text": "hudScreen.controlCustomization.resetConfirm"
@@ -6977,38 +6761,7 @@
                 "centered_gui_elements_at_bottom_middle@centered_gui_elements_at_bottom_middle": {}
             },
             {
-                "not_centered_gui_elements": {
-                    "type": "panel",
-                    "controls": [
-                        {
-                            "text": {
-                                "type": "label",
-                                "anchor_to": "bottom_middle",
-                                "anchor_from": "bottom_middle",
-                                "offset": [
-                                    0,
-                                    -50
-                                ],
-                                "layer": 1,
-                                "alpha": 0.1,
-                                "text": "为了最佳游戏体验，建议前往设置/视频 切换经典UI",
-                                "color": [
-                                    1,
-                                    1,
-                                    1,
-                                    1
-                                ]
-                            }
-                        }
-                    ],
-                    "bindings": [
-                        {
-                            "binding_name": "#hud_visible_not_centered",
-                            "binding_name_override": "#visible",
-                            "binding_type": "global"
-                        }
-                    ]
-                }
+                "not_centered_gui_elements@not_centered_gui_elements": {}
             },
             {
                 "centered_ridingvr_gui_elements@centered_gui_elements_at_bottom_middle": {
@@ -7251,6 +7004,23 @@
                                     {
                                         "binding_name": "#boss_hud_padding",
                                         "binding_name_override": "#visible"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "boss_hud_touch_padding": {
+                                "type": "panel",
+                                "size": [
+                                    "100%",
+                                    "15%"
+                                ],
+                                "visible": "#boss_hud_touch_padding", //Make this visible to move the boss hud panel down
+                                "bindings": [
+                                    {
+                                        "binding_name": "#boss_hud_touch_padding",
+                                        "binding_name_override": "#visible",
+                                        "binding_condition": "always"
                                     }
                                 ]
                             }

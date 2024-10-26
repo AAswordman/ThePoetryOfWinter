@@ -5,7 +5,7 @@
         "builder": "node ./build/build.js"
     },
     "dependencies": {
-        "@minecraft/server": "1.15.0-beta.1.21.30-preview.24",
+        "@minecraft/server": "1.16.0-beta.1.21.40-preview.23",
         "@minecraft/server-ui": "1.4.0-beta.1.21.30-preview.24",
         "@minecraft/vanilla-data": "1.21.20-preview.23",
         "chokidar": "^3.6.0"
