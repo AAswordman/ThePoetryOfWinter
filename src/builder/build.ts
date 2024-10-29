@@ -1,7 +1,7 @@
 import * as chokidar from "chokidar"
 import * as fs from 'fs';
 import * as os from 'os';
-import SingleFileDataSet, { JSONObject } from "./SingleFileDataSet.js";
+import SingleFileDataSet, { JSONArray, JSONObject } from "./SingleFileDataSet.js";
 import { readFile, writeFile } from "./fileOper.js";
 
 const ROOT = "src/TPOW/WPB"
@@ -210,10 +210,11 @@ async function compileExBlock(path: string) {
         delete block["events"];
 
         let permutationsArray = ([...(block['permutations'] ?? []) as JSONObject[]]);
-        permutationsArray.push({ "components": components, "condition": "" });
+        let originCustoms: undefined | string[] = undefined;
+        permutationsArray.unshift({ "components": components, "condition": "" });
         for (let obj of permutationsArray) {
             let i = obj["components"] as JSONObject;
-            const custom = [] as string[];
+            let custom = [] as string[];
             const list = [
                 "on_interact",
                 "on_step_on",
@@ -237,6 +238,11 @@ async function compileExBlock(path: string) {
             }
 
             if (custom.length > 0) {
+                if (i == components) {
+                    originCustoms = custom;
+                } else {
+                    custom = Array.from(new Set(custom.concat(originCustoms??[])))
+                }
                 i["minecraft:custom_components"] = custom;
             }
 
@@ -276,7 +282,7 @@ async function compileEntity(path: string) {
                     "components": {
                         "minecraft:projectile": {
                             "power": power,
-                            "uncertaintyBase":uncertaintyBase
+                            "uncertaintyBase": uncertaintyBase
                         }
                     }
                 }

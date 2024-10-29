@@ -200,10 +200,11 @@ async function compileExBlock(path) {
         let components = block['components'];
         delete block["events"];
         let permutationsArray = ([...((_a = block['permutations']) !== null && _a !== void 0 ? _a : [])]);
-        permutationsArray.push({ "components": components, "condition": "" });
+        let originCustoms = undefined;
+        permutationsArray.unshift({ "components": components, "condition": "" });
         for (let obj of permutationsArray) {
             let i = obj["components"];
-            const custom = [];
+            let custom = [];
             const list = [
                 "on_interact",
                 "on_step_on",
@@ -225,6 +226,12 @@ async function compileExBlock(path) {
                 delete i[minecraft("ticking")];
             }
             if (custom.length > 0) {
+                if (i == components) {
+                    originCustoms = custom;
+                }
+                else {
+                    custom = Array.from(new Set(custom.concat(originCustoms !== null && originCustoms !== void 0 ? originCustoms : [])));
+                }
                 i["minecraft:custom_components"] = custom;
             }
             delete i["minecraft:breathability"];

@@ -30,9 +30,7 @@
     "controller.render.weapon": {
       "geometry": "Geometry.default",
       "materials": [ { "*": "variable.is_enchanted ? material.enchanted : material.default" } ],
-      "textures": [
-        "Texture.default"
-      ]
+      "textures": [ "Texture.default", "Texture.enchanted" ]
     }
   }
 }
