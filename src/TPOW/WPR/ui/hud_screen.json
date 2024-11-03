@@ -2510,7 +2510,7 @@
                 "armor_rend@armor_renderer": {
                     "offset": [
                         0,
-                        20
+                        40
                     ],
                     "anchor_from": "bottom_left",
                     "anchor_to": "bottom_left"
@@ -2567,7 +2567,7 @@
                 "armor_rend@armor_renderer": {
                     "offset": [
                         -90,
-                        -100
+                        -120
                     ],
                     "anchor_from": "bottom_middle",
                     "anchor_to": "bottom_middle"

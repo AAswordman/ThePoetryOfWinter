@@ -4,8 +4,11 @@
 # ❄冬之纪行诗❄
 
 <!-- prettier-ignore-start -->
+
 <!-- markdownlint-disable-next-line MD036 -->
+
 _✨ 一场发生于未知世界的冒险 ✨_
+
 <!-- prettier-ignore-end -->
 
 </div>
@@ -37,14 +40,14 @@ _✨ 一场发生于未知世界的冒险 ✨_
 
 ### 📃Addon 相关信息
 
-📃Addon信息（最新） | 内容
------------- | -------------
-名称 | 冬之纪行诗
-类型 | RPG
-Addon版本 | 1.9.1B4
-支持版本 | 基岩版1.20.60/1.20.62
-售价 | 免费 （女装获取最新快照版）
-最后更新时间 | 2024.3
+| 📃Addon信息（最新） | 内容                        |
+| ------------------- | --------------------------- |
+| 名称                | 冬之纪行诗                  |
+| 类型                | RPG                         |
+| Addon版本           | 1.9.1R1                     |
+| 支持版本            | 基岩版1.20.60/1.20.62       |
+| 售价                | 免费 （女装获取最新快照版） |
+| 最后更新时间        | 2024.3                      |
 
 </div>
 
@@ -60,10 +63,20 @@ Addon版本 | 1.9.1B4
 - 仓库star数为1
 - 历史悠久
 
+
+## 💿教程
+
+- 物品介绍：[https://powitemintroduction.pages.dev/](https://powitemintroduction.pages.dev/)
+- 流程引导：[https://www.mcmod.cn/post/4178.html](https://www.mcmod.cn/post/4178.html)
+- 发布页：[https://klpbbs.com/thread-12380-1-1.html](https://klpbbs.com/thread-12380-1-1.html)
+- 本页面：[https://github.com/AAswordman/ThePoetryOfWinter](https://github.com/AAswordman/ThePoetryOfWinter)
+
 ## 💬反馈
+
 任何你在游玩中遇到的问题都可以在这里提出 Issue ，或者加入我们的[玩家 2 群](https://qm.qq.com/q/baQx43gfIc)。
 
 ## 📖历史
+
 最初想法是2019年7月份诞生的。当年我们[^1]开始着手制作了世界边境、decisland、Epic。在2022年1月份，Epic和世界边境合并，在2022年7月，decisland加入了这个体系当中。
 
 decisland将独立更新下去，而世界边境和Epic将不再独立更新，而是完全作为冬诗的一部分存在。
@@ -83,6 +96,7 @@ decisland将独立更新下去，而世界边境和Epic将不再独立更新，�
 ### 😇参与人员
 
 名字排序为随机排序
+
 ```
 Main creator:   - LiLeyi   AAswordsman
 
@@ -138,6 +152,7 @@ Our Team
 Special Thanks
 BunBun不是笨笨    在矿里的小金呀
 ```
+
 ### 🤑赞助者
 
 感谢以下赞助者对 《冬之纪行诗》 项目提供的资金支持：
