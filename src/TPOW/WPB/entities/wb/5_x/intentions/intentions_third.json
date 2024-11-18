@@ -400,7 +400,7 @@
             },
             "minecraft:boss": {
                 "should_darken_sky": true,
-                "name": "§4Intentions",
+                "name": "§4Nian",
                 "hud_range": 128
             },
             "minecraft:fire_immune": true,

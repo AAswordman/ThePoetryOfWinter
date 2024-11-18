@@ -197,7 +197,7 @@
             },
             "minecraft:boss": {
                 "should_darken_sky": false,
-                "name": "Headless Guard",
+                "name": "Headless Guardian",
                 "hud_range": 64
             },
             "minecraft:can_fly": {

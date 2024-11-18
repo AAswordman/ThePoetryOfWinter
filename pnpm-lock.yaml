@@ -15,8 +15,8 @@ importers:
         specifier: 1.4.0-beta.1.21.30-preview.24
         version: 1.4.0-beta.1.21.30-preview.24
       '@minecraft/vanilla-data':
-        specifier: 1.21.20-preview.23
-        version: 1.21.20-preview.23
+        specifier: 1.21.40-preview.23
+        version: 1.21.40-preview.23
       chokidar:
         specifier: ^3.6.0
         version: 3.6.0
@@ -75,8 +75,8 @@ packages:
   '@minecraft/server@1.16.0-beta.1.21.40-preview.23':
     resolution: {integrity: sha512-drqpxcxxFvC9o9ZzHvdMgVW8u6rAmhgVZr47KlHdzYGfEv8QTaBMGLLnHYT1BJ+PQwvYn9+owFX0SFqSf9z20Q==}
 
-  '@minecraft/vanilla-data@1.21.20-preview.23':
-    resolution: {integrity: sha512-xwzod+9mpFYBNy05Z+Q+dZAYNmnmQZb78GIA+VS7ok/lfDKjDuHv4aJpaOtrLdhO43BBFDufvpdJ15vpLm5EHw==}
+  '@minecraft/vanilla-data@1.21.40-preview.23':
+    resolution: {integrity: sha512-3jrzvYZ/zo0wg+Ul0koZuiNFGmDMhKFzKZHA4y/JZ+CFuwbeTM6Vmq+YfHVa09V8o6nJejh5dYZhgkeK8EHxxA==}
 
   '@sinclair/typebox@0.27.8':
     resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}
@@ -361,7 +361,7 @@ snapshots:
     dependencies:
       '@minecraft/common': 1.2.0
 
-  '@minecraft/vanilla-data@1.21.20-preview.23': {}
+  '@minecraft/vanilla-data@1.21.40-preview.23': {}
 
   '@sinclair/typebox@0.27.8': {}
 

@@ -16,6 +16,12 @@
                 "animate": [
                     "look_at_target", "base",
                     {
+                        "staff": "query.variant == 1"
+                    },
+                    {
+                        "sword": "query.variant == 0"
+                    },
+                    {
                         "move": "query.modified_move_speed"
                     }
                 ],
@@ -30,7 +36,8 @@
                 "look_at_target_gliding": "animation.humanoid.look_at_target.gliding.v1.0",
                 "look_at_target_swimming": "animation.humanoid.look_at_target.swimming.v1.0",
                 "move": "animation.god_of_guard.walk",
-                "base": "animation.god_of_guard.staff"
+                "sword": "animation.god_of_guard.sword",
+                "staff": "animation.god_of_guard.staff"
             },
             "render_controllers": [
                 "controller.render.intentions_second"

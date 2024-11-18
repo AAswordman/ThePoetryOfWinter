@@ -1131,7 +1131,7 @@
             //         "$texture_data": "textures/ui/filled_progress_bar_c",
             //         "$texture_empty": "textures/ui/empty_progress_bar_c",
             //         "bindings": [{
-            //             "binding_name": "(#bossName = 'Headless Guard')",
+            //             "binding_name": "(#bossName = 'Headless Guardian')",
             //             "binding_type": "collection",
             //             "binding_collection_name": "boss_bars",
             //             "binding_name_override": "#visible"

@@ -338,7 +338,7 @@
             "minecraft:tick_world": {},
             "minecraft:boss": {
                 "should_darken_sky": true,
-                "name": "Intentions",
+                "name": "Nian",
                 "hud_range": 128
             },
             "minecraft:fire_immune": true,

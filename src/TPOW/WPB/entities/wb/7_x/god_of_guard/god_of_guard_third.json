@@ -17,9 +17,49 @@
         "minecraft:despawn": {
           "despawn_from_distance": {}
         }
+      },
+      "melee": {
+        "minecraft:behavior.melee_attack": {
+          "priority": 3,
+          "speed_multiplier": 1,
+          "track_target": true
+        }
+      },
+      "range": {
+        "minecraft:behavior.ranged_attack": {
+          "priority": 0,
+          "attack_interval": 99,
+          "charge_charged_trigger":0,
+          "charge_shoot_trigger":0,
+          "attack_radius": 64
+        },
+        "minecraft:shooter": {
+          "def": "epic:sunlight_arrow"
+        }
+      },
+      "move": {
+        "minecraft:movement": {
+          "value": 0.41
+        }
+      },
+      "move0": {
+        "minecraft:movement": {
+          "value": 0
+        }
+      },
+      "variant0": {
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+      "variant1": {
+        "minecraft:variant": {
+          "value": 1
+        }
       }
     },
     "components": {
+      "minecraft:tick_world": {},
       "minecraft:boss": {
         "should_darken_sky": true,
         "name": "The God Of Guard",
@@ -119,7 +159,47 @@
           ]
         }
       },
-      "minecraft:entity_spawned": {}
+      "minecraft:entity_spawned": {},
+      "add_range": {
+        "add": {
+          "component_groups": ["range"]
+        }
+      },
+      "remove_range": {
+        "remove": {
+          "component_groups": ["range"]
+        }
+      },
+      "add_melee": {
+        "add": {
+          "component_groups": ["melee"]
+        }
+      },
+      "remove_melee": {
+        "remove": {
+          "component_groups": ["melee"]
+        }
+      },
+      "add_move": {
+        "add": {
+          "component_groups": ["move"]
+        }
+      },
+      "remove_move": {
+        "add": {
+          "component_groups": ["move0"]
+        }
+      },
+      "variant0": {
+        "add": {
+          "component_groups": ["variant0"]
+        }
+      },
+      "variant1": {
+        "add": {
+          "component_groups": ["variant1"]
+        }
+      }
     }
   }
 }
