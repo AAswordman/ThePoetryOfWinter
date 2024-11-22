@@ -4,7 +4,9 @@
         "target": "ES6",
         "outDir": "out",
         "lib": [
-            "ES6", "DOM","ES2020"
+            "ES6",
+            "DOM",
+            "ES2020"
         ],
         "sourceMap": true,
         //"rootDir": "ExcellentMInecraftscripts/src",
@@ -37,6 +39,7 @@
         "node_modules"
     ],
     "include": [
-        "ExcellentMInecraftscripts/src"
-, "ExcellentMInecraftscripts/src/test"    ]
+        "ExcellentMInecraftscripts/src",
+        "ExcellentMInecraftscripts/src/test"
+    ]
 }
