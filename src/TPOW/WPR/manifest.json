@@ -1,14 +1,14 @@
 {
     "format_version": 1,
     "header": {
-        "description": "Ver. 1.9.1R2 -Made by AA swordsman,LiLeyi and many their friends.",
+        "description": "Ver. 1.9.2B1 -Made by AA swordsman,LiLeyi and many their friends.",
         "name": "The Poetry Of Winter[Res]",
         "uuid": "c2021c95-08e8-9ade-0916-6cd21931fac5",
         "version": [1, 6, 0],
         "min_engine_version": [1, 9, 80]
     },
     "modules": [{
-        "description": "Ver. 1.9.1R2 -Made by AA swordsman,LiLeyi and many their friends.",
+        "description": "Ver. 1.9.2B1 -Made by AA swordsman,LiLeyi and many their friends.",
         "type": "resources",
         "uuid": "c2021c98-08e8-9ade-0916-6cd21931fac5",
         "version": [1, 6, 0]

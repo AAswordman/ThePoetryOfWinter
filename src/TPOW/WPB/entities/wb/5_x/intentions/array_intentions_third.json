@@ -6,16 +6,21 @@
       "is_spawnable": false,
       "is_summonable": true,
       "is_experimental": false
-          },
+    },
     "components": {
-         "minecraft:behavior.nearest_attackable_target": {
+      "minecraft:behavior.nearest_attackable_target": {
         "priority": 3,
         "entity_types": [
           {
-            "filters": { 
-                "all_of": [
-                  { "test" :  "is_family","operator":"!=","subject" : "other", "value" : "intentions"}
-                ] 
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "operator": "!=",
+                  "subject": "other",
+                  "value": "intentions"
+                }
+              ]
             },
             "within_default": 128
           }
@@ -23,39 +28,39 @@
         "must_see": false,
         "must_reach": true
       },
-        
-             "minecraft:damage_sensor": [
+      "minecraft:damage_sensor": [
         {
           "cause": "all",
           "deals_damage": false
         }
       ],
-                  "minecraft:knockback_resistance": {
+      "minecraft:knockback_resistance": {
         "value": 1.0
       },
-        "minecraft:explode": {
-     "fuseLength": 20,
-     "fuseLit": true,
-     "breaks_blocks":false,
-     "power": 0,
-     "destroyAffectedByGriefing": true
-    },
-    "minecraft:attack": {
+      "minecraft:explode": {
+        "fuseLength": 20,
+        "fuseLit": true,
+        "breaks_blocks": false,
+        "power": 0,
+        "destroyAffectedByGriefing": true
+      },
+      "minecraft:attack": {
         "damage": 0
-        
       },
       "minecraft:behavior.melee_attack": {
         "priority": 3,
         "speed_multiplier": 1,
         "track_target": true
       },
-      
       "minecraft:fire_immune": true,
       "minecraft:type_family": {
-        "family": [ "moster","intentions"]
+        "family": [
+          "moster",
+          "intentions"
+        ]
       },
-      "minecraft:scale":{
-      	"value":0.5
+      "minecraft:scale": {
+        "value": 0.5
       },
       "minecraft:collision_box": {
         "width": 0.1,
@@ -68,15 +73,10 @@
       "minecraft:movement": {
         "value": 0.28
       },
-      "minecraft:navigation.walk": {
-      },
-      "minecraft:movement.basic": {
-        
-      },
-      "minecraft:jump.static": {
-      },
-      "minecraft:can_climb": {
-      },
+      "minecraft:navigation.walk": {},
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
       "minecraft:behavior.random_stroll": {
         "priority": 6,
         "speed_multiplier": 1,
@@ -93,8 +93,7 @@
       "minecraft:behavior.hurt_by_target": {
         "priority": 2
       },
-      "minecraft:physics": {
-      },
+      "minecraft:physics": {},
       "minecraft:follow_range": {
         "value": 64
       }

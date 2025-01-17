@@ -2,12 +2,11 @@
     "format_version": "1.10.0",
     "minecraft:entity": {
         "description": {
-            "identifier": "wb:god_of_guard_settle",
+            "identifier": "wb:god_of_guard_big_sword",
             "is_spawnable": false,
             "is_summonable": true,
             "is_experimental": false
         },
-
         "component_groups": {
             "normal": {
                 "minecraft:collision_box": {
@@ -24,19 +23,43 @@
                     "event": "change",
                     "target": "self"
                 }
+            },
+            "scale": {
+                "minecraft:scale": {
+                    "value": 1
+                },
+                "minecraft:health": {
+                    "value": 30,
+                    "max": 30
+                },
+                "minecraft:explode": {
+                    "fuse_length": 10,
+                    "fuse_lit": true,
+                    "power": 0,
+                    "causes_fire": false
+                },
+                "minecraft:physics": {
+                    "has_gravity": true,
+                    "has_collision": true
+                }
             }
-
         },
-
         "components": {
-            "minecraft:explode":{
-                "fuse_length": 10,
+            "minecraft:explode": {
+                "fuse_length": 3,
                 "fuse_lit": true,
                 "power": 0,
                 "causes_fire": false
             },
             "minecraft:type_family": {
-                "family": ["god","god_summoner", "weapon_skill"]
+                "family": [
+                    "god",
+                    "god_summoner",
+                    "weapon_skill"
+                ]
+            },
+            "minecraft:scale": {
+                "value": 1
             },
             "minecraft:breathable": {
                 "totalSupply": 99999,
@@ -44,8 +67,8 @@
                 "breathesWater": true
             },
             "minecraft:health": {
-                "value": 200,
-                "max": 200
+                "value": 500,
+                "max": 500
             },
             "minecraft:knockback_resistance": {
                 "value": 10
@@ -56,11 +79,20 @@
             "minecraft:movement.basic": {},
             "minecraft:jump.static": {},
             "minecraft:nameable": {},
-            "minecraft:physics": {}
+            "minecraft:physics": {
+                "has_gravity": false,
+                "has_collision": false
+            }
         },
-
         "events": {
-            "minecraft:entity_spawned": {}
+            "minecraft:entity_spawned": {},
+            "scale": {
+                "add": {
+                    "component_groups": [
+                        "scale"
+                    ]
+                }
+            }
         }
     }
 }
