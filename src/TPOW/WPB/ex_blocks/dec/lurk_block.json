@@ -18,7 +18,14 @@
                 "explosion_resistance": 20
             },
             "minecraft:map_color": "#27C3C2",
-            "minecraft:loot": "loot_tables/blocks/lurk_block.json"
+            "minecraft:loot": "loot_tables/blocks/lurk_block.json",
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "lurk_block",
+                    "render_method": "alpha_test"
+                }
+            }
         }
     }
 }

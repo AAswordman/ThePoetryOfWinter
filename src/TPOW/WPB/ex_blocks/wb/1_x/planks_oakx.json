@@ -19,6 +19,13 @@
                 "tags": [
                     "wood"
                 ]
+            },
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "planks_oakx",
+                    "render_method": "alpha_test"
+                }
             }
         }
     }

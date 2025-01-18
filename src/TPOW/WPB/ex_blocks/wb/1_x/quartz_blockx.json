@@ -19,6 +19,22 @@
                 "tags": [
                     "stone"
                 ]
+            },
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "north": "sides",
+                "south": "sides",
+                "east": "sides",
+                "west": "sides",
+                "sides": {
+                    "texture": "quartz_block_sidex"
+                },
+                "up": {
+                    "texture": "quartz_block_topx"
+                },
+                "down": {
+                    "texture": "quartz_block_bottomx"
+                }
             }
         }
     }

@@ -22,7 +22,14 @@
                 "flame_odds": 500,
                 "burn_odds": 10
             },
-            "minecraft:loot": "loot_tables/blocks/fuse.json"
+            "minecraft:loot": "loot_tables/blocks/fuse.json",
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "fuse",
+                    "render_method": "alpha_test"
+                }
+            }
         }
     }
 }

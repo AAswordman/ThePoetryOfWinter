@@ -24,7 +24,8 @@
                 "explosion_resistance": 0
             },
             "minecraft:map_color": "#184123",
-            "minecraft:loot": "loot_tables/blocks/sweet_berries_block.json"
+            "minecraft:loot": "loot_tables/blocks/sweet_berries_block.json",
+            "minecraft:geometry": "minecraft:geometry.full_block"
         }
     }
 }

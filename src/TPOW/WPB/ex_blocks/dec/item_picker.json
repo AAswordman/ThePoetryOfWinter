@@ -27,6 +27,22 @@
                 "tags": [
                     "stone"
                 ]
+            },
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "north": "sides",
+                "south": "sides",
+                "east": "sides",
+                "west": "sides",
+                "sides": {
+                    "texture": "item_picker_side"
+                },
+                "up": {
+                    "texture": "item_picker_up"
+                },
+                "down": {
+                    "texture": "item_picker_down"
+                }
             }
         },
         "events": {

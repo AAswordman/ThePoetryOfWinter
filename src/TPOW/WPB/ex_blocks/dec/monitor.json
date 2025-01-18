@@ -23,6 +23,22 @@
                 "tags": [
                     "wood"
                 ]
+            },
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "north": "sides",
+                "south": "sides",
+                "east": "sides",
+                "west": "sides",
+                "sides": {
+                    "texture": "monitor"
+                },
+                "up": {
+                    "texture": "lurk_log_up"
+                },
+                "down": {
+                    "texture": "lurk_log_up"
+                }
             }
         }
     }

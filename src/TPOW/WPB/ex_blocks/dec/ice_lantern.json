@@ -18,7 +18,14 @@
                 "explosion_resistance": 10
             },
             "minecraft:loot": "loot_tables/blocks/ice_lantern.json",
-            "minecraft:map_color": "#BBDBFF"
+            "minecraft:map_color": "#BBDBFF",
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "ice_lantern",
+                    "render_method": "alpha_test"
+                }
+            }
         }
     }
 }

@@ -28,6 +28,13 @@
                 "on_tick": {
                     "event": "minecraft:effect"
                 }
+            },
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "eye_of_nature_log",
+                    "render_method": "alpha_test"
+                }
             }
         },
         "events": {

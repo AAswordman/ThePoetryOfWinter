@@ -17,7 +17,23 @@
             "minecraft:destructible_by_explosion": {
                 "explosion_resistance": 100
             },
-            "minecraft:map_color": "#270E3C"
+            "minecraft:map_color": "#270E3C",
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "north": "sides",
+                "south": "sides",
+                "east": "sides",
+                "west": "sides",
+                "sides": {
+                    "texture": "purpur_summoner_side"
+                },
+                "up": {
+                    "texture": "purpur_summoner_up"
+                },
+                "down": {
+                    "texture": "purpur_summoner_up"
+                }
+            }
         }
     }
 }

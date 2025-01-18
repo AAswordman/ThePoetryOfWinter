@@ -4,7 +4,8 @@ import * as os from 'os';
 import SingleFileDataSet, { JSONArray, JSONObject } from "./SingleFileDataSet.js";
 import { readFile, writeFile } from "./fileOper.js";
 
-const ROOT = "src/TPOW/WPB"
+const BEHROOT = "src/TPOW/WPB";
+const RESROOT = "src/TPOW/WPR";
 const GAMEROOT = "C:/Users/" + os.userInfo().username + "/AppData/Local/Packages/Microsoft.MinecraftUWP_8wekyb3d8bbwe/LocalState/games/com.mojang/development_behavior_packs/WPB"
 async function fileDisplay(filePath: string) {
     for (let f of fs.readdirSync(filePath)) {
@@ -19,7 +20,7 @@ async function fileDisplay(filePath: string) {
 let dataSet = new SingleFileDataSet("src/TPOW/WPB/scripts/ExcellentMInecraftscripts/src/filepack");
 dataSet.init().then(async () => {
     await dataSet.setCacheMode(true);
-    let watcher = chokidar.watch(ROOT, {
+    let watcher = chokidar.watch(BEHROOT, {
         ignored: /([\/\\]\.|scripts\/)/,
         persistent: true
     });
@@ -53,11 +54,11 @@ async function compile(path: string) {
     try {
         // console.log("try compile  " + path);
         if (path.endsWith(".json")) {
-            if (path.startsWith(ROOT + "/ex_blocks")) {
+            if (path.startsWith(BEHROOT + "/ex_blocks")) {
                 await compileExBlock(path);
-            } else if (path.startsWith(ROOT + "/ex_items")) {
+            } else if (path.startsWith(BEHROOT + "/ex_items")) {
                 await compileExItem(path);
-            } else if (path.startsWith(ROOT + "/entities")) {
+            } else if (path.startsWith(BEHROOT + "/entities")) {
                 await compileEntity(path);
             }
         }
@@ -82,10 +83,10 @@ async function compileExItem(path: string) {
         } catch (e) {
             return;
         }
-        await dataSet.write(path.replace(ROOT + "/", ""), JSON.parse(JSON.stringify(jsonObj)));
+        await dataSet.write(path.replace(BEHROOT + "/", ""), JSON.parse(JSON.stringify(jsonObj)));
 
         let items = GAMEROOT + "/items";
-        let targetFile = items + path.replace(ROOT + "/ex_items", "");
+        let targetFile = items + path.replace(BEHROOT + "/ex_items", "");
         let targetDir = targetFile.substring(0, targetFile.lastIndexOf("/"));
         fs.mkdirSync(targetDir, { recursive: true })
         let item = jsonObj['minecraft:item'] as JSONObject;
@@ -199,10 +200,10 @@ async function compileExBlock(path: string) {
         } catch (e) {
             return;
         }
-        await dataSet.write(path.replace(ROOT + "/", ""), JSON.parse(JSON.stringify(jsonObj)));
+        await dataSet.write(path.replace(BEHROOT + "/", ""), JSON.parse(JSON.stringify(jsonObj)));
 
         let blocks = GAMEROOT + "/blocks";
-        let targetFile = blocks + path.replace(ROOT + "/ex_blocks", "");
+        let targetFile = blocks + path.replace(BEHROOT + "/ex_blocks", "");
         let targetDir = targetFile.substring(0, targetFile.lastIndexOf("/"));
         fs.mkdirSync(targetDir, { recursive: true })
         let block = jsonObj['minecraft:block'] as JSONObject;
@@ -288,7 +289,7 @@ async function compileEntity(path: string) {
                 }
             }
 
-            await dataSet.write(path.replace(ROOT + "/", ""), saver);
+            await dataSet.write(path.replace(BEHROOT + "/", ""), saver);
         }
     }
 }
@@ -298,6 +299,6 @@ async function compileCommonJson(path: string) {
     if (!fs.existsSync(path)) {
         await dataSet.remove(path);
     } else {
-        await dataSet.write(path.replace(ROOT + "/", ""), eval("(" + await readFile(path) + ")"));
+        await dataSet.write(path.replace(BEHROOT + "/", ""), eval("(" + await readFile(path) + ")"));
     }
 }

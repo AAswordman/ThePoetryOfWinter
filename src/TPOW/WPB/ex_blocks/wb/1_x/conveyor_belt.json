@@ -20,7 +20,14 @@
                     "stone"
                 ]
             },
-            "minecraft:friction": 0.8
+            "minecraft:friction": 0.8,
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "conveyor_belt",
+                    "render_method": "alpha_test"
+                }
+            }
         }
     }
 }

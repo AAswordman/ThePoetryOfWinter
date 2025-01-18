@@ -57,7 +57,13 @@
                     }
                 ]
             },
-            "minecraft:breathability": "air"
+            "minecraft:breathability": "air",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "bizarre_chilli_crop_stage_0",
+                    "render_method": "alpha_test"
+                }
+            }
         },
         "events": {
             "grow_stage": {

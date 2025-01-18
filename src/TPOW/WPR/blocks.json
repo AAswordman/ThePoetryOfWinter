@@ -1,692 +1,472 @@
 {
-  "format_version": [1,1,0],
-  "wb:portal_bossx": {
-    "textures": "portal_bossx",
-    "sound": "stone"
-  },
-  "wb:waste_recovery": {
-    "textures": "waste_recovery",
-    "sound": "stone"
-  },
-  "wb:parallel_block": {
-    "textures": "parallel_block",
-    "sound": "stone"
-  },
-  "wb:boss_keeper_block": {
-    "textures": "boss_keeper_block",
-    "sound": "stone"
-  },
-  "wb:parallel_block_destroy": {
-    "textures": "parallel_block_destroy",
-    "sound": "stone"
-  },
-  "wb:portal_boss": {
-    "textures": "portal_boss",
-    "sound": "stone"
-  },
-  "wb:portal_desertboss": {
-    "textures": "portal_boss",
-    "sound": "stone"
-  },
-  "wb:portal_guardboss": {
-    "textures": "portal_boss",
-    "sound": "stone"
-  },
-  "wb:portal_stoneboss": {
-    "textures": "portal_stoneboss",
-    "sound": "stone"
-  },
-  "wb:portal_caveboss": {
-    "textures": "portal_caveboss",
-    "sound": "stone"
-  },
-  "wb:portal_ancientboss": {
-    "textures": "portal_ancientboss",
-    "sound": "stone"
-  },
-  "wb:portal_mindboss": {
-    "textures": "portal_mindboss",
-    "sound": "stone"
-  },
-  "wb:quartz_blue": {
-    "textures": "quartz_blue",
-    "sound": "stone"
-  },
-  "wb:electric_light": {
-    "textures": "electric_light",
-    "sound": "stone"
-  },
-  "wb:lamp_senior": {
-    "textures": "lamp_senior",
-    "sound": "stone"
-  },
-  "wb:button_block": {
-    "textures": "button_block",
-    "sound": "stone"
-  },
-  "wb:conveyor_belt": {
-    "textures": "conveyor_belt",
-    "sound": "stone"
-  },
-  "wb:planks_oakx": {
-    "textures": "planks_oakx",
-    "sound": "wood"
-  },
-  "wb:quartz_blockx": {
-    "textures": {
-      "up": "quartz_block_topx",
-      "down": "quartz_block_bottomx",
-      "side": "quartz_block_sidex"
+    "format_version": [
+        1,
+        1,
+        0
+    ],
+    "wb:portal_bossx": {
+        "sound": "stone"
     },
-    "sound": "stone"
-  },
-  "wb:magic_forest_grass": {
-    "textures": "magic_forest_grass",
-    "sound": "stone"
-  },
-  "wb:leaves_magic_tree": {
-    "textures": "leaves_magic_tree",
-    "sound": "grass"
-  },
-  "wb:leaves_magic_lower_tree": {
-    "textures": "leaves_magic_lower_tree",
-    "sound": "grass"
-  },
-  "wb:leaves_magic_bottom_tree": {
-    "textures": "leaves_magic_bottom_tree",
-    "sound": "grass"
-  },
-  "wb:sand_hard": {
-    "textures": "sand_hard",
-    "sound": "stone"
-  },
-  "wb:red_sand_hard": {
-    "textures": "red_sand_hard",
-    "sound": "stone"
-  },
-  "wb:block_magic_barrier_ore": {
-    "textures": "block_magic_barrier_ore",
-    "sound": "stone"
-  },
-  "wb:block_magic_equipment_ore": {
-    "textures": "block_magic_equipment_ore",
-    "sound": "stone"
-  },
-  "wb:block_magic_barrier": {
-    "textures": "block_magic_barrier",
-    "sound": "stone"
-  },
-  "wb:block_magic_equipment": {
-    "textures": "block_magic_equipment",
-    "sound": "stone"
-  },
-  "wb:block_energy_boundary_ore": {
-    "textures": "block_energy_boundary_ore",
-    "sound": "stone"
-  },
-  "wb:block_energy_boundary": {
-    "textures": "block_energy_boundary",
-    "sound": "stone"
-  },
-  "wb:block_energy_seal_ore": {
-    "textures": "block_energy_seal_ore",
-    "sound": "stone"
-  },
-  "wb:block_energy_seal": {
-    "textures": "block_energy_seal",
-    "sound": "stone"
-  },
-  "wb:block_energy_water_ore": {
-    "textures": "block_energy_water_ore",
-    "sound": "stone"
-  },
-  "wb:block_energy_water": {
-    "textures": "block_energy_water",
-    "sound": "stone"
-  },
-  "wb:block_magic_forget_ore": {
-    "textures": "block_magic_forget_ore",
-    "sound": "stone"
-  },
-  "wb:block_magic_forget": {
-    "textures": "block_magic_forget",
-    "sound": "stone"
-  },
-  "wb:block_magic_ink_ore": {
-    "textures": "block_magic_ink_ore",
-    "sound": "stone"
-  },
-  "wb:block_magic_ink": {
-    "textures": "block_magic_ink",
-    "sound": "stone"
-  },
-  "wb:block_senior_boundary_ore": {
-    "textures": "block_senior_boundary_ore",
-    "sound": "stone"
-  },
-  "wb:block_senior_boundary": {
-    "textures": "block_senior_boundary",
-    "sound": "stone"
-  },
-  "wb:block_senior_equipment_ore": {
-    "textures": "block_senior_equipment_ore",
-    "sound": "stone"
-  },
-  "wb:block_senior_equipment": {
-    "textures": "block_senior_equipment",
-    "sound": "stone"
-  },
-  "wb:block_senior_forget_ore": {
-    "textures": "block_senior_forget_ore",
-    "sound": "stone"
-  },
-  "wb:block_senior_forget": {
-    "textures": "block_senior_forget",
-    "sound": "stone"
-  },
-  "wb:block_senior_ink_ore": {
-    "textures": "block_senior_ink_ore",
-    "sound": "stone"
-  },
-  "wb:block_senior_ink": {
-    "textures": "block_senior_ink",
-    "sound": "stone"
-  },
-  "wb:block_senior_seal_ore": {
-    "textures": "block_senior_seal_ore",
-    "sound": "stone"
-  },
-  "wb:block_senior_seal": {
-    "textures": "block_senior_seal",
-    "sound": "stone"
-  },
-  "wb:block_senior_water_ore": {
-    "textures": "block_senior_water_ore",
-    "sound": "stone"
-  },
-  "wb:block_senior_water": {
-    "textures": "block_senior_water",
-    "sound": "stone"
-  },
-  "dec:ancient_ice": {
-    "textures": "ancient_ice",
-    "sound": "glass"
-  },
-  "dec:fuse": {
-    "textures": "fuse",
-    "sound": "cloth"
-  },
-  "dec:lava_ore": {
-    "textures": "lava_ore",
-    "sound": "stone"
-  },
-  "dec:ash": {
-    "textures": "ash",
-    "sound": "sand"
-  },
-  "dec:light_obsidian": {
-    "textures": "light_obsidian",
-    "sound": "glass"
-  },
-  "dec:end_altar": {
-    "textures": {
-      "up": "end_altar_up",
-      "down": "end_altar_down",
-      "side": "end_altar_side"
+    "wb:waste_recovery": {
+        "sound": "stone"
     },
-    "sound": "stone"
-  },
-  "dec:yellow_flower_block": {
-    "textures": "yellow_flower_block",
-    "sound": "grass"
-  },
-  "dec:white_flower_block": {
-    "textures": "white_flower_block",
-    "sound": "grass"
-  },
-  "dec:blue_flower_block": {
-    "textures": "blue_flower_block",
-    "sound": "grass"
-  },
-  "dec:pink_flower_block": {
-    "textures": "pink_flower_block",
-    "sound": "grass"
-  },
-  "dec:black_flower_block": {
-    "textures": "black_flower_block",
-    "sound": "grass"
-  },
-  "dec:compress_flower_block": {
-    "textures": "compress_flower_block",
-    "sound": "grass"
-  },
-  "dec:red_flower_block": {
-    "textures": "red_flower_block",
-    "sound": "grass"
-  },
-  "dec:ice_brick_block": {
-    "textures": "ice_brick_block",
-    "sound": "glass"
-  },
-  "dec:compressed_ice": {
-    "textures": "compressed_ice",
-    "sound": "glass"
-  },
-  "dec:snow_brick_block": {
-    "textures": "snow_brick_block",
-    "sound": "snow"
-  },
-  "dec:uranium_ore": {
-    "textures": "uranium_ore",
-    "sound": "stone"
-  },
-  "dec:uranium_block": {
-    "textures": "uranium_block",
-    "sound": "stone"
-  },
-  "dec:solidified_lava_block": {
-    "textures": "solidified_lava_block",
-    "sound": "stone"
-  },
-  "dec:nuke_block": {
-    "textures": {
-      "up": "tnt_up",
-      "down": "tnt_down",
-      "side": "nuke_side"
+    "wb:parallel_block": {
+        "sound": "stone"
     },
-    "sound": "grass"
-  },
-  "dec:end_ore": {
-    "textures": "end_ore",
-    "sound": "stone"
-  },
-  "dec:smooth_amethyst_block": {
-    "textures": "smooth_amethyst_block",
-    "sound": "glass"
-  },
-  "dec:amethyst_lantern": {
-    "textures": "amethyst_lantern",
-    "sound": "glass"
-  },
-  "dec:candy_block": {
-    "textures": "candy_block",
-    "sound": "stone"
-  },
-  "dec:scale_block": {
-    "textures": "scale_block",
-    "sound": "stone"
-  },
-  "dec:stream_ore": {
-    "textures": "stream_ore",
-    "sound": "stone"
-  },
-  "dec:lightning_summoner": {
-    "textures": {
-      "up": "weather_console_up",
-      "down": "weather_console_down",
-      "side": "lightning_summoner"
+    "wb:boss_keeper_block": {
+        "sound": "stone"
     },
-    "sound": "stone"
-  },
-  "dec:raining_summoner": {
-    "textures": {
-      "up": "weather_console_up",
-      "down": "weather_console_down",
-      "side": "raining_summoner"
+    "wb:parallel_block_destroy": {
+        "sound": "stone"
     },
-    "sound": "stone"
-  },
-  "dec:sunny_summoner": {
-    "textures": {
-      "up": "weather_console_up",
-      "down": "weather_console_down",
-      "side": "sunny_summoner"
+    "wb:portal_boss": {
+        "sound": "stone"
     },
-    "sound": "stone"
-  },
-  "dec:item_picker": {
-    "textures": {
-      "up": "item_picker_up",
-      "down": "item_picker_down",
-      "side": "item_picker_side"
+    "wb:portal_desertboss": {
+        "sound": "stone"
     },
-    "sound": "stone"
-  },
-  "dec:mining_machine": {
-    "textures": {
-      "up": "mining_machine_up",
-      "down": "mining_machine_down",
-      "side": "mining_machine_side"
+    "wb:portal_guardboss": {
+        "sound": "stone"
     },
-    "sound": "stone"
-  },
-  "dec:summoner": {
-    "textures": "summoner",
-    "sound": "gravel"
-  },
-  "dec:soul_soil_diamond_ore": {
-    "sound": "soul_soil",
-    "textures": "soul_soil_diamond_ore"
-  },
-  "dec:sweet_berries_block": {
-    "textures": "sweet_berries_block",
-    "sound": "grass"
-  },
-  "dec:steel_block": {
-    "textures": "steel_block",
-    "sound": "stone"
-  },
-  "dec:radiate_dirt": {
-    "textures": "radiate_dirt",
-    "sound": "gravel"
-  },
-  "dec:radiate_stone": {
-    "textures": "radiate_stone",
-    "sound": "stone"
-  },
-  "dec:radiate_stonebrick": {
-    "textures": "radiate_stonebrick",
-    "sound": "stone"
-  },
-  "dec:broken_dirt": {
-    "textures": "broken_dirt",
-    "sound": "gravel"
-  },
-  "dec:mine": {
-    "textures": {
-      "up": "mine_top",
-      "down": "mine",
-      "side": "mine"
+    "wb:portal_stoneboss": {
+        "sound": "stone"
     },
-    "sound": "gravel"
-  },
-  "dec:christmas_gift_block": {
-    "textures": "christmas_gift_block",
-    "sound": "cloth"
-  },
-  "dec:soybean_crop": {
-    "textures": "soybean_stage_0",
-    "sound": "grass"
-  },
-  "dec:rice_crop": {
-    "textures": "rice_stage_0",
-    "sound": "grass"
-  },
-  "dec:leek_crop": {
-    "textures": "leek_stage_0",
-    "sound": "grass"
-  },
-  "dec:red_lantern": {
-    "textures": "red_lantern",
-    "sound": "cloth"
-  },
-  "dec:lurk_block": {
-    "textures": "lurk_block",
-    "sound": "wood"
-  },
-  "dec:lurk_end_stone": {
-    "textures": {
-      "up": "lurk_end_stone_up",
-      "down": "end_stone",
-      "side": "lurk_end_stone_side"
+    "wb:portal_caveboss": {
+        "sound": "stone"
     },
-    "sound": "stone"
-  },
-  "dec:lurk_grass": {
-    "textures": "lurk_grass",
-    "sound": "grass"
-  },
-  "dec:lurk_log": {
-    "textures": {
-      "up": "lurk_log_up",
-      "down": "lurk_log_up",
-      "side": "lurk_log_side"
+    "wb:portal_ancientboss": {
+        "sound": "stone"
     },
-    "sound": "wood"
-  },
-  "dec:lurk_mushroom": {
-    "textures": "lurk_mushroom",
-    "sound": "grass"
-  },
-  "dec:lurk_mushroom_lit": {
-    "textures": "lurk_mushroom_lit",
-    "sound": "grass"
-  },
-  "dec:lurk_spring": {
-    "textures": "lurk_spring",
-    "sound": "grass"
-  },
-  "dec:monitor": {
-    "textures": {
-      "up": "lurk_log_up",
-      "down": "lurk_log_up",
-      "side": "monitor"
+    "wb:portal_mindboss": {
+        "sound": "stone"
     },
-    "sound": "wood"
-  },
-  "dec:monitor_activated": {
-    "textures": {
-      "up": "lurk_log_up",
-      "down": "lurk_log_up",
-      "side": "monitor_activated"
+    "wb:quartz_blue": {
+        "sound": "stone"
     },
-    "sound": "wood"
-  },
-  "dec:end_coal_ore": {
-    "textures": "end_coal_ore",
-    "sound": "stone"
-  },
-  "dec:end_diamond_ore": {
-    "textures": "end_diamond_ore",
-    "sound": "stone"
-  },
-  "dec:end_emerald_ore": {
-    "textures": "end_emerald_ore",
-    "sound": "stone"
-  },
-  "dec:end_gold_ore": {
-    "textures": "end_gold_ore",
-    "sound": "stone"
-  },
-  "dec:end_iron_ore": {
-    "textures": "end_iron_ore",
-    "sound": "stone"
-  },
-  "dec:end_lapis_ore": {
-    "textures": "end_lapis_ore",
-    "sound": "stone"
-  },
-  "dec:end_redstone_ore": {
-    "textures": "end_redstone_ore",
-    "sound": "stone"
-  },
-  "dec:nether_coal_ore": {
-    "textures": "nether_coal_ore",
-    "sound": "stone"
-  },
-  "dec:nether_diamond_ore": {
-    "textures": "nether_diamond_ore",
-    "sound": "stone"
-  },
-  "dec:nether_emerald_ore": {
-    "textures": "nether_emerald_ore",
-    "sound": "stone"
-  },
-  "dec:nether_iron_ore": {
-    "textures": "nether_iron_ore",
-    "sound": "stone"
-  },
-  "dec:nether_lapis_ore": {
-    "textures": "nether_lapis_ore",
-    "sound": "stone"
-  },
-  "dec:nether_redstone_ore": {
-    "textures": "nether_redstone_ore",
-    "sound": "stone"
-  },
-  "dec:experience_flower_crop": {
-    "textures": "experience_flower_stage_0",
-    "sound": "grass"
-  },
-  "dec:snow_lotus_crop": {
-    "textures": "snow_lotus_crop",
-    "sound": "grass"
-  },
-  "dec:blue_gem_ore": {
-    "textures": "blue_gem_ore",
-    "sound": "stone"
-  },
-  "dec:red_gem_ore": {
-    "textures": "red_gem_ore",
-    "sound": "stone"
-  },
-  "dec:flower_ghost_block": {
-    "textures": "flower_ghost_block",
-    "sound": "grass"
-  },
-  "dec:nightmare_block": {
-    "textures": "nightmare_block",
-    "sound": "stone"
-  },
-  "dec:eye_of_nature_log": {
-    "textures": "eye_of_nature_log",
-    "sound": "wood"
-  },
-  "dec:bracken_crop": {
-    "textures": "bracken_crop",
-    "sound": "grass"
-  },
-  "dec:blue_ice_brick_block": {
-    "textures": "blue_ice_brick_block",
-    "sound": "glass"
-  },
-  "dec:ice_bookshelf": {
-    "textures": {
-      "up": "ice_brick_block",
-      "down": "ice_brick_block",
-      "side": "ice_bookshelf_side"
+    "wb:electric_light": {
+        "sound": "stone"
     },
-    "sound": "glass"
-  },
-  "dec:purpur_summoner": {
-    "textures": {
-      "up": "purpur_summoner_up",
-      "down": "purpur_summoner_up",
-      "side": "purpur_summoner_side"
+    "wb:lamp_senior": {
+        "sound": "stone"
     },
-    "sound": "stone"
-  },
-  "dec:dirt_ghost_block": {
-    "textures": "dirt_ghost_block",
-    "sound": "gravel"
-  },
-  "dec:houttuynia_crop": {
-    "textures": "houttuynia_crop_stage_0",
-    "sound": "grass"
-  },
-  "dec:fritillary_crop": {
-    "textures": "fritillary_crop_stage_0",
-    "sound": "grass"
-  },
-  "dec:bizarre_chilli_crop": {
-    "textures": "bizarre_chilli_crop_stage_0",
-    "sound": "grass"
-  },
-  "dec:rotten_flesh_block": {
-    "textures": "rotten_flesh_block",
-    "sound": "gravel"
-  },
-  "dec:ghost_ice": {
-    "textures": "ghost_ice",
-    "sound": "glass"
-  },
-  "dec:ice_mixed_brick": {
-    "textures": "ice_mixed_brick",
-    "sound": "glass"
-  },
-  "dec:chiseled_ice_brick": {
-    "textures": "chiseled_ice_brick",
-    "sound": "glass"
-  },
-  "dec:frozen_cage": {
-    "textures": "frozen_cage",
-    "sound": "glass"
-  },
-  "dec:ice_lantern": {
-    "textures": "ice_lantern",
-    "sound": "glass"
-  },
-  "dec:ash_cage": {
-    "textures": "ash_cage",
-    "sound": "stone"
-  },
-//DEC1.9.3
-  "dec:patterned_vase_red_block": {
-    "textures": "patterned_vase_red_block",
-    "sound": "decorated_pot"
-  },
-  "dec:lace_block_black": {
-    "textures": "lace_block_black_side",
-    "sound": "cloth"
-  },
-  "dec:lace_block_light_red": {
-    "textures": "lace_block_light_red_side",
-    "sound": "cloth"
-  },
-  "dec:red_patterned_stonebrick": {
-    "textures": "red_patterned_stonebrick_side",
-    "sound": "stone"
-  },
-  "dec:red_stonebrick": {
-    "textures": "red_stonebrick",
-    "sound": "stone"
-  },
-  "dec:lava_flower_crop": {
-    "textures": "lava_flower_crop_0",
-    "sound": "grass"
-  },
-  "dec:mooli_crop": {
-    "textures": "mooli_crop_0",
-    "sound": "grass"
-  },
-  "dec:red_spider_lily_crop": {
-    "textures": "red_spider_lily_crop",
-    "sound": "grass"
-  },
-  "dec:corn_crop": {
-    "textures": "corn_crop_0_0",
-    "sound": "grass"
-  },
-  "dec:golden_chain": {
-    "textures": "golden_chain",
-    "sound": "chain"
-  },
-  "dec:golden_lamp": {
-    "textures": {
-      "up": "golden_lamp_top",
-      "down": "golden_lamp_bottom",
-      "side": "golden_lamp_side"
+    "wb:button_block": {
+        "sound": "stone"
     },
-    "sound": "stone"
-  },
-  "dec:golden_bookshelf_frame": {
-    "textures": "golden_bookshelf_frame",
-    "sound": "wood"
-  },
-  "dec:golden_bookshelf": {
-    "textures": "golden_bookshelf",
-    "sound": "wood"
-  },
-  "dec:crimson_lamp": {
-    "textures": {
-      "up": "crimson_lamp_top",
-      "down": "crimson_lamp_bottom",
-      "side": "crimson_lamp_side"
+    "wb:conveyor_belt": {
+        "sound": "stone"
     },
-    "sound": "stone"
-  },
-  "dec:lampshade": {
-    "textures": "lampshade",
-    "sound": "stone"
-  }
+    "wb:planks_oakx": {
+        "sound": "wood"
+    },
+    "wb:quartz_blockx": {
+        "sound": "stone"
+    },
+    "wb:magic_forest_grass": {
+        "sound": "stone"
+    },
+    "wb:leaves_magic_tree": {
+        "sound": "grass"
+    },
+    "wb:leaves_magic_lower_tree": {
+        "sound": "grass"
+    },
+    "wb:leaves_magic_bottom_tree": {
+        "sound": "grass"
+    },
+    "wb:sand_hard": {
+        "sound": "stone"
+    },
+    "wb:red_sand_hard": {
+        "sound": "stone"
+    },
+    "wb:block_magic_barrier_ore": {
+        "sound": "stone"
+    },
+    "wb:block_magic_equipment_ore": {
+        "sound": "stone"
+    },
+    "wb:block_magic_barrier": {
+        "sound": "stone"
+    },
+    "wb:block_magic_equipment": {
+        "sound": "stone"
+    },
+    "wb:block_energy_boundary_ore": {
+        "sound": "stone"
+    },
+    "wb:block_energy_boundary": {
+        "sound": "stone"
+    },
+    "wb:block_energy_seal_ore": {
+        "sound": "stone"
+    },
+    "wb:block_energy_seal": {
+        "sound": "stone"
+    },
+    "wb:block_energy_water_ore": {
+        "sound": "stone"
+    },
+    "wb:block_energy_water": {
+        "sound": "stone"
+    },
+    "wb:block_magic_forget_ore": {
+        "sound": "stone"
+    },
+    "wb:block_magic_forget": {
+        "sound": "stone"
+    },
+    "wb:block_magic_ink_ore": {
+        "sound": "stone"
+    },
+    "wb:block_magic_ink": {
+        "sound": "stone"
+    },
+    "wb:block_senior_boundary_ore": {
+        "sound": "stone"
+    },
+    "wb:block_senior_boundary": {
+        "sound": "stone"
+    },
+    "wb:block_senior_equipment_ore": {
+        "sound": "stone"
+    },
+    "wb:block_senior_equipment": {
+        "sound": "stone"
+    },
+    "wb:block_senior_forget_ore": {
+        "sound": "stone"
+    },
+    "wb:block_senior_forget": {
+        "sound": "stone"
+    },
+    "wb:block_senior_ink_ore": {
+        "sound": "stone"
+    },
+    "wb:block_senior_ink": {
+        "sound": "stone"
+    },
+    "wb:block_senior_seal_ore": {
+        "sound": "stone"
+    },
+    "wb:block_senior_seal": {
+        "sound": "stone"
+    },
+    "wb:block_senior_water_ore": {
+        "sound": "stone"
+    },
+    "wb:block_senior_water": {
+        "sound": "stone"
+    },
+    "dec:ancient_ice": {
+        "sound": "glass"
+    },
+    "dec:fuse": {
+        "sound": "cloth"
+    },
+    "dec:lava_ore": {
+        "sound": "stone"
+    },
+    "dec:ash": {
+        "sound": "sand"
+    },
+    "dec:light_obsidian": {
+        "sound": "glass"
+    },
+    "dec:end_altar": {
+        "sound": "stone"
+    },
+    "dec:yellow_flower_block": {
+        "sound": "grass"
+    },
+    "dec:white_flower_block": {
+        "sound": "grass"
+    },
+    "dec:blue_flower_block": {
+        "sound": "grass"
+    },
+    "dec:pink_flower_block": {
+        "sound": "grass"
+    },
+    "dec:black_flower_block": {
+        "sound": "grass"
+    },
+    "dec:compress_flower_block": {
+        "sound": "grass"
+    },
+    "dec:red_flower_block": {
+        "sound": "grass"
+    },
+    "dec:ice_brick_block": {
+        "sound": "glass"
+    },
+    "dec:compressed_ice": {
+        "sound": "glass"
+    },
+    "dec:snow_brick_block": {
+        "sound": "snow"
+    },
+    "dec:uranium_ore": {
+        "sound": "stone"
+    },
+    "dec:uranium_block": {
+        "sound": "stone"
+    },
+    "dec:solidified_lava_block": {
+        "sound": "stone"
+    },
+    "dec:nuke_block": {
+        "sound": "grass"
+    },
+    "dec:end_ore": {
+        "sound": "stone"
+    },
+    "dec:smooth_amethyst_block": {
+        "sound": "glass"
+    },
+    "dec:amethyst_lantern": {
+        "sound": "glass"
+    },
+    "dec:candy_block": {
+        "sound": "stone"
+    },
+    "dec:scale_block": {
+        "sound": "stone"
+    },
+    "dec:stream_ore": {
+        "sound": "stone"
+    },
+    "dec:lightning_summoner": {
+        "sound": "stone"
+    },
+    "dec:raining_summoner": {
+        "sound": "stone"
+    },
+    "dec:sunny_summoner": {
+        "sound": "stone"
+    },
+    "dec:item_picker": {
+        "sound": "stone"
+    },
+    "dec:mining_machine": {
+        "sound": "stone"
+    },
+    "dec:summoner": {
+        "sound": "gravel"
+    },
+    "dec:soul_soil_diamond_ore": {
+        "sound": "soul_soil"
+    },
+    "dec:sweet_berries_block": {
+        "sound": "grass"
+    },
+    "dec:steel_block": {
+        "sound": "stone"
+    },
+    "dec:radiate_dirt": {
+        "sound": "gravel"
+    },
+    "dec:radiate_stone": {
+        "sound": "stone"
+    },
+    "dec:radiate_stonebrick": {
+        "sound": "stone"
+    },
+    "dec:broken_dirt": {
+        "sound": "gravel"
+    },
+    "dec:mine": {
+        "sound": "gravel"
+    },
+    "dec:christmas_gift_block": {
+        "sound": "cloth"
+    },
+    "dec:soybean_crop": {
+        "sound": "grass"
+    },
+    "dec:rice_crop": {
+        "sound": "grass"
+    },
+    "dec:leek_crop": {
+        "sound": "grass"
+    },
+    "dec:red_lantern": {
+        "sound": "cloth"
+    },
+    "dec:lurk_block": {
+        "sound": "wood"
+    },
+    "dec:lurk_end_stone": {
+        "sound": "stone"
+    },
+    "dec:lurk_grass": {
+        "sound": "grass"
+    },
+    "dec:lurk_log": {
+        "sound": "wood"
+    },
+    "dec:lurk_mushroom": {
+        "sound": "grass"
+    },
+    "dec:lurk_mushroom_lit": {
+        "sound": "grass"
+    },
+    "dec:lurk_spring": {
+        "sound": "grass"
+    },
+    "dec:monitor": {
+        "sound": "wood"
+    },
+    "dec:monitor_activated": {
+        "sound": "wood"
+    },
+    "dec:end_coal_ore": {
+        "sound": "stone"
+    },
+    "dec:end_diamond_ore": {
+        "sound": "stone"
+    },
+    "dec:end_emerald_ore": {
+        "sound": "stone"
+    },
+    "dec:end_gold_ore": {
+        "sound": "stone"
+    },
+    "dec:end_iron_ore": {
+        "sound": "stone"
+    },
+    "dec:end_lapis_ore": {
+        "sound": "stone"
+    },
+    "dec:end_redstone_ore": {
+        "sound": "stone"
+    },
+    "dec:nether_coal_ore": {
+        "sound": "stone"
+    },
+    "dec:nether_diamond_ore": {
+        "sound": "stone"
+    },
+    "dec:nether_emerald_ore": {
+        "sound": "stone"
+    },
+    "dec:nether_iron_ore": {
+        "sound": "stone"
+    },
+    "dec:nether_lapis_ore": {
+        "sound": "stone"
+    },
+    "dec:nether_redstone_ore": {
+        "sound": "stone"
+    },
+    "dec:experience_flower_crop": {
+        "sound": "grass"
+    },
+    "dec:snow_lotus_crop": {
+        "sound": "grass"
+    },
+    "dec:blue_gem_ore": {
+        "sound": "stone"
+    },
+    "dec:red_gem_ore": {
+        "sound": "stone"
+    },
+    "dec:flower_ghost_block": {
+        "sound": "grass"
+    },
+    "dec:nightmare_block": {
+        "sound": "stone"
+    },
+    "dec:eye_of_nature_log": {
+        "sound": "wood"
+    },
+    "dec:bracken_crop": {
+        "sound": "grass"
+    },
+    "dec:blue_ice_brick_block": {
+        "sound": "glass"
+    },
+    "dec:ice_bookshelf": {
+        "sound": "glass"
+    },
+    "dec:purpur_summoner": {
+        "sound": "stone"
+    },
+    "dec:dirt_ghost_block": {
+        "sound": "gravel"
+    },
+    "dec:houttuynia_crop": {
+        "sound": "grass"
+    },
+    "dec:fritillary_crop": {
+        "sound": "grass"
+    },
+    "dec:bizarre_chilli_crop": {
+        "sound": "grass"
+    },
+    "dec:rotten_flesh_block": {
+        "sound": "gravel"
+    },
+    "dec:ghost_ice": {
+        "sound": "glass"
+    },
+    "dec:ice_mixed_brick": {
+        "sound": "glass"
+    },
+    "dec:chiseled_ice_brick": {
+        "sound": "glass"
+    },
+    "dec:frozen_cage": {
+        "sound": "glass"
+    },
+    "dec:ice_lantern": {
+        "sound": "glass"
+    },
+    "dec:ash_cage": {
+        "sound": "stone"
+    },
+    "dec:patterned_vase_red_block": {
+        "sound": "decorated_pot"
+    },
+    "dec:lace_block_black": {
+        "sound": "cloth"
+    },
+    "dec:lace_block_light_red": {
+        "sound": "cloth"
+    },
+    "dec:red_patterned_stonebrick": {
+        "sound": "stone"
+    },
+    "dec:red_stonebrick": {
+        "sound": "stone"
+    },
+    "dec:lava_flower_crop": {
+        "sound": "grass"
+    },
+    "dec:mooli_crop": {
+        "sound": "grass"
+    },
+    "dec:red_spider_lily_crop": {
+        "sound": "grass"
+    },
+    "dec:corn_crop": {
+        "sound": "grass"
+    },
+    "dec:golden_chain": {
+        "sound": "chain"
+    },
+    "dec:golden_lamp": {
+        "sound": "stone"
+    },
+    "dec:golden_bookshelf_frame": {
+        "sound": "wood"
+    },
+    "dec:golden_bookshelf": {
+        "sound": "wood"
+    },
+    "dec:crimson_lamp": {
+        "sound": "stone"
+    },
+    "dec:lampshade": {
+        "sound": "stone"
+    }
 }

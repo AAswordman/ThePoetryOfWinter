@@ -56,6 +56,12 @@
                         ]
                     }
                 ]
+            },
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "rice_stage_0",
+                    "render_method": "alpha_test"
+                }
             }
         },
         "events": {

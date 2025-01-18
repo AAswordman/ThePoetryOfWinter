@@ -23,6 +23,22 @@
                 "tags": [
                     "stone"
                 ]
+            },
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "north": "sides",
+                "south": "sides",
+                "east": "sides",
+                "west": "sides",
+                "sides": {
+                    "texture": "lurk_end_stone_side"
+                },
+                "up": {
+                    "texture": "lurk_end_stone_up"
+                },
+                "down": {
+                    "texture": "end_stone"
+                }
             }
         }
     }

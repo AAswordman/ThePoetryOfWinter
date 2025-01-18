@@ -14,6 +14,13 @@
             },
             "minecraft:destructible_by_explosion": {
                 "explosion_resistance": 3
+            },
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "magic_forest_grass",
+                    "render_method": "alpha_test"
+                }
             }
         }
     }

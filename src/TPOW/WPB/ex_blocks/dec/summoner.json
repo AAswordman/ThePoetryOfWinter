@@ -20,7 +20,14 @@
             "minecraft:on_interact": {
                 "event": "summon"
             },
-            "minecraft:map_color": "#79553A"
+            "minecraft:map_color": "#79553A",
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "summoner",
+                    "render_method": "alpha_test"
+                }
+            }
         },
         "events": {
             "summon": {

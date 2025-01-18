@@ -63,7 +63,8 @@
                     "event": "tick"
                 },
                 "looping": true
-            }
+            },
+            "minecraft:geometry": "minecraft:geometry.full_block"
         }
     }
 }

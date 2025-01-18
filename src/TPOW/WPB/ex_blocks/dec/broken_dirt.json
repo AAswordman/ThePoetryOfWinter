@@ -21,6 +21,13 @@
             "minecraft:on_step_on": {
                 "event": "broke",
                 "target": "other"
+            },
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "broken_dirt",
+                    "render_method": "alpha_test"
+                }
             }
         },
         "events": {

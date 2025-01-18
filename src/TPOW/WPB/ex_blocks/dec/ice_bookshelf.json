@@ -24,6 +24,22 @@
                 "tags": [
                     "stone"
                 ]
+            },
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "north": "sides",
+                "south": "sides",
+                "east": "sides",
+                "west": "sides",
+                "sides": {
+                    "texture": "ice_bookshelf_side"
+                },
+                "up": {
+                    "texture": "ice_brick_block"
+                },
+                "down": {
+                    "texture": "ice_brick_block"
+                }
             }
         }
     }

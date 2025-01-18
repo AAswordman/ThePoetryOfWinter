@@ -19,6 +19,13 @@
                 "tags": [
                     "stone"
                 ]
+            },
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "block_magic_ink",
+                    "render_method": "alpha_test"
+                }
             }
         }
     }

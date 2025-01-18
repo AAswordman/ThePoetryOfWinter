@@ -22,6 +22,22 @@
             "minecraft:on_step_on": {
                 "event": "explode",
                 "target": "other"
+            },
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "north": "sides",
+                "south": "sides",
+                "east": "sides",
+                "west": "sides",
+                "sides": {
+                    "texture": "mine"
+                },
+                "up": {
+                    "texture": "mine_top"
+                },
+                "down": {
+                    "texture": "mine"
+                }
             }
         },
         "events": {

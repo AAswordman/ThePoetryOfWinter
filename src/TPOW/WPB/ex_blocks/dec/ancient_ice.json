@@ -24,6 +24,13 @@
                 "tags": [
                     "stone"
                 ]
+            },
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "ancient_ice",
+                    "render_method": "alpha_test"
+                }
             }
         }
     }

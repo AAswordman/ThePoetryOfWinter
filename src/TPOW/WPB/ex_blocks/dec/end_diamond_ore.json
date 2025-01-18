@@ -23,6 +23,13 @@
                 "tags": [
                     "stone"
                 ]
+            },
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "end_diamond_ore",
+                    "render_method": "alpha_test"
+                }
             }
         }
     }

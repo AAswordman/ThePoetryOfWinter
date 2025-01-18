@@ -23,6 +23,22 @@
                 "tags": [
                     "stone"
                 ]
+            },
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "north": "sides",
+                "south": "sides",
+                "east": "sides",
+                "west": "sides",
+                "sides": {
+                    "texture": "crimson_lamp_side"
+                },
+                "up": {
+                    "texture": "crimson_lamp_top"
+                },
+                "down": {
+                    "texture": "crimson_lamp_bottom"
+                }
             }
         }
     }

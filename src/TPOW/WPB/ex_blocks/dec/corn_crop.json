@@ -51,7 +51,13 @@
                     "event": "grow_stage"
                 }
             },
-            "minecraft:breathability": "air"
+            "minecraft:breathability": "air",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "corn_crop_0_0",
+                    "render_method": "alpha_test"
+                }
+            }
         },
         "events": {
             "grow": {

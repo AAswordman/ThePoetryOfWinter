@@ -18,7 +18,14 @@
                 "explosion_resistance": 10
             },
             "minecraft:map_color": "#49372C",
-            "minecraft:loot": "loot_tables/blocks/soul_soil_diamond_ore.json"
+            "minecraft:loot": "loot_tables/blocks/soul_soil_diamond_ore.json",
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "soul_soil_diamond_ore",
+                    "render_method": "alpha_test"
+                }
+            }
         }
     }
 }

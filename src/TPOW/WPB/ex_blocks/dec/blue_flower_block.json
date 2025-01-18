@@ -23,7 +23,8 @@
             "minecraft:destructible_by_explosion": {
                 "explosion_resistance": 0
             },
-            "minecraft:map_color": "#1C92D6"
+            "minecraft:map_color": "#1C92D6",
+            "minecraft:geometry": "minecraft:geometry.full_block"
         }
     }
 }

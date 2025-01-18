@@ -20,7 +20,7 @@
                 "condition": "q.block_state('dec:facing') == 'vertical'",
                 "components": {
                     "minecraft:transformation": {
-                        "minecraft:rotation": [
+                        "rotation": [
                             0,
                             0,
                             0
@@ -32,7 +32,7 @@
                 "condition": "q.block_state('dec:facing') == 'south_north'",
                 "components": {
                     "minecraft:transformation": {
-                        "minecraft:rotation": [
+                        "rotation": [
                             90,
                             0,
                             0
@@ -44,7 +44,7 @@
                 "condition": "q.block_state('dec:facing') == 'east_west'",
                 "components": {
                     "minecraft:transformation": {
-                        "minecraft:rotation": [
+                        "rotation": [
                             90,
                             90,
                             0
@@ -79,18 +79,9 @@
         },
         "components": {
             "minecraft:material_instances": {
-                "north": "sides",
-                "south": "sides",
-                "east": "sides",
-                "west": "sides",
-                "sides": {
-                    "texture": "lace_block_black_side"
-                },
-                "up": {
-                    "texture": "lace_block_black_up"
-                },
-                "down": {
-                    "texture": "lace_block_black_up"
+                "*": {
+                    "texture": "lace_block_black_side",
+                    "render_method": "alpha_test"
                 }
             },
             "minecraft:on_player_placing": {
@@ -115,7 +106,8 @@
                 "tags": [
                     "wool"
                 ]
-            }
+            },
+            "minecraft:geometry": "minecraft:geometry.full_block"
         }
     }
 }

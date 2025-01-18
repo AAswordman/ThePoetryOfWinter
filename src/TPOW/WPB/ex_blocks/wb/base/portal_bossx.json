@@ -15,7 +15,14 @@
             "minecraft:destructible_by_explosion": {
                 "explosion_resistance": 32767
             },
-            "minecraft:light_emission": 1
+            "minecraft:light_emission": 1,
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "portal_bossx",
+                    "render_method": "alpha_test"
+                }
+            }
         }
     }
 }

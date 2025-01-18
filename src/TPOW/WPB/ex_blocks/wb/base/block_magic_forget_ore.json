@@ -20,6 +20,13 @@
                 "tags": [
                     "stone"
                 ]
+            },
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "block_magic_forget_ore",
+                    "render_method": "alpha_test"
+                }
             }
         }
     }

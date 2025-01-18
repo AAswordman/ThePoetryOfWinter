@@ -12,7 +12,7 @@
             "minecraft:material_instances": {
                 "*": {
                     "texture": "nightmare_block",
-                    "render_method": "blend"
+                    "render_method": "alpha_test"
                 }
             },
             "minecraft:loot": "loot_tables/empty.json",
@@ -34,7 +34,8 @@
                 "on_tick": {
                     "event": "minecraft:disappear"
                 }
-            }
+            },
+            "minecraft:geometry": "minecraft:geometry.full_block"
         },
         "events": {
             "minecraft:disappear": {

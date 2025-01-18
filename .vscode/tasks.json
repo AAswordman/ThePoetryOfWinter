@@ -8,8 +8,24 @@
             "problemMatcher": [
                 "$tsc-watch"
             ],
-            "group": "build",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
             "label": "tsc: 监视 - src/TPOW/WPB/scripts/tsconfig.json"
+        },
+        {
+            "type": "typescript",
+            "tsconfig": "tsconfig.json",
+            "option": "watch",
+            "problemMatcher": [
+                "$tsc-watch"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "label": "tsc: 监视 - tsconfig.json"
         }
     ]
 }
