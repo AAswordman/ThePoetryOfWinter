@@ -63,10 +63,10 @@
         ],
         "events": {
             "unlock": {
-                "post_message":{
-                    "sign":"dec:crate_unlocked",
-                    "message":["query.position(0)","query.position(1)","query.position(2)","sapi.position"]
-                },
+                // "post_message":{
+                //     "sign":"dec:crate_unlocked",
+                //     "message":["query.position(0)","query.position(1)","query.position(2)","sapi.position"]
+                // },
                 "set_block_state": {
                     "dec:is_unlocked": 1
                 },
