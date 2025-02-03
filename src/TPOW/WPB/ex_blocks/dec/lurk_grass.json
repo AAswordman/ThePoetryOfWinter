@@ -11,8 +11,7 @@
         "components": {
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "lurk_grass",
-                    "render_method": "alpha_test"
+                    "texture": "lurk_grass"
                 }
             },
             "minecraft:geometry": "geometry.crop.sparse.on_dirt",

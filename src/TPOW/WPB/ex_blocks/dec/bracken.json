@@ -32,8 +32,7 @@
             "minecraft:loot": "loot_tables/blocks/bracken_crop.json",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "bracken_crop",
-                    "render_method": "alpha_test"
+                    "texture": "bracken_crop"
                 }
             },
             "minecraft:placement_filter": {

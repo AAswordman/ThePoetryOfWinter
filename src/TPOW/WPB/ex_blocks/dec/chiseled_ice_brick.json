@@ -27,8 +27,7 @@
             "minecraft:geometry": "minecraft:geometry.full_block",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "chiseled_ice_brick",
-                    "render_method": "alpha_test"
+                    "texture": "chiseled_ice_brick"
                 }
             }
         }

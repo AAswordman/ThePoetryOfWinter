@@ -140,8 +140,7 @@
             },
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "lampshade",
-                    "render_method": "alpha_test"
+                    "texture": "lampshade"
                 }
             },
             "minecraft:selection_box": {

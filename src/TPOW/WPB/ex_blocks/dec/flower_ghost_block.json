@@ -11,8 +11,7 @@
         "components": {
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "flower_ghost_block",
-                    "render_method": "alpha_test"
+                    "texture": "flower_ghost_block"
                 }
             },
             "minecraft:loot": "loot_tables/empty.json",

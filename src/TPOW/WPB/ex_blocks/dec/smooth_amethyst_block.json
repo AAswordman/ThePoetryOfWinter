@@ -27,8 +27,7 @@
             "minecraft:geometry": "minecraft:geometry.full_block",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "smooth_amethyst_block",
-                    "render_method": "alpha_test"
+                    "texture": "smooth_amethyst_block"
                 }
             }
         }

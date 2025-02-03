@@ -11,8 +11,7 @@
         "components": {
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "nightmare_block",
-                    "render_method": "alpha_test"
+                    "texture": "nightmare_block"
                 }
             },
             "minecraft:loot": "loot_tables/empty.json",

@@ -42,8 +42,7 @@
             "minecraft:light_dampening": 1,
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "boss_keeper_block",
-                    "render_method": "alpha_test"
+                    "texture": "boss_keeper_block"
                 }
             },
             "minecraft:destructible_by_mining": {

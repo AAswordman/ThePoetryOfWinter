@@ -11,8 +11,7 @@
         "components": {
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "lurk_mushroom_lit",
-                    "render_method": "alpha_test"
+                    "texture": "lurk_mushroom_lit"
                 }
             },
             "minecraft:geometry": "geometry.crop.sparse.on_dirt",

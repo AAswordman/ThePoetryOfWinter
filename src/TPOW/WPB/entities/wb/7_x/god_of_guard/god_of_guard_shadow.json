@@ -62,6 +62,7 @@
       }
     },
     "components": {
+      "minecraft:tick_world": {},
       "minecraft:fire_immune": true,
       "minecraft:type_family": {
         "family": [

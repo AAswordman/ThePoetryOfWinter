@@ -27,8 +27,7 @@
             "minecraft:geometry": "minecraft:geometry.full_block",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "ice_mixed_brick",
-                    "render_method": "alpha_test"
+                    "texture": "ice_mixed_brick"
                 }
             }
         }

@@ -11,8 +11,7 @@
         "components": {
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "red_spider_lily_crop",
-                    "render_method": "alpha_test"
+                    "texture": "red_spider_lily_crop"
                 }
             },
             "minecraft:geometry": "geometry.crop.sparse.on_dirt",

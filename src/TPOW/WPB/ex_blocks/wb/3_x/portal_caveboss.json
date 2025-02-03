@@ -20,8 +20,7 @@
             "minecraft:geometry": "minecraft:geometry.full_block",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "portal_caveboss",
-                    "render_method": "alpha_test"
+                    "texture": "portal_caveboss"
                 }
             }
         }

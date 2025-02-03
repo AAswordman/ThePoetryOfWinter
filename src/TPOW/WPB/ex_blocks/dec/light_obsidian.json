@@ -27,8 +27,7 @@
             "minecraft:geometry": "minecraft:geometry.full_block",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "light_obsidian",
-                    "render_method": "alpha_test"
+                    "texture": "light_obsidian"
                 }
             }
         }

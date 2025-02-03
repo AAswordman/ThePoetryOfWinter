@@ -23,8 +23,7 @@
             "minecraft:geometry": "minecraft:geometry.full_block",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "block_energy_boundary",
-                    "render_method": "alpha_test"
+                    "texture": "block_energy_boundary"
                 }
             }
         }

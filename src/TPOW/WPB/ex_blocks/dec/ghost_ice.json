@@ -11,8 +11,7 @@
         "components": {
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "ghost_ice",
-                    "render_method": "alpha_test"
+                    "texture": "ghost_ice"
                 }
             },
             "minecraft:loot": "loot_tables/empty.json",

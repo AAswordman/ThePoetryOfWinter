@@ -58,8 +58,7 @@
             },
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "lava_flower_crop_0",
-                    "render_method": "alpha_test"
+                    "texture": "lava_flower_crop_0"
                 }
             }
         },

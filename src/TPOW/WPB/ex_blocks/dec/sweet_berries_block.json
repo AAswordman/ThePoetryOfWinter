@@ -11,8 +11,7 @@
         "components": {
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "sweet_berries_block",
-                    "render_method": "alpha_test"
+                    "texture": "sweet_berries_block"
                 }
             },
             "minecraft:light_dampening": 15,

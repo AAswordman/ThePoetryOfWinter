@@ -81,8 +81,7 @@
         "components": {
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "patterned_vase_red_block",
-                    "render_method": "alpha_test"
+                    "texture": "patterned_vase_red_block"
                 }
             },
             "minecraft:geometry": "geometry.patterned_vase_red",

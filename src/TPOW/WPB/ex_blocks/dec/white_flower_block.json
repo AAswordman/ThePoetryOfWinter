@@ -11,8 +11,7 @@
         "components": {
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "white_flower_block",
-                    "render_method": "alpha_test"
+                    "texture": "white_flower_block"
                 }
             },
             "minecraft:light_dampening": 15,

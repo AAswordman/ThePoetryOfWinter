@@ -80,8 +80,7 @@
         "components": {
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "red_patterned_stonebrick_side",
-                    "render_method": "alpha_test"
+                    "texture": "red_patterned_stonebrick_side"
                 }
             },
             "minecraft:on_player_placing": {

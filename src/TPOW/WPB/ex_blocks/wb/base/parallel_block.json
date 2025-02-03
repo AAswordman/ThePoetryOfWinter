@@ -12,8 +12,7 @@
             "minecraft:light_dampening": 1,
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "parallel_block",
-                    "render_method": "alpha_test"
+                    "texture": "parallel_block"
                 }
             },
             "minecraft:destructible_by_mining": {

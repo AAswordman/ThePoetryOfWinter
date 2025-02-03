@@ -57,8 +57,7 @@
             "minecraft:breathability": "air",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "mooli_crop_0",
-                    "render_method": "alpha_test"
+                    "texture": "mooli_crop_0"
                 }
             }
         },

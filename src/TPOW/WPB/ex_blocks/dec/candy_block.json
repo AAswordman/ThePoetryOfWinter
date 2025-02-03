@@ -27,8 +27,7 @@
             "minecraft:geometry": "minecraft:geometry.full_block",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "candy_block",
-                    "render_method": "alpha_test"
+                    "texture": "candy_block"
                 }
             }
         }

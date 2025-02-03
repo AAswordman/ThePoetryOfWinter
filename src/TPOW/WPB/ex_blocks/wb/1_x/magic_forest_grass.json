@@ -18,8 +18,7 @@
             "minecraft:geometry": "minecraft:geometry.full_block",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "magic_forest_grass",
-                    "render_method": "alpha_test"
+                    "texture": "magic_forest_grass"
                 }
             }
         }

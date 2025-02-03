@@ -37,8 +37,7 @@
             "minecraft:geometry": "minecraft:geometry.full_block",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "ash_cage",
-                    "render_method": "alpha_test"
+                    "texture": "ash_cage"
                 }
             }
         },

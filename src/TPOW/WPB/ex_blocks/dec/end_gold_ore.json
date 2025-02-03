@@ -27,8 +27,7 @@
             "minecraft:geometry": "minecraft:geometry.full_block",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "end_gold_ore",
-                    "render_method": "alpha_test"
+                    "texture": "end_gold_ore"
                 }
             }
         }

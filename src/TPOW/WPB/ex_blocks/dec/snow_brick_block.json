@@ -28,8 +28,7 @@
             "minecraft:geometry": "minecraft:geometry.full_block",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "snow_brick_block",
-                    "render_method": "alpha_test"
+                    "texture": "snow_brick_block"
                 }
             }
         }

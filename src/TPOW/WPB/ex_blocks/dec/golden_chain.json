@@ -137,8 +137,7 @@
         "components": {
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "golden_chain",
-                    "render_method": "alpha_test"
+                    "texture": "golden_chain"
                 }
             },
             "minecraft:selection_box": {

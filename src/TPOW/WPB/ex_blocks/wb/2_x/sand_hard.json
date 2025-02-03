@@ -18,8 +18,7 @@
             "minecraft:geometry": "minecraft:geometry.full_block",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "sand_hard",
-                    "render_method": "alpha_test"
+                    "texture": "sand_hard"
                 }
             }
         }

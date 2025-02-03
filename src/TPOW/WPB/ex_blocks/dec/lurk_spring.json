@@ -11,8 +11,7 @@
         "components": {
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "lurk_spring",
-                    "render_method": "alpha_test"
+                    "texture": "lurk_spring"
                 }
             },
             "minecraft:geometry": "geometry.crop.sparse.on_dirt",

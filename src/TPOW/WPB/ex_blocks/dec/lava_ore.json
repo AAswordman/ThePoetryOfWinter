@@ -27,8 +27,7 @@
             "minecraft:geometry": "minecraft:geometry.full_block",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "lava_ore",
-                    "render_method": "alpha_test"
+                    "texture": "lava_ore"
                 }
             }
         }

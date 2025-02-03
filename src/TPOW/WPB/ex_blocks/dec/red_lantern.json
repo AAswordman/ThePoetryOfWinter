@@ -11,8 +11,7 @@
         "components": {
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "red_lantern",
-                    "render_method": "alpha_test"
+                    "texture": "red_lantern"
                 }
             },
             "minecraft:selection_box": {

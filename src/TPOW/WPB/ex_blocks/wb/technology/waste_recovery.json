@@ -18,8 +18,7 @@
             "minecraft:geometry": "minecraft:geometry.full_block",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "waste_recovery",
-                    "render_method": "alpha_test"
+                    "texture": "waste_recovery"
                 }
             }
         }

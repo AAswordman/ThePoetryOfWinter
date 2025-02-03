@@ -11,8 +11,7 @@
         "components": {
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "christmas_gift_block",
-                    "render_method": "alpha_test"
+                    "texture": "christmas_gift_block"
                 }
             },
             "minecraft:selection_box": {

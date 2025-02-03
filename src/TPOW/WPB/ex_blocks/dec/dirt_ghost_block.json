@@ -11,8 +11,7 @@
         "components": {
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "dirt_ghost_block",
-                    "render_method": "alpha_test"
+                    "texture": "dirt_ghost_block"
                 }
             },
             "minecraft:loot": "loot_tables/empty.json",

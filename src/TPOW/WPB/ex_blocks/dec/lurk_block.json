@@ -22,8 +22,7 @@
             "minecraft:geometry": "minecraft:geometry.full_block",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "lurk_block",
-                    "render_method": "alpha_test"
+                    "texture": "lurk_block"
                 }
             }
         }

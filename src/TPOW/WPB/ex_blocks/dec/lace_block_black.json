@@ -80,8 +80,7 @@
         "components": {
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "lace_block_black_side",
-                    "render_method": "alpha_test"
+                    "texture": "lace_block_black_side"
                 }
             },
             "minecraft:on_player_placing": {

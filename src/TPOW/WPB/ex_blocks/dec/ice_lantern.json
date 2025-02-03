@@ -22,8 +22,7 @@
             "minecraft:geometry": "minecraft:geometry.full_block",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "ice_lantern",
-                    "render_method": "alpha_test"
+                    "texture": "ice_lantern"
                 }
             }
         }

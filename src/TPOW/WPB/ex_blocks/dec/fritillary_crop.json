@@ -58,8 +58,7 @@
             "minecraft:breathability": "air",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "fritillary_crop_stage_0",
-                    "render_method": "alpha_test"
+                    "texture": "fritillary_crop_stage_0"
                 }
             }
         },

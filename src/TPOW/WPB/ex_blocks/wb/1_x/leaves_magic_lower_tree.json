@@ -18,8 +18,7 @@
             "minecraft:geometry": "minecraft:geometry.full_block",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "leaves_magic_lower_tree",
-                    "render_method": "alpha_test"
+                    "texture": "leaves_magic_lower_tree"
                 }
             }
         }

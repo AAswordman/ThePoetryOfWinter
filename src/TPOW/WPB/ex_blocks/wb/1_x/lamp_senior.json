@@ -24,8 +24,7 @@
             "minecraft:geometry": "minecraft:geometry.full_block",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "lamp_senior",
-                    "render_method": "alpha_test"
+                    "texture": "lamp_senior"
                 }
             }
         }
