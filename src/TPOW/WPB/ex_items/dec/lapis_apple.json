@@ -19,7 +19,7 @@
             "minecraft:use_animation": "eat",
             "minecraft:cooldown": {
                 "category": "apple",
-                "duration": 30
+                "duration": 10
             },
             "minecraft:food": {
                 "nutrition": 4,
@@ -38,27 +38,12 @@
             "consumed": {
                 "sequence": [
                     {
-                        "add_mob_effect": {
-                            "effect": "resistance",
-                            "duration": 4,
-                            "amplifier": 6,
-                            "target": "holder"
-                        }
-                    },
-                    {
-                        "add_mob_effect": {
-                            "effect": "speed",
-                            "duration": 20,
-                            "amplifier": 1,
-                            "target": "holder"
-                        }
-                    },
-                    {
-                        "add_mob_effect": {
-                            "effect": "instant_health",
-                            "duration": 1,
-                            "amplifier": 0,
-                            "target": "holder"
+                        "run_command": {
+                            "command": [
+                                "scoreboard players set @s[scores={wbfl=401..}] wbfl 600",
+                                "scoreboard players add @s[scores={wbfl=..400}] wbfl 200",
+                                "effect @s health_boost 300 4 true"
+                            ]
                         }
                     }
                 ]

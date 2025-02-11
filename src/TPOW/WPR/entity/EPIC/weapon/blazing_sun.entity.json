@@ -7,7 +7,8 @@
 				"default": "slime_outer"
 			},
 			"textures": {
-				"default": "textures/EPIC/entity/weapon/blazing_sun"
+				"default": "textures/EPIC/entity/weapon/blazing_sun_2",
+				"old": "textures/EPIC/entity/weapon/blazing_sun"
 			},
 			"geometry": {
 				"default": "geometry.blazing_sun"

@@ -34,51 +34,15 @@
             "consumed": {
                 "sequence": [
                     {
-                        "add_mob_effect": {
-                            "effect": "village_hero",
-                            "duration": 180,
-                            "amplifier": 0,
-                            "target": "holder"
-                        }
-                    },
-                    {
-                        "add_mob_effect": {
-                            "effect": "haste",
-                            "duration": 180,
-                            "amplifier": 1,
-                            "target": "holder"
-                        }
-                    },
-                    {
-                        "add_mob_effect": {
-                            "effect": "speed",
-                            "duration": 180,
-                            "amplifier": 0,
-                            "target": "holder"
-                        }
-                    },
-                    {
-                        "add_mob_effect": {
-                            "effect": "night_vision",
-                            "duration": 180,
-                            "amplifier": 0,
-                            "target": "holder"
-                        }
-                    },
-                    {
-                        "add_mob_effect": {
-                            "effect": "strength",
-                            "duration": 180,
-                            "amplifier": 1,
-                            "target": "holder"
-                        }
-                    },
-                    {
-                        "add_mob_effect": {
-                            "effect": "resistance",
-                            "duration": 180,
-                            "amplifier": 0,
-                            "target": "holder"
+                        "run_command": {
+                            "command": [
+                                "function EPIC/clear_debuff",
+                                "effect @s regeneration 60 0 true",
+                                "effect @s speed 90 0 true",
+                                //"effect @s strength 90 0 true",
+                                "effect @s jump_boost 90 0 true",
+                                "effect @s night_vision 90 0 true"
+                            ]
                         }
                     }
                 ]

@@ -17,6 +17,7 @@
                 "texture": "redstone_apple"
             },
             "minecraft:use_animation": "eat",
+            "minecraft:glint": true,
             "minecraft:hover_text_color": "light_purple",
             "minecraft:foil": true,
             "minecraft:food": {
@@ -36,27 +37,12 @@
             "consumed": {
                 "sequence": [
                     {
-                        "add_mob_effect": {
-                            "effect": "absorption",
-                            "duration": 180,
-                            "amplifier": 2,
-                            "target": "holder"
-                        }
-                    },
-                    {
-                        "add_mob_effect": {
-                            "effect": "night_vision",
-                            "duration": 120,
-                            "amplifier": 0,
-                            "target": "holder"
-                        }
-                    },
-                    {
-                        "add_mob_effect": {
-                            "effect": "regeneration",
-                            "duration": 180,
-                            "amplifier": 0,
-                            "target": "holder"
+                        "run_command": {
+                            "command": [
+                                "effect @s health_boost 300 3 true",//12法术护盾
+                                "effect @s regeneration 15 1 true",
+                                "effect @s night_vision 120 0 true"
+                            ]
                         }
                     }
                 ]

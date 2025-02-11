@@ -17,6 +17,7 @@
                 "texture": "iron_apple"
             },
             "minecraft:use_animation": "eat",
+            "minecraft:glint": true,
             "minecraft:hover_text_color": "light_purple",
             "minecraft:foil": true,
             "minecraft:food": {
@@ -36,35 +37,11 @@
             "consumed": {
                 "sequence": [
                     {
-                        "add_mob_effect": {
-                            "effect": "resistance",
-                            "duration": 120,
-                            "amplifier": 1,
-                            "target": "holder"
-                        }
-                    },
-                    {
-                        "add_mob_effect": {
-                            "effect": "absorption",
-                            "duration": 120,
-                            "amplifier": 1,
-                            "target": "holder"
-                        }
-                    },
-                    {
-                        "add_mob_effect": {
-                            "effect": "regeneration",
-                            "duration": 60,
-                            "amplifier": 1,
-                            "target": "holder"
-                        }
-                    },
-                    {
-                        "add_mob_effect": {
-                            "effect": "health_boost",
-                            "duration": 150,
-                            "amplifier": 1,
-                            "target": "holder"
+                        "run_command": {
+                            "command": [
+                                "effect @s absorption 300 4 true",//20物理护盾
+                                "effect @s resistance 30 1 true"
+                            ]
                         }
                     }
                 ]
