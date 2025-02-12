@@ -2,14 +2,14 @@
     "format_version": 2,
     "capabilities": ["script_eval"],
     "header": {
-        "description": "Ver. 1.9.4B1 -Made by AA swordsman,LiLeyi and many their friends.",
+        "description": "Ver. 1.9.3R2 -Made by AA swordsman,LiLeyi and many their friends.",
         "name": "The Poetry Of Winter[Beh]",
         "uuid": "c2021c25-08e8-9ade-0916-6cd21931fac5",
         "version": [1, 6, 0],
         "min_engine_version": [1, 21, 0]
     },
     "modules": [{
-            "description": "Ver. 1.9.4B1 -Made by AA swordsman,LiLeyi and many their friends.",
+            "description": "Ver. 1.9.3R2 -Made by AA swordsman,LiLeyi and many their friends.",
             "type": "script",
             "uuid": "c2021c83-08e8-9ade-0916-6cd21931fac5",
             "version": [1, 6, 0],
@@ -24,7 +24,7 @@
     "dependencies": [
         {
             "module_name": "@minecraft/server",
-            "version": "1.18.0-beta"
+            "version": "1.17.0-beta"
         },
         {
             "module_name": "@minecraft/server-ui",
