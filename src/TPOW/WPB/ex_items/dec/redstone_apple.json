@@ -34,11 +34,11 @@
             "consumed": {
                 "sequence": [
                     {
-                        "add_mob_effect": {
-                            "effect": "absorption",
-                            "duration": 120,
-                            "amplifier": 0,
-                            "target": "holder"
+                        "run_command": {
+                            "command": [
+                                "effect @s health_boost 300 0 true",
+                                "effect @s regeneration 5 0 true"
+                            ]
                         }
                     }
                 ]

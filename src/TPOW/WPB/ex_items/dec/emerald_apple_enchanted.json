@@ -18,6 +18,7 @@
             },
             "minecraft:hover_text_color": "light_purple",
             "minecraft:use_animation": "eat",
+            "minecraft:glint": true,
             "minecraft:foil": true,
             "minecraft:food": {
                 "on_consume": {
@@ -36,69 +37,26 @@
             "consumed": {
                 "sequence": [
                     {
-                        "add_mob_effect": {
-                            "effect": "village_hero",
-                            "duration": 180,
-                            "amplifier": 0,
-                            "target": "holder"
-                        }
-                    },
-                    {
-                        "add_mob_effect": {
-                            "effect": "haste",
-                            "duration": 180,
-                            "amplifier": 1,
-                            "target": "holder"
-                        }
-                    },
-                    {
-                        "add_mob_effect": {
-                            "effect": "speed",
-                            "duration": 180,
-                            "amplifier": 2,
-                            "target": "holder"
-                        }
-                    },
-                    {
-                        "add_mob_effect": {
-                            "effect": "night_vision",
-                            "duration": 180,
-                            "amplifier": 0,
-                            "target": "holder"
-                        }
-                    },
-                    {
-                        "add_mob_effect": {
-                            "effect": "strength",
-                            "duration": 180,
-                            "amplifier": 1,
-                            "target": "holder"
-                        }
-                    },
-                    {
-                        "add_mob_effect": {
-                            "effect": "resistance",
-                            "duration": 180,
-                            "amplifier": 1,
-                            "target": "holder"
-                        }
-                    },
-                    {
-                        "add_mob_effect": {
-                            "effect": "jump_boost",
-                            "duration": 180,
-                            "amplifier": 0,
-                            "target": "holder"
-                        }
-                    },
-                    {
-                        "add_mob_effect": {
-                            "effect": "saturation",
-                            "duration": 60,
-                            "amplifier": 0,
-                            "target": "holder"
+                        "run_command": {
+                            "command": [
+                                "function EPIC/clear_debuff",
+                                "effect @s saturation 10 0 true",
+                                "effect @s regeneration 300 0 true",
+                                "effect @s absorption 600 3 true",
+                                "effect @s health_boost 600 1 true",
+                                "effect @s instant_health 1 0 true",
+                                "effect @s speed 600 0 true",
+                                "effect @s jump_boost 600 0 true",
+                                "effect @s haste 600 0 true",
+                                "effect @s night_vision 600 0 true",
+                                "effect @s village_hero 600 0 true",
+                                "effect @s strength 600 0 true",
+                                "effect @s resistance 600 0 true",
+                                "effect @s fire_resistance 600 0 true"
+                            ]
                         }
                     }
+
                 ]
             }
         }

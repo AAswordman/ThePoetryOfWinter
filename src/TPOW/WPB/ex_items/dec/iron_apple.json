@@ -34,20 +34,12 @@
             "consumed": {
                 "sequence": [
                     {
-                        "add_mob_effect": {
-                            "effect": "absorption",
-                            "duration": 120,
-                            "amplifier": 0,
-                            "target": "holder"
-                        }
-                    },
-                    {
-                        "add_mob_effect": {
-                            "effect": "resistance",
-                            "duration": 120,
-                            "amplifier": 0,
-                            "target": "holder"
-                        }
+                        "run_command": {
+                            "command": [
+                                "effect @s absorption 100 1 true",
+                                "effect @s resistance 10 0 true"
+                            ]
+                    }
                     }
                 ]
             }
