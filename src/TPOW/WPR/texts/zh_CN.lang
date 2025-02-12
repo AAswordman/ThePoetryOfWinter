@@ -439,9 +439,16 @@ entity.wb:intentions_second.name=念
 entity.wb:intentions_third.name=念
 item.spawn_egg.entity.wb:intentions_first.name=念
 
+
 entity.wb:shadow_intentions_first.name=念的影子
 entity.wb:shadow_intentions_second.name=念的影子
 entity.wb:shadow_intentions_secondx.name=念的影子
+
+entity.wb:god_of_guard_first.name=守卫战神
+entity.wb:god_of_guard_second.name=守卫战神
+entity.wb:god_of_guard_shadow.name=守卫战神的分身
+entity.wb:god_of_guard_third.name=守卫战神
+item.spawn_egg.entity.wb:god_of_guard_zero.name=守卫战神
 
 entity.wb:ball_fly.name=凌空斩
 entity.wb:ball_border_fugitivea.name=焚烧

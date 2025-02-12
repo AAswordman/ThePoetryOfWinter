@@ -20,7 +20,7 @@
         "value": 1.0
       },
         "minecraft:explode": {
-     "fuseLength": 10,
+     "fuseLength": 20,
      "fuseLit": true,
      "breaks_blocks":false,
      "power": 0,

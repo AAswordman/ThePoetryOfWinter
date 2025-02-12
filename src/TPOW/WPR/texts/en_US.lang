@@ -4474,13 +4474,21 @@ item.wb:currency_4.name=Ruby
 
 entity.wb:border_fugitive.name=Border Ronin Boss
 item.spawn_egg.entity.wb:border_fugitive.name=Border Ronin Boss
-entity.wb:intentions_first.name=Intentions
-entity.wb:intentions_second.name=Intentions
-entity.wb:intentions_third.name=Intentions
-item.spawn_egg.entity.wb:intentions_first.name=Intentions
-entity.wb:shadow_intentions_first.name=Intentions's shadow
-entity.wb:shadow_intentions_second.name=Intentions's shadow
-entity.wb:shadow_intentions_secondx.name=Intentions's shadow
+
+entity.wb:god_of_guard_first.name=God Of Guard
+entity.wb:god_of_guard_second.name=God Of Guard
+entity.wb:god_of_guard_shadow.name=God Of Guard's shadow
+entity.wb:god_of_guard_third.name=God Of Guard
+item.spawn_egg.entity.wb:god_of_guard_zero.name=God Of Guard
+
+entity.wb:intentions_first.name=Nian
+entity.wb:intentions_second.name=Nian
+entity.wb:intentions_third.name=Nian
+item.spawn_egg.entity.wb:intentions_first.name=Nian
+entity.wb:shadow_intentions_first.name=Nian's shadow
+entity.wb:shadow_intentions_second.name=Nian's shadow
+entity.wb:shadow_intentions_secondx.name=Nian's shadow
+
 item.wb:sword_fly=§6Lv.82 §4Ling Emperor Divine Sword
 item.wb:staff_burn=§6Lv.82 §4Burning Wand
 item.wb:sword_intentions=The Ultimate Psychokinesis Sword
