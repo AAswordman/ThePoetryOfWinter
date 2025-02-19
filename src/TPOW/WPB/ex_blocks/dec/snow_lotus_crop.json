@@ -11,7 +11,8 @@
         "components": {
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "snow_lotus_crop"
+                    "texture": "snow_lotus_crop",
+                    "render_method": "alpha_test"
                 }
             },
             "minecraft:geometry": "geometry.crop.sparse.on_dirt",
