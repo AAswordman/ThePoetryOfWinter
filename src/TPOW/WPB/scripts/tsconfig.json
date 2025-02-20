@@ -39,7 +39,6 @@
         "node_modules"
     ],
     "include": [
-        "ExcellentMInecraftscripts/src",
-        "ExcellentMInecraftscripts/src/test"
+        "ExcellentMInecraftscripts/src"
     ]
 }

@@ -26,7 +26,7 @@ dataSet.init().then(async () => {
     });
 
     let log = console.log.bind(console);
-
+    
     watcher
         .on('add', function (path) {
             try {

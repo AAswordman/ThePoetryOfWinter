@@ -9,6 +9,7 @@ import * as fs from 'fs';
  */
 export async function writeFile(path: string, msg: string, maxRetries: number = 3, retryDelay: number = 2) {
     let retries = 0;
+    
     while (retries <= maxRetries) {
         try {
             await new Promise<void>((resolve, reject) => {

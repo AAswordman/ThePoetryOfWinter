@@ -34,8 +34,8 @@ importers:
         specifier: ^2.6.1
         version: 2.6.5
       typescript:
-        specifier: ^4.9.5
-        version: 4.9.5
+        specifier: 5.9.0-dev.20250220
+        version: 5.9.0-dev.20250220
 
 packages:
 
@@ -307,9 +307,9 @@ packages:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
     engines: {node: '>=8.0'}
 
-  typescript@4.9.5:
-    resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
-    engines: {node: '>=4.2.0'}
+  typescript@5.9.0-dev.20250220:
+    resolution: {integrity: sha512-B0DJklYzD1Dk9xavFC0jllU/id2fa7UFDmjjwx/0IufSTqGZatd6q76dtYTc8zzzMw39jliYeIuvSi+bxuGduw==}
+    engines: {node: '>=14.17'}
     hasBin: true
 
   undici-types@6.19.6:
@@ -599,6 +599,6 @@ snapshots:
     dependencies:
       is-number: 7.0.0
 
-  typescript@4.9.5: {}
+  typescript@5.9.0-dev.20250220: {}
 
   undici-types@6.19.6: {}

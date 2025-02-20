@@ -36,60 +36,72 @@
         },
         "events": {
             "read": {
-                "randomize": [
+                "sequence": [
                     {
-                        "weight": 1,
-                        "run_command": {
-                            "command": [
-                                "function story",
-                                "replaceitem entity @s slot.weapon.mainhand 0 book"
-                            ]
-                        }
+                        "condition": "sapi.isDec",
+                        "randomize": [
+                            {
+                                "weight": 1,
+                                "run_command": {
+                                    "command": [
+                                        "function story",
+                                        "replaceitem entity @s slot.weapon.mainhand 0 book"
+                                    ]
+                                }
+                            },
+                            {
+                                "weight": 3,
+                                "run_command": {
+                                    "command": [
+                                        "function story",
+                                        "function story",
+                                        "replaceitem entity @s slot.weapon.mainhand 0 book"
+                                    ]
+                                }
+                            },
+                            {
+                                "weight": 4,
+                                "run_command": {
+                                    "command": [
+                                        "function story",
+                                        "function story",
+                                        "function story",
+                                        "replaceitem entity @s slot.weapon.mainhand 0 book"
+                                    ]
+                                }
+                            },
+                            {
+                                "weight": 3,
+                                "run_command": {
+                                    "command": [
+                                        "function story",
+                                        "function story",
+                                        "function story",
+                                        "function story",
+                                        "replaceitem entity @s slot.weapon.mainhand 0 book"
+                                    ]
+                                }
+                            },
+                            {
+                                "weight": 1,
+                                "run_command": {
+                                    "command": [
+                                        "function story",
+                                        "function story",
+                                        "function story",
+                                        "function story",
+                                        "function story",
+                                        "replaceitem entity @s slot.weapon.mainhand 0 book"
+                                    ]
+                                }
+                            }
+                        ]
                     },
                     {
-                        "weight": 3,
-                        "run_command": {
-                            "command": [
-                                "function story",
-                                "function story",
-                                "replaceitem entity @s slot.weapon.mainhand 0 book"
-                            ]
-                        }
-                    },
-                    {
-                        "weight": 4,
-                        "run_command": {
-                            "command": [
-                                "function story",
-                                "function story",
-                                "function story",
-                                "replaceitem entity @s slot.weapon.mainhand 0 book"
-                            ]
-                        }
-                    },
-                    {
-                        "weight": 3,
-                        "run_command": {
-                            "command": [
-                                "function story",
-                                "function story",
-                                "function story",
-                                "function story",
-                                "replaceitem entity @s slot.weapon.mainhand 0 book"
-                            ]
-                        }
-                    },
-                    {
-                        "weight": 1,
-                        "run_command": {
-                            "command": [
-                                "function story",
-                                "function story",
-                                "function story",
-                                "function story",
-                                "function story",
-                                "replaceitem entity @s slot.weapon.mainhand 0 book"
-                            ]
+                        "condition": "!sapi.isDec",
+                        "script": {
+                            "output": "item:unknow_book",
+                            "args": []
                         }
                     }
                 ]
