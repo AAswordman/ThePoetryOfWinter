@@ -38,7 +38,7 @@
             },
             "minecraft:cooldown": {
                 "category": "saber",
-                "duration": 4
+                "duration": 2
             },
             "minecraft:repairable": {
                 "repair_items": [
@@ -71,9 +71,13 @@
                 "slot": "sword",
                 "value": 5
             },
+            "minecraft:custom_components": [
+                "epic:echo_saber"
+            ],
             "minecraft:tags": {
                 "tags": [
-                    "comp:base_attack:7"
+                    "comp:base_attack:7",
+                    "comp:movement_addition:0.015"
                 ]
             }
         },
@@ -86,7 +90,7 @@
                             {
                                 "run_command": {
                                     "command": [
-                                        "function EPIC/weapon/high_armor",
+                                     /* "function EPIC/weapon/high_armor",
                                         "tag @s[tag=echo_record_3] add echo_record_4",
                                         "tag @s[tag=echo_record_4] remove echo_record_3",
                                         "tag @s[tag=echo_record_2] add echo_record_3",
@@ -121,7 +125,7 @@
                                         "execute as @s[tag=echo_record_4] run playsound mob.warden.sonic_boom @a[r=10]",
                                         "tag @s[tag=echo_record_4] remove echo_record_4",
                                         "particle minecraft:critical_hit_emitter ~~1.8~",
-                                        "tag @s remove high_armor"
+                                        "tag @s remove high_armor"  */
                                     ],
                                     "target": "other"
                                 }
