@@ -1856,6 +1856,11 @@
         "renderer": "editor_volume_highlight_renderer",
         "layer": 4
     },
+    "editor_compass_renderer": {
+        "type": "custom",
+        "renderer": "editor_compass_renderer",
+        "layer": 4
+    },
     "hotbar_hud_item_icon@common.item_renderer": {
         "$item_collection_name": "$hotbar_collection_name",
         "property_bag": {
@@ -2048,6 +2053,7 @@
         "focus_change_left": "$focus_override_left",
         "focus_change_right": "$focus_override_right",
         "focus_enabled": true,
+        "tts_ignore_count": true,
         "layer": 2,
         "button_mappings": [
             {
@@ -2170,8 +2176,8 @@
         "layer": 1,
         "size": [
             "100%-2px",
-            "100%c+0.3px"
-        ], // Crafted to fit messages with neither gap or overlap
+            "100%c"
+        ],
         "anchor_from": "top_left",
         "anchor_to": "top_left",
         "bindings": [
@@ -2459,9 +2465,16 @@
             {
                 "hud_player_rend_desktop@hud_player_renderer": {
                     "offset": "$hud_player_rend_desktop_offset",
-                    "anchor_from": "bottom_left",
-                    "anchor_to": "bottom_left"
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left"
                 }
+            }
+        ],
+        "bindings": [
+            {
+                "binding_name": "#hud_visible_centered_gui_elements",
+                "binding_name_override": "#visible",
+                "binding_type": "global"
             }
         ]
     },
@@ -2474,6 +2487,16 @@
             50
         ],
         "controls": [
+            {
+                "heart_rend@heart_renderer": {
+                    "offset": [
+                        -1,
+                        -40
+                    ],
+                    "anchor_from": "bottom_left",
+                    "anchor_to": "bottom_left"
+                }
+            },
             {
                 "horse_heart_rend_0@horse_heart_renderer": {
                     "offset": [
@@ -2509,8 +2532,18 @@
             {
                 "armor_rend@armor_renderer": {
                     "offset": [
-                        0,
-                        40
+                        -1,
+                        -40
+                    ],
+                    "anchor_from": "bottom_left",
+                    "anchor_to": "bottom_left"
+                }
+            },
+            {
+                "hunger_rend@hunger_renderer": {
+                    "offset": [
+                        180,
+                        -40
                     ],
                     "anchor_from": "bottom_left",
                     "anchor_to": "bottom_left"
@@ -2564,6 +2597,43 @@
         "type": "panel",
         "controls": [
             {
+                "heart_rend@heart_renderer": {
+                    "offset": [
+                        2,
+                        2
+                    ],
+                    "anchor_from": "top_left",
+                    "anchor_to": "top_left"
+                }
+            },
+            {
+                "horse_heart_rend@horse_heart_renderer": {
+                    "offset": [
+                        -2,
+                        2
+                    ],
+                    "anchor_from": "top_right",
+                    "anchor_to": "top_right",
+                    "layer": 1,
+                    "bindings": [
+                        {
+                            "binding_name": "#horse_hearts_touch",
+                            "binding_name_override": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "hunger_rend@hunger_renderer": {
+                    "offset": [
+                        -2,
+                        2
+                    ],
+                    "anchor_from": "top_right",
+                    "anchor_to": "top_right"
+                }
+            },
+            {
                 "armor_rend@armor_renderer": {
                     "offset": [
                         -90,
@@ -2581,6 +2651,38 @@
                     ],
                     "anchor_from": "top_left",
                     "anchor_to": "top_left"
+                }
+            },
+            {
+                "bubbles_rend_0@bubbles_renderer": {
+                    "offset": [
+                        -2,
+                        12
+                    ],
+                    "anchor_from": "top_right",
+                    "anchor_to": "top_right",
+                    "bindings": [
+                        {
+                            "binding_name": "#is_not_riding_bubbles",
+                            "binding_name_override": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "bubbles_rend_1@bubbles_renderer": {
+                    "offset": [
+                        -2,
+                        12
+                    ],
+                    "anchor_from": "top_right",
+                    "anchor_to": "top_right",
+                    "bindings": [
+                        {
+                            "binding_name": "#is_riding_bubbles",
+                            "binding_name_override": "#visible"
+                        }
+                    ]
                 }
             }
         ],
@@ -4972,7 +5074,7 @@
                         {
                             "pom_hud_bg_render_0": {
                                 "type": "image",
-                                "size": [
+        "size": [
                                     230,
                                     120
                                 ],
@@ -4980,7 +5082,7 @@
                                 "offset": [
                                     -22,
                                     -9.5
-                                ],
+        ],
                                 "anchor_from": "top_left",
                                 "anchor_to": "top_left",
                                 "alpha": "$float_output_1",
@@ -5013,7 +5115,7 @@
                     ],
                     "$use_layout": "('textures/wb_ui/layout' + $res1 +'_2')",
                     "controls": [
-                        {
+            {
                             "pom_hud_bg_render_0": {
                                 "type": "image",
                                 "size": [
@@ -5041,8 +5143,8 @@
         "type": "panel",
         "anchor_from": "top_left",
         "anchor_to": "top_left",
-        "offset": [
-            0,
+                    "offset": [
+                        0,
             0
         ],
         "controls": [
@@ -5073,8 +5175,8 @@
                                 "anchor_to": "top_left",
                                 "alpha": "$float_output_1",
                                 "layer": 1
-                            }
-                        }
+                }
+            }
                     ]
                 }
             }
@@ -5148,7 +5250,7 @@
                         {
                             "pom_hud_bg_render_0": {
                                 "type": "image",
-                                "size": [
+        "size": [
                                     230,
                                     120
                                 ],
@@ -7215,6 +7317,11 @@
             },
             {
                 "editor_gizmo_renderer@editor_gizmo_renderer": {
+                    "ignored": "(not $is_editor_mode_enabled)"
+                }
+            },
+            {
+                "editor_compass_renderer@editor_compass_renderer": {
                     "ignored": "(not $is_editor_mode_enabled)"
                 }
             },
