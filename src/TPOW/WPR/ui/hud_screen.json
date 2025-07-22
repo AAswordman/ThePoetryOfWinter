@@ -6882,6 +6882,7 @@
                     "offset": [
                         0,
                         24
+                        //24-(HP/20) *16
                     ],
                     "anchor_from": "center",
                     "anchor_to": "center",
