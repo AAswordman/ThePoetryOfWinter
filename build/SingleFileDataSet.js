@@ -122,8 +122,8 @@ class SingleFileDataSet {
         return temps[path];
     }
 }
-exports.default = SingleFileDataSet;
 SingleFileDataSet.PIECE_NUM = 64;
+exports.default = SingleFileDataSet;
 String.prototype.hashCode = function () {
     let hash = 0;
     for (let i = 0; i < this.length; i++) {

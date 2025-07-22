@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.readFile = exports.writeFile = void 0;
+exports.writeFile = writeFile;
+exports.readFile = readFile;
 const fs = require("fs");
 /**
  * 重试文件写入操作。
@@ -35,7 +36,6 @@ async function writeFile(path, msg, maxRetries = 3, retryDelay = 2) {
         }
     }
 }
-exports.writeFile = writeFile;
 /**
  * 重试文件读取操作。
  * @param path 文件路径
@@ -67,5 +67,4 @@ async function readFile(path, maxRetries = 3, retryDelay = 2) {
         }
     }
 }
-exports.readFile = readFile;
 //# sourceMappingURL=fileOper.js.map
