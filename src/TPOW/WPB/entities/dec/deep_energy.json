@@ -50,12 +50,6 @@
         "reflect_on_hurt": true,
         "hit_sound": "explode"
       }
-    },
-	  "minecraft:physics": {
-    },
-    "minecraft:pushable": {
-      "is_pushable": true,
-      "is_pushable_by_piston": true
     }
   }
 }

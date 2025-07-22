@@ -70,7 +70,7 @@
                             "side"
                         ],
                         "block_filter": [
-                            "trellis"
+                            "dec:trellis"
                         ]
                     }
                 ]

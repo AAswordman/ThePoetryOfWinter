@@ -1119,13 +1119,13 @@
                 "repair_items": [
                     {
                         "items": [
-                            "minecraft:miecraft:slime_ball"
+                            "minecraft:slime_ball"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.1"
                     },
                     {
                         "items": [
-                            "minecraft:miecraft:slime"
+                            "minecraft:slime"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  1"
                     }

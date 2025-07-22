@@ -8,7 +8,6 @@
       "is_summonable": false,
       "is_experimental": false
     },
-
     "component_groups": {
       "minecraft:ranged_attack": {
         "minecraft:behavior.ranged_attack": {
@@ -54,11 +53,9 @@
             "event": "minecraft:ranged_mode"
           }
         }
-      }
       },
       "minecraft:illager_squad_captain": {
-        "minecraft:is_illager_captain": {
-        },
+        "minecraft:is_illager_captain": {},
         "minecraft:variant": {
           "value": 1
         },
@@ -94,8 +91,7 @@
         }
       },
       "minecraft:patrol_captain": {
-        "minecraft:is_illager_captain": {
-        },
+        "minecraft:is_illager_captain": {},
         "minecraft:variant": {
           "value": 1
         },
@@ -193,25 +189,25 @@
             "event": "minecraft:synchronized_ranged_mode",
             "target": "self"
           },
-        "minecraft:on_hurt": {
-          "event": "minecraft:synchronized_ranged_mode",
-          "target": "self"
-        },
-        "minecraft:on_hurt_by_player": {
-          "event": "minecraft:synchronized_ranged_mode",
-          "target": "self"
-        },
-        "minecraft:on_friendly_anger": {
-          "event": "minecraft:synchronized_ranged_mode",
-          "target": "self"
-        },
-        "minecraft:on_target_escape": {
-          "event": "minecraft:calm",
-          "target": "self"
+          "minecraft:on_hurt": {
+            "event": "minecraft:synchronized_ranged_mode",
+            "target": "self"
+          },
+          "minecraft:on_hurt_by_player": {
+            "event": "minecraft:synchronized_ranged_mode",
+            "target": "self"
+          },
+          "minecraft:on_friendly_anger": {
+            "event": "minecraft:synchronized_ranged_mode",
+            "target": "self"
+          },
+          "minecraft:on_target_escape": {
+            "event": "minecraft:calm",
+            "target": "self"
+          }
         }
       }
     },
-
     "components": {
       "minecraft:despawn": {
         "despawn_from_distance": {}
@@ -224,7 +220,12 @@
         "height": 1.9
       },
       "minecraft:type_family": {
-        "family": [ "pillager", "monster", "illager", "mob" ]
+        "family": [
+          "pillager",
+          "monster",
+          "illager",
+          "mob"
+        ]
       },
       "minecraft:variant": {
         "value": 0
@@ -240,7 +241,12 @@
       "minecraft:hurt_on_condition": {
         "damage_conditions": [
           {
-            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
             "cause": "lava",
             "damage_per_tick": 4
           }
@@ -252,12 +258,9 @@
       "minecraft:navigation.walk": {
         "can_path_over_water": true
       },
-      "minecraft:movement.basic": {
-      },
-      "minecraft:jump.static": {
-      },
-      "minecraft:nameable": {
-      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:nameable": {},
       "minecraft:equipment": {
         "table": "loot_tables/entities/pillager_gear.json"
       },
@@ -284,9 +287,21 @@
           {
             "filters": {
               "any_of": [
-                { "test": "is_family", "subject": "other", "value": "player" },
-                { "test": "is_family", "subject": "other", "value": "irongolem" },
-                { "test": "is_family", "subject": "other", "value": "wandering_trader" }
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "wandering_trader"
+                }
               ]
             },
             "max_dist": 16
@@ -294,8 +309,17 @@
           {
             "filters": {
               "all_of": [
-                { "test": "is_family", "subject": "other", "value": "villager" },
-                { "test": "has_component", "subject": "other", "operator": "!=", "value": "minecraft:is_baby" }
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "villager"
+                },
+                {
+                  "test": "has_component",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "minecraft:is_baby"
+                }
               ]
             },
             "max_dist": 16
@@ -320,8 +344,7 @@
           "minecraft:arrow"
         ]
       },
-      "minecraft:physics": {
-      },
+      "minecraft:physics": {},
       "minecraft:pushable": {
         "is_pushable": true,
         "is_pushable_by_piston": true
@@ -330,7 +353,6 @@
         "value": 64
       }
     },
-
     "events": {
       "minecraft:entity_spawned": {
         "add": {
@@ -386,18 +408,45 @@
         }
       },
       "minecraft:melee_mode": {
-        "remove": { "component_groups": [ "minecraft:ranged_attack" ] },
-        "add": { "component_groups": [ "minecraft:melee_attack" ] }
+        "remove": {
+          "component_groups": [
+            "minecraft:ranged_attack"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:melee_attack"
+          ]
+        }
       },
       "minecraft:ranged_mode": {
-        "remove": { "component_groups": [ "minecraft:melee_attack" ] },
-        "add": { "component_groups": [ "minecraft:ranged_attack" ] }
+        "remove": {
+          "component_groups": [
+            "minecraft:melee_attack"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:ranged_attack"
+          ]
+        }
       },
       "minecraft:calm": {
-        "remove": { "component_groups": [ "minecraft:ranged_attack", "minecraft:melee_attack", "minecraft:synchronized_ranged_attack" ] }
+        "remove": {
+          "component_groups": [
+            "minecraft:ranged_attack",
+            "minecraft:melee_attack",
+            "minecraft:synchronized_ranged_attack"
+          ]
+        }
       },
       "minecraft:synchronized_ranged_mode": {
-        "add": { "component_groups": [ "minecraft:synchronized_ranged_attack", "minecraft:ranged_attack" ] }
+        "add": {
+          "component_groups": [
+            "minecraft:synchronized_ranged_attack",
+            "minecraft:ranged_attack"
+          ]
+        }
       }
     }
   }

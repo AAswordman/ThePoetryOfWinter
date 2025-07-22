@@ -36,7 +36,7 @@
                 "repair_items": [
                     {
                         "items": [
-                            "minecraft:scute"
+                            "minecraft:turtle_scute"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.3"
                     }

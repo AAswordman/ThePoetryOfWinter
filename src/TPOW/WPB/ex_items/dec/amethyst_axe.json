@@ -63,7 +63,7 @@
                         "speed": 12
                     },
                     {
-                        "block": "minecraft:bamboo_sign",
+                        "block": "minecraft:bamboo_standing_sign",
                         "speed": 12
                     },
                     {
@@ -79,7 +79,7 @@
                         "speed": 12
                     },
                     {
-                        "block": "minecraft:cherry_sign",
+                        "block": "minecraft:cherry_standing_sign",
                         "speed": 12
                     },
                     {

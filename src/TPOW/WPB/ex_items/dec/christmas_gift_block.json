@@ -2,7 +2,7 @@
     "format_version": "1.20.50",
     "minecraft:item": {
         "description": {
-            "identifier": "dec:christmas_gift",
+            "identifier": "dec:christmas_gift_block",
             "menu_category": {
                 "group": "itemGroup.name.decorations",
                 "is_hidden_in_commands": false,

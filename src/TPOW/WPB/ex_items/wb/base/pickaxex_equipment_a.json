@@ -903,10 +903,6 @@
                         "speed": 5
                     },
                     {
-                        "block": "dec:cave_crate_locked",
-                        "speed": 5
-                    },
-                    {
                         "block": "dec:compressed_ice",
                         "speed": 5
                     },

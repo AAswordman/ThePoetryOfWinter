@@ -54,7 +54,7 @@
                             "up"
                         ],
                         "block_filter": [
-                            "grass"
+                            "minecraft:grass"
                         ]
                     }
                 ]

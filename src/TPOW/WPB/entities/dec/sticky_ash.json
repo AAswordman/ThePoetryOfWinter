@@ -38,12 +38,6 @@
             "damage": 6,
             "catchFire": true,
             "knockback": true
-          },
-          "particle_on_hit": {
-            "particle_type": "bullet.hit",
-            "num_particles": 6,
-            "on_entity_hit": true,
-            "on_other_hit": true
           }
         },
         "hit_sound": "lava.pop",

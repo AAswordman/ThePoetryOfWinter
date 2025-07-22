@@ -52,7 +52,7 @@
                         ],
                         "block_filter": [
                             "farmland",
-                            "trellis"
+                            "dec:trellis"
                         ]
                     }
                 ]

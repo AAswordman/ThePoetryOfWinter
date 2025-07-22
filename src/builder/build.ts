@@ -242,9 +242,14 @@ async function compileExBlock(path: string) {
                 if (i == components) {
                     originCustoms = custom;
                 } else {
-                    custom = Array.from(new Set(custom.concat(originCustoms??[])))
+                    custom = Array.from(new Set(custom.concat(originCustoms??[])));
                 }
-                i["minecraft:custom_components"] = custom;
+                // old v1
+                // i["minecraft:custom_components"] = custom;
+                // new v2
+                for (let c of custom) {
+                    i[c] = {};
+                }
             }
 
             delete i["minecraft:breathability"];

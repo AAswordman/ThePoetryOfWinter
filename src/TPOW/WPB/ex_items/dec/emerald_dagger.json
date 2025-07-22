@@ -37,7 +37,7 @@
                         "speed": 15
                     },
                     {
-                        "block": "dec:christmas_gift",
+                        "block": "dec:christmas_gift_block",
                         "speed": 15
                     }
                 ],

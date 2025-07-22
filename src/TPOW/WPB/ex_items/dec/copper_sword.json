@@ -41,7 +41,7 @@
                     },
                     {
                         "items": [
-                            "minecraft:copper_nugget"
+                            "dec:copper_nugget"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.03"
                     }

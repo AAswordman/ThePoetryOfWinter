@@ -100,7 +100,7 @@
                 "burn_odds": 5
             },
             "minecraft:unit_cube": {},
-            "minecraft:loot": "loot_tables/blocks/8F5758.json",
+            "minecraft:loot": "loot_tables/blocks/lace_block_light_red.json",
             "minecraft:tags": {
                 "tags": [
                     "wool"

@@ -58,7 +58,7 @@
             },
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "soybean_stage_0"
+                    "texture": "soybean_crop_0"
                 }
             }
         },

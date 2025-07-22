@@ -164,7 +164,7 @@
                                     "up"
                                 ],
                                 "block_filter": [
-                                    "corn_crop"
+                                    "dec:corn_crop"
                                 ]
                             }
                         ]

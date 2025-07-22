@@ -233,7 +233,12 @@ async function compileExBlock(path) {
                 else {
                     custom = Array.from(new Set(custom.concat(originCustoms !== null && originCustoms !== void 0 ? originCustoms : [])));
                 }
-                i["minecraft:custom_components"] = custom;
+                // old v1
+                // i["minecraft:custom_components"] = custom;
+                // new v2
+                for (let c of custom) {
+                    i[c] = {};
+                }
             }
             delete i["minecraft:breathability"];
             if ('minecraft:unit_cube' in i) {

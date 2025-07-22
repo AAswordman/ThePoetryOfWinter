@@ -55,7 +55,7 @@
             },
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "leek_stage_0"
+                    "texture": "leek_crop_0"
                 }
             }
         },

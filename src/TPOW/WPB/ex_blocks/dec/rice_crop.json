@@ -59,7 +59,7 @@
             },
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "rice_stage_0"
+                    "texture": "rice_crop_0"
                 }
             }
         },

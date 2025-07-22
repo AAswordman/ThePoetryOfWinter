@@ -44,7 +44,7 @@
                         "block_filter": [
                             "stone",
                             "snow",
-                            "grass",
+                            "minecraft:grass",
                             "dirt",
                             "gravel"
                         ]

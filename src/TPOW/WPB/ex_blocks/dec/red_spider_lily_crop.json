@@ -44,7 +44,7 @@
                         "block_filter": [
                             "netherrack",
                             "crimson_nylium",
-                            "ash"
+                            "dec:ash"
                         ]
                     }
                 ]

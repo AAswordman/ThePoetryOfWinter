@@ -63,7 +63,7 @@
                         "speed": 2
                     },
                     {
-                        "block": "minecraft:bamboo_sign",
+                        "block": "minecraft:bamboo_standing_sign",
                         "speed": 2
                     },
                     {
@@ -79,7 +79,7 @@
                         "speed": 2
                     },
                     {
-                        "block": "minecraft:cherry_sign",
+                        "block": "minecraft:cherry_standing_sign",
                         "speed": 2
                     },
                     {
@@ -727,13 +727,13 @@
                 "repair_items": [
                     {
                         "items": [
-                            "minecraft:miecraft:slime_ball"
+                            "minecraft:slime_ball"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.1"
                     },
                     {
                         "items": [
-                            "minecraft:miecraft:slime"
+                            "minecraft:slime"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  1"
                     }

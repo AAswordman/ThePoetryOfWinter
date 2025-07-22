@@ -47,7 +47,7 @@
                     },
                     {
                         "items": [
-                            "minecraft:yellow_flower"
+                            "minecraft:dandelion"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.1"
                     },

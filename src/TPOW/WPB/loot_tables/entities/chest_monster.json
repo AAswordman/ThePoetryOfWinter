@@ -156,7 +156,7 @@
 
                 {
                     "type": "item",
-                    "name": "dec:christmas_gift",
+                    "name": "dec:christmas_gift_block",
                     "weight": 1,
                     "functions": [
                         {
