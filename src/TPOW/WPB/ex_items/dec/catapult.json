@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:catapult",
             "menu_category": {
-                "group": "itemGroup.name.sword",
+                "group": "dec:itemGroup.name.flintlocks",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -12,9 +12,6 @@
         "components": {
             "minecraft:display_name": {
                 "value": "item.dec:catapult.name"
-            },
-            "minecraft:icon": {
-                "texture": "catapult"
             },
             "minecraft:cooldown": {
                 "category": "catapult",
@@ -32,6 +29,11 @@
                 "tags": [
                     "comp:equipment_type:range_weapon_:range_weapon:_"
                 ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "catapult"
+                }
             }
         },
         "events": {}

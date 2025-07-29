@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:soul",
             "menu_category": {
-                "group": "itemGroup.name.decorations",
+                "group": "minecraft:itemGroup.name.decorations",
                 "is_hidden_in_commands": false,
                 "category": "items"
             }
@@ -14,7 +14,9 @@
                 "value": "item.dec:soul.name"
             },
             "minecraft:icon": {
-                "texture": "soul"
+                "textures": {
+                    "default": "soul"
+                }
             }
         }
     }

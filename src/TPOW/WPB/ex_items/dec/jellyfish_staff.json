@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:jellyfish_staff",
             "menu_category": {
-                "group": "itemGroup.name.sword",
+                "group": "dec:itemGroup.name.staffs",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -13,10 +13,6 @@
             "minecraft:display_name": {
                 "value": "item.dec:jellyfish_staff.name"
             },
-            "minecraft:icon": {
-                "texture": "jellyfish_staff"
-            },
-            "minecraft:use_animation": "bow",
             "minecraft:stacked_by_data": false,
             "minecraft:max_stack_size": 1,
             "minecraft:hand_equipped": true,
@@ -41,6 +37,11 @@
                 "tags": [
                     "comp:equipment_type:magic_weapon_:staff:_"
                 ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "jellyfish_staff"
+                }
             }
         },
         "events": {
@@ -58,7 +59,7 @@
                             {
                                 "run_command": {
                                     "command": [
-                                        "playsound item.book.put @a ~~~",
+                                        "playsound break.amethyst_block @a ~~~",
                                         "scoreboard players remove @s wbfl 2",
                                         "playanimation @s animation.humanoid.staff_use"
                                     ],

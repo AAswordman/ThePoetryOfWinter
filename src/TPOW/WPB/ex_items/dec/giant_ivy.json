@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:giant_ivy",
             "menu_category": {
-                "group": "itemGroup.name.sword",
+                "group": "dec:itemGroup.name.staffs",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -13,10 +13,6 @@
             "minecraft:display_name": {
                 "value": "item.dec:giant_ivy.name"
             },
-            "minecraft:icon": {
-                "texture": "giant_ivy"
-            },
-            "minecraft:use_animation": "bow",
             "minecraft:stacked_by_data": false,
             "minecraft:max_stack_size": 1,
             "minecraft:hand_equipped": true,
@@ -41,6 +37,11 @@
                 "tags": [
                     "comp:equipment_type:magic_weapon_:staff:_"
                 ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "giant_ivy"
+                }
             }
         },
         "events": {
@@ -58,8 +59,9 @@
                             {
                                 "run_command": {
                                     "command": [
-                                        "playsound item.book.put @a ~~~",
-                                        "scoreboard players remove @s wbfl 2"
+                                        "playsound break.amethyst_block @a ~~~",
+                                        "scoreboard players remove @s wbfl 2",
+                                        "playanimation @s animation.humanoid.staff_use"
                                     ],
                                     "target": "holder"
                                 }

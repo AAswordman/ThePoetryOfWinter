@@ -1,5 +1,5 @@
 {
-    "format_version": "1.20.80",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "dec:red_patterned_stonebrick",
@@ -11,8 +11,8 @@
                 ]
             },
             "menu_category": {
-                "group": "itemGroup.name.outside",
-                "category": "items"
+                "group": "minecraft:itemGroup.name.stoneBrick",
+                "category": "construction"
             }
         },
         "permutations": [
@@ -80,7 +80,8 @@
         "components": {
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "red_patterned_stonebrick_side"
+                    "texture": "red_patterned_stonebrick_side",
+                    "render_method": "alpha_test"
                 }
             },
             "minecraft:on_player_placing": {

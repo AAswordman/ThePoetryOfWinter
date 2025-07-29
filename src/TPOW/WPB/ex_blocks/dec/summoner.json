@@ -1,11 +1,11 @@
 {
-    "format_version": "1.20.80",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "dec:summoner",
             "menu_category": {
-                "group": "itemGroup.name.outside",
-                "category": "items"
+                "group": "dec:itemGroup.name.summoners",
+                "category": "nature"
             }
         },
         "components": {
@@ -24,7 +24,8 @@
             "minecraft:geometry": "minecraft:geometry.full_block",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "summoner"
+                    "texture": "summoner",
+                    "render_method": "alpha_test"
                 }
             }
         },

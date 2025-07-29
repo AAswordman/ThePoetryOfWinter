@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:experience_flower_seeds",
             "menu_category": {
-                "group": "itemGroup.name.seed",
+                "group": "minecraft:itemGroup.name.seed",
                 "is_hidden_in_commands": false,
                 "category": "nature"
             }
@@ -13,12 +13,17 @@
             "minecraft:display_name": {
                 "value": "item.dec:experience_flower_seeds.name"
             },
-            "minecraft:icon": {
-                "texture": "experience_flower_seeds"
-            },
             "minecraft:use_animation": "eat",
             "minecraft:block_placer": {
                 "block": "dec:experience_flower_crop"
+            },
+            "minecraft:compostable": {
+                "composting_chance": 30
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "experience_flower_seeds"
+                }
             }
         }
     }

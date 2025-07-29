@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:scale_sword",
             "menu_category": {
-                "group": "itemGroup.name.sword",
+                "group": "minecraft:itemGroup.name.sword",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -12,9 +12,6 @@
         "components": {
             "minecraft:display_name": {
                 "value": "item.dec:scale_sword.name"
-            },
-            "minecraft:icon": {
-                "texture": "scale_sword"
             },
             "minecraft:weapon": {
                 "on_hurt_entity": {
@@ -89,6 +86,11 @@
                     "comp:underwater_movement_addition:0.04",
                     "comp:equipment_type:melee_weapon_:sword:_"
                 ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "scale_sword"
+                }
             }
         },
         "events": {

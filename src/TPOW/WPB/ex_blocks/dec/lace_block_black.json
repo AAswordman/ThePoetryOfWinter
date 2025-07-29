@@ -1,5 +1,5 @@
 {
-    "format_version": "1.20.80",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "dec:lace_block_black",
@@ -11,7 +11,7 @@
                 ]
             },
             "menu_category": {
-                "group": "itemGroup.name.outside",
+                "group": "minecraft:itemGroup.name.outside",
                 "category": "items"
             }
         },
@@ -80,7 +80,8 @@
         "components": {
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "lace_block_black_side"
+                    "texture": "lace_block_black_side",
+                    "render_method": "alpha_test"
                 }
             },
             "minecraft:on_player_placing": {

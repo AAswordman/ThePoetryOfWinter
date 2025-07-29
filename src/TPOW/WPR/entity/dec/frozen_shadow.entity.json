@@ -4,7 +4,7 @@
     "description": {
       "identifier": "dec:frozen_shadow",
       "materials": {
-        "default": "entity_alphatest"
+        "default": "slime_outer"
       },
       "textures": {
         "default": "textures/entity/frozen_shadow"

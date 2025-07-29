@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:ice_brick",
             "menu_category": {
-                "group": "itemGroup.name.decorations",
+                "group": "dec:itemGroup.name.ingots",
                 "is_hidden_in_commands": false,
                 "category": "items"
             }
@@ -14,7 +14,9 @@
                 "value": "item.dec:ice_brick.name"
             },
             "minecraft:icon": {
-                "texture": "ice_brick"
+                "textures": {
+                    "default": "ice_brick"
+                }
             }
         }
     }

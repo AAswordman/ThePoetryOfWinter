@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:storm_giant_sword",
             "menu_category": {
-                "group": "itemGroup.name.sword",
+                "group": "minecraft:itemGroup.name.sword",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -13,10 +13,6 @@
             "minecraft:display_name": {
                 "value": "item.dec:storm_giant_sword.name"
             },
-            "minecraft:icon": {
-                "texture": "storm_giant_sword"
-            },
-            "minecraft:use_animation": "bow",
             "minecraft:weapon": {
                 "on_hurt_entity": {
                     "event": "attack",
@@ -34,7 +30,7 @@
                 "max_durability": 533
             },
             "minecraft:mining_speed": 1.5,
-            "minecraft:damage": 6.5,
+            "minecraft:damage": 6,
             "minecraft:enchantable": {
                 "value": 15,
                 "slot": "sword"
@@ -80,6 +76,11 @@
                 "tags": [
                     "comp:equipment_type:melee_weapon_:sword:_"
                 ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "storm_giant_sword"
+                }
             }
         },
         "events": {
@@ -97,7 +98,7 @@
                             {
                                 "run_command": {
                                     "command": [
-                                        "playsound item.book.put @a ~~~",
+                                        "playsound break.amethyst_block @a ~~~",
                                         "scoreboard players remove @s wbfl 3",
                                         "playanimation @s animation.humanoid.staff_use"
                                     ],

@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:exploding_pellets",
             "menu_category": {
-                "group": "itemGroup.name.navigation",
+                "group": "dec:itemGroup.name.bullets",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -13,10 +13,12 @@
             "minecraft:display_name": {
                 "value": "item.dec:exploding_pellets.name"
             },
+            "minecraft:allow_off_hand": true,
             "minecraft:icon": {
-                "texture": "exploding_pellets"
-            },
-            "minecraft:allow_off_hand": true
+                "textures": {
+                    "default": "exploding_pellets"
+                }
+            }
         }
     }
 }

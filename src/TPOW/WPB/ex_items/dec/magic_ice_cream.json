@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:magic_ice_cream",
             "menu_category": {
-                "group": "itemGroup.name.miscFood",
+                "group": "minecraft:itemGroup.name.miscFood",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -12,9 +12,6 @@
         "components": {
             "minecraft:display_name": {
                 "value": "item.dec:magic_ice_cream.name"
-            },
-            "minecraft:icon": {
-                "texture": "magic_ice_cream"
             },
             "minecraft:use_animation": "eat",
             "minecraft:cooldown": {
@@ -31,7 +28,13 @@
                 }
             },
             "minecraft:use_modifiers": {
-                "use_duration": 1.6
+                "use_duration": 1.6,
+                "movement_modifier": 0.4
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "magic_ice_cream"
+                }
             }
         },
         "events": {

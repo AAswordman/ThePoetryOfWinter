@@ -18,7 +18,7 @@
         "spinning": "animation.spots.spinning"
       },
       "render_controllers": [ "controller.render.spots" ],
-      "materials": { "default": "husk" }
+      "materials": { "default": "charged_creeper" }
       }
    }
 }

@@ -7,7 +7,6 @@
       "is_summonable": true,
       "is_experimental": false
     },
-
     "component_groups": {
       "zombification_sensor": {
         "minecraft:environment_sensor": {
@@ -22,7 +21,6 @@
           }
         }
       },
-
       "start_zombification": {
         "minecraft:is_shaking": {},
         "minecraft:environment_sensor": {
@@ -44,16 +42,14 @@
           }
         }
       },
-
       "become_zombie": {
         "minecraft:transformation": {
           "into": "minecraft:zombie_pigman",
-          "transformation_sound" : "converted_to_zombified",
+          "transformation_sound": "converted_to_zombified",
           "keep_level": true,
           "preserve_equipment": true
         }
       },
-
       "melee_unit": {
         "minecraft:behavior.melee_attack": {
           "priority": 4,
@@ -70,7 +66,6 @@
           "value": 1
         }
       },
-
       "angry": {
         "minecraft:angry": {
           "duration": 30,
@@ -102,7 +97,6 @@
           }
         }
       },
-
       "alert_for_attack_targets": {
         "minecraft:behavior.nearest_prioritized_attackable_target": {
           "priority": 3,
@@ -117,7 +111,7 @@
                 "value": "player"
               },
               "max_dist": 12,
-              "priority":  0
+              "priority": 0
             },
             {
               "filters": {
@@ -131,7 +125,6 @@
           ]
         }
       },
-
       "take_target_as_response_to_block_break": {
         "minecraft:behavior.nearest_attackable_target": {
           "priority": 3,
@@ -154,13 +147,12 @@
           "speed_multiplier": 0.6,
           "goal_radius": 4.0,
           "on_failed": {
-              "event": "go_back_to_spawn_failed",
-              "target": "self"
+            "event": "go_back_to_spawn_failed",
+            "target": "self"
           }
         }
       }
     },
-
     "components": {
       "minecraft:boss": {
         "should_darken_sky": false,
@@ -180,14 +172,11 @@
           "monster"
         ]
       },
-      "minecraft:home": {
-      },
-      "minecraft:conditional_bandwidth_optimization": {
-      },
+      "minecraft:home": {},
+      "minecraft:conditional_bandwidth_optimization": {},
       "minecraft:experience_reward": {
         "on_death": "query.last_hit_by_player ? 20 : 0"
       },
-      
       "minecraft:on_target_acquired": {
         "event": "become_angry_event",
         "target": "self"
@@ -224,8 +213,7 @@
         "can_path_over_water": true,
         "can_open_doors": true
       },
-      "minecraft:annotation.open_door": {
-      },
+      "minecraft:annotation.open_door": {},
       "minecraft:movement.basic": {},
       "minecraft:jump.static": {},
       "minecraft:nameable": {},
@@ -293,7 +281,6 @@
         "value": 64
       }
     },
-
     "events": {
       "minecraft:entity_spawned": {
         "add": {

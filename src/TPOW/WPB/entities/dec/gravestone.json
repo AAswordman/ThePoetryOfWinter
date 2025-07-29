@@ -41,9 +41,9 @@
 				]
 			},
 			"minecraft:explode": {
-			  "fuse_length": 300.0,
-			  "fuse_lit": false,
-			  "power": 0
+				"fuse_length": 300.0,
+				"fuse_lit": false,
+				"power": 0
 			},
 			"minecraft:collision_box": {
 				"width": 0.6875,

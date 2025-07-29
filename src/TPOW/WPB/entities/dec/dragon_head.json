@@ -7,8 +7,7 @@
 			"is_summonable": true,
 			"is_experimental": false
 		},
-		"component_groups": {
-		},
+		"component_groups": {},
 		"components": {
 			"minecraft:explode": {
 				"fuseLength": 20,
@@ -19,15 +18,15 @@
 			"minecraft:behavior.hurt_by_target": {
 				"priority": 1,
 				"entity_types": {
-				  "filters": {
-					"test": "is_family",
-					"subject": "other",
-					"operator": "!=",
-					"value": "shadow"
-				  },
-				  "max_dist": 64
+					"filters": {
+						"test": "is_family",
+						"subject": "other",
+						"operator": "!=",
+						"value": "shadow"
+					},
+					"max_dist": 64
 				}
-			  },
+			},
 			"minecraft:damage_sensor": {
 				"triggers": [
 					{
@@ -60,15 +59,15 @@
 				"height": 0.6
 			},
 			"minecraft:type_family": {
-			  "family": [
-				"baby_ender_dragon_head",
-				"monster",
-				"mob",
-				"shadow"
-			  ]
+				"family": [
+					"baby_ender_dragon_head",
+					"monster",
+					"mob",
+					"shadow"
+				]
 			},
 			"minecraft:despawn": {
-			  "despawn_from_distance": {}
+				"despawn_from_distance": {}
 			},
 			"minecraft:breathable": {
 				"total_supply": 15,
@@ -103,17 +102,17 @@
 			"minecraft:can_climb": {},
 			"minecraft:nameable": {},
 			"minecraft:shooter": {
-			  "def": "dec:ender_breath"
+				"def": "dec:ender_breath"
 			},
 			"minecraft:behavior.ranged_attack": {
-			  "priority": 4,
-			  "burst_shots": 2,
-			  "burst_interval": 0.1,
-			  "charge_charged_trigger": 0.0,
-			  "charge_shoot_trigger": 1.0,
-			  "attack_interval_min": 1.0,
-			  "attack_interval_max": 1.0,
-			  "attack_radius": 64.0
+				"priority": 4,
+				"burst_shots": 2,
+				"burst_interval": 0.1,
+				"charge_charged_trigger": 0.0,
+				"charge_shoot_trigger": 1.0,
+				"attack_interval_min": 1.0,
+				"attack_interval_max": 1.0,
+				"attack_radius": 64.0
 			},
 			"minecraft:follow_range": {
 				"value": 64,
@@ -179,7 +178,6 @@
 				"priority": 6
 			}
 		},
-		"events": {
-		}
+		"events": {}
 	}
 }

@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:hanyi_shoes",
             "menu_category": {
-                "group": "itemGroup.name.boots",
+                "group": "dec:itemGroup.name.clothes_boots",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -12,9 +12,6 @@
         "components": {
             "minecraft:display_name": {
                 "value": "item.dec:hanyi_shoes.name"
-            },
-            "minecraft:icon": {
-                "texture": "hanyi_shoes"
             },
             "minecraft:max_stack_size": 1,
             "minecraft:enchantable": {
@@ -65,6 +62,11 @@
                     "comp:armor_protection:2",
                     "comp:armor_type:decorate_"
                 ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "hanyi_shoes"
+                }
             }
         }
     }

@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:the_imperial_sword",
             "menu_category": {
-                "group": "itemGroup.name.sword",
+                "group": "minecraft:itemGroup.name.sword",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -12,9 +12,6 @@
         "components": {
             "minecraft:display_name": {
                 "value": "item.dec:the_imperial_sword.name"
-            },
-            "minecraft:icon": {
-                "texture": "the_imperial_sword"
             },
             "minecraft:weapon": {
                 "on_hurt_entity": {
@@ -54,7 +51,7 @@
                 "max_durability": 564
             },
             "minecraft:mining_speed": 1.5,
-            "minecraft:damage": 7.5,
+            "minecraft:damage": 8,
             "minecraft:enchantable": {
                 "value": 20,
                 "slot": "sword"
@@ -85,6 +82,11 @@
                     "use_skill_count",
                     "comp:equipment_type:melee_weapon_:sword:_"
                 ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "the_imperial_sword"
+                }
             }
         },
         "events": {

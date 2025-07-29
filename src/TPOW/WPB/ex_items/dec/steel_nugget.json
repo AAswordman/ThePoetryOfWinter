@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:steel_nugget",
             "menu_category": {
-                "group": "itemGroup.name.decorations",
+                "group": "dec:itemGroup.name.nuggets",
                 "is_hidden_in_commands": false,
                 "category": "items"
             }
@@ -14,7 +14,9 @@
                 "value": "item.dec:steel_nugget.name"
             },
             "minecraft:icon": {
-                "texture": "steel_nugget"
+                "textures": {
+                    "default": "steel_nugget"
+                }
             }
         }
     }

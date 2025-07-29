@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "epic:echoing_scream_saber",
             "menu_category": {
-                "group": "itemGroup.name.sword",
+                "group": "minecraft:itemGroup.name.sword",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -14,7 +14,9 @@
                 "value": "item.epic:echoing_scream_saber.name"
             },
             "minecraft:icon": {
-                "texture": "epic:echoing_scream_saber"
+                "textures": {
+                    "default": "epic:echoing_scream_saber"
+                }
             },
             "minecraft:damage": 7,
             "minecraft:durability": {

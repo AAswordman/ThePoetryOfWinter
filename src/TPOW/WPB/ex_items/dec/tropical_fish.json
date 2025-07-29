@@ -1,20 +1,17 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:tropical_fish",
             "menu_category": {
-                "group": "itemGroup.name.rawFood",
+                "group": "minecraft:itemGroup.name.rawFood",
                 "is_hidden_in_commands": false,
-                "category": "items"
+                "category": "nature"
             }
         },
         "components": {
             "minecraft:display_name": {
                 "value": "item.dec:tropical_fish.name"
-            },
-            "minecraft:icon": {
-                "texture": "tropical_fish"
             },
             "minecraft:use_animation": "eat",
             "minecraft:food": {
@@ -22,7 +19,13 @@
                 "saturation_modifier": 0.6
             },
             "minecraft:use_modifiers": {
-                "use_duration": 1.6
+                "use_duration": 1.6,
+                "movement_modifier": 0.4
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "tropical_fish"
+                }
             }
         }
     }

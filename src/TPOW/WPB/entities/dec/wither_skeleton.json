@@ -7,7 +7,6 @@
       "is_summonable": true,
       "is_experimental": false
     },
-
     "component_groups": {
       "minecraft:despawn": {
         "minecraft:instant_despawn": {}
@@ -51,7 +50,6 @@
           "value": 0.3
         }
       },
-
       "minecraft:wither_skeleton_adult": {
         "minecraft:health": {
           "value": {
@@ -71,7 +69,11 @@
             "skeleton"
           ],
           "seats": {
-            "position": [ 0.0, 1.6, -0.35 ],
+            "position": [
+              0.0,
+              1.6,
+              -0.35
+            ],
             "lock_rider_rotation": 0
           }
         },
@@ -82,7 +84,6 @@
           "track_target": true
         }
       },
-
       "minecraft:wither_skeleton_jockey": {
         "minecraft:behavior.find_mount": {
           "priority": 1,
@@ -93,8 +94,7 @@
       }
     },
     "components": {
-      "minecraft:nameable": {
-      },
+      "minecraft:nameable": {},
       "minecraft:breathable": {
         "total_supply": 15,
         "suffocate_time": 0,
@@ -106,8 +106,7 @@
           "range_max": 30
         }
       },
-      "minecraft:equip_item": {
-      },
+      "minecraft:equip_item": {},
       "minecraft:collision_box": {
         "width": 0.72,
         "height": 2.01
@@ -128,12 +127,9 @@
         "avoid_sun": true,
         "avoid_water": true
       },
-      "minecraft:movement.basic": {
-      },
-      "minecraft:jump.static": {
-      },
-      "minecraft:can_climb": {
-      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
       "minecraft:shareables": {
         "items": [
           {
@@ -489,8 +485,7 @@
       "minecraft:scale": {
         "value": 1.2
       },
-      "minecraft:fire_immune": {
-      },
+      "minecraft:fire_immune": {},
       "minecraft:despawn": {
         "despawn_from_distance": {}
       },
@@ -565,16 +560,20 @@
         "priority": 8
       },
       "minecraft:type_family": {
-        "family": [ "wither", "monster", "undead", "skeleton", "mob" ]
+        "family": [
+          "wither",
+          "monster",
+          "undead",
+          "skeleton",
+          "mob"
+        ]
       },
-      "minecraft:physics": {
-      },
+      "minecraft:physics": {},
       "minecraft:pushable": {
         "is_pushable": true,
         "is_pushable_by_piston": true
       }
     },
-
     "events": {
       "minecraft:despawn": {
         "add": {
@@ -616,8 +615,7 @@
           },
           {
             "weight": 25,
-            "remove": {
-            },
+            "remove": {},
             "add": {
               "component_groups": [
                 "minecraft:wither_skeleton_baby"
@@ -626,8 +624,7 @@
           },
           {
             "weight": 5,
-            "remove": {
-            },
+            "remove": {},
             "add": {
               "component_groups": [
                 "minecraft:wither_skeleton_baby",

@@ -1100,6 +1100,197 @@
         "textures/blocks/lampshade"
       ]
     },
+    // Dec 1.9.8 add
+    "baby_blue_eyes_flower_crop": {
+      "textures": [
+        "textures/blocks/baby_blue_eyes_flower_crop"
+      ]
+    },
+    "balloon_flower_crop": {
+      "textures": [
+        "textures/blocks/balloon_flower_crop"
+      ]
+    },
+    "breeze_flower_crop": {
+      "textures": [
+        "textures/blocks/breeze_flower_crop"
+      ]
+    },
+    "butter_flower_crop": {
+      "textures": [
+        "textures/blocks/butter_flower_crop"
+      ]
+    },
+    "butterfly_pea_crop": {
+      "textures": [
+        "textures/blocks/butterfly_pea_crop"
+      ]
+    },
+    "cloud_flower_crop": {
+      "textures": [
+        "textures/blocks/cloud_flower_crop"
+      ]
+    },
+    "crinum_crop": {
+      "textures": [
+        "textures/blocks/crinum_crop"
+      ]
+    },
+    "dandelion_crop": {
+      "textures": [
+        "textures/blocks/dandelion_crop"
+      ]
+    },
+    "deep_dandelion_crop": {
+      "textures": [
+        "textures/blocks/deep_dandelion_crop"
+      ]
+    },
+    "depart_grass_crop": {
+      "textures": [
+        "textures/blocks/depart_grass_crop"
+      ]
+    },
+    "desert_fan_flower_crop": {
+      "textures": [
+        "textures/blocks/desert_fan_flower_crop"
+      ]
+    },
+    "fan_flower_crop": {
+      "textures": [
+        "textures/blocks/fan_flower_crop"
+      ]
+    },
+    "frozen_mirror_flower_crop": {
+      "textures": [
+        "textures/blocks/frozen_mirror_flower_crop"
+      ]
+    },
+    "gold_flower_crop": {
+      "textures": [
+        "textures/blocks/gold_flower_crop"
+      ]
+    },
+    "hammer_flower_crop": {
+      "textures": [
+        "textures/blocks/hammer_flower_crop"
+      ]
+    },
+    "lamp_flower_crop": {
+      "textures": [
+        "textures/blocks/lamp_flower_crop"
+      ]
+    },
+    "leaves_flower_crop": {
+      "textures": [
+        "textures/blocks/leaves_flower_crop"
+      ]
+    },
+    "lurk_bud_crop": {
+      "textures": [
+        "textures/blocks/lurk_bud_crop"
+      ]
+    },
+    "lurk_fruit_crop": {
+      "textures": [
+        "textures/blocks/lurk_fruit_crop"
+      ]
+    },
+    "lurk_orchid_crop": {
+      "textures": [
+        "textures/blocks/lurk_orchid_crop"
+      ]
+    },
+    "maple_flower_crop": {
+      "textures": [
+        "textures/blocks/maple_flower_crop"
+      ]
+    },
+    "mock_strawberry_crop": {
+      "textures": [
+        "textures/blocks/mock_strawberry_crop"
+      ]
+    },
+    "mouth_flower_crop": {
+      "textures": [
+        "textures/blocks/mouth_flower_crop"
+      ]
+    },
+    "nether_dandelion_crop": {
+      "textures": [
+        "textures/blocks/nether_dandelion_crop"
+      ]
+    },
+    "nether_stick_flower_crop": {
+      "textures": [
+        "textures/blocks/nether_stick_flower_crop"
+      ]
+    },
+    "pink_dandelion_crop": {
+      "textures": [
+        "textures/blocks/pink_dandelion_crop"
+      ]
+    },
+    "pink_fan_flower_crop": {
+      "textures": [
+        "textures/blocks/pink_fan_flower_crop"
+      ]
+    },
+    "rosemary_crop": {
+      "textures": [
+        "textures/blocks/rosemary_crop"
+      ]
+    },
+    "russet_grass_crop": {
+      "textures": [
+        "textures/blocks/russet_grass_crop"
+      ]
+    },
+    "snow_flower_crop": {
+      "textures": [
+        "textures/blocks/snow_flower_crop"
+      ]
+    },
+    "spark_flower_crop": {
+      "textures": [
+        "textures/blocks/spark_flower_crop"
+      ]
+    },
+    "spell_flower_crop": {
+      "textures": [
+        "textures/blocks/spell_flower_crop"
+      ]
+    },
+    "star_flower_crop": {
+      "textures": [
+        "textures/blocks/star_flower_crop"
+      ]
+    },
+    "stick_flower_crop": {
+      "textures": [
+        "textures/blocks/stick_flower_crop"
+      ]
+    },
+    "thyme_crop": {
+      "textures": [
+        "textures/blocks/thyme_crop"
+      ]
+    },
+    "wither_cone_crop": {
+      "textures": [
+        "textures/blocks/wither_cone_crop"
+      ]
+    },
+    "yellow_butterfly_flower_crop": {
+      "textures": [
+        "textures/blocks/yellow_butterfly_flower_crop"
+      ]
+    },
+    "flesh_block": {
+      "textures": [
+        "textures/blocks/flesh_block"
+      ]
+    },
     //=============================WB==================================
     "waste_recovery": {
       "textures": "textures/wb_blocks/technology/waste_recovery"

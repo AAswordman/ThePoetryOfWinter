@@ -65,14 +65,10 @@
         "can_open_doors": true,
         "avoid_water": true
       },
-      "minecraft:annotation.open_door":{
-      },
-      "minecraft:movement.basic": {
-      },
-      "minecraft:jump.static": {
-      },
-      "minecraft:can_climb": {
-      },
+      "minecraft:annotation.open_door": {},
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
       "minecraft:health": {
         "value": {
           "range_min": 28,
@@ -83,8 +79,7 @@
         "value": 64,
         "max": 64
       },
-      "minecraft:nameable": {
-      },
+      "minecraft:nameable": {},
       "minecraft:behavior.float": {
         "priority": 0
       },
@@ -153,10 +148,15 @@
         "priority": 4
       },
       "minecraft:type_family": {
-        "family": [ "monster", "rumorer", "undead", "swamp", "mob" ]
+        "family": [
+          "monster",
+          "rumorer",
+          "undead",
+          "swamp",
+          "mob"
+        ]
       },
-      "minecraft:physics": {
-      },
+      "minecraft:physics": {},
       "minecraft:pushable": {
         "is_pushable": true,
         "is_pushable_by_piston": true

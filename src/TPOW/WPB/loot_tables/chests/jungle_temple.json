@@ -216,6 +216,20 @@
         },
         {
           "type": "item",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 2
+              }
+            }
+          ],
+          "name": "dec:fritillary_seeds"
+        },
+        {
+          "type": "item",
           "name": "minecraft:book",
           "weight": 6,
           "functions": [

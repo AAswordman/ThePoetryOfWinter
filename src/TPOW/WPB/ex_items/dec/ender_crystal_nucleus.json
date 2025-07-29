@@ -1,20 +1,17 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:ender_crystal_nucleus",
             "menu_category": {
-                "group": "itemGroup.name.decorations",
+                "group": "dec:itemGroup.name.crystal_nucleus",
                 "is_hidden_in_commands": false,
-                "category": "items"
+                "category": "equipment"
             }
         },
         "components": {
             "minecraft:display_name": {
                 "value": "item.dec:ender_crystal_nucleus.name"
-            },
-            "minecraft:icon": {
-                "texture": "ender_crystal_nucleus"
             },
             "minecraft:use_animation": "eat",
             "minecraft:stacked_by_data": false,
@@ -29,6 +26,11 @@
             "minecraft:cooldown": {
                 "category": "magic_nucleus",
                 "duration": 3
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "ender_crystal_nucleus"
+                }
             }
         },
         "events": {

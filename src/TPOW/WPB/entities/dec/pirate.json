@@ -22,8 +22,7 @@
       }
     },
     "component_groups": {
-      "minecraft:join_fight": {
-      },
+      "minecraft:join_fight": {},
       "minecraft:run_away": {
         "minecraft:behavior.avoid_mob_type": {
           "priority": 3,

@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:lava_leggings",
             "menu_category": {
-                "group": "itemGroup.name.leggings",
+                "group": "minecraft:itemGroup.name.leggings",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -12,9 +12,6 @@
         "components": {
             "minecraft:display_name": {
                 "value": "item.dec:lava_leggings.name"
-            },
-            "minecraft:icon": {
-                "texture": "lava_leggings"
             },
             "minecraft:max_stack_size": 1,
             "minecraft:enchantable": {
@@ -61,6 +58,11 @@
                     "comp:armor_magic_protection:2",
                     "comp:armor_physical_protection:5"
                 ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "lava_leggings"
+                }
             }
         }
     }

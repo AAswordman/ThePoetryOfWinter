@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:flintlock_bullet",
             "menu_category": {
-                "group": "itemGroup.name.navigation",
+                "group": "dec:itemGroup.name.bullets",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -13,11 +13,13 @@
             "minecraft:display_name": {
                 "value": "item.dec:flintlock_bullet.name"
             },
-            "minecraft:icon": {
-                "texture": "flintlock_bullet"
-            },
             "minecraft:use_animation": "eat",
-            "minecraft:allow_off_hand": true
+            "minecraft:allow_off_hand": true,
+            "minecraft:icon": {
+                "textures": {
+                    "default": "flintlock_bullet"
+                }
+            }
         }
     }
 }

@@ -16,7 +16,7 @@
         },
         {
           "type": "item",
-          "name": "dec:mace",
+          "name": "dec:fang_mace",
           "weight": 40,
           "functions": [
             {

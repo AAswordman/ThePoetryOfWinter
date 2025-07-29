@@ -57,10 +57,14 @@
           "deals_damage": false
         }
       },
-      "minecraft:nameable": {
-      },
+      "minecraft:nameable": {},
       "minecraft:type_family": {
-        "family": [ "soul", "monster", "undead", "mob" ]
+        "family": [
+          "soul",
+          "monster",
+          "undead",
+          "mob"
+        ]
       },
       "minecraft:health": {
         "value": 15,
@@ -84,13 +88,9 @@
       "minecraft:navigation.walk": {
         "can_path_over_water": true
       },
-      "minecraft:movement.basic": {
-
-      },
-      "minecraft:jump.static": {
-      },
-      "minecraft:can_climb": {
-      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
       "minecraft:fire_immune": true,
       "minecraft:behavior.float": {
         "priority": 0
@@ -103,10 +103,22 @@
         "entity_types": [
           {
             "filters": {
-              "any_of" : [
-                {"test" : "is_family", "subject" : "other", "value" :  "player"},
-                {"test" : "is_family", "subject" : "other", "value" :  "irongolem"},
-                {"test" : "is_family", "subject" : "other", "value" :  "wandering_trader"}
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "wandering_trader"
+                }
               ]
             },
             "max_dist": 70
@@ -114,8 +126,17 @@
           {
             "filters": {
               "all_of": [
-                { "test": "is_family", "subject": "other", "value": "villager" },
-                { "test": "has_component", "subject": "other", "operator": "!=", "value": "minecraft:is_baby" }
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "villager"
+                },
+                {
+                  "test": "has_component",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "minecraft:is_baby"
+                }
               ]
             },
             "max_dist": 70
@@ -132,7 +153,11 @@
         "priority": 9,
         "look_distance": 6.0,
         "probability": 0.02,
-        "filters": { "test" :  "is_family", "subject" : "other", "value" :  "mob"}
+        "filters": {
+          "test": "is_family",
+          "subject": "other",
+          "value": "mob"
+        }
       },
       "minecraft:physics": {
         "has_gravity": false,

@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:long_bread",
             "menu_category": {
-                "group": "itemGroup.name.sword",
+                "group": "minecraft:itemGroup.name.sword",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -12,9 +12,6 @@
         "components": {
             "minecraft:display_name": {
                 "value": "item.dec:long_bread.name"
-            },
-            "minecraft:icon": {
-                "texture": "long_bread"
             },
             "minecraft:use_animation": "eat",
             "minecraft:weapon": {
@@ -53,12 +50,18 @@
                 "saturation_modifier": 0.8
             },
             "minecraft:use_modifiers": {
-                "use_duration": 2
+                "use_duration": 2,
+                "movement_modifier": 0.4
             },
             "minecraft:tags": {
                 "tags": [
                     "comp:equipment_type:melee_weapon_:sword:_"
                 ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "long_bread"
+                }
             }
         },
         "events": {

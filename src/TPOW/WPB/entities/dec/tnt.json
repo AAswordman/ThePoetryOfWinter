@@ -8,7 +8,6 @@
       "is_summonable": true,
       "is_experimental": false
     },
-
     "component_groups": {
       "from_explosion": {
         "minecraft:explode": {
@@ -22,7 +21,6 @@
         }
       }
     },
-	
     "components": {
       "minecraft:projectile": {
         "on_hit": {
@@ -39,27 +37,27 @@
         "angle_offset": -30
       },
       "minecraft:type_family": {
-        "family": [ "tnt", "inanimate" ]
+        "family": [
+          "tnt",
+          "inanimate"
+        ]
       },
       "minecraft:collision_box": {
         "width": 0.98,
         "height": 0.98
       },
-
       "minecraft:explode": {
         "fuse_length": 4,
         "fuse_lit": true,
         "power": 4,
         "causes_fire": false
       },
-	    "minecraft:physics": {
-      },
+      "minecraft:physics": {},
       "minecraft:pushable": {
         "is_pushable": false,
         "is_pushable_by_piston": true
       }
     },
-    
     "events": {
       "from_explosion": {
         "add": {

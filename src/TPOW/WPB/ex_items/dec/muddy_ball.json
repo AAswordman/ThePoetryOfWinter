@@ -1,0 +1,38 @@
+{
+    "format_version": "1.21.94",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dec:muddy_ball",
+            "menu_category": {
+                "group": "dec:itemGroup.name.thrown_sundries",
+                "is_hidden_in_commands": false,
+                "category": "equipment"
+            }
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.dec:muddy_ball.name"
+            },
+            "minecraft:cooldown": {
+                "category": "missile",
+                "duration": 3
+            },
+            "minecraft:throwable": {
+                "do_swing_animation": true
+            },
+            "minecraft:projectile": {
+                "projectile_entity": "dec:muddy_ball"
+            },
+            "minecraft:tags": {
+                "tags": [
+                    "comp:equipment_type:thrown_weapon"
+                ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "muddy_ball"
+                }
+            }
+        }
+    }
+}

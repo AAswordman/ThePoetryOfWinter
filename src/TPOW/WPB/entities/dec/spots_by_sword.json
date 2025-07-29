@@ -53,7 +53,7 @@
             "fireAffectedByGriefing": true
           }
         },
-        "power": 1,
+        "power": 1.5,
         "gravity": 0.00,
         "liquid_inertia": 0.95,
         "inertia": 1.05,
@@ -64,8 +64,13 @@
           0
         ],
         "destroy_on_hurt": false,
-        "uncertaintyBase": 10.0,
-        "uncertaintyMultiplier": 5
+        "uncertaintyBase": 1.7,
+        "uncertaintyMultiplier": 0
+      },
+      "minecraft:type_family": {
+        "family": [
+          "remove_on_hit"
+        ]
       },
       "minecraft:pushable": {
         "is_pushable": false,

@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:sword_of_deep",
             "menu_category": {
-                "group": "itemGroup.name.sword",
+                "group": "minecraft:itemGroup.name.sword",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -13,10 +13,6 @@
             "minecraft:display_name": {
                 "value": "item.dec:sword_of_deep.name"
             },
-            "minecraft:icon": {
-                "texture": "sword_of_deep"
-            },
-            "minecraft:use_animation": "bow",
             "minecraft:weapon": {
                 "on_hurt_entity": {
                     "event": "attack",
@@ -83,6 +79,11 @@
                 "tags": [
                     "comp:equipment_type:melee_weapon_:sword:_"
                 ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "sword_of_deep"
+                }
             }
         },
         "events": {

@@ -7,7 +7,6 @@
       "is_summonable": true,
       "is_experimental": false
     },
-
     "components": {
       "minecraft:despawn": {
         "despawn_from_distance": {}
@@ -20,8 +19,7 @@
         "suffocate_time": 0
       },
       "minecraft:fire_immune": true,
-      "minecraft:nameable": {
-      },
+      "minecraft:nameable": {},
       "minecraft:health": {
         "value": {
           "range_min": 5,
@@ -42,8 +40,7 @@
         "priority": 2,
         "must_reach": true
       },
-      "minecraft:can_fly": {
-      },
+      "minecraft:can_fly": {},
       "minecraft:loot": {
         "table": "loot_tables/entities/saucer.json"
       },
@@ -52,7 +49,11 @@
         "def": "dec:saucer_ray"
       },
       "minecraft:type_family": {
-        "family": [ "saucer", "monster", "mob" ]
+        "family": [
+          "saucer",
+          "monster",
+          "mob"
+        ]
       },
       "minecraft:damage_sensor": {
         "triggers": {
@@ -60,8 +61,7 @@
           "deals_damage": true
         }
       },
-      "minecraft:jump.static": {
-      },
+      "minecraft:jump.static": {},
       "minecraft:behavior.float": {
         "priority": 0
       },
@@ -92,8 +92,7 @@
         ],
         "must_see": true
       },
-      "minecraft:physics": {
-      },
+      "minecraft:physics": {},
       "minecraft:pushable": {
         "is_pushable": true,
         "is_pushable_by_piston": true

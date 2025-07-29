@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:leaves_dagger",
             "menu_category": {
-                "group": "itemGroup.name.sword",
+                "group": "dec:itemGroup.name.daggers",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -12,9 +12,6 @@
         "components": {
             "minecraft:display_name": {
                 "value": "item.dec:leaves_dagger.name"
-            },
-            "minecraft:icon": {
-                "texture": "leaves_dagger"
             },
             "minecraft:max_stack_size": 1,
             "minecraft:durability": {
@@ -113,6 +110,11 @@
                     "comp:movement_addition:0.01",
                     "comp:equipment_type:melee_weapon_::dagger_"
                 ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "leaves_dagger"
+                }
             }
         },
         "events": {

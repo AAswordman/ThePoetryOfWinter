@@ -17,13 +17,13 @@
             "event": "minecraft:spurt_change_attack"
           }
         },
-				"minecraft:spawn_entity": {
-					"min_wait_time": 0,
-					"max_wait_time": 0,
-					"num_to_spawn": 20,
-					"single_use": true,
-					"spawn_entity": "dec:poison_powder"
-				}
+        "minecraft:spawn_entity": {
+          "min_wait_time": 0,
+          "max_wait_time": 0,
+          "num_to_spawn": 20,
+          "single_use": true,
+          "spawn_entity": "dec:poison_powder"
+        }
       },
       "minecraft:ranged_mode": {
         "minecraft:timer": {
@@ -67,7 +67,6 @@
       }
     },
     "components": {
-
       "minecraft:loot": {
         "table": "loot_tables/entities/swamp_golem.json"
       },

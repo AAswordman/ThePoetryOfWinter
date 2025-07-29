@@ -13,7 +13,7 @@
         "wake": "dec:thunder_wake_particle"
       },
       "scripts": {
-        "scale": "0.45",
+        "scale": "0.9",
         "animate": [
           "fly",
           "wake"
@@ -24,7 +24,7 @@
         "wake": "animation.energy_ball.wake"
       },
       "render_controllers": [ "controller.render.spots" ],
-      "materials": { "default": "husk" }
+      "materials": { "default": "charged_creeper" }
       }
    }
 }

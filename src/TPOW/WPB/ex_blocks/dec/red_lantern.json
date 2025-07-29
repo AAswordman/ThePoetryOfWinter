@@ -1,17 +1,18 @@
 {
-    "format_version": "1.20.80",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "dec:red_lantern",
             "menu_category": {
-                "group": "itemGroup.name.outside",
+                "group": "minecraft:itemGroup.name.outside",
                 "category": "items"
             }
         },
         "components": {
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "red_lantern"
+                    "texture": "red_lantern",
+                    "render_method": "alpha_test"
                 }
             },
             "minecraft:selection_box": {

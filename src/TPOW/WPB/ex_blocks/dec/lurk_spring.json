@@ -1,17 +1,18 @@
 {
-    "format_version": "1.20.80",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "dec:lurk_spring",
             "menu_category": {
-                "group": "itemGroup.name.sapling",
+                "group": "minecraft:itemGroup.name.sapling",
                 "category": "nature"
             }
         },
         "components": {
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "lurk_spring"
+                    "texture": "lurk_spring",
+                    "render_method": "alpha_test"
                 }
             },
             "minecraft:geometry": "geometry.crop.sparse.on_dirt",
@@ -32,7 +33,7 @@
                 "seconds_to_destroy": 0.001
             },
             "minecraft:map_color": "#00847D",
-            "minecraft:light_dampening": 0,
+            "minecraft:light_dampening": 0.0,
             "minecraft:loot": "loot_tables/blocks/lurk_spring.json",
             "minecraft:placement_filter": {
                 "conditions": [

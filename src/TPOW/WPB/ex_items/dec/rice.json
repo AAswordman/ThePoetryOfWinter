@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:rice",
             "menu_category": {
-                "group": "itemGroup.name.miscFood",
+                "group": "minecraft:itemGroup.name.miscFood",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -13,16 +13,19 @@
             "minecraft:display_name": {
                 "value": "item.dec:rice.name"
             },
-            "minecraft:icon": {
-                "texture": "rice"
-            },
             "minecraft:use_animation": "eat",
             "minecraft:food": {
                 "nutrition": 1,
                 "saturation_modifier": 0.6
             },
             "minecraft:use_modifiers": {
-                "use_duration": 1
+                "use_duration": 1,
+                "movement_modifier": 0.4
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "rice"
+                }
             }
         }
     }

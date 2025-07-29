@@ -86,6 +86,10 @@
         {
           "type": "item",
           "name": "dec:wooden_staff"
+        },
+        {
+          "type": "item",
+          "name": "dec:echo_of_deep"
         }
       ]
     }

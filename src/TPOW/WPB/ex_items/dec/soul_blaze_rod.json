@@ -1,25 +1,27 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:soul_blaze_rod",
             "menu_category": {
-                "group": "itemGroup.name.decorations",
+                "group": "dec:itemGroup.name.sticks_and_rods",
                 "is_hidden_in_commands": false,
                 "category": "items"
             }
         },
         "components": {
-            "minecraft:fuel": {
-                "duration": 20
-            },
             "minecraft:display_name": {
                 "value": "item.dec:soul_blaze_rod.name"
             },
-            "minecraft:icon": {
-                "texture": "soul_blaze_rod"
+            "minecraft:fuel": {
+                "duration": 20
             },
-            "minecraft:hand_equipped": true
+            "minecraft:hand_equipped": true,
+            "minecraft:icon": {
+                "textures": {
+                    "default": "soul_blaze_rod"
+                }
+            }
         }
     }
 }

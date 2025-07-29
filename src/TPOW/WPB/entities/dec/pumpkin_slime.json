@@ -27,7 +27,10 @@
       },
       "minecraft:pumpkin_monster_calm": {
         "minecraft:movement.jump": {
-          "jump_delay": [ 0.1, 0.25 ]
+          "jump_delay": [
+            0.1,
+            0.25
+          ]
         },
         "minecraft:spell_effects": {
           "add_effects": [
@@ -43,17 +46,18 @@
       },
       "minecraft:pumpkin_monster_aggressive": {
         "minecraft:movement.jump": {
-          "jump_delay": [ 0.1, 0.25 ]
+          "jump_delay": [
+            0.1,
+            0.25
+          ]
         }
       }
     },
-
     "components": {
       "minecraft:despawn": {
         "despawn_from_distance": {}
       },
-      "minecraft:jump.static": {
-      },
+      "minecraft:jump.static": {},
       "minecraft:movement": {
         "value": 0.3
       },
@@ -64,7 +68,13 @@
         "on_death": "query.last_hit_by_player ? query.variant : 5"
       },
       "minecraft:type_family": {
-        "family": [ "pumpkin_monster", "monster", "mob", "slime", "swamp" ]
+        "family": [
+          "pumpkin_monster",
+          "monster",
+          "mob",
+          "slime",
+          "swamp"
+        ]
       },
       "minecraft:breathable": {
         "total_supply": 15,
@@ -74,12 +84,16 @@
         "can_path_over_water": true,
         "avoid_water": false
       },
-      "minecraft:can_climb": {
-      },
+      "minecraft:can_climb": {},
       "minecraft:hurt_on_condition": {
         "damage_conditions": [
           {
-            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
             "cause": "lava",
             "damage_per_tick": 4
           }
@@ -106,8 +120,7 @@
         "event": "minecraft:become_calm",
         "target": "self"
       },
-      "minecraft:nameable": {
-      },
+      "minecraft:nameable": {},
       "minecraft:behavior.slime_float": {
         "priority": 1
       },
@@ -150,14 +163,12 @@
         ],
         "must_see": true
       },
-      "minecraft:physics": {
-      },
+      "minecraft:physics": {},
       "minecraft:pushable": {
         "is_pushable": true,
         "is_pushable_by_piston": true
       }
     },
-
     "events": {
       "minecraft:despawn": {
         "add": {

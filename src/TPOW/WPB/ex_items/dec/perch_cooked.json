@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:perch_cooked",
             "menu_category": {
-                "group": "itemGroup.name.cookedFood",
+                "group": "minecraft:itemGroup.name.cookedFood",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -13,16 +13,19 @@
             "minecraft:display_name": {
                 "value": "item.dec:perch_cooked.name"
             },
-            "minecraft:icon": {
-                "texture": "perch_cooked"
-            },
             "minecraft:use_animation": "eat",
             "minecraft:food": {
                 "nutrition": 6,
                 "saturation_modifier": 0.8
             },
             "minecraft:use_modifiers": {
-                "use_duration": 1.6
+                "use_duration": 1.6,
+                "movement_modifier": 0.4
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "perch_cooked"
+                }
             }
         }
     }

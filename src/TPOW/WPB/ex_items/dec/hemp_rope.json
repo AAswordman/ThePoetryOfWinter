@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:hemp_rope",
             "menu_category": {
-                "group": "itemGroup.name.decorations",
+                "group": "minecraft:itemGroup.name.decorations",
                 "is_hidden_in_commands": false,
                 "category": "items"
             }
@@ -14,7 +14,9 @@
                 "value": "item.dec:hemp_rope.name"
             },
             "minecraft:icon": {
-                "texture": "hemp_rope"
+                "textures": {
+                    "default": "hemp_rope"
+                }
             }
         }
     }

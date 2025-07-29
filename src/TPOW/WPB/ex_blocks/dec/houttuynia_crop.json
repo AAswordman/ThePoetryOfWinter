@@ -1,5 +1,5 @@
 {
-    "format_version": "1.20.80",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "dec:houttuynia_crop",
@@ -10,10 +10,6 @@
                     2,
                     3
                 ]
-            },
-            "menu_category": {
-                "group": "itemGroup.name.outside",
-                "category": "construction"
             }
         },
         "components": {
@@ -61,7 +57,8 @@
             },
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "houttuynia_crop_stage_0"
+                    "texture": "houttuynia_crop_stage_0",
+                    "render_method": "alpha_test"
                 }
             }
         },

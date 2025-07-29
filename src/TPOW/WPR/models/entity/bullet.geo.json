@@ -7,8 +7,8 @@
 				"texture_width": 16,
 				"texture_height": 16,
 				"visible_bounds_width": 2,
-				"visible_bounds_height": 1,
-				"visible_bounds_offset": [0, 0, 0]
+				"visible_bounds_height": 1.5,
+				"visible_bounds_offset": [0, 0.25, 0]
 			},
 			"bones": [
 				{
@@ -17,6 +17,14 @@
 					"cubes": [
 						{"origin": [-1, -1, -1], "size": [2, 2, 2], "uv": [0, 0]}
 					]
+				},
+				{
+					"name": "particle",
+					"parent": "bullet",
+					"pivot": [0, 0, 0],
+					"locators": {
+						"particle": [0, 0, 0]
+					}
 				}
 			]
 		}

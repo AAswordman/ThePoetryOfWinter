@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:coral_ingot",
             "menu_category": {
-                "group": "itemGroup.name.decorations",
+                "group": "dec:itemGroup.name.ingots",
                 "is_hidden_in_commands": false,
                 "category": "items"
             }
@@ -14,7 +14,9 @@
                 "value": "item.dec:coral_ingot.name"
             },
             "minecraft:icon": {
-                "texture": "coral_ingot"
+                "textures": {
+                    "default": "coral_ingot"
+                }
             }
         }
     }

@@ -80,6 +80,15 @@
                         }
                       },
                       {
+                        "weight": 1,
+                        "queue_command": {
+                          "command": [
+                            "replaceitem entity @e[r=2,c=1,type=dec:zombie_summoner] slot.weapon.mainhand 0 dec:pumpkin_candy 3"
+                          ],
+                          "target": "self"
+                        }
+                      },
+                      {
                         "weight": 3
                       }
                     ]
@@ -110,6 +119,15 @@
                         }
                       },
                       {
+                        "weight": 1,
+                        "queue_command": {
+                          "command": [
+                            "replaceitem entity @e[r=2,c=1,type=dec:zombie_warrior] slot.weapon.mainhand 0 dec:pumpkin_candy 3"
+                          ],
+                          "target": "self"
+                        }
+                      },
+                      {
                         "weight": 3
                       }
                     ]
@@ -135,6 +153,15 @@
                         "queue_command": {
                           "command": [
                             "replaceitem entity @e[r=2,c=1,type=zombie] slot.weapon.mainhand 0 dec:sword_of_halloween"
+                          ],
+                          "target": "self"
+                        }
+                      },
+                      {
+                        "weight": 1,
+                        "queue_command": {
+                          "command": [
+                            "replaceitem entity @e[r=2,c=1,type=dec:zombie] slot.weapon.mainhand 0 dec:pumpkin_candy 3"
                           ],
                           "target": "self"
                         }
@@ -175,6 +202,15 @@
                         "queue_command": {
                           "command": [
                             "replaceitem entity @e[r=2,c=1,type=dec:skeleton_warrior] slot.weapon.mainhand 0 dec:sword_of_halloween"
+                          ],
+                          "target": "self"
+                        }
+                      },
+                      {
+                        "weight": 1,
+                        "queue_command": {
+                          "command": [
+                            "replaceitem entity @e[r=2,c=1,type=dec:skeleton_warrior] slot.weapon.mainhand 0 dec:pumpkin_candy 3"
                           ],
                           "target": "self"
                         }

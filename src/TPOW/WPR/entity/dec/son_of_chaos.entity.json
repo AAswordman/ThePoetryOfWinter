@@ -32,7 +32,7 @@
           "arm_controller"
         ]
       },
-      "render_controllers": [ "controller.render.base" ]
+      "render_controllers": [ "controller.render.iron_golem" ]
     }
   }
 }

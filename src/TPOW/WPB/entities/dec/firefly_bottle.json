@@ -1,0 +1,88 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "dec:firefly_bottle",
+			"runtime_identifier": "minecraft:egg",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"minecraft:exploding": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:collision_box": {
+				"width": 0.1,
+				"height": 0.1
+			},
+			"minecraft:projectile": {
+				"onHit": {
+					"impact_damage": {
+						"damage": 1,
+						"knockback": true,
+						"semirandomdiffdamage": false,
+						"destroyonhit": false
+					},
+					"definition_event": {
+						"affectProjectile": true,
+						"eventTrigger": {
+							"event": "minecraft:explode",
+							"target": "self"
+						}
+					},
+					"grant_xp": {
+						"minXP": 6,
+						"maxXP": 18
+					}
+				},
+				"power": 0.5,
+				"gravity": 0.05,
+				"angle_offset": -20.0,
+				"hit_sound": "glass"
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": true
+			}
+		},
+		"events": {
+			"minecraft:explode": {
+				"add": {
+					"component_groups": [
+						"minecraft:exploding"
+					]
+				},
+				"queue_command": {
+					"command": [
+						"fill ~-2 ~-2 ~-2 ~2 ~2 ~2 firefly_bush replace deadbush",
+						"fill ~-2 ~-2 ~-2 ~2 ~2 ~2 firefly_bush replace bush",
+						"particle minecraft:firefly_particle ~~~",
+						"particle minecraft:firefly_particle ~~~",
+						"particle minecraft:firefly_particle ~~~",
+						"particle minecraft:firefly_particle ~~~",
+						"particle minecraft:firefly_particle ~~~",
+						"particle minecraft:firefly_particle ~~~",
+						"particle minecraft:firefly_particle ~~~",
+						"particle minecraft:firefly_particle ~~~",
+						"particle minecraft:firefly_particle ~~~",
+						"particle minecraft:firefly_particle ~~~",
+						"particle minecraft:firefly_particle ~~~",
+						"particle minecraft:firefly_particle ~~~",
+						"particle minecraft:firefly_particle ~~~",
+						"particle minecraft:firefly_particle ~~~",
+						"particle minecraft:firefly_particle ~~~",
+						"particle minecraft:firefly_particle ~~~",
+						"particle minecraft:firefly_particle ~~~",
+						"particle minecraft:firefly_particle ~~~",
+						"particle minecraft:firefly_particle ~~~",
+						"particle minecraft:firefly_particle ~~~",
+						"particle minecraft:firefly_particle ~~~"
+					]
+				}
+			}
+		}
+	}
+}

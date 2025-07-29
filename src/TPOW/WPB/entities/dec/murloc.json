@@ -8,7 +8,6 @@
       "is_summonable": true,
       "is_experimental": false
     },
-
     "component_groups": {
       "minecraft:guardian_baby": {
         "minecraft:scale": {
@@ -25,7 +24,6 @@
           "value": 0.18
         }
       },
-
       "minecraft:guardian_adult": {
         "minecraft:experience_reward": {
           "on_death": "query.last_hit_by_player ? 10 : 0"
@@ -38,12 +36,9 @@
         }
       }
     },
-
     "components": {
-      "minecraft:can_climb": {
-      },
-      "minecraft:movement.generic": {
-      },
+      "minecraft:can_climb": {},
+      "minecraft:movement.generic": {},
       "minecraft:collision_box": {
         "width": 0.6,
         "height": 1.9
@@ -62,8 +57,7 @@
         "can_walk": true,
         "avoid_sun": true
       },
-      "minecraft:nameable": {
-      },
+      "minecraft:nameable": {},
       "minecraft:health": {
         "value": {
           "range_min": 8,
@@ -73,7 +67,12 @@
       "minecraft:hurt_on_condition": {
         "damage_conditions": [
           {
-            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
             "cause": "lava",
             "damage_per_tick": 4
           }
@@ -86,8 +85,7 @@
         "value": 16,
         "max": 16
       },
-      "minecraft:jump.static": {
-      },
+      "minecraft:jump.static": {},
       "minecraft:loot": {
         "table": "loot_tables/entities/murloc.json"
       },
@@ -98,11 +96,19 @@
         "priority": 1,
         "entity_types": [
           {
-            "filters": {  
+            "filters": {
               "any_of": [
-                { "test" :  "is_family", "subject" : "other", "value" :  "player"},
-                { "test" :  "is_family", "subject" : "other", "value" :  "squid"}
-              ] 
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "squid"
+                }
+              ]
             },
             "max_dist": 16
           }
@@ -128,16 +134,18 @@
         "priority": 9
       },
       "minecraft:type_family": {
-        "family": [ "guardian", "monster", "mob" ]
+        "family": [
+          "guardian",
+          "monster",
+          "mob"
+        ]
       },
-	    "minecraft:physics": {
-      },
+      "minecraft:physics": {},
       "minecraft:pushable": {
         "is_pushable": true,
         "is_pushable_by_piston": true
       }
     },
-
     "events": {
       "minecraft:entity_spawned": {
         "randomize": [
@@ -152,8 +160,7 @@
           },
           {
             "weight": 25,
-            "remove": {
-            },
+            "remove": {},
             "add": {
               "component_groups": [
                 "minecraft:guardian_baby"

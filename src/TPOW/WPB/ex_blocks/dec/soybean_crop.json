@@ -1,5 +1,5 @@
 {
-    "format_version": "1.20.80",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "dec:soybean_crop",
@@ -11,10 +11,6 @@
                     3,
                     4
                 ]
-            },
-            "menu_category": {
-                "group": "itemGroup.name.outside",
-                "category": "construction"
             }
         },
         "components": {
@@ -58,7 +54,8 @@
             },
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "soybean_crop_0"
+                    "texture": "soybean_crop_0",
+                    "render_method": "alpha_test"
                 }
             }
         },

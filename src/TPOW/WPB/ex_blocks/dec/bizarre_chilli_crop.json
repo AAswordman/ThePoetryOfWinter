@@ -1,5 +1,5 @@
 {
-    "format_version": "1.20.80",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "dec:bizarre_chilli_crop",
@@ -13,10 +13,6 @@
                     5,
                     6
                 ]
-            },
-            "menu_category": {
-                "group": "itemGroup.name.outside",
-                "category": "construction"
             }
         },
         "components": {
@@ -60,7 +56,8 @@
             "minecraft:breathability": "air",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "bizarre_chilli_crop_stage_0"
+                    "texture": "bizarre_chilli_crop_stage_0",
+                    "render_method": "alpha_test"
                 }
             }
         },

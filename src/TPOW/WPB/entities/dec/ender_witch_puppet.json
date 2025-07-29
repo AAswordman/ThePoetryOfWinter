@@ -7,11 +7,10 @@
 			"is_summonable": true,
 			"is_experimental": false
 		},
-		"component_groups": {
-		},
+		"component_groups": {},
 		"components": {
 			"minecraft:despawn": {
-			  "despawn_from_distance": {}
+				"despawn_from_distance": {}
 			},
 			"minecraft:explode": {
 				"fuseLength": 5,
@@ -22,7 +21,11 @@
 			"minecraft:teleport": {
 				"random_teleports": true,
 				"max_random_teleport_time": 20,
-				"random_teleport_cube": [ 4, 4, 4 ],
+				"random_teleport_cube": [
+					4,
+					4,
+					4
+				],
 				"target_distance": 4,
 				"target_teleport_chance": 0.05,
 				"light_teleport_chance": 0.05
@@ -33,7 +36,14 @@
 			},
 			"minecraft:nameable": {},
 			"minecraft:type_family": {
-				"family": [ "ender_witch", "monster", "mob", "witch", "ender", "puppet" ]
+				"family": [
+					"ender_witch",
+					"monster",
+					"mob",
+					"witch",
+					"ender",
+					"puppet"
+				]
 			},
 			"minecraft:collision_box": {
 				"width": 0.6,
@@ -138,7 +148,6 @@
 				"is_pushable_by_piston": true
 			}
 		},
-		"events": {
-		}
+		"events": {}
 	}
 }

@@ -1,4 +1,4 @@
- {
+{
   "format_version": "1.13.0",
   "minecraft:entity": {
     "description": {
@@ -307,8 +307,7 @@
         "should_darken_sky": false,
         "name": "event.dec:radiate_crystal.name",
         "hud_range": 64
-      },
-      "minecraft:tick_world": {}
+      }
     },
     "events": {
       "minecraft:despawn": {

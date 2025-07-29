@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.80",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "dec:broken_dirt",
             "menu_category": {
-                "group": "itemGroup.name.outside",
+                "group": "minecraft:itemGroup.name.outside",
                 "category": "nature"
             }
         },
@@ -25,7 +25,8 @@
             "minecraft:geometry": "minecraft:geometry.full_block",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "broken_dirt"
+                    "texture": "broken_dirt",
+                    "render_method": "alpha_test"
                 }
             }
         },

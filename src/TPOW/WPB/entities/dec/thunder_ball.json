@@ -15,8 +15,8 @@
     },
     "components": {
       "minecraft:collision_box": {
-        "width": 0.3,
-        "height": 0.3
+        "width": 0.9,
+        "height": 0.9
       },
       "minecraft:explode": {
         "fuseLength": 3,
@@ -53,8 +53,8 @@
           0
         ],
         "semirandomdiffdamage": true,
-        "uncertaintyBase": 6.0,
-        "uncertaintyMultiplier": 6,
+        "uncertaintyBase": 2.0,
+        "uncertaintyMultiplier": 0,
         "reflectOnHurt": true,
         "shoot_target": false
       },

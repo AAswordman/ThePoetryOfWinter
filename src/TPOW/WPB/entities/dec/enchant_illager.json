@@ -280,7 +280,6 @@
         "value": 700,
         "max": 700
       },
-      "minecraft:tick_world": {},
       "minecraft:boss": {
         "should_darken_sky": false,
         "name": "boss.dec:enchant_illager.name",

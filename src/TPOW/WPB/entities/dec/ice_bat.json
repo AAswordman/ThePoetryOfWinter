@@ -1,7 +1,6 @@
 {
   "format_version": "1.13.0",
   "minecraft:entity": {
-
     "description": {
       "identifier": "dec:ice_bat",
       "runtime_identifier": "minecraft:bat",
@@ -9,18 +8,19 @@
       "is_summonable": true,
       "is_experimental": false
     },
-
-    "component_groups": {
-
-    },
-
+    "component_groups": {},
     "components": {
       "minecraft:on_death": {
         "event": "minecraft:die",
         "target": "self"
       },
       "minecraft:type_family": {
-        "family": [ "bat", "monster","ice_bat", "frozen" ]
+        "family": [
+          "bat",
+          "monster",
+          "ice_bat",
+          "frozen"
+        ]
       },
       "minecraft:experience_reward": {
         "on_death": "query.last_hit_by_player ? 10 : 0"
@@ -28,8 +28,7 @@
       "minecraft:loot": {
         "table": "loot_tables/entities/ice_bat.json"
       },
-      "minecraft:nameable": {
-      },
+      "minecraft:nameable": {},
       "minecraft:health": {
         "value": 10,
         "max": 10
@@ -73,10 +72,18 @@
         "entity_types": [
           {
             "filters": {
-                "any_of": [
-                  { "test" :  "is_family", "subject" : "other", "value" :  "ocelot"},
-                  { "test" :  "is_family", "subject" : "other", "value" :  "cat"}
-                ]
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "ocelot"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "cat"
+                }
+              ]
             },
             "max_dist": 16,
             "walk_speed_multiplier": 1,
@@ -105,14 +112,26 @@
       },
       "minecraft:behavior.swoop_attack": {
         "priority": 2,
-        "delay_range": [ 3.0, 3.0 ]
+        "delay_range": [
+          3.0,
+          3.0
+        ]
       },
       "minecraft:behavior.circle_around_anchor": {
         "priority": 3,
-        "radius_range": [ 30.0, 30.0 ],
+        "radius_range": [
+          30.0,
+          30.0
+        ],
         "radius_change_chance": 100,
-        "height_above_target_range": [ 10.0, 20.0 ],
-        "height_offset_range": [ -4.0, 5.0 ],
+        "height_above_target_range": [
+          10.0,
+          20.0
+        ],
+        "height_offset_range": [
+          -4.0,
+          5.0
+        ],
         "height_change_chance": 350,
         "goal_radius": 1.0
       }

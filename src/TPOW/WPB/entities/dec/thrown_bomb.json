@@ -28,7 +28,7 @@
 			"minecraft:projectile": {
 				"onHit": {
 					"impact_damage": {
-						"damage": 9,
+						"damage": 7,
 						"knockback": true,
 						"semirandomdiffdamage": false,
 						"destroyonhit": false
@@ -52,7 +52,7 @@
 			"minecraft:pushable": {
 				"is_pushable": false,
 				"is_pushable_by_piston": true
-			   }
+			}
 		},
 		"events": {
 			"minecraft:explode": {

@@ -3,7 +3,7 @@
   "minecraft:entity": {
     "description": {
       "identifier": "dec:bullet_by_flintlock",
-      "runtime_identifier": "minecraft:egg",
+      "runtime_identifier": "minecraft:snowball",
       "is_spawnable": false,
       "is_summonable": true,
       "is_experimental": false,
@@ -16,8 +16,7 @@
         "spawn": "animation.playsound_random_explode"
       }
     },
-    "component_groups": {
-    },
+    "component_groups": {},
     "components": {
       "minecraft:collision_box": {
         "width": 0.2,
@@ -31,9 +30,11 @@
             "catchFire": false,
             "semirandomdiffdamage": false
           },
-          "remove_on_hit": {}
+          "stick_in_ground": true
         },
         "power": 2.5,
+        "should_bounce": false,
+        "multiple_targets": false,
         "gravity": 0.02,
         "inertia": 1.1,
         "liquid_inertia": 0.95,
@@ -44,16 +45,19 @@
           0
         ],
         "semirandomdiffdamage": true,
-        "uncertaintyBase": 8.0,
-        "uncertaintyMultiplier": 3,
-        "reflectOnHurt": true
+        "uncertaintyBase": 3,
+        "uncertaintyMultiplier": 0
+      },
+      "minecraft:type_family": {
+        "family": [
+          "remove_on_hit"
+        ]
       },
       "minecraft:pushable": {
         "is_pushable": false,
         "is_pushable_by_piston": true
       }
     },
-    "events": {
-    }
+    "events": {}
   }
 }

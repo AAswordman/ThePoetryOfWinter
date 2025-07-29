@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "wb:start_key",
             "menu_category": {
-                "group": "itemGroup.name.navigation",
+                "group": "minecraft:itemGroup.name.navigation",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -16,7 +16,9 @@
             },
             "minecraft:display_name": {},
             "minecraft:icon": {
-                "texture": "start_key_a"
+                "textures": {
+                    "default": "start_key_a"
+                }
             },
             "minecraft:foil": true,
             "minecraft:stacked_by_data": false,

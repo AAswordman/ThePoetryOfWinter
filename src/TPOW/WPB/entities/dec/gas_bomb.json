@@ -65,7 +65,6 @@
             "effect @e[r=4,type=!item,type=!painting] nausea 10 0",
             "camerashake add @a[r=6,tag=gaming] 0.1 15 rotational",
             "camerashake add @a[r=4,tag=gaming] 1 1 rotational"
-            //sapi修好后记得在这加个r=3内的gamer玩家随机转视角
           ]
         }
       }

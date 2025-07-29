@@ -12,11 +12,10 @@
       "small": {
         "minecraft:projectile": {
           "onHit": {
-          "impact_damage": {
-            "damage": 15,
-            "knockback": true
-          },
-          "remove_on_hit": { },
+            "impact_damage": {
+              "damage": 15,
+              "knockback": true
+            },
             "particle_on_hit": {
               "particle_type": "snowballpoof",
               "particle_color": "#87AFFFFF",
@@ -40,12 +39,20 @@
           "uncertaintyBase": 0.5,
           "uncertaintyMultiplier": 1,
           "anchor": 1,
-          "offset": [ 0, 0.75, 0 ],
+          "offset": [
+            0,
+            0.75,
+            0
+          ],
           "reflectOnHurt": false
         },
         "minecraft:environment_sensor": {
           "triggers": {
-            "filters": { "test": "in_water", "operator": "==", "value": true },
+            "filters": {
+              "test": "in_water",
+              "operator": "==",
+              "value": true
+            },
             "event": "minecraft:explode"
           }
         }
@@ -56,11 +63,10 @@
         },
         "minecraft:projectile": {
           "onHit": {
-          "impact_damage": {
-            "damage": 20,
-            "knockback": true
-          },
-          "remove_on_hit": { },
+            "impact_damage": {
+              "damage": 20,
+              "knockback": true
+            },
             "particle_on_hit": {
               "particle_type": "snowballpoof",
               "particle_color": "#FF664D59",
@@ -77,12 +83,20 @@
           "uncertaintyBase": 0.5,
           "uncertaintyMultiplier": 1,
           "anchor": 1,
-          "offset": [ 0, 0.75, 0 ],
+          "offset": [
+            0,
+            0.75,
+            0
+          ],
           "reflectOnHurt": false
         },
         "minecraft:environment_sensor": {
           "triggers": {
-            "filters": { "test": "in_water", "operator": "==", "value": true },
+            "filters": {
+              "test": "in_water",
+              "operator": "==",
+              "value": true
+            },
             "event": "minecraft:explode2"
           }
         }
@@ -93,11 +107,10 @@
         },
         "minecraft:projectile": {
           "onHit": {
-          "impact_damage": {
-            "damage": 30,
-            "knockback": true
-          },
-          "remove_on_hit": { },
+            "impact_damage": {
+              "damage": 30,
+              "knockback": true
+            },
             "particle_on_hit": {
               "particle_type": "snowballpoof",
               "particle_color": "#FF664D59",
@@ -114,7 +127,11 @@
           "uncertaintyBase": 0.5,
           "uncertaintyMultiplier": 1,
           "anchor": 1,
-          "offset": [ 0, 0.75, 0 ],
+          "offset": [
+            0,
+            0.75,
+            0
+          ],
           "reflectOnHurt": false
         }
       },
@@ -154,7 +171,11 @@
     },
     "components": {
       "minecraft:type_family": {
-        "family": [ "ice_block", "frozen" ]
+        "family": [
+          "ice_block",
+          "frozen",
+          "remove_on_hit"
+        ]
       },
       "minecraft:explode": {
         "fuseLength": 12,
@@ -178,10 +199,9 @@
             "damage": 15,
             "knockback": true
           },
-          "remove_on_hit": { },
-               "particle_on_hit": {
+          "particle_on_hit": {
             "particle_type": "snowballpoof",
-               "particle_color": "#FF664D59",
+            "particle_color": "#FF664D59",
             "num_particles": 12,
             "on_entity_hit": true,
             "on_other_hit": true
@@ -195,7 +215,11 @@
         "uncertaintyBase": 0.5,
         "uncertaintyMultiplier": 1,
         "anchor": 1,
-        "offset": [ 0, 0.75, 0 ],
+        "offset": [
+          0,
+          0.75,
+          0
+        ],
         "reflectOnHurt": false
       }
     },

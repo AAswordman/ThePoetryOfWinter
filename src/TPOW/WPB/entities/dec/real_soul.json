@@ -8,10 +8,7 @@
       "is_summonable": true,
       "is_experimental": false
     },
-
-    "component_groups": {
-    },
-
+    "component_groups": {},
     "components": {
       "minecraft:knockback_resistance": {
         "value": 1.0
@@ -24,14 +21,19 @@
         "suffocateTime": 0,
         "breathesWater": true
       },
-			"minecraft:collision_box": {
-				"width": 1.2,
-				"height": 3
-			},
-      "minecraft:nameable": {
+      "minecraft:collision_box": {
+        "width": 1.2,
+        "height": 3
       },
+      "minecraft:nameable": {},
       "minecraft:type_family": {
-        "family": [ "undead", "monster","soul","real_soul", "mob" ]
+        "family": [
+          "undead",
+          "monster",
+          "soul",
+          "real_soul",
+          "mob"
+        ]
       },
       "minecraft:health": {
         "value": 150,
@@ -48,18 +50,13 @@
         "can_break_doors": true,
         "avoid_portals": false
       },
-      "minecraft:annotation.break_door": {
-      },
-      "minecraft:movement.basic": {
-
-      },
+      "minecraft:annotation.break_door": {},
+      "minecraft:movement.basic": {},
       "minecraft:movement": {
         "value": 0.12
       },
-      "minecraft:jump.static": {
-      },
-      "minecraft:can_climb": {
-      },
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
       "minecraft:behavior.melee_attack": {
         "priority": 3,
         "speed_multiplier": 1,
@@ -101,9 +98,21 @@
           {
             "filters": {
               "any_of": [
-                { "test": "is_family", "subject": "other", "value": "player" },
-                { "test": "is_family", "subject": "other", "value": "snowgolem" },
-                { "test": "is_family", "subject": "other", "value": "irongolem" }
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "snowgolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                }
               ]
             },
             "max_dist": 35
@@ -111,8 +120,16 @@
           {
             "filters": {
               "any_of": [
-                { "test": "is_family", "subject": "other", "value": "villager" },
-                { "test": "is_family", "subject": "other", "value": "wandering_trader" }
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "villager"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "wandering_trader"
+                }
               ]
             },
             "max_dist": 35,
@@ -121,8 +138,17 @@
           {
             "filters": {
               "all_of": [
-                { "test": "is_family", "subject": "other", "value": "baby_turtle" },
-                { "test": "in_water", "subject": "other", "operator": "!=", "value": true }
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "baby_turtle"
+                },
+                {
+                  "test": "in_water",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": true
+                }
               ]
             },
             "max_dist": 35
@@ -130,11 +156,8 @@
         ],
         "must_see": true
       },
-      "minecraft:physics": {
-      }
+      "minecraft:physics": {}
     },
-
-    "events": {
-    }
+    "events": {}
   }
 }

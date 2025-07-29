@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:soybean",
             "menu_category": {
-                "group": "itemGroup.name.seed",
+                "group": "minecraft:itemGroup.name.seed",
                 "is_hidden_in_commands": false,
                 "category": "nature"
             }
@@ -12,9 +12,6 @@
         "components": {
             "minecraft:display_name": {
                 "value": "item.dec:soybean.name"
-            },
-            "minecraft:icon": {
-                "texture": "soybean"
             },
             "minecraft:use_animation": "eat",
             "minecraft:block_placer": {
@@ -25,7 +22,16 @@
                 "saturation_modifier": 0.5
             },
             "minecraft:use_modifiers": {
-                "use_duration": 1
+                "use_duration": 1,
+                "movement_modifier": 0.4
+            },
+            "minecraft:compostable": {
+                "composting_chance": 50
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "soybean"
+                }
             }
         }
     }

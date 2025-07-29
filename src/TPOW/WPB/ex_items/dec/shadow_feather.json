@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:shadow_feather",
             "menu_category": {
-                "group": "itemGroup.name.navigation",
+                "group": "dec:itemGroup.name.magic_accessories",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -13,11 +13,13 @@
             "minecraft:display_name": {
                 "value": "item.dec:shadow_feather.name"
             },
-            "minecraft:icon": {
-                "texture": "shadow_feather"
-            },
             "minecraft:max_stack_size": 1,
-            "minecraft:allow_off_hand": true
+            "minecraft:allow_off_hand": true,
+            "minecraft:icon": {
+                "textures": {
+                    "default": "shadow_feather"
+                }
+            }
         }
     }
 }

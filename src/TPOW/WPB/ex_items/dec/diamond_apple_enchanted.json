@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:diamond_apple_enchanted",
             "menu_category": {
-                "group": "itemGroup.name.crop",
+                "group": "minecraft:itemGroup.name.crop",
                 "is_hidden_in_commands": false,
                 "category": "nature"
             }
@@ -13,11 +13,7 @@
             "minecraft:display_name": {
                 "value": "item.dec:diamond_apple_enchanted.name"
             },
-            "minecraft:icon": {
-                "texture": "diamond_apple"
-            },
             "minecraft:use_animation": "eat",
-            "minecraft:glint": true,
             "minecraft:hover_text_color": "light_purple",
             "minecraft:foil": true,
             "minecraft:hand_equipped": false,
@@ -32,27 +28,82 @@
                 }
             },
             "minecraft:use_modifiers": {
-                "use_duration": 1.6
+                "use_duration": 1.6,
+                "movement_modifier": 0.4
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "diamond_apple"
+                }
             }
         },
         "events": {
             "consumed": {
                 "sequence": [
                     {
-                        "run_command": {
-                            "command": [
-                                "effect @s absorption 100 4 true",//20物理护盾
-                                "effect @s health_boost 100 4 true",//20法术护盾
-                                "effect @s resistance 300 1 true",
-                                "effect @s fire_resistance 300 0 true",
-                                "effect @s strength 180 1 true",
-                                "effect @s speed 180 1 true",
-                                "effect @s regeneration 60 1 true",
-                                "effect @s saturation 180 0 true"
-                            ]
+                        "add_mob_effect": {
+                            "effect": "regeneration",
+                            "duration": 20,
+                            "amplifier": 2,
+                            "target": "holder"
+                        }
+                    },
+                    {
+                        "add_mob_effect": {
+                            "effect": "absorption",
+                            "duration": 180,
+                            "amplifier": 2,
+                            "target": "holder"
+                        }
+                    },
+                    {
+                        "add_mob_effect": {
+                            "effect": "resistance",
+                            "duration": 120,
+                            "amplifier": 1,
+                            "target": "holder"
+                        }
+                    },
+                    {
+                        "add_mob_effect": {
+                            "effect": "fire_resistance",
+                            "duration": 120,
+                            "amplifier": 0,
+                            "target": "holder"
+                        }
+                    },
+                    {
+                        "add_mob_effect": {
+                            "effect": "strength",
+                            "duration": 180,
+                            "amplifier": 0,
+                            "target": "holder"
+                        }
+                    },
+                    {
+                        "add_mob_effect": {
+                            "effect": "night_vision",
+                            "duration": 180,
+                            "amplifier": 0,
+                            "target": "holder"
+                        }
+                    },
+                    {
+                        "add_mob_effect": {
+                            "effect": "haste",
+                            "duration": 180,
+                            "amplifier": 0,
+                            "target": "holder"
+                        }
+                    },
+                    {
+                        "add_mob_effect": {
+                            "effect": "jump_boost",
+                            "duration": 180,
+                            "amplifier": 1,
+                            "target": "holder"
                         }
                     }
-                   
                 ]
             }
         }

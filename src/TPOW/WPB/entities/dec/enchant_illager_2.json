@@ -7,7 +7,6 @@
       "is_summonable": true,
       "is_experimental": false
     },
-
     "component_groups": {
       "minecraft:despawn": {
         "minecraft:instant_despawn": {}
@@ -47,21 +46,46 @@
           "priority": 2,
           "entity_types": [
             {
-              "filters": {  
-                  "any_of": [
-                    { "test" :  "is_family", "subject" : "other", "value" :  "player"},
-                    { "test" :  "is_family", "subject" : "other", "value" :  "snowgolem"},
-                    { "test" :  "is_family", "subject" : "other", "value" :  "irongolem"},
-                    { "test" :  "is_family", "subject" : "other", "value" :  "wandering_trader"}
-                  ] 
+              "filters": {
+                "any_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "snowgolem"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "irongolem"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "wandering_trader"
+                  }
+                ]
               },
               "max_dist": 20
             },
             {
               "filters": {
                 "all_of": [
-                  { "test": "is_family", "subject": "other", "value": "villager" },
-                  { "test": "has_component", "subject": "other", "operator": "!=", "value": "minecraft:is_baby" }
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "villager"
+                  },
+                  {
+                    "test": "has_component",
+                    "subject": "other",
+                    "operator": "!=",
+                    "value": "minecraft:is_baby"
+                  }
                 ]
               },
               "max_dist": 20
@@ -71,7 +95,6 @@
         }
       }
     },
-
     "components": {
       "minecraft:despawn": {
         "despawn_from_distance": {
@@ -79,10 +102,9 @@
           "max_distance": 64
         }
       },
-      "minecraft:tick_world": {},
       "minecraft:boss": {
         "should_darken_sky": false,
-        "name":"boss.dec:enchant_illager.name",
+        "name": "boss.dec:enchant_illager.name",
         "hud_range": 64
       },
       "minecraft:knockback_resistance": {
@@ -91,10 +113,15 @@
       "minecraft:experience_reward": {
         "on_death": "query.last_hit_by_player ? 300 : 0"
       },
-      "minecraft:nameable": {
-      },
+      "minecraft:nameable": {},
       "minecraft:type_family": {
-        "family": [ "enchant_illager", "monster", "illager", "mob", "boss" ]
+        "family": [
+          "enchant_illager",
+          "monster",
+          "illager",
+          "mob",
+          "boss"
+        ]
       },
       "minecraft:variant": {
         "value": 0
@@ -114,7 +141,12 @@
       "minecraft:hurt_on_condition": {
         "damage_conditions": [
           {
-            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
             "cause": "lava",
             "damage_per_tick": 4
           }
@@ -132,10 +164,8 @@
         "can_open_doors": true,
         "avoid_water": false
       },
-      "minecraft:movement.basic": {
-      },
-      "minecraft:jump.static": {
-      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
       "minecraft:follow_range": {
         "value": 256
       },
@@ -188,14 +218,12 @@
         "event": "minecraft:stop_aggro",
         "target": "self"
       },
-      "minecraft:physics": {
-      },
+      "minecraft:physics": {},
       "minecraft:pushable": {
         "is_pushable": true,
         "is_pushable_by_piston": true
       }
     },
-
     "events": {
       "minecraft:despawn": {
         "add": {

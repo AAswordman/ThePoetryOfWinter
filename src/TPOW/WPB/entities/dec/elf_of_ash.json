@@ -18,13 +18,12 @@
       }
     },
     "components": {
-      
       "minecraft:fire_immune": true,
       "minecraft:damage_sensor": {
         "triggers": [
           {
-          "cause": "fall",
-          "deals_damage": false
+            "cause": "fall",
+            "deals_damage": false
           },
           {
             "on_damage": {
@@ -39,7 +38,13 @@
         ]
       },
       "minecraft:type_family": {
-        "family": [ "monster","elf_of_ash", "ash", "undead", "mob" ]
+        "family": [
+          "monster",
+          "elf_of_ash",
+          "ash",
+          "undead",
+          "mob"
+        ]
       },
       "minecraft:despawn": {
         "despawn_from_distance": {}
@@ -62,14 +67,16 @@
         "has_gravity": false,
         "has_collision": true
       },
-      "minecraft:can_fly": {
-      },
+      "minecraft:can_fly": {},
       "minecraft:behavior.float_wander": {
         "xz_dist": 10,
         "y_dist": 7,
         "y_offset": -2.0,
         "random_reselect": true,
-        "float_duration": [0.1, 0.35]
+        "float_duration": [
+          0.1,
+          0.35
+        ]
       },
       "minecraft:shooter": {
         "type": "ashEnergy",
@@ -89,8 +96,8 @@
         "attack_interval_max": 3.0,
         "attack_radius": 64.0
       },
-        "minecraft:movement": {
-          "value": 0.005
+      "minecraft:movement": {
+        "value": 0.005
       },
       "minecraft:collision_box": {
         "width": 0.4,
@@ -99,12 +106,9 @@
       "minecraft:navigation.walk": {
         "can_float": true
       },
-      "minecraft:movement.basic": {
-      },
-      "minecraft:jump.static": {
-      },
-      "minecraft:can_climb": {
-      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
       "minecraft:behavior.float": {
         "priority": 0
       },
@@ -179,7 +183,6 @@
         "priority": 6
       }
     },
-
     "events": {
       "minecraft:from_summoner": {
         "add": {

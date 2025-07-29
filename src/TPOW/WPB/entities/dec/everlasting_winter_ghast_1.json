@@ -1,12 +1,12 @@
 {
-	"format_version": "1.13.0",
-	"minecraft:entity": {
-		"description": {
-			"identifier": "dec:everlasting_winter_ghast_1",
-			"runtime_identifier": "minecraft:ghast",
-			"is_spawnable": false,
-			"is_summonable": true,
-			"is_experimental": false,
+  "format_version": "1.13.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:everlasting_winter_ghast_1",
+      "runtime_identifier": "minecraft:ghast",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false,
       "scripts": {
         "animate": [
           "teleport"
@@ -15,13 +15,13 @@
       "animations": {
         "teleport": "animation.everlasting_winter_ghast_1.teleport"
       }
-		},
-		"component_groups": {
+    },
+    "component_groups": {
       "minecraft:despawn": {
         "minecraft:instant_despawn": {}
       }
-		},
-		"components": {
+    },
+    "components": {
       "minecraft:on_death": {
         "event": "minecraft:die",
         "target": "self"
@@ -36,14 +36,13 @@
       "minecraft:knockback_resistance": {
         "value": 1
       },
-			"minecraft:physics": {
-				"has_gravity": false
-			},
+      "minecraft:physics": {
+        "has_gravity": false
+      },
       "minecraft:collision_box": {
         "width": 5,
         "height": 5
       },
-      "minecraft:tick_world": {},
       "minecraft:boss": {
         "should_darken_sky": true,
         "name": "boss.dec:everlasting_winter_ghast.name",
@@ -69,11 +68,11 @@
           "max_distance": 64
         }
       },
-			"minecraft:breathable": {
-				"total_supply": 15,
-				"suffocate_time": 0,
-				"breathes_water": true
-			},
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0,
+        "breathes_water": true
+      },
       "minecraft:health": {
         "value": 350,
         "max": 350
@@ -96,18 +95,18 @@
           }
         ]
       },
-			"minecraft:navigation.walk": {
-				"is_amphibious": true,
-				"avoid_sun": true,
-				"avoid_water": true
-			},
-			"minecraft:movement.basic": {},
-			"minecraft:jump.static": {},
-			"minecraft:can_climb": {},
-			"minecraft:nameable": {},
-			"minecraft:shooter": {
-				"def": "dec:frozen_ball"
-			},
+      "minecraft:navigation.walk": {
+        "is_amphibious": true,
+        "avoid_sun": true,
+        "avoid_water": true
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
+      "minecraft:nameable": {},
+      "minecraft:shooter": {
+        "def": "dec:frozen_ball"
+      },
       "minecraft:behavior.ranged_attack": {
         "priority": 4,
         "burst_shots": 10,
@@ -118,58 +117,58 @@
         "attack_interval_max": 2.0,
         "attack_radius": 64.0
       },
-			"minecraft:follow_range": {
-				"value": 64,
-				"max": 64
-			},
-			"minecraft:behavior.nearest_attackable_target": {
-				"priority": 0,
-				"within_radius": 64,
-				"reselect_targets": true,
-				"entity_types": [
-					{
-						"filters": {
-							"any_of": [
-								{
-									"test": "is_family",
-									"subject": "other",
-									"value": "player"
-								},
-								{
-									"test": "is_family",
-									"subject": "other",
-									"value": "snowgolem"
-								},
-								{
-									"test": "is_family",
-									"subject": "other",
-									"value": "irongolem"
-								}
-							]
-						},
-						"max_dist": 64
-					},
-					{
-						"filters": {
-							"any_of": [
-								{
-									"test": "is_family",
-									"subject": "other",
-									"value": "villager"
-								},
-								{
-									"test": "is_family",
-									"subject": "other",
-									"value": "wandering_trader"
-								}
-							]
-						},
-						"max_dist": 64,
-						"must_see": false
-					}
-				],
-				"must_see": true
-			},
+      "minecraft:follow_range": {
+        "value": 64,
+        "max": 64
+      },
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 0,
+        "within_radius": 64,
+        "reselect_targets": true,
+        "entity_types": [
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "snowgolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                }
+              ]
+            },
+            "max_dist": 64
+          },
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "villager"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "wandering_trader"
+                }
+              ]
+            },
+            "max_dist": 64,
+            "must_see": false
+          }
+        ],
+        "must_see": true
+      },
       "minecraft:behavior.hurt_by_target": {
         "priority": 1,
         "entity_types": {
@@ -182,14 +181,14 @@
           "max_dist": 64
         }
       },
-			"minecraft:behavior.look_at_player": {
-				"priority": 6,
-				"look_distance": 8
-			},
-			"minecraft:behavior.random_look_around": {
-				"priority": 6
-			}
-		},
+      "minecraft:behavior.look_at_player": {
+        "priority": 6,
+        "look_distance": 8
+      },
+      "minecraft:behavior.random_look_around": {
+        "priority": 6
+      }
+    },
     "events": {
       "minecraft:despawn": {
         "add": {
@@ -373,5 +372,5 @@
         ]
       }
     }
-	}
+  }
 }

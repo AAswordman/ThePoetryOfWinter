@@ -16,8 +16,7 @@
         "spawn": "animation.playsound_random_explode"
       }
     },
-    "component_groups": {
-    },
+    "component_groups": {},
     "components": {
       "minecraft:collision_box": {
         "width": 0.2,
@@ -30,8 +29,7 @@
             "knockback": true,
             "catchFire": false,
             "semirandomdiffdamage": false
-          },
-          "remove_on_hit": {}
+          }
         },
         "power": 2.7,
         "gravity": 0.02,
@@ -44,16 +42,20 @@
           0
         ],
         "semirandomdiffdamage": true,
-        "uncertaintyBase": 3.0,
-        "uncertaintyMultiplier": 0.5,
+        "uncertaintyBase": 2.5,
+        "uncertaintyMultiplier": 0,
         "reflectOnHurt": true
+      },
+      "minecraft:type_family": {
+        "family": [
+          "remove_on_hit"
+        ]
       },
       "minecraft:pushable": {
         "is_pushable": false,
         "is_pushable_by_piston": true
       }
     },
-    "events": {
-    }
+    "events": {}
   }
 }

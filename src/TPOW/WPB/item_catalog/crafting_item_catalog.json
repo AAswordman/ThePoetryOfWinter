@@ -1,0 +1,253 @@
+{
+   "format_version": "1.21.60",
+   "minecraft:crafting_items_catalog": {
+      "categories": [
+         {
+            "category_name": "equipment",
+            "groups": [
+               {
+                  "group_identifier": {
+                     "icon": "dec:frank_mask",
+                     "name": "dec:itemGroup.name.masks"
+                  },
+                  "items": []
+               },
+               {
+                  "group_identifier": {
+                     "icon": "dec:black_courtesy",
+                     "name": "dec:itemGroup.name.clothes_helmets"
+                  },
+                  "items": []
+               },
+               {
+                  "group_identifier": {
+                     "icon": "dec:formal_style_clothes",
+                     "name": "dec:itemGroup.name.clothes_chestplates"
+                  },
+                  "items": []
+               },
+               {
+                  "group_identifier": {
+                     "icon": "dec:formal_style_pants",
+                     "name": "dec:itemGroup.name.clothes_leggings"
+                  },
+                  "items": []
+               },
+               {
+                  "group_identifier": {
+                     "icon": "dec:black_shoes",
+                     "name": "dec:itemGroup.name.clothes_boots"
+                  },
+                  "items": []
+               },
+               {
+                  "group_identifier": {
+                     "icon": "dec:wooden_dagger",
+                     "name": "dec:itemGroup.name.daggers"
+                  },
+                  "items": []
+               },
+               {
+                  "group_identifier": {
+                     "icon": "dec:copper_sickle",
+                     "name": "dec:itemGroup.name.sickles"
+                  },
+                  "items": []
+               },
+               {
+                  "group_identifier": {
+                     "icon": "dec:the_blade",
+                     "name": "dec:itemGroup.name.katanas"
+                  },
+                  "items": []
+               },
+               {
+                  "group_identifier": {
+                     "icon": "dec:rapier",
+                     "name": "dec:itemGroup.name.rapiers"
+                  },
+                  "items": []
+               },
+               {
+                  "group_identifier": {
+                     "icon": "dec:angel_purification",
+                     "name": "dec:itemGroup.name.spears"
+                  },
+                  "items": []
+               },
+               {
+                  "group_identifier": {
+                     "icon": "dec:flintlock",
+                     "name": "dec:itemGroup.name.flintlocks"
+                  },
+                  "items": []
+               },
+               {
+                  "group_identifier": {
+                     "icon": "dec:flintlock_bullet",
+                     "name": "dec:itemGroup.name.bullets"
+                  },
+                  "items": []
+               },
+               {
+                  "group_identifier": {
+                     "icon": "dec:wave_magic_book",
+                     "name": "dec:itemGroup.name.magic_books"
+                  },
+                  "items": []
+               },
+               {
+                  "group_identifier": {
+                     "icon": "dec:wooden_staff",
+                     "name": "dec:itemGroup.name.staffs"
+                  },
+                  "items": []
+               },
+               {
+                  "group_identifier": {
+                     "icon": "dec:wood_dart",
+                     "name": "dec:itemGroup.name.darts"
+                  },
+                  "items": []
+               },
+               {
+                  "group_identifier": {
+                     "icon": "dec:destroy_staff",
+                     "name": "dec:itemGroup.name.destroy_staffs"
+                  },
+                  "items": []
+               },
+               {
+                  "group_identifier": {
+                     "icon": "dec:smoke_bomb",
+                     "name": "dec:itemGroup.name.thrown_sundries"
+                  },
+                  "items": []
+               },
+               {
+                  "group_identifier": {
+                     "icon": "dec:bullet_bag",
+                     "name": "dec:itemGroup.name.bullet_bags"
+                  },
+                  "items": []
+               },
+               {
+                  "group_identifier": {
+                     "icon": "dec:natural_ring",
+                     "name": "dec:itemGroup.name.rings"
+                  },
+                  "items": []
+               },
+               {
+                  "group_identifier": {
+                     "icon": "dec:empty_totem",
+                     "name": "dec:itemGroup.name.totems"
+                  },
+                  "items": []
+               },
+               {
+                  "group_identifier": {
+                     "icon": "dec:shadow_crystal",
+                     "name": "dec:itemGroup.name.evil_crystals"
+                  },
+                  "items": []
+               },
+               {
+                  "group_identifier": {
+                     "icon": "dec:alchemic_stone",
+                     "name": "dec:itemGroup.name.magic_accessories"
+                  },
+                  "items": []
+               },
+               {
+                  "group_identifier": {
+                     "icon": "dec:guide_book",
+                     "name": "dec:itemGroup.name.other_books"
+                  },
+                  "items": []
+               },
+               {
+                  "group_identifier": {
+                     "icon": "dec:nature_essence",
+                     "name": "dec:itemGroup.name.summon_items"
+                  },
+                  "items": []
+               },
+               {
+                  "group_identifier": {
+                     "icon": "dec:crystal_nucleus",
+                     "name": "dec:itemGroup.name.crystal_nucleus"
+                  },
+                  "items": []
+               },
+               {
+                  "group_identifier": {
+                     "icon": "dec:heart_egg",
+                     "name": "dec:itemGroup.name.heart_eggs"
+                  },
+                  "items": []
+               },
+               {
+                  "group_identifier": {
+                     "icon": "dec:blue_gem",
+                     "name": "dec:itemGroup.name.magic_gems"
+                  },
+                  "items": []
+               }
+            ]
+         },
+         {
+            "category_name": "items",
+            "groups": [
+               {
+                  "group_identifier": {
+                     "icon": "dec:steel_ingot",
+                     "name": "dec:itemGroup.name.ingots"
+                  },
+                  "items": []
+               },
+               {
+                  "group_identifier": {
+                     "icon": "dec:steel_nugget",
+                     "name": "dec:itemGroup.name.nuggets"
+                  },
+                  "items": []
+               },
+               {
+                  "group_identifier": {
+                     "icon": "dec:iron_stick",
+                     "name": "dec:itemGroup.name.sticks_and_rods"
+                  },
+                  "items": []
+               },
+               {
+                  "group_identifier": {
+                     "icon": "dec:mining_machine",
+                     "name": "dec:itemGroup.name.stream_machines"
+                  },
+                  "items": []
+               },
+               {
+                  "group_identifier": {
+                     "icon": "dec:crate",
+                     "name": "dec:itemGroup.name.crates"
+                  },
+                  "items": []
+               }
+            ]
+         },
+         {
+            "category_name": "nature",
+            "groups": [
+               {
+                  "group_identifier": {
+                     "icon": "dec:summoner",
+                     "name": "dec:itemGroup.name.summoners"
+                  },
+                  "items": []
+               }
+            ]
+         }
+      ]
+   }
+}

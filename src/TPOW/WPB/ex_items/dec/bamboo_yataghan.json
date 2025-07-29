@@ -1,23 +1,20 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:bamboo_yataghan",
             "menu_category": {
-                "group": "itemGroup.name.sword",
+                "group": "minecraft:itemGroup.name.sword",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
         },
         "components": {
-            "minecraft:fuel": {
-                "duration": 5
-            },
             "minecraft:display_name": {
                 "value": "item.dec:bamboo_yataghan.name"
             },
-            "minecraft:icon": {
-                "texture": "bamboo_yataghan"
+            "minecraft:fuel": {
+                "duration": 5
             },
             "minecraft:cooldown": {
                 "category": "sword",
@@ -78,6 +75,11 @@
                 "tags": [
                     "comp:equipment_type:melee_weapon_:sword:_"
                 ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "bamboo_yataghan"
+                }
             }
         },
         "events": {

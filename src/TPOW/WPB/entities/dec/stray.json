@@ -7,7 +7,6 @@
       "is_summonable": true,
       "is_experimental": false
     },
-
     "component_groups": {
       "minecraft:stray_baby": {
         "minecraft:health": {
@@ -35,7 +34,6 @@
           "value": 0.35
         }
       },
-
       "minecraft:stray_adult": {
         "minecraft:health": {
           "value": {
@@ -55,7 +53,11 @@
             "skeleton"
           ],
           "seats": {
-            "position": [ 0.0, 1.6, -0.35 ],
+            "position": [
+              0.0,
+              1.6,
+              -0.35
+            ],
             "lock_rider_rotation": 0
           }
         },
@@ -66,7 +68,6 @@
           "track_target": true
         }
       },
-
       "minecraft:stray_jockey": {
         "minecraft:behavior.find_mount": {
           "priority": 1,
@@ -151,15 +152,13 @@
         }
       }
     },
-
     "components": {
       "minecraft:breathable": {
         "total_supply": 15,
         "suffocate_time": 0,
         "breathes_water": true
       },
-      "minecraft:equip_item": {
-      },
+      "minecraft:equip_item": {},
       "minecraft:collision_box": {
         "width": 0.6,
         "height": 1.9
@@ -175,7 +174,12 @@
       "minecraft:hurt_on_condition": {
         "damage_conditions": [
           {
-            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
             "cause": "lava",
             "damage_per_tick": 4
           }
@@ -192,12 +196,9 @@
         "avoid_sun": true,
         "avoid_water": true
       },
-      "minecraft:movement.basic": {
-      },
-      "minecraft:jump.static": {
-      },
-      "minecraft:can_climb": {
-      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
       "minecraft:equipment": {
         "table": "loot_tables/entities/skeleton_gear.json",
         "slot_drop_chance": [
@@ -479,7 +480,6 @@
         "priority": 2,
         "must_see": true,
         "reselect_targets": true,
-
         "entity_types": [
           {
             "filters": {
@@ -517,7 +517,6 @@
           }
         ]
       },
-
       "minecraft:behavior.flee_sun": {
         "priority": 2,
         "speed_multiplier": 1
@@ -560,16 +559,20 @@
         "priority": 8
       },
       "minecraft:type_family": {
-        "family": [ "stray", "skeleton", "monster", "mob", "undead" ]
+        "family": [
+          "stray",
+          "skeleton",
+          "monster",
+          "mob",
+          "undead"
+        ]
       },
-      "minecraft:physics": {
-      },
+      "minecraft:physics": {},
       "minecraft:pushable": {
         "is_pushable": true,
         "is_pushable_by_piston": true
       }
     },
-
     "events": {
       "minecraft:entity_spawned": {
         "add": {
@@ -589,8 +592,7 @@
           },
           {
             "weight": 25,
-            "remove": {
-            },
+            "remove": {},
             "add": {
               "component_groups": [
                 "minecraft:stray_baby"
@@ -599,8 +601,7 @@
           },
           {
             "weight": 5,
-            "remove": {
-            },
+            "remove": {},
             "add": {
               "component_groups": [
                 "minecraft:stray_baby",
@@ -642,7 +643,9 @@
                 "weight": 20,
                 "remove": {},
                 "add": {
-                  "component_groups": [ "minecraft:revert_to_skeleton" ]
+                  "component_groups": [
+                    "minecraft:revert_to_skeleton"
+                  ]
                 }
               },
               {
@@ -655,12 +658,28 @@
         ]
       },
       "minecraft:melee_mode": {
-        "remove": { "component_groups": [ "minecraft:ranged_attack" ] },
-        "add": { "component_groups": [ "minecraft:melee_attack" ] }
+        "remove": {
+          "component_groups": [
+            "minecraft:ranged_attack"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:melee_attack"
+          ]
+        }
       },
       "minecraft:ranged_mode": {
-        "remove": { "component_groups": [ "minecraft:melee_attack" ] },
-        "add": { "component_groups": [ "minecraft:ranged_attack" ] }
+        "remove": {
+          "component_groups": [
+            "minecraft:melee_attack"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:ranged_attack"
+          ]
+        }
       }
     }
   }

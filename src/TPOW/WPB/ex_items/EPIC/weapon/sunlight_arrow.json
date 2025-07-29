@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "epic:sunlight_arrow",
             "menu_category": {
-                "group": "itemGroup.name.arrow",
+                "group": "minecraft:itemGroup.name.arrow",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -14,7 +14,9 @@
                 "value": "item.epic:sunlight_arrow.name"
             },
             "minecraft:icon": {
-                "texture": "epic:sunlight_arrow"
+                "textures": {
+                    "default": "epic:sunlight_arrow"
+                }
             },
             "minecraft:projectile": {
                 "minimum_critical_power": 2,

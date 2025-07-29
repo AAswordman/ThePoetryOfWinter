@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.80",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "dec:stream_ore",
             "menu_category": {
-                "group": "itemGroup.name.ore",
+                "group": "minecraft:itemGroup.name.ore",
                 "category": "nature"
             }
         },
@@ -27,7 +27,8 @@
             "minecraft:geometry": "minecraft:geometry.full_block",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "stream_ore"
+                    "texture": "stream_ore",
+                    "render_method": "alpha_test"
                 }
             }
         }

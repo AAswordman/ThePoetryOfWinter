@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:candy_cane",
             "menu_category": {
-                "group": "itemGroup.name.sword",
+                "group": "minecraft:itemGroup.name.sword",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -12,9 +12,6 @@
         "components": {
             "minecraft:display_name": {
                 "value": "item.dec:candy_cane.name"
-            },
-            "minecraft:icon": {
-                "texture": "candy_cane"
             },
             "minecraft:repairable": {
                 "repair_items": [
@@ -59,12 +56,18 @@
                 "can_always_eat": true
             },
             "minecraft:use_modifiers": {
-                "use_duration": 3.2
+                "use_duration": 3.2,
+                "movement_modifier": 0.4
             },
             "minecraft:tags": {
                 "tags": [
                     "comp:equipment_type:melee_weapon_:sword:_"
                 ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "candy_cane"
+                }
             }
         },
         "events": {

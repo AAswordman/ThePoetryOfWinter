@@ -23,7 +23,10 @@
     },
     "components": {
       "minecraft:type_family": {
-        "family": [ "ice_fallblock", "frozen" ]
+        "family": [
+          "ice_fallblock",
+          "frozen"
+        ]
       },
       "minecraft:explode": {
         "fuseLength": 12,
@@ -71,10 +74,10 @@
       },
       "dec:tp": {
         "queue_command": {
-	      "command": [
-		    "tp @s ~ ~52 ~"
-		  ]
-	    }
+          "command": [
+            "tp @s ~ ~52 ~"
+          ]
+        }
       }
     }
   }

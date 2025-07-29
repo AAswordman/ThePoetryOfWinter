@@ -6,7 +6,10 @@
             "register_to_creative_menu": true
         },
         "components": {
-            "minecraft:food": {
+"minecraft:display_name": {
+                "value": "item.wb:particle_halo.name"
+            },
+                        "minecraft:food": {
                 "nutrition": 5,
                 "can_always_eat": true,
                 "cooldown_type": "particle",

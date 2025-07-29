@@ -1,0 +1,28 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "dec:bullet_by_echo_of_deep",
+      "textures": {
+        "default": "textures/entity/bullet_by_echo_of_deep"
+      },
+      "geometry": {
+        "default": "geometry.bullet"
+      },
+      "particle_effects": {
+        "wake": "dec:deep_wake_particle"
+      },
+      "scripts": {
+        "scale": "1",
+        "animate": [
+          "wake"
+        ]
+      },
+      "animations": {
+        "wake": "animation.bullet.wake"
+      },
+      "render_controllers": [ "controller.render.spots" ],
+      "materials": { "default": "husk" }
+      }
+   }
+}

@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.80",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "dec:snow_brick_block",
             "menu_category": {
-                "group": "itemGroup.name.stoneBrick",
+                "group": "minecraft:itemGroup.name.stoneBrick",
                 "category": "construction"
             }
         },
@@ -28,7 +28,8 @@
             "minecraft:geometry": "minecraft:geometry.full_block",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "snow_brick_block"
+                    "texture": "snow_brick_block",
+                    "render_method": "alpha_test"
                 }
             }
         }

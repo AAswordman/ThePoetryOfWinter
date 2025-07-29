@@ -22,11 +22,11 @@
       }
     },
     "components": {
-			"minecraft:type_family": {
-				"family": [
-					"bullet_by_ghost_flintlock"
-				]
-			},
+      "minecraft:type_family": {
+        "family": [
+          "bullet_by_ghost_flintlock"
+        ]
+      },
       "minecraft:collision_box": {
         "width": 0.2,
         "height": 0.2

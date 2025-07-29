@@ -7,8 +7,6 @@
       "is_summonable": true,
       "is_experimental": false
     },
-
-
     "component_groups": {
       "minecraft:spider_jockey": {
         "minecraft:addrider": {
@@ -22,11 +20,14 @@
             "jockey"
           ],
           "seats": {
-            "position": [ 0.0, 0.54, 0.0 ]
+            "position": [
+              0.0,
+              0.54,
+              0.0
+            ]
           }
         }
       },
-
       "minecraft:spider_stray_jockey": {
         "minecraft:addrider": {
           "entity_type": "minecraft:skeleton.stray"
@@ -39,11 +40,14 @@
             "jockey"
           ],
           "seats": {
-            "position": [ 0.0, 0.54, 0.0 ]
+            "position": [
+              0.0,
+              0.54,
+              0.0
+            ]
           }
         }
       },
-
       "minecraft:spider_wither_jockey": {
         "minecraft:addrider": {
           "entity_type": "minecraft:skeleton.wither"
@@ -56,11 +60,14 @@
             "jockey"
           ],
           "seats": {
-            "position": [ 0.0, 0.54, 0.0 ]
+            "position": [
+              0.0,
+              0.54,
+              0.0
+            ]
           }
         }
       },
-
       "minecraft:spider_neutral": {
         "minecraft:environment_sensor": {
           "triggers": {
@@ -76,7 +83,6 @@
           "event": "minecraft:become_angry"
         }
       },
-
       "minecraft:spider_hostile": {
         "minecraft:environment_sensor": {
           "triggers": {
@@ -126,7 +132,6 @@
           "must_see": true
         }
       },
-
       "minecraft:spider_angry": {
         "minecraft:angry": {
           "duration": 10,
@@ -149,7 +154,6 @@
         }
       }
     },
-
     "components": {
       "minecraft:despawn": {
         "despawn_from_distance": {}
@@ -157,10 +161,14 @@
       "minecraft:experience_reward": {
         "on_death": "query.last_hit_by_player ? 5 : 0"
       },
-      "minecraft:nameable": {
-      },
+      "minecraft:nameable": {},
       "minecraft:type_family": {
-        "family": [ "spider", "monster", "mob", "arthropod" ]
+        "family": [
+          "spider",
+          "monster",
+          "mob",
+          "arthropod"
+        ]
       },
       "minecraft:breathable": {
         "total_supply": 15,
@@ -182,7 +190,12 @@
       "minecraft:hurt_on_condition": {
         "damage_conditions": [
           {
-            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
             "cause": "lava",
             "damage_per_tick": 4
           }
@@ -194,12 +207,9 @@
       "minecraft:navigation.climb": {
         "can_path_over_water": true
       },
-      "minecraft:movement.basic": {
-      },
-      "minecraft:jump.static": {
-      },
-      "minecraft:can_climb": {
-      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
       "minecraft:attack": {
         "damage": 3
       },
@@ -233,17 +243,19 @@
           "zombie"
         ],
         "seats": {
-          "position": [ 0.0, 0.54, -0.1 ]
+          "position": [
+            0.0,
+            0.54,
+            -0.1
+          ]
         }
       },
-      "minecraft:physics": {
-      },
+      "minecraft:physics": {},
       "minecraft:pushable": {
         "is_pushable": true,
         "is_pushable_by_piston": true
       }
     },
-
     "events": {
       "minecraft:entity_spawned": {
         "randomize": [
@@ -325,7 +337,6 @@
           }
         ]
       },
-
       "minecraft:become_hostile": {
         "remove": {
           "component_groups": [
@@ -338,7 +349,6 @@
           ]
         }
       },
-
       "minecraft:become_neutral": {
         "remove": {
           "component_groups": [
@@ -351,7 +361,6 @@
           ]
         }
       },
-
       "minecraft:become_angry": {
         "add": {
           "component_groups": [

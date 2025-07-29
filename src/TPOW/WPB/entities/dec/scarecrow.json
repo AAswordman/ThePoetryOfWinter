@@ -1,4 +1,4 @@
- {
+{
   "format_version": "1.13.0",
   "minecraft:entity": {
     "description": {
@@ -35,8 +35,17 @@
             "on_interact": {
               "filters": {
                 "all_of": [
-                  { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "shears"},
-                  { "test" :  "is_family", "subject" : "other", "value" :  "player"}
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "value": "shears"
+                  },
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  }
                 ]
               },
               "event": "minecraft:resort",

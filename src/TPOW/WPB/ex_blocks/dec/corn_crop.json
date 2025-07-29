@@ -1,5 +1,5 @@
 {
-    "format_version": "1.20.80",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "dec:corn_crop",
@@ -19,10 +19,6 @@
                     false,
                     true
                 ]
-            },
-            "menu_category": {
-                "group": "itemGroup.name.outside",
-                "category": "construction"
             }
         },
         "components": {
@@ -54,7 +50,8 @@
             "minecraft:breathability": "air",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "corn_crop_0_0"
+                    "texture": "corn_crop_0_0",
+                    "render_method": "alpha_test"
                 }
             }
         },

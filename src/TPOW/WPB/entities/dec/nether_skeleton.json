@@ -37,7 +37,6 @@
           "value": 0.42
         }
       },
-
       "minecraft:zombie_adult": {
         "minecraft:experience_reward": {
           "on_death": "query.last_hit_by_player ? 5 + (query.equipment_count * Math.Random(1,3)) : 0"
@@ -51,7 +50,11 @@
             "skeleton"
           ],
           "seats": {
-            "position": [ 0.0, 1.1, -0.35 ],
+            "position": [
+              0.0,
+              1.1,
+              -0.35
+            ],
             "lock_rider_rotation": 0
           }
         },
@@ -62,7 +65,6 @@
           "track_target": true
         }
       },
-
       "minecraft:zombie_jockey": {
         "minecraft:behavior.find_mount": {
           "priority": 1,
@@ -97,37 +99,38 @@
             }
           ]
         }
-      } 
+      }
     },
-
     "components": {
       "minecraft:despawn": {
         "despawn_from_distance": {}
       },
-      "minecraft:nameable": {
-      },
+      "minecraft:nameable": {},
       "minecraft:fire_immune": true,
       "minecraft:type_family": {
-        "family": [ "skeleton", "undead", "monster", "mob", "nether_skeleton", "nether" ]
+        "family": [
+          "skeleton",
+          "undead",
+          "monster",
+          "mob",
+          "nether_skeleton",
+          "nether"
+        ]
       },
       "minecraft:collision_box": {
         "width": 0.6,
         "height": 1.8
       },
-      "minecraft:movement.basic": {
-      },
+      "minecraft:movement.basic": {},
       "minecraft:navigation.walk": {
         "is_amphibious": true,
         "can_pass_doors": true,
         "can_walk": true,
         "can_break_doors": true
       },
-      "minecraft:annotation.break_door": {
-      },
-      "minecraft:jump.static": {
-      },
-      "minecraft:can_climb": {
-      },
+      "minecraft:annotation.break_door": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
       "minecraft:health": {
         "value": {
           "range_min": 38,
@@ -137,7 +140,12 @@
       "minecraft:hurt_on_condition": {
         "damage_conditions": [
           {
-            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
             "cause": "lava",
             "damage_per_tick": 0
           }
@@ -155,7 +163,6 @@
       "minecraft:loot": {
         "table": "loot_tables/entities/nether_skeleton.json"
       },
-
       "minecraft:environment_sensor": {
         "triggers": {
           "filters": {
@@ -166,7 +173,6 @@
           "event": "minecraft:start_transforming"
         }
       },
-
       "minecraft:behavior.melee_attack": {
         "priority": 3,
         "speed_multiplier": 1,
@@ -199,9 +205,21 @@
           {
             "filters": {
               "any_of": [
-                { "test": "is_family", "subject": "other", "value": "player" },
-                { "test": "is_family", "subject": "other", "value": "snowgolem" },
-                { "test": "is_family", "subject": "other", "value": "irongolem" }
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "snowgolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                }
               ]
             },
             "max_dist": 35
@@ -209,8 +227,16 @@
           {
             "filters": {
               "any_of": [
-                { "test": "is_family", "subject": "other", "value": "villager" },
-                { "test": "is_family", "subject": "other", "value": "wandering_trader" }
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "villager"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "wandering_trader"
+                }
               ]
             },
             "max_dist": 35,
@@ -220,14 +246,12 @@
         "must_see": true,
         "must_see_forget_duration": 17.0
       },
-      "minecraft:physics": {
-      },
+      "minecraft:physics": {},
       "minecraft:pushable": {
         "is_pushable": true,
         "is_pushable_by_piston": true
       }
     },
-
     "events": {
       "minecraft:despawn": {
         "add": {
@@ -258,20 +282,17 @@
           },
           {
             "weight": 17,
-            "remove": {
-            },
+            "remove": {},
             "add": {
               "component_groups": [
                 "minecraft:zombie_baby",
                 "minecraft:can_have_equipment"
               ]
-
             }
           },
           {
             "weight": 3,
-            "remove": {
-            },
+            "remove": {},
             "add": {
               "component_groups": [
                 "minecraft:zombie_baby",

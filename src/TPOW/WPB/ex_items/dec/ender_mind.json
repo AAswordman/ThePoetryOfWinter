@@ -1,5 +1,5 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:ender_mind",
@@ -14,7 +14,9 @@
                 "value": "item.dec:ender_mind.name"
             },
             "minecraft:icon": {
-                "texture": "ender_mind"
+                "textures": {
+                    "default": "ender_mind"
+                }
             },
             "minecraft:use_animation": "eat",
             "minecraft:cooldown": {

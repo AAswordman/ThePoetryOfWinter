@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:snow_lotus",
             "menu_category": {
-                "group": "itemGroup.name.flower",
+                "group": "minecraft:itemGroup.name.flower",
                 "is_hidden_in_commands": false,
                 "category": "nature"
             }
@@ -13,12 +13,14 @@
             "minecraft:display_name": {
                 "value": "item.dec:snow_lotus.name"
             },
-            "minecraft:icon": {
-                "texture": "snow_lotus"
-            },
             "minecraft:use_animation": "eat",
             "minecraft:block_placer": {
                 "block": "dec:snow_lotus_crop"
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "snow_lotus"
+                }
             }
         }
     }

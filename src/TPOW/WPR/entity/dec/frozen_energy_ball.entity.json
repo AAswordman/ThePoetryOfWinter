@@ -10,7 +10,7 @@
         "default": "geometry.energy_ball_v2"
       },
       "scripts": {
-        "scale": "0.3",
+        "scale": "0.6",
         "animate": [
           "fly"
         ]
@@ -19,7 +19,7 @@
         "fly": "animation.energy_ball.fly"
       },
       "render_controllers": [ "controller.render.spots" ],
-      "materials": { "default": "husk" }
+      "materials": { "default": "charged_creeper" }
       }
    }
 }

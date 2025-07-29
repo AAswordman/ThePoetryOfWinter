@@ -8,8 +8,7 @@
       "is_summonable": true,
       "is_experimental": false
     },
-    "component_groups": {
-    },
+    "component_groups": {},
     "components": {
       "minecraft:collision_box": {
         "width": 0.1,

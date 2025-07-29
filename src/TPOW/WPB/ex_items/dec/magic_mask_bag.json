@@ -1,0 +1,44 @@
+{
+    "format_version": "1.21.94",
+    "minecraft:item": {
+        "description": {
+            "menu_category": {
+                "group": "minecraft:itemGroup.name.decorations",
+                "is_hidden_in_commands": false,
+                "category": "items"
+            },
+            "identifier": "dec:magic_mask_bag"
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.dec:magic_mask_bag.name"
+            },
+            "minecraft:cooldown": {
+                "category": "magic_mask_bag",
+                "duration": 3
+            },
+            "minecraft:on_use": {
+                "on_use": {
+                    "event": "magic_mask_bag"
+                }
+            },
+            "minecraft:stacked_by_data": true,
+            "minecraft:icon": {
+                "textures": {
+                    "default": "magic_mask_bag"
+                }
+            }
+        },
+        "events": {
+            "magic_mask_bag": {
+                "run_command": {
+                    "command": [
+                        "loot give @s loot \"template/mask\"",
+                        "clear @s dec:magic_mask_bag 0 1",
+                        "playsound vault.insert_item @a ~~~"
+                    ]
+                }
+            }
+        }
+    }
+}

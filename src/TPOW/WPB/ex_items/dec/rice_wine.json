@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:rice_wine",
             "menu_category": {
-                "group": "itemGroup.name.miscFood",
+                "group": "minecraft:itemGroup.name.miscFood",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -12,9 +12,6 @@
         "components": {
             "minecraft:display_name": {
                 "value": "item.dec:rice_wine.name"
-            },
-            "minecraft:icon": {
-                "texture": "rice_wine"
             },
             "minecraft:use_animation": "drink",
             "minecraft:food": {
@@ -28,7 +25,13 @@
                 "using_converts_to": "dec:wine_glass"
             },
             "minecraft:use_modifiers": {
-                "use_duration": 1.8
+                "use_duration": 1.8,
+                "movement_modifier": 0.4
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "rice_wine"
+                }
             }
         },
         "events": {

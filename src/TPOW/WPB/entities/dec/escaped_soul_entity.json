@@ -147,7 +147,6 @@
       "minecraft:experience_reward": {
         "on_death": "query.last_hit_by_player ? 400 : 0"
       },
-      "minecraft:tick_world": {},
       "minecraft:boss": {
         "should_darken_sky": false,
         "hud_range": 64,

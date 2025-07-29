@@ -6,12 +6,15 @@
       "is_spawnable": true,
       "is_summonable": true,
       "is_experimental": false,
-      "scripts":{
-        "animate":["ticking"]
-         },
-         "animations":{	"ticking":"controller.animation.carnager_rushing" }
+      "scripts": {
+        "animate": [
+          "ticking"
+        ]
+      },
+      "animations": {
+        "ticking": "controller.animation.carnager_rushing"
+      }
     },
-
     "component_groups": {
       "minecraft:vindicator_aggro": {
         "minecraft:angry": {
@@ -67,13 +70,17 @@
         }
       }
     },
-
     "components": {
       "minecraft:despawn": {
         "despawn_from_distance": {}
       },
       "minecraft:type_family": {
-        "family": [ "carnager", "monster", "illager", "mob" ]
+        "family": [
+          "carnager",
+          "monster",
+          "illager",
+          "mob"
+        ]
       },
       "minecraft:variant": {
         "value": 0
@@ -95,7 +102,12 @@
       "minecraft:hurt_on_condition": {
         "damage_conditions": [
           {
-            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
             "cause": "lava",
             "damage_per_tick": 4
           }
@@ -110,10 +122,8 @@
       "minecraft:navigation.walk": {
         "can_path_over_water": true
       },
-      "minecraft:movement.basic": {
-      },
-      "minecraft:jump.static": {
-      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
       "minecraft:follow_range": {
         "value": 64
       },
@@ -151,14 +161,12 @@
         "event": "minecraft:stop_aggro",
         "target": "self"
       },
-      "minecraft:physics": {
-      },
+      "minecraft:physics": {},
       "minecraft:pushable": {
         "is_pushable": true,
         "is_pushable_by_piston": true
       }
     },
-
     "events": {
       "minecraft:entity_spawned": {
         "add": {

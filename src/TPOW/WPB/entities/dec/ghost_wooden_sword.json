@@ -15,7 +15,6 @@
         "disappear": "animation.disappear.10s"
       }
     },
-
     "component_groups": {
       "minecraft:tame": {
         "minecraft:behavior.owner_hurt_by_target": {
@@ -36,7 +35,6 @@
         "minecraft:instant_despawn": {}
       }
     },
-
     "components": {
       "minecraft:tameable": {
         "probability": 1,
@@ -71,10 +69,13 @@
         ]
       },
       "minecraft:type_family": {
-        "family": [ "player","villager", "mob" ]
+        "family": [
+          "player",
+          "villager",
+          "mob"
+        ]
       },
-      "minecraft:nameable": {
-      },
+      "minecraft:nameable": {},
       "minecraft:health": {
         "value": 10,
         "max": 10
@@ -83,7 +84,12 @@
       "minecraft:hurt_on_condition": {
         "damage_conditions": [
           {
-            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
             "cause": "lava",
             "damage_per_tick": 4
           }
@@ -141,14 +147,26 @@
       },
       "minecraft:behavior.swoop_attack": {
         "priority": 2,
-        "delay_range": [ 0.5, 0.5 ]
+        "delay_range": [
+          0.5,
+          0.5
+        ]
       },
       "minecraft:behavior.circle_around_anchor": {
         "priority": 3,
-        "radius_range": [ 15.0, 15.0 ],
+        "radius_range": [
+          15.0,
+          15.0
+        ],
         "radius_change_chance": 20,
-        "height_above_target_range": [ 0, 1 ],
-        "height_offset_range": [ -4.0, 5.0 ],
+        "height_above_target_range": [
+          0,
+          1
+        ],
+        "height_offset_range": [
+          -4.0,
+          5.0
+        ],
         "height_change_chance": 1,
         "goal_radius": 1.0
       }

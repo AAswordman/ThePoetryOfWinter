@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:coral_pickaxe",
             "menu_category": {
-                "group": "itemGroup.name.pickaxe",
+                "group": "minecraft:itemGroup.name.pickaxe",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -12,9 +12,6 @@
         "components": {
             "minecraft:display_name": {
                 "value": "item.dec:coral_pickaxe.name"
-            },
-            "minecraft:icon": {
-                "texture": "coral_pickaxe"
             },
             "minecraft:max_stack_size": 1,
             "minecraft:durability": {
@@ -1130,6 +1127,11 @@
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability *  0.3"
                     }
                 ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "coral_pickaxe"
+                }
             }
         },
         "events": {

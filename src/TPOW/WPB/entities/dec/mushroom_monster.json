@@ -81,17 +81,20 @@
         }
       }
     },
-
     "components": {
       "minecraft:despawn": {
         "despawn_from_distance": {}
       },
       "minecraft:type_family": {
-        "family": [ "mushroom_monster", "monster", "mob" ]
+        "family": [
+          "mushroom_monster",
+          "monster",
+          "mob"
+        ]
       },
-        "minecraft:navigation.walk": {
+      "minecraft:navigation.walk": {
         "can_path_over_water": false
-        },
+      },
       "minecraft:experience_reward": {
         "on_death": "query.last_hit_by_player ? 5 : 0"
       },
@@ -99,26 +102,23 @@
         "width": 0.2,
         "height": 0.2
       },
-        "minecraft:movement": {
-          "value": 0.25
-        },
-        "minecraft:underwater_movement": {
-          "value": 0.15
-        },
-        "minecraft:movement.basic": {
-        },
+      "minecraft:movement": {
+        "value": 0.25
+      },
+      "minecraft:underwater_movement": {
+        "value": 0.15
+      },
+      "minecraft:movement.basic": {},
       "minecraft:breathable": {
         "totalSupply": 5,
         "suffocateTime": 0,
         "breathesAir": true,
         "breathesWater": false
       },
-
       "minecraft:navigation.generic": {
         "is_amphibious": true
       },
-      "minecraft:nameable": {
-      },
+      "minecraft:nameable": {},
       "minecraft:behavior.melee_attack": {
         "priority": 2,
         "speed_multiplier": 1,
@@ -132,9 +132,21 @@
           {
             "filters": {
               "any_of": [
-                { "test": "is_family", "subject": "other", "value": "player" },
-                { "test": "is_family", "subject": "other", "value": "snowgolem" },
-                { "test": "is_family", "subject": "other", "value": "irongolem" }
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "snowgolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                }
               ]
             },
             "max_dist": 35
@@ -142,8 +154,16 @@
           {
             "filters": {
               "any_of": [
-                { "test": "is_family", "subject": "other", "value": "villager" },
-                { "test": "is_family", "subject": "other", "value": "wandering_trader" }
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "villager"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "wandering_trader"
+                }
               ]
             },
             "max_dist": 35,

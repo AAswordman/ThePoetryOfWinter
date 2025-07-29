@@ -1,12 +1,12 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:complete_bat_wing",
             "menu_category": {
-                "group": "itemGroup.name.decorations",
+                "group": "minecraft:itemGroup.name.decorations",
                 "is_hidden_in_commands": false,
-                "category": "nature"
+                "category": "items"
             }
         },
         "components": {
@@ -14,7 +14,9 @@
                 "value": "item.dec:complete_bat_wing.name"
             },
             "minecraft:icon": {
-                "texture": "complete_bat_wing"
+                "textures": {
+                    "default": "complete_bat_wing"
+                }
             }
         }
     }

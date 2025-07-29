@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:enriched_uranium",
             "menu_category": {
-                "group": "itemGroup.name.decorations",
+                "group": "minecraft:itemGroup.name.decorations",
                 "is_hidden_in_commands": false,
                 "category": "items"
             }
@@ -14,7 +14,9 @@
                 "value": "item.dec:enriched_uranium.name"
             },
             "minecraft:icon": {
-                "texture": "enriched_uranium"
+                "textures": {
+                    "default": "enriched_uranium"
+                }
             }
         }
     }

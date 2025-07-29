@@ -124,7 +124,6 @@
       }
     },
     "components": {
-        "minecraft:tick_world": {},
       "minecraft:type_family": {
         "family": [
           "escaped_soul",

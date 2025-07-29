@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:growth",
             "menu_category": {
-                "group": "itemGroup.name.sword",
+                "group": "minecraft:itemGroup.name.sword",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -12,9 +12,6 @@
         "components": {
             "minecraft:display_name": {
                 "value": "item.dec:growth.name"
-            },
-            "minecraft:icon": {
-                "texture": "growth"
             },
             "minecraft:weapon": {
                 "on_hurt_entity": {
@@ -41,13 +38,7 @@
                 "repair_items": [
                     {
                         "items": [
-                            "minecraft:red_flower"
-                        ],
-                        "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.1"
-                    },
-                    {
-                        "items": [
-                            "minecraft:dandelion"
+                            "dec:dandelion"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.1"
                     },
@@ -94,6 +85,11 @@
                 "tags": [
                     "comp:equipment_type:melee_weapon_:staff:_"
                 ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "growth"
+                }
             }
         },
         "events": {
@@ -105,8 +101,9 @@
                             {
                                 "run_command": {
                                     "command": [
-                                        "playsound item.book.put @a ~~~",
-                                        "scoreboard players remove @s wbfl 4"
+                                        "playsound break.amethyst_block @a ~~~",
+                                        "scoreboard players remove @s wbfl 4",
+                                        "playanimation @s animation.humanoid.staff_use"
                                     ],
                                     "target": "holder"
                                 }
@@ -135,7 +132,7 @@
                             {
                                 "run_command": {
                                     "command": [
-                                        "playsound item.book.put @a ~~~",
+                                        "playsound break.amethyst_block @a ~~~",
                                         "scoreboard players remove @s wbfl 5"
                                     ],
                                     "target": "holder"

@@ -41,8 +41,7 @@
             "num_particles": 6,
             "on_entity_hit": true,
             "on_other_hit": true
-          },
-          "remove_on_hit": {}
+          }
         },
         "power": 1.8,
         "gravity": 0.00,
@@ -56,9 +55,14 @@
         ],
         "semirandomdiffdamage": true,
         "uncertaintyBase": 40.0,
-        "uncertaintyMultiplier": 4,
+        "uncertaintyMultiplier": 0,
         "reflectOnHurt": false,
         "shoot_target": false
+      },
+      "minecraft:type_family": {
+        "family": [
+          "remove_on_hit"
+        ]
       },
       "minecraft:pushable": {
         "is_pushable": false,

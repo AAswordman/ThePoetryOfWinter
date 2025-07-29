@@ -140,7 +140,6 @@
         "name": "boss.dec:abyssal_controller.name",
         "hud_range": 64
       },
-      "minecraft:tick_world": {},
       "minecraft:follow_range": {
         "value": 256,
         "max": 256

@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:radiate_sword",
             "menu_category": {
-                "group": "itemGroup.name.sword",
+                "group": "minecraft:itemGroup.name.sword",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -13,10 +13,6 @@
             "minecraft:display_name": {
                 "value": "item.dec:radiate_sword.name"
             },
-            "minecraft:icon": {
-                "texture": "radiate_sword"
-            },
-            "minecraft:use_animation": "bow",
             "minecraft:weapon": {
                 "on_hurt_entity": {
                     "event": "attack",
@@ -62,7 +58,7 @@
                 }
             },
             "minecraft:mining_speed": 1.5,
-            "minecraft:damage": 9.5,
+            "minecraft:damage": 10,
             "minecraft:enchantable": {
                 "value": 15,
                 "slot": "sword"
@@ -89,6 +85,11 @@
                 "tags": [
                     "comp:equipment_type:melee_weapon_:sword:_"
                 ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "radiate_sword"
+                }
             }
         },
         "events": {

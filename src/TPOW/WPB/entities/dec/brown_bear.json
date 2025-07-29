@@ -57,15 +57,12 @@
           }
         }
       },
-      
       "minecraft:brown_bear_saddled": {
-        "minecraft:is_saddled": {
-        },
+        "minecraft:is_saddled": {},
         "minecraft:loot": {
           "table": "loot_tables/entities/brown_bear_saddled.json"
         },
-        "minecraft:input_ground_controlled": {
-        },
+        "minecraft:input_ground_controlled": {},
         "minecraft:behavior.controlled_by_player": {
           "priority": 0
         }
@@ -75,7 +72,12 @@
           "interactions": [
             {
               "on_interact": {
-                "filters": { "test": "has_equipment", "subject": "other", "domain": "hand", "value": "saddle"},
+                "filters": {
+                  "test": "has_equipment",
+                  "subject": "other",
+                  "domain": "hand",
+                  "value": "saddle"
+                },
                 "event": "minecraft:on_saddled"
               },
               "use_item": true,

@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "epic:sunlight_sword",
             "menu_category": {
-                "group": "itemGroup.name.sword",
+                "group": "minecraft:itemGroup.name.sword",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -14,7 +14,9 @@
                 "value": "item.epic:sunlight_sword.name"
             },
             "minecraft:icon": {
-                "texture": "epic:sunlight_sword"
+                "textures": {
+                    "default": "epic:sunlight_sword"
+                }
             },
             "minecraft:damage": 8,
             "minecraft:durability": {

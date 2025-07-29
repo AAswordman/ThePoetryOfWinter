@@ -9,7 +9,7 @@
         {
           "type": "item",
           "weight": 5,
-          "name": "minecraft:dandelion"
+          "name": "minecraft:yellow_flower"
         },
         {
           "type": "item",
@@ -171,6 +171,20 @@
             }
           ],
           "name": "minecraft:sapling"
+        },
+        {
+          "type": "item",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 2
+              }
+            }
+          ],
+          "name": "dec:corn_seeds"
         }
       ]
     }

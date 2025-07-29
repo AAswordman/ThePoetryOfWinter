@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:wood_chestplate",
             "menu_category": {
-                "group": "itemGroup.name.chestplate",
+                "group": "minecraft:itemGroup.name.chestplate",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -12,9 +12,6 @@
         "components": {
             "minecraft:display_name": {
                 "value": "item.dec:wood_chestplate.name"
-            },
-            "minecraft:icon": {
-                "texture": "wood_chestplate"
             },
             "minecraft:fuel": {
                 "duration": 10
@@ -63,6 +60,11 @@
                     "comp:armor_magic_protection:3",
                     "comp:armor_type:suit_:wood:_"
                 ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "wood_chestplate"
+                }
             }
         }
     }

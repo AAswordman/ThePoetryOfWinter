@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:frozen_power",
             "menu_category": {
-                "group": "itemGroup.name.navigation",
+                "group": "dec:itemGroup.name.summon_items",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -13,12 +13,14 @@
             "minecraft:display_name": {
                 "value": "item.dec:frozen_power.name"
             },
-            "minecraft:icon": {
-                "texture": "frozen_power"
-            },
             "minecraft:stacked_by_data": true,
             "minecraft:foil": true,
-            "minecraft:hand_equipped": true
+            "minecraft:hand_equipped": true,
+            "minecraft:icon": {
+                "textures": {
+                    "default": "frozen_power"
+                }
+            }
         }
     }
 }

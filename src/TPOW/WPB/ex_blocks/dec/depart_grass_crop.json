@@ -1,0 +1,50 @@
+{
+    "format_version": "1.21.60",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dec:depart_grass_crop"
+        },
+        "components": {
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "depart_grass_crop",
+                    "render_method": "alpha_test"
+                }
+            },
+            "minecraft:geometry": "geometry.crop.sparse.on_dirt",
+            "minecraft:collision_box": false,
+            "minecraft:selection_box": {
+                "origin": [
+                    -5,
+                    0,
+                    -5
+                ],
+                "size": [
+                    10,
+                    14,
+                    10
+                ]
+            },
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 0.001
+            },
+            "minecraft:map_color": "#1F663C",
+            "minecraft:light_dampening": 0.0,
+            "minecraft:loot": "loot_tables/blocks/depart_grass_crop.json",
+            "minecraft:placement_filter": {
+                "conditions": [
+                    {
+                        "allowed_faces": [
+                            "up"
+                        ],
+                        "block_filter": [
+                            "minecraft:grass",
+                            "dirt",
+                            "podzol"
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

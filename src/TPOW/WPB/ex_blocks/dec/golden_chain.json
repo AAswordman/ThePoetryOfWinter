@@ -1,5 +1,5 @@
 {
-    "format_version": "1.20.80",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "dec:golden_chain",
@@ -14,7 +14,7 @@
                 ]
             },
             "menu_category": {
-                "group": "itemGroup.name.outside",
+                "group": "minecraft:itemGroup.name.outside",
                 "category": "items"
             }
         },
@@ -137,7 +137,8 @@
         "components": {
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "golden_chain"
+                    "texture": "golden_chain",
+                    "render_method": "alpha_test"
                 }
             },
             "minecraft:selection_box": {

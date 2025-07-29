@@ -7,10 +7,7 @@
       "is_summonable": true,
       "is_experimental": false
     },
-
-    "component_groups": {
-
-    },
+    "component_groups": {},
     "components": {
       "minecraft:loot": {
         "table": "loot_tables/entities/simple_car.json"
@@ -18,8 +15,7 @@
       "minecraft:behavior.controlled_by_player": {
         "priority": 0
       },
-      "minecraft:input_ground_controlled": {
-      },
+      "minecraft:input_ground_controlled": {},
       "minecraft:boostable": {
         "speed_multiplier": 1.2,
         "duration": 10.0,
@@ -36,7 +32,11 @@
         "interact_text": "action.interact.ride.minecart",
         "pull_in_entities": false,
         "seats": {
-          "position": [ 0.0, 0.1, -0.2 ]
+          "position": [
+            0.0,
+            0.1,
+            -0.2
+          ]
         }
       },
       "minecraft:healable": {
@@ -59,10 +59,12 @@
         "value": 40,
         "max": 40
       },
-      "minecraft:is_stackable": {
-      },
+      "minecraft:is_stackable": {},
       "minecraft:type_family": {
-        "family": [ "simple_car", "inanimate" ]
+        "family": [
+          "simple_car",
+          "inanimate"
+        ]
       },
       "minecraft:movement": {
         "value": 0.20
@@ -71,15 +73,12 @@
         "width": 0.98,
         "height": 0.7
       },
-      "minecraft:physics": {
-      },
+      "minecraft:physics": {},
       "minecraft:pushable": {
         "is_pushable": true,
         "is_pushable_by_piston": true
       }
     },
-    "events": {
-
-    }
+    "events": {}
   }
 }

@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:frozen_ball",
             "menu_category": {
-                "group": "itemGroup.name.sword",
+                "group": "dec:itemGroup.name.thrown_sundries",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -13,10 +13,6 @@
             "minecraft:display_name": {
                 "value": "item.dec:frozen_ball.name"
             },
-            "minecraft:icon": {
-                "texture": "frozen_ball"
-            },
-            "minecraft:use_animation": "crossbow",
             "minecraft:throwable": {
                 "do_swing_animation": true
             },
@@ -27,6 +23,11 @@
                 "tags": [
                     "comp:equipment_type:thrown_weapon_:sundries:_"
                 ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "frozen_ball"
+                }
             }
         }
     }

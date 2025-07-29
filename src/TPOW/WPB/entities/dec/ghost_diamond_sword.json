@@ -1,18 +1,13 @@
 {
   "format_version": "1.13.0",
   "minecraft:entity": {
-
     "description": {
       "identifier": "dec:ghost_diamond_sword",
       "is_spawnable": true,
       "is_summonable": true,
       "is_experimental": false
     },
-
-    "component_groups": {
-
-    },
-
+    "component_groups": {},
     "components": {
       "minecraft:despawn": {
         "despawn_from_distance": {}
@@ -21,10 +16,14 @@
         "on_death": "query.last_hit_by_player ? 5 : 0"
       },
       "minecraft:type_family": {
-        "family": [ "ghost_diamond_sword","ghost", "mob", "monster" ]
+        "family": [
+          "ghost_diamond_sword",
+          "ghost",
+          "mob",
+          "monster"
+        ]
       },
-      "minecraft:nameable": {
-      },
+      "minecraft:nameable": {},
       "minecraft:health": {
         "value": 40,
         "max": 40
@@ -88,14 +87,26 @@
       },
       "minecraft:behavior.swoop_attack": {
         "priority": 2,
-        "delay_range": [ 0.5, 0.5 ]
+        "delay_range": [
+          0.5,
+          0.5
+        ]
       },
       "minecraft:behavior.circle_around_anchor": {
         "priority": 3,
-        "radius_range": [ 15.0, 15.0 ],
+        "radius_range": [
+          15.0,
+          15.0
+        ],
         "radius_change_chance": 20,
-        "height_above_target_range": [ 0, 1 ],
-        "height_offset_range": [ -4.0, 5.0 ],
+        "height_above_target_range": [
+          0,
+          1
+        ],
+        "height_offset_range": [
+          -4.0,
+          5.0
+        ],
         "height_change_chance": 1,
         "goal_radius": 1.0
       }

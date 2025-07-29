@@ -11,7 +11,7 @@
           "support"
         ]
       },
-			"animations": {
+      "animations": {
         "support": "animation.shadow_soul_2"
       }
     },
@@ -69,7 +69,11 @@
           "priority": 5,
           "entity_types": [
             {
-              "filters": { "test" :  "is_family", "subject" : "other", "value" :  "player"},
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "player"
+              },
               "max_dist": 16,
               "walk_speed_multiplier": 1,
               "sprint_speed_multiplier": 1.2
@@ -152,7 +156,6 @@
       "minecraft:experience_reward": {
         "on_death": "query.last_hit_by_player ? 100 : 0"
       },
-      "minecraft:tick_world": {},
       "minecraft:boss": {
         "should_darken_sky": false,
         "hud_range": 64,

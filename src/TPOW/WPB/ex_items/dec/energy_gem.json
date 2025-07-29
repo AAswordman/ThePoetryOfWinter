@@ -1,5 +1,5 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:energy_gem",
@@ -14,7 +14,9 @@
                 "value": "item.dec:energy_gem.name"
             },
             "minecraft:icon": {
-                "texture": "energy_gem"
+                "textures": {
+                    "default": "energy_gem"
+                }
             },
             "minecraft:hand_equipped": false,
             "minecraft:stacked_by_data": false,

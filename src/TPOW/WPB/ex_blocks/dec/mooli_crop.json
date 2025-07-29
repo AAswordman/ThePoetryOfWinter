@@ -1,5 +1,5 @@
 {
-    "format_version": "1.20.80",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "dec:mooli_crop",
@@ -10,10 +10,6 @@
                     2,
                     3
                 ]
-            },
-            "menu_category": {
-                "group": "itemGroup.name.outside",
-                "category": "construction"
             }
         },
         "components": {
@@ -57,7 +53,8 @@
             "minecraft:breathability": "air",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "mooli_crop_0"
+                    "texture": "mooli_crop_0",
+                    "render_method": "alpha_test"
                 }
             }
         },

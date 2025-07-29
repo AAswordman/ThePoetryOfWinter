@@ -1,5 +1,5 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:super_armor_core0",
@@ -14,7 +14,9 @@
                 "value": "item.dec:super_armor_core0.name"
             },
             "minecraft:icon": {
-                "texture": "super_armor_core0"
+                "textures": {
+                    "default": "super_armor_core0"
+                }
             },
             "minecraft:hand_equipped": false,
             "minecraft:stacked_by_data": false,

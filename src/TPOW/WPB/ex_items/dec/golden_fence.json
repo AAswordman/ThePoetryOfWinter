@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:golden_fence",
             "menu_category": {
-                "group": "itemGroup.name.decorations",
+                "group": "minecraft:itemGroup.name.decorations",
                 "is_hidden_in_commands": false,
                 "category": "items"
             }
@@ -13,10 +13,12 @@
             "minecraft:display_name": {
                 "value": "item.dec:golden_fence.name"
             },
+            "minecraft:use_animation": "eat",
             "minecraft:icon": {
-                "texture": "golden_fence"
-            },
-            "minecraft:use_animation": "eat"
+                "textures": {
+                    "default": "golden_fence"
+                }
+            }
         }
     }
 }

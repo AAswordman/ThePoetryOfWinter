@@ -7,7 +7,6 @@
       "is_summonable": true,
       "is_experimental": false
     },
-
     "component_groups": {
       "minecraft:ranged_mode": {
         "minecraft:timer": {
@@ -32,33 +31,31 @@
           "attack_radius": 64.0
         }
       },
-
       "minecraft:attack_mode": {
-          "minecraft:behavior.melee_attack": {
-            "priority": 4,
-            "target_dist": 1.2,
-            "speed_multiplier": 1,
-            "track_target": true
-          },
-          "minecraft:attack": {
-            "damage": 9
-          },
-          "minecraft:timer": {
-            "looping": false,
-            "time": 15,
-            "time_down_event": {
-              "event": "minecraft:change_attack"
+        "minecraft:behavior.melee_attack": {
+          "priority": 4,
+          "target_dist": 1.2,
+          "speed_multiplier": 1,
+          "track_target": true
+        },
+        "minecraft:attack": {
+          "damage": 9
+        },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 15,
+          "time_down_event": {
+            "event": "minecraft:change_attack"
           }
         }
       }
     },
-    
     "components": {
       "minecraft:damage_sensor": {
         "triggers": [
           {
-          "cause": "fall",
-          "deals_damage": false
+            "cause": "fall",
+            "deals_damage": false
           },
           {
             "on_damage": {
@@ -80,19 +77,22 @@
         "on_death": "query.last_hit_by_player ? 10 : 0"
       },
       "minecraft:type_family": {
-        "family": [ "elf_of_chaos", "monster", "undead", "ash" ]
+        "family": [
+          "elf_of_chaos",
+          "monster",
+          "undead",
+          "ash"
+        ]
       },
       "minecraft:despawn": {
         "despawn_from_distance": {}
       },
-      "minecraft:nameable": {
-      },
+      "minecraft:nameable": {},
       "minecraft:health": {
         "value": 100,
         "max": 100
       },
-      "minecraft:physics": {
-      },
+      "minecraft:physics": {},
       "minecraft:breathable": {
         "totalSupply": 15,
         "suffocateTime": 0,
@@ -113,10 +113,8 @@
       "minecraft:navigation.walk": {
         "can_path_over_water": true
       },
-      "minecraft:movement.basic": {
-      },
-      "minecraft:jump.static": {
-      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
       "minecraft:pushable": {
         "is_pushable": true,
         "is_pushable_by_piston": true
@@ -144,10 +142,26 @@
           {
             "filters": {
               "any_of": [
-                { "test": "is_family", "subject": "other", "value": "player" },
-                { "test": "is_family", "subject": "other", "value": "irongolem" },
-                { "test": "is_family", "subject": "other", "value": "wandering_trader" },
-                { "test": "is_family", "subject": "other", "value": "villager" }
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "wandering_trader"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "villager"
+                }
               ]
             },
             "max_dist": 16
@@ -167,51 +181,76 @@
         "priority": 8
       }
     },
-    
     "events": {
       "minecraft:entity_spawned": {
         "sequence": [
-        {
-              "randomize": [
-                {
-                  "weight": 1,
-                  "sequence": [
-                    {
-                      "randomize": [
-                        {
-                          "weight": 2,
-                          "add": { "component_groups": [ "minecraft:ranged_mode" ] }
-                        },
-                        {
-                          "weight": 1,
-                          "add": { "component_groups": [ "minecraft:attack_mode" ] }
-                        }
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        "minecraft:change_attack": {
-          "sequence": [
           {
-             "randomize": [
+            "randomize": [
               {
                 "weight": 1,
                 "sequence": [
-                   {
+                  {
+                    "randomize": [
+                      {
+                        "weight": 2,
+                        "add": {
+                          "component_groups": [
+                            "minecraft:ranged_mode"
+                          ]
+                        }
+                      },
+                      {
+                        "weight": 1,
+                        "add": {
+                          "component_groups": [
+                            "minecraft:attack_mode"
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "minecraft:change_attack": {
+        "sequence": [
+          {
+            "randomize": [
+              {
+                "weight": 1,
+                "sequence": [
+                  {
                     "randomize": [
                       {
                         "weight": 5,
-                        "remove": { "component_groups": [ "minecraft:ranged_mode", "minecraft:attack_mode"] },
-                        "add": { "component_groups": [ "minecraft:ranged_mode" ] }
+                        "remove": {
+                          "component_groups": [
+                            "minecraft:ranged_mode",
+                            "minecraft:attack_mode"
+                          ]
+                        },
+                        "add": {
+                          "component_groups": [
+                            "minecraft:ranged_mode"
+                          ]
+                        }
                       },
                       {
                         "weight": 3,
-                        "remove": { "component_groups": [ "minecraft:ranged_mode", "minecraft:attack_mode"] },
-                        "add": { "component_groups": [ "minecraft:attack_mode" ] }
+                        "remove": {
+                          "component_groups": [
+                            "minecraft:ranged_mode",
+                            "minecraft:attack_mode"
+                          ]
+                        },
+                        "add": {
+                          "component_groups": [
+                            "minecraft:attack_mode"
+                          ]
+                        }
                       }
                     ]
                   }

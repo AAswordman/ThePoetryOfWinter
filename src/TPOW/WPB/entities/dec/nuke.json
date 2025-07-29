@@ -7,43 +7,42 @@
       "is_summonable": true,
       "runtime_identifier": "minecraft:tnt",
       "is_experimental": false,
-      "scripts":{
-        "animate":["ticking"]
+      "scripts": {
+        "animate": [
+          "ticking"
+        ]
       },
-        "animations":{
-          "ticking":"controller.animation.nuke"
+      "animations": {
+        "ticking": "controller.animation.nuke"
       }
     },
-
-    "component_groups": {
-    },
-	
+    "component_groups": {},
     "components": {
       "minecraft:type_family": {
-        "family": [ "nuke", "tnt", "inanimate" ]
+        "family": [
+          "nuke",
+          "tnt",
+          "inanimate"
+        ]
       },
       "minecraft:collision_box": {
         "width": 0.98,
         "height": 0.98
       },
-
       "minecraft:explode": {
         "fuse_length": 15,
         "fuse_lit": true,
-        "power": 134,
+        "power": 1,
         "causes_fire": true,
         "destroy_affected_by_griefing": true,
         "fire_affected_by_griefing": true
       },
-	    "minecraft:physics": {
-      },
+      "minecraft:physics": {},
       "minecraft:pushable": {
         "is_pushable": false,
         "is_pushable_by_piston": true
       }
     },
-    
-    "events": {
-    }
+    "events": {}
   }
 }

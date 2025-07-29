@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:corn",
             "menu_category": {
-                "group": "itemGroup.name.crop",
+                "group": "minecraft:itemGroup.name.crop",
                 "is_hidden_in_commands": false,
                 "category": "nature"
             }
@@ -12,9 +12,6 @@
         "components": {
             "minecraft:display_name": {
                 "value": "item.dec:corn.name"
-            },
-            "minecraft:icon": {
-                "texture": "corn"
             },
             "minecraft:use_animation": "eat",
             "minecraft:food": {
@@ -27,7 +24,16 @@
                 "using_converts_to": "dec:cob"
             },
             "minecraft:use_modifiers": {
-                "use_duration": 3.2
+                "use_duration": 3.2,
+                "movement_modifier": 0.4
+            },
+            "minecraft:compostable": {
+                "composting_chance": 65
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "corn"
+                }
             }
         }
     }

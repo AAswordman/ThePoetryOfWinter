@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:everlasting_winter_stick",
             "menu_category": {
-                "group": "itemGroup.name.decorations",
+                "group": "dec:itemGroup.name.sticks_and_rods",
                 "is_hidden_in_commands": false,
                 "category": "items"
             }
@@ -13,11 +13,13 @@
             "minecraft:display_name": {
                 "value": "item.dec:everlasting_winter_stick.name"
             },
-            "minecraft:icon": {
-                "texture": "everlasting_winter_stick"
-            },
             "minecraft:use_animation": "eat",
-            "minecraft:hand_equipped": true
+            "minecraft:hand_equipped": true,
+            "minecraft:icon": {
+                "textures": {
+                    "default": "everlasting_winter_stick"
+                }
+            }
         }
     }
 }

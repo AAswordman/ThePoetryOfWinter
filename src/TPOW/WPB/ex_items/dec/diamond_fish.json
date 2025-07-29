@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:diamond_fish",
             "menu_category": {
-                "group": "itemGroup.name.rawFood",
+                "group": "minecraft:itemGroup.name.rawFood",
                 "is_hidden_in_commands": false,
                 "category": "nature"
             }
@@ -13,16 +13,19 @@
             "minecraft:display_name": {
                 "value": "item.dec:diamond_fish.name"
             },
-            "minecraft:icon": {
-                "texture": "diamond_fish"
-            },
             "minecraft:use_animation": "eat",
             "minecraft:food": {
                 "nutrition": 8,
                 "saturation_modifier": 0.6
             },
             "minecraft:use_modifiers": {
-                "use_duration": 8
+                "use_duration": 8,
+                "movement_modifier": 0.4
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "diamond_fish"
+                }
             }
         }
     }

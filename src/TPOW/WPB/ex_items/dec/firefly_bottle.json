@@ -1,0 +1,29 @@
+{
+    "format_version": "1.21.94",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dec:firefly_bottle",
+            "menu_category": {
+                "group": "minecraft:itemGroup.name.out",
+                "is_hidden_in_commands": false,
+                "category": "equipment"
+            }
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.dec:firefly_bottle.name"
+            },
+            "minecraft:throwable": {
+                "do_swing_animation": true
+            },
+            "minecraft:projectile": {
+                "projectile_entity": "dec:firefly_bottle"
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "firefly_bottle"
+                }
+            }
+        }
+    }
+}

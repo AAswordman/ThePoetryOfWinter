@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:bizarre_chilli",
             "menu_category": {
-                "group": "itemGroup.name.crop",
+                "group": "minecraft:itemGroup.name.crop",
                 "is_hidden_in_commands": false,
                 "category": "nature"
             }
@@ -12,9 +12,6 @@
         "components": {
             "minecraft:display_name": {
                 "value": "item.dec:bizarre_chilli.name"
-            },
-            "minecraft:icon": {
-                "texture": "bizarre_chilli"
             },
             "minecraft:use_animation": "eat",
             "minecraft:food": {
@@ -25,8 +22,17 @@
                     "target": "self"
                 }
             },
+            "minecraft:compostable": {
+                "composting_chance": 65
+            },
             "minecraft:use_modifiers": {
-                "use_duration": 1.6
+                "use_duration": 1.6,
+                "movement_modifier": 0.4
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "bizarre_chilli"
+                }
             }
         },
         "events": {
