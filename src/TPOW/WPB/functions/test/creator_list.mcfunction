@@ -37,6 +37,7 @@ tellraw @s { "rawtext" : [ { "translate" : "text.dec:creator_list_36.name" } ] }
 tellraw @s { "rawtext" : [ { "translate" : "text.dec:creator_list_37.name" } ] }
 tellraw @s { "rawtext" : [ { "translate" : "text.dec:creator_list_38.name" } ] }
 tellraw @s { "rawtext" : [ { "translate" : "text.dec:creator_list_39.name" } ] }
+tellraw @s { "rawtext" : [ { "translate" : "text.dec:creator_list_40.name" } ] }
 tellraw @s { "rawtext" : [ { "translate" : "text.dec:omit.name"} ] }
 tellraw @s { "rawtext" : [ { "translate" : "text.dec:qq_group.name" } ] }
 tellraw @s { "rawtext" : [ { "translate" : "text.dec:thanks.name" } ] }

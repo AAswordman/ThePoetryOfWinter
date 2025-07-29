@@ -2,13 +2,13 @@
   "format_version": "1.8.0",
   "minecraft:attachable": {
     "description": {
-      "identifier": "dec:formal_sytle_clothes",
+      "identifier": "dec:formal_style_clothes",
       "materials": {
         "default": "armor",
         "enchanted": "armor_enchanted"
       },
       "textures": {
-        "default": "textures/models/armor/formal_sytle_clothes",
+        "default": "textures/models/armor/formal_style_clothes",
         "enchanted": "textures/misc/enchanted_item_glint"
       },
       "geometry": {

@@ -5104,3 +5104,17 @@ text.dec:task_998_complete.name=任务完成！
 text.dec:task_999_title.name=
 text.dec:task_999_body.name=
 text.dec:task_999_complete.name=任务完成！
+
+====================================================================DecDeleted====================================================================
+
+item.dec:super_armor_core0.name=霸体核心未充能
+item.dec:super_armor_core1.name=霸体核心I
+item.dec:super_armor_core2.name=霸体核心II
+item.dec:super_armor_core3.name=霸体核心III
+item.dec:super_armor_core4.name=霸体核心IV
+item.dec:super_armor_core5.name=霸体核心V
+item.dec:super_armor_core6.name=霸体核心VI
+item.dec:super_armor_core7.name=霸体核心VII
+item.dec:super_armor_core8.name=霸体核心VIII
+
+dec:itemGroup.name.super_armor_core=霸体核心

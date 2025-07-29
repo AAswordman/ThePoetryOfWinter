@@ -4456,7 +4456,22 @@ text.dec:task_998_complete.name=Task Complete!
 text.dec:task_999_title.name=
 text.dec:task_999_body.name=
 text.dec:task_999_complete.name=Task Complete!
-entity.dec:soon_of_chaos.name=Son of chaos
+
+====================================================================DecDeleted====================================================================
+
+item.dec:super_armor_core0.name=Super Armor Core Uncharged
+item.dec:super_armor_core1.name=Super Armor Core I
+item.dec:super_armor_core2.name=Super Armor Core II
+item.dec:super_armor_core3.name=Super Armor Core III
+item.dec:super_armor_core4.name=Super Armor Core IV
+item.dec:super_armor_core5.name=Super Armor Core V
+item.dec:super_armor_core6.name=Super Armor Core VI
+item.dec:super_armor_core7.name=Super Armor Core VII
+item.dec:super_armor_core8.name=Super Armor Core VIII
+
+dec:itemGroup.name.super_armor_core=Super Armor Core
+
+====================================================================wb====================================================================
 
 howtoplay.wb0.title=Boss Flow Path
 howtoplay.wb0=Boss Flow Path

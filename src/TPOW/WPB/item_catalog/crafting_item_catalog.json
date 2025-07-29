@@ -193,6 +193,13 @@
                      "name": "dec:itemGroup.name.magic_gems"
                   },
                   "items": []
+               },
+               {
+                  "group_identifier": {
+                     "icon": "dec:super_armor_core8",
+                     "name": "dec:itemGroup.name.super_armor_core"
+                  },
+                  "items": []
                }
             ]
          },

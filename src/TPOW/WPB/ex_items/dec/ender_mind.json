@@ -4,7 +4,7 @@
         "description": {
             "identifier": "dec:ender_mind",
             "menu_category": {
-                "group": "itemGroup.name.miscFood",
+                "group": "minecraft:itemGroup.name.miscFood",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }

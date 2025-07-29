@@ -2,13 +2,13 @@
   "format_version": "1.8.0",
   "minecraft:attachable": {
     "description": {
-      "identifier": "dec:formal_sytle_pants",
+      "identifier": "dec:formal_style_pants",
       "materials": {
         "default": "armor",
         "enchanted": "armor_enchanted"
       },
       "textures": {
-        "default": "textures/models/armor/formal_sytle_pants",
+        "default": "textures/models/armor/formal_style_pants",
         "enchanted": "textures/misc/enchanted_item_glint"
       },
       "geometry": {

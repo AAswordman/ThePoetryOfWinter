@@ -1215,11 +1215,11 @@
         "es_shoes": {
             "textures": "textures/items/es_shoes"
         },
-        "formal_sytle_clothes": {
-            "textures": "textures/items/formal_sytle_clothes"
+        "formal_style_clothes": {
+            "textures": "textures/items/formal_style_clothes"
         },
-        "formal_sytle_pants": {
-            "textures": "textures/items/formal_sytle_pants"
+        "formal_style_pants": {
+            "textures": "textures/items/formal_style_pants"
         },
         "frank_mask": {
             "textures": "textures/items/frank_mask"

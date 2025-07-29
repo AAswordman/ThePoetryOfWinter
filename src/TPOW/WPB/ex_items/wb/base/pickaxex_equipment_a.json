@@ -949,10 +949,6 @@
                         "speed": 5
                     },
                     {
-                        "block": "dec:flowing_block_1",
-                        "speed": 5
-                    },
-                    {
                         "block": "dec:ice_bookshelf",
                         "speed": 5
                     },

@@ -4,7 +4,7 @@
         "description": {
             "identifier": "wb:staff_light",
             "menu_category": {
-                "group": "minecraft:itemGroup.name.sword",
+                "group": "minecraft:itemGroup.name.staffs",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
