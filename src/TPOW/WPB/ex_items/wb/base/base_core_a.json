@@ -4,9 +4,9 @@
         "description": {
             "identifier": "wb:base_core_a",
             "menu_category": {
-                "group": "minecraft:itemGroup.name.outside",
+                "group": "dec:itemGroup.name.magic_cores",
                 "is_hidden_in_commands": false,
-                "category": "nature"
+                "category": "items"
             }
         },
         "components": {

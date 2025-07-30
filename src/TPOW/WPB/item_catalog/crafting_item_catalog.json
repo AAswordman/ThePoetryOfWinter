@@ -200,6 +200,13 @@
                      "name": "dec:itemGroup.name.super_armor_core"
                   },
                   "items": []
+               },
+               {
+                  "group_identifier": {
+                     "icon": "wb:particle_flame",
+                     "name": "dec:itemGroup.name.particles"
+                  },
+                  "items": []
                }
             ]
          },
@@ -238,6 +245,20 @@
                   "group_identifier": {
                      "icon": "dec:crate",
                      "name": "dec:itemGroup.name.crates"
+                  },
+                  "items": []
+               },
+               {
+                  "group_identifier": {
+                     "icon": "wb:currency_1",
+                     "name": "dec:itemGroup.name.gems"
+                  },
+                  "items": []
+               },
+               {
+                  "group_identifier": {
+                     "icon": "wb:base_core_g",
+                     "name": "dec:itemGroup.name.magic_cores"
                   },
                   "items": []
                }

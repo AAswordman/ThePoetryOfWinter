@@ -4,9 +4,9 @@
         "description": {
             "identifier": "wb:currency_1",
             "menu_category": {
-                "group": "minecraft:itemGroup.name.outside",
+                "group": "dec:itemGroup.name.gems",
                 "is_hidden_in_commands": false,
-                "category": "nature"
+                "category": "items"
             }
         },
         "components": {

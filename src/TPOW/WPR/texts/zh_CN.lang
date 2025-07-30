@@ -5118,3 +5118,7 @@ item.dec:super_armor_core7.name=霸体核心VII
 item.dec:super_armor_core8.name=霸体核心VIII
 
 dec:itemGroup.name.super_armor_core=霸体核心
+dec:itemGroup.name.particles=粒子
+
+dec:itemGroup.name.gems=宝石
+dec:itemGroup.name.magic_cores=魔法核心

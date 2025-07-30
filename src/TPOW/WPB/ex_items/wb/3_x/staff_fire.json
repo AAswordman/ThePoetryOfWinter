@@ -4,7 +4,7 @@
         "description": {
             "identifier": "wb:staff_fire",
             "menu_category": {
-                "group": "minecraft:itemGroup.name.staffs",
+                "group": "dec:itemGroup.name.staffs",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }

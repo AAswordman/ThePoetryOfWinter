@@ -4,9 +4,9 @@
         "description": {
             "identifier": "wb:particle_flame",
             "menu_category": {
-                "group": "minecraft:itemGroup.name.outside",
+                "group": "dec:itemGroup.name.particles",
                 "is_hidden_in_commands": false,
-                "category": "nature"
+                "category": "equipment"
             }
         },
         "components": {

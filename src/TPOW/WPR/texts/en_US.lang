@@ -4470,6 +4470,10 @@ item.dec:super_armor_core7.name=Super Armor Core VII
 item.dec:super_armor_core8.name=Super Armor Core VIII
 
 dec:itemGroup.name.super_armor_core=Super Armor Core
+dec:itemGroup.name.particles=Particles
+
+dec:itemGroup.name.gems=Gems
+dec:itemGroup.name.magic_cores=Magic Cores
 
 ====================================================================wb====================================================================
 
