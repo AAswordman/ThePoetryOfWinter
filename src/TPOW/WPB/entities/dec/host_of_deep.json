@@ -282,15 +282,18 @@
                 "test": "is_family",
                 "subject": "other",
                 "value": "deep"
-                }
-              },
-            "deals_damage": false
+              }
             },
+            "deals_damage": false
+          },
           {
             "on_damage": {
               "filters": {
                 "all_of": [
-                  {"test": "has_damage", "value": "fatal"}
+                  {
+                    "test": "has_damage",
+                    "value": "fatal"
+                  }
                 ]
               },
               "event": "minecraft:next"
@@ -299,7 +302,6 @@
           }
         ]
       },
-      "minecraft:tick_world": {},
       "minecraft:boss": {
         "should_darken_sky": false,
         "name": "boss.dec:host_of_deep.name",
@@ -487,7 +489,7 @@
           ]
         }
       },
-      "minecraft:next":{
+      "minecraft:next": {
         "add": {
           "component_groups": [
             "minecraft:next"

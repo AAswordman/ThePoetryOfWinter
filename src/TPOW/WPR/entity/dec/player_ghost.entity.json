@@ -10,7 +10,7 @@
         "default": "textures/entity/player_ghost"
       },
       "geometry": {
-        "default": "geometry.zombie.husk"
+        "default": "geometry.zombie.v1.8"
       },
       "scripts": {
         "pre_animation": [

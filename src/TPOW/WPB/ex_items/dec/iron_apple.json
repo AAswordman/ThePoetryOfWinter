@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:iron_apple",
             "menu_category": {
-                "group": "itemGroup.name.crop",
+                "group": "minecraft:itemGroup.name.crop",
                 "is_hidden_in_commands": false,
                 "category": "nature"
             }
@@ -12,9 +12,6 @@
         "components": {
             "minecraft:display_name": {
                 "value": "item.dec:iron_apple.name"
-            },
-            "minecraft:icon": {
-                "texture": "iron_apple"
             },
             "minecraft:use_animation": "eat",
             "minecraft:food": {
@@ -27,19 +24,33 @@
                 }
             },
             "minecraft:use_modifiers": {
-                "use_duration": 1.6
+                "use_duration": 1.6,
+                "movement_modifier": 0.4
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "iron_apple"
+                }
             }
         },
         "events": {
             "consumed": {
                 "sequence": [
                     {
-                        "run_command": {
-                            "command": [
-                                "effect @s absorption 100 1 true",
-                                "effect @s resistance 10 0 true"
-                            ]
-                    }
+                        "add_mob_effect": {
+                            "effect": "absorption",
+                            "duration": 120,
+                            "amplifier": 0,
+                            "target": "holder"
+                        }
+                    },
+                    {
+                        "add_mob_effect": {
+                            "effect": "resistance",
+                            "duration": 120,
+                            "amplifier": 0,
+                            "target": "holder"
+                        }
                     }
                 ]
             }

@@ -1,25 +1,21 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:natural_spear",
             "menu_category": {
-                "group": "itemGroup.name.sword",
+                "group": "dec:itemGroup.name.staffs",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
         },
         "components": {
-            "minecraft:fuel": {
-                "duration": 15
-            },
             "minecraft:display_name": {
                 "value": "item.dec:natural_spear.name"
             },
-            "minecraft:icon": {
-                "texture": "natural_spear"
+            "minecraft:fuel": {
+                "duration": 15
             },
-            "minecraft:use_animation": "bow",
             "minecraft:stacked_by_data": false,
             "minecraft:max_stack_size": 1,
             "minecraft:hand_equipped": true,
@@ -84,6 +80,11 @@
                 "tags": [
                     "comp:equipment_type:summon_weapon_:summon_weapon:_"
                 ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "natural_spear"
+                }
             }
         },
         "events": {
@@ -101,7 +102,7 @@
                             {
                                 "run_command": {
                                     "command": [
-                                        "playsound item.book.put @a ~~~",
+                                        "playsound break.amethyst_block @a ~~~",
                                         "particle dec:summon_staff_spawn ^^1.6^1.3",
                                         "scoreboard players remove @s wbfl 9",
                                         "playanimation @s animation.humanoid.staff_use"
@@ -110,9 +111,9 @@
                                 }
                             },
                             {
-                                "shoot":{
-                                    "launch_power":1,
-                                    "projectile":"dec:son_of_nature"
+                                "shoot": {
+                                    "launch_power": 1,
+                                    "projectile": "dec:son_of_nature"
                                 }
                             },
                             {

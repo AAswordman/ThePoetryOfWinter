@@ -1,5 +1,5 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "wb:technology_world_explorer",
@@ -10,7 +10,9 @@
         },
         "components": {
             "minecraft:icon": {
-                "texture": "technology_world_explorer"
+                "textures": {
+                    "default": "technology_world_explorer"
+                }
             },
             "minecraft:display_name": {
                 "value": "item.wb:technology_world_explorer.name"

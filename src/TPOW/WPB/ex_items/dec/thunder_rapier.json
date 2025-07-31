@@ -1,15 +1,18 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:thunder_rapier",
             "menu_category": {
-                "group": "itemGroup.name.sword",
+                "group": "dec:itemGroup.name.rapiers",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
         },
         "components": {
+            "minecraft:display_name": {
+                "value": "item.dec:thunder_rapier.name"
+            },
             "minecraft:weapon": {
                 "on_hurt_entity": {
                     "event": "attack_etity",
@@ -19,12 +22,6 @@
                     "event": "attack",
                     "target": "self"
                 }
-            },
-            "minecraft:display_name": {
-                "value": "item.dec:thunder_rapier.name"
-            },
-            "minecraft:icon": {
-                "texture": "thunder_rapier"
             },
             "minecraft:stacked_by_data": false,
             "minecraft:max_stack_size": 1,
@@ -76,6 +73,11 @@
                 "tags": [
                     "comp:equipment_type:melee_weapon_:sword:_"
                 ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "thunder_rapier"
+                }
             }
         },
         "events": {

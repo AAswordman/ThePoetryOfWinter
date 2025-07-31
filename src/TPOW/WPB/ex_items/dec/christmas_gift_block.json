@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
-            "identifier": "dec:christmas_gift_block",
+            "identifier": "dec:christmas_gift",
             "menu_category": {
-                "group": "itemGroup.name.decorations",
+                "group": "minecraft:itemGroup.name.decorations",
                 "is_hidden_in_commands": false,
                 "category": "items"
             }
@@ -13,11 +13,13 @@
             "minecraft:display_name": {
                 "value": "item.dec:christmas_gift.name"
             },
-            "minecraft:icon": {
-                "texture": "christmas_gift"
-            },
             "minecraft:block_placer": {
                 "block": "dec:christmas_gift_block"
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "christmas_gift"
+                }
             }
         }
     }

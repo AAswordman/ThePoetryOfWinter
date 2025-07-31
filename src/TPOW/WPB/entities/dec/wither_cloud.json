@@ -46,9 +46,14 @@
           0
         ],
         "semirandomdiffdamage": true,
-        "uncertaintyBase": 3.0,
-        "uncertaintyMultiplier": 6,
+        "uncertaintyBase": 1.0,
+        "uncertaintyMultiplier": 0,
         "reflectOnHurt": false
+      },
+      "minecraft:type_family": {
+        "family": [
+          "remove_on_hit_ground"
+        ]
       },
       "minecraft:pushable": {
         "is_pushable": false,

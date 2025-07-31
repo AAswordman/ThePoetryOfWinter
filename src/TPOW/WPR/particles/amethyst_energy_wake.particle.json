@@ -4,7 +4,7 @@
 		"description": {
 			"identifier": "dec:amethyst_energy_wake_particle",
 			"basic_render_parameters": {
-				"material": "particles_alpha",
+				"material": "particles_add",
 				"texture": "textures/particle/amethyst_energy_wake"
 			}
 		},

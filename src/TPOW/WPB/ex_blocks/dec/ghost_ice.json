@@ -1,17 +1,14 @@
 {
-    "format_version": "1.20.80",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
-            "identifier": "dec:ghost_ice",
-            "menu_category": {
-                "group": "itemGroup.name.outside",
-                "category": "construction"
-            }
+            "identifier": "dec:ghost_ice"
         },
         "components": {
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "ghost_ice"
+                    "texture": "ghost_ice",
+                    "render_method": "blend"
                 }
             },
             "minecraft:loot": "loot_tables/empty.json",

@@ -7,8 +7,7 @@
       "is_summonable": true,
       "is_experimental": false
     },
-    "component_groups": {
-    },
+    "component_groups": {},
     "components": {
       "minecraft:behavior.ranged_attack": {
         "attack_interval_min": 2,
@@ -24,14 +23,19 @@
       },
       "minecraft:fire_immune": true,
       "minecraft:type_family": {
-        "family": [ "tnt_creeper", "monster", "creeper", "mob", "nether" ]
+        "family": [
+          "tnt_creeper",
+          "monster",
+          "creeper",
+          "mob",
+          "nether"
+        ]
       },
       "minecraft:breathable": {
         "total_supply": 15,
         "suffocate_time": 0
       },
-      "minecraft:nameable": {
-      },
+      "minecraft:nameable": {},
       "minecraft:loot": {
         "table": "loot_tables/entities/tnt_creeper.json"
       },
@@ -54,12 +58,9 @@
       "minecraft:navigation.walk": {
         "avoid_water": true
       },
-      "minecraft:movement.basic": {
-      },
-      "minecraft:jump.static": {
-      },
-      "minecraft:can_climb": {
-      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
       "minecraft:behavior.float": {
         "priority": 0
       },
@@ -69,12 +70,32 @@
           {
             "filters": {
               "any_of": [
-                { "test" :  "is_family", "subject" : "other", "value" :  "player"},
-                { "test" :  "is_family", "subject" : "other", "value" :  "snowgolem"},
-                { "test" :  "is_family", "subject" : "other", "value" :  "ocelot"},
-                { "test" :  "is_family", "subject" : "other", "value" :  "cat"},
-                { "test" :  "is_family", "subject" : "other", "value" :  "irongolem"}
-              ] 
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "snowgolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "ocelot"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "cat"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                }
+              ]
             },
             "max_dist": 8,
             "walk_speed_multiplier": 0.6,
@@ -90,20 +111,41 @@
         "priority": 2,
         "entity_types": [
           {
-            "filters": {  
-                "any_of": [
-                  { "test" :  "is_family", "subject" : "other", "value" :  "player"},
-                  { "test" :  "is_family", "subject" : "other", "value" :  "snowgolem"},
-                  { "test" :  "is_family", "subject" : "other", "value" :  "irongolem"}
-                ] 
+            "filters": {
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "snowgolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                }
+              ]
             },
             "max_dist": 20
           },
           {
             "filters": {
               "all_of": [
-                { "test": "is_family", "subject": "other", "value": "villager" },
-                { "test": "has_component", "subject": "other", "operator": "!=", "value": "minecraft:is_baby" }
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "villager"
+                },
+                {
+                  "test": "has_component",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "minecraft:is_baby"
+                }
               ]
             },
             "max_dist": 20
@@ -111,7 +153,6 @@
         ],
         "must_see": true
       },
-
       "minecraft:behavior.look_at_player": {
         "priority": 9,
         "look_distance": 3.0,
@@ -120,15 +161,17 @@
       "minecraft:behavior.look_at_entity": {
         "priority": 10,
         "look_distance": 8.0,
-        "filters": { "test" :  "is_family", "subject" : "other", "value" :  "mob" }
+        "filters": {
+          "test": "is_family",
+          "subject": "other",
+          "value": "mob"
+        }
       },
       "minecraft:behavior.hurt_by_target": {
         "priority": 1
       },
-      "minecraft:persistent": {
-      },
-      "minecraft:physics": {
-      },
+      "minecraft:persistent": {},
+      "minecraft:physics": {},
       "minecraft:pushable": {
         "is_pushable": true,
         "is_pushable_by_piston": true
@@ -137,7 +180,6 @@
         "value": 64
       }
     },
-    "events": {
-    }
+    "events": {}
   }
 }

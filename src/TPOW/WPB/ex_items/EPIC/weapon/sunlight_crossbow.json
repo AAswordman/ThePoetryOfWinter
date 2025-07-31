@@ -1,17 +1,19 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "epic:sunlight_crossbow",
             "menu_category": {
-                "group": "itemGroup.name.sword",
+                "group": "minecraft:itemGroup.name.sword",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
         },
         "components": {
             "minecraft:icon": {
-                "texture": "epic:sunlight_crossbow"
+                "textures": {
+                    "default": "epic:sunlight_crossbow"
+                }
             },
             "minecraft:display_name": {
                 "value": "item.epic:sunlight_crossbow.name"

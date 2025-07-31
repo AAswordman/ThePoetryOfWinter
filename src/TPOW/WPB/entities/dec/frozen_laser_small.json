@@ -6,22 +6,22 @@
       "is_spawnable": false,
       "is_summonable": true,
       "is_experimental": false,
-			"scripts": {
-				"animate": [
-					{
-						"attack": "query.variant == 1"
-					}
-				]
-			},
-			"animations": {
-				"attack": "animation.frozen_laser_small_attack"
-			}
+      "scripts": {
+        "animate": [
+          {
+            "attack": "query.variant == 1"
+          }
+        ]
+      },
+      "animations": {
+        "attack": "animation.frozen_laser_small_attack"
+      }
     },
     "component_groups": {
       "minecraft:despawn": {
         "minecraft:instant_despawn": {}
       },
-      "minecraft:start":{
+      "minecraft:start": {
         "minecraft:timer": {
           "looping": false,
           "time": 2,
@@ -30,7 +30,7 @@
           }
         }
       },
-      "minecraft:attack_mode":{
+      "minecraft:attack_mode": {
         "minecraft:timer": {
           "looping": false,
           "time": 0.66,
@@ -38,9 +38,9 @@
             "event": "minecraft:despawn"
           }
         },
-				"minecraft:variant": {
-					"value": 1
-				}
+        "minecraft:variant": {
+          "value": 1
+        }
       }
     },
     "components": {
@@ -90,7 +90,7 @@
           ]
         }
       },
-      "minecraft:entity_spawned":{
+      "minecraft:entity_spawned": {
         "add": {
           "component_groups": [
             "minecraft:start"
@@ -102,7 +102,7 @@
           ]
         }
       },
-      "minecraft:attack_mode":{
+      "minecraft:attack_mode": {
         "add": {
           "component_groups": [
             "minecraft:attack_mode"

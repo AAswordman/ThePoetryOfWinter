@@ -1,20 +1,17 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:blue_gem",
             "menu_category": {
-                "group": "itemGroup.name.decorations",
+                "group": "dec:itemGroup.name.magic_gems",
                 "is_hidden_in_commands": false,
-                "category": "items"
+                "category": "equipment"
             }
         },
         "components": {
             "minecraft:display_name": {
                 "value": "item.dec:blue_gem.name"
-            },
-            "minecraft:icon": {
-                "texture": "blue_gem"
             },
             "minecraft:use_animation": "eat",
             "minecraft:stacked_by_data": false,
@@ -28,6 +25,11 @@
             "minecraft:cooldown": {
                 "category": "blue_gem",
                 "duration": 0.3
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "blue_gem"
+                }
             }
         },
         "events": {

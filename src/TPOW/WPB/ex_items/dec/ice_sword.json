@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:ice_sword",
             "menu_category": {
-                "group": "itemGroup.name.sword",
+                "group": "minecraft:itemGroup.name.sword",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -12,9 +12,6 @@
         "components": {
             "minecraft:display_name": {
                 "value": "item.dec:ice_sword.name"
-            },
-            "minecraft:icon": {
-                "texture": "ice_sword"
             },
             "minecraft:weapon": {
                 "on_hurt_entity": {
@@ -79,6 +76,11 @@
                     "comp:movement_addition:0.01",
                     "comp:equipment_type:melee_weapon_:sword:_"
                 ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "ice_sword"
+                }
             }
         },
         "events": {

@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:artificial_meat_creator_off",
             "menu_category": {
-                "group": "itemGroup.name.decorations",
+                "group": "minecraft:itemGroup.name.decorations",
                 "is_hidden_in_commands": false,
                 "category": "items"
             }
@@ -13,12 +13,14 @@
             "minecraft:display_name": {
                 "value": "item.dec:artificial_meat_creator_off.name"
             },
-            "minecraft:icon": {
-                "texture": "artificial_meat_creator_off"
-            },
             "minecraft:stacked_by_data": true,
             "minecraft:max_stack_size": 1,
-            "minecraft:hand_equipped": true
+            "minecraft:hand_equipped": true,
+            "minecraft:icon": {
+                "textures": {
+                    "default": "artificial_meat_creator_off"
+                }
+            }
         }
     }
 }

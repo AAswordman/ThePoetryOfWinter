@@ -1,16 +1,19 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "wb:armor_equipment_chestplate",
             "menu_category": {
-                "group": "itemGroup.name.chestplate",
+                "group": "minecraft:itemGroup.name.chestplate",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
         },
         "components": {
-            "minecraft:max_stack_size": 1,
+"minecraft:display_name": {
+                "value": "item.wb:armor_equipment_chestplate.name"
+            },
+                        "minecraft:max_stack_size": 1,
             "minecraft:enchantable": {
                 "value": 10,
                 "slot": "armor_torso"
@@ -39,7 +42,9 @@
                 "protection": 3
             },
             "minecraft:icon": {
-                "texture": "armor_equipment_chestplate"
+                "textures": {
+                    "default": "armor_equipment_chestplate"
+                }
             },
             "minecraft:tags": {
                 "tags": [

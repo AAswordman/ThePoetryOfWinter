@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:wood_leggings",
             "menu_category": {
-                "group": "itemGroup.name.leggings",
+                "group": "minecraft:itemGroup.name.leggings",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -15,9 +15,6 @@
             },
             "minecraft:fuel": {
                 "duration": 10
-            },
-            "minecraft:icon": {
-                "texture": "wood_leggings"
             },
             "minecraft:max_stack_size": 1,
             "minecraft:enchantable": {
@@ -63,6 +60,11 @@
                     "comp:armor_magic_protection:3",
                     "comp:armor_type:suit_:wood:_"
                 ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "wood_leggings"
+                }
             }
         }
     }

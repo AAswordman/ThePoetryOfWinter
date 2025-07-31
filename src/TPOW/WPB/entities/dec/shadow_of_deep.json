@@ -258,13 +258,12 @@
         }
       }
     },
-
     "components": {
       "minecraft:damage_sensor": {
         "triggers": [
           {
-          "cause": "fall",
-          "deals_damage": false
+            "cause": "fall",
+            "deals_damage": false
           },
           {
             "on_damage": {
@@ -311,14 +310,10 @@
         "avoid_sun": true,
         "avoid_water": true
       },
-      "minecraft:movement.basic": {
-      },
-      "minecraft:jump.static": {
-      },
-      "minecraft:can_climb": {
-      },
-      "minecraft:nameable": {
-      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
+      "minecraft:nameable": {},
       "minecraft:behavior.hurt_by_target": {
         "priority": 1,
         "entity_types": {
@@ -365,14 +360,12 @@
       "minecraft:behavior.random_look_around": {
         "priority": 8
       },
-      "minecraft:physics": {
-      },
+      "minecraft:physics": {},
       "minecraft:pushable": {
         "is_pushable": true,
         "is_pushable_by_piston": true
       }
     },
-
     "events": {
       "minecraft:entity_spawned": {
         "sequence": [

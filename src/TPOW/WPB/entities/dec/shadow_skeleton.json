@@ -87,7 +87,7 @@
 				]
 			},
 			"minecraft:despawn": {
-			  "despawn_from_distance": {}
+				"despawn_from_distance": {}
 			},
 			"minecraft:loot": {
 				"table": "loot_tables/entities/shadow_skeleton.json"

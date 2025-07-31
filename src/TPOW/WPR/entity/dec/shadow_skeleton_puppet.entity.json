@@ -5,7 +5,7 @@
       "identifier": "dec:shadow_skeleton_puppet",
       "materials": { "default": "slime_outer" },
       "textures": { "default": "textures/entity/skeleton/shadow_skeleton_puppet" },
-      "geometry": { "default": "geometry.skeleton" },
+      "geometry": { "default": "geometry.skeleton.v1.8" },
       "scripts": {
         "pre_animation": [
           "variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;"

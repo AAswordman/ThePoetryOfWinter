@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:piglin_leggings",
             "menu_category": {
-                "group": "itemGroup.name.leggings",
+                "group": "minecraft:itemGroup.name.leggings",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -12,9 +12,6 @@
         "components": {
             "minecraft:display_name": {
                 "value": "item.dec:piglin_leggings.name"
-            },
-            "minecraft:icon": {
-                "texture": "piglin_leggings"
             },
             "minecraft:max_stack_size": 1,
             "minecraft:enchantable": {
@@ -41,6 +38,11 @@
                     "comp:armor_protection:5",
                     "comp:armor_type:singleton_"
                 ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "piglin_leggings"
+                }
             }
         }
     }

@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:redstone_apple_enchanted",
             "menu_category": {
-                "group": "itemGroup.name.crop",
+                "group": "minecraft:itemGroup.name.crop",
                 "is_hidden_in_commands": false,
                 "category": "nature"
             }
@@ -13,11 +13,7 @@
             "minecraft:display_name": {
                 "value": "item.dec:redstone_apple_enchanted.name"
             },
-            "minecraft:icon": {
-                "texture": "redstone_apple"
-            },
             "minecraft:use_animation": "eat",
-            "minecraft:glint": true,
             "minecraft:hover_text_color": "light_purple",
             "minecraft:foil": true,
             "minecraft:food": {
@@ -30,19 +26,40 @@
                 "can_always_eat": true
             },
             "minecraft:use_modifiers": {
-                "use_duration": 1.6
+                "use_duration": 1.6,
+                "movement_modifier": 0.4
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "redstone_apple"
+                }
             }
         },
         "events": {
             "consumed": {
                 "sequence": [
                     {
-                        "run_command": {
-                            "command": [
-                                "effect @s health_boost 300 3 true",//12法术护盾
-                                "effect @s regeneration 15 1 true",
-                                "effect @s night_vision 120 0 true"
-                            ]
+                        "add_mob_effect": {
+                            "effect": "absorption",
+                            "duration": 180,
+                            "amplifier": 2,
+                            "target": "holder"
+                        }
+                    },
+                    {
+                        "add_mob_effect": {
+                            "effect": "night_vision",
+                            "duration": 120,
+                            "amplifier": 0,
+                            "target": "holder"
+                        }
+                    },
+                    {
+                        "add_mob_effect": {
+                            "effect": "regeneration",
+                            "duration": 180,
+                            "amplifier": 0,
+                            "target": "holder"
                         }
                     }
                 ]

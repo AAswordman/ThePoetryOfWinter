@@ -77,6 +77,16 @@
                 },
                 {
                     "type": "item",
+                    "name": "dec:dead_wood_dagger",
+                    "weight": 2
+                },
+                {
+                    "type": "item",
+                    "name": "dec:dead_wood_rapier",
+                    "weight": 2
+                },
+                {
+                    "type": "item",
                     "name": "dec:giant_bat_wings",
                     "weight": 1
                 }

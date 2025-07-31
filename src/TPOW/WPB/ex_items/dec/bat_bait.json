@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:bat_bait",
             "menu_category": {
-                "group": "itemGroup.name.navigation",
+                "group": "dec:itemGroup.name.summon_items",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -13,11 +13,13 @@
             "minecraft:display_name": {
                 "value": "item.dec:bat_bait.name"
             },
-            "minecraft:icon": {
-                "texture": "bat_bait"
-            },
             "minecraft:foil": true,
-            "minecraft:stacked_by_data": false
+            "minecraft:stacked_by_data": false,
+            "minecraft:icon": {
+                "textures": {
+                    "default": "bat_bait"
+                }
+            }
         }
     }
 }

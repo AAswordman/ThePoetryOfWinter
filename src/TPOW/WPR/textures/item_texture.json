@@ -2,7 +2,7 @@
     "resource_pack_name": "vanilla",
     "texture_name": "atlas.items",
     "texture_data": {
- //=============================DEC==================================
+        //=============================DEC==================================
         "rice": {
             "textures": "textures/items/rice"
         },
@@ -1215,11 +1215,11 @@
         "es_shoes": {
             "textures": "textures/items/es_shoes"
         },
-        "formal_sytle_clothes": {
-            "textures": "textures/items/formal_sytle_clothes"
+        "formal_style_clothes": {
+            "textures": "textures/items/formal_style_clothes"
         },
-        "formal_sytle_pants": {
-            "textures": "textures/items/formal_sytle_pants"
+        "formal_style_pants": {
+            "textures": "textures/items/formal_style_pants"
         },
         "frank_mask": {
             "textures": "textures/items/frank_mask"
@@ -1443,86 +1443,567 @@
         "snow_lotus": {
             "textures": "textures/items/snow_lotus"
         },
-//Decisland1.9.3 Added
+        //Decisland1.9.3 Added
         "hunter_book": {
-		"textures": "textures/items/hunter_book"
-		},
-		"patterned_vase_red": {
-			"textures": "textures/items/patterned_vase_red"
-		},
-		"lava_essence": {
-			"textures": "textures/items/lava_essence"
-		},
-		"lava_flower_seeds": {
-			"textures": "textures/items/lava_flower_seeds"
-		},
-		"mooli": {
-			"textures": "textures/items/mooli"
-		},
-		"mooli_seeds": {
-			"textures": "textures/items/mooli_seeds"
-		},
-		"red_spider_lily": {
-			"textures": "textures/items/red_spider_lily"
-		},
-		"cob": {
-			"textures": "textures/items/cob"
-		},
-		"corn": {
-			"textures": "textures/items/corn"
-		},
-	    "corn_seeds": {
-			"textures": "textures/items/corn_seeds"
-		},
+            "textures": "textures/items/hunter_book"
+        },
+        "patterned_vase_red": {
+            "textures": "textures/items/patterned_vase_red"
+        },
+        "lava_essence": {
+            "textures": "textures/items/lava_essence"
+        },
+        "lava_flower_seeds": {
+            "textures": "textures/items/lava_flower_seeds"
+        },
+        "mooli": {
+            "textures": "textures/items/mooli"
+        },
+        "mooli_seeds": {
+            "textures": "textures/items/mooli_seeds"
+        },
+        "red_spider_lily": {
+            "textures": "textures/items/red_spider_lily"
+        },
+        "cob": {
+            "textures": "textures/items/cob"
+        },
+        "corn": {
+            "textures": "textures/items/corn"
+        },
+        "corn_seeds": {
+            "textures": "textures/items/corn_seeds"
+        },
         "giant_bat_wings": {
-			"textures": "textures/items/giant_bat_wings"
-		},
+            "textures": "textures/items/giant_bat_wings"
+        },
         "smoke_bomb": {
-			"textures": "textures/items/smoke_bomb"
-		},
-	    "gas_bomb": {
-			"textures": "textures/items/gas_bomb"
-		},
-     	"golden_fence": {
-			"textures": "textures/items/golden_fence"
-		},
+            "textures": "textures/items/smoke_bomb"
+        },
+        "gas_bomb": {
+            "textures": "textures/items/gas_bomb"
+        },
+        "golden_fence": {
+            "textures": "textures/items/golden_fence"
+        },
         "bamboo_katana": {
-			"textures": "textures/items/bamboo_katana"
-		},
-		"hard_bamboo_katana": {
-			"textures": "textures/items/hard_bamboo_katana"
-		},
-		"rapier": {
-			"textures": "textures/items/rapier"
-		},
-		"dead_wood_rapier": {
-			"textures": "textures/items/dead_wood_rapier"
-		},
-		"dead_wood_dagger": {
-			"textures": "textures/items/dead_wood_dagger"
-		},
-		"moon_jellyfish": {
-			"textures": "textures/items/moon_jellyfish"
-		},
-		"scarecrow": {
-			"textures": "textures/items/scarecrow"
-		},
-		"archer_hat": {
-			"textures": "textures/items/archer_hat"
-		},
-		"black_courtesy": {
-			"textures": "textures/items/black_courtesy"
-		},
-		"blue_gem_hat": {
-			"textures": "textures/items/blue_gem_hat"
-		},
-		"farmer_hat": {
-			"textures": "textures/items/farmer_hat"
-		},
-		"red_gem_hat": {
-			"textures": "textures/items/red_gem_hat"
-		},
- //=============================WB==================================
+            "textures": "textures/items/bamboo_katana"
+        },
+        "hard_bamboo_katana": {
+            "textures": "textures/items/hard_bamboo_katana"
+        },
+        "rapier": {
+            "textures": "textures/items/rapier"
+        },
+        "dead_wood_rapier": {
+            "textures": "textures/items/dead_wood_rapier"
+        },
+        "dead_wood_dagger": {
+            "textures": "textures/items/dead_wood_dagger"
+        },
+        "moon_jellyfish": {
+            "textures": "textures/items/moon_jellyfish"
+        },
+        "scarecrow": {
+            "textures": "textures/items/scarecrow"
+        },
+        "archer_hat": {
+            "textures": "textures/items/archer_hat"
+        },
+        "black_courtesy": {
+            "textures": "textures/items/black_courtesy"
+        },
+        "blue_gem_hat": {
+            "textures": "textures/items/blue_gem_hat"
+        },
+        "farmer_hat": {
+            "textures": "textures/items/farmer_hat"
+        },
+        "red_gem_hat": {
+            "textures": "textures/items/red_gem_hat"
+        },
+        // Dec 1.9.8 add
+        "glass_tank": {
+            "textures": "textures/items/glass_tank"
+        },
+        "autumn_leaves": {
+            "textures": "textures/items/autumn_leaves"
+        },
+        "baby_blue_eyes_flower": {
+            "textures": "textures/items/baby_blue_eyes_flower"
+        },
+        "balloon_flower": {
+            "textures": "textures/items/balloon_flower"
+        },
+        "breeze_flower": {
+            "textures": "textures/items/breeze_flower"
+        },
+        "butter_flower": {
+            "textures": "textures/items/butter_flower"
+        },
+        "butterfly_pea": {
+            "textures": "textures/items/butterfly_pea"
+        },
+        "cloud_flower": {
+            "textures": "textures/items/cloud_flower"
+        },
+        "crinum": {
+            "textures": "textures/items/crinum"
+        },
+        "dandelion": {
+            "textures": "textures/items/dandelion"
+        },
+        "deep_dandelion": {
+            "textures": "textures/items/deep_dandelion"
+        },
+        "depart_grass": {
+            "textures": "textures/items/depart_grass"
+        },
+        "desert_fan_flower": {
+            "textures": "textures/items/desert_fan_flower"
+        },
+        "fan_flower": {
+            "textures": "textures/items/fan_flower"
+        },
+        "frozen_mirror_flower": {
+            "textures": "textures/items/frozen_mirror_flower"
+        },
+        "gold_flower": {
+            "textures": "textures/items/gold_flower"
+        },
+        "hammer_flower": {
+            "textures": "textures/items/hammer_flower"
+        },
+        "lamp_flower": {
+            "textures": "textures/items/lamp_flower"
+        },
+        "leaves_flower": {
+            "textures": "textures/items/leaves_flower"
+        },
+        "lurk_bud": {
+            "textures": "textures/items/lurk_bud"
+        },
+        "lurk_fruit": {
+            "textures": "textures/items/lurk_fruit"
+        },
+        "lurk_orchid": {
+            "textures": "textures/items/lurk_orchid"
+        },
+        "maple_flower": {
+            "textures": "textures/items/maple_flower"
+        },
+        "mock_strawberry": {
+            "textures": "textures/items/mock_strawberry"
+        },
+        "mouth_flower": {
+            "textures": "textures/items/mouth_flower"
+        },
+        "nether_dandelion": {
+            "textures": "textures/items/nether_dandelion"
+        },
+        "nether_stick_flower": {
+            "textures": "textures/items/nether_stick_flower"
+        },
+        "pink_dandelion": {
+            "textures": "textures/items/pink_dandelion"
+        },
+        "pink_fan_flower": {
+            "textures": "textures/items/pink_fan_flower"
+        },
+        "rosemary": {
+            "textures": "textures/items/rosemary"
+        },
+        "russet_grass": {
+            "textures": "textures/items/russet_grass"
+        },
+        "snow_flower": {
+            "textures": "textures/items/snow_flower"
+        },
+        "spark_flower": {
+            "textures": "textures/items/spark_flower"
+        },
+        "spell_flower": {
+            "textures": "textures/items/spell_flower"
+        },
+        "star_flower": {
+            "textures": "textures/items/star_flower"
+        },
+        "stick_flower": {
+            "textures": "textures/items/stick_flower"
+        },
+        "thyme": {
+            "textures": "textures/items/thyme"
+        },
+        "wither_cone": {
+            "textures": "textures/items/wither_cone"
+        },
+        "yellow_butterfly_flower": {
+            "textures": "textures/items/yellow_butterfly_flower"
+        },
+        "abyssal_controller_mask": {
+            "textures": "textures/items/abyssal_controller_mask"
+        },
+        "agent_mask": {
+            "textures": "textures/items/agent_mask"
+        },
+        "alex_mask": {
+            "textures": "textures/items/alex_mask"
+        },
+        "allay_mask": {
+            "textures": "textures/items/allay_mask"
+        },
+        "arctic_fox_mask": {
+            "textures": "textures/items/arctic_fox_mask"
+        },
+        "ash_blaze_mask": {
+            "textures": "textures/items/ash_blaze_mask"
+        },
+        "ash_knight_mask": {
+            "textures": "textures/items/ash_knight_mask"
+        },
+        "ash_pufferfish_mask": {
+            "textures": "textures/items/ash_pufferfish_mask"
+        },
+        "axolotl_blue_mask": {
+            "textures": "textures/items/axolotl_blue_mask"
+        },
+        "axolotl_cyan_mask": {
+            "textures": "textures/items/axolotl_cyan_mask"
+        },
+        "axolotl_gold_mask": {
+            "textures": "textures/items/axolotl_gold_mask"
+        },
+        "axolotl_lucy_mask": {
+            "textures": "textures/items/axolotl_lucy_mask"
+        },
+        "axolotl_wild_mask": {
+            "textures": "textures/items/axolotl_wild_mask"
+        },
+        "bat_mask": {
+            "textures": "textures/items/bat_mask"
+        },
+        "bee_mask": {
+            "textures": "textures/items/bee_mask"
+        },
+        "blaze_mask": {
+            "textures": "textures/items/blaze_mask"
+        },
+        "boomber_mask": {
+            "textures": "textures/items/boomber_mask"
+        },
+        "brown_bear_mask": {
+            "textures": "textures/items/brown_bear_mask"
+        },
+        "brown_mooshroom_mask": {
+            "textures": "textures/items/brown_mooshroom_mask"
+        },
+        "cave_spider_mask": {
+            "textures": "textures/items/cave_spider_mask"
+        },
+        "chicken_mask": {
+            "textures": "textures/items/chicken_mask"
+        },
+        "cow_mask": {
+            "textures": "textures/items/cow_mask"
+        },
+        "creeper_mask": {
+            "textures": "textures/items/creeper_mask"
+        },
+        "crimson_slime_mask": {
+            "textures": "textures/items/crimson_slime_mask"
+        },
+        "dark_snow_man_mask": {
+            "textures": "textures/items/dark_snow_man_mask"
+        },
+        "dark_werewolf_mask": {
+            "textures": "textures/items/dark_werewolf_mask"
+        },
+        "dark_zombie_mask": {
+            "textures": "textures/items/dark_zombie_mask"
+        },
+        "dolphin_mask": {
+            "textures": "textures/items/dolphin_mask"
+        },
+        "drowned_mask": {
+            "textures": "textures/items/drowned_mask"
+        },
+        "elf_of_ash_mask": {
+            "textures": "textures/items/elf_of_ash_mask"
+        },
+        "elf_of_chaos_mask": {
+            "textures": "textures/items/elf_of_chaos_mask"
+        },
+        "elf_of_deep_mask": {
+            "textures": "textures/items/elf_of_deep_mask"
+        },
+        "elf_of_leaves_mask": {
+            "textures": "textures/items/elf_of_leaves_mask"
+        },
+        "end_stone_golem_mask": {
+            "textures": "textures/items/end_stone_golem_mask"
+        },
+        "ender_witch_mask": {
+            "textures": "textures/items/ender_witch_mask"
+        },
+        "enderman_mask": {
+            "textures": "textures/items/enderman_mask"
+        },
+        "entity_soul_mask": {
+            "textures": "textures/items/entity_soul_mask"
+        },
+        "everlasting_winter_ghast_mask": {
+            "textures": "textures/items/everlasting_winter_ghast_mask"
+        },
+        "evil_snow_man_mask": {
+            "textures": "textures/items/evil_snow_man_mask"
+        },
+        "fox_mask": {
+            "textures": "textures/items/fox_mask"
+        },
+        "frozen_spider_mask": {
+            "textures": "textures/items/frozen_spider_mask"
+        },
+        "gargoyle_mask": {
+            "textures": "textures/items/gargoyle_mask"
+        },
+        "ghast_mask": {
+            "textures": "textures/items/ghast_mask"
+        },
+        "gingerbread_man_mask": {
+            "textures": "textures/items/gingerbread_man_mask"
+        },
+        "goblin_mask": {
+            "textures": "textures/items/goblin_mask"
+        },
+        "guardian_elder_mask": {
+            "textures": "textures/items/guardian_elder_mask"
+        },
+        "guardian_mask": {
+            "textures": "textures/items/guardian_mask"
+        },
+        "host_of_deep_mask": {
+            "textures": "textures/items/host_of_deep_mask"
+        },
+        "husk_mask": {
+            "textures": "textures/items/husk_mask"
+        },
+        "ice_blaze_mask": {
+            "textures": "textures/items/ice_blaze_mask"
+        },
+        "ice_zombie_mask": {
+            "textures": "textures/items/ice_zombie_mask"
+        },
+        "illager_mask": {
+            "textures": "textures/items/illager_mask"
+        },
+        "iron_golem_mask": {
+            "textures": "textures/items/iron_golem_mask"
+        },
+        "leaves_golem_mask": {
+            "textures": "textures/items/leaves_golem_mask"
+        },
+        "magma_cube_mask": {
+            "textures": "textures/items/magma_cube_mask"
+        },
+        "mooshroom_mask": {
+            "textures": "textures/items/mooshroom_mask"
+        },
+        "mummy_mask": {
+            "textures": "textures/items/mummy_mask"
+        },
+        "mummy_skeleton_mask": {
+            "textures": "textures/items/mummy_skeleton_mask"
+        },
+        "mushroom_mask": {
+            "textures": "textures/items/mushroom_mask"
+        },
+        "mystical_skeleton_mask": {
+            "textures": "textures/items/mystical_skeleton_mask"
+        },
+        "nether_creeper_mask": {
+            "textures": "textures/items/nether_creeper_mask"
+        },
+        "nether_golem_mask": {
+            "textures": "textures/items/nether_golem_mask"
+        },
+        "nether_phantom_mask": {
+            "textures": "textures/items/nether_phantom_mask"
+        },
+        "nether_skeleton_mask": {
+            "textures": "textures/items/nether_skeleton_mask"
+        },
+        "nether_skeleton_wizard_mask": {
+            "textures": "textures/items/nether_skeleton_wizard_mask"
+        },
+        "obsidian_golem_mask": {
+            "textures": "textures/items/obsidian_golem_mask"
+        },
+        "old_monster_mask": {
+            "textures": "textures/items/old_monster_mask"
+        },
+        "phantom_mask": {
+            "textures": "textures/items/phantom_mask"
+        },
+        "pig_mask": {
+            "textures": "textures/items/pig_mask"
+        },
+        "pigzombie_mask": {
+            "textures": "textures/items/pigzombie_mask"
+        },
+        "player_ghost_mask": {
+            "textures": "textures/items/player_ghost_mask"
+        },
+        "polar_wolf_mask": {
+            "textures": "textures/items/polar_wolf_mask"
+        },
+        "polarbear_mask": {
+            "textures": "textures/items/polarbear_mask"
+        },
+        "predators_mask": {
+            "textures": "textures/items/predators_mask"
+        },
+        "prehistoric_monster_mask": {
+            "textures": "textures/items/prehistoric_monster_mask"
+        },
+        "pufferfish_mask": {
+            "textures": "textures/items/pufferfish_mask"
+        },
+        "radiate_creeper_mask": {
+            "textures": "textures/items/radiate_creeper_mask"
+        },
+        "radiate_enderman_mask": {
+            "textures": "textures/items/radiate_enderman_mask"
+        },
+        "rumorer_mask": {
+            "textures": "textures/items/rumorer_mask"
+        },
+        "sea_turtle_mask": {
+            "textures": "textures/items/sea_turtle_mask"
+        },
+        "shadow_creeper_mask": {
+            "textures": "textures/items/shadow_creeper_mask"
+        },
+        "shadow_of_sea_mask": {
+            "textures": "textures/items/shadow_of_sea_mask"
+        },
+        "shadow_skeleton_mask": {
+            "textures": "textures/items/shadow_skeleton_mask"
+        },
+        "shadow_zombie_mask": {
+            "textures": "textures/items/shadow_zombie_mask"
+        },
+        "shulker_mask": {
+            "textures": "textures/items/shulker_mask"
+        },
+        "skeleton_assassin_mask": {
+            "textures": "textures/items/skeleton_assassin_mask"
+        },
+        "skeleton_knight_mask": {
+            "textures": "textures/items/skeleton_knight_mask"
+        },
+        "skeleton_mask": {
+            "textures": "textures/items/skeleton_mask"
+        },
+        "slime_mask": {
+            "textures": "textures/items/slime_mask"
+        },
+        "soul_blaze_mask": {
+            "textures": "textures/items/soul_blaze_mask"
+        },
+        "soul_skeleton_mask": {
+            "textures": "textures/items/soul_skeleton_mask"
+        },
+        "soul_zombie_mask": {
+            "textures": "textures/items/soul_zombie_mask"
+        },
+        "spider_mask": {
+            "textures": "textures/items/spider_mask"
+        },
+        "squid_mask": {
+            "textures": "textures/items/squid_mask"
+        },
+        "steve_mask": {
+            "textures": "textures/items/steve_mask"
+        },
+        "stray_mask": {
+            "textures": "textures/items/stray_mask"
+        },
+        "strider_mask": {
+            "textures": "textures/items/strider_mask"
+        },
+        "swamp_drowned_mask": {
+            "textures": "textures/items/swamp_drowned_mask"
+        },
+        "swamp_golem_mask": {
+            "textures": "textures/items/swamp_golem_mask"
+        },
+        "tnt_creeper_mask": {
+            "textures": "textures/items/tnt_creeper_mask"
+        },
+        "vengeful_ghost_mask": {
+            "textures": "textures/items/vengeful_ghost_mask"
+        },
+        "vex_mask": {
+            "textures": "textures/items/vex_mask"
+        },
+        "villager_mask": {
+            "textures": "textures/items/villager_mask"
+        },
+        "wandering_trader_mask": {
+            "textures": "textures/items/wandering_trader_mask"
+        },
+        "warped_skeleton_mask": {
+            "textures": "textures/items/warped_skeleton_mask"
+        },
+        "werewolf_mask": {
+            "textures": "textures/items/werewolf_mask"
+        },
+        "witch_mask": {
+            "textures": "textures/items/witch_mask"
+        },
+        "wither_invulnerable_mask": {
+            "textures": "textures/items/wither_invulnerable_mask"
+        },
+        "wither_mask": {
+            "textures": "textures/items/wither_mask"
+        },
+        "wither_skeleton_mask": {
+            "textures": "textures/items/wither_skeleton_mask"
+        },
+        "wolf_mask": {
+            "textures": "textures/items/wolf_mask"
+        },
+        "zombie_mask": {
+            "textures": "textures/items/zombie_mask"
+        },
+        "zombie_summoner_mask": {
+            "textures": "textures/items/zombie_summoner_mask"
+        },
+        "zombie_villager_mask": {
+            "textures": "textures/items/zombie_villager_mask"
+        },
+        "zombie_warrior_mask": {
+            "textures": "textures/items/zombie_warrior_mask"
+        },
+        "magic_mask_bag": {
+            "textures": "textures/items/magic_mask_bag"
+        },
+        "echo_of_deep": {
+            "textures": "textures/items/echo_of_deep"
+        },
+        "firefly_bottle": {
+            "textures": "textures/items/firefly_bottle"
+        },
+        "muddy_fish": {
+            "textures": "textures/items/muddy_fish"
+        },
+        "pumpkin_candy": {
+            "textures": "textures/items/pumpkin_candy"
+        },
+        "muddy_ball": {
+            "textures": "textures/items/muddy_ball"
+        },
+        //=============================WB==================================
         "energy_core_a": {
             "textures": "textures/wb_item/technology/energy_core_a"
         },
@@ -2086,56 +2567,88 @@
             "textures": ["textures/EPIC/items/spawn_egg/tesla"]
         },
         "epic:machanical_operator": {
-            "textures": ["textures/EPIC/items/machanical_operator"]
+            "textures": [
+                "textures/EPIC/items/machanical_operator"
+            ]
         },
         "epic:alliance_token": {
-            "textures": ["textures/EPIC/items/alliance_token"]
+            "textures": [
+                "textures/EPIC/items/alliance_token"
+            ]
         },
         "epic:reinforced_metal_group": {
-            "textures": ["textures/EPIC/items/reinforced_metal_group"]
+            "textures": [
+                "textures/EPIC/items/reinforced_metal_group"
+            ]
         },
         "epic:crystal_electronics_group": {
-            "textures": ["textures/EPIC/items/crystal_electronics_group"]
+            "textures": [
+                "textures/EPIC/items/crystal_electronics_group"
+            ]
         },
         "epic:crystal_electronics_group_broken": {
-            "textures": ["textures/EPIC/items/crystal_electronics_group_broken"]
+            "textures": [
+                "textures/EPIC/items/crystal_electronics_group_broken"
+            ]
         },
         "epic_cannon_cart_bullet": {
             "textures": "textures/EPIC/items/pamobile/epic_cannon_cart_bullet"
         },
         "epic:sun_worshipping_sword": {
-			"textures": ["textures/EPIC/items/weapon/sun_worshipping_sword"]
-		},
-		"epic:sunlight_sword": {
-			"textures": ["textures/EPIC/items/weapon/sunlight_sword"]
-		},
-		"epic:sunlight_staff": {
-			"textures": ["textures/EPIC/items/weapon/sunlight_staff"]
-		},
-		"epic:sunlight_crossbow": {
-			"textures": ["textures/EPIC/items/weapon/sunlight_crossbow/sunlight_crossbow"]
-		},
-		"epic:sunlight_crossbow_drawn": {
-			"textures": ["textures/EPIC/items/weapon/sunlight_crossbow/sunlight_crossbow_drawn"]
-		},
-		"epic:sunlight_arrow": {
-			"textures": ["textures/EPIC/items/weapon/sunlight_arrow"]
-		},
+            "textures": [
+                "textures/EPIC/items/weapon/sun_worshipping_sword"
+            ]
+        },
+        "epic:sunlight_sword": {
+            "textures": [
+                "textures/EPIC/items/weapon/sunlight_sword"
+            ]
+        },
+        "epic:sunlight_staff": {
+            "textures": [
+                "textures/EPIC/items/weapon/sunlight_staff"
+            ]
+        },
+        "epic:sunlight_crossbow": {
+            "textures": [
+                "textures/EPIC/items/weapon/sunlight_crossbow/sunlight_crossbow"
+            ]
+        },
+        "epic:sunlight_crossbow_drawn": {
+            "textures": [
+                "textures/EPIC/items/weapon/sunlight_crossbow/sunlight_crossbow_drawn"
+            ]
+        },
+        "epic:sunlight_arrow": {
+            "textures": [
+                "textures/EPIC/items/weapon/sunlight_arrow"
+            ]
+        },
         "epic:sunlight_helmet": {
-			"textures": ["textures/EPIC/items/armor/sunlight_helmet"]
-		},
-		"epic:sunlight_chestplate": {
-			"textures": ["textures/EPIC/items/armor/sunlight_chestplate"]
-		},
-		"epic:sunlight_leggings": {
-			"textures": ["textures/EPIC/items/armor/sunlight_leggings"]
-		},
-		"epic:sunlight_boots": {
-			"textures": ["textures/EPIC/items/armor/sunlight_boots"]
-		},
-		"epic:iron_crossbow": {
-			"textures": ["textures/EPIC/items/weapon/iron_crossbow/iron_crossbow"]
-		},
+            "textures": [
+                "textures/EPIC/items/armor/sunlight_helmet"
+            ]
+        },
+        "epic:sunlight_chestplate": {
+            "textures": [
+                "textures/EPIC/items/armor/sunlight_chestplate"
+            ]
+        },
+        "epic:sunlight_leggings": {
+            "textures": [
+                "textures/EPIC/items/armor/sunlight_leggings"
+            ]
+        },
+        "epic:sunlight_boots": {
+            "textures": [
+                "textures/EPIC/items/armor/sunlight_boots"
+            ]
+        },
+        "epic:iron_crossbow": {
+            "textures": [
+                "textures/EPIC/items/weapon/iron_crossbow/iron_crossbow"
+            ]
+        },
         "dec:everlasting_winter_pickaxe_axe": {
 			"textures": ["textures/EPIC/items/tool/everlasting_winter_pickaxe_axe"]
 		},
@@ -2146,8 +2659,10 @@
 			"textures": ["textures/EPIC/items/weapon/wither_sword"]
 		},
         "epic:echoing_scream_saber": {
-			"textures": ["textures/EPIC/items/weapon/echoing_scream_saber"]
-		}
-    //======================================================================
+            "textures": [
+                "textures/EPIC/items/weapon/echoing_scream_saber"
+            ]
+        }
+        //======================================================================
     }
 }

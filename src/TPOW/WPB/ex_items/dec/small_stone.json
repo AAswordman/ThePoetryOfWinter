@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:small_stone",
             "menu_category": {
-                "group": "itemGroup.name.decorations",
+                "group": "minecraft:itemGroup.name.decorations",
                 "is_hidden_in_commands": false,
                 "category": "items"
             }
@@ -13,14 +13,16 @@
             "minecraft:display_name": {
                 "value": "item.dec:small_stone.name"
             },
-            "minecraft:icon": {
-                "texture": "small_stone"
-            },
             "minecraft:block_placer": {
                 "block": "dec:small_stone_block_entity"
             },
             "minecraft:stacked_by_data": true,
-            "minecraft:allow_off_hand": true
+            "minecraft:allow_off_hand": true,
+            "minecraft:icon": {
+                "textures": {
+                    "default": "small_stone"
+                }
+            }
         }
     }
 }

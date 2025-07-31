@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.80",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "dec:item_picker",
             "menu_category": {
-                "group": "itemGroup.name.outside",
+                "group": "dec:itemGroup.name.stream_machines",
                 "category": "items"
             }
         },

@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:pollution_algae",
             "menu_category": {
-                "group": "itemGroup.name.decorations",
+                "group": "minecraft:itemGroup.name.decorations",
                 "is_hidden_in_commands": false,
                 "category": "items"
             }
@@ -12,9 +12,6 @@
         "components": {
             "minecraft:display_name": {
                 "value": "item.dec:pollution_algae.name"
-            },
-            "minecraft:icon": {
-                "texture": "pollution_algae"
             },
             "minecraft:use_animation": "eat",
             "minecraft:food": {
@@ -26,7 +23,13 @@
                 "saturation_modifier": 0.4
             },
             "minecraft:use_modifiers": {
-                "use_duration": 1.6
+                "use_duration": 1.6,
+                "movement_modifier": 0.4
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "pollution_algae"
+                }
             }
         },
         "events": {

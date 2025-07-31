@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:red_bag",
             "menu_category": {
-                "group": "itemGroup.name.decorations",
+                "group": "minecraft:itemGroup.name.decorations",
                 "is_hidden_in_commands": false,
                 "category": "items"
             }
@@ -12,9 +12,6 @@
         "components": {
             "minecraft:display_name": {
                 "value": "item.dec:red_bag.name"
-            },
-            "minecraft:icon": {
-                "texture": "red_bag"
             },
             "minecraft:cooldown": {
                 "category": "red_bag",
@@ -26,8 +23,10 @@
                 }
             },
             "minecraft:stacked_by_data": true,
-            "minecraft:use_modifiers": {
-                "use_duration": 30000
+            "minecraft:icon": {
+                "textures": {
+                    "default": "red_bag"
+                }
             }
         },
         "events": {
@@ -35,7 +34,8 @@
                 "run_command": {
                     "command": [
                         "loot give @s loot \"items/red_bag\"",
-                        "clear @s dec:red_bag 0 1"
+                        "clear @s dec:red_bag 0 1",
+                        "playsound vault.insert_item @a ~~~"
                     ]
                 }
             }

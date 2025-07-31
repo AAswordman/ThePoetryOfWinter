@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "epic:sunlight_chestplate",
             "menu_category": {
-                "group": "itemGroup.name.chestplate",
+                "group": "minecraft:itemGroup.name.chestplate",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -14,7 +14,9 @@
                 "value": "item.epic:sunlight_chestplate.name"
             },
             "minecraft:icon": {
-                "texture": "epic:sunlight_chestplate"
+                "textures": {
+                    "default": "epic:sunlight_chestplate"
+                }
             },
             "minecraft:enchantable": {
                 "value": 10,

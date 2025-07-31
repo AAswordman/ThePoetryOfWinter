@@ -7,8 +7,7 @@
 			"is_summonable": true,
 			"is_experimental": false
 		},
-		"component_groups": {
-		},
+		"component_groups": {},
 		"components": {
 			"minecraft:explode": {
 				"fuseLength": 10,
@@ -19,15 +18,15 @@
 			"minecraft:behavior.hurt_by_target": {
 				"priority": 1,
 				"entity_types": {
-				  "filters": {
-					"test": "is_family",
-					"subject": "other",
-					"operator": "!=",
-					"value": "shadow"
-				  },
-				  "max_dist": 64
+					"filters": {
+						"test": "is_family",
+						"subject": "other",
+						"operator": "!=",
+						"value": "shadow"
+					},
+					"max_dist": 64
 				}
-			  },
+			},
 			"minecraft:damage_sensor": {
 				"triggers": [
 					{
@@ -66,7 +65,7 @@
 				"height": 1.9
 			},
 			"minecraft:despawn": {
-			  "despawn_from_distance": {}
+				"despawn_from_distance": {}
 			},
 			"minecraft:movement.basic": {},
 			"minecraft:navigation.walk": {

@@ -1,0 +1,220 @@
+{
+  "format_version": "1.16.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:doctor",
+      "is_spawnable": true,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:mob_effect": {
+        "effect_range": 4,
+        "mob_effect": "regeneration",
+        "effect_time": 20,
+        "entity_filter": {
+          "all_of": [
+            {
+              "test": "is_missing_health",
+              "subject": "other",
+              "value": true
+            },
+            {
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "villager"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "iron_golem"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "minecraft:behavior.follow_mob": {
+        "priority": 6,
+        "search_range": 32,
+        "stop_distance": 2,
+        "speed_multiplier": 0.6,
+        "filters": {
+          "all_of": [
+            {
+              "test": "is_underwater",
+              "subject": "other",
+              "value": false
+            },
+            {
+              "test": "is_missing_health",
+              "subject": "other",
+              "value": true
+            },
+            {
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "villager"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "iron_golem"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "minecraft:behavior.move_through_village": {
+        "priority": 10,
+        "speed_multiplier": 0.6,
+        "only_at_night": true
+      },
+      "minecraft:behavior.move_towards_restriction": {
+        "priority": 9,
+        "speed_multiplier": 1
+      },
+      "minecraft:dweller": {
+        "dwelling_type": "village",
+        "dweller_role": "defender",
+        "update_interval_base": 60,
+        "update_interval_variant": 40,
+        "can_find_poi": false,
+        "can_migrate": true,
+        "first_founding_reward": 0
+      },
+      "minecraft:behavior.stroll_towards_village": {
+        "priority": 11,
+        "speed_multiplier": 1.3,
+        "goal_radius": 128.0,
+        "cooldown_time": 0,
+        "search_range": 1028,
+        "start_chance": 1.0
+      },
+      "minecraft:behavior.defend_village_target": {
+        "priority": 1,
+        "entity_types": {
+          "filters": {
+            "any_of": [
+              {
+                "test": "is_family",
+                "subject": "other",
+                "operator": "!=",
+                "value": "villager"
+              }
+            ]
+          }
+        }
+      },
+      "minecraft:is_hidden_when_invisible": {},
+      "minecraft:type_family": {
+        "family": [
+          "archer",
+          "villager",
+          "mob"
+        ]
+      },
+      "minecraft:breathable": {
+        "total_supply": 15,
+        "suffocate_time": 0
+      },
+      "minecraft:nameable": {},
+      "minecraft:health": {
+        "value": 20,
+        "max": 20
+      },
+      "minecraft:hurt_on_condition": {
+        "damage_conditions": [
+          {
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+          }
+        ]
+      },
+      "minecraft:collision_box": {
+        "width": 0.6,
+        "height": 1.9
+      },
+      "minecraft:movement": {
+        "value": 0.5
+      },
+      "minecraft:navigation.walk": {
+        "can_path_over_water": true,
+        "can_pass_doors": true,
+        "can_open_doors": true,
+        "avoid_water": true
+      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
+      "minecraft:behavior.avoid_mob_type": {
+        "priority": 5,
+        "entity_types": [
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "other",
+              "value": "monster"
+            },
+            "max_dist": 16,
+            "walk_speed_multiplier": 0.6,
+            "sprint_speed_multiplier": 1.0
+          }
+        ]
+      },
+      "minecraft:behavior.random_stroll": {
+        "priority": 8,
+        "speed_multiplier": 0.6
+      },
+      "minecraft:behavior.look_at_player": {
+        "priority": 9,
+        "look_distance": 3.0,
+        "probability": 1.0
+      },
+      "minecraft:behavior.look_at_entity": {
+        "priority": 10,
+        "look_distance": 8.0,
+        "filters": {
+          "test": "is_family",
+          "subject": "other",
+          "value": "villager"
+        }
+      },
+      "minecraft:persistent": {},
+      "minecraft:physics": {},
+      "minecraft:pushable": {
+        "is_pushable": true,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:follow_range": {
+        "value": 64
+      },
+      "minecraft:conditional_bandwidth_optimization": {}
+    },
+    "events": {}
+  }
+}

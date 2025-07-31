@@ -1,5 +1,5 @@
 {
-    "format_version": "1.20.80",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "dec:trellis_cover",
@@ -20,11 +20,11 @@
                     3,
                     4
                 ]
-            },
-            "menu_category": {
-                "group": "itemGroup.name.outside",
-                "category": "items"
-            }
+            }//,
+            // "menu_category": {
+            //     "group": "minecraft:itemGroup.name.outside",
+            //     "category": "items"
+            // }
         },
         "components": {
             "minecraft:material_instances": {
@@ -32,7 +32,7 @@
                     "texture": "trellis",
                     "render_method": "alpha_test"
                 },
-                "*":{
+                "*": {
                     "texture": "trellis",
                     "render_method": "alpha_test"
                 }
@@ -232,7 +232,7 @@
             "grow": {
                 "sequence": [
                     {
-                        "condition": "query.block_state('dec:crop_type') == 'grape' && query.block_state('dec:growth_stage') < 1",//作物多了这里写三元运算符
+                        "condition": "query.block_state('dec:crop_type') == 'grape' && query.block_state('dec:growth_stage') < 1", //作物多了这里写三元运算符
                         "sequence": [
                             {
                                 "condition": "!query.block_state('dec:may_wither')",
@@ -258,7 +258,7 @@
                         ]
                     },
                     {
-                        "condition": "query.block_state('dec:crop_type') == 'grape' && query.block_state('dec:growth_stage') == 1",//作物多了这里写三元运算符
+                        "condition": "query.block_state('dec:crop_type') == 'grape' && query.block_state('dec:growth_stage') == 1", //作物多了这里写三元运算符
                         "sequence": [
                             {
                                 "condition": "query.block_state('dec:may_wither')",

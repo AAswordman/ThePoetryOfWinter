@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:stone_dagger",
             "menu_category": {
-                "group": "itemGroup.name.sword",
+                "group": "dec:itemGroup.name.daggers",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -12,9 +12,6 @@
         "components": {
             "minecraft:display_name": {
                 "value": "item.dec:stone_dagger.name"
-            },
-            "minecraft:icon": {
-                "texture": "stone_dagger"
             },
             "minecraft:max_stack_size": 1,
             "minecraft:durability": {
@@ -24,7 +21,7 @@
                 "value": 10,
                 "slot": "sword"
             },
-            "minecraft:damage": 4.5,
+            "minecraft:damage": 4,
             "minecraft:digger": {
                 "use_efficiency": true,
                 "destroy_speeds": [
@@ -107,6 +104,11 @@
                     "comp:movement_addition:0.01",
                     "comp:equipment_type:melee_weapon_:dagger:_"
                 ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "stone_dagger"
+                }
             }
         },
         "events": {

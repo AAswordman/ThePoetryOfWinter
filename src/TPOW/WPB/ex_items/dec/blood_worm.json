@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:blood_worm",
             "menu_category": {
-                "group": "itemGroup.name.rawFood",
+                "group": "minecraft:itemGroup.name.rawFood",
                 "is_hidden_in_commands": false,
                 "category": "nature"
             }
@@ -12,9 +12,6 @@
         "components": {
             "minecraft:display_name": {
                 "value": "item.dec:blood_worm.name"
-            },
-            "minecraft:icon": {
-                "texture": "blood_worm"
             },
             "minecraft:use_animation": "eat",
             "minecraft:food": {
@@ -26,7 +23,13 @@
                 }
             },
             "minecraft:use_modifiers": {
-                "use_duration": 1
+                "use_duration": 1,
+                "movement_modifier": 0.4
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "blood_worm"
+                }
             }
         },
         "events": {

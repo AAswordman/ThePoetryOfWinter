@@ -15,8 +15,8 @@
     },
     "components": {
       "minecraft:collision_box": {
-        "width": 0.31,
-        "height": 0.31
+        "width": 0.8,
+        "height": 0.8
       },
       "minecraft:projectile": {
         "onHit": {
@@ -41,7 +41,7 @@
           }
         },
         "hit_sound": "bullet.hit",
-        "power": 1.2,
+        "power": 1.6,
         "gravity": 0.03,
         "inertia": 1.01,
         "liquid_inertia": 1.0,
@@ -52,8 +52,8 @@
           0
         ],
         "semirandomdiffdamage": true,
-        "uncertaintyBase": 6.0,
-        "uncertaintyMultiplier": 6,
+        "uncertaintyBase": 2.0,
+        "uncertaintyMultiplier": 0,
         "reflectOnHurt": true,
         "shoot_target": false
       },
@@ -77,6 +77,7 @@
             "queue_command": {
               "command": [
                 "function entity/snow_energy_spawn/1",
+                "particle dec:winter_energy_hit_particle ~~~",
                 "event entity @s minecraft:despawn"
               ]
             }
@@ -86,6 +87,7 @@
             "queue_command": {
               "command": [
                 "function entity/snow_energy_spawn/2",
+                "particle dec:winter_energy_hit_particle ~~~",
                 "event entity @s minecraft:despawn"
               ]
             }
@@ -95,6 +97,7 @@
             "queue_command": {
               "command": [
                 "function entity/snow_energy_spawn/3",
+                "particle dec:winter_energy_hit_particle ~~~",
                 "event entity @s minecraft:despawn"
               ]
             }
@@ -104,6 +107,7 @@
             "queue_command": {
               "command": [
                 "function entity/snow_energy_spawn/4",
+                "particle dec:winter_energy_hit_particle ~~~",
                 "event entity @s minecraft:despawn"
               ]
             }
@@ -113,6 +117,7 @@
             "queue_command": {
               "command": [
                 "function entity/snow_energy_spawn/5",
+                "particle dec:winter_energy_hit_particle ~~~",
                 "event entity @s minecraft:despawn"
               ]
             }
@@ -122,6 +127,7 @@
             "queue_command": {
               "command": [
                 "function entity/snow_energy_spawn/6",
+                "particle dec:winter_energy_hit_particle ~~~",
                 "event entity @s minecraft:despawn"
               ]
             }

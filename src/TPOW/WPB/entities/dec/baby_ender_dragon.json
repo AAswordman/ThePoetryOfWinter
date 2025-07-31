@@ -9,7 +9,6 @@
       "is_experimental": false
     },
     "component_groups": {
-
       "minecraft:despawn": {
         "minecraft:instant_despawn": {}
       },
@@ -44,7 +43,6 @@
           }
         }
       },
-
       "minecraft:ranged_attack": {
         "minecraft:timer": {
           "looping": false,
@@ -54,7 +52,6 @@
           }
         }
       },
-
       "minecraft:melee_attack": {
         "minecraft:movement.glide": {
           "start_speed": 0.8,
@@ -93,7 +90,6 @@
           }
         }
       }
-
     },
     "components": {
       "minecraft:despawn": {
@@ -154,54 +150,54 @@
       "minecraft:knockback_resistance": {
         "value": 1.0
       },
-			"minecraft:behavior.nearest_attackable_target": {
-				"priority": 0,
-				"within_radius": 256,
-				"reselect_targets": true,
-				"entity_types": [
-					{
-						"filters": {
-							"any_of": [
-								{
-									"test": "is_family",
-									"subject": "other",
-									"value": "player"
-								},
-								{
-									"test": "is_family",
-									"subject": "other",
-									"value": "snowgolem"
-								},
-								{
-									"test": "is_family",
-									"subject": "other",
-									"value": "irongolem"
-								}
-							]
-						},
-						"max_dist": 256
-					},
-					{
-						"filters": {
-							"any_of": [
-								{
-									"test": "is_family",
-									"subject": "other",
-									"value": "villager"
-								},
-								{
-									"test": "is_family",
-									"subject": "other",
-									"value": "wandering_trader"
-								}
-							]
-						},
-						"max_dist": 256,
-						"must_see": false
-					}
-				],
-				"must_see": true
-			}
+      "minecraft:behavior.nearest_attackable_target": {
+        "priority": 0,
+        "within_radius": 256,
+        "reselect_targets": true,
+        "entity_types": [
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "snowgolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                }
+              ]
+            },
+            "max_dist": 256
+          },
+          {
+            "filters": {
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "villager"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "wandering_trader"
+                }
+              ]
+            },
+            "max_dist": 256,
+            "must_see": false
+          }
+        ],
+        "must_see": true
+      }
     },
     "events": {
       "minecraft:entity_spawned": {

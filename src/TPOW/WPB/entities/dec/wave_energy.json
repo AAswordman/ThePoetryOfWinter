@@ -1,49 +1,58 @@
 {
   "format_version": "1.12.0",
- "minecraft:entity": {
-  "description": {
-    "identifier": "dec:wave_energy",
-    "runtime_identifier": "minecraft:egg",
-    "is_spawnable": false,
-    "is_summonable": true,
-    "is_experimental": false
-  },
-  "components": {
-   "minecraft:collision_box": {
-    "width": 1,
-    "height": 1
-   },
-   "minecraft:explode": {
-    "fuseLength": 5,
-    "fuseLit": true,
-    "power": 0,
-    "causesFire": false
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:wave_energy",
+      "runtime_identifier": "minecraft:egg",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
     },
-   "minecraft:projectile": {
-    "onHit": {
-      "impact_damage": {
-        "damage": 14,
-        "knockback": false,
-        "catchFire": false,
-        "semirandomdiffdamage": false
+    "components": {
+      "minecraft:collision_box": {
+        "width": 1,
+        "height": 1
       },
-      "remove_on_hit": {}
-    },
-    "power": 0.5,
-    "gravity": 0.00,
-    "inertia": 1,
-    "liquid_inertia": 1.2,
-    "anchor": 1,
-    "offset": [ 0, 0, 0],
-    "semirandomdiffdamage": true,
-    "uncertaintyBase": 6.0,
-    "uncertaintyMultiplier": 6,
-    "reflectOnHurt": false
-   },
-   "minecraft:pushable": {
-    "is_pushable": false,
-    "is_pushable_by_piston": true
-   }
+      "minecraft:explode": {
+        "fuseLength": 5,
+        "fuseLit": true,
+        "power": 0,
+        "causesFire": false
+      },
+      "minecraft:projectile": {
+        "onHit": {
+          "impact_damage": {
+            "damage": 14,
+            "knockback": false,
+            "catchFire": false,
+            "semirandomdiffdamage": false
+          },
+          "stick_in_ground": true
+        },
+        "power": 0.6,
+        "gravity": 0.00,
+        "inertia": 1,
+        "liquid_inertia": 1.2,
+        "anchor": 1,
+        "offset": [
+          0,
+          0,
+          0
+        ],
+        "semirandomdiffdamage": true,
+        "uncertaintyBase": 2.0,
+        "uncertaintyMultiplier": 0,
+        "reflectOnHurt": false
+      },
+      "minecraft:type_family": {
+        "family": [
+          "remove_on_hit_ground"
+        ]
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    }
   }
- }
 }

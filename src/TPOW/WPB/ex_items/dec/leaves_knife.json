@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:leaves_knife",
             "menu_category": {
-                "group": "itemGroup.name.sword",
+                "group": "dec:itemGroup.name.thrown_sundries",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -12,9 +12,6 @@
         "components": {
             "minecraft:display_name": {
                 "value": "item.dec:leaves_knife.name"
-            },
-            "minecraft:icon": {
-                "texture": "leaves_knife"
             },
             "minecraft:cooldown": {
                 "category": "missilemissile",
@@ -30,6 +27,11 @@
                 "tags": [
                     "comp:equipment_type:thrown_weapon_:sundries:_"
                 ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "leaves_knife"
+                }
             }
         }
     }

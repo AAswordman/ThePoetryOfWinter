@@ -1,25 +1,21 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:wood_dart",
             "menu_category": {
-                "group": "itemGroup.name.sword",
+                "group": "dec:itemGroup.name.darts",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
         },
         "components": {
-            "minecraft:fuel": {
-                "duration": 10
-            },
             "minecraft:display_name": {
                 "value": "item.dec:wood_dart.name"
             },
-            "minecraft:icon": {
-                "texture": "wood_dart"
+            "minecraft:fuel": {
+                "duration": 10
             },
-            "minecraft:use_animation": "crossbow",
             "minecraft:cooldown": {
                 "category": "missile",
                 "duration": 0.6
@@ -34,6 +30,11 @@
                 "tags": [
                     "comp:equipment_type:thrown_weapon_:darts:_"
                 ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "wood_dart"
+                }
             }
         }
     }

@@ -1,17 +1,19 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "wb:staff_summon",
             "menu_category": {
-                "group": "itemGroup.name.sword",
+                "group": "dec:itemGroup.name.staffs",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
         },
         "components": {
             "minecraft:icon": {
-                "texture": "staff_summon"
+                "textures": {
+                    "default": "staff_summon"
+                }
             },
             "minecraft:enchantable": {
                 "value": 20,

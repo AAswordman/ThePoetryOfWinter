@@ -1,15 +1,18 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:everlasting_winter_sickle",
             "menu_category": {
-                "group": "itemGroup.name.sword",
+                "group": "dec:itemGroup.name.sickles",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
         },
         "components": {
+            "minecraft:display_name": {
+                "value": "item.dec:everlasting_winter_sickle.name"
+            },
             "minecraft:weapon": {
                 "on_hurt_entity": {
                     "event": "everlasting_winter_sickle_attack",
@@ -20,13 +23,6 @@
                     "target": "self"
                 }
             },
-            "minecraft:display_name": {
-                "value": "item.dec:everlasting_winter_sickle.name"
-            },
-            "minecraft:icon": {
-                "texture": "everlasting_winter_sickle"
-            },
-            "minecraft:use_animation": "bow",
             "minecraft:stacked_by_data": false,
             "minecraft:max_stack_size": 1,
             "minecraft:hand_equipped": true,
@@ -93,6 +89,11 @@
                     "comp:movement_addition:-0.01",
                     "comp:equipment_type:melee_weapon_:sickle:_"
                 ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "everlasting_winter_sickle"
+                }
             }
         },
         "events": {

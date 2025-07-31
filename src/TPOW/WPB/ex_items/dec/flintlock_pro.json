@@ -1,23 +1,20 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:flintlock_pro",
             "menu_category": {
-                "group": "itemGroup.name.sword",
+                "group": "dec:itemGroup.name.flintlocks",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
         },
         "components": {
-            "minecraft:fuel": {
-                "duration": 10
-            },
             "minecraft:display_name": {
                 "value": "item.dec:flintlock_pro.name"
             },
-            "minecraft:icon": {
-                "texture": "flintlock_pro"
+            "minecraft:fuel": {
+                "duration": 10
             },
             "minecraft:stacked_by_data": false,
             "minecraft:max_stack_size": 1,
@@ -38,6 +35,11 @@
                     "comp:sneak_movement_addition:-0.06",
                     "comp:equipment_type:range_weapon_:range_weapon:_"
                 ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "flintlock_pro"
+                }
             }
         },
         "events": {}

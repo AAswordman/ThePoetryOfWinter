@@ -30,8 +30,7 @@
       "minecraft:experience_reward": {
         "on_death": "query.last_hit_by_player ? 5 + (query.equipment_count * Math.Random(1,6)) : 0"
       },
-      "minecraft:nameable": {
-      },
+      "minecraft:nameable": {},
       "minecraft:breathable": {
         "total_supply": 15,
         "suffocate_time": 0,
@@ -66,12 +65,9 @@
         "avoid_sun": true,
         "avoid_water": true
       },
-      "minecraft:movement.basic": {
-      },
-      "minecraft:jump.static": {
-      },
-      "minecraft:can_climb": {
-      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
       "minecraft:scale": {
         "value": 0.9875
       },
@@ -138,10 +134,16 @@
         "priority": 6
       },
       "minecraft:type_family": {
-        "family": [ "warped_skeleton", "monster", "undead", "skeleton", "warp", "nether" ]
+        "family": [
+          "warped_skeleton",
+          "monster",
+          "undead",
+          "skeleton",
+          "warp",
+          "nether"
+        ]
       },
-      "minecraft:physics": {
-      },
+      "minecraft:physics": {},
       "minecraft:despawn": {
         "despawn_from_distance": {}
       },
@@ -150,7 +152,6 @@
         "is_pushable_by_piston": true
       }
     },
-
     "events": {
       "minecraft:despawn": {
         "add": {
@@ -167,9 +168,7 @@
           ]
         }
       },
-      "minecraft:entity_spawned": {
-
-      }
+      "minecraft:entity_spawned": {}
     }
   }
 }

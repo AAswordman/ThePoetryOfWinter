@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:mooli",
             "menu_category": {
-                "group": "itemGroup.name.crop",
+                "group": "minecraft:itemGroup.name.crop",
                 "is_hidden_in_commands": false,
                 "category": "nature"
             }
@@ -13,16 +13,22 @@
             "minecraft:display_name": {
                 "value": "item.dec:mooli.name"
             },
-            "minecraft:icon": {
-                "texture": "mooli"
-            },
             "minecraft:use_animation": "eat",
             "minecraft:food": {
                 "nutrition": 4,
                 "saturation_modifier": 0.4
             },
+            "minecraft:compostable": {
+                "composting_chance": 50
+            },
             "minecraft:use_modifiers": {
-                "use_duration": 1.6
+                "use_duration": 1.6,
+                "movement_modifier": 0.4
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "mooli"
+                }
             }
         }
     }

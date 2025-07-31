@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:following_particle",
             "menu_category": {
-                "group": "itemGroup.name.chestplate",
+                "group": "dec:itemGroup.name.clothes_chestplates",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -12,9 +12,6 @@
         "components": {
             "minecraft:display_name": {
                 "value": "item.dec:following_particle.name"
-            },
-            "minecraft:icon": {
-                "texture": "following_particle"
             },
             "minecraft:max_stack_size": 1,
             "minecraft:enchantable": {
@@ -43,6 +40,11 @@
                     "comp:armor_protection:3",
                     "comp:armor_type:decorate_"
                 ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "following_particle"
+                }
             }
         }
     }

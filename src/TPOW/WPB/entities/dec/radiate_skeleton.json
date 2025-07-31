@@ -50,7 +50,6 @@
           "value": 0.23
         }
       },
-
       "minecraft:radiate_skeleton_adult": {
         "minecraft:health": {
           "value": {
@@ -70,7 +69,11 @@
             "skeleton"
           ],
           "seats": {
-            "position": [ 0.0, 1.1, -0.35 ],
+            "position": [
+              0.0,
+              1.1,
+              -0.35
+            ],
             "lock_rider_rotation": 0
           }
         },
@@ -81,7 +84,6 @@
           "track_target": true
         }
       },
-
       "minecraft:zombie_jockey": {
         "minecraft:behavior.find_mount": {
           "priority": 1,
@@ -91,7 +93,6 @@
         }
       }
     },
-
     "components": {
       "minecraft:despawn": {
         "despawn_from_distance": {}
@@ -121,30 +122,32 @@
           }
         ]
       },
-      "minecraft:nameable": {
-      },
+      "minecraft:nameable": {},
       "minecraft:fire_immune": true,
       "minecraft:type_family": {
-        "family": [ "skeleton", "undead", "monster", "mob", "radiate_skeleton", "radiate" ]
+        "family": [
+          "skeleton",
+          "undead",
+          "monster",
+          "mob",
+          "radiate_skeleton",
+          "radiate"
+        ]
       },
       "minecraft:collision_box": {
         "width": 0.6,
         "height": 1.8
       },
-      "minecraft:movement.basic": {
-      },
+      "minecraft:movement.basic": {},
       "minecraft:navigation.walk": {
         "is_amphibious": true,
         "can_pass_doors": true,
         "can_walk": true,
         "can_break_doors": true
       },
-      "minecraft:annotation.break_door": {
-      },
-      "minecraft:jump.static": {
-      },
-      "minecraft:can_climb": {
-      },
+      "minecraft:annotation.break_door": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
       "minecraft:health": {
         "value": {
           "range_min": 28,
@@ -154,7 +157,12 @@
       "minecraft:hurt_on_condition": {
         "damage_conditions": [
           {
-            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
             "cause": "lava",
             "damage_per_tick": 0
           }
@@ -167,9 +175,9 @@
         "breathes_water": true
       },
       "minecraft:attack": {
-          "damage": 2,
-          "effect_name": "poison",
-          "effect_duration": 5
+        "damage": 2,
+        "effect_name": "poison",
+        "effect_duration": 5
       },
       "minecraft:loot": {
         "table": "loot_tables/entities/radiate_skeleton.json"
@@ -206,9 +214,21 @@
           {
             "filters": {
               "any_of": [
-                { "test": "is_family", "subject": "other", "value": "player" },
-                { "test": "is_family", "subject": "other", "value": "snowgolem" },
-                { "test": "is_family", "subject": "other", "value": "irongolem" }
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "snowgolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                }
               ]
             },
             "max_dist": 35
@@ -216,8 +236,16 @@
           {
             "filters": {
               "any_of": [
-                { "test": "is_family", "subject": "other", "value": "villager" },
-                { "test": "is_family", "subject": "other", "value": "wandering_trader" }
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "villager"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "wandering_trader"
+                }
               ]
             },
             "max_dist": 35,
@@ -227,14 +255,12 @@
         "must_see": true,
         "must_see_forget_duration": 17.0
       },
-      "minecraft:physics": {
-      },
+      "minecraft:physics": {},
       "minecraft:pushable": {
         "is_pushable": true,
         "is_pushable_by_piston": true
       }
     },
-
     "events": {
       "minecraft:despawn": {
         "add": {
@@ -264,8 +290,7 @@
           },
           {
             "weight": 25,
-            "remove": {
-            },
+            "remove": {},
             "add": {
               "component_groups": [
                 "minecraft:radiate_skeleton_baby"
@@ -274,8 +299,7 @@
           },
           {
             "weight": 5,
-            "remove": {
-            },
+            "remove": {},
             "add": {
               "component_groups": [
                 "minecraft:radiate_skeleton_baby",
@@ -285,7 +309,6 @@
           }
         ]
       },
-      
       "minecraft:grow_up": {
         "remove": {
           "component_groups": [

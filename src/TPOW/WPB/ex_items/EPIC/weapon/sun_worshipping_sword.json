@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "epic:sun_worshipping_sword",
             "menu_category": {
-                "group": "itemGroup.name.sword",
+                "group": "minecraft:itemGroup.name.sword",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -14,7 +14,9 @@
                 "value": "item.epic:sun_worshipping_sword.name"
             },
             "minecraft:icon": {
-                "texture": "epic:sun_worshipping_sword"
+                "textures": {
+                    "default": "epic:sun_worshipping_sword"
+                }
             },
             "minecraft:animates_in_toolbar": {},
             "minecraft:damage": 12,

@@ -1,17 +1,14 @@
 {
-    "format_version": "1.20.80",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
-            "identifier": "dec:christmas_gift_block",
-            "menu_category": {
-                "group": "itemGroup.name.outside",
-                "category": "construction"
-            }
+            "identifier": "dec:christmas_gift_block"
         },
         "components": {
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "christmas_gift_block"
+                    "texture": "christmas_gift_block",
+                    "render_method": "alpha_test"
                 }
             },
             "minecraft:selection_box": {

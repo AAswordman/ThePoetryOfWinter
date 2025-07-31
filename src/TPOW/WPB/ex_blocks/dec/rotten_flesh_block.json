@@ -1,11 +1,11 @@
 {
-    "format_version": "1.20.80",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "dec:rotten_flesh_block",
             "menu_category": {
-                "group": "itemGroup.name.outside",
-                "category": "items"
+                "group": "minecraft:itemGroup.name.outside",
+                "category": "construction"
             }
         },
         "components": {
@@ -22,7 +22,8 @@
             "minecraft:geometry": "minecraft:geometry.full_block",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "rotten_flesh_block"
+                    "texture": "rotten_flesh_block",
+                    "render_method": "alpha_test"
                 }
             }
         }

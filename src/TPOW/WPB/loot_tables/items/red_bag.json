@@ -61,7 +61,7 @@
         },
         {
           "type": "item",
-          "name": "dec:emerald",
+          "name": "minecraft:emerald",
           "weight": 1,
           "functions": [
             {

@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:challenge_of_ash",
             "menu_category": {
-                "group": "itemGroup.name.navigation",
+                "group": "dec:itemGroup.name.summon_items",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -13,10 +13,12 @@
             "minecraft:display_name": {
                 "value": "item.dec:challenge_of_ash.name"
             },
+            "minecraft:foil": true,
             "minecraft:icon": {
-                "texture": "challenge_of_ash"
-            },
-            "minecraft:foil": true
+                "textures": {
+                    "default": "challenge_of_ash"
+                }
+            }
         }
     }
 }

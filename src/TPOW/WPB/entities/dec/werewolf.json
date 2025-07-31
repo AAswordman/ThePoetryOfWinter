@@ -6,11 +6,13 @@
       "is_spawnable": true,
       "is_summonable": true,
       "is_experimental": false,
-      "scripts":{
-        "animate":[ "werewolf" ]
+      "scripts": {
+        "animate": [
+          "werewolf"
+        ]
       },
-      "animations":{
-        "werewolf":"controller.animation.werewolf"
+      "animations": {
+        "werewolf": "controller.animation.werewolf"
       }
     },
     "component_groups": {
@@ -39,7 +41,6 @@
           "value": 0.35
         }
       },
-
       "minecraft:zombie_adult": {
         "minecraft:movement": {
           "value": 0.23
@@ -50,7 +51,11 @@
             "werewolf"
           ],
           "seats": {
-            "position": [ 0.0, 1.1, -0.35 ],
+            "position": [
+              0.0,
+              1.1,
+              -0.35
+            ],
             "lock_rider_rotation": 0
           }
         },
@@ -61,7 +66,6 @@
           "track_target": true
         }
       },
-
       "minecraft:zombie_jockey": {
         "minecraft:behavior.find_mount": {
           "priority": 1,
@@ -69,13 +73,15 @@
         }
       }
     },
-
     "components": {
-      "minecraft:nameable": {
-      },
-
+      "minecraft:nameable": {},
       "minecraft:type_family": {
-        "family": [ "werewolf","undead", "monster", "radiate" ]
+        "family": [
+          "werewolf",
+          "undead",
+          "monster",
+          "radiate"
+        ]
       },
       "minecraft:collision_box": {
         "width": 0.6,
@@ -84,20 +90,16 @@
       "minecraft:despawn": {
         "despawn_from_distance": {}
       },
-      "minecraft:movement.basic": {
-      },
+      "minecraft:movement.basic": {},
       "minecraft:navigation.walk": {
         "is_amphibious": true,
         "can_pass_doors": true,
         "can_walk": true,
         "can_break_doors": true
       },
-      "minecraft:annotation.break_door": {
-      },
-      "minecraft:jump.static": {
-      },
-      "minecraft:can_climb": {
-      },
+      "minecraft:annotation.break_door": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
       "minecraft:knockback_resistance": {
         "value": 0.75
       },
@@ -110,7 +112,12 @@
       "minecraft:hurt_on_condition": {
         "damage_conditions": [
           {
-            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
             "cause": "lava",
             "damage_per_tick": 4
           }
@@ -139,10 +146,15 @@
       "minecraft:behavior.hurt_by_target": {
         "priority": 1,
         "entity_types": {
-          "filters": { 
-              "all_of": [
-                { "test" :  "is_family", "subject" : "other", "operator": "!=", "value" :  "x"}
-              ] 
+          "filters": {
+            "all_of": [
+              {
+                "test": "is_family",
+                "subject": "other",
+                "operator": "!=",
+                "value": "x"
+              }
+            ]
           }
         }
       },
@@ -179,9 +191,21 @@
           {
             "filters": {
               "any_of": [
-                { "test": "is_family", "subject": "other", "value": "player" },
-                { "test": "is_family", "subject": "other", "value": "snowgolem" },
-                { "test": "is_family", "subject": "other", "value": "irongolem" }
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "snowgolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                }
               ]
             },
             "max_dist": 10
@@ -189,8 +213,16 @@
           {
             "filters": {
               "any_of": [
-                { "test": "is_family", "subject": "other", "value": "villager" },
-                { "test": "is_family", "subject": "other", "value": "wandering_trader" }
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "villager"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "wandering_trader"
+                }
               ]
             },
             "max_dist": 10,
@@ -199,8 +231,17 @@
           {
             "filters": {
               "all_of": [
-                { "test": "is_family", "subject": "other", "value": "baby_turtle" },
-                { "test": "in_water", "subject": "other", "operator": "!=", "value": true }
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "baby_turtle"
+                },
+                {
+                  "test": "in_water",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": true
+                }
               ]
             },
             "max_dist": 10
@@ -209,14 +250,12 @@
         "must_see": true,
         "must_see_forget_duration": 17.0
       },
-      "minecraft:physics": {
-      },
+      "minecraft:physics": {},
       "minecraft:pushable": {
         "is_pushable": true,
         "is_pushable_by_piston": true
       }
     },
-
     "events": {
       "minecraft:despawn": {
         "add": {
@@ -246,19 +285,16 @@
           },
           {
             "weight": 17,
-            "remove": {
-            },
+            "remove": {},
             "add": {
               "component_groups": [
                 "minecraft:zombie_baby"
               ]
-
             }
           },
           {
             "weight": 3,
-            "remove": {
-            },
+            "remove": {},
             "add": {
               "component_groups": [
                 "minecraft:zombie_baby",

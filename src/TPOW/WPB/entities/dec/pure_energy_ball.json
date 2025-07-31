@@ -10,8 +10,8 @@
     },
     "components": {
       "minecraft:collision_box": {
-        "width": 0.31,
-        "height": 0.31
+        "width": 0.8,
+        "height": 0.8
       },
       "minecraft:explode": {
         "fuseLength": 2,
@@ -21,16 +21,20 @@
       },
       "minecraft:projectile": {
         "onHit": {
+          "definition_event": {
+            "event_trigger": {
+              "event": "hit"
+            }
+          },
           "impact_damage": {
             "damage": 9,
             "knockback": true,
             "catchFire": false,
             "semirandomdiffdamage": false
-          },
-          "remove_on_hit": {}
+          }
         },
         "hit_sound": "bullet.hit",
-        "power": 1.3,
+        "power": 1.7,
         "gravity": 0.00,
         "inertia": 1.02,
         "liquid_inertia": 1,
@@ -38,16 +42,30 @@
         "offset": [
           0,
           0,
-          1
+          0
         ],
         "semirandomdiffdamage": true,
-        "uncertaintyBase": 6.0,
-        "uncertaintyMultiplier": 6,
+        "uncertaintyBase": 2.0,
+        "uncertaintyMultiplier": 0,
         "reflectOnHurt": true
+      },
+      "minecraft:type_family": {
+        "family": [
+          "remove_on_hit"
+        ]
       },
       "minecraft:pushable": {
         "is_pushable": false,
         "is_pushable_by_piston": true
+      }
+    },
+    "events": {
+      "hit": {
+        "queue_command": {
+          "command": [
+            "particle dec:pure_energy_ball_hit_particle ~~~"
+          ]
+        }
       }
     }
   }

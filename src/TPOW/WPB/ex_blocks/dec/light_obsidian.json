@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.80",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "dec:light_obsidian",
             "menu_category": {
-                "group": "itemGroup.name.outside",
+                "group": "minecraft:itemGroup.name.outside",
                 "category": "items"
             }
         },
@@ -27,7 +27,8 @@
             "minecraft:geometry": "minecraft:geometry.full_block",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "light_obsidian"
+                    "texture": "light_obsidian",
+                    "render_method": "alpha_test"
                 }
             }
         }

@@ -1,23 +1,25 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:coal_nugget",
             "menu_category": {
-                "group": "itemGroup.name.decorations",
+                "group": "dec:itemGroup.name.nuggets",
                 "is_hidden_in_commands": false,
                 "category": "items"
             }
         },
         "components": {
-            "minecraft:fuel": {
-                "duration": 10
-            },
             "minecraft:display_name": {
                 "value": "item.dec:coal_nugget.name"
             },
+            "minecraft:fuel": {
+                "duration": 10
+            },
             "minecraft:icon": {
-                "texture": "coal_nugget"
+                "textures": {
+                    "default": "coal_nugget"
+                }
             }
         }
     }

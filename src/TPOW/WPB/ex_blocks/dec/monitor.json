@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.80",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "dec:monitor",
             "menu_category": {
-                "group": "itemGroup.name.log",
+                "group": "minecraft:itemGroup.name.log",
                 "category": "nature"
             }
         },

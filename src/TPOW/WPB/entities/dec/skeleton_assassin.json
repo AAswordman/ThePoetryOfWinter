@@ -58,7 +58,6 @@
           "def": "dec:iron_dart"
         }
       },
-
       "minecraft:poison_dart": {
         "minecraft:loot": {
           "table": "loot_tables/entities/skeleton_assassin_poison_dart.json"
@@ -93,7 +92,6 @@
           "def": "dec:poison_dart"
         }
       },
-
       "minecraft:skeleton_baby": {
         "minecraft:health": {
           "value": {
@@ -120,7 +118,6 @@
           "value": 0.4
         }
       },
-
       "minecraft:skeleton_adult": {
         "minecraft:health": {
           "value": {
@@ -140,7 +137,11 @@
             "skeleton"
           ],
           "seats": {
-            "position": [ 0.0, 1.6, -0.35 ],
+            "position": [
+              0.0,
+              1.6,
+              -0.35
+            ],
             "lock_rider_rotation": 0
           }
         },
@@ -151,7 +152,6 @@
           "track_target": true
         }
       },
-
       "minecraft:skeleton_jockey": {
         "minecraft:behavior.find_mount": {
           "priority": 1,
@@ -161,14 +161,18 @@
         }
       }
     },
-
     "components": {
       "minecraft:collision_box": {
         "width": 0.6,
         "height": 1.9
       },
       "minecraft:type_family": {
-        "family": [ "skeleton", "undead", "monster", "mob" ]
+        "family": [
+          "skeleton",
+          "undead",
+          "monster",
+          "mob"
+        ]
       },
       "minecraft:despawn": {
         "despawn_from_distance": {}
@@ -178,7 +182,6 @@
         "suffocate_time": 0,
         "breathes_water": true
       },
-
       "minecraft:health": {
         "value": {
           "range_min": 38,
@@ -188,7 +191,12 @@
       "minecraft:hurt_on_condition": {
         "damage_conditions": [
           {
-            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
             "cause": "lava",
             "damage_per_tick": 4
           }
@@ -199,14 +207,10 @@
         "avoid_sun": true,
         "avoid_water": true
       },
-      "minecraft:movement.basic": {
-      },
-      "minecraft:jump.static": {
-      },
-      "minecraft:can_climb": {
-      },
-      "minecraft:nameable": {
-      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
+      "minecraft:nameable": {},
       "minecraft:behavior.ranged_attack": {
         "attack_interval_min": 1,
         "attack_interval_max": 3,
@@ -279,14 +283,12 @@
       "minecraft:behavior.random_look_around": {
         "priority": 6
       },
-      "minecraft:physics": {
-      },
+      "minecraft:physics": {},
       "minecraft:pushable": {
         "is_pushable": true,
         "is_pushable_by_piston": true
       }
     },
-
     "events": {
       "minecraft:despawn": {
         "add": {
@@ -317,8 +319,7 @@
           },
           {
             "weight": 25,
-            "remove": {
-            },
+            "remove": {},
             "add": {
               "component_groups": [
                 "minecraft:skeleton_baby",
@@ -328,8 +329,7 @@
           },
           {
             "weight": 5,
-            "remove": {
-            },
+            "remove": {},
             "add": {
               "component_groups": [
                 "minecraft:skeleton_baby",
@@ -350,8 +350,7 @@
           },
           {
             "weight": 25,
-            "remove": {
-            },
+            "remove": {},
             "add": {
               "component_groups": [
                 "minecraft:skeleton_baby",
@@ -361,8 +360,7 @@
           },
           {
             "weight": 5,
-            "remove": {
-            },
+            "remove": {},
             "add": {
               "component_groups": [
                 "minecraft:skeleton_baby",
@@ -373,7 +371,6 @@
           }
         ]
       },
-      
       "minecraft:grow_up": {
         "remove": {
           "component_groups": [

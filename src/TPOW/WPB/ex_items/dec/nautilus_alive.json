@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:nautilus_alive",
             "menu_category": {
-                "group": "itemGroup.name.rawFood",
+                "group": "minecraft:itemGroup.name.rawFood",
                 "is_hidden_in_commands": false,
                 "category": "nature"
             }
@@ -12,9 +12,6 @@
         "components": {
             "minecraft:display_name": {
                 "value": "item.dec:nautilus_alive.name"
-            },
-            "minecraft:icon": {
-                "texture": "nautilus_alive"
             },
             "minecraft:use_animation": "eat",
             "minecraft:stacked_by_data": true,
@@ -24,7 +21,13 @@
                 "using_converts_to": "nautilus_shell"
             },
             "minecraft:use_modifiers": {
-                "use_duration": 1.5
+                "use_duration": 1.6,
+                "movement_modifier": 0.4
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "nautilus_alive"
+                }
             }
         }
     }

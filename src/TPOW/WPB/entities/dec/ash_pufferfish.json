@@ -19,13 +19,27 @@
           "minimum_count": 1,
           "event_filters": {
             "any_of": [
-              { "test": "is_family", "subject": "other", "value": "mob" },
-              { "all_of": [
-                { "test": "is_family", "subject": "other", "value": "player" },
-                { "none_of": 
-                  { "test": "has_ability", "subject": "other", "value": "instabuild" } 
-                }
-              ]}
+              {
+                "test": "is_family",
+                "subject": "other",
+                "value": "mob"
+              },
+              {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "none_of": {
+                      "test": "has_ability",
+                      "subject": "other",
+                      "value": "instabuild"
+                    }
+                  }
+                ]
+              }
             ]
           },
           "event": "minecraft:start_half_puff"
@@ -54,13 +68,27 @@
           "minimum_count": 1,
           "event_filters": {
             "any_of": [
-              { "test": "is_family", "subject": "other", "value": "mob" },
-              { "all_of": [
-                { "test": "is_family", "subject": "other", "value": "player" },
-                { "none_of": 
-                  { "test": "has_ability", "subject": "other", "value": "instabuild" } 
-                }
-              ]}
+              {
+                "test": "is_family",
+                "subject": "other",
+                "value": "mob"
+              },
+              {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "none_of": {
+                      "test": "has_ability",
+                      "subject": "other",
+                      "value": "instabuild"
+                    }
+                  }
+                ]
+              }
             ]
           },
           "event": "minecraft:start_full_puff"
@@ -107,15 +135,31 @@
           "require_all": true,
           "event_filters": {
             "none_of": [
-              { "test": "is_family", "subject": "other", "value": "mob" },
-              { "all_of": [
-                { "test": "is_family", "subject": "other", "value": "player" },
-                { "none_of": 
-                  { "test": "has_ability", "subject": "other", "value": "instabuild" } 
-                }
-              ]}
+              {
+                "test": "is_family",
+                "subject": "other",
+                "value": "mob"
+              },
+              {
+                "all_of": [
+                  {
+                    "test": "is_family",
+                    "subject": "other",
+                    "value": "player"
+                  },
+                  {
+                    "none_of": {
+                      "test": "has_ability",
+                      "subject": "other",
+                      "value": "instabuild"
+                    }
+                  }
+                ]
+              }
             ],
-            "test": "distance_to_nearest_player", "operator": ">", "value": 2.9
+            "test": "distance_to_nearest_player",
+            "operator": ">",
+            "value": 2.9
           },
           "event": "minecraft:from_full_puff"
         }
@@ -131,7 +175,6 @@
         }
       }
     },
-
     "components": {
       "minecraft:behavior.tempt": {
         "priority": 5,
@@ -144,7 +187,11 @@
         "on_death": "query.last_hit_by_player ? Math.Random(1,3) : 0"
       },
       "minecraft:type_family": {
-        "family": [ "ash_pufferfish", "pufferfish", "fish" ]
+        "family": [
+          "ash_pufferfish",
+          "pufferfish",
+          "fish"
+        ]
       },
       "minecraft:collision_box": {
         "width": 0.8,
@@ -160,7 +207,12 @@
       "minecraft:hurt_on_condition": {
         "damage_conditions": [
           {
-            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
             "cause": "lava",
             "damage_per_tick": 4
           }
@@ -190,7 +242,7 @@
         "sway_amplitude": 0.0
       },
       "minecraft:despawn": {
-        "despawn_from_distance": { 
+        "despawn_from_distance": {
           "min_distance": 32,
           "max_distance": 40
         }
@@ -229,8 +281,7 @@
         "block_distance": 2.0,
         "block_weight": 0.85
       },
-      "minecraft:nameable": {
-      },
+      "minecraft:nameable": {},
       "minecraft:physics": {
         "has_gravity": false
       },
@@ -239,52 +290,112 @@
         "is_pushable_by_piston": true
       }
     },
-
     "events": {
       "minecraft:entity_spawned": {
         "add": {
-          "component_groups": [ "minecraft:normal_puff" ]
+          "component_groups": [
+            "minecraft:normal_puff"
+          ]
         }
       },
-
       "minecraft:to_full_puff": {
-        "add": { "component_groups": [ "minecraft:full_puff", "minecraft:deflate_sensor_buffer" ] },
-        "remove": { "component_groups": [ "minecraft:normal_puff" ] }
+        "add": {
+          "component_groups": [
+            "minecraft:full_puff",
+            "minecraft:deflate_sensor_buffer"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "minecraft:normal_puff"
+          ]
+        }
       },
-
       "minecraft:start_half_puff": {
-        "add": { "component_groups": [ "minecraft:half_puff_primary" ] },
-        "remove": { "component_groups": [ "minecraft:normal_puff" ] }
+        "add": {
+          "component_groups": [
+            "minecraft:half_puff_primary"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "minecraft:normal_puff"
+          ]
+        }
       },
-
       "minecraft:on_half_puff": {
-        "add": { "component_groups": [ "minecraft:half_puff_secondary" ] },
-        "remove": { "component_groups": [ "minecraft:half_puff_primary" ] }
+        "add": {
+          "component_groups": [
+            "minecraft:half_puff_secondary"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "minecraft:half_puff_primary"
+          ]
+        }
       },
-
       "minecraft:start_full_puff": {
-        "add": { "component_groups": [ "minecraft:full_puff", "minecraft:deflate_sensor_buffer" ] },
-        "remove": { "component_groups": [ "minecraft:half_puff_secondary" ] }
+        "add": {
+          "component_groups": [
+            "minecraft:full_puff",
+            "minecraft:deflate_sensor_buffer"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "minecraft:half_puff_secondary"
+          ]
+        }
       },
-
       "minecraft:on_full_puff": {
-        "add": { "component_groups": [ "minecraft:deflate_sensor" ] },
-        "remove": { "component_groups": [ "minecraft:deflate_sensor_buffer" ] }
+        "add": {
+          "component_groups": [
+            "minecraft:deflate_sensor"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "minecraft:deflate_sensor_buffer"
+          ]
+        }
       },
-
       "minecraft:from_full_puff": {
-        "add": { "component_groups": [ "minecraft:start_deflate" ] },
-        "remove": { "component_groups": [ "minecraft:deflate_sensor" ] }
+        "add": {
+          "component_groups": [
+            "minecraft:start_deflate"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "minecraft:deflate_sensor"
+          ]
+        }
       },
-
       "minecraft:on_deflate": {
-        "add": { "component_groups": [ "minecraft:half_puff_secondary" ] },
-        "remove": { "component_groups": [ "minecraft:full_puff", "minecraft:start_deflate" ] }
+        "add": {
+          "component_groups": [
+            "minecraft:half_puff_secondary"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "minecraft:full_puff",
+            "minecraft:start_deflate"
+          ]
+        }
       },
-
       "minecraft:on_normal_puff": {
-        "add": { "component_groups": [ "minecraft:normal_puff" ] },
-        "remove": { "component_groups": [ "minecraft:half_puff_secondary" ] }
+        "add": {
+          "component_groups": [
+            "minecraft:normal_puff"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "minecraft:half_puff_secondary"
+          ]
+        }
       }
     }
   }

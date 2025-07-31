@@ -7,9 +7,7 @@
       "is_summonable": true,
       "is_experimental": false
     },
-    "component_groups": {
-    },
-
+    "component_groups": {},
     "components": {
       "minecraft:despawn": {
         "despawn_from_distance": {}
@@ -23,31 +21,31 @@
         "start_delay": 15,
         "max_failed_attempts": 20
       },
-      "minecraft:nameable": {
-      },
+      "minecraft:nameable": {},
       "minecraft:type_family": {
-        "family": [ "illusion_zombie","zombie", "undead", "monster", "mob" ]
+        "family": [
+          "illusion_zombie",
+          "zombie",
+          "undead",
+          "monster",
+          "mob"
+        ]
       },
       "minecraft:collision_box": {
         "width": 0.6,
         "height": 1.9
       },
-      "minecraft:burns_in_daylight": {
-      },
-      "minecraft:movement.basic": {
-      },
+      "minecraft:burns_in_daylight": {},
+      "minecraft:movement.basic": {},
       "minecraft:navigation.walk": {
         "is_amphibious": true,
         "can_pass_doors": true,
         "can_walk": true,
         "can_break_doors": true
       },
-      "minecraft:annotation.break_door": {
-      },
-      "minecraft:jump.static": {
-      },
-      "minecraft:can_climb": {
-      },
+      "minecraft:annotation.break_door": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
       "minecraft:health": {
         "value": 20,
         "max": 20
@@ -55,7 +53,12 @@
       "minecraft:hurt_on_condition": {
         "damage_conditions": [
           {
-            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
             "cause": "lava",
             "damage_per_tick": 4
           }
@@ -111,9 +114,21 @@
           {
             "filters": {
               "any_of": [
-                { "test": "is_family", "subject": "other", "value": "player" },
-                { "test": "is_family", "subject": "other", "value": "snowgolem" },
-                { "test": "is_family", "subject": "other", "value": "irongolem" }
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "snowgolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                }
               ]
             },
             "max_dist": 35
@@ -121,8 +136,16 @@
           {
             "filters": {
               "any_of": [
-                { "test": "is_family", "subject": "other", "value": "villager" },
-                { "test": "is_family", "subject": "other", "value": "wandering_trader" }
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "villager"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "wandering_trader"
+                }
               ]
             },
             "max_dist": 35,
@@ -131,8 +154,17 @@
           {
             "filters": {
               "all_of": [
-                { "test": "is_family", "subject": "other", "value": "baby_turtle" },
-                { "test": "in_water", "subject": "other", "operator": "!=", "value": true }
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "baby_turtle"
+                },
+                {
+                  "test": "in_water",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": true
+                }
               ]
             },
             "max_dist": 35
@@ -141,22 +173,36 @@
         "must_see": true,
         "must_see_forget_duration": 17.0
       },
-      "minecraft:physics": {
-      },
+      "minecraft:physics": {},
       "minecraft:pushable": {
         "is_pushable": true,
         "is_pushable_by_piston": true
       }
     },
-
     "events": {
       "minecraft:slow_mode": {
-        "remove": { "component_groups": [ "minecraft:quick_mode" ] },
-        "add": { "component_groups": [ "minecraft:slow_mode" ] }
+        "remove": {
+          "component_groups": [
+            "minecraft:quick_mode"
+          ]
+        },
+        "add": {
+          "component_groups": [
+            "minecraft:slow_mode"
+          ]
+        }
       },
       "minecraft:quick_mode": {
-        "add": { "component_groups": [ "minecraft:quick_mode" ] },
-        "remove": { "component_groups": [ "minecraft:slow_mode" ] }
+        "add": {
+          "component_groups": [
+            "minecraft:quick_mode"
+          ]
+        },
+        "remove": {
+          "component_groups": [
+            "minecraft:slow_mode"
+          ]
+        }
       }
     }
   }

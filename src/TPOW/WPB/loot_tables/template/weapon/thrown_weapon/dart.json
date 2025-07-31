@@ -184,6 +184,32 @@
               }
             }
           ]
+        },
+        {
+          "type": "item",
+          "name": "dec:stone_dart",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 16,
+                "max": 32
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "dec:poison_dart",
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 16,
+                "max": 32
+              }
+            }
+          ]
         }
       ]
     }

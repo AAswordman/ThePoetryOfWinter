@@ -48,8 +48,8 @@
           0
         ],
         "semirandomdiffdamage": true,
-        "uncertaintyBase": 13.0,
-        "uncertaintyMultiplier": 8,
+        "uncertaintyBase": 4.3,
+        "uncertaintyMultiplier": 0,
         "reflectOnHurt": true,
         "shoot_target": false
       },

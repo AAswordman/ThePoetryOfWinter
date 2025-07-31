@@ -108,6 +108,21 @@
                 },
                 {
                     "type": "item",
+                    "name": "dec:lurk_bud_crop",
+                    "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "dec:lurk_fruit_crop",
+                    "weight": 1
+                },
+                {
+                    "type": "item",
+                    "name": "dec:lurk_orchid_crop",
+                    "weight": 1
+                },
+                {
+                    "type": "item",
                     "name": "dec:lurk_mushroom",
                     "weight": 1
                 },

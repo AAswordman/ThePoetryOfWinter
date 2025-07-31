@@ -18,14 +18,18 @@
           "impact_damage": {
             "damage": 4,
             "knockback": true
-          },
-          "remove_on_hit": { }
+          }
         },
         "hit_sound": "dig.stone",
-				"hit_ground_sound": "dig.stone",
+        "hit_ground_sound": "dig.stone",
         "power": 1.5,
         "gravity": 0.035,
         "angleoffset": 0.0
+      },
+      "minecraft:type_family": {
+        "family": [
+          "remove_on_hit"
+        ]
       },
       "minecraft:pushable": {
         "is_pushable": false,

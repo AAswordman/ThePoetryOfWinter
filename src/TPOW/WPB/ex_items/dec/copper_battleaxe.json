@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:copper_battleaxe",
             "menu_category": {
-                "group": "itemGroup.name.axe",
+                "group": "minecraft:itemGroup.name.axe",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -12,9 +12,6 @@
         "components": {
             "minecraft:display_name": {
                 "value": "item.dec:copper_battleaxe.name"
-            },
-            "minecraft:icon": {
-                "texture": "copper_battleaxe"
             },
             "minecraft:max_stack_size": 1,
             "minecraft:durability": {
@@ -24,7 +21,7 @@
                 "value": 14,
                 "slot": "axe"
             },
-            "minecraft:damage": 6.7,
+            "minecraft:damage": 6,
             "minecraft:digger": {
                 "use_efficiency": true,
                 "destroy_speeds": [
@@ -754,6 +751,11 @@
                     "minecraft:is_axe",
                     "comp:equipment_type:melee_weapon_:axe:_"
                 ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "copper_battleaxe"
+                }
             }
         },
         "events": {

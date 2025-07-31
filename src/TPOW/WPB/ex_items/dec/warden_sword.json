@@ -1,24 +1,21 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:warden_sword",
             "menu_category": {
-                "group": "itemGroup.name.sword",
+                "group": "minecraft:itemGroup.name.sword",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
         },
         "components": {
-            "minecraft:cooldown": {
-                "category": "sword",
-                "duration": 15
-            },
             "minecraft:display_name": {
                 "value": "item.dec:warden_sword.name"
             },
-            "minecraft:icon": {
-                "texture": "warden_sword"
+            "minecraft:cooldown": {
+                "category": "sword",
+                "duration": 15
             },
             "minecraft:weapon": {
                 "on_hurt_entity": {
@@ -30,7 +27,6 @@
                     "target": "self"
                 }
             },
-            "minecraft:use_animation": "bow",
             "minecraft:stacked_by_data": false,
             "minecraft:max_stack_size": 1,
             "minecraft:repairable": {
@@ -87,6 +83,11 @@
                 "tags": [
                     "comp:equipment_type:melee_weapon_:sword:_"
                 ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "warden_sword"
+                }
             }
         },
         "events": {

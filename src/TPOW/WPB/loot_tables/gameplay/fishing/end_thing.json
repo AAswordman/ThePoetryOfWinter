@@ -30,11 +30,6 @@
         },
         {
           "type": "item",
-          "name": "dec:ender_mind",
-          "weight": 10
-        },
-        {
-          "type": "item",
           "name": "dec:ender_substance",
           "weight": 5
         },

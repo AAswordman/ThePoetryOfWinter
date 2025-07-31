@@ -1,25 +1,21 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:flare_magic_book",
             "menu_category": {
-                "group": "itemGroup.name.sword",
+                "group": "dec:itemGroup.name.magic_books",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
         },
         "components": {
-            "minecraft:fuel": {
-                "duration": 20
-            },
             "minecraft:display_name": {
                 "value": "item.dec:flare_magic_book.name"
             },
-            "minecraft:icon": {
-                "texture": "flare_magic_book"
+            "minecraft:fuel": {
+                "duration": 20
             },
-            "minecraft:use_animation": "bow",
             "minecraft:stacked_by_data": false,
             "minecraft:max_stack_size": 1,
             "minecraft:hand_equipped": false,
@@ -43,20 +39,19 @@
                 "value": 20,
                 "slot": "flintsteel"
             },
-            "minecraft:cooldown": {
-                "category": "magic_book",
-                "duration": 1
-            },
             "minecraft:durability": {
                 "max_durability": 4096
             },
-            "minecraft:use_modifiers": {
-                "use_duration": 30000
-            },
             "minecraft:tags": {
                 "tags": [
+                    "use_skill_count",
                     "comp:equipment_type:magic_weapon_:magic_book:_"
                 ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "flare_magic_book"
+                }
             }
         },
         "events": {
@@ -69,7 +64,7 @@
             "shoot": {
                 "sequence": [
                     {
-                        "condition": "query.scoreboard('wbfl') > 6",
+                        "condition": "query.scoreboard('wbfl') > 6 && query.scoreboard('skill_count') > 4",
                         "sequence": [
                             {
                                 "run_command": {
@@ -86,13 +81,115 @@
                             {
                                 "shoot": {
                                     "projectile": "dec:spots_by_book",
-                                    "launch_power": 1
+                                    "launch_power": 1,
+                                    "delay_ticks": 0
                                 }
                             },
                             {
                                 "damage": {
                                     "type": "magic",
                                     "amount": 1
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "condition": "query.scoreboard('skill_count') >= 10",
+                        "sequence": [
+                            {
+                                "run_command": {
+                                    "command": [
+                                        "scoreboard players set @s skill_count 0"
+                                    ],
+                                    "target": "holder"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "condition": "query.scoreboard('skill_count') <= 12",
+                        "sequence": [
+                            {
+                                "run_command": {
+                                    "command": [
+                                        "scoreboard players add @s skill_count 1"
+                                    ],
+                                    "target": "holder"
+                                }
+                            },
+                            {
+                                "randomize": [
+                                    {
+                                        "shoot": {
+                                            "projectile": "dec:spots_overflow",
+                                            "launch_power": 1,
+                                            "delay_ticks": 0
+                                        },
+                                        "weight": 4
+                                    },
+                                    {
+                                        "sequence": [
+                                            {
+                                                "shoot": {
+                                                    "projectile": "dec:spots_overflow",
+                                                    "launch_power": 1,
+                                                    "delay_ticks": 0
+                                                }
+                                            },
+                                            {
+                                                "shoot": {
+                                                    "projectile": "dec:spots_overflow",
+                                                    "launch_power": 1,
+                                                    "delay_ticks": 10
+                                                }
+                                            }
+                                        ],
+                                        "weight": 2
+                                    },
+                                    {
+                                        "sequence": [
+                                            {
+                                                "shoot": {
+                                                    "projectile": "dec:spots_overflow",
+                                                    "launch_power": 1,
+                                                    "delay_ticks": 0
+                                                }
+                                            },
+                                            {
+                                                "shoot": {
+                                                    "projectile": "dec:spots_overflow",
+                                                    "launch_power": 1,
+                                                    "delay_ticks": 10
+                                                }
+                                            },
+                                            {
+                                                "shoot": {
+                                                    "projectile": "dec:spots_overflow",
+                                                    "launch_power": 1,
+                                                    "delay_ticks": 20
+                                                }
+                                            }
+                                        ],
+                                        "weight": 1
+                                    },
+                                    {
+                                        "weight": 9
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "condition": "query.scoreboard('skill_count') == 2 || query.scoreboard('skill_count') == 4",
+                        "sequence": [
+                            {
+                                "run_command": {
+                                    "command": [
+                                        "playsound fire.fire @a ~~~",
+                                        "particle dec:fire_powering_particle ~~0.5~",
+                                        "playanimation @s animation.humanoid.sword_charge"
+                                    ],
+                                    "target": "holder"
                                 }
                             }
                         ]

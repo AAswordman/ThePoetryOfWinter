@@ -1,0 +1,114 @@
+{
+    "format_version": "1.21.60",
+    "minecraft:block": {
+        "description": {
+            "identifier": "dec:flesh_block",
+            "states": {
+                "dec:age": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15
+                ]
+            },
+            "menu_category": {
+                "group": "minecraft:itemGroup.name.outside",
+                "category": "construction"
+            }
+        },
+        "permutations": [
+            {
+                "condition": "query.block_state('dec:age') <= 15",
+                "components": {
+                    "minecraft:on_interact": {
+                        "event": "artificial_aging",
+                        "condition": "query.get_equipped_item_name('main_hand') == 'bone_meal'"
+                    },
+                    "minecraft:loot": "loot_tables/empty.json"
+                }
+            }
+        ],
+        "components": {
+            "minecraft:unit_cube": {},
+            "minecraft:light_dampening": 15,
+            "minecraft:light_emission": 0,
+            "minecraft:destructible_by_mining": {
+                "seconds_to_destroy": 1
+            },
+            "minecraft:destructible_by_explosion": {
+                "explosion_resistance": 0
+            },
+            "minecraft:random_ticking": {
+                "on_tick": {
+                    "event": "aging"
+                }
+            },
+            "minecraft:map_color": "#A2FFFF",
+            "minecraft:loot": "loot_tables/empty.json",
+            "minecraft:geometry": "minecraft:geometry.full_block",
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "flesh_block",
+                    "render_method": "alpha_test"
+                }
+            }
+        },
+        "events": {
+            "aging": {
+                "randomize": [
+                    {
+                        "weight": 1,
+                        "trigger": {
+                            "event": "spread"
+                        }
+                    },
+                    {
+                        "weight": 4,
+                        "set_block_state": {
+                            "dec:age": "(query.block_state('dec:age')<15) ? query.block_state('dec:age') + 1 : 15"
+                        }
+                    }
+                ]
+            },
+            "spread": {
+                "post_message": {
+                    "sign": "dec:flesh_block_spread",
+                    "message": [
+                        "sapi.block"
+                    ]
+                }
+            },
+            "artificial_aging": {
+                "sequence": [
+                    {
+                        "decrement_stack": {}
+                    },
+                    {
+                        "run_command": {
+                            "command": [
+                                "particle minecraft:crop_growth_emitter ~~~"
+                            ]
+                        }
+                    },
+                    {
+                        "trigger": {
+                            "event": "aging"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

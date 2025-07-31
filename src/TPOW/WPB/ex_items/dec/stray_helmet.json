@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:stray_helmet",
             "menu_category": {
-                "group": "itemGroup.name.helmet",
+                "group": "dec:itemGroup.name.clothes_helmets",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -12,9 +12,6 @@
         "components": {
             "minecraft:display_name": {
                 "value": "item.dec:stray_helmet.name"
-            },
-            "minecraft:icon": {
-                "texture": "stray_helmet"
             },
             "minecraft:max_stack_size": 1,
             "minecraft:enchantable": {
@@ -43,6 +40,11 @@
                     "comp:armor_protection:2",
                     "comp:armor_type:decorate_"
                 ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "stray_helmet"
+                }
             }
         }
     }

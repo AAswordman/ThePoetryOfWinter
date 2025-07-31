@@ -56,7 +56,6 @@
           "mob"
         ]
       },
-      "minecraft:tick_world": {},
       "minecraft:boss": {
         "should_darken_sky": false,
         "name": "boss.dec:escaped_soul.name",
@@ -93,8 +92,7 @@
           ]
         }
       },
-      "minecraft:entity_spawned": {
-      },
+      "minecraft:entity_spawned": {},
       "minecraft:next": {
         "add": {
           "component_groups": [

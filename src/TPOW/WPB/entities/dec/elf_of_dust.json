@@ -70,7 +70,12 @@
       },
       "minecraft:fire_immune": true,
       "minecraft:type_family": {
-        "family": ["elf_of_dust", "villager", "player", "mob" ]
+        "family": [
+          "elf_of_dust",
+          "villager",
+          "player",
+          "mob"
+        ]
       },
       "minecraft:breathable": {
         "totalSupply": 15,
@@ -87,14 +92,16 @@
         "has_gravity": false,
         "has_collision": true
       },
-      "minecraft:can_fly": {
-      },
+      "minecraft:can_fly": {},
       "minecraft:behavior.float_wander": {
         "xz_dist": 10,
         "y_dist": 7,
         "y_offset": -2.0,
         "random_reselect": true,
-        "float_duration": [0.1, 0.35]
+        "float_duration": [
+          0.1,
+          0.35
+        ]
       },
       "minecraft:shooter": {
         "type": "ashEnergy",
@@ -109,13 +116,13 @@
         "burst_shots": 2,
         "burst_interval": 1,
         "charge_charged_trigger": 0.0,
-        "charge_shoot_trigger": 4.0,
-        "attack_interval_min": 2.0,
-        "attack_interval_max": 3.0,
-        "attack_radius": 64.0
+        "charge_shoot_trigger": 0.5,
+        "attack_interval_min": 1.0,
+        "attack_interval_max": 2.0,
+        "attack_radius": 16.0
       },
-        "minecraft:movement": {
-          "value": 0.005
+      "minecraft:movement": {
+        "value": 0.005
       },
       "minecraft:collision_box": {
         "width": 0.4,
@@ -124,12 +131,9 @@
       "minecraft:navigation.walk": {
         "can_float": true
       },
-      "minecraft:movement.basic": {
-      },
-      "minecraft:jump.static": {
-      },
-      "minecraft:can_climb": {
-      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
       "minecraft:behavior.float": {
         "priority": 0
       },
@@ -178,7 +182,6 @@
         "priority": 6
       }
     },
-
     "events": {
       "minecraft:disappear": {
         "queue_command": {

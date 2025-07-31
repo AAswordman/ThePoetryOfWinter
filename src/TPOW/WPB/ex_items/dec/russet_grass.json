@@ -1,0 +1,26 @@
+{
+    "format_version": "1.21.94",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dec:russet_grass",
+            "menu_category": {
+                "group": "minecraft:itemGroup.name.flower",
+                "is_hidden_in_commands": false,
+                "category": "nature"
+            }
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.dec:russet_grass.name"
+            },
+            "minecraft:block_placer": {
+                "block": "dec:russet_grass_crop"
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "russet_grass"
+                }
+            }
+        }
+    }
+}

@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:steel_sickle",
             "menu_category": {
-                "group": "itemGroup.name.sword",
+                "group": "dec:itemGroup.name.sickles",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -12,9 +12,6 @@
         "components": {
             "minecraft:display_name": {
                 "value": "item.dec:steel_sickle.name"
-            },
-            "minecraft:icon": {
-                "texture": "steel_sickle"
             },
             "minecraft:weapon": {
                 "on_hurt_entity": {
@@ -73,6 +70,11 @@
                     "comp:movement_addition:-0.015",
                     "comp:equipment_type:melee_weapon_:sickle:_"
                 ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "steel_sickle"
+                }
             }
         },
         "events": {

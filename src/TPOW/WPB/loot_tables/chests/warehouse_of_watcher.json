@@ -246,7 +246,7 @@
         {
           "type": "item",
           "weight": 5,
-          "name": "minecraft:dandelion"
+          "name": "minecraft:yellow_flower"
         },
         {
           "type": "item",
@@ -811,7 +811,7 @@
           ]
         },
         {
-          "name": "dec:christmas_gift_block",
+          "name": "dec:christmas_gift",
           "type": "item",
           "weight": 1,
           "functions": [

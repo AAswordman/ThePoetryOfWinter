@@ -348,8 +348,7 @@
         "is_pushable": true,
         "is_pushable_by_piston": true
       },
-      "minecraft:movement.basic": {
-      }
+      "minecraft:movement.basic": {}
     },
     "events": {
       "minecraft:invisibility": {
@@ -372,7 +371,7 @@
             "minecraft:shadow_of_sea_angry"
           ]
         },
-        "queue_command":  {
+        "queue_command": {
           "command": [
             "effect @s invisibility 3 0 true"
           ]

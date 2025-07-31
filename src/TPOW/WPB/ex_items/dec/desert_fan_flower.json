@@ -1,0 +1,26 @@
+{
+    "format_version": "1.21.94",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dec:desert_fan_flower",
+            "menu_category": {
+                "group": "minecraft:itemGroup.name.flower",
+                "is_hidden_in_commands": false,
+                "category": "nature"
+            }
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.dec:desert_fan_flower.name"
+            },
+            "minecraft:block_placer": {
+                "block": "dec:desert_fan_flower_crop"
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "desert_fan_flower"
+                }
+            }
+        }
+    }
+}

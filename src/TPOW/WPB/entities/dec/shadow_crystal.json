@@ -1,4 +1,4 @@
- {
+{
   "format_version": "1.13.0",
   "minecraft:entity": {
     "description": {
@@ -50,7 +50,6 @@
         "width": 0,
         "height": 0
       },
-      "minecraft:tick_world": {},
       "minecraft:boss": {
         "should_darken_sky": false,
         "name": "event.dec:shadow_crystal.name",

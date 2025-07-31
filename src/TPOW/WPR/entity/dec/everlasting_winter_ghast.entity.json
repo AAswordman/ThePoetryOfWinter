@@ -1,39 +1,22 @@
 {
-  "format_version": "1.10.0",
+  "format_version": "1.8.0",
   "minecraft:client_entity": {
     "description": {
       "identifier": "dec:everlasting_winter_ghast",
       "materials": {
-        "default": "entity_alphatest",
-        "outer": "slime_outer"
+        "default": "slime_outer"
       },
       "textures": {
         "default": "textures/entity/everlasting_winter_ghast"
       },
       "geometry": {
-        "default": "geometry.everlasting_winter_ghast",
-        "armor": "geometry.everlasting_winter_ghast.armor"
+        "default": "geometry.everlasting_winter_ghast"
       },
       "spawn_egg": {
         "base_color": "#AAFCFF",
         "overlay_color": "#ADD2FF"
       },
       "scripts": {
-        "animate": [
-          "look_at_target_ac",
-          "move_ac",
-          "riding_ac",
-          "holding_ac",
-          "brandish_spear_ac",
-          "charging_ac",
-          "attack_ac",
-          "sneaking_ac",
-          "bob_ac",
-          "damage_nearby_mobs_ac",
-          "bow_and_arrow_ac",
-          "swimming_ac",
-          "use_item_progress_ac"
-				],
         "pre_animation": [
           "variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
           "variable.tcos1 = -variable.tcos0;",
@@ -42,25 +25,10 @@
           "variable.sin_attack_body_rot_y = Math.sin(variable.attack_body_rot_y);",
           "variable.internal_swim_pos = Math.mod(query.modified_distance_moved, 26.0);",
           "variable.attack = Math.sin((1.0 - (1.0 - variable.attack_time) * (1.0 - variable.attack_time)) * 180.0) * 57.3;",
-          "variable.attack2 = Math.sin(variable.attack_time * 180.0) * 57.3;",
-          "variable.is_armor_on = query.variant;"
+          "variable.attack2 = Math.sin(variable.attack_time * 180.0) * 57.3;"
         ]
       },
       "animations": {
-        "look_at_target_ac": "controller.animation.humanoid.look_at_target",
-        "move_ac": "controller.animation.humanoid.move",
-        "riding_ac": "controller.animation.humanoid.riding",
-        "holding_ac": "controller.animation.humanoid.holding",
-        "brandish_spear_ac": "controller.animation.humanoid.brandish_spear",
-        "charging_ac": "controller.animation.humanoid.charging",
-        "attack_ac": "controller.animation.humanoid.attack",
-        "sneaking_ac": "controller.animation.humanoid.sneaking",
-        "bob_ac": "controller.animation.humanoid.bob",
-        "damage_nearby_mobs_ac": "controller.animation.humanoid.damage_nearby_mobs",
-        "bow_and_arrow_ac": "controller.animation.humanoid.bow_and_arrow",
-        "swimming_ac": "controller.animation.humanoid.swimming",
-        "use_item_progress_ac": "controller.animation.humanoid.use_item_progress",
-
         "look_at_target_default": "animation.humanoid.look_at_target.default",
         "look_at_target_gliding": "animation.humanoid.look_at_target.gliding",
         "look_at_target_swimming": "animation.humanoid.look_at_target.swimming",
@@ -78,10 +46,23 @@
         "swimming": "animation.humanoid.swimming",
         "use_item_progress": "animation.humanoid.use_item_progress"
       },
-
+      "animation_controllers": [
+        { "look_at_target": "controller.animation.humanoid.look_at_target" },
+        { "move": "controller.animation.humanoid.move" },
+        { "riding": "controller.animation.humanoid.riding" },
+        { "holding": "controller.animation.humanoid.holding" },
+        { "brandish_spear": "controller.animation.humanoid.brandish_spear" },
+        { "charging": "controller.animation.humanoid.charging" },
+        { "attack": "controller.animation.humanoid.attack" },
+        { "sneaking": "controller.animation.humanoid.sneaking" },
+        { "bob": "controller.animation.humanoid.bob" },
+        { "damage_nearby_mobs": "controller.animation.humanoid.damage_nearby_mobs" },
+        { "bow_and_arrow": "controller.animation.humanoid.bow_and_arrow" },
+        { "swimming": "controller.animation.humanoid.swimming" },
+        { "use_item_progress": "controller.animation.humanoid.use_item_progress" }
+      ],
       "render_controllers": [
-        "controller.render.slime",
-        "controller.render.outer"
+        "controller.render.stray"
       ],
       "enable_attachables": true
     }

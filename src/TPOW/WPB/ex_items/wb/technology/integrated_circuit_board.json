@@ -1,17 +1,28 @@
 {
-    "format_version": "1.10",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "wb:integrated_circuit_board",
-            "register_to_creative_menu": true
+            "menu_category": {
+                "group": "minecraft:itemGroup.name.outside",
+                "is_hidden_in_commands": false,
+                "category": "nature"
+            }
         },
         "components": {
+            "minecraft:display_name": {
+                "value": "item.wb:integrated_circuit_board.name"
+            },
             "minecraft:hand_equipped": false,
-            "minecraft:use_duration": 99999999,
             "minecraft:foil": false,
             "minecraft:max_stack_size": 16,
-            "minecraft:max_damage": 50000,
-            "minecraft:stacked_by_data": true
+            "minecraft:stacked_by_data": true,
+            "minecraft:hover_text_color": "light_purple",
+            "minecraft:icon": {
+                "textures": {
+                    "default": "integrated_circuit_board"
+                }
+            }
         }
     }
 }

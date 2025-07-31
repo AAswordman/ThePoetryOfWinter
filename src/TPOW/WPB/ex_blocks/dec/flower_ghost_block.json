@@ -1,17 +1,14 @@
 {
-    "format_version": "1.20.80",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
-            "identifier": "dec:flower_ghost_block",
-            "menu_category": {
-                "group": "itemGroup.name.outside",
-                "category": "construction"
-            }
+            "identifier": "dec:flower_ghost_block"
         },
         "components": {
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "flower_ghost_block"
+                    "texture": "flower_ghost_block",
+                    "render_method": "blend"
                 }
             },
             "minecraft:loot": "loot_tables/empty.json",

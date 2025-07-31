@@ -1,23 +1,20 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:coal_fish",
             "menu_category": {
-                "group": "itemGroup.name.rawFood",
+                "group": "minecraft:itemGroup.name.rawFood",
                 "is_hidden_in_commands": false,
                 "category": "nature"
             }
         },
         "components": {
-            "minecraft:fuel": {
-                "duration": 80
-            },
             "minecraft:display_name": {
                 "value": "item.dec:coal_fish.name"
             },
-            "minecraft:icon": {
-                "texture": "coal_fish"
+            "minecraft:fuel": {
+                "duration": 80
             },
             "minecraft:use_animation": "eat",
             "minecraft:food": {
@@ -25,7 +22,13 @@
                 "saturation_modifier": 0.6
             },
             "minecraft:use_modifiers": {
-                "use_duration": 2
+                "use_duration": 2,
+                "movement_modifier": 0.4
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "coal_fish"
+                }
             }
         }
     }

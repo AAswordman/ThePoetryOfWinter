@@ -8,7 +8,6 @@
       "is_summonable": true,
       "is_experimental": false
     },
-
     "component_groups": {
       "become_soul": {
         "minecraft:transformation": {
@@ -16,7 +15,6 @@
         }
       }
     },
-    
     "components": {
       "minecraft:collision_box": {
         "width": 0.5,
@@ -32,20 +30,20 @@
             "deals_damage": false
           },
           {
-          "on_damage": {
-            "filters": {
-              "test": "is_family",
-              "subject": "other",
-              "value": "soul"
+            "on_damage": {
+              "filters": {
+                "test": "is_family",
+                "subject": "other",
+                "value": "soul"
               }
             },
-          "deals_damage": false
+            "deals_damage": false
           },
           {
             "on_damage": {
               "filters": {
-              "test": "has_damage",
-              "value": "fatal"
+                "test": "has_damage",
+                "value": "fatal"
               },
               "event": "become_soul"
             }
@@ -58,14 +56,11 @@
       "minecraft:navigation.walk": {
         "can_path_over_water": true,
         "avoid_water": true,
-        "avoid_damage_blocks":  true
+        "avoid_damage_blocks": true
       },
-      "minecraft:movement.basic": {
-      },
-      "minecraft:jump.static": {
-      },
-      "minecraft:can_climb": {
-      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
       "minecraft:health": {
         "value": {
           "range_min": 18,
@@ -75,7 +70,11 @@
       "minecraft:hurt_on_condition": {
         "damage_conditions": [
           {
-            "filters": { "test": "in_water_or_rain", "operator": "==", "value": true },
+            "filters": {
+              "test": "in_water_or_rain",
+              "operator": "==",
+              "value": true
+            },
             "cause": "drowning",
             "damage_per_tick": 1
           }
@@ -85,11 +84,8 @@
         "value": 64,
         "max": 64
       },
-      "minecraft:fire_immune": {
-      },
-      "minecraft:nameable": {
-
-      },
+      "minecraft:fire_immune": {},
+      "minecraft:nameable": {},
       "minecraft:despawn": {
         "despawn_from_distance": {}
       },
@@ -139,16 +135,20 @@
         "priority": 6
       },
       "minecraft:type_family": {
-        "family": [ "blaze", "monster", "mob", "soul_blaze", "soul" ]
+        "family": [
+          "blaze",
+          "monster",
+          "mob",
+          "soul_blaze",
+          "soul"
+        ]
       },
-      "minecraft:physics": {
-      },
+      "minecraft:physics": {},
       "minecraft:pushable": {
         "is_pushable": true,
         "is_pushable_by_piston": true
       }
     },
-
     "events": {
       "become_soul": {
         "add": {

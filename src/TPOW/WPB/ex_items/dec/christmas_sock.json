@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:christmas_sock",
             "menu_category": {
-                "group": "itemGroup.name.decorations",
+                "group": "minecraft:itemGroup.name.decorations",
                 "is_hidden_in_commands": false,
                 "category": "items"
             }
@@ -12,9 +12,6 @@
         "components": {
             "minecraft:display_name": {
                 "value": "item.dec:christmas_sock.name"
-            },
-            "minecraft:icon": {
-                "texture": "christmas_sock"
             },
             "minecraft:cooldown": {
                 "category": "christmas_sock",
@@ -26,8 +23,10 @@
                 }
             },
             "minecraft:stacked_by_data": true,
-            "minecraft:use_modifiers": {
-                "use_duration": 30000
+            "minecraft:icon": {
+                "textures": {
+                    "default": "christmas_sock"
+                }
             }
         },
         "events": {
@@ -35,7 +34,8 @@
                 "run_command": {
                     "command": [
                         "loot give @s loot \"items/christmas_sock\"",
-                        "clear @s dec:christmas_sock 0 1"
+                        "clear @s dec:christmas_sock 0 1",
+                        "playsound vault.insert_item @a ~~~"
                     ]
                 }
             }

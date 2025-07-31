@@ -9,17 +9,22 @@
       "geometry": {
         "default": "geometry.energy_ball_v2"
       },
+      "particle_effects": {
+        "wake": "dec:ash_energy_wake_particle"
+      },
       "scripts": {
         "scale": "0.3",
         "animate": [
-          "fly"
+          "fly",
+          "wake"
         ]
       },
       "animations": {
-        "fly": "animation.energy_ball.fly"
+        "fly": "animation.energy_ball.fly",
+        "wake": "animation.energy_ball.wake"
       },
       "render_controllers": [ "controller.render.spots" ],
-      "materials": { "default": "husk" }
+      "materials": { "default": "charged_creeper" }
       }
    }
 }

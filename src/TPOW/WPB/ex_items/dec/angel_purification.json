@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:angel_purification",
             "menu_category": {
-                "group": "itemGroup.name.sword",
+                "group": "dec:itemGroup.name.spears",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -12,9 +12,6 @@
         "components": {
             "minecraft:display_name": {
                 "value": "item.dec:angel_purification.name"
-            },
-            "minecraft:icon": {
-                "texture": "angel_purification"
             },
             "minecraft:on_use": {
                 "on_use": {
@@ -41,13 +38,7 @@
                 "repair_items": [
                     {
                         "items": [
-                            "minecraft:red_flower"
-                        ],
-                        "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.1"
-                    },
-                    {
-                        "items": [
-                            "minecraft:dandelion"
+                            "dec:dandelion"
                         ],
                         "repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.1"
                     },
@@ -66,7 +57,7 @@
                 ]
             },
             "minecraft:mining_speed": 1.5,
-            "minecraft:damage": 6.5,
+            "minecraft:damage": 7,
             "minecraft:enchantable": {
                 "value": 15,
                 "slot": "sword"
@@ -94,6 +85,11 @@
                 "tags": [
                     "comp:equipment_type:melee_weapon:spear:_"
                 ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "angel_purification"
+                }
             }
         },
         "events": {

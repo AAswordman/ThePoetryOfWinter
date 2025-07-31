@@ -1,5 +1,5 @@
 {
-    "format_version": "1.20.80",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "dec:leek_crop",
@@ -9,10 +9,6 @@
                     1,
                     2
                 ]
-            },
-            "menu_category": {
-                "group": "itemGroup.name.outside",
-                "category": "construction"
             }
         },
         "components": {
@@ -55,7 +51,8 @@
             },
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "leek_crop_0"
+                    "texture": "leek_crop_0",
+                    "render_method": "alpha_test"
                 }
             }
         },

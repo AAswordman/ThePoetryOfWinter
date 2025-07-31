@@ -1,7 +1,7 @@
 {
 	"entity_sounds": {
 		"entities": {
-			"dec:scarecrow": {
+"dec:scarecrow": {
 				"volume": 1.0,
 				"pitch": [
 					0.8,
@@ -566,18 +566,8 @@
                     1.2
                   ]
                 },
-                "sniff": {
-                  "sound": "mob.warden.sniff",
-                  "volume": 1.0,
-                  "pitch": 1.0
-                },
                 "roar": {
                   "sound": "mob.warden.roar",
-                  "volume": 1.0,
-                  "pitch": 1.0
-                },
-                "idle": {
-                  "sound": "mob.warden.idle",
                   "volume": 1.0,
                   "pitch": 1.0
                 },
@@ -664,18 +654,8 @@
                     1.2
                   ]
                 },
-                "sniff": {
-                  "sound": "mob.warden.sniff",
-                  "volume": 1.0,
-                  "pitch": 1.0
-                },
                 "roar": {
                   "sound": "mob.warden.roar",
-                  "volume": 1.0,
-                  "pitch": 1.0
-                },
-                "idle": {
-                  "sound": "mob.warden.idle",
                   "volume": 1.0,
                   "pitch": 1.0
                 },
@@ -1755,7 +1735,6 @@
 					"ambient": "mob.ghast.moan",
 					"death": "mob.ghast.death",
 					"hurt": "mob.ghast.scream",
-					"scream": "mob.ghast.affectionate_scream",
 					"shoot": {
 						"sound": "random.glass",
 						"volume": 0.70
@@ -1766,14 +1745,13 @@
 					0.80,
 					1.20
 				],
-				"volume": 600.0
+				"volume": 1.0
 			},
 			"dec:frozen_ghast": {
 				"events": {
 					"ambient": "mob.ghast.moan",
 					"death": "mob.ghast.death",
 					"hurt": "mob.ghast.scream",
-					"scream": "mob.ghast.affectionate_scream",
 					"shoot": {
 						"sound": "random.glass",
 						"volume": 0.70
@@ -1784,7 +1762,7 @@
 					0.80,
 					1.20
 				],
-				"volume": 600.0
+				"volume": 1.0
 			},
 			"dec:soul_zombie": {
 				"volume": 1.0,
@@ -2212,6 +2190,18 @@
 				}
 			},
 			"dec:archer": {
+				"volume": 1.0,
+				"pitch": [
+					0.8,
+					1.2
+				],
+				"events": {
+					"ambient": "mob.villager.idle",
+					"hurt": "mob.villager.hit",
+					"death": "mob.villager.death"
+				}
+			},
+			"dec:doctor": {
 				"volume": 1.0,
 				"pitch": [
 					0.8,

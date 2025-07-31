@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:shadow_crystal",
             "menu_category": {
-                "group": "itemGroup.name.navigation",
+                "group": "dec:itemGroup.name.evil_crystals",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -12,9 +12,6 @@
         "components": {
             "minecraft:display_name": {
                 "value": "item.dec:shadow_crystal.name"
-            },
-            "minecraft:icon": {
-                "texture": "shadow_crystal"
             },
             "minecraft:foil": true,
             "minecraft:stacked_by_data": false,
@@ -27,6 +24,11 @@
                 "dispense_on": [
                     "dec:purpur_summoner"
                 ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "shadow_crystal"
+                }
             }
         }
     }

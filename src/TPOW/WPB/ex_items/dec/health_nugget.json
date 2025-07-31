@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:health_nugget",
             "menu_category": {
-                "group": "itemGroup.name.decorations",
+                "group": "dec:itemGroup.name.nuggets",
                 "is_hidden_in_commands": false,
                 "category": "items"
             }
@@ -14,7 +14,9 @@
                 "value": "item.dec:health_nugget.name"
             },
             "minecraft:icon": {
-                "texture": "health_nugget"
+                "textures": {
+                    "default": "health_nugget"
+                }
             }
         }
     }

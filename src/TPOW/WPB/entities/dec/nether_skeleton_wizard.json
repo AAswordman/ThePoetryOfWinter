@@ -25,7 +25,6 @@
         }
       }
     },
-
     "components": {
       "minecraft:despawn": {
         "despawn_from_distance": {}
@@ -38,14 +37,20 @@
         "height": 1.9
       },
       "minecraft:type_family": {
-        "family": [ "nether_skeleton_wizard","skeleton", "undead", "monster", "mob", "nether" ]
+        "family": [
+          "nether_skeleton_wizard",
+          "skeleton",
+          "undead",
+          "monster",
+          "mob",
+          "nether"
+        ]
       },
       "minecraft:breathable": {
         "total_supply": 15,
         "suffocate_time": 0,
         "breathes_water": true
       },
-
       "minecraft:health": {
         "value": {
           "range_min": 28,
@@ -55,7 +60,12 @@
       "minecraft:hurt_on_condition": {
         "damage_conditions": [
           {
-            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
             "cause": "lava",
             "damage_per_tick": 0
           }
@@ -72,14 +82,10 @@
         "avoid_sun": true,
         "avoid_water": true
       },
-      "minecraft:movement.basic": {
-      },
-      "minecraft:jump.static": {
-      },
-      "minecraft:can_climb": {
-      },
-      "minecraft:nameable": {
-      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
+      "minecraft:nameable": {},
       "minecraft:equipment": {
         "table": "loot_tables/entities/nether_skeleton_wizard_gear.json",
         "slot_drop_chance": [
@@ -184,8 +190,7 @@
       "minecraft:behavior.random_look_around": {
         "priority": 6
       },
-      "minecraft:physics": {
-      },
+      "minecraft:physics": {},
       "minecraft:pushable": {
         "is_pushable": true,
         "is_pushable_by_piston": true

@@ -7,7 +7,8 @@
       "textures": {
         "polar_wolf_default": "textures/entity/wolf/polar_wolf",
         "polar_wolf_angry": "textures/entity/wolf/angry_polar_wolf",
-        "polar_wolf_tame": "textures/entity/wolf/polar_wolf_tame"
+        "polar_wolf_tame": "textures/entity/wolf/polar_wolf_tame",
+        "polar_wolf_saddled": "textures/entity/wolf/polar_wolf_saddled"
       },
       "geometry": {
         "default": "geometry.wolf"

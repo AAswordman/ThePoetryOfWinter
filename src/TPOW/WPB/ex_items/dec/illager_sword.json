@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:illager_sword",
             "menu_category": {
-                "group": "itemGroup.name.sword",
+                "group": "dec:itemGroup.name.katanas",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -12,9 +12,6 @@
         "components": {
             "minecraft:display_name": {
                 "value": "item.dec:illager_sword.name"
-            },
-            "minecraft:icon": {
-                "texture": "illager_sword"
             },
             "minecraft:weapon": {
                 "on_hurt_entity": {
@@ -83,6 +80,11 @@
                     "comp:movement_addition:0.015",
                     "comp:equipment_type:melee_weapon_:katana:_"
                 ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "illager_sword"
+                }
             }
         },
         "events": {

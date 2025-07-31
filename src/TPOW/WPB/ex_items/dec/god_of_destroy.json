@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:god_of_destroy",
             "menu_category": {
-                "group": "itemGroup.name.sword",
+                "group": "dec:itemGroup.name.destroy_staffs",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -12,9 +12,6 @@
         "components": {
             "minecraft:display_name": {
                 "value": "item.dec:god_of_destroy.name"
-            },
-            "minecraft:icon": {
-                "texture": "god_of_destroy"
             },
             "minecraft:weapon": {
                 "on_hurt_entity": {
@@ -53,6 +50,11 @@
                 "on_use": {
                     "event": "god_of_destroy_use",
                     "target": "self"
+                }
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "god_of_destroy"
                 }
             }
         },

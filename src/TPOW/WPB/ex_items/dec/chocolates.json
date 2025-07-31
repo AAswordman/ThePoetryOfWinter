@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:chocolates",
             "menu_category": {
-                "group": "itemGroup.name.miscFood",
+                "group": "minecraft:itemGroup.name.miscFood",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -13,12 +13,9 @@
             "minecraft:display_name": {
                 "value": "item.dec:chocolates.name"
             },
-            "minecraft:icon": {
-                "texture": "chocolates"
-            },
             "minecraft:use_animation": "eat",
             "minecraft:food": {
-                "using_converts_to": "paper",
+                "using_converts_to": "minecraft:paper",
                 "nutrition": 7,
                 "saturation_modifier": 0.6,
                 "on_consume": {
@@ -27,7 +24,13 @@
                 }
             },
             "minecraft:use_modifiers": {
-                "use_duration": 1.6
+                "use_duration": 1.6,
+                "movement_modifier": 0.4
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "chocolates"
+                }
             }
         },
         "events": {

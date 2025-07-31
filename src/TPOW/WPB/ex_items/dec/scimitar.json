@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:scimitar",
             "menu_category": {
-                "group": "itemGroup.name.sword",
+                "group": "minecraft:itemGroup.name.sword",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -12,9 +12,6 @@
         "components": {
             "minecraft:display_name": {
                 "value": "item.dec:scimitar.name"
-            },
-            "minecraft:icon": {
-                "texture": "scimitar"
             },
             "minecraft:weapon": {
                 "on_hurt_entity": {
@@ -32,7 +29,7 @@
                 "max_durability": 231
             },
             "minecraft:mining_speed": 1.5,
-            "minecraft:damage": 6.5,
+            "minecraft:damage": 6,
             "minecraft:enchantable": {
                 "value": 15,
                 "slot": "sword"
@@ -74,6 +71,11 @@
                 "tags": [
                     "comp:equipment_type:melee_weapon_:sword:_"
                 ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "scimitar"
+                }
             }
         },
         "events": {

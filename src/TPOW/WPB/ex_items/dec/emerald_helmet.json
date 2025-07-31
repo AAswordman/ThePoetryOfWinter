@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:emerald_helmet",
             "menu_category": {
-                "group": "itemGroup.name.helmet",
+                "group": "minecraft:itemGroup.name.helmet",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -12,9 +12,6 @@
         "components": {
             "minecraft:display_name": {
                 "value": "item.dec:emerald_helmet.name"
-            },
-            "minecraft:icon": {
-                "texture": "emerald_helmet"
             },
             "minecraft:max_stack_size": 1,
             "minecraft:enchantable": {
@@ -56,6 +53,11 @@
                     "comp:armor_physical_protection:0",
                     "comp:armor_resilience:1"
                 ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "emerald_helmet"
+                }
             }
         }
     }

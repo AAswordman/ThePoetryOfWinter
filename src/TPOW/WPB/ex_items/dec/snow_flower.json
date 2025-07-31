@@ -1,0 +1,26 @@
+{
+    "format_version": "1.21.94",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dec:snow_flower",
+            "menu_category": {
+                "group": "minecraft:itemGroup.name.flower",
+                "is_hidden_in_commands": false,
+                "category": "nature"
+            }
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.dec:snow_flower.name"
+            },
+            "minecraft:block_placer": {
+                "block": "dec:snow_flower_crop"
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "snow_flower"
+                }
+            }
+        }
+    }
+}

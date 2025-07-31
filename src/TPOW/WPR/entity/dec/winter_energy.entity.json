@@ -13,7 +13,7 @@
         "wake": "dec:everlasting_winter_wake_particle"
       },
       "scripts": {
-        "scale": "0.3",
+        "scale": "0.8",
         "animate": [
           "fly",
           "wake"

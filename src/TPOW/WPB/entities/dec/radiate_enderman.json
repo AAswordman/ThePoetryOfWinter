@@ -18,7 +18,6 @@
           "value": 0.32
         }
       },
-
       "minecraft:enderman_angry": {
         "minecraft:angry": {
           "duration": 45,
@@ -37,7 +36,6 @@
         }
       }
     },
-
     "components": {
       "minecraft:despawn": {
         "despawn_from_distance": {}
@@ -46,14 +44,20 @@
         "on_death": "query.last_hit_by_player ? 7 : 0"
       },
       "minecraft:type_family": {
-        "family": [ "radiate", "enderman", "monster", "mob", "ender", "radiate_ender_man" ]
+        "family": [
+          "radiate",
+          "enderman",
+          "monster",
+          "mob",
+          "ender",
+          "radiate_ender_man"
+        ]
       },
       "minecraft:breathable": {
         "total_supply": 15,
         "suffocate_time": 0
       },
-      "minecraft:nameable": {
-      },
+      "minecraft:nameable": {},
       "minecraft:loot": {
         "table": "loot_tables/entities/radiate_enderman.json"
       },
@@ -66,7 +70,12 @@
       "minecraft:hurt_on_condition": {
         "damage_conditions": [
           {
-            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
             "cause": "lava",
             "damage_per_tick": 4
           }
@@ -88,7 +97,11 @@
       "minecraft:teleport": {
         "random_teleports": true,
         "max_random_teleport_time": 30,
-        "random_teleport_cube": [ 32, 32, 32 ],
+        "random_teleport_cube": [
+          32,
+          32,
+          32
+        ],
         "target_distance": 16,
         "target_teleport_chance": 0.05,
         "light_teleport_chance": 0.05
@@ -126,13 +139,9 @@
         "can_path_over_water": false,
         "avoid_water": false
       },
-      "minecraft:movement.basic": {
-
-      },
-      "minecraft:jump.static": {
-      },
-      "minecraft:can_climb": {
-      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
       "minecraft:behavior.float": {
         "priority": 0
       },
@@ -157,18 +166,15 @@
       "minecraft:behavior.enderman_take_block": {
         "priority": 11
       },
-      "minecraft:physics": {
-      },
+      "minecraft:physics": {},
       "minecraft:pushable": {
         "is_pushable": true,
         "is_pushable_by_piston": true
       }
     },
-
     "events": {
       "minecraft:entity_spawned": {
-        "remove": {
-        },
+        "remove": {},
         "add": {
           "component_groups": [
             "minecraft:enderman_calm"

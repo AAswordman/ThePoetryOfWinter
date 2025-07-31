@@ -1,0 +1,27 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "loot_table",
+          "name": "loot_tables/gameplay/fishing/mangrove_swamp_junk.json",
+          "weight": 25,
+          "quality": -2
+        },
+        {
+          "type": "loot_table",
+          "name": "loot_tables/gameplay/fishing/mangrove_swamp_treasure.json",
+          "weight": 15,
+          "quality": 2
+        },
+        {
+          "type": "loot_table",
+          "name": "loot_tables/gameplay/fishing/mangrove_swamp_fish.json",
+          "weight": 80,
+          "quality": -1
+        }
+      ]
+    }
+  ]
+}

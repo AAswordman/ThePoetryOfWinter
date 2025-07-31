@@ -25,7 +25,6 @@
         }
       }
     },
-
     "components": {
       "minecraft:boss": {
         "should_darken_sky": false,
@@ -121,7 +120,7 @@
             "item": "minecraft:turtle_helmet",
             "want_amount": 1,
             "surplus_amount": 1,
-            "priority":  6
+            "priority": 6
           },
           {
             "item": "minecraft:skull:0",
@@ -251,8 +250,7 @@
           }
         ]
       },
-      "minecraft:equip_item": {
-      },
+      "minecraft:equip_item": {},
       "minecraft:movement": {
         "value": 0.3
       },
@@ -262,30 +260,29 @@
         "target_dist": 0.0,
         "track_target": true
       },
-			"minecraft:nameable": {
-				"always_show": true
-			},
+      "minecraft:nameable": {
+        "always_show": true
+      },
       "minecraft:type_family": {
-        "family": [ "player_ghost","mini_boss" ]
+        "family": [
+          "player_ghost",
+          "mini_boss"
+        ]
       },
       "minecraft:collision_box": {
         "width": 0.6,
         "height": 1.9
       },
-      "minecraft:movement.basic": {
-      },
+      "minecraft:movement.basic": {},
       "minecraft:navigation.walk": {
         "is_amphibious": true,
         "can_pass_doors": true,
         "can_walk": true,
         "can_break_doors": true
       },
-      "minecraft:annotation.break_door": {
-      },
-      "minecraft:jump.static": {
-      },
-      "minecraft:can_climb": {
-      },
+      "minecraft:annotation.break_door": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
       "minecraft:health": {
         "value": 30,
         "max": 30
@@ -323,14 +320,12 @@
         ],
         "must_see": true
       },
-      "minecraft:physics": {
-      },
+      "minecraft:physics": {},
       "minecraft:pushable": {
         "is_pushable": true,
         "is_pushable_by_piston": true
       }
     },
-
     "events": {
       "minecraft:despawn": {
         "add": {

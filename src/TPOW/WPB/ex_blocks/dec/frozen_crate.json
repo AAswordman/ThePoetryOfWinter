@@ -1,5 +1,5 @@
 {
-    "format_version": "1.20.80",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "dec:frozen_crate",
@@ -10,7 +10,7 @@
                 ]
             },
             "menu_category": {
-                "group": "itemGroup.name.outside",
+                "group": "dec:itemGroup.name.crates",
                 "category": "items"
             }
         },
@@ -54,7 +54,7 @@
                             "texture": "crate_locked"
                         }
                     },
-                    "minecraft:loot": "loot_tables/blocks/frozen_crate_locked.json"
+                    "minecraft:loot": "loot_tables/empty.json"
                 }
             },
             {

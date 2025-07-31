@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.80",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "dec:radiate_stonebrick",
             "menu_category": {
-                "group": "itemGroup.name.stoneBrick",
+                "group": "minecraft:itemGroup.name.stoneBrick",
                 "category": "construction"
             }
         },
@@ -31,7 +31,8 @@
             "minecraft:geometry": "minecraft:geometry.full_block",
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "radiate_stonebrick"
+                    "texture": "radiate_stonebrick",
+                    "render_method": "alpha_test"
                 }
             }
         },

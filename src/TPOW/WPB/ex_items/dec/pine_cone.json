@@ -1,31 +1,37 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:pine_cone",
             "menu_category": {
-                "group": "itemGroup.name.crop",
+                "group": "minecraft:itemGroup.name.crop",
                 "is_hidden_in_commands": false,
                 "category": "nature"
             }
         },
         "components": {
-            "minecraft:fuel": {
-                "duration": 5
-            },
             "minecraft:display_name": {
                 "value": "item.dec:pine_cone.name"
             },
-            "minecraft:icon": {
-                "texture": "pine_cone"
+            "minecraft:fuel": {
+                "duration": 5
             },
             "minecraft:use_animation": "eat",
             "minecraft:food": {
                 "nutrition": 3,
                 "saturation_modifier": 0.4
             },
+            "minecraft:compostable": {
+                "composting_chance": 10
+            },
             "minecraft:use_modifiers": {
-                "use_duration": 1
+                "use_duration": 1,
+                "movement_modifier": 0.4
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "pine_cone"
+                }
             }
         }
     }

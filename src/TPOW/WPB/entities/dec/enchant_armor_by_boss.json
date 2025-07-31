@@ -7,12 +7,8 @@
       "is_summonable": true,
       "is_experimental": false
     },
-
-    "component_groups": {
-    },
-
+    "component_groups": {},
     "components": {
-
       "minecraft:movement": {
         "value": 0.1
       },
@@ -25,13 +21,17 @@
         "width": 0.6,
         "height": 1.8
       },
-      "minecraft:nameable": {
-      },
+      "minecraft:nameable": {},
       "minecraft:despawn": {
         "despawn_from_distance": {}
       },
       "minecraft:type_family": {
-        "family": [ "undead", "monster","enchant_armor", "mob" ]
+        "family": [
+          "undead",
+          "monster",
+          "enchant_armor",
+          "mob"
+        ]
       },
       "minecraft:equipment": {
         "table": "loot_tables/entities/enchant_armor_gear.json",
@@ -75,15 +75,10 @@
         "can_break_doors": true,
         "avoid_portals": false
       },
-      "minecraft:annotation.break_door": {
-      },
-      "minecraft:movement.basic": {
-
-      },
-      "minecraft:jump.static": {
-      },
-      "minecraft:can_climb": {
-      },
+      "minecraft:annotation.break_door": {},
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
       "minecraft:behavior.melee_attack": {
         "priority": 3,
         "speed_multiplier": 1,
@@ -116,9 +111,21 @@
           {
             "filters": {
               "any_of": [
-                { "test": "is_family", "subject": "other", "value": "player" },
-                { "test": "is_family", "subject": "other", "value": "snowgolem" },
-                { "test": "is_family", "subject": "other", "value": "irongolem" }
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "snowgolem"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "irongolem"
+                }
               ]
             },
             "max_dist": 35
@@ -126,8 +133,16 @@
           {
             "filters": {
               "any_of": [
-                { "test": "is_family", "subject": "other", "value": "villager" },
-                { "test": "is_family", "subject": "other", "value": "wandering_trader" }
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "villager"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "wandering_trader"
+                }
               ]
             },
             "max_dist": 35,
@@ -136,8 +151,17 @@
           {
             "filters": {
               "all_of": [
-                { "test": "is_family", "subject": "other", "value": "baby_turtle" },
-                { "test": "in_water", "subject": "other", "operator": "!=", "value": true }
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "baby_turtle"
+                },
+                {
+                  "test": "in_water",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": true
+                }
               ]
             },
             "max_dist": 35
@@ -145,11 +169,8 @@
         ],
         "must_see": true
       },
-      "minecraft:physics": {
-      }
+      "minecraft:physics": {}
     },
-
-    "events": {
-    }
+    "events": {}
   }
 }

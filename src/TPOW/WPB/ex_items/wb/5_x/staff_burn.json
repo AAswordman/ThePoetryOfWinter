@@ -1,17 +1,19 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "wb:staff_burn",
             "menu_category": {
-                "group": "itemGroup.name.sword",
+                "group": "dec:itemGroup.name.staffs",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
         },
         "components": {
             "minecraft:icon": {
-                "texture": "staff_burn"
+                "textures": {
+                    "default": "staff_burn"
+                }
             },
             "minecraft:enchantable": {
                 "value": 20,

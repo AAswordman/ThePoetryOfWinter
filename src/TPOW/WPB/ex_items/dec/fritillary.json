@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:fritillary",
             "menu_category": {
-                "group": "itemGroup.name.crop",
+                "group": "minecraft:itemGroup.name.crop",
                 "is_hidden_in_commands": false,
                 "category": "nature"
             }
@@ -12,9 +12,6 @@
         "components": {
             "minecraft:display_name": {
                 "value": "item.dec:fritillary.name"
-            },
-            "minecraft:icon": {
-                "texture": "fritillary"
             },
             "minecraft:use_animation": "eat",
             "minecraft:food": {
@@ -26,8 +23,17 @@
                     "target": "self"
                 }
             },
+            "minecraft:compostable": {
+                "composting_chance": 65
+            },
             "minecraft:use_modifiers": {
-                "use_duration": 1.6
+                "use_duration": 1.6,
+                "movement_modifier": 0.4
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "fritillary"
+                }
             }
         },
         "events": {

@@ -5,7 +5,7 @@
       "geometry": "Geometry.default",
       "materials": [ { "*": "Material.default" } ],
       "textures": [
-        "query.is_angry ? Texture.polar_wolf_angry : (query.has_owner ? Texture.polar_wolf_tame : Texture.polar_wolf_default)"
+        "query.is_angry ? Texture.polar_wolf_angry : (query.has_owner ? (query.is_saddled ? Texture.polar_wolf_saddled : Texture.polar_wolf_tame) : Texture.polar_wolf_default)"
       ]
     }
   }

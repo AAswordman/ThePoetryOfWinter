@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:steel_boots",
             "menu_category": {
-                "group": "itemGroup.name.boots",
+                "group": "minecraft:itemGroup.name.boots",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
@@ -12,9 +12,6 @@
         "components": {
             "minecraft:display_name": {
                 "value": "item.dec:steel_boots.name"
-            },
-            "minecraft:icon": {
-                "texture": "steel_boots"
             },
             "minecraft:max_stack_size": 1,
             "minecraft:enchantable": {
@@ -57,6 +54,11 @@
                     "comp:armor_type:suit_:steel:_",
                     "comp:armor_resilience:1"
                 ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "steel_boots"
+                }
             }
         }
     }

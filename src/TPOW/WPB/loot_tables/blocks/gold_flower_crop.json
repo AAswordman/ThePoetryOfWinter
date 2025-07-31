@@ -1,0 +1,14 @@
+{
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "dec:gold_flower_crop",
+                    "weight": 1
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,48 @@
+{
+  "format_version": "1.12.0",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "dec:muddy_ball",
+      "runtime_identifier": "minecraft:snowball",
+      "is_spawnable": false,
+      "is_summonable": true,
+      "is_experimental": false
+    },
+    "components": {
+      "minecraft:collision_box": {
+        "width": 0.25,
+        "height": 0.25
+      },
+      "minecraft:projectile": {
+        "onHit": {
+          "impact_damage": {
+            "damage": 2,
+            "knockback": true
+          },
+          
+          "mob_effect": {
+            "effect": "blindness",
+            "durationeasy": 150,
+            "durationnormal": 150,
+            "durationhard": 150,
+            "amplifier": 0
+          }
+        },
+        "hit_sound": "block.mud.break",
+        "hit_ground_sound": "block.mud.break",
+        "power": 1.6,
+        "gravity": 0.04,
+        "angleoffset": 0.0
+      },
+      "minecraft:type_family": {
+        "family": [
+          "remove_on_hit"
+        ]
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      }
+    }
+  }
+}

@@ -337,6 +337,20 @@
         },
         {
           "type": "item",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 2
+              }
+            }
+          ],
+          "name": "dec:corn_seeds"
+        },
+        {
+          "type": "item",
           "name": "minecraft:string",
           "weight": 50,
           "functions": [

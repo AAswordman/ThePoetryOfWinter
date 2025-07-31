@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:magic_article",
             "menu_category": {
-                "group": "itemGroup.name.decorations",
+                "group": "minecraft:itemGroup.name.decorations",
                 "is_hidden_in_commands": false,
                 "category": "items"
             }
@@ -13,10 +13,12 @@
             "minecraft:display_name": {
                 "value": "item.dec:magic_article.name"
             },
+            "minecraft:foil": true,
             "minecraft:icon": {
-                "texture": "magic_article"
-            },
-            "minecraft:foil": true
+                "textures": {
+                    "default": "magic_article"
+                }
+            }
         }
     }
 }

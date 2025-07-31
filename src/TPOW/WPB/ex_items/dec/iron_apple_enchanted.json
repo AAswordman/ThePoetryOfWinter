@@ -1,10 +1,10 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:iron_apple_enchanted",
             "menu_category": {
-                "group": "itemGroup.name.crop",
+                "group": "minecraft:itemGroup.name.crop",
                 "is_hidden_in_commands": false,
                 "category": "nature"
             }
@@ -13,11 +13,7 @@
             "minecraft:display_name": {
                 "value": "item.dec:iron_apple_enchanted.name"
             },
-            "minecraft:icon": {
-                "texture": "iron_apple"
-            },
             "minecraft:use_animation": "eat",
-            "minecraft:glint": true,
             "minecraft:hover_text_color": "light_purple",
             "minecraft:foil": true,
             "minecraft:food": {
@@ -30,18 +26,48 @@
                 }
             },
             "minecraft:use_modifiers": {
-                "use_duration": 1.6
+                "use_duration": 1.6,
+                "movement_modifier": 0.4
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "iron_apple"
+                }
             }
         },
         "events": {
             "consumed": {
                 "sequence": [
                     {
-                        "run_command": {
-                            "command": [
-                                "effect @s absorption 300 4 true",//20物理护盾
-                                "effect @s resistance 30 1 true"
-                            ]
+                        "add_mob_effect": {
+                            "effect": "resistance",
+                            "duration": 120,
+                            "amplifier": 1,
+                            "target": "holder"
+                        }
+                    },
+                    {
+                        "add_mob_effect": {
+                            "effect": "absorption",
+                            "duration": 120,
+                            "amplifier": 1,
+                            "target": "holder"
+                        }
+                    },
+                    {
+                        "add_mob_effect": {
+                            "effect": "regeneration",
+                            "duration": 60,
+                            "amplifier": 1,
+                            "target": "holder"
+                        }
+                    },
+                    {
+                        "add_mob_effect": {
+                            "effect": "health_boost",
+                            "duration": 150,
+                            "amplifier": 1,
+                            "target": "holder"
                         }
                     }
                 ]

@@ -25,15 +25,23 @@
           "impact_damage": {
             "damage": 10,
             "knockback": false
-          },
-          "remove_on_hit": { }
+          }
         },
         "power": 2.3,
         "gravity": 0.03,
         "inertia": 1.1,
-        "offset": [ 0, 0, 0],
+        "offset": [
+          0,
+          0,
+          0
+        ],
         "uncertaintyBase": 6.0,
         "angleoffset": 0.0
+      },
+      "minecraft:type_family": {
+        "family": [
+          "remove_on_hit"
+        ]
       },
       "minecraft:pushable": {
         "is_pushable": false,

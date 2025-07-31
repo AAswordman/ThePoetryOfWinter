@@ -7,7 +7,6 @@
       "is_summonable": true,
       "is_experimental": false
     },
-
     "component_groups": {
       "minecraft:blaze_baby": {
         "minecraft:health": {
@@ -35,7 +34,6 @@
           "value": 0.23
         }
       },
-
       "minecraft:blaze_adult": {
         "minecraft:health": {
           "value": {
@@ -71,14 +69,11 @@
       "minecraft:navigation.walk": {
         "can_path_over_water": true,
         "avoid_water": true,
-        "avoid_damage_blocks":  true
+        "avoid_damage_blocks": true
       },
-      "minecraft:movement.basic": {
-      },
-      "minecraft:jump.static": {
-      },
-      "minecraft:can_climb": {
-      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
       "minecraft:health": {
         "value": {
           "range_min": 18,
@@ -88,7 +83,11 @@
       "minecraft:hurt_on_condition": {
         "damage_conditions": [
           {
-            "filters": { "test": "in_water_or_rain", "operator": "==", "value": true },
+            "filters": {
+              "test": "in_water_or_rain",
+              "operator": "==",
+              "value": true
+            },
             "cause": "drowning",
             "damage_per_tick": 1
           }
@@ -98,11 +97,8 @@
         "value": 48,
         "max": 48
       },
-      "minecraft:fire_immune": {
-      },
-      "minecraft:nameable": {
-
-      },
+      "minecraft:fire_immune": {},
+      "minecraft:nameable": {},
       "minecraft:despawn": {
         "despawn_from_distance": {}
       },
@@ -152,16 +148,18 @@
         "priority": 6
       },
       "minecraft:type_family": {
-        "family": [ "blaze", "monster", "mob" ]
+        "family": [
+          "blaze",
+          "monster",
+          "mob"
+        ]
       },
-      "minecraft:physics": {
-      },
+      "minecraft:physics": {},
       "minecraft:pushable": {
         "is_pushable": true,
         "is_pushable_by_piston": true
       }
     },
-
     "events": {
       "minecraft:entity_spawned": {
         "randomize": [
@@ -176,8 +174,7 @@
           },
           {
             "weight": 25,
-            "remove": {
-            },
+            "remove": {},
             "add": {
               "component_groups": [
                 "minecraft:blaze_baby"

@@ -1,0 +1,26 @@
+{
+    "format_version": "1.21.94",
+    "minecraft:item": {
+        "description": {
+            "identifier": "dec:lurk_fruit",
+            "menu_category": {
+                "group": "minecraft:itemGroup.name.flower",
+                "is_hidden_in_commands": false,
+                "category": "nature"
+            }
+        },
+        "components": {
+            "minecraft:display_name": {
+                "value": "item.dec:lurk_fruit.name"
+            },
+            "minecraft:block_placer": {
+                "block": "dec:lurk_fruit_crop"
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "lurk_fruit"
+                }
+            }
+        }
+    }
+}

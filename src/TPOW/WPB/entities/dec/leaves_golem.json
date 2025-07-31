@@ -8,7 +8,6 @@
       "is_summonable": true,
       "is_experimental": false
     },
-
     "component_groups": {
       "minecraft:despawn": {
         "minecraft:instant_despawn": {}
@@ -37,17 +36,17 @@
           }
         },
         "minecraft:spell_effects": {
-					"add_effects": [
+          "add_effects": [
             {
-						"effect": "slowness",
-						"amplifier": 50,
-						"visible": 0,
-						"ambient": 0,
-						"duration": 5,
-						"display_on_screen_animation": true
-					  }
+              "effect": "slowness",
+              "amplifier": 50,
+              "visible": 0,
+              "ambient": 0,
+              "duration": 5,
+              "display_on_screen_animation": true
+            }
           ]
-		    }
+        }
       },
       "minecraft:normal_attack": {
         "minecraft:damage_sensor": {
@@ -65,13 +64,13 @@
             }
           ]
         },
-          "minecraft:timer": {
-            "looping": false,
-            "time": 10,
-            "time_down_event": {
-              "event": "minecraft:roaring_attack"
-            }
-          },
+        "minecraft:timer": {
+          "looping": false,
+          "time": 10,
+          "time_down_event": {
+            "event": "minecraft:roaring_attack"
+          }
+        },
         "minecraft:behavior.melee_attack": {
           "priority": 1,
           "target_dist": 1.0,
@@ -122,7 +121,6 @@
         }
       }
     },
-
     "components": {
       "minecraft:despawn": {
         "despawn_from_distance": {
@@ -132,19 +130,23 @@
       },
       "minecraft:fire_immune": true,
       "minecraft:type_family": {
-        "family": [ "leaves_golem", "mob", "monster", "golem", "boss" ]
+        "family": [
+          "leaves_golem",
+          "mob",
+          "monster",
+          "golem",
+          "boss"
+        ]
       },
       "minecraft:experience_reward": {
         "on_death": "query.last_hit_by_player ? 100 : 0"
       },
-      "minecraft:tick_world": {},
       "minecraft:boss": {
         "should_darken_sky": false,
-        "name":"boss.dec:leaves_golem.name",
+        "name": "boss.dec:leaves_golem.name",
         "hud_range": 64
       },
-      "minecraft:nameable": {
-      },
+      "minecraft:nameable": {},
       "minecraft:collision_box": {
         "width": 1.4,
         "height": 2.9
@@ -154,12 +156,17 @@
       },
       "minecraft:health": {
         "value": 200,
-        "max":200
+        "max": 200
       },
       "minecraft:hurt_on_condition": {
         "damage_conditions": [
           {
-            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
             "cause": "lava",
             "damage_per_tick": 4
           }
@@ -173,13 +180,9 @@
         "avoid_water": true,
         "avoid_damage_blocks": true
       },
-      "minecraft:movement.basic": {
-        
-      },
-      "minecraft:jump.static": {
-      },
-      "minecraft:can_climb": {
-      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
       "minecraft:attack": {
         "damage": {
           "range_min": 5,
@@ -195,17 +198,20 @@
       "minecraft:knockback_resistance": {
         "value": 1.0
       },
-      "minecraft:balloonable": {
-      },
+      "minecraft:balloonable": {},
       "minecraft:behavior.target_when_pushed": {
         "priority": 1,
         "percent_chance": 5.0,
         "entity_types": [
           {
-            "filters": { 
+            "filters": {
               "all_of": [
-                { "test" :  "is_family", "subject" : "other", "value" :  "player" }
-              ] 
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "player"
+                }
+              ]
             }
           }
         ]
@@ -245,9 +251,21 @@
               "all_of": [
                 {
                   "any_of": [
-                    { "test": "is_family", "subject": "other", "value": "player" },
-                    { "test": "is_family", "subject": "other", "value": "villager" },
-                    { "test": "is_family", "subject": "other", "value": "irongolem" }
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "player"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "villager"
+                    },
+                    {
+                      "test": "is_family",
+                      "subject": "other",
+                      "value": "irongolem"
+                    }
                   ]
                 }
               ]
@@ -259,10 +277,8 @@
         "must_see_forget_duration": 17.0,
         "persist_time": 0.5
       },
-      "minecraft:persistent": {
-      },
-      "minecraft:physics": {
-      },
+      "minecraft:persistent": {},
+      "minecraft:physics": {},
       "minecraft:pushable": {
         "is_pushable": true,
         "is_pushable_by_piston": true
@@ -271,7 +287,6 @@
         "value": 64
       }
     },
-
     "events": {
       "minecraft:despawn": {
         "add": {
@@ -281,8 +296,8 @@
         }
       },
       "minecraft:entity_spawned": {
-        "sequence": [{
-          },
+        "sequence": [
+          {},
           {
             "add": {
               "component_groups": [

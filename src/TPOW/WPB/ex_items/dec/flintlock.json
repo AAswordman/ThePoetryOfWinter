@@ -1,25 +1,21 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.94",
     "minecraft:item": {
         "description": {
             "identifier": "dec:flintlock",
             "menu_category": {
-                "group": "itemGroup.name.sword",
+                "group": "dec:itemGroup.name.flintlocks",
                 "is_hidden_in_commands": false,
                 "category": "equipment"
             }
         },
         "components": {
-            "minecraft:fuel": {
-                "duration": 10
-            },
             "minecraft:display_name": {
                 "value": "item.dec:flintlock.name"
             },
-            "minecraft:icon": {
-                "texture": "flintlock"
+            "minecraft:fuel": {
+                "duration": 10
             },
-            "minecraft:use_animation": "bow",
             "minecraft:stacked_by_data": false,
             "minecraft:max_stack_size": 1,
             "minecraft:hand_equipped": true,
@@ -38,6 +34,11 @@
                 "tags": [
                     "comp:equipment_type:range_weapon_:range_weapon:_"
                 ]
+            },
+            "minecraft:icon": {
+                "textures": {
+                    "default": "flintlock"
+                }
             }
         },
         "events": {}

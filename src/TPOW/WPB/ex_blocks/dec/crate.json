@@ -1,5 +1,5 @@
 {
-    "format_version": "1.20.80",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "dec:crate",
@@ -10,7 +10,7 @@
                 ]
             },
             "menu_category": {
-                "group": "itemGroup.name.outside",
+                "group": "dec:itemGroup.name.crates",
                 "category": "items"
             }
         },
@@ -45,7 +45,7 @@
                             "render_method": "opaque"
                         }
                     },
-                    "minecraft:loot": "loot_tables/blocks/crate_locked.json"
+                    "minecraft:loot": "loot_tables/empty.json"
                 }
             },
             {
@@ -63,10 +63,6 @@
         ],
         "events": {
             "unlock": {
-                // "post_message":{
-                //     "sign":"dec:crate_unlocked",
-                //     "message":["query.position(0)","query.position(1)","query.position(2)","sapi.position"]
-                // },
                 "set_block_state": {
                     "dec:is_unlocked": 1
                 },
