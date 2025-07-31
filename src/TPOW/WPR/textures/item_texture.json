@@ -2079,8 +2079,11 @@
             "textures": "textures/wb_item/armor/armor_senior_equipment_boots"
         },
     //=============================EPIC==================================
-        "cannon_cart_spawn_egg": {
-            "textures": ["textures/EPIC/items/cannon_cart_spawn_egg"]
+        "cannon_cart": {
+            "textures": ["textures/EPIC/items/spawn_egg/cannon_cart"]
+        },
+        "tesla":{
+            "textures": ["textures/EPIC/items/spawn_egg/tesla"]
         },
         "epic:machanical_operator": {
             "textures": ["textures/EPIC/items/machanical_operator"]
@@ -2135,6 +2138,12 @@
 		},
         "dec:everlasting_winter_pickaxe_axe": {
 			"textures": ["textures/EPIC/items/tool/everlasting_winter_pickaxe_axe"]
+		},
+        "epic:longsword": {
+			"textures": ["textures/EPIC/items/weapon/longsword"]
+		},
+        "epic:wither_sword": {
+			"textures": ["textures/EPIC/items/weapon/wither_sword"]
 		},
         "epic:echoing_scream_saber": {
 			"textures": ["textures/EPIC/items/weapon/echoing_scream_saber"]

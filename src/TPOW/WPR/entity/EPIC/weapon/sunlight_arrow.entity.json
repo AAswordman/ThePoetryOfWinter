@@ -27,7 +27,7 @@
 			},
 			"animations": {
 				"particle": "controller.animation.sunlight_arrow.particle",
-				"move": "animation.arrow.move"
+				"move": "animation.facing.direct"
 			},
 
 			"render_controllers": ["controller.render.default"],

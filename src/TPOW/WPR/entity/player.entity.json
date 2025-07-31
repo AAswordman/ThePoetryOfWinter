@@ -76,6 +76,22 @@
                 ]
             },
             "animations": {
+            //Longsword
+                "longsword": "animation.player.first_person.longsword_hold",
+                "longsword_controller": "controller.animation.tp.longsword",
+                "longsword_tp_hold": "animation.player.tp.longsword_hold",
+                "longsword_tp_first_attack": "animation.player.tp.longsword_first_attack",
+                "longsword_tp_first_attack_interval":"animation.player.tp.longsword_first_attack_interval",
+                "longsword_tp_second_attack": "animation.player.tp.longsword_second_attack",
+                "longsword_tp_second_attack_interval": "animation.player.tp.longsword_second_attack_interval",
+                "longsword_tp_fast_attack_1": "animation.player.tp.longsword_fast_attack_1",
+                "longsword_tp_fast_attack_2": "animation.player.tp.longsword_fast_attack_2",
+                "longsword_tp_fast_attack_interval": "animation.player.tp.longsword_fast_attack_interval",
+                "longsword_fp_hold": "animation.fp.longsword_hold",
+                "longsword_fp_first_attack": "animation.player.first_person.attack_rotation",
+                "longsword_fp_second_attack": "animation.player.first_person.attack_rotation",
+                "first_person_longsword_controller":"controller.animation.player.fp.longsword",
+
                 "bomber": "controller.animation.player.bomber",
                 "catapult_explode": "controller.animation.player.catapult_explode",
                 "catapult_normal": "controller.animation.player.catapult_normal",

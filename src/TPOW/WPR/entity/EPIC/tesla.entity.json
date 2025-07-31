@@ -1,0 +1,24 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "epic:tesla_tower",
+      "materials": {
+        "default": "entity_alphatest"
+      },
+      "textures": {
+        "default": "textures/EPIC/entity/tesla"
+      },
+      "geometry": {
+        "default": "geometry.tesla"
+      },
+      "render_controllers": [
+        "controller.render.default"
+      ],
+      "spawn_egg": {
+        "texture": "tesla",
+        "texture_index": 0
+      }
+    }
+  }
+}

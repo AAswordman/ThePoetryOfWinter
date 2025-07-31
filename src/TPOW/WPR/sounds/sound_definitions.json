@@ -48,6 +48,22 @@
             }
         ]
     },
+    "epic.tesla.attack": {
+        "sounds": [
+            {
+                "name": "sounds/EPIC/electric/tesla_zap",
+                "volume": 1.2
+            }
+        ]
+    },
+    "epic.lightning_chain.zap": {
+        "sounds": [
+            {
+                "name": "sounds/EPIC/electric/chain_zap",
+                "volume": 0.2
+            }
+        ]
+    },
     //=================================================================
     "mob.mcow.say": {
         "category": "hostile",

@@ -14,22 +14,25 @@
 			},
 			"scripts": {
 				"animate": [
-				  "move_controller","attack_controller","death1_controller"
+					"move_controller",
+					"attack_controller",
+					"death1_controller"
 				]
-			  },
-			"animations": {			
+			},
+			"animations": {
 				"move_controller": "controller.animation.cannon_cart.move",
-			    "attack_controller": "controller.animation.cannon_cart.attack",
-			    "death1_controller": "controller.animation.cannon_cart.death1",
-
+				"attack_controller": "controller.animation.cannon_cart.attack",
+				"death1_controller": "controller.animation.cannon_cart.death1",
+				
 				"move": "animation.cannon_cart.move",
 				"attack": "animation.cannon_cart.attack",
 				"death1": "animation.cannon_cart.death1"
-			   },
-			
-			"render_controllers": ["controller.render.default"],
+			},
+			"render_controllers": [
+				"controller.render.default"
+			],
 			"spawn_egg": {
-				"texture": "cannon_cart_spawn_egg"
+				"texture": "cannon_cart"
 			}
 		}
 	}

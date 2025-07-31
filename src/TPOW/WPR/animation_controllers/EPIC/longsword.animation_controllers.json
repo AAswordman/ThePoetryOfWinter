@@ -1,0 +1,144 @@
+{
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.fp.longsword": {
+      "initial_state": "hold",
+      "states": {
+        "hold": {
+          "animations": ["first_person_hold"],
+          "transitions": [
+            {
+              "attack": "query.is_sneaking"
+            }
+          ]
+        },
+        "attack": {
+          "animations": ["attack_1"],
+          "transitions": [
+            {
+              "hold": "!query.is_sneaking"
+            }
+          ]
+        }
+      }
+    },
+    
+    "controller.animation.tp.longsword": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": ["longsword_tp_hold"],
+          "transitions": [
+            {
+              "first_attack": "variable.attack_time > 0.0"
+            }
+          ]
+        },
+        "first_attack": {
+          "animations": ["longsword_tp_first_attack"],
+          "transitions": [
+            {
+              "first_attack_interval": "variable.attack_time <= 0.0"
+            },
+            {
+              "default": "query.equipped_item_any_tag('slot.weapon.mainhand','longsword') == 0"
+            }
+          ]
+        },
+        "first_attack_interval": {
+        "animations": ["longsword_tp_first_attack_interval"],
+          "transitions": [
+            {
+              "second_attack": "variable.attack_time > 0.0"
+            },
+            {
+              "default": "query.any_animation_finished"
+            }
+          ]
+        },
+        "second_attack": {
+          "animations": ["longsword_tp_second_attack"],
+          "transitions": [
+            {
+              "second_attack_interval": "variable.attack_time <= 0.0"
+            }
+          ]
+        },
+        "second_attack_interval": {
+          "animations": ["longsword_tp_second_attack_interval"],
+            "transitions": [
+              {
+                "fast_attack_1": "variable.attack_time > 0.0"
+              },
+              {
+                "default": "query.any_animation_finished"
+              }
+            ]
+          },
+          "fast_attack_1": {
+            "animations": ["longsword_tp_fast_attack_1"],
+            "transitions": [
+              {
+                "fast_attack_interval": "variable.attack_time <= 0.0"
+              }
+            ]
+          },
+          "fast_attack_2": {
+            "animations": ["longsword_tp_fast_attack_2"],
+            "transitions": [
+              {
+                "second_attack_interval": "variable.attack_time <= 0.0"
+              }
+            ]
+          },
+          "fast_attack_interval": {
+            "animations": ["longsword_tp_fast_attack_interval"],
+            "transitions": [
+              {
+                "fast_attack_2": "variable.attack_time > 0.0"
+              },
+              {
+                "default": "query.any_animation_finished"
+              }
+            ]
+          }
+
+      }
+    },
+    
+    "controller.animation.player.fp.longsword": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "animations": ["longsword_fp_hold"],
+          "transitions": [
+            {
+              "first_attack": "variable.attack_time > 0.0"
+            }
+          ]
+        },
+        "first_attack": {
+          "animations": ["longsword_fp_first_attack"],
+          "transitions": [
+            {
+              "second_attack": "query.any_animation_finished && variable.attack_time > 1"
+            },
+            {
+              "default": "query.any_animation_finished && variable.attack_time <= 0"
+            }
+          ]
+        },
+        "second_attack": {
+          "animations": ["longsword_fp_second_attack"],
+          "transitions": [
+            {
+              "default": "query.any_animation_finished"
+            }
+          ]
+        }
+        
+      }
+    }
+
+  }
+}

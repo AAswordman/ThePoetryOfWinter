@@ -14,8 +14,17 @@
         "animate": [
           "status_display"
         ]
+      },
+      "properties": {
+        "epic:form": {
+          "type": "enum",
+          "values": ["cannon_cart", "cannon"], 
+          "default": "cannon_cart", 
+          "client_sync": true 
       }
-    },
+      
+    }
+  },
     "component_groups": {
       "cannon_cart_form_untamed": {
         "minecraft:health": {
@@ -591,6 +600,10 @@
         "width": 1.1,
         "height": 0.65
       },
+      "minecraft:is_stackable": {
+        "value": false
+      },
+      "minecraft:is_collidable": {},
       "minecraft:type_family": {
         "family": [
           "defence",
