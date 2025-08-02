@@ -1942,7 +1942,7 @@
             1
         ],
         "renderer": "hunger_renderer",
-        "layer": 1,
+        "layer": 10,
         "bindings": [
             {
                 "binding_name": "#show_survival_ui",
