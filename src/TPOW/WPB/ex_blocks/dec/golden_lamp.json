@@ -9,6 +9,10 @@
             }
         },
         "components": {
+            "minecraft:redstone_conductivity": {
+                "allows_wire_to_step_down": true,
+                "redstone_conductor": true
+            },
             "minecraft:light_dampening": 7,
             "minecraft:light_emission": 15,
             "minecraft:destructible_by_mining": {

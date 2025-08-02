@@ -5,11 +5,18 @@
             "identifier": "dec:depart_grass_crop"
         },
         "components": {
+            "minecraft:redstone_conductivity": {
+                "allows_wire_to_step_down": false,
+                "redstone_conductor": false
+            },
             "minecraft:material_instances": {
                 "*": {
                     "texture": "depart_grass_crop",
                     "render_method": "alpha_test"
                 }
+            },
+            "minecraft:movable": {
+                "movement_type": "popped"
             },
             "minecraft:geometry": "geometry.crop.sparse.on_dirt",
             "minecraft:collision_box": false,

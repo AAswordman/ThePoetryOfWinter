@@ -22,10 +22,6 @@
                     14,
                     15
                 ]
-            },
-            "menu_category": {
-                "group": "minecraft:itemGroup.name.outside",
-                "category": "construction"
             }
         },
         "permutations": [
@@ -41,6 +37,10 @@
             }
         ],
         "components": {
+            "minecraft:redstone_conductivity": {
+                "allows_wire_to_step_down": true,
+                "redstone_conductor": true
+            },
             "minecraft:unit_cube": {},
             "minecraft:light_dampening": 15,
             "minecraft:light_emission": 0,

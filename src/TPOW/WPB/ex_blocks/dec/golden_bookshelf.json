@@ -118,6 +118,10 @@
                     "texture": "golden_bookshelf_up_down"
                 }
             },
+            "minecraft:redstone_conductivity": {
+                "allows_wire_to_step_down": true,
+                "redstone_conductor": true
+            },
             "minecraft:on_player_placing": {
                 "event": "on_player_placing"
             },

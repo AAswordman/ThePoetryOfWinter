@@ -35,6 +35,13 @@
             // }
         },
         "components": {
+            "minecraft:movable": {
+                "movement_type": "popped"
+            },
+            "minecraft:redstone_conductivity": {
+                "allows_wire_to_step_down": false,
+                "redstone_conductor": false
+            },
             "minecraft:breathability": "air",
             "minecraft:collision_box": true,
             "minecraft:material_instances": {

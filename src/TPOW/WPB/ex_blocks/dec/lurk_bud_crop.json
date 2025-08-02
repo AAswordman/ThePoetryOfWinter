@@ -11,6 +11,13 @@
                     "render_method": "alpha_test"
                 }
             },
+            "minecraft:redstone_conductivity": {
+                "allows_wire_to_step_down": false,
+                "redstone_conductor": false
+            },
+            "minecraft:movable": {
+                "movement_type": "popped"
+            },
             "minecraft:geometry": "geometry.crop.sparse.on_dirt",
             "minecraft:collision_box": false,
             "minecraft:selection_box": {
