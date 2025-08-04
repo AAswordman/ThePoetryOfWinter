@@ -120,15 +120,12 @@
         "entity_types": [
           {
             "filters": {
-              "test": "is_family",
-              "subject": "other",
-              "value": "Monster"
-            },
-            "max_dist": 16
-          },
-          {
-            "filters": {
-              "all_of": [
+              "any_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "value": "monster"
+                },
                 {
                   "test": "is_family",
                   "subject": "other",
@@ -136,7 +133,7 @@
                 }
               ]
             },
-            "max_dist": 16
+            "max_dist": 20
           }
         ],
         "must_see": true
