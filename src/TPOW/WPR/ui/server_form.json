@@ -564,6 +564,76 @@
                 }
             },
             {
+                "toggle_on": {
+                    "type": "stack_panel",
+                    "orientation": "horizontal",
+                    "size": [
+                        "100%",
+                        24
+                    ],
+                    "bindings": [{
+                        "binding_type": "collection",
+                        "binding_collection_name": "form_buttons",
+                        "binding_name": "((#form_button_text = 'toggle_on'))",
+                        "binding_name_override": "#visible"
+                    }],
+                    "controls": [{
+                            "botton2@toggle_on": {
+                                "size": [
+                                    35,
+                                    18
+                                ],
+                                "$border_visible": false,
+                                "offset": [
+                                    0,
+                                    -1
+                                ],
+                                "$pressed_button_name": "button.form_button_click",
+                                "bindings": [{
+                                    "binding_type": "collection_details",
+                                    "binding_collection_name": "form_buttons"
+                                }],
+                                "anchor_to": "left_middle",
+                                "anchor_from": "left_middle",
+                                "layer": 21
+                            }
+                        },
+                        {
+                            "panel": {
+                                "type": "panel",
+                                "size": [
+                                    "100%",
+                                    35
+                                ],
+                                "controls": [{
+                                    "label": {
+                                        "offset": [
+                                            10,
+                                            4
+                                        ],
+                                        "layer": 21,
+                                        "type": "label",
+                                        "size": [
+                                            "100% - 30px",
+                                            "default"
+                                        ],
+                                        "color": "$main_header_text_color",
+                                        "anchor_from": "top_left",
+                                        "anchor_to": "top_left",
+                                        "text": "#form_button_texture",
+                                        "bindings": [{
+                                            "binding_name": "#form_button_texture",
+                                            "binding_type": "collection",
+                                            "binding_collection_name": "form_buttons"
+                                        }]
+                                    }
+                                }]
+                            }
+                        }
+                    ]
+                }
+            },
+            {
                 "toggle_off": {
                     "type": "stack_panel",
                     "orientation": "horizontal",
