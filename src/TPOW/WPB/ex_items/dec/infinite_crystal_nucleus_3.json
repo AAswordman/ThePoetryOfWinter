@@ -61,7 +61,7 @@
             "use": {
                 "sequence": [
                     {
-                        "condition": "query.scoreboard('wbfl') <= 59",
+                        "condition": "query.scoreboard('wbfl') < 0.8 * query.scoreboard('wbflMax')",
                         "run_command": {
                             "command": [
                                 "particle dec:white_star_particle ~~1~",

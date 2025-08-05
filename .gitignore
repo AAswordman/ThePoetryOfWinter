@@ -3,3 +3,5 @@ out
 .vscode
 filepack
 fsconfig.json
+src/TPOW/WPB/items/
+src/TPOW/WPB/blocks/

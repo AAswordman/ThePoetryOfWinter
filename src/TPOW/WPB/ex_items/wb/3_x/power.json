@@ -13,20 +13,15 @@
             "minecraft:display_name": {
                 "value": "item.wb:power.name"
             },
-            "minecraft:food": {
-                "nutrition": 5,
-                "can_always_eat": true
-            },
-            "minecraft:hand_equipped": true,
-            "minecraft:foil": true,
-            "minecraft:max_stack_size": 16,
-            "minecraft:stacked_by_data": true,
-            "minecraft:hover_text_color": "light_purple",
             "minecraft:icon": {
                 "textures": {
                     "default": "power"
                 }
             },
+            "minecraft:hand_equipped": true,
+            "minecraft:max_stack_size": 1,
+            "minecraft:stacked_by_data": true,
+            "minecraft:hover_text_color": "light_purple",
             "minecraft:cooldown": {
                 "category": "power",
                 "duration": 2
