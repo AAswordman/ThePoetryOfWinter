@@ -6,7 +6,8 @@ import { readFile, writeFile } from "./fileOper.js";
 
 const BEHROOT = "src/TPOW/WPB";
 const RESROOT = "src/TPOW/WPR";
-const GAMEROOT = "C:/Users/" + os.userInfo().username + "/AppData/Local/Packages/Microsoft.MinecraftUWP_8wekyb3d8bbwe/LocalState/games/com.mojang/development_behavior_packs/WPB"
+const GAMEROOT = "src/TPOW/WPB";
+// const GAMEROOT = "C:/Users/" + os.userInfo().username + "/AppData/Local/Packages/Microsoft.MinecraftUWP_8wekyb3d8bbwe/LocalState/games/com.mojang/development_behavior_packs/WPB"
 async function fileDisplay(filePath: string) {
     for (let f of fs.readdirSync(filePath)) {
         if (fs.statSync(filePath + "/" + f).isDirectory()) {
