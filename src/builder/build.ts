@@ -1,13 +1,11 @@
 import * as chokidar from "chokidar"
 import * as fs from 'fs';
-import * as os from 'os';
 import SingleFileDataSet, { JSONArray, JSONObject } from "./SingleFileDataSet.js";
 import { readFile, writeFile } from "./fileOper.js";
 
 const BEHROOT = "src/TPOW/WPB";
 const RESROOT = "src/TPOW/WPR";
-const GAMEROOT = "src/TPOW/WPB";
-// const GAMEROOT = "C:/Users/" + os.userInfo().username + "/AppData/Local/Packages/Microsoft.MinecraftUWP_8wekyb3d8bbwe/LocalState/games/com.mojang/development_behavior_packs/WPB"
+const BUILD_OUTPUT_ROOT = "src/TPOW/WPB";
 async function fileDisplay(filePath: string) {
     for (let f of fs.readdirSync(filePath)) {
         if (fs.statSync(filePath + "/" + f).isDirectory()) {
@@ -86,7 +84,7 @@ async function compileExItem(path: string) {
         }
         await dataSet.write(path.replace(BEHROOT + "/", ""), JSON.parse(JSON.stringify(jsonObj)));
 
-        let items = GAMEROOT + "/items";
+        let items = BUILD_OUTPUT_ROOT + "/items";
         let targetFile = items + path.replace(BEHROOT + "/ex_items", "");
         let targetDir = targetFile.substring(0, targetFile.lastIndexOf("/"));
         fs.mkdirSync(targetDir, { recursive: true })
@@ -203,7 +201,7 @@ async function compileExBlock(path: string) {
         }
         await dataSet.write(path.replace(BEHROOT + "/", ""), JSON.parse(JSON.stringify(jsonObj)));
 
-        let blocks = GAMEROOT + "/blocks";
+        let blocks = BUILD_OUTPUT_ROOT + "/blocks";
         let targetFile = blocks + path.replace(BEHROOT + "/ex_blocks", "");
         let targetDir = targetFile.substring(0, targetFile.lastIndexOf("/"));
         fs.mkdirSync(targetDir, { recursive: true })
