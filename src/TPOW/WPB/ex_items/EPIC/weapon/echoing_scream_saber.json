@@ -73,9 +73,6 @@
                 "slot": "sword",
                 "value": 5
             },
-            "minecraft:custom_components": [
-                "epic:echo_saber"
-            ],
             "minecraft:tags": {
                 "tags": [
                     "comp:base_attack:7",

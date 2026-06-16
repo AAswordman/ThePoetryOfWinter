@@ -177,6 +177,10 @@
             }
         },
         "components": {
+            "minecraft:redstone_conductivity": {
+                "allows_wire_to_step_down": true,
+                "redstone_conductor": true
+            },
             "minecraft:on_player_placing": {
                 "event": "on_player_placing"
             },

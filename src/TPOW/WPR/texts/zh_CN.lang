@@ -48,65 +48,67 @@ item.wb:book_cache=转移附魔书
 tile.wb:block_translate.name=未激活的转移台
 tile.wb:block_translate_book.name=激活了但没卵用的转移台
 
-item.wb:armor_bloodsucking_helmet=嗜血头盔 I
-item.wb:armor_bloodsucking_boots=嗜血靴子 I
-item.wb:armor_bloodsucking_leggings=嗜血护腿 I
-item.wb:armor_bloodsucking_chestplate=嗜血胸甲 I
+properties
+深色版本
+item.wb:armor_bloodsucking_helmet.name=嗜血头盔 I
+item.wb:armor_bloodsucking_boots.name=嗜血靴子 I
+item.wb:armor_bloodsucking_leggings.name=嗜血护腿 I
+item.wb:armor_bloodsucking_chestplate.name=嗜血胸甲 I
 
-item.wb:armor_ink_helmet=墨痕头盔 I
-item.wb:armor_ink_boots=墨痕靴子 I
-item.wb:armor_ink_leggings=墨痕护腿 I
-item.wb:armor_ink_chestplate=墨痕胸甲 I
+item.wb:armor_ink_helmet.name=墨痕头盔 I
+item.wb:armor_ink_boots.name=墨痕靴子 I
+item.wb:armor_ink_leggings.name=墨痕护腿 I
+item.wb:armor_ink_chestplate.name=墨痕胸甲 I
 
-item.wb:armor_forget_helmet=遗忘头盔 I
-item.wb:armor_forget_boots=遗忘靴子 I
-item.wb:armor_forget_leggings=遗忘护腿 I
-item.wb:armor_forget_chestplate=遗忘胸甲 I
+item.wb:armor_forget_helmet.name=遗忘头盔 I
+item.wb:armor_forget_boots.name=遗忘靴子 I
+item.wb:armor_forget_leggings.name=遗忘护腿 I
+item.wb:armor_forget_chestplate.name=遗忘胸甲 I
 
-item.wb:armor_water_helmet=水源头盔 I
-item.wb:armor_water_boots=水源靴子 I
-item.wb:armor_water_leggings=水源护腿 I
-item.wb:armor_water_chestplate=水源胸甲 I
+item.wb:armor_water_helmet.name=水源头盔 I
+item.wb:armor_water_boots.name=水源靴子 I
+item.wb:armor_water_leggings.name=水源护腿 I
+item.wb:armor_water_chestplate.name=水源胸甲 I
 
-item.wb:armor_seal_helmet=封尘头盔 I
-item.wb:armor_seal_boots=封尘靴子 I
-item.wb:armor_seal_leggings=封尘护腿 I
-item.wb:armor_seal_chestplate=封尘胸甲 I
+item.wb:armor_seal_helmet.name=封尘头盔 I
+item.wb:armor_seal_boots.name=封尘靴子 I
+item.wb:armor_seal_leggings.name=封尘护腿 I
+item.wb:armor_seal_chestplate.name=封尘胸甲 I
 
-item.wb:armor_equipment_helmet=魔能头盔 I
-item.wb:armor_equipment_boots=魔能靴子 I
-item.wb:armor_equipment_leggings=魔能护腿 I
-item.wb:armor_equipment_chestplate=魔能胸甲 I
+item.wb:armor_equipment_helmet.name=魔能头盔 I
+item.wb:armor_equipment_boots.name=魔能靴子 I
+item.wb:armor_equipment_leggings.name=魔能护腿 I
+item.wb:armor_equipment_chestplate.name=魔能胸甲 I
 
-item.wb:armor_senior_bloodsucking_helmet=嗜血头盔 II
-item.wb:armor_senior_bloodsucking_boots=嗜血靴子 II
-item.wb:armor_senior_bloodsucking_leggings=嗜血护腿 II
-item.wb:armor_senior_bloodsucking_chestplate=嗜血胸甲 II
+item.wb:armor_senior_bloodsucking_helmet.name=嗜血头盔 II
+item.wb:armor_senior_bloodsucking_boots.name=嗜血靴子 II
+item.wb:armor_senior_bloodsucking_leggings.name=嗜血护腿 II
+item.wb:armor_senior_bloodsucking_chestplate.name=嗜血胸甲 II
 
-item.wb:armor_senior_ink_helmet=墨痕头盔 II
-item.wb:armor_senior_ink_boots=墨痕靴子 II
-item.wb:armor_senior_ink_leggings=墨痕护腿 II
-item.wb:armor_senior_ink_chestplate=墨痕胸甲 II
+item.wb:armor_senior_ink_helmet.name=墨痕头盔 II
+item.wb:armor_senior_ink_boots.name=墨痕靴子 II
+item.wb:armor_senior_ink_leggings.name=墨痕护腿 II
+item.wb:armor_senior_ink_chestplate.name=墨痕胸甲 II
 
-item.wb:armor_senior_forget_helmet=遗忘头盔 II
-item.wb:armor_senior_forget_boots=遗忘靴子 II
-item.wb:armor_senior_forget_leggings=遗忘护腿 II
-item.wb:armor_senior_forget_chestplate=遗忘胸甲 II
+item.wb:armor_senior_forget_helmet.name=遗忘头盔 II
+item.wb:armor_senior_forget_boots.name=遗忘靴子 II
+item.wb:armor_senior_forget_leggings.name=遗忘护腿 II
+item.wb:armor_senior_forget_chestplate.name=遗忘胸甲 II
 
-item.wb:armor_senior_water_helmet=水源头盔 II
-item.wb:armor_senior_water_boots=水源靴子 II
-item.wb:armor_senior_water_leggings=水源护腿 II
-item.wb:armor_senior_water_chestplate=水源胸甲 II
+item.wb:armor_senior_water_helmet.name=水源头盔 II
+item.wb:armor_senior_water_boots.name=水源靴子 II
+item.wb:armor_senior_water_leggings.name=水源护腿 II
+item.wb:armor_senior_water_chestplate.name=水源胸甲 II
 
-item.wb:armor_senior_seal_helmet=封尘头盔 II
-item.wb:armor_senior_seal_boots=封尘靴子 II
-item.wb:armor_senior_seal_leggings=封尘护腿 II
-item.wb:armor_senior_seal_chestplate=封尘胸甲 II
+item.wb:armor_senior_seal_helmet.name=封尘头盔 II
+item.wb:armor_senior_seal_boots.name=封尘靴子 II
+item.wb:armor_senior_seal_leggings.name=封尘护腿 II
+item.wb:armor_senior_seal_chestplate.name=封尘胸甲 II
 
-item.wb:armor_senior_equipment_helmet=魔能头盔 II
-item.wb:armor_senior_equipment_boots=魔能靴子 II
-item.wb:armor_senior_equipment_leggings=魔能护腿 II
-item.wb:armor_senior_equipment_chestplate=魔能胸甲 II
+item.wb:armor_senior_equipment_helmet.name=魔能头盔 II
+item.wb:armor_senior_equipment_boots.name=魔能靴子 II
+item.wb:armor_senior_equipment_leggings.name=魔能护腿 II
+item.wb:armor_senior_equipment_chestplate.name=魔能胸甲 II
 
 
 item.wb:technology_world_explorer.name=世界探索者
@@ -197,45 +199,47 @@ item.wb:mineral_senior_seal.name=封尘精华§9§o[高级]
 item.wb:mineral_senior_water.name=水源精华§9§o[高级]
 
 
-item.wb:sword_bloodsucking_a=嗜血剑 I§r§9§o[普通]
-item.wb:sword_bloodsucking_b=嗜血剑 II§r§9§o[普通]§o§c[嗜血]
-item.wb:sword_bloodsucking_c=嗜血剑 III§r§9§o[普通]§o§c[嗜血]
-item.wb:sword_bloodsucking_d=嗜血剑 IV§r§9§o[高级]§o§c[嗜血][狂暴]
-item.wb:sword_bloodsucking_e=嗜血剑 V§r§9§o[高级]§o§c[嗜血][狂暴]
-item.wb:sword_bloodsucking_f=嗜血剑 MAX§r§o§c[嗜血][狂暴][嗜血风暴]
+item.wb:sword_bloodsucking_a.name=嗜血剑 I§r§9§o[普通]
+item.wb:sword_bloodsucking_b.name=嗜血剑 II§r§9§o[普通]§o§c[嗜血]
+item.wb:sword_bloodsucking_c.name=嗜血剑 III§r§9§o[普通]§o§c[嗜血]
+item.wb:sword_bloodsucking_d.name=嗜血剑 IV§r§9§o[高级]§o§c[嗜血][狂暴]
+item.wb:sword_bloodsucking_e.name=嗜血剑 V§r§9§o[高级]§o§c[嗜血][狂暴]
+item.wb:sword_bloodsucking_f.name=嗜血剑 MAX§r§o§c[嗜血][狂暴][嗜血风暴]
 
-item.wb:sword_ink_a=墨痕剑 I§r§9§o[普通]
-item.wb:sword_ink_b=墨痕剑 II§r§9§o[普通]§o§c[舞动]
-item.wb:sword_ink_c=墨痕剑 III§r§9§o[普通]§o§c[舞动]
-item.wb:sword_ink_d=墨痕剑 IV§r§9§o[高级]§o§c[舞动][墨痕]
-item.wb:sword_ink_e=墨痕剑 V§r§9§o[高级]§o§c[舞动][墨痕]
-item.wb:sword_ink_f=墨痕剑 MAX§r§o§c[舞动][墨痕][笔走龙蛇]
+item.wb:sword_ink_a.name=墨痕剑 I§r§9§o[普通]
+item.wb:sword_ink_b.name=墨痕剑 II§r§9§o[普通]§o§c[舞动]
+item.wb:sword_ink_c.name=墨痕剑 III§r§9§o[普通]§o§c[舞动]
+item.wb:sword_ink_d.name=墨痕剑 IV§r§9§o[高级]§o§c[舞动][墨痕]
+item.wb:sword_ink_e.name=墨痕剑 V§r§9§o[高级]§o§c[舞动][墨痕]
+item.wb:sword_ink_f.name=墨痕剑 MAX§r§o§c[舞动][墨痕][笔走龙蛇]
 
-item.wb:sword_forget_a=遗忘剑 I§r§9§o[普通]
-item.wb:sword_forget_b=遗忘剑 II§r§9§o[普通]§o§c[失忆]
-item.wb:sword_forget_c=遗忘剑 III§r§9§o[普通]§o§c[失忆]
-item.wb:sword_forget_d=遗忘剑 IV§r§9§o[高级]§o§c[失忆][忘却]
-item.wb:sword_forget_e=遗忘剑 V§r§9§o[高级]§o§c[失忆][忘却]
-item.wb:sword_forget_f=遗忘剑 MAX§r§o§c[失忆][忘却][遗忘之光]
+item.wb:sword_forget_a.name=遗忘剑 I§r§9§o[普通]
+item.wb:sword_forget_b.name=遗忘剑 II§r§9§o[普通]§o§c[失忆]
+item.wb:sword_forget_c.name=遗忘剑 III§r§9§o[普通]§o§c[失忆]
+item.wb:sword_forget_d.name=遗忘剑 IV§r§9§o[高级]§o§c[失忆][忘却]
+item.wb:sword_forget_e.name=遗忘剑 V§r§9§o[高级]§o§c[失忆][忘却]
+item.wb:sword_forget_f.name=遗忘剑 MAX§r§o§c[失忆][忘却][遗忘之光]
 
-item.wb:sword_water_a=水源剑 I§r§9§o[普通]
-item.wb:sword_water_b=水源剑 II§r§9§o[普通]§o§c[冲刷]
-item.wb:sword_water_c=水源剑 III§r§9§o[普通]§o§c[冲刷]
-item.wb:sword_water_d=水源剑 IV§r§9§o[高级]§o§c[冲刷][浪花]
-item.wb:sword_water_e=水源剑 V§r§9§o[高级]§o§c[冲刷][浪花]
-item.wb:sword_water_f=水源剑 MAX§r§o§c[冲刷][浪花][水尽鹅飞]
+item.wb:sword_water_a.name=水源剑 I§r§9§o[普通]
+item.wb:sword_water_b.name=水源剑 II§r§9§o[普通]§o§c[冲刷]
+item.wb:sword_water_c.name=水源剑 III§r§9§o[普通]§o§c[冲刷]
+item.wb:sword_water_d.name=水源剑 IV§r§9§o[高级]§o§c[冲刷][浪花]
+item.wb:sword_water_e.name=水源剑 V§r§9§o[高级]§o§c[冲刷][浪花]
+item.wb:sword_water_f.name=水源剑 MAX§r§o§c[冲刷][浪花][水尽鹅飞]
 
-item.wb:sword_seal_a=封尘剑 I§r§9§o[普通]
-item.wb:sword_seal_b=封尘剑 II§r§9§o[普通]§o§c[尘埃]
-item.wb:sword_seal_c=封尘剑 III§r§9§o[普通]§o§c[尘埃]
-item.wb:sword_seal_d=封尘剑 IV§r§9§o[高级]§o§c[尘埃][破尘]
-item.wb:sword_seal_e=封尘剑 V§r§9§o[高级]§o§c[尘埃][破尘]
-item.wb:sword_seal_f=封尘剑 MAX§r§o§c[尘埃][破尘][土崩瓦解]
+item.wb:sword_seal_a.name=封尘剑 I§r§9§o[普通]
+item.wb:sword_seal_b.name=封尘剑 II§r§9§o[普通]§o§c[尘埃]
+item.wb:sword_seal_c.name=封尘剑 III§r§9§o[普通]§o§c[尘埃]
+item.wb:sword_seal_d.name=封尘剑 IV§r§9§o[高级]§o§c[尘埃][破尘]
+item.wb:sword_seal_e.name=封尘剑 V§r§9§o[高级]§o§c[尘埃][破尘]
+item.wb:sword_seal_f.name=封尘剑 MAX§r§o§c[尘埃][破尘][土崩瓦解]
+
 item.wb:axex_equipment_a.name=魔能斧§r§9§o[普通]
 item.wb:pickaxex_equipment_a.name=魔能镐§r§9§o[普通][潜行时开启连锁挖掘]
-item.wb:sword_equipment_a=魔能剑 I§r§9§o[普通]
-item.wb:sword_equipment_b=魔能剑 II§r§9§o[普通]
-item.wb:sword_equipment_c=魔能剑 MAX§r§9§o[普通]
+item.wb:sword_equipment_a.name=魔能剑 I§r§9§o[普通]
+item.wb:sword_equipment_b.name=魔能剑 II§r§9§o[普通]
+item.wb:sword_equipment_c.name=魔能剑 MAX§r§9§o[普通]
+
 item.wb:summon_territory.name=创建领地(长按使用)
 item.spawn_egg.entity.wb:territory.name=领地
 item.spawn_egg.entity.wb:ball_territoryc.name=魔法球
@@ -385,12 +389,12 @@ item.wb:power.name=菜单
 
 item.wb:currency_3.name=紫宝石
 
-item.wb:staff_fire=烈焰法杖
-item.wb:staff_wind=飓风法杖
-item.wb:staff_summon=圣灵法杖
+item.wb:staff_fire.name=烈焰法杖
+item.wb:staff_wind.name=飓风法杖
+item.wb:staff_summon.name=圣灵法杖
 
-item.wb:sword_guard=守卫之剑§o§c[守卫][防御][绝对防御]§r
-item.wb:sword_bluemark=痕之剑§o§c[蓝光][裁决][痕.耀]§r §e
+item.wb:sword_guard.name=守卫之剑§o§c[守卫][防御][绝对防御]§r
+item.wb:sword_bluemark.name=痕之剑§o§c[蓝光][裁决][痕.耀]§r §e
 
 
 entity.wb:ancient_stone.name=远古石像boss
@@ -459,13 +463,13 @@ entity.wb:ball_border_fugitivec.name=焚烧
 entity.wb:ball_staff_burna.name=焚烧
 
 
-item.wb:sword_fly=凌空神剑§o§c[腾空][翱翔][抵御][凌空斩]§r
-item.wb:staff_burn=焚烧法杖
+item.wb:sword_fly.name=凌空神剑§o§c[腾空][翱翔][抵御][凌空斩]§r
+item.wb:staff_burn.name=焚烧法杖
 item.wb:staff_governor.name=[预告]执政者之杖
-item.wb:sword_intentions=极念狂想§o§c[横扫][箭雨][爆破][极念狂想]§r
+item.wb:sword_intentions.name=极念狂想§o§c[横扫][箭雨][爆破][极念狂想]§r
 
 
-item.wb:sword_ink_g=[预告]§e逝影墨痕
+item.wb:sword_ink_g.name=[预告]§e逝影墨痕
 
 
 item.spawn_egg.entity.wb:originking.name=生成 起源王

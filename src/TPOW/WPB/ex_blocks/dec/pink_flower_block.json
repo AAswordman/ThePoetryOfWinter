@@ -15,6 +15,10 @@
                     "render_method": "alpha_test"
                 }
             },
+            "minecraft:redstone_conductivity": {
+                "allows_wire_to_step_down": false,
+                "redstone_conductor": false
+            },
             "minecraft:light_dampening": 0,
             "minecraft:light_emission": 0,
             "minecraft:destructible_by_mining": {

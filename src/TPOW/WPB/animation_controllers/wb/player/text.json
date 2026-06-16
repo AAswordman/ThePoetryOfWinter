@@ -10,6 +10,7 @@
             "/scoreboard objectives add wbdj dummy 等级",
             "/scoreboard objectives add wbef dummy 勇者之力冷却",
             "/scoreboard objectives add wbfl dummy 法力值",
+            "/scoreboard objectives add wbflMax dummy 法力值上限",
             "/scoreboard objectives add wbldid dummy 玩家id",
             "/scoreboard objectives add wbwqlqjs dummy 武器冷却加速",
             "/scoreboard objectives add wbwqlq dummy 武器冷却",

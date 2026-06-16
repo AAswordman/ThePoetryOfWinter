@@ -5,6 +5,10 @@
             "identifier": "dec:christmas_gift_block"
         },
         "components": {
+            "minecraft:redstone_conductivity": {
+                "allows_wire_to_step_down": false,
+                "redstone_conductor": false
+            },
             "minecraft:material_instances": {
                 "*": {
                     "texture": "christmas_gift_block",

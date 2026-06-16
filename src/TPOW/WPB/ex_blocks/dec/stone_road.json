@@ -16,6 +16,13 @@
                     "render_method": "alpha_test"
                 }
             },
+            "minecraft:movable": {
+                "movement_type": "popped"
+            },
+            "minecraft:redstone_conductivity": {
+                "allows_wire_to_step_down": false,
+                "redstone_conductor": false
+            },
             "minecraft:selection_box": {
                 "origin": [
                     -8,

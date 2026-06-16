@@ -5,6 +5,13 @@
             "identifier": "dec:bracken_crop"
         },
         "components": {
+            "minecraft:redstone_conductivity": {
+                "allows_wire_to_step_down": false,
+                "redstone_conductor": false
+            },
+            "minecraft:movable": {
+                "movement_type": "popped"
+            },
             "minecraft:breathability": "air",
             "minecraft:geometry": "geometry.crop.hash.on_dirt",
             "minecraft:collision_box": false,

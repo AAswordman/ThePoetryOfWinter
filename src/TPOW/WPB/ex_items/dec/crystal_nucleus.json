@@ -36,7 +36,7 @@
             "use": {
                 "sequence": [
                     {
-                        "condition": "query.scoreboard('wbfl') <= 60",
+                        "condition": "query.scoreboard('wbfl') < query.scoreboard('wbflMax')",
                         "run_command": {
                             "command": [
                                 "particle dec:white_star_particle ~~1~",
@@ -45,6 +45,7 @@
                                 "particle dec:white_star_particle ~~1~",
                                 "particle dec:white_star_particle ~~1~",
                                 "scoreboard players add @s wbfl 20",
+                                "execute as @s at @s if score @s wbfl > @s wbflMax run scoreboard players operation @s wbfl = @s wbflMax",
                                 "clear @s dec:crystal_nucleus 0 1"
                             ]
                         }

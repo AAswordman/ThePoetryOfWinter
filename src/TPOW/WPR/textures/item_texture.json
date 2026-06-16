@@ -816,8 +816,8 @@
         "cudgel": {
             "textures": "textures/items/cudgel"
         },
-        "mace": {
-            "textures": "textures/items/mace"
+        "fang_mace": {
+            "textures": "textures/items/fang_mace"
         },
         "witch_hat": {
             "textures": "textures/items/witch_hat"

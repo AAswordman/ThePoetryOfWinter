@@ -1,5 +1,5 @@
 <div align="center">
-  <img style = "width: 50%;height: 50%" src=https://github.com/AAswordman/ThePoetryOfWinter/assets/91937041/86c0436b-90c3-44ab-acde-02062aba4cd6>
+  <img style = "width: 50%;height: 50%" src=https://github.com/DEC-Development/ThePoetryOfWinter/assets/91937041/86c0436b-90c3-44ab-acde-02062aba4cd6>
 
 # ❄冬之纪行诗❄
 
@@ -16,8 +16,8 @@ _✨ 一场发生于未知世界的冒险 ✨_
 </div>
 
 <p align="center">
-  <a href="https://raw.githubusercontent.com/AAswordman/ThePoetryOfWinter/master/LICENSE">
-    <img src="https://img.shields.io/github/license/AAswordman/ThePoetryOfWinter" alt="license">
+  <a href="https://raw.githubusercontent.com/DEC-Development/ThePoetryOfWinter/master/LICENSE">
+    <img src="https://img.shields.io/github/license/DEC-Development/ThePoetryOfWinter" alt="license">
   </a>
   <a href="https://github.com/HookyQR/VSCodeBeautify">
     <img src="https://img.shields.io/badge/code%20style-beautuful-000000.svg?logo=javascript&logoColor=edb641" alt="beautuful">
@@ -44,7 +44,7 @@ _✨ 一场发生于未知世界的冒险 ✨_
 | ------------------- | --------------------------- |
 | 名称                | 冬之纪行诗                  |
 | 类型                | RPG                         |
-| Addon版本           | 1.9.3R2                     |
+| Addon版本           | 1.10.0B2                     |
 | 支持版本            | 基岩版1.21.60 61        |
 | 售价                | 免费 （女装获取最新快照版） |
 | 最后更新时间        | 2024.3                      |
@@ -69,7 +69,7 @@ _✨ 一场发生于未知世界的冒险 ✨_
 - 物品介绍：[https://powitemintroduction.pages.dev/](https://powitemintroduction.pages.dev/)
 - 流程引导：[https://www.mcmod.cn/post/4178.html](https://www.mcmod.cn/post/4178.html)
 - 发布页：[https://klpbbs.com/thread-12380-1-1.html](https://klpbbs.com/thread-12380-1-1.html)
-- 本页面：[https://github.com/AAswordman/ThePoetryOfWinter](https://github.com/AAswordman/ThePoetryOfWinter)
+- 本页面：[https://github.com/DEC-Development/ThePoetryOfWinter](https://github.com/DEC-Development/ThePoetryOfWinter)
 
 ## 💬反馈
 
@@ -163,11 +163,11 @@ BunBun不是笨笨    在矿里的小金呀
 
 ### 🧑🏻‍💻仓库内开发者
 
-<a href="https://github.com/AAswordman/ThePoetryOfWinter/graphs/contributors">
+<a href="https://github.com/DEC-Development/ThePoetryOfWinter/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=AAswordman/ThePoetryOfWinter&max=1000" alt="contributors" />
 </a>
 
-<a href="https://github.com/AAswordman/ExcellentMInecraftscripts/graphs/contributors">
+<a href="https://github.com/DEC-Development/ExcellentMInecraftscripts/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=AAswordman/ExcellentMInecraftscripts&max=1000" alt="contributors" />
 </a>
 

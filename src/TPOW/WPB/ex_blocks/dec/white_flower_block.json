@@ -9,6 +9,10 @@
             }
         },
         "components": {
+            "minecraft:redstone_conductivity": {
+                "allows_wire_to_step_down": true,
+                "redstone_conductor": true
+            },
             "minecraft:material_instances": {
                 "*": {
                     "texture": "white_flower_block",
